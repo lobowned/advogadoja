@@ -1,9 +1,26 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { Scale, Shield, Users } from "lucide-react";
+import { Scale } from "lucide-react";
+import VideoSection from "@/components/VideoSection";
+import ProcessSteps from "@/components/ProcessSteps";
+import ForWhoSection from "@/components/ForWhoSection";
+import OfferBox from "@/components/OfferBox";
+import GuaranteeCard from "@/components/GuaranteeCard";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import AuthorBio from "@/components/AuthorBio";
+import ObjecionsFAQ from "@/components/ObjecionsFAQ";
+import StatsSection from "@/components/StatsSection";
+import PainsVsDesires from "@/components/PainsVsDesires";
+import ComparisonTable from "@/components/ComparisonTable";
+import SupportChannels from "@/components/SupportChannels";
+import CTASection from "@/components/CTASection";
 
 const Index = () => {
   const navigate = useNavigate();
+
+  const handleCTA = () => {
+    navigate("/selecionar-problema");
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -15,92 +32,98 @@ const Index = () => {
           <div className="mx-auto max-w-4xl text-center">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-secondary/20 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
               <Scale className="h-4 w-4" />
-              <span>Especialistas em Direito do Consumidor</span>
+              <span>Especialistas em Todas as Áreas do Direito</span>
             </div>
             
             <h1 className="mb-6 text-4xl font-bold text-white md:text-6xl lg:text-7xl">
-              Defenda seus Direitos como Consumidor com Apoio Jurídico Especializado
+              Proteja seus Direitos com a Atuação de um Advogado Especializado
             </h1>
             
             <p className="mb-10 text-lg text-white/90 md:text-xl lg:text-2xl">
-              Mais de 15 anos de experiência protegendo consumidores contra práticas abusivas. 
-              Consulta gratuita e atendimento personalizado.
+              Com estratégia, segurança e total dedicação ao seu caso. 
+              Atendimento sigiloso e condução técnica voltada para resultados reais.
             </p>
             
             <Button 
               size="lg"
               variant="secondary"
               className="group h-14 px-8 text-lg font-semibold shadow-button transition-all hover:scale-105 hover:shadow-lg"
-              onClick={() => navigate("/selecionar-problema")}
+              onClick={handleCTA}
             >
-              Iniciar Atendimento
+              📌 Quero orientação jurídica imediata
               <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Trust Indicators */}
-      <section className="border-b bg-muted/30 py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-                <Shield className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="mb-2 text-xl font-bold text-foreground">100% Confidencial</h3>
-              <p className="text-muted-foreground">
-                Suas informações são protegidas com total sigilo profissional
-              </p>
-            </div>
-            
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-                <Scale className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="mb-2 text-xl font-bold text-foreground">Especialização Focada</h3>
-              <p className="text-muted-foreground">
-                Atuação exclusiva em Direito do Consumidor há mais de 15 anos
-              </p>
-            </div>
-            
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-                <Users className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="mb-2 text-xl font-bold text-foreground">+5.000 Casos Resolvidos</h3>
-              <p className="text-muted-foreground">
-                Milhares de consumidores tiveram seus direitos restaurados
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Video Section */}
+      <VideoSection />
 
-      {/* CTA Section */}
-      <section className="bg-background py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
-            Pronto para Resolver seu Problema?
-          </h2>
-          <p className="mb-8 text-lg text-muted-foreground">
-            O processo é rápido, simples e totalmente confidencial
-          </p>
-          <Button 
-            size="lg"
-            onClick={() => navigate("/selecionar-problema")}
-            className="h-12 px-8 text-base font-semibold"
-          >
-            Começar Agora
-          </Button>
-        </div>
-      </section>
+      {/* Process Steps */}
+      <ProcessSteps />
+
+      {/* For Who Section */}
+      <ForWhoSection />
+
+      {/* Stats Section */}
+      <StatsSection />
+
+      {/* Offer Box */}
+      <OfferBox />
+
+      {/* Guarantee Card */}
+      <GuaranteeCard />
+
+      {/* Testimonials Carousel */}
+      <TestimonialsCarousel />
+
+      {/* Author Bio */}
+      <AuthorBio />
+
+      {/* Pains vs Desires */}
+      <PainsVsDesires />
+
+      {/* Comparison Table */}
+      <ComparisonTable />
+
+      {/* Objections and FAQ */}
+      <ObjecionsFAQ />
+
+      {/* Support Channels */}
+      <SupportChannels />
+
+      {/* Final CTA */}
+      <CTASection onAction={handleCTA} />
 
       {/* Footer */}
-      <footer className="border-t bg-muted/30 py-8">
-        <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>© 2024 Escritório de Advocacia - Direito do Consumidor</p>
-          <p className="mt-2">Todos os direitos reservados</p>
+      <footer className="border-t bg-muted/30 py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h3 className="font-bold text-foreground mb-4">Escritório de Advocacia</h3>
+              <p className="text-sm text-muted-foreground">
+                Atuação em todas as áreas do Direito com ética, dedicação e resultados comprovados.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-bold text-foreground mb-4">Contato</h3>
+              <p className="text-sm text-muted-foreground">contato@escritorio.com.br</p>
+              <p className="text-sm text-muted-foreground">(XX) XXXXX-XXXX</p>
+              <p className="text-sm text-muted-foreground mt-2">OAB/XX 000.000</p>
+            </div>
+            <div>
+              <h3 className="font-bold text-foreground mb-4">Links</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#" className="hover:text-primary transition-colors">Sobre o Escritório</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Áreas de Atuação</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Política de Privacidade</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t pt-8 text-center text-sm text-muted-foreground">
+            <p>© 2024 Escritório de Advocacia - Todos os direitos reservados</p>
+          </div>
         </div>
       </footer>
     </div>

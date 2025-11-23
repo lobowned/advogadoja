@@ -4,8 +4,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import SelectProblem from "./pages/SelectProblem";
-import Questionnaire from "./pages/Questionnaire";
+import SelectNiche from "./pages/SelectNiche";
+import SelectAction from "./pages/SelectAction";
+import DynamicQuestionnaire from "./pages/DynamicQuestionnaire";
 import Completed from "./pages/Completed";
 import NotFound from "./pages/NotFound";
 
@@ -19,8 +20,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/selecionar-problema" element={<SelectProblem />} />
-          <Route path="/questionario/:problemId" element={<Questionnaire />} />
+          <Route path="/selecionar-nicho" element={<SelectNiche />} />
+          <Route path="/selecionar-acao/:nicheId" element={<SelectAction />} />
+          <Route path="/questionario/:nicheId/:actionId" element={<DynamicQuestionnaire />} />
           <Route path="/concluido" element={<Completed />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

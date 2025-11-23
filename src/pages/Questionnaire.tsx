@@ -291,10 +291,10 @@ const Questionnaire = () => {
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-6">
           <button
-            onClick={() => navigate("/selecionar-problema")}
+            onClick={() => navigate("/selecionar-nicho")}
             className="mb-4 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
-            ← Escolher outro problema
+            ← Escolher outro nicho
           </button>
           <div className="mb-4">
             <div className="flex items-center justify-between text-sm text-muted-foreground">

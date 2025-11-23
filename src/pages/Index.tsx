@@ -19,7 +19,7 @@ const Index = () => {
   const navigate = useNavigate();
 
   const handleCTA = () => {
-    navigate("/selecionar-problema");
+    navigate("/selecionar-nicho");
   };
 
   return (

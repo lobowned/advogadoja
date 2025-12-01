@@ -11,14 +11,16 @@ serve(async (req) => {
   }
 
   try {
-    const { messages, currentLawyerId } = await req.json();
+    const { messages, currentLawyerId, sessionId, messageCount } = await req.json();
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
+    const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
+    const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
     
     if (!LOVABLE_API_KEY) {
       throw new Error("LOVABLE_API_KEY is not configured");
     }
 
-    console.log("Received messages:", messages.length, "Current lawyer:", currentLawyerId);
+    console.log("Received messages:", messages.length, "Current lawyer:", currentLawyerId, "Session:", sessionId);
 
     // NÍVEL 1: Detecção específica por sub-especialidade (direciona para advogado específico)
     const detectSpecificLawyer = (text: string): string | null => {
@@ -243,6 +245,75 @@ serve(async (req) => {
       penal: ['roberto-costa', 'vanessa-reis', 'joao-fernandes', 'larissa-souza', 'eduardo-gomes', 'monica-alves'],
     };
 
+    // LEAD COLLECTION LOGIC
+    let needsLeadCollection = false;
+    let leadData: { hasName: boolean; hasContact: boolean; problemDetected: boolean; specialty?: string } = {
+      hasName: false,
+      hasContact: false,
+      problemDetected: false
+    };
+
+    // Check if we need to collect lead info after 3-4 messages with identified problem
+    if (sessionId && messageCount >= 3 && currentLawyerId !== 'carlos-silva') {
+      try {
+        // Check existing lead in database
+        const leadCheckResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?session_id=eq.${sessionId}&select=*`, {
+          headers: {
+            'apikey': SUPABASE_SERVICE_ROLE_KEY!,
+            'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`
+          }
+        });
+        
+        const existingLeads = await leadCheckResponse.json();
+        
+        if (existingLeads && existingLeads.length > 0) {
+          const lead = existingLeads[0];
+          leadData.hasName = !!lead.name;
+          leadData.hasContact = !!(lead.phone || lead.email);
+          leadData.problemDetected = !!lead.specialty;
+          
+          // Update message count
+          await fetch(`${SUPABASE_URL}/rest/v1/leads?session_id=eq.${sessionId}`, {
+            method: 'PATCH',
+            headers: {
+              'apikey': SUPABASE_SERVICE_ROLE_KEY!,
+              'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+              'Content-Type': 'application/json',
+              'Prefer': 'return=minimal'
+            },
+            body: JSON.stringify({
+              message_count: messageCount
+            })
+          });
+        } else {
+          // Create new lead entry
+          await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+            method: 'POST',
+            headers: {
+              'apikey': SUPABASE_SERVICE_ROLE_KEY!,
+              'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+              'Content-Type': 'application/json',
+              'Prefer': 'return=minimal'
+            },
+            body: JSON.stringify({
+              session_id: sessionId,
+              message_count: messageCount,
+              assigned_lawyer: currentLawyerId,
+              specialty: currentLawyerId !== 'carlos-silva' ? currentLawyerId : null,
+              problem_detected: true
+            })
+          });
+          leadData.problemDetected = true;
+        }
+
+        // Determine if we need to ask for information
+        needsLeadCollection = !leadData.hasName || !leadData.hasContact;
+        
+      } catch (error) {
+        console.error("Error checking/creating lead:", error);
+      }
+    }
+    
     // Verificar se precisa transferir
     let needsTransfer = false;
     let newLawyerId: string | null = null;
@@ -366,6 +437,34 @@ SEU PAPEL:
       );
     }
 
+    // Se precisa coletar lead, enviar dados de coleta antes do stream
+    if (needsLeadCollection) {
+      const encoder = new TextEncoder();
+      let leadQuestion = '';
+      
+      if (!leadData.hasName) {
+        leadQuestion = 'Qual é o seu nome?';
+      } else if (!leadData.hasContact) {
+        leadQuestion = 'Qual o seu WhatsApp para contato?';
+      }
+      
+      const leadCollectionData = `data: ${JSON.stringify({ collectLead: true, question: leadQuestion })}\n\n`;
+      
+      // Criar novo stream com dados de coleta + response original
+      const { readable, writable } = new TransformStream();
+      const writer = writable.getWriter();
+      
+      // Escrever dados de coleta
+      writer.write(encoder.encode(leadCollectionData));
+      
+      // Pipe o response original
+      response.body?.pipeTo(writable);
+      
+      return new Response(readable, {
+        headers: { ...corsHeaders, "Content-Type": "text/event-stream" },
+      });
+    }
+    
     // Se precisa transferir, enviar dados de transferência antes do stream
     if (needsTransfer && newLawyerId) {
       const encoder = new TextEncoder();

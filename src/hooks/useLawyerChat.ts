@@ -588,6 +588,9 @@ export const useLawyerChat = () => {
 
             const content = parsed.choices?.[0]?.delta?.content as string | undefined;
             if (content) {
+              // Não validar respostas curtas (mensagens hardcoded são curtas)
+              const isShortResponse = fullResponseContent.length < 150;
+              
               // VALIDAÇÃO: Detectar resposta corrompida (ignorando emojis, permitindo português)
               const contentWithoutEmojis = content
                 .replace(/[\u{1F300}-\u{1FAFF}]/gu, '')  // Todos os emojis (range completo)
@@ -596,28 +599,32 @@ export const useLawyerChat = () => {
                 .replace(/[\u{200D}]/gu, '')               // Zero-width joiner
                 .trim();
               
-              console.log('📝 [VALIDATION]', {
+              console.log('🔍 [VALIDATION CHECK]', {
                 originalContent: content,
                 withoutEmojis: contentWithoutEmojis,
+                contentLength: fullResponseContent.length,
+                isShortResponse,
                 hasEmojis: content !== contentWithoutEmojis
               });
               
-              // Detectar apenas inglês excessivo (mais de 4 palavras em inglês)
-              const englishWords = (contentWithoutEmojis.match(/\b(you|the|and|for|with|from|will|need|that|this|your|case|legal|help|can|are|have|been|what|when|where|how|why|client|attorney|should|would|could)\b/gi) || []);
-              const hasExcessiveEnglish = englishWords.length > 4;
-              
-              // Detectar caracteres realmente problemáticos (árabe, chinês, cirílico, etc.)
-              const hasTrulyForeignChars = /[\u0600-\u06FF\u4E00-\u9FFF\u0400-\u04FF\u3040-\u309F\u30A0-\u30FF]/.test(contentWithoutEmojis);
-              
-              if (hasExcessiveEnglish || hasTrulyForeignChars) {
-                console.warn('⚠️ [CORRUPTED RESPONSE]', {
-                  englishWordsCount: englishWords.length,
-                  englishWords,
-                  hasTrulyForeignChars,
-                  contentSample: contentWithoutEmojis.substring(0, 100)
-                });
-                fullResponseContent = "Olá! Sou o especialista. Vi seu caso e vou te ajudar. Pode me contar mais detalhes?";
-                break; // Parar de processar chunks
+              if (!isShortResponse) {
+                // Detectar apenas inglês excessivo (mais de 6 palavras em inglês)
+                const englishWords = (contentWithoutEmojis.match(/\b(you|the|and|for|with|from|will|need|that|this|your|case|legal|help|can|are|have|been|what|when|where|how|why|client|attorney|should|would|could)\b/gi) || []);
+                const hasExcessiveEnglish = englishWords.length > 6;
+                
+                // Detectar caracteres realmente problemáticos (árabe, chinês, cirílico, etc.)
+                const hasTrulyForeignChars = /[\u0600-\u06FF\u4E00-\u9FFF\u0400-\u04FF\u3040-\u309F\u30A0-\u30FF]/.test(contentWithoutEmojis);
+                
+                if (hasExcessiveEnglish || hasTrulyForeignChars) {
+                  console.warn('⚠️ [CORRUPTED RESPONSE]', {
+                    englishWordsCount: englishWords.length,
+                    englishWords,
+                    hasTrulyForeignChars,
+                    contentSample: contentWithoutEmojis.substring(0, 100)
+                  });
+                  fullResponseContent = "Olá! Sou o especialista. Vi seu caso e vou te ajudar. Pode me contar mais detalhes?";
+                  break; // Parar de processar chunks
+                }
               }
               
               fullResponseContent += content;
@@ -678,11 +685,22 @@ export const useLawyerChat = () => {
             timestamp: new Date().toISOString()
           });
           
+          // NOVO: Adicionar mensagem visual de transferência
+          const transferMessage: TransferMessage = {
+            role: 'system',
+            content: `Transferindo para ${newLawyer.name}...`,
+            timestamp: new Date(),
+            isTransfer: true,
+            fromLawyer: currentLawyer,
+            toLawyer: newLawyer,
+          };
+          setMessages(prev => [...prev, transferMessage]);
+          
           setIsTransferring(true);
           setIsTyping(false);
 
-          // Mostrar indicador visual de transferência (sem mensagem de texto)
-          await new Promise(resolve => setTimeout(resolve, 2000));
+          // Aumentar tempo de animação de transferência
+          await new Promise(resolve => setTimeout(resolve, 3000));
           
           console.log('🔄 [SWITCHING LAWYER]', {
             newLawyerId: newLawyer.id,

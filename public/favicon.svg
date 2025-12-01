@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Base -->
+  <rect x="26" y="54" width="12" height="4" fill="#D4AF37" rx="1"/>
+  <rect x="22" y="58" width="20" height="2" fill="#D4AF37" rx="1"/>
+  
+  <!-- Pilar central -->
+  <rect x="30" y="14" width="4" height="44" fill="#D4AF37" rx="1"/>
+  
+  <!-- Barra horizontal -->
+  <rect x="8" y="14" width="48" height="3" fill="#D4AF37" rx="1.5"/>
+  
+  <!-- Prato esquerdo -->
+  <line x1="16" y1="17" x2="12" y2="24" stroke="#D4AF37" stroke-width="1.5"/>
+  <line x1="16" y1="17" x2="20" y2="24" stroke="#D4AF37" stroke-width="1.5"/>
+  <ellipse cx="16" cy="25" rx="8" ry="2" fill="#D4AF37"/>
+  <path d="M 8 25 Q 8 27 16 27 Q 24 27 24 25" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
+  
+  <!-- Prato direito -->
+  <line x1="48" y1="17" x2="44" y2="24" stroke="#D4AF37" stroke-width="1.5"/>
+  <line x1="48" y1="17" x2="52" y2="24" stroke="#D4AF37" stroke-width="1.5"/>
+  <ellipse cx="48" cy="25" rx="8" ry="2" fill="#D4AF37"/>
+  <path d="M 40 25 Q 40 27 48 27 Q 56 27 56 25" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
+  
+  <!-- Topo decorativo -->
+  <circle cx="32" cy="11" r="3" fill="#D4AF37"/>
+  <polygon points="32,8 30,11 34,11" fill="#D4AF37"/>
+</svg>

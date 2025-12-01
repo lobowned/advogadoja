@@ -31,7 +31,7 @@ const Index = () => {
         <div className="container relative mx-auto px-4 py-16 sm:py-20 md:py-32 z-10">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="mb-8 sm:mb-10 text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight animated-gradient-text">
-              Um advogado especialista entra em contato em minutos — 100% gratuito.
+              Fale Agora com um Advogado — Atendimento Imediato e Gratuito
             </h1>
             
             <Button 
@@ -40,7 +40,7 @@ const Index = () => {
               className="h-12 sm:h-14 w-full sm:w-auto px-6 sm:px-8 text-base sm:text-lg font-semibold shadow-button transition-all hover:scale-105 hover:shadow-lg"
               onClick={handleCTA}
             >
-              Falar com Especialista
+              Iniciar Conversa Grátis
             </Button>
           </div>
         </div>
@@ -54,9 +54,10 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t bg-muted/30 py-6">
         <div className="container mx-auto px-4">
-          <p className="text-center text-sm text-muted-foreground">
-            Escritório de Advocacia • OAB/XX 000.000 • © 2025
-          </p>
+          <div className="text-center text-sm text-muted-foreground">
+            <p className="font-semibold">Silva & Associados Advocacia • OAB/SP 123.456 • © 2025</p>
+            <p className="mt-1">Atendimento: seg-sex 8h às 20h | contato@silvaadvocacia.com.br</p>
+          </div>
         </div>
       </footer>
     </div>

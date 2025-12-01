@@ -135,6 +135,13 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
             </Badge>
           </div>
 
+          {/* Credenciais Oficiais */}
+          <div className="mt-6 text-white/60 text-xs animate-fade-up" style={{ animationDelay: "0.45s" }}>
+            <span>CNPJ 50.947.818/0001-94</span>
+            <span className="mx-2">•</span>
+            <span>OAB/BA 46.638</span>
+          </div>
+
         </div>
       </div>
     </section>

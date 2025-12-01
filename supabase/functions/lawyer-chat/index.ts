@@ -676,8 +676,11 @@ Seja objetivo e direto.`;
       if (lastUserMessage) {
         // Se já tem transferência pendente, verificar confirmação
         if (existingPendingTransfer) {
-          const confirmationPhrases = /\b(sim|quero|pode|claro|pode ser|ok|tá|ta|beleza|aceito|por favor|gostaria|vamos|queria|vamo|bora|autorizo|pode sim|tudo bem|tranquilo|blz)\b/i;
+          // Regex mais flexível para capturar variações de digitação (ssim, sssim, etc.)
+          const confirmationPhrases = /(s+im|sim|quero|pode|claro|pode ser|ok|tá|ta|beleza|aceito|por favor|gostaria|vamos|queria|vamo|bora|autorizo|pode sim|tudo bem|tranquilo|blz|isso|exato|correto|afirmativo)/i;
           const userConfirmed = confirmationPhrases.test(lastUserMessage.content.toLowerCase());
+          
+          console.log(`🔍 [CONFIRMATION CHECK] User message: "${lastUserMessage.content}" | Confirmed: ${userConfirmed}`);
           
           if (userConfirmed) {
             needsTransfer = true;

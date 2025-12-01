@@ -305,9 +305,13 @@ export const useLawyerChat = () => {
     abortControllerRef.current = new AbortController();
 
     try {
-      // Simular tempo de leitura e pensamento do advogado (1.5-3 segundos)
-      const thinkingDelay = 1500 + Math.random() * 1500;
-      await new Promise(resolve => setTimeout(resolve, thinkingDelay));
+      // Tempo de leitura baseado no tamanho da mensagem do usuário
+      const words = content.trim().split(/\s+/).length;
+      const readingTime = words * 250; // 250ms por palavra
+      const thinkingTime = 1500 + Math.random() * 3000; // 1.5-4.5 segundos
+      const totalDelay = readingTime + thinkingTime;
+      
+      await new Promise(resolve => setTimeout(resolve, totalDelay));
       
       setIsThinking(false);
       setIsTyping(true);
@@ -420,16 +424,102 @@ export const useLawyerChat = () => {
 
             const content = parsed.choices?.[0]?.delta?.content as string | undefined;
             if (content) {
-              // Implementar digitação humana com velocidade variável
+              // Sistema de digitação humanizada com erros e velocidade variável
               for (let i = 0; i < content.length; i++) {
                 const char = content[i];
+                const textLength = content.length;
+                
+                // Velocidade variável: mais lento no início/fim, rápido no meio
+                let baseDelay = 60;
+                const progress = i / textLength;
+                
+                if (progress < 0.15) {
+                  baseDelay = 90; // Início mais lento (pensando)
+                } else if (progress > 0.85) {
+                  baseDelay = 75; // Final mais lento (revisando)
+                } else {
+                  baseDelay = 45; // Meio mais rápido (fluindo)
+                }
+                
+                // Alta variância (±50%) para naturalidade
+                let delay = baseDelay * (0.5 + Math.random());
+                
+                // Pausas naturais após pontuação
+                if (char === '.' || char === '!' || char === '?') {
+                  delay = 450 + Math.random() * 400; // 450-850ms
+                } else if (char === ',') {
+                  delay = 150 + Math.random() * 150; // 150-300ms
+                } else if (char === '\n') {
+                  delay = 250 + Math.random() * 250; // 250-500ms
+                } else if (char === ' ' && Math.random() < 0.08) {
+                  // 8% chance de pausa extra entre palavras (pensando)
+                  delay = 200 + Math.random() * 350; // 200-550ms
+                }
+                
+                // 3% chance de erro de digitação (apenas em letras)
+                const shouldMakeTypo = Math.random() < 0.03 && 
+                                      char.match(/[a-záàâãéêíóôõúçA-ZÁÀÂÃÉÊÍÓÔÕÚÇ]/) && 
+                                      i < textLength - 3;
+                
+                if (shouldMakeTypo) {
+                  // Digitar letra errada
+                  const wrongChars = 'abcdefghijklmnopqrstuvwxyz';
+                  const wrongChar = wrongChars[Math.floor(Math.random() * wrongChars.length)];
+                  assistantContent += wrongChar;
+                  
+                  setMessages(prev => {
+                    const last = prev[prev.length - 1];
+                    if (last?.role === 'assistant' && !('isTransfer' in last)) {
+                      return prev.map((m, idx) =>
+                        idx === prev.length - 1
+                          ? { ...m, content: assistantContent }
+                          : m
+                      );
+                    }
+                    return [
+                      ...prev,
+                      {
+                        role: 'assistant',
+                        content: assistantContent,
+                        timestamp: new Date(),
+                        lawyerId: currentLawyer.id,
+                      },
+                    ];
+                  });
+                  
+                  // Pausa ao digitar errado
+                  await new Promise(resolve => setTimeout(resolve, 50 + Math.random() * 80));
+                  
+                  // Pausa ao perceber o erro
+                  await new Promise(resolve => setTimeout(resolve, 180 + Math.random() * 220));
+                  
+                  // Apagar caractere errado
+                  assistantContent = assistantContent.slice(0, -1);
+                  
+                  setMessages(prev => {
+                    const last = prev[prev.length - 1];
+                    if (last?.role === 'assistant' && !('isTransfer' in last)) {
+                      return prev.map((m, idx) =>
+                        idx === prev.length - 1
+                          ? { ...m, content: assistantContent }
+                          : m
+                      );
+                    }
+                    return prev;
+                  });
+                  
+                  // Pausa antes de corrigir
+                  await new Promise(resolve => setTimeout(resolve, 60 + Math.random() * 80));
+                }
+                
+                // Digitar o caractere correto
                 assistantContent += char;
                 
                 setMessages(prev => {
                   const last = prev[prev.length - 1];
                   if (last?.role === 'assistant' && !('isTransfer' in last)) {
-                    return prev.map((m, i) =>
-                      i === prev.length - 1
+                    return prev.map((m, idx) =>
+                      idx === prev.length - 1
                         ? { ...m, content: assistantContent }
                         : m
                     );
@@ -444,18 +534,6 @@ export const useLawyerChat = () => {
                     },
                   ];
                 });
-
-                // Pausas variáveis para parecer digitação humana
-                let delay = 25 + Math.random() * 35; // 25-60ms por caractere
-                
-                // Pausas maiores após pontuação
-                if (char === '.' || char === '!' || char === '?') {
-                  delay = 400 + Math.random() * 300; // 400-700ms
-                } else if (char === ',' || char === ';') {
-                  delay = 100 + Math.random() * 100; // 100-200ms
-                } else if (char === '\n') {
-                  delay = 200 + Math.random() * 200; // 200-400ms
-                }
                 
                 await new Promise(resolve => setTimeout(resolve, delay));
               }

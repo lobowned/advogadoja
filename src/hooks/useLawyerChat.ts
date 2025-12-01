@@ -11,7 +11,7 @@ export const useLawyerChat = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: 'Olá! Sou Dr. Carlos Silva, advogado com 15 anos de experiência. Estou aqui para ajudá-lo com sua questão jurídica. Pode me contar o que está acontecendo?',
+      content: 'Olá! Sou o Dr. Carlos. Em que posso ajudá-lo hoje?',
       timestamp: new Date(),
     },
   ]);

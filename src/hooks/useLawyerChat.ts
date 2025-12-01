@@ -613,9 +613,21 @@ export const useLawyerChat = () => {
               continue;
             }
             
-            // Verificar se há transferência
-            if (parsed.transfer && parsed.newLawyerId) {
-              console.log('🔄 [TRANSFER DETECTED]', {
+            // Verificar se há transferência (novo formato com metadata)
+            const metadata = parsed.metadata;
+            if (metadata?.action === 'confirm_transfer' && metadata?.newLawyerId) {
+              console.log('🔄 [TRANSFER DETECTED via metadata]', {
+                from: currentLawyer.id,
+                to: metadata.newLawyerId,
+                action: metadata.action,
+                timestamp: new Date().toISOString()
+              });
+              transferData = { newLawyerId: metadata.newLawyerId };
+              continue;
+            }
+            // Manter compatibilidade com formato antigo (se houver)
+            else if (parsed.transfer && parsed.newLawyerId) {
+              console.log('🔄 [TRANSFER DETECTED via legacy format]', {
                 from: currentLawyer.id,
                 to: parsed.newLawyerId,
                 timestamp: new Date().toISOString()

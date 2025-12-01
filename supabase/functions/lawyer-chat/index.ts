@@ -721,7 +721,7 @@ Seja objetivo e direto.`;
             }
           } 
           // Se NÃO detectou nova especialidade, verificar confirmação da pendente
-          else if (!currentDetection || currentDetection.confidence < 0.5) {
+          else {
             // Regex mais flexível para capturar variações de digitação (ssim, sssim, etc.)
             const confirmationPhrases = /(s+im|sim|quero|pode|claro|pode ser|ok|tá|ta|beleza|aceito|por favor|gostaria|vamos|queria|vamo|bora|autorizo|pode sim|tudo bem|tranquilo|blz|isso|exato|correto|afirmativo)/i;
             const userConfirmed = confirmationPhrases.test(lastUserMessage.content.toLowerCase());

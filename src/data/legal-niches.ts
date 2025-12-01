@@ -10,7 +10,7 @@ export const legalNiches: LegalNiche[] = [
   {
     id: 'familia',
     name: 'Direito de Família',
-    description: 'Divórcio, guarda, pensão alimentícia e união estável',
+    description: 'Separação, guarda de filhos, pensão - quando a família precisa de solução jurídica',
     icon: Users,
     color: 'text-blue-600',
     actions: familiaActions,
@@ -18,7 +18,7 @@ export const legalNiches: LegalNiche[] = [
   {
     id: 'trabalhista',
     name: 'Direito Trabalhista',
-    description: 'Demissão, assédio, horas extras e direitos trabalhistas',
+    description: 'Mandaram você embora injustamente? Tem direitos não pagos? Sofreu assédio?',
     icon: Briefcase,
     color: 'text-orange-600',
     actions: trabalhistaActions,
@@ -26,7 +26,7 @@ export const legalNiches: LegalNiche[] = [
   {
     id: 'civil',
     name: 'Direito Civil',
-    description: 'Cobrança, danos morais, contratos e questões patrimoniais',
+    description: 'Prejuízo financeiro, danos morais, contratos descumpridos - você não está sozinho',
     icon: Scale,
     color: 'text-purple-600',
     actions: civilActions,
@@ -34,7 +34,7 @@ export const legalNiches: LegalNiche[] = [
   {
     id: 'previdenciario',
     name: 'Direito Previdenciário',
-    description: 'Aposentadoria, auxílio-doença, BPC/LOAS e revisões',
+    description: 'Seu benefício foi negado? Aposentadoria atrasada? Vamos resolver juntos',
     icon: Heart,
     color: 'text-green-600',
     actions: previdenciarioActions,
@@ -42,7 +42,7 @@ export const legalNiches: LegalNiche[] = [
   {
     id: 'penal',
     name: 'Direito Penal',
-    description: 'Defesa criminal, habeas corpus e acompanhamento policial',
+    description: 'Acusado injustamente? Vítima de crime? Defesa ou acusação com estratégia sólida',
     icon: Shield,
     color: 'text-red-600',
     actions: penalActions,

@@ -41,16 +41,15 @@ const Index = () => {
           <div className="mx-auto max-w-4xl text-center">
             <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full bg-secondary/20 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-white backdrop-blur-sm">
               <Scale className="h-3 w-3 sm:h-4 sm:w-4" />
-              <span>Especialistas em Todas as Áreas do Direito</span>
+              <span>⚖️ Atendimento em Todo Brasil • Consulta Gratuita</span>
             </div>
             
             <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold text-white leading-tight">
-              Proteja seus Direitos com a Atuação de um Advogado Especializado
+              Teve seus Direitos Violados? Descubra em 3 Minutos se Você Tem Direito a Indenização
             </h1>
             
             <p className="mb-8 sm:mb-10 text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed">
-              Com estratégia, segurança e total dedicação ao seu caso. 
-              Atendimento sigiloso e condução técnica voltada para resultados reais.
+              Responda um breve questionário e nossa equipe jurídica entra em contato para analisar seu caso — sem compromisso e 100% gratuito.
             </p>
             
             <Button 
@@ -59,7 +58,7 @@ const Index = () => {
               className="group h-12 sm:h-14 w-full sm:w-auto px-6 sm:px-8 text-base sm:text-lg font-semibold shadow-button transition-all hover:scale-105 hover:shadow-lg"
               onClick={handleCTA}
             >
-              📌 Quero orientação jurídica imediata
+              🔍 Analisar Meu Caso Gratuitamente
               <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
             </Button>
           </div>
@@ -103,7 +102,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t pt-6 sm:pt-8 text-center text-xs sm:text-sm text-muted-foreground">
-            <p>© 2024 Escritório de Advocacia - Todos os direitos reservados</p>
+            <p>© 2025 Escritório de Advocacia - Todos os direitos reservados</p>
           </div>
         </div>
       </footer>

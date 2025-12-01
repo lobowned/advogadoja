@@ -15,10 +15,10 @@ const NicheSelector = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 sm:mb-12 animate-fade-up">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
-            Qual área jurídica você precisa?
+            O que está tirando sua paz?
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-            Selecione o nicho que melhor se aplica ao seu caso para começarmos
+            Selecione a situação mais próxima do seu caso e descubra como podemos ajudar:
           </p>
         </div>
 
@@ -58,8 +58,18 @@ const NicheSelector = () => {
           })}
         </div>
 
-        <div className="text-center mt-8 sm:mt-10 text-xs sm:text-sm text-muted-foreground px-4">
-          <p>Não encontrou o que procura? Entre em contato conosco para orientação personalizada</p>
+        <div className="text-center mt-8 sm:mt-10 px-4">
+          <p className="text-xs sm:text-sm text-muted-foreground mb-4">
+            Não encontrou o que procura? Entre em contato conosco para orientação personalizada
+          </p>
+          <a 
+            href="https://wa.me/5511999999999" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg transition-all hover:scale-105 shadow-lg"
+          >
+            <span>⚠️ Não sabe qual escolher? Fale com um especialista</span>
+          </a>
         </div>
       </div>
     </section>

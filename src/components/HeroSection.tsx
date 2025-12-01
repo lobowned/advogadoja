@@ -12,7 +12,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
   const displayLawyers = onlineLawyers.filter(l => l.specialty !== 'geral').slice(0, 5);
 
   return (
-    <section className="relative overflow-hidden min-h-[70vh] sm:min-h-[80vh] flex items-center pt-16 md:pt-20">
+    <section className="relative overflow-hidden min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] flex items-center pt-16 md:pt-20">
       {/* Video Background */}
       <video
         autoPlay
@@ -38,11 +38,11 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
       
-      <div className="container relative mx-auto px-4 py-16 sm:py-20 md:py-32 z-10">
+      <div className="container relative mx-auto px-4 py-12 sm:py-16 md:py-32 z-10">
         <div className="mx-auto max-w-3xl text-center">
           
           {/* Indicador Online */}
-          <div className="mb-8 flex items-center justify-center gap-2 text-white/90 text-sm animate-fade-up">
+          <div className="mb-6 sm:mb-8 flex items-center justify-center gap-2 text-white/90 text-sm animate-fade-up">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
@@ -51,22 +51,22 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
           </div>
 
           {/* Título Principal */}
-          <h1 className="mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animated-gradient-text text-shadow-hero animate-fade-up">
+          <h1 className="mb-3 sm:mb-4 text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight animated-gradient-text text-shadow-hero animate-fade-up">
             Fale Agora com um Advogado
           </h1>
           
           {/* Subtítulo */}
-          <p className="mb-10 text-xl sm:text-2xl md:text-3xl text-white/90 font-medium text-shadow-hero animate-fade-up">
+          <p className="mb-8 sm:mb-10 text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 font-medium text-shadow-hero animate-fade-up">
             Atendimento Imediato e Gratuito
           </p>
 
           {/* Avatares */}
-          <div className="flex items-center justify-center gap-3 mb-8 animate-fade-up">
+          <div className="flex items-center justify-center gap-3 mb-6 sm:mb-8 animate-fade-up">
             <div className="flex -space-x-3">
               {displayLawyers.map((lawyer) => (
                 <Avatar 
                   key={lawyer.id} 
-                  className="w-11 h-11 border-2 border-white/80 shadow-lg"
+                  className="w-9 h-9 sm:w-11 sm:h-11 border-2 border-white/80 shadow-lg"
                 >
                   <AvatarImage src={lawyer.photo} alt={lawyer.name} />
                   <AvatarFallback>{lawyer.name[0]}</AvatarFallback>
@@ -78,7 +78,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
           {/* CTA Button */}
           <Button 
             size="lg"
-            className="h-14 px-10 text-lg font-semibold bg-secondary hover:bg-secondary/90 shadow-button transition-all hover:scale-105 animate-fade-up"
+            className="h-12 sm:h-14 px-8 sm:px-10 text-base sm:text-lg font-semibold bg-secondary hover:bg-secondary/90 shadow-button transition-all hover:scale-105 animate-fade-up"
             onClick={onCtaClick}
           >
             <MessageCircle className="w-5 h-5 mr-2" />
@@ -86,7 +86,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
           </Button>
 
           {/* Credenciais */}
-          <div className="mt-10 text-white/50 text-xs animate-fade-up">
+          <div className="mt-8 sm:mt-10 text-white/50 text-xs animate-fade-up">
             <span>CNPJ 50.947.818/0001-94</span>
             <span className="mx-2">•</span>
             <span>OAB/BA 46.638</span>

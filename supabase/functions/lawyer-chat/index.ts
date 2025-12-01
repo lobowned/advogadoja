@@ -1,95 +1,303 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-// Função para analisar confirmação/negação usando IA
-async function analyzeUserConfirmation(
-  userMessage: string, 
-  pendingLawyerName: string,
-  apiKey: string
-): Promise<{ isConfirmation: boolean; isNegation: boolean; confidence: number }> {
-  console.log(`🤖 [CONFIRMATION AI] Analyzing: "${userMessage}"`);
+// LISTA COMPLETA DE ADVOGADOS PARA A IA
+const LAWYERS_LIST = `ADVOGADOS DISPONÍVEIS:
+
+FAMÍLIA (6 advogados):
+1. maria-santos: Dra. Maria Santos - Divórcio e Separação
+2. rafael-oliveira: Dr. Rafael Oliveira - Guarda de Filhos
+3. juliana-costa: Dra. Juliana Costa - Pensão Alimentícia
+4. fernando-lima: Dr. Fernando Lima - Alienação Parental
+5. patricia-almeida: Dra. Patrícia Almeida - União Estável
+6. rodrigo-barros: Dr. Rodrigo Barros - Inventário e Herança
+
+TRABALHISTA (6 advogados):
+7. ricardo-mendes: Dr. Ricardo Mendes - Demissão Sem Justa Causa
+8. ana-rodrigues: Dra. Ana Rodrigues - Acidente de Trabalho
+9. lucas-ferreira: Dr. Lucas Ferreira - Assédio Moral
+10. carla-souza: Dra. Carla Souza - Assédio Sexual
+11. paulo-martins: Dr. Paulo Martins - Horas Extras
+12. beatriz-campos: Dra. Beatriz Campos - Rescisão Indireta
+
+CIVIL (11 advogados):
+13. gustavo-reis: Dr. Gustavo Reis - Cobranças e Dívidas
+14. camila-nunes: Dra. Camila Nunes - Danos Morais
+15. diego-santos: Dr. Diego Santos - Contratos
+16. fernanda-lima: Dra. Fernanda Lima - Despejo e Locação
+17. thiago-rocha: Dr. Thiago Rocha - Imóveis e Usucapião
+18. marina-costa: Dra. Marina Costa - Direito do Consumidor
+19. helena-vasconcelos: Dra. Helena Vasconcelos - Direito da Saúde / Planos / SUS / Cirurgias
+20. gabriel-monteiro: Dr. Gabriel Monteiro - Crimes Digitais e Golpes (PIX, WhatsApp)
+21. renata-machado: Dra. Renata Machado - Erro Médico
+22. leonardo-prado: Dr. Leonardo Prado - Direito Aéreo (voos, bagagens)
+23. cristina-torres: Dra. Cristina Torres - Multas de Trânsito
+
+PREVIDENCIÁRIO (6 advogados):
+24. andre-silva: Dr. André Silva - Aposentadoria
+25. claudia-martins: Dra. Claudia Martins - Auxílio-Doença
+26. marcos-oliveira: Dr. Marcos Oliveira - BPC/LOAS
+27. isabela-santos: Dra. Isabela Santos - Pensão por Morte
+28. renato-alves: Dr. Renato Alves - Revisão de Benefícios
+29. sandra-lima: Dra. Sandra Lima - Aposentadoria Rural
+
+PENAL (6 advogados):
+30. roberto-costa: Dr. Roberto Costa - Flagrante e Prisão
+31. vanessa-reis: Dra. Vanessa Reis - Habeas Corpus
+32. joao-fernandes: Dr. João Fernandes - Violência Doméstica
+33. larissa-souza: Dra. Larissa Souza - Crimes Patrimoniais
+34. eduardo-gomes: Dr. Eduardo Gomes - Crimes de Trânsito
+35. monica-alves: Dra. Mônica Alves - Defesa Criminal Geral`;
+
+// Tool para orquestrar resposta
+const orchestrateResponseTool = {
+  type: "function",
+  function: {
+    name: "orchestrate_response",
+    description: "Decide a ação e gera a resposta apropriada para o usuário",
+    parameters: {
+      type: "object",
+      properties: {
+        action: {
+          type: "string",
+          enum: ["normal_response", "suggest_transfer", "confirm_transfer", "deny_transfer", "specialist_greeting"],
+          description: "Tipo de ação a executar"
+        },
+        response: {
+          type: "string",
+          description: "Texto da resposta para o usuário em português brasileiro informal"
+        },
+        target_lawyer_id: {
+          type: "string",
+          description: "ID do advogado para transferir (obrigatório se action for suggest_transfer ou confirm_transfer)"
+        },
+        target_lawyer_name: {
+          type: "string", 
+          description: "Nome completo do advogado (ex: 'Dra. Maria Santos')"
+        },
+        detected_specialty: {
+          type: "string",
+          description: "Especialidade detectada (familia, trabalhista, civil, previdenciario, penal)"
+        },
+        detected_problem: {
+          type: "string",
+          description: "Problema específico detectado (ex: 'divórcio', 'aposentadoria')"
+        },
+        confidence: {
+          type: "number",
+          description: "Confiança na decisão (0-1)"
+        },
+        reasoning: {
+          type: "string",
+          description: "Explicação breve da decisão"
+        }
+      },
+      required: ["action", "response", "confidence", "reasoning"]
+    }
+  }
+};
+
+// Função principal de orquestração
+async function orchestrateChat(params: {
+  messages: any[];
+  currentLawyerId: string;
+  sessionId: string;
+  isTransfer: boolean;
+  pendingTransfer: string | null;
+  detectedProblem: string | null;
+  apiKey: string;
+}): Promise<{
+  action: string;
+  response: string;
+  targetLawyerId?: string;
+  targetLawyerName?: string;
+  detectedSpecialty?: string;
+  detectedProblem?: string;
+  confidence: number;
+  reasoning: string;
+}> {
+  
+  const currentLawyerName = params.currentLawyerId === 'carlos-silva' 
+    ? 'Dr. Carlos Silva (triagem geral)' 
+    : 'Especialista';
+
+  const systemPrompt = `Você é o ORQUESTRADOR INTELIGENTE do sistema de atendimento jurídico online. 
+Seu trabalho é analisar o contexto completo e decidir a melhor ação a tomar.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 CONTEXTO ATUAL DA CONVERSA:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Advogado atual: ${currentLawyerName}
+- É transferência recente? ${params.isTransfer ? 'SIM (acabou de ser transferido)' : 'NÃO'}
+- Transferência pendente aguardando confirmação? ${params.pendingTransfer ? `SIM (aguardando confirmação para ${params.pendingTransfer})` : 'NÃO'}
+- Problema detectado anteriormente: ${params.detectedProblem || 'Nenhum'}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+👥 ${LAWYERS_LIST}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 REGRAS DE DECISÃO (use o tool):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣ **normal_response**: Resposta normal de conversa
+   ✅ Quando usar:
+   - Saudações sem contexto jurídico ("oi", "olá", "bom dia")
+   - Perguntas de esclarecimento
+   - Continuação natural da conversa com especialista
+   - Não há problema jurídico claro identificado
+   ❌ NÃO use quando: houver problema jurídico claro que precisa de especialista
+   
+2️⃣ **suggest_transfer**: Sugerir transferência para especialista
+   ✅ Quando usar:
+   - Dr. Carlos detecta problema jurídico ESPECÍFICO
+   - Usuário menciona problema jurídico claro (divórcio, demissão, acidente, etc.)
+   - Tem confiança > 0.7 de que sabe qual especialista precisa
+   ❌ NÃO use quando:
+   - Já tem transferência pendente (a menos que seja área DIFERENTE)
+   - É apenas saudação
+   - Informação é vaga demais
+   
+3️⃣ **confirm_transfer**: Usuário CONFIRMOU transferência pendente
+   ✅ Quando usar:
+   - Há pending_transfer aguardando
+   - Usuário disse: "sim", "pode", "ok", "beleza", "quero", "vamos", "aceito"
+   - IMPORTANTE: Aceite erros de digitação comuns: "sikm", "simm", "okk", "pde"
+   - Execute a transferência imediatamente
+   ❌ NÃO use quando: não há pending_transfer
+   
+4️⃣ **deny_transfer**: Usuário NEGOU transferência
+   ✅ Quando usar:
+   - Há pending_transfer aguardando
+   - Usuário disse: "não", "nao", "depois", "espera", "deixa", "agora não"
+   - Aceite variações: "nai", "naum", "nn"
+   - Continue conversa normalmente com Carlos
+   ❌ NÃO use quando: não há pending_transfer
+
+5️⃣ **specialist_greeting**: Primeira mensagem após transferência
+   ✅ Quando usar:
+   - isTransfer=true (acabou de ser transferido)
+   - Advogado atual NÃO é Carlos
+   - É a primeira mensagem do especialista
+   - Apresente-se brevemente e pergunte sobre o caso
+   ❌ NÃO use quando: não é transferência recente
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💬 ESTILO DAS RESPOSTAS (Brasileiro informal e natural):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Use linguagem coloquial: "vc", "pra", "né", "tá", "blz", "tranquilo"
+- Emojis ocasionais (mas sem exagero): 👍 😊 ✅ 📋
+- Máximo 2-3 frases curtas e diretas
+- Seja empático e acolhedor
+- VARIE as respostas para parecer humano (não repita sempre a mesma frase)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📝 EXEMPLOS DE RESPOSTAS PARA CADA ACTION:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+normal_response (Carlos conversando):
+- "Entendi. Me conta mais sobre isso, quando aconteceu?"
+- "Certo. E vc já tentou resolver isso de alguma forma?"
+- "Ah sim. Tem algum documento sobre isso?"
+
+suggest_transfer (Carlos sugere especialista):
+- "Ah, isso aí é caso de herança. Posso te passar pro Dr. Rodrigo? Ele é especialista nisso 👍"
+- "Bom, isso é questão trabalhista. Transfiro pra Dra. Ana que é expert em acidente de trabalho?"
+- "Entendi. Melhor falar com a Dra. Maria, ela é especialista em divórcio. Transfiro?"
+
+confirm_transfer (usuário confirmou):
+- "Beleza! Só um instante que já te passo pro Dr. André 👍"
+- "Ok, transferindo pra Dra. Maria agora..."
+- "Perfeito! Já te conecto com o Dr. Roberto"
+
+deny_transfer (usuário negou):
+- "Tranquilo! Fica comigo então. Me conta melhor o que aconteceu"
+- "Ok, sem problema. Vamos continuar conversando por aqui"
+- "Blz! Então me explica melhor a situação"
+
+specialist_greeting (especialista se apresentando):
+- "Oi! Sou a Dra. Maria Santos. Vi que vc precisa de ajuda com divórcio. Me conta: vc e seu cônjuge já conversaram sobre isso?"
+- "E aí! André Silva aqui. Sobre sua aposentadoria: vc já deu entrada no INSS ou ainda não?"
+- "Olá! Sou o Dr. Roberto. Entendi que teve um problema criminal. Me diz: quando isso aconteceu?"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚠️ REGRAS CRÍTICAS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- SEMPRE use o tool orchestrate_response
+- NUNCA sugira transferência 2x seguidas para o mesmo advogado
+- SEMPRE aceite erros de digitação comuns (sikm=sim, nai=não)
+- SEMPRE complete target_lawyer_id quando action for suggest_transfer ou confirm_transfer
+- SEMPRE seja breve, informal e natural (máximo 3 frases)`;
+
+  console.log("🧠 [ORCHESTRATOR] Starting analysis...");
+  console.log("🧠 [ORCHESTRATOR] Current lawyer:", params.currentLawyerId);
+  console.log("🧠 [ORCHESTRATOR] Pending transfer:", params.pendingTransfer);
+  console.log("🧠 [ORCHESTRATOR] Is transfer:", params.isTransfer);
   
   try {
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${apiKey}`,
+        "Authorization": `Bearer ${params.apiKey}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "google/gemini-2.5-flash-lite",
+        model: "google/gemini-2.5-flash",
         messages: [
-          {
-            role: "system",
-            content: `Você analisa se uma mensagem é confirmação ou negação para transferir atendimento para ${pendingLawyerName}.
-            
-CONFIRMAÇÕES incluem (mesmo com erros de digitação):
-- sim, sím, sikm, simm, sin, siiim, ssim, s, ss, sss
-- ok, oks, okk, okkk
-- pode, pode ser, claro, beleza, blz, tranquilo
-- quero, vamos, bora, vamo, aceito
-- por favor, tudo bem, isso, exato, correto
-- qualquer variação com erros de digitação
-
-NEGAÇÕES incluem:
-- não, nao, n, nn, nope, nai, naum
-- prefiro não, ainda não, depois
-- deixa, espera, aguarda
-
-IMPORTANTE: Erros de digitação são MUITO comuns em celulares. "sikm" = "sim", "simm" = "sim", "nai" = "não".`
-          },
-          {
-            role: "user",
-            content: `Mensagem do usuário: "${userMessage}"\n\nIsso é uma confirmação ou negação para transferir?`
-          }
+          { role: "system", content: systemPrompt },
+          ...params.messages
         ],
-        tools: [{
-          type: "function",
-          function: {
-            name: "analyze_confirmation",
-            description: "Analisa se a mensagem é confirmação ou negação",
-            parameters: {
-              type: "object",
-              properties: {
-                is_confirmation: { type: "boolean", description: "True se é confirmação" },
-                is_negation: { type: "boolean", description: "True se é negação" },
-                confidence: { type: "number", description: "Confiança de 0 a 1" },
-                reasoning: { type: "string", description: "Explicação breve" }
-              },
-              required: ["is_confirmation", "is_negation", "confidence"]
-            }
-          }
-        }],
-        tool_choice: { type: "function", function: { name: "analyze_confirmation" } }
+        tools: [orchestrateResponseTool],
+        tool_choice: { type: "function", function: { name: "orchestrate_response" } }
       })
     });
 
     if (!response.ok) {
-      console.error("❌ [CONFIRMATION AI] Error:", response.status, await response.text());
-      return { isConfirmation: false, isNegation: false, confidence: 0 };
+      const errorText = await response.text();
+      console.error("❌ [ORCHESTRATOR] API Error:", response.status, errorText);
+      throw new Error(`API error: ${response.status}`);
     }
 
     const data = await response.json();
     const toolCall = data.choices?.[0]?.message?.tool_calls?.[0];
     
-    if (toolCall?.function?.arguments) {
-      const result = JSON.parse(toolCall.function.arguments);
-      console.log(`✅ [CONFIRMATION AI] Result:`, result);
-      return {
-        isConfirmation: result.is_confirmation,
-        isNegation: result.is_negation,
-        confidence: result.confidence
-      };
+    if (!toolCall?.function?.arguments) {
+      console.error("❌ [ORCHESTRATOR] No tool call in response");
+      throw new Error("No tool call in response");
     }
-    
-    return { isConfirmation: false, isNegation: false, confidence: 0 };
+
+    const decision = JSON.parse(toolCall.function.arguments);
+    console.log("✅ [ORCHESTRATOR] Decision:", {
+      action: decision.action,
+      confidence: decision.confidence,
+      reasoning: decision.reasoning,
+      targetLawyer: decision.target_lawyer_id
+    });
+
+    return {
+      action: decision.action,
+      response: decision.response,
+      targetLawyerId: decision.target_lawyer_id,
+      targetLawyerName: decision.target_lawyer_name,
+      detectedSpecialty: decision.detected_specialty,
+      detectedProblem: decision.detected_problem,
+      confidence: decision.confidence,
+      reasoning: decision.reasoning
+    };
   } catch (error) {
-    console.error("❌ [CONFIRMATION AI] Exception:", error);
-    return { isConfirmation: false, isNegation: false, confidence: 0 };
+    console.error("❌ [ORCHESTRATOR] Exception:", error);
+    // Fallback: resposta genérica
+    return {
+      action: "normal_response",
+      response: "Desculpe, tive um problema técnico. Pode repetir sua pergunta?",
+      confidence: 0,
+      reasoning: "Error fallback"
+    };
   }
 }
 
@@ -99,1260 +307,149 @@ serve(async (req) => {
   }
 
   try {
-    const { messages, currentLawyerId, sessionId, messageCount, isTransfer } = await req.json();
+    const { messages, currentLawyerId, sessionId, isTransfer } = await req.json();
+    
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
     const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
     
-    // VERIFICAÇÃO CRÍTICA: Garantir que variáveis de ambiente existem
-    if (!LOVABLE_API_KEY) {
-      console.error("❌ LOVABLE_API_KEY is missing");
-      throw new Error("LOVABLE_API_KEY is not configured");
-    }
-    if (!SUPABASE_URL) {
-      console.error("❌ SUPABASE_URL is missing");
-      throw new Error("SUPABASE_URL is not configured");
-    }
-    if (!SUPABASE_SERVICE_ROLE_KEY) {
-      console.error("❌ SUPABASE_SERVICE_ROLE_KEY is missing");
-      throw new Error("SUPABASE_SERVICE_ROLE_KEY is not configured");
+    if (!LOVABLE_API_KEY || !SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
+      throw new Error("Missing environment variables");
     }
 
-    console.log("✅ All environment variables loaded");
-    console.log("📨 Received messages:", messages.length, "Current lawyer:", currentLawyerId, "Session:", sessionId);
+    console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    console.log("📨 NEW REQUEST");
+    console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    console.log("Messages:", messages.length);
+    console.log("Current lawyer:", currentLawyerId);
+    console.log("Session:", sessionId);
+    console.log("Is transfer:", isTransfer);
 
-    // FUNÇÃO DE CRIAÇÃO DE ADVOGADO DINÂMICO
-    const createDynamicLawyer = (specialty: string, subSpecialty: string): any => {
-      const specialtyNames: Record<string, { name: string; gender: string; photo: string }> = {
-        tributario: { 
-          name: 'Dr. Eduardo Fiscal', 
-          gender: 'M',
-          photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop'
-        },
-        ambiental: { 
-          name: 'Dra. Carolina Verde', 
-          gender: 'F',
-          photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop'
-        },
-        imobiliario: { 
-          name: 'Dr. Henrique Imóveis', 
-          gender: 'M',
-          photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop'
-        },
-        bancario: { 
-          name: 'Dra. Luciana Bancária', 
-          gender: 'F',
-          photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop'
-        },
-        empresarial: { 
-          name: 'Dr. Roberto Empresarial', 
-          gender: 'M',
-          photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop'
-        },
-        administrativo: { 
-          name: 'Dra. Fernanda Administrativa', 
-          gender: 'F',
-          photo: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=200&h=200&fit=crop'
-        },
-        internacional: { 
-          name: 'Dr. Paulo Internacional', 
-          gender: 'M',
-          photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop'
-        },
-        eleitoral: { 
-          name: 'Dra. Beatriz Eleitoral', 
-          gender: 'F',
-          photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop'
-        },
-      };
-      
-      const specialtyData = specialtyNames[specialty.toLowerCase()] || {
-        name: `Dr. Especialista em ${subSpecialty}`,
-        gender: 'M',
-        photo: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=200&h=200&fit=crop'
-      };
-      
-      return {
-        id: `dynamic-${specialty}-${Date.now()}`,
-        name: specialtyData.name,
-        photo: specialtyData.photo,
-        oab: 'OAB/SP Virtual',
-        specialty,
-        subSpecialty,
-        bio: `Especialista em ${subSpecialty} com ampla experiência na área.`,
-        isVirtual: true,
-        gender: specialtyData.gender,
-        keywords: []
-      };
-    };
+    // Criar cliente Supabase
+    const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
-    // VERIFICAÇÃO DE SAUDAÇÃO (para evitar detecção agressiva)
-    const isGreetingOnly = (text: string): boolean => {
-      const greetings = /^(oi|olá|ola|olá!|oi!|hey|hi|e aí|eae|eai|boa tarde|bom dia|boa noite|oie|oiee|oiii|opa|salve|fala|tudo bem|td bem|tudo bom|beleza|blz)[\!\?\.\s]*$/i;
-      return greetings.test(text.trim());
-    };
+    // Buscar dados do lead
+    const { data: leadData, error: leadError } = await supabase
+      .from('leads')
+      .select('*')
+      .eq('session_id', sessionId)
+      .maybeSingle();
 
-    // LISTA COMPLETA DE ADVOGADOS PARA A IA
-    const lawyersListForAI = `ADVOGADOS DISPONÍVEIS:
-
-FAMÍLIA (6 advogados):
-1. maria-santos: Divórcio e Separação
-2. rafael-oliveira: Guarda de Filhos
-3. juliana-costa: Pensão Alimentícia
-4. fernando-lima: Alienação Parental
-5. patricia-almeida: União Estável
-6. rodrigo-barros: Inventário e Herança
-
-TRABALHISTA (6 advogados):
-7. ricardo-mendes: Demissão Sem Justa Causa
-8. ana-rodrigues: Acidente de Trabalho
-9. lucas-ferreira: Assédio Moral
-10. carla-souza: Assédio Sexual
-11. paulo-martins: Horas Extras
-12. beatriz-campos: Rescisão Indireta
-
-CIVIL (11 advogados):
-13. gustavo-reis: Cobranças e Dívidas
-14. camila-nunes: Danos Morais
-15. diego-santos: Contratos
-16. fernanda-lima: Despejo e Locação
-17. thiago-rocha: Imóveis e Usucapião
-18. marina-costa: Direito do Consumidor
-19. helena-vasconcelos: Direito da Saúde / Planos / SUS / Cirurgias
-20. gabriel-monteiro: Crimes Digitais e Golpes (PIX, WhatsApp, Invasão)
-21. renata-machado: Erro Médico
-22. leonardo-prado: Direito Aéreo (voos, bagagens)
-23. cristina-torres: Multas de Trânsito (recurso, CNH)
-
-PREVIDENCIÁRIO (6 advogados):
-24. andre-silva: Aposentadoria
-25. claudia-martins: Auxílio-Doença
-26. marcos-oliveira: BPC/LOAS
-27. isabela-santos: Pensão por Morte
-28. renato-alves: Revisão de Benefícios
-29. sandra-lima: Aposentadoria Rural
-
-PENAL (6 advogados):
-30. roberto-costa: Flagrante e Prisão
-31. vanessa-reis: Habeas Corpus
-32. joao-fernandes: Violência Doméstica
-33. larissa-souza: Crimes Patrimoniais
-34. eduardo-gomes: Crimes de Trânsito
-35. monica-alves: Defesa Criminal Geral`;
-
-    // TOOL DE DETECÇÃO DE ESPECIALIDADE
-    const detectSpecialtyTool = {
-      type: "function",
-      function: {
-        name: "detect_legal_specialty",
-        description: "Detecta a especialidade jurídica do problema do usuário e sugere o advogado mais adequado",
-        parameters: {
-          type: "object",
-          properties: {
-            specialty: {
-              type: "string",
-              enum: ["familia", "trabalhista", "civil", "previdenciario", "penal", "tributario", "ambiental", "imobiliario", "bancario", "empresarial", "administrativo", "internacional", "eleitoral", "outro"],
-              description: "Área do direito identificada"
-            },
-            subSpecialty: {
-              type: "string",
-              description: "Sub-especialidade específica (ex: 'divórcio', 'cirurgia bariátrica SUS', 'golpe PIX')"
-            },
-            suggestedLawyerId: {
-              type: "string",
-              description: "ID do advogado mais adequado da lista, ou 'DYNAMIC' se não houver nenhum adequado"
-            },
-            confidence: {
-              type: "number",
-              description: "Confiança na detecção de 0 a 1"
-            },
-            reasoning: {
-              type: "string",
-              description: "Explicação breve do motivo da escolha"
-            }
-          },
-          required: ["specialty", "subSpecialty", "confidence", "reasoning"]
-        }
-      }
-    };
-
-    // DETECÇÃO INTELIGENTE COM IA
-    const detectSpecialtyWithAI = async (userMessage: string, conversationHistory: any[]): Promise<{
-      lawyerId: string | null;
-      dynamicLawyer: any | null;
-      specialty: string;
-      subSpecialty: string;
-      confidence: number;
-    }> => {
-      try {
-        console.log("🧠 [AI DETECTION] Analyzing:", userMessage.substring(0, 100));
-        
-        const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${LOVABLE_API_KEY}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            model: "google/gemini-2.5-flash",
-            messages: [
-              { 
-                role: "system", 
-                content: `Você é um sistema de triagem jurídica brasileira.
-
-⚠️ REGRA CRÍTICA - QUANDO NÃO USAR O TOOL:
-- Se a mensagem for apenas uma SAUDAÇÃO (oi, olá, bom dia, etc.) sem problema jurídico → NÃO use o tool
-- Se a mensagem for pergunta genérica sem contexto jurídico → NÃO use o tool
-- Se não conseguir identificar problema jurídico claro → NÃO use o tool
-- NUNCA sugira transferência para saudações ou perguntas vagas
-
-Só USE O TOOL quando identificar um PROBLEMA JURÍDICO CLARAMENTE DEFINIDO.
-
-Quando usar o tool, analise:
-1. A área do direito (família, trabalhista, civil, previdenciário, penal, etc.)
-2. A sub-especialidade específica
-3. O advogado mais adequado da lista abaixo
-
-${lawyersListForAI}
-
-IMPORTANTE:
-- Se NENHUM advogado da lista for adequado, retorne suggestedLawyerId: "DYNAMIC"
-- Para casos de cirurgia bariátrica, SUS, tratamento pelo SUS: helena-vasconcelos
-- Para casos de anulação de casamento: rodrigo-barros
-- Para casos de retificação de registro, mudança de nome: patricia-almeida
-- Para problemas tributários, fiscais, imposto: DYNAMIC (tributario)
-- Para problemas ambientais: DYNAMIC (ambiental)
-- Para responsabilidade civil do Estado, prefeitura: DYNAMIC (administrativo)
-- Seja específico na subSpecialty para ajudar a criar o advogado dinâmico se necessário`
-              },
-              ...conversationHistory.slice(-10),
-              { role: "user", content: userMessage }
-            ],
-            tools: [detectSpecialtyTool],
-            tool_choice: "auto"
-          }),
-        });
-
-        if (!response.ok) {
-          console.error("❌ [AI DETECTION] Error:", response.status);
-          return { lawyerId: null, dynamicLawyer: null, specialty: 'geral', subSpecialty: '', confidence: 0 };
-        }
-
-        const data = await response.json();
-        const toolCall = data.choices?.[0]?.message?.tool_calls?.[0];
-        
-        if (toolCall) {
-          const args = JSON.parse(toolCall.function.arguments);
-          console.log("🧠 [AI DETECTION] Result:", args);
-          
-          // Verificar se o reasoning indica informações insuficientes
-          if (args.reasoning && (
-            args.reasoning.toLowerCase().includes('insuficiente') || 
-            args.reasoning.toLowerCase().includes('não forneceu') ||
-            args.reasoning.toLowerCase().includes('sem contexto') ||
-            args.reasoning.toLowerCase().includes('saudação') ||
-            args.reasoning.toLowerCase().includes('apenas cumprimentou')
-          )) {
-            console.log("⚠️ [AI DETECTION] Insufficient context detected, skipping transfer");
-            return { lawyerId: null, dynamicLawyer: null, specialty: 'geral', subSpecialty: '', confidence: 0 };
-          }
-          
-          // Se sugeriu criar advogado dinâmico
-          if (args.suggestedLawyerId === 'DYNAMIC' && args.confidence > 0.6) {
-            const dynamicLawyer = createDynamicLawyer(args.specialty, args.subSpecialty);
-            console.log("✨ [DYNAMIC LAWYER] Created:", dynamicLawyer.name);
-            
-            return {
-              lawyerId: dynamicLawyer.id,
-              dynamicLawyer,
-              specialty: args.specialty,
-              subSpecialty: args.subSpecialty,
-              confidence: args.confidence
-            };
-          }
-          
-          // Advogado existente
-          return {
-            lawyerId: args.suggestedLawyerId,
-            dynamicLawyer: null,
-            specialty: args.specialty,
-            subSpecialty: args.subSpecialty,
-            confidence: args.confidence
-          };
-        }
-        
-        return { lawyerId: null, dynamicLawyer: null, specialty: 'geral', subSpecialty: '', confidence: 0 };
-      } catch (error) {
-        console.error("❌ [AI DETECTION] Exception:", error);
-        return { lawyerId: null, dynamicLawyer: null, specialty: 'geral', subSpecialty: '', confidence: 0 };
-      }
-    };
-
-    // NÍVEL 2: Detecção geral por categoria (fallback quando não encontra advogado específico)
-    const detectGeneralSpecialty = (text: string): string | null => {
-      const lowerText = text.toLowerCase();
-      
-      // Família
-      if (/divórcio|separação|guarda|filho|filha|pensão|alimento|união.*estável|herança|inventário|casamento|cônjuge/i.test(lowerText)) {
-        return 'familia';
-      }
-      
-      // Trabalhista
-      if (/demissão|demitido|trabalho|emprego|patrão|acidente.*trabalho|assédio|hora.*extra|rescisão|salário/i.test(lowerText)) {
-        return 'trabalhista';
-      }
-      
-      // Civil
-      if (/cobrança|dívida|dano|contrato|despejo|aluguel|imóvel|consumidor|locação|propriedade/i.test(lowerText)) {
-        return 'civil';
-      }
-      
-      // Previdenciário
-      if (/aposentadoria|inss|benefício|auxílio|bpc|loas|pensão.*morte|perícia|rural/i.test(lowerText)) {
-        return 'previdenciario';
-      }
-      
-      // Penal
-      if (/preso|prisão|crime|polícia|acusado|habeas|violência|roubo|furto|trânsito|denúncia/i.test(lowerText)) {
-        return 'penal';
-      }
-      
-      return null;
-    };
-
-    // Lista de advogados por especialidade
-    const lawyersBySpecialty: Record<string, string[]> = {
-      familia: ['maria-santos', 'rafael-oliveira', 'juliana-costa', 'fernando-lima', 'patricia-almeida', 'rodrigo-barros'],
-      trabalhista: ['ricardo-mendes', 'ana-rodrigues', 'lucas-ferreira', 'carla-souza', 'paulo-martins', 'beatriz-campos'],
-      civil: ['gustavo-reis', 'camila-nunes', 'diego-santos', 'fernanda-lima', 'thiago-rocha', 'marina-costa', 'helena-vasconcelos', 'gabriel-monteiro', 'renata-machado', 'leonardo-prado', 'cristina-torres'],
-      previdenciario: ['andre-silva', 'claudia-martins', 'marcos-oliveira', 'isabela-santos', 'renato-alves', 'sandra-lima'],
-      penal: ['roberto-costa', 'vanessa-reis', 'joao-fernandes', 'larissa-souza', 'eduardo-gomes', 'monica-alves'],
-    };
-
-    // Map lawyer IDs to their specialties
-    const getSpecialtyFromLawyerId = (lawyerId: string): string | null => {
-      const specialtyMap: Record<string, string> = {
-        'carlos-silva': 'geral',
-        'maria-santos': 'familia',
-        'rafael-oliveira': 'familia',
-        'juliana-costa': 'familia',
-        'fernando-lima': 'familia',
-        'patricia-almeida': 'familia',
-        'rodrigo-barros': 'familia',
-        'ricardo-mendes': 'trabalhista',
-        'ana-rodrigues': 'trabalhista',
-        'lucas-ferreira': 'trabalhista',
-        'carla-souza': 'trabalhista',
-        'paulo-martins': 'trabalhista',
-        'beatriz-campos': 'trabalhista',
-        'gustavo-reis': 'civil',
-        'camila-nunes': 'civil',
-        'diego-santos': 'civil',
-        'fernanda-lima': 'civil',
-        'thiago-rocha': 'civil',
-        'marina-costa': 'civil',
-        'helena-vasconcelos': 'civil',
-        'gabriel-monteiro': 'civil',
-        'renata-machado': 'civil',
-        'leonardo-prado': 'civil',
-        'cristina-torres': 'civil',
-        'andre-silva': 'previdenciario',
-        'claudia-martins': 'previdenciario',
-        'marcos-oliveira': 'previdenciario',
-        'isabela-santos': 'previdenciario',
-        'renato-alves': 'previdenciario',
-        'sandra-lima': 'previdenciario',
-        'roberto-costa': 'penal',
-        'vanessa-reis': 'penal',
-        'joao-fernandes': 'penal',
-        'larissa-souza': 'penal',
-        'eduardo-gomes': 'penal',
-        'monica-alves': 'penal',
-      };
-      return specialtyMap[lawyerId] || null;
-    };
-
-    // LEAD COLLECTION LOGIC
-    let needsLeadCollection = false;
-    let leadData: { hasName: boolean; hasContact: boolean; problemDetected: boolean; specialty?: string; leadId?: string; notificationSent?: boolean } = {
-      hasName: false,
-      hasContact: false,
-      problemDetected: false
-    };
-
-    // Check if we need to collect lead info (always check, not just after 5 messages)
-    if (sessionId) {
-      try {
-        console.log("🔍 Checking for existing lead with session:", sessionId);
-        
-        // Check existing lead in database
-        const leadCheckResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?session_id=eq.${sessionId}&select=*`, {
-          headers: {
-            'apikey': SUPABASE_SERVICE_ROLE_KEY!,
-            'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`
-          }
-        });
-        
-        if (!leadCheckResponse.ok) {
-          console.error("❌ Failed to check leads:", leadCheckResponse.status, await leadCheckResponse.text());
-          throw new Error("Failed to check existing leads");
-        }
-        
-        const existingLeads = await leadCheckResponse.json();
-        console.log("📊 Existing leads found:", existingLeads.length);
-        
-        if (existingLeads && existingLeads.length > 0) {
-          const lead = existingLeads[0];
-          leadData.hasName = !!lead.name;
-          leadData.hasContact = !!(lead.phone || lead.email);
-          leadData.problemDetected = !!lead.specialty;
-          leadData.leadId = lead.id;
-          leadData.notificationSent = lead.notification_sent || false;
-          
-          console.log("✅ Lead exists:", { 
-            leadId: leadData.leadId, 
-            hasName: leadData.hasName, 
-            hasContact: leadData.hasContact,
-            notificationSent: leadData.notificationSent
-          });
-          
-          // Update message count and conversation history
-          const updateResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?session_id=eq.${sessionId}`, {
-            method: 'PATCH',
-            headers: {
-              'apikey': SUPABASE_SERVICE_ROLE_KEY!,
-              'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
-              'Content-Type': 'application/json',
-              'Prefer': 'return=minimal'
-            },
-            body: JSON.stringify({
-              message_count: messageCount,
-              conversation_history: messages
-            })
-          });
-          
-          if (!updateResponse.ok) {
-            console.error("❌ Failed to update lead:", await updateResponse.text());
-          } else {
-            console.log("✅ Lead updated with message count:", messageCount);
-          }
-
-          // DISPARO DE NOTIFICAÇÃO: Se tem nome + WhatsApp + 8+ mensagens + não enviou ainda
-          console.log("📲 Checking notification conditions:", {
-            hasName: leadData.hasName,
-            hasContact: leadData.hasContact,
-            messageCount,
-            notificationSent: leadData.notificationSent
-          });
-          
-          if (leadData.hasName && leadData.hasContact && messageCount >= 8 && !leadData.notificationSent) {
-            console.log("🚀 Triggering WhatsApp notification for lead:", leadData.leadId);
-            
-            // Gerar resumo do caso usando a IA
-            try {
-              const summaryPrompt = `Com base nesta conversa, crie um resumo profissional do caso jurídico em 2-3 frases, incluindo:
-- Problema principal
-- Fatos relevantes mencionados
-- Próximos passos sugeridos
-
-Seja objetivo e direto.`;
-
-              const summaryResponse = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
-                method: "POST",
-                headers: {
-                  Authorization: `Bearer ${LOVABLE_API_KEY}`,
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  model: "google/gemini-2.5-flash",
-                  messages: [
-                    ...messages,
-                    { role: "user", content: summaryPrompt }
-                  ],
-                  stream: false,
-                }),
-              });
-
-              let caseSummary = "Resumo não disponível";
-              if (summaryResponse.ok) {
-                const summaryData = await summaryResponse.json();
-                caseSummary = summaryData.choices?.[0]?.message?.content || caseSummary;
-              }
-
-              // Salvar resumo no banco
-              const saveSummaryResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
-                method: 'PATCH',
-                headers: {
-                  'apikey': SUPABASE_SERVICE_ROLE_KEY!,
-                  'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
-                  'Content-Type': 'application/json',
-                  'Prefer': 'return=minimal'
-                },
-                body: JSON.stringify({
-                  case_summary: caseSummary,
-                  case_details: {
-                    message_count: messageCount,
-                    conversation_started: messages[0]?.content || "",
-                    last_message: messages[messages.length - 1]?.content || ""
-                  }
-                })
-              });
-              
-              if (!saveSummaryResponse.ok) {
-                console.error("❌ Failed to save case summary:", await saveSummaryResponse.text());
-              } else {
-                console.log("✅ Case summary saved");
-              }
-
-              // Buscar dados completos do lead para enviar
-              const fullLeadResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}&select=*`, {
-                headers: {
-                  'apikey': SUPABASE_SERVICE_ROLE_KEY!,
-                  'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`
-                }
-              });
-              
-              if (!fullLeadResponse.ok) {
-                console.error("❌ Failed to fetch full lead data:", await fullLeadResponse.text());
-                throw new Error("Failed to fetch full lead data");
-              }
-
-              const fullLeadData = await fullLeadResponse.json();
-              console.log("📋 Full lead data retrieved:", fullLeadData.length > 0);
-              
-              if (fullLeadData && fullLeadData.length > 0) {
-                // Chamar edge function de notificação via Supabase client
-                console.log("📤 Sending WhatsApp notification for lead:", leadData.leadId);
-                
-                const notificationResult = await fetch(`${SUPABASE_URL}/functions/v1/send-whatsapp-notification`, {
-                  method: 'POST',
-                  headers: {
-                    'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
-                    'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify({
-                    leadData: fullLeadData[0]
-                  })
-                });
-                
-                if (!notificationResult.ok) {
-                  const errorText = await notificationResult.text();
-                  console.error("❌ Failed to send WhatsApp notification:", notificationResult.status, errorText);
-                } else {
-                  console.log("✅ WhatsApp notification API called successfully");
-                }
-
-                // Marcar notificação como enviada
-                const markSentResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
-                  method: 'PATCH',
-                  headers: {
-                    'apikey': SUPABASE_SERVICE_ROLE_KEY!,
-                    'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
-                    'Content-Type': 'application/json',
-                    'Prefer': 'return=minimal'
-                  },
-                  body: JSON.stringify({
-                    notification_sent: true,
-                    notification_sent_at: new Date().toISOString()
-                  })
-                });
-                
-                if (!markSentResponse.ok) {
-                  console.error("❌ Failed to mark notification as sent:", await markSentResponse.text());
-                } else {
-                  console.log("✅ Notification marked as sent for lead:", leadData.leadId);
-                }
-              }
-            } catch (notificationError) {
-              console.error("Error sending notification:", notificationError);
-              // Não falhar a requisição principal por erro na notificação
-            }
-          }
-          
-        } else {
-          // Create new lead entry (CRIAR IMEDIATAMENTE, não esperar 5 mensagens)
-          console.log("🆕 Creating new lead for session:", sessionId);
-          
-          const createLeadResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
-            method: 'POST',
-            headers: {
-              'apikey': SUPABASE_SERVICE_ROLE_KEY!,
-              'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
-              'Content-Type': 'application/json',
-              'Prefer': 'return=representation'
-            },
-            body: JSON.stringify({
-              session_id: sessionId,
-              message_count: messageCount,
-              assigned_lawyer: currentLawyerId,
-              specialty: getSpecialtyFromLawyerId(currentLawyerId),
-              conversation_history: messages
-            })
-          });
-          
-          if (!createLeadResponse.ok) {
-            const errorText = await createLeadResponse.text();
-            console.error("❌ Failed to create lead:", createLeadResponse.status, errorText);
-            throw new Error(`Failed to create lead: ${errorText}`);
-          }
-          
-          const createdLead = await createLeadResponse.json();
-          console.log("✅ Lead created successfully:", createdLead[0]?.id);
-          
-          leadData.problemDetected = true;
-          leadData.leadId = createdLead[0]?.id;
-        }
-
-        // Detect if user accepted WhatsApp continuation
-        const lastUserMessage = messages.filter((m: any) => m.role === 'user').slice(-1)[0]?.content.toLowerCase() || '';
-        const acceptPatterns = /\b(sim|quero|pode|claro|pode ser|ok|tá|ta|beleza|aceito|por favor|gostaria|vamos|queria|vamo|bora)\b/i;
-        const userAcceptedWhatsApp = acceptPatterns.test(lastUserMessage);
-        
-        // Check if specialist just asked about WhatsApp continuation
-        const lastAssistantMessage = messages.filter((m: any) => m.role === 'assistant').slice(-2)[0]?.content.toLowerCase() || '';
-        const askedAboutWhatsApp = lastAssistantMessage.includes('whatsapp') && 
-                                   (lastAssistantMessage.includes('gostaria') || 
-                                    lastAssistantMessage.includes('continuar') || 
-                                    lastAssistantMessage.includes('prosseguir'));
-        
-        // If user accepted and we don't have their name yet, start collecting
-        if (userAcceptedWhatsApp && askedAboutWhatsApp && !leadData.hasName) {
-          needsLeadCollection = true;
-          console.log("💬 Lead accepted WhatsApp, collecting name");
-        } 
-        // If we have name but no contact, ask for contact
-        else if (leadData.hasName && !leadData.hasContact) {
-          needsLeadCollection = true;
-          console.log("💬 Has name, collecting contact");
-        }
-        
-      } catch (error) {
-        console.error("❌ Error checking/creating lead:", error);
-      }
-    }
-    
-    // Verificar se precisa transferir
-    let needsTransfer = false;
-    let newLawyerId: string | null = null;
-    let pendingTransferLawyer: string | null = null;
-    let shouldAskPermission = false;
-    
-    if (currentLawyerId === 'carlos-silva' && messages.length > 0) {
-      const lastUserMessage = messages.filter((m: any) => m.role === 'user').slice(-1)[0];
-      
-      // Verificar se já existe transferência pendente
-      let existingPendingTransfer: string | null = null;
-      if (sessionId && leadData.leadId) {
-        try {
-          const pendingCheckResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}&select=pending_transfer_lawyer`, {
-            headers: {
-              'apikey': SUPABASE_SERVICE_ROLE_KEY!,
-              'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`
-            }
-          });
-          
-          if (pendingCheckResponse.ok) {
-            const pendingData = await pendingCheckResponse.json();
-            existingPendingTransfer = pendingData[0]?.pending_transfer_lawyer;
-            console.log("📋 Pending transfer check:", existingPendingTransfer);
-          }
-        } catch (error) {
-          console.error("Error checking pending transfer:", error);
-        }
-      }
-      
-      if (lastUserMessage) {
-        // Sempre detectar a especialidade da mensagem atual primeiro
-        let currentDetection = null;
-        if (!isGreetingOnly(lastUserMessage.content)) {
-          currentDetection = await detectSpecialtyWithAI(lastUserMessage.content, messages);
-          console.log("🔍 [CONTEXT CHECK] Current detection:", currentDetection);
-        }
-        
-        // Se já tem transferência pendente, verificar confirmação OU mudança de contexto
-        if (existingPendingTransfer) {
-          // Se detectou NOVA especialidade diferente da pendente, substituir
-          if (currentDetection?.lawyerId && currentDetection.confidence > 0.75 && currentDetection.lawyerId !== existingPendingTransfer) {
-            console.log(`🔄 [CONTEXT CHANGE] New specialty detected, replacing pending transfer`);
-            console.log(`   Old: ${existingPendingTransfer}`);
-            console.log(`   New: ${currentDetection.lawyerId}`);
-            
-            // Limpar transferência antiga e sugerir nova
-            newLawyerId = currentDetection.lawyerId;
-            pendingTransferLawyer = newLawyerId;
-            shouldAskPermission = true;
-            
-            // Atualizar no banco
-            if (sessionId && leadData.leadId) {
-              const updateData: any = {
-                pending_transfer_lawyer: newLawyerId,
-                detected_problem: currentDetection.subSpecialty
-              };
-              
-              if (currentDetection.dynamicLawyer) {
-                updateData.dynamic_lawyer = currentDetection.dynamicLawyer;
-                console.log("✨ [DYNAMIC LAWYER] Saved to lead:", currentDetection.dynamicLawyer.name);
-              }
-              
-              console.log("📝 [DETECTED PROBLEM] Saved:", currentDetection.subSpecialty);
-              
-              await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
-                method: 'PATCH',
-                headers: {
-                  'apikey': SUPABASE_SERVICE_ROLE_KEY!,
-                  'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
-                  'Content-Type': 'application/json',
-                  'Prefer': 'return=minimal'
-                },
-                body: JSON.stringify(updateData)
-              });
-            }
-          } 
-          // Se NÃO detectou nova especialidade, verificar confirmação da pendente
-          else {
-            // Buscar nome do advogado para análise de confirmação
-            let targetLawyerName = 'especialista';
-            
-            // Verificar se é advogado dinâmico
-            if (existingPendingTransfer.startsWith('dynamic-')) {
-              try {
-                const leadResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}&select=dynamic_lawyer`, {
-                  headers: {
-                    'apikey': SUPABASE_SERVICE_ROLE_KEY!,
-                    'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`
-                  }
-                });
-                
-                if (leadResponse.ok) {
-                  const leadDataResult = await leadResponse.json();
-                  const dynamicLawyer = leadDataResult[0]?.dynamic_lawyer;
-                  if (dynamicLawyer) {
-                    targetLawyerName = dynamicLawyer.name;
-                  }
-                }
-              } catch (error) {
-                console.error("Error fetching dynamic lawyer:", error);
-              }
-            } else {
-              // Advogado estático
-              const lawyerNamesMap: Record<string, string> = {
-                'maria-santos': 'Dra. Maria Santos',
-                'rafael-oliveira': 'Dr. Rafael Oliveira',
-                'juliana-costa': 'Dra. Juliana Costa',
-                'fernando-lima': 'Dr. Fernando Lima',
-                'patricia-almeida': 'Dra. Patrícia Almeida',
-                'rodrigo-barros': 'Dr. Rodrigo Barros',
-                'ricardo-mendes': 'Dr. Ricardo Mendes',
-                'ana-rodrigues': 'Dra. Ana Rodrigues',
-                'lucas-ferreira': 'Dr. Lucas Ferreira',
-                'carla-souza': 'Dra. Carla Souza',
-                'paulo-martins': 'Dr. Paulo Martins',
-                'beatriz-campos': 'Dra. Beatriz Campos',
-                'andre-silva': 'Dr. André Silva',
-                'claudia-martins': 'Dra. Cláudia Martins',
-                'marcos-oliveira': 'Dr. Marcos Oliveira',
-                'isabela-santos': 'Dra. Isabela Santos',
-                'renato-alves': 'Dr. Renato Alves',
-                'sandra-lima': 'Dra. Sandra Lima',
-                'roberto-costa': 'Dr. Roberto Costa',
-                'vanessa-reis': 'Dra. Vanessa Reis',
-                'joao-fernandes': 'Dr. João Fernandes',
-                'larissa-souza': 'Dra. Larissa Souza',
-                'eduardo-gomes': 'Dr. Eduardo Gomes',
-                'monica-alves': 'Dra. Mônica Alves',
-                'gustavo-reis': 'Dr. Gustavo Reis',
-                'camila-nunes': 'Dra. Camila Nunes',
-                'diego-santos': 'Dr. Diego Santos',
-                'fernanda-lima': 'Dra. Fernanda Lima',
-                'thiago-rocha': 'Dr. Thiago Rocha',
-                'marina-costa': 'Dra. Marina Costa',
-                'helena-vasconcelos': 'Dra. Helena Vasconcelos',
-                'gabriel-monteiro': 'Dr. Gabriel Monteiro',
-                'renata-machado': 'Dra. Renata Machado',
-                'leonardo-prado': 'Dr. Leonardo Prado',
-                'cristina-torres': 'Dra. Cristina Torres',
-              };
-              
-              targetLawyerName = lawyerNamesMap[existingPendingTransfer] || 'especialista';
-            }
-            
-            // Usar IA para analisar confirmação (captura erros de digitação)
-            const confirmationResult = await analyzeUserConfirmation(
-              lastUserMessage.content,
-              targetLawyerName,
-              LOVABLE_API_KEY!
-            );
-
-            console.log(`🔍 [CONFIRMATION CHECK] User message: "${lastUserMessage.content}" | Result:`, confirmationResult);
-            
-            if (confirmationResult.isConfirmation && confirmationResult.confidence > 0.6) {
-              needsTransfer = true;
-              newLawyerId = existingPendingTransfer;
-              console.log(`✅ User confirmed transfer to: ${newLawyerId} (confidence: ${confirmationResult.confidence})`);
-              
-              // Limpar pending transfer após confirmação
-              if (sessionId && leadData.leadId) {
-                await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
-                  method: 'PATCH',
-                  headers: {
-                    'apikey': SUPABASE_SERVICE_ROLE_KEY!,
-                    'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
-                    'Content-Type': 'application/json',
-                    'Prefer': 'return=minimal'
-                  },
-                  body: JSON.stringify({
-                    pending_transfer_lawyer: null
-                  })
-                });
-              }
-            } else if (confirmationResult.isNegation && confirmationResult.confidence > 0.6) {
-              console.log(`❌ User explicitly declined transfer (confidence: ${confirmationResult.confidence}), clearing pending transfer`);
-              
-              // Limpar pending transfer quando usuário recusa
-              if (sessionId && leadData.leadId) {
-                await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
-                  method: 'PATCH',
-                  headers: {
-                    'apikey': SUPABASE_SERVICE_ROLE_KEY!,
-                    'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
-                    'Content-Type': 'application/json',
-                    'Prefer': 'return=minimal'
-                  },
-                  body: JSON.stringify({
-                    pending_transfer_lawyer: null
-                  })
-                });
-              }
-            } else {
-              console.log("🤷 Unclear response, continuing with Carlos");
-            }
-          }
-        } else {
-          // Não tem transferência pendente
-          if (currentDetection?.lawyerId && currentDetection.confidence > 0.75) {
-            newLawyerId = currentDetection.lawyerId;
-            pendingTransferLawyer = newLawyerId;
-            shouldAskPermission = true;
-            console.log(`🤔 [AI DETECTION] Asking permission to transfer to: ${newLawyerId} (confidence: ${currentDetection.confidence})`);
-            
-            // Salvar pending transfer, advogado dinâmico e problema detectado no banco
-            if (sessionId && leadData.leadId) {
-              const updateData: any = {
-                pending_transfer_lawyer: newLawyerId,
-                detected_problem: currentDetection.subSpecialty
-              };
-              
-              if (currentDetection.dynamicLawyer) {
-                updateData.dynamic_lawyer = currentDetection.dynamicLawyer;
-                console.log("✨ [DYNAMIC LAWYER] Saved to lead:", currentDetection.dynamicLawyer.name);
-              }
-              
-              console.log("📝 [DETECTED PROBLEM] Saved:", currentDetection.subSpecialty);
-              
-              await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
-                method: 'PATCH',
-                headers: {
-                  'apikey': SUPABASE_SERVICE_ROLE_KEY!,
-                  'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
-                  'Content-Type': 'application/json',
-                  'Prefer': 'return=minimal'
-                },
-                body: JSON.stringify(updateData)
-              });
-            }
-          }
-        }
-      }
+    if (leadError) {
+      console.error("❌ Error fetching lead:", leadError);
     }
 
-    // Definir prompt baseado no advogado atual
-    let systemPrompt = `Você é Dr. Carlos Silva, advogado brasileiro de 38 anos.
-
-⚠️ REGRA CRÍTICA - NÃO REPITA APRESENTAÇÃO:
-Você JÁ se apresentou na primeira mensagem automática ("Olá! Sou o Dr. Carlos Silva. Em que posso ajudá-lo hoje?").
-NUNCA mais diga "Sou o Dr. Carlos Silva" ou se apresente novamente.
-
-PERSONALIDADE - VOCÊ FALA COMO UM BRASILEIRO REAL:
-✅ Use: "vc", "pq", "tbm", "né", "tá", "pra"
-✅ Use emojis ocasionalmente: 😊, 👍, 🤔, 😕 (não em toda mensagem)
-✅ Comece frases com: "Ah", "Então", "Olha", "Bom", "Eita", "Poxa"
-✅ Contrações: "tá", "tô", "vou", "é"
-✅ Perguntas curtas e diretas
-
-❌ Evite: "Hmm...", "Compreendo sua situação", "Pelo que você me relatou"
-❌ Evite: Formalidade excessiva tipo "juridicamente falando"
-❌ Evite: Repetir o que a pessoa disse
-❌ Evite: Sempre fazer pergunta - às vezes só comente
-
-COMO VOCÊ FALA (exemplos reais):
-✅ "Ah entendi. Seria tipo uma doação em vida ou é mais pra herança?"
-✅ "Olha, nesse caso a gente precisa ver se tem testamento"
-✅ "Então, tem algumas opções aí"
-✅ "Eita, situação complicada 😕"
-✅ "Ah sim, isso é inventário. Seus pais ainda são vivos?"
-✅ "Vc tem algum documento sobre isso?"
-✅ "Bom, aí depende né. Seria doação ou herança?"
-✅ "Poxa, que situação difícil"
-
-TAMANHO DAS RESPOSTAS:
-- MÁXIMO 1-3 frases curtas
-- Vá direto ao ponto
-- Se for perguntar algo, pergunte direto sem rodeios
-
-REGRAS IMPORTANTES:
-1. NUNCA repita o que a pessoa disse de volta pra ela
-2. NÃO use formalidades excessivas
-3. Às vezes use "vc" ao invés de "você" 
-4. Às vezes use "pq" ao invés de "porque"
-5. Às vezes só dê uma resposta curta sem perguntar nada
-6. Seja natural como se tivesse mandando mensagem no WhatsApp
-
-TRANSFERÊNCIA:
-Quando identificar área específica, fale direto:
-✅ "Ah entendi. Vou te passar pra Dra. Maria, ela é especialista nisso"
-✅ "Bom, esse caso é da Dra. Juliana. Vou te conectar com ela agora"
-❌ "Perfeito! Vou te passar agora para a Dra. Maria Santos, nossa especialista..."
-
-VARIAÇÃO DE ESTILO (use diferentes formas):
-- Às vezes mais sério, às vezes mais casual
-- Às vezes emoji, às vezes não
-- Às vezes abreviação, às vezes palavra completa
-- Varie o tamanho: 1 frase, 2 frases, raramente 3`;
-
-    // Se detectou especialidade, retornar mensagem hardcoded de autorização
-    if (shouldAskPermission && pendingTransferLawyer) {
-      // Buscar informações do advogado (pode ser dinâmico)
-      let targetLawyerName = 'especialista';
-      let targetGender = 'M';
-      
-      // Verificar se é advogado dinâmico
-      if (pendingTransferLawyer.startsWith('dynamic-')) {
-        try {
-          const leadResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}&select=dynamic_lawyer`, {
-            headers: {
-              'apikey': SUPABASE_SERVICE_ROLE_KEY!,
-              'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`
-            }
-          });
-          
-          if (leadResponse.ok) {
-            const leadDataResult = await leadResponse.json();
-            const dynamicLawyer = leadDataResult[0]?.dynamic_lawyer;
-            if (dynamicLawyer) {
-              targetLawyerName = dynamicLawyer.name;
-              targetGender = dynamicLawyer.gender || 'M';
-              console.log("✨ [DYNAMIC LAWYER] Using:", targetLawyerName);
-            }
-          }
-        } catch (error) {
-          console.error("Error fetching dynamic lawyer:", error);
-        }
-      } else {
-        // Advogado estático
-        const lawyerNames: Record<string, { name: string; gender: string }> = {
-          'maria-santos': { name: 'Dra. Maria Santos', gender: 'F' },
-          'rafael-oliveira': { name: 'Dr. Rafael Oliveira', gender: 'M' },
-          'juliana-costa': { name: 'Dra. Juliana Costa', gender: 'F' },
-          'fernando-lima': { name: 'Dr. Fernando Lima', gender: 'M' },
-          'patricia-almeida': { name: 'Dra. Patrícia Almeida', gender: 'F' },
-          'rodrigo-barros': { name: 'Dr. Rodrigo Barros', gender: 'M' },
-          'ricardo-mendes': { name: 'Dr. Ricardo Mendes', gender: 'M' },
-          'ana-rodrigues': { name: 'Dra. Ana Rodrigues', gender: 'F' },
-          'lucas-ferreira': { name: 'Dr. Lucas Ferreira', gender: 'M' },
-          'carla-souza': { name: 'Dra. Carla Souza', gender: 'F' },
-          'paulo-martins': { name: 'Dr. Paulo Martins', gender: 'M' },
-          'beatriz-campos': { name: 'Dra. Beatriz Campos', gender: 'F' },
-          'andre-silva': { name: 'Dr. André Silva', gender: 'M' },
-          'claudia-martins': { name: 'Dra. Cláudia Martins', gender: 'F' },
-          'marcos-oliveira': { name: 'Dr. Marcos Oliveira', gender: 'M' },
-          'isabela-santos': { name: 'Dra. Isabela Santos', gender: 'F' },
-          'renato-alves': { name: 'Dr. Renato Alves', gender: 'M' },
-          'sandra-lima': { name: 'Dra. Sandra Lima', gender: 'F' },
-          'roberto-costa': { name: 'Dr. Roberto Costa', gender: 'M' },
-          'vanessa-reis': { name: 'Dra. Vanessa Reis', gender: 'F' },
-          'joao-fernandes': { name: 'Dr. João Fernandes', gender: 'M' },
-          'larissa-souza': { name: 'Dra. Larissa Souza', gender: 'F' },
-          'eduardo-gomes': { name: 'Dr. Eduardo Gomes', gender: 'M' },
-          'monica-alves': { name: 'Dra. Mônica Alves', gender: 'F' },
-          'gustavo-reis': { name: 'Dr. Gustavo Reis', gender: 'M' },
-          'camila-nunes': { name: 'Dra. Camila Nunes', gender: 'F' },
-          'diego-santos': { name: 'Dr. Diego Santos', gender: 'M' },
-          'fernanda-lima': { name: 'Dra. Fernanda Lima', gender: 'F' },
-          'thiago-rocha': { name: 'Dr. Thiago Rocha', gender: 'M' },
-          'marina-costa': { name: 'Dra. Marina Costa', gender: 'F' },
-          'helena-vasconcelos': { name: 'Dra. Helena Vasconcelos', gender: 'F' },
-          'gabriel-monteiro': { name: 'Dr. Gabriel Monteiro', gender: 'M' },
-          'renata-machado': { name: 'Dra. Renata Machado', gender: 'F' },
-          'leonardo-prado': { name: 'Dr. Leonardo Prado', gender: 'M' },
-          'cristina-torres': { name: 'Dra. Cristina Torres', gender: 'F' },
-        };
-        
-        const lawyerData = lawyerNames[pendingTransferLawyer];
-        if (lawyerData) {
-          targetLawyerName = lawyerData.name;
-          targetGender = lawyerData.gender;
-        }
-      }
-      
-      const pronoun = targetGender === 'F' ? 'ela' : 'ele';
-      const shortName = targetLawyerName.split(' ').slice(1).join(' ');
-      
-      // Retornar diretamente mensagem de permissão sem chamar IA
-      const permissionMessages = [
-        `Ah, isso é caso de ${shortName}. Posso te passar pra ${pronoun} que é especialista nisso? 👍`,
-        `Olha, esse caso é com ${targetLawyerName}. Transfiro pra ${pronoun}?`,
-        `Bom, aí é com ${shortName}. Passo pra ${pronoun}? É especialista nisso.`,
-      ];
-      
-      const randomMessage = permissionMessages[Math.floor(Math.random() * permissionMessages.length)];
-      
-      console.log("🤖 Returning permission message for:", targetLawyerName);
-      
-      // Retornar diretamente sem chamar a IA
-      return new Response(
-        `data: ${JSON.stringify({ choices: [{ delta: { content: randomMessage } }] })}\n\ndata: [DONE]\n\n`,
-        { headers: { ...corsHeaders, 'Content-Type': 'text/event-stream' } }
-      );
-    }
-
-    if (currentLawyerId !== 'carlos-silva') {
-      // Obter nome do advogado atual
-      const lawyerNames: Record<string, string> = {
-        'maria-santos': 'Dra. Maria Santos',
-        'rafael-oliveira': 'Dr. Rafael Oliveira',
-        'juliana-costa': 'Dra. Juliana Costa',
-        'fernando-lima': 'Dr. Fernando Lima',
-        'patricia-almeida': 'Dra. Patrícia Almeida',
-        'rodrigo-barros': 'Dr. Rodrigo Barros',
-        'ricardo-mendes': 'Dr. Ricardo Mendes',
-        'ana-rodrigues': 'Dra. Ana Rodrigues',
-        'lucas-ferreira': 'Dr. Lucas Ferreira',
-        'carla-souza': 'Dra. Carla Souza',
-        'paulo-martins': 'Dr. Paulo Martins',
-        'beatriz-campos': 'Dra. Beatriz Campos',
-        'andre-silva': 'Dr. André Silva',
-        'claudia-martins': 'Dra. Cláudia Martins',
-        'marcos-oliveira': 'Dr. Marcos Oliveira',
-        'isabela-santos': 'Dra. Isabela Santos',
-        'renato-alves': 'Dr. Renato Alves',
-        'sandra-lima': 'Dra. Sandra Lima',
-        'roberto-costa': 'Dr. Roberto Costa',
-        'vanessa-reis': 'Dra. Vanessa Reis',
-        'joao-fernandes': 'Dr. João Fernandes',
-        'larissa-souza': 'Dra. Larissa Souza',
-        'eduardo-gomes': 'Dr. Eduardo Gomes',
-        'monica-alves': 'Dra. Mônica Alves',
-        'gustavo-reis': 'Dr. Gustavo Reis',
-        'camila-nunes': 'Dra. Camila Nunes',
-        'diego-santos': 'Dr. Diego Santos',
-        'fernanda-lima': 'Dra. Fernanda Lima',
-        'thiago-rocha': 'Dr. Thiago Rocha',
-        'marina-costa': 'Dra. Marina Costa',
-        'helena-vasconcelos': 'Dra. Helena Vasconcelos',
-        'gabriel-monteiro': 'Dr. Gabriel Monteiro',
-        'renata-machado': 'Dra. Renata Machado',
-        'leonardo-prado': 'Dr. Leonardo Prado',
-        'cristina-torres': 'Dra. Cristina Torres',
-      };
-      
-      const lawyerName = lawyerNames[currentLawyerId] || 'Dr./Dra. Especialista';
-      
-      // ⚡ NOVA LÓGICA: Se é transferência, retornar template direto (mais rápido e confiável)
-      if (isTransfer === true) {
-        // Buscar o problema detectado do banco
-        let userProblem = '';
-        if (sessionId) {
-          try {
-            const leadResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?session_id=eq.${sessionId}&select=detected_problem`, {
-              headers: {
-                'apikey': SUPABASE_SERVICE_ROLE_KEY!,
-                'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`
-              }
-            });
-            
-            if (leadResponse.ok) {
-              const leadDataResult = await leadResponse.json();
-              userProblem = leadDataResult[0]?.detected_problem || '';
-              console.log('📋 [TRANSFER GREETING] User problem retrieved:', userProblem);
-            }
-          } catch (error) {
-            console.error("Error fetching detected problem:", error);
-          }
-        }
-        
-        const shortName = lawyerName.split(' ').slice(1).join(' ');
-        
-        // Mensagens template variadas para naturalidade
-        const greetingTemplates = [
-          `Olá! Sou ${shortName}. Vi que você precisa de ajuda com ${userProblem || 'uma questão jurídica'}. Me conta mais sobre o seu caso?`,
-          `Oi! Aqui é ${shortName}. O caso de ${userProblem || 'questão jurídica'} é minha especialidade. Como posso te ajudar?`,
-          `E aí! Sou ${shortName}. Vi seu caso de ${userProblem || 'questão jurídica'}. Me fala mais detalhes?`,
-          `Olá! ${shortName} aqui. Sobre ${userProblem || 'seu caso'}, me conta: o que exatamente aconteceu?`,
-          `Oi! Sou ${shortName}, especialista em ${userProblem || 'sua área'}. Vamos resolver isso. Me dá mais detalhes?`,
-        ];
-        
-        const randomGreeting = greetingTemplates[Math.floor(Math.random() * greetingTemplates.length)];
-        
-        console.log(`👋 [TRANSFER GREETING] ${lawyerName} greeting user about: ${userProblem || 'general case'}`);
-        
-        // Retornar diretamente sem chamar IA (mais rápido e confiável)
-        return new Response(
-          `data: ${JSON.stringify({ choices: [{ delta: { content: randomGreeting } }] })}\n\ndata: [DONE]\n\n`,
-          { headers: { ...corsHeaders, 'Content-Type': 'text/event-stream' } }
-        );
-      }
-      
-      systemPrompt = `⚠️ CRÍTICO: RESPONDA EXCLUSIVAMENTE EM PORTUGUÊS BRASILEIRO. NUNCA use inglês ou outros idiomas.
-
-VOCÊ É ${lawyerName}, advogado especialista brasileiro.
-SEU NOME É ${lawyerName}. SEU ID É ${currentLawyerId}.
-
-ESTILO (Brasileiro Natural):
-- Máximo 2-3 frases curtas
-- Use: "vc", "pra", "né", "tá"
-- Emojis ocasionais: 😊, 👍, 😕
-- NÃO use "Hmm...", "Veja bem...", "Compreendo sua situação"
-
-FLUXO RÁPIDO:
-1. Pergunte o essencial (1-2 mensagens)
-2. Dê orientação prática
-3. Peça WhatsApp: "Me passa seu WhatsApp? Facilita pra eu te ajudar melhor"
-
-PROIBIDO:
-- Inglês ou qualquer língua que não seja português
-- Repetir o que o cliente disse
-- Formalidade excessiva
-- Textos longos`;
-    }
-
-    const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${LOVABLE_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "google/gemini-2.5-flash",
-        messages: [
-          {
-            role: "system",
-            content: systemPrompt
-          },
-          ...messages,
-        ],
-        stream: true,
-      }),
+    console.log("📋 Lead data:", {
+      id: leadData?.id,
+      pendingTransfer: leadData?.pending_transfer_lawyer,
+      assignedLawyer: leadData?.assigned_lawyer,
+      detectedProblem: leadData?.detected_problem
     });
 
-    if (!response.ok) {
-      if (response.status === 429) {
-        return new Response(
-          JSON.stringify({ error: "Muitas requisições. Por favor, aguarde um momento." }),
-          { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-        );
-      }
-      if (response.status === 402) {
-        return new Response(
-          JSON.stringify({ error: "Serviço temporariamente indisponível." }),
-          { status: 402, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-        );
-      }
-      const errorText = await response.text();
-      console.error("AI gateway error:", response.status, errorText);
-      return new Response(
-        JSON.stringify({ error: "Erro ao processar mensagem" }),
-        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
-
-    // Se precisa coletar lead, enviar dados de coleta antes do stream
-    if (needsLeadCollection) {
-      const encoder = new TextEncoder();
-      let leadQuestion = '';
-      
-      if (!leadData.hasName) {
-        leadQuestion = 'Qual é o seu nome?';
-      } else if (!leadData.hasContact) {
-        leadQuestion = 'Qual o seu WhatsApp para contato?';
-      }
-      
-      const leadCollectionData = `data: ${JSON.stringify({ collectLead: true, question: leadQuestion })}\n\n`;
-      
-      // Usar TransformStream com abordagem manual
-      const { readable, writable } = new TransformStream();
-      const writer = writable.getWriter();
-      
-      // Processar em background
-      (async () => {
-        try {
-          // Primeiro, escrever dados de coleta
-          await writer.write(encoder.encode(leadCollectionData));
-          
-          // Depois, copiar a resposta da IA
-          if (response.body) {
-            const reader = response.body.getReader();
-            while (true) {
-              const { done, value } = await reader.read();
-              if (done) break;
-              await writer.write(value);
-            }
-          }
-        } catch (error) {
-          console.error("Error streaming lead collection response:", error);
-        } finally {
-          await writer.close();
-        }
-      })();
-      
-      return new Response(readable, {
-        headers: { ...corsHeaders, "Content-Type": "text/event-stream" },
-      });
-    }
-    
-    // Se precisa transferir, enviar dados de transferência antes do stream
-    if (needsTransfer && newLawyerId) {
-      const encoder = new TextEncoder();
-      const transferData = `data: ${JSON.stringify({ transfer: true, newLawyerId })}\n\n`;
-      
-      // Usar TransformStream com abordagem manual
-      const { readable, writable } = new TransformStream();
-      const writer = writable.getWriter();
-      
-      // Processar em background
-      (async () => {
-        try {
-          // Primeiro, escrever dados de transferência
-          await writer.write(encoder.encode(transferData));
-          
-          // Depois, copiar a resposta da IA
-          if (response.body) {
-            const reader = response.body.getReader();
-            while (true) {
-              const { done, value } = await reader.read();
-              if (done) break;
-              await writer.write(value);
-            }
-          }
-        } catch (error) {
-          console.error("Error streaming transfer response:", error);
-        } finally {
-          await writer.close();
-        }
-      })();
-      
-      return new Response(readable, {
-        headers: { ...corsHeaders, "Content-Type": "text/event-stream" },
-      });
-    }
-
-    return new Response(response.body, {
-      headers: { ...corsHeaders, "Content-Type": "text/event-stream" },
+    // Chamar orquestrador (UMA única chamada de IA)
+    const decision = await orchestrateChat({
+      messages,
+      currentLawyerId,
+      sessionId,
+      isTransfer: isTransfer || false,
+      pendingTransfer: leadData?.pending_transfer_lawyer || null,
+      detectedProblem: leadData?.detected_problem || null,
+      apiKey: LOVABLE_API_KEY
     });
-  } catch (e) {
-    console.error("Error in lawyer-chat:", e);
+
+    console.log("🎯 [DECISION]", decision.action);
+    console.log("💬 [RESPONSE]", decision.response.substring(0, 100));
+
+    // Executar ações baseadas na decisão
+    if (leadData?.id) {
+      switch (decision.action) {
+        case "suggest_transfer":
+          // Salvar transferência pendente
+          console.log("💾 Saving pending transfer:", decision.targetLawyerId);
+          await supabase
+            .from('leads')
+            .update({
+              pending_transfer_lawyer: decision.targetLawyerId,
+              detected_problem: decision.detectedProblem,
+              specialty: decision.detectedSpecialty,
+              updated_at: new Date().toISOString()
+            })
+            .eq('id', leadData.id);
+          break;
+          
+        case "confirm_transfer":
+          // Executar transferência
+          console.log("✅ Confirming transfer to:", decision.targetLawyerId);
+          await supabase
+            .from('leads')
+            .update({
+              pending_transfer_lawyer: null,
+              assigned_lawyer: decision.targetLawyerId,
+              specialty: decision.detectedSpecialty,
+              detected_problem: decision.detectedProblem,
+              updated_at: new Date().toISOString()
+            })
+            .eq('id', leadData.id);
+          break;
+          
+        case "deny_transfer":
+          // Limpar transferência pendente
+          console.log("❌ Clearing pending transfer");
+          await supabase
+            .from('leads')
+            .update({
+              pending_transfer_lawyer: null,
+              updated_at: new Date().toISOString()
+            })
+            .eq('id', leadData.id);
+          break;
+      }
+    }
+
+    // Retornar resposta em formato SSE
+    const responseData = {
+      choices: [
+        {
+          delta: {
+            content: decision.response
+          }
+        }
+      ],
+      metadata: {
+        action: decision.action,
+        newLawyerId: decision.action === "confirm_transfer" ? decision.targetLawyerId : null,
+        targetLawyerName: decision.targetLawyerName,
+        confidence: decision.confidence
+      }
+    };
+
+    console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    console.log("✅ REQUEST COMPLETED");
+    console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+
     return new Response(
-      JSON.stringify({ error: e instanceof Error ? e.message : "Erro desconhecido" }),
-      { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      `data: ${JSON.stringify(responseData)}\n\ndata: [DONE]\n\n`,
+      { 
+        headers: { 
+          ...corsHeaders, 
+          'Content-Type': 'text/event-stream',
+          'Cache-Control': 'no-cache',
+          'Connection': 'keep-alive'
+        } 
+      }
+    );
+    
+  } catch (error) {
+    console.error("❌ FATAL ERROR:", error);
+    return new Response(
+      JSON.stringify({ 
+        error: error instanceof Error ? error.message : "Unknown error",
+        stack: error instanceof Error ? error.stack : undefined
+      }), 
+      {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      }
     );
   }
 });

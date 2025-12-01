@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Scale } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Scale, Menu } from "lucide-react";
 
 interface NavbarProps {
   onCtaClick: () => void;
@@ -68,14 +69,58 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
             </a>
           </div>
 
-          {/* CTA Button */}
-          <Button 
-            onClick={onCtaClick}
-            variant={isScrolled ? "default" : "secondary"}
-            className="h-9 md:h-10 px-4 md:px-6 text-sm font-semibold shadow-button hover:scale-105 transition-transform"
-          >
-            Falar Agora
-          </Button>
+          {/* Mobile Menu and CTA */}
+          <div className="flex items-center gap-2">
+            {/* CTA Button - Desktop */}
+            <Button 
+              onClick={onCtaClick}
+              variant={isScrolled ? "default" : "secondary"}
+              className="hidden md:flex h-10 px-6 text-sm font-semibold shadow-button hover:scale-105 transition-transform"
+            >
+              Falar Agora
+            </Button>
+
+            {/* Mobile Menu */}
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  className={`md:hidden ${isScrolled ? 'text-foreground' : 'text-white'}`}
+                >
+                  <Menu className="w-6 h-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[280px]">
+                <nav className="flex flex-col gap-6 mt-8">
+                  <a 
+                    href="#"
+                    className="text-base font-medium hover:text-primary transition-colors py-2"
+                  >
+                    Início
+                  </a>
+                  <a 
+                    href="#lawyer-chat"
+                    className="text-base font-medium hover:text-primary transition-colors py-2"
+                  >
+                    Como Funciona
+                  </a>
+                  <a 
+                    href="#advogados"
+                    className="text-base font-medium hover:text-primary transition-colors py-2"
+                  >
+                    Advogados
+                  </a>
+                  <Button 
+                    onClick={onCtaClick}
+                    className="w-full h-12 text-base font-semibold mt-4"
+                  >
+                    Falar Agora
+                  </Button>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </nav>

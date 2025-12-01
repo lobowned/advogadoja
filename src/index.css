@@ -151,6 +151,15 @@ All colors MUST be HSL.
   button, a {
     @apply min-h-[44px];
   }
+  
+  /* Safe area support for notch devices */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }
 
 /* Animated gradient text */

@@ -567,6 +567,16 @@ export const useLawyerChat = () => {
 
             const content = parsed.choices?.[0]?.delta?.content as string | undefined;
             if (content) {
+              // VALIDAÇÃO: Detectar resposta corrompida ou em inglês
+              const hasNonLatinChars = /[^\x00-\x7F\u00C0-\u00FF\u0100-\u017F\u0180-\u024F\u2000-\u206F\u2070-\u209F\u20A0-\u20CF\u2100-\u214F\u2190-\u21FF\u2200-\u22FF]/.test(content);
+              const hasEnglishWords = /\b(you|the|and|for|with|from|will|need|that|this|your|case|legal|issue|help|can|are|have|been|what|when|where|how|why|client|lawyer|attorney)\b/i.test(content);
+              
+              if (hasNonLatinChars || hasEnglishWords) {
+                console.warn('⚠️ Corrupted or English response detected, using fallback');
+                fullResponseContent = "Olá! Sou o especialista. Vi seu caso e vou te ajudar. Pode me contar mais detalhes?";
+                break; // Parar de processar chunks
+              }
+              
               fullResponseContent += content;
             }
           } catch {

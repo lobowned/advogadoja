@@ -5,6 +5,94 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
+// Função para analisar confirmação/negação usando IA
+async function analyzeUserConfirmation(
+  userMessage: string, 
+  pendingLawyerName: string,
+  apiKey: string
+): Promise<{ isConfirmation: boolean; isNegation: boolean; confidence: number }> {
+  console.log(`🤖 [CONFIRMATION AI] Analyzing: "${userMessage}"`);
+  
+  try {
+    const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: "google/gemini-2.5-flash-lite",
+        messages: [
+          {
+            role: "system",
+            content: `Você analisa se uma mensagem é confirmação ou negação para transferir atendimento para ${pendingLawyerName}.
+            
+CONFIRMAÇÕES incluem (mesmo com erros de digitação):
+- sim, sím, sikm, simm, sin, siiim, ssim, s, ss, sss
+- ok, oks, okk, okkk
+- pode, pode ser, claro, beleza, blz, tranquilo
+- quero, vamos, bora, vamo, aceito
+- por favor, tudo bem, isso, exato, correto
+- qualquer variação com erros de digitação
+
+NEGAÇÕES incluem:
+- não, nao, n, nn, nope, nai, naum
+- prefiro não, ainda não, depois
+- deixa, espera, aguarda
+
+IMPORTANTE: Erros de digitação são MUITO comuns em celulares. "sikm" = "sim", "simm" = "sim", "nai" = "não".`
+          },
+          {
+            role: "user",
+            content: `Mensagem do usuário: "${userMessage}"\n\nIsso é uma confirmação ou negação para transferir?`
+          }
+        ],
+        tools: [{
+          type: "function",
+          function: {
+            name: "analyze_confirmation",
+            description: "Analisa se a mensagem é confirmação ou negação",
+            parameters: {
+              type: "object",
+              properties: {
+                is_confirmation: { type: "boolean", description: "True se é confirmação" },
+                is_negation: { type: "boolean", description: "True se é negação" },
+                confidence: { type: "number", description: "Confiança de 0 a 1" },
+                reasoning: { type: "string", description: "Explicação breve" }
+              },
+              required: ["is_confirmation", "is_negation", "confidence"]
+            }
+          }
+        }],
+        tool_choice: { type: "function", function: { name: "analyze_confirmation" } }
+      })
+    });
+
+    if (!response.ok) {
+      console.error("❌ [CONFIRMATION AI] Error:", response.status, await response.text());
+      return { isConfirmation: false, isNegation: false, confidence: 0 };
+    }
+
+    const data = await response.json();
+    const toolCall = data.choices?.[0]?.message?.tool_calls?.[0];
+    
+    if (toolCall?.function?.arguments) {
+      const result = JSON.parse(toolCall.function.arguments);
+      console.log(`✅ [CONFIRMATION AI] Result:`, result);
+      return {
+        isConfirmation: result.is_confirmation,
+        isNegation: result.is_negation,
+        confidence: result.confidence
+      };
+    }
+    
+    return { isConfirmation: false, isNegation: false, confidence: 0 };
+  } catch (error) {
+    console.error("❌ [CONFIRMATION AI] Exception:", error);
+    return { isConfirmation: false, isNegation: false, confidence: 0 };
+  }
+}
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -722,16 +810,85 @@ Seja objetivo e direto.`;
           } 
           // Se NÃO detectou nova especialidade, verificar confirmação da pendente
           else {
-            // Regex mais flexível para capturar variações de digitação (ssim, sssim, etc.)
-            const confirmationPhrases = /(s+im|sim|quero|pode|claro|pode ser|ok|tá|ta|beleza|aceito|por favor|gostaria|vamos|queria|vamo|bora|autorizo|pode sim|tudo bem|tranquilo|blz|isso|exato|correto|afirmativo)/i;
-            const userConfirmed = confirmationPhrases.test(lastUserMessage.content.toLowerCase());
+            // Buscar nome do advogado para análise de confirmação
+            let targetLawyerName = 'especialista';
             
-            console.log(`🔍 [CONFIRMATION CHECK] User message: "${lastUserMessage.content}" | Confirmed: ${userConfirmed}`);
+            // Verificar se é advogado dinâmico
+            if (existingPendingTransfer.startsWith('dynamic-')) {
+              try {
+                const leadResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}&select=dynamic_lawyer`, {
+                  headers: {
+                    'apikey': SUPABASE_SERVICE_ROLE_KEY!,
+                    'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`
+                  }
+                });
+                
+                if (leadResponse.ok) {
+                  const leadDataResult = await leadResponse.json();
+                  const dynamicLawyer = leadDataResult[0]?.dynamic_lawyer;
+                  if (dynamicLawyer) {
+                    targetLawyerName = dynamicLawyer.name;
+                  }
+                }
+              } catch (error) {
+                console.error("Error fetching dynamic lawyer:", error);
+              }
+            } else {
+              // Advogado estático
+              const lawyerNamesMap: Record<string, string> = {
+                'maria-santos': 'Dra. Maria Santos',
+                'rafael-oliveira': 'Dr. Rafael Oliveira',
+                'juliana-costa': 'Dra. Juliana Costa',
+                'fernando-lima': 'Dr. Fernando Lima',
+                'patricia-almeida': 'Dra. Patrícia Almeida',
+                'rodrigo-barros': 'Dr. Rodrigo Barros',
+                'ricardo-mendes': 'Dr. Ricardo Mendes',
+                'ana-rodrigues': 'Dra. Ana Rodrigues',
+                'lucas-ferreira': 'Dr. Lucas Ferreira',
+                'carla-souza': 'Dra. Carla Souza',
+                'paulo-martins': 'Dr. Paulo Martins',
+                'beatriz-campos': 'Dra. Beatriz Campos',
+                'andre-silva': 'Dr. André Silva',
+                'claudia-martins': 'Dra. Cláudia Martins',
+                'marcos-oliveira': 'Dr. Marcos Oliveira',
+                'isabela-santos': 'Dra. Isabela Santos',
+                'renato-alves': 'Dr. Renato Alves',
+                'sandra-lima': 'Dra. Sandra Lima',
+                'roberto-costa': 'Dr. Roberto Costa',
+                'vanessa-reis': 'Dra. Vanessa Reis',
+                'joao-fernandes': 'Dr. João Fernandes',
+                'larissa-souza': 'Dra. Larissa Souza',
+                'eduardo-gomes': 'Dr. Eduardo Gomes',
+                'monica-alves': 'Dra. Mônica Alves',
+                'gustavo-reis': 'Dr. Gustavo Reis',
+                'camila-nunes': 'Dra. Camila Nunes',
+                'diego-santos': 'Dr. Diego Santos',
+                'fernanda-lima': 'Dra. Fernanda Lima',
+                'thiago-rocha': 'Dr. Thiago Rocha',
+                'marina-costa': 'Dra. Marina Costa',
+                'helena-vasconcelos': 'Dra. Helena Vasconcelos',
+                'gabriel-monteiro': 'Dr. Gabriel Monteiro',
+                'renata-machado': 'Dra. Renata Machado',
+                'leonardo-prado': 'Dr. Leonardo Prado',
+                'cristina-torres': 'Dra. Cristina Torres',
+              };
+              
+              targetLawyerName = lawyerNamesMap[existingPendingTransfer] || 'especialista';
+            }
             
-            if (userConfirmed) {
+            // Usar IA para analisar confirmação (captura erros de digitação)
+            const confirmationResult = await analyzeUserConfirmation(
+              lastUserMessage.content,
+              targetLawyerName,
+              LOVABLE_API_KEY!
+            );
+
+            console.log(`🔍 [CONFIRMATION CHECK] User message: "${lastUserMessage.content}" | Result:`, confirmationResult);
+            
+            if (confirmationResult.isConfirmation && confirmationResult.confidence > 0.6) {
               needsTransfer = true;
               newLawyerId = existingPendingTransfer;
-              console.log(`✅ User confirmed transfer to: ${newLawyerId}`);
+              console.log(`✅ User confirmed transfer to: ${newLawyerId} (confidence: ${confirmationResult.confidence})`);
               
               // Limpar pending transfer após confirmação
               if (sessionId && leadData.leadId) {
@@ -748,8 +905,26 @@ Seja objetivo e direto.`;
                   })
                 });
               }
+            } else if (confirmationResult.isNegation && confirmationResult.confidence > 0.6) {
+              console.log(`❌ User explicitly declined transfer (confidence: ${confirmationResult.confidence}), clearing pending transfer`);
+              
+              // Limpar pending transfer quando usuário recusa
+              if (sessionId && leadData.leadId) {
+                await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
+                  method: 'PATCH',
+                  headers: {
+                    'apikey': SUPABASE_SERVICE_ROLE_KEY!,
+                    'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+                    'Content-Type': 'application/json',
+                    'Prefer': 'return=minimal'
+                  },
+                  body: JSON.stringify({
+                    pending_transfer_lawyer: null
+                  })
+                });
+              }
             } else {
-              console.log("❌ User did not confirm transfer, continuing with Carlos");
+              console.log("🤷 Unclear response, continuing with Carlos");
             }
           }
         } else {

@@ -5,20 +5,10 @@ import { Send, Video, MoreVertical, Smile, Mic, Check, Shield, RefreshCw } from 
 import { useLawyerChat } from "@/hooks/useLawyerChat";
 import { useEffect, useRef, useState } from "react";
 
-// Quick reply suggestions for common legal problems
-const quickReplies = [
-  "Fui demitido injustamente",
-  "Tenho dívidas/nome sujo",
-  "Problema com plano de saúde",
-  "Acidente de trabalho",
-  "Divórcio/pensão alimentícia"
-];
-
 const LawyerChatSection = () => {
   const { messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers, isCollectingLead, leadQuestion } = useLawyerChat();
   const [inputValue, setInputValue] = useState("");
   const [showResponseTime, setShowResponseTime] = useState(false);
-  const [showQuickReplies, setShowQuickReplies] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -35,13 +25,7 @@ const LawyerChatSection = () => {
     if (inputValue.trim() && !isLoading) {
       sendMessage(inputValue);
       setInputValue("");
-      setShowQuickReplies(false); // Hide quick replies after first message
     }
-  };
-
-  const handleQuickReply = (reply: string) => {
-    sendMessage(reply);
-    setShowQuickReplies(false);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -253,27 +237,6 @@ const LawyerChatSection = () => {
               
               <div ref={messagesEndRef} />
             </div>
-
-            {/* Quick Replies - Show only at start of conversation */}
-            {showQuickReplies && messages.length <= 1 && (
-              <div className="bg-background/95 border-t border-border/30 p-3 sm:p-4 animate-fade-in">
-                <p className="text-xs text-muted-foreground mb-2 text-center">💡 Selecione um problema comum ou digite sua dúvida:</p>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {quickReplies.map((reply, index) => (
-                    <Button
-                      key={index}
-                      variant="outline"
-                      size="sm"
-                      onClick={() => handleQuickReply(reply)}
-                      disabled={isLoading}
-                      className="text-xs hover:bg-primary/10 hover:text-primary hover:border-primary transition-all"
-                    >
-                      {reply}
-                    </Button>
-                  ))}
-                </div>
-              </div>
-            )}
 
             {/* Input Area */}
             <div className="bg-whatsapp-input-bg p-3 sm:p-4 border-t border-border/30 sticky bottom-0">

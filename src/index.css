@@ -144,3 +144,32 @@ All colors MUST be HSL.
     @apply min-h-[44px];
   }
 }
+
+/* Animated gradient text */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient-text {
+  background: linear-gradient(
+    90deg,
+    hsl(0 0% 100%),
+    hsl(38 92% 50%),
+    hsl(0 0% 100%),
+    hsl(213 45% 60%),
+    hsl(0 0% 100%)
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 6s ease-in-out infinite;
+}

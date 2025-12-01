@@ -455,7 +455,10 @@ SEU PAPEL:
       const writer = writable.getWriter();
       
       // Escrever dados de coleta
-      writer.write(encoder.encode(leadCollectionData));
+      await writer.write(encoder.encode(leadCollectionData));
+      
+      // Liberar o writer antes de fazer pipeTo
+      writer.releaseLock();
       
       // Pipe o response original
       response.body?.pipeTo(writable);
@@ -475,7 +478,10 @@ SEU PAPEL:
       const writer = writable.getWriter();
       
       // Escrever dados de transferência
-      writer.write(encoder.encode(transferData));
+      await writer.write(encoder.encode(transferData));
+      
+      // Liberar o writer antes de fazer pipeTo
+      writer.releaseLock();
       
       // Pipe o response original
       response.body?.pipeTo(writable);

@@ -737,12 +737,26 @@ export const useLawyerChat = () => {
               }),
             });
 
+            console.log('📡 [TRANSFER RESPONSE]', {
+              status: transferResponse.status,
+              ok: transferResponse.ok,
+              hasBody: !!transferResponse.body
+            });
+
             if (transferResponse.ok && transferResponse.body) {
               const transferReader = transferResponse.body.getReader();
               const transferDecoder = new TextDecoder();
               let transferBuffer = '';
               let transferDone = false;
               let newLawyerContent = '';
+              let hasReceivedContent = false;
+
+              // Timeout de 10 segundos para receber conteúdo
+              const timeoutId = setTimeout(() => {
+                if (!hasReceivedContent) {
+                  console.warn('⚠️ [TRANSFER TIMEOUT] No content received after 10s');
+                }
+              }, 10000);
 
               while (!transferDone) {
                 const { done, value } = await transferReader.read();
@@ -768,7 +782,14 @@ export const useLawyerChat = () => {
                   try {
                     const parsed = JSON.parse(jsonStr);
                     const content = parsed.choices?.[0]?.delta?.content as string | undefined;
+                    
                     if (content) {
+                      hasReceivedContent = true;
+                      console.log('🔤 [TRANSFER CONTENT]', {
+                        content: content.substring(0, 50),
+                        totalLength: newLawyerContent.length + content.length
+                      });
+                      
                       for (let i = 0; i < content.length; i++) {
                         const char = content[i];
                         newLawyerContent += char;
@@ -811,9 +832,54 @@ export const useLawyerChat = () => {
                   }
                 }
               }
+
+              clearTimeout(timeoutId);
+
+              console.log('✅ [TRANSFER COMPLETE]', {
+                finalContent: newLawyerContent.substring(0, 100),
+                contentLength: newLawyerContent.length,
+                hasContent: newLawyerContent.length > 0
+              });
+
+              // Fallback se não recebeu conteúdo
+              if (newLawyerContent.length === 0) {
+                console.warn('⚠️ [TRANSFER] No content received, using fallback');
+                const fallbackMessage = `Olá! Sou ${newLawyer.name.split(' ')[1]}, especialista em ${newLawyer.subSpecialty}. Vi que você precisa de ajuda. Pode me dar mais detalhes?`;
+                setMessages(prev => [
+                  ...prev,
+                  {
+                    role: 'assistant',
+                    content: fallbackMessage,
+                    timestamp: new Date(),
+                    lawyerId: newLawyer.id,
+                  },
+                ]);
+              }
+
+              setIsTyping(false);
+              console.log('✅ [TRANSFER TYPING DONE]');
+            } else {
+              console.error('❌ [TRANSFER RESPONSE ERROR]', {
+                status: transferResponse.status,
+                statusText: transferResponse.statusText
+              });
+              setIsTyping(false);
+              
+              // Fallback para resposta com erro
+              const fallbackMessage = `Olá! Sou ${newLawyer.name.split(' ')[1]}, especialista em ${newLawyer.subSpecialty}. Vi que você precisa de ajuda. Pode me dar mais detalhes?`;
+              setMessages(prev => [
+                ...prev,
+                {
+                  role: 'assistant',
+                  content: fallbackMessage,
+                  timestamp: new Date(),
+                  lawyerId: newLawyer.id,
+                },
+              ]);
             }
           } catch (error) {
-            console.error('Error generating transfer message:', error);
+            console.error('❌ [TRANSFER ERROR]', error);
+            setIsTyping(false);
             // Fallback para mensagem estática em caso de erro
             const fallbackMessage = `Olá! Sou ${newLawyer.name.split(' ')[1]}, especialista em ${newLawyer.subSpecialty}. Vi que você precisa de ajuda. Pode me dar mais detalhes?`;
             setMessages(prev => [

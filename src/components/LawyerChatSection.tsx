@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Send, Video, MoreVertical, Smile, Mic, Check, Shield, RefreshCw, MessageSquare } from "lucide-react";
 import { useLawyerChat } from "@/hooks/useLawyerChat";
-import { useLawyerPresence } from "@/hooks/useLawyerPresence";
+import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
 import { useEffect, useRef, useState } from "react";
 
 const LawyerChatSection = () => {

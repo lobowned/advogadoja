@@ -6,7 +6,7 @@ import { useLawyerChat } from "@/hooks/useLawyerChat";
 import { useEffect, useRef, useState } from "react";
 
 const LawyerChatSection = () => {
-  const { messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers, isCollectingLead, leadQuestion, isInQueue, queuePosition, hasJoinedQueue, joinQueue } = useLawyerChat();
+  const { messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers, isCollectingLead, leadQuestion, isInQueue, queuePosition, hasJoinedQueue, joinQueue, peopleAhead } = useLawyerChat();
   const [inputValue, setInputValue] = useState("");
   const [showResponseTime, setShowResponseTime] = useState(false);
   const chatContainerRef = useRef<HTMLDivElement>(null);
@@ -176,22 +176,70 @@ const LawyerChatSection = () => {
                 {messages.map((message, index) => {
                 // Mensagem de fila
                 if ('isQueue' in message && message.isQueue) {
+                  const isInitial = message.queuePosition === 2;
+                  const isUpdating = message.queuePosition === 1;
+                  const isNext = message.queuePosition === 0;
+                  
                   return (
                     <div key={index} className="flex justify-center py-2">
-                      <div className="bg-primary/10 border border-primary/20 rounded-lg px-6 py-4 max-w-[90%] flex flex-col items-center gap-3 animate-fade-in shadow-md">
-                        <p className="text-sm font-medium text-center text-foreground whitespace-pre-line">
-                          {message.content}
-                        </p>
-                        {message.queuePosition && message.queuePosition > 0 && (
-                          <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
+                      <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl px-6 py-5 max-w-[90%] flex flex-col items-center gap-4 animate-fade-in shadow-lg">
+                        <div className="text-center">
+                          <p className="text-sm font-semibold text-primary mb-2">
+                            {message.content}
+                          </p>
+                          
+                          {/* Contador de pessoas com animação */}
+                          {peopleAhead > 0 && (
+                            <div className="flex items-center justify-center gap-3 my-3">
+                              <div className="flex items-center gap-1 animate-scale-in">
+                                {[...Array(peopleAhead)].map((_, i) => (
+                                  <div 
+                                    key={i} 
+                                    className="w-10 h-10 rounded-full bg-muted border-2 border-primary/30 flex items-center justify-center animate-fade-in"
+                                    style={{ animationDelay: `${i * 0.1}s` }}
+                                  >
+                                    <span className="text-xl">👤</span>
+                                  </div>
+                                ))}
+                              </div>
+                              <div className="text-2xl font-bold text-primary animate-pulse">
+                                →
+                              </div>
+                              <div className="w-12 h-12 rounded-full bg-whatsapp-send-btn/20 border-3 border-whatsapp-send-btn flex items-center justify-center">
+                                <span className="text-2xl">👤</span>
+                              </div>
+                            </div>
+                          )}
+                          
+                          {peopleAhead > 0 && (
+                            <p className="text-xs text-muted-foreground font-medium">
+                              {peopleAhead === 2 ? '2 pessoas' : '1 pessoa'} na sua frente
+                            </p>
+                          )}
+                          
+                          {peopleAhead === 0 && isNext && (
+                            <div className="text-4xl my-2 animate-bounce">
+                              🎉
+                            </div>
+                          )}
+                        </div>
+                        
+                        {/* Barra de progresso */}
+                        <div className="w-full">
+                          <div className="w-full bg-muted rounded-full h-2.5 overflow-hidden shadow-inner">
                             <div 
-                              className="bg-primary h-full transition-all duration-1000 ease-out rounded-full"
+                              className="bg-gradient-to-r from-primary to-whatsapp-send-btn h-full transition-all duration-1000 ease-out rounded-full shadow-sm"
                               style={{ 
                                 width: message.queuePosition === 2 ? '33%' : message.queuePosition === 1 ? '66%' : '100%' 
                               }}
                             />
                           </div>
-                        )}
+                          <p className="text-[10px] text-muted-foreground text-center mt-1.5 font-medium">
+                            {message.queuePosition === 2 && 'Estimativa: ~1 minuto'}
+                            {message.queuePosition === 1 && 'Quase lá! ~30 segundos'}
+                            {message.queuePosition === 0 && 'Conectando...'}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   );

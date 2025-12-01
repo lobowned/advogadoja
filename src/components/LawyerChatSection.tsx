@@ -9,10 +9,13 @@ const LawyerChatSection = () => {
   const { messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers, isCollectingLead, leadQuestion } = useLawyerChat();
   const [inputValue, setInputValue] = useState("");
   const [showResponseTime, setShowResponseTime] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    // Scroll apenas dentro do container do chat, sem afetar a página
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
   }, [messages, isTyping, isThinking]);
 
   useEffect(() => {
@@ -127,7 +130,10 @@ const LawyerChatSection = () => {
             </div>
 
             {/* Messages Area */}
-            <div className="bg-whatsapp-bg p-4 h-[400px] sm:h-[600px] overflow-y-auto space-y-3">
+            <div 
+              ref={chatContainerRef}
+              className="bg-whatsapp-bg p-4 h-[400px] sm:h-[600px] overflow-y-auto space-y-3"
+            >
               {messages.map((message, index) => {
                 // Mensagem de transferência
                 if ('isTransfer' in message && message.isTransfer) {
@@ -234,8 +240,6 @@ const LawyerChatSection = () => {
                   </div>
                 </div>
               )}
-              
-              <div ref={messagesEndRef} />
             </div>
 
             {/* Input Area */}

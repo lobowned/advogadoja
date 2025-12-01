@@ -56,6 +56,14 @@ All colors MUST be HSL.
     
     /* Stats and counters */
     --counter-duration: 2s;
+    
+    /* WhatsApp colors */
+    --whatsapp-header: 173 80% 20%;
+    --whatsapp-bg: 40 20% 92%;
+    --whatsapp-bubble-received: 0 0% 100%;
+    --whatsapp-bubble-sent: 84 46% 88%;
+    --whatsapp-send-btn: 142 70% 49%;
+    --whatsapp-check: 206 100% 50%;
 
     --sidebar-background: 0 0% 98%;
 

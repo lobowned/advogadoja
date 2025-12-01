@@ -2,11 +2,10 @@ import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useLawyerChat } from '@/hooks/useLawyerChat';
-import { Send, Loader2 } from 'lucide-react';
+import { Send, Loader2, Smile, Mic, ArrowLeft, Video, MoreVertical, Check } from 'lucide-react';
 
 const LawyerChatSection = () => {
   const [inputValue, setInputValue] = useState('');
@@ -50,145 +49,150 @@ const LawyerChatSection = () => {
           </p>
         </div>
 
-        <Card className="max-w-4xl mx-auto overflow-hidden">
-          {/* Header com advogados online */}
-          <div className="bg-card border-b border-border p-4">
-            <div className="flex items-center justify-between flex-wrap gap-4">
-              <div className="flex items-center gap-3">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="relative">
-                      <Avatar className="h-10 w-10 border-2 border-background">
-                        <AvatarImage src={`https://i.pravatar.cc/150?img=${i + 10}`} />
-                        <AvatarFallback>A{i}</AvatarFallback>
-                      </Avatar>
-                      <span className="absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-green-500 ring-2 ring-background"></span>
-                    </div>
-                  ))}
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">
-                    {onlineLawyers} advogados online agora
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Tempo médio de resposta: 2 minutos
-                  </p>
-                </div>
-              </div>
-              <Badge variant="secondary" className="gap-1">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                </span>
-                Online
-              </Badge>
+        <Card className="max-w-4xl mx-auto overflow-hidden shadow-xl">
+          {/* WhatsApp-style Header */}
+          <div className="bg-whatsapp-header p-3 flex items-center gap-3">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="h-10 w-10 text-white hover:bg-white/10"
+            >
+              <ArrowLeft className="h-5 w-5" />
+            </Button>
+            
+            <Avatar className="h-10 w-10 flex-shrink-0">
+              <AvatarImage src="https://i.pravatar.cc/150?img=12" />
+              <AvatarFallback>CS</AvatarFallback>
+            </Avatar>
+            
+            <div className="flex-1 min-w-0">
+              <p className="text-white font-medium text-sm">Dr. Carlos Silva</p>
+              <p className="text-white/80 text-xs">online</p>
+            </div>
+            
+            <div className="flex items-center gap-2">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="h-10 w-10 text-white hover:bg-white/10"
+              >
+                <Video className="h-5 w-5" />
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="h-10 w-10 text-white hover:bg-white/10"
+              >
+                <MoreVertical className="h-5 w-5" />
+              </Button>
             </div>
           </div>
 
-          {/* Chat area */}
-          <ScrollArea className="h-[500px] p-4" ref={scrollRef}>
-            <div className="space-y-4">
+          {/* WhatsApp-style Chat area */}
+          <ScrollArea className="h-[500px] bg-whatsapp-bg p-4" ref={scrollRef}>
+            <div className="space-y-2">
               {messages.map((message, index) => (
                 <div
                   key={index}
-                  className={`flex gap-3 ${
+                  className={`flex ${
                     message.role === 'user' ? 'justify-end' : 'justify-start'
                   }`}
                 >
-                  {message.role === 'assistant' && (
-                    <Avatar className="h-10 w-10 flex-shrink-0">
-                      <AvatarImage src="https://i.pravatar.cc/150?img=12" />
-                      <AvatarFallback>CS</AvatarFallback>
-                    </Avatar>
-                  )}
-                  
-                  <div className={`flex flex-col ${message.role === 'user' ? 'items-end' : 'items-start'} max-w-[80%]`}>
-                    {message.role === 'assistant' && (
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-sm font-semibold text-foreground">
-                          Dr. Carlos Silva
-                        </span>
-                        <span className="text-xs text-muted-foreground">
-                          Advogado
-                        </span>
-                      </div>
-                    )}
-                    
+                  <div className={`relative max-w-[75%] ${message.role === 'user' ? 'ml-auto' : 'mr-auto'}`}>
+                    {/* WhatsApp message bubble */}
                     <div
-                      className={`rounded-lg p-3 ${
+                      className={`rounded-lg px-3 py-2 shadow-sm ${
                         message.role === 'user'
-                          ? 'bg-primary text-primary-foreground'
-                          : 'bg-muted'
+                          ? 'bg-whatsapp-bubble-sent'
+                          : 'bg-whatsapp-bubble-received'
                       }`}
                     >
-                      <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                      <p className="text-sm whitespace-pre-wrap text-gray-800">{message.content}</p>
+                      <div className="flex items-center justify-end gap-1 mt-1">
+                        <span className="text-[10px] text-gray-500">
+                          {formatTime(message.timestamp)}
+                        </span>
+                        {message.role === 'user' && (
+                          <div className="flex">
+                            <Check className="h-3 w-3 text-whatsapp-check" />
+                            <Check className="h-3 w-3 text-whatsapp-check -ml-2" />
+                          </div>
+                        )}
+                      </div>
                     </div>
                     
-                    <span className="text-xs text-muted-foreground mt-1">
-                      {formatTime(message.timestamp)}
-                    </span>
+                    {/* WhatsApp tail */}
+                    <div
+                      className={`absolute top-0 w-0 h-0 ${
+                        message.role === 'user'
+                          ? 'right-0 -mr-2 border-l-[10px] border-l-whatsapp-bubble-sent border-t-[10px] border-t-transparent'
+                          : 'left-0 -ml-2 border-r-[10px] border-r-whatsapp-bubble-received border-t-[10px] border-t-transparent'
+                      }`}
+                    />
                   </div>
-
-                  {message.role === 'user' && (
-                    <Avatar className="h-10 w-10 flex-shrink-0">
-                      <AvatarFallback>Você</AvatarFallback>
-                    </Avatar>
-                  )}
                 </div>
               ))}
 
               {isTyping && (
-                <div className="flex gap-3 justify-start">
-                  <Avatar className="h-10 w-10 flex-shrink-0">
-                    <AvatarImage src="https://i.pravatar.cc/150?img=12" />
-                    <AvatarFallback>CS</AvatarFallback>
-                  </Avatar>
-                  <div className="flex flex-col items-start">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-sm font-semibold text-foreground">
-                        Dr. Carlos Silva
-                      </span>
-                    </div>
-                    <div className="rounded-lg p-3 bg-muted">
+                <div className="flex justify-start">
+                  <div className="relative max-w-[75%]">
+                    <div className="rounded-lg px-3 py-2 bg-whatsapp-bubble-received shadow-sm">
                       <div className="flex gap-1">
-                        <span className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></span>
-                        <span className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
-                        <span className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
+                        <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></span>
+                        <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
+                        <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
                       </div>
                     </div>
-                    <span className="text-xs text-muted-foreground mt-1">
-                      digitando...
-                    </span>
+                    <div className="absolute top-0 left-0 -ml-2 w-0 h-0 border-r-[10px] border-r-whatsapp-bubble-received border-t-[10px] border-t-transparent" />
                   </div>
                 </div>
               )}
             </div>
           </ScrollArea>
 
-          {/* Input area */}
-          <div className="border-t border-border p-4 bg-card">
-            <div className="flex gap-2">
-              <Input
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                onKeyPress={handleKeyPress}
-                placeholder="Descreva sua situação jurídica..."
-                disabled={isLoading}
-                className="flex-1"
-              />
+          {/* WhatsApp-style Input area */}
+          <div className="border-t border-border p-3 bg-gray-50">
+            <div className="flex items-center gap-2">
+              <Button 
+                variant="ghost" 
+                size="icon"
+                className="h-10 w-10 text-gray-500 hover:bg-transparent"
+              >
+                <Smile className="h-6 w-6" />
+              </Button>
+              
+              <div className="flex-1 relative">
+                <Input
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Descreva sua situação jurídica..."
+                  disabled={isLoading}
+                  className="rounded-full bg-white border-none shadow-sm pr-10"
+                />
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  className="absolute right-0 top-0 h-10 w-10 text-gray-500 hover:bg-transparent"
+                >
+                  <Mic className="h-5 w-5" />
+                </Button>
+              </div>
+              
               <Button
                 onClick={handleSend}
                 disabled={isLoading || !inputValue.trim()}
                 size="icon"
+                className="h-11 w-11 rounded-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 shadow-md"
               >
                 {isLoading ? (
-                  <Loader2 className="h-4 w-4 animate-spin" />
+                  <Loader2 className="h-5 w-5 animate-spin text-white" />
                 ) : (
-                  <Send className="h-4 w-4" />
+                  <Send className="h-5 w-5 text-white" />
                 )}
               </Button>
             </div>
-            <p className="text-xs text-muted-foreground mt-2 text-center">
+            <p className="text-[10px] text-gray-500 mt-2 text-center">
               🔒 Conversa protegida por sigilo profissional (Art. 34, VII do Estatuto da OAB)
             </p>
           </div>

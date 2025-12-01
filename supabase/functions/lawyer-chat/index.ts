@@ -716,10 +716,11 @@ Seja objetivo e direto.`;
               shouldAskPermission = true;
               console.log(`🤔 [AI DETECTION] Asking permission to transfer to: ${newLawyerId} (confidence: ${detection.confidence})`);
               
-              // Salvar pending transfer e advogado dinâmico no banco
+              // Salvar pending transfer, advogado dinâmico e problema detectado no banco
               if (sessionId && leadData.leadId) {
                 const updateData: any = {
-                  pending_transfer_lawyer: newLawyerId
+                  pending_transfer_lawyer: newLawyerId,
+                  detected_problem: detection.subSpecialty // Salvar o problema detectado
                 };
                 
                 // Se criou advogado dinâmico, salvar também
@@ -727,6 +728,8 @@ Seja objetivo e direto.`;
                   updateData.dynamic_lawyer = detection.dynamicLawyer;
                   console.log("✨ [DYNAMIC LAWYER] Saved to lead:", detection.dynamicLawyer.name);
                 }
+                
+                console.log("📝 [DETECTED PROBLEM] Saved:", detection.subSpecialty);
                 
                 await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
                   method: 'PATCH',
@@ -940,18 +943,44 @@ VARIAÇÃO DE ESTILO (use diferentes formas):
       // Verificar se é uma transferência (primeira mensagem do especialista)
       const isFirstMessage = isTransfer === true;
       
+      // Buscar o problema detectado do banco quando é primeira mensagem
+      let userProblem = '';
+      if (isFirstMessage && sessionId) {
+        try {
+          const leadResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?session_id=eq.${sessionId}&select=detected_problem`, {
+            headers: {
+              'apikey': SUPABASE_SERVICE_ROLE_KEY!,
+              'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`
+            }
+          });
+          
+          if (leadResponse.ok) {
+            const leadDataResult = await leadResponse.json();
+            userProblem = leadDataResult[0]?.detected_problem || '';
+            console.log('📋 [FIRST MESSAGE] User problem retrieved:', userProblem);
+          }
+        } catch (error) {
+          console.error("Error fetching detected problem:", error);
+        }
+      }
+      
       systemPrompt = `⚠️ CRÍTICO: RESPONDA EXCLUSIVAMENTE EM PORTUGUÊS BRASILEIRO. NUNCA use inglês ou outros idiomas.
 
 VOCÊ É ${lawyerName}, advogado especialista brasileiro.
 SEU NOME É ${lawyerName}. SEU ID É ${currentLawyerId}.
 
 ${isFirstMessage ? `PRIMEIRA MENSAGEM (Transferência):
-1. Diga: "Olá! Sou ${lawyerName}"
-2. Mencione o problema: "Vi que você [problema específico]"
-3. Faça UMA pergunta objetiva
-MÁXIMO 2 frases. PORTUGUÊS BRASILEIRO APENAS.
+O problema do usuário é: "${userProblem || 'precisa de ajuda jurídica'}"
 
-Exemplo: "Olá! Sou ${lawyerName}. Vi que seu voo foi cancelado. Quando isso aconteceu?"
+RESPONDA EXATAMENTE assim:
+"Olá! Sou ${lawyerName.split(' ')[1]} ${lawyerName.split(' ')[2] || ''}. Vi que você precisa de ${userProblem || 'ajuda jurídica'}. [pergunta específica e direta sobre o caso]"
+
+EXEMPLOS:
+- Para "autorização para uso de canabidiol": "Olá! Sou a Dra. Helena. Vi que você precisa de autorização para canabidiol. É pra você ou pra um familiar?"
+- Para "cirurgia bariátrica pelo SUS": "Olá! Sou a Dra. Helena. Vi que você precisa de cirurgia bariátrica pelo SUS. Já passou por consulta com nutricionista?"
+- Para "divórcio consensual": "Olá! Sou a Dra. Maria. Vi que você precisa de divórcio consensual. Vocês já têm acordo sobre partilha?"
+
+SEJA NATURAL, BRASILEIRO E DIRETO. Use "você" ou "vc", faça uma pergunta específica relevante ao caso.
 ` : ''}
 
 ESTILO (Brasileiro Natural):

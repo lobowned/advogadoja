@@ -36,7 +36,7 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
             <span className={`text-lg md:text-xl font-bold transition-colors ${
               isScrolled ? 'text-foreground' : 'text-white'
             }`}>
-              Silva & Associados
+              Advogado Online
             </span>
           </div>
 

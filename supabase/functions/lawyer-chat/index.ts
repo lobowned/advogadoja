@@ -982,48 +982,55 @@ VARIAÇÃO DE ESTILO (use diferentes formas):
       
       const lawyerName = lawyerNames[currentLawyerId] || 'Dr./Dra. Especialista';
       
-      // Verificar se é uma transferência (primeira mensagem do especialista)
-      const isFirstMessage = isTransfer === true;
-      
-      // Buscar o problema detectado do banco quando é primeira mensagem
-      let userProblem = '';
-      if (isFirstMessage && sessionId) {
-        try {
-          const leadResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?session_id=eq.${sessionId}&select=detected_problem`, {
-            headers: {
-              'apikey': SUPABASE_SERVICE_ROLE_KEY!,
-              'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`
+      // ⚡ NOVA LÓGICA: Se é transferência, retornar template direto (mais rápido e confiável)
+      if (isTransfer === true) {
+        // Buscar o problema detectado do banco
+        let userProblem = '';
+        if (sessionId) {
+          try {
+            const leadResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?session_id=eq.${sessionId}&select=detected_problem`, {
+              headers: {
+                'apikey': SUPABASE_SERVICE_ROLE_KEY!,
+                'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`
+              }
+            });
+            
+            if (leadResponse.ok) {
+              const leadDataResult = await leadResponse.json();
+              userProblem = leadDataResult[0]?.detected_problem || '';
+              console.log('📋 [TRANSFER GREETING] User problem retrieved:', userProblem);
             }
-          });
-          
-          if (leadResponse.ok) {
-            const leadDataResult = await leadResponse.json();
-            userProblem = leadDataResult[0]?.detected_problem || '';
-            console.log('📋 [FIRST MESSAGE] User problem retrieved:', userProblem);
+          } catch (error) {
+            console.error("Error fetching detected problem:", error);
           }
-        } catch (error) {
-          console.error("Error fetching detected problem:", error);
         }
+        
+        const shortName = lawyerName.split(' ').slice(1).join(' ');
+        
+        // Mensagens template variadas para naturalidade
+        const greetingTemplates = [
+          `Olá! Sou ${shortName}. Vi que você precisa de ajuda com ${userProblem || 'uma questão jurídica'}. Me conta mais sobre o seu caso?`,
+          `Oi! Aqui é ${shortName}. O caso de ${userProblem || 'questão jurídica'} é minha especialidade. Como posso te ajudar?`,
+          `E aí! Sou ${shortName}. Vi seu caso de ${userProblem || 'questão jurídica'}. Me fala mais detalhes?`,
+          `Olá! ${shortName} aqui. Sobre ${userProblem || 'seu caso'}, me conta: o que exatamente aconteceu?`,
+          `Oi! Sou ${shortName}, especialista em ${userProblem || 'sua área'}. Vamos resolver isso. Me dá mais detalhes?`,
+        ];
+        
+        const randomGreeting = greetingTemplates[Math.floor(Math.random() * greetingTemplates.length)];
+        
+        console.log(`👋 [TRANSFER GREETING] ${lawyerName} greeting user about: ${userProblem || 'general case'}`);
+        
+        // Retornar diretamente sem chamar IA (mais rápido e confiável)
+        return new Response(
+          `data: ${JSON.stringify({ choices: [{ delta: { content: randomGreeting } }] })}\n\ndata: [DONE]\n\n`,
+          { headers: { ...corsHeaders, 'Content-Type': 'text/event-stream' } }
+        );
       }
       
       systemPrompt = `⚠️ CRÍTICO: RESPONDA EXCLUSIVAMENTE EM PORTUGUÊS BRASILEIRO. NUNCA use inglês ou outros idiomas.
 
 VOCÊ É ${lawyerName}, advogado especialista brasileiro.
 SEU NOME É ${lawyerName}. SEU ID É ${currentLawyerId}.
-
-${isFirstMessage ? `PRIMEIRA MENSAGEM (Transferência):
-O problema do usuário é: "${userProblem || 'precisa de ajuda jurídica'}"
-
-RESPONDA EXATAMENTE assim:
-"Olá! Sou ${lawyerName.split(' ')[1]} ${lawyerName.split(' ')[2] || ''}. Vi que você precisa de ${userProblem || 'ajuda jurídica'}. [pergunta específica e direta sobre o caso]"
-
-EXEMPLOS:
-- Para "autorização para uso de canabidiol": "Olá! Sou a Dra. Helena. Vi que você precisa de autorização para canabidiol. É pra você ou pra um familiar?"
-- Para "cirurgia bariátrica pelo SUS": "Olá! Sou a Dra. Helena. Vi que você precisa de cirurgia bariátrica pelo SUS. Já passou por consulta com nutricionista?"
-- Para "divórcio consensual": "Olá! Sou a Dra. Maria. Vi que você precisa de divórcio consensual. Vocês já têm acordo sobre partilha?"
-
-SEJA NATURAL, BRASILEIRO E DIRETO. Use "você" ou "vc", faça uma pergunta específica relevante ao caso.
-` : ''}
 
 ESTILO (Brasileiro Natural):
 - Máximo 2-3 frases curtas

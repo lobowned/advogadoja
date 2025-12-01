@@ -6,19 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { Scale, Briefcase, Heart, Shield, Users, Home } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
-
-type SpecialtyFilter = "all" | "familia" | "trabalhista" | "civil" | "previdenciario" | "penal";
-
-const specialtyFilters = [
-  { value: "all" as SpecialtyFilter, label: "Todos", icon: Home },
-  { value: "familia" as SpecialtyFilter, label: "Família", icon: Heart },
-  { value: "trabalhista" as SpecialtyFilter, label: "Trabalhista", icon: Briefcase },
-  { value: "civil" as SpecialtyFilter, label: "Civil", icon: Scale },
-  { value: "previdenciario" as SpecialtyFilter, label: "Previdenciário", icon: Shield },
-  { value: "penal" as SpecialtyFilter, label: "Penal", icon: Users },
-];
 
 // Componente de Card reutilizável
 const LawyerCard = ({ lawyer }: { lawyer: typeof lawyers[0] }) => (
@@ -57,13 +45,8 @@ const LawyerCard = ({ lawyer }: { lawyer: typeof lawyers[0] }) => (
 );
 
 const LawyersShowcase = () => {
-  const [selectedSpecialty, setSelectedSpecialty] = useState<SpecialtyFilter>("all");
   const isMobile = useIsMobile();
-
-  const filteredLawyers =
-    selectedSpecialty === "all"
-      ? lawyers.filter((l) => l.specialty !== "geral")
-      : lawyers.filter((l) => l.specialty === selectedSpecialty);
+  const displayLawyers = lawyers.filter((l) => l.specialty !== "geral");
 
   return (
     <section className="py-16 px-4 bg-gradient-to-b from-background via-muted/30 to-background">
@@ -76,24 +59,6 @@ const LawyersShowcase = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             35 advogados altamente qualificados prontos para defender seus direitos
           </p>
-        </div>
-
-        {/* Filtros */}
-        <div className="flex flex-wrap gap-2 justify-center mb-12 animate-fade-in">
-          {specialtyFilters.map((filter) => {
-            const Icon = filter.icon;
-            return (
-              <Button
-                key={filter.value}
-                variant={selectedSpecialty === filter.value ? "default" : "outline"}
-                onClick={() => setSelectedSpecialty(filter.value)}
-                className="transition-all duration-300 hover-scale"
-              >
-                <Icon className="w-4 h-4 mr-2" />
-                {filter.label}
-              </Button>
-            );
-          })}
         </div>
 
         {/* Carrossel Responsivo */}
@@ -113,7 +78,7 @@ const LawyersShowcase = () => {
             className="w-full px-4"
           >
             <CarouselContent>
-              {filteredLawyers.map((lawyer) => (
+              {displayLawyers.map((lawyer) => (
                 <CarouselItem key={lawyer.id} className="basis-full">
                   <LawyerCard lawyer={lawyer} />
                 </CarouselItem>
@@ -127,12 +92,12 @@ const LawyersShowcase = () => {
           <div className="relative overflow-hidden py-4">
             <div className="flex gap-6 animate-marquee hover:pause-marquee">
               {/* Cards originais */}
-              {filteredLawyers.map((lawyer) => (
+              {displayLawyers.map((lawyer) => (
                 <LawyerCard key={lawyer.id} lawyer={lawyer} />
               ))}
               
               {/* Cards duplicados para loop infinito */}
-              {filteredLawyers.map((lawyer) => (
+              {displayLawyers.map((lawyer) => (
                 <LawyerCard key={`duplicate-${lawyer.id}`} lawyer={lawyer} />
               ))}
             </div>
@@ -142,8 +107,8 @@ const LawyersShowcase = () => {
         {/* Contador */}
         <div className="text-center mt-12 animate-fade-in">
           <p className="text-muted-foreground">
-            Exibindo <span className="font-bold text-primary">{filteredLawyers.length}</span>{" "}
-            {filteredLawyers.length === 1 ? "advogado" : "advogados"}
+            Exibindo <span className="font-bold text-primary">{displayLawyers.length}</span>{" "}
+            {displayLawyers.length === 1 ? "advogado" : "advogados"}
           </p>
         </div>
       </div>

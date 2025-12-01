@@ -674,21 +674,40 @@ Seja objetivo e direto.`;
       }
       
       if (lastUserMessage) {
-        // Se já tem transferência pendente, verificar confirmação
+        // Sempre detectar a especialidade da mensagem atual primeiro
+        let currentDetection = null;
+        if (!isGreetingOnly(lastUserMessage.content)) {
+          currentDetection = await detectSpecialtyWithAI(lastUserMessage.content, messages);
+          console.log("🔍 [CONTEXT CHECK] Current detection:", currentDetection);
+        }
+        
+        // Se já tem transferência pendente, verificar confirmação OU mudança de contexto
         if (existingPendingTransfer) {
-          // Regex mais flexível para capturar variações de digitação (ssim, sssim, etc.)
-          const confirmationPhrases = /(s+im|sim|quero|pode|claro|pode ser|ok|tá|ta|beleza|aceito|por favor|gostaria|vamos|queria|vamo|bora|autorizo|pode sim|tudo bem|tranquilo|blz|isso|exato|correto|afirmativo)/i;
-          const userConfirmed = confirmationPhrases.test(lastUserMessage.content.toLowerCase());
-          
-          console.log(`🔍 [CONFIRMATION CHECK] User message: "${lastUserMessage.content}" | Confirmed: ${userConfirmed}`);
-          
-          if (userConfirmed) {
-            needsTransfer = true;
-            newLawyerId = existingPendingTransfer;
-            console.log(`✅ User confirmed transfer to: ${newLawyerId}`);
+          // Se detectou NOVA especialidade diferente da pendente, substituir
+          if (currentDetection?.lawyerId && currentDetection.confidence > 0.75 && currentDetection.lawyerId !== existingPendingTransfer) {
+            console.log(`🔄 [CONTEXT CHANGE] New specialty detected, replacing pending transfer`);
+            console.log(`   Old: ${existingPendingTransfer}`);
+            console.log(`   New: ${currentDetection.lawyerId}`);
             
-            // Limpar pending transfer após confirmação
+            // Limpar transferência antiga e sugerir nova
+            newLawyerId = currentDetection.lawyerId;
+            pendingTransferLawyer = newLawyerId;
+            shouldAskPermission = true;
+            
+            // Atualizar no banco
             if (sessionId && leadData.leadId) {
+              const updateData: any = {
+                pending_transfer_lawyer: newLawyerId,
+                detected_problem: currentDetection.subSpecialty
+              };
+              
+              if (currentDetection.dynamicLawyer) {
+                updateData.dynamic_lawyer = currentDetection.dynamicLawyer;
+                console.log("✨ [DYNAMIC LAWYER] Saved to lead:", currentDetection.dynamicLawyer.name);
+              }
+              
+              console.log("📝 [DETECTED PROBLEM] Saved:", currentDetection.subSpecialty);
+              
               await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
                 method: 'PATCH',
                 headers: {
@@ -697,43 +716,25 @@ Seja objetivo e direto.`;
                   'Content-Type': 'application/json',
                   'Prefer': 'return=minimal'
                 },
-                body: JSON.stringify({
-                  pending_transfer_lawyer: null
-                })
+                body: JSON.stringify(updateData)
               });
             }
-          } else {
-            console.log("❌ User did not confirm transfer, continuing with Carlos");
-          }
-        } else {
-          // Não tem transferência pendente, verificar se é saudação antes de detectar
-          if (isGreetingOnly(lastUserMessage.content)) {
-            console.log("👋 [GREETING] Skipping detection for greeting:", lastUserMessage.content);
-          } else {
-            // Usar IA para detectar
-            const detection = await detectSpecialtyWithAI(lastUserMessage.content, messages);
+          } 
+          // Se NÃO detectou nova especialidade, verificar confirmação da pendente
+          else if (!currentDetection || currentDetection.confidence < 0.5) {
+            // Regex mais flexível para capturar variações de digitação (ssim, sssim, etc.)
+            const confirmationPhrases = /(s+im|sim|quero|pode|claro|pode ser|ok|tá|ta|beleza|aceito|por favor|gostaria|vamos|queria|vamo|bora|autorizo|pode sim|tudo bem|tranquilo|blz|isso|exato|correto|afirmativo)/i;
+            const userConfirmed = confirmationPhrases.test(lastUserMessage.content.toLowerCase());
             
-            if (detection.lawyerId && detection.confidence > 0.75) {
-              newLawyerId = detection.lawyerId;
-              pendingTransferLawyer = newLawyerId;
-              shouldAskPermission = true;
-              console.log(`🤔 [AI DETECTION] Asking permission to transfer to: ${newLawyerId} (confidence: ${detection.confidence})`);
+            console.log(`🔍 [CONFIRMATION CHECK] User message: "${lastUserMessage.content}" | Confirmed: ${userConfirmed}`);
+            
+            if (userConfirmed) {
+              needsTransfer = true;
+              newLawyerId = existingPendingTransfer;
+              console.log(`✅ User confirmed transfer to: ${newLawyerId}`);
               
-              // Salvar pending transfer, advogado dinâmico e problema detectado no banco
+              // Limpar pending transfer após confirmação
               if (sessionId && leadData.leadId) {
-                const updateData: any = {
-                  pending_transfer_lawyer: newLawyerId,
-                  detected_problem: detection.subSpecialty // Salvar o problema detectado
-                };
-                
-                // Se criou advogado dinâmico, salvar também
-                if (detection.dynamicLawyer) {
-                  updateData.dynamic_lawyer = detection.dynamicLawyer;
-                  console.log("✨ [DYNAMIC LAWYER] Saved to lead:", detection.dynamicLawyer.name);
-                }
-                
-                console.log("📝 [DETECTED PROBLEM] Saved:", detection.subSpecialty);
-                
                 await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
                   method: 'PATCH',
                   headers: {
@@ -742,9 +743,47 @@ Seja objetivo e direto.`;
                     'Content-Type': 'application/json',
                     'Prefer': 'return=minimal'
                   },
-                  body: JSON.stringify(updateData)
+                  body: JSON.stringify({
+                    pending_transfer_lawyer: null
+                  })
                 });
               }
+            } else {
+              console.log("❌ User did not confirm transfer, continuing with Carlos");
+            }
+          }
+        } else {
+          // Não tem transferência pendente
+          if (currentDetection?.lawyerId && currentDetection.confidence > 0.75) {
+            newLawyerId = currentDetection.lawyerId;
+            pendingTransferLawyer = newLawyerId;
+            shouldAskPermission = true;
+            console.log(`🤔 [AI DETECTION] Asking permission to transfer to: ${newLawyerId} (confidence: ${currentDetection.confidence})`);
+            
+            // Salvar pending transfer, advogado dinâmico e problema detectado no banco
+            if (sessionId && leadData.leadId) {
+              const updateData: any = {
+                pending_transfer_lawyer: newLawyerId,
+                detected_problem: currentDetection.subSpecialty
+              };
+              
+              if (currentDetection.dynamicLawyer) {
+                updateData.dynamic_lawyer = currentDetection.dynamicLawyer;
+                console.log("✨ [DYNAMIC LAWYER] Saved to lead:", currentDetection.dynamicLawyer.name);
+              }
+              
+              console.log("📝 [DETECTED PROBLEM] Saved:", currentDetection.subSpecialty);
+              
+              await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
+                method: 'PATCH',
+                headers: {
+                  'apikey': SUPABASE_SERVICE_ROLE_KEY!,
+                  'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+                  'Content-Type': 'application/json',
+                  'Prefer': 'return=minimal'
+                },
+                body: JSON.stringify(updateData)
+              });
             }
           }
         }

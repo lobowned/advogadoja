@@ -9,6 +9,18 @@ export type Lawyer = {
   subSpecialty: string;
   keywords: string[];
   bio: string;
+  isVirtual?: boolean;
+};
+
+export type DynamicLawyer = {
+  id: string;
+  name: string;
+  photo: string;
+  oab: string;
+  specialty: string;
+  subSpecialty: string;
+  bio: string;
+  isVirtual: true;
 };
 
 export const lawyers: Lawyer[] = [

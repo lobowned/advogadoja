@@ -33,186 +33,242 @@ serve(async (req) => {
     console.log("✅ All environment variables loaded");
     console.log("📨 Received messages:", messages.length, "Current lawyer:", currentLawyerId, "Session:", sessionId);
 
-    // NÍVEL 1: Detecção específica por sub-especialidade (direciona para advogado específico)
-    const detectSpecificLawyer = (text: string): string | null => {
-      const lowerText = text.toLowerCase();
+    // FUNÇÃO DE CRIAÇÃO DE ADVOGADO DINÂMICO
+    const createDynamicLawyer = (specialty: string, subSpecialty: string): any => {
+      const specialtyNames: Record<string, { name: string; gender: string; photo: string }> = {
+        tributario: { 
+          name: 'Dr. Eduardo Fiscal', 
+          gender: 'M',
+          photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop'
+        },
+        ambiental: { 
+          name: 'Dra. Carolina Verde', 
+          gender: 'F',
+          photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop'
+        },
+        imobiliario: { 
+          name: 'Dr. Henrique Imóveis', 
+          gender: 'M',
+          photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop'
+        },
+        bancario: { 
+          name: 'Dra. Luciana Bancária', 
+          gender: 'F',
+          photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop'
+        },
+        empresarial: { 
+          name: 'Dr. Roberto Empresarial', 
+          gender: 'M',
+          photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop'
+        },
+        administrativo: { 
+          name: 'Dra. Fernanda Administrativa', 
+          gender: 'F',
+          photo: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=200&h=200&fit=crop'
+        },
+        internacional: { 
+          name: 'Dr. Paulo Internacional', 
+          gender: 'M',
+          photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop'
+        },
+        eleitoral: { 
+          name: 'Dra. Beatriz Eleitoral', 
+          gender: 'F',
+          photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop'
+        },
+      };
       
-      // PLANO DE SAÚDE - Prioridade máxima
-      if (/plano.*de?.*saúde|cirurgia.*negada|tratamento.*negado|medicamento.*negado|procedimento.*negado|cobertura.*negada|UTI.*negada|home.*care|unimed|bradesco.*saúde|amil|hapvida|sul.*américa|ANS|carência.*plano|reajuste.*abusivo.*saúde|autorização.*negada/i.test(lowerText)) {
-        return 'helena-vasconcelos';
+      const specialtyData = specialtyNames[specialty.toLowerCase()] || {
+        name: `Dr. Especialista em ${subSpecialty}`,
+        gender: 'M',
+        photo: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=200&h=200&fit=crop'
+      };
+      
+      return {
+        id: `dynamic-${specialty}-${Date.now()}`,
+        name: specialtyData.name,
+        photo: specialtyData.photo,
+        oab: 'OAB/SP Virtual',
+        specialty,
+        subSpecialty,
+        bio: `Especialista em ${subSpecialty} com ampla experiência na área.`,
+        isVirtual: true,
+        gender: specialtyData.gender
+      };
+    };
+
+    // LISTA COMPLETA DE ADVOGADOS PARA A IA
+    const lawyersListForAI = `ADVOGADOS DISPONÍVEIS:
+
+FAMÍLIA (6 advogados):
+1. maria-santos: Divórcio e Separação
+2. rafael-oliveira: Guarda de Filhos
+3. juliana-costa: Pensão Alimentícia
+4. fernando-lima: Alienação Parental
+5. patricia-almeida: União Estável
+6. rodrigo-barros: Inventário e Herança
+
+TRABALHISTA (6 advogados):
+7. ricardo-mendes: Demissão Sem Justa Causa
+8. ana-rodrigues: Acidente de Trabalho
+9. lucas-ferreira: Assédio Moral
+10. carla-souza: Assédio Sexual
+11. paulo-martins: Horas Extras
+12. beatriz-campos: Rescisão Indireta
+
+CIVIL (11 advogados):
+13. gustavo-reis: Cobranças e Dívidas
+14. camila-nunes: Danos Morais
+15. diego-santos: Contratos
+16. fernanda-lima: Despejo e Locação
+17. thiago-rocha: Imóveis e Usucapião
+18. marina-costa: Direito do Consumidor
+19. helena-vasconcelos: Direito da Saúde / Planos / SUS / Cirurgias
+20. gabriel-monteiro: Crimes Digitais e Golpes (PIX, WhatsApp, Invasão)
+21. renata-machado: Erro Médico
+22. leonardo-prado: Direito Aéreo (voos, bagagens)
+23. cristina-torres: Multas de Trânsito (recurso, CNH)
+
+PREVIDENCIÁRIO (6 advogados):
+24. andre-silva: Aposentadoria
+25. claudia-martins: Auxílio-Doença
+26. marcos-oliveira: BPC/LOAS
+27. isabela-santos: Pensão por Morte
+28. renato-alves: Revisão de Benefícios
+29. sandra-lima: Aposentadoria Rural
+
+PENAL (6 advogados):
+30. roberto-costa: Flagrante e Prisão
+31. vanessa-reis: Habeas Corpus
+32. joao-fernandes: Violência Doméstica
+33. larissa-souza: Crimes Patrimoniais
+34. eduardo-gomes: Crimes de Trânsito
+35. monica-alves: Defesa Criminal Geral`;
+
+    // TOOL DE DETECÇÃO DE ESPECIALIDADE
+    const detectSpecialtyTool = {
+      type: "function",
+      function: {
+        name: "detect_legal_specialty",
+        description: "Detecta a especialidade jurídica do problema do usuário e sugere o advogado mais adequado",
+        parameters: {
+          type: "object",
+          properties: {
+            specialty: {
+              type: "string",
+              enum: ["familia", "trabalhista", "civil", "previdenciario", "penal", "tributario", "ambiental", "imobiliario", "bancario", "empresarial", "administrativo", "internacional", "eleitoral", "outro"],
+              description: "Área do direito identificada"
+            },
+            subSpecialty: {
+              type: "string",
+              description: "Sub-especialidade específica (ex: 'divórcio', 'cirurgia bariátrica SUS', 'golpe PIX')"
+            },
+            suggestedLawyerId: {
+              type: "string",
+              description: "ID do advogado mais adequado da lista, ou 'DYNAMIC' se não houver nenhum adequado"
+            },
+            confidence: {
+              type: "number",
+              description: "Confiança na detecção de 0 a 1"
+            },
+            reasoning: {
+              type: "string",
+              description: "Explicação breve do motivo da escolha"
+            }
+          },
+          required: ["specialty", "subSpecialty", "confidence", "reasoning"]
+        }
       }
-      
-      // GOLPES DIGITAIS / CRIMES CIBERNÉTICOS
-      if (/golpe.*pix|golpe.*whatsapp|golpe.*internet|conta.*invadida|hackeado|hackear|perfil.*falso|vazamento.*dados|lgpd|fotos.*vazadas|nudes.*vazados|extorsão|ransomware|fake.*news|deepfake|stalker|perseguição.*online|fraude.*digital|phishing|crimes.*digitais/i.test(lowerText)) {
-        return 'gabriel-monteiro';
+    };
+
+    // DETECÇÃO INTELIGENTE COM IA
+    const detectSpecialtyWithAI = async (userMessage: string, conversationHistory: any[]): Promise<{
+      lawyerId: string | null;
+      dynamicLawyer: any | null;
+      specialty: string;
+      subSpecialty: string;
+      confidence: number;
+    }> => {
+      try {
+        console.log("🧠 [AI DETECTION] Analyzing:", userMessage.substring(0, 100));
+        
+        const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${LOVABLE_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            model: "google/gemini-2.5-flash",
+            messages: [
+              { 
+                role: "system", 
+                content: `Você é um sistema de triagem jurídica brasileira. Analise o problema do usuário e determine:
+1. A área do direito (família, trabalhista, civil, previdenciário, penal, etc.)
+2. A sub-especialidade específica
+3. O advogado mais adequado da lista abaixo
+
+${lawyersListForAI}
+
+IMPORTANTE:
+- Se NENHUM advogado da lista for adequado, retorne suggestedLawyerId: "DYNAMIC"
+- Para casos de cirurgia bariátrica, SUS, tratamento pelo SUS: helena-vasconcelos
+- Para casos de anulação de casamento: rodrigo-barros
+- Para casos de retificação de registro, mudança de nome: patricia-almeida
+- Para problemas tributários, fiscais, imposto: DYNAMIC (tributario)
+- Para problemas ambientais: DYNAMIC (ambiental)
+- Para responsabilidade civil do Estado, prefeitura: DYNAMIC (administrativo)
+- Seja específico na subSpecialty para ajudar a criar o advogado dinâmico se necessário`
+              },
+              ...conversationHistory.slice(-10),
+              { role: "user", content: userMessage }
+            ],
+            tools: [detectSpecialtyTool],
+            tool_choice: { type: "function", function: { name: "detect_legal_specialty" } }
+          }),
+        });
+
+        if (!response.ok) {
+          console.error("❌ [AI DETECTION] Error:", response.status);
+          return { lawyerId: null, dynamicLawyer: null, specialty: 'geral', subSpecialty: '', confidence: 0 };
+        }
+
+        const data = await response.json();
+        const toolCall = data.choices?.[0]?.message?.tool_calls?.[0];
+        
+        if (toolCall) {
+          const args = JSON.parse(toolCall.function.arguments);
+          console.log("🧠 [AI DETECTION] Result:", args);
+          
+          // Se sugeriu criar advogado dinâmico
+          if (args.suggestedLawyerId === 'DYNAMIC' && args.confidence > 0.6) {
+            const dynamicLawyer = createDynamicLawyer(args.specialty, args.subSpecialty);
+            console.log("✨ [DYNAMIC LAWYER] Created:", dynamicLawyer.name);
+            
+            return {
+              lawyerId: dynamicLawyer.id,
+              dynamicLawyer,
+              specialty: args.specialty,
+              subSpecialty: args.subSpecialty,
+              confidence: args.confidence
+            };
+          }
+          
+          // Advogado existente
+          return {
+            lawyerId: args.suggestedLawyerId,
+            dynamicLawyer: null,
+            specialty: args.specialty,
+            subSpecialty: args.subSpecialty,
+            confidence: args.confidence
+          };
+        }
+        
+        return { lawyerId: null, dynamicLawyer: null, specialty: 'geral', subSpecialty: '', confidence: 0 };
+      } catch (error) {
+        console.error("❌ [AI DETECTION] Exception:", error);
+        return { lawyerId: null, dynamicLawyer: null, specialty: 'geral', subSpecialty: '', confidence: 0 };
       }
-      
-      // ERRO MÉDICO
-      if (/erro.*médico|negligência.*médica|negligência.*hospitalar|cirurgia.*errada|diagnóstico.*errado|infecção.*hospitalar|imperícia|imprudência.*médica|parto.*errado|sequela|morte.*hospital|morte.*médico|tratamento.*errado|medicamento.*errado|médico.*errou|cirurgia.*mal.*feita/i.test(lowerText)) {
-        return 'renata-machado';
-      }
-      
-      // PROBLEMAS COM COMPANHIAS AÉREAS
-      if (/voo.*cancelado|voo.*atrasado|overbooking|mala.*extraviada|bagagem.*perdida|companhia.*aérea|gol|latam|azul|avianca|reembolso.*passagem|conexão.*perdida|atraso.*aeroporto|perdi.*voo|extravio.*bagagem|não.*embarcaram/i.test(lowerText)) {
-        return 'leonardo-prado';
-      }
-      
-      // MULTAS DE TRÂNSITO (Administrativo)
-      if (/multa.*trânsito|multa.*de.*trânsito|recurso.*multa|pontos.*cnh|suspensão.*cnh|cassação.*cnh|detran|radar|blitz|autuação|auto.*infração|jari|cetran|multa.*injusta|pontos.*carteira/i.test(lowerText)) {
-        return 'cristina-torres';
-      }
-      
-      // CONSUMIDOR - Prioridade alta (negativação indevida, etc.)
-      if (/negativação|negativado|negativada|nome.*sujo|serasa|spc|boa.*vista|cobrança.*indevida|cobraram.*errado|fraude.*cartão|clonaram|não.*reconheço|débito.*automático/i.test(lowerText)) {
-        return 'marina-costa';
-      }
-      
-      // PENSÃO POR MORTE
-      if (/pensão.*(por|de)?.*morte|pai.*morreu|mãe.*morreu|marido.*morreu|esposa.*morreu|viúva|viúvo|dependente.*faleceu/i.test(lowerText)) {
-        return 'isabela-santos';
-      }
-      
-      // ACIDENTE DE TRABALHO
-      if (/acidente.*(de|no).*trabalho|machucou.*trabalho|lesão.*trabalho|doença.*ocupacional|CAT|afastado.*trabalho|LER|DORT/i.test(lowerText)) {
-        return 'ana-rodrigues';
-      }
-      
-      // ASSÉDIO MORAL
-      if (/assédio.*moral|humilha|humilhado|humilhação|chefe.*xinga|ambiente.*hostil|perseguição.*trabalho|constrangimento.*trabalho/i.test(lowerText)) {
-        return 'lucas-ferreira';
-      }
-      
-      // ASSÉDIO SEXUAL
-      if (/assédio.*sexual|cantada|investida.*sexual|importunação|abuso.*sexual.*trabalho|proposta.*indecente|toque.*indesejado/i.test(lowerText)) {
-        return 'carla-souza';
-      }
-      
-      // HORAS EXTRAS
-      if (/hora.*extra|horas.*extras|não.*paga.*hora|banco.*de.*horas|adicional.*noturno|excesso.*jornada/i.test(lowerText)) {
-        return 'paulo-martins';
-      }
-      
-      // RESCISÃO INDIRETA
-      if (/rescisão.*indireta|salário.*atrasado|não.*paga.*salário|falta.*grave.*empregador|forçando.*pedir.*demissão/i.test(lowerText)) {
-        return 'beatriz-campos';
-      }
-      
-      // DIVÓRCIO
-      if (/divórcio|divorciar|separação|separar.*casal|quero.*me.*separar|ex-marido|ex-esposa|fim.*do.*casamento/i.test(lowerText)) {
-        return 'maria-santos';
-      }
-      
-      // GUARDA DE FILHOS
-      if (/guarda.*(de|do|da)?.*(filho|filha|criança|menor)|visitação|convivência|não.*deixa.*ver|tirar.*guarda|perder.*guarda/i.test(lowerText)) {
-        return 'rafael-oliveira';
-      }
-      
-      // PENSÃO ALIMENTÍCIA
-      if (/pensão.*alimentícia|pensão.*de.*alimentos|não.*paga.*pensão|pensão.*atrasada|aumentar.*pensão|diminuir.*pensão|exoneração/i.test(lowerText)) {
-        return 'juliana-costa';
-      }
-      
-      // ALIENAÇÃO PARENTAL
-      if (/alienação.*parental|manipula|fala.*mal|afastar.*do.*pai|afastar.*da.*mãe|impede.*visita|dificulta.*convivência/i.test(lowerText)) {
-        return 'fernando-lima';
-      }
-      
-      // UNIÃO ESTÁVEL
-      if (/união.*estável|companheiro|companheira|moramos.*juntos|vivemos.*juntos|reconhecer.*união|dissolução.*união/i.test(lowerText)) {
-        return 'patricia-almeida';
-      }
-      
-      // INVENTÁRIO E HERANÇA
-      if (/herança|inventário|bens.*do.*falecido|partilha.*herança|herdeiro|espólio|testamento|arrolamento/i.test(lowerText)) {
-        return 'rodrigo-barros';
-      }
-      
-      // DEMISSÃO
-      if (/demissão|demitido|demitida|mandaram.*embora|dispensado|perdeu.*emprego|justa.*causa|verbas.*rescisórias/i.test(lowerText)) {
-        return 'ricardo-mendes';
-      }
-      
-      // APOSENTADORIA
-      if (/aposentadoria|aposentar|quero.*aposentar|já.*posso.*aposentar|tempo.*de.*contribuição|aposentadoria.*por.*idade/i.test(lowerText)) {
-        return 'andre-silva';
-      }
-      
-      // AUXÍLIO-DOENÇA
-      if (/auxílio.*doença|auxílio-doença|negado.*auxílio|cortaram.*auxílio|perícia.*médica|não.*consigo.*trabalhar|afastado.*doença/i.test(lowerText)) {
-        return 'claudia-martins';
-      }
-      
-      // BPC/LOAS
-      if (/bpc|loas|benefício.*assistencial|idoso.*carente|baixa.*renda|nunca.*contribui|deficiente.*carente/i.test(lowerText)) {
-        return 'marcos-oliveira';
-      }
-      
-      // REVISÃO DE BENEFÍCIOS
-      if (/revisão.*benefício|revisar.*aposentadoria|benefício.*baixo|valor.*errado|buraco.*negro|teto.*previdenciário/i.test(lowerText)) {
-        return 'renato-alves';
-      }
-      
-      // APOSENTADORIA RURAL
-      if (/rural|trabalhador.*rural|agricultura|roça|campo|lavrador|sitiante|meeiro|boia-fria|trabalho.*no.*campo/i.test(lowerText)) {
-        return 'sandra-lima';
-      }
-      
-      // FLAGRANTE E PRISÃO
-      if (/preso|presa|flagrante|detido|delegacia|cadeia|algemado|audiência.*custódia|foi.*preso/i.test(lowerText)) {
-        return 'roberto-costa';
-      }
-      
-      // HABEAS CORPUS
-      if (/habeas.*corpus|soltar|prisão.*preventiva|mandado.*prisão|preso.*injustamente|relaxamento|tirar.*da.*cadeia/i.test(lowerText)) {
-        return 'vanessa-reis';
-      }
-      
-      // VIOLÊNCIA DOMÉSTICA
-      if (/violência.*doméstica|maria.*da.*penha|agressão|medida.*protetiva|espancou|bateu|agrediu|ameaça.*matar/i.test(lowerText)) {
-        return 'joao-fernandes';
-      }
-      
-      // CRIMES PATRIMONIAIS
-      if (/roubo|furto|estelionato|receptação|roubaram|furtaram|caí.*em.*golpe|me.*roubaram/i.test(lowerText)) {
-        return 'larissa-souza';
-      }
-      
-      // CRIMES DE TRÂNSITO
-      if (/acidente.*carro|acidente.*moto|dirigir.*embriagado|bêbado.*volante|alcoolemia|CNH.*cassada|atropelamento|bateu.*carro/i.test(lowerText)) {
-        return 'eduardo-gomes';
-      }
-      
-      // DEFESA CRIMINAL GERAL
-      if (/processo.*criminal|denúncia|réu|inquérito|respondendo.*processo|defesa.*criminal/i.test(lowerText)) {
-        return 'monica-alves';
-      }
-      
-      // COBRANÇAS E DÍVIDAS
-      if (/cobrança|dívida|devo.*dinheiro|devedor|empréstimo|cheque|promissória|execução|me.*cobrando|protesto/i.test(lowerText)) {
-        return 'gustavo-reis';
-      }
-      
-      // DANOS MORAIS (GERAL)
-      if (/dano.*moral|ofensa|constrangimento|humilhação.*pública|injúria|difamação|calúnia|exposto.*ridículo/i.test(lowerText)) {
-        return 'camila-nunes';
-      }
-      
-      // CONTRATOS
-      if (/contrato|descumpriu.*contrato|acordo|quebra.*de.*contrato|cláusula|rescisão.*contrato|não.*cumpriram/i.test(lowerText)) {
-        return 'diego-santos';
-      }
-      
-      // DESPEJO E LOCAÇÃO
-      if (/despejo|aluguel|inquilino|locação|não.*paga.*aluguel|ação.*de.*despejo|locador|locatário/i.test(lowerText)) {
-        return 'fernanda-lima';
-      }
-      
-      // IMÓVEIS E USUCAPIÃO
-      if (/usucapião|propriedade|posse|registro.*imóvel|escritura|regularização|morando.*há.*anos|invasão/i.test(lowerText)) {
-        return 'thiago-rocha';
-      }
-      
-      return null;
     };
 
     // NÍVEL 2: Detecção geral por categoria (fallback quando não encontra advogado específico)
@@ -618,27 +674,27 @@ Seja objetivo e direto.`;
             console.log("❌ User did not confirm transfer, continuing with Carlos");
           }
         } else {
-          // Não tem transferência pendente, detectar nova especialidade
-          // NÍVEL 1: Tentar detectar advogado específico primeiro
-          newLawyerId = detectSpecificLawyer(lastUserMessage.content);
+          // Não tem transferência pendente, usar IA para detectar
+          const detection = await detectSpecialtyWithAI(lastUserMessage.content, messages);
           
-          // NÍVEL 2: Se não encontrou específico, usar categoria geral
-          if (!newLawyerId) {
-            const detectedSpecialty = detectGeneralSpecialty(lastUserMessage.content);
-            if (detectedSpecialty) {
-              const specialists = lawyersBySpecialty[detectedSpecialty];
-              newLawyerId = specialists[Math.floor(Math.random() * specialists.length)];
-            }
-          }
-          
-          if (newLawyerId) {
-            // Em vez de transferir imediatamente, salvar como pendente e pedir autorização
+          if (detection.lawyerId && detection.confidence > 0.6) {
+            newLawyerId = detection.lawyerId;
             pendingTransferLawyer = newLawyerId;
             shouldAskPermission = true;
-            console.log(`🤔 Detected specialty, asking permission to transfer to: ${newLawyerId}`);
+            console.log(`🤔 [AI DETECTION] Asking permission to transfer to: ${newLawyerId} (confidence: ${detection.confidence})`);
             
-            // Salvar pending transfer no banco
+            // Salvar pending transfer e advogado dinâmico no banco
             if (sessionId && leadData.leadId) {
+              const updateData: any = {
+                pending_transfer_lawyer: newLawyerId
+              };
+              
+              // Se criou advogado dinâmico, salvar também
+              if (detection.dynamicLawyer) {
+                updateData.dynamic_lawyer = detection.dynamicLawyer;
+                console.log("✨ [DYNAMIC LAWYER] Saved to lead:", detection.dynamicLawyer.name);
+              }
+              
               await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
                 method: 'PATCH',
                 headers: {
@@ -647,9 +703,7 @@ Seja objetivo e direto.`;
                   'Content-Type': 'application/json',
                   'Prefer': 'return=minimal'
                 },
-                body: JSON.stringify({
-                  pending_transfer_lawyer: newLawyerId
-                })
+                body: JSON.stringify(updateData)
               });
             }
           }
@@ -713,56 +767,92 @@ VARIAÇÃO DE ESTILO (use diferentes formas):
 
     // Se detectou especialidade, retornar mensagem hardcoded de autorização
     if (shouldAskPermission && pendingTransferLawyer) {
-      const lawyerNames: Record<string, string> = {
-        'maria-santos': 'Dra. Maria Santos',
-        'rafael-oliveira': 'Dr. Rafael Oliveira',
-        'juliana-costa': 'Dra. Juliana Costa',
-        'fernando-lima': 'Dr. Fernando Lima',
-        'patricia-almeida': 'Dra. Patrícia Almeida',
-        'rodrigo-barros': 'Dr. Rodrigo Barros',
-        'ricardo-mendes': 'Dr. Ricardo Mendes',
-        'ana-rodrigues': 'Dra. Ana Rodrigues',
-        'lucas-ferreira': 'Dr. Lucas Ferreira',
-        'carla-souza': 'Dra. Carla Souza',
-        'paulo-martins': 'Dr. Paulo Martins',
-        'beatriz-campos': 'Dra. Beatriz Campos',
-        'andre-silva': 'Dr. André Silva',
-        'claudia-martins': 'Dra. Cláudia Martins',
-        'marcos-oliveira': 'Dr. Marcos Oliveira',
-        'isabela-santos': 'Dra. Isabela Santos',
-        'renato-alves': 'Dr. Renato Alves',
-        'sandra-lima': 'Dra. Sandra Lima',
-        'roberto-costa': 'Dr. Roberto Costa',
-        'vanessa-reis': 'Dra. Vanessa Reis',
-        'joao-fernandes': 'Dr. João Fernandes',
-        'larissa-souza': 'Dra. Larissa Souza',
-        'eduardo-gomes': 'Dr. Eduardo Gomes',
-        'monica-alves': 'Dra. Mônica Alves',
-        'gustavo-reis': 'Dr. Gustavo Reis',
-        'camila-nunes': 'Dra. Camila Nunes',
-        'diego-santos': 'Dr. Diego Santos',
-        'fernanda-lima': 'Dra. Fernanda Lima',
-        'thiago-rocha': 'Dr. Thiago Rocha',
-        'marina-costa': 'Dra. Marina Costa',
-        'helena-vasconcelos': 'Dra. Helena Vasconcelos',
-        'gabriel-monteiro': 'Dr. Gabriel Monteiro',
-        'renata-machado': 'Dra. Renata Machado',
-        'leonardo-prado': 'Dr. Leonardo Prado',
-        'cristina-torres': 'Dra. Cristina Torres',
-      };
+      // Buscar informações do advogado (pode ser dinâmico)
+      let targetLawyerName = 'especialista';
+      let targetGender = 'M';
       
-      const targetLawyerName = lawyerNames[pendingTransferLawyer] || 'especialista';
+      // Verificar se é advogado dinâmico
+      if (pendingTransferLawyer.startsWith('dynamic-')) {
+        try {
+          const leadResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}&select=dynamic_lawyer`, {
+            headers: {
+              'apikey': SUPABASE_SERVICE_ROLE_KEY!,
+              'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`
+            }
+          });
+          
+          if (leadResponse.ok) {
+            const leadDataResult = await leadResponse.json();
+            const dynamicLawyer = leadDataResult[0]?.dynamic_lawyer;
+            if (dynamicLawyer) {
+              targetLawyerName = dynamicLawyer.name;
+              targetGender = dynamicLawyer.gender || 'M';
+              console.log("✨ [DYNAMIC LAWYER] Using:", targetLawyerName);
+            }
+          }
+        } catch (error) {
+          console.error("Error fetching dynamic lawyer:", error);
+        }
+      } else {
+        // Advogado estático
+        const lawyerNames: Record<string, { name: string; gender: string }> = {
+          'maria-santos': { name: 'Dra. Maria Santos', gender: 'F' },
+          'rafael-oliveira': { name: 'Dr. Rafael Oliveira', gender: 'M' },
+          'juliana-costa': { name: 'Dra. Juliana Costa', gender: 'F' },
+          'fernando-lima': { name: 'Dr. Fernando Lima', gender: 'M' },
+          'patricia-almeida': { name: 'Dra. Patrícia Almeida', gender: 'F' },
+          'rodrigo-barros': { name: 'Dr. Rodrigo Barros', gender: 'M' },
+          'ricardo-mendes': { name: 'Dr. Ricardo Mendes', gender: 'M' },
+          'ana-rodrigues': { name: 'Dra. Ana Rodrigues', gender: 'F' },
+          'lucas-ferreira': { name: 'Dr. Lucas Ferreira', gender: 'M' },
+          'carla-souza': { name: 'Dra. Carla Souza', gender: 'F' },
+          'paulo-martins': { name: 'Dr. Paulo Martins', gender: 'M' },
+          'beatriz-campos': { name: 'Dra. Beatriz Campos', gender: 'F' },
+          'andre-silva': { name: 'Dr. André Silva', gender: 'M' },
+          'claudia-martins': { name: 'Dra. Cláudia Martins', gender: 'F' },
+          'marcos-oliveira': { name: 'Dr. Marcos Oliveira', gender: 'M' },
+          'isabela-santos': { name: 'Dra. Isabela Santos', gender: 'F' },
+          'renato-alves': { name: 'Dr. Renato Alves', gender: 'M' },
+          'sandra-lima': { name: 'Dra. Sandra Lima', gender: 'F' },
+          'roberto-costa': { name: 'Dr. Roberto Costa', gender: 'M' },
+          'vanessa-reis': { name: 'Dra. Vanessa Reis', gender: 'F' },
+          'joao-fernandes': { name: 'Dr. João Fernandes', gender: 'M' },
+          'larissa-souza': { name: 'Dra. Larissa Souza', gender: 'F' },
+          'eduardo-gomes': { name: 'Dr. Eduardo Gomes', gender: 'M' },
+          'monica-alves': { name: 'Dra. Mônica Alves', gender: 'F' },
+          'gustavo-reis': { name: 'Dr. Gustavo Reis', gender: 'M' },
+          'camila-nunes': { name: 'Dra. Camila Nunes', gender: 'F' },
+          'diego-santos': { name: 'Dr. Diego Santos', gender: 'M' },
+          'fernanda-lima': { name: 'Dra. Fernanda Lima', gender: 'F' },
+          'thiago-rocha': { name: 'Dr. Thiago Rocha', gender: 'M' },
+          'marina-costa': { name: 'Dra. Marina Costa', gender: 'F' },
+          'helena-vasconcelos': { name: 'Dra. Helena Vasconcelos', gender: 'F' },
+          'gabriel-monteiro': { name: 'Dr. Gabriel Monteiro', gender: 'M' },
+          'renata-machado': { name: 'Dra. Renata Machado', gender: 'F' },
+          'leonardo-prado': { name: 'Dr. Leonardo Prado', gender: 'M' },
+          'cristina-torres': { name: 'Dra. Cristina Torres', gender: 'F' },
+        };
+        
+        const lawyerData = lawyerNames[pendingTransferLawyer];
+        if (lawyerData) {
+          targetLawyerName = lawyerData.name;
+          targetGender = lawyerData.gender;
+        }
+      }
+      
+      const pronoun = targetGender === 'F' ? 'ela' : 'ele';
+      const shortName = targetLawyerName.split(' ').slice(1).join(' ');
       
       // Retornar diretamente mensagem de permissão sem chamar IA
       const permissionMessages = [
-        `Ah, isso é caso de ${targetLawyerName.split(' ').slice(1).join(' ')}. Posso te passar pra ${targetLawyerName.includes('Dra.') ? 'ela' : 'ele'} que é especialista nisso? 👍`,
-        `Olha, esse caso é com ${targetLawyerName}. Transfiro pra ${targetLawyerName.includes('Dra.') ? 'ela' : 'ele'}?`,
-        `Bom, aí é com ${targetLawyerName.split(' ').slice(1).join(' ')}. Passo pra ${targetLawyerName.includes('Dra.') ? 'ela' : 'ele'}? É especialista nisso.`,
+        `Ah, isso é caso de ${shortName}. Posso te passar pra ${pronoun} que é especialista nisso? 👍`,
+        `Olha, esse caso é com ${targetLawyerName}. Transfiro pra ${pronoun}?`,
+        `Bom, aí é com ${shortName}. Passo pra ${pronoun}? É especialista nisso.`,
       ];
       
       const randomMessage = permissionMessages[Math.floor(Math.random() * permissionMessages.length)];
       
-      console.log("🤖 Returning hardcoded permission message:", randomMessage);
+      console.log("🤖 Returning permission message for:", targetLawyerName);
       
       // Retornar diretamente sem chamar a IA
       return new Response(

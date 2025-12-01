@@ -308,7 +308,7 @@ serve(async (req) => {
     };
 
     // Check if we need to collect lead info (always check, not just after 5 messages)
-    if (sessionId && currentLawyerId !== 'carlos-silva') {
+    if (sessionId) {
       try {
         console.log("🔍 Checking for existing lead with session:", sessionId);
         
@@ -513,7 +513,7 @@ Seja objetivo e direto.`;
               message_count: messageCount,
               assigned_lawyer: currentLawyerId,
               specialty: getSpecialtyFromLawyerId(currentLawyerId),
-              problem_detected: true,
+              problem_detected: currentLawyerId !== 'carlos-silva',
               conversation_history: messages
             })
           });

@@ -1,14 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
-import NicheSelector from "@/components/NicheSelector";
+import LawyerChatSection from "@/components/LawyerChatSection";
 
 const Index = () => {
-  const navigate = useNavigate();
-
   const handleCTA = () => {
-    const nicheSection = document.getElementById("niche-selector");
-    if (nicheSection) {
-      nicheSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    const chatSection = document.getElementById("lawyer-chat");
+    if (chatSection) {
+      chatSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -49,9 +46,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Niche Selector */}
-      <div id="niche-selector">
-        <NicheSelector />
+      {/* Lawyer Chat */}
+      <div id="lawyer-chat">
+        <LawyerChatSection />
       </div>
 
       {/* Footer */}

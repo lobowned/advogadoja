@@ -8,8 +8,8 @@ import { generalQuestions } from "@/data/general-questions";
 import { QuestionRenderer } from "@/components/questionnaire/QuestionRenderer";
 import { ProgressIndicator } from "@/components/questionnaire/ProgressIndicator";
 import { Question, CaseAnswers } from "@/types/legal-flows";
-import { generateProtocolId } from "@/utils/protocol-generator";
 import { useToast } from "@/hooks/use-toast";
+import { useSubmitCase } from "@/hooks/useSubmitCase";
 
 const DynamicQuestionnaire = () => {
   const navigate = useNavigate();
@@ -74,21 +74,27 @@ const DynamicQuestionnaire = () => {
     }
   };
 
+  const { submitCase } = useSubmitCase();
+
   const handleSubmit = async () => {
     setIsSubmitting(true);
     
     try {
-      const protocolId = generateProtocolId();
-      
-      // TODO: Integrar com Lovable Cloud para salvar os dados
+      const result = await submitCase({
+        nicheId: nicheId!,
+        actionId: actionId!,
+        answers,
+        documents: [], // TODO: Implementar upload de documentos na próxima fase
+      });
       
       toast({
         title: "Sucesso!",
-        description: "Seu caso foi registrado com sucesso",
+        description: `Seu caso foi registrado com o protocolo ${result.protocolId}`,
       });
       
-      navigate(`/concluido?protocol=${protocolId}`);
+      navigate(`/concluido?protocol=${result.protocolId}`);
     } catch (error) {
+      console.error("Erro ao submeter caso:", error);
       toast({
         title: "Erro",
         description: "Erro ao enviar o formulário. Tente novamente.",

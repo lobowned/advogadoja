@@ -450,6 +450,7 @@ export const useLawyerChat = () => {
       // Função para digitar mensagem com humanização
       const typeMessage = async (text: string, forceNewMessage: boolean = false): Promise<string> => {
         let typedContent = '';
+        let newMessageCreated = false;
         
         for (let i = 0; i < text.length; i++) {
           const char = text[i];
@@ -493,9 +494,11 @@ export const useLawyerChat = () => {
             const wrongChar = wrongChars[Math.floor(Math.random() * wrongChars.length)];
             typedContent += wrongChar;
             
+            const shouldCreateNewMessage1 = forceNewMessage && !newMessageCreated;
+            
             setMessages(prev => {
               const last = prev[prev.length - 1];
-              if (!forceNewMessage && last?.role === 'assistant' && !('isTransfer' in last) && last.lawyerId === currentLawyer.id) {
+              if (!shouldCreateNewMessage1 && last?.role === 'assistant' && !('isTransfer' in last) && last.lawyerId === currentLawyer.id) {
                 return prev.map((m, idx) =>
                   idx === prev.length - 1
                     ? { ...m, content: typedContent }
@@ -513,6 +516,10 @@ export const useLawyerChat = () => {
               ];
             });
             
+            if (shouldCreateNewMessage1) {
+              newMessageCreated = true;
+            }
+            
             // Pausa ao digitar errado
             await new Promise(resolve => setTimeout(resolve, 50 + Math.random() * 80));
             
@@ -522,9 +529,11 @@ export const useLawyerChat = () => {
             // Apagar caractere errado
             typedContent = typedContent.slice(0, -1);
             
+            const shouldCreateNewMessage2 = forceNewMessage && !newMessageCreated;
+            
             setMessages(prev => {
               const last = prev[prev.length - 1];
-              if (!forceNewMessage && last?.role === 'assistant' && !('isTransfer' in last) && last.lawyerId === currentLawyer.id) {
+              if (!shouldCreateNewMessage2 && last?.role === 'assistant' && !('isTransfer' in last) && last.lawyerId === currentLawyer.id) {
                 return prev.map((m, idx) =>
                   idx === prev.length - 1
                     ? { ...m, content: typedContent }
@@ -534,6 +543,10 @@ export const useLawyerChat = () => {
               return prev;
             });
             
+            if (shouldCreateNewMessage2) {
+              newMessageCreated = true;
+            }
+            
             // Pausa antes de corrigir
             await new Promise(resolve => setTimeout(resolve, 60 + Math.random() * 80));
           }
@@ -541,9 +554,11 @@ export const useLawyerChat = () => {
           // Digitar o caractere correto
           typedContent += char;
           
+          const shouldCreateNewMessage = forceNewMessage && !newMessageCreated;
+          
           setMessages(prev => {
             const last = prev[prev.length - 1];
-            if (!forceNewMessage && last?.role === 'assistant' && !('isTransfer' in last) && last.lawyerId === currentLawyer.id) {
+            if (!shouldCreateNewMessage && last?.role === 'assistant' && !('isTransfer' in last) && last.lawyerId === currentLawyer.id) {
               return prev.map((m, idx) =>
                 idx === prev.length - 1
                   ? { ...m, content: typedContent }
@@ -560,6 +575,10 @@ export const useLawyerChat = () => {
               },
             ];
           });
+          
+          if (shouldCreateNewMessage) {
+            newMessageCreated = true;
+          }
           
           await new Promise(resolve => setTimeout(resolve, delay));
         }

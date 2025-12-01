@@ -64,11 +64,11 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
 
           {/* Main Title */}
           <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight animated-gradient-text text-shadow-hero animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Resolva Seu Problema Jurídico Hoje
+            Fale Agora com um Advogado
           </h1>
           
           <p className="mb-3 sm:mb-4 text-xl sm:text-2xl md:text-3xl text-white font-semibold text-shadow-hero animate-fade-up" style={{ animationDelay: "0.15s" }}>
-            Especialistas analisando seu caso em até 2 minutos — sem compromisso
+            Atendimento Imediato e Gratuito
           </p>
           
           <p className="mb-8 sm:mb-10 text-sm sm:text-base md:text-lg text-white/90 animate-fade-up" style={{ animationDelay: "0.2s" }}>
@@ -102,7 +102,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
             style={{ animationDelay: "0.3s" }}
           >
             <MessageCircle className="w-5 h-5 mr-2" />
-            Descobrir Meus Direitos (Grátis)
+            Falar com um Advogado agora
           </Button>
 
           {/* Micro-copy */}

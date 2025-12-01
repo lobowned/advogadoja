@@ -692,68 +692,96 @@ export const useLawyerChat = () => {
               .maybeSingle();
             
             if (error) {
-              console.error('Error loading dynamic lawyer:', error);
+              console.error('❌ Error loading dynamic lawyer:', error);
             } else if (leadData?.dynamic_lawyer) {
-              dynamicLawyerData = leadData.dynamic_lawyer as DynamicLawyer;
-              console.log('✨ [DYNAMIC LAWYER] Loaded:', dynamicLawyerData.name);
+              const dynamicData = leadData.dynamic_lawyer as any;
+              
+              // Validar estrutura do advogado dinâmico
+              if (dynamicData.id && dynamicData.name && dynamicData.photo) {
+                dynamicLawyerData = {
+                  ...dynamicData,
+                  keywords: dynamicData.keywords || [],
+                  isVirtual: true
+                } as DynamicLawyer;
+                console.log('✨ [DYNAMIC LAWYER] Loaded and validated:', dynamicLawyerData.name);
+              } else {
+                console.error('⚠️ [DYNAMIC LAWYER] Invalid structure in database:', dynamicData);
+              }
             } else {
               console.warn('⚠️ [DYNAMIC LAWYER] Not found in database for session:', sessionId);
             }
           } catch (error) {
-            console.error('Error loading dynamic lawyer:', error);
+            console.error('❌ Exception loading dynamic lawyer:', error);
           }
         }
         
         const targetLawyer = newLawyer || dynamicLawyerData;
         
-        // Validar que targetLawyer existe e tem as propriedades necessárias
-        if (targetLawyer && targetLawyer.id && targetLawyer.name && targetLawyer.id !== currentLawyer.id) {
-          console.log('✅ [TRANSFER INITIATED]', {
-            from: currentLawyer.name,
-            to: targetLawyer.name,
-            timestamp: new Date().toISOString()
-          });
-          
-          // NOVO: Adicionar mensagem visual de transferência
-          const transferMessage: TransferMessage = {
-            role: 'system',
-            content: `Transferindo para ${targetLawyer.name}...`,
-            timestamp: new Date(),
-            isTransfer: true,
-            fromLawyer: currentLawyer,
-            toLawyer: targetLawyer,
-          };
-          setMessages(prev => [...prev, transferMessage]);
-          
-          // Salvar advogado dinâmico se necessário
-          if (dynamicLawyerData) {
-            // Garantir que tem keywords para compatibilidade
-            if (!dynamicLawyerData.keywords) {
-              dynamicLawyerData.keywords = [];
-            }
-            setDynamicLawyer(dynamicLawyerData);
+        // Validar completamente que targetLawyer existe e tem as propriedades necessárias
+        if (!targetLawyer) {
+          console.error('❌ [TRANSFER] No target lawyer found for:', transferData.newLawyerId);
+          return;
+        }
+        
+        if (!targetLawyer.id || !targetLawyer.name) {
+          console.error('❌ [TRANSFER] Invalid target lawyer structure:', targetLawyer);
+          return;
+        }
+        
+        if (targetLawyer.id === currentLawyer.id) {
+          console.log('⚠️ [TRANSFER] Target lawyer is the same as current, skipping');
+          return;
+        }
+        
+        console.log('✅ [TRANSFER INITIATED]', {
+          from: currentLawyer.name,
+          to: targetLawyer.name,
+          timestamp: new Date().toISOString()
+        });
+        
+        // NOVO: Adicionar mensagem visual de transferência
+        const transferMessage: TransferMessage = {
+          role: 'system',
+          content: `Transferindo para ${targetLawyer.name}...`,
+          timestamp: new Date(),
+          isTransfer: true,
+          fromLawyer: currentLawyer,
+          toLawyer: targetLawyer,
+        };
+        setMessages(prev => [...prev, transferMessage]);
+        
+        // Salvar advogado dinâmico se necessário
+        if (dynamicLawyerData && dynamicLawyerData.id && dynamicLawyerData.name) {
+          // Garantir que tem keywords para compatibilidade
+          if (!dynamicLawyerData.keywords) {
+            dynamicLawyerData.keywords = [];
           }
-          
-          setIsTransferring(true);
-          setIsTyping(false);
+          setDynamicLawyer(dynamicLawyerData);
+          console.log('✅ [DYNAMIC LAWYER] Set in state:', dynamicLawyerData.name);
+        } else if (dynamicLawyerData) {
+          console.error('⚠️ [DYNAMIC LAWYER] Invalid structure:', dynamicLawyerData);
+        }
+        
+        setIsTransferring(true);
+        setIsTyping(false);
 
-          // Aumentar tempo de animação de transferência
-          await new Promise(resolve => setTimeout(resolve, 3000));
-          
-          console.log('🔄 [SWITCHING LAWYER]', {
-            newLawyerId: targetLawyer.id,
-            newLawyerName: targetLawyer.name
-          });
-          
-          setCurrentLawyer(targetLawyer);
-          setIsTransferring(false);
-          setIsTyping(true);
+        // Aumentar tempo de animação de transferência
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        
+        console.log('🔄 [SWITCHING LAWYER]', {
+          newLawyerId: targetLawyer.id,
+          newLawyerName: targetLawyer.name
+        });
+        
+        setCurrentLawyer(targetLawyer);
+        setIsTransferring(false);
+        setIsTyping(true);
 
-          // Gerar primeira mensagem do novo advogado via IA
-          await new Promise(resolve => setTimeout(resolve, 1000));
-          
-          try {
-            const transferResponse = await fetch(CHAT_URL, {
+        // Gerar primeira mensagem do novo advogado via IA
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        try {
+          const transferResponse = await fetch(CHAT_URL, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -834,7 +862,7 @@ export const useLawyerChat = () => {
                         
                         setMessages(prev => {
                           const last = prev[prev.length - 1];
-                          if (last?.role === 'assistant' && !('isTransfer' in last) && last.lawyerId === newLawyer.id) {
+                          if (last?.role === 'assistant' && !('isTransfer' in last) && last.lawyerId === targetLawyer.id) {
                             return prev.map((m, i) =>
                               i === prev.length - 1
                                 ? { ...m, content: newLawyerContent }
@@ -847,7 +875,7 @@ export const useLawyerChat = () => {
                               role: 'assistant',
                               content: newLawyerContent,
                               timestamp: new Date(),
-                              lawyerId: newLawyer.id,
+                              lawyerId: targetLawyer.id,
                             },
                           ];
                         });
@@ -882,14 +910,14 @@ export const useLawyerChat = () => {
               // Fallback se não recebeu conteúdo
               if (newLawyerContent.length === 0) {
                 console.warn('⚠️ [TRANSFER] No content received, using fallback');
-              const fallbackMessage = `Olá! Sou ${(targetLawyer.name.split(' ')[1] || targetLawyer.name.split(' ')[0])}, especialista em ${targetLawyer.subSpecialty}. Vi que você precisa de ajuda. Pode me dar mais detalhes?`;
+                const fallbackMessage = `Olá! Sou ${(targetLawyer.name.split(' ')[1] || targetLawyer.name.split(' ')[0])}, especialista em ${targetLawyer.subSpecialty}. Vi que você precisa de ajuda. Pode me dar mais detalhes?`;
                 setMessages(prev => [
                   ...prev,
                   {
                     role: 'assistant',
                     content: fallbackMessage,
                     timestamp: new Date(),
-                  lawyerId: targetLawyer.id,
+                    lawyerId: targetLawyer.id,
                   },
                 ]);
               }
@@ -931,7 +959,6 @@ export const useLawyerChat = () => {
             ]);
           }
         }
-      }
       
       console.log('✅ [MESSAGE PROCESSED]', {
         hadTransfer: !!transferData,

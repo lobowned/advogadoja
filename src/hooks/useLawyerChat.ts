@@ -346,7 +346,7 @@ export const useLawyerChat = () => {
         }
       }
 
-      // Final flush
+      // Final flush - always update last assistant message if it exists
       if (textBuffer.trim()) {
         for (let raw of textBuffer.split('\n')) {
           if (!raw) continue;
@@ -362,19 +362,22 @@ export const useLawyerChat = () => {
               assistantContent += content;
               setMessages(prev => {
                 const last = prev[prev.length - 1];
-                if (last?.role === 'assistant') {
+                // Always update last assistant message if it exists and is not a transfer
+                if (last?.role === 'assistant' && !('isTransfer' in last)) {
                   return prev.map((m, i) =>
                     i === prev.length - 1
                       ? { ...m, content: assistantContent }
                       : m
                   );
                 }
+                // Only create new message if last message is not assistant
                 return [
                   ...prev,
                   {
                     role: 'assistant',
                     content: assistantContent,
                     timestamp: new Date(),
+                    lawyerId: currentLawyer.id,
                   },
                 ];
               });

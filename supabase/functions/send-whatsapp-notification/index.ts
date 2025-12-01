@@ -25,8 +25,16 @@ serve(async (req) => {
   try {
     const { leadData } = await req.json() as { leadData: LeadData };
     
+    console.log("=== WhatsApp Notification Request ===");
+    console.log("Lead Data:", JSON.stringify(leadData, null, 2));
+    
     const ZAPI_INSTANCE_ID = Deno.env.get("ZAPI_INSTANCE_ID");
     const ZAPI_TOKEN = Deno.env.get("ZAPI_TOKEN");
+    
+    console.log("Z-API Configuration:", {
+      instanceId: ZAPI_INSTANCE_ID ? `${ZAPI_INSTANCE_ID.substring(0, 5)}...` : 'NOT SET',
+      token: ZAPI_TOKEN ? 'SET' : 'NOT SET'
+    });
     
     if (!ZAPI_INSTANCE_ID || !ZAPI_TOKEN) {
       throw new Error("Z-API credentials not configured");
@@ -34,11 +42,13 @@ serve(async (req) => {
 
     // Formatar a mensagem
     const message = formatWhatsAppMessage(leadData);
+    console.log("Formatted message length:", message.length);
     
     // Enviar via Z-API
     const zapiUrl = `https://api.z-api.io/instances/${ZAPI_INSTANCE_ID}/token/${ZAPI_TOKEN}/send-text`;
     
-    console.log("Sending notification to WhatsApp:", "5571997036269");
+    console.log("Sending to Z-API URL:", zapiUrl.replace(ZAPI_TOKEN || '', 'TOKEN_HIDDEN'));
+    console.log("Target WhatsApp:", "5571997036269");
     
     const response = await fetch(zapiUrl, {
       method: 'POST',
@@ -53,12 +63,15 @@ serve(async (req) => {
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("Z-API error:", response.status, errorText);
+      console.error("=== Z-API Error ===");
+      console.error("Status:", response.status);
+      console.error("Response:", errorText);
       throw new Error(`Z-API error: ${response.status}`);
     }
 
     const result = await response.json();
-    console.log("WhatsApp notification sent successfully:", result);
+    console.log("=== WhatsApp notification sent successfully ===");
+    console.log("Z-API Response:", JSON.stringify(result, null, 2));
 
     return new Response(
       JSON.stringify({ success: true, result }),

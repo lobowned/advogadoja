@@ -140,7 +140,7 @@ export const useLawyerChat = () => {
           // Add confirmation message
           const confirmMessage: Message = {
             role: 'assistant',
-            content: 'Perfeito! Já salvei suas informações. Como posso continuar ajudando você?',
+            content: 'Perfeito! 📱 Vamos entrar em contato imediatamente pelo WhatsApp para dar seguimento ao seu atendimento. Fique atento às mensagens!',
             timestamp: new Date(),
             lawyerId: currentLawyer.id,
           };

@@ -371,13 +371,156 @@ export const useLawyerChat = () => {
         throw new Error('Falha ao conectar com o advogado');
       }
 
+      // Função para encontrar ponto de quebra natural
+      const findSplitPoint = (text: string): number | null => {
+        // Não quebrar mensagens curtas
+        if (text.length < 40) return null;
+        
+        // 25% de chance de quebrar
+        if (Math.random() > 0.25) return null;
+        
+        // Encontrar ponto natural de quebra
+        const sentenceEnders = ['. ', '! ', '? '];
+        
+        for (const ender of sentenceEnders) {
+          const index = text.indexOf(ender);
+          // Quebrar após primeira frase se tiver tamanho adequado
+          if (index >= 15 && index < text.length - 10) {
+            return index + ender.length;
+          }
+        }
+        
+        return null;
+      };
+
+      // Função para digitar mensagem com humanização
+      const typeMessage = async (text: string): Promise<string> => {
+        let typedContent = '';
+        
+        for (let i = 0; i < text.length; i++) {
+          const char = text[i];
+          const textLength = text.length;
+          
+          // Velocidade variável: mais lento no início/fim, rápido no meio
+          let baseDelay = 60;
+          const progress = i / textLength;
+          
+          if (progress < 0.15) {
+            baseDelay = 90; // Início mais lento (pensando)
+          } else if (progress > 0.85) {
+            baseDelay = 75; // Final mais lento (revisando)
+          } else {
+            baseDelay = 45; // Meio mais rápido (fluindo)
+          }
+          
+          // Alta variância (±50%) para naturalidade
+          let delay = baseDelay * (0.5 + Math.random());
+          
+          // Pausas naturais após pontuação
+          if (char === '.' || char === '!' || char === '?') {
+            delay = 450 + Math.random() * 400; // 450-850ms
+          } else if (char === ',') {
+            delay = 150 + Math.random() * 150; // 150-300ms
+          } else if (char === '\n') {
+            delay = 250 + Math.random() * 250; // 250-500ms
+          } else if (char === ' ' && Math.random() < 0.08) {
+            // 8% chance de pausa extra entre palavras (pensando)
+            delay = 200 + Math.random() * 350; // 200-550ms
+          }
+          
+          // 3% chance de erro de digitação (apenas em letras)
+          const shouldMakeTypo = Math.random() < 0.03 && 
+                                char.match(/[a-záàâãéêíóôõúçA-ZÁÀÂÃÉÊÍÓÔÕÚÇ]/) && 
+                                i < textLength - 3;
+          
+          if (shouldMakeTypo) {
+            // Digitar letra errada
+            const wrongChars = 'abcdefghijklmnopqrstuvwxyz';
+            const wrongChar = wrongChars[Math.floor(Math.random() * wrongChars.length)];
+            typedContent += wrongChar;
+            
+            setMessages(prev => {
+              const last = prev[prev.length - 1];
+              if (last?.role === 'assistant' && !('isTransfer' in last)) {
+                return prev.map((m, idx) =>
+                  idx === prev.length - 1
+                    ? { ...m, content: typedContent }
+                    : m
+                );
+              }
+              return [
+                ...prev,
+                {
+                  role: 'assistant',
+                  content: typedContent,
+                  timestamp: new Date(),
+                  lawyerId: currentLawyer.id,
+                },
+              ];
+            });
+            
+            // Pausa ao digitar errado
+            await new Promise(resolve => setTimeout(resolve, 50 + Math.random() * 80));
+            
+            // Pausa ao perceber o erro
+            await new Promise(resolve => setTimeout(resolve, 180 + Math.random() * 220));
+            
+            // Apagar caractere errado
+            typedContent = typedContent.slice(0, -1);
+            
+            setMessages(prev => {
+              const last = prev[prev.length - 1];
+              if (last?.role === 'assistant' && !('isTransfer' in last)) {
+                return prev.map((m, idx) =>
+                  idx === prev.length - 1
+                    ? { ...m, content: typedContent }
+                    : m
+                );
+              }
+              return prev;
+            });
+            
+            // Pausa antes de corrigir
+            await new Promise(resolve => setTimeout(resolve, 60 + Math.random() * 80));
+          }
+          
+          // Digitar o caractere correto
+          typedContent += char;
+          
+          setMessages(prev => {
+            const last = prev[prev.length - 1];
+            if (last?.role === 'assistant' && !('isTransfer' in last)) {
+              return prev.map((m, idx) =>
+                idx === prev.length - 1
+                  ? { ...m, content: typedContent }
+                  : m
+              );
+            }
+            return [
+              ...prev,
+              {
+                role: 'assistant',
+                content: typedContent,
+                timestamp: new Date(),
+                lawyerId: currentLawyer.id,
+              },
+            ];
+          });
+          
+          await new Promise(resolve => setTimeout(resolve, delay));
+        }
+        
+        return typedContent;
+      };
+
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
       let textBuffer = '';
       let streamDone = false;
-      let assistantContent = '';
+      let fullResponseContent = '';
       let transferData: { newLawyerId: string } | null = null;
 
+      // Primeiro, acumular todo o conteúdo da resposta
       while (!streamDone) {
         const { done, value } = await reader.read();
         if (done) break;
@@ -399,7 +542,7 @@ export const useLawyerChat = () => {
             break;
           }
 
-            try {
+          try {
             const parsed = JSON.parse(jsonStr);
             
             // Verificar se há solicitação de coleta de lead
@@ -424,125 +567,40 @@ export const useLawyerChat = () => {
 
             const content = parsed.choices?.[0]?.delta?.content as string | undefined;
             if (content) {
-              // Sistema de digitação humanizada com erros e velocidade variável
-              for (let i = 0; i < content.length; i++) {
-                const char = content[i];
-                const textLength = content.length;
-                
-                // Velocidade variável: mais lento no início/fim, rápido no meio
-                let baseDelay = 60;
-                const progress = i / textLength;
-                
-                if (progress < 0.15) {
-                  baseDelay = 90; // Início mais lento (pensando)
-                } else if (progress > 0.85) {
-                  baseDelay = 75; // Final mais lento (revisando)
-                } else {
-                  baseDelay = 45; // Meio mais rápido (fluindo)
-                }
-                
-                // Alta variância (±50%) para naturalidade
-                let delay = baseDelay * (0.5 + Math.random());
-                
-                // Pausas naturais após pontuação
-                if (char === '.' || char === '!' || char === '?') {
-                  delay = 450 + Math.random() * 400; // 450-850ms
-                } else if (char === ',') {
-                  delay = 150 + Math.random() * 150; // 150-300ms
-                } else if (char === '\n') {
-                  delay = 250 + Math.random() * 250; // 250-500ms
-                } else if (char === ' ' && Math.random() < 0.08) {
-                  // 8% chance de pausa extra entre palavras (pensando)
-                  delay = 200 + Math.random() * 350; // 200-550ms
-                }
-                
-                // 3% chance de erro de digitação (apenas em letras)
-                const shouldMakeTypo = Math.random() < 0.03 && 
-                                      char.match(/[a-záàâãéêíóôõúçA-ZÁÀÂÃÉÊÍÓÔÕÚÇ]/) && 
-                                      i < textLength - 3;
-                
-                if (shouldMakeTypo) {
-                  // Digitar letra errada
-                  const wrongChars = 'abcdefghijklmnopqrstuvwxyz';
-                  const wrongChar = wrongChars[Math.floor(Math.random() * wrongChars.length)];
-                  assistantContent += wrongChar;
-                  
-                  setMessages(prev => {
-                    const last = prev[prev.length - 1];
-                    if (last?.role === 'assistant' && !('isTransfer' in last)) {
-                      return prev.map((m, idx) =>
-                        idx === prev.length - 1
-                          ? { ...m, content: assistantContent }
-                          : m
-                      );
-                    }
-                    return [
-                      ...prev,
-                      {
-                        role: 'assistant',
-                        content: assistantContent,
-                        timestamp: new Date(),
-                        lawyerId: currentLawyer.id,
-                      },
-                    ];
-                  });
-                  
-                  // Pausa ao digitar errado
-                  await new Promise(resolve => setTimeout(resolve, 50 + Math.random() * 80));
-                  
-                  // Pausa ao perceber o erro
-                  await new Promise(resolve => setTimeout(resolve, 180 + Math.random() * 220));
-                  
-                  // Apagar caractere errado
-                  assistantContent = assistantContent.slice(0, -1);
-                  
-                  setMessages(prev => {
-                    const last = prev[prev.length - 1];
-                    if (last?.role === 'assistant' && !('isTransfer' in last)) {
-                      return prev.map((m, idx) =>
-                        idx === prev.length - 1
-                          ? { ...m, content: assistantContent }
-                          : m
-                      );
-                    }
-                    return prev;
-                  });
-                  
-                  // Pausa antes de corrigir
-                  await new Promise(resolve => setTimeout(resolve, 60 + Math.random() * 80));
-                }
-                
-                // Digitar o caractere correto
-                assistantContent += char;
-                
-                setMessages(prev => {
-                  const last = prev[prev.length - 1];
-                  if (last?.role === 'assistant' && !('isTransfer' in last)) {
-                    return prev.map((m, idx) =>
-                      idx === prev.length - 1
-                        ? { ...m, content: assistantContent }
-                        : m
-                    );
-                  }
-                  return [
-                    ...prev,
-                    {
-                      role: 'assistant',
-                      content: assistantContent,
-                      timestamp: new Date(),
-                      lawyerId: currentLawyer.id,
-                    },
-                  ];
-                });
-                
-                await new Promise(resolve => setTimeout(resolve, delay));
-              }
+              fullResponseContent += content;
             }
           } catch {
             textBuffer = line + '\n' + textBuffer;
             break;
           }
         }
+      }
+
+      // Agora processar o conteúdo acumulado - verificar se deve quebrar
+      const splitPoint = findSplitPoint(fullResponseContent);
+      
+      if (splitPoint !== null && fullResponseContent.length > 0) {
+        // Dividir em duas partes
+        const part1 = fullResponseContent.substring(0, splitPoint).trim();
+        const part2 = fullResponseContent.substring(splitPoint).trim();
+        
+        // Digitar e enviar primeira parte
+        await typeMessage(part1);
+        
+        // Pausa natural entre mensagens (simula "enviou antes de terminar")
+        setIsTyping(false);
+        await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 1200));
+        
+        // Mostrar "digitando" novamente
+        setIsTyping(true);
+        await new Promise(resolve => setTimeout(resolve, 300 + Math.random() * 500));
+        
+        // Digitar segunda parte como nova mensagem
+        await typeMessage(part2);
+        
+      } else if (fullResponseContent.length > 0) {
+        // Comportamento normal - uma única mensagem
+        await typeMessage(fullResponseContent);
       }
 
       // Processar transferência se detectada
@@ -573,7 +631,7 @@ export const useLawyerChat = () => {
                 messages: [
                   ...messages,
                   userMessage,
-                  { role: 'assistant', content: assistantContent }
+                  { role: 'assistant', content: fullResponseContent }
                 ].map(m => ({
                   role: m.role === 'system' ? 'assistant' : m.role,
                   content: m.content,
@@ -674,46 +732,6 @@ export const useLawyerChat = () => {
               },
             ]);
           }
-        }
-      }
-
-      // Final flush - always update last assistant message if it exists
-      if (textBuffer.trim()) {
-        for (let raw of textBuffer.split('\n')) {
-          if (!raw) continue;
-          if (raw.endsWith('\r')) raw = raw.slice(0, -1);
-          if (raw.startsWith(':') || raw.trim() === '') continue;
-          if (!raw.startsWith('data: ')) continue;
-          const jsonStr = raw.slice(6).trim();
-          if (jsonStr === '[DONE]') continue;
-          try {
-            const parsed = JSON.parse(jsonStr);
-            const content = parsed.choices?.[0]?.delta?.content as string | undefined;
-            if (content) {
-              assistantContent += content;
-              setMessages(prev => {
-                const last = prev[prev.length - 1];
-                // Always update last assistant message if it exists and is not a transfer
-                if (last?.role === 'assistant' && !('isTransfer' in last)) {
-                  return prev.map((m, i) =>
-                    i === prev.length - 1
-                      ? { ...m, content: assistantContent }
-                      : m
-                  );
-                }
-                // Only create new message if last message is not assistant
-                return [
-                  ...prev,
-                  {
-                    role: 'assistant',
-                    content: assistantContent,
-                    timestamp: new Date(),
-                    lawyerId: currentLawyer.id,
-                  },
-                ];
-              });
-            }
-          } catch {}
         }
       }
     } catch (error: any) {

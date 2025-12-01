@@ -163,6 +163,15 @@ export const useLawyerChat = () => {
   const sendMessage = async (content: string) => {
     if (!content.trim() || isLoading) return;
 
+    console.log('💬 [USER MESSAGE]', {
+      content: content.trim(),
+      currentLawyer: currentLawyer.id,
+      isCollectingLead,
+      leadStep,
+      messageCount: messages.filter(m => m.role === 'user').length + 1,
+      timestamp: new Date().toISOString()
+    });
+
     // Handle lead collection responses
     if (isCollectingLead) {
       try {
@@ -317,6 +326,13 @@ export const useLawyerChat = () => {
       setIsTyping(true);
 
       const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/lawyer-chat`;
+      
+      console.log('📡 [CALLING API]', {
+        url: CHAT_URL,
+        currentLawyer: currentLawyer.id,
+        messageCount: userMessageCount + 1,
+        sessionId
+      });
       
       const response = await fetch(CHAT_URL, {
         method: 'POST',
@@ -561,6 +577,11 @@ export const useLawyerChat = () => {
             
             // Verificar se há transferência
             if (parsed.transfer && parsed.newLawyerId) {
+              console.log('🔄 [TRANSFER DETECTED]', {
+                from: currentLawyer.id,
+                to: parsed.newLawyerId,
+                timestamp: new Date().toISOString()
+              });
               transferData = { newLawyerId: parsed.newLawyerId };
               continue;
             }
@@ -575,6 +596,12 @@ export const useLawyerChat = () => {
                 .replace(/[\u{200D}]/gu, '')               // Zero-width joiner
                 .trim();
               
+              console.log('📝 [VALIDATION]', {
+                originalContent: content,
+                withoutEmojis: contentWithoutEmojis,
+                hasEmojis: content !== contentWithoutEmojis
+              });
+              
               // Detectar apenas inglês excessivo (mais de 4 palavras em inglês)
               const englishWords = (contentWithoutEmojis.match(/\b(you|the|and|for|with|from|will|need|that|this|your|case|legal|help|can|are|have|been|what|when|where|how|why|client|attorney|should|would|could)\b/gi) || []);
               const hasExcessiveEnglish = englishWords.length > 4;
@@ -583,7 +610,12 @@ export const useLawyerChat = () => {
               const hasTrulyForeignChars = /[\u0600-\u06FF\u4E00-\u9FFF\u0400-\u04FF\u3040-\u309F\u30A0-\u30FF]/.test(contentWithoutEmojis);
               
               if (hasExcessiveEnglish || hasTrulyForeignChars) {
-                console.warn('⚠️ Corrupted or English response detected, using fallback');
+                console.warn('⚠️ [CORRUPTED RESPONSE]', {
+                  englishWordsCount: englishWords.length,
+                  englishWords,
+                  hasTrulyForeignChars,
+                  contentSample: contentWithoutEmojis.substring(0, 100)
+                });
                 fullResponseContent = "Olá! Sou o especialista. Vi seu caso e vou te ajudar. Pode me contar mais detalhes?";
                 break; // Parar de processar chunks
               }
@@ -596,6 +628,13 @@ export const useLawyerChat = () => {
           }
         }
       }
+
+      console.log('📨 [RESPONSE RECEIVED]', {
+        contentLength: fullResponseContent.length,
+        hasTransfer: !!transferData,
+        contentPreview: fullResponseContent.substring(0, 100),
+        timestamp: new Date().toISOString()
+      });
 
       // Agora processar o conteúdo acumulado - verificar se deve quebrar
       const splitPoint = findSplitPoint(fullResponseContent);
@@ -626,13 +665,29 @@ export const useLawyerChat = () => {
 
       // Processar transferência se detectada
       if (transferData && transferData.newLawyerId) {
+        console.log('🔄 [PROCESSING TRANSFER]', {
+          newLawyerId: transferData.newLawyerId,
+          currentLawyerId: currentLawyer.id
+        });
+        
         const newLawyer = lawyers.find(l => l.id === transferData.newLawyerId);
         if (newLawyer && newLawyer.id !== currentLawyer.id) {
+          console.log('✅ [TRANSFER INITIATED]', {
+            from: currentLawyer.name,
+            to: newLawyer.name,
+            timestamp: new Date().toISOString()
+          });
+          
           setIsTransferring(true);
           setIsTyping(false);
 
           // Mostrar indicador visual de transferência (sem mensagem de texto)
           await new Promise(resolve => setTimeout(resolve, 2000));
+          
+          console.log('🔄 [SWITCHING LAWYER]', {
+            newLawyerId: newLawyer.id,
+            newLawyerName: newLawyer.name
+          });
           
           setCurrentLawyer(newLawyer);
           setIsTransferring(false);
@@ -755,12 +810,20 @@ export const useLawyerChat = () => {
           }
         }
       }
+      
+      console.log('✅ [MESSAGE PROCESSED]', {
+        hadTransfer: !!transferData,
+        finalLawyer: currentLawyer.id,
+        responseLength: fullResponseContent.length,
+        timestamp: new Date().toISOString()
+      });
+      
     } catch (error: any) {
       if (error.name === 'AbortError') {
-        console.log('Request aborted');
+        console.log('⚠️ [REQUEST ABORTED]');
         return;
       }
-      console.error('Error sending message:', error);
+      console.error('❌ [ERROR]', error);
       toast({
         title: 'Erro ao enviar mensagem',
         description: 'Não foi possível conectar com o advogado. Tente novamente.',

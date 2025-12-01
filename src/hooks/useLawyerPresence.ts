@@ -16,7 +16,7 @@ type PresenceNotification = {
   timestamp: Date;
 };
 
-export const useLawyerPresence = () => {
+export const useLawyerPresenceState = () => {
   const [onlineLawyers, setOnlineLawyers] = useState<LawyerWithPresence[]>([]);
   const [notification, setNotification] = useState<PresenceNotification | null>(null);
 

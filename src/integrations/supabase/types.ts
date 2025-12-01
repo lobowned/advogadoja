@@ -167,11 +167,16 @@ export type Database = {
       leads: {
         Row: {
           assigned_lawyer: string | null
+          case_details: Json | null
+          case_summary: string | null
+          conversation_history: Json | null
           created_at: string | null
           email: string | null
           id: string
           message_count: number | null
           name: string | null
+          notification_sent: boolean | null
+          notification_sent_at: string | null
           phone: string | null
           problem_type: string | null
           session_id: string | null
@@ -181,11 +186,16 @@ export type Database = {
         }
         Insert: {
           assigned_lawyer?: string | null
+          case_details?: Json | null
+          case_summary?: string | null
+          conversation_history?: Json | null
           created_at?: string | null
           email?: string | null
           id?: string
           message_count?: number | null
           name?: string | null
+          notification_sent?: boolean | null
+          notification_sent_at?: string | null
           phone?: string | null
           problem_type?: string | null
           session_id?: string | null
@@ -195,11 +205,16 @@ export type Database = {
         }
         Update: {
           assigned_lawyer?: string | null
+          case_details?: Json | null
+          case_summary?: string | null
+          conversation_history?: Json | null
           created_at?: string | null
           email?: string | null
           id?: string
           message_count?: number | null
           name?: string | null
+          notification_sent?: boolean | null
+          notification_sent_at?: string | null
           phone?: string | null
           problem_type?: string | null
           session_id?: string | null

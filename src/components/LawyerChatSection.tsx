@@ -132,37 +132,39 @@ const LawyerChatSection = () => {
             {/* Messages Area */}
             <div 
               ref={chatContainerRef}
-              className="bg-whatsapp-bg p-4 h-[400px] sm:h-[600px] overflow-y-auto space-y-3"
+              className={`bg-whatsapp-bg p-4 h-[400px] sm:h-[600px] space-y-3 ${
+                hasJoinedQueue ? 'overflow-y-auto' : 'overflow-hidden'
+              }`}
             >
               {!hasJoinedQueue ? (
                 <div className="flex items-center justify-center h-full">
-                  <div className="text-center max-w-md px-6 animate-fade-in">
-                    <div className="mb-6">
-                      <div className="text-6xl mb-4">🏛️</div>
-                      <h3 className="text-2xl font-bold mb-2">Assistência Jurídica Online</h3>
-                      <p className="text-muted-foreground mb-6">
+                  <div className="text-center max-w-md px-4 animate-fade-in">
+                    <div className="mb-4">
+                      <div className="text-4xl mb-3">🏛️</div>
+                      <h3 className="text-xl font-bold mb-2">Assistência Jurídica Online</h3>
+                      <p className="text-sm text-muted-foreground mb-4">
                         30 advogados disponíveis para atender você agora mesmo
                       </p>
                     </div>
                     
-                    <div className="space-y-3 mb-8 text-left">
-                      <div className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
+                    <div className="space-y-2 mb-5 text-left">
+                      <div className="flex items-start gap-2.5">
+                        <Check className="w-4 h-4 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
                         <p className="text-sm">Atendimento gratuito inicial</p>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <Shield className="w-5 h-5 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
+                      <div className="flex items-start gap-2.5">
+                        <Shield className="w-4 h-4 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
                         <p className="text-sm">Sigilo profissional garantido</p>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
+                      <div className="flex items-start gap-2.5">
+                        <Check className="w-4 h-4 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
                         <p className="text-sm">Especialistas em diversas áreas</p>
                       </div>
                     </div>
                     
                     <Button
                       onClick={joinQueue}
-                      className="w-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white font-semibold py-6 text-base shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                      className="w-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white font-semibold py-5 text-base shadow-lg hover:shadow-xl transition-all hover:scale-105"
                     >
                       🎫 Entrar na Fila
                       <span className="block text-xs font-normal mt-1 opacity-90">

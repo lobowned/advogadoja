@@ -328,7 +328,24 @@ const LawyerChatSection = () => {
                 );
               })}
 
-              {(isThinking || isTyping || isTransferring) && (
+              {/* Animação dedicada de transferência */}
+              {isTransferring && !isThinking && !isTyping && (
+                <div className="flex justify-center py-4">
+                  <div className="bg-gradient-to-r from-primary/20 to-yellow-500/20 border border-primary/30 rounded-xl px-6 py-4 flex items-center gap-4 animate-pulse shadow-lg">
+                    <Avatar className="h-10 w-10 border-2 border-primary/20">
+                      <AvatarImage src={currentLawyer.photo} />
+                      <AvatarFallback className="bg-primary/10 text-primary text-xs">
+                        {currentLawyer.name.split(' ').map(n => n[0]).join('')}
+                      </AvatarFallback>
+                    </Avatar>
+                    <RefreshCw className="h-6 w-6 text-primary animate-spin" />
+                    <div className="text-sm font-medium text-primary">Conectando com especialista...</div>
+                  </div>
+                </div>
+              )}
+
+              {/* Indicadores normais de digitação */}
+              {(isThinking || isTyping) && !isTransferring && (
                 <div className="flex justify-start animate-message-slide">
                   <Avatar className="h-8 w-8 mr-2 flex-shrink-0">
                     <AvatarImage src={currentLawyer.photo} alt={currentLawyer.name} />

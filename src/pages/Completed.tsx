@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, MessageCircle, Mail } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { CheckCircle2, MessageCircle, Mail, FileText } from "lucide-react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const Completed = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const protocolId = searchParams.get("protocol");
 
   const handleWhatsAppClick = () => {
     // Substitua pelo número real do escritório no formato internacional
@@ -26,6 +28,20 @@ const Completed = () => {
           <h1 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
             Informações Recebidas com Sucesso!
           </h1>
+
+          {protocolId && (
+            <div className="mb-6 rounded-lg border-2 border-primary/20 bg-primary/5 p-4">
+              <p className="text-sm font-medium text-muted-foreground">
+                Número do Protocolo
+              </p>
+              <p className="text-2xl font-bold text-primary">
+                {protocolId}
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Guarde este número para acompanhar seu caso
+              </p>
+            </div>
+          )}
 
           <p className="mb-8 text-lg text-muted-foreground">
             Agradecemos por compartilhar sua situação conosco. Nossa equipe jurídica

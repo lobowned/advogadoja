@@ -32,6 +32,7 @@ export const useLawyerChat = () => {
   );
   const [isLoading, setIsLoading] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
+  const [isThinking, setIsThinking] = useState(false);
   const [isTransferring, setIsTransferring] = useState(false);
   const { toast } = useToast();
   const abortControllerRef = useRef<AbortController | null>(null);
@@ -47,11 +48,18 @@ export const useLawyerChat = () => {
 
     setMessages(prev => [...prev, userMessage]);
     setIsLoading(true);
-    setIsTyping(true);
+    setIsThinking(true);
 
     abortControllerRef.current = new AbortController();
 
     try {
+      // Simular tempo de leitura e pensamento do advogado (1.5-3 segundos)
+      const thinkingDelay = 1500 + Math.random() * 1500;
+      await new Promise(resolve => setTimeout(resolve, thinkingDelay));
+      
+      setIsThinking(false);
+      setIsTyping(true);
+
       const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/lawyer-chat`;
       
       const response = await fetch(CHAT_URL, {
@@ -113,26 +121,45 @@ export const useLawyerChat = () => {
 
             const content = parsed.choices?.[0]?.delta?.content as string | undefined;
             if (content) {
-              assistantContent += content;
-              setMessages(prev => {
-                const last = prev[prev.length - 1];
-                if (last?.role === 'assistant' && !('isTransfer' in last)) {
-                  return prev.map((m, i) =>
-                    i === prev.length - 1
-                      ? { ...m, content: assistantContent }
-                      : m
-                  );
+              // Implementar digitação humana com velocidade variável
+              for (let i = 0; i < content.length; i++) {
+                const char = content[i];
+                assistantContent += char;
+                
+                setMessages(prev => {
+                  const last = prev[prev.length - 1];
+                  if (last?.role === 'assistant' && !('isTransfer' in last)) {
+                    return prev.map((m, i) =>
+                      i === prev.length - 1
+                        ? { ...m, content: assistantContent }
+                        : m
+                    );
+                  }
+                  return [
+                    ...prev,
+                    {
+                      role: 'assistant',
+                      content: assistantContent,
+                      timestamp: new Date(),
+                      lawyerId: currentLawyer.id,
+                    },
+                  ];
+                });
+
+                // Pausas variáveis para parecer digitação humana
+                let delay = 25 + Math.random() * 35; // 25-60ms por caractere
+                
+                // Pausas maiores após pontuação
+                if (char === '.' || char === '!' || char === '?') {
+                  delay = 400 + Math.random() * 300; // 400-700ms
+                } else if (char === ',' || char === ';') {
+                  delay = 100 + Math.random() * 100; // 100-200ms
+                } else if (char === '\n') {
+                  delay = 200 + Math.random() * 200; // 200-400ms
                 }
-                return [
-                  ...prev,
-                  {
-                    role: 'assistant',
-                    content: assistantContent,
-                    timestamp: new Date(),
-                    lawyerId: currentLawyer.id,
-                  },
-                ];
-              });
+                
+                await new Promise(resolve => setTimeout(resolve, delay));
+              }
             }
           } catch {
             textBuffer = line + '\n' + textBuffer;
@@ -236,6 +263,7 @@ export const useLawyerChat = () => {
     } finally {
       setIsLoading(false);
       setIsTyping(false);
+      setIsThinking(false);
     }
   };
 
@@ -246,12 +274,14 @@ export const useLawyerChat = () => {
     }
     setIsLoading(false);
     setIsTyping(false);
+    setIsThinking(false);
   };
 
   return {
     messages,
     isLoading,
     isTyping,
+    isThinking,
     isTransferring,
     sendMessage,
     stopGeneration,

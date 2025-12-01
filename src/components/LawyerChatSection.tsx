@@ -6,14 +6,14 @@ import { useLawyerChat } from "@/hooks/useLawyerChat";
 import { useEffect, useRef, useState } from "react";
 
 const LawyerChatSection = () => {
-  const { messages, isLoading, isTyping, isTransferring, sendMessage, currentLawyer, allLawyers } = useLawyerChat();
+  const { messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers } = useLawyerChat();
   const [inputValue, setInputValue] = useState("");
   const [showResponseTime, setShowResponseTime] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
-  }, [messages, isTyping]);
+  }, [messages, isTyping, isThinking]);
 
   useEffect(() => {
     if (messages.length > 2 && !showResponseTime) {
@@ -205,7 +205,7 @@ const LawyerChatSection = () => {
                 );
               })}
 
-              {(isTyping || isTransferring) && (
+              {(isThinking || isTyping || isTransferring) && (
                 <div className="flex justify-start animate-message-slide">
                   <Avatar className="h-8 w-8 mr-2 flex-shrink-0">
                     <AvatarImage src={currentLawyer.photo} alt={currentLawyer.name} />
@@ -215,11 +215,22 @@ const LawyerChatSection = () => {
                   </Avatar>
                   <div className="bg-whatsapp-bubble-received text-foreground rounded-lg rounded-tl-none px-4 py-3 max-w-[85%] sm:max-w-[70%] shadow-sm relative">
                     <div className="absolute -left-2 top-0 w-0 h-0 border-t-[8px] border-t-whatsapp-bubble-received border-r-[8px] border-r-transparent" />
-                    <div className="flex gap-1.5">
-                      <div className="w-2.5 h-2.5 bg-muted-foreground/60 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                      <div className="w-2.5 h-2.5 bg-muted-foreground/60 rounded-full animate-bounce" style={{ animationDelay: "200ms" }} />
-                      <div className="w-2.5 h-2.5 bg-muted-foreground/60 rounded-full animate-bounce" style={{ animationDelay: "400ms" }} />
-                    </div>
+                    {isThinking ? (
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm text-muted-foreground italic">Lendo sua mensagem</span>
+                        <div className="flex gap-1">
+                          <div className="w-1 h-1 bg-muted-foreground/60 rounded-full animate-pulse" style={{ animationDelay: "0ms" }} />
+                          <div className="w-1 h-1 bg-muted-foreground/60 rounded-full animate-pulse" style={{ animationDelay: "200ms" }} />
+                          <div className="w-1 h-1 bg-muted-foreground/60 rounded-full animate-pulse" style={{ animationDelay: "400ms" }} />
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex gap-1.5">
+                        <div className="w-2.5 h-2.5 bg-muted-foreground/60 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                        <div className="w-2.5 h-2.5 bg-muted-foreground/60 rounded-full animate-bounce" style={{ animationDelay: "200ms" }} />
+                        <div className="w-2.5 h-2.5 bg-muted-foreground/60 rounded-full animate-bounce" style={{ animationDelay: "400ms" }} />
+                      </div>
+                    )}
                   </div>
                 </div>
               )}

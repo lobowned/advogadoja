@@ -622,23 +622,71 @@ SEU PAPEL:
 - Quando identificar a área específica, informe que vai transferir para um especialista
 - Use tom conversacional e empático
 
-IMPORTANTE: Quando detectar uma área específica (família, trabalhista, civil, previdenciário, penal), diga algo como:
-"Entendi... Vou conectar você com nosso especialista em [área], que poderá ajudá-lo melhor com esse tipo de caso."`;
+IMPORTANTE - TRANSFERÊNCIA AUTOMÁTICA:
+Quando detectar uma área específica (família, trabalhista, civil, previdenciário, penal), ANUNCIE a transferência como fato consumado:
+- Diga: "Perfeito! Vou te passar agora para [nome do especialista], nosso(a) especialista em [sub-especialidade]. Ele/ela já tem acesso ao seu caso."
+- NÃO pergunte "O que você acha?" ou peça autorização - a transferência é automática
+- Seja breve e confiante na transição
+- Exemplo: "Entendi! Vou te conectar agora com a Dra. Souza, nossa especialista em assédio no trabalho. Ela já está ciente do seu caso."`;
 
     if (currentLawyerId !== 'carlos-silva') {
+      // Obter nome do advogado atual
+      const lawyerNames: Record<string, string> = {
+        'maria-santos': 'Dra. Maria Santos',
+        'rafael-oliveira': 'Dr. Rafael Oliveira',
+        'juliana-costa': 'Dra. Juliana Costa',
+        'fernando-lima': 'Dr. Fernando Lima',
+        'patricia-almeida': 'Dra. Patrícia Almeida',
+        'rodrigo-barros': 'Dr. Rodrigo Barros',
+        'ricardo-mendes': 'Dr. Ricardo Mendes',
+        'ana-rodrigues': 'Dra. Ana Rodrigues',
+        'lucas-ferreira': 'Dr. Lucas Ferreira',
+        'carla-souza': 'Dra. Carla Souza',
+        'paulo-martins': 'Dr. Paulo Martins',
+        'beatriz-campos': 'Dra. Beatriz Campos',
+        'andre-silva': 'Dr. André Silva',
+        'claudia-martins': 'Dra. Cláudia Martins',
+        'marcos-oliveira': 'Dr. Marcos Oliveira',
+        'isabela-santos': 'Dra. Isabela Santos',
+        'renato-alves': 'Dr. Renato Alves',
+        'sandra-lima': 'Dra. Sandra Lima',
+        'roberto-costa': 'Dr. Roberto Costa',
+        'vanessa-reis': 'Dra. Vanessa Reis',
+        'joao-fernandes': 'Dr. João Fernandes',
+        'larissa-souza': 'Dra. Larissa Souza',
+        'eduardo-gomes': 'Dr. Eduardo Gomes',
+        'monica-alves': 'Dra. Mônica Alves',
+        'gustavo-reis': 'Dr. Gustavo Reis',
+        'camila-nunes': 'Dra. Camila Nunes',
+        'diego-santos': 'Dr. Diego Santos',
+        'fernanda-lima': 'Dra. Fernanda Lima',
+        'thiago-rocha': 'Dr. Thiago Rocha',
+        'marina-costa': 'Dra. Marina Costa',
+        'helena-vasconcelos': 'Dra. Helena Vasconcelos',
+        'gabriel-monteiro': 'Dr. Gabriel Monteiro',
+        'renata-machado': 'Dra. Renata Machado',
+        'leonardo-prado': 'Dr. Leonardo Prado',
+        'cristina-torres': 'Dra. Cristina Torres',
+      };
+      
+      const lawyerName = lawyerNames[currentLawyerId] || 'Dr./Dra. Especialista';
+      
       // Verificar se é uma transferência (primeira mensagem do especialista)
       const isFirstMessage = isTransfer === true;
       
-      systemPrompt = `Você é um advogado especialista brasileiro. Seja natural, direto e humano.
+      systemPrompt = `VOCÊ É ${lawyerName}, advogado especialista brasileiro.
+SEU NOME É ${lawyerName}. SEU ID É ${currentLawyerId}.
+NUNCA diga que é outro advogado.
 
 ${isFirstMessage ? `IMPORTANTE: ESTA É SUA PRIMEIRA MENSAGEM (transferência de advogado)
-- Se apresente brevemente com seu sobrenome (ex: "Oi! Sou Dr. Oliveira")
+- Se apresente brevemente (ex: "Oi! Sou ${lawyerName}")
 - Mostre que leu o caso: mencione o problema específico que foi relatado
 - Faça UMA pergunta relevante para avançar o caso
 - NÃO peça para repetir o problema
 - NÃO diga "Como posso ajudá-lo?"
+- NÃO se confunda com o advogado anterior (Dr. Carlos Silva)
 
-Exemplo: "Oi! Sou Dr. Oliveira. Vi que você quer entrar com processo de pensão. Vocês já tiveram algum acordo antes?"
+Exemplo: "Oi! Sou ${lawyerName}. Vi que você sofreu assédio no trabalho. Isso aconteceu recentemente?"
 ` : ''}
 
 ESTILO:

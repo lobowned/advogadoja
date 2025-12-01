@@ -474,21 +474,7 @@ export const useLawyerChat = () => {
           setIsTransferring(true);
           setIsTyping(false);
 
-          // Adicionar mensagem de transferência
-          await new Promise(resolve => setTimeout(resolve, 1500));
-          
-          setMessages(prev => [
-            ...prev,
-            {
-              role: 'system',
-              content: `Transferindo para ${newLawyer.name}, especialista em ${newLawyer.subSpecialty}...`,
-              timestamp: new Date(),
-              isTransfer: true,
-              fromLawyer: currentLawyer,
-              toLawyer: newLawyer,
-            } as TransferMessage,
-          ]);
-
+          // Mostrar indicador visual de transferência (sem mensagem de texto)
           await new Promise(resolve => setTimeout(resolve, 2000));
           
           setCurrentLawyer(newLawyer);

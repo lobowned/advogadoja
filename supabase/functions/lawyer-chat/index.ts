@@ -20,32 +20,189 @@ serve(async (req) => {
 
     console.log("Received messages:", messages.length, "Current lawyer:", currentLawyerId);
 
-    // Detectar área jurídica baseado em palavras-chave
-    const detectSpecialty = (text: string): string | null => {
+    // NÍVEL 1: Detecção específica por sub-especialidade (direciona para advogado específico)
+    const detectSpecificLawyer = (text: string): string | null => {
+      const lowerText = text.toLowerCase();
+      
+      // CONSUMIDOR - Prioridade máxima (negativação indevida, etc.)
+      if (/negativação|negativado|negativada|nome.*sujo|serasa|spc|boa.*vista|cobrança.*indevida|cobraram.*errado|fraude.*cartão|clonaram|não.*reconheço|débito.*automático/i.test(lowerText)) {
+        return 'marina-costa';
+      }
+      
+      // PENSÃO POR MORTE
+      if (/pensão.*(por|de)?.*morte|pai.*morreu|mãe.*morreu|marido.*morreu|esposa.*morreu|viúva|viúvo|dependente.*faleceu/i.test(lowerText)) {
+        return 'isabela-santos';
+      }
+      
+      // ACIDENTE DE TRABALHO
+      if (/acidente.*(de|no).*trabalho|machucou.*trabalho|lesão.*trabalho|doença.*ocupacional|CAT|afastado.*trabalho|LER|DORT/i.test(lowerText)) {
+        return 'ana-rodrigues';
+      }
+      
+      // ASSÉDIO MORAL
+      if (/assédio.*moral|humilha|humilhado|humilhação|chefe.*xinga|ambiente.*hostil|perseguição.*trabalho|constrangimento.*trabalho/i.test(lowerText)) {
+        return 'lucas-ferreira';
+      }
+      
+      // ASSÉDIO SEXUAL
+      if (/assédio.*sexual|cantada|investida.*sexual|importunação|abuso.*sexual.*trabalho|proposta.*indecente|toque.*indesejado/i.test(lowerText)) {
+        return 'carla-souza';
+      }
+      
+      // HORAS EXTRAS
+      if (/hora.*extra|horas.*extras|não.*paga.*hora|banco.*de.*horas|adicional.*noturno|excesso.*jornada/i.test(lowerText)) {
+        return 'paulo-martins';
+      }
+      
+      // RESCISÃO INDIRETA
+      if (/rescisão.*indireta|salário.*atrasado|não.*paga.*salário|falta.*grave.*empregador|forçando.*pedir.*demissão/i.test(lowerText)) {
+        return 'beatriz-campos';
+      }
+      
+      // DIVÓRCIO
+      if (/divórcio|divorciar|separação|separar.*casal|quero.*me.*separar|ex-marido|ex-esposa|fim.*do.*casamento/i.test(lowerText)) {
+        return 'maria-santos';
+      }
+      
+      // GUARDA DE FILHOS
+      if (/guarda.*(de|do|da)?.*(filho|filha|criança|menor)|visitação|convivência|não.*deixa.*ver|tirar.*guarda|perder.*guarda/i.test(lowerText)) {
+        return 'rafael-oliveira';
+      }
+      
+      // PENSÃO ALIMENTÍCIA
+      if (/pensão.*alimentícia|pensão.*de.*alimentos|não.*paga.*pensão|pensão.*atrasada|aumentar.*pensão|diminuir.*pensão|exoneração/i.test(lowerText)) {
+        return 'juliana-costa';
+      }
+      
+      // ALIENAÇÃO PARENTAL
+      if (/alienação.*parental|manipula|fala.*mal|afastar.*do.*pai|afastar.*da.*mãe|impede.*visita|dificulta.*convivência/i.test(lowerText)) {
+        return 'fernando-lima';
+      }
+      
+      // UNIÃO ESTÁVEL
+      if (/união.*estável|companheiro|companheira|moramos.*juntos|vivemos.*juntos|reconhecer.*união|dissolução.*união/i.test(lowerText)) {
+        return 'patricia-almeida';
+      }
+      
+      // INVENTÁRIO E HERANÇA
+      if (/herança|inventário|bens.*do.*falecido|partilha.*herança|herdeiro|espólio|testamento|arrolamento/i.test(lowerText)) {
+        return 'rodrigo-barros';
+      }
+      
+      // DEMISSÃO
+      if (/demissão|demitido|demitida|mandaram.*embora|dispensado|perdeu.*emprego|justa.*causa|verbas.*rescisórias/i.test(lowerText)) {
+        return 'ricardo-mendes';
+      }
+      
+      // APOSENTADORIA
+      if (/aposentadoria|aposentar|quero.*aposentar|já.*posso.*aposentar|tempo.*de.*contribuição|aposentadoria.*por.*idade/i.test(lowerText)) {
+        return 'andre-silva';
+      }
+      
+      // AUXÍLIO-DOENÇA
+      if (/auxílio.*doença|auxílio-doença|negado.*auxílio|cortaram.*auxílio|perícia.*médica|não.*consigo.*trabalhar|afastado.*doença/i.test(lowerText)) {
+        return 'claudia-martins';
+      }
+      
+      // BPC/LOAS
+      if (/bpc|loas|benefício.*assistencial|idoso.*carente|baixa.*renda|nunca.*contribui|deficiente.*carente/i.test(lowerText)) {
+        return 'marcos-oliveira';
+      }
+      
+      // REVISÃO DE BENEFÍCIOS
+      if (/revisão.*benefício|revisar.*aposentadoria|benefício.*baixo|valor.*errado|buraco.*negro|teto.*previdenciário/i.test(lowerText)) {
+        return 'renato-alves';
+      }
+      
+      // APOSENTADORIA RURAL
+      if (/rural|trabalhador.*rural|agricultura|roça|campo|lavrador|sitiante|meeiro|boia-fria|trabalho.*no.*campo/i.test(lowerText)) {
+        return 'sandra-lima';
+      }
+      
+      // FLAGRANTE E PRISÃO
+      if (/preso|presa|flagrante|detido|delegacia|cadeia|algemado|audiência.*custódia|foi.*preso/i.test(lowerText)) {
+        return 'roberto-costa';
+      }
+      
+      // HABEAS CORPUS
+      if (/habeas.*corpus|soltar|prisão.*preventiva|mandado.*prisão|preso.*injustamente|relaxamento|tirar.*da.*cadeia/i.test(lowerText)) {
+        return 'vanessa-reis';
+      }
+      
+      // VIOLÊNCIA DOMÉSTICA
+      if (/violência.*doméstica|maria.*da.*penha|agressão|medida.*protetiva|espancou|bateu|agrediu|ameaça.*matar/i.test(lowerText)) {
+        return 'joao-fernandes';
+      }
+      
+      // CRIMES PATRIMONIAIS
+      if (/roubo|furto|estelionato|receptação|roubaram|furtaram|caí.*em.*golpe|me.*roubaram/i.test(lowerText)) {
+        return 'larissa-souza';
+      }
+      
+      // CRIMES DE TRÂNSITO
+      if (/acidente.*carro|acidente.*moto|dirigir.*embriagado|bêbado.*volante|alcoolemia|CNH.*cassada|atropelamento|bateu.*carro/i.test(lowerText)) {
+        return 'eduardo-gomes';
+      }
+      
+      // DEFESA CRIMINAL GERAL
+      if (/processo.*criminal|denúncia|réu|inquérito|respondendo.*processo|defesa.*criminal/i.test(lowerText)) {
+        return 'monica-alves';
+      }
+      
+      // COBRANÇAS E DÍVIDAS
+      if (/cobrança|dívida|devo.*dinheiro|devedor|empréstimo|cheque|promissória|execução|me.*cobrando|protesto/i.test(lowerText)) {
+        return 'gustavo-reis';
+      }
+      
+      // DANOS MORAIS (GERAL)
+      if (/dano.*moral|ofensa|constrangimento|humilhação.*pública|injúria|difamação|calúnia|exposto.*ridículo/i.test(lowerText)) {
+        return 'camila-nunes';
+      }
+      
+      // CONTRATOS
+      if (/contrato|descumpriu.*contrato|acordo|quebra.*de.*contrato|cláusula|rescisão.*contrato|não.*cumpriram/i.test(lowerText)) {
+        return 'diego-santos';
+      }
+      
+      // DESPEJO E LOCAÇÃO
+      if (/despejo|aluguel|inquilino|locação|não.*paga.*aluguel|ação.*de.*despejo|locador|locatário/i.test(lowerText)) {
+        return 'fernanda-lima';
+      }
+      
+      // IMÓVEIS E USUCAPIÃO
+      if (/usucapião|propriedade|posse|registro.*imóvel|escritura|regularização|morando.*há.*anos|invasão/i.test(lowerText)) {
+        return 'thiago-rocha';
+      }
+      
+      return null;
+    };
+
+    // NÍVEL 2: Detecção geral por categoria (fallback quando não encontra advogado específico)
+    const detectGeneralSpecialty = (text: string): string | null => {
       const lowerText = text.toLowerCase();
       
       // Família
-      if (/divórcio|separação|separar|guarda|filho|filha|pensão|alimento|união estável|herança|inventário/i.test(lowerText)) {
+      if (/divórcio|separação|guarda|filho|filha|pensão|alimento|união.*estável|herança|inventário|casamento|cônjuge/i.test(lowerText)) {
         return 'familia';
       }
       
       // Trabalhista
-      if (/demissão|demitido|trabalho|emprego|patrão|acidente.*trabalho|assédio.*moral|assédio.*sexual|hora.*extra/i.test(lowerText)) {
+      if (/demissão|demitido|trabalho|emprego|patrão|acidente.*trabalho|assédio|hora.*extra|rescisão|salário/i.test(lowerText)) {
         return 'trabalhista';
       }
       
       // Civil
-      if (/cobrança|dívida|dano.*moral|contrato|despejo|aluguel|imóvel|consumidor/i.test(lowerText)) {
+      if (/cobrança|dívida|dano|contrato|despejo|aluguel|imóvel|consumidor|locação|propriedade/i.test(lowerText)) {
         return 'civil';
       }
       
       // Previdenciário
-      if (/aposentadoria|inss|benefício|auxílio.*doença|bpc|loas|pensão.*morte/i.test(lowerText)) {
+      if (/aposentadoria|inss|benefício|auxílio|bpc|loas|pensão.*morte|perícia|rural/i.test(lowerText)) {
         return 'previdenciario';
       }
       
       // Penal
-      if (/preso|prisão|crime|polícia|acusado|habeas corpus|violência doméstica|roubo|furto/i.test(lowerText)) {
+      if (/preso|prisão|crime|polícia|acusado|habeas|violência|roubo|furto|trânsito|denúncia/i.test(lowerText)) {
         return 'penal';
       }
       
@@ -68,11 +225,21 @@ serve(async (req) => {
     if (currentLawyerId === 'carlos-silva' && messages.length > 0) {
       const lastUserMessage = messages.filter((m: any) => m.role === 'user').slice(-1)[0];
       if (lastUserMessage) {
-        const detectedSpecialty = detectSpecialty(lastUserMessage.content);
-        if (detectedSpecialty) {
-          const specialists = lawyersBySpecialty[detectedSpecialty];
-          newLawyerId = specialists[Math.floor(Math.random() * specialists.length)];
+        // NÍVEL 1: Tentar detectar advogado específico primeiro
+        newLawyerId = detectSpecificLawyer(lastUserMessage.content);
+        
+        // NÍVEL 2: Se não encontrou específico, usar categoria geral
+        if (!newLawyerId) {
+          const detectedSpecialty = detectGeneralSpecialty(lastUserMessage.content);
+          if (detectedSpecialty) {
+            const specialists = lawyersBySpecialty[detectedSpecialty];
+            newLawyerId = specialists[Math.floor(Math.random() * specialists.length)];
+          }
+        }
+        
+        if (newLawyerId) {
           needsTransfer = true;
+          console.log(`Transferring to specific lawyer: ${newLawyerId}`);
         }
       }
     }

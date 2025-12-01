@@ -333,6 +333,58 @@ export const lawyers: Lawyer[] = [
     keywords: ['acusado', 'processo criminal', 'denúncia', 'réu', 'crime', 'inquérito', 'processado', 'respondendo processo', 'defesa criminal'],
     bio: 'Especialista em defesa criminal geral em todas as fases processuais.'
   },
+
+  // DIREITO DA SAÚDE E OUTROS (5)
+  {
+    id: 'helena-vasconcelos',
+    name: 'Dra. Helena Vasconcelos',
+    photo: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop',
+    oab: 'OAB/SP 234.567',
+    specialty: 'civil',
+    subSpecialty: 'Direito da Saúde',
+    keywords: ['plano de saúde', 'plano saúde', 'cirurgia negada', 'medicamento negado', 'carência', 'reajuste abusivo', 'ANS', 'cobertura negada', 'home care', 'UTI negada', 'quimioterapia negada', 'tratamento negado', 'exame negado', 'unimed', 'bradesco saúde', 'sul américa', 'amil', 'hapvida', 'procedimento negado', 'autorização negada'],
+    bio: 'Especialista em ações contra planos de saúde, cobertura de tratamentos e procedimentos médicos.'
+  },
+  {
+    id: 'gabriel-monteiro',
+    name: 'Dr. Gabriel Monteiro',
+    photo: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=200&h=200&fit=crop',
+    oab: 'OAB/RJ 345.678',
+    specialty: 'civil',
+    subSpecialty: 'Direito Digital e Crimes Cibernéticos',
+    keywords: ['golpe pix', 'golpe whatsapp', 'golpe internet', 'golpe banco', 'conta invadida', 'hackeado', 'hackear', 'perfil falso', 'vazamento dados', 'lgpd', 'fotos vazadas', 'nudes vazados', 'extorsão', 'ransomware', 'fake news', 'deepfake', 'stalker', 'perseguição online', 'crimes digitais', 'crimes virtuais', 'fraude digital', 'phishing'],
+    bio: 'Especialista em crimes digitais, vazamento de dados, golpes virtuais e proteção de dados pessoais.'
+  },
+  {
+    id: 'renata-machado',
+    name: 'Dra. Renata Machado',
+    photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop',
+    oab: 'OAB/MG 456.789',
+    specialty: 'civil',
+    subSpecialty: 'Erro Médico e Responsabilidade Hospitalar',
+    keywords: ['erro médico', 'negligência médica', 'negligência hospitalar', 'cirurgia errada', 'diagnóstico errado', 'infecção hospitalar', 'imperícia', 'imprudência', 'parto errado', 'sequela', 'morte hospital', 'morte médico', 'tratamento errado', 'medicamento errado', 'procedimento errado', 'médico errou', 'cirurgia mal feita'],
+    bio: 'Especialista em ações de indenização por erro médico, imperícia e negligência hospitalar.'
+  },
+  {
+    id: 'leonardo-prado',
+    name: 'Dr. Leonardo Prado',
+    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop',
+    oab: 'OAB/PR 567.890',
+    specialty: 'civil',
+    subSpecialty: 'Direito Aéreo e do Passageiro',
+    keywords: ['voo cancelado', 'voo atrasado', 'overbooking', 'mala extraviada', 'bagagem perdida', 'companhia aérea', 'gol', 'latam', 'azul', 'avianca', 'reembolso passagem', 'conexão perdida', 'atraso aeroporto', 'perdi voo', 'extravio bagagem', 'não embarcaram', 'voo atrasou'],
+    bio: 'Especialista em direitos do passageiro aéreo, indenizações por atrasos, cancelamentos e extravios.'
+  },
+  {
+    id: 'cristina-torres',
+    name: 'Dra. Cristina Torres',
+    photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop',
+    oab: 'OAB/BA 678.901',
+    specialty: 'civil',
+    subSpecialty: 'Direito de Trânsito Administrativo',
+    keywords: ['multa trânsito', 'multa de trânsito', 'recurso multa', 'pontos cnh', 'suspensão cnh', 'cassação cnh', 'detran', 'radar', 'blitz', 'autuação', 'auto infração', 'jari', 'cetran', 'velocidade', 'estacionamento', 'rodízio', 'multa injusta', 'pontos carteira'],
+    bio: 'Especialista em recursos administrativos de trânsito, defesas de multas e recuperação de CNH.'
+  },
 ];
 
 export const getLawyerById = (id: string): Lawyer | undefined => {

@@ -24,7 +24,32 @@ serve(async (req) => {
     const detectSpecificLawyer = (text: string): string | null => {
       const lowerText = text.toLowerCase();
       
-      // CONSUMIDOR - Prioridade máxima (negativação indevida, etc.)
+      // PLANO DE SAÚDE - Prioridade máxima
+      if (/plano.*de?.*saúde|cirurgia.*negada|tratamento.*negado|medicamento.*negado|procedimento.*negado|cobertura.*negada|UTI.*negada|home.*care|unimed|bradesco.*saúde|amil|hapvida|sul.*américa|ANS|carência.*plano|reajuste.*abusivo.*saúde|autorização.*negada/i.test(lowerText)) {
+        return 'helena-vasconcelos';
+      }
+      
+      // GOLPES DIGITAIS / CRIMES CIBERNÉTICOS
+      if (/golpe.*pix|golpe.*whatsapp|golpe.*internet|conta.*invadida|hackeado|hackear|perfil.*falso|vazamento.*dados|lgpd|fotos.*vazadas|nudes.*vazados|extorsão|ransomware|fake.*news|deepfake|stalker|perseguição.*online|fraude.*digital|phishing|crimes.*digitais/i.test(lowerText)) {
+        return 'gabriel-monteiro';
+      }
+      
+      // ERRO MÉDICO
+      if (/erro.*médico|negligência.*médica|negligência.*hospitalar|cirurgia.*errada|diagnóstico.*errado|infecção.*hospitalar|imperícia|imprudência.*médica|parto.*errado|sequela|morte.*hospital|morte.*médico|tratamento.*errado|medicamento.*errado|médico.*errou|cirurgia.*mal.*feita/i.test(lowerText)) {
+        return 'renata-machado';
+      }
+      
+      // PROBLEMAS COM COMPANHIAS AÉREAS
+      if (/voo.*cancelado|voo.*atrasado|overbooking|mala.*extraviada|bagagem.*perdida|companhia.*aérea|gol|latam|azul|avianca|reembolso.*passagem|conexão.*perdida|atraso.*aeroporto|perdi.*voo|extravio.*bagagem|não.*embarcaram/i.test(lowerText)) {
+        return 'leonardo-prado';
+      }
+      
+      // MULTAS DE TRÂNSITO (Administrativo)
+      if (/multa.*trânsito|multa.*de.*trânsito|recurso.*multa|pontos.*cnh|suspensão.*cnh|cassação.*cnh|detran|radar|blitz|autuação|auto.*infração|jari|cetran|multa.*injusta|pontos.*carteira/i.test(lowerText)) {
+        return 'cristina-torres';
+      }
+      
+      // CONSUMIDOR - Prioridade alta (negativação indevida, etc.)
       if (/negativação|negativado|negativada|nome.*sujo|serasa|spc|boa.*vista|cobrança.*indevida|cobraram.*errado|fraude.*cartão|clonaram|não.*reconheço|débito.*automático/i.test(lowerText)) {
         return 'marina-costa';
       }
@@ -213,7 +238,7 @@ serve(async (req) => {
     const lawyersBySpecialty: Record<string, string[]> = {
       familia: ['maria-santos', 'rafael-oliveira', 'juliana-costa', 'fernando-lima', 'patricia-almeida', 'rodrigo-barros'],
       trabalhista: ['ricardo-mendes', 'ana-rodrigues', 'lucas-ferreira', 'carla-souza', 'paulo-martins', 'beatriz-campos'],
-      civil: ['gustavo-reis', 'camila-nunes', 'diego-santos', 'fernanda-lima', 'thiago-rocha', 'marina-costa'],
+      civil: ['gustavo-reis', 'camila-nunes', 'diego-santos', 'fernanda-lima', 'thiago-rocha', 'marina-costa', 'helena-vasconcelos', 'gabriel-monteiro', 'renata-machado', 'leonardo-prado', 'cristina-torres'],
       previdenciario: ['andre-silva', 'claudia-martins', 'marcos-oliveira', 'isabela-santos', 'renato-alves', 'sandra-lima'],
       penal: ['roberto-costa', 'vanessa-reis', 'joao-fernandes', 'larissa-souza', 'eduardo-gomes', 'monica-alves'],
     };

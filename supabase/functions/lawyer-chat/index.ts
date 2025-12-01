@@ -245,6 +245,49 @@ serve(async (req) => {
       penal: ['roberto-costa', 'vanessa-reis', 'joao-fernandes', 'larissa-souza', 'eduardo-gomes', 'monica-alves'],
     };
 
+    // Map lawyer IDs to their specialties
+    const getSpecialtyFromLawyerId = (lawyerId: string): string | null => {
+      const specialtyMap: Record<string, string> = {
+        'carlos-silva': 'geral',
+        'maria-santos': 'familia',
+        'rafael-oliveira': 'familia',
+        'juliana-costa': 'familia',
+        'fernando-lima': 'familia',
+        'patricia-almeida': 'familia',
+        'rodrigo-barros': 'familia',
+        'ricardo-mendes': 'trabalhista',
+        'ana-rodrigues': 'trabalhista',
+        'lucas-ferreira': 'trabalhista',
+        'carla-souza': 'trabalhista',
+        'paulo-martins': 'trabalhista',
+        'beatriz-campos': 'trabalhista',
+        'gustavo-reis': 'civil',
+        'camila-nunes': 'civil',
+        'diego-santos': 'civil',
+        'fernanda-lima': 'civil',
+        'thiago-rocha': 'civil',
+        'marina-costa': 'civil',
+        'helena-vasconcelos': 'civil',
+        'gabriel-monteiro': 'civil',
+        'renata-machado': 'civil',
+        'leonardo-prado': 'civil',
+        'cristina-torres': 'civil',
+        'andre-silva': 'previdenciario',
+        'claudia-martins': 'previdenciario',
+        'marcos-oliveira': 'previdenciario',
+        'isabela-santos': 'previdenciario',
+        'renato-alves': 'previdenciario',
+        'sandra-lima': 'previdenciario',
+        'roberto-costa': 'penal',
+        'vanessa-reis': 'penal',
+        'joao-fernandes': 'penal',
+        'larissa-souza': 'penal',
+        'eduardo-gomes': 'penal',
+        'monica-alves': 'penal',
+      };
+      return specialtyMap[lawyerId] || null;
+    };
+
     // LEAD COLLECTION LOGIC
     let needsLeadCollection = false;
     let leadData: { hasName: boolean; hasContact: boolean; problemDetected: boolean; specialty?: string; leadId?: string; notificationSent?: boolean } = {
@@ -253,8 +296,8 @@ serve(async (req) => {
       problemDetected: false
     };
 
-    // Check if we need to collect lead info after 3-4 messages with identified problem
-    if (sessionId && messageCount >= 3 && currentLawyerId !== 'carlos-silva') {
+    // Check if we need to collect lead info after 5+ messages with identified problem
+    if (sessionId && messageCount >= 5 && currentLawyerId !== 'carlos-silva') {
       try {
         // Check existing lead in database
         const leadCheckResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?session_id=eq.${sessionId}&select=*`, {
@@ -289,8 +332,15 @@ serve(async (req) => {
             })
           });
 
-          // DISPARO DE NOTIFICAÇÃO: Se tem nome + WhatsApp + 5+ mensagens + não enviou ainda
-          if (leadData.hasName && leadData.hasContact && messageCount >= 5 && !leadData.notificationSent) {
+          // DISPARO DE NOTIFICAÇÃO: Se tem nome + WhatsApp + 8+ mensagens + não enviou ainda
+          console.log("Checking notification conditions:", {
+            hasName: leadData.hasName,
+            hasContact: leadData.hasContact,
+            messageCount,
+            notificationSent: leadData.notificationSent
+          });
+          
+          if (leadData.hasName && leadData.hasContact && messageCount >= 8 && !leadData.notificationSent) {
             console.log("Triggering WhatsApp notification for lead:", leadData.leadId);
             
             // Gerar resumo do caso usando a IA
@@ -354,8 +404,10 @@ Seja objetivo e direto.`;
               const fullLeadData = await fullLeadResponse.json();
               
               if (fullLeadData && fullLeadData.length > 0) {
-                // Chamar edge function de notificação via Supabase client (não precisa de fetch)
-                await fetch(`${SUPABASE_URL}/functions/v1/send-whatsapp-notification`, {
+                // Chamar edge function de notificação via Supabase client
+                console.log("Sending WhatsApp notification for lead:", leadData.leadId);
+                
+                const notificationResult = await fetch(`${SUPABASE_URL}/functions/v1/send-whatsapp-notification`, {
                   method: 'POST',
                   headers: {
                     'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
@@ -365,6 +417,13 @@ Seja objetivo e direto.`;
                     leadData: fullLeadData[0]
                   })
                 });
+                
+                if (!notificationResult.ok) {
+                  const errorText = await notificationResult.text();
+                  console.error("Failed to send WhatsApp notification:", errorText);
+                } else {
+                  console.log("WhatsApp notification sent successfully");
+                }
 
                 // Marcar notificação como enviada
                 await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
@@ -403,7 +462,7 @@ Seja objetivo e direto.`;
               session_id: sessionId,
               message_count: messageCount,
               assigned_lawyer: currentLawyerId,
-              specialty: currentLawyerId !== 'carlos-silva' ? currentLawyerId : null,
+              specialty: getSpecialtyFromLawyerId(currentLawyerId),
               problem_detected: true,
               conversation_history: messages
             })

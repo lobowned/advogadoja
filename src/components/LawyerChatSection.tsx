@@ -43,10 +43,10 @@ const LawyerChatSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Fale com um Advogado Agora
+            Atendimento Jurídico Imediato
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Advogados especializados prontos para atender você
+            Converse agora com Dr. Carlos Silva — sem compromisso, 100% confidencial
           </p>
         </div>
 
@@ -172,7 +172,7 @@ const LawyerChatSection = () => {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Digite sua mensagem..."
+                placeholder="Descreva sua situação jurídica..."
                 disabled={isLoading}
                 className="flex-1"
               />
@@ -189,7 +189,7 @@ const LawyerChatSection = () => {
               </Button>
             </div>
             <p className="text-xs text-muted-foreground mt-2 text-center">
-              Suas informações são confidenciais e protegidas
+              🔒 Conversa protegida por sigilo profissional (Art. 34, VII do Estatuto da OAB)
             </p>
           </div>
         </Card>

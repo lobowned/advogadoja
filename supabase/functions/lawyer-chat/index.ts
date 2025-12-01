@@ -97,6 +97,12 @@ serve(async (req) => {
       };
     };
 
+    // VERIFICAÇÃO DE SAUDAÇÃO (para evitar detecção agressiva)
+    const isGreetingOnly = (text: string): boolean => {
+      const greetings = /^(oi|olá|ola|olá!|oi!|hey|hi|e aí|eae|eai|boa tarde|bom dia|boa noite|oie|oiee|oiii|opa|salve|fala|tudo bem|td bem|tudo bom|beleza|blz)[\!\?\.\s]*$/i;
+      return greetings.test(text.trim());
+    };
+
     // LISTA COMPLETA DE ADVOGADOS PARA A IA
     const lawyersListForAI = `ADVOGADOS DISPONÍVEIS:
 
@@ -203,7 +209,17 @@ PENAL (6 advogados):
             messages: [
               { 
                 role: "system", 
-                content: `Você é um sistema de triagem jurídica brasileira. Analise o problema do usuário e determine:
+                content: `Você é um sistema de triagem jurídica brasileira.
+
+⚠️ REGRA CRÍTICA - QUANDO NÃO USAR O TOOL:
+- Se a mensagem for apenas uma SAUDAÇÃO (oi, olá, bom dia, etc.) sem problema jurídico → NÃO use o tool
+- Se a mensagem for pergunta genérica sem contexto jurídico → NÃO use o tool
+- Se não conseguir identificar problema jurídico claro → NÃO use o tool
+- NUNCA sugira transferência para saudações ou perguntas vagas
+
+Só USE O TOOL quando identificar um PROBLEMA JURÍDICO CLARAMENTE DEFINIDO.
+
+Quando usar o tool, analise:
 1. A área do direito (família, trabalhista, civil, previdenciário, penal, etc.)
 2. A sub-especialidade específica
 3. O advogado mais adequado da lista abaixo
@@ -224,7 +240,7 @@ IMPORTANTE:
               { role: "user", content: userMessage }
             ],
             tools: [detectSpecialtyTool],
-            tool_choice: { type: "function", function: { name: "detect_legal_specialty" } }
+            tool_choice: "auto"
           }),
         });
 
@@ -239,6 +255,18 @@ IMPORTANTE:
         if (toolCall) {
           const args = JSON.parse(toolCall.function.arguments);
           console.log("🧠 [AI DETECTION] Result:", args);
+          
+          // Verificar se o reasoning indica informações insuficientes
+          if (args.reasoning && (
+            args.reasoning.toLowerCase().includes('insuficiente') || 
+            args.reasoning.toLowerCase().includes('não forneceu') ||
+            args.reasoning.toLowerCase().includes('sem contexto') ||
+            args.reasoning.toLowerCase().includes('saudação') ||
+            args.reasoning.toLowerCase().includes('apenas cumprimentou')
+          )) {
+            console.log("⚠️ [AI DETECTION] Insufficient context detected, skipping transfer");
+            return { lawyerId: null, dynamicLawyer: null, specialty: 'geral', subSpecialty: '', confidence: 0 };
+          }
           
           // Se sugeriu criar advogado dinâmico
           if (args.suggestedLawyerId === 'DYNAMIC' && args.confidence > 0.6) {
@@ -674,37 +702,42 @@ Seja objetivo e direto.`;
             console.log("❌ User did not confirm transfer, continuing with Carlos");
           }
         } else {
-          // Não tem transferência pendente, usar IA para detectar
-          const detection = await detectSpecialtyWithAI(lastUserMessage.content, messages);
-          
-          if (detection.lawyerId && detection.confidence > 0.6) {
-            newLawyerId = detection.lawyerId;
-            pendingTransferLawyer = newLawyerId;
-            shouldAskPermission = true;
-            console.log(`🤔 [AI DETECTION] Asking permission to transfer to: ${newLawyerId} (confidence: ${detection.confidence})`);
+          // Não tem transferência pendente, verificar se é saudação antes de detectar
+          if (isGreetingOnly(lastUserMessage.content)) {
+            console.log("👋 [GREETING] Skipping detection for greeting:", lastUserMessage.content);
+          } else {
+            // Usar IA para detectar
+            const detection = await detectSpecialtyWithAI(lastUserMessage.content, messages);
             
-            // Salvar pending transfer e advogado dinâmico no banco
-            if (sessionId && leadData.leadId) {
-              const updateData: any = {
-                pending_transfer_lawyer: newLawyerId
-              };
+            if (detection.lawyerId && detection.confidence > 0.75) {
+              newLawyerId = detection.lawyerId;
+              pendingTransferLawyer = newLawyerId;
+              shouldAskPermission = true;
+              console.log(`🤔 [AI DETECTION] Asking permission to transfer to: ${newLawyerId} (confidence: ${detection.confidence})`);
               
-              // Se criou advogado dinâmico, salvar também
-              if (detection.dynamicLawyer) {
-                updateData.dynamic_lawyer = detection.dynamicLawyer;
-                console.log("✨ [DYNAMIC LAWYER] Saved to lead:", detection.dynamicLawyer.name);
+              // Salvar pending transfer e advogado dinâmico no banco
+              if (sessionId && leadData.leadId) {
+                const updateData: any = {
+                  pending_transfer_lawyer: newLawyerId
+                };
+                
+                // Se criou advogado dinâmico, salvar também
+                if (detection.dynamicLawyer) {
+                  updateData.dynamic_lawyer = detection.dynamicLawyer;
+                  console.log("✨ [DYNAMIC LAWYER] Saved to lead:", detection.dynamicLawyer.name);
+                }
+                
+                await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
+                  method: 'PATCH',
+                  headers: {
+                    'apikey': SUPABASE_SERVICE_ROLE_KEY!,
+                    'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+                    'Content-Type': 'application/json',
+                    'Prefer': 'return=minimal'
+                  },
+                  body: JSON.stringify(updateData)
+                });
               }
-              
-              await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
-                method: 'PATCH',
-                headers: {
-                  'apikey': SUPABASE_SERVICE_ROLE_KEY!,
-                  'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
-                  'Content-Type': 'application/json',
-                  'Prefer': 'return=minimal'
-                },
-                body: JSON.stringify(updateData)
-              });
             }
           }
         }

@@ -14,12 +14,16 @@ import PainsVsDesires from "@/components/PainsVsDesires";
 import ComparisonTable from "@/components/ComparisonTable";
 import SupportChannels from "@/components/SupportChannels";
 import CTASection from "@/components/CTASection";
+import NicheSelector from "@/components/NicheSelector";
 
 const Index = () => {
   const navigate = useNavigate();
 
   const handleCTA = () => {
-    navigate("/selecionar-nicho");
+    const nicheSection = document.getElementById("niche-selector");
+    if (nicheSection) {
+      nicheSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
@@ -56,6 +60,11 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Niche Selector */}
+      <div id="niche-selector">
+        <NicheSelector />
+      </div>
 
       {/* Video Section */}
       <VideoSection />

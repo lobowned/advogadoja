@@ -2,16 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { MessageCircle, Shield, Lock, Star, CheckCircle } from "lucide-react";
-import { lawyers } from "@/data/lawyers";
+import { useLawyerPresence } from "@/hooks/useLawyerPresence";
 
 interface HeroSectionProps {
   onCtaClick: () => void;
 }
 
 const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
-  // Filter out general lawyers and take first 5
-  const onlineLawyers = lawyers.filter(l => l.specialty !== 'geral').slice(0, 5);
-  const totalOnline = lawyers.filter(l => l.specialty !== 'geral').length;
+  const { onlineLawyers, onlineCount } = useLawyerPresence();
+  const displayLawyers = onlineLawyers.filter(l => l.specialty !== 'geral').slice(0, 5);
 
   return (
     <section className="relative overflow-hidden min-h-[70vh] sm:min-h-[80vh] flex items-center pt-16 md:pt-20">
@@ -58,7 +57,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
               </span>
-              <span><span className="font-semibold">{totalOnline}</span> advogados online</span>
+              <span><span className="font-semibold">{onlineCount}</span> advogados online</span>
             </div>
           </div>
 
@@ -79,7 +78,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
           {/* Stacked Avatars */}
           <div className="flex items-center justify-center gap-3 mb-6 sm:mb-8 animate-fade-up" style={{ animationDelay: "0.25s" }}>
             <div className="flex -space-x-3">
-              {onlineLawyers.map((lawyer) => (
+              {displayLawyers.map((lawyer) => (
                 <Avatar 
                   key={lawyer.id} 
                   className="w-10 h-10 sm:w-12 sm:h-12 border-2 border-white shadow-lg"
@@ -90,7 +89,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
               ))}
             </div>
             <span className="text-white/90 text-sm sm:text-base font-medium">
-              +{totalOnline - 5} disponíveis agora
+              +{Math.max(0, onlineCount - 5)} disponíveis agora
             </span>
           </div>
           

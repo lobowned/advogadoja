@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { MessageCircle, Shield, Lock, Star, CheckCircle } from "lucide-react";
 import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
+import TodayCounter from "@/components/TodayCounter";
 
 interface HeroSectionProps {
   onCtaClick: () => void;
@@ -50,7 +51,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
               <span>Google</span>
             </div>
             <span className="text-white/50">•</span>
-            <span><span className="font-semibold">+5.000</span> atendimentos</span>
+            <TodayCounter />
             <span className="text-white/50">•</span>
             <div className="flex items-center gap-1.5">
               <span className="relative flex h-2.5 w-2.5">

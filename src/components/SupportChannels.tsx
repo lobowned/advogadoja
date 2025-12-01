@@ -1,42 +1,55 @@
 import { Phone, Mail, Video, Clock } from "lucide-react";
 
 const SupportChannels = () => {
-  const channels = [
+  const channels: Array<{
+    icon: any;
+    title: string;
+    description: string;
+    contact: string;
+    action: string;
+    color: string;
+    bgColor: string;
+    highlight: boolean;
+  }> = [
     {
       icon: Phone,
       title: "WhatsApp",
-      description: "Atendimento rápido e direto",
+      description: "Resposta imediata • Disponível agora",
       contact: "(XX) XXXXX-XXXX",
       action: "Enviar mensagem",
       color: "text-green-600",
-      bgColor: "bg-green-600/10"
+      bgColor: "bg-green-600/10",
+      highlight: true
     },
     {
       icon: Mail,
       title: "E-mail",
-      description: "Resposta em até 24h",
+      description: "Resposta garantida em até 24h",
       contact: "contato@escritorio.com.br",
       action: "Enviar e-mail",
       color: "text-blue-600",
-      bgColor: "bg-blue-600/10"
+      bgColor: "bg-blue-600/10",
+      highlight: false
     },
     {
       icon: Video,
       title: "Reunião Online",
-      description: "Videoconferência segura",
+      description: "Videoconferência segura e sigilosa",
       contact: "Agendamento disponível",
       action: "Agendar reunião",
       color: "text-purple-600",
-      bgColor: "bg-purple-600/10"
+      bgColor: "bg-purple-600/10",
+      highlight: false
     },
     {
       icon: Clock,
       title: "Horário de Atendimento",
-      description: "Segunda a Sexta",
+      description: "Segunda a Sexta • Plantão aos sábados",
       contact: "09:00 às 18:00",
       action: "Ver disponibilidade",
       color: "text-amber-600",
-      bgColor: "bg-amber-600/10"
+      bgColor: "bg-amber-600/10",
+      highlight: false
     }
   ];
 
@@ -45,10 +58,10 @@ const SupportChannels = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
-            Entre em Contato
+            Fale Agora com Nossa Equipe
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-            Escolha o canal mais conveniente para você. Estamos prontos para atender.
+            Atendimento humanizado e resposta rápida. Escolha como prefere conversar:
           </p>
         </div>
 
@@ -58,7 +71,11 @@ const SupportChannels = () => {
             return (
               <div
                 key={index}
-                className="bg-card border border-border rounded-lg p-4 sm:p-6 shadow-card hover:shadow-elegant transition-all group cursor-pointer"
+                className={`bg-card rounded-lg p-4 sm:p-6 shadow-card hover:shadow-elegant transition-all group cursor-pointer ${
+                  channel.highlight 
+                    ? 'border-2 border-green-600 ring-2 ring-green-600/20' 
+                    : 'border border-border'
+                }`}
               >
                 <div className={`mb-4 sm:mb-6 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full ${channel.bgColor} group-hover:scale-110 transition-transform`}>
                   <Icon className={`h-6 w-6 sm:h-7 sm:w-7 ${channel.color}`} />

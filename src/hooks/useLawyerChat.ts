@@ -448,7 +448,7 @@ export const useLawyerChat = () => {
       };
 
       // Função para digitar mensagem com humanização
-      const typeMessage = async (text: string): Promise<string> => {
+      const typeMessage = async (text: string, forceNewMessage: boolean = false): Promise<string> => {
         let typedContent = '';
         
         for (let i = 0; i < text.length; i++) {
@@ -495,7 +495,7 @@ export const useLawyerChat = () => {
             
             setMessages(prev => {
               const last = prev[prev.length - 1];
-              if (last?.role === 'assistant' && !('isTransfer' in last)) {
+              if (!forceNewMessage && last?.role === 'assistant' && !('isTransfer' in last) && last.lawyerId === currentLawyer.id) {
                 return prev.map((m, idx) =>
                   idx === prev.length - 1
                     ? { ...m, content: typedContent }
@@ -524,7 +524,7 @@ export const useLawyerChat = () => {
             
             setMessages(prev => {
               const last = prev[prev.length - 1];
-              if (last?.role === 'assistant' && !('isTransfer' in last)) {
+              if (!forceNewMessage && last?.role === 'assistant' && !('isTransfer' in last) && last.lawyerId === currentLawyer.id) {
                 return prev.map((m, idx) =>
                   idx === prev.length - 1
                     ? { ...m, content: typedContent }
@@ -543,7 +543,7 @@ export const useLawyerChat = () => {
           
           setMessages(prev => {
             const last = prev[prev.length - 1];
-            if (last?.role === 'assistant' && !('isTransfer' in last)) {
+            if (!forceNewMessage && last?.role === 'assistant' && !('isTransfer' in last) && last.lawyerId === currentLawyer.id) {
               return prev.map((m, idx) =>
                 idx === prev.length - 1
                   ? { ...m, content: typedContent }
@@ -712,8 +712,8 @@ export const useLawyerChat = () => {
         setIsTyping(true);
         await new Promise(resolve => setTimeout(resolve, 300 + Math.random() * 500));
         
-        // Digitar segunda parte como nova mensagem
-        await typeMessage(part2);
+        // Digitar segunda parte FORÇANDO nova mensagem
+        await typeMessage(part2, true);
         
       } else if (fullResponseContent.length > 0) {
         // Comportamento normal - uma única mensagem

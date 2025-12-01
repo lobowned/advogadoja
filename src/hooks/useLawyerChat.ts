@@ -61,6 +61,32 @@ export const useLawyerChat = () => {
         const trimmedContent = content.trim();
         
         if (leadStep === 'name') {
+          // VALIDAÇÃO: Verificar se é um nome válido
+          const invalidNames = ['não', 'nao', 'sim', 'talvez', 'ok', 'oi', 'olá', 'ola'];
+          const isInvalidName = invalidNames.includes(trimmedContent.toLowerCase()) || 
+                                trimmedContent.length < 2 ||
+                                /^\d+$/.test(trimmedContent); // Só números
+          
+          if (isInvalidName) {
+            // Add user message
+            const userMessage: Message = {
+              role: 'user',
+              content: trimmedContent,
+              timestamp: new Date(),
+            };
+            setMessages(prev => [...prev, userMessage]);
+            
+            // Ask again
+            const retryMessage: Message = {
+              role: 'assistant',
+              content: 'Desculpe, não entendi. Poderia me informar seu nome completo?',
+              timestamp: new Date(),
+              lawyerId: currentLawyer.id,
+            };
+            setMessages(prev => [...prev, retryMessage]);
+            return;
+          }
+          
           // Add user message
           const userMessage: Message = {
             role: 'user',

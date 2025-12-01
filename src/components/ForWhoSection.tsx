@@ -47,38 +47,38 @@ const ForWhoSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
             Para Quem É o Serviço?
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Este escritório é ideal para diferentes perfis e necessidades
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {audiences.map((audience, index) => {
             const Icon = audience.icon;
             return (
               <div
                 key={index}
-                className="bg-card border border-border rounded-lg p-8 shadow-card hover:shadow-elegant transition-all"
+                className="bg-card border border-border rounded-lg p-6 sm:p-8 shadow-card hover:shadow-elegant transition-all"
               >
-                <div className={`mb-6 flex h-16 w-16 items-center justify-center rounded-full ${audience.bgColor}`}>
-                  <Icon className={`h-8 w-8 ${audience.color}`} />
+                <div className={`mb-4 sm:mb-6 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full ${audience.bgColor}`}>
+                  <Icon className={`h-6 w-6 sm:h-8 sm:w-8 ${audience.color}`} />
                 </div>
 
-                <h3 className="text-xl font-bold text-foreground mb-6">
+                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-4 sm:mb-6">
                   {audience.title}
                 </h3>
 
-                <ul className="space-y-3">
+                <ul className="space-y-2 sm:space-y-3">
                   {audience.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className={`h-1.5 w-1.5 rounded-full ${audience.color} mt-2 flex-shrink-0`} />
-                      <span className="text-muted-foreground">{item}</span>
+                    <li key={i} className="flex items-start gap-2 sm:gap-3">
+                      <div className={`h-1.5 w-1.5 rounded-full ${audience.color} mt-1.5 sm:mt-2 flex-shrink-0`} />
+                      <span className="text-sm sm:text-base text-muted-foreground">{item}</span>
                     </li>
                   ))}
                 </ul>

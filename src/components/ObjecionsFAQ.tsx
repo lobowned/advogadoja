@@ -72,22 +72,22 @@ const ObjecionsFAQ = () => {
               </p>
             </div>
 
-            <Accordion type="single" collapsible className="space-y-4">
+            <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
               {objections.map((objection, index) => (
                 <AccordionItem
                   key={index}
                   value={`objection-${index}`}
-                  className="bg-card border border-border rounded-lg px-6 shadow-sm"
+                  className="bg-card border border-border rounded-lg px-4 sm:px-6 shadow-sm"
                 >
-                  <AccordionTrigger className="text-left hover:no-underline">
-                    <div className="flex items-start gap-3">
-                      <Shield className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                      <span className="font-semibold text-foreground">
+                  <AccordionTrigger className="text-left hover:no-underline py-4">
+                    <div className="flex items-start gap-2 sm:gap-3">
+                      <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0 mt-1" />
+                      <span className="font-semibold text-foreground text-sm sm:text-base">
                         {objection.question}
                       </span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pt-4 pl-8">
+                  <AccordionContent className="text-muted-foreground pt-3 sm:pt-4 pl-6 sm:pl-8 text-sm sm:text-base">
                     {objection.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -107,22 +107,22 @@ const ObjecionsFAQ = () => {
               </h2>
             </div>
 
-            <Accordion type="single" collapsible className="space-y-4">
+            <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
               {faqs.map((faq, index) => (
                 <AccordionItem
                   key={index}
                   value={`faq-${index}`}
-                  className="bg-card border border-border rounded-lg px-6 shadow-sm"
+                  className="bg-card border border-border rounded-lg px-4 sm:px-6 shadow-sm"
                 >
-                  <AccordionTrigger className="text-left hover:no-underline">
-                    <div className="flex items-start gap-3">
-                      <FileQuestion className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                      <span className="font-semibold text-foreground">
+                  <AccordionTrigger className="text-left hover:no-underline py-4">
+                    <div className="flex items-start gap-2 sm:gap-3">
+                      <FileQuestion className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0 mt-1" />
+                      <span className="font-semibold text-foreground text-sm sm:text-base">
                         {faq.question}
                       </span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pt-4 pl-8">
+                  <AccordionContent className="text-muted-foreground pt-3 sm:pt-4 pl-6 sm:pl-8 text-sm sm:text-base">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

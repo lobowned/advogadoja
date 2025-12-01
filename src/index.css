@@ -128,4 +128,19 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Mobile optimization */
+  html {
+    @apply scroll-smooth;
+  }
+  
+  /* Prevent horizontal scroll */
+  body {
+    @apply overflow-x-hidden;
+  }
+  
+  /* Touch-friendly minimum sizes */
+  button, a {
+    @apply min-h-[44px];
+  }
 }

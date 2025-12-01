@@ -1,17 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Scale } from "lucide-react";
-import VideoSection from "@/components/VideoSection";
-import ProcessSteps from "@/components/ProcessSteps";
-import ForWhoSection from "@/components/ForWhoSection";
-import OfferBox from "@/components/OfferBox";
-import GuaranteeCard from "@/components/GuaranteeCard";
-import TestimonialsCarousel from "@/components/TestimonialsCarousel";
-import AuthorBio from "@/components/AuthorBio";
-import ObjecionsFAQ from "@/components/ObjecionsFAQ";
-import StatsSection from "@/components/StatsSection";
-import PainsVsDesires from "@/components/PainsVsDesires";
-import ComparisonTable from "@/components/ComparisonTable";
 import SupportChannels from "@/components/SupportChannels";
 import CTASection from "@/components/CTASection";
 import NicheSelector from "@/components/NicheSelector";
@@ -81,39 +70,6 @@ const Index = () => {
       <div id="niche-selector">
         <NicheSelector />
       </div>
-
-      {/* Video Section */}
-      <VideoSection />
-
-      {/* Process Steps */}
-      <ProcessSteps />
-
-      {/* For Who Section */}
-      <ForWhoSection />
-
-      {/* Stats Section */}
-      <StatsSection />
-
-      {/* Offer Box */}
-      <OfferBox />
-
-      {/* Guarantee Card */}
-      <GuaranteeCard />
-
-      {/* Testimonials Carousel */}
-      <TestimonialsCarousel />
-
-      {/* Author Bio */}
-      <AuthorBio />
-
-      {/* Pains vs Desires */}
-      <PainsVsDesires />
-
-      {/* Comparison Table */}
-      <ComparisonTable />
-
-      {/* Objections and FAQ */}
-      <ObjecionsFAQ />
 
       {/* Support Channels */}
       <SupportChannels />

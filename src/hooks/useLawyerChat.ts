@@ -123,15 +123,47 @@ export const useLawyerChat = () => {
           };
           setMessages(prev => [...prev, userMessage]);
           
-          // Save contact to database
+          // Save contact to database and get lead data
           const isPhone = /^\d+$/.test(trimmedContent.replace(/\D/g, ''));
-          await supabase
+          const { data: updatedLead, error: updateError } = await supabase
             .from('leads')
             .update({ 
               [isPhone ? 'phone' : 'email']: trimmedContent,
               status: 'contacted'
             })
-            .eq('session_id', sessionId);
+            .eq('session_id', sessionId)
+            .select()
+            .single();
+          
+          if (!updateError && updatedLead) {
+            // Disparar notificação WhatsApp IMEDIATAMENTE
+            try {
+              console.log('Sending WhatsApp notification...');
+              const { error: notificationError } = await supabase.functions.invoke(
+                'send-whatsapp-notification',
+                {
+                  body: { leadData: updatedLead }
+                }
+              );
+              
+              if (notificationError) {
+                console.error('Error sending WhatsApp notification:', notificationError);
+              } else {
+                console.log('WhatsApp notification sent successfully');
+                
+                // Marcar como notificado
+                await supabase
+                  .from('leads')
+                  .update({
+                    notification_sent: true,
+                    notification_sent_at: new Date().toISOString()
+                  })
+                  .eq('session_id', sessionId);
+              }
+            } catch (error) {
+              console.error('Failed to invoke WhatsApp notification:', error);
+            }
+          }
           
           setIsCollectingLead(false);
           setLeadStep('none');

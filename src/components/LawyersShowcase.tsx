@@ -3,6 +3,7 @@ import { lawyers } from "@/data/lawyers";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Scale, Briefcase, Heart, Shield, Users, Home } from "lucide-react";
@@ -23,6 +24,15 @@ const specialtyFilters = [
 const LawyerCard = ({ lawyer }: { lawyer: typeof lawyers[0] }) => (
   <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden border-muted flex-shrink-0 w-full md:w-72">
     <CardHeader className="text-center pb-4">
+      <div className="relative mx-auto mb-4">
+        <Avatar className="w-24 h-24 border-4 border-primary/20 group-hover:border-primary/40 transition-colors">
+          <AvatarImage src={lawyer.photo} alt={lawyer.name} />
+          <AvatarFallback className="text-xl font-bold bg-primary/10 text-primary">
+            {lawyer.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+          </AvatarFallback>
+        </Avatar>
+        <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-4 border-card animate-pulse" />
+      </div>
       <h3 className="font-bold text-lg leading-tight group-hover:text-primary transition-colors">
         {lawyer.name}
       </h3>

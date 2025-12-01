@@ -387,20 +387,121 @@ export const useLawyerChat = () => {
           setIsTransferring(false);
           setIsTyping(true);
 
-          // Mensagem de boas-vindas do novo advogado
+          // Gerar primeira mensagem do novo advogado via IA
           await new Promise(resolve => setTimeout(resolve, 1000));
           
-          const welcomeMessage = `Olá! Sou ${newLawyer.name.split(' ')[0]} ${newLawyer.name.split(' ')[newLawyer.name.split(' ').length - 1]}, especialista em ${newLawyer.subSpecialty}. ${currentLawyer.name.split(' ')[1]} me passou seu caso. Como posso ajudá-lo?`;
-          
-          setMessages(prev => [
-            ...prev,
-            {
-              role: 'assistant',
-              content: welcomeMessage,
-              timestamp: new Date(),
-              lawyerId: newLawyer.id,
-            },
-          ]);
+          try {
+            const transferResponse = await fetch(CHAT_URL, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+              },
+              body: JSON.stringify({
+                messages: [
+                  ...messages,
+                  userMessage,
+                  { role: 'assistant', content: assistantContent }
+                ].map(m => ({
+                  role: m.role === 'system' ? 'assistant' : m.role,
+                  content: m.content,
+                })),
+                currentLawyerId: newLawyer.id,
+                sessionId: sessionId,
+                messageCount: userMessageCount + 1,
+                isTransfer: true, // Indica que é a primeira mensagem após transferência
+              }),
+            });
+
+            if (transferResponse.ok && transferResponse.body) {
+              const transferReader = transferResponse.body.getReader();
+              const transferDecoder = new TextDecoder();
+              let transferBuffer = '';
+              let transferDone = false;
+              let newLawyerContent = '';
+
+              while (!transferDone) {
+                const { done, value } = await transferReader.read();
+                if (done) break;
+                
+                transferBuffer += transferDecoder.decode(value, { stream: true });
+
+                let newlineIndex: number;
+                while ((newlineIndex = transferBuffer.indexOf('\n')) !== -1) {
+                  let line = transferBuffer.slice(0, newlineIndex);
+                  transferBuffer = transferBuffer.slice(newlineIndex + 1);
+
+                  if (line.endsWith('\r')) line = line.slice(0, -1);
+                  if (line.startsWith(':') || line.trim() === '') continue;
+                  if (!line.startsWith('data: ')) continue;
+
+                  const jsonStr = line.slice(6).trim();
+                  if (jsonStr === '[DONE]') {
+                    transferDone = true;
+                    break;
+                  }
+
+                  try {
+                    const parsed = JSON.parse(jsonStr);
+                    const content = parsed.choices?.[0]?.delta?.content as string | undefined;
+                    if (content) {
+                      for (let i = 0; i < content.length; i++) {
+                        const char = content[i];
+                        newLawyerContent += char;
+                        
+                        setMessages(prev => {
+                          const last = prev[prev.length - 1];
+                          if (last?.role === 'assistant' && !('isTransfer' in last) && last.lawyerId === newLawyer.id) {
+                            return prev.map((m, i) =>
+                              i === prev.length - 1
+                                ? { ...m, content: newLawyerContent }
+                                : m
+                            );
+                          }
+                          return [
+                            ...prev,
+                            {
+                              role: 'assistant',
+                              content: newLawyerContent,
+                              timestamp: new Date(),
+                              lawyerId: newLawyer.id,
+                            },
+                          ];
+                        });
+
+                        let delay = 25 + Math.random() * 35;
+                        if (char === '.' || char === '!' || char === '?') {
+                          delay = 400 + Math.random() * 300;
+                        } else if (char === ',' || char === ';') {
+                          delay = 100 + Math.random() * 100;
+                        } else if (char === '\n') {
+                          delay = 200 + Math.random() * 200;
+                        }
+                        
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                      }
+                    }
+                  } catch {
+                    transferBuffer = line + '\n' + transferBuffer;
+                    break;
+                  }
+                }
+              }
+            }
+          } catch (error) {
+            console.error('Error generating transfer message:', error);
+            // Fallback para mensagem estática em caso de erro
+            const fallbackMessage = `Olá! Sou ${newLawyer.name.split(' ')[1]}, especialista em ${newLawyer.subSpecialty}. Vi que você precisa de ajuda. Pode me dar mais detalhes?`;
+            setMessages(prev => [
+              ...prev,
+              {
+                role: 'assistant',
+                content: fallbackMessage,
+                timestamp: new Date(),
+                lawyerId: newLawyer.id,
+              },
+            ]);
+          }
         }
       }
 

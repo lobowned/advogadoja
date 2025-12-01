@@ -62,13 +62,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Lawyers Showcase Section */}
-      <LawyersShowcase />
-
       {/* Lawyer Chat */}
       <div id="lawyer-chat">
         <LawyerChatSection />
       </div>
+
+      {/* Lawyers Showcase Section */}
+      <LawyersShowcase />
 
       {/* Footer */}
       <footer className="border-t bg-muted/30 py-8 sm:py-10">

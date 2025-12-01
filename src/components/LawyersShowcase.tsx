@@ -56,46 +56,87 @@ const LawyersShowcase = () => {
           })}
         </div>
 
-        {/* Grid de Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filteredLawyers.map((lawyer, index) => (
-            <Card
-              key={lawyer.id}
-              className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden animate-fade-in border-muted"
-              style={{ animationDelay: `${index * 0.05}s` }}
-            >
-              <CardHeader className="text-center pb-4">
-                <div className="relative mx-auto mb-4">
-                  <Avatar className="w-24 h-24 border-4 border-primary/20 group-hover:border-primary/40 transition-colors">
-                    <AvatarImage src={lawyer.photo} alt={lawyer.name} />
-                    <AvatarFallback className="text-xl font-bold bg-primary/10 text-primary">
-                      {lawyer.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-4 border-card animate-pulse" />
-                </div>
-                <h3 className="font-bold text-lg leading-tight group-hover:text-primary transition-colors">
-                  {lawyer.name}
-                </h3>
-              </CardHeader>
+        {/* Carrossel Marquee Infinito */}
+        <div className="relative overflow-hidden py-4">
+          <div className="flex gap-6 animate-marquee hover:pause-marquee">
+            {/* Cards originais */}
+            {filteredLawyers.map((lawyer) => (
+              <Card
+                key={lawyer.id}
+                className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden border-muted flex-shrink-0 w-72"
+              >
+                <CardHeader className="text-center pb-4">
+                  <div className="relative mx-auto mb-4">
+                    <Avatar className="w-24 h-24 border-4 border-primary/20 group-hover:border-primary/40 transition-colors">
+                      <AvatarImage src={lawyer.photo} alt={lawyer.name} />
+                      <AvatarFallback className="text-xl font-bold bg-primary/10 text-primary">
+                        {lawyer.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-4 border-card animate-pulse" />
+                  </div>
+                  <h3 className="font-bold text-lg leading-tight group-hover:text-primary transition-colors">
+                    {lawyer.name}
+                  </h3>
+                </CardHeader>
 
-              <CardContent className="space-y-3">
-                <Badge variant="secondary" className="w-full justify-center font-medium">
-                  {lawyer.subSpecialty}
-                </Badge>
-
-                <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
-                  {lawyer.bio}
-                </p>
-
-                <div className="pt-2 border-t border-border/50">
-                  <Badge variant="outline" className="w-full justify-center text-xs">
-                    {lawyer.oab}
+                <CardContent className="space-y-3">
+                  <Badge variant="secondary" className="w-full justify-center font-medium">
+                    {lawyer.subSpecialty}
                   </Badge>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+
+                  <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
+                    {lawyer.bio}
+                  </p>
+
+                  <div className="pt-2 border-t border-border/50">
+                    <Badge variant="outline" className="w-full justify-center text-xs">
+                      {lawyer.oab}
+                    </Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+            
+            {/* Cards duplicados para loop infinito */}
+            {filteredLawyers.map((lawyer) => (
+              <Card
+                key={`duplicate-${lawyer.id}`}
+                className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden border-muted flex-shrink-0 w-72"
+              >
+                <CardHeader className="text-center pb-4">
+                  <div className="relative mx-auto mb-4">
+                    <Avatar className="w-24 h-24 border-4 border-primary/20 group-hover:border-primary/40 transition-colors">
+                      <AvatarImage src={lawyer.photo} alt={lawyer.name} />
+                      <AvatarFallback className="text-xl font-bold bg-primary/10 text-primary">
+                        {lawyer.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-4 border-card animate-pulse" />
+                  </div>
+                  <h3 className="font-bold text-lg leading-tight group-hover:text-primary transition-colors">
+                    {lawyer.name}
+                  </h3>
+                </CardHeader>
+
+                <CardContent className="space-y-3">
+                  <Badge variant="secondary" className="w-full justify-center font-medium">
+                    {lawyer.subSpecialty}
+                  </Badge>
+
+                  <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
+                    {lawyer.bio}
+                  </p>
+
+                  <div className="pt-2 border-t border-border/50">
+                    <Badge variant="outline" className="w-full justify-center text-xs">
+                      {lawyer.oab}
+                    </Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
 
         {/* Contador */}

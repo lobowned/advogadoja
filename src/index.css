@@ -155,14 +155,11 @@ All colors MUST be HSL.
 
 /* Animated gradient text */
 @keyframes gradient-shift {
-  0% {
+  0%, 100% {
     background-position: 0% 50%;
   }
   50% {
     background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }
 
@@ -180,4 +177,9 @@ All colors MUST be HSL.
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient-shift 6s ease-in-out infinite;
+}
+
+/* WhatsApp input background */
+:root {
+  --whatsapp-input-bg: 0 0% 96%;
 }

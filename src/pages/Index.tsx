@@ -33,13 +33,9 @@ const Index = () => {
         
         <div className="container relative mx-auto px-4 py-16 sm:py-20 md:py-32 z-10">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="mb-4 sm:mb-6 text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-              Seu Problema Jurídico Resolvido por Especialistas — Atendimento Imediato
-            </h1>
-            
-            <p className="mb-8 sm:mb-10 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed animated-gradient-text font-medium">
+            <h1 className="mb-8 sm:mb-10 text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight animated-gradient-text">
               Um advogado especialista entra em contato em minutos — 100% gratuito.
-            </p>
+            </h1>
             
             <Button 
               size="lg"

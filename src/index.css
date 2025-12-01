@@ -183,3 +183,22 @@ All colors MUST be HSL.
 :root {
   --whatsapp-input-bg: 0 0% 96%;
 }
+
+/* Marquee animation for lawyers carousel */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 60s linear infinite;
+}
+
+.animate-marquee:hover,
+.pause-marquee {
+  animation-play-state: paused;
+}

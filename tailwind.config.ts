@@ -147,6 +147,14 @@ export default {
             opacity: "1",
             transform: "translateY(0) scale(1)"
           }
+        },
+        "marquee": {
+          "0%": {
+            transform: "translateX(0)"
+          },
+          "100%": {
+            transform: "translateX(-50%)"
+          }
         }
       },
       animation: {
@@ -158,7 +166,8 @@ export default {
         "scale-up": "scale-up 0.3s ease-out",
         "pulse-dot": "pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "pulse-subtle": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "message-slide": "message-slide 0.4s cubic-bezier(0.16, 1, 0.3, 1)"
+        "message-slide": "message-slide 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+        "marquee": "marquee 60s linear infinite"
       },
       boxShadow: {
         "card": "var(--shadow-card)",

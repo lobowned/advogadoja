@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import LawyerChatSection from "@/components/LawyerChatSection";
+import LawyersShowcase from "@/components/LawyersShowcase";
 
 const Index = () => {
   const handleCTA = () => {
@@ -60,6 +61,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Lawyers Showcase Section */}
+      <LawyersShowcase />
 
       {/* Lawyer Chat */}
       <div id="lawyer-chat">

@@ -42,6 +42,7 @@ export const useLawyerChat = () => {
   const [queuePosition, setQueuePosition] = useState<number>(2);
   const [isInQueue, setIsInQueue] = useState<boolean>(false);
   const [hasJoinedQueue, setHasJoinedQueue] = useState<boolean>(false);
+  const [peopleAhead, setPeopleAhead] = useState<number>(0);
   const [sessionId] = useState(() => {
     // Generate or retrieve session ID
     const stored = sessionStorage.getItem('chat_session_id');
@@ -56,49 +57,98 @@ export const useLawyerChat = () => {
   // Track user message count
   const userMessageCount = messages.filter(m => m.role === 'user').length;
 
+  // Função para tocar notificações sonoras
+  const playNotificationSound = (type: 'position' | 'ready') => {
+    try {
+      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      
+      if (type === 'position') {
+        // Som suave de "ding" quando posição muda
+        oscillator.frequency.value = 800;
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 0.2);
+      } else {
+        // Som duplo de sucesso quando atendimento começa
+        oscillator.frequency.value = 600;
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.15);
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 0.15);
+        
+        // Segundo "ding" mais alto
+        setTimeout(() => {
+          const osc2 = audioContext.createOscillator();
+          const gain2 = audioContext.createGain();
+          osc2.connect(gain2);
+          gain2.connect(audioContext.destination);
+          osc2.frequency.value = 900;
+          gain2.gain.setValueAtTime(0.3, audioContext.currentTime);
+          gain2.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
+          osc2.start(audioContext.currentTime);
+          osc2.stop(audioContext.currentTime + 0.2);
+        }, 150);
+      }
+    } catch (error) {
+      console.log('Audio notification not available:', error);
+    }
+  };
+
   // Função para entrar na fila
   const joinQueue = async () => {
     setHasJoinedQueue(true);
     setIsInQueue(true);
+    setPeopleAhead(2);
     
-    // Mensagem inicial: Posição 2
+    // Mensagem inicial: 2 pessoas na frente
     setMessages([
       {
         role: 'system',
-        content: '🎫 Você entrou na fila de atendimento\nPosição: 2 | Previsão: ~1 minuto',
+        content: '🎫 Você entrou na fila de atendimento',
         timestamp: new Date(),
         isQueue: true,
         queuePosition: 2,
       } as QueueMessage,
     ]);
 
-    // Após 8 segundos: Posição 1
+    // Após 8 segundos: 1 pessoa na frente
     await new Promise(resolve => setTimeout(resolve, 8000));
+    playNotificationSound('position');
+    setPeopleAhead(1);
     setQueuePosition(1);
     setMessages([
       {
         role: 'system',
-        content: '🎫 Sua posição: 1\nPróximo a ser atendido!',
+        content: '🎫 Atualizando sua posição na fila',
         timestamp: new Date(),
         isQueue: true,
         queuePosition: 1,
       } as QueueMessage,
     ]);
 
-    // Após mais 10 segundos: Atendimento iniciado
+    // Após mais 10 segundos: Você é o próximo
     await new Promise(resolve => setTimeout(resolve, 10000));
+    playNotificationSound('position');
+    setPeopleAhead(0);
     setMessages([
       {
         role: 'system',
-        content: '✅ Atendimento iniciado!',
+        content: '🎫 Você é o próximo!',
         timestamp: new Date(),
         isQueue: true,
         queuePosition: 0,
       } as QueueMessage,
     ]);
 
-    // Após 2 segundos: Mostrar mensagem do Dr. Carlos
+    // Após 2 segundos: Atendimento iniciado
     await new Promise(resolve => setTimeout(resolve, 2000));
+    playNotificationSound('ready');
     setIsInQueue(false);
     setMessages([
       {
@@ -646,5 +696,6 @@ export const useLawyerChat = () => {
     queuePosition,
     hasJoinedQueue,
     joinQueue,
+    peopleAhead,
   };
 };

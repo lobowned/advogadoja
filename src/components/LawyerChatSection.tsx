@@ -6,7 +6,7 @@ import { useLawyerChat } from "@/hooks/useLawyerChat";
 import { useEffect, useRef, useState } from "react";
 
 const LawyerChatSection = () => {
-  const { messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers, isCollectingLead, leadQuestion } = useLawyerChat();
+  const { messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers, isCollectingLead, leadQuestion, isInQueue, queuePosition } = useLawyerChat();
   const [inputValue, setInputValue] = useState("");
   const [showResponseTime, setShowResponseTime] = useState(false);
   const chatContainerRef = useRef<HTMLDivElement>(null);
@@ -135,6 +135,29 @@ const LawyerChatSection = () => {
               className="bg-whatsapp-bg p-4 h-[400px] sm:h-[600px] overflow-y-auto space-y-3"
             >
               {messages.map((message, index) => {
+                // Mensagem de fila
+                if ('isQueue' in message && message.isQueue) {
+                  return (
+                    <div key={index} className="flex justify-center py-2">
+                      <div className="bg-primary/10 border border-primary/20 rounded-lg px-6 py-4 max-w-[90%] flex flex-col items-center gap-3 animate-fade-in shadow-md">
+                        <p className="text-sm font-medium text-center text-foreground whitespace-pre-line">
+                          {message.content}
+                        </p>
+                        {message.queuePosition && message.queuePosition > 0 && (
+                          <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
+                            <div 
+                              className="bg-primary h-full transition-all duration-1000 ease-out rounded-full"
+                              style={{ 
+                                width: message.queuePosition === 2 ? '33%' : message.queuePosition === 1 ? '66%' : '100%' 
+                              }}
+                            />
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                }
+
                 // Mensagem de transferência
                 if ('isTransfer' in message && message.isTransfer) {
                   return (
@@ -259,11 +282,13 @@ const LawyerChatSection = () => {
                     onChange={(e) => setInputValue(e.target.value)}
                     onKeyPress={handleKeyPress}
                     placeholder={
-                      isCollectingLead && leadQuestion
+                      isInQueue
+                        ? "Aguarde na fila..."
+                        : isCollectingLead && leadQuestion
                         ? leadQuestion
                         : "Digite uma mensagem"
                     }
-                    disabled={isLoading}
+                    disabled={isLoading || isInQueue}
                     className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 px-0 text-sm"
                   />
                   <Button
@@ -277,7 +302,7 @@ const LawyerChatSection = () => {
 
                 <Button
                   onClick={handleSend}
-                  disabled={isLoading || !inputValue.trim()}
+                  disabled={isLoading || !inputValue.trim() || isInQueue}
                   size="icon"
                   className="h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white flex-shrink-0 shadow-lg transition-all hover:scale-110 active:scale-95 disabled:scale-100"
                 >

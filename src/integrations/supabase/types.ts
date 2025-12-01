@@ -177,6 +177,7 @@ export type Database = {
           name: string | null
           notification_sent: boolean | null
           notification_sent_at: string | null
+          pending_transfer_lawyer: string | null
           phone: string | null
           problem_type: string | null
           session_id: string | null
@@ -196,6 +197,7 @@ export type Database = {
           name?: string | null
           notification_sent?: boolean | null
           notification_sent_at?: string | null
+          pending_transfer_lawyer?: string | null
           phone?: string | null
           problem_type?: string | null
           session_id?: string | null
@@ -215,6 +217,7 @@ export type Database = {
           name?: string | null
           notification_sent?: boolean | null
           notification_sent_at?: string | null
+          pending_transfer_lawyer?: string | null
           phone?: string | null
           problem_type?: string | null
           session_id?: string | null

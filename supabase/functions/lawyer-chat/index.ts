@@ -562,25 +562,98 @@ Seja objetivo e direto.`;
     // Verificar se precisa transferir
     let needsTransfer = false;
     let newLawyerId: string | null = null;
+    let pendingTransferLawyer: string | null = null;
+    let shouldAskPermission = false;
     
     if (currentLawyerId === 'carlos-silva' && messages.length > 0) {
       const lastUserMessage = messages.filter((m: any) => m.role === 'user').slice(-1)[0];
-      if (lastUserMessage) {
-        // NÍVEL 1: Tentar detectar advogado específico primeiro
-        newLawyerId = detectSpecificLawyer(lastUserMessage.content);
-        
-        // NÍVEL 2: Se não encontrou específico, usar categoria geral
-        if (!newLawyerId) {
-          const detectedSpecialty = detectGeneralSpecialty(lastUserMessage.content);
-          if (detectedSpecialty) {
-            const specialists = lawyersBySpecialty[detectedSpecialty];
-            newLawyerId = specialists[Math.floor(Math.random() * specialists.length)];
+      
+      // Verificar se já existe transferência pendente
+      let existingPendingTransfer: string | null = null;
+      if (sessionId && leadData.leadId) {
+        try {
+          const pendingCheckResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}&select=pending_transfer_lawyer`, {
+            headers: {
+              'apikey': SUPABASE_SERVICE_ROLE_KEY!,
+              'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`
+            }
+          });
+          
+          if (pendingCheckResponse.ok) {
+            const pendingData = await pendingCheckResponse.json();
+            existingPendingTransfer = pendingData[0]?.pending_transfer_lawyer;
+            console.log("📋 Pending transfer check:", existingPendingTransfer);
           }
+        } catch (error) {
+          console.error("Error checking pending transfer:", error);
         }
-        
-        if (newLawyerId) {
-          needsTransfer = true;
-          console.log(`Transferring to specific lawyer: ${newLawyerId}`);
+      }
+      
+      if (lastUserMessage) {
+        // Se já tem transferência pendente, verificar confirmação
+        if (existingPendingTransfer) {
+          const confirmationPhrases = /\b(sim|quero|pode|claro|pode ser|ok|tá|ta|beleza|aceito|por favor|gostaria|vamos|queria|vamo|bora|autorizo|pode sim|tudo bem|tranquilo|blz)\b/i;
+          const userConfirmed = confirmationPhrases.test(lastUserMessage.content.toLowerCase());
+          
+          if (userConfirmed) {
+            needsTransfer = true;
+            newLawyerId = existingPendingTransfer;
+            console.log(`✅ User confirmed transfer to: ${newLawyerId}`);
+            
+            // Limpar pending transfer após confirmação
+            if (sessionId && leadData.leadId) {
+              await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
+                method: 'PATCH',
+                headers: {
+                  'apikey': SUPABASE_SERVICE_ROLE_KEY!,
+                  'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+                  'Content-Type': 'application/json',
+                  'Prefer': 'return=minimal'
+                },
+                body: JSON.stringify({
+                  pending_transfer_lawyer: null
+                })
+              });
+            }
+          } else {
+            console.log("❌ User did not confirm transfer, continuing with Carlos");
+          }
+        } else {
+          // Não tem transferência pendente, detectar nova especialidade
+          // NÍVEL 1: Tentar detectar advogado específico primeiro
+          newLawyerId = detectSpecificLawyer(lastUserMessage.content);
+          
+          // NÍVEL 2: Se não encontrou específico, usar categoria geral
+          if (!newLawyerId) {
+            const detectedSpecialty = detectGeneralSpecialty(lastUserMessage.content);
+            if (detectedSpecialty) {
+              const specialists = lawyersBySpecialty[detectedSpecialty];
+              newLawyerId = specialists[Math.floor(Math.random() * specialists.length)];
+            }
+          }
+          
+          if (newLawyerId) {
+            // Em vez de transferir imediatamente, salvar como pendente e pedir autorização
+            pendingTransferLawyer = newLawyerId;
+            shouldAskPermission = true;
+            console.log(`🤔 Detected specialty, asking permission to transfer to: ${newLawyerId}`);
+            
+            // Salvar pending transfer no banco
+            if (sessionId && leadData.leadId) {
+              await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
+                method: 'PATCH',
+                headers: {
+                  'apikey': SUPABASE_SERVICE_ROLE_KEY!,
+                  'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+                  'Content-Type': 'application/json',
+                  'Prefer': 'return=minimal'
+                },
+                body: JSON.stringify({
+                  pending_transfer_lawyer: newLawyerId
+                })
+              });
+            }
+          }
         }
       }
     }
@@ -638,6 +711,65 @@ VARIAÇÃO DE ESTILO (use diferentes formas):
 - Às vezes emoji, às vezes não
 - Às vezes abreviação, às vezes palavra completa
 - Varie o tamanho: 1 frase, 2 frases, raramente 3`;
+
+    // Se detectou especialidade, adicionar instrução para pedir autorização
+    if (shouldAskPermission && pendingTransferLawyer) {
+      const lawyerNames: Record<string, string> = {
+        'maria-santos': 'Dra. Maria Santos',
+        'rafael-oliveira': 'Dr. Rafael Oliveira',
+        'juliana-costa': 'Dra. Juliana Costa',
+        'fernando-lima': 'Dr. Fernando Lima',
+        'patricia-almeida': 'Dra. Patrícia Almeida',
+        'rodrigo-barros': 'Dr. Rodrigo Barros',
+        'ricardo-mendes': 'Dr. Ricardo Mendes',
+        'ana-rodrigues': 'Dra. Ana Rodrigues',
+        'lucas-ferreira': 'Dr. Lucas Ferreira',
+        'carla-souza': 'Dra. Carla Souza',
+        'paulo-martins': 'Dr. Paulo Martins',
+        'beatriz-campos': 'Dra. Beatriz Campos',
+        'andre-silva': 'Dr. André Silva',
+        'claudia-martins': 'Dra. Cláudia Martins',
+        'marcos-oliveira': 'Dr. Marcos Oliveira',
+        'isabela-santos': 'Dra. Isabela Santos',
+        'renato-alves': 'Dr. Renato Alves',
+        'sandra-lima': 'Dra. Sandra Lima',
+        'roberto-costa': 'Dr. Roberto Costa',
+        'vanessa-reis': 'Dra. Vanessa Reis',
+        'joao-fernandes': 'Dr. João Fernandes',
+        'larissa-souza': 'Dra. Larissa Souza',
+        'eduardo-gomes': 'Dr. Eduardo Gomes',
+        'monica-alves': 'Dra. Mônica Alves',
+        'gustavo-reis': 'Dr. Gustavo Reis',
+        'camila-nunes': 'Dra. Camila Nunes',
+        'diego-santos': 'Dr. Diego Santos',
+        'fernanda-lima': 'Dra. Fernanda Lima',
+        'thiago-rocha': 'Dr. Thiago Rocha',
+        'marina-costa': 'Dra. Marina Costa',
+        'helena-vasconcelos': 'Dra. Helena Vasconcelos',
+        'gabriel-monteiro': 'Dr. Gabriel Monteiro',
+        'renata-machado': 'Dra. Renata Machado',
+        'leonardo-prado': 'Dr. Leonardo Prado',
+        'cristina-torres': 'Dra. Cristina Torres',
+      };
+      
+      const targetLawyerName = lawyerNames[pendingTransferLawyer] || 'especialista';
+      
+      systemPrompt += `
+
+⚠️ AÇÃO OBRIGATÓRIA AGORA - PEÇA AUTORIZAÇÃO PARA TRANSFERIR:
+Você detectou que esse caso é para ${targetLawyerName}.
+ANTES de transferir, pergunte ao cliente se pode passar pra esse especialista.
+
+EXEMPLOS de como perguntar (escolha UM estilo):
+✅ "Ah, isso é caso de ${targetLawyerName.includes('Dr.') ? targetLawyerName.split(' ')[1] : targetLawyerName}. Posso te passar pra ${targetLawyerName.includes('Dra.') ? 'ela' : 'ele'} que é especialista nisso? 👍"
+✅ "Olha, esse caso é com ${targetLawyerName}. Transfiro pra ${targetLawyerName.includes('Dra.') ? 'ela' : 'ele'}?"
+✅ "Deixa eu te passar pro ${targetLawyerName}, ${targetLawyerName.includes('Dra.') ? 'ela' : 'ele'} é expert nisso. Pode ser?"
+
+IMPORTANTE:
+- Use seu estilo casual natural
+- Seja breve (1 frase)
+- AGUARDE a resposta antes de continuar`;
+    }
 
     if (currentLawyerId !== 'carlos-silva') {
       // Obter nome do advogado atual

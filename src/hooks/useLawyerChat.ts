@@ -15,8 +15,8 @@ type TransferMessage = {
   content: string;
   timestamp: Date;
   isTransfer: true;
-  fromLawyer: Lawyer;
-  toLawyer: Lawyer;
+  fromLawyer: Lawyer | DynamicLawyer;
+  toLawyer: Lawyer | DynamicLawyer;
 };
 
 type QueueMessage = {
@@ -29,7 +29,7 @@ type QueueMessage = {
 
 export const useLawyerChat = () => {
   const [messages, setMessages] = useState<(Message | TransferMessage | QueueMessage)[]>([]);
-  const [currentLawyer, setCurrentLawyer] = useState<Lawyer>(
+  const [currentLawyer, setCurrentLawyer] = useState<Lawyer | DynamicLawyer>(
     lawyers.find(l => l.id === 'carlos-silva')!
   );
   const [dynamicLawyer, setDynamicLawyer] = useState<DynamicLawyer | null>(null);
@@ -685,24 +685,29 @@ export const useLawyerChat = () => {
         // Se não encontrou lawyer estático, verificar se é dinâmico
         if (!newLawyer && transferData.newLawyerId?.startsWith('dynamic-')) {
           try {
-            const { data: leadData } = await supabase
+            const { data: leadData, error } = await supabase
               .from('leads')
               .select('dynamic_lawyer')
               .eq('session_id', sessionId)
-              .single();
+              .maybeSingle();
             
-            if (leadData?.dynamic_lawyer) {
+            if (error) {
+              console.error('Error loading dynamic lawyer:', error);
+            } else if (leadData?.dynamic_lawyer) {
               dynamicLawyerData = leadData.dynamic_lawyer as DynamicLawyer;
               console.log('✨ [DYNAMIC LAWYER] Loaded:', dynamicLawyerData.name);
+            } else {
+              console.warn('⚠️ [DYNAMIC LAWYER] Not found in database for session:', sessionId);
             }
           } catch (error) {
             console.error('Error loading dynamic lawyer:', error);
           }
         }
         
-        const targetLawyer = newLawyer || (dynamicLawyerData as any);
+        const targetLawyer = newLawyer || dynamicLawyerData;
         
-        if (targetLawyer && targetLawyer.id !== currentLawyer.id) {
+        // Validar que targetLawyer existe e tem as propriedades necessárias
+        if (targetLawyer && targetLawyer.id && targetLawyer.name && targetLawyer.id !== currentLawyer.id) {
           console.log('✅ [TRANSFER INITIATED]', {
             from: currentLawyer.name,
             to: targetLawyer.name,
@@ -722,6 +727,10 @@ export const useLawyerChat = () => {
           
           // Salvar advogado dinâmico se necessário
           if (dynamicLawyerData) {
+            // Garantir que tem keywords para compatibilidade
+            if (!dynamicLawyerData.keywords) {
+              dynamicLawyerData.keywords = [];
+            }
             setDynamicLawyer(dynamicLawyerData);
           }
           

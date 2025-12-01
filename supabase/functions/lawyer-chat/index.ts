@@ -93,7 +93,8 @@ serve(async (req) => {
         subSpecialty,
         bio: `Especialista em ${subSpecialty} com ampla experiência na área.`,
         isVirtual: true,
-        gender: specialtyData.gender
+        gender: specialtyData.gender,
+        keywords: []
       };
     };
 

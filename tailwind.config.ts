@@ -167,7 +167,7 @@ export default {
         "pulse-dot": "pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "pulse-subtle": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "message-slide": "message-slide 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
-        "marquee": "marquee 60s linear infinite"
+        "marquee": "marquee 30s linear infinite"
       },
       boxShadow: {
         "card": "var(--shadow-card)",

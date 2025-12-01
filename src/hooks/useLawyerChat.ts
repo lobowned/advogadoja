@@ -40,7 +40,8 @@ export const useLawyerChat = () => {
   const [leadQuestion, setLeadQuestion] = useState<string>('');
   const [leadStep, setLeadStep] = useState<'none' | 'name' | 'contact'>('none');
   const [queuePosition, setQueuePosition] = useState<number>(2);
-  const [isInQueue, setIsInQueue] = useState<boolean>(true);
+  const [isInQueue, setIsInQueue] = useState<boolean>(false);
+  const [hasJoinedQueue, setHasJoinedQueue] = useState<boolean>(false);
   const [sessionId] = useState(() => {
     // Generate or retrieve session ID
     const stored = sessionStorage.getItem('chat_session_id');
@@ -55,60 +56,59 @@ export const useLawyerChat = () => {
   // Track user message count
   const userMessageCount = messages.filter(m => m.role === 'user').length;
 
-  // Simular fila de espera ao iniciar
-  useEffect(() => {
-    const simulateQueue = async () => {
-      // Mensagem inicial: Posição 2
-      setMessages([
-        {
-          role: 'system',
-          content: '🎫 Você entrou na fila de atendimento\nPosição: 2 | Previsão: ~1 minuto',
-          timestamp: new Date(),
-          isQueue: true,
-          queuePosition: 2,
-        } as QueueMessage,
-      ]);
+  // Função para entrar na fila
+  const joinQueue = async () => {
+    setHasJoinedQueue(true);
+    setIsInQueue(true);
+    
+    // Mensagem inicial: Posição 2
+    setMessages([
+      {
+        role: 'system',
+        content: '🎫 Você entrou na fila de atendimento\nPosição: 2 | Previsão: ~1 minuto',
+        timestamp: new Date(),
+        isQueue: true,
+        queuePosition: 2,
+      } as QueueMessage,
+    ]);
 
-      // Após 4 segundos: Posição 1
-      await new Promise(resolve => setTimeout(resolve, 4000));
-      setQueuePosition(1);
-      setMessages([
-        {
-          role: 'system',
-          content: '🎫 Sua posição: 1\nPróximo a ser atendido!',
-          timestamp: new Date(),
-          isQueue: true,
-          queuePosition: 1,
-        } as QueueMessage,
-      ]);
+    // Após 8 segundos: Posição 1
+    await new Promise(resolve => setTimeout(resolve, 8000));
+    setQueuePosition(1);
+    setMessages([
+      {
+        role: 'system',
+        content: '🎫 Sua posição: 1\nPróximo a ser atendido!',
+        timestamp: new Date(),
+        isQueue: true,
+        queuePosition: 1,
+      } as QueueMessage,
+    ]);
 
-      // Após mais 6 segundos: Atendimento iniciado
-      await new Promise(resolve => setTimeout(resolve, 6000));
-      setMessages([
-        {
-          role: 'system',
-          content: '✅ Atendimento iniciado!',
-          timestamp: new Date(),
-          isQueue: true,
-          queuePosition: 0,
-        } as QueueMessage,
-      ]);
+    // Após mais 10 segundos: Atendimento iniciado
+    await new Promise(resolve => setTimeout(resolve, 10000));
+    setMessages([
+      {
+        role: 'system',
+        content: '✅ Atendimento iniciado!',
+        timestamp: new Date(),
+        isQueue: true,
+        queuePosition: 0,
+      } as QueueMessage,
+    ]);
 
-      // Após 1 segundo: Mostrar mensagem do Dr. Carlos
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setIsInQueue(false);
-      setMessages([
-        {
-          role: 'assistant',
-          content: 'Olá! Sou o Dr. Carlos Silva. Em que posso ajudá-lo hoje?',
-          timestamp: new Date(),
-          lawyerId: 'carlos-silva',
-        },
-      ]);
-    };
-
-    simulateQueue();
-  }, []);
+    // Após 2 segundos: Mostrar mensagem do Dr. Carlos
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    setIsInQueue(false);
+    setMessages([
+      {
+        role: 'assistant',
+        content: 'Olá! Sou o Dr. Carlos Silva. Em que posso ajudá-lo hoje?',
+        timestamp: new Date(),
+        lawyerId: 'carlos-silva',
+      },
+    ]);
+  };
 
   const sendMessage = async (content: string) => {
     if (!content.trim() || isLoading) return;
@@ -644,5 +644,7 @@ export const useLawyerChat = () => {
     allLawyers: lawyers,
     isInQueue,
     queuePosition,
+    hasJoinedQueue,
+    joinQueue,
   };
 };

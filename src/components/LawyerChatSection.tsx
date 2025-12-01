@@ -6,7 +6,7 @@ import { useLawyerChat } from "@/hooks/useLawyerChat";
 import { useEffect, useRef, useState } from "react";
 
 const LawyerChatSection = () => {
-  const { messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers, isCollectingLead, leadQuestion, isInQueue, queuePosition } = useLawyerChat();
+  const { messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers, isCollectingLead, leadQuestion, isInQueue, queuePosition, hasJoinedQueue, joinQueue } = useLawyerChat();
   const [inputValue, setInputValue] = useState("");
   const [showResponseTime, setShowResponseTime] = useState(false);
   const chatContainerRef = useRef<HTMLDivElement>(null);
@@ -134,7 +134,46 @@ const LawyerChatSection = () => {
               ref={chatContainerRef}
               className="bg-whatsapp-bg p-4 h-[400px] sm:h-[600px] overflow-y-auto space-y-3"
             >
-              {messages.map((message, index) => {
+              {!hasJoinedQueue ? (
+                <div className="flex items-center justify-center h-full">
+                  <div className="text-center max-w-md px-6 animate-fade-in">
+                    <div className="mb-6">
+                      <div className="text-6xl mb-4">🏛️</div>
+                      <h3 className="text-2xl font-bold mb-2">Assistência Jurídica Online</h3>
+                      <p className="text-muted-foreground mb-6">
+                        30 advogados disponíveis para atender você agora mesmo
+                      </p>
+                    </div>
+                    
+                    <div className="space-y-3 mb-8 text-left">
+                      <div className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
+                        <p className="text-sm">Atendimento gratuito inicial</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <Shield className="w-5 h-5 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
+                        <p className="text-sm">Sigilo profissional garantido</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
+                        <p className="text-sm">Especialistas em diversas áreas</p>
+                      </div>
+                    </div>
+                    
+                    <Button
+                      onClick={joinQueue}
+                      className="w-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white font-semibold py-6 text-base shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                    >
+                      🎫 Entrar na Fila
+                      <span className="block text-xs font-normal mt-1 opacity-90">
+                        Tempo estimado: ~1 min
+                      </span>
+                    </Button>
+                  </div>
+                </div>
+              ) : (
+                <>
+                {messages.map((message, index) => {
                 // Mensagem de fila
                 if ('isQueue' in message && message.isQueue) {
                   return (
@@ -262,6 +301,8 @@ const LawyerChatSection = () => {
                     )}
                   </div>
                 </div>
+              )}
+              </>
               )}
             </div>
 

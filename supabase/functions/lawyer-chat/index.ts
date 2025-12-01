@@ -513,7 +513,6 @@ Seja objetivo e direto.`;
               message_count: messageCount,
               assigned_lawyer: currentLawyerId,
               specialty: getSpecialtyFromLawyerId(currentLawyerId),
-              problem_detected: currentLawyerId !== 'carlos-silva',
               conversation_history: messages
             })
           });

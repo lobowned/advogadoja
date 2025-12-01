@@ -164,26 +164,10 @@ const LawyerChatSection = () => {
                     
                     <Button
                       onClick={joinQueue}
-                      className="relative w-full overflow-hidden bg-gradient-to-r from-green-500 via-emerald-400 to-green-500 hover:from-green-600 hover:via-emerald-500 hover:to-green-600 text-white font-bold py-6 text-lg rounded-xl transition-all duration-300 hover:scale-[1.02] btn-cta-pulse group"
+                      className="w-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white font-medium py-4 text-base rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
                     >
-                      {/* Shimmer overlay */}
-                      <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                      
-                      {/* Conteúdo principal */}
-                      <div className="relative flex flex-col items-center gap-1">
-                        <div className="flex items-center gap-2">
-                          <MessageSquare className="w-5 h-5" />
-                          <span>Iniciar Atendimento</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-xs font-normal opacity-90">
-                          <span className="flex items-center gap-1">
-                            <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
-                            30 online
-                          </span>
-                          <span>·</span>
-                          <span>~1 min espera</span>
-                        </div>
-                      </div>
+                      <MessageSquare className="w-5 h-5" />
+                      Iniciar Atendimento
                     </Button>
                   </div>
                 </div>

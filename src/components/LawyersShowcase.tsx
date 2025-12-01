@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { lawyers } from "@/data/lawyers";
+import { useLawyerPresence } from "@/hooks/useLawyerPresence";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -46,7 +47,8 @@ const LawyerCard = ({ lawyer }: { lawyer: typeof lawyers[0] }) => (
 
 const LawyersShowcase = () => {
   const isMobile = useIsMobile();
-  const displayLawyers = lawyers.filter((l) => l.specialty !== "geral");
+  const { onlineLawyers } = useLawyerPresence();
+  const displayLawyers = onlineLawyers.filter((l) => l.specialty !== "geral");
 
   return (
     <section className="py-16 px-4 bg-gradient-to-b from-background via-muted/30 to-background">

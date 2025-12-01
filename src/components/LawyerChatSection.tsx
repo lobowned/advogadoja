@@ -3,10 +3,12 @@ import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Send, Video, MoreVertical, Smile, Mic, Check, Shield, RefreshCw, MessageSquare } from "lucide-react";
 import { useLawyerChat } from "@/hooks/useLawyerChat";
+import { useLawyerPresence } from "@/hooks/useLawyerPresence";
 import { useEffect, useRef, useState } from "react";
 
 const LawyerChatSection = () => {
   const { messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers, isCollectingLead, leadQuestion, isInQueue, queuePosition, hasJoinedQueue, joinQueue, peopleAhead } = useLawyerChat();
+  const { onlineLawyers, notification, onlineCount } = useLawyerPresence();
   const [inputValue, setInputValue] = useState("");
   const [showResponseTime, setShowResponseTime] = useState(false);
   const chatContainerRef = useRef<HTMLDivElement>(null);
@@ -50,35 +52,46 @@ const LawyerChatSection = () => {
             <h2 className="text-2xl sm:text-3xl font-bold mb-3">
               Atendimento Jurídico Imediato
             </h2>
-            <div className="flex items-center justify-center gap-2 mb-3">
-              <div className="flex items-center gap-1.5 bg-whatsapp-send-btn/10 px-3 py-1.5 rounded-full">
-                <div className="w-2 h-2 bg-whatsapp-send-btn rounded-full animate-pulse-dot" />
-                <span className="text-xs font-medium text-whatsapp-send-btn">
-                  30 advogados online agora
-                </span>
+            <div className="flex flex-col items-center gap-2 mb-3">
+              <div className="flex items-center justify-center gap-2">
+                <div className="flex items-center gap-1.5 bg-whatsapp-send-btn/10 px-3 py-1.5 rounded-full transition-all duration-300">
+                  <div className="w-2 h-2 bg-whatsapp-send-btn rounded-full animate-pulse-dot" />
+                  <span className="text-xs font-medium text-whatsapp-send-btn">
+                    {onlineCount} advogados online
+                  </span>
+                </div>
+                {showResponseTime && (
+                  <div className="flex items-center gap-1.5 bg-primary/10 px-3 py-1.5 rounded-full animate-fade-in">
+                    <Check className="w-3 h-3 text-primary" />
+                    <span className="text-xs font-medium text-primary">Resposta em menos de 1min</span>
+                  </div>
+                )}
               </div>
-              {showResponseTime && (
-                <div className="flex items-center gap-1.5 bg-primary/10 px-3 py-1.5 rounded-full animate-fade-in">
-                  <Check className="w-3 h-3 text-primary" />
-                  <span className="text-xs font-medium text-primary">Resposta em menos de 1min</span>
+              
+              {/* Notificação de entrada/saída */}
+              {notification && (
+                <div className="animate-fade-in text-xs text-muted-foreground px-3 py-1 bg-muted/50 rounded-full">
+                  {notification.message}
                 </div>
               )}
             </div>
             
-            {/* Carrossel de Advogados */}
+            {/* Carrossel de Advogados Online */}
             <div className="flex items-center justify-center gap-1 mb-2 overflow-hidden">
               <div className="flex -space-x-2 animate-fade-in">
-                {allLawyers.slice(0, 10).map((lawyer) => (
-                  <Avatar key={lawyer.id} className="h-8 w-8 border-2 border-background">
+                {onlineLawyers.slice(0, 10).map((lawyer) => (
+                  <Avatar key={lawyer.id} className="h-8 w-8 border-2 border-background transition-all duration-300">
                     <AvatarImage src={lawyer.photo} alt={lawyer.name} />
                     <AvatarFallback className="text-[10px]">
                       {lawyer.name.split(' ').map(n => n[0]).join('')}
                     </AvatarFallback>
                   </Avatar>
                 ))}
-                <div className="h-8 w-8 rounded-full bg-muted border-2 border-background flex items-center justify-center">
-                  <span className="text-[10px] font-semibold text-muted-foreground">+20</span>
-                </div>
+                {onlineCount > 10 && (
+                  <div className="h-8 w-8 rounded-full bg-muted border-2 border-background flex items-center justify-center">
+                    <span className="text-[10px] font-semibold text-muted-foreground">+{onlineCount - 10}</span>
+                  </div>
+                )}
               </div>
             </div>
             
@@ -143,7 +156,7 @@ const LawyerChatSection = () => {
                       <div className="text-4xl mb-3">🏛️</div>
                       <h3 className="text-xl font-bold mb-2">Assistência Jurídica Online</h3>
                       <p className="text-sm text-muted-foreground mb-4">
-                        30 advogados disponíveis para atender você agora mesmo
+                        {onlineCount} advogados disponíveis para atender você agora mesmo
                       </p>
                     </div>
                     

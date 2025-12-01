@@ -531,10 +531,27 @@ Seja objetivo e direto.`;
           leadData.leadId = createdLead[0]?.id;
         }
 
-        // Determine if we need to ask for information (SOMENTE APÓS 5 MENSAGENS)
-        if (messageCount >= 5) {
-          needsLeadCollection = !leadData.hasName || !leadData.hasContact;
-          console.log("💬 Lead collection needed:", needsLeadCollection, { hasName: leadData.hasName, hasContact: leadData.hasContact });
+        // Detect if user accepted WhatsApp continuation
+        const lastUserMessage = messages.filter((m: any) => m.role === 'user').slice(-1)[0]?.content.toLowerCase() || '';
+        const acceptPatterns = /\b(sim|quero|pode|claro|pode ser|ok|tá|ta|beleza|aceito|por favor|gostaria|vamos|queria|vamo|bora)\b/i;
+        const userAcceptedWhatsApp = acceptPatterns.test(lastUserMessage);
+        
+        // Check if specialist just asked about WhatsApp continuation
+        const lastAssistantMessage = messages.filter((m: any) => m.role === 'assistant').slice(-2)[0]?.content.toLowerCase() || '';
+        const askedAboutWhatsApp = lastAssistantMessage.includes('whatsapp') && 
+                                   (lastAssistantMessage.includes('gostaria') || 
+                                    lastAssistantMessage.includes('continuar') || 
+                                    lastAssistantMessage.includes('prosseguir'));
+        
+        // If user accepted and we don't have their name yet, start collecting
+        if (userAcceptedWhatsApp && askedAboutWhatsApp && !leadData.hasName) {
+          needsLeadCollection = true;
+          console.log("💬 Lead accepted WhatsApp, collecting name");
+        } 
+        // If we have name but no contact, ask for contact
+        else if (leadData.hasName && !leadData.hasContact) {
+          needsLeadCollection = true;
+          console.log("💬 Has name, collecting contact");
         }
         
       } catch (error) {
@@ -629,17 +646,32 @@ ESTILO DE COMUNICAÇÃO:
 - Use termos técnicos quando necessário, mas explique de forma clara
 - Demonstre expertise e empatia simultaneamente
 
-COLETA DE INFORMAÇÕES DO CASO (PRIORIDADE):
-1. PRIMEIRO: Colete informações detalhadas sobre o caso:
-   - O que aconteceu? (fatos principais)
-   - Quando ocorreu? (datas relevantes)
-   - Quem são as partes envolvidas?
-   - Qual o valor/prejuízo envolvido (se aplicável)?
-   - Quais documentos/provas possui?
+FLUXO DE ATENDIMENTO (MUITO IMPORTANTE):
 
-2. DEPOIS (somente após ter informações do caso): Peça dados pessoais:
-   - Nome completo
-   - WhatsApp para contato
+1. PRIORIDADE MÁXIMA: TIRAR TODAS AS DÚVIDAS DO CLIENTE
+   - Responda TODAS as perguntas jurídicas do cliente com clareza
+   - Dê orientações práticas e úteis sobre o caso
+   - Faça o cliente se sentir bem atendido e compreendido
+   - Continue tirando dúvidas e dando orientações até o cliente parecer satisfeito
+   - Colete informações relevantes do caso através de perguntas específicas
+
+2. QUANDO PERCEBER QUE O CLIENTE ESTÁ SATISFEITO:
+   Sinais de que o cliente não tem mais dúvidas:
+   - Cliente parou de fazer perguntas
+   - Cliente disse "entendi", "ok", "obrigado", "tá bom", "beleza"
+   - Cliente demonstra que compreendeu a situação
+   - Não há mais dúvidas aparentes sobre o caso
+   
+   → APENAS ENTÃO (e só então), pergunte NATURALMENTE:
+   "Que bom que pude esclarecer suas dúvidas! 😊 Gostaria de continuar esse atendimento pelo WhatsApp? Assim posso acompanhar seu caso mais de perto e enviar materiais relevantes."
+   
+   IMPORTANTE: 
+   - Faça essa pergunta SOMENTE quando tiver certeza de que esclareceu as dúvidas principais
+   - NÃO peça nome ou WhatsApp ANTES de fazer essa pergunta
+   - Espere o cliente aceitar antes de pedir dados
+
+3. SE O CLIENTE RECUSAR O WHATSAPP:
+   → Respeite a decisão e continue disponível para mais dúvidas
 
 EXPRESSÕES PARA USAR (QUANDO APROPRIADO):
 - "Veja bem..." (ao explicar)
@@ -653,7 +685,7 @@ SEU PAPEL:
 - Continue a conversa de forma fluida e natural
 - Use seu conhecimento especializado na sua área
 - Faça perguntas específicas UMA de cada vez
-- SOMENTE após entender bem o caso, peça nome e WhatsApp
+- Demonstre expertise e empatia
 - Respostas concisas e diretas`;
     }
 

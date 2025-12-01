@@ -450,18 +450,31 @@ SEU PAPEL:
       
       const leadCollectionData = `data: ${JSON.stringify({ collectLead: true, question: leadQuestion })}\n\n`;
       
-      // Criar novo stream com dados de coleta + response original
+      // Usar TransformStream com abordagem manual
       const { readable, writable } = new TransformStream();
       const writer = writable.getWriter();
       
-      // Escrever dados de coleta
-      await writer.write(encoder.encode(leadCollectionData));
-      
-      // Liberar o writer antes de fazer pipeTo
-      writer.releaseLock();
-      
-      // Pipe o response original
-      response.body?.pipeTo(writable);
+      // Processar em background
+      (async () => {
+        try {
+          // Primeiro, escrever dados de coleta
+          await writer.write(encoder.encode(leadCollectionData));
+          
+          // Depois, copiar a resposta da IA
+          if (response.body) {
+            const reader = response.body.getReader();
+            while (true) {
+              const { done, value } = await reader.read();
+              if (done) break;
+              await writer.write(value);
+            }
+          }
+        } catch (error) {
+          console.error("Error streaming lead collection response:", error);
+        } finally {
+          await writer.close();
+        }
+      })();
       
       return new Response(readable, {
         headers: { ...corsHeaders, "Content-Type": "text/event-stream" },
@@ -473,18 +486,31 @@ SEU PAPEL:
       const encoder = new TextEncoder();
       const transferData = `data: ${JSON.stringify({ transfer: true, newLawyerId })}\n\n`;
       
-      // Criar novo stream com dados de transferência + response original
+      // Usar TransformStream com abordagem manual
       const { readable, writable } = new TransformStream();
       const writer = writable.getWriter();
       
-      // Escrever dados de transferência
-      await writer.write(encoder.encode(transferData));
-      
-      // Liberar o writer antes de fazer pipeTo
-      writer.releaseLock();
-      
-      // Pipe o response original
-      response.body?.pipeTo(writable);
+      // Processar em background
+      (async () => {
+        try {
+          // Primeiro, escrever dados de transferência
+          await writer.write(encoder.encode(transferData));
+          
+          // Depois, copiar a resposta da IA
+          if (response.body) {
+            const reader = response.body.getReader();
+            while (true) {
+              const { done, value } = await reader.read();
+              if (done) break;
+              await writer.write(value);
+            }
+          }
+        } catch (error) {
+          console.error("Error streaming transfer response:", error);
+        } finally {
+          await writer.close();
+        }
+      })();
       
       return new Response(readable, {
         headers: { ...corsHeaders, "Content-Type": "text/event-stream" },

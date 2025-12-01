@@ -44,16 +44,53 @@ export const useLawyerChat = () => {
   const [isInQueue, setIsInQueue] = useState<boolean>(false);
   const [hasJoinedQueue, setHasJoinedQueue] = useState<boolean>(false);
   const [peopleAhead, setPeopleAhead] = useState<number>(0);
+  
+  // Sempre gera novo sessionId a cada refresh da página
   const [sessionId] = useState(() => {
-    // Generate or retrieve session ID
-    const stored = sessionStorage.getItem('chat_session_id');
-    if (stored) return stored;
     const newId = `session_${Date.now()}_${Math.random().toString(36).substring(7)}`;
-    sessionStorage.setItem('chat_session_id', newId);
+    console.log('🆕 New chat session created:', newId);
     return newId;
   });
+  
   const { toast } = useToast();
   const abortControllerRef = useRef<AbortController | null>(null);
+
+  // Reset da conversa ao montar o componente (page refresh)
+  useEffect(() => {
+    console.log('🔄 Resetting chat on page refresh');
+    
+    // Limpar sessionStorage de conversas antigas
+    sessionStorage.removeItem('chat_session_id');
+    sessionStorage.removeItem('chat_messages');
+    sessionStorage.removeItem('current_lawyer');
+    
+    // Limpar qualquer transferência pendente no banco
+    const clearPendingTransfer = async () => {
+      try {
+        const { data: existingLeads } = await supabase
+          .from('leads')
+          .select('id')
+          .eq('session_id', sessionId)
+          .maybeSingle();
+        
+        if (existingLeads) {
+          await supabase
+            .from('leads')
+            .update({ 
+              pending_transfer_lawyer: null,
+              detected_problem: null 
+            })
+            .eq('id', existingLeads.id);
+          
+          console.log('✅ Cleared pending transfers for session');
+        }
+      } catch (error) {
+        console.error('Error clearing pending transfers:', error);
+      }
+    };
+    
+    clearPendingTransfer();
+  }, []); // Empty deps = só executa na montagem inicial
 
   // Track user message count
   const userMessageCount = messages.filter(m => m.role === 'user').length;

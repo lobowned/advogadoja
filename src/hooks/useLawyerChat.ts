@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import { Lawyer, lawyers } from '@/data/lawyers';
+import { Lawyer, lawyers, type DynamicLawyer } from '@/data/lawyers';
 import { supabase } from '@/integrations/supabase/client';
 
 type Message = {
@@ -32,6 +32,7 @@ export const useLawyerChat = () => {
   const [currentLawyer, setCurrentLawyer] = useState<Lawyer>(
     lawyers.find(l => l.id === 'carlos-silva')!
   );
+  const [dynamicLawyer, setDynamicLawyer] = useState<DynamicLawyer | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const [isThinking, setIsThinking] = useState(false);
@@ -677,24 +678,52 @@ export const useLawyerChat = () => {
           currentLawyerId: currentLawyer.id
         });
         
+        // Verificar se há transferência
         const newLawyer = lawyers.find(l => l.id === transferData.newLawyerId);
-        if (newLawyer && newLawyer.id !== currentLawyer.id) {
+        let dynamicLawyerData: DynamicLawyer | null = null;
+        
+        // Se não encontrou lawyer estático, verificar se é dinâmico
+        if (!newLawyer && transferData.newLawyerId?.startsWith('dynamic-')) {
+          try {
+            const { data: leadData } = await supabase
+              .from('leads')
+              .select('dynamic_lawyer')
+              .eq('session_id', sessionId)
+              .single();
+            
+            if (leadData?.dynamic_lawyer) {
+              dynamicLawyerData = leadData.dynamic_lawyer as DynamicLawyer;
+              console.log('✨ [DYNAMIC LAWYER] Loaded:', dynamicLawyerData.name);
+            }
+          } catch (error) {
+            console.error('Error loading dynamic lawyer:', error);
+          }
+        }
+        
+        const targetLawyer = newLawyer || (dynamicLawyerData as any);
+        
+        if (targetLawyer && targetLawyer.id !== currentLawyer.id) {
           console.log('✅ [TRANSFER INITIATED]', {
             from: currentLawyer.name,
-            to: newLawyer.name,
+            to: targetLawyer.name,
             timestamp: new Date().toISOString()
           });
           
           // NOVO: Adicionar mensagem visual de transferência
           const transferMessage: TransferMessage = {
             role: 'system',
-            content: `Transferindo para ${newLawyer.name}...`,
+            content: `Transferindo para ${targetLawyer.name}...`,
             timestamp: new Date(),
             isTransfer: true,
             fromLawyer: currentLawyer,
-            toLawyer: newLawyer,
+            toLawyer: targetLawyer,
           };
           setMessages(prev => [...prev, transferMessage]);
+          
+          // Salvar advogado dinâmico se necessário
+          if (dynamicLawyerData) {
+            setDynamicLawyer(dynamicLawyerData);
+          }
           
           setIsTransferring(true);
           setIsTyping(false);
@@ -703,11 +732,11 @@ export const useLawyerChat = () => {
           await new Promise(resolve => setTimeout(resolve, 3000));
           
           console.log('🔄 [SWITCHING LAWYER]', {
-            newLawyerId: newLawyer.id,
-            newLawyerName: newLawyer.name
+            newLawyerId: targetLawyer.id,
+            newLawyerName: targetLawyer.name
           });
           
-          setCurrentLawyer(newLawyer);
+          setCurrentLawyer(targetLawyer);
           setIsTransferring(false);
           setIsTyping(true);
 
@@ -730,7 +759,7 @@ export const useLawyerChat = () => {
                   role: m.role === 'system' ? 'assistant' : m.role,
                   content: m.content,
                 })),
-                currentLawyerId: newLawyer.id,
+                currentLawyerId: targetLawyer.id,
                 sessionId: sessionId,
                 messageCount: userMessageCount + 1,
                 isTransfer: true, // Indica que é a primeira mensagem após transferência
@@ -844,14 +873,14 @@ export const useLawyerChat = () => {
               // Fallback se não recebeu conteúdo
               if (newLawyerContent.length === 0) {
                 console.warn('⚠️ [TRANSFER] No content received, using fallback');
-                const fallbackMessage = `Olá! Sou ${newLawyer.name.split(' ')[1]}, especialista em ${newLawyer.subSpecialty}. Vi que você precisa de ajuda. Pode me dar mais detalhes?`;
+              const fallbackMessage = `Olá! Sou ${(targetLawyer.name.split(' ')[1] || targetLawyer.name.split(' ')[0])}, especialista em ${targetLawyer.subSpecialty}. Vi que você precisa de ajuda. Pode me dar mais detalhes?`;
                 setMessages(prev => [
                   ...prev,
                   {
                     role: 'assistant',
                     content: fallbackMessage,
                     timestamp: new Date(),
-                    lawyerId: newLawyer.id,
+                  lawyerId: targetLawyer.id,
                   },
                 ]);
               }
@@ -866,14 +895,14 @@ export const useLawyerChat = () => {
               setIsTyping(false);
               
               // Fallback para resposta com erro
-              const fallbackMessage = `Olá! Sou ${newLawyer.name.split(' ')[1]}, especialista em ${newLawyer.subSpecialty}. Vi que você precisa de ajuda. Pode me dar mais detalhes?`;
+              const fallbackMessage = `Olá! Sou ${(targetLawyer.name.split(' ')[1] || targetLawyer.name.split(' ')[0])}, especialista em ${targetLawyer.subSpecialty}. Vi que você precisa de ajuda. Pode me dar mais detalhes?`;
               setMessages(prev => [
                 ...prev,
                 {
                   role: 'assistant',
                   content: fallbackMessage,
                   timestamp: new Date(),
-                  lawyerId: newLawyer.id,
+                  lawyerId: targetLawyer.id,
                 },
               ]);
             }
@@ -881,14 +910,14 @@ export const useLawyerChat = () => {
             console.error('❌ [TRANSFER ERROR]', error);
             setIsTyping(false);
             // Fallback para mensagem estática em caso de erro
-            const fallbackMessage = `Olá! Sou ${newLawyer.name.split(' ')[1]}, especialista em ${newLawyer.subSpecialty}. Vi que você precisa de ajuda. Pode me dar mais detalhes?`;
+            const fallbackMessage = `Olá! Sou ${(targetLawyer.name.split(' ')[1] || targetLawyer.name.split(' ')[0])}, especialista em ${targetLawyer.subSpecialty}. Vi que você precisa de ajuda. Pode me dar mais detalhes?`;
             setMessages(prev => [
               ...prev,
               {
                 role: 'assistant',
                 content: fallbackMessage,
                 timestamp: new Date(),
-                lawyerId: newLawyer.id,
+                lawyerId: targetLawyer.id,
               },
             ]);
           }

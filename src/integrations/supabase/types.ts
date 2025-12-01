@@ -171,6 +171,7 @@ export type Database = {
           case_summary: string | null
           conversation_history: Json | null
           created_at: string | null
+          dynamic_lawyer: Json | null
           email: string | null
           id: string
           message_count: number | null
@@ -191,6 +192,7 @@ export type Database = {
           case_summary?: string | null
           conversation_history?: Json | null
           created_at?: string | null
+          dynamic_lawyer?: Json | null
           email?: string | null
           id?: string
           message_count?: number | null
@@ -211,6 +213,7 @@ export type Database = {
           case_summary?: string | null
           conversation_history?: Json | null
           created_at?: string | null
+          dynamic_lawyer?: Json | null
           email?: string | null
           id?: string
           message_count?: number | null

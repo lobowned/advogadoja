@@ -247,7 +247,7 @@ serve(async (req) => {
 
     // LEAD COLLECTION LOGIC
     let needsLeadCollection = false;
-    let leadData: { hasName: boolean; hasContact: boolean; problemDetected: boolean; specialty?: string } = {
+    let leadData: { hasName: boolean; hasContact: boolean; problemDetected: boolean; specialty?: string; leadId?: string; notificationSent?: boolean } = {
       hasName: false,
       hasContact: false,
       problemDetected: false
@@ -271,8 +271,10 @@ serve(async (req) => {
           leadData.hasName = !!lead.name;
           leadData.hasContact = !!(lead.phone || lead.email);
           leadData.problemDetected = !!lead.specialty;
+          leadData.leadId = lead.id;
+          leadData.notificationSent = lead.notification_sent || false;
           
-          // Update message count
+          // Update message count and conversation history
           await fetch(`${SUPABASE_URL}/rest/v1/leads?session_id=eq.${sessionId}`, {
             method: 'PATCH',
             headers: {
@@ -282,9 +284,111 @@ serve(async (req) => {
               'Prefer': 'return=minimal'
             },
             body: JSON.stringify({
-              message_count: messageCount
+              message_count: messageCount,
+              conversation_history: messages
             })
           });
+
+          // DISPARO DE NOTIFICAÇÃO: Se tem nome + WhatsApp + 5+ mensagens + não enviou ainda
+          if (leadData.hasName && leadData.hasContact && messageCount >= 5 && !leadData.notificationSent) {
+            console.log("Triggering WhatsApp notification for lead:", leadData.leadId);
+            
+            // Gerar resumo do caso usando a IA
+            try {
+              const summaryPrompt = `Com base nesta conversa, crie um resumo profissional do caso jurídico em 2-3 frases, incluindo:
+- Problema principal
+- Fatos relevantes mencionados
+- Próximos passos sugeridos
+
+Seja objetivo e direto.`;
+
+              const summaryResponse = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+                method: "POST",
+                headers: {
+                  Authorization: `Bearer ${LOVABLE_API_KEY}`,
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  model: "google/gemini-2.5-flash",
+                  messages: [
+                    ...messages,
+                    { role: "user", content: summaryPrompt }
+                  ],
+                  stream: false,
+                }),
+              });
+
+              let caseSummary = "Resumo não disponível";
+              if (summaryResponse.ok) {
+                const summaryData = await summaryResponse.json();
+                caseSummary = summaryData.choices?.[0]?.message?.content || caseSummary;
+              }
+
+              // Salvar resumo no banco
+              await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
+                method: 'PATCH',
+                headers: {
+                  'apikey': SUPABASE_SERVICE_ROLE_KEY!,
+                  'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+                  'Content-Type': 'application/json',
+                  'Prefer': 'return=minimal'
+                },
+                body: JSON.stringify({
+                  case_summary: caseSummary,
+                  case_details: {
+                    message_count: messageCount,
+                    conversation_started: messages[0]?.content || "",
+                    last_message: messages[messages.length - 1]?.content || ""
+                  }
+                })
+              });
+
+              // Buscar dados completos do lead para enviar
+              const fullLeadResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}&select=*`, {
+                headers: {
+                  'apikey': SUPABASE_SERVICE_ROLE_KEY!,
+                  'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`
+                }
+              });
+
+              const fullLeadData = await fullLeadResponse.json();
+              
+              if (fullLeadData && fullLeadData.length > 0) {
+                // Chamar edge function de notificação via Supabase client (não precisa de fetch)
+                await fetch(`${SUPABASE_URL}/functions/v1/send-whatsapp-notification`, {
+                  method: 'POST',
+                  headers: {
+                    'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    leadData: fullLeadData[0]
+                  })
+                });
+
+                // Marcar notificação como enviada
+                await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
+                  method: 'PATCH',
+                  headers: {
+                    'apikey': SUPABASE_SERVICE_ROLE_KEY!,
+                    'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+                    'Content-Type': 'application/json',
+                    'Prefer': 'return=minimal'
+                  },
+                  body: JSON.stringify({
+                    notification_sent: true,
+                    notification_sent_at: new Date().toISOString()
+                  })
+                });
+
+                console.log("WhatsApp notification sent successfully for lead:", leadData.leadId);
+              }
+            } catch (notificationError) {
+              console.error("Error sending notification:", notificationError);
+              // Não falhar a requisição principal por erro na notificação
+            }
+          }
+          
         } else {
           // Create new lead entry
           await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
@@ -300,7 +404,8 @@ serve(async (req) => {
               message_count: messageCount,
               assigned_lawyer: currentLawyerId,
               specialty: currentLawyerId !== 'carlos-silva' ? currentLawyerId : null,
-              problem_detected: true
+              problem_detected: true,
+              conversation_history: messages
             })
           });
           leadData.problemDetected = true;
@@ -378,7 +483,18 @@ ESTILO DE COMUNICAÇÃO (MUITO IMPORTANTE):
 - Escreva em frases curtas e objetivas (2-4 frases por resposta)
 - Seja empático mas mantenha profissionalismo
 - Use termos técnicos quando necessário, mas explique de forma acessível
-- Faça perguntas específicas da sua área, UMA de cada vez
+
+COLETA DE INFORMAÇÕES DO CASO (PRIORIDADE):
+1. PRIMEIRO: Colete informações detalhadas sobre o caso:
+   - O que aconteceu? (fatos principais)
+   - Quando ocorreu? (datas relevantes)
+   - Quem são as partes envolvidas?
+   - Qual o valor/prejuízo envolvido (se aplicável)?
+   - Quais documentos/provas possui?
+
+2. DEPOIS (somente após ter informações do caso): Peça dados pessoais:
+   - Nome completo
+   - WhatsApp para contato
 
 EXPRESSÕES NATURAIS:
 - "Veja bem..."
@@ -391,9 +507,9 @@ EXPRESSÕES NATURAIS:
 SEU PAPEL:
 - Continue a conversa de forma natural e fluida
 - Use seu conhecimento especializado na área
-- Faça perguntas específicas para entender todos os detalhes do caso
+- Faça perguntas específicas UMA de cada vez para entender todos os detalhes
 - Demonstre expertise e empatia simultaneamente
-- Após entender bem o caso, sugira os próximos passos práticos
+- SOMENTE após entender bem o caso, peça nome e WhatsApp
 - Respostas concisas e diretas (2-4 frases máximo)`;
     }
 

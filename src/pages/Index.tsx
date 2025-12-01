@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Scale } from "lucide-react";
-import SupportChannels from "@/components/SupportChannels";
-import CTASection from "@/components/CTASection";
 import NicheSelector from "@/components/NicheSelector";
 
 const Index = () => {
@@ -69,12 +67,6 @@ const Index = () => {
       <div id="niche-selector">
         <NicheSelector />
       </div>
-
-      {/* Support Channels */}
-      <SupportChannels />
-
-      {/* Final CTA */}
-      <CTASection onAction={handleCTA} />
 
       {/* Footer */}
       <footer className="border-t bg-muted/30 py-8 sm:py-12">

@@ -37,7 +37,7 @@ const Index = () => {
               Seu Problema Jurídico Resolvido por Especialistas — Atendimento Imediato
             </h1>
             
-            <p className="mb-8 sm:mb-10 text-sm sm:text-base md:text-lg lg:text-xl text-white/90 leading-relaxed">
+            <p className="mb-8 sm:mb-10 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed animated-gradient-text font-medium">
               Um advogado especialista entra em contato em minutos — 100% gratuito.
             </p>
             

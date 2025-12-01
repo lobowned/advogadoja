@@ -1,6 +1,12 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import StatsSection from "@/components/StatsSection";
+import PainsVsDesires from "@/components/PainsVsDesires";
+import ForWhoSection from "@/components/ForWhoSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import GuaranteeCard from "@/components/GuaranteeCard";
 import LawyerChatSection from "@/components/LawyerChatSection";
+import ObjecionsFAQ from "@/components/ObjecionsFAQ";
 import LawyersShowcase from "@/components/LawyersShowcase";
 
 const Index = () => {
@@ -19,10 +25,28 @@ const Index = () => {
       {/* Hero Section */}
       <HeroSection onCtaClick={handleCTA} />
 
+      {/* Stats Section - Por que você precisa */}
+      <StatsSection />
+
+      {/* Pains vs Desires - Dores e Objetivos */}
+      <PainsVsDesires />
+
+      {/* For Who Section - Para quem é */}
+      <ForWhoSection />
+
+      {/* Comparison Table - Com vs Sem */}
+      <ComparisonTable />
+
+      {/* Guarantee Card - Garantia */}
+      <GuaranteeCard />
+
       {/* Lawyer Chat */}
       <div id="lawyer-chat">
         <LawyerChatSection />
       </div>
+
+      {/* Objections FAQ */}
+      <ObjecionsFAQ />
 
       {/* Lawyers Showcase Section */}
       <div id="advogados">

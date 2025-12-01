@@ -329,7 +329,7 @@ serve(async (req) => {
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
     // Buscar dados do lead
-    const { data: leadData, error: leadError } = await supabase
+    let { data: leadData, error: leadError } = await supabase
       .from('leads')
       .select('*')
       .eq('session_id', sessionId)
@@ -337,6 +337,30 @@ serve(async (req) => {
 
     if (leadError) {
       console.error("❌ Error fetching lead:", leadError);
+    }
+
+    // Criar lead se não existir
+    if (!leadData) {
+      console.log("📝 Creating new lead for session:", sessionId);
+      const { data: newLead, error: createError } = await supabase
+        .from('leads')
+        .insert({
+          session_id: sessionId,
+          assigned_lawyer: 'carlos-silva',
+          status: 'new',
+          message_count: 0,
+          conversation_history: [],
+          case_details: {}
+        })
+        .select()
+        .single();
+      
+      if (createError) {
+        console.error("❌ Error creating lead:", createError);
+      } else {
+        leadData = newLead;
+        console.log("✅ Lead created:", newLead.id);
+      }
     }
 
     console.log("📋 Lead data:", {

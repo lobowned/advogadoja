@@ -16,11 +16,22 @@ serve(async (req) => {
     const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
     const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
     
+    // VERIFICAÇÃO CRÍTICA: Garantir que variáveis de ambiente existem
     if (!LOVABLE_API_KEY) {
+      console.error("❌ LOVABLE_API_KEY is missing");
       throw new Error("LOVABLE_API_KEY is not configured");
     }
+    if (!SUPABASE_URL) {
+      console.error("❌ SUPABASE_URL is missing");
+      throw new Error("SUPABASE_URL is not configured");
+    }
+    if (!SUPABASE_SERVICE_ROLE_KEY) {
+      console.error("❌ SUPABASE_SERVICE_ROLE_KEY is missing");
+      throw new Error("SUPABASE_SERVICE_ROLE_KEY is not configured");
+    }
 
-    console.log("Received messages:", messages.length, "Current lawyer:", currentLawyerId, "Session:", sessionId);
+    console.log("✅ All environment variables loaded");
+    console.log("📨 Received messages:", messages.length, "Current lawyer:", currentLawyerId, "Session:", sessionId);
 
     // NÍVEL 1: Detecção específica por sub-especialidade (direciona para advogado específico)
     const detectSpecificLawyer = (text: string): string | null => {
@@ -296,9 +307,11 @@ serve(async (req) => {
       problemDetected: false
     };
 
-    // Check if we need to collect lead info after 5+ messages with identified problem
-    if (sessionId && messageCount >= 5 && currentLawyerId !== 'carlos-silva') {
+    // Check if we need to collect lead info (always check, not just after 5 messages)
+    if (sessionId && currentLawyerId !== 'carlos-silva') {
       try {
+        console.log("🔍 Checking for existing lead with session:", sessionId);
+        
         // Check existing lead in database
         const leadCheckResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?session_id=eq.${sessionId}&select=*`, {
           headers: {
@@ -307,7 +320,13 @@ serve(async (req) => {
           }
         });
         
+        if (!leadCheckResponse.ok) {
+          console.error("❌ Failed to check leads:", leadCheckResponse.status, await leadCheckResponse.text());
+          throw new Error("Failed to check existing leads");
+        }
+        
         const existingLeads = await leadCheckResponse.json();
+        console.log("📊 Existing leads found:", existingLeads.length);
         
         if (existingLeads && existingLeads.length > 0) {
           const lead = existingLeads[0];
@@ -317,8 +336,15 @@ serve(async (req) => {
           leadData.leadId = lead.id;
           leadData.notificationSent = lead.notification_sent || false;
           
+          console.log("✅ Lead exists:", { 
+            leadId: leadData.leadId, 
+            hasName: leadData.hasName, 
+            hasContact: leadData.hasContact,
+            notificationSent: leadData.notificationSent
+          });
+          
           // Update message count and conversation history
-          await fetch(`${SUPABASE_URL}/rest/v1/leads?session_id=eq.${sessionId}`, {
+          const updateResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?session_id=eq.${sessionId}`, {
             method: 'PATCH',
             headers: {
               'apikey': SUPABASE_SERVICE_ROLE_KEY!,
@@ -331,9 +357,15 @@ serve(async (req) => {
               conversation_history: messages
             })
           });
+          
+          if (!updateResponse.ok) {
+            console.error("❌ Failed to update lead:", await updateResponse.text());
+          } else {
+            console.log("✅ Lead updated with message count:", messageCount);
+          }
 
           // DISPARO DE NOTIFICAÇÃO: Se tem nome + WhatsApp + 8+ mensagens + não enviou ainda
-          console.log("Checking notification conditions:", {
+          console.log("📲 Checking notification conditions:", {
             hasName: leadData.hasName,
             hasContact: leadData.hasContact,
             messageCount,
@@ -341,7 +373,7 @@ serve(async (req) => {
           });
           
           if (leadData.hasName && leadData.hasContact && messageCount >= 8 && !leadData.notificationSent) {
-            console.log("Triggering WhatsApp notification for lead:", leadData.leadId);
+            console.log("🚀 Triggering WhatsApp notification for lead:", leadData.leadId);
             
             // Gerar resumo do caso usando a IA
             try {
@@ -375,7 +407,7 @@ Seja objetivo e direto.`;
               }
 
               // Salvar resumo no banco
-              await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
+              const saveSummaryResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
                 method: 'PATCH',
                 headers: {
                   'apikey': SUPABASE_SERVICE_ROLE_KEY!,
@@ -392,6 +424,12 @@ Seja objetivo e direto.`;
                   }
                 })
               });
+              
+              if (!saveSummaryResponse.ok) {
+                console.error("❌ Failed to save case summary:", await saveSummaryResponse.text());
+              } else {
+                console.log("✅ Case summary saved");
+              }
 
               // Buscar dados completos do lead para enviar
               const fullLeadResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}&select=*`, {
@@ -400,12 +438,18 @@ Seja objetivo e direto.`;
                   'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`
                 }
               });
+              
+              if (!fullLeadResponse.ok) {
+                console.error("❌ Failed to fetch full lead data:", await fullLeadResponse.text());
+                throw new Error("Failed to fetch full lead data");
+              }
 
               const fullLeadData = await fullLeadResponse.json();
+              console.log("📋 Full lead data retrieved:", fullLeadData.length > 0);
               
               if (fullLeadData && fullLeadData.length > 0) {
                 // Chamar edge function de notificação via Supabase client
-                console.log("Sending WhatsApp notification for lead:", leadData.leadId);
+                console.log("📤 Sending WhatsApp notification for lead:", leadData.leadId);
                 
                 const notificationResult = await fetch(`${SUPABASE_URL}/functions/v1/send-whatsapp-notification`, {
                   method: 'POST',
@@ -420,13 +464,13 @@ Seja objetivo e direto.`;
                 
                 if (!notificationResult.ok) {
                   const errorText = await notificationResult.text();
-                  console.error("Failed to send WhatsApp notification:", errorText);
+                  console.error("❌ Failed to send WhatsApp notification:", notificationResult.status, errorText);
                 } else {
-                  console.log("WhatsApp notification sent successfully");
+                  console.log("✅ WhatsApp notification API called successfully");
                 }
 
                 // Marcar notificação como enviada
-                await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
+                const markSentResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadData.leadId}`, {
                   method: 'PATCH',
                   headers: {
                     'apikey': SUPABASE_SERVICE_ROLE_KEY!,
@@ -439,8 +483,12 @@ Seja objetivo e direto.`;
                     notification_sent_at: new Date().toISOString()
                   })
                 });
-
-                console.log("WhatsApp notification sent successfully for lead:", leadData.leadId);
+                
+                if (!markSentResponse.ok) {
+                  console.error("❌ Failed to mark notification as sent:", await markSentResponse.text());
+                } else {
+                  console.log("✅ Notification marked as sent for lead:", leadData.leadId);
+                }
               }
             } catch (notificationError) {
               console.error("Error sending notification:", notificationError);
@@ -449,14 +497,16 @@ Seja objetivo e direto.`;
           }
           
         } else {
-          // Create new lead entry
-          await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+          // Create new lead entry (CRIAR IMEDIATAMENTE, não esperar 5 mensagens)
+          console.log("🆕 Creating new lead for session:", sessionId);
+          
+          const createLeadResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
             method: 'POST',
             headers: {
               'apikey': SUPABASE_SERVICE_ROLE_KEY!,
               'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
               'Content-Type': 'application/json',
-              'Prefer': 'return=minimal'
+              'Prefer': 'return=representation'
             },
             body: JSON.stringify({
               session_id: sessionId,
@@ -467,14 +517,28 @@ Seja objetivo e direto.`;
               conversation_history: messages
             })
           });
+          
+          if (!createLeadResponse.ok) {
+            const errorText = await createLeadResponse.text();
+            console.error("❌ Failed to create lead:", createLeadResponse.status, errorText);
+            throw new Error(`Failed to create lead: ${errorText}`);
+          }
+          
+          const createdLead = await createLeadResponse.json();
+          console.log("✅ Lead created successfully:", createdLead[0]?.id);
+          
           leadData.problemDetected = true;
+          leadData.leadId = createdLead[0]?.id;
         }
 
-        // Determine if we need to ask for information
-        needsLeadCollection = !leadData.hasName || !leadData.hasContact;
+        // Determine if we need to ask for information (SOMENTE APÓS 5 MENSAGENS)
+        if (messageCount >= 5) {
+          needsLeadCollection = !leadData.hasName || !leadData.hasContact;
+          console.log("💬 Lead collection needed:", needsLeadCollection, { hasName: leadData.hasName, hasContact: leadData.hasContact });
+        }
         
       } catch (error) {
-        console.error("Error checking/creating lead:", error);
+        console.error("❌ Error checking/creating lead:", error);
       }
     }
     

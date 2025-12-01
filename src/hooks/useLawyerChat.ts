@@ -567,9 +567,10 @@ export const useLawyerChat = () => {
 
             const content = parsed.choices?.[0]?.delta?.content as string | undefined;
             if (content) {
-              // VALIDAÇÃO: Detectar resposta corrompida ou em inglês
-              const hasNonLatinChars = /[^\x00-\x7F\u00C0-\u00FF\u0100-\u017F\u0180-\u024F\u2000-\u206F\u2070-\u209F\u20A0-\u20CF\u2100-\u214F\u2190-\u21FF\u2200-\u22FF]/.test(content);
-              const hasEnglishWords = /\b(you|the|and|for|with|from|will|need|that|this|your|case|legal|issue|help|can|are|have|been|what|when|where|how|why|client|lawyer|attorney)\b/i.test(content);
+              // VALIDAÇÃO: Detectar resposta corrompida ou em inglês (ignorando emojis)
+              const contentWithoutEmojis = content.replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F000}-\u{1F02F}\u{1F0A0}-\u{1F0FF}]/gu, '');
+              const hasNonLatinChars = /[^\x00-\x7F\u00C0-\u00FF\u0100-\u017F\u0180-\u024F\u2000-\u206F\u2070-\u209F\u20A0-\u20CF\u2100-\u214F\u2190-\u21FF\u2200-\u22FF]/.test(contentWithoutEmojis);
+              const hasEnglishWords = /\b(you|the|and|for|with|from|will|need|that|this|your|case|legal|issue|help|can|are|have|been|what|when|where|how|why|client|lawyer|attorney)\b/i.test(contentWithoutEmojis);
               
               if (hasNonLatinChars || hasEnglishWords) {
                 console.warn('⚠️ Corrupted or English response detected, using fallback');

@@ -102,6 +102,57 @@ const orchestrateResponseTool = {
   }
 };
 
+// Mapa de nomes de advogados para fallback
+const LAWYER_NAMES: { [key: string]: string } = {
+  'carlos-silva': 'Dr. Carlos Silva',
+  'maria-santos': 'Dra. Maria Santos',
+  'rafael-oliveira': 'Dr. Rafael Oliveira',
+  'juliana-costa': 'Dra. Juliana Costa',
+  'fernando-lima': 'Dr. Fernando Lima',
+  'patricia-almeida': 'Dra. Patrícia Almeida',
+  'rodrigo-barros': 'Dr. Rodrigo Barros',
+  'ricardo-mendes': 'Dr. Ricardo Mendes',
+  'ana-rodrigues': 'Dra. Ana Rodrigues',
+  'lucas-ferreira': 'Dr. Lucas Ferreira',
+  'carla-souza': 'Dra. Carla Souza',
+  'paulo-martins': 'Dr. Paulo Martins',
+  'beatriz-campos': 'Dra. Beatriz Campos',
+  'gustavo-reis': 'Dr. Gustavo Reis',
+  'camila-nunes': 'Dra. Camila Nunes',
+  'diego-santos': 'Dr. Diego Santos',
+  'fernanda-lima': 'Dra. Fernanda Lima',
+  'thiago-rocha': 'Dr. Thiago Rocha',
+  'marina-costa': 'Dra. Marina Costa',
+  'helena-vasconcelos': 'Dra. Helena Vasconcelos',
+  'gabriel-monteiro': 'Dr. Gabriel Monteiro',
+  'renata-machado': 'Dra. Renata Machado',
+  'leonardo-prado': 'Dr. Leonardo Prado',
+  'cristina-torres': 'Dra. Cristina Torres',
+  'andre-silva': 'Dr. André Silva',
+  'claudia-martins': 'Dra. Claudia Martins',
+  'marcos-oliveira': 'Dr. Marcos Oliveira',
+  'isabela-santos': 'Dra. Isabela Santos',
+  'renato-alves': 'Dr. Renato Alves',
+  'sandra-lima': 'Dra. Sandra Lima',
+  'roberto-costa': 'Dr. Roberto Costa',
+  'vanessa-reis': 'Dra. Vanessa Reis',
+  'joao-fernandes': 'Dr. João Fernandes',
+  'larissa-souza': 'Dra. Larissa Souza',
+  'eduardo-gomes': 'Dr. Eduardo Gomes',
+  'monica-alves': 'Dra. Mônica Alves'
+};
+
+// Função para gerar saudação de especialista como fallback
+function generateSpecialistGreeting(lawyerId: string, problem: string | null): string {
+  const lawyerName = LAWYER_NAMES[lawyerId] || 'especialista';
+  const greetings = [
+    `Oi! Sou ${lawyerName}. Vi que vc precisa de ajuda${problem ? ` com ${problem}` : ''}. Me conta mais sobre o seu caso?`,
+    `E aí! ${lawyerName} aqui. Sobre ${problem || 'seu caso'}: me diz o que aconteceu?`,
+    `Olá! Sou ${lawyerName}. Entendi que vc tem uma questão${problem ? ` de ${problem}` : ''}. Como posso te ajudar?`
+  ];
+  return greetings[Math.floor(Math.random() * greetings.length)];
+}
+
 // Função principal de orquestração
 async function orchestrateChat(params: {
   messages: any[];
@@ -145,7 +196,17 @@ Seu trabalho é analisar o contexto completo e decidir a melhor ação a tomar.
 🎯 REGRAS DE DECISÃO (use o tool):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-1️⃣ **normal_response**: Resposta normal de conversa
+🚨 **REGRA PRIORITÁRIA #1: specialist_greeting** - SEMPRE VERIFIQUE ISSO PRIMEIRO!
+   ⚡ ATENÇÃO: Esta regra TEM PRIORIDADE ABSOLUTA sobre todas as outras!
+   ✅ Quando usar:
+   - isTransfer=true (acabou de ser transferido) E
+   - Advogado atual NÃO é Carlos Silva
+   - 🔴 IMPORTANTE: Se essas condições forem verdadeiras, USE specialist_greeting SEMPRE
+   - 🔴 IGNORE qualquer outro contexto do histórico (confirmações, "pode ser", etc.)
+   - Apresente-se brevemente como o especialista e pergunte sobre o caso
+   ❌ NÃO use quando: não é transferência recente OU advogado é Carlos
+
+2️⃣ **normal_response**: Resposta normal de conversa
    ✅ Quando usar:
    - Saudações sem contexto jurídico ("oi", "olá", "bom dia")
    - Perguntas de esclarecimento
@@ -153,7 +214,7 @@ Seu trabalho é analisar o contexto completo e decidir a melhor ação a tomar.
    - Não há problema jurídico claro identificado
    ❌ NÃO use quando: houver problema jurídico claro que precisa de especialista
    
-2️⃣ **suggest_transfer**: Sugerir transferência para especialista
+3️⃣ **suggest_transfer**: Sugerir transferência para especialista
    ✅ Quando usar:
    - Dr. Carlos detecta problema jurídico ESPECÍFICO
    - Usuário menciona problema jurídico claro (divórcio, demissão, acidente, etc.)
@@ -162,30 +223,25 @@ Seu trabalho é analisar o contexto completo e decidir a melhor ação a tomar.
    - Já tem transferência pendente (a menos que seja área DIFERENTE)
    - É apenas saudação
    - Informação é vaga demais
+   - isTransfer=true (nesse caso use specialist_greeting)
    
-3️⃣ **confirm_transfer**: Usuário CONFIRMOU transferência pendente
+4️⃣ **confirm_transfer**: Usuário CONFIRMOU transferência pendente
    ✅ Quando usar:
    - Há pending_transfer aguardando
    - Usuário disse: "sim", "pode", "ok", "beleza", "quero", "vamos", "aceito"
    - IMPORTANTE: Aceite erros de digitação comuns: "sikm", "simm", "okk", "pde"
    - Execute a transferência imediatamente
-   ❌ NÃO use quando: não há pending_transfer
+   ❌ NÃO use quando: 
+   - não há pending_transfer
+   - isTransfer=true (nesse caso use specialist_greeting)
    
-4️⃣ **deny_transfer**: Usuário NEGOU transferência
+5️⃣ **deny_transfer**: Usuário NEGOU transferência
    ✅ Quando usar:
    - Há pending_transfer aguardando
    - Usuário disse: "não", "nao", "depois", "espera", "deixa", "agora não"
    - Aceite variações: "nai", "naum", "nn"
    - Continue conversa normalmente com Carlos
    ❌ NÃO use quando: não há pending_transfer
-
-5️⃣ **specialist_greeting**: Primeira mensagem após transferência
-   ✅ Quando usar:
-   - isTransfer=true (acabou de ser transferido)
-   - Advogado atual NÃO é Carlos
-   - É a primeira mensagem do especialista
-   - Apresente-se brevemente e pergunte sobre o caso
-   ❌ NÃO use quando: não é transferência recente
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 💬 ESTILO DAS RESPOSTAS (Brasileiro informal e natural):
@@ -380,6 +436,21 @@ serve(async (req) => {
       detectedProblem: leadData?.detected_problem || null,
       apiKey: LOVABLE_API_KEY
     });
+
+    // 🛡️ VALIDAÇÃO FORÇADA: Garantir specialist_greeting quando necessário
+    if (isTransfer && currentLawyerId !== 'carlos-silva' && decision.action !== 'specialist_greeting') {
+      console.warn('⚠️ [OVERRIDE] Forcing specialist_greeting because isTransfer=true and currentLawyer is specialist');
+      console.warn('⚠️ [OVERRIDE] Original action was:', decision.action);
+      
+      // Forçar action e gerar saudação de fallback
+      decision.action = 'specialist_greeting';
+      decision.response = generateSpecialistGreeting(
+        currentLawyerId, 
+        leadData?.detected_problem || null
+      );
+      decision.confidence = 1.0;
+      decision.reasoning = 'Forced specialist greeting override';
+    }
 
     console.log("🎯 [DECISION]", decision.action);
     console.log("💬 [RESPONSE]", decision.response.substring(0, 100));

@@ -96,12 +96,12 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
           {/* CTA Button */}
           <Button 
             size="lg"
-            className="h-14 sm:h-16 w-full sm:w-auto px-8 sm:px-10 text-base sm:text-lg font-semibold bg-green-600 hover:bg-green-700 text-white shadow-glow transition-all hover:scale-105 animate-fade-up mb-4"
+            className="h-14 sm:h-16 w-full sm:w-auto px-8 sm:px-10 text-base sm:text-lg font-semibold bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-button transition-all hover:scale-105 animate-fade-up mb-4"
             onClick={onCtaClick}
             style={{ animationDelay: "0.3s" }}
           >
             <MessageCircle className="w-5 h-5 mr-2" />
-            Iniciar Conversa Grátis
+            Falar com um Advogado agora
           </Button>
 
           {/* Micro-copy */}

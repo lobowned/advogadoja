@@ -93,14 +93,6 @@ const LawyersShowcase = () => {
             </div>
           </div>
         )}
-
-        {/* Contador */}
-        <div className="text-center mt-12 animate-fade-in">
-          <p className="text-muted-foreground">
-            Exibindo <span className="font-bold text-primary">{displayLawyers.length}</span>{" "}
-            {displayLawyers.length === 1 ? "advogado" : "advogados"}
-          </p>
-        </div>
       </div>
     </section>
   );

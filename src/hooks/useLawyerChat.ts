@@ -567,12 +567,22 @@ export const useLawyerChat = () => {
 
             const content = parsed.choices?.[0]?.delta?.content as string | undefined;
             if (content) {
-              // VALIDAÇÃO: Detectar resposta corrompida ou em inglês (ignorando emojis)
-              const contentWithoutEmojis = content.replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F000}-\u{1F02F}\u{1F0A0}-\u{1F0FF}]/gu, '');
-              const hasNonLatinChars = /[^\x00-\x7F\u00C0-\u00FF\u0100-\u017F\u0180-\u024F\u2000-\u206F\u2070-\u209F\u20A0-\u20CF\u2100-\u214F\u2190-\u21FF\u2200-\u22FF]/.test(contentWithoutEmojis);
-              const hasEnglishWords = /\b(you|the|and|for|with|from|will|need|that|this|your|case|legal|issue|help|can|are|have|been|what|when|where|how|why|client|lawyer|attorney)\b/i.test(contentWithoutEmojis);
+              // VALIDAÇÃO: Detectar resposta corrompida (ignorando emojis, permitindo português)
+              const contentWithoutEmojis = content
+                .replace(/[\u{1F300}-\u{1FAFF}]/gu, '')  // Todos os emojis (range completo)
+                .replace(/[\u{2600}-\u{27BF}]/gu, '')     // Misc symbols, dingbats
+                .replace(/[\u{FE00}-\u{FE0F}]/gu, '')     // Variation selectors
+                .replace(/[\u{200D}]/gu, '')               // Zero-width joiner
+                .trim();
               
-              if (hasNonLatinChars || hasEnglishWords) {
+              // Detectar apenas inglês excessivo (mais de 4 palavras em inglês)
+              const englishWords = (contentWithoutEmojis.match(/\b(you|the|and|for|with|from|will|need|that|this|your|case|legal|help|can|are|have|been|what|when|where|how|why|client|attorney|should|would|could)\b/gi) || []);
+              const hasExcessiveEnglish = englishWords.length > 4;
+              
+              // Detectar caracteres realmente problemáticos (árabe, chinês, cirílico, etc.)
+              const hasTrulyForeignChars = /[\u0600-\u06FF\u4E00-\u9FFF\u0400-\u04FF\u3040-\u309F\u30A0-\u30FF]/.test(contentWithoutEmojis);
+              
+              if (hasExcessiveEnglish || hasTrulyForeignChars) {
                 console.warn('⚠️ Corrupted or English response detected, using fallback');
                 fullResponseContent = "Olá! Sou o especialista. Vi seu caso e vou te ajudar. Pode me contar mais detalhes?";
                 break; // Parar de processar chunks

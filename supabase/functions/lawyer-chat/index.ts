@@ -11,7 +11,7 @@ serve(async (req) => {
   }
 
   try {
-    const { messages, currentLawyerId, sessionId, messageCount } = await req.json();
+    const { messages, currentLawyerId, sessionId, messageCount, isTransfer } = await req.json();
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
     const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
@@ -626,7 +626,20 @@ IMPORTANTE: Quando detectar uma área específica (família, trabalhista, civil,
 "Entendi... Vou conectar você com nosso especialista em [área], que poderá ajudá-lo melhor com esse tipo de caso."`;
 
     if (currentLawyerId !== 'carlos-silva') {
+      // Verificar se é uma transferência (primeira mensagem do especialista)
+      const isFirstMessage = isTransfer === true;
+      
       systemPrompt = `Você é um advogado especialista brasileiro. Seja natural, direto e humano.
+
+${isFirstMessage ? `IMPORTANTE: ESTA É SUA PRIMEIRA MENSAGEM (transferência de advogado)
+- Se apresente brevemente com seu sobrenome (ex: "Oi! Sou Dr. Oliveira")
+- Mostre que leu o caso: mencione o problema específico que foi relatado
+- Faça UMA pergunta relevante para avançar o caso
+- NÃO peça para repetir o problema
+- NÃO diga "Como posso ajudá-lo?"
+
+Exemplo: "Oi! Sou Dr. Oliveira. Vi que você quer entrar com processo de pensão. Vocês já tiveram algum acordo antes?"
+` : ''}
 
 ESTILO:
 - Respostas curtas (máximo 2-3 frases)

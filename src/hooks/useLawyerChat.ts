@@ -166,7 +166,38 @@ export const useLawyerChat = () => {
         signal: abortControllerRef.current.signal,
       });
 
-      if (!response.ok || !response.body) {
+      if (!response.ok) {
+        let errorMessage = 'Falha ao conectar com o advogado';
+        
+        // Handle specific error codes
+        if (response.status === 402) {
+          errorMessage = 'O serviço está temporariamente indisponível devido ao limite de créditos. Por favor, tente novamente mais tarde.';
+          toast({
+            title: 'Serviço Indisponível',
+            description: errorMessage,
+            variant: 'destructive',
+          });
+          setIsLoading(false);
+          setIsTyping(false);
+          setIsThinking(false);
+          return;
+        } else if (response.status === 429) {
+          errorMessage = 'Muitas requisições. Por favor, aguarde um momento antes de tentar novamente.';
+          toast({
+            title: 'Limite de Requisições',
+            description: errorMessage,
+            variant: 'destructive',
+          });
+          setIsLoading(false);
+          setIsTyping(false);
+          setIsThinking(false);
+          return;
+        }
+        
+        throw new Error(errorMessage);
+      }
+      
+      if (!response.body) {
         throw new Error('Falha ao conectar com o advogado');
       }
 

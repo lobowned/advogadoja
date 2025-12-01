@@ -232,3 +232,8 @@ All colors MUST be HSL.
 .btn-cta-pulse {
   animation: cta-pulse 2s ease-in-out infinite;
 }
+
+/* Text shadow for hero section */
+.text-shadow-hero {
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6), 0 4px 16px rgba(0,0,0,0.4);
+}

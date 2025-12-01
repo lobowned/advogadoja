@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { MessageCircle, Shield, Lock, Star, CheckCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
-import TodayCounter from "@/components/TodayCounter";
 
 interface HeroSectionProps {
   onCtaClick: () => void;
@@ -41,102 +39,54 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
       
       <div className="container relative mx-auto px-4 py-16 sm:py-20 md:py-32 z-10">
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           
-          {/* Social Proof Indicators */}
-          <div className="mb-6 sm:mb-8 flex flex-wrap items-center justify-center gap-4 text-white/90 text-xs sm:text-sm animate-fade-up">
-            <div className="flex items-center gap-1.5">
-              <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-              <span className="font-semibold">4.9</span>
-              <span>Google</span>
-            </div>
-            <span className="text-white/50">•</span>
-            <TodayCounter />
-            <span className="text-white/50">•</span>
-            <div className="flex items-center gap-1.5">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
-              </span>
-              <span><span className="font-semibold">{onlineCount}</span> advogados online</span>
-            </div>
+          {/* Indicador Online */}
+          <div className="mb-8 flex items-center justify-center gap-2 text-white/90 text-sm animate-fade-up">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+            </span>
+            <span><span className="font-semibold">{onlineCount}</span> advogados online</span>
           </div>
 
-          {/* Main Title */}
-          <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight animated-gradient-text text-shadow-hero animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          {/* Título Principal */}
+          <h1 className="mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animated-gradient-text text-shadow-hero animate-fade-up">
             Fale Agora com um Advogado
           </h1>
           
-          <p className="mb-3 sm:mb-4 text-xl sm:text-2xl md:text-3xl text-white font-semibold text-shadow-hero animate-fade-up" style={{ animationDelay: "0.15s" }}>
+          {/* Subtítulo */}
+          <p className="mb-10 text-xl sm:text-2xl md:text-3xl text-white/90 font-medium text-shadow-hero animate-fade-up">
             Atendimento Imediato e Gratuito
           </p>
-          
-          <p className="mb-8 sm:mb-10 text-sm sm:text-base md:text-lg text-white/90 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Tire suas dúvidas jurídicas com especialistas verificados.<br className="hidden sm:inline" />
-            Sem compromisso, 100% confidencial.
-          </p>
 
-          {/* Stacked Avatars */}
-          <div className="flex items-center justify-center gap-3 mb-6 sm:mb-8 animate-fade-up" style={{ animationDelay: "0.25s" }}>
+          {/* Avatares */}
+          <div className="flex items-center justify-center gap-3 mb-8 animate-fade-up">
             <div className="flex -space-x-3">
               {displayLawyers.map((lawyer) => (
                 <Avatar 
                   key={lawyer.id} 
-                  className="w-10 h-10 sm:w-12 sm:h-12 border-2 border-white shadow-lg"
+                  className="w-11 h-11 border-2 border-white/80 shadow-lg"
                 >
                   <AvatarImage src={lawyer.photo} alt={lawyer.name} />
                   <AvatarFallback>{lawyer.name[0]}</AvatarFallback>
                 </Avatar>
               ))}
             </div>
-            <span className="text-white/90 text-sm sm:text-base font-medium">
-              +{Math.max(0, onlineCount - 5)} disponíveis agora
-            </span>
           </div>
           
           {/* CTA Button */}
           <Button 
             size="lg"
-            className="h-14 sm:h-16 w-full sm:w-auto px-8 sm:px-10 text-base sm:text-lg font-semibold bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-button transition-all hover:scale-105 animate-fade-up mb-4"
+            className="h-14 px-10 text-lg font-semibold bg-secondary hover:bg-secondary/90 shadow-button transition-all hover:scale-105 animate-fade-up"
             onClick={onCtaClick}
-            style={{ animationDelay: "0.3s" }}
           >
             <MessageCircle className="w-5 h-5 mr-2" />
-            Falar com um Advogado agora
+            Iniciar Conversa
           </Button>
 
-          {/* Micro-copy */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-white/80 text-xs sm:text-sm mb-6 sm:mb-8 animate-fade-up" style={{ animationDelay: "0.35s" }}>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle className="w-4 h-4 text-green-400" />
-              <span>Resposta em 2 minutos</span>
-            </div>
-            <span className="text-white/50">•</span>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle className="w-4 h-4 text-green-400" />
-              <span>100% Gratuito</span>
-            </div>
-            <span className="text-white/50">•</span>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle className="w-4 h-4 text-green-400" />
-              <span>Atendimento Sigiloso</span>
-            </div>
-          </div>
-
-          {/* Trust Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-            <Badge variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20 px-4 py-2 text-xs sm:text-sm">
-              <Shield className="w-4 h-4 mr-2" />
-              OAB Verificado
-            </Badge>
-            <Badge variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20 px-4 py-2 text-xs sm:text-sm">
-              <Lock className="w-4 h-4 mr-2" />
-              100% Confidencial
-            </Badge>
-          </div>
-
-          {/* Credenciais Oficiais */}
-          <div className="mt-6 text-white/60 text-xs animate-fade-up" style={{ animationDelay: "0.45s" }}>
+          {/* Credenciais */}
+          <div className="mt-10 text-white/50 text-xs animate-fade-up">
             <span>CNPJ 50.947.818/0001-94</span>
             <span className="mx-2">•</span>
             <span>OAB/BA 46.638</span>

@@ -164,6 +164,51 @@ export type Database = {
         }
         Relationships: []
       }
+      leads: {
+        Row: {
+          assigned_lawyer: string | null
+          created_at: string | null
+          email: string | null
+          id: string
+          message_count: number | null
+          name: string | null
+          phone: string | null
+          problem_type: string | null
+          session_id: string | null
+          specialty: string | null
+          status: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          assigned_lawyer?: string | null
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          message_count?: number | null
+          name?: string | null
+          phone?: string | null
+          problem_type?: string | null
+          session_id?: string | null
+          specialty?: string | null
+          status?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          assigned_lawyer?: string | null
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          message_count?: number | null
+          name?: string | null
+          phone?: string | null
+          problem_type?: string | null
+          session_id?: string | null
+          specialty?: string | null
+          status?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

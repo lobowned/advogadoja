@@ -1,6 +1,7 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Lawyer, lawyers } from '@/data/lawyers';
+import { supabase } from '@/integrations/supabase/client';
 
 type Message = {
   role: 'user' | 'assistant';
@@ -34,11 +35,96 @@ export const useLawyerChat = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [isThinking, setIsThinking] = useState(false);
   const [isTransferring, setIsTransferring] = useState(false);
+  const [isCollectingLead, setIsCollectingLead] = useState(false);
+  const [leadQuestion, setLeadQuestion] = useState<string>('');
+  const [leadStep, setLeadStep] = useState<'none' | 'name' | 'contact'>('none');
+  const [sessionId] = useState(() => {
+    // Generate or retrieve session ID
+    const stored = sessionStorage.getItem('chat_session_id');
+    if (stored) return stored;
+    const newId = `session_${Date.now()}_${Math.random().toString(36).substring(7)}`;
+    sessionStorage.setItem('chat_session_id', newId);
+    return newId;
+  });
   const { toast } = useToast();
   const abortControllerRef = useRef<AbortController | null>(null);
 
+  // Track user message count
+  const userMessageCount = messages.filter(m => m.role === 'user').length;
+
   const sendMessage = async (content: string) => {
     if (!content.trim() || isLoading) return;
+
+    // Handle lead collection responses
+    if (isCollectingLead) {
+      try {
+        const trimmedContent = content.trim();
+        
+        if (leadStep === 'name') {
+          // Add user message
+          const userMessage: Message = {
+            role: 'user',
+            content: trimmedContent,
+            timestamp: new Date(),
+          };
+          setMessages(prev => [...prev, userMessage]);
+          
+          // Save name to database
+          await supabase
+            .from('leads')
+            .update({ name: trimmedContent })
+            .eq('session_id', sessionId);
+          
+          setLeadStep('contact');
+          setLeadQuestion('Qual o seu WhatsApp para contato?');
+          
+          // Add next question message
+          const nextQuestion: Message = {
+            role: 'assistant',
+            content: 'Ótimo! E qual o seu WhatsApp para contato?',
+            timestamp: new Date(),
+            lawyerId: currentLawyer.id,
+          };
+          setMessages(prev => [...prev, nextQuestion]);
+          return;
+          
+        } else if (leadStep === 'contact') {
+          // Add user message
+          const userMessage: Message = {
+            role: 'user',
+            content: trimmedContent,
+            timestamp: new Date(),
+          };
+          setMessages(prev => [...prev, userMessage]);
+          
+          // Save contact to database
+          const isPhone = /^\d+$/.test(trimmedContent.replace(/\D/g, ''));
+          await supabase
+            .from('leads')
+            .update({ 
+              [isPhone ? 'phone' : 'email']: trimmedContent,
+              status: 'contacted'
+            })
+            .eq('session_id', sessionId);
+          
+          setIsCollectingLead(false);
+          setLeadStep('none');
+          setLeadQuestion('');
+          
+          // Add confirmation message
+          const confirmMessage: Message = {
+            role: 'assistant',
+            content: 'Perfeito! Já salvei suas informações. Como posso continuar ajudando você?',
+            timestamp: new Date(),
+            lawyerId: currentLawyer.id,
+          };
+          setMessages(prev => [...prev, confirmMessage]);
+          return;
+        }
+      } catch (error) {
+        console.error('Error saving lead data:', error);
+      }
+    }
 
     const userMessage: Message = {
       role: 'user',
@@ -74,6 +160,8 @@ export const useLawyerChat = () => {
             content: m.content,
           })),
           currentLawyerId: currentLawyer.id,
+          sessionId: sessionId,
+          messageCount: userMessageCount + 1,
         }),
         signal: abortControllerRef.current.signal,
       });
@@ -110,8 +198,22 @@ export const useLawyerChat = () => {
             break;
           }
 
-          try {
+            try {
             const parsed = JSON.parse(jsonStr);
+            
+            // Verificar se há solicitação de coleta de lead
+            if (parsed.collectLead && parsed.question) {
+              setIsCollectingLead(true);
+              setLeadQuestion(parsed.question);
+              
+              // Determine step based on question
+              if (parsed.question.toLowerCase().includes('nome')) {
+                setLeadStep('name');
+              } else if (parsed.question.toLowerCase().includes('whatsapp') || parsed.question.toLowerCase().includes('contato')) {
+                setLeadStep('contact');
+              }
+              continue;
+            }
             
             // Verificar se há transferência
             if (parsed.transfer && parsed.newLawyerId) {
@@ -283,6 +385,8 @@ export const useLawyerChat = () => {
     isTyping,
     isThinking,
     isTransferring,
+    isCollectingLead,
+    leadQuestion,
     sendMessage,
     stopGeneration,
     currentLawyer,

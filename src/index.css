@@ -202,3 +202,11 @@ All colors MUST be HSL.
 .pause-marquee {
   animation-play-state: paused;
 }
+
+/* Green pulse animation for online indicator */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

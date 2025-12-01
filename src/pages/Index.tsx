@@ -1,4 +1,5 @@
-import { Button } from "@/components/ui/button";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
 import LawyerChatSection from "@/components/LawyerChatSection";
 import LawyersShowcase from "@/components/LawyersShowcase";
 
@@ -12,55 +13,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Navbar */}
+      <Navbar onCtaClick={handleCTA} />
+
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-[70vh] sm:min-h-[80vh] flex items-center">
-        {/* Video Background with Fallback */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
-          poster="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop"
-        >
-          <source src="/videos/hero-background.mp4" type="video/mp4" />
-        </video>
-        
-        {/* Fallback Image */}
-        <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop')",
-            zIndex: -1
-          }}
-        />
-        
-        {/* Dark Overlay para legibilidade */}
-        <div className="absolute inset-0 bg-black/60" />
-        
-        <div className="container relative mx-auto px-4 py-16 sm:py-20 md:py-32 z-10">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="mb-4 sm:mb-6 text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight animated-gradient-text animate-fade-up">
-              Fale Agora com um Advogado — Atendimento Imediato e Gratuito
-            </h1>
-            
-            <p className="mb-8 sm:mb-10 text-sm sm:text-base md:text-lg text-white/90 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              Tire suas dúvidas jurídicas com especialistas. Sem compromisso, 100% confidencial.
-            </p>
-            
-            <Button 
-              size="lg"
-              variant="secondary"
-              className="h-12 sm:h-14 w-full sm:w-auto px-6 sm:px-8 text-base sm:text-lg font-semibold shadow-button transition-all hover:scale-105 hover:shadow-lg animate-pulse-subtle animate-fade-up"
-              onClick={handleCTA}
-              style={{ animationDelay: "0.4s" }}
-            >
-              Iniciar Conversa Grátis
-            </Button>
-          </div>
-        </div>
-      </section>
+      <HeroSection onCtaClick={handleCTA} />
 
       {/* Lawyer Chat */}
       <div id="lawyer-chat">
@@ -68,7 +25,9 @@ const Index = () => {
       </div>
 
       {/* Lawyers Showcase Section */}
-      <LawyersShowcase />
+      <div id="advogados">
+        <LawyersShowcase />
+      </div>
 
       {/* Footer */}
       <footer className="border-t bg-muted/30 py-8 sm:py-10">

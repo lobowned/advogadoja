@@ -38,7 +38,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
       />
       
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
       
       <div className="container relative mx-auto px-4 py-16 sm:py-20 md:py-32 z-10">
         <div className="mx-auto max-w-4xl text-center">
@@ -63,11 +63,11 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
           </div>
 
           {/* Main Title */}
-          <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight animated-gradient-text animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight animated-gradient-text text-shadow-hero animate-fade-up" style={{ animationDelay: "0.1s" }}>
             Fale Agora com um Advogado
           </h1>
           
-          <p className="mb-3 sm:mb-4 text-xl sm:text-2xl md:text-3xl text-white font-semibold animate-fade-up" style={{ animationDelay: "0.15s" }}>
+          <p className="mb-3 sm:mb-4 text-xl sm:text-2xl md:text-3xl text-white font-semibold text-shadow-hero animate-fade-up" style={{ animationDelay: "0.15s" }}>
             Atendimento Imediato e Gratuito
           </p>
           

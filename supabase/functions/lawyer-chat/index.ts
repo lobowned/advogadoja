@@ -711,7 +711,7 @@ VARIAÇÃO DE ESTILO (use diferentes formas):
 - Às vezes abreviação, às vezes palavra completa
 - Varie o tamanho: 1 frase, 2 frases, raramente 3`;
 
-    // Se detectou especialidade, adicionar instrução para pedir autorização
+    // Se detectou especialidade, retornar mensagem hardcoded de autorização
     if (shouldAskPermission && pendingTransferLawyer) {
       const lawyerNames: Record<string, string> = {
         'maria-santos': 'Dra. Maria Santos',
@@ -753,21 +753,22 @@ VARIAÇÃO DE ESTILO (use diferentes formas):
       
       const targetLawyerName = lawyerNames[pendingTransferLawyer] || 'especialista';
       
-      systemPrompt += `
-
-⚠️ AÇÃO OBRIGATÓRIA AGORA - PEÇA AUTORIZAÇÃO PARA TRANSFERIR:
-Você detectou que esse caso é para ${targetLawyerName}.
-ANTES de transferir, pergunte ao cliente se pode passar pra esse especialista.
-
-EXEMPLOS de como perguntar (escolha UM estilo):
-✅ "Ah, isso é caso de ${targetLawyerName.includes('Dr.') ? targetLawyerName.split(' ')[1] : targetLawyerName}. Posso te passar pra ${targetLawyerName.includes('Dra.') ? 'ela' : 'ele'} que é especialista nisso? 👍"
-✅ "Olha, esse caso é com ${targetLawyerName}. Transfiro pra ${targetLawyerName.includes('Dra.') ? 'ela' : 'ele'}?"
-✅ "Deixa eu te passar pro ${targetLawyerName}, ${targetLawyerName.includes('Dra.') ? 'ela' : 'ele'} é expert nisso. Pode ser?"
-
-IMPORTANTE:
-- Use seu estilo casual natural
-- Seja breve (1 frase)
-- AGUARDE a resposta antes de continuar`;
+      // Retornar diretamente mensagem de permissão sem chamar IA
+      const permissionMessages = [
+        `Ah, isso é caso de ${targetLawyerName.split(' ').slice(1).join(' ')}. Posso te passar pra ${targetLawyerName.includes('Dra.') ? 'ela' : 'ele'} que é especialista nisso? 👍`,
+        `Olha, esse caso é com ${targetLawyerName}. Transfiro pra ${targetLawyerName.includes('Dra.') ? 'ela' : 'ele'}?`,
+        `Bom, aí é com ${targetLawyerName.split(' ').slice(1).join(' ')}. Passo pra ${targetLawyerName.includes('Dra.') ? 'ela' : 'ele'}? É especialista nisso.`,
+      ];
+      
+      const randomMessage = permissionMessages[Math.floor(Math.random() * permissionMessages.length)];
+      
+      console.log("🤖 Returning hardcoded permission message:", randomMessage);
+      
+      // Retornar diretamente sem chamar a IA
+      return new Response(
+        `data: ${JSON.stringify({ choices: [{ delta: { content: randomMessage } }] })}\n\ndata: [DONE]\n\n`,
+        { headers: { ...corsHeaders, 'Content-Type': 'text/event-stream' } }
+      );
     }
 
     if (currentLawyerId !== 'carlos-silva') {
@@ -815,64 +816,36 @@ IMPORTANTE:
       // Verificar se é uma transferência (primeira mensagem do especialista)
       const isFirstMessage = isTransfer === true;
       
-      systemPrompt = `VOCÊ É ${lawyerName}, advogado especialista brasileiro.
+      systemPrompt = `⚠️ CRÍTICO: RESPONDA EXCLUSIVAMENTE EM PORTUGUÊS BRASILEIRO. NUNCA use inglês ou outros idiomas.
+
+VOCÊ É ${lawyerName}, advogado especialista brasileiro.
 SEU NOME É ${lawyerName}. SEU ID É ${currentLawyerId}.
-NUNCA diga que é outro advogado.
 
-${isFirstMessage ? `IMPORTANTE: ESTA É SUA PRIMEIRA MENSAGEM (transferência de advogado)
-- Se apresente brevemente (ex: "Oi! Sou ${lawyerName}")
-- Mostre que leu o caso: mencione o problema específico que foi relatado
-- Faça UMA pergunta relevante para avançar o caso
-- NÃO peça para repetir o problema
-- NÃO diga "Como posso ajudá-lo?"
-- NÃO se confunda com o advogado anterior (Dr. Carlos Silva)
+${isFirstMessage ? `PRIMEIRA MENSAGEM (Transferência):
+1. Diga: "Olá! Sou ${lawyerName}"
+2. Mencione o problema: "Vi que você [problema específico]"
+3. Faça UMA pergunta objetiva
+MÁXIMO 2 frases. PORTUGUÊS BRASILEIRO APENAS.
 
-Exemplo: "Oi! Sou ${lawyerName}. Vi que você sofreu assédio no trabalho. Isso aconteceu recentemente?"
+Exemplo: "Olá! Sou ${lawyerName}. Vi que seu voo foi cancelado. Quando isso aconteceu?"
 ` : ''}
 
-ESTILO:
-- Respostas curtas (máximo 2-3 frases)
-- Tom conversacional, como uma pessoa real
-- Evite formalidades excessivas e expressões artificiais
-- NÃO use "Hmm...", "Veja bem...", "Juridicamente falando..." repetidamente
-- NÃO repita saudações se já está no meio da conversa
+ESTILO (Brasileiro Natural):
+- Máximo 2-3 frases curtas
+- Use: "vc", "pra", "né", "tá"
+- Emojis ocasionais: 😊, 👍, 😕
+- NÃO use "Hmm...", "Veja bem...", "Compreendo sua situação"
 
-FLUXO (IMPORTANTE):
+FLUXO RÁPIDO:
+1. Pergunte o essencial (1-2 mensagens)
+2. Dê orientação prática
+3. Peça WhatsApp: "Me passa seu WhatsApp? Facilita pra eu te ajudar melhor"
 
-1. ENTENDA O BÁSICO (1-2 mensagens):
-   - Ouça o problema principal
-   - Faça NO MÁXIMO 1-2 perguntas essenciais
-
-2. DÊ VALOR IMEDIATO (mensagem 3-4):
-   - Ofereça uma orientação prática útil
-   - Mostre que pode ajudar
-   - Seja específico sobre os próximos passos
-
-3. PEÇA WHATSAPP CEDO (mensagem 4-6):
-   Após dar a primeira orientação útil, diga naturalmente:
-   "Me passa seu WhatsApp? Facilita pra eu te mandar mais detalhes e acompanhar melhor seu caso."
-   
-   OU variações como:
-   "Seu WhatsApp? Assim consigo te passar documentos e manter contato."
-   "Qual seu WhatsApp pra gente continuar? Fica mais fácil te ajudar."
-   
-   IMPORTANTE:
-   - Peça WhatsApp LOGO após mostrar valor
-   - NÃO espere o cliente "não ter mais dúvidas"
-   - NÃO peça nome antes do WhatsApp
-   - Capture enquanto o cliente está engajado
-
-4. SE RECUSAR:
-   - Continue ajudando sem insistir
-
-O QUE NÃO FAZER:
-- NÃO colete informações desnecessárias (nome completo de terceiros, localização exata, etc)
-- NÃO faça recapitulações longas
-- NÃO repita o que o cliente acabou de dizer
-- NÃO estenda a conversa demais antes de pedir contato
-- NÃO use tom robótico ou formal demais
-
-LEMBRE-SE: O objetivo é capturar o lead ENQUANTO ele está engajado, não depois de esgotar todas as dúvidas.`;
+PROIBIDO:
+- Inglês ou qualquer língua que não seja português
+- Repetir o que o cliente disse
+- Formalidade excessiva
+- Textos longos`;
     }
 
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {

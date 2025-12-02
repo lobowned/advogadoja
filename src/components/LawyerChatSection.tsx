@@ -59,7 +59,7 @@ const LawyerChatSection = () => {
   return (
     <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-background via-primary/5 to-background">
       <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-5xl">
           <div className="mb-4 sm:mb-6 text-center">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3">
               Atendimento Jurídico Imediato
@@ -151,7 +151,7 @@ const LawyerChatSection = () => {
             {/* Messages Area */}
             <div 
               ref={chatContainerRef}
-              className={`bg-whatsapp-bg p-2 sm:p-3 md:p-4 h-[380px] sm:h-[450px] md:h-[500px] space-y-3 ${
+              className={`bg-whatsapp-bg p-2 sm:p-3 md:p-4 h-[420px] sm:h-[500px] md:h-[580px] space-y-3 ${
                 hasJoinedQueue ? 'overflow-y-auto' : 'overflow-hidden'
               }`}
             >

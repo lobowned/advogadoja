@@ -11,6 +11,7 @@ import {
   TestAssertion
 } from '@/types/qa-types';
 import { qaScenarios } from '@/data/qa-scenarios';
+import { lawyers } from '@/data/lawyers';
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 
@@ -165,8 +166,10 @@ export const useQATests = () => {
             passed = data.action === assertion.value;
             break;
           case 'lawyer_transfer':
-            passed = data.suggestedLawyer?.specialty?.toLowerCase().includes(String(assertion.value).toLowerCase()) ||
-                     data.action === 'transfer' && data.targetLawyer?.specialty?.toLowerCase().includes(String(assertion.value).toLowerCase());
+            // Look up lawyer by targetLawyerId and check specialty
+            const targetLawyer = lawyers.find(l => l.id === data.targetLawyerId);
+            passed = (data.action === 'suggest_transfer' || data.action === 'confirm_transfer') &&
+                     targetLawyer?.specialty?.toLowerCase().includes(String(assertion.value).toLowerCase());
             break;
           case 'lead_field_saved':
             passed = data.leadData && data.leadData[assertion.value as string];

@@ -65,7 +65,7 @@ const orchestrateResponseTool = {
       properties: {
         action: {
           type: "string",
-          enum: ["normal_response", "suggest_transfer", "confirm_transfer", "deny_transfer", "specialist_greeting", "save_contact_data", "request_name", "request_rating"],
+          enum: ["normal_response", "suggest_transfer", "confirm_transfer", "deny_transfer", "specialist_greeting", "save_contact_data", "request_name", "request_phone", "request_rating"],
           description: "Tipo de ação a executar"
         },
         response: {
@@ -237,8 +237,58 @@ async function orchestrateChat(params: {
     ? 'Dr. Carlos Silva (triagem geral)' 
     : 'Especialista';
 
+  // Buscar dados coletados do lead
+  let leadName = null;
+  let leadPhone = null;
+  let leadEmail = null;
+  
+  try {
+    const supabase = createClient(
+      Deno.env.get("SUPABASE_URL") || '',
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || ''
+    );
+    const { data: lead } = await supabase
+      .from('leads')
+      .select('name, phone, email')
+      .eq('session_id', params.sessionId)
+      .maybeSingle();
+    
+    if (lead) {
+      leadName = lead.name;
+      leadPhone = lead.phone;
+      leadEmail = lead.email;
+    }
+  } catch (e) {
+    console.warn("⚠️ Could not fetch lead data for context:", e);
+  }
+
   const systemPrompt = `Você é o ORQUESTRADOR INTELIGENTE do sistema de atendimento jurídico online. 
 Seu trabalho é analisar o contexto completo e decidir a melhor ação a tomar.
+
+🚨🚨🚨 REGRA ABSOLUTAMENTE OBRIGATÓRIA - LEIA PRIMEIRO! 🚨🚨🚨
+═══════════════════════════════════════════════════════════
+
+ANTES de qualquer finalização (request_rating), você DEVE ter coletado:
+1. ✅ Nome do cliente (save_contact_data com extracted_name)
+2. ✅ WhatsApp/Telefone (save_contact_data com extracted_phone)
+
+Se ainda NÃO tiver esses dados, a próxima ação DEVE SER:
+- request_name (se não tem nome)
+- request_phone (se não tem WhatsApp/telefone)
+- Depois: save_contact_data (quando receber os dados)
+- SÓ ENTÃO: request_rating
+
+❌ NUNCA use request_rating se name OU phone não foram coletados!
+❌ O sistema BLOQUEARÁ request_rating se dados estiverem faltando!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 DADOS JÁ COLETADOS DESTE LEAD:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Nome: ${leadName || '❌ NÃO COLETADO'}
+- WhatsApp: ${leadPhone || '❌ NÃO COLETADO'}
+- Email: ${leadEmail || '❌ NÃO COLETADO'}
+
+⚠️ Se algum dado estiver como "NÃO COLETADO", priorize coletá-lo antes de finalizar!
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📋 CONTEXTO ATUAL DA CONVERSA:
@@ -251,6 +301,20 @@ Seu trabalho é analisar o contexto completo e decidir a melhor ação a tomar.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 👥 ${LAWYERS_LIST}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 FLUXO OBRIGATÓRIO DO ESPECIALISTA:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣ Saudação e perguntar sobre o caso (1-3 mensagens)
+2️⃣ Entender os detalhes do problema (fazer 2-3 perguntas relevantes)
+3️⃣ Dar orientação inicial breve
+4️⃣ OBRIGATÓRIO: Pedir nome ("Qual seu nome completo?") - use request_name
+5️⃣ OBRIGATÓRIO: Pedir WhatsApp ("Me passa seu WhatsApp?") - use request_phone
+6️⃣ Confirmar próximos passos
+7️⃣ SÓ ENTÃO: request_rating (se cliente se despedir)
+
+⚠️ IMPORTANTE: Não pule as etapas 4 e 5! O sistema bloqueará request_rating sem esses dados.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🎯 REGRAS DE DECISÃO (use o tool):
@@ -305,20 +369,34 @@ Seu trabalho é analisar o contexto completo e decidir a melhor ação a tomar.
 
 6️⃣ **request_name**: Solicitar nome do usuário
    ✅ Quando usar:
-   - Após 3+ mensagens de conversa relevante sobre o caso
+   - Após 2-4 mensagens de conversa relevante sobre o caso
    - Usuário já explicou o problema básico
-   - Ainda NÃO foi coletado o nome
-   - Carlos ou especialista quer formalizar o atendimento
+   - Ainda NÃO foi coletado o nome (verifique DADOS JÁ COLETADOS acima!)
+   - Especialista entendeu o caso e quer formalizar
    ✅ Resposta deve ser:
    - Natural e contextualizada ao caso
    - Informal: "Qual seu nome pra eu anotar aqui?"
    - Variar: "Me diz seu nome completo?"
    ❌ NÃO use quando:
-   - Conversa ainda está no início (menos de 3 mensagens)
-   - Nome já foi fornecido anteriormente
+   - Conversa ainda está no início (menos de 2 mensagens)
+   - Nome já foi fornecido (verifique DADOS JÁ COLETADOS!)
    - Usuário está apenas fazendo pergunta genérica
 
- 7️⃣ **save_contact_data**: Usuário forneceu dados de contato
+7️⃣ **request_phone**: Solicitar WhatsApp do usuário
+   ✅ Quando usar:
+   - APÓS coletar o nome (request_name)
+   - Especialista entendeu o problema
+   - Ainda NÃO foi coletado o telefone (verifique DADOS JÁ COLETADOS acima!)
+   - Antes de propor próximos passos
+   ✅ Respostas:
+   - "Legal! Me passa seu WhatsApp pra eu te enviar as orientações?"
+   - "Perfeito! Qual seu número de WhatsApp?"
+   - "Beleza! Pra finalizar, me dá seu WhatsApp?"
+   ❌ NÃO use quando:
+   - Nome ainda não foi coletado (primeiro request_name!)
+   - WhatsApp já foi fornecido (verifique DADOS JÁ COLETADOS!)
+
+8️⃣ **save_contact_data**: Usuário forneceu dados de contato
      ✅ Quando usar:
      - Usuário forneceu NOME OU telefone/email
      - Detectar padrões: 
@@ -335,17 +413,26 @@ Seu trabalho é analisar o contexto completo e decidir a melhor ação a tomar.
      - Responder confirmando os dados de forma específica
      ❌ NÃO use quando: mensagem não contém dados de contato
 
-8️⃣ **request_rating**: Solicitar avaliação do atendimento
-   ✅ Quando usar (ORDEM DE PRIORIDADE):
-   - Usuário se despede: "tchau", "até", "valeu", "obrigado", "combinado", "beleza então"
-   - Agendamento foi confirmado (data/hora marcada)
-   - Usuário indica que entendeu e não tem mais dúvidas
-   - Conversa parece estar concluída
+9️⃣ **request_rating**: Solicitar avaliação do atendimento
+   🛑 PRÉ-REQUISITOS OBRIGATÓRIOS (verificar ANTES de usar):
+   - ✅ Nome foi coletado? (verifique DADOS JÁ COLETADOS acima!)
+   - ✅ WhatsApp foi coletado? (verifique DADOS JÁ COLETADOS acima!)
+   - ❌ Se QUALQUER UM faltar: NÃO use request_rating! Use request_name ou request_phone!
+   
+   ✅ Quando usar (APENAS se pré-requisitos atendidos):
+   - Usuário se despede EXPLICITAMENTE: "tchau", "até", "valeu", "obrigado", "vlw"
+   - Agendamento FOI CONFIRMADO com data/hora específica
+   - Todos os dados de contato foram coletados
+   - ❌ NÃO use para: "ok", "acho que sim", "entendi", "beleza" (são continuação!)
+   
    ✅ OBRIGATÓRIO:
    - Gerar case_summary resumindo TODO o caso discutido
    - Incluir: problema do cliente, contexto, próximos passos acordados
    - Resposta deve convidar para avaliar o atendimento de forma natural
-   ❌ NÃO usar se ainda há dúvidas pendentes ou conversa ativa
+   
+   ❌ BLOQUEIOS AUTOMÁTICOS:
+   - Sistema BLOQUEARÁ se nome ou phone não foram coletados
+   - Nesse caso, voltará para request_name ou request_phone automaticamente
    
    📝 Exemplos de resposta:
    - "Combinado então! Se puder, avalia nosso atendimento aí embaixo pra gente melhorar sempre 👍"
@@ -394,6 +481,11 @@ request_name (solicitando nome):
 - "Legal! Qual seu nome completo pra eu anotar aqui?"
 - "Perfeito. Me diz seu nome?"
 - "Blz! E qual seu nome?"
+
+request_phone (solicitando WhatsApp):
+- "Legal! Me passa seu WhatsApp pra eu te enviar as orientações?"
+- "Perfeito! Qual seu número de WhatsApp?"
+- "Beleza! Pra finalizar, me dá seu WhatsApp?"
 
 save_contact_data (confirmando dados de contato):
 - "Perfeito! Anotei seu telefone 71997036269 e email lobowned@gmail.com. Agora vou formalizar o agendamento 👍"
@@ -733,7 +825,27 @@ serve(async (req) => {
           break;
           
         case "request_rating":
-          // Salvar case_summary e preparar para avaliação
+          // 🛡️ VALIDAÇÃO: Verificar se dados de contato foram coletados
+          const hasRequiredData = leadData?.name && leadData?.phone;
+          
+          if (!hasRequiredData) {
+            console.warn("⚠️ [OVERRIDE] request_rating bloqueado - dados incompletos!");
+            console.warn("⚠️ Name:", leadData?.name, "Phone:", leadData?.phone);
+            
+            // Forçar pedido de nome/WhatsApp
+            if (!leadData?.name) {
+              decision.action = 'request_name';
+              decision.response = "Legal! Qual seu nome completo pra eu anotar aqui?";
+              console.log("🔄 [OVERRIDE] Forcing request_name");
+            } else if (!leadData?.phone) {
+              decision.action = 'request_phone';
+              decision.response = "Perfeito! Me passa seu WhatsApp pra eu te enviar as orientações?";
+              console.log("🔄 [OVERRIDE] Forcing request_phone");
+            }
+            break;
+          }
+          
+          // Dados completos: prosseguir com rating
           console.log("⭐ Requesting rating with summary:", decision.caseSummary?.substring(0, 100));
           if (decision.caseSummary) {
             await supabase
@@ -745,6 +857,11 @@ serve(async (req) => {
               })
               .eq('id', leadData.id);
           }
+          break;
+        
+        case "request_phone":
+          // Solicitar WhatsApp do usuário (apenas logging)
+          console.log("📱 Requesting user WhatsApp");
           break;
       }
     }

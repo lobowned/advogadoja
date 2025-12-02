@@ -86,57 +86,6 @@ const LawyerChatSection = () => {
     <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-background via-primary/5 to-background">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-5xl">
-          <div className="mb-4 sm:mb-6 text-center">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3">
-              Atendimento Jurídico Imediato
-            </h2>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-3">
-              <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1.5 bg-whatsapp-send-btn/10 px-3 py-1.5 rounded-full transition-all duration-300">
-                  <div className="w-2 h-2 bg-whatsapp-send-btn rounded-full animate-pulse-dot" />
-                  <span className="text-xs sm:text-sm font-medium text-whatsapp-send-btn">
-                    {onlineCount} advogados online
-                  </span>
-                </div>
-                {showResponseTime && (
-                  <div className="flex items-center gap-1.5 bg-primary/10 px-3 py-1.5 rounded-full animate-fade-in">
-                    <Check className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary" />
-                    <span className="text-xs sm:text-sm font-medium text-primary">Resposta em ~1min</span>
-                  </div>
-                )}
-              </div>
-              
-              {/* Notificação de entrada/saída */}
-              {notification && (
-                <div className="animate-fade-in text-xs text-muted-foreground px-3 py-1 bg-muted/50 rounded-full">
-                  {notification.message}
-                </div>
-              )}
-            </div>
-            
-            {/* Carrossel de Advogados Online */}
-            <div className="flex items-center justify-center gap-1 mb-2 overflow-hidden">
-              <div className="flex -space-x-2 animate-fade-in">
-                {onlineLawyers.slice(0, isMobile ? 5 : 10).map((lawyer) => (
-                  <Avatar key={lawyer.id} className="h-6 w-6 sm:h-8 sm:w-8 border-2 border-background transition-all duration-300">
-                    <AvatarImage src={lawyer.photo} alt={lawyer.name} />
-                    <AvatarFallback className="text-[10px]">
-                      {lawyer.name.split(' ').map(n => n[0]).join('')}
-                    </AvatarFallback>
-                  </Avatar>
-                ))}
-                {onlineCount > (isMobile ? 5 : 10) && (
-                  <div className="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-muted border-2 border-background flex items-center justify-center">
-                    <span className="text-[10px] font-semibold text-muted-foreground">+{onlineCount - (isMobile ? 5 : 10)}</span>
-                  </div>
-                )}
-              </div>
-            </div>
-            
-            <p className="text-[10px] sm:text-xs text-muted-foreground">
-              Mensagens criptografadas de ponta a ponta
-            </p>
-          </div>
 
           {/* Chat Container */}
           <div className={`bg-card rounded-2xl shadow-2xl overflow-hidden border border-border/30 ${!hasAnimated ? 'animate-chat-entrance' : ''}`}>

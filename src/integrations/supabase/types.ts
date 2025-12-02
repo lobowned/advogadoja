@@ -174,7 +174,10 @@ export type Database = {
           detected_problem: string | null
           dynamic_lawyer: Json | null
           email: string | null
+          followup_count: number | null
+          followup_sent_at: string | null
           id: string
+          last_activity_at: string | null
           message_count: number | null
           name: string | null
           notification_sent: boolean | null
@@ -197,7 +200,10 @@ export type Database = {
           detected_problem?: string | null
           dynamic_lawyer?: Json | null
           email?: string | null
+          followup_count?: number | null
+          followup_sent_at?: string | null
           id?: string
+          last_activity_at?: string | null
           message_count?: number | null
           name?: string | null
           notification_sent?: boolean | null
@@ -220,7 +226,10 @@ export type Database = {
           detected_problem?: string | null
           dynamic_lawyer?: Json | null
           email?: string | null
+          followup_count?: number | null
+          followup_sent_at?: string | null
           id?: string
+          last_activity_at?: string | null
           message_count?: number | null
           name?: string | null
           notification_sent?: boolean | null

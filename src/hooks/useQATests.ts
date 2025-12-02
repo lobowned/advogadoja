@@ -325,8 +325,8 @@ export const useQATests = () => {
           failed++;
         }
 
-        // Small delay between tests to avoid rate limiting
-        await new Promise(resolve => setTimeout(resolve, 500));
+        // Delay between tests to avoid rate limiting (1s)
+        await new Promise(resolve => setTimeout(resolve, 1000));
       }
 
       // Update run with final stats

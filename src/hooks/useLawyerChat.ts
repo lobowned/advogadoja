@@ -440,6 +440,26 @@ export const useLawyerChat = () => {
     setMessages(prev => [...prev, userMessage]);
     setIsLoading(true);
     setIsThinking(true);
+    
+    // Detectar urgência na mensagem do usuário
+    const detectedUrgency = detectUrgencyLevel(content);
+    if (detectedUrgency.level !== 'baixa') {
+      setUrgencyLevel(detectedUrgency.level);
+      console.log('🚨 Urgência detectada:', detectedUrgency);
+      
+      // Atualizar no banco
+      (supabase.from('leads') as any)
+        .update({ 
+          urgency_level: detectedUrgency.level,
+          urgency_keywords: detectedUrgency.keywords 
+        })
+        .eq('session_id', sessionId)
+        .then(() => console.log('✅ Urgência salva no banco'));
+    }
+    
+    // Atualizar sugestões contextuais
+    const suggestions = getSuggestionsByProblem(detectedProblem || content);
+    setContextualSuggestions(suggestions.slice(0, 3));
 
     abortControllerRef.current = new AbortController();
 

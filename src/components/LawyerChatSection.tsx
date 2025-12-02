@@ -7,10 +7,17 @@ import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useEffect, useRef, useState } from "react";
 import TypingIndicator from "@/components/TypingIndicator";
+import { QuickRepliesInline } from "@/components/QuickReplies";
+import UrgencyBadge, { UrgencyAlert } from "@/components/UrgencyBadge";
 
 const LawyerChatSection = () => {
   const isMobile = useIsMobile();
-  const { messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers, isCollectingLead, leadQuestion, isInQueue, queuePosition, hasJoinedQueue, joinQueue, peopleAhead, showRatingButton, submitRating } = useLawyerChat();
+  const { 
+    messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers, 
+    isCollectingLead, leadQuestion, isInQueue, queuePosition, hasJoinedQueue, joinQueue, peopleAhead, 
+    showRatingButton, submitRating,
+    detectedProblem, urgencyLevel, contextualSuggestions, resetNudgeTimer
+  } = useLawyerChat();
   const { onlineLawyers, notification, onlineCount } = useLawyerPresence();
   const [inputValue, setInputValue] = useState("");
   const [showResponseTime, setShowResponseTime] = useState(false);
@@ -58,17 +65,13 @@ const LawyerChatSection = () => {
     if (inputValue.trim() && !isLoading) {
       sendMessage(inputValue);
       setInputValue("");
-      
-      // Feedback visual de mensagem enviada
-      const messageLength = inputValue.trim().length;
-      if (messageLength > 10) {
-        // Só mostra toast para mensagens mais longas
-        setTimeout(() => {
-          // Toast sutil que desaparece rápido
-          console.log('✅ Mensagem enviada');
-        }, 100);
-      }
+      resetNudgeTimer(); // Reset nudge timer on user interaction
     }
+  };
+
+  const handleQuickReply = (suggestion: string) => {
+    setInputValue(suggestion);
+    resetNudgeTimer();
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -111,6 +114,9 @@ const LawyerChatSection = () => {
                     <span title={`${currentLawyer.oab} - ${currentLawyer.subSpecialty}`}>
                       <Shield className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white/80 flex-shrink-0" />
                     </span>
+                    {(urgencyLevel === 'alta' || urgencyLevel === 'critica') && (
+                      <UrgencyBadge level={urgencyLevel as 'alta' | 'critica'} showLabel={false} />
+                    )}
                   </div>
                   <div className="flex items-center gap-1.5">
                     <div className="w-2 h-2 bg-whatsapp-send-btn rounded-full animate-pulse-dot" />
@@ -421,67 +427,62 @@ const LawyerChatSection = () => {
               )}
             </div>
 
-            {/* Quick Replies - Sugestões contextuais */}
-            {hasJoinedQueue && !isInQueue && !isLoading && !isCollectingLead && messages.length > 1 && messages.length < 10 && (
-              <div className="bg-muted/20 border-t border-border/20 px-2 sm:px-3 py-2 flex gap-2 overflow-x-auto scrollbar-hide">
-                {messages[messages.length - 1]?.role === 'assistant' && (
-                  <>
-                    {messages[messages.length - 1]?.content.toLowerCase().includes('urgente') && (
+            {/* Alerta de urgência se detectado */}
+            {urgencyLevel && (urgencyLevel === 'alta' || urgencyLevel === 'critica') && hasJoinedQueue && !isInQueue && (
+              <div className="px-2 sm:px-3 pt-2">
+                <UrgencyAlert level={urgencyLevel as 'alta' | 'critica'} />
+              </div>
+            )}
+
+            {/* Quick Replies - Sugestões contextuais inteligentes */}
+            {hasJoinedQueue && !isInQueue && !isLoading && !isCollectingLead && messages.length > 1 && messages.length < 12 && (
+              <div className="bg-muted/20 border-t border-border/20 px-2 sm:px-3 py-2">
+                {messages[messages.length - 1]?.role === 'assistant' && contextualSuggestions.length > 0 ? (
+                  <QuickRepliesInline 
+                    suggestions={contextualSuggestions} 
+                    onSelect={handleQuickReply}
+                    disabled={isLoading}
+                  />
+                ) : (
+                  <div className="flex gap-2 overflow-x-auto scrollbar-hide">
+                    {messages[messages.length - 1]?.role === 'assistant' && (
                       <>
-                        <button
-                          onClick={() => setInputValue('É urgente sim')}
-                          className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
-                        >
-                          É urgente
-                        </button>
-                        <button
-                          onClick={() => setInputValue('Pode ser nos próximos dias')}
-                          className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
-                        >
-                          Próximos dias
-                        </button>
+                        {messages[messages.length - 1]?.content.toLowerCase().includes('urgente') && (
+                          <>
+                            <button
+                              onClick={() => handleQuickReply('É urgente sim')}
+                              className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
+                            >
+                              É urgente
+                            </button>
+                            <button
+                              onClick={() => handleQuickReply('Pode ser nos próximos dias')}
+                              className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
+                            >
+                              Próximos dias
+                            </button>
+                          </>
+                        )}
+                        {(messages[messages.length - 1]?.content.toLowerCase().includes('documento') || 
+                          messages[messages.length - 1]?.content.toLowerCase().includes('prova')) && (
+                          <>
+                            <button
+                              onClick={() => handleQuickReply('Tenho documentos')}
+                              className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
+                            >
+                              📄 Tenho docs
+                            </button>
+                            <button
+                              onClick={() => handleQuickReply('Não tenho provas ainda')}
+                              className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
+                            >
+                              Sem provas
+                            </button>
+                          </>
+                        )}
                       </>
                     )}
-                    {(messages[messages.length - 1]?.content.toLowerCase().includes('documento') || 
-                      messages[messages.length - 1]?.content.toLowerCase().includes('prova')) && (
-                      <>
-                        <button
-                          onClick={() => setInputValue('Tenho fotos do local')}
-                          className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
-                        >
-                          📸 Tenho fotos
-                        </button>
-                        <button
-                          onClick={() => setInputValue('Tenho documentos')}
-                          className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
-                        >
-                          📄 Tenho docs
-                        </button>
-                        <button
-                          onClick={() => setInputValue('Não tenho provas ainda')}
-                          className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
-                        >
-                          Sem provas
-                        </button>
-                      </>
-                    )}
-                    {messages[messages.length - 1]?.content.toLowerCase().includes('pode') && (
-                      <>
-                        <button
-                          onClick={() => setInputValue('Sim, pode')}
-                          className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
-                        >
-                          ✅ Sim
-                        </button>
-                        <button
-                          onClick={() => setInputValue('Não, obrigado')}
-                          className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
-                        >
-                          ❌ Não
-                        </button>
-                      </>
-                    )}
-                  </>
+                  </div>
                 )}
               </div>
             )}

@@ -170,78 +170,114 @@ export type Database = {
           case_details: Json | null
           case_summary: string | null
           conversation_history: Json | null
+          conversion_score: number | null
           created_at: string | null
           detected_problem: string | null
+          documents_mentioned: string[] | null
           dynamic_lawyer: Json | null
           email: string | null
           followup_count: number | null
           followup_sent_at: string | null
           id: string
           last_activity_at: string | null
+          last_nudge_at: string | null
           message_count: number | null
           name: string | null
           notification_sent: boolean | null
           notification_sent_at: string | null
+          nudge_count: number | null
           pending_transfer_lawyer: string | null
           phone: string | null
           problem_type: string | null
+          quick_replies_used: string[] | null
           rating: number | null
           session_id: string | null
+          session_start_at: string | null
           specialty: string | null
           status: string | null
+          structured_summary: Json | null
+          time_to_first_response_ms: number | null
+          time_to_name_collected_ms: number | null
+          time_to_phone_collected_ms: number | null
           updated_at: string | null
+          urgency_keywords: string[] | null
+          urgency_level: string | null
         }
         Insert: {
           assigned_lawyer?: string | null
           case_details?: Json | null
           case_summary?: string | null
           conversation_history?: Json | null
+          conversion_score?: number | null
           created_at?: string | null
           detected_problem?: string | null
+          documents_mentioned?: string[] | null
           dynamic_lawyer?: Json | null
           email?: string | null
           followup_count?: number | null
           followup_sent_at?: string | null
           id?: string
           last_activity_at?: string | null
+          last_nudge_at?: string | null
           message_count?: number | null
           name?: string | null
           notification_sent?: boolean | null
           notification_sent_at?: string | null
+          nudge_count?: number | null
           pending_transfer_lawyer?: string | null
           phone?: string | null
           problem_type?: string | null
+          quick_replies_used?: string[] | null
           rating?: number | null
           session_id?: string | null
+          session_start_at?: string | null
           specialty?: string | null
           status?: string | null
+          structured_summary?: Json | null
+          time_to_first_response_ms?: number | null
+          time_to_name_collected_ms?: number | null
+          time_to_phone_collected_ms?: number | null
           updated_at?: string | null
+          urgency_keywords?: string[] | null
+          urgency_level?: string | null
         }
         Update: {
           assigned_lawyer?: string | null
           case_details?: Json | null
           case_summary?: string | null
           conversation_history?: Json | null
+          conversion_score?: number | null
           created_at?: string | null
           detected_problem?: string | null
+          documents_mentioned?: string[] | null
           dynamic_lawyer?: Json | null
           email?: string | null
           followup_count?: number | null
           followup_sent_at?: string | null
           id?: string
           last_activity_at?: string | null
+          last_nudge_at?: string | null
           message_count?: number | null
           name?: string | null
           notification_sent?: boolean | null
           notification_sent_at?: string | null
+          nudge_count?: number | null
           pending_transfer_lawyer?: string | null
           phone?: string | null
           problem_type?: string | null
+          quick_replies_used?: string[] | null
           rating?: number | null
           session_id?: string | null
+          session_start_at?: string | null
           specialty?: string | null
           status?: string | null
+          structured_summary?: Json | null
+          time_to_first_response_ms?: number | null
+          time_to_name_collected_ms?: number | null
+          time_to_phone_collected_ms?: number | null
           updated_at?: string | null
+          urgency_keywords?: string[] | null
+          urgency_level?: string | null
         }
         Relationships: []
       }

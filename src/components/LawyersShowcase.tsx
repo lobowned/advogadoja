@@ -12,32 +12,32 @@ import Autoplay from "embla-carousel-autoplay";
 // Componente de Card reutilizável
 const LawyerCard = ({ lawyer }: { lawyer: typeof lawyers[0] }) => (
   <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden border-muted flex-shrink-0 w-full md:w-72">
-    <CardHeader className="text-center pb-4">
-      <div className="relative mx-auto mb-4">
-        <Avatar className="w-24 h-24 border-4 border-primary/20 group-hover:border-primary/40 transition-colors">
+    <CardHeader className="text-center pb-3 sm:pb-4 px-4 sm:px-6">
+      <div className="relative mx-auto mb-3 sm:mb-4">
+        <Avatar className="w-20 h-20 sm:w-24 sm:h-24 border-4 border-primary/20 group-hover:border-primary/40 transition-colors">
           <AvatarImage src={lawyer.photo} alt={lawyer.name} />
-          <AvatarFallback className="text-xl font-bold bg-primary/10 text-primary">
+          <AvatarFallback className="text-lg sm:text-xl font-bold bg-primary/10 text-primary">
             {lawyer.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
           </AvatarFallback>
         </Avatar>
-        <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-4 border-card animate-pulse" />
+        <div className="absolute -bottom-2 -right-2 w-5 h-5 sm:w-6 sm:h-6 bg-green-500 rounded-full border-4 border-card animate-pulse" />
       </div>
-      <h3 className="font-bold text-lg leading-tight group-hover:text-primary transition-colors">
+      <h3 className="font-bold text-base sm:text-lg leading-tight group-hover:text-primary transition-colors">
         {lawyer.name}
       </h3>
     </CardHeader>
 
-    <CardContent className="space-y-3">
-      <Badge variant="secondary" className="w-full justify-center font-medium">
+    <CardContent className="space-y-2 sm:space-y-3 px-4 sm:px-6">
+      <Badge variant="secondary" className="w-full justify-center font-medium text-xs sm:text-sm">
         {lawyer.subSpecialty}
       </Badge>
 
-      <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
+      <p className="text-xs sm:text-sm text-muted-foreground line-clamp-3 leading-relaxed">
         {lawyer.bio}
       </p>
 
       <div className="pt-2 border-t border-border/50">
-        <Badge variant="outline" className="w-full justify-center text-xs">
+        <Badge variant="outline" className="w-full justify-center text-[10px] sm:text-xs">
           {lawyer.oab}
         </Badge>
       </div>
@@ -51,7 +51,7 @@ const LawyersShowcase = () => {
   const displayLawyers = onlineLawyers.filter((l) => l.specialty !== "geral");
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-background via-muted/30 to-background">
+    <section className="py-10 sm:py-16 px-2 sm:px-4 bg-gradient-to-b from-background via-muted/30 to-background">
       <div className="container mx-auto max-w-7xl">
         {/* Carrossel Responsivo */}
         {isMobile ? (

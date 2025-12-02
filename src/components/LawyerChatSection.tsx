@@ -4,9 +4,11 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Send, Video, MoreVertical, Smile, Mic, Check, Shield, RefreshCw, MessageSquare } from "lucide-react";
 import { useLawyerChat } from "@/hooks/useLawyerChat";
 import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { useEffect, useRef, useState } from "react";
 
 const LawyerChatSection = () => {
+  const isMobile = useIsMobile();
   const { messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers, isCollectingLead, leadQuestion, isInQueue, queuePosition, hasJoinedQueue, joinQueue, peopleAhead, showRatingButton, submitRating } = useLawyerChat();
   const { onlineLawyers, notification, onlineCount } = useLawyerPresence();
   const [inputValue, setInputValue] = useState("");
@@ -55,25 +57,25 @@ const LawyerChatSection = () => {
   };
 
   return (
-    <section className="py-12 sm:py-16 bg-gradient-to-b from-background to-muted/20">
+    <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl">
-          <div className="mb-6 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-3">
+          <div className="mb-4 sm:mb-6 text-center">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3">
               Atendimento Jurídico Imediato
             </h2>
-            <div className="flex flex-col items-center gap-2 mb-3">
-              <div className="flex items-center justify-center gap-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-3">
+              <div className="flex items-center gap-2">
                 <div className="flex items-center gap-1.5 bg-whatsapp-send-btn/10 px-3 py-1.5 rounded-full transition-all duration-300">
                   <div className="w-2 h-2 bg-whatsapp-send-btn rounded-full animate-pulse-dot" />
-                  <span className="text-xs font-medium text-whatsapp-send-btn">
+                  <span className="text-xs sm:text-sm font-medium text-whatsapp-send-btn">
                     {onlineCount} advogados online
                   </span>
                 </div>
                 {showResponseTime && (
                   <div className="flex items-center gap-1.5 bg-primary/10 px-3 py-1.5 rounded-full animate-fade-in">
-                    <Check className="w-3 h-3 text-primary" />
-                    <span className="text-xs font-medium text-primary">Resposta em menos de 1min</span>
+                    <Check className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary" />
+                    <span className="text-xs sm:text-sm font-medium text-primary">Resposta em ~1min</span>
                   </div>
                 )}
               </div>
@@ -89,23 +91,23 @@ const LawyerChatSection = () => {
             {/* Carrossel de Advogados Online */}
             <div className="flex items-center justify-center gap-1 mb-2 overflow-hidden">
               <div className="flex -space-x-2 animate-fade-in">
-                {onlineLawyers.slice(0, 10).map((lawyer) => (
-                  <Avatar key={lawyer.id} className="h-8 w-8 border-2 border-background transition-all duration-300">
+                {onlineLawyers.slice(0, isMobile ? 5 : 10).map((lawyer) => (
+                  <Avatar key={lawyer.id} className="h-6 w-6 sm:h-8 sm:w-8 border-2 border-background transition-all duration-300">
                     <AvatarImage src={lawyer.photo} alt={lawyer.name} />
                     <AvatarFallback className="text-[10px]">
                       {lawyer.name.split(' ').map(n => n[0]).join('')}
                     </AvatarFallback>
                   </Avatar>
                 ))}
-                {onlineCount > 10 && (
-                  <div className="h-8 w-8 rounded-full bg-muted border-2 border-background flex items-center justify-center">
-                    <span className="text-[10px] font-semibold text-muted-foreground">+{onlineCount - 10}</span>
+                {onlineCount > (isMobile ? 5 : 10) && (
+                  <div className="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-muted border-2 border-background flex items-center justify-center">
+                    <span className="text-[10px] font-semibold text-muted-foreground">+{onlineCount - (isMobile ? 5 : 10)}</span>
                   </div>
                 )}
               </div>
             </div>
             
-            <p className="text-xs text-muted-foreground">
+            <p className="text-[10px] sm:text-xs text-muted-foreground">
               Mensagens criptografadas de ponta a ponta
             </p>
           </div>
@@ -149,7 +151,7 @@ const LawyerChatSection = () => {
             {/* Messages Area */}
             <div 
               ref={chatContainerRef}
-              className={`bg-whatsapp-bg p-3 sm:p-4 h-[450px] sm:h-[500px] space-y-3 ${
+              className={`bg-whatsapp-bg p-2 sm:p-3 md:p-4 h-[380px] sm:h-[450px] md:h-[500px] space-y-3 ${
                 hasJoinedQueue ? 'overflow-y-auto' : 'overflow-hidden'
               }`}
             >
@@ -181,9 +183,9 @@ const LawyerChatSection = () => {
                     
                     <Button
                       onClick={joinQueue}
-                      className="w-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white font-medium py-4 text-base rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
+                      className="w-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white font-medium py-4 sm:py-5 text-sm sm:text-base rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 min-h-[48px]"
                     >
-                      <MessageSquare className="w-5 h-5" />
+                      <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
                       Iniciar Atendimento
                     </Button>
                   </div>
@@ -412,17 +414,17 @@ const LawyerChatSection = () => {
             </div>
 
             {/* Input Area */}
-            <div className="bg-whatsapp-input-bg p-3 sm:p-4 border-t border-border/30 sticky bottom-0">
-              <div className="flex items-center gap-2 sm:gap-3">
+            <div className="bg-whatsapp-input-bg p-2 sm:p-3 md:p-4 border-t border-border/30 sticky bottom-0">
+              <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="h-9 w-9 sm:h-10 sm:w-10 text-muted-foreground hover:text-foreground flex-shrink-0 transition-all hover:scale-110"
+                  className="h-10 w-10 sm:h-11 sm:w-11 text-muted-foreground hover:text-foreground flex-shrink-0 transition-all hover:scale-110 min-h-[40px] min-w-[40px]"
                 >
                   <Smile className="h-5 w-5 sm:h-6 sm:w-6" />
                 </Button>
                 
-                <div className="flex-1 flex items-center gap-2 bg-background rounded-full px-4 py-2 border border-border/50 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex-1 flex items-center gap-2 bg-background rounded-full px-3 sm:px-4 py-2 sm:py-2.5 border border-border/50 shadow-sm hover:shadow-md transition-shadow min-h-[44px]">
                   <Input
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
@@ -435,14 +437,14 @@ const LawyerChatSection = () => {
                         : "Digite uma mensagem"
                     }
                     disabled={isLoading || isInQueue}
-                    className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 px-0 text-sm"
+                    className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 px-0 text-sm sm:text-base"
                   />
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="h-8 w-8 text-muted-foreground hover:text-foreground flex-shrink-0 transition-all hover:scale-110"
+                    className="h-8 w-8 sm:h-9 sm:w-9 text-muted-foreground hover:text-foreground flex-shrink-0 transition-all hover:scale-110"
                   >
-                    <Mic className="h-5 w-5" />
+                    <Mic className="h-4 h-4 sm:h-5 sm:w-5" />
                   </Button>
                 </div>
 
@@ -450,12 +452,12 @@ const LawyerChatSection = () => {
                   onClick={handleSend}
                   disabled={isLoading || !inputValue.trim() || isInQueue}
                   size="icon"
-                  className="h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white flex-shrink-0 shadow-lg transition-all hover:scale-110 active:scale-95 disabled:scale-100"
+                  className="h-12 w-12 sm:h-13 sm:w-13 rounded-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white flex-shrink-0 shadow-lg transition-all hover:scale-110 active:scale-95 disabled:scale-100 min-h-[48px] min-w-[48px]"
                 >
-                  <Send className="h-5 w-5" />
+                  <Send className="h-5 w-5 sm:h-6 sm:w-6" />
                 </Button>
               </div>
-              <p className="text-[10px] text-muted-foreground mt-2 text-center">
+              <p className="text-[10px] sm:text-xs text-muted-foreground mt-2 text-center">
                 🔒 Conversa protegida por sigilo profissional (Art. 34, VII do Estatuto da OAB)
               </p>
             </div>

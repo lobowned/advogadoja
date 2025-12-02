@@ -35,7 +35,7 @@ const AuthorBio = () => {
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4 sm:p-6">
                   <p className="text-white font-semibold text-base sm:text-lg">Advogado Especializado</p>
-                  <p className="text-white/80 text-xs sm:text-sm">OAB/XX 000.000</p>
+                  <p className="text-white/80 text-xs sm:text-sm">OAB/BA 46.638</p>
                 </div>
               </div>
             </div>

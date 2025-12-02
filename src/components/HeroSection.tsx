@@ -46,7 +46,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
             <img 
               src={logoAdvogadoOnline} 
               alt="Advogado Online" 
-              className="h-32 sm:h-40 md:h-48 lg:h-56 mx-auto"
+              className="h-56 sm:h-64 md:h-72 lg:h-96 mx-auto"
             />
           </div>
 

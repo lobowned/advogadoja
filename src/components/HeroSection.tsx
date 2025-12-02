@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Shield, MessageSquare, CheckCircle2, Users } from "lucide-react";
 import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
-import logoAdvogadoOnline from "@/assets/logo-advogado-online.gif";
+import logoAdvogadoOnline from "@/assets/logo-advogado-online.png";
 
 interface HeroSectionProps {
   onCtaClick: () => void;

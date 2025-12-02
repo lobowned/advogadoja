@@ -31,6 +31,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center md:text-left text-sm text-muted-foreground">
             <div>
               <p className="font-semibold text-foreground mb-2">Advogado Online</p>
+              <p>OAB/BA 46.638 | CNPJ 50.947.818/0001-94</p>
               <p>© 2025</p>
               <p className="mt-2">Atendimento: seg-sex 8h às 20h</p>
             </div>

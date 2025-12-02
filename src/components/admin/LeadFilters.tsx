@@ -19,7 +19,7 @@ export const LeadFilters = ({ onFilterChange }: LeadFiltersProps) => {
   const [filters, setFilters] = useState<LeadFiltersType>({
     status: 'all',
     lawyer: '',
-    specialty: '',
+    specialty: 'all',
     search: '',
   });
 
@@ -33,7 +33,7 @@ export const LeadFilters = ({ onFilterChange }: LeadFiltersProps) => {
     const clearedFilters: LeadFiltersType = {
       status: 'all',
       lawyer: '',
-      specialty: '',
+      specialty: 'all',
       search: '',
     };
     setFilters(clearedFilters);
@@ -76,7 +76,7 @@ export const LeadFilters = ({ onFilterChange }: LeadFiltersProps) => {
           <SelectValue placeholder="Especialidade" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="">Todas</SelectItem>
+          <SelectItem value="all">Todas</SelectItem>
           <SelectItem value="CIVIL">Civil</SelectItem>
           <SelectItem value="TRABALHISTA">Trabalhista</SelectItem>
           <SelectItem value="PENAL">Criminal</SelectItem>

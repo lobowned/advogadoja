@@ -62,7 +62,7 @@ export const useLeads = () => {
         query = query.eq('assigned_lawyer', filters.lawyer);
       }
 
-      if (filters?.specialty) {
+      if (filters?.specialty && filters.specialty !== 'all') {
         query = query.ilike('specialty', `%${filters.specialty}%`);
       }
 

@@ -28,15 +28,6 @@ const LawyerChatSection = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Scroll suave para a última mensagem
-  useEffect(() => {
-    if (lastMessageRef.current) {
-      lastMessageRef.current.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'end'
-      });
-    }
-  }, [messages]);
 
   // Rastrear novas mensagens para animação
   useEffect(() => {

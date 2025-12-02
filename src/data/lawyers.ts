@@ -241,8 +241,8 @@ export const lawyers: Lawyer[] = [
     photo: 'https://images.unsplash.com/photo-1598550874175-4d0ef436c909?w=200&h=200&fit=crop',
     oab: 'OAB/RJ 123.456',
     specialty: 'previdenciario',
-    subSpecialty: 'Auxílio-Doença',
-    keywords: ['auxílio doença', 'auxílio-doença', 'doente', 'incapaz', 'perícia', 'negado auxílio', 'cortaram auxílio', 'afastado doença', 'não consigo trabalhar', 'laudo médico', 'perícia médica inss'],
+    subSpecialty: 'Auxílio-Doença e Auxílio-Acidente',
+    keywords: ['auxílio doença', 'auxílio-doença', 'doente', 'incapaz', 'perícia', 'negado auxílio', 'cortaram auxílio', 'afastado doença', 'não consigo trabalhar', 'laudo médico', 'perícia médica inss', 'auxílio-acidente', 'auxílio acidente', 'acidentário', 'B94', 'sequela', 'fiquei com sequela', 'sequela acidente'],
     bio: 'Especialista em concessão e restabelecimento de auxílio-doença e auxílio-acidente.'
   },
   {
@@ -364,9 +364,9 @@ export const lawyers: Lawyer[] = [
     name: 'Dr. Gabriel Monteiro',
     photo: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=200&h=200&fit=crop',
     oab: 'OAB/RJ 345.678',
-    specialty: 'civil',
-    subSpecialty: 'Direito Digital e Crimes Cibernéticos',
-    keywords: ['golpe pix', 'golpe whatsapp', 'golpe internet', 'golpe banco', 'conta invadida', 'hackeado', 'hackear', 'perfil falso', 'vazamento dados', 'lgpd', 'fotos vazadas', 'nudes vazados', 'extorsão', 'ransomware', 'fake news', 'deepfake', 'stalker', 'perseguição online', 'crimes digitais', 'crimes virtuais', 'fraude digital', 'phishing'],
+    specialty: 'penal',
+    subSpecialty: 'Crimes Digitais e Cibernéticos',
+    keywords: ['golpe pix', 'golpe whatsapp', 'golpe internet', 'golpe banco', 'conta invadida', 'hackeado', 'hackear', 'perfil falso', 'vazamento dados', 'lgpd', 'fotos vazadas', 'nudes vazados', 'extorsão', 'ransomware', 'fake news', 'deepfake', 'stalker', 'perseguição online', 'crimes digitais', 'crimes virtuais', 'fraude digital', 'phishing', 'estelionato digital', 'calúnia', 'difamação', 'injúria'],
     bio: 'Especialista em crimes digitais, vazamento de dados, golpes virtuais e proteção de dados pessoais.'
   },
   {

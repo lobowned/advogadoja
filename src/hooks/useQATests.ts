@@ -171,6 +171,15 @@ export const useQATests = () => {
             passed = (data.action === 'suggest_transfer' || data.action === 'confirm_transfer') &&
                      targetLawyer?.specialty?.toLowerCase().includes(String(assertion.value).toLowerCase());
             break;
+          case 'lawyer_transfer_any':
+            // Check if lawyer specialty matches any of the valid specialties (pipe-separated)
+            const validSpecialties = String(assertion.value).split('|').map(s => s.trim().toLowerCase());
+            const targetLawyerAny = lawyers.find(l => l.id === data.targetLawyerId);
+            passed = (data.action === 'suggest_transfer' || data.action === 'confirm_transfer') &&
+                     targetLawyerAny && validSpecialties.some(spec => 
+                       targetLawyerAny.specialty.toLowerCase() === spec
+                     );
+            break;
           case 'lead_field_saved':
             passed = data.leadData && data.leadData[assertion.value as string];
             break;

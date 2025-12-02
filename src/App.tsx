@@ -12,6 +12,7 @@ import DynamicQuestionnaire from "./pages/DynamicQuestionnaire";
 import Completed from "./pages/Completed";
 import NotFound from "./pages/NotFound";
 import LeadsDashboard from "./pages/admin/LeadsDashboard";
+import QADashboard from "./pages/admin/QADashboard";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
               <Route path="/concluido" element={<Completed />} />
               <Route path="/admin" element={<LeadsDashboard />} />
               <Route path="/admin/leads" element={<LeadsDashboard />} />
+              <Route path="/admin/qa" element={<QADashboard />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

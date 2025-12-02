@@ -245,6 +245,187 @@ export type Database = {
         }
         Relationships: []
       }
+      qa_anomalies: {
+        Row: {
+          context: Json | null
+          description: string | null
+          detected_at: string | null
+          id: string
+          lead_id: string | null
+          resolution_notes: string | null
+          resolved_at: string | null
+          session_id: string | null
+          severity: Database["public"]["Enums"]["qa_severity"] | null
+          type: string
+        }
+        Insert: {
+          context?: Json | null
+          description?: string | null
+          detected_at?: string | null
+          id?: string
+          lead_id?: string | null
+          resolution_notes?: string | null
+          resolved_at?: string | null
+          session_id?: string | null
+          severity?: Database["public"]["Enums"]["qa_severity"] | null
+          type: string
+        }
+        Update: {
+          context?: Json | null
+          description?: string | null
+          detected_at?: string | null
+          id?: string
+          lead_id?: string | null
+          resolution_notes?: string | null
+          resolved_at?: string | null
+          session_id?: string | null
+          severity?: Database["public"]["Enums"]["qa_severity"] | null
+          type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "qa_anomalies_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "leads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      qa_metrics: {
+        Row: {
+          dimensions: Json | null
+          id: string
+          metric_name: string
+          metric_value: number | null
+          recorded_at: string | null
+        }
+        Insert: {
+          dimensions?: Json | null
+          id?: string
+          metric_name: string
+          metric_value?: number | null
+          recorded_at?: string | null
+        }
+        Update: {
+          dimensions?: Json | null
+          id?: string
+          metric_name?: string
+          metric_value?: number | null
+          recorded_at?: string | null
+        }
+        Relationships: []
+      }
+      qa_test_results: {
+        Row: {
+          actual_output: Json | null
+          assertions: Json | null
+          category: Database["public"]["Enums"]["qa_category"] | null
+          created_at: string | null
+          error_message: string | null
+          expected_output: Json | null
+          id: string
+          input: string | null
+          logs: Json | null
+          response_time_ms: number | null
+          run_id: string | null
+          scenario_id: string
+          scenario_name: string | null
+          stack_trace: string | null
+          status: Database["public"]["Enums"]["qa_test_status"] | null
+        }
+        Insert: {
+          actual_output?: Json | null
+          assertions?: Json | null
+          category?: Database["public"]["Enums"]["qa_category"] | null
+          created_at?: string | null
+          error_message?: string | null
+          expected_output?: Json | null
+          id?: string
+          input?: string | null
+          logs?: Json | null
+          response_time_ms?: number | null
+          run_id?: string | null
+          scenario_id: string
+          scenario_name?: string | null
+          stack_trace?: string | null
+          status?: Database["public"]["Enums"]["qa_test_status"] | null
+        }
+        Update: {
+          actual_output?: Json | null
+          assertions?: Json | null
+          category?: Database["public"]["Enums"]["qa_category"] | null
+          created_at?: string | null
+          error_message?: string | null
+          expected_output?: Json | null
+          id?: string
+          input?: string | null
+          logs?: Json | null
+          response_time_ms?: number | null
+          run_id?: string | null
+          scenario_id?: string
+          scenario_name?: string | null
+          stack_trace?: string | null
+          status?: Database["public"]["Enums"]["qa_test_status"] | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "qa_test_results_run_id_fkey"
+            columns: ["run_id"]
+            isOneToOne: false
+            referencedRelation: "qa_test_runs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      qa_test_runs: {
+        Row: {
+          completed_at: string | null
+          config: Json | null
+          duration_ms: number | null
+          failed: number | null
+          id: string
+          passed: number | null
+          run_name: string | null
+          run_type: string | null
+          skipped: number | null
+          started_at: string | null
+          status: Database["public"]["Enums"]["qa_run_status"] | null
+          summary: Json | null
+          total_tests: number | null
+        }
+        Insert: {
+          completed_at?: string | null
+          config?: Json | null
+          duration_ms?: number | null
+          failed?: number | null
+          id?: string
+          passed?: number | null
+          run_name?: string | null
+          run_type?: string | null
+          skipped?: number | null
+          started_at?: string | null
+          status?: Database["public"]["Enums"]["qa_run_status"] | null
+          summary?: Json | null
+          total_tests?: number | null
+        }
+        Update: {
+          completed_at?: string | null
+          config?: Json | null
+          duration_ms?: number | null
+          failed?: number | null
+          id?: string
+          passed?: number | null
+          run_name?: string | null
+          run_type?: string | null
+          skipped?: number | null
+          started_at?: string | null
+          status?: Database["public"]["Enums"]["qa_run_status"] | null
+          summary?: Json | null
+          total_tests?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -253,7 +434,28 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      qa_category:
+        | "triagem"
+        | "transfer"
+        | "lead"
+        | "edge"
+        | "stress"
+        | "regression"
+      qa_run_status:
+        | "pending"
+        | "running"
+        | "completed"
+        | "failed"
+        | "cancelled"
+      qa_severity: "low" | "medium" | "high" | "critical"
+      qa_test_status:
+        | "pending"
+        | "running"
+        | "passed"
+        | "failed"
+        | "error"
+        | "timeout"
+        | "skipped"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -380,6 +582,26 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      qa_category: [
+        "triagem",
+        "transfer",
+        "lead",
+        "edge",
+        "stress",
+        "regression",
+      ],
+      qa_run_status: ["pending", "running", "completed", "failed", "cancelled"],
+      qa_severity: ["low", "medium", "high", "critical"],
+      qa_test_status: [
+        "pending",
+        "running",
+        "passed",
+        "failed",
+        "error",
+        "timeout",
+        "skipped",
+      ],
+    },
   },
 } as const

@@ -634,8 +634,8 @@ serve(async (req) => {
       console.error("❌ Error fetching lead:", leadError);
     }
 
-    // Criar lead se não existir
-    if (!leadData) {
+    // Criar lead se não existir (skip em modo de teste para não poluir o banco)
+    if (!leadData && !isTestMode) {
       console.log("📝 Creating new lead for session:", sessionId);
       const { data: newLead, error: createError } = await supabase
         .from('leads')
@@ -656,10 +656,12 @@ serve(async (req) => {
         leadData = newLead;
         console.log("✅ Lead created:", newLead.id);
       }
+    } else if (!leadData && isTestMode) {
+      console.log("🧪 [TEST MODE] Skipping lead creation for session:", sessionId);
     }
 
-    // 🔢 INCREMENTAR MESSAGE COUNT a cada mensagem do usuário
-    if (leadData?.id) {
+    // 🔢 INCREMENTAR MESSAGE COUNT a cada mensagem do usuário (skip em modo de teste)
+    if (leadData?.id && !isTestMode) {
       const userMessagesCount = messages.filter((m: any) => m.role === 'user').length;
       console.log("📊 Updating message count to:", userMessagesCount);
       await supabase

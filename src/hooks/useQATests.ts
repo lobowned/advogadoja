@@ -237,21 +237,21 @@ export const useQATests = () => {
 
     const { data: savedResult, error: saveError } = await supabase
       .from('qa_test_results')
-      .insert({
+      .insert([{
         run_id: runId,
         scenario_id: scenario.id,
         scenario_name: scenario.name,
         category: scenario.category,
         status,
         input: scenario.userMessage,
-        expected_output: { assertions: scenario.assertions },
-        actual_output: actualOutput,
+        expected_output: JSON.parse(JSON.stringify({ assertions: scenario.assertions })),
+        actual_output: JSON.parse(JSON.stringify(actualOutput)),
         response_time_ms: responseTime,
-        assertions: assertions as unknown as Record<string, unknown>[],
-        logs: logs as unknown as Record<string, unknown>[],
+        assertions: JSON.parse(JSON.stringify(assertions)),
+        logs: JSON.parse(JSON.stringify(logs)),
         error_message: errorMessage,
         stack_trace: null
-      })
+      }])
       .select()
       .single();
 
@@ -276,14 +276,14 @@ export const useQATests = () => {
     leadId?: string
   ) => {
     try {
-      await supabase.from('qa_anomalies').insert({
+      await supabase.from('qa_anomalies').insert([{
         type,
         severity,
         description,
-        context: context as unknown as Record<string, unknown>,
+        context: JSON.parse(JSON.stringify(context)),
         session_id: sessionId,
         lead_id: leadId
-      } as Record<string, unknown>);
+      }]);
     } catch (error) {
       console.error('Error reporting anomaly:', error);
     }

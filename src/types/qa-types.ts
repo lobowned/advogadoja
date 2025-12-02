@@ -10,7 +10,7 @@ export interface Message {
 }
 
 export interface TestAssertion {
-  type: 'response_contains' | 'response_contains_any' | 'action_equals' | 'lawyer_transfer' | 'lead_field_saved' | 'response_time_under' | 'no_english';
+  type: 'response_contains' | 'response_contains_any' | 'action_equals' | 'lawyer_transfer' | 'lawyer_transfer_any' | 'lead_field_saved' | 'response_time_under' | 'no_english';
   value: string | number | boolean;
   message: string;
   passed?: boolean;

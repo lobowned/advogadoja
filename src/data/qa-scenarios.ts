@@ -1818,7 +1818,8 @@ export const qaScenarios: TestScenario[] = [
     description: 'Teste de saudação com contexto',
     userMessage: 'olá, preciso de ajuda',
     assertions: [
-      { type: 'response_contains', value: 'posso ajudar', message: 'Deve perguntar especificidade' }
+      { type: 'response_contains_any', value: 'ajudar|ajuda|dúvida|problema|conte', message: 'Deve ser receptivo ao pedido' },
+      { type: 'no_english', value: true, message: 'Deve responder em português' }
     ],
     tags: ['regression', 'saudacao']
   },

@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import LawyerChatSection from "@/components/LawyerChatSection";
 import LawyersShowcase from "@/components/LawyersShowcase";
+import { TestWhatsAppNotification } from "@/components/TestWhatsAppNotification";
 
 const Index = () => {
   const handleCTA = () => {
@@ -13,6 +14,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Test WhatsApp Notification Button */}
+      <TestWhatsAppNotification />
+      
       {/* Navbar */}
       <Navbar onCtaClick={handleCTA} />
 

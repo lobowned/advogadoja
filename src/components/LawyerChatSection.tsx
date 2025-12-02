@@ -115,7 +115,7 @@ const LawyerChatSection = () => {
           {/* Chat Container */}
           <div className="bg-card rounded-2xl shadow-2xl overflow-hidden border border-border/30">
             {/* WhatsApp Style Header */}
-            <div className="bg-gradient-to-r from-whatsapp-header to-whatsapp-header/90 text-white px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between border-b border-white/10">
+            <div className="bg-gradient-to-r from-whatsapp-header to-whatsapp-header/90 text-white px-2.5 sm:px-4 py-2 sm:py-3 flex items-center justify-between border-b border-white/10">
               <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
                 <Avatar className="h-9 w-9 sm:h-10 sm:w-10 border-2 border-white/20 flex-shrink-0">
                   <AvatarImage src={currentLawyer.photo} alt={currentLawyer.name} />
@@ -151,22 +151,22 @@ const LawyerChatSection = () => {
             {/* Messages Area */}
             <div 
               ref={chatContainerRef}
-              className={`bg-whatsapp-bg p-2 sm:p-3 md:p-4 h-[520px] sm:h-[500px] md:h-[580px] space-y-3 ${
+              className={`bg-whatsapp-bg p-1.5 sm:p-2 md:p-3 h-[520px] sm:h-[500px] md:h-[580px] space-y-2 ${
                 hasJoinedQueue ? 'overflow-y-auto' : 'overflow-hidden'
               }`}
             >
               {!hasJoinedQueue ? (
                 <div className="flex items-center justify-center h-full">
-                  <div className="text-center max-w-md px-4 animate-fade-in">
-                    <div className="mb-4">
-                      <div className="text-4xl mb-3">🏛️</div>
-                      <h3 className="text-xl font-bold mb-2">Assistência Jurídica Online</h3>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        {onlineCount} advogados disponíveis para atender você agora mesmo
-                      </p>
-                    </div>
-                    
-                    <div className="space-y-2 mb-5 text-left">
+                <div className="text-center max-w-md px-3 animate-fade-in">
+                  <div className="mb-3">
+                    <div className="text-3xl sm:text-4xl mb-2">🏛️</div>
+                    <h3 className="text-xl font-bold mb-2">Assistência Jurídica Online</h3>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      {onlineCount} advogados disponíveis para atender você agora mesmo
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-1.5 mb-4 text-left">
                       <div className="flex items-start gap-2.5">
                         <Check className="w-4 h-4 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
                         <p className="text-sm">Atendimento gratuito inicial</p>
@@ -308,7 +308,7 @@ const LawyerChatSection = () => {
                     )}
 
                     <div
-                      className={`rounded-lg px-3 sm:px-4 py-2 max-w-[85%] sm:max-w-[70%] shadow-sm relative ${
+                      className={`rounded-lg px-2.5 sm:px-3 py-1.5 max-w-[85%] sm:max-w-[70%] shadow-sm relative ${
                         message.role === "user"
                           ? "bg-whatsapp-bubble-sent"
                           : "bg-whatsapp-bubble-received"

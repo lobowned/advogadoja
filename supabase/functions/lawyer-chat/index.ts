@@ -578,7 +578,30 @@ serve(async (req) => {
   }
 
   try {
-    const { messages, currentLawyerId, sessionId, isTransfer } = await req.json();
+    const body = await req.json();
+    
+    // Support both formats: 
+    // 1. Original format: { messages, currentLawyerId, sessionId, isTransfer }
+    // 2. QA test format: { message, conversationHistory, currentLawyer, sessionId, isTestMode }
+    let messages = body.messages;
+    let currentLawyerId = body.currentLawyerId;
+    const sessionId = body.sessionId;
+    const isTransfer = body.isTransfer || false;
+    
+    // Handle QA test format
+    if (!messages && (body.message !== undefined || body.conversationHistory)) {
+      const history = body.conversationHistory || [];
+      messages = body.message 
+        ? [...history, { role: 'user', content: body.message }]
+        : history;
+    }
+    
+    if (!currentLawyerId && body.currentLawyer) {
+      currentLawyerId = body.currentLawyer;
+    }
+    
+    // Ensure messages is always an array
+    messages = messages || [];
     
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     const SUPABASE_URL = Deno.env.get("SUPABASE_URL");

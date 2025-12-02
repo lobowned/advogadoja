@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Shield, MessageSquare, CheckCircle2, Users } from "lucide-react";
 import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
-import logoAdvogadoOnline from "@/assets/logo-advogado-online.png";
+import logoAdvogadoOnline from "@/assets/logo-advogado-online.gif";
 
 interface HeroSectionProps {
   onCtaClick: () => void;
@@ -46,7 +46,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
             <img 
               src={logoAdvogadoOnline} 
               alt="Advogado Online" 
-              className="h-16 sm:h-20 md:h-24 mx-auto"
+              className="h-32 sm:h-40 md:h-48 lg:h-56 mx-auto"
             />
           </div>
 

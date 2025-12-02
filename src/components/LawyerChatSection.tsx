@@ -7,7 +7,7 @@ import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
 import { useEffect, useRef, useState } from "react";
 
 const LawyerChatSection = () => {
-  const { messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers, isCollectingLead, leadQuestion, isInQueue, queuePosition, hasJoinedQueue, joinQueue, peopleAhead } = useLawyerChat();
+  const { messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers, isCollectingLead, leadQuestion, isInQueue, queuePosition, hasJoinedQueue, joinQueue, peopleAhead, showRatingButton, submitRating } = useLawyerChat();
   const { onlineLawyers, notification, onlineCount } = useLawyerPresence();
   const [inputValue, setInputValue] = useState("");
   const [showResponseTime, setShowResponseTime] = useState(false);
@@ -340,6 +340,29 @@ const LawyerChatSection = () => {
                     </Avatar>
                     <RefreshCw className="h-6 w-6 text-primary animate-spin" />
                     <div className="text-sm font-medium text-primary">Conectando com especialista...</div>
+                  </div>
+                </div>
+              )}
+
+              {/* Botão de Avaliação */}
+              {showRatingButton && (
+                <div className="flex justify-center py-4">
+                  <div className="bg-gradient-to-r from-yellow-100 to-amber-100 border border-yellow-300 rounded-xl px-6 py-4 max-w-[90%] animate-fade-in shadow-lg">
+                    <p className="text-sm font-medium text-amber-800 mb-3 text-center">
+                      Como foi seu atendimento?
+                    </p>
+                    <div className="flex justify-center gap-2">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <button
+                          key={star}
+                          onClick={() => submitRating(star)}
+                          className="text-3xl hover:scale-125 transition-transform duration-200 cursor-pointer"
+                          aria-label={`Avaliar com ${star} estrela${star > 1 ? 's' : ''}`}
+                        >
+                          ⭐
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}

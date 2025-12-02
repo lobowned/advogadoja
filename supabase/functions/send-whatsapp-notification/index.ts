@@ -118,18 +118,32 @@ function formatWhatsAppMessage(lead: LeadData, isEndConversation: boolean = fals
         minute: '2-digit'
       });
 
-  // Mapear specialty para nome legível
+  // Mapear specialty para nome legível - MAPEAMENTO COMPLETO
   const specialtyNames: Record<string, string> = {
     'familia': 'Direito de Família',
     'FAMILIA': 'Direito de Família',
     'trabalhista': 'Direito Trabalhista',
     'TRABALHISTA': 'Direito Trabalhista',
     'civil': 'Direito Civil',
-    'CIVIL': 'Direito Civil / Trânsito',
+    'CIVIL': 'Direito Civil',
+    'transito': 'Direito de Trânsito Administrativo',
+    'TRANSITO': 'Direito de Trânsito Administrativo',
+    'TRÂNSITO': 'Direito de Trânsito Administrativo',
     'previdenciario': 'Direito Previdenciário',
     'PREVIDENCIARIO': 'Direito Previdenciário',
+    'PREVIDENCIÁRIO': 'Direito Previdenciário',
     'penal': 'Direito Penal',
     'PENAL': 'Direito Penal',
+    'consumidor': 'Direito do Consumidor',
+    'CONSUMIDOR': 'Direito do Consumidor',
+    'empresarial': 'Direito Empresarial',
+    'EMPRESARIAL': 'Direito Empresarial',
+    'imobiliario': 'Direito Imobiliário',
+    'IMOBILIARIO': 'Direito Imobiliário',
+    'IMOBILIÁRIO': 'Direito Imobiliário',
+    'tributario': 'Direito Tributário',
+    'TRIBUTARIO': 'Direito Tributário',
+    'TRIBUTÁRIO': 'Direito Tributário'
   };
 
   const specialtyName = lead.specialty 
@@ -138,25 +152,26 @@ function formatWhatsAppMessage(lead: LeadData, isEndConversation: boolean = fals
 
   let message = isEndConversation 
     ? `🏁 *CONVERSA FINALIZADA*\n`
-    : `🔔 *NOVO LEAD JURÍDICO*\n`;
+    : `🔔 *NOVO LEAD - ${specialtyName}*\n`;
   message += `━━━━━━━━━━━━━━━━━━━\n\n`;
   
-  // DADOS DO CLIENTE (WhatsApp em destaque!)
-  message += `👤 *Cliente:* ${lead.name}\n`;
-  message += `📱 *WhatsApp:* ${lead.phone}\n`;  // ← EM DESTAQUE
+  // DADOS DO CLIENTE (destaque para identificação)
+  message += `👤 *Cliente:* ${lead.name || 'Não informado'}\n`;
+  message += `📱 *WhatsApp:* ${lead.phone || 'Não informado'}\n`;
   if (lead.email) {
     message += `📧 *Email:* ${lead.email}\n`;
   }
   message += `\n`;
   
-  message += `⚖️ *Área:* ${specialtyName}\n`;
-  if (lead.assigned_lawyer) {
-    message += `👨‍⚖️ *Advogado:* ${lead.assigned_lawyer}\n`;
-  }
+  // Problema detectado em DESTAQUE
   if (lead.detected_problem) {
-    message += `📋 *Problema:* ${lead.detected_problem}\n`;
+    message += `⚖️ *Problema Detectado:* ${lead.detected_problem}\n\n`;
   }
-  message += `\n`;
+  
+  // Advogado responsável
+  if (lead.assigned_lawyer) {
+    message += `👨‍⚖️ *Advogado(a):* ${lead.assigned_lawyer}\n\n`;
+  }
   
   if (isEndConversation && lead.case_summary) {
     message += `📋 *RESUMO COMPLETO DO CASO:*\n`;

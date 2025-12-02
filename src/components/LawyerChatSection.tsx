@@ -329,7 +329,7 @@ const LawyerChatSection = () => {
                           {formatTime(message.timestamp)}
                         </span>
                         {message.role === "user" && (
-                          <div className="flex -space-x-1">
+                          <div className="flex -space-x-1" title="Mensagem entregue">
                             <Check className="h-3 w-3 text-whatsapp-check" />
                             <Check className="h-3 w-3 text-whatsapp-check" />
                           </div>
@@ -379,7 +379,7 @@ const LawyerChatSection = () => {
                 </div>
               )}
 
-              {/* Indicadores normais de digitação */}
+              {/* Indicadores com status do advogado */}
               {(isThinking || isTyping) && !isTransferring && (
                 <div className="flex justify-start animate-message-slide">
                   <Avatar className="h-8 w-8 mr-2 flex-shrink-0">
@@ -388,30 +388,100 @@ const LawyerChatSection = () => {
                       {currentLawyer.name.split(' ').map(n => n[0]).join('')}
                     </AvatarFallback>
                   </Avatar>
-                  <div className="bg-whatsapp-bubble-received text-foreground rounded-lg rounded-tl-none px-4 py-3 max-w-[85%] sm:max-w-[70%] shadow-sm relative">
-                    <div className="absolute -left-2 top-0 w-0 h-0 border-t-[8px] border-t-whatsapp-bubble-received border-r-[8px] border-r-transparent" />
-                    {isThinking ? (
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-muted-foreground italic">Lendo sua mensagem</span>
-                        <div className="flex gap-1">
-                          <div className="w-1 h-1 bg-muted-foreground/60 rounded-full animate-pulse" style={{ animationDelay: "0ms" }} />
-                          <div className="w-1 h-1 bg-muted-foreground/60 rounded-full animate-pulse" style={{ animationDelay: "200ms" }} />
-                          <div className="w-1 h-1 bg-muted-foreground/60 rounded-full animate-pulse" style={{ animationDelay: "400ms" }} />
+                  <div className="space-y-1">
+                    <div className="text-[10px] text-muted-foreground px-2">
+                      {currentLawyer.name.split(' ')[0]} {isThinking ? 'lendo...' : 'digitando...'}
+                    </div>
+                    <div className="bg-whatsapp-bubble-received text-foreground rounded-lg rounded-tl-none px-4 py-3 max-w-[85%] sm:max-w-[70%] shadow-sm relative">
+                      <div className="absolute -left-2 top-0 w-0 h-0 border-t-[8px] border-t-whatsapp-bubble-received border-r-[8px] border-r-transparent" />
+                      {isThinking ? (
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm text-muted-foreground italic">Analisando...</span>
+                          <div className="flex gap-1">
+                            <div className="w-1 h-1 bg-muted-foreground/60 rounded-full animate-pulse" style={{ animationDelay: "0ms" }} />
+                            <div className="w-1 h-1 bg-muted-foreground/60 rounded-full animate-pulse" style={{ animationDelay: "200ms" }} />
+                            <div className="w-1 h-1 bg-muted-foreground/60 rounded-full animate-pulse" style={{ animationDelay: "400ms" }} />
+                          </div>
                         </div>
-                      </div>
-                    ) : (
-                      <div className="flex gap-1.5">
-                        <div className="w-2.5 h-2.5 bg-muted-foreground/60 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                        <div className="w-2.5 h-2.5 bg-muted-foreground/60 rounded-full animate-bounce" style={{ animationDelay: "200ms" }} />
-                        <div className="w-2.5 h-2.5 bg-muted-foreground/60 rounded-full animate-bounce" style={{ animationDelay: "400ms" }} />
-                      </div>
-                    )}
+                      ) : (
+                        <div className="flex gap-1.5">
+                          <div className="w-2.5 h-2.5 bg-muted-foreground/60 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                          <div className="w-2.5 h-2.5 bg-muted-foreground/60 rounded-full animate-bounce" style={{ animationDelay: "200ms" }} />
+                          <div className="w-2.5 h-2.5 bg-muted-foreground/60 rounded-full animate-bounce" style={{ animationDelay: "400ms" }} />
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               )}
               </>
               )}
             </div>
+
+            {/* Quick Replies - Sugestões contextuais */}
+            {hasJoinedQueue && !isInQueue && !isLoading && !isCollectingLead && messages.length > 1 && messages.length < 10 && (
+              <div className="bg-muted/20 border-t border-border/20 px-2 sm:px-3 py-2 flex gap-2 overflow-x-auto scrollbar-hide">
+                {messages[messages.length - 1]?.role === 'assistant' && (
+                  <>
+                    {messages[messages.length - 1]?.content.toLowerCase().includes('urgente') && (
+                      <>
+                        <button
+                          onClick={() => setInputValue('É urgente sim')}
+                          className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
+                        >
+                          É urgente
+                        </button>
+                        <button
+                          onClick={() => setInputValue('Pode ser nos próximos dias')}
+                          className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
+                        >
+                          Próximos dias
+                        </button>
+                      </>
+                    )}
+                    {(messages[messages.length - 1]?.content.toLowerCase().includes('documento') || 
+                      messages[messages.length - 1]?.content.toLowerCase().includes('prova')) && (
+                      <>
+                        <button
+                          onClick={() => setInputValue('Tenho fotos do local')}
+                          className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
+                        >
+                          📸 Tenho fotos
+                        </button>
+                        <button
+                          onClick={() => setInputValue('Tenho documentos')}
+                          className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
+                        >
+                          📄 Tenho docs
+                        </button>
+                        <button
+                          onClick={() => setInputValue('Não tenho provas ainda')}
+                          className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
+                        >
+                          Sem provas
+                        </button>
+                      </>
+                    )}
+                    {messages[messages.length - 1]?.content.toLowerCase().includes('pode') && (
+                      <>
+                        <button
+                          onClick={() => setInputValue('Sim, pode')}
+                          className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
+                        >
+                          ✅ Sim
+                        </button>
+                        <button
+                          onClick={() => setInputValue('Não, obrigado')}
+                          className="text-xs bg-background border border-border px-3 py-1.5 rounded-full hover:bg-muted transition-colors whitespace-nowrap shadow-sm"
+                        >
+                          ❌ Não
+                        </button>
+                      </>
+                    )}
+                  </>
+                )}
+              </div>
+            )}
 
             {/* Input Area */}
             <div className="bg-whatsapp-input-bg p-2 sm:p-3 md:p-4 border-t border-border/30 sticky bottom-0">

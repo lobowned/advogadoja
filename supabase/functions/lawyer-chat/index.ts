@@ -98,7 +98,7 @@ const orchestrateResponseTool = {
         },
         extracted_name: {
           type: "string",
-          description: "Nome completo extraído da mensagem do usuário"
+          description: "Nome completo extraído da MENSAGEM ANTERIOR do usuário (quando user respondeu pergunta sobre nome)"
         },
         extracted_phone: {
           type: "string",
@@ -110,7 +110,7 @@ const orchestrateResponseTool = {
         },
         case_summary: {
           type: "string",
-          description: "Resumo completo do caso discutido (máx 300 palavras)"
+          description: "Resumo completo do caso discutido até agora (máx 200 palavras)"
         }
       },
       required: ["action", "response", "confidence", "reasoning"]
@@ -278,18 +278,20 @@ Seu trabalho é analisar o contexto completo e decidir a melhor ação a tomar.
    - Nome já foi fornecido anteriormente
    - Usuário está apenas fazendo pergunta genérica
 
-7️⃣ **save_contact_data**: Usuário forneceu dados de contato
-   ✅ Quando usar:
-   - Usuário forneceu NOME (após request_name) OU telefone/email
-   - Detectar padrões: 
-     * Nome: palavras com 2+ nomes (João Silva, Maria Santos)
-     * Telefone: números com 10-11 dígitos (71997036269, 5571997036269)
-     * Email: formato xxx@xxx.com
-   - EXTRAIR e retornar nos campos extracted_name, extracted_phone e extracted_email
-   - Adicionar código do país (55) ao telefone se não tiver
-   - OBRIGATÓRIO: Gerar case_summary com resumo completo da conversa
-   - Responder confirmando recebimento dos dados
-   ❌ NÃO use quando: mensagem não contém dados de contato
+ 7️⃣ **save_contact_data**: Usuário forneceu dados de contato
+    ✅ Quando usar:
+    - Usuário forneceu NOME OU telefone/email
+    - Detectar padrões: 
+      * Nome: procurar na MENSAGEM ANTERIOR onde user respondeu pergunta sobre nome
+      * Telefone: números com 10-11 dígitos (71997036269, 5571997036269)
+      * Email: formato xxx@xxx.com
+    - 🔴 CRÍTICO PARA NOME: Olhar mensagem ANTERIOR (não atual) para extrair nome
+    - Exemplo: Se perguntou "qual seu nome?" e user respondeu "Gilberto", extrair "Gilberto" da mensagem anterior
+    - EXTRAIR e retornar nos campos extracted_name, extracted_phone e extracted_email
+    - Adicionar código do país (55) ao telefone se não tiver
+    - OBRIGATÓRIO: Gerar case_summary com resumo completo (max 150 palavras)
+    - Responder confirmando os dados de forma específica
+    ❌ NÃO use quando: mensagem não contém dados de contato
 
 8️⃣ **request_rating**: Solicitar avaliação do atendimento
    ✅ Quando usar (ORDEM DE PRIORIDADE):
@@ -419,6 +421,7 @@ save_contact_data (confirmando dados de contato):
       detectedProblem: decision.detected_problem,
       confidence: decision.confidence,
       reasoning: decision.reasoning,
+      extractedName: decision.extracted_name,
       extractedPhone: decision.extracted_phone,
       extractedEmail: decision.extracted_email,
       caseSummary: decision.case_summary
@@ -587,12 +590,14 @@ serve(async (req) => {
           console.log("📞 Saving contact data:", {
             name: decision.extractedName,
             phone: decision.extractedPhone,
-            email: decision.extractedEmail
+            email: decision.extractedEmail,
+            hasSummary: !!decision.caseSummary
           });
           
           const updateData: any = {
             status: 'contacted',
             conversation_history: messages,
+            message_count: messages.filter((m: any) => m.role === 'user').length,
             updated_at: new Date().toISOString()
           };
           
@@ -613,12 +618,15 @@ serve(async (req) => {
           const caseDetails: any = {};
           const conversationText = messages.map((m: any) => m.content).join(' ').toLowerCase();
           
-          // Extrair informações contextuais
-          if (conversationText.includes('foto') || conversationText.includes('prova')) {
+          // Extrair informações contextuais - mais detalhado
+          if (conversationText.includes('foto') || conversationText.includes('prova') || conversationText.includes('documento')) {
             caseDetails.evidencias = 'Cliente possui fotos/documentos como prova';
           }
           if (conversationText.includes('primeira vez')) {
             caseDetails.historico = 'Primeira vez buscando ajuda jurídica';
+          }
+          if (conversationText.includes('urgente') || conversationText.includes('urgência')) {
+            caseDetails.urgencia = 'ALTA';
           }
           
           updateData.case_details = caseDetails;
@@ -642,6 +650,15 @@ serve(async (req) => {
                 body: { leadData: updatedLead }
               });
               console.log("✅ WhatsApp notification sent successfully");
+              
+              // Marcar como notificado
+              await supabase
+                .from('leads')
+                .update({
+                  notification_sent: true,
+                  notification_sent_at: new Date().toISOString()
+                })
+                .eq('id', leadData.id);
             } catch (notifError) {
               console.error("❌ Error sending WhatsApp notification:", notifError);
             }

@@ -587,6 +587,7 @@ serve(async (req) => {
     let currentLawyerId = body.currentLawyerId;
     const sessionId = body.sessionId;
     const isTransfer = body.isTransfer || false;
+    const isTestMode = body.isTestMode || false;
     
     // Handle QA test format
     if (!messages && (body.message !== undefined || body.conversationHistory)) {
@@ -911,6 +912,28 @@ serve(async (req) => {
     console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
     console.log("✅ REQUEST COMPLETED");
     console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+
+    // Return plain JSON for test mode, SSE for production
+    if (isTestMode) {
+      console.log("🧪 [TEST MODE] Returning plain JSON");
+      return new Response(
+        JSON.stringify({
+          message: decision.response,
+          action: decision.action,
+          targetLawyerId: decision.targetLawyerId,
+          targetLawyerName: decision.targetLawyerName,
+          confidence: decision.confidence,
+          caseSummary: decision.caseSummary,
+          showRatingButton: decision.action === "request_rating"
+        }),
+        { 
+          headers: { 
+            ...corsHeaders, 
+            'Content-Type': 'application/json'
+          } 
+        }
+      );
+    }
 
     return new Response(
       `data: ${JSON.stringify(responseData)}\n\ndata: [DONE]\n\n`,

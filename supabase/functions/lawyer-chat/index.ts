@@ -65,7 +65,7 @@ const orchestrateResponseTool = {
       properties: {
         action: {
           type: "string",
-          enum: ["normal_response", "suggest_transfer", "confirm_transfer", "deny_transfer", "specialist_greeting"],
+          enum: ["normal_response", "suggest_transfer", "confirm_transfer", "deny_transfer", "specialist_greeting", "save_contact_data"],
           description: "Tipo de ação a executar"
         },
         response: {
@@ -95,6 +95,14 @@ const orchestrateResponseTool = {
         reasoning: {
           type: "string",
           description: "Explicação breve da decisão"
+        },
+        extracted_phone: {
+          type: "string",
+          description: "Telefone extraído da mensagem do usuário (formato com DDD: 5571997036269)"
+        },
+        extracted_email: {
+          type: "string",
+          description: "Email extraído da mensagem do usuário"
         }
       },
       required: ["action", "response", "confidence", "reasoning"]
@@ -171,6 +179,8 @@ async function orchestrateChat(params: {
   detectedProblem?: string;
   confidence: number;
   reasoning: string;
+  extractedPhone?: string;
+  extractedEmail?: string;
 }> {
   
   const currentLawyerName = params.currentLawyerId === 'carlos-silva' 
@@ -243,6 +253,17 @@ Seu trabalho é analisar o contexto completo e decidir a melhor ação a tomar.
    - Continue conversa normalmente com Carlos
    ❌ NÃO use quando: não há pending_transfer
 
+6️⃣ **save_contact_data**: Usuário forneceu dados de contato
+   ✅ Quando usar:
+   - Usuário forneceu telefone E/OU email na mensagem
+   - Detectar padrões: 
+     * Telefone: números com 10-11 dígitos (71997036269, 5571997036269)
+     * Email: formato xxx@xxx.com
+   - EXTRAIR e retornar nos campos extracted_phone e extracted_email
+   - Adicionar código do país (55) se não tiver
+   - Responder confirmando recebimento dos dados
+   ❌ NÃO use quando: mensagem não contém dados de contato
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 💬 ESTILO DAS RESPOSTAS (Brasileiro informal e natural):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -280,6 +301,11 @@ specialist_greeting (especialista se apresentando):
 - "Oi! Sou a Dra. Maria Santos. Vi que vc precisa de ajuda com divórcio. Me conta: vc e seu cônjuge já conversaram sobre isso?"
 - "E aí! André Silva aqui. Sobre sua aposentadoria: vc já deu entrada no INSS ou ainda não?"
 - "Olá! Sou o Dr. Roberto. Entendi que teve um problema criminal. Me diz: quando isso aconteceu?"
+
+save_contact_data (confirmando dados de contato):
+- "Perfeito! Anotei seu telefone 71997036269 e email lobowned@gmail.com. Agora vou formalizar o agendamento 👍"
+- "Ótimo! Recebi seus dados de contato. Te envio a confirmação no email que vc passou"
+- "Beleza! Já tenho seus dados aqui. Vou te mandar as instruções por email e WhatsApp"
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⚠️ REGRAS CRÍTICAS:
@@ -343,7 +369,9 @@ specialist_greeting (especialista se apresentando):
       detectedSpecialty: decision.detected_specialty,
       detectedProblem: decision.detected_problem,
       confidence: decision.confidence,
-      reasoning: decision.reasoning
+      reasoning: decision.reasoning,
+      extractedPhone: decision.extracted_phone,
+      extractedEmail: decision.extracted_email
     };
   } catch (error) {
     console.error("❌ [ORCHESTRATOR] Exception:", error);
@@ -497,6 +525,50 @@ serve(async (req) => {
               updated_at: new Date().toISOString()
             })
             .eq('id', leadData.id);
+          break;
+          
+        case "save_contact_data":
+          // Salvar dados de contato e disparar notificação
+          console.log("📞 Saving contact data:", {
+            phone: decision.extractedPhone,
+            email: decision.extractedEmail
+          });
+          
+          const updateData: any = {
+            status: 'contacted',
+            updated_at: new Date().toISOString()
+          };
+          
+          if (decision.extractedPhone) {
+            updateData.phone = decision.extractedPhone;
+          }
+          if (decision.extractedEmail) {
+            updateData.email = decision.extractedEmail;
+          }
+          
+          await supabase
+            .from('leads')
+            .update(updateData)
+            .eq('id', leadData.id);
+          
+          // Buscar lead atualizado para disparar notificação
+          const { data: updatedLead, error: fetchError } = await supabase
+            .from('leads')
+            .select('*')
+            .eq('id', leadData.id)
+            .single();
+          
+          if (!fetchError && updatedLead) {
+            console.log("📨 Invoking WhatsApp notification...");
+            try {
+              await supabase.functions.invoke('send-whatsapp-notification', {
+                body: { leadData: updatedLead }
+              });
+              console.log("✅ WhatsApp notification sent successfully");
+            } catch (notifError) {
+              console.error("❌ Error sending WhatsApp notification:", notifError);
+            }
+          }
           break;
       }
     }

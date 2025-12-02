@@ -169,6 +169,26 @@ export default {
             opacity: "1",
             transform: "translateY(0) scale(1)"
           }
+        },
+        "typing-dot": {
+          "0%, 60%, 100%": {
+            transform: "translateY(0)",
+            opacity: "0.4"
+          },
+          "30%": {
+            transform: "translateY(-8px)",
+            opacity: "1"
+          }
+        },
+        "typing-wave": {
+          "0%, 100%": {
+            transform: "scaleY(0.4)",
+            opacity: "0.4"
+          },
+          "50%": {
+            transform: "scaleY(1)",
+            opacity: "1"
+          }
         }
       },
       animation: {
@@ -182,7 +202,9 @@ export default {
         "pulse-subtle": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "message-slide": "message-slide 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
         "marquee": "marquee 30s linear infinite",
-        "new-message": "new-message 0.45s cubic-bezier(0.34, 1.56, 0.64, 1)"
+        "new-message": "new-message 0.45s cubic-bezier(0.34, 1.56, 0.64, 1)",
+        "typing-dot": "typing-dot 1.4s infinite ease-in-out",
+        "typing-wave": "typing-wave 1.2s infinite ease-in-out"
       },
       boxShadow: {
         "card": "var(--shadow-card)",

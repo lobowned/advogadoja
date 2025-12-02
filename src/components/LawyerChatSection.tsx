@@ -6,6 +6,7 @@ import { useLawyerChat } from "@/hooks/useLawyerChat";
 import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useEffect, useRef, useState } from "react";
+import TypingIndicator from "@/components/TypingIndicator";
 
 const LawyerChatSection = () => {
   const isMobile = useIsMobile();
@@ -411,34 +412,29 @@ const LawyerChatSection = () => {
 
               {/* Indicadores com status do advogado */}
               {(isThinking || isTyping) && !isTransferring && (
-                <div className="flex justify-start animate-message-slide">
-                  <Avatar className="h-8 w-8 mr-2 flex-shrink-0">
+                <div className="flex justify-start animate-new-message">
+                  <Avatar className="h-8 w-8 mr-2 flex-shrink-0 ring-2 ring-green-400/30 ring-offset-1 ring-offset-background">
                     <AvatarImage src={currentLawyer.photo} alt={currentLawyer.name} />
                     <AvatarFallback className="bg-primary/10 text-primary text-xs">
                       {currentLawyer.name.split(' ').map(n => n[0]).join('')}
                     </AvatarFallback>
                   </Avatar>
                   <div className="space-y-1">
-                    <div className="text-[10px] text-muted-foreground px-2">
-                      {currentLawyer.name.split(' ')[0]} {isThinking ? 'lendo...' : 'digitando...'}
+                    <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground px-2">
+                      <span className="font-medium text-green-600">
+                        {currentLawyer.name.split(' ')[0]}
+                      </span>
+                      <span>{isThinking ? 'está lendo...' : 'está digitando...'}</span>
                     </div>
-                    <div className="bg-whatsapp-bubble-received text-foreground rounded-lg rounded-tl-none px-4 py-3 max-w-[85%] sm:max-w-[70%] shadow-sm relative">
+                    <div className="bg-whatsapp-bubble-received text-foreground rounded-lg rounded-tl-none px-4 py-3 shadow-sm relative min-w-[70px]">
                       <div className="absolute -left-2 top-0 w-0 h-0 border-t-[8px] border-t-whatsapp-bubble-received border-r-[8px] border-r-transparent" />
                       {isThinking ? (
-                        <div className="flex items-center gap-2">
-                          <span className="text-sm text-muted-foreground italic">Analisando...</span>
-                          <div className="flex gap-1">
-                            <div className="w-1 h-1 bg-muted-foreground/60 rounded-full animate-pulse" style={{ animationDelay: "0ms" }} />
-                            <div className="w-1 h-1 bg-muted-foreground/60 rounded-full animate-pulse" style={{ animationDelay: "200ms" }} />
-                            <div className="w-1 h-1 bg-muted-foreground/60 rounded-full animate-pulse" style={{ animationDelay: "400ms" }} />
-                          </div>
+                        <div className="flex items-center gap-2.5">
+                          <span className="text-xs text-muted-foreground">Analisando</span>
+                          <TypingIndicator variant="wave" />
                         </div>
                       ) : (
-                        <div className="flex gap-1.5">
-                          <div className="w-2.5 h-2.5 bg-muted-foreground/60 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                          <div className="w-2.5 h-2.5 bg-muted-foreground/60 rounded-full animate-bounce" style={{ animationDelay: "200ms" }} />
-                          <div className="w-2.5 h-2.5 bg-muted-foreground/60 rounded-full animate-bounce" style={{ animationDelay: "400ms" }} />
-                        </div>
+                        <TypingIndicator variant="dots" />
                       )}
                     </div>
                   </div>

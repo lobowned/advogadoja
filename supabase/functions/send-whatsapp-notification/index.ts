@@ -15,6 +15,7 @@ interface LeadData {
   case_details?: any;
   message_count?: number;
   created_at?: string;
+  rating?: number;
 }
 
 serve(async (req) => {
@@ -23,10 +24,11 @@ serve(async (req) => {
   }
 
   try {
-    const { leadData } = await req.json() as { leadData: LeadData };
+    const { leadData, isEndConversation } = await req.json() as { leadData: LeadData; isEndConversation?: boolean };
     
     console.log("=== WhatsApp Notification Request ===");
     console.log("Lead Data:", JSON.stringify(leadData, null, 2));
+    console.log("Is End Conversation:", isEndConversation);
     
     const ZAPI_INSTANCE_ID = Deno.env.get("ZAPI_INSTANCE_ID");
     const ZAPI_TOKEN = Deno.env.get("ZAPI_TOKEN");
@@ -41,7 +43,7 @@ serve(async (req) => {
     }
 
     // Formatar a mensagem
-    const message = formatWhatsAppMessage(leadData);
+    const message = formatWhatsAppMessage(leadData, isEndConversation || false);
     console.log("Formatted message length:", message.length);
     
     // Enviar via Z-API
@@ -95,7 +97,7 @@ serve(async (req) => {
   }
 });
 
-function formatWhatsAppMessage(lead: LeadData): string {
+function formatWhatsAppMessage(lead: LeadData, isEndConversation: boolean = false): string {
   const timestamp = lead.created_at 
     ? new Date(lead.created_at).toLocaleString('pt-BR', { 
         day: '2-digit', 
@@ -125,11 +127,14 @@ function formatWhatsAppMessage(lead: LeadData): string {
     ? (specialtyNames[lead.specialty] || lead.specialty)
     : 'Não identificada';
 
-  let message = `🔔 *NOVO LEAD JURÍDICO*\n`;
+  let message = isEndConversation 
+    ? `🏁 *CONVERSA FINALIZADA*\n`
+    : `🔔 *NOVO LEAD JURÍDICO*\n`;
   message += `━━━━━━━━━━━━━━━━━━━\n\n`;
   
+  // DADOS DO CLIENTE (WhatsApp em destaque!)
   message += `👤 *Cliente:* ${lead.name}\n`;
-  message += `📱 *WhatsApp:* ${lead.phone}\n`;
+  message += `📱 *WhatsApp:* ${lead.phone}\n`;  // ← EM DESTAQUE
   if (lead.email) {
     message += `📧 *Email:* ${lead.email}\n`;
   }
@@ -141,7 +146,10 @@ function formatWhatsAppMessage(lead: LeadData): string {
   }
   message += `\n`;
   
-  if (lead.case_summary) {
+  if (isEndConversation && lead.case_summary) {
+    message += `📋 *RESUMO COMPLETO DO CASO:*\n`;
+    message += `${lead.case_summary}\n\n`;
+  } else if (lead.case_summary) {
     message += `📋 *RESUMO DO CASO:*\n`;
     message += `${lead.case_summary}\n\n`;
   }
@@ -165,6 +173,11 @@ function formatWhatsAppMessage(lead: LeadData): string {
       message += `• Documentos: ${lead.case_details.documentos}\n`;
     }
     message += `\n`;
+  }
+  
+  if (lead.rating) {
+    const stars = '⭐'.repeat(lead.rating);
+    message += `${stars} *Avaliação do cliente:* ${lead.rating}/5\n\n`;
   }
   
   message += `🕐 *Recebido:* ${timestamp}\n`;

@@ -182,6 +182,7 @@ export type Database = {
           pending_transfer_lawyer: string | null
           phone: string | null
           problem_type: string | null
+          rating: number | null
           session_id: string | null
           specialty: string | null
           status: string | null
@@ -204,6 +205,7 @@ export type Database = {
           pending_transfer_lawyer?: string | null
           phone?: string | null
           problem_type?: string | null
+          rating?: number | null
           session_id?: string | null
           specialty?: string | null
           status?: string | null
@@ -226,6 +228,7 @@ export type Database = {
           pending_transfer_lawyer?: string | null
           phone?: string | null
           problem_type?: string | null
+          rating?: number | null
           session_id?: string | null
           specialty?: string | null
           status?: string | null

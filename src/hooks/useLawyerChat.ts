@@ -44,6 +44,8 @@ export const useLawyerChat = () => {
   const [isInQueue, setIsInQueue] = useState<boolean>(false);
   const [hasJoinedQueue, setHasJoinedQueue] = useState<boolean>(false);
   const [peopleAhead, setPeopleAhead] = useState<number>(0);
+  const [showRatingButton, setShowRatingButton] = useState(false);
+  const [caseSummary, setCaseSummary] = useState<string | null>(null);
   
   // Sempre gera novo sessionId a cada refresh da página
   const [sessionId] = useState(() => {
@@ -632,8 +634,18 @@ export const useLawyerChat = () => {
               continue;
             }
             
-            // Verificar se há transferência (novo formato com metadata)
+            // Verificar se há solicitação de avaliação
             const metadata = parsed.metadata;
+            if (metadata?.showRatingButton) {
+              console.log('⭐ [RATING REQUESTED]', {
+                caseSummary: metadata.caseSummary?.substring(0, 100),
+                timestamp: new Date().toISOString()
+              });
+              setShowRatingButton(true);
+              setCaseSummary(metadata.caseSummary || null);
+            }
+            
+            // Verificar se há transferência (novo formato com metadata)
             if (metadata?.action === 'confirm_transfer' && metadata?.newLawyerId) {
               console.log('🔄 [TRANSFER DETECTED via metadata]', {
                 from: currentLawyer.id,
@@ -1063,6 +1075,100 @@ export const useLawyerChat = () => {
     setIsThinking(false);
   };
 
+  const submitRating = async (rating: number) => {
+    try {
+      console.log('⭐ [SUBMITTING RATING]', { rating, sessionId });
+      
+      // Buscar dados do lead
+      const { data: lead, error: leadError } = await supabase
+        .from('leads')
+        .select('*')
+        .eq('session_id', sessionId)
+        .single();
+      
+      if (leadError) {
+        console.error('Error fetching lead:', leadError);
+        toast({
+          title: "Erro ao salvar avaliação",
+          description: "Não foi possível processar sua avaliação.",
+          variant: "destructive"
+        });
+        return;
+      }
+      
+      if (lead) {
+        // Converter mensagens para JSON serializado (sem Date objects)
+        const messagesForDb = messages.map(m => ({
+          role: m.role,
+          content: m.content,
+          timestamp: m.timestamp.toISOString(),
+          ...(('lawyerId' in m) && { lawyerId: m.lawyerId }),
+          ...(('isTransfer' in m) && { isTransfer: true }),
+          ...(('isQueue' in m) && { isQueue: true, queuePosition: m.queuePosition })
+        }));
+        
+        // Salvar histórico, resumo e avaliação
+        const { error: updateError } = await supabase
+          .from('leads')
+          .update({
+            conversation_history: messagesForDb,
+            case_summary: caseSummary,
+            status: 'completed',
+            rating: rating,
+            updated_at: new Date().toISOString()
+          })
+          .eq('session_id', sessionId);
+        
+        if (updateError) {
+          console.error('Error updating lead:', updateError);
+          toast({
+            title: "Erro ao salvar avaliação",
+            description: "Não foi possível processar sua avaliação.",
+            variant: "destructive"
+          });
+          return;
+        }
+        
+        // Disparar notificação WhatsApp com resumo
+        console.log('📨 [INVOKING WHATSAPP NOTIFICATION]');
+        try {
+          const { error: notificationError } = await supabase.functions.invoke('send-whatsapp-notification', {
+            body: { 
+              leadData: {
+                ...lead,
+                case_summary: caseSummary,
+                conversation_history: messagesForDb,
+                rating: rating
+              },
+              isEndConversation: true
+            }
+          });
+          
+          if (notificationError) {
+            console.error('Error sending WhatsApp notification:', notificationError);
+          } else {
+            console.log('✅ WhatsApp notification sent successfully');
+          }
+        } catch (notifError) {
+          console.error('Failed to invoke WhatsApp notification:', notifError);
+        }
+      }
+      
+      setShowRatingButton(false);
+      toast({ 
+        title: "Obrigado pela avaliação! 🙏",
+        description: "Sua opinião nos ajuda a melhorar nosso atendimento."
+      });
+    } catch (error) {
+      console.error('Error submitting rating:', error);
+      toast({
+        title: "Erro ao salvar avaliação",
+        description: "Não foi possível processar sua avaliação.",
+        variant: "destructive"
+      });
+    }
+  };
+
   return {
     messages,
     isLoading,
@@ -1073,6 +1179,7 @@ export const useLawyerChat = () => {
     leadQuestion,
     sendMessage,
     stopGeneration,
+    submitRating,
     currentLawyer,
     allLawyers: lawyers,
     isInQueue,
@@ -1080,5 +1187,6 @@ export const useLawyerChat = () => {
     hasJoinedQueue,
     joinQueue,
     peopleAhead,
+    showRatingButton,
   };
 };

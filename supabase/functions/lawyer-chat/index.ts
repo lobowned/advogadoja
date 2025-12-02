@@ -65,7 +65,7 @@ const orchestrateResponseTool = {
       properties: {
         action: {
           type: "string",
-          enum: ["normal_response", "suggest_transfer", "confirm_transfer", "deny_transfer", "specialist_greeting", "save_contact_data"],
+          enum: ["normal_response", "suggest_transfer", "confirm_transfer", "deny_transfer", "specialist_greeting", "save_contact_data", "request_rating"],
           description: "Tipo de ação a executar"
         },
         response: {
@@ -103,6 +103,10 @@ const orchestrateResponseTool = {
         extracted_email: {
           type: "string",
           description: "Email extraído da mensagem do usuário"
+        },
+        case_summary: {
+          type: "string",
+          description: "Resumo completo do caso discutido (máx 300 palavras)"
         }
       },
       required: ["action", "response", "confidence", "reasoning"]
@@ -181,6 +185,7 @@ async function orchestrateChat(params: {
   reasoning: string;
   extractedPhone?: string;
   extractedEmail?: string;
+  caseSummary?: string;
 }> {
   
   const currentLawyerName = params.currentLawyerId === 'carlos-silva' 
@@ -263,6 +268,23 @@ Seu trabalho é analisar o contexto completo e decidir a melhor ação a tomar.
    - Adicionar código do país (55) se não tiver
    - Responder confirmando recebimento dos dados
    ❌ NÃO use quando: mensagem não contém dados de contato
+
+7️⃣ **request_rating**: Solicitar avaliação do atendimento
+   ✅ Quando usar (ORDEM DE PRIORIDADE):
+   - Usuário se despede: "tchau", "até", "valeu", "obrigado", "combinado", "beleza então"
+   - Agendamento foi confirmado (data/hora marcada)
+   - Usuário indica que entendeu e não tem mais dúvidas
+   - Conversa parece estar concluída
+   ✅ OBRIGATÓRIO:
+   - Gerar case_summary resumindo TODO o caso discutido
+   - Incluir: problema do cliente, contexto, próximos passos acordados
+   - Resposta deve convidar para avaliar o atendimento de forma natural
+   ❌ NÃO usar se ainda há dúvidas pendentes ou conversa ativa
+   
+   📝 Exemplos de resposta:
+   - "Combinado então! Se puder, avalia nosso atendimento aí embaixo pra gente melhorar sempre 👍"
+   - "Beleza! Fico feliz em ajudar. Quando puder, dá uma avaliada no atendimento, blz?"
+   - "Perfeito! Se quiser, avalia a gente aqui embaixo. Até mais! 😊"
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 💬 ESTILO DAS RESPOSTAS (Brasileiro informal e natural):
@@ -371,7 +393,8 @@ save_contact_data (confirmando dados de contato):
       confidence: decision.confidence,
       reasoning: decision.reasoning,
       extractedPhone: decision.extracted_phone,
-      extractedEmail: decision.extracted_email
+      extractedEmail: decision.extracted_email,
+      caseSummary: decision.case_summary
     };
   } catch (error) {
     console.error("❌ [ORCHESTRATOR] Exception:", error);
@@ -570,6 +593,21 @@ serve(async (req) => {
             }
           }
           break;
+          
+        case "request_rating":
+          // Salvar case_summary e preparar para avaliação
+          console.log("⭐ Requesting rating with summary:", decision.caseSummary?.substring(0, 100));
+          if (decision.caseSummary) {
+            await supabase
+              .from('leads')
+              .update({
+                case_summary: decision.caseSummary,
+                conversation_history: messages,
+                updated_at: new Date().toISOString()
+              })
+              .eq('id', leadData.id);
+          }
+          break;
       }
     }
 
@@ -586,7 +624,9 @@ serve(async (req) => {
         action: decision.action,
         newLawyerId: decision.action === "confirm_transfer" ? decision.targetLawyerId : null,
         targetLawyerName: decision.targetLawyerName,
-        confidence: decision.confidence
+        confidence: decision.confidence,
+        showRatingButton: decision.action === "request_rating",
+        caseSummary: decision.caseSummary
       }
     };
 

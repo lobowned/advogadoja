@@ -32,14 +32,16 @@ serve(async (req) => {
     
     const ZAPI_INSTANCE_ID = Deno.env.get("ZAPI_INSTANCE_ID");
     const ZAPI_TOKEN = Deno.env.get("ZAPI_TOKEN");
+    const ZAPI_CLIENT_TOKEN = Deno.env.get("ZAPI_CLIENT_TOKEN");
     
     console.log("Z-API Configuration:", {
       instanceId: ZAPI_INSTANCE_ID ? `${ZAPI_INSTANCE_ID.substring(0, 5)}...` : 'NOT SET',
-      token: ZAPI_TOKEN ? 'SET' : 'NOT SET'
+      token: ZAPI_TOKEN ? 'SET' : 'NOT SET',
+      clientToken: ZAPI_CLIENT_TOKEN ? 'SET' : 'NOT SET'
     });
     
-    if (!ZAPI_INSTANCE_ID || !ZAPI_TOKEN) {
-      throw new Error("Z-API credentials not configured");
+    if (!ZAPI_INSTANCE_ID || !ZAPI_TOKEN || !ZAPI_CLIENT_TOKEN) {
+      throw new Error("Z-API credentials not configured (missing instance, token or client-token)");
     }
 
     // Formatar a mensagem
@@ -56,6 +58,7 @@ serve(async (req) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Client-Token': ZAPI_CLIENT_TOKEN,
       },
       body: JSON.stringify({
         phone: "5571997036269",

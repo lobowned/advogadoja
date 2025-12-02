@@ -14,13 +14,38 @@ const LawyerChatSection = () => {
   const [inputValue, setInputValue] = useState("");
   const [showResponseTime, setShowResponseTime] = useState(false);
   const chatContainerRef = useRef<HTMLDivElement>(null);
+  const lastMessageRef = useRef<HTMLDivElement>(null);
+  const [newMessageIds, setNewMessageIds] = useState<Set<number>>(new Set());
+  const previousMessagesLength = useRef(0);
 
+  // Scroll suave para a última mensagem
   useEffect(() => {
-    // Scroll apenas dentro do container do chat, sem afetar a página
-    if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    if (lastMessageRef.current) {
+      lastMessageRef.current.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'end'
+      });
     }
   }, [messages, isTyping, isThinking]);
+
+  // Rastrear novas mensagens para animação
+  useEffect(() => {
+    if (messages.length > previousMessagesLength.current) {
+      const newIds = new Set<number>();
+      for (let i = previousMessagesLength.current; i < messages.length; i++) {
+        newIds.add(i);
+      }
+      setNewMessageIds(newIds);
+      
+      // Remover flag após animação
+      const timer = setTimeout(() => {
+        setNewMessageIds(new Set());
+      }, 500);
+      
+      return () => clearTimeout(timer);
+    }
+    previousMessagesLength.current = messages.length;
+  }, [messages]);
 
   useEffect(() => {
     if (messages.length > 2 && !showResponseTime) {
@@ -292,11 +317,16 @@ const LawyerChatSection = () => {
                   ? allLawyers.find(l => l.id === message.lawyerId) 
                   : currentLawyer;
 
+                const isLastMessage = index === messages.length - 1;
+                const isNewMessage = newMessageIds.has(index);
+
                 return (
                   <div
                     key={index}
-                    className={`flex ${message.role === "user" ? "justify-end" : "justify-start"} animate-message-slide`}
-                    style={{ animationDelay: `${index * 0.05}s` }}
+                    ref={isLastMessage ? lastMessageRef : null}
+                    className={`flex ${message.role === "user" ? "justify-end" : "justify-start"} ${
+                      isNewMessage ? 'animate-new-message' : ''
+                    }`}
                   >
                     {message.role === "assistant" && messageLawyer && (
                       <Avatar className="h-8 w-8 mr-2 flex-shrink-0">

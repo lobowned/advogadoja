@@ -1895,6 +1895,185 @@ export const qaScenarios: TestScenario[] = [
       { type: 'no_english', value: true, message: 'Deve responder em português mesmo com input em inglês' }
     ],
     tags: ['regression', 'idioma']
+  },
+
+  // ================================
+  // SISTEMA PROATIVO - URGÊNCIA (8 cenários)
+  // ================================
+  {
+    id: 'proativo-urgencia-critica-prisao',
+    name: 'Urgência crítica - prisão em flagrante',
+    category: 'edge',
+    priority: 'critical',
+    description: 'Teste de detecção de caso urgente - prisão',
+    userMessage: 'Meu filho foi preso em flagrante agora',
+    assertions: [
+      { type: 'response_contains_any', value: 'urgente|rápido|imediato|agora|prioridade', message: 'Resposta deve indicar urgência' },
+      { type: 'lawyer_transfer', value: 'penal', message: 'Deve transferir para advogado penal' }
+    ],
+    tags: ['proativo', 'urgencia', 'critica', 'penal']
+  },
+  {
+    id: 'proativo-urgencia-critica-violencia',
+    name: 'Urgência crítica - violência doméstica',
+    category: 'edge',
+    priority: 'critical',
+    description: 'Teste de detecção de violência doméstica urgente',
+    userMessage: 'Meu marido está me batendo preciso de ajuda urgente',
+    assertions: [
+      { type: 'response_contains_any', value: 'urgente|medida protetiva|delegacia|imediato|190|segurança', message: 'Resposta deve indicar urgência e orientação' },
+      { type: 'lawyer_transfer', value: 'penal', message: 'Deve transferir para advogado penal' }
+    ],
+    tags: ['proativo', 'urgencia', 'critica', 'violencia']
+  },
+  {
+    id: 'proativo-urgencia-critica-audiencia-hoje',
+    name: 'Urgência crítica - audiência hoje',
+    category: 'edge',
+    priority: 'critical',
+    description: 'Teste de urgência para audiência no mesmo dia',
+    userMessage: 'Tenho audiência hoje às 14h e não tenho advogado',
+    assertions: [
+      { type: 'response_contains_any', value: 'urgente|hoje|imediato|rápido', message: 'Deve reconhecer urgência' }
+    ],
+    tags: ['proativo', 'urgencia', 'critica', 'audiencia']
+  },
+  {
+    id: 'proativo-urgencia-alta-despejo',
+    name: 'Urgência alta - ordem de despejo',
+    category: 'edge',
+    priority: 'high',
+    description: 'Teste de urgência para despejo marcado',
+    userMessage: 'Recebi ordem de despejo pra amanhã',
+    assertions: [
+      { type: 'response_contains_any', value: 'despejo|urgente|prazo|suspender|liminar', message: 'Deve abordar urgência do despejo' },
+      { type: 'lawyer_transfer', value: 'civil', message: 'Deve transferir para advogado civil' }
+    ],
+    tags: ['proativo', 'urgencia', 'alta', 'despejo']
+  },
+  {
+    id: 'proativo-urgencia-alta-acidente-hoje',
+    name: 'Urgência alta - acidente recente',
+    category: 'edge',
+    priority: 'high',
+    description: 'Teste de urgência para acidente recente',
+    userMessage: 'Sofri um acidente de trabalho agora mesmo',
+    assertions: [
+      { type: 'response_contains_any', value: 'acidente|urgente|CAT|hospital|prova', message: 'Deve orientar sobre urgência' },
+      { type: 'lawyer_transfer', value: 'trabalhista', message: 'Deve transferir para advogado trabalhista' }
+    ],
+    tags: ['proativo', 'urgencia', 'alta', 'acidente']
+  },
+
+  // ================================
+  // SISTEMA PROATIVO - COLETA DE DADOS (5 cenários)
+  // ================================
+  {
+    id: 'proativo-coleta-dados-apos-3-msgs',
+    name: 'Coleta de dados precoce - após 3 mensagens',
+    category: 'lead',
+    priority: 'high',
+    description: 'Teste se chatbot pede nome/telefone após entender problema',
+    conversationHistory: [
+      { role: 'user', content: 'Fui demitido sem justa causa' },
+      { role: 'assistant', content: 'Entendi! Demissão sem justa causa te dá vários direitos. Quando aconteceu?' },
+      { role: 'user', content: 'Semana passada' }
+    ],
+    userMessage: 'Trabalhei lá 5 anos',
+    assertions: [
+      { type: 'response_contains_any', value: 'nome|chamar|WhatsApp|contato|telefone', message: 'Deve pedir dados após 3ª mensagem' }
+    ],
+    tags: ['proativo', 'coleta', 'lead']
+  },
+  {
+    id: 'proativo-coleta-valor-troca',
+    name: 'Oferecer valor em troca do contato',
+    category: 'lead',
+    priority: 'high',
+    description: 'Teste se oferece algo de valor em troca do contato',
+    conversationHistory: [
+      { role: 'user', content: 'Quero me divorciar' },
+      { role: 'assistant', content: 'Entendi! O divórcio pode ser consensual ou litigioso. Vocês têm acordo sobre tudo?' },
+      { role: 'user', content: 'Não, ele não quer assinar' }
+    ],
+    userMessage: 'Temos casa e carro pra dividir',
+    assertions: [
+      { type: 'response_contains_any', value: 'documento|checklist|enviar|resumo|WhatsApp|contato', message: 'Deve oferecer valor em troca do contato' }
+    ],
+    tags: ['proativo', 'coleta', 'valor']
+  },
+  {
+    id: 'proativo-coleta-detectar-saida',
+    name: 'Detectar intenção de saída',
+    category: 'lead',
+    priority: 'medium',
+    description: 'Teste se detecta quando usuário quer sair e pede contato',
+    conversationHistory: [
+      { role: 'user', content: 'Preciso de um advogado trabalhista' },
+      { role: 'assistant', content: 'Posso te ajudar! Qual é a situação trabalhista?' },
+      { role: 'user', content: 'Fui demitido' }
+    ],
+    userMessage: 'Preciso pensar, depois volto',
+    assertions: [
+      { type: 'response_contains_any', value: 'WhatsApp|contato|telefone|resumo|enviar', message: 'Deve oferecer contato antes de sair' }
+    ],
+    tags: ['proativo', 'coleta', 'saida']
+  },
+
+  // ================================
+  // SISTEMA PROATIVO - SUGESTÕES CONTEXTUAIS (4 cenários)
+  // ================================
+  {
+    id: 'proativo-sugestao-divorcio',
+    name: 'Sugestões contextuais - divórcio',
+    category: 'triagem',
+    priority: 'medium',
+    description: 'Teste se sistema reconhece problema de divórcio',
+    userMessage: 'Quero me separar do meu marido',
+    assertions: [
+      { type: 'response_contains_any', value: 'divórcio|separação|consensual|litigioso', message: 'Deve abordar divórcio' },
+      { type: 'lawyer_transfer', value: 'familia', message: 'Deve transferir para família' }
+    ],
+    tags: ['proativo', 'sugestao', 'familia']
+  },
+  {
+    id: 'proativo-sugestao-demissao',
+    name: 'Sugestões contextuais - demissão',
+    category: 'triagem',
+    priority: 'medium',
+    description: 'Teste se sistema reconhece problema trabalhista',
+    userMessage: 'A empresa me mandou embora ontem',
+    assertions: [
+      { type: 'response_contains_any', value: 'demissão|rescisão|verbas|direito', message: 'Deve abordar demissão' },
+      { type: 'lawyer_transfer', value: 'trabalhista', message: 'Deve transferir para trabalhista' }
+    ],
+    tags: ['proativo', 'sugestao', 'trabalhista']
+  },
+  {
+    id: 'proativo-sugestao-aposentadoria',
+    name: 'Sugestões contextuais - aposentadoria',
+    category: 'triagem',
+    priority: 'medium',
+    description: 'Teste se sistema reconhece problema previdenciário',
+    userMessage: 'Quero saber se posso me aposentar',
+    assertions: [
+      { type: 'response_contains_any', value: 'aposentar|INSS|contribuição|tempo|idade', message: 'Deve abordar aposentadoria' },
+      { type: 'lawyer_transfer', value: 'previdenciario', message: 'Deve transferir para previdenciário' }
+    ],
+    tags: ['proativo', 'sugestao', 'previdenciario']
+  },
+  {
+    id: 'proativo-sugestao-pensao',
+    name: 'Sugestões contextuais - pensão alimentícia',
+    category: 'triagem',
+    priority: 'medium',
+    description: 'Teste se sistema reconhece problema de pensão',
+    userMessage: 'Meu ex não paga pensão',
+    assertions: [
+      { type: 'response_contains_any', value: 'pensão|execução|prisão|pagar|devendo', message: 'Deve abordar pensão' },
+      { type: 'lawyer_transfer', value: 'familia', message: 'Deve transferir para família' }
+    ],
+    tags: ['proativo', 'sugestao', 'familia', 'pensao']
   }
 ];
 

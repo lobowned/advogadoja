@@ -184,6 +184,13 @@ export const useQATests = () => {
             const englishCount = responseWords.filter((w: string) => englishWords.includes(w)).length;
             passed = englishCount < 3; // Allow up to 2 common English words
             break;
+          case 'response_contains_any':
+            // Check if response contains any of the phrases (pipe-separated)
+            const phrases = String(assertion.value).split('|');
+            passed = phrases.some(phrase => 
+              data.message?.toLowerCase().includes(phrase.toLowerCase().trim())
+            );
+            break;
         }
 
         assertion.passed = passed;

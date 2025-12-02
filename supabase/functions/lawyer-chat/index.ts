@@ -926,7 +926,13 @@ serve(async (req) => {
           targetLawyerName: decision.targetLawyerName,
           confidence: decision.confidence,
           caseSummary: decision.caseSummary,
-          showRatingButton: decision.action === "request_rating"
+          showRatingButton: decision.action === "request_rating",
+          // Retornar dados extraídos para validação em testes
+          leadData: {
+            name: decision.extractedName || null,
+            phone: decision.extractedPhone || null,
+            email: decision.extractedEmail || null
+          }
         }),
         { 
           headers: { 

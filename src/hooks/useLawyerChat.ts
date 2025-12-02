@@ -92,6 +92,31 @@ export const useLawyerChat = () => {
     };
     
     clearPendingTransfer();
+    
+    // Timeout de 30s para limpar transferências não confirmadas
+    const transferTimeoutId = setTimeout(async () => {
+      try {
+        const { data: leadData } = await supabase
+          .from('leads')
+          .select('pending_transfer_lawyer')
+          .eq('session_id', sessionId)
+          .maybeSingle();
+        
+        if (leadData?.pending_transfer_lawyer) {
+          console.log('⏱️ Clearing unconfirmed transfer after 30s timeout');
+          await supabase
+            .from('leads')
+            .update({ pending_transfer_lawyer: null })
+            .eq('session_id', sessionId);
+        }
+      } catch (error) {
+        console.error('Error clearing transfer timeout:', error);
+      }
+    }, 30000); // 30 segundos
+    
+    return () => {
+      clearTimeout(transferTimeoutId);
+    };
   }, []); // Empty deps = só executa na montagem inicial
 
   // Track user message count
@@ -200,7 +225,7 @@ export const useLawyerChat = () => {
     ]);
   };
 
-  const sendMessage = async (content: string) => {
+  const sendMessage = async (content: string, retryCount = 0) => {
     if (!content.trim() || isLoading) return;
 
     console.log('💬 [USER MESSAGE]', {
@@ -209,6 +234,7 @@ export const useLawyerChat = () => {
       isCollectingLead,
       leadStep,
       messageCount: messages.filter(m => m.role === 'user').length + 1,
+      retryAttempt: retryCount,
       timestamp: new Date().toISOString()
     });
 
@@ -394,6 +420,7 @@ export const useLawyerChat = () => {
 
       if (!response.ok) {
         let errorMessage = 'Falha ao conectar com o advogado';
+        let shouldRetry = false;
         
         // Handle specific error codes
         if (response.status === 402) {
@@ -403,10 +430,6 @@ export const useLawyerChat = () => {
             description: errorMessage,
             variant: 'destructive',
           });
-          setIsLoading(false);
-          setIsTyping(false);
-          setIsThinking(false);
-          return;
         } else if (response.status === 429) {
           errorMessage = 'Muitas requisições. Por favor, aguarde um momento antes de tentar novamente.';
           toast({
@@ -414,13 +437,38 @@ export const useLawyerChat = () => {
             description: errorMessage,
             variant: 'destructive',
           });
-          setIsLoading(false);
-          setIsTyping(false);
-          setIsThinking(false);
-          return;
+        } else if (response.status >= 500 && retryCount < 3) {
+          // Retry on server errors (max 3 attempts)
+          shouldRetry = true;
+          errorMessage = `Erro no servidor. Tentando novamente (${retryCount + 1}/3)...`;
+          console.warn(`⚠️ [RETRY] Attempt ${retryCount + 1} after server error ${response.status}`);
+        } else if (!navigator.onLine) {
+          errorMessage = 'Sem conexão com a internet. Verifique sua conexão e tente novamente.';
+          toast({
+            title: 'Sem Conexão',
+            description: errorMessage,
+            variant: 'destructive',
+          });
+        } else {
+          errorMessage = `Erro de conexão (código ${response.status}). Tente novamente.`;
+          toast({
+            title: 'Erro de Conexão',
+            description: errorMessage,
+            variant: 'destructive',
+          });
         }
         
-        throw new Error(errorMessage);
+        setIsLoading(false);
+        setIsTyping(false);
+        setIsThinking(false);
+        
+        if (shouldRetry) {
+          // Wait 2 seconds before retry
+          await new Promise(resolve => setTimeout(resolve, 2000));
+          return sendMessage(content, retryCount + 1);
+        }
+        
+        return;
       }
       
       if (!response.body) {
@@ -1052,10 +1100,32 @@ export const useLawyerChat = () => {
         console.log('⚠️ [REQUEST ABORTED]');
         return;
       }
+      
       console.error('❌ [ERROR]', error);
+      
+      setIsLoading(false);
+      setIsTyping(false);
+      setIsThinking(false);
+
+      // Check if it's a network error and retry
+      const isNetworkError = error instanceof TypeError && error.message.includes('fetch');
+      if (isNetworkError && retryCount < 3) {
+        console.warn(`⚠️ [NETWORK RETRY] Attempt ${retryCount + 1} after network error`);
+        toast({
+          title: 'Reconectando...',
+          description: `Tentativa ${retryCount + 1} de 3`,
+        });
+        
+        // Wait 2 seconds before retry
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        return sendMessage(content, retryCount + 1);
+      }
+
       toast({
-        title: 'Erro ao enviar mensagem',
-        description: 'Não foi possível conectar com o advogado. Tente novamente.',
+        title: 'Erro de Conexão',
+        description: isNetworkError 
+          ? 'Não foi possível conectar. Verifique sua internet e tente novamente.'
+          : 'Não foi possível conectar com o advogado. Tente novamente.',
         variant: 'destructive',
       });
     } finally {

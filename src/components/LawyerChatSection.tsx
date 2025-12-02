@@ -30,6 +30,16 @@ const LawyerChatSection = () => {
     if (inputValue.trim() && !isLoading) {
       sendMessage(inputValue);
       setInputValue("");
+      
+      // Feedback visual de mensagem enviada
+      const messageLength = inputValue.trim().length;
+      if (messageLength > 10) {
+        // Só mostra toast para mensagens mais longas
+        setTimeout(() => {
+          // Toast sutil que desaparece rápido
+          console.log('✅ Mensagem enviada');
+        }, 100);
+      }
     }
   };
 

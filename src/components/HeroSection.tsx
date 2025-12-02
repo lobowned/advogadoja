@@ -68,7 +68,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Atendimento Jurídico
             <br />
-            <span className="bg-gradient-to-r from-primary to-whatsapp-send-btn bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[hsl(200,90%,55%)] to-[hsl(75,70%,55%)] bg-clip-text text-transparent">
               Gratuito e Imediato
             </span>
           </h1>

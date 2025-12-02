@@ -16,6 +16,7 @@ interface LeadData {
   message_count?: number;
   created_at?: string;
   rating?: number;
+  detected_problem?: string;
 }
 
 serve(async (req) => {
@@ -120,10 +121,15 @@ function formatWhatsAppMessage(lead: LeadData, isEndConversation: boolean = fals
   // Mapear specialty para nome legível
   const specialtyNames: Record<string, string> = {
     'familia': 'Direito de Família',
+    'FAMILIA': 'Direito de Família',
     'trabalhista': 'Direito Trabalhista',
+    'TRABALHISTA': 'Direito Trabalhista',
     'civil': 'Direito Civil',
+    'CIVIL': 'Direito Civil / Trânsito',
     'previdenciario': 'Direito Previdenciário',
+    'PREVIDENCIARIO': 'Direito Previdenciário',
     'penal': 'Direito Penal',
+    'PENAL': 'Direito Penal',
   };
 
   const specialtyName = lead.specialty 
@@ -147,19 +153,28 @@ function formatWhatsAppMessage(lead: LeadData, isEndConversation: boolean = fals
   if (lead.assigned_lawyer) {
     message += `👨‍⚖️ *Advogado:* ${lead.assigned_lawyer}\n`;
   }
+  if (lead.detected_problem) {
+    message += `📋 *Problema:* ${lead.detected_problem}\n`;
+  }
   message += `\n`;
   
   if (isEndConversation && lead.case_summary) {
     message += `📋 *RESUMO COMPLETO DO CASO:*\n`;
     message += `${lead.case_summary}\n\n`;
   } else if (lead.case_summary) {
-    message += `📋 *RESUMO DO CASO:*\n`;
+    message += `📝 *RESUMO DO CASO:*\n`;
     message += `${lead.case_summary}\n\n`;
   }
   
   if (lead.case_details && Object.keys(lead.case_details).length > 0) {
     message += `📊 *Detalhes:*\n`;
     
+    if (lead.case_details.evidencias) {
+      message += `• ${lead.case_details.evidencias}\n`;
+    }
+    if (lead.case_details.historico) {
+      message += `• ${lead.case_details.historico}\n`;
+    }
     if (lead.case_details.fatos) {
       message += `• Fatos: ${lead.case_details.fatos}\n`;
     }

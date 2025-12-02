@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Shield, MessageSquare, CheckCircle2, Users } from "lucide-react";
 import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
+import logoAdvogadoOnline from "@/assets/logo-advogado-online.png";
 
 interface HeroSectionProps {
   onCtaClick: () => void;
@@ -40,8 +41,17 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
       {/* Hero Content */}
       <div className="relative z-10 container mx-auto px-4 py-10 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Logo */}
+          <div className="mb-6 sm:mb-8 animate-fade-in">
+            <img 
+              src={logoAdvogadoOnline} 
+              alt="Advogado Online" 
+              className="h-16 sm:h-20 md:h-24 mx-auto"
+            />
+          </div>
+
           {/* Badge de Advogados Online */}
-          <div className="mb-4 sm:mb-6 animate-fade-in">
+          <div className="mb-4 sm:mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
             <Badge 
               variant="secondary" 
               className="bg-whatsapp-send-btn/20 text-white border-whatsapp-send-btn/40 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium backdrop-blur-sm"
@@ -55,7 +65,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
           </div>
 
           {/* Título Principal */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight animate-fade-in" style={{ animationDelay: '0.1s' }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Atendimento Jurídico
             <br />
             <span className="bg-gradient-to-r from-primary to-whatsapp-send-btn bg-clip-text text-transparent">
@@ -64,14 +74,14 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
           </h1>
 
           {/* Subtítulo */}
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.3s' }}>
             Fale agora com um advogado especializado.
             <br />
             <span className="text-sm sm:text-lg text-gray-300">Atendimento em menos de 1 minuto.</span>
           </p>
 
           {/* CTA Button */}
-          <div className="mb-6 sm:mb-8 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <div className="mb-6 sm:mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <Button
               onClick={onCtaClick}
               size="lg"
@@ -83,7 +93,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
           </div>
 
           {/* Trust Badges */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-white/90 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-white/90 animate-fade-in" style={{ animationDelay: '0.5s' }}>
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
               <span className="text-xs sm:text-sm font-medium">OAB Verificado</span>

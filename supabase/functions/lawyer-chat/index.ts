@@ -65,7 +65,7 @@ const orchestrateResponseTool = {
       properties: {
         action: {
           type: "string",
-          enum: ["normal_response", "suggest_transfer", "confirm_transfer", "deny_transfer", "specialist_greeting", "save_contact_data", "request_rating"],
+          enum: ["normal_response", "suggest_transfer", "confirm_transfer", "deny_transfer", "specialist_greeting", "save_contact_data", "request_name", "request_rating"],
           description: "Tipo de ação a executar"
         },
         response: {
@@ -258,9 +258,25 @@ Seu trabalho é analisar o contexto completo e decidir a melhor ação a tomar.
    - Continue conversa normalmente com Carlos
    ❌ NÃO use quando: não há pending_transfer
 
-6️⃣ **save_contact_data**: Usuário forneceu dados de contato
+6️⃣ **request_name**: Solicitar nome do usuário
+   ✅ Quando usar:
+   - Após 3+ mensagens de conversa relevante sobre o caso
+   - Usuário já explicou o problema básico
+   - Ainda NÃO foi coletado o nome
+   - Carlos ou especialista quer formalizar o atendimento
+   ✅ Resposta deve ser:
+   - Natural e contextualizada ao caso
+   - Informal: "Qual seu nome pra eu anotar aqui?"
+   - Variar: "Me diz seu nome completo?"
+   ❌ NÃO use quando:
+   - Conversa ainda está no início (menos de 3 mensagens)
+   - Nome já foi fornecido anteriormente
+   - Usuário está apenas fazendo pergunta genérica
+
+7️⃣ **save_contact_data**: Usuário forneceu dados de contato
    ✅ Quando usar:
    - Usuário forneceu telefone E/OU email na mensagem
+   - Nome já foi coletado anteriormente
    - Detectar padrões: 
      * Telefone: números com 10-11 dígitos (71997036269, 5571997036269)
      * Email: formato xxx@xxx.com
@@ -269,7 +285,7 @@ Seu trabalho é analisar o contexto completo e decidir a melhor ação a tomar.
    - Responder confirmando recebimento dos dados
    ❌ NÃO use quando: mensagem não contém dados de contato
 
-7️⃣ **request_rating**: Solicitar avaliação do atendimento
+8️⃣ **request_rating**: Solicitar avaliação do atendimento
    ✅ Quando usar (ORDEM DE PRIORIDADE):
    - Usuário se despede: "tchau", "até", "valeu", "obrigado", "combinado", "beleza então"
    - Agendamento foi confirmado (data/hora marcada)
@@ -323,6 +339,11 @@ specialist_greeting (especialista se apresentando):
 - "Oi! Sou a Dra. Maria Santos. Vi que vc precisa de ajuda com divórcio. Me conta: vc e seu cônjuge já conversaram sobre isso?"
 - "E aí! André Silva aqui. Sobre sua aposentadoria: vc já deu entrada no INSS ou ainda não?"
 - "Olá! Sou o Dr. Roberto. Entendi que teve um problema criminal. Me diz: quando isso aconteceu?"
+
+request_name (solicitando nome):
+- "Legal! Qual seu nome completo pra eu anotar aqui?"
+- "Perfeito. Me diz seu nome?"
+- "Blz! E qual seu nome?"
 
 save_contact_data (confirmando dados de contato):
 - "Perfeito! Anotei seu telefone 71997036269 e email lobowned@gmail.com. Agora vou formalizar o agendamento 👍"
@@ -548,6 +569,11 @@ serve(async (req) => {
               updated_at: new Date().toISOString()
             })
             .eq('id', leadData.id);
+          break;
+          
+        case "request_name":
+          // Solicitar nome do usuário (apenas logging)
+          console.log("📝 Requesting user name");
           break;
           
         case "save_contact_data":

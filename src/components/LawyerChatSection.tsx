@@ -36,7 +36,7 @@ const LawyerChatSection = () => {
         block: 'end'
       });
     }
-  }, [messages, isTyping, isThinking]);
+  }, [messages]);
 
   // Rastrear novas mensagens para animação
   useEffect(() => {

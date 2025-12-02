@@ -42,11 +42,11 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
       <div className="relative z-10 container mx-auto px-4 py-10 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo */}
-          <div className="mb-6 sm:mb-8 animate-fade-in">
+          <div className="mb-6 sm:mb-8 animate-fade-in animate-[float_3s_ease-in-out_infinite]">
             <img 
               src={logoAdvogadoOnline} 
               alt="Advogado Online" 
-              className="h-56 sm:h-64 md:h-72 lg:h-96 mx-auto"
+              className="h-56 sm:h-64 md:h-72 lg:h-96 mx-auto transition-transform hover:scale-105 duration-300"
             />
           </div>
 
@@ -54,7 +54,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
           <div className="mb-4 sm:mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
             <Badge 
               variant="secondary" 
-              className="bg-whatsapp-send-btn/20 text-white border-whatsapp-send-btn/40 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium backdrop-blur-sm"
+              className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium shadow-lg"
             >
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-whatsapp-send-btn rounded-full animate-pulse-dot" />
@@ -85,7 +85,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
             <Button
               onClick={onCtaClick}
               size="lg"
-              className="w-full sm:w-auto bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white text-base sm:text-lg px-8 sm:px-12 py-5 sm:py-7 rounded-xl shadow-2xl hover:shadow-whatsapp-send-btn/50 transition-all duration-300 transform hover:scale-105"
+              className="w-full sm:w-auto bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white text-base sm:text-lg px-8 sm:px-12 py-5 sm:py-7 rounded-xl shadow-2xl shadow-[0_0_30px_rgba(34,197,94,0.5)] hover:shadow-[0_0_50px_rgba(34,197,94,0.7)] transition-all duration-300 transform hover:scale-105"
             >
               <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
               Iniciar Atendimento Agora
@@ -94,15 +94,15 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
 
           {/* Trust Badges */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-white/90 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 hover:scale-105 transition-transform duration-200 cursor-default">
               <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
               <span className="text-xs sm:text-sm font-medium">OAB Verificado</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 hover:scale-105 transition-transform duration-200 cursor-default">
               <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-whatsapp-send-btn" />
               <span className="text-xs sm:text-sm font-medium">Sigilo Garantido</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 hover:scale-105 transition-transform duration-200 cursor-default">
               <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
               <span className="text-xs sm:text-sm font-medium">Resposta Imediata</span>
             </div>

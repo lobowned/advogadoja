@@ -57,7 +57,7 @@ const LawyerChatSection = () => {
   };
 
   return (
-    <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-background to-muted/20">
+    <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-background via-primary/5 to-background">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl">
           <div className="mb-4 sm:mb-6 text-center">
@@ -113,9 +113,9 @@ const LawyerChatSection = () => {
           </div>
 
           {/* Chat Container */}
-          <div className="bg-card rounded-lg shadow-card overflow-hidden border border-border/50">
+          <div className="bg-card rounded-2xl shadow-2xl overflow-hidden border border-border/30">
             {/* WhatsApp Style Header */}
-            <div className="bg-whatsapp-header text-white px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between">
+            <div className="bg-gradient-to-r from-whatsapp-header to-whatsapp-header/90 text-white px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between border-b border-white/10">
               <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
                 <Avatar className="h-9 w-9 sm:h-10 sm:w-10 border-2 border-white/20 flex-shrink-0">
                   <AvatarImage src={currentLawyer.photo} alt={currentLawyer.name} />

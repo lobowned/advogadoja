@@ -4,6 +4,7 @@ import { LeadStats } from '@/components/admin/LeadStats';
 import { LeadsTable } from '@/components/admin/LeadsTable';
 import { LeadFilters } from '@/components/admin/LeadFilters';
 import { FollowupTester } from '@/components/admin/FollowupTester';
+import { ConversionAnalytics } from '@/components/admin/ConversionAnalytics';
 import { useLeads, LeadFilters as LeadFiltersType } from '@/hooks/useLeads';
 
 const LeadsDashboard = () => {
@@ -43,6 +44,8 @@ const LeadsDashboard = () => {
         </div>
 
         <LeadStats stats={stats} />
+
+        <ConversionAnalytics />
 
         <FollowupTester />
 

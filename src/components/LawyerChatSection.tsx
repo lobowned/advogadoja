@@ -151,7 +151,7 @@ const LawyerChatSection = () => {
             {/* Messages Area */}
             <div 
               ref={chatContainerRef}
-              className={`bg-whatsapp-bg p-2 sm:p-3 md:p-4 h-[420px] sm:h-[500px] md:h-[580px] space-y-3 ${
+              className={`bg-whatsapp-bg p-2 sm:p-3 md:p-4 h-[520px] sm:h-[500px] md:h-[580px] space-y-3 ${
                 hasJoinedQueue ? 'overflow-y-auto' : 'overflow-hidden'
               }`}
             >

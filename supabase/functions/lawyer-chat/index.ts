@@ -118,6 +118,46 @@ const orchestrateResponseTool = {
   }
 };
 
+// Mapeamento completo de especialidades granulares dos advogados
+const LAWYER_SPECIALTIES: { [key: string]: { area: string; sub: string; problema: string } } = {
+  'carlos-silva': { area: 'GERAL', sub: 'Triagem', problema: 'Atendimento Geral' },
+  'maria-santos': { area: 'FAMILIA', sub: 'Divórcio e Separação', problema: 'Divórcio' },
+  'rafael-oliveira': { area: 'FAMILIA', sub: 'Guarda de Filhos', problema: 'Guarda' },
+  'juliana-costa': { area: 'FAMILIA', sub: 'Pensão Alimentícia', problema: 'Pensão Alimentícia' },
+  'fernando-lima': { area: 'FAMILIA', sub: 'Alienação Parental', problema: 'Alienação Parental' },
+  'patricia-almeida': { area: 'FAMILIA', sub: 'União Estável', problema: 'União Estável' },
+  'rodrigo-barros': { area: 'FAMILIA', sub: 'Inventário e Herança', problema: 'Herança' },
+  'ricardo-mendes': { area: 'TRABALHISTA', sub: 'Demissão Sem Justa Causa', problema: 'Demissão' },
+  'ana-rodrigues': { area: 'TRABALHISTA', sub: 'Acidente de Trabalho', problema: 'Acidente de Trabalho' },
+  'lucas-ferreira': { area: 'TRABALHISTA', sub: 'Assédio Moral', problema: 'Assédio Moral' },
+  'carla-souza': { area: 'TRABALHISTA', sub: 'Assédio Sexual', problema: 'Assédio Sexual' },
+  'paulo-martins': { area: 'TRABALHISTA', sub: 'Horas Extras', problema: 'Horas Extras' },
+  'beatriz-campos': { area: 'TRABALHISTA', sub: 'Rescisão Indireta', problema: 'Rescisão Indireta' },
+  'gustavo-reis': { area: 'CIVIL', sub: 'Cobranças e Dívidas', problema: 'Dívidas' },
+  'camila-nunes': { area: 'CIVIL', sub: 'Danos Morais', problema: 'Danos Morais' },
+  'diego-santos': { area: 'CIVIL', sub: 'Contratos', problema: 'Contrato' },
+  'fernanda-lima': { area: 'CIVIL', sub: 'Despejo e Locação', problema: 'Aluguel' },
+  'thiago-rocha': { area: 'CIVIL', sub: 'Imóveis e Usucapião', problema: 'Imóveis' },
+  'marina-costa': { area: 'CIVIL', sub: 'Direito do Consumidor', problema: 'Consumidor' },
+  'helena-vasconcelos': { area: 'CIVIL', sub: 'Direito da Saúde', problema: 'Planos de Saúde' },
+  'gabriel-monteiro': { area: 'CIVIL', sub: 'Crimes Digitais e Golpes', problema: 'Golpes Online' },
+  'renata-machado': { area: 'CIVIL', sub: 'Erro Médico', problema: 'Erro Médico' },
+  'leonardo-prado': { area: 'CIVIL', sub: 'Direito Aéreo', problema: 'Voos' },
+  'cristina-torres': { area: 'CIVIL', sub: 'Trânsito Administrativo', problema: 'Multas de Trânsito' },
+  'andre-silva': { area: 'PREVIDENCIARIO', sub: 'Aposentadoria', problema: 'Aposentadoria' },
+  'claudia-martins': { area: 'PREVIDENCIARIO', sub: 'Auxílio-Doença', problema: 'Auxílio-Doença' },
+  'marcos-oliveira': { area: 'PREVIDENCIARIO', sub: 'BPC/LOAS', problema: 'BPC/LOAS' },
+  'isabela-santos': { area: 'PREVIDENCIARIO', sub: 'Pensão por Morte', problema: 'Pensão por Morte' },
+  'renato-alves': { area: 'PREVIDENCIARIO', sub: 'Revisão de Benefícios', problema: 'Revisão INSS' },
+  'sandra-lima': { area: 'PREVIDENCIARIO', sub: 'Aposentadoria Rural', problema: 'Aposentadoria Rural' },
+  'roberto-costa': { area: 'PENAL', sub: 'Flagrante e Prisão', problema: 'Prisão' },
+  'vanessa-reis': { area: 'PENAL', sub: 'Habeas Corpus', problema: 'Habeas Corpus' },
+  'joao-fernandes': { area: 'PENAL', sub: 'Violência Doméstica', problema: 'Violência Doméstica' },
+  'larissa-souza': { area: 'PENAL', sub: 'Crimes Patrimoniais', problema: 'Roubo/Furto' },
+  'eduardo-gomes': { area: 'PENAL', sub: 'Crimes de Trânsito', problema: 'Crimes de Trânsito' },
+  'monica-alves': { area: 'PENAL', sub: 'Defesa Criminal', problema: 'Defesa Criminal' }
+};
+
 // Mapa de nomes de advogados para fallback
 const LAWYER_NAMES: { [key: string]: string } = {
   'carlos-silva': 'Dr. Carlos Silva',
@@ -279,19 +319,21 @@ Seu trabalho é analisar o contexto completo e decidir a melhor ação a tomar.
    - Usuário está apenas fazendo pergunta genérica
 
  7️⃣ **save_contact_data**: Usuário forneceu dados de contato
-    ✅ Quando usar:
-    - Usuário forneceu NOME OU telefone/email
-    - Detectar padrões: 
-      * Nome: procurar na MENSAGEM ANTERIOR onde user respondeu pergunta sobre nome
-      * Telefone: números com 10-11 dígitos (71997036269, 5571997036269)
-      * Email: formato xxx@xxx.com
-    - 🔴 CRÍTICO PARA NOME: Olhar mensagem ANTERIOR (não atual) para extrair nome
-    - Exemplo: Se perguntou "qual seu nome?" e user respondeu "Gilberto", extrair "Gilberto" da mensagem anterior
-    - EXTRAIR e retornar nos campos extracted_name, extracted_phone e extracted_email
-    - Adicionar código do país (55) ao telefone se não tiver
-    - OBRIGATÓRIO: Gerar case_summary com resumo completo (max 150 palavras)
-    - Responder confirmando os dados de forma específica
-    ❌ NÃO use quando: mensagem não contém dados de contato
+     ✅ Quando usar:
+     - Usuário forneceu NOME OU telefone/email
+     - Detectar padrões: 
+       * Nome: buscar nas ÚLTIMAS 3 MENSAGENS do usuário, não apenas na anterior
+       * Usar regex robusto: /^[A-ZÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ][a-zàáâãäåçèéêëìíîïñòóôõöùúûüý]+(\s+[A-ZÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ]?[a-zàáâãäåçèéêëìíîïñòóôõöùúûüý]+)+$/
+       * Telefone: números com 10-11 dígitos (71997036269, 5571997036269)
+       * Email: formato xxx@xxx.com
+     - 🔴 CRÍTICO: Buscar nome nas últimas 3 mensagens do usuário
+     - Aceitar nomes com 2+ palavras (ex: "Gilberto", "Maria Silva", "João Pedro Santos")
+     - Se não encontrar padrão perfeito, usar a mensagem completa se tiver 2-5 palavras
+     - EXTRAIR e retornar nos campos extracted_name, extracted_phone e extracted_email
+     - Adicionar código do país (55) ao telefone se não tiver
+     - OBRIGATÓRIO: Gerar case_summary com resumo completo (max 150 palavras)
+     - Responder confirmando os dados de forma específica
+     ❌ NÃO use quando: mensagem não contém dados de contato
 
 8️⃣ **request_rating**: Solicitar avaliação do atendimento
    ✅ Quando usar (ORDEM DE PRIORIDADE):
@@ -500,6 +542,19 @@ serve(async (req) => {
       }
     }
 
+    // 🔢 INCREMENTAR MESSAGE COUNT a cada mensagem do usuário
+    if (leadData?.id) {
+      const userMessagesCount = messages.filter((m: any) => m.role === 'user').length;
+      console.log("📊 Updating message count to:", userMessagesCount);
+      await supabase
+        .from('leads')
+        .update({ 
+          message_count: userMessagesCount,
+          updated_at: new Date().toISOString()
+        })
+        .eq('id', leadData.id);
+    }
+
     console.log("📋 Lead data:", {
       id: leadData?.id,
       pendingTransfer: leadData?.pending_transfer_lawyer,
@@ -540,29 +595,41 @@ serve(async (req) => {
     if (leadData?.id) {
       switch (decision.action) {
         case "suggest_transfer":
-          // Salvar transferência pendente
+          // Salvar transferência pendente COM ESPECIALIDADE GRANULAR
           console.log("💾 Saving pending transfer:", decision.targetLawyerId);
+          
+          const lawyerSpecialty = LAWYER_SPECIALTIES[decision.targetLawyerId || ''];
+          const granularSpecialty = lawyerSpecialty 
+            ? `${lawyerSpecialty.area} - ${lawyerSpecialty.sub}` 
+            : decision.detectedSpecialty;
+          
           await supabase
             .from('leads')
             .update({
               pending_transfer_lawyer: decision.targetLawyerId,
-              detected_problem: decision.detectedProblem,
-              specialty: decision.detectedSpecialty,
+              detected_problem: decision.detectedProblem || lawyerSpecialty?.problema,
+              specialty: granularSpecialty,
               updated_at: new Date().toISOString()
             })
             .eq('id', leadData.id);
           break;
           
         case "confirm_transfer":
-          // Executar transferência
+          // Executar transferência COM ESPECIALIDADE GRANULAR
           console.log("✅ Confirming transfer to:", decision.targetLawyerId);
+          
+          const confirmedLawyerSpecialty = LAWYER_SPECIALTIES[decision.targetLawyerId || ''];
+          const confirmedGranularSpecialty = confirmedLawyerSpecialty
+            ? `${confirmedLawyerSpecialty.area} - ${confirmedLawyerSpecialty.sub}`
+            : decision.detectedSpecialty;
+          
           await supabase
             .from('leads')
             .update({
               pending_transfer_lawyer: null,
               assigned_lawyer: decision.targetLawyerId,
-              specialty: decision.detectedSpecialty,
-              detected_problem: decision.detectedProblem,
+              specialty: confirmedGranularSpecialty,
+              detected_problem: decision.detectedProblem || confirmedLawyerSpecialty?.problema,
               updated_at: new Date().toISOString()
             })
             .eq('id', leadData.id);

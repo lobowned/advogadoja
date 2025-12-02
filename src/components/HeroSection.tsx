@@ -38,24 +38,24 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
 
       {/* Hero Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20">
+      <div className="relative z-10 container mx-auto px-4 py-10 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge de Advogados Online */}
-          <div className="mb-6 animate-fade-in">
+          <div className="mb-4 sm:mb-6 animate-fade-in">
             <Badge 
               variant="secondary" 
-              className="bg-whatsapp-send-btn/20 text-white border-whatsapp-send-btn/40 px-4 py-2 text-sm font-medium backdrop-blur-sm"
+              className="bg-whatsapp-send-btn/20 text-white border-whatsapp-send-btn/40 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium backdrop-blur-sm"
             >
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-whatsapp-send-btn rounded-full animate-pulse-dot" />
-                <Users className="w-4 h-4" />
+                <Users className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span>{onlineCount} advogados online agora</span>
               </div>
             </Badge>
           </div>
 
           {/* Título Principal */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in" style={{ animationDelay: '0.1s' }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight animate-fade-in" style={{ animationDelay: '0.1s' }}>
             Atendimento Jurídico
             <br />
             <span className="bg-gradient-to-r from-primary to-whatsapp-send-btn bg-clip-text text-transparent">
@@ -64,37 +64,37 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
           </h1>
 
           {/* Subtítulo */}
-          <p className="text-xl sm:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Fale agora com um advogado especializado.
             <br />
-            <span className="text-lg text-gray-300">Atendimento em menos de 1 minuto.</span>
+            <span className="text-sm sm:text-lg text-gray-300">Atendimento em menos de 1 minuto.</span>
           </p>
 
           {/* CTA Button */}
-          <div className="mb-8 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <div className="mb-6 sm:mb-8 animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <Button
               onClick={onCtaClick}
               size="lg"
-              className="bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white text-lg px-12 py-7 rounded-xl shadow-2xl hover:shadow-whatsapp-send-btn/50 transition-all duration-300 transform hover:scale-105"
+              className="w-full sm:w-auto bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white text-base sm:text-lg px-8 sm:px-12 py-5 sm:py-7 rounded-xl shadow-2xl hover:shadow-whatsapp-send-btn/50 transition-all duration-300 transform hover:scale-105"
             >
-              <MessageSquare className="w-6 h-6 mr-2" />
+              <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
               Iniciar Atendimento Agora
             </Button>
           </div>
 
           {/* Trust Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-6 text-white/90 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-white/90 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-primary" />
-              <span className="text-sm font-medium">OAB Verificado</span>
+              <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+              <span className="text-xs sm:text-sm font-medium">OAB Verificado</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-5 h-5 text-whatsapp-send-btn" />
-              <span className="text-sm font-medium">Sigilo Garantido</span>
+              <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-whatsapp-send-btn" />
+              <span className="text-xs sm:text-sm font-medium">Sigilo Garantido</span>
             </div>
             <div className="flex items-center gap-2">
-              <MessageSquare className="w-5 h-5 text-primary" />
-              <span className="text-sm font-medium">Resposta Imediata</span>
+              <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+              <span className="text-xs sm:text-sm font-medium">Resposta Imediata</span>
             </div>
           </div>
         </div>

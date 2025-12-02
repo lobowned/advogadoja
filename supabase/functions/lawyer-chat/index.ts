@@ -96,6 +96,10 @@ const orchestrateResponseTool = {
           type: "string",
           description: "Explicação breve da decisão"
         },
+        extracted_name: {
+          type: "string",
+          description: "Nome completo extraído da mensagem do usuário"
+        },
         extracted_phone: {
           type: "string",
           description: "Telefone extraído da mensagem do usuário (formato com DDD: 5571997036269)"
@@ -183,6 +187,7 @@ async function orchestrateChat(params: {
   detectedProblem?: string;
   confidence: number;
   reasoning: string;
+  extractedName?: string;
   extractedPhone?: string;
   extractedEmail?: string;
   caseSummary?: string;
@@ -275,13 +280,14 @@ Seu trabalho é analisar o contexto completo e decidir a melhor ação a tomar.
 
 7️⃣ **save_contact_data**: Usuário forneceu dados de contato
    ✅ Quando usar:
-   - Usuário forneceu telefone E/OU email na mensagem
-   - Nome já foi coletado anteriormente
+   - Usuário forneceu NOME (após request_name) OU telefone/email
    - Detectar padrões: 
+     * Nome: palavras com 2+ nomes (João Silva, Maria Santos)
      * Telefone: números com 10-11 dígitos (71997036269, 5571997036269)
      * Email: formato xxx@xxx.com
-   - EXTRAIR e retornar nos campos extracted_phone e extracted_email
-   - Adicionar código do país (55) se não tiver
+   - EXTRAIR e retornar nos campos extracted_name, extracted_phone e extracted_email
+   - Adicionar código do país (55) ao telefone se não tiver
+   - OBRIGATÓRIO: Gerar case_summary com resumo completo da conversa
    - Responder confirmando recebimento dos dados
    ❌ NÃO use quando: mensagem não contém dados de contato
 
@@ -579,21 +585,43 @@ serve(async (req) => {
         case "save_contact_data":
           // Salvar dados de contato e disparar notificação
           console.log("📞 Saving contact data:", {
+            name: decision.extractedName,
             phone: decision.extractedPhone,
             email: decision.extractedEmail
           });
           
           const updateData: any = {
             status: 'contacted',
+            conversation_history: messages,
             updated_at: new Date().toISOString()
           };
           
+          if (decision.extractedName) {
+            updateData.name = decision.extractedName;
+          }
           if (decision.extractedPhone) {
             updateData.phone = decision.extractedPhone;
           }
           if (decision.extractedEmail) {
             updateData.email = decision.extractedEmail;
           }
+          if (decision.caseSummary) {
+            updateData.case_summary = decision.caseSummary;
+          }
+          
+          // Extrair detalhes estruturados da conversa
+          const caseDetails: any = {};
+          const conversationText = messages.map((m: any) => m.content).join(' ').toLowerCase();
+          
+          // Extrair informações contextuais
+          if (conversationText.includes('foto') || conversationText.includes('prova')) {
+            caseDetails.evidencias = 'Cliente possui fotos/documentos como prova';
+          }
+          if (conversationText.includes('primeira vez')) {
+            caseDetails.historico = 'Primeira vez buscando ajuda jurídica';
+          }
+          
+          updateData.case_details = caseDetails;
           
           await supabase
             .from('leads')

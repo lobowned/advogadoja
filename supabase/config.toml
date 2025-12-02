@@ -8,3 +8,9 @@ verify_jwt = false
 
 [functions.send-whatsapp-notification]
 verify_jwt = false
+
+[functions.send-followup]
+verify_jwt = false
+
+[functions.qa-hub]
+verify_jwt = false

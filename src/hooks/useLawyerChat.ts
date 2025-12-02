@@ -1,7 +1,9 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Lawyer, lawyers, type DynamicLawyer } from '@/data/lawyers';
 import { supabase } from '@/integrations/supabase/client';
+import { NUDGE_CONFIG, detectUrgencyLevel } from '@/data/nudge-messages';
+import { getSuggestionsByProblem } from '@/data/contextual-suggestions';
 
 type Message = {
   role: 'user' | 'assistant';
@@ -46,6 +48,18 @@ export const useLawyerChat = () => {
   const [peopleAhead, setPeopleAhead] = useState<number>(0);
   const [showRatingButton, setShowRatingButton] = useState(false);
   const [caseSummary, setCaseSummary] = useState<string | null>(null);
+  
+  // Sistema de nudges
+  const [nudgeCount, setNudgeCount] = useState(0);
+  const [lastUserActivity, setLastUserActivity] = useState<Date>(new Date());
+  const nudgeTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const sessionStartRef = useRef<Date>(new Date());
+  
+  // Detecção de urgência e problema
+  const [detectedProblem, setDetectedProblem] = useState<string | null>(null);
+  const [urgencyLevel, setUrgencyLevel] = useState<string>('baixa');
+  const [contextualSuggestions, setContextualSuggestions] = useState<string[]>([]);
+  const [userName, setUserName] = useState<string | null>(null);
   
   // Sempre gera novo sessionId a cada refresh da página
   const [sessionId] = useState(() => {
@@ -121,6 +135,56 @@ export const useLawyerChat = () => {
 
   // Track user message count
   const userMessageCount = messages.filter(m => m.role === 'user').length;
+
+  // Sistema de nudges - enviar mensagens proativas quando usuário fica inativo
+  const sendNudge = useCallback(() => {
+    if (nudgeCount >= NUDGE_CONFIG.length || isLoading || isTyping) return;
+    
+    const config = NUDGE_CONFIG[nudgeCount];
+    const nudgeMessage: Message = {
+      role: 'assistant',
+      content: config.getMessage(detectedProblem, userName),
+      timestamp: new Date(),
+      lawyerId: currentLawyer.id,
+    };
+    
+    setMessages(prev => [...prev, nudgeMessage]);
+    setNudgeCount(prev => prev + 1);
+    
+    // Atualizar no banco (campos novos podem não estar nos types ainda)
+    (supabase.from('leads') as any)
+      .update({ nudge_count: nudgeCount + 1, last_nudge_at: new Date().toISOString() })
+      .eq('session_id', sessionId)
+      .then(() => console.log('📢 Nudge sent:', nudgeCount + 1));
+    
+    // Agendar próximo nudge se houver
+    if (nudgeCount + 1 < NUDGE_CONFIG.length) {
+      nudgeTimerRef.current = setTimeout(sendNudge, NUDGE_CONFIG[nudgeCount + 1].delay);
+    }
+  }, [nudgeCount, detectedProblem, userName, currentLawyer.id, sessionId, isLoading, isTyping]);
+  
+  // Resetar timer de nudge quando usuário interage
+  const resetNudgeTimer = useCallback(() => {
+    if (nudgeTimerRef.current) {
+      clearTimeout(nudgeTimerRef.current);
+    }
+    setLastUserActivity(new Date());
+    
+    if (nudgeCount < NUDGE_CONFIG.length && hasJoinedQueue) {
+      nudgeTimerRef.current = setTimeout(sendNudge, NUDGE_CONFIG[nudgeCount]?.delay || 25000);
+    }
+  }, [nudgeCount, sendNudge, hasJoinedQueue]);
+  
+  // Iniciar timer de nudge quando entra no chat
+  useEffect(() => {
+    if (hasJoinedQueue && messages.length > 0 && nudgeCount === 0) {
+      nudgeTimerRef.current = setTimeout(sendNudge, NUDGE_CONFIG[0].delay);
+    }
+    
+    return () => {
+      if (nudgeTimerRef.current) clearTimeout(nudgeTimerRef.current);
+    };
+  }, [hasJoinedQueue, messages.length]);
 
   // Função para tocar notificações sonoras
   const playNotificationSound = (type: 'position' | 'ready') => {
@@ -1258,5 +1322,11 @@ export const useLawyerChat = () => {
     joinQueue,
     peopleAhead,
     showRatingButton,
+    // Novos campos para sistema proativo
+    detectedProblem,
+    urgencyLevel,
+    contextualSuggestions,
+    resetNudgeTimer,
+    nudgeCount,
   };
 };

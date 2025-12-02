@@ -189,6 +189,50 @@ export default {
             transform: "scaleY(1)",
             opacity: "1"
           }
+        },
+        "chat-entrance": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(40px) scale(0.95)"
+          },
+          "60%": {
+            opacity: "1",
+            transform: "translateY(-8px) scale(1.01)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0) scale(1)"
+          }
+        },
+        "header-slide": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-20px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)"
+          }
+        },
+        "content-reveal": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(15px) scale(0.98)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0) scale(1)"
+          }
+        },
+        "button-pulse": {
+          "0%, 100%": {
+            transform: "scale(1)",
+            boxShadow: "0 0 0 0 hsl(var(--whatsapp-send-btn) / 0.5)"
+          },
+          "50%": {
+            transform: "scale(1.02)",
+            boxShadow: "0 0 0 8px hsl(var(--whatsapp-send-btn) / 0)"
+          }
         }
       },
       animation: {
@@ -204,7 +248,11 @@ export default {
         "marquee": "marquee 30s linear infinite",
         "new-message": "new-message 0.45s cubic-bezier(0.34, 1.56, 0.64, 1)",
         "typing-dot": "typing-dot 1.4s infinite ease-in-out",
-        "typing-wave": "typing-wave 1.2s infinite ease-in-out"
+        "typing-wave": "typing-wave 1.2s infinite ease-in-out",
+        "chat-entrance": "chat-entrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
+        "header-slide": "header-slide 0.5s ease-out forwards",
+        "content-reveal": "content-reveal 0.5s ease-out forwards",
+        "button-pulse": "button-pulse 2s ease-in-out infinite"
       },
       boxShadow: {
         "card": "var(--shadow-card)",

@@ -18,6 +18,15 @@ const LawyerChatSection = () => {
   const lastMessageRef = useRef<HTMLDivElement>(null);
   const [newMessageIds, setNewMessageIds] = useState<Set<number>>(new Set());
   const previousMessagesLength = useRef(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  // Marcar que animação inicial completou
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setHasAnimated(true);
+    }, 1200);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Scroll suave para a última mensagem
   useEffect(() => {
@@ -139,9 +148,15 @@ const LawyerChatSection = () => {
           </div>
 
           {/* Chat Container */}
-          <div className="bg-card rounded-2xl shadow-2xl overflow-hidden border border-border/30">
+          <div className={`bg-card rounded-2xl shadow-2xl overflow-hidden border border-border/30 ${!hasAnimated ? 'animate-chat-entrance' : ''}`}>
             {/* WhatsApp Style Header */}
-            <div className="bg-gradient-to-r from-whatsapp-header to-whatsapp-header/90 text-white px-2.5 sm:px-4 py-2 sm:py-3 flex items-center justify-between border-b border-white/10">
+            <div 
+              className="bg-gradient-to-r from-whatsapp-header to-whatsapp-header/90 text-white px-2.5 sm:px-4 py-2 sm:py-3 flex items-center justify-between border-b border-white/10"
+              style={{ 
+                animation: !hasAnimated ? 'header-slide 0.5s ease-out 0.2s forwards' : 'none',
+                opacity: !hasAnimated ? 0 : 1 
+              }}
+            >
               <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
                 <Avatar className="h-9 w-9 sm:h-10 sm:w-10 border-2 border-white/20 flex-shrink-0">
                   <AvatarImage src={currentLawyer.photo} alt={currentLawyer.name} />
@@ -183,16 +198,30 @@ const LawyerChatSection = () => {
             >
               {!hasJoinedQueue ? (
                 <div className="flex items-center justify-center h-full">
-                <div className="text-center max-w-md px-3 animate-fade-in">
-                  <div className="mb-3">
-                    <div className="text-3xl sm:text-4xl mb-2">🏛️</div>
-                    <h3 className="text-xl font-bold mb-2">Assistência Jurídica Online</h3>
-                    <p className="text-sm text-muted-foreground mb-3">
-                      {onlineCount} advogados disponíveis para atender você agora mesmo
-                    </p>
-                  </div>
-                  
-                  <div className="space-y-1.5 mb-4 text-left">
+                  <div className="text-center max-w-md px-3">
+                    {/* Emoji e título com stagger */}
+                    <div 
+                      className="mb-3"
+                      style={{ 
+                        animation: !hasAnimated ? 'content-reveal 0.5s ease-out 0.3s forwards' : 'none',
+                        opacity: !hasAnimated ? 0 : 1 
+                      }}
+                    >
+                      <div className="text-3xl sm:text-4xl mb-2 animate-bounce">🏛️</div>
+                      <h3 className="text-xl font-bold mb-2">Assistência Jurídica Online</h3>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        {onlineCount} advogados disponíveis para atender você agora mesmo
+                      </p>
+                    </div>
+                    
+                    {/* Lista de benefícios com delay */}
+                    <div 
+                      className="space-y-1.5 mb-4 text-left"
+                      style={{ 
+                        animation: !hasAnimated ? 'content-reveal 0.5s ease-out 0.45s forwards' : 'none',
+                        opacity: !hasAnimated ? 0 : 1 
+                      }}
+                    >
                       <div className="flex items-start gap-2.5">
                         <Check className="w-4 h-4 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
                         <p className="text-sm">Atendimento gratuito inicial</p>
@@ -207,13 +236,21 @@ const LawyerChatSection = () => {
                       </div>
                     </div>
                     
-                    <Button
-                      onClick={joinQueue}
-                      className="w-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white font-medium py-4 sm:py-5 text-sm sm:text-base rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 min-h-[48px]"
+                    {/* Botão com animação e pulse após entrada */}
+                    <div
+                      style={{ 
+                        animation: !hasAnimated ? 'content-reveal 0.5s ease-out 0.6s forwards' : 'none',
+                        opacity: !hasAnimated ? 0 : 1 
+                      }}
                     >
-                      <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
-                      Iniciar Atendimento
-                    </Button>
+                      <Button
+                        onClick={joinQueue}
+                        className={`w-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white font-medium py-4 sm:py-5 text-sm sm:text-base rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 min-h-[48px] ${hasAnimated ? 'animate-button-pulse' : ''}`}
+                      >
+                        <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
+                        Iniciar Atendimento
+                      </Button>
+                    </div>
                   </div>
                 </div>
               ) : (

@@ -829,19 +829,29 @@ serve(async (req) => {
       apiKey: LOVABLE_API_KEY
     });
 
-    // 🛡️ VALIDAÇÃO FORÇADA: Garantir specialist_greeting quando necessário
-    if (isTransfer && currentLawyerId !== 'carlos-silva' && decision.action !== 'specialist_greeting') {
-      console.warn('⚠️ [OVERRIDE] Forcing specialist_greeting because isTransfer=true and currentLawyer is specialist');
-      console.warn('⚠️ [OVERRIDE] Original action was:', decision.action);
+    // 🛡️ VALIDAÇÃO FORÇADA: Garantir specialist_greeting usa o advogado correto
+    if (isTransfer && currentLawyerId !== 'carlos-silva') {
+      // SEMPRE forçar specialist_greeting quando isTransfer=true
+      if (decision.action !== 'specialist_greeting') {
+        console.warn('⚠️ [OVERRIDE] Forcing specialist_greeting because isTransfer=true and currentLawyer is specialist');
+        console.warn('⚠️ [OVERRIDE] Original action was:', decision.action);
+        decision.action = 'specialist_greeting';
+      }
       
-      // Forçar action e gerar saudação de fallback
-      decision.action = 'specialist_greeting';
+      // SEMPRE garantir que o advogado correto (currentLawyerId) é usado, não o que a IA retornou
+      if (decision.targetLawyerId !== currentLawyerId) {
+        console.warn('⚠️ [FIX] AI returned wrong lawyer:', decision.targetLawyerId, '- Fixing to:', currentLawyerId);
+        decision.targetLawyerId = currentLawyerId;
+        decision.targetLawyerName = LAWYER_NAMES[currentLawyerId] || 'Especialista';
+      }
+      
+      // Regenerar saudação com o advogado CORRETO
       decision.response = generateSpecialistGreeting(
         currentLawyerId, 
         leadData?.detected_problem || null
       );
       decision.confidence = 1.0;
-      decision.reasoning = 'Forced specialist greeting override';
+      decision.reasoning = 'Specialist greeting with correct lawyer';
     }
 
     console.log("🎯 [DECISION]", decision.action);

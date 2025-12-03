@@ -1107,7 +1107,7 @@ serve(async (req) => {
       ],
       metadata: {
         action: decision.action,
-        newLawyerId: decision.action === "confirm_transfer" ? decision.targetLawyerId : null,
+        newLawyerId: (decision.action === "confirm_transfer" || decision.action === "specialist_greeting") ? decision.targetLawyerId : null,
         targetLawyerName: decision.targetLawyerName,
         confidence: decision.confidence,
         showRatingButton: decision.action === "request_rating",

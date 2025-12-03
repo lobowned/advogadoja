@@ -59,11 +59,15 @@ export default {
         },
         whatsapp: {
           header: "hsl(var(--whatsapp-header))",
+          "header-dark": "hsl(var(--whatsapp-header-dark))",
           bg: "hsl(var(--whatsapp-bg))",
           "bubble-received": "hsl(var(--whatsapp-bubble-received))",
           "bubble-sent": "hsl(var(--whatsapp-bubble-sent))",
           "send-btn": "hsl(var(--whatsapp-send-btn))",
           check: "hsl(var(--whatsapp-check))",
+          time: "hsl(var(--whatsapp-time))",
+          "input-bg": "hsl(var(--whatsapp-input-bg))",
+          divider: "hsl(var(--whatsapp-divider))",
         },
       },
       borderRadius: {
@@ -233,6 +237,38 @@ export default {
             transform: "scale(1.02)",
             boxShadow: "0 0 0 8px hsl(var(--whatsapp-send-btn) / 0)"
           }
+        },
+        "bubble-pop": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.8) translateY(10px)"
+          },
+          "50%": {
+            transform: "scale(1.02) translateY(-2px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1) translateY(0)"
+          }
+        },
+        "mic-to-send": {
+          "0%": {
+            transform: "scale(1) rotate(0deg)"
+          },
+          "50%": {
+            transform: "scale(0.8) rotate(90deg)"
+          },
+          "100%": {
+            transform: "scale(1) rotate(0deg)"
+          }
+        },
+        "header-status": {
+          "0%, 100%": {
+            opacity: "1"
+          },
+          "50%": {
+            opacity: "0.7"
+          }
         }
       },
       animation: {
@@ -252,7 +288,10 @@ export default {
         "chat-entrance": "chat-entrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
         "header-slide": "header-slide 0.5s ease-out forwards",
         "content-reveal": "content-reveal 0.5s ease-out forwards",
-        "button-pulse": "button-pulse 2s ease-in-out infinite"
+        "button-pulse": "button-pulse 2s ease-in-out infinite",
+        "bubble-pop": "bubble-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)",
+        "mic-to-send": "mic-to-send 0.3s ease-out",
+        "header-status": "header-status 2s ease-in-out infinite"
       },
       boxShadow: {
         "card": "var(--shadow-card)",

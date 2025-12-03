@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Send, Video, MoreVertical, Smile, Mic, Check, Shield, RefreshCw, MessageSquare } from "lucide-react";
+import { Send, Phone, Video, MoreVertical, Smile, Mic, Check, Shield, RefreshCw, MessageSquare, ChevronLeft, Paperclip, Lock } from "lucide-react";
 import { useLawyerChat } from "@/hooks/useLawyerChat";
 import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -90,55 +90,63 @@ const LawyerChatSection = () => {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-5xl">
 
-          {/* Chat Container */}
-          <div className={`bg-card rounded-2xl shadow-2xl overflow-hidden border border-border/30 ${!hasAnimated ? 'animate-chat-entrance' : ''}`}>
-            {/* WhatsApp Style Header */}
+          {/* Chat Container - Phone Frame Style */}
+          <div className={`bg-card rounded-3xl shadow-2xl overflow-hidden border-2 border-border/20 ${!hasAnimated ? 'animate-chat-entrance' : ''}`}>
+            {/* WhatsApp Style Header - Enhanced */}
             <div 
-              className="bg-gradient-to-r from-whatsapp-header to-whatsapp-header/90 text-white px-2.5 sm:px-4 py-2 sm:py-3 flex items-center justify-between border-b border-white/10"
+              className="whatsapp-header-gradient text-white px-2 sm:px-3 py-2.5 sm:py-3 flex items-center justify-between"
               style={{ 
                 animation: !hasAnimated ? 'header-slide 0.5s ease-out 0.2s forwards' : 'none',
                 opacity: !hasAnimated ? 0 : 1 
               }}
             >
-              <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
-                <Avatar className="h-9 w-9 sm:h-10 sm:w-10 border-2 border-white/20 flex-shrink-0">
+              <div className="flex items-center gap-1.5 sm:gap-2 flex-1 min-w-0">
+                {/* Back Arrow */}
+                <button className="p-1.5 hover:bg-white/10 rounded-full transition-colors">
+                  <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+                
+                <Avatar className="h-9 w-9 sm:h-10 sm:w-10 border-2 border-white/30 flex-shrink-0 ring-2 ring-white/10">
                   <AvatarImage src={currentLawyer.photo} alt={currentLawyer.name} />
                   <AvatarFallback className="bg-white/20 text-white text-xs">
                     {currentLawyer.name.split(' ').map(n => n[0]).join('')}
                   </AvatarFallback>
                 </Avatar>
                 
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-1.5 sm:gap-2">
-                    <h3 className="font-semibold text-sm truncate">{currentLawyer.name}</h3>
+                <div className="flex-1 min-w-0 ml-1">
+                  <div className="flex items-center gap-1.5">
+                    <h3 className="font-semibold text-sm sm:text-base truncate">{currentLawyer.name}</h3>
                     <span title={`${currentLawyer.oab} - ${currentLawyer.subSpecialty}`}>
-                      <Shield className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white/80 flex-shrink-0" />
+                      <Shield className="w-3.5 h-3.5 text-emerald-300 flex-shrink-0" />
                     </span>
                     {(urgencyLevel === 'alta' || urgencyLevel === 'critica') && (
                       <UrgencyBadge level={urgencyLevel as 'alta' | 'critica'} showLabel={false} />
                     )}
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <div className="w-2 h-2 bg-whatsapp-send-btn rounded-full animate-pulse-dot" />
-                    <p className="text-xs text-white/90 truncate">{currentLawyer.subSpecialty}</p>
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full animate-header-status" />
+                    <p className="text-xs text-white/80 truncate">online</p>
                   </div>
                 </div>
               </div>
 
-              <div className="hidden sm:flex gap-2">
-                <button className="p-2 hover:bg-white/10 rounded-full transition-colors">
+              <div className="flex gap-0.5 sm:gap-1">
+                <button className="p-2 sm:p-2.5 hover:bg-white/10 rounded-full transition-colors">
                   <Video className="w-5 h-5" />
                 </button>
-                <button className="p-2 hover:bg-white/10 rounded-full transition-colors">
+                <button className="p-2 sm:p-2.5 hover:bg-white/10 rounded-full transition-colors">
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                </button>
+                <button className="p-2 sm:p-2.5 hover:bg-white/10 rounded-full transition-colors">
                   <MoreVertical className="w-5 h-5" />
                 </button>
               </div>
             </div>
 
-            {/* Messages Area */}
+            {/* Messages Area with Doodle Background */}
             <div 
               ref={chatContainerRef}
-              className={`bg-whatsapp-bg p-1.5 sm:p-2 md:p-3 h-[520px] sm:h-[500px] md:h-[580px] space-y-2 ${
+              className={`whatsapp-doodle-bg p-2 sm:p-3 md:p-4 h-[520px] sm:h-[500px] md:h-[580px] space-y-2.5 ${
                 hasJoinedQueue ? 'overflow-y-auto' : 'overflow-hidden'
               }`}
             >
@@ -303,17 +311,18 @@ const LawyerChatSection = () => {
 
                 const isLastMessage = index === messages.length - 1;
                 const isNewMessage = newMessageIds.has(index);
+                const isUser = message.role === "user";
 
                 return (
                   <div
                     key={index}
                     ref={isLastMessage ? lastMessageRef : null}
-                    className={`flex ${message.role === "user" ? "justify-end" : "justify-start"} ${
-                      isNewMessage ? 'animate-new-message' : ''
+                    className={`flex ${isUser ? "justify-end" : "justify-start"} ${
+                      isNewMessage ? 'animate-bubble-pop' : ''
                     }`}
                   >
-                    {message.role === "assistant" && messageLawyer && (
-                      <Avatar className="h-8 w-8 mr-2 flex-shrink-0">
+                    {!isUser && messageLawyer && (
+                      <Avatar className="h-7 w-7 sm:h-8 sm:w-8 mr-1.5 flex-shrink-0 shadow-sm">
                         <AvatarImage src={messageLawyer.photo} alt={messageLawyer.name} />
                         <AvatarFallback className="bg-primary/10 text-primary text-xs">
                           {messageLawyer.name.split(' ').map(n => n[0]).join('')}
@@ -322,30 +331,21 @@ const LawyerChatSection = () => {
                     )}
 
                     <div
-                      className={`rounded-lg px-2.5 sm:px-3 py-1.5 max-w-[85%] sm:max-w-[70%] shadow-sm relative ${
-                        message.role === "user"
-                          ? "bg-whatsapp-bubble-sent"
-                          : "bg-whatsapp-bubble-received"
-                      } ${message.role === "user" ? "rounded-tr-none" : "rounded-tl-none"}`}
+                      className={`rounded-lg px-3 py-2 max-w-[82%] sm:max-w-[68%] relative whatsapp-bubble-shadow ${
+                        isUser
+                          ? "bg-whatsapp-bubble-sent bubble-tail-sent rounded-tr-sm"
+                          : "bg-whatsapp-bubble-received bubble-tail-received rounded-tl-sm"
+                      }`}
                     >
-                      {/* Message tail */}
-                      <div
-                        className={`absolute top-0 w-0 h-0 ${
-                          message.role === "user"
-                            ? "right-0 -mr-2 border-t-[8px] border-t-whatsapp-bubble-sent border-l-[8px] border-l-transparent"
-                            : "left-0 -ml-2 border-t-[8px] border-t-whatsapp-bubble-received border-r-[8px] border-r-transparent"
-                        }`}
-                      />
-                      
-                      <p className="text-sm whitespace-pre-wrap text-gray-800">{message.content}</p>
-                      <div className="flex items-center justify-end gap-1 mt-1">
-                        <span className="text-[10px] text-gray-500">
+                      <p className="text-[13px] sm:text-sm whitespace-pre-wrap text-foreground leading-relaxed">{message.content}</p>
+                      <div className="flex items-center justify-end gap-1 mt-0.5 -mb-0.5">
+                        <span className="text-[10px] text-whatsapp-time">
                           {formatTime(message.timestamp)}
                         </span>
-                        {message.role === "user" && (
-                          <div className="flex -space-x-1" title="Mensagem entregue">
-                            <Check className="h-3 w-3 text-whatsapp-check" />
-                            <Check className="h-3 w-3 text-whatsapp-check" />
+                        {isUser && (
+                          <div className="flex -space-x-1.5 ml-0.5" title="Mensagem lida">
+                            <Check className="h-3.5 w-3.5 text-whatsapp-check" />
+                            <Check className="h-3.5 w-3.5 text-whatsapp-check" />
                           </div>
                         )}
                       </div>
@@ -395,24 +395,23 @@ const LawyerChatSection = () => {
 
               {/* Indicadores com status do advogado */}
               {(isThinking || isTyping) && !isTransferring && (
-                <div className="flex justify-start animate-new-message">
-                  <Avatar className="h-8 w-8 mr-2 flex-shrink-0 ring-2 ring-green-400/30 ring-offset-1 ring-offset-background">
+                <div className="flex justify-start animate-bubble-pop">
+                  <Avatar className="h-7 w-7 sm:h-8 sm:w-8 mr-1.5 flex-shrink-0 shadow-sm ring-2 ring-emerald-400/30">
                     <AvatarImage src={currentLawyer.photo} alt={currentLawyer.name} />
                     <AvatarFallback className="bg-primary/10 text-primary text-xs">
                       {currentLawyer.name.split(' ').map(n => n[0]).join('')}
                     </AvatarFallback>
                   </Avatar>
-                  <div className="space-y-1">
-                    <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground px-2">
-                      <span className="font-medium text-green-600">
+                  <div className="space-y-0.5">
+                    <div className="flex items-center gap-1 text-[10px] text-muted-foreground px-1">
+                      <span className="font-medium text-emerald-600">
                         {currentLawyer.name.split(' ')[0]}
                       </span>
                       <span>{isThinking ? 'está lendo...' : 'está digitando...'}</span>
                     </div>
-                    <div className="bg-whatsapp-bubble-received text-foreground rounded-lg rounded-tl-none px-4 py-3 shadow-sm relative min-w-[70px]">
-                      <div className="absolute -left-2 top-0 w-0 h-0 border-t-[8px] border-t-whatsapp-bubble-received border-r-[8px] border-r-transparent" />
+                    <div className="bg-whatsapp-bubble-received rounded-lg rounded-tl-sm px-3 py-2.5 whatsapp-bubble-shadow bubble-tail-received min-w-[65px]">
                       {isThinking ? (
-                        <div className="flex items-center gap-2.5">
+                        <div className="flex items-center gap-2">
                           <span className="text-xs text-muted-foreground">Analisando</span>
                           <TypingIndicator variant="wave" />
                         </div>
@@ -487,18 +486,29 @@ const LawyerChatSection = () => {
               </div>
             )}
 
-            {/* Input Area */}
-            <div className="bg-whatsapp-input-bg p-2 sm:p-3 md:p-4 border-t border-border/30 sticky bottom-0">
-              <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-10 w-10 sm:h-11 sm:w-11 text-muted-foreground hover:text-foreground flex-shrink-0 transition-all hover:scale-110 min-h-[40px] min-w-[40px]"
-                >
+            {/* Input Area - WhatsApp Style */}
+            <div className="whatsapp-input-area px-2 sm:px-3 py-2 sm:py-2.5 border-t border-whatsapp-divider">
+              {/* Encryption Notice */}
+              <div className="flex items-center justify-center gap-1.5 mb-2">
+                <Lock className="h-3 w-3 text-amber-600" />
+                <span className="text-[10px] text-amber-700 font-medium">
+                  Mensagens protegidas com criptografia de ponta-a-ponta
+                </span>
+              </div>
+              
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                {/* Emoji Button */}
+                <button className="p-2 text-whatsapp-time hover:text-foreground transition-colors rounded-full hover:bg-muted/50">
                   <Smile className="h-5 w-5 sm:h-6 sm:w-6" />
-                </Button>
+                </button>
                 
-                <div className="flex-1 flex items-center gap-2 bg-background rounded-full px-3 sm:px-4 py-2 sm:py-2.5 border border-border/50 shadow-sm hover:shadow-md transition-shadow min-h-[44px]">
+                {/* Attachment Button */}
+                <button className="p-2 text-whatsapp-time hover:text-foreground transition-colors rounded-full hover:bg-muted/50">
+                  <Paperclip className="h-5 w-5 sm:h-6 sm:w-6 rotate-45" />
+                </button>
+                
+                {/* Input Field */}
+                <div className="flex-1 flex items-center bg-white rounded-3xl px-4 py-2 shadow-sm min-h-[42px] sm:min-h-[46px]">
                   <Input
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
@@ -508,32 +518,32 @@ const LawyerChatSection = () => {
                         ? "Aguarde na fila..."
                         : isCollectingLead && leadQuestion
                         ? leadQuestion
-                        : "Digite uma mensagem"
+                        : "Mensagem"
                     }
                     disabled={isLoading || isInQueue}
-                    className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 px-0 text-sm sm:text-base"
+                    className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 px-0 text-sm sm:text-base placeholder:text-whatsapp-time"
                   />
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-8 w-8 sm:h-9 sm:w-9 text-muted-foreground hover:text-foreground flex-shrink-0 transition-all hover:scale-110"
-                  >
-                    <Mic className="h-4 h-4 sm:h-5 sm:w-5" />
-                  </Button>
                 </div>
 
-                <Button
-                  onClick={handleSend}
-                  disabled={isLoading || !inputValue.trim() || isInQueue}
-                  size="icon"
-                  className="h-12 w-12 sm:h-13 sm:w-13 rounded-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white flex-shrink-0 shadow-lg transition-all hover:scale-110 active:scale-95 disabled:scale-100 min-h-[48px] min-w-[48px]"
-                >
-                  <Send className="h-5 w-5 sm:h-6 sm:w-6" />
-                </Button>
+                {/* Mic or Send Button */}
+                {inputValue.trim() ? (
+                  <Button
+                    onClick={handleSend}
+                    disabled={isLoading || isInQueue}
+                    size="icon"
+                    className="h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white flex-shrink-0 shadow-lg transition-all hover:scale-105 active:scale-95 animate-mic-to-send"
+                  >
+                    <Send className="h-5 w-5" />
+                  </Button>
+                ) : (
+                  <button
+                    className="h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-whatsapp-send-btn text-white flex items-center justify-center shadow-lg transition-all hover:scale-105 active:scale-95"
+                    disabled={isLoading || isInQueue}
+                  >
+                    <Mic className="h-5 w-5" />
+                  </button>
+                )}
               </div>
-              <p className="text-[10px] sm:text-xs text-muted-foreground mt-2 text-center">
-                🔒 Conversa protegida por sigilo profissional (Art. 34, VII do Estatuto da OAB)
-              </p>
             </div>
           </div>
         </div>

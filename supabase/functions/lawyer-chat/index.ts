@@ -306,6 +306,58 @@ Se ainda NÃO tiver esses dados, a próxima ação DEVE SER:
 👥 ${LAWYERS_LIST}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+🚨🚨🚨 MAPEAMENTO OBRIGATÓRIO: PROBLEMA → ADVOGADO CORRETO 🚨🚨🚨
+═════════════════════════════════════════════════════════════════
+⚠️ SEMPRE use este mapeamento ao sugerir transferências!
+
+VIOLÊNCIA DOMÉSTICA / AGRESSÃO:
+- "agredida pelo marido/esposa" → joao-fernandes (Dr. João Fernandes)
+- "violência doméstica" → joao-fernandes (Dr. João Fernandes)
+- "apanhei do marido" → joao-fernandes (Dr. João Fernandes)
+- "Lei Maria da Penha" → joao-fernandes (Dr. João Fernandes)
+
+HABEAS CORPUS / PRISÃO:
+- "habeas corpus" → vanessa-reis (Dra. Vanessa Reis)
+- "preso injustamente" → vanessa-reis (Dra. Vanessa Reis)
+- "soltar preso" → vanessa-reis (Dra. Vanessa Reis)
+- "flagrante" → roberto-costa (Dr. Roberto Costa)
+- "prisão em flagrante" → roberto-costa (Dr. Roberto Costa)
+
+CRIMES PATRIMONIAIS:
+- "roubo" → larissa-souza (Dra. Larissa Souza)
+- "furto" → larissa-souza (Dra. Larissa Souza)
+- "acusado de roubo" → larissa-souza (Dra. Larissa Souza)
+
+FAMÍLIA:
+- "divórcio" / "separar" → maria-santos (Dra. Maria Santos)
+- "guarda dos filhos" → rafael-oliveira (Dr. Rafael Oliveira)
+- "pensão alimentícia" → juliana-costa (Dra. Juliana Costa)
+- "alienação parental" → fernando-lima (Dr. Fernando Lima)
+- "união estável" → patricia-almeida (Dra. Patrícia Almeida)
+- "inventário" / "herança" → rodrigo-barros (Dr. Rodrigo Barros)
+
+TRABALHISTA:
+- "demitido" / "mandado embora" → ricardo-mendes (Dr. Ricardo Mendes)
+- "acidente de trabalho" → ana-rodrigues (Dra. Ana Rodrigues)
+- "assédio moral" → lucas-ferreira (Dr. Lucas Ferreira)
+- "assédio sexual" → carla-souza (Dra. Carla Souza)
+- "horas extras" → paulo-martins (Dr. Paulo Martins)
+
+SAÚDE:
+- "plano de saúde" → helena-vasconcelos (Dra. Helena Vasconcelos)
+- "cancelou meu plano" → helena-vasconcelos (Dra. Helena Vasconcelos)
+- "SUS negou" → helena-vasconcelos (Dra. Helena Vasconcelos)
+- "erro médico" → renata-machado (Dra. Renata Machado)
+
+PREVIDENCIÁRIO:
+- "aposentadoria" → andre-silva (Dr. André Silva)
+- "auxílio-doença" / "afastado" → claudia-martins (Dra. Claudia Martins)
+- "BPC" / "LOAS" → marcos-oliveira (Dr. Marcos Oliveira)
+- "pensão por morte" → isabela-santos (Dra. Isabela Santos)
+
+⚠️ SE O PROBLEMA NÃO ESTIVER LISTADO, escolha o especialista com a especialidade mais próxima!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🎯 FLUXO UNIVERSAL OBRIGATÓRIO (TODOS OS 35 ESPECIALISTAS):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

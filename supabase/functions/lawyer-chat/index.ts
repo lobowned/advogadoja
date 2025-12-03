@@ -213,6 +213,26 @@ function generateSpecialistGreeting(lawyerId: string, problem: string | null): s
   return greetings[Math.floor(Math.random() * greetings.length)];
 }
 
+// 🛡️ Gera resposta de suggest_transfer com nome CORRETO do advogado
+function generateSuggestTransferResponse(lawyerId: string, problem: string | null): string {
+  const lawyerName = LAWYER_NAMES[lawyerId];
+  const specialty = LAWYER_SPECIALTIES[lawyerId];
+  
+  if (!lawyerName) return `Preciso te transferir para um especialista. Posso fazer isso?`;
+  
+  const specialtyText = problem || specialty?.sub || specialty?.problema || 'sua área';
+  const pronoun = lawyerName.startsWith('Dra.') ? 'ela' : 'ele';
+  
+  const templates = [
+    `Poxa, sinto muito por isso! Pra te ajudar da melhor forma, preciso te conectar com ${lawyerName}, ${pronoun} é especialista em ${specialtyText}. Posso te transferir?`,
+    `Entendi! Pra esse tipo de caso, temos ${lawyerName}, especialista em ${specialtyText}. Quer que eu te transfira?`,
+    `Olha, pra casos de ${specialtyText}, quem pode te ajudar melhor é ${lawyerName}. Posso fazer a transferência?`,
+    `Pra resolver isso, preciso te passar pra ${lawyerName}, ${pronoun} é especialista em ${specialtyText}. Tudo bem?`
+  ];
+  
+  return templates[Math.floor(Math.random() * templates.length)];
+}
+
 // Função principal de orquestração
 async function orchestrateChat(params: {
   messages: any[];
@@ -917,6 +937,16 @@ serve(async (req) => {
         case "suggest_transfer":
           // Salvar transferência pendente COM ESPECIALIDADE GRANULAR
           console.log("💾 Saving pending transfer:", decision.targetLawyerId);
+          
+          // 🛡️ VALIDAÇÃO: Garantir que a resposta menciona o advogado CORRETO
+          const correctLawyerNameForTransfer = LAWYER_NAMES[decision.targetLawyerId || ''];
+          if (correctLawyerNameForTransfer && !decision.response.includes(correctLawyerNameForTransfer)) {
+            console.warn('⚠️ [FIX] Response mentions wrong lawyer, regenerating with correct name:', correctLawyerNameForTransfer);
+            decision.response = generateSuggestTransferResponse(
+              decision.targetLawyerId!,
+              decision.detectedProblem || leadData?.detected_problem || null
+            );
+          }
           
           const lawyerSpecialty = LAWYER_SPECIALTIES[decision.targetLawyerId || ''];
           const granularSpecialty = lawyerSpecialty 

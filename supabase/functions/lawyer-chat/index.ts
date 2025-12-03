@@ -199,9 +199,11 @@ const LAWYER_NAMES: { [key: string]: string } = {
 };
 
 // Função para gerar saudação de especialista como fallback (SEMPRE pede nome!)
+// PRIORIZA o problema detectado sobre a especialidade padrão do advogado
 function generateSpecialistGreeting(lawyerId: string, problem: string | null): string {
   const lawyerName = LAWYER_NAMES[lawyerId] || 'especialista';
-  const specialty = LAWYER_SPECIALTIES[lawyerId]?.sub || problem || 'sua área';
+  // Usar o problema detectado se disponível, senão usar a especialidade do advogado
+  const specialty = problem || LAWYER_SPECIALTIES[lawyerId]?.sub || 'sua área';
   const greetings = [
     `E aí! ${lawyerName} aqui, especialista em ${specialty}. Pra abrir seu atendimento, qual seu nome?`,
     `Oi! Sou ${lawyerName}, trabalho com ${specialty}. Me diz seu nome pra gente começar?`,

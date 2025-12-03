@@ -777,8 +777,10 @@ export const useLawyerChat = () => {
               setCaseSummary(metadata.caseSummary || null);
             }
             
-            // Verificar se há transferência (novo formato com metadata)
-            if (metadata?.action === 'confirm_transfer' && metadata?.newLawyerId) {
+            // Verificar se há transferência (confirm_transfer OU specialist_greeting)
+            if ((metadata?.action === 'confirm_transfer' || metadata?.action === 'specialist_greeting') 
+                && metadata?.newLawyerId 
+                && metadata?.newLawyerId !== currentLawyer.id) {
               console.log('🔄 [TRANSFER DETECTED via metadata]', {
                 from: currentLawyer.id,
                 to: metadata.newLawyerId,

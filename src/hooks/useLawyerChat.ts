@@ -4,7 +4,7 @@ import { Lawyer, lawyers, type DynamicLawyer } from '@/data/lawyers';
 import { supabase } from '@/integrations/supabase/client';
 import { NUDGE_CONFIG, detectUrgencyLevel } from '@/data/nudge-messages';
 import { getSuggestionsByProblem } from '@/data/contextual-suggestions';
-import { getPersonalityByLawyerId, getInterruptionMessages } from '@/data/lawyer-personalities';
+import { getPersonalityByLawyerId, getInterruptionMessages, getHourMultiplier } from '@/data/lawyer-personalities';
 
 type Message = {
   role: 'user' | 'assistant';
@@ -487,7 +487,9 @@ export const useLawyerChat = () => {
           break;
       }
       
-      const totalDelay = readingTime + baseThinkingTime;
+      // Aplicar multiplicador baseado no horário (fora de horário comercial = mais lento)
+      const hourMultiplier = getHourMultiplier();
+      const totalDelay = (readingTime + baseThinkingTime) * hourMultiplier;
       
       await new Promise(resolve => setTimeout(resolve, totalDelay));
       

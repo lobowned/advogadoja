@@ -67,6 +67,14 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
             >
               Advogados
             </a>
+            <a 
+              href="/artigos" 
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                isScrolled ? 'text-foreground' : 'text-white'
+              }`}
+            >
+              Artigos
+            </a>
           </div>
 
           {/* Mobile Menu and CTA */}

@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import LawyerChatSection from "@/components/LawyerChatSection";
 import LawyersShowcase from "@/components/LawyersShowcase";
+import Navbar from "@/components/Navbar";
 
 const Index = () => {
   const handleCTA = () => {
@@ -12,6 +13,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Navbar onCtaClick={handleCTA} />
       {/* Hero Section */}
       <HeroSection onCtaClick={handleCTA} />
 

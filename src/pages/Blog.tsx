@@ -6,8 +6,12 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import BlogCard from "@/components/BlogCard";
 import { NewsCard } from "@/components/NewsCard";
+import ArticleSearch from "@/components/blog/ArticleSearch";
+import FloatingCTA from "@/components/blog/FloatingCTA";
+import NewsletterSignup from "@/components/blog/NewsletterSignup";
 import { blogArticles, niches, getArticlesByNiche, getNicheInfo } from "@/data/blog-articles";
 import { useRecentNews } from "@/hooks/useNews";
+import { decodeHtmlEntities } from "@/utils/reading-time";
 
 const nicheIcons: Record<string, React.ReactNode> = {
   trabalhista: <Briefcase className="w-5 h-5" />,
@@ -42,6 +46,13 @@ const Blog = () => {
   const pageDescription = selectedNiche
     ? `Leia artigos completos sobre ${selectedNiche.name}. ${selectedNiche.description}`
     : "Central de conhecimento jurídico. Artigos completos sobre Direito Trabalhista, Família, Civil, Previdenciário e Criminal.";
+
+  // Decode HTML entities in news titles
+  const processedNews = recentNews?.map(article => ({
+    ...article,
+    title: decodeHtmlEntities(article.title),
+    excerpt: article.excerpt ? decodeHtmlEntities(article.excerpt) : null,
+  }));
 
   return (
     <>
@@ -86,11 +97,14 @@ const Blog = () => {
                   "Central de Conhecimento Jurídico"
                 )}
               </h1>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-muted-foreground mb-6">
                 {selectedNiche 
                   ? selectedNiche.description
                   : "Artigos completos e gratuitos sobre seus direitos. Escrito por advogados especialistas."}
               </p>
+              
+              {/* Search */}
+              <ArticleSearch />
             </div>
           </div>
         </header>
@@ -140,9 +154,9 @@ const Blog = () => {
                     </div>
                   ))}
                 </div>
-              ) : recentNews && recentNews.length > 0 ? (
+              ) : processedNews && processedNews.length > 0 ? (
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {recentNews.map((article) => (
+                  {processedNews.map((article) => (
                     <NewsCard key={article.id} article={article} variant="compact" />
                   ))}
                 </div>
@@ -172,7 +186,7 @@ const Blog = () => {
 
           {/* All Articles */}
           {remainingArticles.length > 0 && (
-            <section>
+            <section className="mb-12">
               <h2 className="text-xl font-semibold mb-6">Todos os Artigos</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {remainingArticles.map((article) => (
@@ -181,6 +195,11 @@ const Blog = () => {
               </div>
             </section>
           )}
+
+          {/* Newsletter Signup */}
+          <section className="mb-12 max-w-xl mx-auto">
+            <NewsletterSignup nicheId={nicheId} />
+          </section>
 
           {/* Empty State */}
           {articles.length === 0 && (
@@ -214,6 +233,9 @@ const Blog = () => {
             <p>© 2025 Advogado Online | OAB/BA 46.638</p>
           </div>
         </footer>
+
+        {/* Floating CTA */}
+        <FloatingCTA />
       </div>
     </>
   );

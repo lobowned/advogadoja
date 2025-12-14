@@ -33,10 +33,24 @@ const sourceColors: Record<string, string> = {
   stj: "bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200"
 };
 
+/**
+ * Decode HTML entities in text
+ */
+const decodeHtmlEntities = (text: string): string => {
+  if (typeof document === 'undefined') return text;
+  const textarea = document.createElement("textarea");
+  textarea.innerHTML = text;
+  return textarea.value;
+};
+
 export const NewsCard = ({ article, variant = "default" }: NewsCardProps) => {
   const formattedDate = article.published_at 
     ? format(new Date(article.published_at), "d 'de' MMMM, yyyy", { locale: ptBR })
     : null;
+
+  // Decode HTML entities in title and excerpt
+  const decodedTitle = decodeHtmlEntities(article.title);
+  const decodedExcerpt = article.excerpt ? decodeHtmlEntities(article.excerpt) : null;
 
   if (variant === "compact") {
     return (
@@ -59,7 +73,7 @@ export const NewsCard = ({ article, variant = "default" }: NewsCardProps) => {
                   </Badge>
                 </div>
                 <h3 className="font-medium text-sm line-clamp-2 group-hover:text-primary transition-colors">
-                  {article.title}
+                  {decodedTitle}
                 </h3>
                 {formattedDate && (
                   <p className="text-xs text-muted-foreground mt-1 flex items-center gap-1">
@@ -95,12 +109,12 @@ export const NewsCard = ({ article, variant = "default" }: NewsCardProps) => {
           </div>
           
           <h3 className="font-semibold text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-            {article.title}
+            {decodedTitle}
           </h3>
           
-          {article.excerpt && (
+          {decodedExcerpt && (
             <p className="text-muted-foreground text-sm line-clamp-3 mb-3">
-              {article.excerpt}
+              {decodedExcerpt}
             </p>
           )}
           

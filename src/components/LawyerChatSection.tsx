@@ -10,6 +10,11 @@ import TypingIndicator from "@/components/TypingIndicator";
 import { QuickRepliesInline } from "@/components/QuickReplies";
 import UrgencyBadge, { UrgencyAlert } from "@/components/UrgencyBadge";
 
+// Tipo para rastrear status do "visto" com delay
+type MessageSeenStatus = {
+  [key: number]: 'sent' | 'delivered' | 'read';
+};
+
 const LawyerChatSection = () => {
   const isMobile = useIsMobile();
   const { 
@@ -26,6 +31,7 @@ const LawyerChatSection = () => {
   const [newMessageIds, setNewMessageIds] = useState<Set<number>>(new Set());
   const previousMessagesLength = useRef(0);
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [messageSeenStatus, setMessageSeenStatus] = useState<MessageSeenStatus>({});
 
   // Marcar que animação inicial completou
   useEffect(() => {
@@ -36,12 +42,29 @@ const LawyerChatSection = () => {
   }, []);
 
 
-  // Rastrear novas mensagens para animação
+  // Rastrear novas mensagens para animação e status de "visto" com delay
   useEffect(() => {
     if (messages.length > previousMessagesLength.current) {
       const newIds = new Set<number>();
       for (let i = previousMessagesLength.current; i < messages.length; i++) {
         newIds.add(i);
+        
+        // Se for mensagem do usuário, simular delay no "visto"
+        const msg = messages[i];
+        if (msg.role === 'user') {
+          // Iniciar como "enviado"
+          setMessageSeenStatus(prev => ({ ...prev, [i]: 'sent' }));
+          
+          // Após 500-1000ms, marcar como "entregue" (1 check)
+          setTimeout(() => {
+            setMessageSeenStatus(prev => ({ ...prev, [i]: 'delivered' }));
+          }, 500 + Math.random() * 500);
+          
+          // Após mais 800-1500ms, marcar como "lido" (2 checks azuis)
+          setTimeout(() => {
+            setMessageSeenStatus(prev => ({ ...prev, [i]: 'read' }));
+          }, 1300 + Math.random() * 700);
+        }
       }
       setNewMessageIds(newIds);
       
@@ -343,9 +366,21 @@ const LawyerChatSection = () => {
                           {formatTime(message.timestamp)}
                         </span>
                         {isUser && (
-                          <div className="flex -space-x-1.5 ml-0.5" title="Mensagem lida">
-                            <Check className="h-3.5 w-3.5 text-whatsapp-check" />
-                            <Check className="h-3.5 w-3.5 text-whatsapp-check" />
+                          <div className="flex -space-x-1.5 ml-0.5" title={
+                            messageSeenStatus[index] === 'read' ? 'Mensagem lida' :
+                            messageSeenStatus[index] === 'delivered' ? 'Mensagem entregue' :
+                            'Mensagem enviada'
+                          }>
+                            <Check className={`h-3.5 w-3.5 transition-colors duration-300 ${
+                              messageSeenStatus[index] === 'read' ? 'text-whatsapp-check' : 
+                              messageSeenStatus[index] === 'delivered' ? 'text-muted-foreground' : 
+                              'text-muted-foreground/50'
+                            }`} />
+                            {(messageSeenStatus[index] === 'delivered' || messageSeenStatus[index] === 'read') && (
+                              <Check className={`h-3.5 w-3.5 transition-colors duration-300 ${
+                                messageSeenStatus[index] === 'read' ? 'text-whatsapp-check' : 'text-muted-foreground'
+                              }`} />
+                            )}
                           </div>
                         )}
                       </div>

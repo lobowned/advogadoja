@@ -4,6 +4,7 @@ import { Lawyer, lawyers, type DynamicLawyer } from '@/data/lawyers';
 import { supabase } from '@/integrations/supabase/client';
 import { NUDGE_CONFIG, detectUrgencyLevel } from '@/data/nudge-messages';
 import { getSuggestionsByProblem } from '@/data/contextual-suggestions';
+import { getPersonalityByLawyerId, getInterruptionMessages } from '@/data/lawyer-personalities';
 
 type Message = {
   role: 'user' | 'assistant';
@@ -464,13 +465,63 @@ export const useLawyerChat = () => {
     abortControllerRef.current = new AbortController();
 
     try {
+      // Obter personalidade do advogado atual
+      const personality = getPersonalityByLawyerId(currentLawyer.id);
+      
       // Tempo de leitura baseado no tamanho da mensagem do usuário
       const words = content.trim().split(/\s+/).length;
       const readingTime = words * 250; // 250ms por palavra
-      const thinkingTime = 1500 + Math.random() * 3000; // 1.5-4.5 segundos
-      const totalDelay = readingTime + thinkingTime;
+      
+      // Tempo de "pensando" baseado na personalidade do advogado
+      let baseThinkingTime: number;
+      switch (personality?.responseDelay) {
+        case 'fast':
+          baseThinkingTime = 1000 + Math.random() * 1500; // 1-2.5s
+          break;
+        case 'slow':
+          baseThinkingTime = 3500 + Math.random() * 3000; // 3.5-6.5s
+          break;
+        case 'medium':
+        default:
+          baseThinkingTime = 2000 + Math.random() * 2500; // 2-4.5s
+          break;
+      }
+      
+      const totalDelay = readingTime + baseThinkingTime;
       
       await new Promise(resolve => setTimeout(resolve, totalDelay));
+      
+      // 5% de chance de interrupção natural (apenas após 4+ mensagens)
+      const shouldInterrupt = Math.random() < 0.05 && messages.length > 4;
+      
+      if (shouldInterrupt) {
+        const interruptions = getInterruptionMessages(currentLawyer.name);
+        const interruption = interruptions[Math.floor(Math.random() * interruptions.length)];
+        
+        // Enviar mensagem de interrupção
+        const interruptMessage: Message = {
+          role: 'assistant',
+          content: interruption.message,
+          timestamp: new Date(),
+          lawyerId: currentLawyer.id,
+        };
+        setMessages(prev => [...prev, interruptMessage]);
+        
+        // Pausar 3-5 segundos
+        await new Promise(resolve => setTimeout(resolve, 3000 + Math.random() * 2000));
+        
+        // Enviar mensagem de retorno
+        const returnMessage: Message = {
+          role: 'assistant',
+          content: interruption.returnMessage,
+          timestamp: new Date(),
+          lawyerId: currentLawyer.id,
+        };
+        setMessages(prev => [...prev, returnMessage]);
+        
+        // Pequena pausa antes de continuar
+        await new Promise(resolve => setTimeout(resolve, 800));
+      }
       
       setIsThinking(false);
       setIsTyping(true);

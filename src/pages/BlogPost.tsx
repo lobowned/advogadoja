@@ -6,7 +6,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import BlogCard from "@/components/BlogCard";
+import ReadingProgressBar from "@/components/blog/ReadingProgressBar";
+import TableOfContents from "@/components/blog/TableOfContents";
+import SocialShare from "@/components/blog/SocialShare";
+import FloatingCTA from "@/components/blog/FloatingCTA";
+import NewsletterSignup from "@/components/blog/NewsletterSignup";
 import { getArticleBySlug, getNicheInfo, getRelatedArticles } from "@/data/blog-articles";
+import { getArticleReadingTime } from "@/utils/reading-time";
 
 const BlogPost = () => {
   const { nicheId, slug } = useParams();
@@ -23,6 +29,17 @@ const BlogPost = () => {
   }
   
   const relatedArticles = getRelatedArticles(article);
+  const readingTime = getArticleReadingTime(article.content);
+  const articleUrl = `https://advogadoonline.com.br/artigos/${nicheId}/${slug}`;
+
+  const tocItems = [
+    { id: "introducao", title: "Introdução" },
+    { id: "o-que-e", title: "O que é?" },
+    { id: "quando-tem-direito", title: "Quando você tem direito?" },
+    { id: "documentos", title: "Documentos Necessários" },
+    { id: "prazos", title: "Prazos Importantes" },
+    { id: "faq", title: "Perguntas Frequentes" },
+  ];
 
   const nicheColors: Record<string, string> = {
     trabalhista: "bg-blue-500/10 text-blue-600 border-blue-200",
@@ -54,7 +71,7 @@ const BlogPost = () => {
     "dateModified": article.updatedAt,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://advogadoonline.com.br/artigos/${nicheId}/${slug}`
+      "@id": articleUrl
     }
   };
 
@@ -72,18 +89,50 @@ const BlogPost = () => {
     }))
   };
 
+  // Schema.org BreadcrumbList
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://advogadoonline.com.br"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Artigos",
+        "item": "https://advogadoonline.com.br/artigos"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": nicheInfo.name,
+        "item": `https://advogadoonline.com.br/artigos/${nicheId}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": article.title,
+        "item": articleUrl
+      }
+    ]
+  };
+
   return (
     <>
       <Helmet>
         <title>{article.metaTitle}</title>
         <meta name="description" content={article.metaDescription} />
         <meta name="keywords" content={article.keywords.join(", ")} />
-        <link rel="canonical" href={`https://advogadoonline.com.br/artigos/${nicheId}/${slug}`} />
+        <link rel="canonical" href={articleUrl} />
         
         <meta property="og:title" content={article.metaTitle} />
         <meta property="og:description" content={article.metaDescription} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://advogadoonline.com.br/artigos/${nicheId}/${slug}`} />
+        <meta property="og:url" content={articleUrl} />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={article.metaTitle} />
@@ -95,7 +144,13 @@ const BlogPost = () => {
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
       </Helmet>
+
+      {/* Reading Progress Bar */}
+      <ReadingProgressBar />
 
       <div className="min-h-screen bg-background">
         {/* Header */}
@@ -128,167 +183,190 @@ const BlogPost = () => {
           </div>
         </nav>
 
+        {/* Mobile TOC */}
+        <TableOfContents items={tocItems} />
+
         {/* Article Content */}
         <article className="container mx-auto px-4 py-8 md:py-12">
-          <div className="max-w-4xl mx-auto">
-            {/* Article Header */}
-            <header className="mb-8">
-              <Link 
-                to={`/artigos/${nicheId}`}
-                className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-4"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                Voltar para {nicheInfo.name}
-              </Link>
-              
-              <Badge 
-                variant="outline" 
-                className={`mb-4 ${nicheColors[nicheId]}`}
-              >
-                {nicheInfo.name}
-              </Badge>
-              
-              <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                {article.title}
-              </h1>
-              
-              <p className="text-lg text-muted-foreground mb-4">
-                {article.excerpt}
-              </p>
-              
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                <span className="flex items-center gap-1">
-                  <Clock className="w-4 h-4" />
-                  5 min de leitura
-                </span>
-                <span>Atualizado em {new Date(article.updatedAt).toLocaleDateString('pt-BR')}</span>
-              </div>
-            </header>
+          <div className="flex gap-8">
+            {/* Desktop TOC Sidebar */}
+            <TableOfContents items={tocItems} />
 
-            {/* Introduction */}
-            <section className="prose prose-lg max-w-none mb-8">
-              <p className="text-lg leading-relaxed">{article.content.intro}</p>
-            </section>
-
-            {/* What Is Section */}
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                <FileText className="w-6 h-6 text-primary" />
-                O que é?
-              </h2>
-              <Card>
-                <CardContent className="pt-6">
-                  <p className="text-muted-foreground leading-relaxed">
-                    {article.content.whatIs}
-                  </p>
-                </CardContent>
-              </Card>
-            </section>
-
-            {/* When You Have Right */}
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                <CheckCircle className="w-6 h-6 text-green-600" />
-                Quando você tem direito?
-              </h2>
-              <Card>
-                <CardContent className="pt-6">
-                  <ul className="space-y-3">
-                    {article.content.whenYouHaveRight.map((item, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </section>
-
-            {/* Documents */}
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                <FileText className="w-6 h-6 text-blue-600" />
-                Documentos Necessários
-              </h2>
-              <Card>
-                <CardContent className="pt-6">
-                  <ul className="grid sm:grid-cols-2 gap-3">
-                    {article.content.documents.map((doc, index) => (
-                      <li key={index} className="flex items-center gap-2 text-sm">
-                        <div className="w-2 h-2 rounded-full bg-blue-600" />
-                        {doc}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </section>
-
-            {/* Deadlines */}
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                <AlertCircle className="w-6 h-6 text-amber-600" />
-                Prazos Importantes
-              </h2>
-              <Card className="border-amber-200 bg-amber-50/50">
-                <CardContent className="pt-6">
-                  <p className="text-muted-foreground leading-relaxed">
-                    {article.content.deadlines}
-                  </p>
-                </CardContent>
-              </Card>
-            </section>
-
-            {/* FAQ */}
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                <MessageCircle className="w-6 h-6 text-primary" />
-                Perguntas Frequentes
-              </h2>
-              <Accordion type="single" collapsible className="w-full">
-                {article.content.faq.map((item, index) => (
-                  <AccordionItem key={index} value={`faq-${index}`}>
-                    <AccordionTrigger className="text-left font-medium">
-                      {item.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">
-                      {item.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </section>
-
-            {/* CTA */}
-            <section className="mb-12">
-              <Card className="bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20">
-                <CardHeader>
-                  <CardTitle className="text-xl">Precisa de ajuda com seu caso?</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground">
-                    Fale agora com um advogado especialista em {nicheInfo.name}. 
-                    Atendimento gratuito e imediato.
-                  </p>
-                  <Button asChild size="lg">
-                    <Link to="/">Falar com Advogado Agora</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            </section>
-
-            {/* Related Articles */}
-            {relatedArticles.length > 0 && (
-              <section>
-                <h2 className="text-xl font-bold mb-6">Artigos Relacionados</h2>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {relatedArticles.map((relatedArticle) => (
-                    <BlogCard key={relatedArticle.id} article={relatedArticle} variant="compact" />
-                  ))}
+            {/* Main Content */}
+            <div className="flex-1 max-w-3xl">
+              {/* Article Header */}
+              <header className="mb-8">
+                <Link 
+                  to={`/artigos/${nicheId}`}
+                  className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-4"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  Voltar para {nicheInfo.name}
+                </Link>
+                
+                <Badge 
+                  variant="outline" 
+                  className={`mb-4 ${nicheColors[nicheId]}`}
+                >
+                  {nicheInfo.name}
+                </Badge>
+                
+                <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+                  {article.title}
+                </h1>
+                
+                <p className="text-lg text-muted-foreground mb-4">
+                  {article.excerpt}
+                </p>
+                
+                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
+                  <span className="flex items-center gap-1">
+                    <Clock className="w-4 h-4" />
+                    {readingTime} min de leitura
+                  </span>
+                  <span>Atualizado em {new Date(article.updatedAt).toLocaleDateString('pt-BR')}</span>
                 </div>
+
+                {/* Social Share */}
+                <SocialShare title={article.title} url={articleUrl} />
+              </header>
+
+              {/* Introduction */}
+              <section id="introducao" className="prose prose-lg max-w-none mb-8">
+                <p className="text-lg leading-relaxed">{article.content.intro}</p>
               </section>
-            )}
+
+              {/* What Is Section */}
+              <section id="o-que-e" className="mb-8">
+                <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <FileText className="w-6 h-6 text-primary" />
+                  O que é?
+                </h2>
+                <Card>
+                  <CardContent className="pt-6">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {article.content.whatIs}
+                    </p>
+                  </CardContent>
+                </Card>
+              </section>
+
+              {/* When You Have Right */}
+              <section id="quando-tem-direito" className="mb-8">
+                <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <CheckCircle className="w-6 h-6 text-green-600" />
+                  Quando você tem direito?
+                </h2>
+                <Card>
+                  <CardContent className="pt-6">
+                    <ul className="space-y-3">
+                      {article.content.whenYouHaveRight.map((item, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </section>
+
+              {/* Documents */}
+              <section id="documentos" className="mb-8">
+                <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <FileText className="w-6 h-6 text-blue-600" />
+                  Documentos Necessários
+                </h2>
+                <Card>
+                  <CardContent className="pt-6">
+                    <ul className="grid sm:grid-cols-2 gap-3">
+                      {article.content.documents.map((doc, index) => (
+                        <li key={index} className="flex items-center gap-2 text-sm">
+                          <div className="w-2 h-2 rounded-full bg-blue-600" />
+                          {doc}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </section>
+
+              {/* Deadlines */}
+              <section id="prazos" className="mb-8">
+                <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <AlertCircle className="w-6 h-6 text-amber-600" />
+                  Prazos Importantes
+                </h2>
+                <Card className="border-amber-200 bg-amber-50/50 dark:bg-amber-900/10">
+                  <CardContent className="pt-6">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {article.content.deadlines}
+                    </p>
+                  </CardContent>
+                </Card>
+              </section>
+
+              {/* FAQ */}
+              <section id="faq" className="mb-8">
+                <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <MessageCircle className="w-6 h-6 text-primary" />
+                  Perguntas Frequentes
+                </h2>
+                <Accordion type="single" collapsible className="w-full">
+                  {article.content.faq.map((item, index) => (
+                    <AccordionItem key={index} value={`faq-${index}`}>
+                      <AccordionTrigger className="text-left font-medium">
+                        {item.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-muted-foreground">
+                        {item.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </section>
+
+              {/* Share Again */}
+              <section className="mb-8 p-4 bg-muted/30 rounded-lg">
+                <p className="text-sm text-muted-foreground mb-3">Gostou do artigo? Compartilhe!</p>
+                <SocialShare title={article.title} url={articleUrl} />
+              </section>
+
+              {/* Newsletter Signup */}
+              <section className="mb-12">
+                <NewsletterSignup nicheId={nicheId} />
+              </section>
+
+              {/* CTA */}
+              <section className="mb-12">
+                <Card className="bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20">
+                  <CardHeader>
+                    <CardTitle className="text-xl">Precisa de ajuda com seu caso?</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-muted-foreground">
+                      Fale agora com um advogado especialista em {nicheInfo.name}. 
+                      Atendimento gratuito e imediato.
+                    </p>
+                    <Button asChild size="lg">
+                      <Link to="/">Falar com Advogado Agora</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </section>
+
+              {/* Related Articles */}
+              {relatedArticles.length > 0 && (
+                <section>
+                  <h2 className="text-xl font-bold mb-6">Artigos Relacionados</h2>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {relatedArticles.map((relatedArticle) => (
+                      <BlogCard key={relatedArticle.id} article={relatedArticle} variant="compact" />
+                    ))}
+                  </div>
+                </section>
+              )}
+            </div>
           </div>
         </article>
 
@@ -298,6 +376,9 @@ const BlogPost = () => {
             <p>© 2025 Advogado Online | OAB/BA 46.638</p>
           </div>
         </footer>
+
+        {/* Floating CTA */}
+        <FloatingCTA />
       </div>
     </>
   );

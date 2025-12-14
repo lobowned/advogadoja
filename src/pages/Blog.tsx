@@ -285,6 +285,14 @@ const Blog = () => {
         <footer className="border-t py-6">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
             <p>© 2025 Advogado Online | OAB/BA 46.638</p>
+            <div className="flex justify-center gap-4 mt-2">
+              <Link to="/termos-de-uso" className="hover:text-foreground transition-colors">
+                Termos de Uso
+              </Link>
+              <Link to="/privacidade" className="hover:text-foreground transition-colors">
+                Política de Privacidade
+              </Link>
+            </div>
           </div>
         </footer>
 

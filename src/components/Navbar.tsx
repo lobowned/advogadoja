@@ -75,6 +75,14 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
             >
               Artigos
             </a>
+            <a 
+              href="/noticias" 
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                isScrolled ? 'text-foreground' : 'text-white'
+              }`}
+            >
+              Notícias
+            </a>
           </div>
 
           {/* Mobile Menu and CTA */}
@@ -118,6 +126,18 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
                     className="text-base font-medium hover:text-primary transition-colors py-2"
                   >
                     Advogados
+                  </a>
+                  <a 
+                    href="/artigos"
+                    className="text-base font-medium hover:text-primary transition-colors py-2"
+                  >
+                    Artigos
+                  </a>
+                  <a 
+                    href="/noticias"
+                    className="text-base font-medium hover:text-primary transition-colors py-2"
+                  >
+                    Notícias
                   </a>
                   <Button 
                     onClick={onCtaClick}

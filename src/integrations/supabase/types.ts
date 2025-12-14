@@ -281,6 +281,60 @@ export type Database = {
         }
         Relationships: []
       }
+      news_articles: {
+        Row: {
+          content: string | null
+          created_at: string | null
+          excerpt: string | null
+          fetched_at: string | null
+          id: string
+          image_url: string | null
+          is_active: boolean | null
+          keywords: string[] | null
+          niche_id: string
+          original_link: string
+          published_at: string | null
+          relevance_score: number | null
+          source: string
+          source_url: string
+          title: string
+        }
+        Insert: {
+          content?: string | null
+          created_at?: string | null
+          excerpt?: string | null
+          fetched_at?: string | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          keywords?: string[] | null
+          niche_id: string
+          original_link: string
+          published_at?: string | null
+          relevance_score?: number | null
+          source: string
+          source_url: string
+          title: string
+        }
+        Update: {
+          content?: string | null
+          created_at?: string | null
+          excerpt?: string | null
+          fetched_at?: string | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          keywords?: string[] | null
+          niche_id?: string
+          original_link?: string
+          published_at?: string | null
+          relevance_score?: number | null
+          source?: string
+          source_url?: string
+          title?: string
+        }
+        Relationships: []
+      }
       qa_anomalies: {
         Row: {
           context: Json | null

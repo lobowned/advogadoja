@@ -89,14 +89,14 @@ export default function News() {
 
       <div className="min-h-screen bg-background">
         {/* Header */}
-        <header className="bg-primary text-primary-foreground py-12">
+        <header className="bg-primary text-primary-foreground py-8 sm:py-12">
           <div className="container mx-auto px-4">
-            <div className="flex items-center gap-2 mb-4">
-              <Link to="/" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+            <div className="flex flex-wrap items-center gap-1 sm:gap-2 mb-3 sm:mb-4 text-xs sm:text-sm">
+              <Link to="/" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] flex items-center">
                 Início
               </Link>
               <span>/</span>
-              <Link to="/noticias" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <Link to="/noticias" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] flex items-center">
                 Notícias
               </Link>
               {nicheId && (
@@ -107,13 +107,13 @@ export default function News() {
               )}
             </div>
             
-            <div className="flex items-center gap-4">
-              <NicheIcon className="h-12 w-12" />
+            <div className="flex items-start sm:items-center gap-3 sm:gap-4">
+              <NicheIcon className="h-10 w-10 sm:h-12 sm:w-12 flex-shrink-0" />
               <div>
-                <h1 className="text-3xl md:text-4xl font-bold">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
                   {currentNiche ? `Notícias de ${currentNiche.label}` : 'Notícias Jurídicas'}
                 </h1>
-                <p className="text-primary-foreground/80 mt-2 max-w-2xl">
+                <p className="text-primary-foreground/80 mt-1 sm:mt-2 max-w-2xl text-sm sm:text-base">
                   {pageDescription}
                 </p>
               </div>
@@ -123,11 +123,11 @@ export default function News() {
 
         <main className="container mx-auto px-4 py-8">
           {/* Filters */}
-          <div className="flex flex-wrap items-center gap-3 mb-8">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
             <Link to="/noticias">
               <Badge 
                 variant={!nicheId ? "default" : "outline"}
-                className="cursor-pointer hover:bg-primary/90 transition-colors px-4 py-2"
+                className="cursor-pointer hover:bg-primary/90 transition-colors px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm min-h-[36px] flex items-center"
               >
                 Todas
               </Badge>
@@ -139,21 +139,23 @@ export default function News() {
                 <Link key={niche} to={`/noticias/${niche}`}>
                   <Badge 
                     variant={nicheId === niche ? "default" : "outline"}
-                    className="cursor-pointer hover:bg-primary/90 transition-colors px-4 py-2 flex items-center gap-1"
+                    className="cursor-pointer hover:bg-primary/90 transition-colors px-3 sm:px-4 py-1.5 sm:py-2 flex items-center gap-1 text-xs sm:text-sm min-h-[36px]"
                   >
                     <Icon className="h-3 w-3" />
-                    {info.label}
+                    <span className="hidden xs:inline">{info.label}</span>
+                    <span className="xs:hidden">{info.label.replace('Direito ', '')}</span>
                   </Badge>
                 </Link>
               );
             })}
             
-            <div className="ml-auto">
+            <div className="w-full sm:w-auto sm:ml-auto mt-2 sm:mt-0">
               <Button 
                 variant="outline" 
                 size="sm"
                 onClick={handleRefresh}
                 disabled={isRefreshing}
+                className="w-full sm:w-auto min-h-[44px]"
               >
                 <RefreshCw className={`h-4 w-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
                 Atualizar

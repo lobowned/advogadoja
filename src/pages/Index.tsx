@@ -3,6 +3,8 @@ import HeroSection from "@/components/HeroSection";
 import LawyerChatSection from "@/components/LawyerChatSection";
 import LawyersShowcase from "@/components/LawyersShowcase";
 import Navbar from "@/components/Navbar";
+import ArticlesSection from "@/components/ArticlesSection";
+import NewsSection from "@/components/NewsSection";
 
 const Index = () => {
   const handleCTA = () => {
@@ -143,6 +145,12 @@ const Index = () => {
       <div id="advogados">
         <LawyersShowcase />
       </div>
+
+      {/* Articles Section */}
+      <ArticlesSection />
+
+      {/* News Section */}
+      <NewsSection />
 
       {/* Footer */}
       <footer className="border-t bg-gradient-to-b from-muted/30 to-muted/50 py-8 sm:py-10 safe-bottom">

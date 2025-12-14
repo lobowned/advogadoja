@@ -174,18 +174,21 @@ const FAQ = () => {
       <div className="min-h-screen bg-background">
         {/* Header */}
         <header className="border-b">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
+          <div className="container mx-auto px-4 py-3 sm:py-4">
+            <div className="flex items-center justify-between gap-2">
               <Link to="/" className="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity">
-                <Scale className="w-6 h-6" />
-                <span className="font-bold text-lg">Advogado Online</span>
+                <Scale className="w-5 h-5 sm:w-6 sm:h-6" />
+                <span className="font-bold text-base sm:text-lg">Advogado Online</span>
               </Link>
-              <div className="flex items-center gap-2">
-                <Button asChild variant="ghost" size="sm">
+              <div className="flex items-center gap-1 sm:gap-2">
+                <Button asChild variant="ghost" size="sm" className="text-xs sm:text-sm px-2 sm:px-3 min-h-[44px]">
                   <Link to="/artigos">Artigos</Link>
                 </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link to="/">Falar com Advogado</Link>
+                <Button asChild variant="outline" size="sm" className="text-xs sm:text-sm px-2 sm:px-3 min-h-[44px]">
+                  <Link to="/">
+                    <span className="hidden xs:inline">Falar com Advogado</span>
+                    <span className="xs:hidden">Falar</span>
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -212,23 +215,23 @@ const FAQ = () => {
 
         {/* FAQ Content */}
         <main className="container mx-auto px-4 py-12">
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
             {faqCategories.map((category) => (
               <Card key={category.id}>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2 text-xl">
+                <CardHeader className="p-4 sm:p-6">
+                  <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
                     <span className="text-primary">{category.icon}</span>
                     {category.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="p-4 sm:p-6 pt-0 sm:pt-0">
                   <Accordion type="single" collapsible className="w-full">
                     {category.questions.map((item, index) => (
                       <AccordionItem key={index} value={`${category.id}-${index}`}>
-                        <AccordionTrigger className="text-left">
+                        <AccordionTrigger className="text-left text-sm sm:text-base py-4 min-h-[44px]">
                           {item.question}
                         </AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground">
+                        <AccordionContent className="text-muted-foreground text-sm sm:text-base">
                           {item.answer}
                         </AccordionContent>
                       </AccordionItem>

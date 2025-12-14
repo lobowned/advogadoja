@@ -18,6 +18,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import FAQ from "./pages/FAQ";
 import NicheLanding from "./pages/NicheLanding";
+import News from "./pages/News";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,9 @@ const App = () => (
                 <Route path="/artigos/:nicheId/:slug" element={<BlogPost />} />
                 {/* FAQ */}
                 <Route path="/perguntas-frequentes" element={<FAQ />} />
+                {/* News */}
+                <Route path="/noticias" element={<News />} />
+                <Route path="/noticias/:nicheId" element={<News />} />
                 {/* Niche Landing Pages */}
                 <Route path="/advogado-trabalhista" element={<NicheLanding />} />
                 <Route path="/advogado-familia" element={<NicheLanding />} />

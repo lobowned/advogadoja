@@ -1,10 +1,13 @@
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft, Scale, Briefcase, Users, Shield, Gavel } from "lucide-react";
+import { ArrowLeft, Scale, Briefcase, Users, Shield, Gavel, Newspaper, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Skeleton } from "@/components/ui/skeleton";
 import BlogCard from "@/components/BlogCard";
+import { NewsCard } from "@/components/NewsCard";
 import { blogArticles, niches, getArticlesByNiche, getNicheInfo } from "@/data/blog-articles";
+import { useRecentNews } from "@/hooks/useNews";
 
 const nicheIcons: Record<string, React.ReactNode> = {
   trabalhista: <Briefcase className="w-5 h-5" />,
@@ -26,6 +29,8 @@ const Blog = () => {
   const { nicheId } = useParams();
   const selectedNiche = nicheId ? getNicheInfo(nicheId) : null;
   const articles = nicheId ? getArticlesByNiche(nicheId) : blogArticles;
+  
+  const { data: recentNews, isLoading: isLoadingNews } = useRecentNews(6);
   
   const featuredArticles = articles.slice(0, 3);
   const remainingArticles = articles.slice(3);
@@ -113,6 +118,44 @@ const Blog = () => {
 
         {/* Content */}
         <main className="container mx-auto px-4 py-8 md:py-12">
+          {/* Recent News Section */}
+          {!nicheId && (
+            <section className="mb-12">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-xl font-semibold flex items-center gap-2">
+                  <Newspaper className="w-5 h-5 text-primary" />
+                  Notícias Recentes
+                </h2>
+                <Link to="/noticias" className="text-sm text-primary hover:underline flex items-center gap-1">
+                  Ver todas <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+              {isLoadingNews ? (
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {Array.from({ length: 6 }).map((_, i) => (
+                    <div key={i} className="space-y-2">
+                      <Skeleton className="h-4 w-20" />
+                      <Skeleton className="h-5 w-full" />
+                      <Skeleton className="h-4 w-2/3" />
+                    </div>
+                  ))}
+                </div>
+              ) : recentNews && recentNews.length > 0 ? (
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {recentNews.map((article) => (
+                    <NewsCard key={article.id} article={article} variant="compact" />
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-8 bg-muted/30 rounded-lg">
+                  <p className="text-muted-foreground">
+                    Nenhuma notícia disponível. <Link to="/noticias" className="text-primary hover:underline">Clique aqui</Link> para atualizar.
+                  </p>
+                </div>
+              )}
+            </section>
+          )}
+
           {/* Featured Articles */}
           {featuredArticles.length > 0 && (
             <section className="mb-12">

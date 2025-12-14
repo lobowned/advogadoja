@@ -14,3 +14,6 @@ verify_jwt = false
 
 [functions.qa-hub]
 verify_jwt = false
+
+[functions.fetch-legal-news]
+verify_jwt = false

@@ -19,6 +19,8 @@ import BlogPost from "./pages/BlogPost";
 import FAQ from "./pages/FAQ";
 import NicheLanding from "./pages/NicheLanding";
 import News from "./pages/News";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +45,9 @@ const App = () => (
                 <Route path="/artigos/:nicheId/:slug" element={<BlogPost />} />
                 {/* FAQ */}
                 <Route path="/perguntas-frequentes" element={<FAQ />} />
+                {/* Legal Pages */}
+                <Route path="/privacidade" element={<PrivacyPolicy />} />
+                <Route path="/termos-de-uso" element={<TermsOfUse />} />
                 {/* News */}
                 <Route path="/noticias" element={<News />} />
                 <Route path="/noticias/:nicheId" element={<News />} />

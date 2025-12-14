@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft, Scale, Briefcase, Users, Shield, Gavel, Newspaper, ArrowRight } from "lucide-react";
+import { ArrowLeft, Briefcase, Users, Scale, Shield, Gavel, Newspaper, ArrowRight } from "lucide-react";
+import logoAdvogadoOnline from "@/assets/logo-advogado-online.png";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -121,9 +122,12 @@ const Blog = () => {
         <header className="border-b bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4 py-6">
             <div className="flex items-center justify-between mb-6">
-              <Link to="/" className="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity">
-                <Scale className="w-6 h-6" />
-                <span className="font-bold text-lg">Advogado Online</span>
+              <Link to="/" className="hover:opacity-80 transition-opacity">
+                <img 
+                  src={logoAdvogadoOnline} 
+                  alt="Advogado Online" 
+                  className="h-12 sm:h-14 md:h-16"
+                />
               </Link>
               <Button asChild variant="outline" size="sm">
                 <Link to="/">Falar com Advogado</Link>

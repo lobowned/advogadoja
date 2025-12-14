@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { MessageCircle } from "lucide-react";
 
 interface NavbarProps {
   onCtaClick: () => void;
@@ -17,7 +18,7 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const linkClass = `font-medium transition-colors hover:text-primary ${
+  const linkClass = `font-medium transition-colors hover:text-primary py-2 ${
     isScrolled ? 'text-foreground' : 'text-white'
   }`;
 
@@ -30,38 +31,37 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
       }`}
     >
       <div className="container mx-auto px-3 md:px-4">
-        <div className="flex items-center justify-between h-12 md:h-20">
+        <div className="flex items-center justify-between h-14 md:h-20">
 
-          {/* Navigation Links - Responsive */}
-          <div className="flex items-center gap-3 sm:gap-4 md:gap-8">
-            <a href="#" className={`${linkClass} text-[11px] sm:text-xs md:text-sm`}>
+          {/* Navigation Links - Prioritized */}
+          <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 md:gap-8">
+            <a href="#" className={`${linkClass} text-xs md:text-sm`}>
               Início
             </a>
-            <a href="#lawyer-chat" className={`${linkClass} text-[11px] sm:text-xs md:text-sm hidden xs:inline`}>
-              <span className="hidden sm:inline">Como Funciona</span>
-              <span className="sm:hidden">Funciona</span>
+            <a href="#advogados" className={`${linkClass} text-xs md:text-sm`}>
+              Advogados
             </a>
-            <a href="#advogados" className={`${linkClass} text-[11px] sm:text-xs md:text-sm`}>
-              <span className="hidden sm:inline">Advogados</span>
-              <span className="sm:hidden">Adv.</span>
-            </a>
-            <a href="/artigos" className={`${linkClass} text-[11px] sm:text-xs md:text-sm`}>
+            <a href="/artigos" className={`${linkClass} text-xs md:text-sm hidden xs:inline`}>
               Artigos
             </a>
-            <a href="/noticias" className={`${linkClass} text-[11px] sm:text-xs md:text-sm`}>
+            <a href="#lawyer-chat" className={`${linkClass} text-xs md:text-sm hidden sm:inline`}>
+              Como Funciona
+            </a>
+            <a href="/noticias" className={`${linkClass} text-xs md:text-sm hidden sm:inline`}>
               Notícias
             </a>
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button with Icon */}
           <Button 
             onClick={onCtaClick}
             variant={isScrolled ? "default" : "secondary"}
             size="sm"
-            className="h-7 px-2 text-[10px] sm:h-8 sm:px-3 sm:text-xs md:h-10 md:px-6 md:text-sm font-semibold shadow-button hover:scale-105 transition-transform"
+            className="h-9 px-3 text-xs sm:h-10 sm:px-4 sm:text-sm md:px-6 font-semibold shadow-button hover:scale-105 transition-transform gap-1.5"
           >
-            <span className="hidden sm:inline">Falar Agora</span>
-            <span className="sm:hidden">Falar</span>
+            <MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            <span className="hidden xs:inline">Falar Agora</span>
+            <span className="xs:hidden">Falar</span>
           </Button>
         </div>
       </div>

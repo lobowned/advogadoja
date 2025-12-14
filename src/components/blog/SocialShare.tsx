@@ -33,7 +33,7 @@ const SocialShare = ({ title, url, variant = "horizontal" }: SocialShareProps) =
   const buttonClass = variant === "vertical" ? "w-full justify-start" : "";
 
   return (
-    <div className={`flex ${variant === "vertical" ? "flex-col gap-2" : "flex-wrap gap-2"}`}>
+    <div className={`flex w-full ${variant === "vertical" ? "flex-col gap-2" : "flex-wrap gap-1.5 sm:gap-2"}`}>
       <Button
         variant="outline"
         size="sm"

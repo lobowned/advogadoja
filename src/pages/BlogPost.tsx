@@ -215,7 +215,7 @@ const BlogPost = () => {
         {/* Breadcrumb */}
         <nav className="border-b bg-muted/30">
           <div className="container mx-auto px-4 py-3">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground overflow-x-auto">
               <Link to="/" className="hover:text-foreground">Início</Link>
               <span>/</span>
               <Link to="/artigos" className="hover:text-foreground">Artigos</Link>
@@ -232,12 +232,12 @@ const BlogPost = () => {
 
         {/* Article Content */}
         <article className="container mx-auto px-4 py-8 md:py-12">
-          <div className="flex gap-8">
+          <div className="flex flex-col lg:flex-row gap-4 lg:gap-8">
             {/* Desktop TOC Sidebar */}
             <TableOfContents items={tocItems} />
 
             {/* Main Content */}
-            <div className="flex-1 max-w-3xl">
+            <div className="flex-1 max-w-3xl min-w-0 overflow-hidden">
               {/* Article Header */}
               <header className="mb-8">
                 <Link 

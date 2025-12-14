@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -24,8 +25,15 @@ const nicheColors: Record<string, string> = {
 };
 
 const ArticlesSection = () => {
-  // Get 4 featured articles from different niches
-  const featuredArticles = blogArticles.slice(0, 4);
+  // Get 1 article from each different niche for diversity
+  const featuredArticles = useMemo(() => {
+    const seen = new Set<string>();
+    return blogArticles.filter(article => {
+      if (seen.has(article.nicheId)) return false;
+      seen.add(article.nicheId);
+      return true;
+    }).slice(0, 4);
+  }, []);
 
   return (
     <section className="py-12 md:py-20 bg-muted/30">
@@ -48,12 +56,17 @@ const ArticlesSection = () => {
             <Link key={article.slug} to={`/artigos/${article.slug}`}>
               <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50 bg-card">
                 <CardContent className="p-4 md:p-5">
-                  <Badge 
-                    variant="outline" 
-                    className={`mb-3 text-xs ${nicheColors[article.nicheId] || "bg-muted text-muted-foreground"}`}
-                  >
-                    {nicheLabels[article.nicheId] || article.nicheId}
-                  </Badge>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs bg-emerald-500/10 text-emerald-600 px-2 py-0.5 rounded-full font-medium">
+                      📖 Guia
+                    </span>
+                    <Badge 
+                      variant="outline" 
+                      className={`text-xs ${nicheColors[article.nicheId] || "bg-muted text-muted-foreground"}`}
+                    >
+                      {nicheLabels[article.nicheId] || article.nicheId}
+                    </Badge>
+                  </div>
                   
                   <h3 className="font-semibold text-foreground text-sm md:text-base leading-tight mb-2 line-clamp-2">
                     {article.title}

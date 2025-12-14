@@ -92,33 +92,39 @@ const NewsSection = () => {
               <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50 bg-card group">
                 <CardContent className="p-4 md:p-5">
                   <div className="flex items-center justify-between mb-3">
-                    <Badge 
-                      variant="outline" 
-                      className={`text-xs ${nicheColors[article.niche_id] || "bg-muted text-muted-foreground"}`}
-                    >
-                      {nicheLabels[article.niche_id] || article.niche_id}
-                    </Badge>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs bg-amber-500/10 text-amber-600 px-2 py-0.5 rounded-full font-medium">
+                        📰 Notícia
+                      </span>
+                      <Badge 
+                        variant="outline" 
+                        className={`text-xs ${nicheColors[article.niche_id] || "bg-muted text-muted-foreground"}`}
+                      >
+                        {nicheLabels[article.niche_id] || article.niche_id}
+                      </Badge>
+                    </div>
                     <ExternalLink className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
+                  
+                  {article.published_at && (
+                    <div className="flex items-center gap-1 text-xs text-muted-foreground mb-2">
+                      <span className="font-medium text-foreground/70">
+                        {format(new Date(article.published_at), "dd 'de' MMMM", { locale: ptBR })}
+                      </span>
+                      <span>•</span>
+                      <span>{article.source}</span>
+                    </div>
+                  )}
                   
                   <h3 className="font-semibold text-foreground text-sm md:text-base leading-tight mb-2 line-clamp-2">
                     {decodeHtmlEntities(article.title)}
                   </h3>
                   
                   {article.excerpt && (
-                    <p className="text-muted-foreground text-xs md:text-sm line-clamp-2 mb-3">
+                    <p className="text-muted-foreground text-xs md:text-sm line-clamp-2">
                       {decodeHtmlEntities(article.excerpt)}
                     </p>
                   )}
-                  
-                  <div className="flex items-center justify-between text-xs text-muted-foreground">
-                    {article.published_at && (
-                      <span>
-                        {format(new Date(article.published_at), "dd MMM yyyy", { locale: ptBR })}
-                      </span>
-                    )}
-                    <span className="text-primary font-medium">{article.source}</span>
-                  </div>
                 </CardContent>
               </Card>
             </a>

@@ -75,7 +75,7 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
           </div>
 
           {/* Mobile Menu and CTA */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 ml-auto">
             {/* CTA Button - Desktop */}
             <Button 
               onClick={onCtaClick}
@@ -96,7 +96,7 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
                   <Menu className="w-6 h-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[280px]">
+              <SheetContent side="right" className="w-[280px] bg-background">
                 <nav className="flex flex-col gap-6 mt-8">
                   <a 
                     href="#"

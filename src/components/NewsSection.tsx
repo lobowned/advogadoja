@@ -70,13 +70,13 @@ const NewsSection = () => {
         <div className="text-center mb-8 md:mb-12">
           <div className="inline-flex items-center gap-2 bg-accent/10 text-accent-foreground px-4 py-2 rounded-full text-sm font-medium mb-4">
             <Newspaper className="w-4 h-4" />
-            Atualizações
+            Aconteceu Agora
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3">
-            Notícias Jurídicas em Destaque
+            O Que Mudou na Lei e Afeta Você
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
-            Fique por dentro das principais mudanças na legislação brasileira
+            Novas leis, decisões importantes e mudanças que podem impactar seu bolso, seu trabalho e sua família. Atualizado diariamente.
           </p>
         </div>
 
@@ -128,7 +128,7 @@ const NewsSection = () => {
         <div className="text-center mt-8">
           <Link to="/noticias">
             <Button variant="outline" size="lg" className="gap-2">
-              Ver Todas as Notícias
+              Ver Mais Novidades
               <ArrowRight className="w-4 h-4" />
             </Button>
           </Link>

@@ -33,13 +33,13 @@ const ArticlesSection = () => {
         <div className="text-center mb-8 md:mb-12">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
             <BookOpen className="w-4 h-4" />
-            Conteúdo Jurídico
+            Conhecimento Gratuito
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3">
-            Artigos que Podem te Ajudar
+            Aprenda Sobre Seus Direitos — Sem Juridiquês
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
-            Guias práticos sobre seus direitos em diversas áreas do direito brasileiro
+            Explicamos de forma simples o que você precisa saber para não ser passado para trás. Escritos por advogados, para pessoas reais.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ const ArticlesSection = () => {
                   </p>
                   
                   <span className="text-primary text-xs md:text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Ler artigo
+                    Entenda seus direitos
                     <ArrowRight className="w-3 h-3" />
                   </span>
                 </CardContent>
@@ -76,7 +76,7 @@ const ArticlesSection = () => {
         <div className="text-center mt-8">
           <Link to="/artigos">
             <Button variant="outline" size="lg" className="gap-2">
-              Ver Todos os Artigos
+              Explorar Mais Guias Gratuitos
               <ArrowRight className="w-4 h-4" />
             </Button>
           </Link>

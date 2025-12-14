@@ -233,6 +233,46 @@ function generateSuggestTransferResponse(lawyerId: string, problem: string | nul
   return templates[Math.floor(Math.random() * templates.length)];
 }
 
+// Personalidades dos advogados para humanizar respostas
+const LAWYER_PERSONALITIES: { [key: string]: { tone: string; typicalPhrases: string[]; emojiLevel: string } } = {
+  'carlos-silva': { tone: 'acolhedor', typicalPhrases: ['Entendo perfeitamente', 'Vou te ajudar', 'Fique tranquilo'], emojiLevel: 'moderado' },
+  'maria-santos': { tone: 'acolhedor', typicalPhrases: ['Sei que é difícil', 'Vamos resolver isso juntos', 'Você está no seu direito'], emojiLevel: 'moderado' },
+  'rafael-oliveira': { tone: 'tecnico', typicalPhrases: ['Pela legislação vigente', 'O Estatuto da Criança estabelece', 'Do ponto de vista jurídico'], emojiLevel: 'baixo' },
+  'juliana-costa': { tone: 'direto', typicalPhrases: ['Vamos direto ao ponto', 'O que importa aqui é', 'Resumindo'], emojiLevel: 'baixo' },
+  'fernando-lima': { tone: 'acolhedor', typicalPhrases: ['Entendo sua preocupação', 'Isso acontece mais do que imagina', 'Vamos proteger a criança'], emojiLevel: 'moderado' },
+  'patricia-almeida': { tone: 'informal', typicalPhrases: ['Tranquilo', 'Sem estresse', 'A gente resolve'], emojiLevel: 'alto' },
+  'rodrigo-barros': { tone: 'formal', typicalPhrases: ['Formalmente falando', 'De acordo com o código civil', 'Tecnicamente'], emojiLevel: 'baixo' },
+  'ricardo-mendes': { tone: 'direto', typicalPhrases: ['Seus direitos são claros', 'A CLT garante', 'Você tem direito a'], emojiLevel: 'moderado' },
+  'ana-rodrigues': { tone: 'acolhedor', typicalPhrases: ['Sei que está difícil', 'Vamos buscar seus direitos', 'Você não está sozinho(a)'], emojiLevel: 'moderado' },
+  'lucas-ferreira': { tone: 'tecnico', typicalPhrases: ['Juridicamente', 'Segundo a jurisprudência', 'Os tribunais entendem que'], emojiLevel: 'baixo' },
+  'carla-souza': { tone: 'acolhedor', typicalPhrases: ['Você está segura aqui', 'Isso é sério e vamos tratar com respeito', 'Fique tranquila'], emojiLevel: 'moderado' },
+  'paulo-martins': { tone: 'informal', typicalPhrases: ['Bora resolver', 'É o seguinte', 'Olha só'], emojiLevel: 'alto' },
+  'beatriz-campos': { tone: 'direto', typicalPhrases: ['Vamos lá', 'Direto ao ponto', 'O importante é'], emojiLevel: 'moderado' },
+  'gustavo-reis': { tone: 'formal', typicalPhrases: ['Conforme a lei', 'Legalmente', 'Do ponto de vista jurídico'], emojiLevel: 'baixo' },
+  'camila-nunes': { tone: 'acolhedor', typicalPhrases: ['Entendo sua indignação', 'Você tem razão em estar chateado(a)', 'Vamos buscar justiça'], emojiLevel: 'moderado' },
+  'diego-santos': { tone: 'tecnico', typicalPhrases: ['Contratualmente', 'A cláusula estabelece', 'Nos termos do contrato'], emojiLevel: 'baixo' },
+  'fernanda-lima': { tone: 'direto', typicalPhrases: ['Vamos resolver isso rápido', 'O caminho mais eficiente é', 'Resumindo'], emojiLevel: 'moderado' },
+  'thiago-rocha': { tone: 'informal', typicalPhrases: ['Olha só', 'É o seguinte', 'Sem complicar'], emojiLevel: 'alto' },
+  'marina-costa': { tone: 'acolhedor', typicalPhrases: ['Sei como é frustrante', 'Você está certo(a)', 'Vamos fazer valer seus direitos'], emojiLevel: 'moderado' },
+  'helena-vasconcelos': { tone: 'acolhedor', typicalPhrases: ['Saúde é prioridade', 'Você tem direito a tratamento', 'Vamos lutar pelo seu direito'], emojiLevel: 'moderado' },
+  'gabriel-monteiro': { tone: 'tecnico', typicalPhrases: ['Digitalmente', 'Segundo a LGPD', 'Tecnicamente'], emojiLevel: 'baixo' },
+  'renata-machado': { tone: 'acolhedor', typicalPhrases: ['Sei como é difícil', 'Você merece justiça', 'Vamos buscar reparação'], emojiLevel: 'moderado' },
+  'leonardo-prado': { tone: 'direto', typicalPhrases: ['Vamos resolver rápido', 'As companhias aéreas devem', 'Seus direitos são claros'], emojiLevel: 'moderado' },
+  'cristina-torres': { tone: 'informal', typicalPhrases: ['Olha', 'É assim', 'Relaxa'], emojiLevel: 'alto' },
+  'andre-silva': { tone: 'tecnico', typicalPhrases: ['O INSS entende que', 'Conforme a legislação previdenciária', 'Tecnicamente'], emojiLevel: 'baixo' },
+  'claudia-martins': { tone: 'acolhedor', typicalPhrases: ['Sei que está difícil', 'Vamos conseguir seu benefício', 'Não desista'], emojiLevel: 'moderado' },
+  'marcos-oliveira': { tone: 'informal', typicalPhrases: ['Olha', 'É assim', 'Resumindo'], emojiLevel: 'alto' },
+  'isabela-santos': { tone: 'acolhedor', typicalPhrases: ['Sinto muito pela perda', 'Vamos garantir seus direitos', 'Estou aqui pra ajudar'], emojiLevel: 'moderado' },
+  'renato-alves': { tone: 'tecnico', typicalPhrases: ['Analisando os cálculos', 'O valor correto seria', 'Tecnicamente'], emojiLevel: 'baixo' },
+  'sandra-lima': { tone: 'informal', typicalPhrases: ['Trabalho no campo é valorizado', 'Você tem direito sim', 'Vamos provar'], emojiLevel: 'alto' },
+  'roberto-costa': { tone: 'direto', typicalPhrases: ['Precisamos agir rápido', 'O tempo é essencial', 'Vamos resolver isso agora'], emojiLevel: 'moderado' },
+  'vanessa-reis': { tone: 'tecnico', typicalPhrases: ['Constitucionalmente', 'O STF entende que', 'Segundo a jurisprudência'], emojiLevel: 'baixo' },
+  'joao-fernandes': { tone: 'acolhedor', typicalPhrases: ['Você está seguro(a) aqui', 'Vamos proteger você', 'Isso é sério'], emojiLevel: 'moderado' },
+  'larissa-souza': { tone: 'direto', typicalPhrases: ['Vamos ao que interessa', 'O importante é', 'Resumindo'], emojiLevel: 'moderado' },
+  'eduardo-gomes': { tone: 'informal', typicalPhrases: ['Olha só', 'É assim', 'Sem complicar'], emojiLevel: 'alto' },
+  'monica-alves': { tone: 'formal', typicalPhrases: ['Juridicamente', 'Conforme o Código Penal', 'Processualmente'], emojiLevel: 'baixo' },
+};
+
 // Função principal de orquestração
 async function orchestrateChat(params: {
   messages: any[];
@@ -257,9 +297,12 @@ async function orchestrateChat(params: {
   caseSummary?: string;
 }> {
   
+  // Obter personalidade do advogado atual
+  const personality = LAWYER_PERSONALITIES[params.currentLawyerId] || { tone: 'acolhedor', typicalPhrases: [], emojiLevel: 'moderado' };
+  
   const currentLawyerName = params.currentLawyerId === 'carlos-silva' 
     ? 'Dr. Carlos Silva (triagem geral)' 
-    : 'Especialista';
+    : LAWYER_NAMES[params.currentLawyerId] || 'Especialista';
 
   // Buscar dados coletados do lead
   let leadName = null;
@@ -711,7 +754,16 @@ PREVIDENCIÁRIO:
 - request_rating: use quando cliente NÃO quer agir ou APÓS redirect_to_whatsapp
 - NUNCA sugira transferência 2x seguidas para o mesmo advogado
 - NUNCA peça avaliação sem ter nome E WhatsApp
-- SEMPRE seja breve, informal e natural (máximo 3 frases)`;
+- SEMPRE seja breve, informal e natural (máximo 3 frases)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎭 SUA PERSONALIDADE (ADVOGADO ATUAL):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Tom: ${personality.tone}
+Frases típicas que você costuma usar: "${personality.typicalPhrases.join('", "')}"
+Nível de emojis: ${personality.emojiLevel} (${personality.emojiLevel === 'baixo' ? 'use poucos ou nenhum emoji' : personality.emojiLevel === 'alto' ? 'use emojis com frequência' : 'use emojis com moderação'})
+
+⚡ ADAPTE seu estilo de escrita baseado nessa personalidade! Use ocasionalmente as frases típicas acima.`;
 
   console.log("🧠 [ORCHESTRATOR] Starting analysis...");
   console.log("🧠 [ORCHESTRATOR] Current lawyer:", params.currentLawyerId);

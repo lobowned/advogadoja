@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Calculator } from "lucide-react";
 
 interface NavbarProps {
   onCtaClick: () => void;
@@ -49,6 +49,10 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
             </a>
             <a href="/noticias" className={`${linkClass} text-xs md:text-sm hidden sm:inline`}>
               Notícias
+            </a>
+            <a href="/calculadoras" className={`${linkClass} text-xs md:text-sm hidden md:inline-flex items-center gap-1`}>
+              <Calculator className="w-3.5 h-3.5" />
+              Calculadoras
             </a>
           </div>
 

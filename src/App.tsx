@@ -8,6 +8,9 @@ import { LawyerPresenceProvider } from "@/contexts/LawyerPresenceContext";
 import { AttendanceProvider } from "@/contexts/AttendanceContext";
 import Index from "./pages/Index";
 import SelectNiche from "./pages/SelectNiche";
+import Calculadoras from "./pages/Calculadoras";
+import CalculadoraTrabalhista from "./pages/CalculadoraTrabalhista";
+import CalculadoraPensao from "./pages/CalculadoraPensao";
 import SelectAction from "./pages/SelectAction";
 import DynamicQuestionnaire from "./pages/DynamicQuestionnaire";
 import Completed from "./pages/Completed";
@@ -51,6 +54,10 @@ const App = () => (
                 {/* News */}
                 <Route path="/noticias" element={<News />} />
                 <Route path="/noticias/:nicheId" element={<News />} />
+                {/* Calculadoras */}
+                <Route path="/calculadoras" element={<Calculadoras />} />
+                <Route path="/calculadora-trabalhista" element={<CalculadoraTrabalhista />} />
+                <Route path="/calculadora-pensao" element={<CalculadoraPensao />} />
                 {/* Niche Landing Pages */}
                 <Route path="/advogado-trabalhista" element={<NicheLanding />} />
                 <Route path="/advogado-familia" element={<NicheLanding />} />

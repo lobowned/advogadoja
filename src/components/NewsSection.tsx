@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Newspaper, ExternalLink, Scale, Users, FileText, Building, Shield } from "lucide-react";
+import { ArrowRight, Newspaper, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -26,15 +26,6 @@ const nicheColors: Record<string, string> = {
   penal: "bg-red-500/10 text-red-600 border-red-500/20",
 };
 
-const nichePlaceholders: Record<string, { gradient: string; icon: React.ElementType }> = {
-  trabalhista: { gradient: "from-blue-600 to-blue-800", icon: Scale },
-  familia: { gradient: "from-pink-500 to-pink-700", icon: Users },
-  civil: { gradient: "from-purple-600 to-purple-800", icon: FileText },
-  previdenciario: { gradient: "from-green-600 to-green-800", icon: Building },
-  penal: { gradient: "from-red-600 to-red-800", icon: Shield },
-  consumidor: { gradient: "from-orange-500 to-orange-700", icon: FileText },
-};
-
 const decodeHtmlEntities = (text: string): string => {
   const textarea = document.createElement("textarea");
   textarea.innerHTML = text;
@@ -56,19 +47,14 @@ const NewsSection = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             {[1, 2, 3].map((i) => (
               <Card key={i}>
-                <CardContent className="p-0">
-                  <div className="flex gap-3 p-4">
-                    <Skeleton className="w-20 h-20 md:w-24 md:h-24 rounded-lg flex-shrink-0" />
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-wrap gap-1.5 mb-2">
-                        <Skeleton className="h-5 w-16" />
-                        <Skeleton className="h-5 w-20" />
-                      </div>
-                      <Skeleton className="h-3 w-24 mb-2" />
-                      <Skeleton className="h-4 w-full mb-1" />
-                      <Skeleton className="h-4 w-3/4" />
-                    </div>
+                <CardContent className="p-4">
+                  <div className="flex flex-wrap gap-1.5 mb-2">
+                    <Skeleton className="h-5 w-16" />
+                    <Skeleton className="h-5 w-20" />
                   </div>
+                  <Skeleton className="h-3 w-24 mb-2" />
+                  <Skeleton className="h-4 w-full mb-1" />
+                  <Skeleton className="h-4 w-3/4" />
                 </CardContent>
               </Card>
             ))}
@@ -99,78 +85,51 @@ const NewsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-          {news.slice(0, 6).map((article) => {
-            const placeholder = nichePlaceholders[article.niche_id] || nichePlaceholders.civil;
-            const PlaceholderIcon = placeholder.icon;
-            
-            return (
-              <a
-                key={article.id}
-                href={article.original_link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50 bg-card group overflow-hidden">
-                  <CardContent className="p-0">
-                    <div className="flex gap-3 p-4">
-                      {/* Thumbnail */}
-                      <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden">
-                        {article.image_url ? (
-                          <img 
-                            src={article.image_url} 
-                            alt=""
-                            className="w-full h-full object-cover"
-                            loading="lazy"
-                            onError={(e) => {
-                              // Hide broken image and show placeholder
-                              const target = e.target as HTMLImageElement;
-                              target.style.display = 'none';
-                              target.nextElementSibling?.classList.remove('hidden');
-                            }}
-                          />
-                        ) : null}
-                        <div className={`w-full h-full bg-gradient-to-br ${placeholder.gradient} flex items-center justify-center ${article.image_url ? 'hidden' : ''}`}>
-                          <PlaceholderIcon className="w-8 h-8 md:w-10 md:h-10 text-white/80" />
-                        </div>
+          {news.slice(0, 6).map((article) => (
+            <a
+              key={article.id}
+              href={article.original_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50 bg-card group overflow-hidden">
+                <CardContent className="p-4">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-1.5 mb-1.5">
+                        <span className="text-xs bg-amber-500/10 text-amber-600 px-2 py-0.5 rounded-full font-medium">
+                          📰 Notícia
+                        </span>
+                        <Badge 
+                          variant="outline" 
+                          className={`text-xs ${nicheColors[article.niche_id] || "bg-muted text-muted-foreground"}`}
+                        >
+                          {nicheLabels[article.niche_id] || article.niche_id}
+                        </Badge>
                       </div>
                       
-                      {/* Content */}
-                      <div className="flex-1 min-w-0">
-                        <div className="flex flex-wrap items-center gap-1.5 mb-1.5">
-                          <span className="text-xs bg-amber-500/10 text-amber-600 px-2 py-0.5 rounded-full font-medium">
-                            📰 Notícia
+                      {article.published_at && (
+                        <p className="text-xs text-muted-foreground mb-1">
+                          <span className="font-medium text-foreground/70">
+                            {format(new Date(article.published_at), "dd 'de' MMM", { locale: ptBR })}
                           </span>
-                          <Badge 
-                            variant="outline" 
-                            className={`text-xs ${nicheColors[article.niche_id] || "bg-muted text-muted-foreground"}`}
-                          >
-                            {nicheLabels[article.niche_id] || article.niche_id}
-                          </Badge>
-                        </div>
-                        
-                        {article.published_at && (
-                          <p className="text-xs text-muted-foreground mb-1">
-                            <span className="font-medium text-foreground/70">
-                              {format(new Date(article.published_at), "dd 'de' MMM", { locale: ptBR })}
-                            </span>
-                            {" • "}
-                            <span>{article.source}</span>
-                          </p>
-                        )}
-                        
-                        <h3 className="font-semibold text-foreground text-sm leading-tight line-clamp-2 group-hover:text-primary transition-colors">
-                          {decodeHtmlEntities(article.title)}
-                        </h3>
-                      </div>
+                          {" • "}
+                          <span>{article.source}</span>
+                        </p>
+                      )}
                       
-                      <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 hidden sm:block opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <h3 className="font-semibold text-foreground text-sm leading-tight line-clamp-2 group-hover:text-primary transition-colors">
+                        {decodeHtmlEntities(article.title)}
+                      </h3>
                     </div>
-                  </CardContent>
-                </Card>
-              </a>
-            );
-          })}
+                    
+                    <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </CardContent>
+              </Card>
+            </a>
+          ))}
         </div>
 
         <div className="text-center mt-8">

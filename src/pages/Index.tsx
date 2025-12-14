@@ -5,6 +5,7 @@ import LawyersShowcase from "@/components/LawyersShowcase";
 import Navbar from "@/components/Navbar";
 import ArticlesSection from "@/components/ArticlesSection";
 import NewsSection from "@/components/NewsSection";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 const Index = () => {
   const handleCTA = () => {
@@ -191,6 +192,9 @@ const Index = () => {
           </div>
         </div>
       </footer>
+      
+      {/* Exit Intent Popup */}
+      <ExitIntentPopup />
       </div>
     </>
   );

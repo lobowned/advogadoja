@@ -231,10 +231,37 @@ export const useLawyerChat = () => {
   };
 
   // Função para entrar na fila
-  const joinQueue = async () => {
+  const joinQueue = async (triageData?: { area: string | null; urgency: string | null; previousAttempt: string | null; estimatedRights: string | null }) => {
     setHasJoinedQueue(true);
     setIsInQueue(true);
     setPeopleAhead(2);
+    
+    // Se tem dados de triagem, salvar no lead
+    if (triageData?.area) {
+      const areaLabels: Record<string, string> = {
+        trabalhista: 'Direito Trabalhista',
+        familia: 'Direito de Família',
+        previdenciario: 'Direito Previdenciário',
+        outro: 'Assessoria Jurídica'
+      };
+      
+      setDetectedProblem(triageData.area);
+      setUrgencyLevel(triageData.urgency || 'baixa');
+      
+      // Salvar no banco
+      supabase.from('leads').upsert({
+        session_id: sessionId,
+        specialty: triageData.area,
+        detected_problem: triageData.area,
+        urgency_level: triageData.urgency,
+        case_details: {
+          triage: triageData,
+          estimated_rights: triageData.estimatedRights
+        }
+      }, { onConflict: 'session_id' }).then(() => {
+        console.log('✅ Triage data saved to lead');
+      });
+    }
     
     // Mensagem inicial: 2 pessoas na frente
     setMessages([
@@ -280,10 +307,23 @@ export const useLawyerChat = () => {
     await new Promise(resolve => setTimeout(resolve, 2000));
     playNotificationSound('ready');
     setIsInQueue(false);
+    
+    // Mensagem personalizada baseada na triagem
+    const areaLabels: Record<string, string> = {
+      trabalhista: 'Direito Trabalhista',
+      familia: 'Direito de Família',
+      previdenciario: 'Direito Previdenciário',
+      outro: 'questões jurídicas'
+    };
+    
+    const greeting = triageData?.area 
+      ? `Olá! Sou o Dr. Carlos Silva, especialista em ${areaLabels[triageData.area] || 'questões jurídicas'}. Vi que você precisa de ajuda com ${triageData.area === 'trabalhista' ? 'questões trabalhistas' : triageData.area === 'familia' ? 'questões familiares' : triageData.area === 'previdenciario' ? 'aposentadoria ou INSS' : 'questões jurídicas'}. Como posso te ajudar?`
+      : 'Olá! Sou o Dr. Carlos Silva. Em que posso ajudá-lo hoje?';
+    
     setMessages([
       {
         role: 'assistant',
-        content: 'Olá! Sou o Dr. Carlos Silva. Em que posso ajudá-lo hoje?',
+        content: greeting,
         timestamp: new Date(),
         lawyerId: 'carlos-silva',
       },

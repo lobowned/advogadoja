@@ -71,18 +71,45 @@ const NICHE_KEYWORDS: Record<string, string[]> = {
   ]
 };
 
+// Extract image URL from RSS item XML
+function extractImageUrl(itemXml: string): string | null {
+  // Try <enclosure> (common in RSS 2.0)
+  const enclosureMatch = itemXml.match(/<enclosure[^>]+url=["']([^"']+)["'][^>]*type=["']image/i);
+  if (enclosureMatch) return enclosureMatch[1];
+  
+  // Try <media:content> or <media:thumbnail>
+  const mediaMatch = itemXml.match(/<media:(content|thumbnail)[^>]+url=["']([^"']+)["']/i);
+  if (mediaMatch) return mediaMatch[2];
+  
+  // Try <image> inside the item
+  const imageMatch = itemXml.match(/<image[^>]*>[\s\S]*?<url>([^<]+)<\/url>/i);
+  if (imageMatch) return imageMatch[1];
+  
+  // Try extracting <img> from description/content
+  const imgMatch = itemXml.match(/<img[^>]+src=["']([^"']+)["']/i);
+  if (imgMatch) return imgMatch[1];
+  
+  // Try content:encoded
+  const contentMatch = itemXml.match(/<content:encoded[^>]*>[\s\S]*?<img[^>]+src=["']([^"']+)["']/i);
+  if (contentMatch) return contentMatch[1];
+  
+  return null;
+}
+
 // Parse RSS XML to extract articles
 function parseRSSItems(xmlText: string): Array<{
   title: string;
   link: string;
   description: string;
   pubDate: string;
+  imageUrl: string | null;
 }> {
   const items: Array<{
     title: string;
     link: string;
     description: string;
     pubDate: string;
+    imageUrl: string | null;
   }> = [];
 
   // Simple XML parsing using regex (works for RSS feeds)
@@ -99,7 +126,8 @@ function parseRSSItems(xmlText: string): Array<{
         title: cleanText(titleMatch[1]),
         link: cleanText(linkMatch[1]),
         description: descMatch ? cleanText(descMatch[1]) : '',
-        pubDate: dateMatch ? dateMatch[1].trim() : ''
+        pubDate: dateMatch ? dateMatch[1].trim() : '',
+        imageUrl: extractImageUrl(itemXml)
       });
     }
   }
@@ -163,6 +191,7 @@ async function fetchRSSFeed(source: typeof RSS_SOURCES[0]): Promise<Array<{
   nicheId: string;
   keywords: string[];
   relevanceScore: number;
+  imageUrl: string | null;
 }>> {
   try {
     console.log(`📡 Fetching RSS from ${source.name}: ${source.url}`);
@@ -205,7 +234,8 @@ async function fetchRSSFeed(source: typeof RSS_SOURCES[0]): Promise<Array<{
         publishedAt,
         nicheId: classification.niche,
         keywords: classification.keywords,
-        relevanceScore: classification.score
+        relevanceScore: classification.score,
+        imageUrl: item.imageUrl
       };
     });
   } catch (error) {
@@ -252,6 +282,7 @@ serve(async (req) => {
           published_at: article.publishedAt,
           keywords: article.keywords,
           relevance_score: article.relevanceScore,
+          image_url: article.imageUrl,
           is_active: true
         }, {
           onConflict: 'original_link',

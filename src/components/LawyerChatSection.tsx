@@ -5,10 +5,11 @@ import { Send, Phone, Video, MoreVertical, Smile, Mic, Check, Shield, RefreshCw,
 import { useLawyerChat } from "@/hooks/useLawyerChat";
 import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import TypingIndicator from "@/components/TypingIndicator";
 import { QuickRepliesInline } from "@/components/QuickReplies";
 import UrgencyBadge, { UrgencyAlert } from "@/components/UrgencyBadge";
+import { getLawyerAvailabilityStatus } from "@/data/lawyer-personalities";
 
 // Tipo para rastrear status do "visto" com delay
 type MessageSeenStatus = {
@@ -146,10 +147,28 @@ const LawyerChatSection = () => {
                       <UrgencyBadge level={urgencyLevel as 'alta' | 'critica'} showLabel={false} />
                     )}
                   </div>
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full animate-header-status" />
-                    <p className="text-xs text-white/80 truncate">online</p>
-                  </div>
+                  {(() => {
+                    const availability = getLawyerAvailabilityStatus();
+                    return (
+                      <div className="flex flex-col">
+                        <div className="flex items-center gap-1.5">
+                          <div className={`w-2 h-2 rounded-full ${
+                            availability.status === 'online' 
+                              ? 'bg-emerald-400 animate-header-status' 
+                              : availability.status === 'away' 
+                                ? 'bg-amber-400' 
+                                : 'bg-gray-400'
+                          }`} />
+                          <p className="text-xs text-white/80 truncate">{availability.label}</p>
+                        </div>
+                        {availability.responseTime && availability.status !== 'online' && (
+                          <p className="text-[10px] text-white/50 truncate ml-3.5">
+                            {availability.responseTime}
+                          </p>
+                        )}
+                      </div>
+                    );
+                  })()}
                 </div>
               </div>
 

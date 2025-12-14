@@ -493,3 +493,99 @@ export const getColleagueConsultMessages = (colleagueName: string, specialty: st
   consulting: `Deixa eu confirmar com ${colleagueName} que é especialista em ${specialty}...`,
   confirmed: `Confirmei com ${colleagueName}! Então, `
 });
+
+// Tipo para status de disponibilidade
+export type AvailabilityStatus = {
+  status: 'online' | 'away' | 'offline';
+  label: string;
+  lastSeen?: string;
+  responseTime?: string;
+};
+
+// Função para obter status de disponibilidade baseado no horário
+export const getLawyerAvailabilityStatus = (): AvailabilityStatus => {
+  const now = new Date();
+  const hour = now.getHours();
+  const dayOfWeek = now.getDay(); // 0 = domingo, 6 = sábado
+  const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+  
+  // Gerar horário aleatório para "último acesso"
+  const generateLastSeen = (baseHour: number) => {
+    const minute = Math.floor(Math.random() * 60);
+    return `${baseHour}:${minute.toString().padStart(2, '0')}`;
+  };
+  
+  // Fim de semana
+  if (isWeekend) {
+    if (hour >= 9 && hour < 18) {
+      return { 
+        status: 'online', 
+        label: 'plantão fim de semana',
+        responseTime: '~10 min'
+      };
+    } else {
+      return { 
+        status: 'away', 
+        label: `último acesso às ${generateLastSeen(Math.max(9, Math.min(hour - 1, 17)))}`,
+        responseTime: 'responde na segunda-feira'
+      };
+    }
+  }
+  
+  // Horário comercial normal (08h-20h)
+  if (hour >= 8 && hour < 20) {
+    // Horário de almoço (12h-14h) - menos disponível
+    if (hour >= 12 && hour < 14) {
+      return { 
+        status: 'online', 
+        label: 'disponível',
+        responseTime: '~5 min'
+      };
+    }
+    return { status: 'online', label: 'online' };
+  }
+  
+  // Plantão noturno (20h-23h)
+  if (hour >= 20 && hour < 23) {
+    return { 
+      status: 'away', 
+      label: 'plantão noturno',
+      responseTime: '~5 min'
+    };
+  }
+  
+  // Madrugada (23h-06h)
+  if (hour >= 23 || hour < 6) {
+    const lastSeenHour = 22 + Math.floor(Math.random() * 1);
+    return { 
+      status: 'away', 
+      label: `último acesso às ${generateLastSeen(lastSeenHour)}`,
+      responseTime: 'geralmente responde pela manhã'
+    };
+  }
+  
+  // Manhã cedo (06h-08h) - plantão matutino
+  if (hour >= 6 && hour < 8) {
+    return { 
+      status: 'online', 
+      label: 'plantão matutino',
+      responseTime: '~3 min'
+    };
+  }
+  
+  return { status: 'online', label: 'online' };
+};
+
+// Multiplicador de tempo de resposta baseado no horário
+export const getHourMultiplier = (): number => {
+  const now = new Date();
+  const hour = now.getHours();
+  const dayOfWeek = now.getDay();
+  const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+  
+  if (isWeekend) return 1.8; // Fim de semana: mais lento
+  if (hour >= 23 || hour < 6) return 2.5; // Madrugada: bem mais lento
+  if (hour >= 20 && hour < 23) return 1.5; // Noite: um pouco mais lento
+  if (hour >= 12 && hour < 14) return 1.3; // Almoço: levemente mais lento
+  return 1; // Normal
+};

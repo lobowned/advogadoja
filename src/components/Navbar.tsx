@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Scale, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 
 interface NavbarProps {
   onCtaClick: () => void;
@@ -29,17 +29,6 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <div className="flex items-center gap-2">
-            <Scale className={`w-6 h-6 md:w-7 md:h-7 transition-colors ${
-              isScrolled ? 'text-primary' : 'text-white'
-            }`} />
-            <span className={`text-lg md:text-xl font-bold transition-colors ${
-              isScrolled ? 'text-foreground' : 'text-white'
-            }`}>
-              Advogado Online
-            </span>
-          </div>
 
           {/* Navigation Links - Hidden on mobile */}
           <div className="hidden md:flex items-center gap-8">

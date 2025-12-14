@@ -4,7 +4,7 @@ import PresenceNotification from '@/components/PresenceNotification';
 
 type LawyerPresenceContextType = ReturnType<typeof useLawyerPresenceState>;
 
-const LawyerPresenceContext = createContext<LawyerPresenceContextType | null>(null);
+const LawyerPresenceContext = createContext<LawyerPresenceContextType | undefined>(undefined);
 
 export const LawyerPresenceProvider = ({ children }: { children: ReactNode }) => {
   const presence = useLawyerPresenceState();
@@ -19,7 +19,7 @@ export const LawyerPresenceProvider = ({ children }: { children: ReactNode }) =>
 
 export const useLawyerPresence = () => {
   const context = useContext(LawyerPresenceContext);
-  if (!context) {
+  if (context === undefined) {
     throw new Error('useLawyerPresence must be used within LawyerPresenceProvider');
   }
   return context;

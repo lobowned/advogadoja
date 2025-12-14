@@ -61,6 +61,12 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://advogadoonline.com.br/noticias/consumidor</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
   
   <!-- Niche Landing Pages -->
   <url>
@@ -89,6 +95,12 @@
   </url>
   <url>
     <loc>https://advogadoonline.com.br/advogado-criminal</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-consumidor</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -125,8 +137,14 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/consumidor</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   
-  <!-- Individual Articles - Trabalhista -->
+  <!-- ============ ARTIGOS TRABALHISTAS ============ -->
   <url>
     <loc>https://advogadoonline.com.br/artigos/trabalhista/demissao-sem-justa-causa</loc>
     <lastmod>2025-01-01</lastmod>
@@ -157,8 +175,33 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Novos artigos trabalhistas SEO 2025 -->
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/pejotizacao-vinculo-empregaticio</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/adicional-insalubridade-periculosidade</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/rescisao-indireta</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/multa-477-atraso-rescisao</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   
-  <!-- Individual Articles - Familia -->
+  <!-- ============ ARTIGOS FAMÍLIA ============ -->
   <url>
     <loc>https://advogadoonline.com.br/artigos/familia/divorcio-consensual</loc>
     <lastmod>2025-01-01</lastmod>
@@ -169,7 +212,7 @@
     <loc>https://advogadoonline.com.br/artigos/familia/divorcio-litigioso</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/familia/guarda</loc>
@@ -183,8 +226,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/familia/revisao-pensao-alimenticia-2025</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   
-  <!-- Individual Articles - Civil -->
+  <!-- ============ ARTIGOS CIVIL ============ -->
   <url>
     <loc>https://advogadoonline.com.br/artigos/civil/cobranca</loc>
     <lastmod>2025-01-01</lastmod>
@@ -203,8 +252,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/civil/juizado-especial-pequenas-causas</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   
-  <!-- Individual Articles - Previdenciario -->
+  <!-- ============ ARTIGOS PREVIDENCIÁRIO ============ -->
   <url>
     <loc>https://advogadoonline.com.br/artigos/previdenciario/aposentadoria</loc>
     <lastmod>2025-01-01</lastmod>
@@ -223,8 +278,20 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/previdenciario/aposentadoria-novas-regras-2025</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/previdenciario/simular-aposentadoria-meu-inss</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   
-  <!-- Individual Articles - Penal -->
+  <!-- ============ ARTIGOS PENAL ============ -->
   <url>
     <loc>https://advogadoonline.com.br/artigos/penal/defesa-flagrante</loc>
     <lastmod>2025-01-01</lastmod>
@@ -242,5 +309,37 @@
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/penal/crimes-transito-embriaguez-volante</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- ============ ARTIGOS CONSUMIDOR (NOVA CATEGORIA) ============ -->
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/consumidor/atraso-cancelamento-voo-direitos</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/consumidor/overbooking-extravio-bagagem</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/consumidor/negativacao-indevida-spc-serasa</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/consumidor/plano-saude-negativa-cobertura</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

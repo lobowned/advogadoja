@@ -75,16 +75,25 @@ const BlogPost = () => {
     }
   };
 
-  // Schema.org FAQ
+  // Schema.org FAQ - Enhanced with dates, author, and URLs
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": article.content.faq.map(item => ({
+    "datePublished": article.updatedAt,
+    "dateModified": article.updatedAt,
+    "author": {
+      "@type": "Organization",
+      "name": "Advogado Online",
+      "url": "https://advogadoonline.com.br"
+    },
+    "mainEntity": article.content.faq.map((item, index) => ({
       "@type": "Question",
       "name": item.question,
+      "url": `${articleUrl}#faq-${index}`,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": item.answer
+        "text": item.answer,
+        "dateCreated": article.updatedAt
       }
     }))
   };
@@ -121,6 +130,36 @@ const BlogPost = () => {
     ]
   };
 
+  // Schema.org HowTo - For guide articles with step-by-step instructions
+  const isGuideArticle = article.title.toLowerCase().includes('como') || 
+    article.title.toLowerCase().includes('guia') ||
+    article.title.toLowerCase().includes('passo') ||
+    article.content.whenYouHaveRight.length >= 3;
+
+  const howToSchema = isGuideArticle ? {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": article.title,
+    "description": article.content.intro,
+    "datePublished": article.updatedAt,
+    "dateModified": article.updatedAt,
+    "author": {
+      "@type": "Organization",
+      "name": "Advogado Online",
+      "url": "https://advogadoonline.com.br"
+    },
+    "step": article.content.whenYouHaveRight.map((step, index) => ({
+      "@type": "HowToStep",
+      "position": index + 1,
+      "name": `Passo ${index + 1}`,
+      "text": step
+    })),
+    "tool": article.content.documents.map(doc => ({
+      "@type": "HowToTool",
+      "name": doc
+    }))
+  } : null;
+
   return (
     <>
       <Helmet>
@@ -147,6 +186,11 @@ const BlogPost = () => {
         <script type="application/ld+json">
           {JSON.stringify(breadcrumbSchema)}
         </script>
+        {howToSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(howToSchema)}
+          </script>
+        )}
       </Helmet>
 
       {/* Reading Progress Bar */}

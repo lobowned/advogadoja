@@ -39,16 +39,20 @@ const NewsSection = () => {
     return (
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8 md:mb-12">
+          <div className="text-center mb-8 md:mb-12 px-2">
             <Skeleton className="h-8 w-48 mx-auto mb-4" />
             <Skeleton className="h-10 w-80 mx-auto mb-3" />
             <Skeleton className="h-5 w-64 mx-auto" />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             {[1, 2, 3].map((i) => (
-              <Card key={i} className="h-32">
-                <CardContent className="p-4">
-                  <Skeleton className="h-4 w-20 mb-3" />
+              <Card key={i}>
+                <CardContent className="p-4 md:p-5">
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    <Skeleton className="h-5 w-16" />
+                    <Skeleton className="h-5 w-20" />
+                  </div>
+                  <Skeleton className="h-4 w-32 mb-2" />
                   <Skeleton className="h-5 w-full mb-2" />
                   <Skeleton className="h-4 w-3/4" />
                 </CardContent>
@@ -67,7 +71,7 @@ const NewsSection = () => {
   return (
     <section className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8 md:mb-12">
+        <div className="text-center mb-8 md:mb-12 px-2">
           <div className="inline-flex items-center gap-2 bg-accent/10 text-accent-foreground px-4 py-2 rounded-full text-sm font-medium mb-4">
             <Newspaper className="w-4 h-4" />
             Aconteceu Agora
@@ -75,12 +79,12 @@ const NewsSection = () => {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3">
             O Que Mudou na Lei e Afeta Você
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base px-2 sm:px-0">
             Novas leis, decisões importantes e mudanças que podem impactar seu bolso, seu trabalho e sua família. Atualizado diariamente.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {news.slice(0, 6).map((article) => (
             <a
               key={article.id}
@@ -91,8 +95,8 @@ const NewsSection = () => {
             >
               <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50 bg-card group">
                 <CardContent className="p-4 md:p-5">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                    <div className="flex flex-wrap items-center gap-1.5">
                       <span className="text-xs bg-amber-500/10 text-amber-600 px-2 py-0.5 rounded-full font-medium">
                         📰 Notícia
                       </span>
@@ -103,12 +107,12 @@ const NewsSection = () => {
                         {nicheLabels[article.niche_id] || article.niche_id}
                       </Badge>
                     </div>
-                    <ExternalLink className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ExternalLink className="w-3 h-3 text-muted-foreground hidden sm:block opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                   
                   {article.published_at && (
-                    <div className="flex items-center gap-1 text-xs text-muted-foreground mb-2">
-                      <span className="font-medium text-foreground/70">
+                    <div className="flex flex-wrap items-center gap-1 text-xs text-muted-foreground mb-2">
+                      <span className="font-semibold text-foreground/80">
                         {format(new Date(article.published_at), "dd 'de' MMMM", { locale: ptBR })}
                       </span>
                       <span>•</span>
@@ -133,7 +137,7 @@ const NewsSection = () => {
 
         <div className="text-center mt-8">
           <Link to="/noticias">
-            <Button variant="outline" size="lg" className="gap-2">
+            <Button variant="outline" size="lg" className="gap-2 w-full sm:w-auto">
               Ver Mais Novidades
               <ArrowRight className="w-4 h-4" />
             </Button>

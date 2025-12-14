@@ -54,12 +54,66 @@ const Blog = () => {
     excerpt: article.excerpt ? decodeHtmlEntities(article.excerpt) : null,
   }));
 
+  // Schema.org WebSite with SearchAction
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Advogado Online",
+    "url": "https://advogadoonline.com.br",
+    "description": "Central de conhecimento jurídico com artigos sobre direitos trabalhistas, família, civil, previdenciário e criminal.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://advogadoonline.com.br/artigos?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  // Schema.org ItemList for article listings
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": selectedNiche ? `Artigos sobre ${selectedNiche.name}` : "Artigos Jurídicos",
+    "description": pageDescription,
+    "numberOfItems": articles.length,
+    "itemListElement": articles.slice(0, 10).map((article, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `https://advogadoonline.com.br/artigos/${article.nicheId}/${article.slug}`,
+      "name": article.title
+    }))
+  };
+
+  // Schema.org CollectionPage
+  const collectionPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": pageTitle,
+    "description": pageDescription,
+    "url": `https://advogadoonline.com.br/artigos${nicheId ? `/${nicheId}` : ""}`,
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": articles.length
+    }
+  };
+
   return (
     <>
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <link rel="canonical" href={`https://advogadoonline.com.br/artigos${nicheId ? `/${nicheId}` : ""}`} />
+        <script type="application/ld+json">
+          {JSON.stringify(websiteSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(itemListSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(collectionPageSchema)}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-background">

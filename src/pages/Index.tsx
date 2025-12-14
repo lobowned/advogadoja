@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import HeroSection from "@/components/HeroSection";
 import LawyerChatSection from "@/components/LawyerChatSection";
 import LawyersShowcase from "@/components/LawyersShowcase";
@@ -11,10 +12,126 @@ const Index = () => {
     }
   };
 
+  // Schema.org LegalService - Specific for legal services
+  const legalServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Advogado Online",
+    "description": "Atendimento jurídico online gratuito com advogados especialistas. Consulta imediata em Direito Trabalhista, Família, Previdenciário, Civil e Criminal.",
+    "url": "https://advogadoonline.com.br",
+    "telephone": "+55-71-99999-9999",
+    "email": "contato@advogadoonline.com.br",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Brasil"
+    },
+    "serviceType": [
+      "Direito Trabalhista",
+      "Direito de Família",
+      "Direito Previdenciário",
+      "Direito Civil",
+      "Direito do Consumidor",
+      "Direito Penal"
+    ],
+    "priceRange": "Consulta Gratuita",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "20:00"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços Jurídicos",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Consulta Jurídica Online Gratuita"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Análise de Caso Trabalhista"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Orientação em Direito de Família"
+          }
+        }
+      ]
+    }
+  };
+
+  // Schema.org Organization
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Advogado Online",
+    "url": "https://advogadoonline.com.br",
+    "logo": "https://advogadoonline.com.br/favicon.svg",
+    "description": "Plataforma de atendimento jurídico online com advogados especialistas",
+    "email": "contato@advogadoonline.com.br",
+    "telephone": "+55-71-99999-9999",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "BR"
+    },
+    "sameAs": [
+      "https://wa.me/5571999999999"
+    ]
+  };
+
+  // Schema.org WebPage for homepage
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Advogado Online - Consulta Jurídica Gratuita",
+    "description": "Fale agora com um advogado especialista. Atendimento jurídico online gratuito e imediato.",
+    "url": "https://advogadoonline.com.br",
+    "mainEntity": {
+      "@type": "LegalService",
+      "name": "Advogado Online"
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar onCtaClick={handleCTA} />
-      {/* Hero Section */}
+    <>
+      <Helmet>
+        <title>Advogado Online | Consulta Jurídica Gratuita com Especialistas</title>
+        <meta name="description" content="Fale agora com um advogado especialista. Atendimento jurídico online gratuito e imediato em Direito Trabalhista, Família, Previdenciário, Civil e Criminal." />
+        <meta name="keywords" content="advogado online, consulta jurídica gratuita, advogado trabalhista, advogado família, direitos trabalhistas, pensão alimentícia, divórcio, aposentadoria INSS" />
+        <link rel="canonical" href="https://advogadoonline.com.br" />
+        
+        <meta property="og:title" content="Advogado Online | Consulta Jurídica Gratuita" />
+        <meta property="og:description" content="Fale agora com um advogado especialista. Atendimento gratuito e imediato." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://advogadoonline.com.br" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Advogado Online | Consulta Jurídica Gratuita" />
+        <meta name="twitter:description" content="Fale agora com um advogado especialista. Atendimento gratuito e imediato." />
+        
+        <script type="application/ld+json">
+          {JSON.stringify(legalServiceSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(webPageSchema)}
+        </script>
+      </Helmet>
+      
+      <div className="min-h-screen bg-background">
+        <Navbar onCtaClick={handleCTA} />
+        {/* Hero Section */}
       <HeroSection onCtaClick={handleCTA} />
 
       {/* Lawyer Chat */}
@@ -65,7 +182,8 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -121,40 +121,6 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
             </span>
           </h1>
 
-          {/* Subtítulo */}
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            Fale agora com um advogado especializado.
-            <br />
-            <span className="text-sm sm:text-lg text-gray-300">Atendimento em menos de 1 minuto.</span>
-          </p>
-
-          {/* CTA Button */}
-          <div className="mb-6 sm:mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <Button
-              onClick={onCtaClick}
-              size="lg"
-              className="w-full sm:w-auto bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white text-base sm:text-lg px-8 sm:px-12 py-5 sm:py-7 rounded-xl shadow-2xl shadow-[0_0_30px_rgba(34,197,94,0.5)] hover:shadow-[0_0_50px_rgba(34,197,94,0.7)] transition-all duration-300 transform hover:scale-105"
-            >
-              <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
-              Iniciar Atendimento Agora
-            </Button>
-          </div>
-
-          {/* Trust Badges */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-white/90 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            <div className="flex items-center gap-2 hover:scale-105 transition-transform duration-200 cursor-default">
-              <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
-              <span className="text-xs sm:text-sm font-medium">OAB Verificado</span>
-            </div>
-            <div className="flex items-center gap-2 hover:scale-105 transition-transform duration-200 cursor-default">
-              <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-whatsapp-send-btn" />
-              <span className="text-xs sm:text-sm font-medium">Sigilo Garantido</span>
-            </div>
-            <div className="flex items-center gap-2 hover:scale-105 transition-transform duration-200 cursor-default">
-              <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
-              <span className="text-xs sm:text-sm font-medium">Resposta Imediata</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

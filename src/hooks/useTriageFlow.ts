@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback } from 'react';
 
 export interface TriageOption {
   label: string;
@@ -20,20 +20,18 @@ export interface TriageData {
   estimatedRights: string | null;
 }
 
-const baseSteps: TriageStep[] = [
-  {
-    id: 'area',
-    question: 'Qual área do seu problema?',
-    options: [
-      { label: 'Trabalhista', value: 'trabalhista', icon: 'Briefcase' },
-      { label: 'Família e Divórcio', value: 'familia', icon: 'Users' },
-      { label: 'INSS/Aposentadoria', value: 'previdenciario', icon: 'Heart' },
-      { label: 'Civil (Contratos/Danos)', value: 'civil', icon: 'Scale' },
-      { label: 'Criminal/Penal', value: 'penal', icon: 'Shield' },
-      { label: 'Outra Área', value: 'outro', icon: 'HelpCircle' }
-    ]
-  }
-];
+const areaStep: TriageStep = {
+  id: 'area',
+  question: 'Qual área do seu problema?',
+  options: [
+    { label: 'Trabalhista', value: 'trabalhista', icon: 'Briefcase' },
+    { label: 'Família e Divórcio', value: 'familia', icon: 'Users' },
+    { label: 'INSS/Aposentadoria', value: 'previdenciario', icon: 'Heart' },
+    { label: 'Civil (Contratos/Danos)', value: 'civil', icon: 'Scale' },
+    { label: 'Criminal/Penal', value: 'penal', icon: 'Shield' },
+    { label: 'Outra Área', value: 'outro', icon: 'HelpCircle' }
+  ]
+};
 
 const subCategoriesByArea: Record<string, TriageOption[]> = {
   trabalhista: [
@@ -98,44 +96,32 @@ const previousAttemptStep: TriageStep = {
   ]
 };
 
-// Estimates by subCategory and urgency
 const estimates: Record<string, Record<string, { min: number; max: number }>> = {
-  // Trabalhista
   demissao: { urgente: { min: 5000, max: 50000 }, medio: { min: 4000, max: 40000 }, longo: { min: 3000, max: 30000 } },
   'horas-extras': { urgente: { min: 3000, max: 30000 }, medio: { min: 2000, max: 25000 }, longo: { min: 1500, max: 20000 } },
   acidente: { urgente: { min: 10000, max: 150000 }, medio: { min: 8000, max: 120000 }, longo: { min: 5000, max: 100000 } },
   assedio: { urgente: { min: 10000, max: 100000 }, medio: { min: 8000, max: 80000 }, longo: { min: 5000, max: 60000 } },
   'outro-trabalhista': { urgente: { min: 3000, max: 30000 }, medio: { min: 2000, max: 20000 }, longo: { min: 1500, max: 15000 } },
-  
-  // Família
   divorcio: { urgente: { min: 2000, max: 20000 }, medio: { min: 1500, max: 15000 }, longo: { min: 1000, max: 10000 } },
   guarda: { urgente: { min: 3000, max: 25000 }, medio: { min: 2000, max: 20000 }, longo: { min: 1500, max: 15000 } },
   pensao: { urgente: { min: 5000, max: 50000 }, medio: { min: 3000, max: 40000 }, longo: { min: 2000, max: 30000 } },
   'uniao-estavel': { urgente: { min: 2000, max: 30000 }, medio: { min: 1500, max: 25000 }, longo: { min: 1000, max: 20000 } },
   'outro-familia': { urgente: { min: 1500, max: 15000 }, medio: { min: 1000, max: 10000 }, longo: { min: 800, max: 8000 } },
-  
-  // Previdenciário
   aposentadoria: { urgente: { min: 10000, max: 150000 }, medio: { min: 8000, max: 120000 }, longo: { min: 5000, max: 100000 } },
   'auxilio-doenca': { urgente: { min: 5000, max: 50000 }, medio: { min: 4000, max: 40000 }, longo: { min: 3000, max: 30000 } },
   'bpc-loas': { urgente: { min: 10000, max: 80000 }, medio: { min: 8000, max: 60000 }, longo: { min: 5000, max: 50000 } },
   revisao: { urgente: { min: 15000, max: 200000 }, medio: { min: 10000, max: 150000 }, longo: { min: 8000, max: 100000 } },
   'pensao-morte': { urgente: { min: 10000, max: 100000 }, medio: { min: 8000, max: 80000 }, longo: { min: 5000, max: 60000 } },
-  
-  // Civil
   'danos-morais': { urgente: { min: 5000, max: 50000 }, medio: { min: 3000, max: 40000 }, longo: { min: 2000, max: 30000 } },
   cobranca: { urgente: { min: 2000, max: 30000 }, medio: { min: 1500, max: 25000 }, longo: { min: 1000, max: 20000 } },
   contrato: { urgente: { min: 3000, max: 40000 }, medio: { min: 2000, max: 30000 }, longo: { min: 1500, max: 25000 } },
   despejo: { urgente: { min: 2000, max: 20000 }, medio: { min: 1500, max: 15000 }, longo: { min: 1000, max: 10000 } },
   'outro-civil': { urgente: { min: 2000, max: 20000 }, medio: { min: 1500, max: 15000 }, longo: { min: 1000, max: 10000 } },
-  
-  // Penal
   prisao: { urgente: { min: 5000, max: 50000 }, medio: { min: 4000, max: 40000 }, longo: { min: 3000, max: 30000 } },
   'violencia-domestica': { urgente: { min: 3000, max: 30000 }, medio: { min: 2000, max: 25000 }, longo: { min: 1500, max: 20000 } },
   'crimes-patrimoniais': { urgente: { min: 4000, max: 40000 }, medio: { min: 3000, max: 30000 }, longo: { min: 2000, max: 25000 } },
   delegacia: { urgente: { min: 2000, max: 15000 }, medio: { min: 1500, max: 12000 }, longo: { min: 1000, max: 10000 } },
   'outro-penal': { urgente: { min: 3000, max: 30000 }, medio: { min: 2000, max: 25000 }, longo: { min: 1500, max: 20000 } },
-  
-  // Outros
   consumidor: { urgente: { min: 2000, max: 20000 }, medio: { min: 1500, max: 15000 }, longo: { min: 1000, max: 10000 } },
   imobiliario: { urgente: { min: 5000, max: 100000 }, medio: { min: 3000, max: 80000 }, longo: { min: 2000, max: 60000 } },
   empresarial: { urgente: { min: 5000, max: 100000 }, medio: { min: 3000, max: 80000 }, longo: { min: 2000, max: 60000 } },
@@ -183,6 +169,10 @@ const subCategoryLabels: Record<string, string> = {
   indefinido: 'Assessoria Jurídica'
 };
 
+// Step order: area (0), subCategory (1), urgency (2), previousAttempt (3)
+const STEP_IDS = ['area', 'subCategory', 'urgency', 'previousAttempt'] as const;
+const TOTAL_STEPS = 4;
+
 export const useTriageFlow = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [triageData, setTriageData] = useState<TriageData>({
@@ -194,31 +184,32 @@ export const useTriageFlow = () => {
   });
   const [isComplete, setIsComplete] = useState(false);
 
-  // Build dynamic steps based on selected area
-  const triageSteps = useMemo(() => {
-    const steps: TriageStep[] = [...baseSteps];
+  const getCurrentStepData = useCallback((): TriageStep | null => {
+    const stepId = STEP_IDS[currentStep];
     
-    if (triageData.area && subCategoriesByArea[triageData.area]) {
-      steps.push({
-        id: 'subCategory',
-        question: 'Qual o problema específico?',
-        options: subCategoriesByArea[triageData.area]
-      });
+    switch (stepId) {
+      case 'area':
+        return areaStep;
+      case 'subCategory':
+        if (triageData.area && subCategoriesByArea[triageData.area]) {
+          return {
+            id: 'subCategory',
+            question: 'Qual o problema específico?',
+            options: subCategoriesByArea[triageData.area]
+          };
+        }
+        return null;
+      case 'urgency':
+        return urgencyStep;
+      case 'previousAttempt':
+        return previousAttemptStep;
+      default:
+        return null;
     }
-    
-    steps.push(urgencyStep, previousAttemptStep);
-    
-    return steps;
-  }, [triageData.area]);
-
-  const totalSteps = triageSteps.length;
-
-  const getCurrentStepData = useCallback(() => {
-    return triageSteps[currentStep] || null;
-  }, [currentStep, triageSteps]);
+  }, [currentStep, triageData.area]);
 
   const submitStep = useCallback((value: string) => {
-    const stepId = triageSteps[currentStep]?.id;
+    const stepId = STEP_IDS[currentStep];
     if (!stepId) return;
 
     const newTriageData = {
@@ -228,11 +219,8 @@ export const useTriageFlow = () => {
     
     setTriageData(newTriageData);
 
-    // Check if this completes the flow
-    const isLastStep = currentStep >= triageSteps.length - 1;
-    const willBeLastStep = stepId === 'previousAttempt';
-    
-    if (isLastStep || willBeLastStep) {
+    // Check if this is the last step
+    if (stepId === 'previousAttempt') {
       // Calculate estimate
       const subCat = newTriageData.subCategory || 'indefinido';
       const urg = newTriageData.urgency || 'medio';
@@ -241,7 +229,7 @@ export const useTriageFlow = () => {
       
       setTriageData(prev => ({
         ...prev,
-        [stepId]: value,
+        previousAttempt: value,
         estimatedRights: estimatedValue
       }));
       
@@ -249,7 +237,7 @@ export const useTriageFlow = () => {
     } else {
       setCurrentStep(prev => prev + 1);
     }
-  }, [currentStep, triageSteps, triageData]);
+  }, [currentStep, triageData]);
 
   const getEstimatedRights = useCallback(() => {
     const { subCategory, urgency } = triageData;
@@ -281,7 +269,7 @@ export const useTriageFlow = () => {
 
   return {
     currentStep,
-    totalSteps,
+    totalSteps: TOTAL_STEPS,
     triageData,
     isComplete,
     getCurrentStepData,

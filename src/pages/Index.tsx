@@ -5,6 +5,7 @@ import LawyerChatSection from "@/components/LawyerChatSection";
 import LawyersShowcase from "@/components/LawyersShowcase";
 import WhatsAppTestimonials from "@/components/WhatsAppTestimonials";
 import CredibilitySection from "@/components/CredibilitySection";
+import ObjecionsFAQ from "@/components/ObjecionsFAQ";
 import Navbar from "@/components/Navbar";
 import ArticlesSection from "@/components/ArticlesSection";
 import NewsSection from "@/components/NewsSection";
@@ -175,6 +176,9 @@ const Index = () => {
 
       {/* Credibility Section */}
       <CredibilitySection />
+
+      {/* FAQ Section */}
+      <ObjecionsFAQ />
 
       {/* Articles Section */}
       <ArticlesSection />

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Briefcase, Users, Calculator, ArrowRight, MessageCircle, Clock, Scale, TrendingUp, Home, Building2, Wallet, Heart, Stethoscope, HandHeart, ScrollText, ShieldAlert, Car } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { getCalculatorListSchema } from "@/data/calculator-schemas";
+import { BackButton } from "@/components/BackButton";
 
 const calculadoras = [
   { id: "trabalhista", title: "Calculadora Trabalhista", description: "Calcule suas verbas rescisórias: aviso prévio, FGTS, 13º salário, férias e multas.", icon: Briefcase, href: "/calculadora-trabalhista", color: "from-amber-500 to-orange-500", bgLight: "bg-amber-50 dark:bg-amber-950/20", features: ["Aviso Prévio", "FGTS + Multa 40%", "13º Proporcional", "Férias + 1/3"] },
@@ -48,6 +49,7 @@ const Calculadoras = () => {
         {/* Hero Section */}
         <section className="py-12 md:py-20 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4">
+            <BackButton to="/" label="Voltar ao início" className="mb-6" />
             <div className="text-center max-w-3xl mx-auto">
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Calculator className="w-4 h-4" />

@@ -5,6 +5,7 @@ import {
   CheckCircle, ArrowRight, MessageCircle, Clock, 
   Star, Phone, FileText 
 } from "lucide-react";
+import { BackButton } from "@/components/BackButton";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -254,6 +255,7 @@ const NicheLanding = () => {
         {/* Hero Section */}
         <section className="bg-gradient-to-b from-primary/10 to-background py-16 md:py-24">
           <div className="container mx-auto px-4">
+            <BackButton to="/" label="Voltar ao início" className="mb-6" />
             <div className="max-w-4xl mx-auto text-center">
               <div className="flex justify-center mb-6">
                 <div className="p-4 rounded-2xl bg-primary/10 text-primary">

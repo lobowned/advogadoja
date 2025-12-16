@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Scale, HelpCircle, MessageCircle, Shield, Clock, CreditCard, Users, Phone } from "lucide-react";
+import { BackButton } from "@/components/BackButton";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -197,7 +198,9 @@ const FAQ = () => {
 
         {/* Hero */}
         <section className="bg-gradient-to-b from-primary/5 to-background py-12 md:py-16">
-          <div className="container mx-auto px-4 text-center">
+          <div className="container mx-auto px-4">
+            <BackButton to="/" label="Voltar ao início" className="mb-6" />
+            <div className="text-center">
             <div className="flex justify-center mb-4">
               <div className="p-3 rounded-full bg-primary/10">
                 <HelpCircle className="w-8 h-8 text-primary" />
@@ -210,6 +213,7 @@ const FAQ = () => {
               Tire suas dúvidas sobre o Advogado Online. Se não encontrar o que procura, 
               fale conosco pelo chat.
             </p>
+            </div>
           </div>
         </section>
 

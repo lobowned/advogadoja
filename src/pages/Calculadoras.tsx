@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import PageTransition from "@/components/motion/PageTransition";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Briefcase, Users, Calculator, ArrowRight, MessageCircle, Clock, Scale, TrendingUp, Home, Building2, Wallet, Heart, Stethoscope, HandHeart, ScrollText, ShieldAlert, Car } from "lucide-react";
@@ -34,7 +35,7 @@ const Calculadoras = () => {
   const itemListSchema = getCalculatorListSchema();
 
   return (
-    <>
+    <PageTransition variant="fade">
       <Helmet>
         <title>Calculadoras de Direitos | Calcule Grátis suas Verbas</title>
         <meta name="description" content="Calculadoras jurídicas gratuitas: calcule rescisão trabalhista, pensão alimentícia e mais. Descubra quanto você tem direito a receber." />
@@ -158,7 +159,7 @@ const Calculadoras = () => {
           </div>
         </section>
       </main>
-    </>
+    </PageTransition>
   );
 };
 

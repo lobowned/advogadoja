@@ -3,9 +3,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { LazyMotion, domAnimation } from "framer-motion";
+import { LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
 import { LawyerPresenceProvider } from "@/contexts/LawyerPresenceContext";
 import { AttendanceProvider } from "@/contexts/AttendanceContext";
 import Index from "./pages/Index";
@@ -44,6 +44,67 @@ import CasosSucesso from "./pages/CasosSucesso";
 
 const queryClient = new QueryClient();
 
+// Animated Routes component that uses useLocation for AnimatePresence
+const AnimatedRoutes = () => {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait" initial={false}>
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Index />} />
+        <Route path="/selecionar-nicho" element={<SelectNiche />} />
+        <Route path="/selecionar-acao/:nicheId" element={<SelectAction />} />
+        <Route path="/questionario/:nicheId/:actionId" element={<DynamicQuestionnaire />} />
+        <Route path="/concluido" element={<Completed />} />
+        {/* Blog/Artigos */}
+        <Route path="/artigos" element={<Blog />} />
+        <Route path="/artigos/:nicheId" element={<Blog />} />
+        <Route path="/artigos/:nicheId/:slug" element={<BlogPost />} />
+        {/* FAQ */}
+        <Route path="/perguntas-frequentes" element={<FAQ />} />
+        {/* Legal Pages */}
+        <Route path="/privacidade" element={<PrivacyPolicy />} />
+        <Route path="/termos-de-uso" element={<TermsOfUse />} />
+        {/* Success Stories */}
+        <Route path="/casos-de-sucesso" element={<CasosSucesso />} />
+        {/* News */}
+        <Route path="/noticias" element={<News />} />
+        <Route path="/noticias/:nicheId" element={<News />} />
+        {/* Calculadoras */}
+        <Route path="/calculadoras" element={<Calculadoras />} />
+        <Route path="/calculadora-trabalhista" element={<CalculadoraTrabalhista />} />
+        <Route path="/calculadora-pensao" element={<CalculadoraPensao />} />
+        <Route path="/calculadora-aposentadoria" element={<CalculadoraAposentadoria />} />
+        <Route path="/calculadora-danos-morais" element={<CalculadoraDanosMorais />} />
+        <Route path="/calculadora-atualizacao-divida" element={<CalculadoraAtualizacaoDivida />} />
+        <Route path="/calculadora-partilha-bens" element={<CalculadoraPartilhaBens />} />
+        <Route path="/calculadora-aluguel-atrasado" element={<CalculadoraAluguelAtrasado />} />
+        <Route path="/calculadora-horas-extras" element={<CalculadoraHorasExtras />} />
+        <Route path="/calculadora-seguro-desemprego" element={<CalculadoraSeguroDesemprego />} />
+        <Route path="/calculadora-fgts" element={<CalculadoraFGTS />} />
+        <Route path="/calculadora-pensao-morte" element={<CalculadoraPensaoMorte />} />
+        <Route path="/calculadora-auxilio-doenca" element={<CalculadoraAuxilioDoenca />} />
+        <Route path="/calculadora-bpc-loas" element={<CalculadoraBPCLOAS />} />
+        <Route path="/calculadora-inventario" element={<CalculadoraInventario />} />
+        <Route path="/calculadora-insalubridade" element={<CalculadoraInsalubridade />} />
+        <Route path="/calculadora-dpvat" element={<CalculadoraDPVAT />} />
+        {/* Niche Landing Pages */}
+        <Route path="/advogado-trabalhista" element={<NicheLanding />} />
+        <Route path="/advogado-familia" element={<NicheLanding />} />
+        <Route path="/advogado-civil" element={<NicheLanding />} />
+        <Route path="/advogado-previdenciario" element={<NicheLanding />} />
+        <Route path="/advogado-criminal" element={<NicheLanding />} />
+        {/* Admin */}
+        <Route path="/admin" element={<LeadsDashboard />} />
+        <Route path="/admin/leads" element={<LeadsDashboard />} />
+        <Route path="/admin/qa" element={<QADashboard />} />
+        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
+
 const App = () => (
   <React.StrictMode>
     <HelmetProvider>
@@ -55,64 +116,14 @@ const App = () => (
                 <Toaster />
                 <Sonner />
                 <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/selecionar-nicho" element={<SelectNiche />} />
-                <Route path="/selecionar-acao/:nicheId" element={<SelectAction />} />
-                <Route path="/questionario/:nicheId/:actionId" element={<DynamicQuestionnaire />} />
-                <Route path="/concluido" element={<Completed />} />
-                {/* Blog/Artigos */}
-                <Route path="/artigos" element={<Blog />} />
-                <Route path="/artigos/:nicheId" element={<Blog />} />
-                <Route path="/artigos/:nicheId/:slug" element={<BlogPost />} />
-                {/* FAQ */}
-                <Route path="/perguntas-frequentes" element={<FAQ />} />
-                {/* Legal Pages */}
-                <Route path="/privacidade" element={<PrivacyPolicy />} />
-                <Route path="/termos-de-uso" element={<TermsOfUse />} />
-                {/* Success Stories */}
-                <Route path="/casos-de-sucesso" element={<CasosSucesso />} />
-                {/* News */}
-                <Route path="/noticias" element={<News />} />
-                <Route path="/noticias/:nicheId" element={<News />} />
-                {/* Calculadoras */}
-                <Route path="/calculadoras" element={<Calculadoras />} />
-                <Route path="/calculadora-trabalhista" element={<CalculadoraTrabalhista />} />
-                <Route path="/calculadora-pensao" element={<CalculadoraPensao />} />
-                <Route path="/calculadora-aposentadoria" element={<CalculadoraAposentadoria />} />
-                <Route path="/calculadora-danos-morais" element={<CalculadoraDanosMorais />} />
-                <Route path="/calculadora-atualizacao-divida" element={<CalculadoraAtualizacaoDivida />} />
-                <Route path="/calculadora-partilha-bens" element={<CalculadoraPartilhaBens />} />
-                <Route path="/calculadora-aluguel-atrasado" element={<CalculadoraAluguelAtrasado />} />
-                <Route path="/calculadora-horas-extras" element={<CalculadoraHorasExtras />} />
-                <Route path="/calculadora-seguro-desemprego" element={<CalculadoraSeguroDesemprego />} />
-                <Route path="/calculadora-fgts" element={<CalculadoraFGTS />} />
-                <Route path="/calculadora-pensao-morte" element={<CalculadoraPensaoMorte />} />
-                <Route path="/calculadora-auxilio-doenca" element={<CalculadoraAuxilioDoenca />} />
-                <Route path="/calculadora-bpc-loas" element={<CalculadoraBPCLOAS />} />
-                <Route path="/calculadora-inventario" element={<CalculadoraInventario />} />
-                <Route path="/calculadora-insalubridade" element={<CalculadoraInsalubridade />} />
-                <Route path="/calculadora-dpvat" element={<CalculadoraDPVAT />} />
-                {/* Niche Landing Pages */}
-                <Route path="/advogado-trabalhista" element={<NicheLanding />} />
-                <Route path="/advogado-familia" element={<NicheLanding />} />
-                <Route path="/advogado-civil" element={<NicheLanding />} />
-                <Route path="/advogado-previdenciario" element={<NicheLanding />} />
-                <Route path="/advogado-criminal" element={<NicheLanding />} />
-                {/* Admin */}
-                <Route path="/admin" element={<LeadsDashboard />} />
-                <Route path="/admin/leads" element={<LeadsDashboard />} />
-                <Route path="/admin/qa" element={<QADashboard />} />
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-              </BrowserRouter>
-            </AttendanceProvider>
-          </LawyerPresenceProvider>
-        </TooltipProvider>
-      </LazyMotion>
-    </QueryClientProvider>
-  </HelmetProvider>
+                  <AnimatedRoutes />
+                </BrowserRouter>
+              </AttendanceProvider>
+            </LawyerPresenceProvider>
+          </TooltipProvider>
+        </LazyMotion>
+      </QueryClientProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );
 

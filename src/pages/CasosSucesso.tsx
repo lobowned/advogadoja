@@ -8,6 +8,7 @@ import { BackButton } from '@/components/BackButton';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { successStories, areaLabels, areaColors, type SuccessStory } from '@/data/success-stories';
+import PageTransition from "@/components/motion/PageTransition";
 
 const CasosSucesso = () => {
   const [selectedArea, setSelectedArea] = useState<SuccessStory['area'] | 'all'>('all');
@@ -28,7 +29,7 @@ const CasosSucesso = () => {
   const areas = ['all', 'trabalhista', 'familia', 'previdenciario', 'civil', 'consumidor'] as const;
 
   return (
-    <>
+    <PageTransition variant="fade">
       <Helmet>
         <title>Casos de Sucesso | Advogado Online - Resultados Reais</title>
         <meta name="description" content="Conheça casos reais de sucesso. Veja como ajudamos milhares de clientes a conquistar seus direitos em ações trabalhistas, de família, previdenciárias e mais." />
@@ -190,7 +191,7 @@ const CasosSucesso = () => {
           </div>
         </footer>
       </div>
-    </>
+    </PageTransition>
   );
 };
 

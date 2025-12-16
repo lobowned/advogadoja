@@ -5,6 +5,7 @@ import {
   CheckCircle, ArrowRight, MessageCircle, Clock, 
   Star, Phone, FileText 
 } from "lucide-react";
+import PageTransition from "@/components/motion/PageTransition";
 import { BackButton } from "@/components/BackButton";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -215,7 +216,7 @@ const NicheLanding = () => {
   };
 
   return (
-    <>
+    <PageTransition variant="slideUp">
       <Helmet>
         <title>{data.metaTitle}</title>
         <meta name="description" content={data.metaDescription} />
@@ -428,7 +429,7 @@ const NicheLanding = () => {
           </div>
         </footer>
       </div>
-    </>
+    </PageTransition>
   );
 };
 

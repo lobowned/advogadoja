@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { legalNiches } from "@/data/legal-niches";
 import { ArrowLeft } from "lucide-react";
+import PageTransition from "@/components/motion/PageTransition";
 
 const SelectNiche = () => {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ const SelectNiche = () => {
   };
 
   return (
+    <PageTransition variant="slideUp">
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b bg-card">
@@ -73,6 +75,7 @@ const SelectNiche = () => {
         </div>
       </footer>
     </div>
+    </PageTransition>
   );
 };
 

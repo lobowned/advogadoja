@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
+import PageTransition from "@/components/motion/PageTransition";
 import { Link } from "react-router-dom";
 import HeroSection from "@/components/HeroSection";
 import LawyerChatSection from "@/components/LawyerChatSection";
@@ -133,7 +134,7 @@ const IndexContent = () => {
   };
 
   return (
-    <>
+    <PageTransition variant="slideUp">
       <Helmet>
         <title>Advogado Online | Consulta Jurídica Gratuita com Especialistas</title>
         <meta name="description" content="Fale agora com um advogado especialista. Atendimento jurídico online gratuito e imediato em Direito Trabalhista, Família, Previdenciário, Civil e Criminal." />
@@ -239,7 +240,7 @@ const IndexContent = () => {
       {/* Success Notifications */}
       <SuccessNotification disabled={chatVisible} />
       </div>
-    </>
+    </PageTransition>
   );
 };
 

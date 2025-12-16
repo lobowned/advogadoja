@@ -11,6 +11,8 @@ import TableOfContents from "@/components/blog/TableOfContents";
 import SocialShare from "@/components/blog/SocialShare";
 import FloatingCTA from "@/components/blog/FloatingCTA";
 import NewsletterSignup from "@/components/blog/NewsletterSignup";
+import BreadcrumbNav from "@/components/BreadcrumbNav";
+import PageTransition from "@/components/motion/PageTransition";
 import { getArticleBySlug, getNicheInfo, getRelatedArticles } from "@/data/blog-articles";
 import { getArticleReadingTime } from "@/utils/reading-time";
 
@@ -98,38 +100,6 @@ const BlogPost = () => {
     }))
   };
 
-  // Schema.org BreadcrumbList
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Início",
-        "item": "https://advogadoonline.com.br"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Artigos",
-        "item": "https://advogadoonline.com.br/artigos"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": nicheInfo.name,
-        "item": `https://advogadoonline.com.br/artigos/${nicheId}`
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "name": article.title,
-        "item": articleUrl
-      }
-    ]
-  };
-
   // Schema.org HowTo - For guide articles with step-by-step instructions
   const isGuideArticle = article.title.toLowerCase().includes('como') || 
     article.title.toLowerCase().includes('guia') ||
@@ -160,8 +130,16 @@ const BlogPost = () => {
     }))
   } : null;
 
+  // Breadcrumb items for BreadcrumbNav component
+  const breadcrumbItems = [
+    { label: "Início", href: "/" },
+    { label: "Artigos", href: "/artigos" },
+    { label: nicheInfo.name, href: `/artigos/${nicheId}` },
+    { label: article.title }
+  ];
+
   return (
-    <>
+    <PageTransition variant="slideUp">
       <Helmet>
         <title>{article.metaTitle}</title>
         <meta name="description" content={article.metaDescription} />
@@ -182,9 +160,6 @@ const BlogPost = () => {
         </script>
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
         </script>
         {howToSchema && (
           <script type="application/ld+json">
@@ -212,18 +187,10 @@ const BlogPost = () => {
           </div>
         </header>
 
-        {/* Breadcrumb */}
+        {/* Breadcrumb - Using BreadcrumbNav component */}
         <nav className="border-b bg-muted/30">
           <div className="container mx-auto px-4 py-3">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground overflow-x-auto">
-              <Link to="/" className="hover:text-foreground">Início</Link>
-              <span>/</span>
-              <Link to="/artigos" className="hover:text-foreground">Artigos</Link>
-              <span>/</span>
-              <Link to={`/artigos/${nicheId}`} className="hover:text-foreground">{nicheInfo.name}</Link>
-              <span>/</span>
-              <span className="text-foreground truncate max-w-[200px]">{article.title}</span>
-            </div>
+            <BreadcrumbNav items={breadcrumbItems} showHomeIcon={false} />
           </div>
         </nav>
 
@@ -424,7 +391,7 @@ const BlogPost = () => {
         {/* Floating CTA */}
         <FloatingCTA />
       </div>
-    </>
+    </PageTransition>
   );
 };
 

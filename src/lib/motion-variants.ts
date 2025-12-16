@@ -100,3 +100,57 @@ export const hoverLift = {
 export const tapScale = {
   scale: 0.95
 };
+
+// Page Transition Variants
+export const pageTransition = {
+  fade: {
+    initial: { opacity: 0 },
+    animate: { 
+      opacity: 1, 
+      transition: { duration: 0.3, ease: "easeOut" } 
+    },
+    exit: { 
+      opacity: 0, 
+      transition: { duration: 0.2, ease: "easeIn" } 
+    }
+  },
+  slideUp: {
+    initial: { opacity: 0, y: 20 },
+    animate: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] } 
+    },
+    exit: { 
+      opacity: 0, 
+      y: -10, 
+      transition: { duration: 0.2, ease: "easeIn" } 
+    }
+  },
+  scale: {
+    initial: { opacity: 0, scale: 0.98 },
+    animate: { 
+      opacity: 1, 
+      scale: 1, 
+      transition: { duration: 0.3, ease: "easeOut" } 
+    },
+    exit: { 
+      opacity: 0, 
+      scale: 1.02, 
+      transition: { duration: 0.2, ease: "easeIn" } 
+    }
+  },
+  slideRight: {
+    initial: { opacity: 0, x: -20 },
+    animate: { 
+      opacity: 1, 
+      x: 0, 
+      transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] } 
+    },
+    exit: { 
+      opacity: 0, 
+      x: 20, 
+      transition: { duration: 0.2, ease: "easeIn" } 
+    }
+  }
+};

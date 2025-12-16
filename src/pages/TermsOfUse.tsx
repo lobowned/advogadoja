@@ -5,12 +5,13 @@ import { BackButton } from "@/components/BackButton";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import PageTransition from "@/components/motion/PageTransition";
 
 const TermsOfUse = () => {
   const lastUpdated = "14 de dezembro de 2025";
 
   return (
-    <>
+    <PageTransition variant="fade">
       <Helmet>
         <title>Termos de Uso | Advogado Online</title>
         <meta 
@@ -358,7 +359,7 @@ const TermsOfUse = () => {
           </div>
         </footer>
       </div>
-    </>
+    </PageTransition>
   );
 };
 

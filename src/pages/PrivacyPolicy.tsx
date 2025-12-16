@@ -4,12 +4,13 @@ import { Scale, Shield, Mail, Phone } from "lucide-react";
 import { BackButton } from "@/components/BackButton";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import PageTransition from "@/components/motion/PageTransition";
 
 const PrivacyPolicy = () => {
   const lastUpdated = "14 de dezembro de 2025";
 
   return (
-    <>
+    <PageTransition variant="fade">
       <Helmet>
         <title>Política de Privacidade | Advogado Online</title>
         <meta 
@@ -291,7 +292,7 @@ const PrivacyPolicy = () => {
           </div>
         </footer>
       </div>
-    </>
+    </PageTransition>
   );
 };
 

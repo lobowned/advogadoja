@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import PageTransition from "@/components/motion/PageTransition";
 import { Briefcase, Users, Scale, Shield, Gavel, Newspaper, ArrowRight } from "lucide-react";
 import { BackButton } from "@/components/BackButton";
 import logoAdvogadoOnline from "@/assets/logo-advogado-online.png";
@@ -102,7 +103,7 @@ const Blog = () => {
   };
 
   return (
-    <>
+    <PageTransition variant="fade">
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
@@ -300,7 +301,7 @@ const Blog = () => {
         {/* Floating CTA */}
         <FloatingCTA />
       </div>
-    </>
+    </PageTransition>
   );
 };
 

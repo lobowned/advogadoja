@@ -40,7 +40,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
 
   return (
     <section className="relative overflow-hidden min-h-screen w-full flex items-center justify-center">
-{/* Video Background */}
+      {/* Video Background */}
       <video
         autoPlay
         muted
@@ -66,16 +66,16 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
 
       {/* Hero Content */}
-      <div className="relative z-10 container mx-auto px-4 py-10 sm:py-16 md:py-20">
+      <div className="relative z-10 container mx-auto px-4 py-6 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo with scale animation */}
           <m.div 
-            className="mb-4 sm:mb-6 md:mb-8"
+            className="mb-3 sm:mb-6 md:mb-8"
             initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: [0.175, 0.885, 0.32, 1.275] }}
           >
-          <m.img 
+            <m.img 
               src={logoAdvogadoOnline} 
               alt="Advogado Online" 
               className="h-56 xs:h-60 sm:h-64 md:h-72 lg:h-96 mx-auto"
@@ -84,9 +84,9 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
             />
           </m.div>
 
-          {/* Badges with stagger animation */}
+          {/* Badges - Simplified on mobile */}
           <m.div 
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4 sm:mb-6"
+            className="flex flex-row flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-6"
             initial={shouldReduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
@@ -98,12 +98,12 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
             >
               <Badge 
                 variant="secondary" 
-                className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium shadow-lg"
+                className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-2.5 sm:px-4 py-1 sm:py-2 text-[11px] sm:text-sm font-medium shadow-lg"
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5 sm:gap-2">
                   <div className="w-2 h-2 bg-whatsapp-send-btn rounded-full animate-pulse-dot" />
                   <Users className="w-3 h-3 sm:w-4 sm:h-4" />
-                  <span>{onlineCount} advogados online agora</span>
+                  <span>{onlineCount} online</span>
                 </div>
               </Badge>
             </m.div>
@@ -114,23 +114,23 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
               transition={{ delay: 0.5, duration: 0.5 }}
             >
               <Badge 
-                className="bg-amber-500/20 backdrop-blur-md border border-amber-500/30 text-amber-100 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium shadow-lg"
+                className="bg-amber-500/20 backdrop-blur-md border border-amber-500/30 text-amber-100 px-2.5 sm:px-4 py-1 sm:py-2 text-[11px] sm:text-sm font-medium shadow-lg"
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5 sm:gap-2">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-amber-400 text-amber-400" />
+                      <Star key={i} className="w-2.5 h-2.5 sm:w-4 sm:h-4 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <span>4.9 • 2.500+ atendimentos</span>
+                  <span>4.9 • 2.500+</span>
                 </div>
               </Badge>
             </m.div>
           </m.div>
 
-          {/* Rotating Testimonial */}
+          {/* Rotating Testimonial - Hidden on very small mobile */}
           <m.div 
-            className="mb-6"
+            className="mb-4 sm:mb-6 hidden xs:block"
             initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
@@ -141,21 +141,21 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 inline-flex items-center gap-2"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 inline-flex items-center gap-1.5 sm:gap-2"
             >
-              <span className="text-amber-400 text-lg">"</span>
-              <p className="text-white/90 text-sm sm:text-base italic">
+              <span className="text-amber-400 text-base sm:text-lg">"</span>
+              <p className="text-white/90 text-xs sm:text-base italic">
                 {testimonials[currentTestimonial].text}
               </p>
-              <span className="text-white/60 text-xs">
+              <span className="text-white/60 text-[10px] sm:text-xs">
                 - {testimonials[currentTestimonial].author}
               </span>
             </m.div>
           </m.div>
 
-          {/* Avatar Carousel */}
+          {/* Avatar Carousel - Only on larger screens */}
           <m.div 
-            className="mb-6"
+            className="mb-4 sm:mb-6 hidden sm:block"
             initial={shouldReduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.5 }}
@@ -198,9 +198,9 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
             </p>
           </m.div>
 
-          {/* Main Title with blur reveal */}
+          {/* Main Title - Adjusted sizes for mobile */}
           <m.h1 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-6 leading-tight"
             initial={shouldReduceMotion ? false : { opacity: 0, filter: "blur(10px)", y: 30 }}
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{ delay: 0.9, duration: 0.7, ease: "easeOut" }}
@@ -225,13 +225,13 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
               <Button 
                 onClick={onCtaClick}
                 size="lg"
-                className="bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white min-h-[56px] px-8 text-lg font-bold shadow-lg shadow-whatsapp-send-btn/30 hover:shadow-xl hover:shadow-whatsapp-send-btn/40 transition-all duration-300"
+                className="bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white min-h-[52px] sm:min-h-[56px] px-6 sm:px-8 text-base sm:text-lg font-bold shadow-lg shadow-whatsapp-send-btn/30 hover:shadow-xl hover:shadow-whatsapp-send-btn/40 transition-all duration-300"
               >
-                <MessageSquare className="mr-2 h-5 w-5" />
+                <MessageSquare className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 Falar AGORA - Resposta em 2 min
               </Button>
             </m.div>
-            <p className="text-white/70 text-sm mt-3 flex items-center justify-center gap-4">
+            <p className="text-white/70 text-xs sm:text-sm mt-2 sm:mt-3 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-4">
               <span className="flex items-center gap-1">
                 <span className="text-whatsapp-send-btn">✓</span> Consulta 100% gratuita
               </span>

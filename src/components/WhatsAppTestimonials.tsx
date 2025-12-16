@@ -1,8 +1,6 @@
-import { m, useReducedMotion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, Phone, Video, MoreVertical, Check, CheckCheck, Play, Pause, Mic, Signal, Wifi, Battery } from "lucide-react";
+import { ArrowLeft, Phone, Video, MoreVertical, Check, CheckCheck, Play, Mic, Signal, Wifi, Battery } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { useState, useEffect, useCallback, forwardRef } from "react";
-import { useInView } from "react-intersection-observer";
+import { useState } from "react";
 
 interface Message {
   type: "sent" | "received" | "audio";
@@ -247,55 +245,34 @@ const whatsappTestimonials: Testimonial[] = [
   }
 ];
 
-// Phone Status Bar Component
-const PhoneStatusBar = ({ time, batteryLevel }: { time: string; batteryLevel: number }) => {
-  return (
-    <div className="flex items-center justify-between px-4 py-1.5 bg-[#075E54]">
-      <span className="text-white text-xs font-medium">{time}</span>
-      <div className="flex items-center gap-1">
-        <Signal className="w-3.5 h-3.5 text-white" />
-        <Wifi className="w-3.5 h-3.5 text-white" />
-        <div className="flex items-center">
-          <Battery className="w-4 h-4 text-white" />
-          <span className="text-white text-[10px] ml-0.5">{batteryLevel}%</span>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Typing Indicator Component
-const TypingIndicator = () => (
-  <div className="flex justify-start">
-    <div className="wa-bubble-received px-4 py-2.5">
-      <div className="flex items-center gap-1">
-        <span className="w-2 h-2 bg-[#667781] rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-        <span className="w-2 h-2 bg-[#667781] rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-        <span className="w-2 h-2 bg-[#667781] rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+// Phone Status Bar Component - Static
+const PhoneStatusBar = ({ time, batteryLevel }: { time: string; batteryLevel: number }) => (
+  <div className="flex items-center justify-between px-4 py-1.5 bg-[#075E54]">
+    <span className="text-white text-xs font-medium">{time}</span>
+    <div className="flex items-center gap-1">
+      <Signal className="w-3.5 h-3.5 text-white" />
+      <Wifi className="w-3.5 h-3.5 text-white" />
+      <div className="flex items-center">
+        <Battery className="w-4 h-4 text-white" />
+        <span className="text-white text-[10px] ml-0.5">{batteryLevel}%</span>
       </div>
     </div>
   </div>
 );
 
-// Generate random waveform bars
-const generateWaveform = () => {
-  return Array.from({ length: 28 }, () => Math.random() * 100);
-};
-
-const AudioWaveform = ({ isPlaying }: { isPlaying: boolean }) => {
-  const [bars] = useState(() => generateWaveform());
+// Static Waveform - Always "paused" appearance
+const StaticAudioWaveform = () => {
+  const bars = [45, 65, 30, 80, 55, 40, 70, 35, 60, 45, 75, 50, 35, 65, 40, 55, 70, 45, 60, 35, 50, 75, 40, 65, 55, 45, 70, 35];
   
   return (
     <div className="flex items-center gap-[2px] h-5 flex-1">
       {bars.map((height, i) => (
         <div
           key={i}
-          className={`w-[3px] rounded-full transition-all duration-150 ${
-            isPlaying ? 'bg-[#075E54]' : 'bg-[#8696A0]'
-          }`}
+          className="w-[3px] rounded-full bg-[#8696A0]"
           style={{ 
             height: `${Math.max(15, height * 0.6)}%`,
-            opacity: isPlaying ? 1 : 0.7
+            opacity: 0.7
           }}
         />
       ))}
@@ -303,123 +280,63 @@ const AudioWaveform = ({ isPlaying }: { isPlaying: boolean }) => {
   );
 };
 
-const AudioMessage = ({ message }: { message: Message }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [progress, setProgress] = useState(0);
-  
-  useEffect(() => {
-    if (isPlaying) {
-      const interval = setInterval(() => {
-        setProgress(prev => {
-          if (prev >= 100) {
-            setIsPlaying(false);
-            return 0;
-          }
-          return prev + 2;
-        });
-      }, 100);
-      return () => clearInterval(interval);
-    }
-  }, [isPlaying]);
-  
+// Static Audio Message
+const StaticAudioMessage = ({ message }: { message: Message }) => (
+  <div className="flex justify-start">
+    <div className="wa-bubble-received flex items-center gap-2 pl-2 pr-3 py-2 min-w-[240px] max-w-[85%]">
+      {/* Play Button - Static */}
+      <div className="w-9 h-9 rounded-full bg-[#00A884] flex items-center justify-center flex-shrink-0">
+        <Play className="w-4 h-4 text-white fill-white ml-0.5" />
+      </div>
+      
+      {/* Mini Avatar */}
+      <div className="w-6 h-6 rounded-full bg-[#DFE5E7] flex items-center justify-center flex-shrink-0">
+        <Mic className="w-3 h-3 text-[#8696A0]" />
+      </div>
+      
+      {/* Static Waveform */}
+      <StaticAudioWaveform />
+      
+      {/* Duration + Time */}
+      <div className="flex flex-col items-end gap-0.5 flex-shrink-0 ml-1">
+        <span className="text-[11px] text-[#667781] font-medium">{message.duration}</span>
+        <span className="text-[10px] text-[#667781]">{message.time}</span>
+      </div>
+    </div>
+  </div>
+);
+
+// Static Emoji Reaction
+const StaticEmojiReaction = ({ emoji }: { emoji: string }) => (
+  <div className="absolute -bottom-3 right-2 bg-white rounded-full px-1.5 py-0.5 shadow-md border border-gray-100">
+    <span className="text-sm">{emoji}</span>
+  </div>
+);
+
+// Static Message Bubble
+const StaticMessageBubble = ({ message, isFirst }: { message: Message; isFirst: boolean }) => {
+  if (message.type === "audio") {
+    return <StaticAudioMessage message={message} />;
+  }
+
+  const isSent = message.type === "sent";
+
   return (
-    <div className="flex justify-start">
-      <div className="wa-bubble-received flex items-center gap-2 pl-2 pr-3 py-2 min-w-[240px] max-w-[85%]">
-        {/* Play/Pause Button */}
-        <button 
-          onClick={() => setIsPlaying(!isPlaying)}
-          className="w-9 h-9 rounded-full bg-[#00A884] flex items-center justify-center flex-shrink-0 hover:bg-[#008069] transition-colors"
-        >
-          {isPlaying ? (
-            <Pause className="w-4 h-4 text-white fill-white" />
-          ) : (
-            <Play className="w-4 h-4 text-white fill-white ml-0.5" />
-          )}
-        </button>
-        
-        {/* Mini Avatar */}
-        <div className="w-6 h-6 rounded-full bg-[#DFE5E7] flex items-center justify-center flex-shrink-0">
-          <Mic className="w-3 h-3 text-[#8696A0]" />
+    <div className={`flex ${isSent ? "justify-end" : "justify-start"}`}>
+      <div className={`relative ${isSent ? "wa-bubble-sent" : "wa-bubble-received"} ${isFirst ? (isSent ? "wa-tail-sent" : "wa-tail-received") : ""}`}>
+        <p className="text-[14.2px] text-[#111B21] leading-[19px] break-words">{message.text}</p>
+        <div className={`flex items-center gap-1 mt-0.5 ${isSent ? "justify-end" : "justify-start"}`}>
+          <span className="text-[11px] text-[#667781]">{message.time}</span>
+          {isSent && message.seen && <CheckCheck className="w-4 h-4 text-[#53BDEB]" />}
+          {isSent && !message.seen && <Check className="w-4 h-4 text-[#667781]" />}
         </div>
-        
-        {/* Waveform with Progress */}
-        <div className="relative flex-1">
-          <AudioWaveform isPlaying={isPlaying} />
-          <div 
-            className="absolute bottom-0 left-0 h-0.5 bg-[#00A884] transition-all duration-100"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
-        
-        {/* Duration + Time */}
-        <div className="flex flex-col items-end gap-0.5 flex-shrink-0 ml-1">
-          <span className="text-[11px] text-[#667781] font-medium">{message.duration}</span>
-          <span className="text-[10px] text-[#667781]">{message.time}</span>
-        </div>
+        {message.reaction && <StaticEmojiReaction emoji={message.reaction} />}
       </div>
     </div>
   );
 };
 
-// Emoji Reaction Component
-const EmojiReaction = ({ emoji }: { emoji: string }) => (
-  <m.div
-    initial={{ scale: 0, opacity: 0 }}
-    animate={{ scale: 1, opacity: 1 }}
-    transition={{ type: "spring", stiffness: 500, damping: 25 }}
-    className="absolute -bottom-3 right-2 bg-white rounded-full px-1.5 py-0.5 shadow-md border border-gray-100"
-  >
-    <span className="text-sm">{emoji}</span>
-  </m.div>
-);
-
-interface MessageBubbleProps {
-  message: Message;
-  isFirst: boolean;
-  index: number;
-}
-
-const MessageBubble = forwardRef<HTMLDivElement, MessageBubbleProps>(
-  ({ message, isFirst, index }, ref) => {
-    if (message.type === "audio") {
-      return (
-        <m.div
-          ref={ref}
-          initial={{ opacity: 0, y: 10, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.3, delay: index * 0.1 }}
-        >
-          <AudioMessage message={message} />
-        </m.div>
-      );
-    }
-
-    const isSent = message.type === "sent";
-
-    return (
-      <m.div
-        ref={ref}
-        initial={{ opacity: 0, y: 10, scale: 0.95 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.3, delay: index * 0.1 }}
-        className={`flex ${isSent ? "justify-end" : "justify-start"}`}
-      >
-        <div className={`relative ${isSent ? "wa-bubble-sent" : "wa-bubble-received"} ${isFirst ? (isSent ? "wa-tail-sent" : "wa-tail-received") : ""}`}>
-          <p className="text-[14.2px] text-[#111B21] leading-[19px] break-words">{message.text}</p>
-          <div className={`flex items-center gap-1 mt-0.5 ${isSent ? "justify-end" : "justify-start"}`}>
-            <span className="text-[11px] text-[#667781]">{message.time}</span>
-            {isSent && message.seen && <CheckCheck className="w-4 h-4 text-[#53BDEB]" />}
-            {isSent && !message.seen && <Check className="w-4 h-4 text-[#667781]" />}
-          </div>
-          {message.reaction && <EmojiReaction emoji={message.reaction} />}
-        </div>
-      </m.div>
-    );
-  }
-);
-
-MessageBubble.displayName = "MessageBubble";
-
+// Static Date Divider
 const DateDivider = ({ date }: { date: string }) => (
   <div className="flex justify-center my-3">
     <div className="bg-[#FFFFFF] px-3 py-1 rounded-lg shadow-sm">
@@ -428,27 +345,26 @@ const DateDivider = ({ date }: { date: string }) => (
   </div>
 );
 
-const WhatsAppHeader = ({ 
+// Static WhatsApp Header - Always shows "online"
+const StaticWhatsAppHeader = ({ 
   name, 
   initials, 
-  avatarUrl, 
-  isTyping 
+  avatarUrl 
 }: { 
   name: string; 
   initials: string; 
   avatarUrl?: string; 
-  isTyping: boolean;
 }) => {
   const [imgError, setImgError] = useState(false);
   
   return (
     <div className="wa-header-real flex items-center gap-3 px-2 py-2">
       {/* Back Arrow */}
-      <button className="p-1 hover:bg-white/10 rounded-full transition-colors">
+      <div className="p-1">
         <ArrowLeft className="w-5 h-5 text-white" />
-      </button>
+      </div>
       
-      {/* Avatar with Photo or Initials Fallback */}
+      {/* Avatar */}
       <div className="w-10 h-10 rounded-full bg-[#DFE5E7] flex items-center justify-center flex-shrink-0 overflow-hidden">
         {avatarUrl && !imgError ? (
           <img 
@@ -462,42 +378,37 @@ const WhatsAppHeader = ({
         )}
       </div>
       
-      {/* Name & Status */}
+      {/* Name & Status - Always "online" */}
       <div className="flex-1 min-w-0">
         <p className="font-medium text-white text-[16px] truncate leading-tight">{name}</p>
-        <p className="text-[13px] text-white/80 leading-tight">
-          {isTyping ? (
-            <span className="text-[#25D366]">digitando...</span>
-          ) : (
-            "online"
-          )}
-        </p>
+        <p className="text-[13px] text-white/80 leading-tight">online</p>
       </div>
       
       {/* Action Icons */}
       <div className="flex items-center gap-3">
-        <button className="p-1.5 hover:bg-white/10 rounded-full transition-colors">
+        <div className="p-1.5">
           <Video className="w-5 h-5 text-white" />
-        </button>
-        <button className="p-1.5 hover:bg-white/10 rounded-full transition-colors">
+        </div>
+        <div className="p-1.5">
           <Phone className="w-5 h-5 text-white" />
-        </button>
-        <button className="p-1.5 hover:bg-white/10 rounded-full transition-colors">
+        </div>
+        <div className="p-1.5">
           <MoreVertical className="w-5 h-5 text-white" />
-        </button>
+        </div>
       </div>
     </div>
   );
 };
 
-const WhatsAppInputBar = () => (
+// Static Input Bar
+const StaticWhatsAppInputBar = () => (
   <div className="flex items-center gap-2 px-2 py-2 bg-[#F0F2F5]">
     {/* Emoji */}
-    <button className="p-2 text-[#54656F] hover:text-[#00A884] transition-colors">
+    <div className="p-2 text-[#54656F]">
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
         <path d="M9.153 11.603c.795 0 1.439-.879 1.439-1.962s-.644-1.962-1.439-1.962-1.439.879-1.439 1.962.644 1.962 1.439 1.962zm5.694 0c.795 0 1.439-.879 1.439-1.962s-.644-1.962-1.439-1.962-1.439.879-1.439 1.962.644 1.962 1.439 1.962zM12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.514 0-10-4.486-10-10S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10zm6-8.687c0 3.867-3.059 7-6.813 7h-.374C7.059 20.313 4 17.18 4 13.313v-.063c.139-2.998 2.551-5.411 5.543-5.563.139-.004.277.003.414.012a6.26 6.26 0 011.207.2c1.728.429 3.169 1.549 3.98 3.091a6.213 6.213 0 01.856 3.197v.126z"/>
       </svg>
-    </button>
+    </div>
     
     {/* Input */}
     <div className="flex-1 bg-white rounded-full px-4 py-2.5">
@@ -505,162 +416,85 @@ const WhatsAppInputBar = () => (
     </div>
     
     {/* Attachment */}
-    <button className="p-2 text-[#54656F] hover:text-[#00A884] transition-colors">
+    <div className="p-2 text-[#54656F]">
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
         <path d="M1.816 15.556v.002c0 1.502.584 2.912 1.646 3.972s2.472 1.647 3.974 1.647a5.58 5.58 0 003.972-1.645l9.547-9.548c.769-.768 1.147-1.767 1.058-2.817-.079-.968-.548-1.927-1.319-2.698-1.594-1.592-4.068-1.711-5.517-.262l-7.916 7.915c-.881.881-.792 2.25.214 3.261.959.958 2.423 1.053 3.263.215l5.511-5.512c.28-.28.267-.722.053-.936l-.244-.244c-.191-.191-.567-.349-.957.04l-5.506 5.506c-.18.18-.635.127-.976-.214-.098-.097-.576-.613-.213-.973l7.915-7.917c.818-.817 2.267-.699 3.23.262.5.501.802 1.1.849 1.685.051.573-.156 1.111-.589 1.543l-9.547 9.549a3.97 3.97 0 01-2.829 1.171 3.975 3.975 0 01-2.83-1.173 3.973 3.973 0 01-1.172-2.828c0-1.071.415-2.076 1.172-2.83l7.209-7.211c.157-.157.264-.579.028-.814L11.5 4.36a.572.572 0 00-.834.018l-7.205 7.207a5.577 5.577 0 00-1.645 3.971z"/>
       </svg>
-    </button>
+    </div>
     
     {/* Camera */}
-    <button className="p-2 text-[#54656F] hover:text-[#00A884] transition-colors">
+    <div className="p-2 text-[#54656F]">
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
         <path d="M21.317 4.381H10.971L9.078 2.45c-.193-.199-.472-.301-.748-.301H5.084c-.276 0-.556.102-.748.301L2.443 4.381H2.683c-1.18 0-2.14.969-2.14 2.16v11.298c0 1.191.96 2.16 2.14 2.16h18.634c1.18 0 2.14-.969 2.14-2.16V6.541c0-1.191-.96-2.16-2.14-2.16zM12 17.07c-2.99 0-5.41-2.449-5.41-5.469 0-3.019 2.42-5.469 5.41-5.469s5.41 2.449 5.41 5.469c0 3.019-2.42 5.469-5.41 5.469zm0-9.188c-2.022 0-3.66 1.658-3.66 3.719 0 2.061 1.638 3.719 3.66 3.719s3.66-1.658 3.66-3.719c0-2.061-1.638-3.719-3.66-3.719z"/>
       </svg>
-    </button>
+    </div>
     
     {/* Mic */}
-    <button className="w-10 h-10 bg-[#00A884] rounded-full flex items-center justify-center hover:bg-[#008069] transition-colors">
+    <div className="w-10 h-10 bg-[#00A884] rounded-full flex items-center justify-center">
       <Mic className="w-5 h-5 text-white" />
-    </button>
+    </div>
   </div>
 );
 
-const WhatsAppConversation = ({ testimonial, index }: { testimonial: Testimonial; index: number }) => {
-  const shouldReduceMotion = useReducedMotion();
-  const [visibleMessages, setVisibleMessages] = useState<number[]>([]);
-  const [isTyping, setIsTyping] = useState(false);
-  const [hasStarted, setHasStarted] = useState(false);
-  
-  const { ref, inView } = useInView({
-    threshold: 0.3,
-    triggerOnce: true
-  });
-
-  const animateMessages = useCallback(() => {
-    if (shouldReduceMotion) {
-      // Show all messages immediately if reduced motion is preferred
-      setVisibleMessages(testimonial.messages.map((_, i) => i));
-      return;
-    }
-
-    let currentIndex = 0;
-    
-    const showNextMessage = () => {
-      if (currentIndex >= testimonial.messages.length) return;
-      
-      const currentMessage = testimonial.messages[currentIndex];
-      
-      // If it's a client message (received), show typing first
-      if (currentMessage.type === "received" || currentMessage.type === "audio") {
-        setIsTyping(true);
-        setTimeout(() => {
-          setIsTyping(false);
-          setVisibleMessages(prev => [...prev, currentIndex]);
-          currentIndex++;
-          setTimeout(showNextMessage, 800 + Math.random() * 400);
-        }, 1200 + Math.random() * 600);
-      } else {
-        // Lawyer message (sent), show immediately
-        setVisibleMessages(prev => [...prev, currentIndex]);
-        currentIndex++;
-        setTimeout(showNextMessage, 1000 + Math.random() * 500);
-      }
-    };
-    
-    // Start the animation sequence
-    setTimeout(showNextMessage, 500);
-  }, [testimonial.messages, shouldReduceMotion]);
-
-  useEffect(() => {
-    if (inView && !hasStarted) {
-      setHasStarted(true);
-      animateMessages();
-    }
-  }, [inView, hasStarted, animateMessages]);
+// Static WhatsApp Conversation - All messages visible immediately
+const StaticWhatsAppConversation = ({ testimonial }: { testimonial: Testimonial }) => {
+  const hasAudio = testimonial.messages.some(m => m.type === "audio");
   
   return (
-    <m.div
-      ref={ref}
-      initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="wa-card overflow-hidden"
-    >
-      {/* Phone Status Bar */}
-      <PhoneStatusBar time={testimonial.statusBarTime} batteryLevel={testimonial.batteryLevel} />
-      
-      {/* WhatsApp Header */}
-      <WhatsAppHeader 
-        name={testimonial.clientName} 
-        initials={testimonial.clientInitials}
-        avatarUrl={testimonial.avatarUrl}
-        isTyping={isTyping}
-      />
-
-      {/* Messages Area with Doodle Background */}
-      <div className="wa-chat-bg px-3 py-2 space-y-1 min-h-[180px]">
-        <DateDivider date={testimonial.date} />
+    <div className="relative group">
+      {/* Screenshot wrapper with photo-like effect */}
+      <div className="wa-card overflow-hidden rounded-2xl shadow-lg">
+        {/* Phone Status Bar */}
+        <PhoneStatusBar time={testimonial.statusBarTime} batteryLevel={testimonial.batteryLevel} />
         
-        <AnimatePresence mode="popLayout">
+        {/* WhatsApp Header */}
+        <StaticWhatsAppHeader 
+          name={testimonial.clientName} 
+          initials={testimonial.clientInitials}
+          avatarUrl={testimonial.avatarUrl}
+        />
+
+        {/* Messages Area - All visible at once */}
+        <div className="wa-chat-bg px-3 py-2 space-y-1 min-h-[180px]">
+          <DateDivider date={testimonial.date} />
+          
           {testimonial.messages.map((message, idx) => (
-            visibleMessages.includes(idx) && (
-              <MessageBubble 
-                key={idx} 
-                message={message} 
-                isFirst={idx === 0 || testimonial.messages[idx - 1].type !== message.type}
-                index={idx}
-              />
-            )
+            <StaticMessageBubble 
+              key={idx} 
+              message={message} 
+              isFirst={idx === 0 || testimonial.messages[idx - 1].type !== message.type}
+            />
           ))}
-        </AnimatePresence>
-        
-        {/* Typing Indicator */}
-        <AnimatePresence>
-          {isTyping && (
-            <m.div
-              initial={{ opacity: 0, y: 5 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -5 }}
-              transition={{ duration: 0.2 }}
-            >
-              <TypingIndicator />
-            </m.div>
-          )}
-        </AnimatePresence>
-      </div>
+        </div>
 
-      {/* Audio Transcript */}
-      {testimonial.audioTranscript && visibleMessages.includes(testimonial.messages.findIndex(m => m.type === "audio")) && (
-        <m.div 
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          transition={{ duration: 0.3 }}
-          className="px-4 py-3 bg-[#F0F2F5] border-t border-[#E9EDEF]"
-        >
-          <div className="flex items-start gap-2">
-            <div className="w-5 h-5 rounded-full bg-[#25D366] flex items-center justify-center flex-shrink-0 mt-0.5">
-              <Mic className="w-3 h-3 text-white" />
-            </div>
-            <div>
-              <p className="text-[11px] text-[#667781] font-medium mb-1">Transcrição do áudio:</p>
-              <p className="text-[13px] text-[#111B21] italic leading-relaxed">
-                "{testimonial.audioTranscript}"
-              </p>
+        {/* Audio Transcript - Always visible if exists */}
+        {testimonial.audioTranscript && hasAudio && (
+          <div className="px-4 py-3 bg-[#F0F2F5] border-t border-[#E9EDEF]">
+            <div className="flex items-start gap-2">
+              <div className="w-5 h-5 rounded-full bg-[#25D366] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Mic className="w-3 h-3 text-white" />
+              </div>
+              <div>
+                <p className="text-[11px] text-[#667781] font-medium mb-1">Transcrição do áudio:</p>
+                <p className="text-[13px] text-[#111B21] italic leading-relaxed">
+                  "{testimonial.audioTranscript}"
+                </p>
+              </div>
             </div>
           </div>
-        </m.div>
-      )}
+        )}
 
-      {/* Input Bar (Visual Only) */}
-      <WhatsAppInputBar />
-    </m.div>
+        {/* Input Bar */}
+        <StaticWhatsAppInputBar />
+      </div>
+      
+      {/* Subtle ring effect for photo-like appearance */}
+      <div className="absolute inset-0 rounded-2xl ring-1 ring-black/5 pointer-events-none" />
+    </div>
   );
 };
 
 const WhatsAppTestimonials = () => {
-  const shouldReduceMotion = useReducedMotion();
-  
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
       {/* Background decoration */}
@@ -668,12 +502,7 @@ const WhatsAppTestimonials = () => {
       
       <div className="container relative z-10">
         {/* Section Header */}
-        <m.div
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <Badge variant="outline" className="mb-4 text-primary border-primary/30">
             💬 Depoimentos Reais
           </Badge>
@@ -684,27 +513,21 @@ const WhatsAppTestimonials = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Mensagens reais de agradecimento de clientes que tiveram seus casos resolvidos com sucesso
           </p>
-        </m.div>
+        </div>
 
-        {/* Testimonials Grid */}
+        {/* Testimonials Grid - Static screenshots */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {whatsappTestimonials.map((testimonial, index) => (
-            <WhatsAppConversation key={testimonial.id} testimonial={testimonial} index={index} />
+          {whatsappTestimonials.map((testimonial) => (
+            <StaticWhatsAppConversation key={testimonial.id} testimonial={testimonial} />
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <m.div
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="text-center mt-12"
-        >
+        <div className="text-center mt-12">
           <p className="text-muted-foreground text-sm">
             Junte-se a milhares de clientes satisfeitos
           </p>
-        </m.div>
+        </div>
       </div>
     </section>
   );

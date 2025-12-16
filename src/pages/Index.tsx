@@ -12,6 +12,7 @@ import ArticlesSection from "@/components/ArticlesSection";
 import NewsSection from "@/components/NewsSection";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import MobileBottomCTA from "@/components/MobileBottomCTA";
+import SuccessNotification from "@/components/SuccessNotification";
 
 const Index = () => {
   const [chatVisible, setChatVisible] = useState(false);
@@ -232,6 +233,9 @@ const Index = () => {
       
       {/* Mobile Bottom CTA */}
       <MobileBottomCTA onCtaClick={handleCTA} chatVisible={chatVisible} />
+      
+      {/* Success Notifications */}
+      <SuccessNotification disabled={chatVisible} />
       </div>
     </>
   );

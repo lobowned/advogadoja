@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Send, Phone, Video, MoreVertical, Smile, Mic, Check, Shield, RefreshCw, MessageSquare, ChevronLeft, Paperclip, Lock } from "lucide-react";
+import { Send, Phone, Video, MoreVertical, Smile, Mic, Check, Shield, RefreshCw, MessageSquare, ChevronLeft, Paperclip, Lock, Calculator } from "lucide-react";
 import { useLawyerChat } from "@/hooks/useLawyerChat";
 import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -22,11 +22,13 @@ const LawyerChatSection = () => {
     messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers, 
     isCollectingLead, leadQuestion, isInQueue, queuePosition, hasJoinedQueue, joinQueue, peopleAhead, 
     showRatingButton, submitRating,
-    detectedProblem, urgencyLevel, contextualSuggestions, resetNudgeTimer
+    detectedProblem, urgencyLevel, contextualSuggestions, resetNudgeTimer,
+    suggestedCalculator, setSuggestedCalculator
   } = useLawyerChat();
   const { onlineLawyers, notification, onlineCount } = useLawyerPresence();
   const [inputValue, setInputValue] = useState("");
   const [showResponseTime, setShowResponseTime] = useState(false);
+  const [showCalculatorSuggestion, setShowCalculatorSuggestion] = useState(false);
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const lastMessageRef = useRef<HTMLDivElement>(null);
   const [newMessageIds, setNewMessageIds] = useState<Set<number>>(new Set());

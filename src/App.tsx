@@ -26,6 +26,7 @@ import NicheLanding from "./pages/NicheLanding";
 import News from "./pages/News";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
+import CasosSucesso from "./pages/CasosSucesso";
 
 const queryClient = new QueryClient();
 
@@ -55,6 +56,8 @@ const App = () => (
                 {/* Legal Pages */}
                 <Route path="/privacidade" element={<PrivacyPolicy />} />
                 <Route path="/termos-de-uso" element={<TermsOfUse />} />
+                {/* Success Stories */}
+                <Route path="/casos-de-sucesso" element={<CasosSucesso />} />
                 {/* News */}
                 <Route path="/noticias" element={<News />} />
                 <Route path="/noticias/:nicheId" element={<News />} />

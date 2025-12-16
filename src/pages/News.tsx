@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import PageTransition from "@/components/motion/PageTransition";
 import { Newspaper, Scale, Heart, Users, Shield, Gavel, RefreshCw } from "lucide-react";
 import { BackButton } from "@/components/BackButton";
 import { Button } from "@/components/ui/button";
@@ -79,7 +80,7 @@ export default function News() {
     : "Fique por dentro das principais notícias jurídicas do Brasil. Atualizações semanais de fontes oficiais como STF, STJ, TST e Conjur.";
 
   return (
-    <>
+    <PageTransition variant="fade">
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
@@ -205,6 +206,6 @@ export default function News() {
           </div>
         </footer>
       </div>
-    </>
+    </PageTransition>
   );
 }

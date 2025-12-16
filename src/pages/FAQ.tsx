@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import PageTransition from "@/components/motion/PageTransition";
 import { Scale, HelpCircle, MessageCircle, Shield, Clock, CreditCard, Users, Phone } from "lucide-react";
 import { BackButton } from "@/components/BackButton";
 import { Button } from "@/components/ui/button";
@@ -159,7 +160,7 @@ const FAQ = () => {
   };
 
   return (
-    <>
+    <PageTransition variant="fade">
       <Helmet>
         <title>Perguntas Frequentes | Advogado Online</title>
         <meta 
@@ -278,7 +279,7 @@ const FAQ = () => {
           </div>
         </footer>
       </div>
-    </>
+    </PageTransition>
   );
 };
 

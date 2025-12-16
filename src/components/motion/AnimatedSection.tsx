@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ReactNode } from "react";
 
@@ -35,7 +35,7 @@ const AnimatedSection = ({
   }
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       className={className}
       initial="hidden"
@@ -57,7 +57,7 @@ const AnimatedSection = ({
       }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 };
 

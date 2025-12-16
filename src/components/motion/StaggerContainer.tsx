@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ReactNode } from "react";
 
@@ -26,7 +26,7 @@ const StaggerContainer = ({
   }
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       className={className}
       initial="hidden"
@@ -42,7 +42,7 @@ const StaggerContainer = ({
       }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 };
 
@@ -60,7 +60,7 @@ export const StaggerItem = ({
   }
 
   return (
-    <motion.div
+    <m.div
       className={className}
       variants={{
         hidden: { opacity: 0, y: 20 },
@@ -72,7 +72,7 @@ export const StaggerItem = ({
       }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 };
 

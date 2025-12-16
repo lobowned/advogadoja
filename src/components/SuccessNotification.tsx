@@ -1,0 +1,146 @@
+import { useState, useEffect, useCallback } from 'react';
+import { m, AnimatePresence } from 'framer-motion';
+import { X, CheckCircle2, TrendingUp } from 'lucide-react';
+import { successCases, areaLabels, areaColors, type SuccessCase } from '@/data/success-cases';
+
+interface SuccessNotificationProps {
+  disabled?: boolean;
+}
+
+const SuccessNotification = ({ disabled = false }: SuccessNotificationProps) => {
+  const [currentCase, setCurrentCase] = useState<SuccessCase | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [usedIndices, setUsedIndices] = useState<Set<number>>(new Set());
+
+  const showRandomCase = useCallback(() => {
+    if (disabled) return;
+    
+    // Find available indices
+    let availableIndices = successCases
+      .map((_, i) => i)
+      .filter(i => !usedIndices.has(i));
+    
+    // Reset if all used
+    if (availableIndices.length === 0) {
+      setUsedIndices(new Set());
+      availableIndices = successCases.map((_, i) => i);
+    }
+    
+    const randomIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
+    setUsedIndices(prev => new Set([...prev, randomIndex]));
+    setCurrentCase(successCases[randomIndex]);
+    setIsVisible(true);
+    
+    // Auto-hide after 6 seconds
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 6000);
+  }, [disabled, usedIndices]);
+
+  useEffect(() => {
+    if (disabled) return;
+    
+    // Show first notification after 15 seconds
+    const initialTimeout = setTimeout(() => {
+      showRandomCase();
+    }, 15000);
+    
+    // Show subsequent notifications every 35-55 seconds
+    const interval = setInterval(() => {
+      const randomDelay = 35000 + Math.random() * 20000;
+      setTimeout(showRandomCase, randomDelay - 35000);
+    }, 45000);
+    
+    return () => {
+      clearTimeout(initialTimeout);
+      clearInterval(interval);
+    };
+  }, [disabled, showRandomCase]);
+
+  const formatCurrency = (value: number) => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+      maximumFractionDigits: 0
+    }).format(value);
+  };
+
+  if (!currentCase) return null;
+
+  return (
+    <AnimatePresence>
+      {isVisible && (
+        <m.div
+          initial={{ opacity: 0, x: -100, y: 20 }}
+          animate={{ opacity: 1, x: 0, y: 0 }}
+          exit={{ opacity: 0, x: -100, y: 20 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+          className="fixed bottom-20 left-4 z-50 max-w-sm"
+        >
+          <div className="bg-card border border-border rounded-xl shadow-elegant overflow-hidden">
+            {/* Header */}
+            <div className="bg-gradient-to-r from-primary/10 to-primary/5 px-4 py-2 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-primary" />
+                <span className="text-xs font-medium text-primary">Caso Resolvido</span>
+              </div>
+              <button
+                onClick={() => setIsVisible(false)}
+                className="p-1 hover:bg-muted rounded-full transition-colors"
+              >
+                <X className="w-3.5 h-3.5 text-muted-foreground" />
+              </button>
+            </div>
+            
+            {/* Content */}
+            <div className="px-4 py-3">
+              <div className="flex items-start gap-3">
+                {/* Avatar placeholder */}
+                <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
+                  <span className="text-lg">👤</span>
+                </div>
+                
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-medium text-foreground">
+                    {currentCase.name} de {currentCase.city}
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-0.5">
+                    {currentCase.result}
+                    {currentCase.value && (
+                      <span className="font-semibold text-primary ml-1">
+                        {formatCurrency(currentCase.value)}
+                      </span>
+                    )}
+                  </p>
+                  
+                  <div className="flex items-center gap-2 mt-2">
+                    <span className={`text-[10px] px-2 py-0.5 rounded-full text-white ${areaColors[currentCase.area]}`}>
+                      {areaLabels[currentCase.area]}
+                    </span>
+                    <span className="text-[10px] text-muted-foreground">
+                      há {currentCase.timeAgo}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Footer CTA */}
+            <div className="px-4 py-2 bg-muted/30 border-t border-border">
+              <a 
+                href="#lawyer-chat"
+                className="text-xs text-primary hover:underline flex items-center gap-1"
+                onClick={() => setIsVisible(false)}
+              >
+                <TrendingUp className="w-3 h-3" />
+                Consulte seu caso gratuitamente
+              </a>
+            </div>
+          </div>
+        </m.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
+export default SuccessNotification;

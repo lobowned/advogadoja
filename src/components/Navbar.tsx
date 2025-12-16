@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Calculator } from "lucide-react";
+import { MessageCircle, Calculator, Trophy } from "lucide-react";
 
 interface NavbarProps {
   onCtaClick: () => void;
@@ -44,10 +44,11 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
             <a href="/artigos" className={`${linkClass} text-xs md:text-sm hidden xs:inline`}>
               Artigos
             </a>
-            <a href="#lawyer-chat" className={`${linkClass} text-xs md:text-sm hidden sm:inline`}>
-              Como Funciona
+            <a href="/casos-de-sucesso" className={`${linkClass} text-xs md:text-sm hidden sm:inline`}>
+              <Trophy className="w-3.5 h-3.5 sm:w-4 sm:h-4 inline-block align-middle mr-1" />
+              <span className="align-middle">Casos</span>
             </a>
-            <a href="/noticias" className={`${linkClass} text-xs md:text-sm hidden sm:inline`}>
+            <a href="/noticias" className={`${linkClass} text-xs md:text-sm hidden md:inline`}>
               Notícias
             </a>
             <a href="/calculadoras" className={`${linkClass} text-xs md:text-sm`}>

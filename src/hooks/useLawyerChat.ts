@@ -61,6 +61,7 @@ export const useLawyerChat = () => {
   const [urgencyLevel, setUrgencyLevel] = useState<string>('baixa');
   const [contextualSuggestions, setContextualSuggestions] = useState<string[]>([]);
   const [userName, setUserName] = useState<string | null>(null);
+  const [suggestedCalculator, setSuggestedCalculator] = useState<'trabalhista' | 'pensao' | null>(null);
   
   // Sempre gera novo sessionId a cada refresh da página
   const [sessionId] = useState(() => {
@@ -1405,5 +1406,7 @@ export const useLawyerChat = () => {
     contextualSuggestions,
     resetNudgeTimer,
     nudgeCount,
+    suggestedCalculator,
+    setSuggestedCalculator,
   };
 };

@@ -153,9 +153,9 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
             </m.div>
           </m.div>
 
-          {/* Avatar Carousel - Only on larger screens */}
+          {/* Avatar Carousel - Compact on mobile */}
           <m.div 
-            className="mb-4 sm:mb-6 hidden sm:block"
+            className="mb-3 sm:mb-6"
             initial={shouldReduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.5 }}
@@ -172,28 +172,28 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
                   stopOnInteraction: false,
                 }),
               ]}
-              className="w-full max-w-md mx-auto"
+              className="w-full max-w-[260px] sm:max-w-md mx-auto"
             >
-              <CarouselContent className="-ml-2">
+              <CarouselContent className="-ml-1 sm:-ml-2">
                 {displayLawyers.slice(0, 12).map((lawyer) => (
                   <CarouselItem 
                     key={lawyer.id} 
-                    className="pl-2 basis-auto"
+                    className="pl-1 sm:pl-2 basis-auto"
                   >
                     <div className="relative group">
-                      <Avatar className="w-12 h-12 sm:w-14 sm:h-14 border-2 border-white/30 group-hover:border-primary transition-all duration-300 group-hover:scale-110">
+                      <Avatar className="w-9 h-9 sm:w-12 sm:h-12 md:w-14 md:h-14 border-2 border-white/30 group-hover:border-primary transition-all duration-300 group-hover:scale-110">
                         <AvatarImage src={lawyer.photo} alt={lawyer.name} />
-                        <AvatarFallback className="bg-primary/20 text-white text-xs">
+                        <AvatarFallback className="bg-primary/20 text-white text-[10px] sm:text-xs">
                           {lawyer.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
                         </AvatarFallback>
                       </Avatar>
-                      <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-whatsapp-send-btn rounded-full border-2 border-black/50 animate-pulse" />
+                      <div className="absolute -bottom-0.5 -right-0.5 w-2 h-2 sm:w-3 sm:h-3 bg-whatsapp-send-btn rounded-full border-2 border-black/50 animate-pulse" />
                     </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
             </Carousel>
-            <p className="text-xs text-white/60 mt-2">
+            <p className="text-[10px] sm:text-xs text-white/60 mt-1.5 sm:mt-2">
               Advogados prontos para atender você
             </p>
           </m.div>

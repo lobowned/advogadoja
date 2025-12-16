@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { Play, Check, CheckCheck, Mic, Volume2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -204,9 +204,11 @@ const MessageBubble = ({ message }: { message: Message }) => {
 };
 
 const WhatsAppConversation = ({ testimonial, index }: { testimonial: Testimonial; index: number }) => {
+  const shouldReduceMotion = useReducedMotion();
+  
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
+    <m.div
+      initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -246,11 +248,13 @@ const WhatsAppConversation = ({ testimonial, index }: { testimonial: Testimonial
           </div>
         </div>
       )}
-    </motion.div>
+    </m.div>
   );
 };
 
 const WhatsAppTestimonials = () => {
+  const shouldReduceMotion = useReducedMotion();
+  
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
       {/* Background decoration */}
@@ -258,8 +262,8 @@ const WhatsAppTestimonials = () => {
       
       <div className="container relative z-10">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+        <m.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-12"
@@ -274,7 +278,7 @@ const WhatsAppTestimonials = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Mensagens reais de agradecimento de clientes que tiveram seus casos resolvidos com sucesso
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -284,8 +288,8 @@ const WhatsAppTestimonials = () => {
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+        <m.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
@@ -294,7 +298,7 @@ const WhatsAppTestimonials = () => {
           <p className="text-muted-foreground text-sm">
             Junte-se a milhares de clientes satisfeitos
           </p>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

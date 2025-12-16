@@ -26,7 +26,7 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'glass-card shadow-elegant border-b border-primary/10' 
+          ? 'bg-background/80 backdrop-blur-xl shadow-elegant border-b border-border/50' 
           : 'bg-transparent'
       }`}
     >

@@ -142,7 +142,7 @@ const LawyerChatSection = () => {
                   <div className="flex items-center gap-1.5">
                     <h3 className="font-semibold text-sm sm:text-base truncate">{currentLawyer.name}</h3>
                     <span title={`${currentLawyer.oab} - ${currentLawyer.subSpecialty}`}>
-                      <Shield className="w-3.5 h-3.5 text-emerald-300 flex-shrink-0" />
+                      <Shield className="w-3.5 h-3.5 text-cyan-300 flex-shrink-0" />
                     </span>
                     {(urgencyLevel === 'alta' || urgencyLevel === 'critica') && (
                       <UrgencyBadge level={urgencyLevel as 'alta' | 'critica'} showLabel={false} />
@@ -155,7 +155,7 @@ const LawyerChatSection = () => {
                         <div className="flex items-center gap-1.5">
                           <div className={`w-2 h-2 rounded-full ${
                             availability.status === 'online' 
-                              ? 'bg-emerald-400 animate-header-status' 
+                              ? 'bg-cyan-300 animate-header-status' 
                               : availability.status === 'away' 
                                 ? 'bg-amber-400' 
                                 : 'bg-gray-400'

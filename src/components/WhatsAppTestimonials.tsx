@@ -1,7 +1,7 @@
 import { m, useReducedMotion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, Phone, Video, MoreVertical, Check, CheckCheck, Play, Pause, Mic, Signal, Wifi, Battery } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, forwardRef } from "react";
 import { useInView } from "react-intersection-observer";
 
 interface Message {
@@ -373,40 +373,52 @@ const EmojiReaction = ({ emoji }: { emoji: string }) => (
   </m.div>
 );
 
-const MessageBubble = ({ message, isFirst, index }: { message: Message; isFirst: boolean; index: number }) => {
-  if (message.type === "audio") {
+interface MessageBubbleProps {
+  message: Message;
+  isFirst: boolean;
+  index: number;
+}
+
+const MessageBubble = forwardRef<HTMLDivElement, MessageBubbleProps>(
+  ({ message, isFirst, index }, ref) => {
+    if (message.type === "audio") {
+      return (
+        <m.div
+          ref={ref}
+          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.3, delay: index * 0.1 }}
+        >
+          <AudioMessage message={message} />
+        </m.div>
+      );
+    }
+
+    const isSent = message.type === "sent";
+
     return (
       <m.div
+        ref={ref}
         initial={{ opacity: 0, y: 10, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.3, delay: index * 0.1 }}
+        className={`flex ${isSent ? "justify-end" : "justify-start"}`}
       >
-        <AudioMessage message={message} />
+        <div className={`relative ${isSent ? "wa-bubble-sent" : "wa-bubble-received"} ${isFirst ? (isSent ? "wa-tail-sent" : "wa-tail-received") : ""}`}>
+          <p className="text-[14.2px] text-[#111B21] leading-[19px] break-words">{message.text}</p>
+          <div className={`flex items-center gap-1 mt-0.5 ${isSent ? "justify-end" : "justify-start"}`}>
+            <span className="text-[11px] text-[#667781]">{message.time}</span>
+            {isSent && message.seen && <CheckCheck className="w-4 h-4 text-[#53BDEB]" />}
+            {isSent && !message.seen && <Check className="w-4 h-4 text-[#667781]" />}
+          </div>
+          {message.reaction && <EmojiReaction emoji={message.reaction} />}
+        </div>
       </m.div>
     );
   }
+);
 
-  const isSent = message.type === "sent";
-
-  return (
-    <m.div
-      initial={{ opacity: 0, y: 10, scale: 0.95 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.3, delay: index * 0.1 }}
-      className={`flex ${isSent ? "justify-end" : "justify-start"}`}
-    >
-      <div className={`relative ${isSent ? "wa-bubble-sent" : "wa-bubble-received"} ${isFirst ? (isSent ? "wa-tail-sent" : "wa-tail-received") : ""}`}>
-        <p className="text-[14.2px] text-[#111B21] leading-[19px] break-words">{message.text}</p>
-        <div className={`flex items-center gap-1 mt-0.5 ${isSent ? "justify-end" : "justify-start"}`}>
-          <span className="text-[11px] text-[#667781]">{message.time}</span>
-          {isSent && message.seen && <CheckCheck className="w-4 h-4 text-[#53BDEB]" />}
-          {isSent && !message.seen && <Check className="w-4 h-4 text-[#667781]" />}
-        </div>
-        {message.reaction && <EmojiReaction emoji={message.reaction} />}
-      </div>
-    </m.div>
-  );
-};
+MessageBubble.displayName = "MessageBubble";
 
 const DateDivider = ({ date }: { date: string }) => (
   <div className="flex justify-center my-3">

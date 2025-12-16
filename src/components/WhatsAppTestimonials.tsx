@@ -32,21 +32,20 @@ const whatsappTestimonials: Testimonial[] = [
     date: "HOJE",
     messages: [
       {
-        type: "received",
+        type: "sent",
         text: "Maria, seu processo foi julgado procedente! Você vai receber R$ 47.000,00 👏",
-        time: "09:32"
+        time: "09:32",
+        seen: true
       },
       {
-        type: "sent",
+        type: "received",
         text: "DOUTOR! Não acredito!! Muito obrigada mesmo! Vocês mudaram minha vida! 🙏❤️",
-        time: "09:35",
-        seen: true
+        time: "09:35"
       },
       {
-        type: "sent",
+        type: "received",
         text: "Vou indicar pra todo mundo da minha família!",
-        time: "09:36",
-        seen: true
+        time: "09:36"
       }
     ]
   },
@@ -59,15 +58,15 @@ const whatsappTestimonials: Testimonial[] = [
     date: "HOJE",
     messages: [
       {
-        type: "received",
+        type: "sent",
         text: "José, sua aposentadoria foi aprovada! Parabéns! 🎉",
-        time: "14:18"
+        time: "14:18",
+        seen: true
       },
       {
         type: "audio",
         duration: "0:47",
-        time: "14:20",
-        seen: true
+        time: "14:20"
       }
     ],
     audioTranscript: "Doutor, muito obrigado! Depois de 3 anos lutando, finalmente consegui minha aposentadoria. Vocês são demais!"
@@ -81,21 +80,20 @@ const whatsappTestimonials: Testimonial[] = [
     date: "ONTEM",
     messages: [
       {
-        type: "received",
+        type: "sent",
         text: "Ana, a guarda compartilhada foi homologada! Tudo certo ✅",
-        time: "16:45"
+        time: "16:45",
+        seen: true
       },
       {
-        type: "sent",
+        type: "received",
         text: "Doutora, muito obrigada por tudo! Você foi um anjo na minha vida 😭🙏",
-        time: "16:48",
-        seen: true
+        time: "16:48"
       },
       {
-        type: "sent",
+        type: "received",
         text: "Agora posso ficar tranquila com meus filhos",
-        time: "16:48",
-        seen: true
+        time: "16:48"
       }
     ]
   },
@@ -108,15 +106,15 @@ const whatsappTestimonials: Testimonial[] = [
     date: "12/12/2024",
     messages: [
       {
-        type: "received",
+        type: "sent",
         text: "Roberto, ganhamos! Indenização de R$ 15.000 pelo produto defeituoso 💪",
-        time: "11:20"
+        time: "11:20",
+        seen: true
       },
       {
-        type: "sent",
+        type: "received",
         text: "Caramba doutor! Eu já tinha desistido de correr atrás disso! Vocês são muito bons! 👏👏",
-        time: "11:25",
-        seen: true
+        time: "11:25"
       }
     ]
   },
@@ -129,15 +127,15 @@ const whatsappTestimonials: Testimonial[] = [
     date: "HOJE",
     messages: [
       {
-        type: "received",
+        type: "sent",
         text: "Dona Francisca, o BPC/LOAS foi aprovado! A senhora vai receber todo mês agora 🙌",
-        time: "10:15"
+        time: "10:15",
+        seen: true
       },
       {
         type: "audio",
         duration: "0:32",
-        time: "10:22",
-        seen: true
+        time: "10:22"
       }
     ],
     audioTranscript: "Meu Deus do céu! Graças a Deus e a vocês! Agora vou poder comprar meus remédios..."
@@ -151,21 +149,20 @@ const whatsappTestimonials: Testimonial[] = [
     date: "ONTEM",
     messages: [
       {
-        type: "received",
+        type: "sent",
         text: "Carlos, as verbas rescisórias foram depositadas! R$ 23.500,00 na sua conta ✅",
-        time: "15:40"
+        time: "15:40",
+        seen: true
       },
       {
-        type: "sent",
+        type: "received",
         text: "Doutor, não tenho nem palavras! Achei que nunca ia ver esse dinheiro 😭",
-        time: "15:45",
-        seen: true
+        time: "15:45"
       },
       {
-        type: "sent",
+        type: "received",
         text: "Deus abençoe vocês! Profissionais de verdade! 🙏❤️",
-        time: "15:46",
-        seen: true
+        time: "15:46"
       }
     ]
   }
@@ -200,9 +197,10 @@ const AudioWaveform = ({ isPlaying }: { isPlaying: boolean }) => {
 const AudioMessage = ({ message }: { message: Message }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   
+  // Audio messages from clients are displayed as received (white bubble, left aligned)
   return (
-    <div className="flex justify-end">
-      <div className="wa-bubble-sent flex items-center gap-2 pl-2 pr-3 py-2 min-w-[240px] max-w-[85%]">
+    <div className="flex justify-start">
+      <div className="wa-bubble-received flex items-center gap-2 pl-2 pr-3 py-2 min-w-[240px] max-w-[85%]">
         {/* Play/Pause Button */}
         <button 
           onClick={() => setIsPlaying(!isPlaying)}
@@ -223,13 +221,10 @@ const AudioMessage = ({ message }: { message: Message }) => {
         {/* Waveform */}
         <AudioWaveform isPlaying={isPlaying} />
         
-        {/* Duration + Time + Checks */}
+        {/* Duration + Time */}
         <div className="flex flex-col items-end gap-0.5 flex-shrink-0 ml-1">
           <span className="text-[11px] text-[#667781] font-medium">{message.duration}</span>
-          <div className="flex items-center gap-0.5">
-            <span className="text-[10px] text-[#667781]">{message.time}</span>
-            {message.seen && <CheckCheck className="w-4 h-4 text-[#53BDEB]" />}
-          </div>
+          <span className="text-[10px] text-[#667781]">{message.time}</span>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Scale, Shield, Lock, Eye } from "lucide-react";
 import { trustBadges } from "@/data/credibility-data";
@@ -18,14 +18,14 @@ const colorMap = {
 };
 
 const TrustBadges = () => {
-  const prefersReducedMotion = useReducedMotion();
+  const shouldReduceMotion = useReducedMotion();
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
 
   return (
-    <motion.div 
+    <m.div 
       ref={ref}
       className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 md:gap-6"
-      initial={prefersReducedMotion ? {} : "hidden"}
+      initial={shouldReduceMotion ? false : "hidden"}
       animate={inView ? "visible" : "hidden"}
       variants={{
         hidden: {},
@@ -34,14 +34,14 @@ const TrustBadges = () => {
         }
       }}
     >
-      {trustBadges.map((badge, index) => {
+      {trustBadges.map((badge) => {
         const Icon = iconMap[badge.icon as keyof typeof iconMap];
         const colors = colorMap[badge.color as keyof typeof colorMap];
         
         return (
-          <motion.div
+          <m.div
             key={badge.id}
-            variants={prefersReducedMotion ? {} : {
+            variants={shouldReduceMotion ? {} : {
               hidden: { opacity: 0, scale: 0.8, y: 20 },
               visible: { 
                 opacity: 1, 
@@ -54,12 +54,12 @@ const TrustBadges = () => {
                 }
               }
             }}
-            whileHover={prefersReducedMotion ? {} : { 
+            whileHover={shouldReduceMotion ? undefined : { 
               scale: 1.05, 
               rotate: 1,
               transition: { type: "spring", stiffness: 400 }
             }}
-            whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
+            whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
             className={`
               group relative p-3 sm:p-4 md:p-6 rounded-2xl border
               bg-gradient-to-br ${colors}
@@ -68,19 +68,19 @@ const TrustBadges = () => {
             `}
           >
             <div className="flex flex-col items-center text-center space-y-1.5 sm:space-y-2 md:space-y-3">
-              <motion.div 
+              <m.div 
                 className={`
                   p-2.5 sm:p-3 rounded-xl bg-background/50 backdrop-blur-sm
                   transition-transform duration-300
                 `}
-                whileHover={prefersReducedMotion ? {} : { 
+                whileHover={shouldReduceMotion ? undefined : { 
                   scale: 1.1, 
                   rotate: 5,
                   transition: { type: "spring", stiffness: 400 }
                 }}
               >
                 <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" />
-              </motion.div>
+              </m.div>
               
               <div>
                 <h3 className="font-semibold text-foreground text-xs sm:text-sm md:text-base leading-tight">
@@ -103,10 +103,10 @@ const TrustBadges = () => {
               {badge.description}
               <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-foreground" />
             </div>
-          </motion.div>
+          </m.div>
         );
       })}
-    </motion.div>
+    </m.div>
   );
 };
 

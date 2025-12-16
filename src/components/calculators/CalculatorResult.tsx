@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MessageCircle, Share2, AlertTriangle } from "lucide-react";
@@ -20,7 +20,7 @@ interface CalculatorResultProps {
 
 const CalculatorResult = ({ total, items, specialty, calculatorType }: CalculatorResultProps) => {
   const navigate = useNavigate();
-  const prefersReducedMotion = useReducedMotion();
+  const shouldReduceMotion = useReducedMotion();
   const [displayTotal, setDisplayTotal] = useState(0);
   const [isAnimating, setIsAnimating] = useState(true);
 
@@ -84,31 +84,31 @@ const CalculatorResult = ({ total, items, specialty, calculatorType }: Calculato
     : "text-blue-600";
 
   return (
-    <motion.div
-      initial={prefersReducedMotion ? {} : { opacity: 0, scale: 0.95 }}
+    <m.div
+      initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, type: "spring" }}
     >
       <Card className={`p-6 bg-gradient-to-br ${bgGradient} border-2`}>
-        <motion.div 
+        <m.div 
           className="text-center mb-6"
-          initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
           <p className="text-sm text-muted-foreground mb-2">Valor estimado dos seus direitos:</p>
-          <motion.p 
+          <m.p 
             className={`text-4xl md:text-5xl font-bold ${accentColor}`}
-            animate={isAnimating && !prefersReducedMotion ? { scale: [1, 1.02, 1] } : {}}
+            animate={isAnimating && !shouldReduceMotion ? { scale: [1, 1.02, 1] } : {}}
             transition={{ duration: 0.3, repeat: isAnimating ? Infinity : 0 }}
           >
             {formatCurrency(displayTotal)}
-          </motion.p>
-        </motion.div>
+          </m.p>
+        </m.div>
 
-        <motion.div 
+        <m.div 
           className="space-y-3 mb-6"
-          initial={prefersReducedMotion ? {} : "hidden"}
+          initial={shouldReduceMotion ? false : "hidden"}
           animate="visible"
           variants={{
             hidden: {},
@@ -119,10 +119,10 @@ const CalculatorResult = ({ total, items, specialty, calculatorType }: Calculato
         >
           <p className="text-sm font-medium text-foreground">Detalhamento:</p>
           {items.filter(item => item.value > 0).map((item, index) => (
-            <motion.div 
+            <m.div 
               key={index} 
               className="flex justify-between items-center py-2 border-b border-border/50"
-              variants={prefersReducedMotion ? {} : {
+              variants={shouldReduceMotion ? {} : {
                 hidden: { opacity: 0, x: -20 },
                 visible: { 
                   opacity: 1, 
@@ -138,13 +138,13 @@ const CalculatorResult = ({ total, items, specialty, calculatorType }: Calculato
                 )}
               </div>
               <p className="text-sm font-semibold">{formatCurrency(item.value)}</p>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
-        <motion.div 
+        <m.div 
           className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg p-3 mb-6"
-          initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
         >
@@ -155,18 +155,18 @@ const CalculatorResult = ({ total, items, specialty, calculatorType }: Calculato
               O valor final pode variar conforme análise detalhada do seu caso por um advogado.
             </p>
           </div>
-        </motion.div>
+        </m.div>
 
-        <motion.div 
+        <m.div 
           className="flex flex-col sm:flex-row gap-3"
-          initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.5 }}
         >
-          <motion.div 
+          <m.div 
             className="flex-1"
-            whileHover={prefersReducedMotion ? {} : { scale: 1.02 }}
-            whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
+            whileHover={shouldReduceMotion ? undefined : { scale: 1.02 }}
+            whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
           >
             <Button 
               onClick={handleContactLawyer}
@@ -176,10 +176,10 @@ const CalculatorResult = ({ total, items, specialty, calculatorType }: Calculato
               <MessageCircle className="w-4 h-4" />
               Falar com Advogado
             </Button>
-          </motion.div>
-          <motion.div
-            whileHover={prefersReducedMotion ? {} : { scale: 1.02 }}
-            whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
+          </m.div>
+          <m.div
+            whileHover={shouldReduceMotion ? undefined : { scale: 1.02 }}
+            whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
           >
             <Button 
               onClick={handleShare}
@@ -190,10 +190,10 @@ const CalculatorResult = ({ total, items, specialty, calculatorType }: Calculato
               <Share2 className="w-4 h-4" />
               Compartilhar
             </Button>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </Card>
-    </motion.div>
+    </m.div>
   );
 };
 

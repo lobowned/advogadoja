@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { lawyers } from "@/data/lawyers";
 import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
@@ -15,7 +15,7 @@ import { getPersonalityByLawyerId } from "@/data/lawyer-personalities";
 
 // Componente de Card reutilizável com credenciais
 const LawyerCard = ({ lawyer, index }: { lawyer: LawyerWithPresence; index: number }) => {
-  const prefersReducedMotion = useReducedMotion();
+  const shouldReduceMotion = useReducedMotion();
   const personality = getPersonalityByLawyerId(lawyer.id);
   const casesWon = personality?.casesWon || 500;
   const avgRating = personality?.avgRating || 4.7;
@@ -23,14 +23,14 @@ const LawyerCard = ({ lawyer, index }: { lawyer: LawyerWithPresence; index: numb
 
   return (
     <LawyerCredentialsPopup lawyer={lawyer}>
-      <motion.div
-        whileHover={prefersReducedMotion ? {} : { 
+      <m.div
+        whileHover={shouldReduceMotion ? undefined : { 
           y: -8, 
           rotateY: 5,
           rotateX: 5,
           boxShadow: "0 20px 40px -15px rgba(0,0,0,0.2)"
         }}
-        whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
+        whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
         <Card className={`group transition-all duration-500 overflow-hidden border-muted flex-shrink-0 w-full md:w-72 bg-card/80 backdrop-blur-sm border border-border/50 cursor-pointer ${
@@ -49,13 +49,13 @@ const LawyerCard = ({ lawyer, index }: { lawyer: LawyerWithPresence; index: numb
                 </AvatarFallback>
               </Avatar>
               {/* Status indicator with glow effect */}
-              <motion.div 
+              <m.div 
                 className={`absolute -bottom-2 -right-2 w-5 h-5 sm:w-6 sm:h-6 rounded-full border-4 border-card ${
                   isBusy 
                     ? 'bg-orange-500' 
                     : 'bg-green-500'
                 }`}
-                animate={!isBusy && !prefersReducedMotion ? { 
+                animate={!isBusy && !shouldReduceMotion ? { 
                   scale: [1, 1.2, 1],
                   boxShadow: [
                     "0 0 0 0 rgba(34, 197, 94, 0.4)",
@@ -107,14 +107,14 @@ const LawyerCard = ({ lawyer, index }: { lawyer: LawyerWithPresence; index: numb
             </div>
           </CardContent>
         </Card>
-      </motion.div>
+      </m.div>
     </LawyerCredentialsPopup>
   );
 };
 
 const LawyersShowcase = () => {
   const isMobile = useIsMobile();
-  const prefersReducedMotion = useReducedMotion();
+  const shouldReduceMotion = useReducedMotion();
   const { onlineLawyers, availableCount, busyCount } = useLawyerPresence();
   const displayLawyers = onlineLawyers.filter((l) => l.specialty !== "geral");
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
@@ -122,9 +122,9 @@ const LawyersShowcase = () => {
   return (
     <section className="py-10 sm:py-16 px-2 sm:px-4 bg-gradient-to-b from-background via-muted/30 to-background">
       <div className="container mx-auto max-w-7xl">
-        <motion.div 
+        <m.div 
           className="text-center mb-8 sm:mb-12"
-          initial={prefersReducedMotion ? {} : { opacity: 0, y: 30 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
@@ -134,17 +134,17 @@ const LawyersShowcase = () => {
           </h2>
           
           {/* Contador de status */}
-          <motion.div 
+          <m.div 
             className="flex justify-center gap-4 mt-3"
-            initial={prefersReducedMotion ? {} : { opacity: 0, scale: 0.9 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <motion.div 
+              <m.div 
                 className="w-2 h-2 bg-green-500 rounded-full"
-                animate={prefersReducedMotion ? {} : { scale: [1, 1.3, 1] }}
+                animate={shouldReduceMotion ? {} : { scale: [1, 1.3, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               />
               <span>{availableCount} disponíveis</span>
@@ -155,15 +155,15 @@ const LawyersShowcase = () => {
                 <span>{busyCount} em atendimento</span>
               </div>
             )}
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
 
         {/* Carrossel Responsivo */}
         {isMobile ? (
           /* Mobile: Embla Carousel com Swipe */
-          <motion.div
+          <m.div
             ref={ref}
-            initial={prefersReducedMotion ? {} : { opacity: 0 }}
+            initial={shouldReduceMotion ? false : { opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5 }}
           >
@@ -190,13 +190,13 @@ const LawyersShowcase = () => {
               <CarouselPrevious className="left-0" />
               <CarouselNext className="right-0" />
             </Carousel>
-          </motion.div>
+          </m.div>
         ) : (
           /* Desktop: Marquee Infinito with cascade animation */
-          <motion.div 
+          <m.div 
             ref={ref}
             className="relative overflow-hidden py-4"
-            initial={prefersReducedMotion ? {} : { opacity: 0 }}
+            initial={shouldReduceMotion ? false : { opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5 }}
           >
@@ -211,7 +211,7 @@ const LawyersShowcase = () => {
                 <LawyerCard key={`duplicate-${lawyer.id}`} lawyer={lawyer} index={index} />
               ))}
             </div>
-          </motion.div>
+          </m.div>
         )}
       </div>
     </section>

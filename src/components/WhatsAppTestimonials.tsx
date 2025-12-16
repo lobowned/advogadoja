@@ -27,6 +27,7 @@ const whatsappTestimonials: Testimonial[] = [
     id: 1,
     clientName: "Maria Aparecida",
     clientInitials: "MA",
+    avatarUrl: "https://randomuser.me/api/portraits/women/45.jpg",
     area: "Trabalhista",
     date: "HOJE",
     messages: [
@@ -53,6 +54,7 @@ const whatsappTestimonials: Testimonial[] = [
     id: 2,
     clientName: "José Carlos",
     clientInitials: "JC",
+    avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
     area: "Previdenciário",
     date: "HOJE",
     messages: [
@@ -74,6 +76,7 @@ const whatsappTestimonials: Testimonial[] = [
     id: 3,
     clientName: "Ana Paula",
     clientInitials: "AP",
+    avatarUrl: "https://randomuser.me/api/portraits/women/32.jpg",
     area: "Família",
     date: "ONTEM",
     messages: [
@@ -100,6 +103,7 @@ const whatsappTestimonials: Testimonial[] = [
     id: 4,
     clientName: "Roberto Lima",
     clientInitials: "RL",
+    avatarUrl: "https://randomuser.me/api/portraits/men/35.jpg",
     area: "Consumidor",
     date: "12/12/2024",
     messages: [
@@ -120,6 +124,7 @@ const whatsappTestimonials: Testimonial[] = [
     id: 5,
     clientName: "Francisca Souza",
     clientInitials: "FS",
+    avatarUrl: "https://randomuser.me/api/portraits/women/68.jpg",
     area: "Previdenciário",
     date: "HOJE",
     messages: [
@@ -141,6 +146,7 @@ const whatsappTestimonials: Testimonial[] = [
     id: 6,
     clientName: "Carlos Eduardo",
     clientInitials: "CE",
+    avatarUrl: "https://randomuser.me/api/portraits/men/22.jpg",
     area: "Trabalhista",
     date: "ONTEM",
     messages: [
@@ -259,38 +265,51 @@ const DateDivider = ({ date }: { date: string }) => (
   </div>
 );
 
-const WhatsAppHeader = ({ name, initials, area }: { name: string; initials: string; area: string }) => (
-  <div className="wa-header-real flex items-center gap-3 px-2 py-2">
-    {/* Back Arrow */}
-    <button className="p-1 hover:bg-white/10 rounded-full transition-colors">
-      <ArrowLeft className="w-5 h-5 text-white" />
-    </button>
-    
-    {/* Avatar */}
-    <div className="w-10 h-10 rounded-full bg-[#DFE5E7] flex items-center justify-center flex-shrink-0 overflow-hidden">
-      <span className="text-[#54656F] font-semibold text-sm">{initials}</span>
-    </div>
-    
-    {/* Name & Status */}
-    <div className="flex-1 min-w-0">
-      <p className="font-medium text-white text-[16px] truncate leading-tight">{name}</p>
-      <p className="text-[13px] text-white/80 leading-tight">online</p>
-    </div>
-    
-    {/* Action Icons */}
-    <div className="flex items-center gap-3">
-      <button className="p-1.5 hover:bg-white/10 rounded-full transition-colors">
-        <Video className="w-5 h-5 text-white" />
+const WhatsAppHeader = ({ name, initials, avatarUrl, area }: { name: string; initials: string; avatarUrl?: string; area: string }) => {
+  const [imgError, setImgError] = useState(false);
+  
+  return (
+    <div className="wa-header-real flex items-center gap-3 px-2 py-2">
+      {/* Back Arrow */}
+      <button className="p-1 hover:bg-white/10 rounded-full transition-colors">
+        <ArrowLeft className="w-5 h-5 text-white" />
       </button>
-      <button className="p-1.5 hover:bg-white/10 rounded-full transition-colors">
-        <Phone className="w-5 h-5 text-white" />
-      </button>
-      <button className="p-1.5 hover:bg-white/10 rounded-full transition-colors">
-        <MoreVertical className="w-5 h-5 text-white" />
-      </button>
+      
+      {/* Avatar with Photo or Initials Fallback */}
+      <div className="w-10 h-10 rounded-full bg-[#DFE5E7] flex items-center justify-center flex-shrink-0 overflow-hidden">
+        {avatarUrl && !imgError ? (
+          <img 
+            src={avatarUrl} 
+            alt={name}
+            className="w-full h-full object-cover"
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <span className="text-[#54656F] font-semibold text-sm">{initials}</span>
+        )}
+      </div>
+      
+      {/* Name & Status */}
+      <div className="flex-1 min-w-0">
+        <p className="font-medium text-white text-[16px] truncate leading-tight">{name}</p>
+        <p className="text-[13px] text-white/80 leading-tight">online</p>
+      </div>
+      
+      {/* Action Icons */}
+      <div className="flex items-center gap-3">
+        <button className="p-1.5 hover:bg-white/10 rounded-full transition-colors">
+          <Video className="w-5 h-5 text-white" />
+        </button>
+        <button className="p-1.5 hover:bg-white/10 rounded-full transition-colors">
+          <Phone className="w-5 h-5 text-white" />
+        </button>
+        <button className="p-1.5 hover:bg-white/10 rounded-full transition-colors">
+          <MoreVertical className="w-5 h-5 text-white" />
+        </button>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const WhatsAppInputBar = () => (
   <div className="flex items-center gap-2 px-2 py-2 bg-[#F0F2F5]">
@@ -342,6 +361,7 @@ const WhatsAppConversation = ({ testimonial, index }: { testimonial: Testimonial
       <WhatsAppHeader 
         name={testimonial.clientName} 
         initials={testimonial.clientInitials}
+        avatarUrl={testimonial.avatarUrl}
         area={testimonial.area}
       />
 

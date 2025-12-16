@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Send, Phone, Video, MoreVertical, Smile, Mic, Check, Shield, RefreshCw, MessageSquare, ChevronLeft, Paperclip, Lock, Calculator } from "lucide-react";
+import { Send, Phone, Video, MoreVertical, Smile, Mic, Check, Shield, RefreshCw, MessageSquare, ChevronLeft, Paperclip, Lock, Calculator, X } from "lucide-react";
 import { useLawyerChat } from "@/hooks/useLawyerChat";
 import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -10,6 +10,8 @@ import TypingIndicator from "@/components/TypingIndicator";
 import { QuickRepliesInline } from "@/components/QuickReplies";
 import UrgencyBadge, { UrgencyAlert } from "@/components/UrgencyBadge";
 import { getLawyerAvailabilityStatus } from "@/data/lawyer-personalities";
+import { Link } from "react-router-dom";
+import { useDetectedProblem } from "@/contexts/DetectedProblemContext";
 
 // Tipo para rastrear status do "visto" com delay
 type MessageSeenStatus = {
@@ -26,15 +28,52 @@ const LawyerChatSection = () => {
     suggestedCalculator, setSuggestedCalculator
   } = useLawyerChat();
   const { onlineLawyers, notification, onlineCount } = useLawyerPresence();
+  const { setDetectedArea } = useDetectedProblem();
   const [inputValue, setInputValue] = useState("");
   const [showResponseTime, setShowResponseTime] = useState(false);
-  const [showCalculatorSuggestion, setShowCalculatorSuggestion] = useState(false);
+  const [showCalculatorSuggestion, setShowCalculatorSuggestion] = useState(true);
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const lastMessageRef = useRef<HTMLDivElement>(null);
   const [newMessageIds, setNewMessageIds] = useState<Set<number>>(new Set());
   const previousMessagesLength = useRef(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [messageSeenStatus, setMessageSeenStatus] = useState<MessageSeenStatus>({});
+
+  // Atualizar contexto global do problema detectado
+  useEffect(() => {
+    if (detectedProblem) {
+      // Mapear problema para área jurídica
+      const areaMap: Record<string, string> = {
+        'demissao': 'trabalhista',
+        'rescisao': 'trabalhista',
+        'trabalho': 'trabalhista',
+        'salario': 'trabalhista',
+        'horas_extras': 'trabalhista',
+        'assedio': 'trabalhista',
+        'divorcio': 'familia',
+        'pensao': 'familia',
+        'guarda': 'familia',
+        'familia': 'familia',
+        'aposentadoria': 'previdenciario',
+        'inss': 'previdenciario',
+        'beneficio': 'previdenciario',
+        'inventario': 'civil',
+        'heranca': 'civil',
+        'contrato': 'civil',
+        'consumidor': 'consumidor',
+        'banco': 'consumidor',
+        'cobranca': 'consumidor'
+      };
+      
+      const normalizedProblem = detectedProblem.toLowerCase().replace(/[^a-z]/g, '');
+      for (const [key, area] of Object.entries(areaMap)) {
+        if (normalizedProblem.includes(key)) {
+          setDetectedArea(area);
+          break;
+        }
+      }
+    }
+  }, [detectedProblem, setDetectedArea]);
 
   // Marcar que animação inicial completou
   useEffect(() => {
@@ -423,6 +462,51 @@ const LawyerChatSection = () => {
                     </Avatar>
                     <RefreshCw className="h-6 w-6 text-primary animate-spin" />
                     <div className="text-sm font-medium text-primary">Conectando com especialista...</div>
+                  </div>
+                </div>
+              )}
+
+              {/* Card de Sugestão de Calculadora */}
+              {suggestedCalculator && showCalculatorSuggestion && !isCollectingLead && !isInQueue && (
+                <div className="flex justify-center py-3 animate-fade-in">
+                  <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-emerald-500/10 border border-primary/20 rounded-xl px-4 py-4 max-w-[90%] shadow-lg">
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-primary/10 rounded-lg flex-shrink-0">
+                        <Calculator className="w-5 h-5 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm font-semibold text-foreground mb-1">
+                          {suggestedCalculator === 'trabalhista' 
+                            ? '🧮 Calcule seus Direitos Trabalhistas' 
+                            : '🧮 Calcule a Pensão Alimentícia'}
+                        </p>
+                        <p className="text-xs text-muted-foreground mb-3">
+                          {suggestedCalculator === 'trabalhista'
+                            ? 'Faça uma estimativa das verbas rescisórias e outros direitos que você pode ter.'
+                            : 'Estime o valor da pensão alimentícia baseado nos parâmetros legais.'}
+                        </p>
+                        <div className="flex gap-2 flex-wrap">
+                          <Button asChild size="sm" className="text-xs h-8">
+                            <Link 
+                              to={suggestedCalculator === 'trabalhista' ? '/calculadora-trabalhista' : '/calculadora-pensao'}
+                              target="_blank"
+                            >
+                              <Calculator className="w-3.5 h-3.5 mr-1.5" />
+                              Calcular agora
+                            </Link>
+                          </Button>
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            className="text-xs h-8"
+                            onClick={() => setShowCalculatorSuggestion(false)}
+                          >
+                            <X className="w-3.5 h-3.5 mr-1" />
+                            Continuar conversa
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               )}

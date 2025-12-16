@@ -197,16 +197,16 @@ const HeroSection = () => {
               }}
               plugins={[
                 Autoplay({
-                  delay: 2000,
+                  delay: 1500,
                   stopOnInteraction: false,
                 }),
               ]}
-              className="w-full max-w-[280px] sm:max-w-md mx-auto overflow-visible px-2"
+              className="w-full max-w-[280px] sm:max-w-xl lg:max-w-2xl mx-auto overflow-visible px-2"
             >
               <CarouselContent className="-ml-1 sm:-ml-2 py-1" overflowVisible>
-                {displayLawyers.slice(0, 12).map((lawyer, index) => (
+                {[...displayLawyers, ...displayLawyers.slice(0, 12)].map((lawyer, index) => (
                   <CarouselItem 
-                    key={lawyer.id} 
+                    key={`${lawyer.id}-${index}`} 
                     className="pl-1 sm:pl-2 basis-auto"
                   >
                     <div className="relative group p-1">

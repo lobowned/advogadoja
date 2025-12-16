@@ -5,11 +5,16 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
 import LaborCalculator from "@/components/calculators/LaborCalculator";
+import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 
 const CalculadoraTrabalhista = () => {
   const scrollToChat = () => {
     window.location.href = "/?specialty=trabalhista#lawyer-chat";
   };
+
+  const webAppSchema = getWebApplicationSchema("trabalhista");
+  const faqSchema = getFAQPageSchema("trabalhista");
+  const breadcrumbSchema = getBreadcrumbSchema("trabalhista");
 
   return (
     <>
@@ -22,22 +27,21 @@ const CalculadoraTrabalhista = () => {
         <meta name="keywords" content="calculadora rescisão trabalhista, calcular verbas rescisórias, FGTS multa 40%, aviso prévio, demissão sem justa causa, 13º salário, férias proporcionais" />
         <link rel="canonical" href="/calculadora-trabalhista" />
         
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            "name": "Calculadora de Rescisão Trabalhista",
-            "description": "Ferramenta gratuita para calcular verbas rescisórias trabalhistas",
-            "applicationCategory": "FinanceApplication",
-            "operatingSystem": "Web",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "BRL"
-            }
-          })}
-        </script>
+        {webAppSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(webAppSchema)}
+          </script>
+        )}
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
+        {breadcrumbSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(breadcrumbSchema)}
+          </script>
+        )}
       </Helmet>
 
       <Navbar onCtaClick={scrollToChat} />

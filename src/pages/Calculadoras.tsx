@@ -4,168 +4,25 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Briefcase, Users, Calculator, ArrowRight, MessageCircle, Clock, Scale, TrendingUp, Home, Building2, Wallet, Heart, Stethoscope, HandHeart, ScrollText, ShieldAlert, Car } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import { getCalculatorListSchema } from "@/data/calculator-schemas";
 
 const calculadoras = [
-  {
-    id: "trabalhista",
-    title: "Calculadora Trabalhista",
-    description: "Calcule suas verbas rescisórias: aviso prévio, FGTS, 13º salário, férias e multas.",
-    icon: Briefcase,
-    href: "/calculadora-trabalhista",
-    color: "from-amber-500 to-orange-500",
-    bgLight: "bg-amber-50 dark:bg-amber-950/20",
-    features: ["Aviso Prévio", "FGTS + Multa 40%", "13º Proporcional", "Férias + 1/3"]
-  },
-  {
-    id: "horas-extras",
-    title: "Calculadora de Horas Extras",
-    description: "Calcule horas extras não pagas com adicional de 50%, 100% e todos os reflexos.",
-    icon: Clock,
-    href: "/calculadora-horas-extras",
-    color: "from-amber-500 to-orange-500",
-    bgLight: "bg-amber-50 dark:bg-amber-950/20",
-    features: ["Adicional 50%", "Feriados 100%", "Reflexos", "Ad. Noturno"]
-  },
-  {
-    id: "seguro-desemprego",
-    title: "Calculadora de Seguro-Desemprego",
-    description: "Descubra o valor e quantas parcelas do seguro-desemprego você pode receber.",
-    icon: Briefcase,
-    href: "/calculadora-seguro-desemprego",
-    color: "from-amber-500 to-orange-500",
-    bgLight: "bg-amber-50 dark:bg-amber-950/20",
-    features: ["Valor Parcela", "Nº Parcelas", "Faixas 2024", "Requisitos"]
-  },
-  {
-    id: "fgts",
-    title: "Calculadora de FGTS",
-    description: "Simule seu saldo de FGTS, multa rescisória e compare modalidades de saque.",
-    icon: Wallet,
-    href: "/calculadora-fgts",
-    color: "from-amber-500 to-orange-500",
-    bgLight: "bg-amber-50 dark:bg-amber-950/20",
-    features: ["Saldo FGTS", "Multa 40%", "Saque-Aniversário", "Saque-Rescisão"]
-  },
-  {
-    id: "insalubridade",
-    title: "Calculadora de Insalubridade",
-    description: "Calcule o adicional de insalubridade ou periculosidade e reflexos.",
-    icon: ShieldAlert,
-    href: "/calculadora-insalubridade",
-    color: "from-amber-500 to-orange-500",
-    bgLight: "bg-amber-50 dark:bg-amber-950/20",
-    features: ["Insalubridade", "Periculosidade", "Reflexos", "FGTS"]
-  },
-  {
-    id: "pensao",
-    title: "Calculadora de Pensão Alimentícia",
-    description: "Estime o valor da pensão alimentícia baseado na renda e número de dependentes.",
-    icon: Users,
-    href: "/calculadora-pensao",
-    color: "from-blue-500 to-indigo-500",
-    bgLight: "bg-blue-50 dark:bg-blue-950/20",
-    features: ["% sobre Renda", "Custos Especiais", "Múltiplos Filhos", "Valor Anual"]
-  },
-  {
-    id: "partilha",
-    title: "Calculadora de Partilha de Bens",
-    description: "Estime a divisão de bens no divórcio conforme seu regime de casamento.",
-    icon: Home,
-    href: "/calculadora-partilha-bens",
-    color: "from-blue-500 to-cyan-500",
-    bgLight: "bg-blue-50 dark:bg-blue-950/20",
-    features: ["Comunhão Parcial", "Comunhão Universal", "Separação Total", "Dívidas"]
-  },
-  {
-    id: "inventario",
-    title: "Calculadora de Inventário",
-    description: "Calcule ITCMD, custas cartoriais e honorários do inventário por estado.",
-    icon: ScrollText,
-    href: "/calculadora-inventario",
-    color: "from-blue-500 to-indigo-500",
-    bgLight: "bg-blue-50 dark:bg-blue-950/20",
-    features: ["ITCMD por UF", "Custas", "Honorários", "Tipo Inventário"]
-  },
-  {
-    id: "aposentadoria",
-    title: "Calculadora de Aposentadoria",
-    description: "Verifique se você pode se aposentar e estime o valor do benefício INSS.",
-    icon: Calculator,
-    href: "/calculadora-aposentadoria",
-    color: "from-emerald-500 to-teal-500",
-    bgLight: "bg-emerald-50 dark:bg-emerald-950/20",
-    features: ["Idade Mínima", "Tempo Contribuição", "Valor Benefício", "Pós-Reforma"]
-  },
-  {
-    id: "pensao-morte",
-    title: "Calculadora de Pensão por Morte",
-    description: "Estime o valor da pensão por morte do INSS para dependentes.",
-    icon: Heart,
-    href: "/calculadora-pensao-morte",
-    color: "from-emerald-500 to-teal-500",
-    bgLight: "bg-emerald-50 dark:bg-emerald-950/20",
-    features: ["Valor Benefício", "Cota Dependentes", "Duração", "Pós-Reforma"]
-  },
-  {
-    id: "auxilio-doenca",
-    title: "Calculadora de Auxílio-Doença",
-    description: "Calcule o valor do auxílio-doença comum ou acidentário do INSS.",
-    icon: Stethoscope,
-    href: "/calculadora-auxilio-doenca",
-    color: "from-emerald-500 to-teal-500",
-    bgLight: "bg-emerald-50 dark:bg-emerald-950/20",
-    features: ["Valor 91%", "Carência", "Comum", "Acidentário"]
-  },
-  {
-    id: "bpc-loas",
-    title: "Calculadora BPC/LOAS",
-    description: "Verifique se você tem direito ao benefício assistencial de 1 salário mínimo.",
-    icon: HandHeart,
-    href: "/calculadora-bpc-loas",
-    color: "from-emerald-500 to-teal-500",
-    bgLight: "bg-emerald-50 dark:bg-emerald-950/20",
-    features: ["Renda Per Capita", "Idoso 65+", "Deficiência", "Documentos"]
-  },
-  {
-    id: "danos-morais",
-    title: "Calculadora de Danos Morais",
-    description: "Estime o valor da indenização por danos morais baseado em jurisprudência.",
-    icon: Scale,
-    href: "/calculadora-danos-morais",
-    color: "from-purple-500 to-pink-500",
-    bgLight: "bg-purple-50 dark:bg-purple-950/20",
-    features: ["Negativação", "Ofensa à Honra", "Discriminação", "Acidentes"]
-  },
-  {
-    id: "atualizacao-divida",
-    title: "Calculadora de Atualização de Dívida",
-    description: "Atualize dívidas com correção monetária, juros de mora e multa.",
-    icon: TrendingUp,
-    href: "/calculadora-atualizacao-divida",
-    color: "from-red-500 to-orange-500",
-    bgLight: "bg-red-50 dark:bg-red-950/20",
-    features: ["INPC/IPCA", "IGP-M/SELIC", "Juros 1% a.m.", "Multa 2%"]
-  },
-  {
-    id: "aluguel",
-    title: "Calculadora de Aluguel Atrasado",
-    description: "Calcule o débito total do inquilino incluindo multa, juros e encargos.",
-    icon: Building2,
-    href: "/calculadora-aluguel-atrasado",
-    color: "from-yellow-500 to-amber-500",
-    bgLight: "bg-yellow-50 dark:bg-yellow-950/20",
-    features: ["Aluguéis", "Multa", "IPTU/Cond.", "Correção"]
-  },
-  {
-    id: "dpvat",
-    title: "Calculadora DPVAT/SPVAT",
-    description: "Calcule a indenização por acidente de trânsito: morte, invalidez ou despesas.",
-    icon: Car,
-    href: "/calculadora-dpvat",
-    color: "from-purple-500 to-pink-500",
-    bgLight: "bg-purple-50 dark:bg-purple-950/20",
-    features: ["Morte", "Invalidez", "Despesas Médicas", "Documentos"]
-  }
+  { id: "trabalhista", title: "Calculadora Trabalhista", description: "Calcule suas verbas rescisórias: aviso prévio, FGTS, 13º salário, férias e multas.", icon: Briefcase, href: "/calculadora-trabalhista", color: "from-amber-500 to-orange-500", bgLight: "bg-amber-50 dark:bg-amber-950/20", features: ["Aviso Prévio", "FGTS + Multa 40%", "13º Proporcional", "Férias + 1/3"] },
+  { id: "horas-extras", title: "Calculadora de Horas Extras", description: "Calcule horas extras não pagas com adicional de 50%, 100% e todos os reflexos.", icon: Clock, href: "/calculadora-horas-extras", color: "from-amber-500 to-orange-500", bgLight: "bg-amber-50 dark:bg-amber-950/20", features: ["Adicional 50%", "Feriados 100%", "Reflexos", "Ad. Noturno"] },
+  { id: "seguro-desemprego", title: "Calculadora de Seguro-Desemprego", description: "Descubra o valor e quantas parcelas do seguro-desemprego você pode receber.", icon: Briefcase, href: "/calculadora-seguro-desemprego", color: "from-amber-500 to-orange-500", bgLight: "bg-amber-50 dark:bg-amber-950/20", features: ["Valor Parcela", "Nº Parcelas", "Faixas 2024", "Requisitos"] },
+  { id: "fgts", title: "Calculadora de FGTS", description: "Simule seu saldo de FGTS, multa rescisória e compare modalidades de saque.", icon: Wallet, href: "/calculadora-fgts", color: "from-amber-500 to-orange-500", bgLight: "bg-amber-50 dark:bg-amber-950/20", features: ["Saldo FGTS", "Multa 40%", "Saque-Aniversário", "Saque-Rescisão"] },
+  { id: "insalubridade", title: "Calculadora de Insalubridade", description: "Calcule o adicional de insalubridade ou periculosidade e reflexos.", icon: ShieldAlert, href: "/calculadora-insalubridade", color: "from-amber-500 to-orange-500", bgLight: "bg-amber-50 dark:bg-amber-950/20", features: ["Insalubridade", "Periculosidade", "Reflexos", "FGTS"] },
+  { id: "pensao", title: "Calculadora de Pensão Alimentícia", description: "Estime o valor da pensão alimentícia baseado na renda e número de dependentes.", icon: Users, href: "/calculadora-pensao", color: "from-blue-500 to-indigo-500", bgLight: "bg-blue-50 dark:bg-blue-950/20", features: ["% sobre Renda", "Custos Especiais", "Múltiplos Filhos", "Valor Anual"] },
+  { id: "partilha", title: "Calculadora de Partilha de Bens", description: "Estime a divisão de bens no divórcio conforme seu regime de casamento.", icon: Home, href: "/calculadora-partilha-bens", color: "from-blue-500 to-cyan-500", bgLight: "bg-blue-50 dark:bg-blue-950/20", features: ["Comunhão Parcial", "Comunhão Universal", "Separação Total", "Dívidas"] },
+  { id: "inventario", title: "Calculadora de Inventário", description: "Calcule ITCMD, custas cartoriais e honorários do inventário por estado.", icon: ScrollText, href: "/calculadora-inventario", color: "from-blue-500 to-indigo-500", bgLight: "bg-blue-50 dark:bg-blue-950/20", features: ["ITCMD por UF", "Custas", "Honorários", "Tipo Inventário"] },
+  { id: "aposentadoria", title: "Calculadora de Aposentadoria", description: "Verifique se você pode se aposentar e estime o valor do benefício INSS.", icon: Calculator, href: "/calculadora-aposentadoria", color: "from-emerald-500 to-teal-500", bgLight: "bg-emerald-50 dark:bg-emerald-950/20", features: ["Idade Mínima", "Tempo Contribuição", "Valor Benefício", "Pós-Reforma"] },
+  { id: "pensao-morte", title: "Calculadora de Pensão por Morte", description: "Estime o valor da pensão por morte do INSS para dependentes.", icon: Heart, href: "/calculadora-pensao-morte", color: "from-emerald-500 to-teal-500", bgLight: "bg-emerald-50 dark:bg-emerald-950/20", features: ["Valor Benefício", "Cota Dependentes", "Duração", "Pós-Reforma"] },
+  { id: "auxilio-doenca", title: "Calculadora de Auxílio-Doença", description: "Calcule o valor do auxílio-doença comum ou acidentário do INSS.", icon: Stethoscope, href: "/calculadora-auxilio-doenca", color: "from-emerald-500 to-teal-500", bgLight: "bg-emerald-50 dark:bg-emerald-950/20", features: ["Valor 91%", "Carência", "Comum", "Acidentário"] },
+  { id: "bpc-loas", title: "Calculadora BPC/LOAS", description: "Verifique se você tem direito ao benefício assistencial de 1 salário mínimo.", icon: HandHeart, href: "/calculadora-bpc-loas", color: "from-emerald-500 to-teal-500", bgLight: "bg-emerald-50 dark:bg-emerald-950/20", features: ["Renda Per Capita", "Idoso 65+", "Deficiência", "Documentos"] },
+  { id: "danos-morais", title: "Calculadora de Danos Morais", description: "Estime o valor da indenização por danos morais baseado em jurisprudência.", icon: Scale, href: "/calculadora-danos-morais", color: "from-purple-500 to-pink-500", bgLight: "bg-purple-50 dark:bg-purple-950/20", features: ["Negativação", "Ofensa à Honra", "Discriminação", "Acidentes"] },
+  { id: "atualizacao-divida", title: "Calculadora de Atualização de Dívida", description: "Atualize dívidas com correção monetária, juros de mora e multa.", icon: TrendingUp, href: "/calculadora-atualizacao-divida", color: "from-red-500 to-orange-500", bgLight: "bg-red-50 dark:bg-red-950/20", features: ["INPC/IPCA", "IGP-M/SELIC", "Juros 1% a.m.", "Multa 2%"] },
+  { id: "aluguel", title: "Calculadora de Aluguel Atrasado", description: "Calcule o débito total do inquilino incluindo multa, juros e encargos.", icon: Building2, href: "/calculadora-aluguel-atrasado", color: "from-yellow-500 to-amber-500", bgLight: "bg-yellow-50 dark:bg-yellow-950/20", features: ["Aluguéis", "Multa", "IPTU/Cond.", "Correção"] },
+  { id: "dpvat", title: "Calculadora DPVAT/SPVAT", description: "Calcule a indenização por acidente de trânsito: morte, invalidez ou despesas.", icon: Car, href: "/calculadora-dpvat", color: "from-purple-500 to-pink-500", bgLight: "bg-purple-50 dark:bg-purple-950/20", features: ["Morte", "Invalidez", "Despesas Médicas", "Documentos"] }
 ];
 
 const Calculadoras = () => {
@@ -173,16 +30,16 @@ const Calculadoras = () => {
     window.location.href = "/#lawyer-chat";
   };
 
+  const itemListSchema = getCalculatorListSchema();
+
   return (
     <>
       <Helmet>
         <title>Calculadoras de Direitos | Calcule Grátis suas Verbas</title>
-        <meta 
-          name="description" 
-          content="Calculadoras jurídicas gratuitas: calcule rescisão trabalhista, pensão alimentícia e mais. Descubra quanto você tem direito a receber." 
-        />
+        <meta name="description" content="Calculadoras jurídicas gratuitas: calcule rescisão trabalhista, pensão alimentícia e mais. Descubra quanto você tem direito a receber." />
         <meta name="keywords" content="calculadora trabalhista, calculadora pensão alimentícia, calcular rescisão, verbas rescisórias, direitos trabalhistas" />
         <link rel="canonical" href="/calculadoras" />
+        {itemListSchema && <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>}
       </Helmet>
 
       <Navbar onCtaClick={scrollToChat} />

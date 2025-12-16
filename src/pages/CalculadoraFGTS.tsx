@@ -4,11 +4,16 @@ import { ArrowLeft, Wallet } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import FGTSCalculator from "@/components/calculators/FGTSCalculator";
+import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 
 const CalculadoraFGTS = () => {
   const scrollToChat = () => {
     window.location.href = "/#lawyer-chat";
   };
+
+  const webAppSchema = getWebApplicationSchema("fgts");
+  const faqSchema = getFAQPageSchema("fgts");
+  const breadcrumbSchema = getBreadcrumbSchema("fgts");
 
   return (
     <>
@@ -20,6 +25,21 @@ const CalculadoraFGTS = () => {
         />
         <meta name="keywords" content="calculadora fgts, calcular saldo fgts, multa 40 fgts, saque aniversário, saque rescisão fgts" />
         <link rel="canonical" href="/calculadora-fgts" />
+        {webAppSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(webAppSchema)}
+          </script>
+        )}
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
+        {breadcrumbSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(breadcrumbSchema)}
+          </script>
+        )}
       </Helmet>
 
       <Navbar onCtaClick={scrollToChat} />

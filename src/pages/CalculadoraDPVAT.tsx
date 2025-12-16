@@ -4,11 +4,16 @@ import { ArrowLeft, Car } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import DPVATCalculator from "@/components/calculators/DPVATCalculator";
+import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 
 const CalculadoraDPVAT = () => {
   const scrollToChat = () => {
     window.location.href = "/#lawyer-chat";
   };
+
+  const webAppSchema = getWebApplicationSchema("dpvat");
+  const faqSchema = getFAQPageSchema("dpvat");
+  const breadcrumbSchema = getBreadcrumbSchema("dpvat");
 
   return (
     <>
@@ -20,6 +25,21 @@ const CalculadoraDPVAT = () => {
         />
         <meta name="keywords" content="calculadora dpvat, indenização dpvat, seguro dpvat, spvat, acidente de trânsito indenização" />
         <link rel="canonical" href="/calculadora-dpvat" />
+        {webAppSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(webAppSchema)}
+          </script>
+        )}
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
+        {breadcrumbSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(breadcrumbSchema)}
+          </script>
+        )}
       </Helmet>
 
       <Navbar onCtaClick={scrollToChat} />

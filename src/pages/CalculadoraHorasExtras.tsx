@@ -4,11 +4,16 @@ import Navbar from "@/components/Navbar";
 import OvertimeCalculator from "@/components/calculators/OvertimeCalculator";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 
 const CalculadoraHorasExtras = () => {
   const scrollToChat = () => {
     window.location.href = "/#lawyer-chat";
   };
+
+  const webAppSchema = getWebApplicationSchema("horas-extras");
+  const faqSchema = getFAQPageSchema("horas-extras");
+  const breadcrumbSchema = getBreadcrumbSchema("horas-extras");
 
   return (
     <>
@@ -20,6 +25,21 @@ const CalculadoraHorasExtras = () => {
         />
         <meta name="keywords" content="calculadora horas extras, direitos trabalhistas, adicional noturno, banco de horas, reflexos CLT" />
         <link rel="canonical" href="/calculadora-horas-extras" />
+        {webAppSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(webAppSchema)}
+          </script>
+        )}
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
+        {breadcrumbSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(breadcrumbSchema)}
+          </script>
+        )}
       </Helmet>
 
       <Navbar onCtaClick={scrollToChat} />

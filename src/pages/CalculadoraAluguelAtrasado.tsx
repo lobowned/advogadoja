@@ -4,11 +4,16 @@ import Navbar from "@/components/Navbar";
 import RentArrearsCalculator from "@/components/calculators/RentArrearsCalculator";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 
 const CalculadoraAluguelAtrasado = () => {
   const scrollToChat = () => {
     window.location.href = "/#lawyer-chat";
   };
+
+  const webAppSchema = getWebApplicationSchema("aluguel-atrasado");
+  const faqSchema = getFAQPageSchema("aluguel-atrasado");
+  const breadcrumbSchema = getBreadcrumbSchema("aluguel-atrasado");
 
   return (
     <>
@@ -20,6 +25,21 @@ const CalculadoraAluguelAtrasado = () => {
         />
         <meta name="keywords" content="calculadora aluguel atrasado, inquilino devedor, despejo, multa aluguel, cobrança aluguel" />
         <link rel="canonical" href="/calculadora-aluguel-atrasado" />
+        {webAppSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(webAppSchema)}
+          </script>
+        )}
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
+        {breadcrumbSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(breadcrumbSchema)}
+          </script>
+        )}
       </Helmet>
 
       <Navbar onCtaClick={scrollToChat} />

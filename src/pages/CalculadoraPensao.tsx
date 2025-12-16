@@ -5,11 +5,16 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
 import AlimonyCalculator from "@/components/calculators/AlimonyCalculator";
+import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 
 const CalculadoraPensao = () => {
   const scrollToChat = () => {
     window.location.href = "/?specialty=familia#lawyer-chat";
   };
+
+  const webAppSchema = getWebApplicationSchema("pensao");
+  const faqSchema = getFAQPageSchema("pensao");
+  const breadcrumbSchema = getBreadcrumbSchema("pensao");
 
   return (
     <>
@@ -22,22 +27,21 @@ const CalculadoraPensao = () => {
         <meta name="keywords" content="calculadora pensão alimentícia, calcular pensão filhos, valor pensão, direito família, alimentos" />
         <link rel="canonical" href="/calculadora-pensao" />
         
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            "name": "Calculadora de Pensão Alimentícia",
-            "description": "Ferramenta gratuita para calcular estimativa de pensão alimentícia",
-            "applicationCategory": "FinanceApplication",
-            "operatingSystem": "Web",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "BRL"
-            }
-          })}
-        </script>
+        {webAppSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(webAppSchema)}
+          </script>
+        )}
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
+        {breadcrumbSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(breadcrumbSchema)}
+          </script>
+        )}
       </Helmet>
 
       <Navbar onCtaClick={scrollToChat} />

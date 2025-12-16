@@ -78,7 +78,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
           <m.img 
               src={logoAdvogadoOnline} 
               alt="Advogado Online" 
-              className="h-44 xs:h-48 sm:h-56 md:h-72 lg:h-96 mx-auto"
+              className="h-56 xs:h-60 sm:h-64 md:h-72 lg:h-96 mx-auto"
               whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             />

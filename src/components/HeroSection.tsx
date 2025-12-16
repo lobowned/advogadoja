@@ -9,7 +9,7 @@ import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { lawyers } from "@/data/lawyers";
 import logoAdvogadoOnline from "@/assets/logo-advogado-online.png";
-import { heroReveal, heroTitle, heroStagger, heroBadge, heroAvatar } from "@/lib/motion-variants";
+import { heroReveal, heroTitle, heroStagger, heroBadge } from "@/lib/motion-variants";
 
 const testimonials = [
   { text: "Recebi minha rescisão em 3 meses!", author: "Maria S." },
@@ -186,15 +186,14 @@ const HeroSection = () => {
           {/* Avatar Carousel with Cascade Entry */}
           <m.div 
             className="mb-3 sm:mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }}
           >
             <Carousel
               opts={{
                 align: "center",
                 loop: true,
-                dragFree: true,
               }}
               plugins={[
                 Autoplay({
@@ -210,21 +209,18 @@ const HeroSection = () => {
                     key={lawyer.id} 
                     className="pl-1 sm:pl-2 basis-auto"
                   >
-                    <m.div 
-                      className="relative group p-1"
-                      custom={index}
-                      variants={heroAvatar}
-                      initial="hidden"
-                      animate="visible"
-                    >
-                      <Avatar className="w-9 h-9 sm:w-12 sm:h-12 md:w-14 md:h-14 border-2 border-white/30 group-hover:border-cyan-400 transition-all duration-300 group-hover:scale-110">
+                    <div className="relative group p-1">
+                      <Avatar 
+                        className="w-9 h-9 sm:w-12 sm:h-12 md:w-14 md:h-14 border-2 border-white/30 group-hover:border-cyan-400 transition-all duration-300 group-hover:scale-110 avatar-entrance"
+                        style={{ animationDelay: `${index * 50}ms` }}
+                      >
                         <AvatarImage src={lawyer.photo} alt={lawyer.name} />
                         <AvatarFallback className="bg-primary/20 text-white text-[10px] sm:text-xs">
                           {lawyer.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
                         </AvatarFallback>
                       </Avatar>
                       <div className="absolute bottom-0.5 right-0.5 w-2 h-2 sm:w-3 sm:h-3 bg-emerald-400 rounded-full border-2 border-black/50 animate-pulse" />
-                    </m.div>
+                    </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>

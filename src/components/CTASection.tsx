@@ -49,7 +49,7 @@ const CTASection = ({
           <Button 
             size="lg"
             variant={variant === "primary" ? "secondary" : "default"}
-            className="h-12 sm:h-14 md:h-16 w-full sm:w-auto px-6 sm:px-8 md:px-10 text-base sm:text-lg font-bold shadow-button hover:scale-105 transition-all mb-6 sm:mb-8"
+            className="btn-shimmer h-12 sm:h-14 md:h-16 w-full sm:w-auto px-6 sm:px-8 md:px-10 text-base sm:text-lg font-bold shadow-button hover:scale-105 transition-all mb-6 sm:mb-8"
             onClick={onAction}
           >
             {buttonText}

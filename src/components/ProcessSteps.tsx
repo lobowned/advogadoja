@@ -81,7 +81,7 @@ const ProcessSteps = () => {
                   boxShadow: "0 20px 40px -15px rgba(0,0,0,0.15)",
                   transition: { type: "spring", stiffness: 300 }
                 }}
-                className="relative bg-gradient-to-br from-card to-card/50 border border-border rounded-lg p-6 sm:p-8 shadow-card transition-colors group"
+                className="relative gradient-border-hover border border-border rounded-lg p-6 sm:p-8 shadow-card group"
               >
                 {/* Number badge with pop animation */}
                 <m.div 

@@ -68,7 +68,7 @@ const TestimonialsCarousel = () => {
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="flex-[0_0_100%] min-w-0 px-2 sm:px-4">
                   <m.div 
-                    className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 sm:p-8 md:p-12"
+                    className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 sm:p-8 md:p-12 overflow-hidden before:absolute before:inset-0 before:p-[1px] before:rounded-xl before:bg-gradient-to-r before:from-white/30 before:via-cyan-400/50 before:to-white/30 before:-z-10"
                     initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}

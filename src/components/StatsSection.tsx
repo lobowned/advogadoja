@@ -42,7 +42,7 @@ const StatsSection = () => {
             return (
               <div
                 key={index}
-                className="bg-card border border-border rounded-lg p-4 sm:p-6 shadow-card hover:shadow-elegant transition-all text-center"
+                className="gradient-border-hover border border-border rounded-lg p-4 sm:p-6 shadow-card text-center"
               >
                 <div className="flex justify-center mb-3 sm:mb-4">
                   <div className="bg-primary/10 rounded-full p-3 sm:p-4">

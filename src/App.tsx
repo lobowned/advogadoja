@@ -19,6 +19,14 @@ import CalculadoraAtualizacaoDivida from "./pages/CalculadoraAtualizacaoDivida";
 import CalculadoraPartilhaBens from "./pages/CalculadoraPartilhaBens";
 import CalculadoraAluguelAtrasado from "./pages/CalculadoraAluguelAtrasado";
 import CalculadoraHorasExtras from "./pages/CalculadoraHorasExtras";
+import CalculadoraSeguroDesemprego from "./pages/CalculadoraSeguroDesemprego";
+import CalculadoraFGTS from "./pages/CalculadoraFGTS";
+import CalculadoraPensaoMorte from "./pages/CalculadoraPensaoMorte";
+import CalculadoraAuxilioDoenca from "./pages/CalculadoraAuxilioDoenca";
+import CalculadoraBPCLOAS from "./pages/CalculadoraBPCLOAS";
+import CalculadoraInventario from "./pages/CalculadoraInventario";
+import CalculadoraInsalubridade from "./pages/CalculadoraInsalubridade";
+import CalculadoraDPVAT from "./pages/CalculadoraDPVAT";
 import SelectAction from "./pages/SelectAction";
 import DynamicQuestionnaire from "./pages/DynamicQuestionnaire";
 import Completed from "./pages/Completed";
@@ -77,6 +85,14 @@ const App = () => (
                 <Route path="/calculadora-partilha-bens" element={<CalculadoraPartilhaBens />} />
                 <Route path="/calculadora-aluguel-atrasado" element={<CalculadoraAluguelAtrasado />} />
                 <Route path="/calculadora-horas-extras" element={<CalculadoraHorasExtras />} />
+                <Route path="/calculadora-seguro-desemprego" element={<CalculadoraSeguroDesemprego />} />
+                <Route path="/calculadora-fgts" element={<CalculadoraFGTS />} />
+                <Route path="/calculadora-pensao-morte" element={<CalculadoraPensaoMorte />} />
+                <Route path="/calculadora-auxilio-doenca" element={<CalculadoraAuxilioDoenca />} />
+                <Route path="/calculadora-bpc-loas" element={<CalculadoraBPCLOAS />} />
+                <Route path="/calculadora-inventario" element={<CalculadoraInventario />} />
+                <Route path="/calculadora-insalubridade" element={<CalculadoraInsalubridade />} />
+                <Route path="/calculadora-dpvat" element={<CalculadoraDPVAT />} />
                 {/* Niche Landing Pages */}
                 <Route path="/advogado-trabalhista" element={<NicheLanding />} />
                 <Route path="/advogado-familia" element={<NicheLanding />} />

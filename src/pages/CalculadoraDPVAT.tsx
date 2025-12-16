@@ -1,0 +1,63 @@
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
+import { ArrowLeft, Car } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Navbar from "@/components/Navbar";
+import DPVATCalculator from "@/components/calculators/DPVATCalculator";
+
+const CalculadoraDPVAT = () => {
+  const scrollToChat = () => {
+    window.location.href = "/#lawyer-chat";
+  };
+
+  return (
+    <>
+      <Helmet>
+        <title>Calculadora DPVAT/SPVAT 2024 | Calcule Indenização de Acidente</title>
+        <meta 
+          name="description" 
+          content="Calcule a indenização do DPVAT/SPVAT por acidente de trânsito. Valores para morte, invalidez e despesas médicas." 
+        />
+        <meta name="keywords" content="calculadora dpvat, indenização dpvat, seguro dpvat, spvat, acidente de trânsito indenização" />
+        <link rel="canonical" href="/calculadora-dpvat" />
+      </Helmet>
+
+      <Navbar onCtaClick={scrollToChat} />
+
+      <main className="min-h-screen bg-background pt-20">
+        <section className="py-8 md:py-12 bg-gradient-to-b from-purple-500/10 to-background">
+          <div className="container mx-auto px-4">
+            <Link to="/calculadoras">
+              <Button variant="ghost" size="sm" className="mb-4 gap-2">
+                <ArrowLeft className="w-4 h-4" />
+                Voltar para Calculadoras
+              </Button>
+            </Link>
+            
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                <Car className="w-7 h-7 text-white" />
+              </div>
+              <div>
+                <h1 className="text-2xl md:text-4xl font-bold">
+                  Calculadora DPVAT / SPVAT
+                </h1>
+                <p className="text-muted-foreground">
+                  Calcule a indenização por acidente de trânsito
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-8 md:py-12">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <DPVATCalculator />
+          </div>
+        </section>
+      </main>
+    </>
+  );
+};
+
+export default CalculadoraDPVAT;

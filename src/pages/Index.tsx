@@ -165,13 +165,13 @@ const Index = () => {
         <LawyerChatSection />
       </div>
 
+      {/* WhatsApp Testimonials Section */}
+      <WhatsAppTestimonials />
+
       {/* Lawyers Showcase Section */}
       <div id="advogados">
         <LawyersShowcase />
       </div>
-
-      {/* WhatsApp Testimonials Section */}
-      <WhatsAppTestimonials />
 
       {/* Credibility Section */}
       <CredibilitySection />

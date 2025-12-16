@@ -71,17 +71,13 @@ const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: [0.175, 0.885, 0.32, 1.275] }}
           >
-            <div className="relative">
-              <m.img 
-                src={logoAdvogadoOnline} 
-                alt="Advogado Online" 
-                className="h-56 xs:h-60 sm:h-64 md:h-72 lg:h-96 mx-auto drop-shadow-2xl"
-                whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              />
-              {/* Tech shine effect */}
-              <div className="absolute inset-0 blue-shine pointer-events-none rounded-full" />
-            </div>
+            <m.img 
+              src={logoAdvogadoOnline} 
+              alt="Advogado Online" 
+              className="h-56 xs:h-60 sm:h-64 md:h-72 lg:h-96 mx-auto drop-shadow-2xl"
+              whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            />
           </m.div>
 
           {/* Badges - Tech style */}

@@ -64,7 +64,7 @@ const ForWhoSection = () => {
             return (
               <div
                 key={index}
-                className="bg-card border border-border rounded-lg p-6 sm:p-8 shadow-card hover:shadow-elegant transition-all"
+                className="gradient-border-hover border border-border rounded-lg p-6 sm:p-8 shadow-card"
               >
                 <div className={`mb-4 sm:mb-6 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full ${audience.bgColor}`}>
                   <Icon className={`h-6 w-6 sm:h-8 sm:w-8 ${audience.color}`} />

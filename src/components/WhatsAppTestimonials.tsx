@@ -80,9 +80,20 @@ const whatsappTestimonials: Testimonial[] = [
         reaction: "🎉"
       },
       {
+        type: "received",
+        text: "Sério doutor?! Não acredito! 😭",
+        time: "14:19"
+      },
+      {
         type: "audio",
         duration: "0:47",
         time: "14:20"
+      },
+      {
+        type: "received",
+        text: "Muito obrigado por tudo! Vocês são demais! 🙏",
+        time: "14:21",
+        reaction: "🙏"
       },
       {
         type: "sent",
@@ -175,9 +186,20 @@ const whatsappTestimonials: Testimonial[] = [
         seen: true
       },
       {
+        type: "received",
+        text: "Ai meu Deus! É verdade doutor?! 😭",
+        time: "10:18"
+      },
+      {
         type: "audio",
         duration: "0:32",
         time: "10:22"
+      },
+      {
+        type: "received",
+        text: "Que Deus abençoe vocês! Muito obrigada! 🙏❤️",
+        time: "10:23",
+        reaction: "❤️"
       },
       {
         type: "sent",

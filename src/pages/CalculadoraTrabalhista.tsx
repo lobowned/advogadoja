@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
-import { Briefcase, ArrowLeft, MessageCircle, CheckCircle } from "lucide-react";
+import { Briefcase, MessageCircle, CheckCircle } from "lucide-react";
+import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
@@ -50,13 +50,14 @@ const CalculadoraTrabalhista = () => {
         {/* Hero Section */}
         <section className="py-8 md:py-12 bg-gradient-to-b from-amber-500/10 to-background">
           <div className="container mx-auto px-4">
-            <Link 
-              to="/calculadoras" 
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Voltar para Calculadoras
-            </Link>
+            <BreadcrumbNav 
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Calculadoras", href: "/calculadoras" },
+                { label: "Rescisão Trabalhista" }
+              ]}
+              className="mb-6"
+            />
 
             <div className="flex flex-col md:flex-row gap-8 items-start">
               <div className="flex-1">

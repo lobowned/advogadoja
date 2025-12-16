@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import MoralDamagesCalculator from "@/components/calculators/MoralDamagesCalculator";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 
 const CalculadoraDanosMorais = () => {
@@ -47,6 +48,14 @@ const CalculadoraDanosMorais = () => {
       <main className="min-h-screen bg-background pt-20">
         <section className="py-12 md:py-20 bg-gradient-to-b from-purple-500/10 to-background">
           <div className="container mx-auto px-4">
+            <BreadcrumbNav 
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Calculadoras", href: "/calculadoras" },
+                { label: "Danos Morais" }
+              ]}
+              className="mb-8"
+            />
             <div className="text-center max-w-3xl mx-auto mb-12">
               <div className="inline-flex items-center gap-2 bg-purple-500/10 text-purple-600 dark:text-purple-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Scale className="w-4 h-4" />

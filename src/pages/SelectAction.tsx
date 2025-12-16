@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate, useParams } from "react-router-dom";
 import { legalNiches } from "@/data/legal-niches";
-import { ArrowLeft } from "lucide-react";
+import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 
 const SelectAction = () => {
   const navigate = useNavigate();
@@ -33,13 +33,14 @@ const SelectAction = () => {
       {/* Header */}
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-4 sm:py-6">
-          <button
-            onClick={() => navigate("/selecionar-nicho")}
-            className="mb-3 sm:mb-4 flex items-center gap-2 text-xs sm:text-sm text-muted-foreground transition-colors hover:text-foreground min-h-[44px]"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Voltar para nichos
-          </button>
+          <BreadcrumbNav 
+            items={[
+              { label: "Início", href: "/" },
+              { label: "Selecionar Nicho", href: "/selecionar-nicho" },
+              { label: niche.name }
+            ]}
+            className="mb-3 sm:mb-4"
+          />
           <div className="flex items-center gap-3 sm:gap-4">
             <div className={`flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-lg bg-muted ${niche.color}`}>
               <Icon className="h-6 w-6 sm:h-7 sm:w-7" />

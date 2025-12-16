@@ -7,6 +7,7 @@ import { legalNiches } from "@/data/legal-niches";
 import { generalQuestions } from "@/data/general-questions";
 import { QuestionRenderer } from "@/components/questionnaire/QuestionRenderer";
 import { ProgressIndicator } from "@/components/questionnaire/ProgressIndicator";
+import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import { Question, CaseAnswers } from "@/types/legal-flows";
 import { useToast } from "@/hooks/use-toast";
 import { useSubmitCase } from "@/hooks/useSubmitCase";
@@ -84,7 +85,7 @@ const DynamicQuestionnaire = () => {
         nicheId: nicheId!,
         actionId: actionId!,
         answers,
-        documents: [], // TODO: Implementar upload de documentos na próxima fase
+        documents: [],
       });
       
       toast({
@@ -109,13 +110,14 @@ const DynamicQuestionnaire = () => {
     <div className="min-h-screen bg-background">
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-6">
-          <button
-            onClick={() => navigate(`/selecionar-acao/${nicheId}`)}
-            className="mb-4 flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Voltar para seleção de ação
-          </button>
+          <BreadcrumbNav 
+            items={[
+              { label: "Início", href: "/" },
+              { label: niche.name, href: `/selecionar-acao/${nicheId}` },
+              { label: action.name }
+            ]}
+            className="mb-4"
+          />
           <div>
             <h1 className="text-2xl font-bold text-foreground md:text-3xl">
               {action.name}

@@ -1,7 +1,8 @@
-import { m, useReducedMotion } from "framer-motion";
-import { ArrowLeft, Phone, Video, MoreVertical, Check, CheckCheck, Play, Pause, Mic } from "lucide-react";
+import { m, useReducedMotion, AnimatePresence } from "framer-motion";
+import { ArrowLeft, Phone, Video, MoreVertical, Check, CheckCheck, Play, Pause, Mic, Signal, Wifi, Battery } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { useInView } from "react-intersection-observer";
 
 interface Message {
   type: "sent" | "received" | "audio";
@@ -9,6 +10,7 @@ interface Message {
   duration?: string;
   time: string;
   seen?: boolean;
+  reaction?: string;
 }
 
 interface Testimonial {
@@ -40,7 +42,8 @@ const whatsappTestimonials: Testimonial[] = [
       {
         type: "received",
         text: "DOUTOR! Não acredito!! Muito obrigada mesmo! Vocês mudaram minha vida! 🙏❤️",
-        time: "09:35"
+        time: "09:35",
+        reaction: "❤️"
       },
       {
         type: "received",
@@ -61,7 +64,8 @@ const whatsappTestimonials: Testimonial[] = [
         type: "sent",
         text: "José, sua aposentadoria foi aprovada! Parabéns! 🎉",
         time: "14:18",
-        seen: true
+        seen: true,
+        reaction: "🎉"
       },
       {
         type: "audio",
@@ -88,7 +92,8 @@ const whatsappTestimonials: Testimonial[] = [
       {
         type: "received",
         text: "Doutora, muito obrigada por tudo! Você foi um anjo na minha vida 😭🙏",
-        time: "16:48"
+        time: "16:48",
+        reaction: "🙏"
       },
       {
         type: "received",
@@ -109,7 +114,8 @@ const whatsappTestimonials: Testimonial[] = [
         type: "sent",
         text: "Roberto, ganhamos! Indenização de R$ 15.000 pelo produto defeituoso 💪",
         time: "11:20",
-        seen: true
+        seen: true,
+        reaction: "💪"
       },
       {
         type: "received",
@@ -157,7 +163,8 @@ const whatsappTestimonials: Testimonial[] = [
       {
         type: "received",
         text: "Doutor, não tenho nem palavras! Achei que nunca ia ver esse dinheiro 😭",
-        time: "15:45"
+        time: "15:45",
+        reaction: "😭"
       },
       {
         type: "received",
@@ -167,6 +174,49 @@ const whatsappTestimonials: Testimonial[] = [
     ]
   }
 ];
+
+// Phone Status Bar Component
+const PhoneStatusBar = () => {
+  const [time, setTime] = useState(() => {
+    const now = new Date();
+    return `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = new Date();
+      setTime(`${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`);
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="flex items-center justify-between px-4 py-1.5 bg-[#075E54]">
+      <span className="text-white text-xs font-medium">{time}</span>
+      <div className="flex items-center gap-1">
+        <Signal className="w-3.5 h-3.5 text-white" />
+        <Wifi className="w-3.5 h-3.5 text-white" />
+        <div className="flex items-center">
+          <Battery className="w-4 h-4 text-white" />
+          <span className="text-white text-[10px] ml-0.5">87%</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Typing Indicator Component
+const TypingIndicator = () => (
+  <div className="flex justify-start">
+    <div className="wa-bubble-received px-4 py-2.5">
+      <div className="flex items-center gap-1">
+        <span className="w-2 h-2 bg-[#667781] rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+        <span className="w-2 h-2 bg-[#667781] rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+        <span className="w-2 h-2 bg-[#667781] rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+      </div>
+    </div>
+  </div>
+);
 
 // Generate random waveform bars
 const generateWaveform = () => {
@@ -196,8 +246,23 @@ const AudioWaveform = ({ isPlaying }: { isPlaying: boolean }) => {
 
 const AudioMessage = ({ message }: { message: Message }) => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
   
-  // Audio messages from clients are displayed as received (white bubble, left aligned)
+  useEffect(() => {
+    if (isPlaying) {
+      const interval = setInterval(() => {
+        setProgress(prev => {
+          if (prev >= 100) {
+            setIsPlaying(false);
+            return 0;
+          }
+          return prev + 2;
+        });
+      }, 100);
+      return () => clearInterval(interval);
+    }
+  }, [isPlaying]);
+  
   return (
     <div className="flex justify-start">
       <div className="wa-bubble-received flex items-center gap-2 pl-2 pr-3 py-2 min-w-[240px] max-w-[85%]">
@@ -218,8 +283,14 @@ const AudioMessage = ({ message }: { message: Message }) => {
           <Mic className="w-3 h-3 text-[#8696A0]" />
         </div>
         
-        {/* Waveform */}
-        <AudioWaveform isPlaying={isPlaying} />
+        {/* Waveform with Progress */}
+        <div className="relative flex-1">
+          <AudioWaveform isPlaying={isPlaying} />
+          <div 
+            className="absolute bottom-0 left-0 h-0.5 bg-[#00A884] transition-all duration-100"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
         
         {/* Duration + Time */}
         <div className="flex flex-col items-end gap-0.5 flex-shrink-0 ml-1">
@@ -231,24 +302,50 @@ const AudioMessage = ({ message }: { message: Message }) => {
   );
 };
 
-const MessageBubble = ({ message, isFirst }: { message: Message; isFirst: boolean }) => {
+// Emoji Reaction Component
+const EmojiReaction = ({ emoji }: { emoji: string }) => (
+  <m.div
+    initial={{ scale: 0, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    transition={{ type: "spring", stiffness: 500, damping: 25 }}
+    className="absolute -bottom-3 right-2 bg-white rounded-full px-1.5 py-0.5 shadow-md border border-gray-100"
+  >
+    <span className="text-sm">{emoji}</span>
+  </m.div>
+);
+
+const MessageBubble = ({ message, isFirst, index }: { message: Message; isFirst: boolean; index: number }) => {
   if (message.type === "audio") {
-    return <AudioMessage message={message} />;
+    return (
+      <m.div
+        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.3, delay: index * 0.1 }}
+      >
+        <AudioMessage message={message} />
+      </m.div>
+    );
   }
 
   const isSent = message.type === "sent";
 
   return (
-    <div className={`flex ${isSent ? "justify-end" : "justify-start"}`}>
-      <div className={`${isSent ? "wa-bubble-sent" : "wa-bubble-received"} ${isFirst ? (isSent ? "wa-tail-sent" : "wa-tail-received") : ""}`}>
+    <m.div
+      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.3, delay: index * 0.1 }}
+      className={`flex ${isSent ? "justify-end" : "justify-start"}`}
+    >
+      <div className={`relative ${isSent ? "wa-bubble-sent" : "wa-bubble-received"} ${isFirst ? (isSent ? "wa-tail-sent" : "wa-tail-received") : ""}`}>
         <p className="text-[14.2px] text-[#111B21] leading-[19px] break-words">{message.text}</p>
         <div className={`flex items-center gap-1 mt-0.5 ${isSent ? "justify-end" : "justify-start"}`}>
           <span className="text-[11px] text-[#667781]">{message.time}</span>
           {isSent && message.seen && <CheckCheck className="w-4 h-4 text-[#53BDEB]" />}
           {isSent && !message.seen && <Check className="w-4 h-4 text-[#667781]" />}
         </div>
+        {message.reaction && <EmojiReaction emoji={message.reaction} />}
       </div>
-    </div>
+    </m.div>
   );
 };
 
@@ -260,7 +357,17 @@ const DateDivider = ({ date }: { date: string }) => (
   </div>
 );
 
-const WhatsAppHeader = ({ name, initials, avatarUrl, area }: { name: string; initials: string; avatarUrl?: string; area: string }) => {
+const WhatsAppHeader = ({ 
+  name, 
+  initials, 
+  avatarUrl, 
+  isTyping 
+}: { 
+  name: string; 
+  initials: string; 
+  avatarUrl?: string; 
+  isTyping: boolean;
+}) => {
   const [imgError, setImgError] = useState(false);
   
   return (
@@ -287,7 +394,13 @@ const WhatsAppHeader = ({ name, initials, avatarUrl, area }: { name: string; ini
       {/* Name & Status */}
       <div className="flex-1 min-w-0">
         <p className="font-medium text-white text-[16px] truncate leading-tight">{name}</p>
-        <p className="text-[13px] text-white/80 leading-tight">online</p>
+        <p className="text-[13px] text-white/80 leading-tight">
+          {isTyping ? (
+            <span className="text-[#25D366]">digitando...</span>
+          ) : (
+            "online"
+          )}
+        </p>
       </div>
       
       {/* Action Icons */}
@@ -343,38 +456,117 @@ const WhatsAppInputBar = () => (
 
 const WhatsAppConversation = ({ testimonial, index }: { testimonial: Testimonial; index: number }) => {
   const shouldReduceMotion = useReducedMotion();
+  const [visibleMessages, setVisibleMessages] = useState<number[]>([]);
+  const [isTyping, setIsTyping] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
+  
+  const { ref, inView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true
+  });
+
+  const animateMessages = useCallback(() => {
+    if (shouldReduceMotion) {
+      // Show all messages immediately if reduced motion is preferred
+      setVisibleMessages(testimonial.messages.map((_, i) => i));
+      return;
+    }
+
+    let currentIndex = 0;
+    
+    const showNextMessage = () => {
+      if (currentIndex >= testimonial.messages.length) return;
+      
+      const currentMessage = testimonial.messages[currentIndex];
+      
+      // If it's a client message (received), show typing first
+      if (currentMessage.type === "received" || currentMessage.type === "audio") {
+        setIsTyping(true);
+        setTimeout(() => {
+          setIsTyping(false);
+          setVisibleMessages(prev => [...prev, currentIndex]);
+          currentIndex++;
+          setTimeout(showNextMessage, 800 + Math.random() * 400);
+        }, 1200 + Math.random() * 600);
+      } else {
+        // Lawyer message (sent), show immediately
+        setVisibleMessages(prev => [...prev, currentIndex]);
+        currentIndex++;
+        setTimeout(showNextMessage, 1000 + Math.random() * 500);
+      }
+    };
+    
+    // Start the animation sequence
+    setTimeout(showNextMessage, 500);
+  }, [testimonial.messages, shouldReduceMotion]);
+
+  useEffect(() => {
+    if (inView && !hasStarted) {
+      setHasStarted(true);
+      animateMessages();
+    }
+  }, [inView, hasStarted, animateMessages]);
   
   return (
     <m.div
+      ref={ref}
       initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="wa-card overflow-hidden"
     >
+      {/* Phone Status Bar */}
+      <PhoneStatusBar />
+      
       {/* WhatsApp Header */}
       <WhatsAppHeader 
         name={testimonial.clientName} 
         initials={testimonial.clientInitials}
         avatarUrl={testimonial.avatarUrl}
-        area={testimonial.area}
+        isTyping={isTyping}
       />
 
       {/* Messages Area with Doodle Background */}
       <div className="wa-chat-bg px-3 py-2 space-y-1 min-h-[180px]">
         <DateDivider date={testimonial.date} />
-        {testimonial.messages.map((message, idx) => (
-          <MessageBubble 
-            key={idx} 
-            message={message} 
-            isFirst={idx === 0 || testimonial.messages[idx - 1].type !== message.type}
-          />
-        ))}
+        
+        <AnimatePresence mode="popLayout">
+          {testimonial.messages.map((message, idx) => (
+            visibleMessages.includes(idx) && (
+              <MessageBubble 
+                key={idx} 
+                message={message} 
+                isFirst={idx === 0 || testimonial.messages[idx - 1].type !== message.type}
+                index={idx}
+              />
+            )
+          ))}
+        </AnimatePresence>
+        
+        {/* Typing Indicator */}
+        <AnimatePresence>
+          {isTyping && (
+            <m.div
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <TypingIndicator />
+            </m.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {/* Audio Transcript */}
-      {testimonial.audioTranscript && (
-        <div className="px-4 py-3 bg-[#F0F2F5] border-t border-[#E9EDEF]">
+      {testimonial.audioTranscript && visibleMessages.includes(testimonial.messages.findIndex(m => m.type === "audio")) && (
+        <m.div 
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          transition={{ duration: 0.3 }}
+          className="px-4 py-3 bg-[#F0F2F5] border-t border-[#E9EDEF]"
+        >
           <div className="flex items-start gap-2">
             <div className="w-5 h-5 rounded-full bg-[#25D366] flex items-center justify-center flex-shrink-0 mt-0.5">
               <Mic className="w-3 h-3 text-white" />
@@ -386,7 +578,7 @@ const WhatsAppConversation = ({ testimonial, index }: { testimonial: Testimonial
               </p>
             </div>
           </div>
-        </div>
+        </m.div>
       )}
 
       {/* Input Bar (Visual Only) */}

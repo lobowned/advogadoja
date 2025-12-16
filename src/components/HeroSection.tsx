@@ -75,10 +75,10 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: [0.175, 0.885, 0.32, 1.275] }}
           >
-            <m.img 
+          <m.img 
               src={logoAdvogadoOnline} 
               alt="Advogado Online" 
-              className="h-32 xs:h-40 sm:h-56 md:h-72 lg:h-96 mx-auto"
+              className="h-44 xs:h-48 sm:h-56 md:h-72 lg:h-96 mx-auto"
               whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             />

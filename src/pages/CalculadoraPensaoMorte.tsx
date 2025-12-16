@@ -4,22 +4,27 @@ import { ArrowLeft, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import DeathPensionCalculator from "@/components/calculators/DeathPensionCalculator";
+import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 
 const CalculadoraPensaoMorte = () => {
   const scrollToChat = () => {
     window.location.href = "/#lawyer-chat";
   };
 
+  const webAppSchema = getWebApplicationSchema("pensao-morte");
+  const faqSchema = getFAQPageSchema("pensao-morte");
+  const breadcrumbSchema = getBreadcrumbSchema("pensao-morte");
+
   return (
     <>
       <Helmet>
         <title>Calculadora de Pensão por Morte 2024 | Calcule Benefício INSS</title>
-        <meta 
-          name="description" 
-          content="Calcule o valor da pensão por morte do INSS. Simulador com regras pós-reforma 2019. Descubra quanto os dependentes podem receber." 
-        />
+        <meta name="description" content="Calcule o valor da pensão por morte do INSS. Simulador com regras pós-reforma 2019. Descubra quanto os dependentes podem receber." />
         <meta name="keywords" content="calculadora pensão por morte, pensão por morte inss, valor pensão morte, benefício dependentes inss" />
         <link rel="canonical" href="/calculadora-pensao-morte" />
+        {webAppSchema && <script type="application/ld+json">{JSON.stringify(webAppSchema)}</script>}
+        {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
+        {breadcrumbSchema && <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>}
       </Helmet>
 
       <Navbar onCtaClick={scrollToChat} />

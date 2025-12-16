@@ -4,11 +4,16 @@ import Navbar from "@/components/Navbar";
 import AssetDivisionCalculator from "@/components/calculators/AssetDivisionCalculator";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 
 const CalculadoraPartilhaBens = () => {
   const scrollToChat = () => {
     window.location.href = "/#lawyer-chat";
   };
+
+  const webAppSchema = getWebApplicationSchema("partilha-bens");
+  const faqSchema = getFAQPageSchema("partilha-bens");
+  const breadcrumbSchema = getBreadcrumbSchema("partilha-bens");
 
   return (
     <>
@@ -20,6 +25,21 @@ const CalculadoraPartilhaBens = () => {
         />
         <meta name="keywords" content="calculadora partilha bens, divórcio, separação, comunhão parcial, comunhão universal, regime de bens" />
         <link rel="canonical" href="/calculadora-partilha-bens" />
+        {webAppSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(webAppSchema)}
+          </script>
+        )}
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
+        {breadcrumbSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(breadcrumbSchema)}
+          </script>
+        )}
       </Helmet>
 
       <Navbar onCtaClick={scrollToChat} />

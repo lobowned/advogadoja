@@ -4,22 +4,27 @@ import { ArrowLeft, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import UnemploymentInsuranceCalculator from "@/components/calculators/UnemploymentInsuranceCalculator";
+import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 
 const CalculadoraSeguroDesemprego = () => {
   const scrollToChat = () => {
     window.location.href = "/#lawyer-chat";
   };
 
+  const webAppSchema = getWebApplicationSchema("seguro-desemprego");
+  const faqSchema = getFAQPageSchema("seguro-desemprego");
+  const breadcrumbSchema = getBreadcrumbSchema("seguro-desemprego");
+
   return (
     <>
       <Helmet>
         <title>Calculadora de Seguro-Desemprego 2024 | Calcule Parcelas Grátis</title>
-        <meta 
-          name="description" 
-          content="Calcule o valor e número de parcelas do seguro-desemprego. Simulador atualizado com as regras 2024. Descubra quanto você vai receber." 
-        />
+        <meta name="description" content="Calcule o valor e número de parcelas do seguro-desemprego. Simulador atualizado com as regras 2024. Descubra quanto você vai receber." />
         <meta name="keywords" content="calculadora seguro desemprego, calcular parcelas seguro desemprego, valor seguro desemprego 2024, quantas parcelas seguro desemprego" />
         <link rel="canonical" href="/calculadora-seguro-desemprego" />
+        {webAppSchema && <script type="application/ld+json">{JSON.stringify(webAppSchema)}</script>}
+        {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
+        {breadcrumbSchema && <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>}
       </Helmet>
 
       <Navbar onCtaClick={scrollToChat} />

@@ -4,11 +4,16 @@ import Navbar from "@/components/Navbar";
 import DebtUpdateCalculator from "@/components/calculators/DebtUpdateCalculator";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 
 const CalculadoraAtualizacaoDivida = () => {
   const scrollToChat = () => {
     window.location.href = "/#lawyer-chat";
   };
+
+  const webAppSchema = getWebApplicationSchema("atualizacao-divida");
+  const faqSchema = getFAQPageSchema("atualizacao-divida");
+  const breadcrumbSchema = getBreadcrumbSchema("atualizacao-divida");
 
   return (
     <>
@@ -20,6 +25,21 @@ const CalculadoraAtualizacaoDivida = () => {
         />
         <meta name="keywords" content="calculadora atualização dívida, correção monetária, INPC, IPCA, IGP-M, SELIC, juros mora" />
         <link rel="canonical" href="/calculadora-atualizacao-divida" />
+        {webAppSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(webAppSchema)}
+          </script>
+        )}
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
+        {breadcrumbSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(breadcrumbSchema)}
+          </script>
+        )}
       </Helmet>
 
       <Navbar onCtaClick={scrollToChat} />

@@ -4,11 +4,16 @@ import Navbar from "@/components/Navbar";
 import RetirementCalculator from "@/components/calculators/RetirementCalculator";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 
 const CalculadoraAposentadoria = () => {
   const scrollToChat = () => {
     window.location.href = "/#lawyer-chat";
   };
+
+  const webAppSchema = getWebApplicationSchema("aposentadoria");
+  const faqSchema = getFAQPageSchema("aposentadoria");
+  const breadcrumbSchema = getBreadcrumbSchema("aposentadoria");
 
   return (
     <>
@@ -20,17 +25,21 @@ const CalculadoraAposentadoria = () => {
         />
         <meta name="keywords" content="calculadora aposentadoria, INSS, reforma previdência, tempo contribuição, idade mínima, benefício INSS" />
         <link rel="canonical" href="/calculadora-aposentadoria" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            "name": "Calculadora de Aposentadoria INSS",
-            "description": "Verifique sua elegibilidade para aposentadoria e estime o valor do benefício",
-            "applicationCategory": "FinanceApplication",
-            "operatingSystem": "Web",
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" }
-          })}
-        </script>
+        {webAppSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(webAppSchema)}
+          </script>
+        )}
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
+        {breadcrumbSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(breadcrumbSchema)}
+          </script>
+        )}
       </Helmet>
 
       <Navbar onCtaClick={scrollToChat} />

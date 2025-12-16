@@ -4,22 +4,27 @@ import { ArrowLeft, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import SicknessAidCalculator from "@/components/calculators/SicknessAidCalculator";
+import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 
 const CalculadoraAuxilioDoenca = () => {
   const scrollToChat = () => {
     window.location.href = "/#lawyer-chat";
   };
 
+  const webAppSchema = getWebApplicationSchema("auxilio-doenca");
+  const faqSchema = getFAQPageSchema("auxilio-doenca");
+  const breadcrumbSchema = getBreadcrumbSchema("auxilio-doenca");
+
   return (
     <>
       <Helmet>
         <title>Calculadora de Auxílio-Doença 2024 | Calcule Benefício INSS</title>
-        <meta 
-          name="description" 
-          content="Calcule o valor do auxílio-doença do INSS. Simulador atualizado com regras 2024. Comum e acidentário." 
-        />
+        <meta name="description" content="Calcule o valor do auxílio-doença do INSS. Simulador atualizado com regras 2024. Comum e acidentário." />
         <meta name="keywords" content="calculadora auxílio doença, auxílio doença inss, valor auxílio doença, benefício incapacidade inss" />
         <link rel="canonical" href="/calculadora-auxilio-doenca" />
+        {webAppSchema && <script type="application/ld+json">{JSON.stringify(webAppSchema)}</script>}
+        {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
+        {breadcrumbSchema && <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>}
       </Helmet>
 
       <Navbar onCtaClick={scrollToChat} />

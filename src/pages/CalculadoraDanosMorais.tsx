@@ -4,11 +4,16 @@ import Navbar from "@/components/Navbar";
 import MoralDamagesCalculator from "@/components/calculators/MoralDamagesCalculator";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 
 const CalculadoraDanosMorais = () => {
   const scrollToChat = () => {
     window.location.href = "/#lawyer-chat";
   };
+
+  const webAppSchema = getWebApplicationSchema("danos-morais");
+  const faqSchema = getFAQPageSchema("danos-morais");
+  const breadcrumbSchema = getBreadcrumbSchema("danos-morais");
 
   return (
     <>
@@ -20,6 +25,21 @@ const CalculadoraDanosMorais = () => {
         />
         <meta name="keywords" content="calculadora danos morais, indenização, negativação indevida, Serasa, SPC, ofensa honra, discriminação" />
         <link rel="canonical" href="/calculadora-danos-morais" />
+        {webAppSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(webAppSchema)}
+          </script>
+        )}
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
+        {breadcrumbSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(breadcrumbSchema)}
+          </script>
+        )}
       </Helmet>
 
       <Navbar onCtaClick={scrollToChat} />

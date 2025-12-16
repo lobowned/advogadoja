@@ -4,22 +4,27 @@ import { ArrowLeft, ShieldAlert } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import HazardPayCalculator from "@/components/calculators/HazardPayCalculator";
+import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 
 const CalculadoraInsalubridade = () => {
   const scrollToChat = () => {
     window.location.href = "/#lawyer-chat";
   };
 
+  const webAppSchema = getWebApplicationSchema("insalubridade");
+  const faqSchema = getFAQPageSchema("insalubridade");
+  const breadcrumbSchema = getBreadcrumbSchema("insalubridade");
+
   return (
     <>
       <Helmet>
         <title>Calculadora de Insalubridade e Periculosidade 2024 | Calcule Adicional</title>
-        <meta 
-          name="description" 
-          content="Calcule o adicional de insalubridade ou periculosidade. Simulador com todos os graus e reflexos trabalhistas." 
-        />
+        <meta name="description" content="Calcule o adicional de insalubridade ou periculosidade. Simulador com todos os graus e reflexos trabalhistas." />
         <meta name="keywords" content="calculadora insalubridade, calculadora periculosidade, adicional insalubridade, adicional periculosidade, graus insalubridade" />
         <link rel="canonical" href="/calculadora-insalubridade" />
+        {webAppSchema && <script type="application/ld+json">{JSON.stringify(webAppSchema)}</script>}
+        {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
+        {breadcrumbSchema && <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>}
       </Helmet>
 
       <Navbar onCtaClick={scrollToChat} />

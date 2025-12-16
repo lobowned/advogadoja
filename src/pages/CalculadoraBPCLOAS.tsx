@@ -4,22 +4,27 @@ import { ArrowLeft, HandHeart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import BPCLOASCalculator from "@/components/calculators/BPCLOASCalculator";
+import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 
 const CalculadoraBPCLOAS = () => {
   const scrollToChat = () => {
     window.location.href = "/#lawyer-chat";
   };
 
+  const webAppSchema = getWebApplicationSchema("bpc-loas");
+  const faqSchema = getFAQPageSchema("bpc-loas");
+  const breadcrumbSchema = getBreadcrumbSchema("bpc-loas");
+
   return (
     <>
       <Helmet>
         <title>Calculadora BPC/LOAS 2024 | Verifique Elegibilidade Grátis</title>
-        <meta 
-          name="description" 
-          content="Verifique se você tem direito ao BPC/LOAS. Calculadora de renda per capita e elegibilidade para idosos e pessoas com deficiência." 
-        />
+        <meta name="description" content="Verifique se você tem direito ao BPC/LOAS. Calculadora de renda per capita e elegibilidade para idosos e pessoas com deficiência." />
         <meta name="keywords" content="calculadora bpc loas, benefício assistencial, renda per capita bpc, bpc idoso, bpc deficiente" />
         <link rel="canonical" href="/calculadora-bpc-loas" />
+        {webAppSchema && <script type="application/ld+json">{JSON.stringify(webAppSchema)}</script>}
+        {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
+        {breadcrumbSchema && <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>}
       </Helmet>
 
       <Navbar onCtaClick={scrollToChat} />

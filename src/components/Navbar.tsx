@@ -50,9 +50,9 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
             <a href="/noticias" className={`${linkClass} text-xs md:text-sm hidden sm:inline`}>
               Notícias
             </a>
-            <a href="/calculadoras" className={`${linkClass} text-xs md:text-sm inline-flex items-center gap-1`}>
-              <Calculator className="w-3.5 h-3.5 sm:w-4 sm:h-4 -mt-px shrink-0" />
-              <span className="hidden sm:inline">Calculadoras</span>
+            <a href="/calculadoras" className={`${linkClass} text-xs md:text-sm`}>
+              <Calculator className="w-3.5 h-3.5 sm:w-4 sm:h-4 inline-block align-middle mr-1" />
+              <span className="hidden sm:inline align-middle">Calculadoras</span>
             </a>
           </div>
 

@@ -3,6 +3,12 @@ import { m, useReducedMotion, AnimatePresence } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import Autoplay from "embla-carousel-autoplay";
 import { Users, Star, Zap } from "lucide-react";
 import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
@@ -190,41 +196,56 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }}
           >
-            <Carousel
-              opts={{
-                align: "center",
-                loop: true,
-              }}
-              plugins={[
-                Autoplay({
-                  delay: 1500,
-                  stopOnInteraction: false,
-                }),
-              ]}
-              className="w-full max-w-[280px] sm:max-w-xl lg:max-w-2xl mx-auto overflow-visible px-2"
-            >
-              <CarouselContent className="-ml-1 sm:-ml-2 py-1" overflowVisible>
-                {[...displayLawyers, ...displayLawyers.slice(0, 12)].map((lawyer, index) => (
-                  <CarouselItem 
-                    key={`${lawyer.id}-${index}`} 
-                    className="pl-1 sm:pl-2 basis-auto"
-                  >
-                    <div className="relative group p-1">
-                      <Avatar 
-                        className="w-9 h-9 sm:w-12 sm:h-12 md:w-14 md:h-14 border-2 border-white/30 group-hover:border-cyan-400 transition-all duration-300 group-hover:scale-110 avatar-entrance"
-                        style={{ animationDelay: `${index * 50}ms` }}
-                      >
-                        <AvatarImage src={lawyer.photo} alt={lawyer.name} />
-                        <AvatarFallback className="bg-primary/20 text-white text-[10px] sm:text-xs">
-                          {lawyer.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
-                        </AvatarFallback>
-                      </Avatar>
-                      <div className="absolute bottom-0.5 right-0.5 w-2 h-2 sm:w-3 sm:h-3 bg-emerald-400 rounded-full border-2 border-black/50 animate-pulse" />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
+            <TooltipProvider delayDuration={200}>
+              <Carousel
+                opts={{
+                  align: "center",
+                  loop: true,
+                }}
+                plugins={[
+                  Autoplay({
+                    delay: 1500,
+                    stopOnInteraction: false,
+                  }),
+                ]}
+                className="w-full max-w-[280px] sm:max-w-xl lg:max-w-2xl mx-auto overflow-visible px-2"
+              >
+                <CarouselContent className="-ml-1 sm:-ml-2 py-1" overflowVisible>
+                  {[...displayLawyers, ...displayLawyers.slice(0, 12)].map((lawyer, index) => (
+                    <CarouselItem 
+                      key={`${lawyer.id}-${index}`} 
+                      className="pl-1 sm:pl-2 basis-auto"
+                    >
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <div className="relative group p-1 cursor-pointer">
+                            <Avatar 
+                              className="w-9 h-9 sm:w-12 sm:h-12 md:w-14 md:h-14 border-2 border-white/30 group-hover:border-cyan-400 transition-all duration-300 group-hover:scale-110 avatar-entrance"
+                              style={{ animationDelay: `${index * 50}ms` }}
+                            >
+                              <AvatarImage src={lawyer.photo} alt={lawyer.name} />
+                              <AvatarFallback className="bg-primary/20 text-white text-[10px] sm:text-xs">
+                                {lawyer.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
+                              </AvatarFallback>
+                            </Avatar>
+                            <div className="absolute bottom-0.5 right-0.5 w-2 h-2 sm:w-3 sm:h-3 bg-emerald-400 rounded-full border-2 border-black/50 animate-pulse" />
+                          </div>
+                        </TooltipTrigger>
+                        <TooltipContent 
+                          side="bottom" 
+                          className="bg-black/90 backdrop-blur-sm border-cyan-500/30 text-white px-3 py-2"
+                        >
+                          <div className="text-center">
+                            <p className="font-semibold text-sm">{lawyer.name}</p>
+                            <p className="text-xs text-cyan-400">{lawyer.subSpecialty}</p>
+                          </div>
+                        </TooltipContent>
+                      </Tooltip>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
+            </TooltipProvider>
             <m.p 
               className="text-[10px] sm:text-xs text-white/60 mt-1.5 sm:mt-2"
               initial={{ opacity: 0 }}

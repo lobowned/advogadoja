@@ -3,7 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { m } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ArrowLeft, Trophy, Clock, MapPin, TrendingUp, Filter, MessageCircle } from 'lucide-react';
+import { Trophy, Clock, MapPin, TrendingUp, Filter, MessageCircle } from 'lucide-react';
+import { BackButton } from '@/components/BackButton';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { successStories, areaLabels, areaColors, type SuccessStory } from '@/data/success-stories';
@@ -38,13 +39,7 @@ const CasosSucesso = () => {
         {/* Header */}
         <header className="bg-gradient-to-r from-primary to-primary/80 text-white py-16 md:py-24">
           <div className="container mx-auto px-4">
-            <Link 
-              to="/" 
-              className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Voltar ao início
-            </Link>
+            <BackButton to="/" label="Voltar ao início" variant="light" className="mb-6" />
             
             <div className="max-w-3xl">
               <div className="flex items-center gap-3 mb-4">

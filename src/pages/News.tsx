@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Newspaper, Scale, Heart, Users, Shield, Gavel, RefreshCw, ArrowLeft } from "lucide-react";
+import { Newspaper, Scale, Heart, Users, Shield, Gavel, RefreshCw } from "lucide-react";
+import { BackButton } from "@/components/BackButton";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -91,21 +92,12 @@ export default function News() {
         {/* Header */}
         <header className="bg-primary text-primary-foreground py-8 sm:py-12">
           <div className="container mx-auto px-4">
-            <div className="flex flex-wrap items-center gap-1 sm:gap-2 mb-3 sm:mb-4 text-xs sm:text-sm">
-              <Link to="/" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] flex items-center">
-                Início
-              </Link>
-              <span>/</span>
-              <Link to="/noticias" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] flex items-center">
-                Notícias
-              </Link>
-              {nicheId && (
-                <>
-                  <span>/</span>
-                  <span>{currentNiche?.label}</span>
-                </>
-              )}
-            </div>
+            <BackButton 
+              to={nicheId ? "/noticias" : "/"} 
+              label={nicheId ? "Todas as notícias" : "Voltar ao início"} 
+              variant="light"
+              className="mb-4"
+            />
             
             <div className="flex items-start sm:items-center gap-3 sm:gap-4">
               <NicheIcon className="h-10 w-10 sm:h-12 sm:w-12 flex-shrink-0" />
@@ -199,12 +191,7 @@ export default function News() {
 
           {/* Back to articles */}
           <div className="mt-12 pt-8 border-t border-border">
-            <Link to="/artigos">
-              <Button variant="outline">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Ver Artigos do Blog
-              </Button>
-            </Link>
+            <BackButton to="/artigos" label="Ver Artigos do Blog" />
           </div>
         </main>
 

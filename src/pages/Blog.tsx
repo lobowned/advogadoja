@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft, Briefcase, Users, Scale, Shield, Gavel, Newspaper, ArrowRight } from "lucide-react";
+import { Briefcase, Users, Scale, Shield, Gavel, Newspaper, ArrowRight } from "lucide-react";
+import { BackButton } from "@/components/BackButton";
 import logoAdvogadoOnline from "@/assets/logo-advogado-online.png";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -134,15 +135,11 @@ const Blog = () => {
               </Button>
             </div>
             
-            {nicheId && (
-              <Link 
-                to="/artigos" 
-                className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-4"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                Todos os artigos
-              </Link>
-            )}
+            <BackButton 
+              to={nicheId ? "/artigos" : "/"} 
+              label={nicheId ? "Todos os artigos" : "Voltar ao início"} 
+              className="mb-4"
+            />
             
             <div className="max-w-3xl">
               <h1 className="text-3xl md:text-4xl font-bold mb-3">

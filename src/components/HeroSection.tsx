@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -27,7 +27,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
   const { onlineCount } = useLawyerPresence();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const isMobile = useIsMobile();
-  const prefersReducedMotion = useReducedMotion();
+  const shouldReduceMotion = useReducedMotion();
   
   const displayLawyers = lawyers.filter(l => l.specialty !== 'geral');
 
@@ -37,8 +37,6 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
     }, 4000);
     return () => clearInterval(interval);
   }, []);
-
-  const MotionDiv = prefersReducedMotion ? 'div' : motion.div;
 
   return (
     <section className="relative overflow-hidden min-h-screen w-full flex items-center justify-center">
@@ -73,30 +71,30 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
       <div className="relative z-10 container mx-auto px-4 py-10 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo with scale animation */}
-          <motion.div 
+          <m.div 
             className="mb-4 sm:mb-6 md:mb-8"
-            initial={prefersReducedMotion ? {} : { opacity: 0, scale: 0.8 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: [0.175, 0.885, 0.32, 1.275] }}
           >
-            <motion.img 
+            <m.img 
               src={logoAdvogadoOnline} 
               alt="Advogado Online" 
               className="h-32 xs:h-40 sm:h-56 md:h-72 lg:h-96 mx-auto"
-              whileHover={prefersReducedMotion ? {} : { scale: 1.05 }}
+              whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             />
-          </motion.div>
+          </m.div>
 
           {/* Badges with stagger animation */}
-          <motion.div 
+          <m.div 
             className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4 sm:mb-6"
-            initial={prefersReducedMotion ? {} : { opacity: 0 }}
+            initial={shouldReduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            <motion.div
-              initial={prefersReducedMotion ? {} : { opacity: 0, x: -20 }}
+            <m.div
+              initial={shouldReduceMotion ? false : { opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
             >
@@ -110,10 +108,10 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
                   <span>{onlineCount} advogados online agora</span>
                 </div>
               </Badge>
-            </motion.div>
+            </m.div>
 
-            <motion.div
-              initial={prefersReducedMotion ? {} : { opacity: 0, x: 20 }}
+            <m.div
+              initial={shouldReduceMotion ? false : { opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}
             >
@@ -129,19 +127,19 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
                   <span>4.9 • 2.500+ atendimentos</span>
                 </div>
               </Badge>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
 
           {/* Rotating Testimonial */}
-          <motion.div 
+          <m.div 
             className="mb-6"
-            initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            <motion.div 
+            <m.div 
               key={currentTestimonial}
-              initial={prefersReducedMotion ? {} : { opacity: 0, y: 10 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
@@ -154,13 +152,13 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
               <span className="text-white/60 text-xs">
                 - {testimonials[currentTestimonial].author}
               </span>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
 
           {/* Avatar Carousel */}
-          <motion.div 
+          <m.div 
             className="mb-6"
-            initial={prefersReducedMotion ? {} : { opacity: 0 }}
+            initial={shouldReduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.5 }}
           >
@@ -179,17 +177,12 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
               className="w-full max-w-md mx-auto"
             >
               <CarouselContent className="-ml-2">
-                {displayLawyers.slice(0, 12).map((lawyer, index) => (
+                {displayLawyers.slice(0, 12).map((lawyer) => (
                   <CarouselItem 
                     key={lawyer.id} 
                     className="pl-2 basis-auto"
                   >
-                    <motion.div 
-                      className="relative group"
-                      initial={prefersReducedMotion ? {} : { opacity: 0, scale: 0.5 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.8 + index * 0.05, type: "spring", stiffness: 300, damping: 20 }}
-                    >
+                    <div className="relative group">
                       <Avatar className="w-12 h-12 sm:w-14 sm:h-14 border-2 border-white/30 group-hover:border-primary transition-all duration-300 group-hover:scale-110">
                         <AvatarImage src={lawyer.photo} alt={lawyer.name} />
                         <AvatarFallback className="bg-primary/20 text-white text-xs">
@@ -197,7 +190,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
                         </AvatarFallback>
                       </Avatar>
                       <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-whatsapp-send-btn rounded-full border-2 border-black/50 animate-pulse" />
-                    </motion.div>
+                    </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
@@ -205,12 +198,12 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
             <p className="text-xs text-white/60 mt-2">
               Advogados prontos para atender você
             </p>
-          </motion.div>
+          </m.div>
 
           {/* Main Title with blur reveal */}
-          <motion.h1 
+          <m.h1 
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
-            initial={prefersReducedMotion ? {} : { opacity: 0, filter: "blur(10px)", y: 30 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, filter: "blur(10px)", y: 30 }}
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{ delay: 0.9, duration: 0.7, ease: "easeOut" }}
           >
@@ -219,17 +212,17 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
             <span className="bg-gradient-to-r from-[hsl(200,90%,55%)] to-[hsl(75,70%,55%)] bg-clip-text text-transparent">
               Gratuito e Imediato
             </span>
-          </motion.h1>
+          </m.h1>
 
           {/* CTA with spring hover */}
-          <motion.div
-            initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+          <m.div
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.5 }}
           >
-            <motion.div
-              whileHover={prefersReducedMotion ? {} : { scale: 1.05 }}
-              whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
+            <m.div
+              whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
             >
               <Button 
                 onClick={onCtaClick}
@@ -239,7 +232,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
                 <MessageSquare className="mr-2 h-5 w-5" />
                 Falar AGORA - Resposta em 2 min
               </Button>
-            </motion.div>
+            </m.div>
             <p className="text-white/70 text-sm mt-3 flex items-center justify-center gap-4">
               <span className="flex items-center gap-1">
                 <span className="text-whatsapp-send-btn">✓</span> Consulta 100% gratuita
@@ -248,7 +241,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
                 <span className="text-whatsapp-send-btn">✓</span> Sem compromisso
               </span>
             </p>
-          </motion.div>
+          </m.div>
 
         </div>
       </div>

@@ -1,9 +1,11 @@
+import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { LazyMotion, domAnimation } from "framer-motion";
 import { LawyerPresenceProvider } from "@/contexts/LawyerPresenceContext";
 import { AttendanceProvider } from "@/contexts/AttendanceContext";
 import Index from "./pages/Index";
@@ -28,14 +30,16 @@ import TermsOfUse from "./pages/TermsOfUse";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <LawyerPresenceProvider>
-          <AttendanceProvider>
-            <Toaster />
-            <Sonner />
-            <BrowserRouter>
+  <React.StrictMode>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <LazyMotion features={domAnimation} strict>
+          <TooltipProvider>
+            <LawyerPresenceProvider>
+              <AttendanceProvider>
+                <Toaster />
+                <Sonner />
+                <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/selecionar-nicho" element={<SelectNiche />} />
@@ -71,12 +75,14 @@ const App = () => (
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
-            </BrowserRouter>
-          </AttendanceProvider>
-        </LawyerPresenceProvider>
-      </TooltipProvider>
+              </BrowserRouter>
+            </AttendanceProvider>
+          </LawyerPresenceProvider>
+        </TooltipProvider>
+      </LazyMotion>
     </QueryClientProvider>
   </HelmetProvider>
+  </React.StrictMode>
 );
 
 export default App;

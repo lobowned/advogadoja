@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Briefcase, Users, Calculator, ArrowRight, MessageCircle } from "lucide-react";
+import { Briefcase, Users, Calculator, ArrowRight, MessageCircle, Clock, Scale, TrendingUp, Home, Building2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 
 const calculadoras = [
@@ -14,7 +14,17 @@ const calculadoras = [
     href: "/calculadora-trabalhista",
     color: "from-amber-500 to-orange-500",
     bgLight: "bg-amber-50 dark:bg-amber-950/20",
-    features: ["Aviso Prévio", "FGTS + Multa 40%", "13º Proporcional", "Férias + 1/3", "Horas Extras"]
+    features: ["Aviso Prévio", "FGTS + Multa 40%", "13º Proporcional", "Férias + 1/3"]
+  },
+  {
+    id: "horas-extras",
+    title: "Calculadora de Horas Extras",
+    description: "Calcule horas extras não pagas com adicional de 50%, 100% e todos os reflexos.",
+    icon: Clock,
+    href: "/calculadora-horas-extras",
+    color: "from-amber-500 to-orange-500",
+    bgLight: "bg-amber-50 dark:bg-amber-950/20",
+    features: ["Adicional 50%", "Feriados 100%", "Reflexos", "Ad. Noturno"]
   },
   {
     id: "pensao",
@@ -24,7 +34,57 @@ const calculadoras = [
     href: "/calculadora-pensao",
     color: "from-blue-500 to-indigo-500",
     bgLight: "bg-blue-50 dark:bg-blue-950/20",
-    features: ["% sobre Renda", "Custos Especiais", "Múltiplos Filhos", "13ª Pensão", "Valor Anual"]
+    features: ["% sobre Renda", "Custos Especiais", "Múltiplos Filhos", "Valor Anual"]
+  },
+  {
+    id: "partilha",
+    title: "Calculadora de Partilha de Bens",
+    description: "Estime a divisão de bens no divórcio conforme seu regime de casamento.",
+    icon: Home,
+    href: "/calculadora-partilha-bens",
+    color: "from-blue-500 to-cyan-500",
+    bgLight: "bg-blue-50 dark:bg-blue-950/20",
+    features: ["Comunhão Parcial", "Comunhão Universal", "Separação Total", "Dívidas"]
+  },
+  {
+    id: "aposentadoria",
+    title: "Calculadora de Aposentadoria",
+    description: "Verifique se você pode se aposentar e estime o valor do benefício INSS.",
+    icon: Calculator,
+    href: "/calculadora-aposentadoria",
+    color: "from-emerald-500 to-teal-500",
+    bgLight: "bg-emerald-50 dark:bg-emerald-950/20",
+    features: ["Idade Mínima", "Tempo Contribuição", "Valor Benefício", "Pós-Reforma"]
+  },
+  {
+    id: "danos-morais",
+    title: "Calculadora de Danos Morais",
+    description: "Estime o valor da indenização por danos morais baseado em jurisprudência.",
+    icon: Scale,
+    href: "/calculadora-danos-morais",
+    color: "from-purple-500 to-pink-500",
+    bgLight: "bg-purple-50 dark:bg-purple-950/20",
+    features: ["Negativação", "Ofensa à Honra", "Discriminação", "Acidentes"]
+  },
+  {
+    id: "atualizacao-divida",
+    title: "Calculadora de Atualização de Dívida",
+    description: "Atualize dívidas com correção monetária, juros de mora e multa.",
+    icon: TrendingUp,
+    href: "/calculadora-atualizacao-divida",
+    color: "from-red-500 to-orange-500",
+    bgLight: "bg-red-50 dark:bg-red-950/20",
+    features: ["INPC/IPCA", "IGP-M/SELIC", "Juros 1% a.m.", "Multa 2%"]
+  },
+  {
+    id: "aluguel",
+    title: "Calculadora de Aluguel Atrasado",
+    description: "Calcule o débito total do inquilino incluindo multa, juros e encargos.",
+    icon: Building2,
+    href: "/calculadora-aluguel-atrasado",
+    color: "from-yellow-500 to-amber-500",
+    bgLight: "bg-yellow-50 dark:bg-yellow-950/20",
+    features: ["Aluguéis", "Multa", "IPTU/Cond.", "Correção"]
   }
 ];
 

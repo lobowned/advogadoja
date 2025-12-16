@@ -13,6 +13,12 @@ import SelectNiche from "./pages/SelectNiche";
 import Calculadoras from "./pages/Calculadoras";
 import CalculadoraTrabalhista from "./pages/CalculadoraTrabalhista";
 import CalculadoraPensao from "./pages/CalculadoraPensao";
+import CalculadoraAposentadoria from "./pages/CalculadoraAposentadoria";
+import CalculadoraDanosMorais from "./pages/CalculadoraDanosMorais";
+import CalculadoraAtualizacaoDivida from "./pages/CalculadoraAtualizacaoDivida";
+import CalculadoraPartilhaBens from "./pages/CalculadoraPartilhaBens";
+import CalculadoraAluguelAtrasado from "./pages/CalculadoraAluguelAtrasado";
+import CalculadoraHorasExtras from "./pages/CalculadoraHorasExtras";
 import SelectAction from "./pages/SelectAction";
 import DynamicQuestionnaire from "./pages/DynamicQuestionnaire";
 import Completed from "./pages/Completed";
@@ -65,6 +71,12 @@ const App = () => (
                 <Route path="/calculadoras" element={<Calculadoras />} />
                 <Route path="/calculadora-trabalhista" element={<CalculadoraTrabalhista />} />
                 <Route path="/calculadora-pensao" element={<CalculadoraPensao />} />
+                <Route path="/calculadora-aposentadoria" element={<CalculadoraAposentadoria />} />
+                <Route path="/calculadora-danos-morais" element={<CalculadoraDanosMorais />} />
+                <Route path="/calculadora-atualizacao-divida" element={<CalculadoraAtualizacaoDivida />} />
+                <Route path="/calculadora-partilha-bens" element={<CalculadoraPartilhaBens />} />
+                <Route path="/calculadora-aluguel-atrasado" element={<CalculadoraAluguelAtrasado />} />
+                <Route path="/calculadora-horas-extras" element={<CalculadoraHorasExtras />} />
                 {/* Niche Landing Pages */}
                 <Route path="/advogado-trabalhista" element={<NicheLanding />} />
                 <Route path="/advogado-familia" element={<NicheLanding />} />

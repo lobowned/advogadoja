@@ -111,12 +111,12 @@ const LawyerChatSection = () => {
 
 
   return (
-    <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-background via-primary/5 to-background">
+    <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-background via-secondary/5 to-background">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-5xl">
 
           {/* Chat Container - Phone Frame Style */}
-          <div className={`bg-card rounded-3xl shadow-2xl overflow-hidden border-2 border-border/20 ${!hasAnimated ? 'animate-chat-entrance' : ''}`}>
+          <div className={`bg-card rounded-3xl shadow-elegant overflow-hidden border border-border/30 ${!hasAnimated ? 'animate-chat-entrance' : ''}`}>
             {/* WhatsApp Style Header - Enhanced */}
             <div 
               className="whatsapp-header-gradient text-white px-2 sm:px-3 py-2.5 sm:py-3 flex items-center justify-between"
@@ -220,15 +220,15 @@ const LawyerChatSection = () => {
                       }}
                     >
                       <div className="flex items-start gap-2.5">
-                        <Check className="w-4 h-4 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
+                        <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                         <p className="text-sm">Atendimento gratuito inicial</p>
                       </div>
                       <div className="flex items-start gap-2.5">
-                        <Shield className="w-4 h-4 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
+                        <Shield className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                         <p className="text-sm">Sigilo profissional garantido</p>
                       </div>
                       <div className="flex items-start gap-2.5">
-                        <Check className="w-4 h-4 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
+                        <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                         <p className="text-sm">Especialistas em diversas áreas</p>
                       </div>
                     </div>
@@ -242,7 +242,7 @@ const LawyerChatSection = () => {
                     >
                       <Button
                         onClick={() => joinQueue()}
-                        className={`w-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white font-medium py-4 sm:py-5 text-sm sm:text-base rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 min-h-[48px] ${hasAnimated ? 'animate-button-pulse' : ''}`}
+                        className={`w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-4 sm:py-5 text-sm sm:text-base rounded-lg transition-all duration-300 flex items-center justify-center gap-2 min-h-[48px] shadow-button hover:shadow-lg ${hasAnimated ? 'btn-cta-pulse' : ''}`}
                       >
                         <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
                         Iniciar Atendimento

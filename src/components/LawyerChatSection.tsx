@@ -12,6 +12,7 @@ import UrgencyBadge, { UrgencyAlert } from "@/components/UrgencyBadge";
 import { getLawyerAvailabilityStatus } from "@/data/lawyer-personalities";
 import { Link } from "react-router-dom";
 import { useDetectedProblem } from "@/contexts/DetectedProblemContext";
+import { calculatorInfo, areaColors, CalculatorType } from "@/data/calculator-config";
 
 // Tipo para rastrear status do "visto" com delay
 type MessageSeenStatus = {
@@ -25,7 +26,7 @@ const LawyerChatSection = () => {
     isCollectingLead, leadQuestion, isInQueue, queuePosition, hasJoinedQueue, joinQueue, peopleAhead, 
     showRatingButton, submitRating,
     detectedProblem, urgencyLevel, contextualSuggestions, resetNudgeTimer,
-    suggestedCalculator, setSuggestedCalculator
+    suggestedCalculator, dismissCalculator
   } = useLawyerChat();
   const { onlineLawyers, notification, onlineCount } = useLawyerPresence();
   const { setDetectedArea } = useDetectedProblem();
@@ -466,50 +467,54 @@ const LawyerChatSection = () => {
                 </div>
               )}
 
-              {/* Card de Sugestão de Calculadora */}
-              {suggestedCalculator && showCalculatorSuggestion && !isCollectingLead && !isInQueue && (
-                <div className="flex justify-center py-3 animate-fade-in">
-                  <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-emerald-500/10 border border-primary/20 rounded-xl px-4 py-4 max-w-[90%] shadow-lg">
-                    <div className="flex items-start gap-3">
-                      <div className="p-2 bg-primary/10 rounded-lg flex-shrink-0">
-                        <Calculator className="w-5 h-5 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <p className="text-sm font-semibold text-foreground mb-1">
-                          {suggestedCalculator === 'trabalhista' 
-                            ? '🧮 Calcule seus Direitos Trabalhistas' 
-                            : '🧮 Calcule a Pensão Alimentícia'}
-                        </p>
-                        <p className="text-xs text-muted-foreground mb-3">
-                          {suggestedCalculator === 'trabalhista'
-                            ? 'Faça uma estimativa das verbas rescisórias e outros direitos que você pode ter.'
-                            : 'Estime o valor da pensão alimentícia baseado nos parâmetros legais.'}
-                        </p>
-                        <div className="flex gap-2 flex-wrap">
-                          <Button asChild size="sm" className="text-xs h-8">
-                            <Link 
-                              to={suggestedCalculator === 'trabalhista' ? '/calculadora-trabalhista' : '/calculadora-pensao'}
-                              target="_blank"
+              {/* Card de Sugestão de Calculadora - Dinâmico */}
+              {suggestedCalculator && showCalculatorSuggestion && !isCollectingLead && !isInQueue && (() => {
+                const calcInfo = calculatorInfo[suggestedCalculator as Exclude<CalculatorType, null>];
+                const colors = areaColors[calcInfo.area];
+                
+                return (
+                  <div className="flex justify-center py-3 animate-fade-in">
+                    <div className={`bg-gradient-to-r ${colors.bg} border ${colors.border} rounded-xl px-4 py-4 max-w-[90%] shadow-lg`}>
+                      <div className="flex items-start gap-3">
+                        <div className={`p-2 ${colors.bg.replace('from-', 'bg-').split(' ')[0].replace('/10', '/20')} rounded-lg flex-shrink-0`}>
+                          <span className="text-xl">{calcInfo.emoji}</span>
+                        </div>
+                        <div className="flex-1">
+                          <p className={`text-sm font-semibold text-foreground mb-1`}>
+                            🧮 {calcInfo.title}
+                          </p>
+                          <p className="text-xs text-muted-foreground mb-3">
+                            {calcInfo.description}
+                          </p>
+                          <div className="flex gap-2 flex-wrap">
+                            <Button asChild size="sm" className={`text-xs h-8`}>
+                              <Link 
+                                to={calcInfo.url}
+                                target="_blank"
+                              >
+                                <Calculator className="w-3.5 h-3.5 mr-1.5" />
+                                Calcular agora
+                              </Link>
+                            </Button>
+                            <Button 
+                              variant="ghost" 
+                              size="sm" 
+                              className="text-xs h-8"
+                              onClick={() => {
+                                setShowCalculatorSuggestion(false);
+                                dismissCalculator(suggestedCalculator);
+                              }}
                             >
-                              <Calculator className="w-3.5 h-3.5 mr-1.5" />
-                              Calcular agora
-                            </Link>
-                          </Button>
-                          <Button 
-                            variant="ghost" 
-                            size="sm" 
-                            className="text-xs h-8"
-                            onClick={() => setShowCalculatorSuggestion(false)}
-                          >
-                            <X className="w-3.5 h-3.5 mr-1" />
-                            Continuar conversa
-                          </Button>
+                              <X className="w-3.5 h-3.5 mr-1" />
+                              Continuar conversa
+                            </Button>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              )}
+                );
+              })()}
 
               {/* Botão de Avaliação */}
               {showRatingButton && (

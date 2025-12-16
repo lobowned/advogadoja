@@ -5,6 +5,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { NUDGE_CONFIG, detectUrgencyLevel } from '@/data/nudge-messages';
 import { getSuggestionsByProblem } from '@/data/contextual-suggestions';
 import { getPersonalityByLawyerId, getInterruptionMessages, getHourMultiplier } from '@/data/lawyer-personalities';
+import { CalculatorType, detectCalculatorFromMessage } from '@/data/calculator-config';
 
 type Message = {
   role: 'user' | 'assistant';
@@ -61,7 +62,8 @@ export const useLawyerChat = () => {
   const [urgencyLevel, setUrgencyLevel] = useState<string>('baixa');
   const [contextualSuggestions, setContextualSuggestions] = useState<string[]>([]);
   const [userName, setUserName] = useState<string | null>(null);
-  const [suggestedCalculator, setSuggestedCalculator] = useState<'trabalhista' | 'pensao' | null>(null);
+  const [suggestedCalculator, setSuggestedCalculator] = useState<CalculatorType>(null);
+  const [dismissedCalculators, setDismissedCalculators] = useState<Set<string>>(new Set());
   
   // Sempre gera novo sessionId a cada refresh da página
   const [sessionId] = useState(() => {
@@ -464,6 +466,13 @@ export const useLawyerChat = () => {
     // Atualizar sugestões contextuais
     const suggestions = getSuggestionsByProblem(detectedProblem || content);
     setContextualSuggestions(suggestions.slice(0, 3));
+    
+    // Detectar calculadora relevante baseado na mensagem
+    const detectedCalc = detectCalculatorFromMessage(content);
+    if (detectedCalc && !dismissedCalculators.has(detectedCalc)) {
+      setSuggestedCalculator(detectedCalc);
+      console.log('🧮 Calculadora sugerida:', detectedCalc);
+    }
 
     abortControllerRef.current = new AbortController();
 
@@ -1381,6 +1390,12 @@ export const useLawyerChat = () => {
     }
   };
 
+  // Função para dispensar uma calculadora (não sugerir novamente na sessão)
+  const dismissCalculator = useCallback((calculator: string) => {
+    setDismissedCalculators(prev => new Set([...prev, calculator]));
+    setSuggestedCalculator(null);
+  }, []);
+
   return {
     messages,
     isLoading,
@@ -1408,5 +1423,6 @@ export const useLawyerChat = () => {
     nudgeCount,
     suggestedCalculator,
     setSuggestedCalculator,
+    dismissCalculator,
   };
 };

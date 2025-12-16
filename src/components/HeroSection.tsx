@@ -174,7 +174,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
               ]}
               className="w-full max-w-[280px] sm:max-w-md mx-auto overflow-visible px-2"
             >
-              <CarouselContent className="-ml-1 sm:-ml-2 overflow-visible py-1">
+              <CarouselContent className="-ml-1 sm:-ml-2 py-1" overflowVisible>
                 {displayLawyers.slice(0, 12).map((lawyer) => (
                   <CarouselItem 
                     key={lawyer.id} 

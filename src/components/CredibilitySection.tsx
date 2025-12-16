@@ -1,3 +1,5 @@
+import { motion, useReducedMotion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { Award, CheckCircle2 } from "lucide-react";
 import TrustBadges from "./TrustBadges";
 import StatsCounter from "./StatsCounter";
@@ -5,25 +7,50 @@ import PartnerLogos from "./PartnerLogos";
 import { securityFeatures } from "@/data/credibility-data";
 
 const CredibilitySection = () => {
+  const prefersReducedMotion = useReducedMotion();
+  const { ref: headerRef, inView: headerInView } = useInView({ threshold: 0.2, triggerOnce: true });
+  const { ref: securityRef, inView: securityInView } = useInView({ threshold: 0.2, triggerOnce: true });
+
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-background via-muted/30 to-background">
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+        {/* Header with fade up animation */}
+        <motion.div 
+          ref={headerRef}
+          className="text-center max-w-3xl mx-auto mb-12 md:mb-16"
+          initial={prefersReducedMotion ? {} : { opacity: 0, y: 40 }}
+          animate={headerInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <motion.div 
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4"
+            initial={prefersReducedMotion ? {} : { opacity: 0, scale: 0.8 }}
+            animate={headerInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ delay: 0.2, duration: 0.5, type: "spring" }}
+          >
             <Award className="w-4 h-4" />
             Credibilidade e Segurança
-          </div>
+          </motion.div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <motion.h2 
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4"
+            initial={prefersReducedMotion ? {} : { opacity: 0, filter: "blur(10px)" }}
+            animate={headerInView ? { opacity: 1, filter: "blur(0px)" } : {}}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
             Por Que Confiar na{" "}
             <span className="text-primary">Nossa Equipe?</span>
-          </h2>
+          </motion.h2>
           
-          <p className="text-lg text-muted-foreground">
+          <motion.p 
+            className="text-lg text-muted-foreground"
+            initial={prefersReducedMotion ? {} : { opacity: 0 }}
+            animate={headerInView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
             Credenciados, certificados e comprometidos com a excelência no atendimento jurídico
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Trust Badges */}
         <div className="mb-16 md:mb-20">
@@ -32,14 +59,26 @@ const CredibilitySection = () => {
 
         {/* Stats Counter */}
         <div className="mb-16 md:mb-20">
-          <h3 className="text-center text-xl md:text-2xl font-semibold text-foreground mb-8">
+          <motion.h3 
+            className="text-center text-xl md:text-2xl font-semibold text-foreground mb-8"
+            initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             Números que Falam por Si
-          </h3>
+          </motion.h3>
           <StatsCounter />
         </div>
 
-        {/* Security Features */}
-        <div className="mb-16 md:mb-20">
+        {/* Security Features with slide in animation */}
+        <motion.div 
+          ref={securityRef}
+          className="mb-16 md:mb-20"
+          initial={prefersReducedMotion ? {} : { opacity: 0, x: -50 }}
+          animate={securityInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <div className="max-w-4xl mx-auto">
             <div className="
               p-6 md:p-8 rounded-2xl
@@ -50,31 +89,63 @@ const CredibilitySection = () => {
                 🔐 Sua Segurança é Nossa Prioridade
               </h3>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <motion.div 
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                initial={prefersReducedMotion ? {} : "hidden"}
+                animate={securityInView ? "visible" : "hidden"}
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+                  }
+                }}
+              >
                 {securityFeatures.map((feature, index) => (
-                  <div
+                  <motion.div
                     key={index}
                     className="flex items-center gap-3 p-3 rounded-lg bg-background/50"
+                    variants={prefersReducedMotion ? {} : {
+                      hidden: { opacity: 0, x: -20 },
+                      visible: { 
+                        opacity: 1, 
+                        x: 0,
+                        transition: { duration: 0.4, ease: "easeOut" }
+                      }
+                    }}
+                    whileHover={prefersReducedMotion ? {} : { scale: 1.02, x: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
                     <span className="text-foreground font-medium">{feature}</span>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Partner Logos */}
         <div>
-          <h3 className="text-center text-xl md:text-2xl font-semibold text-foreground mb-6">
+          <motion.h3 
+            className="text-center text-xl md:text-2xl font-semibold text-foreground mb-6"
+            initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             Afiliações e Parcerias Profissionais
-          </h3>
+          </motion.h3>
           <PartnerLogos />
           
-          <p className="text-center text-sm text-muted-foreground mt-6">
+          <motion.p 
+            className="text-center text-sm text-muted-foreground mt-6"
+            initial={prefersReducedMotion ? {} : { opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
             Membros ativos de associações e entidades reconhecidas nacionalmente
-          </p>
+          </motion.p>
         </div>
       </div>
     </section>

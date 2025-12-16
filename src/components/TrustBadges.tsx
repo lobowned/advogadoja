@@ -1,3 +1,5 @@
+import { motion, useReducedMotion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { Scale, Shield, Lock, Eye } from "lucide-react";
 import { trustBadges } from "@/data/credibility-data";
 
@@ -16,29 +18,69 @@ const colorMap = {
 };
 
 const TrustBadges = () => {
+  const prefersReducedMotion = useReducedMotion();
+  const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
+
   return (
-    <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 md:gap-6">
-      {trustBadges.map((badge) => {
+    <motion.div 
+      ref={ref}
+      className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 md:gap-6"
+      initial={prefersReducedMotion ? {} : "hidden"}
+      animate={inView ? "visible" : "hidden"}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: { staggerChildren: 0.1 }
+        }
+      }}
+    >
+      {trustBadges.map((badge, index) => {
         const Icon = iconMap[badge.icon as keyof typeof iconMap];
         const colors = colorMap[badge.color as keyof typeof colorMap];
         
         return (
-          <div
+          <motion.div
             key={badge.id}
+            variants={prefersReducedMotion ? {} : {
+              hidden: { opacity: 0, scale: 0.8, y: 20 },
+              visible: { 
+                opacity: 1, 
+                scale: 1, 
+                y: 0,
+                transition: { 
+                  type: "spring", 
+                  stiffness: 300, 
+                  damping: 20 
+                }
+              }
+            }}
+            whileHover={prefersReducedMotion ? {} : { 
+              scale: 1.05, 
+              rotate: 1,
+              transition: { type: "spring", stiffness: 400 }
+            }}
+            whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
             className={`
               group relative p-3 sm:p-4 md:p-6 rounded-2xl border
               bg-gradient-to-br ${colors}
-              active:scale-[0.98] sm:hover:scale-105 transition-all duration-300
+              transition-shadow duration-300
               hover:shadow-lg cursor-default touch-manipulation
             `}
           >
             <div className="flex flex-col items-center text-center space-y-1.5 sm:space-y-2 md:space-y-3">
-              <div className={`
-                p-2.5 sm:p-3 rounded-xl bg-background/50 backdrop-blur-sm
-                group-hover:scale-110 transition-transform duration-300
-              `}>
+              <motion.div 
+                className={`
+                  p-2.5 sm:p-3 rounded-xl bg-background/50 backdrop-blur-sm
+                  transition-transform duration-300
+                `}
+                whileHover={prefersReducedMotion ? {} : { 
+                  scale: 1.1, 
+                  rotate: 5,
+                  transition: { type: "spring", stiffness: 400 }
+                }}
+              >
                 <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" />
-              </div>
+              </motion.div>
               
               <div>
                 <h3 className="font-semibold text-foreground text-xs sm:text-sm md:text-base leading-tight">
@@ -61,10 +103,10 @@ const TrustBadges = () => {
               {badge.description}
               <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-foreground" />
             </div>
-          </div>
+          </motion.div>
         );
       })}
-    </div>
+    </motion.div>
   );
 };
 

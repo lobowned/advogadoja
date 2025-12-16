@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Users, Star, ThumbsUp, Award } from "lucide-react";
 import { credibilityStats } from "@/data/credibility-data";
@@ -55,36 +56,65 @@ const AnimatedCounter = ({
 };
 
 const StatsCounter = () => {
+  const prefersReducedMotion = useReducedMotion();
   const { ref, inView } = useInView({
     threshold: 0.3,
     triggerOnce: true
   });
 
   return (
-    <div ref={ref} className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 md:gap-6 lg:gap-8">
+    <motion.div 
+      ref={ref} 
+      className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 md:gap-6 lg:gap-8"
+      initial={prefersReducedMotion ? {} : "hidden"}
+      animate={inView ? "visible" : "hidden"}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: { staggerChildren: 0.15 }
+        }
+      }}
+    >
       {credibilityStats.map((stat, index) => {
         const Icon = iconMap[stat.icon as keyof typeof iconMap];
         
         return (
-          <div
+          <motion.div
             key={index}
+            variants={prefersReducedMotion ? {} : {
+              hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+              visible: { 
+                opacity: 1, 
+                y: 0, 
+                filter: "blur(0px)",
+                transition: { duration: 0.5, ease: "easeOut" }
+              }
+            }}
+            whileHover={prefersReducedMotion ? {} : { 
+              y: -5, 
+              boxShadow: "0 10px 30px -10px hsl(var(--primary) / 0.3)",
+              transition: { type: "spring", stiffness: 300 }
+            }}
             className="
               group relative text-center p-4 sm:p-5 md:p-6 rounded-2xl
               bg-gradient-to-br from-primary/5 to-primary/10
               border border-primary/20 hover:border-primary/40
-              transition-all duration-300 hover:shadow-lg hover:shadow-primary/10
+              transition-colors duration-300
             "
-            style={{ animationDelay: `${index * 100}ms` }}
           >
-            <div className="flex justify-center mb-2 sm:mb-3">
+            <motion.div 
+              className="flex justify-center mb-2 sm:mb-3"
+              whileHover={prefersReducedMotion ? {} : { scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400 }}
+            >
               <div className="
                 p-2.5 sm:p-3 rounded-xl bg-primary/10 text-primary
-                group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground
+                group-hover:bg-primary group-hover:text-primary-foreground
                 transition-all duration-300
               ">
                 <Icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
               </div>
-            </div>
+            </motion.div>
             
             <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-1 sm:mb-2">
               <AnimatedCounter
@@ -98,10 +128,10 @@ const StatsCounter = () => {
             <p className="text-xs sm:text-sm md:text-base text-muted-foreground font-medium leading-tight">
               {stat.label}
             </p>
-          </div>
+          </motion.div>
         );
       })}
-    </div>
+    </motion.div>
   );
 };
 

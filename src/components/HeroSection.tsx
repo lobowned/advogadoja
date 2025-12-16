@@ -6,6 +6,7 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import Autoplay from "embla-carousel-autoplay";
 import { MessageSquare, Users, Star } from "lucide-react";
 import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { lawyers } from "@/data/lawyers";
 import logoAdvogadoOnline from "@/assets/logo-advogado-online.png";
 
@@ -24,6 +25,7 @@ const testimonials = [
 const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
   const { onlineCount } = useLawyerPresence();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const isMobile = useIsMobile();
   
   // Advogados para exibir no carrossel (excluindo triagem geral)
   const displayLawyers = lawyers.filter(l => l.specialty !== 'geral');
@@ -38,18 +40,20 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
 
   return (
     <section className="relative overflow-hidden min-h-screen w-full flex items-center justify-center">
-      {/* Video Background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        className="absolute inset-0 w-full h-full object-cover"
-        poster="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop"
-      >
-        <source src="/videos/hero-background.mp4" type="video/mp4" />
-      </video>
+      {/* Video Background - Hidden on mobile for performance */}
+      {!isMobile && (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover"
+          poster="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop"
+        >
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
+        </video>
+      )}
       
       {/* Fallback Image */}
       <div 
@@ -66,12 +70,12 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
       {/* Hero Content */}
       <div className="relative z-10 container mx-auto px-4 py-10 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Logo */}
-          <div className="mb-6 sm:mb-8 animate-fade-in animate-[float_3s_ease-in-out_infinite]">
+          {/* Logo - Smaller on mobile */}
+          <div className="mb-4 sm:mb-6 md:mb-8 animate-fade-in animate-[float_3s_ease-in-out_infinite]">
             <img 
               src={logoAdvogadoOnline} 
               alt="Advogado Online" 
-              className="h-56 sm:h-64 md:h-72 lg:h-96 mx-auto transition-transform hover:scale-105 duration-300"
+              className="h-32 xs:h-40 sm:h-56 md:h-72 lg:h-96 mx-auto transition-transform hover:scale-105 duration-300"
             />
           </div>
 

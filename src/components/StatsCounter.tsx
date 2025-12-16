@@ -61,7 +61,7 @@ const StatsCounter = () => {
   });
 
   return (
-    <div ref={ref} className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+    <div ref={ref} className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 md:gap-6 lg:gap-8">
       {credibilityStats.map((stat, index) => {
         const Icon = iconMap[stat.icon as keyof typeof iconMap];
         
@@ -69,24 +69,24 @@ const StatsCounter = () => {
           <div
             key={index}
             className="
-              group relative text-center p-6 rounded-2xl
+              group relative text-center p-4 sm:p-5 md:p-6 rounded-2xl
               bg-gradient-to-br from-primary/5 to-primary/10
               border border-primary/20 hover:border-primary/40
               transition-all duration-300 hover:shadow-lg hover:shadow-primary/10
             "
             style={{ animationDelay: `${index * 100}ms` }}
           >
-            <div className="flex justify-center mb-3">
+            <div className="flex justify-center mb-2 sm:mb-3">
               <div className="
-                p-3 rounded-xl bg-primary/10 text-primary
+                p-2.5 sm:p-3 rounded-xl bg-primary/10 text-primary
                 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground
                 transition-all duration-300
               ">
-                <Icon className="w-5 h-5 md:w-6 md:h-6" />
+                <Icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
               </div>
             </div>
             
-            <div className="text-3xl md:text-4xl font-bold text-foreground mb-2">
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-1 sm:mb-2">
               <AnimatedCounter
                 value={stat.value}
                 decimals={stat.decimals}
@@ -95,7 +95,7 @@ const StatsCounter = () => {
               />
             </div>
             
-            <p className="text-sm md:text-base text-muted-foreground font-medium">
+            <p className="text-xs sm:text-sm md:text-base text-muted-foreground font-medium leading-tight">
               {stat.label}
             </p>
           </div>

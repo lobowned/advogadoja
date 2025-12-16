@@ -102,7 +102,7 @@ const PreChatTriage = ({ onComplete, onlineCount = 3 }: PreChatTriageProps) => {
           </p>
         </div>
 
-        {/* Options */}
+        {/* Options - Larger touch targets on mobile */}
         <div className="space-y-3">
           {stepData?.options.map((option, index) => {
             const Icon = iconMap[option.icon] || HelpCircle;
@@ -111,18 +111,18 @@ const PreChatTriage = ({ onComplete, onlineCount = 3 }: PreChatTriageProps) => {
                 key={option.value}
                 onClick={() => submitStep(option.value)}
                 className={cn(
-                  "w-full p-4 rounded-xl border-2 transition-all duration-200",
-                  "hover:border-primary hover:bg-primary/5 hover:scale-[1.02]",
+                  "w-full p-4 sm:p-4 min-h-[56px] sm:min-h-[52px] rounded-xl border-2 transition-all duration-200",
+                  "hover:border-primary hover:bg-primary/5 active:scale-[0.98] sm:hover:scale-[1.02]",
                   "border-border/50 bg-card",
                   "flex items-center gap-3 text-left",
-                  "animate-fade-in"
+                  "animate-fade-in touch-manipulation"
                 )}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-5 h-5 text-primary" />
+                <div className="w-11 h-11 sm:w-10 sm:h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-5 h-5 sm:w-5 sm:h-5 text-primary" />
                 </div>
-                <span className="font-medium">{option.label}</span>
+                <span className="font-medium text-sm sm:text-base">{option.label}</span>
               </button>
             );
           })}

@@ -154,3 +154,88 @@ export const pageTransition = {
     }
   }
 };
+
+// Hero-specific variants
+export const heroReveal = {
+  hidden: { 
+    opacity: 0, 
+    scale: 0.5, 
+    filter: "blur(30px)",
+    y: -50 
+  },
+  visible: { 
+    opacity: 1, 
+    scale: 1, 
+    filter: "blur(0px)",
+    y: 0,
+    transition: { 
+      duration: 1,
+      ease: [0.16, 1, 0.3, 1],
+      scale: { type: "spring", damping: 15, stiffness: 100 }
+    }
+  }
+};
+
+export const heroTitle = {
+  hidden: { 
+    opacity: 0, 
+    y: 60,
+    clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)"
+  },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+    transition: { 
+      duration: 0.9,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  }
+};
+
+export const heroStagger = {
+  hidden: {},
+  visible: {
+    transition: { 
+      staggerChildren: 0.12,
+      delayChildren: 0.3
+    }
+  }
+};
+
+export const heroBadge = {
+  hidden: { 
+    opacity: 0, 
+    scale: 0,
+    y: 20
+  },
+  visible: { 
+    opacity: 1, 
+    scale: 1,
+    y: 0,
+    transition: { 
+      type: "spring", 
+      stiffness: 400, 
+      damping: 15 
+    }
+  }
+};
+
+export const heroAvatar = {
+  hidden: { 
+    opacity: 0, 
+    scale: 0, 
+    y: 30 
+  },
+  visible: (i: number) => ({ 
+    opacity: 1, 
+    scale: 1, 
+    y: 0,
+    transition: { 
+      delay: 0.6 + (i * 0.05), 
+      type: "spring",
+      stiffness: 300,
+      damping: 20
+    }
+  })
+};

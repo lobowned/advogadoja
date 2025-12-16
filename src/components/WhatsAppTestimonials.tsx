@@ -22,6 +22,8 @@ interface Testimonial {
   messages: Message[];
   audioTranscript?: string;
   date: string;
+  batteryLevel: number;
+  statusBarTime: string;
 }
 
 const whatsappTestimonials: Testimonial[] = [
@@ -32,6 +34,8 @@ const whatsappTestimonials: Testimonial[] = [
     avatarUrl: "https://randomuser.me/api/portraits/women/45.jpg",
     area: "Trabalhista",
     date: "HOJE",
+    batteryLevel: 92,
+    statusBarTime: "09:38",
     messages: [
       {
         type: "sent",
@@ -49,6 +53,12 @@ const whatsappTestimonials: Testimonial[] = [
         type: "received",
         text: "Vou indicar pra todo mundo da minha família!",
         time: "09:36"
+      },
+      {
+        type: "sent",
+        text: "Que alegria Maria! Conte sempre conosco 🙏",
+        time: "09:38",
+        seen: true
       }
     ]
   },
@@ -59,6 +69,8 @@ const whatsappTestimonials: Testimonial[] = [
     avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
     area: "Previdenciário",
     date: "HOJE",
+    batteryLevel: 78,
+    statusBarTime: "14:24",
     messages: [
       {
         type: "sent",
@@ -71,6 +83,12 @@ const whatsappTestimonials: Testimonial[] = [
         type: "audio",
         duration: "0:47",
         time: "14:20"
+      },
+      {
+        type: "sent",
+        text: "Que bom José! Foi uma luta, mas valeu a pena! 💪",
+        time: "14:22",
+        seen: true
       }
     ],
     audioTranscript: "Doutor, muito obrigado! Depois de 3 anos lutando, finalmente consegui minha aposentadoria. Vocês são demais!"
@@ -82,6 +100,8 @@ const whatsappTestimonials: Testimonial[] = [
     avatarUrl: "https://randomuser.me/api/portraits/women/32.jpg",
     area: "Família",
     date: "ONTEM",
+    batteryLevel: 65,
+    statusBarTime: "16:50",
     messages: [
       {
         type: "sent",
@@ -99,6 +119,12 @@ const whatsappTestimonials: Testimonial[] = [
         type: "received",
         text: "Agora posso ficar tranquila com meus filhos",
         time: "16:48"
+      },
+      {
+        type: "sent",
+        text: "Fico muito feliz Ana! Você merece toda paz do mundo 💙",
+        time: "16:50",
+        seen: true
       }
     ]
   },
@@ -109,6 +135,8 @@ const whatsappTestimonials: Testimonial[] = [
     avatarUrl: "https://randomuser.me/api/portraits/men/35.jpg",
     area: "Consumidor",
     date: "12/12/2024",
+    batteryLevel: 87,
+    statusBarTime: "11:30",
     messages: [
       {
         type: "sent",
@@ -121,6 +149,12 @@ const whatsappTestimonials: Testimonial[] = [
         type: "received",
         text: "Caramba doutor! Eu já tinha desistido de correr atrás disso! Vocês são muito bons! 👏👏",
         time: "11:25"
+      },
+      {
+        type: "sent",
+        text: "Fico feliz Roberto! Qualquer coisa estamos aqui 👊",
+        time: "11:27",
+        seen: true
       }
     ]
   },
@@ -131,6 +165,8 @@ const whatsappTestimonials: Testimonial[] = [
     avatarUrl: "https://randomuser.me/api/portraits/women/68.jpg",
     area: "Previdenciário",
     date: "HOJE",
+    batteryLevel: 43,
+    statusBarTime: "10:27",
     messages: [
       {
         type: "sent",
@@ -142,6 +178,12 @@ const whatsappTestimonials: Testimonial[] = [
         type: "audio",
         duration: "0:32",
         time: "10:22"
+      },
+      {
+        type: "sent",
+        text: "A senhora merece dona Francisca! Deus abençoe 🙏",
+        time: "10:25",
+        seen: true
       }
     ],
     audioTranscript: "Meu Deus do céu! Graças a Deus e a vocês! Agora vou poder comprar meus remédios..."
@@ -153,6 +195,8 @@ const whatsappTestimonials: Testimonial[] = [
     avatarUrl: "https://randomuser.me/api/portraits/men/22.jpg",
     area: "Trabalhista",
     date: "ONTEM",
+    batteryLevel: 71,
+    statusBarTime: "15:48",
     messages: [
       {
         type: "sent",
@@ -170,26 +214,19 @@ const whatsappTestimonials: Testimonial[] = [
         type: "received",
         text: "Deus abençoe vocês! Profissionais de verdade! 🙏❤️",
         time: "15:46"
+      },
+      {
+        type: "sent",
+        text: "Merecido Carlos! Sucesso sempre! 🤝",
+        time: "15:48",
+        seen: true
       }
     ]
   }
 ];
 
 // Phone Status Bar Component
-const PhoneStatusBar = () => {
-  const [time, setTime] = useState(() => {
-    const now = new Date();
-    return `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-  });
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const now = new Date();
-      setTime(`${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`);
-    }, 60000);
-    return () => clearInterval(interval);
-  }, []);
-
+const PhoneStatusBar = ({ time, batteryLevel }: { time: string; batteryLevel: number }) => {
   return (
     <div className="flex items-center justify-between px-4 py-1.5 bg-[#075E54]">
       <span className="text-white text-xs font-medium">{time}</span>
@@ -198,7 +235,7 @@ const PhoneStatusBar = () => {
         <Wifi className="w-3.5 h-3.5 text-white" />
         <div className="flex items-center">
           <Battery className="w-4 h-4 text-white" />
-          <span className="text-white text-[10px] ml-0.5">87%</span>
+          <span className="text-white text-[10px] ml-0.5">{batteryLevel}%</span>
         </div>
       </div>
     </div>
@@ -517,7 +554,7 @@ const WhatsAppConversation = ({ testimonial, index }: { testimonial: Testimonial
       className="wa-card overflow-hidden"
     >
       {/* Phone Status Bar */}
-      <PhoneStatusBar />
+      <PhoneStatusBar time={testimonial.statusBarTime} batteryLevel={testimonial.batteryLevel} />
       
       {/* WhatsApp Header */}
       <WhatsAppHeader 

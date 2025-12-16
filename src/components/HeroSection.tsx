@@ -40,20 +40,18 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
 
   return (
     <section className="relative overflow-hidden min-h-screen w-full flex items-center justify-center">
-      {/* Video Background - Hidden on mobile for performance */}
-      {!isMobile && (
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
-          poster="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop"
-        >
-          <source src="/videos/hero-background.mp4" type="video/mp4" />
-        </video>
-      )}
+{/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover"
+        poster="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop"
+      >
+        <source src="/videos/hero-background.mp4" type="video/mp4" />
+      </video>
       
       {/* Fallback Image */}
       <div 

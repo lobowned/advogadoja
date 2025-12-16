@@ -23,7 +23,7 @@ const CredibilitySection = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <m.div 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-primary/20 text-primary text-sm font-medium mb-4"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4"
             initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.8 }}
             animate={headerInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.2, duration: 0.5, type: "spring" }}
@@ -33,13 +33,13 @@ const CredibilitySection = () => {
           </m.div>
           
           <m.h2 
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 font-display"
             initial={shouldReduceMotion ? false : { opacity: 0, filter: "blur(10px)" }}
             animate={headerInView ? { opacity: 1, filter: "blur(0px)" } : {}}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             Por Que Confiar na{" "}
-            <span className="text-primary">Nossa Equipe?</span>
+            <span className="text-gradient-blue">Nossa Equipe?</span>
           </m.h2>
           
           <m.p 
@@ -82,11 +82,12 @@ const CredibilitySection = () => {
           <div className="max-w-4xl mx-auto">
             <div className="
               p-6 md:p-8 rounded-2xl
-              glass-card
-              border border-primary/20
+              bg-card
+              border border-border
               shadow-elegant
+              tech-card-hover
             ">
-              <h3 className="text-center text-xl md:text-2xl font-semibold text-foreground mb-6 font-serif">
+              <h3 className="text-center text-xl md:text-2xl font-semibold text-foreground mb-6 font-display">
                 🔐 Sua Segurança é Nossa Prioridade
               </h3>
               
@@ -104,7 +105,7 @@ const CredibilitySection = () => {
                 {securityFeatures.map((feature, index) => (
                   <m.div
                     key={index}
-                    className="flex items-center gap-3 p-3 rounded-lg bg-background/80 border border-border/50 premium-card-hover"
+                    className="flex items-center gap-3 p-3 rounded-lg bg-muted/50 border border-border/50 hover:border-primary/30 transition-colors"
                     variants={shouldReduceMotion ? {} : {
                       hidden: { opacity: 0, x: -20 },
                       visible: { 

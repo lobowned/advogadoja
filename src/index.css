@@ -2,60 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Premium Design System - Sophisticated & Warm
-   Gold/Bronze palette with elegant typography
+/* Tech Blue Startup Design System
+   Electric blue/cyan palette with modern typography
    All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Premium warm palette */
-    --background: 40 30% 98%;
-    --foreground: 25 35% 15%;
+    /* Tech Blue Startup palette */
+    --background: 220 20% 99%;
+    --foreground: 220 20% 10%;
 
-    --card: 40 25% 99%;
-    --card-foreground: 25 35% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
 
-    --popover: 40 25% 99%;
-    --popover-foreground: 25 35% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
 
-    /* Primary: Elegant Gold */
-    --primary: 42 65% 48%;
-    --primary-foreground: 40 30% 98%;
+    /* Primary: Electric Blue */
+    --primary: 220 90% 56%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Secondary: Deep Bronze */
-    --secondary: 30 55% 42%;
-    --secondary-foreground: 40 30% 98%;
+    /* Secondary: Tech Cyan */
+    --secondary: 190 95% 42%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 35 20% 94%;
-    --muted-foreground: 25 15% 45%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 15% 45%;
 
-    /* Accent: Terracotta */
-    --accent: 20 50% 50%;
-    --accent-foreground: 40 30% 98%;
+    /* Accent: Soft Violet */
+    --accent: 260 80% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 35 25% 88%;
-    --input: 35 25% 90%;
-    --ring: 42 65% 48%;
+    --border: 220 15% 90%;
+    --input: 220 15% 92%;
+    --ring: 220 90% 56%;
 
     --radius: 0.75rem;
     
-    /* Premium Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(42 65% 48%) 0%, hsl(30 55% 42%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(40 25% 99%) 0%, hsl(35 20% 96%) 100%);
-    --gradient-premium: linear-gradient(135deg, hsl(42 65% 55%) 0%, hsl(30 60% 45%) 50%, hsl(20 50% 50%) 100%);
+    /* Startup Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 90% 56%) 0%, hsl(190 95% 42%) 50%, hsl(260 80% 60%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 20% 98%) 100%);
+    --gradient-startup: linear-gradient(135deg, hsl(220 90% 56%) 0%, hsl(190 95% 50%) 50%, hsl(260 80% 60%) 100%);
     --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
     
-    /* Premium Shadows */
-    --shadow-card: 0 4px 20px -2px hsl(42 65% 48% / 0.1);
-    --shadow-card-hover: 0 12px 35px -6px hsl(42 65% 48% / 0.2);
-    --shadow-button: 0 4px 15px -2px hsl(42 65% 48% / 0.35);
-    --shadow-elegant: 0 15px 40px -12px hsl(25 35% 15% / 0.15);
-    --shadow-glow: 0 0 50px hsl(42 65% 48% / 0.2);
-    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.08);
+    /* Tech Shadows */
+    --shadow-card: 0 4px 20px -2px hsl(220 90% 56% / 0.08);
+    --shadow-card-hover: 0 12px 35px -6px hsl(220 90% 56% / 0.15);
+    --shadow-button: 0 4px 15px -2px hsl(220 90% 56% / 0.35);
+    --shadow-elegant: 0 15px 40px -12px hsl(220 20% 10% / 0.1);
+    --shadow-glow: 0 0 50px hsl(220 90% 56% / 0.25);
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.06);
+    --shadow-blue-glow: 0 0 40px hsl(220 90% 56% / 0.3);
     
     /* Smooth Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -63,83 +64,83 @@
     /* Stats and counters */
     --counter-duration: 2s;
     
-    /* Chat colors - Premium warm version */
-    --whatsapp-header: 30 55% 35%;
-    --whatsapp-header-dark: 30 55% 28%;
-    --whatsapp-bg: 35 25% 94%;
-    --whatsapp-bubble-received: 40 25% 99%;
-    --whatsapp-bubble-sent: 42 40% 92%;
-    --whatsapp-send-btn: 42 65% 48%;
-    --whatsapp-check: 42 65% 48%;
-    --whatsapp-time: 25 15% 50%;
-    --whatsapp-input-bg: 35 20% 97%;
-    --whatsapp-divider: 35 20% 88%;
+    /* Chat colors - Tech Blue version */
+    --whatsapp-header: 220 85% 50%;
+    --whatsapp-header-dark: 220 85% 42%;
+    --whatsapp-bg: 220 15% 97%;
+    --whatsapp-bubble-received: 0 0% 100%;
+    --whatsapp-bubble-sent: 220 60% 96%;
+    --whatsapp-send-btn: 220 90% 56%;
+    --whatsapp-check: 190 95% 42%;
+    --whatsapp-time: 220 15% 50%;
+    --whatsapp-input-bg: 0 0% 100%;
+    --whatsapp-divider: 220 15% 92%;
 
-    --sidebar-background: 40 30% 98%;
-    --sidebar-foreground: 25 35% 20%;
-    --sidebar-primary: 42 65% 48%;
-    --sidebar-primary-foreground: 40 30% 98%;
-    --sidebar-accent: 35 20% 94%;
-    --sidebar-accent-foreground: 25 35% 15%;
-    --sidebar-border: 35 25% 88%;
-    --sidebar-ring: 42 65% 48%;
+    --sidebar-background: 220 20% 99%;
+    --sidebar-foreground: 220 20% 15%;
+    --sidebar-primary: 220 90% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 96%;
+    --sidebar-accent-foreground: 220 20% 10%;
+    --sidebar-border: 220 15% 90%;
+    --sidebar-ring: 220 90% 56%;
   }
 
   .dark {
-    --background: 25 25% 8%;
-    --foreground: 35 20% 92%;
+    --background: 220 25% 6%;
+    --foreground: 220 15% 95%;
 
-    --card: 25 22% 12%;
-    --card-foreground: 35 20% 92%;
+    --card: 220 25% 10%;
+    --card-foreground: 220 15% 95%;
 
-    --popover: 25 22% 12%;
-    --popover-foreground: 35 20% 92%;
+    --popover: 220 25% 10%;
+    --popover-foreground: 220 15% 95%;
 
-    /* Primary: Warm Gold on dark */
-    --primary: 42 70% 55%;
-    --primary-foreground: 25 25% 8%;
+    /* Primary: Bright Blue on dark */
+    --primary: 220 90% 65%;
+    --primary-foreground: 220 25% 6%;
 
-    /* Secondary: Bronze on dark */
-    --secondary: 30 60% 50%;
-    --secondary-foreground: 25 25% 8%;
+    /* Secondary: Cyan on dark */
+    --secondary: 190 95% 50%;
+    --secondary-foreground: 220 25% 6%;
 
-    --muted: 25 20% 18%;
-    --muted-foreground: 35 15% 60%;
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 15% 60%;
 
-    --accent: 20 55% 55%;
-    --accent-foreground: 25 25% 8%;
+    --accent: 260 80% 65%;
+    --accent-foreground: 220 25% 6%;
 
     --destructive: 0 65% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 25 20% 22%;
-    --input: 25 20% 22%;
-    --ring: 42 70% 55%;
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 220 90% 65%;
     
-    --gradient-hero: linear-gradient(135deg, hsl(25 25% 12%) 0%, hsl(25 25% 8%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(25 22% 12%) 0%, hsl(25 22% 10%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 25% 10%) 0%, hsl(220 25% 6%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(220 25% 10%) 0%, hsl(220 25% 8%) 100%);
     --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
     
     --shadow-card: 0 4px 20px -2px hsl(0 0% 0% / 0.4);
     --shadow-card-hover: 0 12px 35px -6px hsl(0 0% 0% / 0.5);
-    --shadow-button: 0 4px 15px -2px hsl(42 70% 55% / 0.3);
+    --shadow-button: 0 4px 15px -2px hsl(220 90% 65% / 0.3);
     
     /* Chat dark mode */
-    --whatsapp-header: 30 45% 28%;
-    --whatsapp-header-dark: 30 45% 22%;
-    --whatsapp-bg: 25 20% 12%;
-    --whatsapp-bubble-received: 25 22% 18%;
-    --whatsapp-bubble-sent: 30 25% 22%;
-    --whatsapp-send-btn: 42 70% 55%;
+    --whatsapp-header: 220 75% 35%;
+    --whatsapp-header-dark: 220 75% 28%;
+    --whatsapp-bg: 220 20% 10%;
+    --whatsapp-bubble-received: 220 22% 16%;
+    --whatsapp-bubble-sent: 220 30% 20%;
+    --whatsapp-send-btn: 220 90% 65%;
     
-    --sidebar-background: 25 25% 10%;
-    --sidebar-foreground: 35 20% 92%;
-    --sidebar-primary: 42 70% 55%;
-    --sidebar-primary-foreground: 25 25% 8%;
-    --sidebar-accent: 25 20% 15%;
-    --sidebar-accent-foreground: 35 20% 92%;
-    --sidebar-border: 25 20% 18%;
-    --sidebar-ring: 42 70% 55%;
+    --sidebar-background: 220 25% 8%;
+    --sidebar-foreground: 220 15% 95%;
+    --sidebar-primary: 220 90% 65%;
+    --sidebar-primary-foreground: 220 25% 6%;
+    --sidebar-accent: 220 20% 12%;
+    --sidebar-accent-foreground: 220 15% 95%;
+    --sidebar-border: 220 20% 15%;
+    --sidebar-ring: 220 90% 65%;
   }
 }
 
@@ -153,9 +154,10 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
   
-  /* Premium serif headings */
+  /* Modern sans-serif headings */
   h1, h2, h3 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 600;
   }
   
   /* Mobile optimization */
@@ -192,32 +194,36 @@
   }
 }
 
-/* Glassmorphism utilities */
+/* Glassmorphism utilities - Tech version */
 @layer components {
   .glass-card {
     background: var(--gradient-glass);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid hsl(var(--border) / 0.5);
+    border: 1px solid hsl(220 90% 56% / 0.1);
     box-shadow: var(--shadow-glass);
   }
   
   .glass-dark {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
-  .premium-gradient {
-    background: var(--gradient-premium);
+  .startup-gradient {
+    background: var(--gradient-startup);
   }
   
-  .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(42 65% 55%) 0%, hsl(30 60% 50%) 100%);
+  .text-gradient-blue {
+    background: linear-gradient(135deg, hsl(220 90% 56%) 0%, hsl(190 95% 50%) 50%, hsl(260 80% 65%) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  
+  .glow-blue {
+    box-shadow: var(--shadow-blue-glow);
   }
 }
 
@@ -263,7 +269,7 @@
   display: none;
 }
 
-/* Premium animated gradient text */
+/* Tech gradient animation */
 @keyframes gradient-shift {
   0%, 100% {
     background-position: 0% 50%;
@@ -276,11 +282,11 @@
 .animated-gradient-text {
   background: linear-gradient(
     90deg,
-    hsl(42 65% 55%),
-    hsl(30 60% 50%),
-    hsl(42 65% 55%),
-    hsl(20 50% 55%),
-    hsl(42 65% 55%)
+    hsl(220 90% 56%),
+    hsl(190 95% 50%),
+    hsl(260 80% 60%),
+    hsl(190 95% 50%),
+    hsl(220 90% 56%)
   );
   background-size: 300% 100%;
   -webkit-background-clip: text;
@@ -289,13 +295,13 @@
   animation: gradient-shift 6s ease-in-out infinite;
 }
 
-/* Chat Doodle Pattern Background - Warm version */
+/* Chat Doodle Pattern Background - Tech version */
 .whatsapp-doodle-bg {
   background-color: hsl(var(--whatsapp-bg));
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c4a574' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3Ccircle cx='30' cy='15' r='2'/%3E%3Ccircle cx='15' cy='45' r='2'/%3E%3Ccircle cx='45' cy='45' r='2'/%3E%3Cpath d='M20 25l3-3 3 3-3 3-3-3zm20 20l3-3 3 3-3 3-3-3z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b82f6' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3Ccircle cx='30' cy='15' r='2'/%3E%3Ccircle cx='15' cy='45' r='2'/%3E%3Ccircle cx='45' cy='45' r='2'/%3E%3Cpath d='M20 25l3-3 3 3-3 3-3-3zm20 20l3-3 3 3-3 3-3-3z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-/* Chat Bubble Tails - Premium warm colors */
+/* Chat Bubble Tails - Tech blue colors */
 .bubble-tail-sent {
   position: relative;
 }
@@ -308,8 +314,8 @@
   height: 0;
   border-style: solid;
   border-width: 0 0 10px 10px;
-  border-color: transparent transparent transparent hsl(42 40% 92%);
-  filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.05));
+  border-color: transparent transparent transparent hsl(220 60% 96%);
+  filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.03));
 }
 
 .bubble-tail-received {
@@ -324,29 +330,29 @@
   height: 0;
   border-style: solid;
   border-width: 0 10px 10px 0;
-  border-color: transparent hsl(40 25% 99%) transparent transparent;
-  filter: drop-shadow(-1px 1px 1px rgba(0,0,0,0.05));
+  border-color: transparent hsl(0 0% 100%) transparent transparent;
+  filter: drop-shadow(-1px 1px 1px rgba(0,0,0,0.03));
 }
 
 /* Chat Message Shadow */
 .whatsapp-bubble-shadow {
-  box-shadow: 0 1px 2px rgba(37, 24, 15, 0.08);
+  box-shadow: 0 1px 2px rgba(59, 130, 246, 0.06);
 }
 
-/* Premium Chat Header Gradient */
+/* Tech Chat Header Gradient */
 .whatsapp-header-gradient {
-  background: linear-gradient(180deg, hsl(30 55% 38%) 0%, hsl(30 55% 32%) 100%);
+  background: linear-gradient(135deg, hsl(220 90% 56%) 0%, hsl(190 95% 45%) 100%);
 }
 
 /* Chat Input Area */
 .whatsapp-input-area {
-  background: linear-gradient(180deg, hsl(35 20% 96%) 0%, hsl(35 20% 98%) 100%);
+  background: linear-gradient(180deg, hsl(220 15% 98%) 0%, hsl(0 0% 100%) 100%);
 }
 
 /* Encryption Badge */
 .encryption-badge {
-  background: hsl(42 50% 95%);
-  color: hsl(30 50% 35%);
+  background: hsl(220 60% 97%);
+  color: hsl(220 80% 45%);
 }
 
 /* Marquee animation for lawyers carousel */
@@ -376,15 +382,15 @@
   }
 }
 
-/* CTA Button Glow Pulse - Gold version */
+/* CTA Button Glow Pulse - Blue version */
 @keyframes cta-pulse {
   0%, 100% {
-    box-shadow: 0 4px 15px -3px hsl(42 65% 48% / 0.5),
-                0 0 30px hsl(42 65% 48% / 0.3);
+    box-shadow: 0 4px 15px -3px hsl(220 90% 56% / 0.5),
+                0 0 30px hsl(220 90% 56% / 0.2);
   }
   50% {
-    box-shadow: 0 4px 25px -3px hsl(42 65% 48% / 0.7),
-                0 0 50px hsl(42 65% 48% / 0.5);
+    box-shadow: 0 4px 25px -3px hsl(220 90% 56% / 0.7),
+                0 0 50px hsl(220 90% 56% / 0.4);
   }
 }
 
@@ -418,8 +424,8 @@
   }
 }
 
-/* Premium gold shine effect */
-@keyframes gold-shine {
+/* Tech blue shine effect */
+@keyframes blue-shine {
   0% {
     background-position: -200% 0;
   }
@@ -432,28 +438,50 @@
   animation: cta-pulse 2s ease-in-out infinite;
 }
 
-.gold-shine {
+.blue-shine {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    hsl(42 65% 70% / 0.3) 50%,
+    hsl(220 90% 70% / 0.3) 50%,
     transparent 100%
   );
   background-size: 200% 100%;
-  animation: gold-shine 3s ease-in-out infinite;
+  animation: blue-shine 3s ease-in-out infinite;
 }
 
 /* Text shadow for hero section */
 .text-shadow-hero {
-  text-shadow: 0 2px 8px rgba(37, 24, 15, 0.5), 0 4px 16px rgba(37, 24, 15, 0.3);
+  text-shadow: 0 2px 8px rgba(15, 23, 42, 0.5), 0 4px 16px rgba(15, 23, 42, 0.3);
 }
 
-/* Premium card hover effect */
-.premium-card-hover {
+/* Tech card hover effect */
+.tech-card-hover {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.premium-card-hover:hover {
+.tech-card-hover:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-card-hover);
+  border-color: hsl(220 90% 56% / 0.2);
+}
+
+/* Startup gradient border */
+.gradient-border {
+  position: relative;
+  background: hsl(var(--card));
+  border-radius: var(--radius);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: var(--gradient-startup);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }

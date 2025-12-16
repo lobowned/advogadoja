@@ -574,44 +574,120 @@
   transform: translateY(-2px);
 }
 
-/* WhatsApp Testimonials Styles */
-.whatsapp-bubble-sent {
-  background: hsl(134 61% 89%);
-  border-radius: 8px 0 8px 8px;
-  margin-left: auto;
-  max-width: 85%;
-  padding: 8px 12px;
-  position: relative;
-  box-shadow: 0 1px 2px hsl(0 0% 0% / 0.1);
+/* =============================================
+   WhatsApp Hiper-Realista - Cores Oficiais
+   ============================================= */
+
+/* Card container */
+.wa-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.whatsapp-bubble-sent::after {
+.wa-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Header WhatsApp Real - Cor oficial #075E54 */
+.wa-header-real {
+  background: linear-gradient(180deg, #075E54 0%, #064E47 100%);
+  padding: 8px 4px;
+}
+
+/* Chat Background - Doodle Pattern Autêntico #ECE5DD */
+.wa-chat-bg {
+  background-color: #ECE5DD;
+  background-image: url("data:image/svg+xml,%3Csvg width='412' height='412' viewBox='0 0 412 412' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='doodle' x='0' y='0' width='412' height='412' patternUnits='userSpaceOnUse'%3E%3Cg fill='%23cdc5ba' fill-opacity='0.4'%3E%3Cpath d='M8.5 8.5L8.5 16.5M12.5 12.5L4.5 12.5' stroke-width='0.5'/%3E%3Ccircle cx='30' cy='10' r='3'/%3E%3Crect x='50' y='6' width='8' height='8' rx='1'/%3E%3Cpath d='M80 8c0-2 4-2 4 0s4 2 4 0'/%3E%3Cpath d='M108 6l4 8 4-8'/%3E%3Ccircle cx='130' cy='10' r='2'/%3E%3Ccircle cx='136' cy='10' r='2'/%3E%3Cpath d='M155 6v8M159 6v8'/%3E%3Crect x='175' y='7' width='6' height='6' rx='3'/%3E%3Cpath d='M200 10l4-4 4 4-4 4z'/%3E%3Cpath d='M225 6c0 4 8 4 8 0'/%3E%3Ccircle cx='250' cy='10' r='4' fill='none' stroke='%23cdc5ba' stroke-opacity='0.4'/%3E%3Cpath d='M275 6l8 8M275 14l8-8'/%3E%3Cpath d='M300 10a4 4 0 108 0 4 4 0 10-8 0z' fill='none' stroke='%23cdc5ba' stroke-opacity='0.4'/%3E%3Crect x='325' y='6' width='8' height='8'/%3E%3Cpath d='M355 6c4 0 4 8 0 8'/%3E%3Ccircle cx='380' cy='10' r='3'/%3E%3Ccircle cx='30' cy='40' r='2'/%3E%3Crect x='50' y='36' width='8' height='8' rx='4'/%3E%3Cpath d='M80 36l4 8h-8z'/%3E%3Ccircle cx='108' cy='40' r='3' fill='none' stroke='%23cdc5ba' stroke-opacity='0.4'/%3E%3Cpath d='M130 36v8'/%3E%3Cpath d='M155 40h8'/%3E%3Cpath d='M180 36l4 4-4 4'/%3E%3Crect x='200' y='36' width='8' height='8' rx='1'/%3E%3Ccircle cx='230' cy='40' r='3'/%3E%3Cpath d='M255 36c0 4 4 4 4 0s4-4 4 0'/%3E%3Cpath d='M280 36l8 4-8 4'/%3E%3Ccircle cx='305' cy='40' r='2'/%3E%3Cpath d='M330 38a2 2 0 100 4 2 2 0 000-4z'/%3E%3Crect x='350' y='36' width='4' height='8'/%3E%3Cpath d='M380 36l4 8-8 0z'/%3E%3Cpath d='M8 70l8-8M8 62l8 8'/%3E%3Ccircle cx='30' cy='66' r='4' fill='none' stroke='%23cdc5ba' stroke-opacity='0.4'/%3E%3Crect x='50' y='62' width='8' height='8'/%3E%3Cpath d='M80 62c4 0 4 8 0 8s-4-8 0-8'/%3E%3Ccircle cx='108' cy='66' r='2'/%3E%3Cpath d='M130 62l4 4-4 4-4-4z'/%3E%3Crect x='150' y='62' width='10' height='8' rx='2'/%3E%3Cpath d='M180 66h8'/%3E%3Ccircle cx='205' cy='66' r='3'/%3E%3Cpath d='M225 62v8h8'/%3E%3Crect x='250' y='62' width='8' height='8' rx='4'/%3E%3Cpath d='M280 62l4 8 4-8'/%3E%3Ccircle cx='310' cy='66' r='2'/%3E%3Cpath d='M330 62c4 4 4 4 8 0'/%3E%3Crect x='355' y='64' width='6' height='4'/%3E%3Ccircle cx='385' cy='66' r='3' fill='none' stroke='%23cdc5ba' stroke-opacity='0.4'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23doodle)'/%3E%3C/svg%3E");
+  background-size: 206px 206px;
+}
+
+/* Bolha Enviada - Cor oficial #DCF8C6 */
+.wa-bubble-sent {
+  background: #DCF8C6;
+  border-radius: 7.5px;
+  border-top-right-radius: 0;
+  max-width: 85%;
+  padding: 6px 7px 8px 9px;
+  margin-left: auto;
+  position: relative;
+  box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13);
+}
+
+/* Tail da bolha enviada */
+.wa-tail-sent::after {
   content: '';
   position: absolute;
   top: 0;
   right: -8px;
-  width: 0;
-  height: 0;
-  border-left: 8px solid hsl(134 61% 89%);
-  border-top: 8px solid transparent;
+  width: 8px;
+  height: 13px;
+  background: #DCF8C6;
+  clip-path: path('M0 0 L8 0 Q0 0 0 8 L0 0');
 }
 
-.whatsapp-bubble-received {
-  background: hsl(0 0% 100%);
-  border-radius: 0 8px 8px 8px;
+/* Bolha Recebida - Cor oficial #FFFFFF */
+.wa-bubble-received {
+  background: #FFFFFF;
+  border-radius: 7.5px;
+  border-top-left-radius: 0;
   max-width: 85%;
-  padding: 8px 12px;
+  padding: 6px 7px 8px 9px;
   position: relative;
-  box-shadow: 0 1px 2px hsl(0 0% 0% / 0.1);
+  box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13);
 }
 
-.whatsapp-bubble-received::after {
+/* Tail da bolha recebida */
+.wa-tail-received::after {
   content: '';
   position: absolute;
   top: 0;
   left: -8px;
-  width: 0;
-  height: 0;
-  border-right: 8px solid hsl(0 0% 100%);
-  border-top: 8px solid transparent;
+  width: 8px;
+  height: 13px;
+  background: #FFFFFF;
+  clip-path: path('M8 0 L0 0 Q8 0 8 8 L8 0');
+}
+
+/* Dark mode adjustments */
+.dark .wa-card {
+  background: #1F2C33;
+}
+
+.dark .wa-header-real {
+  background: linear-gradient(180deg, #1F2C33 0%, #182229 100%);
+}
+
+.dark .wa-chat-bg {
+  background-color: #0B141A;
+  background-image: url("data:image/svg+xml,%3Csvg width='412' height='412' viewBox='0 0 412 412' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='doodle-dark' x='0' y='0' width='412' height='412' patternUnits='userSpaceOnUse'%3E%3Cg fill='%231D2B33' fill-opacity='0.5'%3E%3Cpath d='M8.5 8.5L8.5 16.5M12.5 12.5L4.5 12.5' stroke-width='0.5'/%3E%3Ccircle cx='30' cy='10' r='3'/%3E%3Crect x='50' y='6' width='8' height='8' rx='1'/%3E%3Cpath d='M80 8c0-2 4-2 4 0s4 2 4 0'/%3E%3Cpath d='M108 6l4 8 4-8'/%3E%3Ccircle cx='130' cy='10' r='2'/%3E%3Ccircle cx='136' cy='10' r='2'/%3E%3Cpath d='M155 6v8M159 6v8'/%3E%3Crect x='175' y='7' width='6' height='6' rx='3'/%3E%3Cpath d='M200 10l4-4 4 4-4 4z'/%3E%3Cpath d='M225 6c0 4 8 4 8 0'/%3E%3Ccircle cx='250' cy='10' r='4' fill='none' stroke='%231D2B33' stroke-opacity='0.5'/%3E%3Cpath d='M275 6l8 8M275 14l8-8'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23doodle-dark)'/%3E%3C/svg%3E");
+}
+
+.dark .wa-bubble-sent {
+  background: #005C4B;
+}
+
+.dark .wa-tail-sent::after {
+  background: #005C4B;
+}
+
+.dark .wa-bubble-received {
+  background: #1F2C33;
+}
+
+.dark .wa-tail-received::after {
+  background: #1F2C33;
+}
+
+.dark .wa-bubble-sent p,
+.dark .wa-bubble-received p {
+  color: #E9EDEF;
+}
+
+.dark .wa-bubble-sent span,
+.dark .wa-bubble-received span {
+  color: #8696A0;
 }

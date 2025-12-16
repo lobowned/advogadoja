@@ -105,7 +105,7 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo with Dramatic Entrance + Glow */}
           <m.div 
-            className="mb-3 sm:mb-6 md:mb-8 light-sweep-effect"
+            className="mb-3 sm:mb-6 md:mb-8"
             variants={heroReveal}
             initial="hidden"
             animate="visible"

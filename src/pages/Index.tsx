@@ -157,7 +157,7 @@ const Index = () => {
       <div className="min-h-screen bg-background">
         <Navbar onCtaClick={handleCTA} />
         {/* Hero Section */}
-      <HeroSection onCtaClick={handleCTA} />
+      <HeroSection />
 
       {/* Lawyer Chat */}
       <div id="lawyer-chat" ref={chatRef}>

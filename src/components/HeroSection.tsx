@@ -1,19 +1,14 @@
 import { useState, useEffect } from "react";
 import { m, useReducedMotion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { MessageSquare, Users, Star } from "lucide-react";
+import { Users, Star } from "lucide-react";
 import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { lawyers } from "@/data/lawyers";
 import logoAdvogadoOnline from "@/assets/logo-advogado-online.png";
-
-interface HeroSectionProps {
-  onCtaClick: () => void;
-}
 
 const testimonials = [
   { text: "Recebi minha rescisão em 3 meses!", author: "Maria S." },
@@ -23,7 +18,7 @@ const testimonials = [
   { text: "Consegui minha aposentadoria!", author: "Rosa L." },
 ];
 
-const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
+const HeroSection = () => {
   const { onlineCount } = useLawyerPresence();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const isMobile = useIsMobile();
@@ -212,34 +207,6 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
             </span>
           </m.h1>
 
-          {/* CTA with spring hover */}
-          <m.div
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.1, duration: 0.5 }}
-          >
-            <m.div
-              whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }}
-              whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
-            >
-              <Button 
-                onClick={onCtaClick}
-                size="lg"
-                className="bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white min-h-[52px] sm:min-h-[56px] px-6 sm:px-8 text-base sm:text-lg font-bold shadow-lg shadow-whatsapp-send-btn/30 hover:shadow-xl hover:shadow-whatsapp-send-btn/40 transition-all duration-300"
-              >
-                <MessageSquare className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                Falar AGORA - Resposta em 2 min
-              </Button>
-            </m.div>
-            <p className="text-white/70 text-xs sm:text-sm mt-2 sm:mt-3 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-4">
-              <span className="flex items-center gap-1">
-                <span className="text-whatsapp-send-btn">✓</span> Consulta 100% gratuita
-              </span>
-              <span className="flex items-center gap-1">
-                <span className="text-whatsapp-send-btn">✓</span> Sem compromisso
-              </span>
-            </p>
-          </m.div>
 
         </div>
       </div>

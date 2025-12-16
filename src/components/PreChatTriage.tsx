@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { useTriageFlow, TriageData } from "@/hooks/useTriageFlow";
-import { Briefcase, Users, Shield, HelpCircle, AlertTriangle, Clock, Calendar, MessageSquare, RefreshCw, ArrowRight, Sparkles } from "lucide-react";
+import { 
+  Briefcase, Users, Shield, HelpCircle, AlertTriangle, Clock, Calendar, 
+  MessageSquare, RefreshCw, ArrowRight, Sparkles, Heart, Scale,
+  UserMinus, AlertOctagon, HeartCrack, Baby, Wallet, Award,
+  Stethoscope, HandHeart, Frown, Receipt, FileText, Home, Lock,
+  ShieldAlert, Building2, ShoppingBag, Building, Landmark, AlertCircle
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const iconMap: Record<string, React.ElementType> = {
@@ -12,7 +18,28 @@ const iconMap: Record<string, React.ElementType> = {
   Clock,
   Calendar,
   MessageSquare,
-  RefreshCw
+  RefreshCw,
+  Heart,
+  Scale,
+  UserMinus,
+  AlertOctagon,
+  HeartCrack,
+  Baby,
+  Wallet,
+  Award,
+  Stethoscope,
+  HandHeart,
+  Frown,
+  Receipt,
+  FileText,
+  Home,
+  Lock,
+  ShieldAlert,
+  Building2,
+  ShoppingBag,
+  Building,
+  Landmark,
+  AlertCircle
 };
 
 interface PreChatTriageProps {
@@ -33,6 +60,7 @@ const PreChatTriage = ({ onComplete, onlineCount = 3 }: PreChatTriageProps) => {
   } = useTriageFlow();
 
   const stepData = getCurrentStepData();
+  const hasMoreThanFourOptions = stepData && stepData.options.length > 4;
 
   if (isComplete) {
     return (
@@ -77,7 +105,7 @@ const PreChatTriage = ({ onComplete, onlineCount = 3 }: PreChatTriageProps) => {
 
   return (
     <div className="flex items-center justify-center h-full">
-      <div className="text-center max-w-md px-4">
+      <div className="text-center max-w-md px-4 w-full">
         {/* Progress indicator */}
         <div className="flex justify-center gap-2 mb-6">
           {Array.from({ length: totalSteps }).map((_, index) => (
@@ -92,7 +120,7 @@ const PreChatTriage = ({ onComplete, onlineCount = 3 }: PreChatTriageProps) => {
         </div>
 
         {/* Header */}
-        <div className="mb-6 animate-fade-in">
+        <div className="mb-5 animate-fade-in">
           <div className="text-3xl mb-2">🏛️</div>
           <h3 className="text-xl font-bold mb-1">
             {stepData?.question}
@@ -102,8 +130,12 @@ const PreChatTriage = ({ onComplete, onlineCount = 3 }: PreChatTriageProps) => {
           </p>
         </div>
 
-        {/* Options - Larger touch targets on mobile */}
-        <div className="space-y-3">
+        {/* Options - Grid for many options, list for few */}
+        <div className={cn(
+          hasMoreThanFourOptions 
+            ? "grid grid-cols-2 gap-2" 
+            : "space-y-3"
+        )}>
           {stepData?.options.map((option, index) => {
             const Icon = iconMap[option.icon] || HelpCircle;
             return (
@@ -111,25 +143,41 @@ const PreChatTriage = ({ onComplete, onlineCount = 3 }: PreChatTriageProps) => {
                 key={option.value}
                 onClick={() => submitStep(option.value)}
                 className={cn(
-                  "w-full p-4 sm:p-4 min-h-[56px] sm:min-h-[52px] rounded-xl border-2 transition-all duration-200",
+                  "w-full rounded-xl border-2 transition-all duration-200",
                   "hover:border-primary hover:bg-primary/5 active:scale-[0.98] sm:hover:scale-[1.02]",
                   "border-border/50 bg-card",
-                  "flex items-center gap-3 text-left",
-                  "animate-fade-in touch-manipulation"
+                  "flex items-center text-left",
+                  "animate-fade-in touch-manipulation",
+                  hasMoreThanFourOptions 
+                    ? "p-3 gap-2 min-h-[48px] flex-col sm:flex-row justify-center sm:justify-start" 
+                    : "p-4 gap-3 min-h-[56px]"
                 )}
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div className="w-11 h-11 sm:w-10 sm:h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-5 h-5 sm:w-5 sm:h-5 text-primary" />
+                <div className={cn(
+                  "rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0",
+                  hasMoreThanFourOptions ? "w-8 h-8" : "w-11 h-11 sm:w-10 sm:h-10"
+                )}>
+                  <Icon className={cn(
+                    "text-primary",
+                    hasMoreThanFourOptions ? "w-4 h-4" : "w-5 h-5"
+                  )} />
                 </div>
-                <span className="font-medium text-sm sm:text-base">{option.label}</span>
+                <span className={cn(
+                  "font-medium",
+                  hasMoreThanFourOptions 
+                    ? "text-xs sm:text-sm text-center sm:text-left leading-tight" 
+                    : "text-sm sm:text-base"
+                )}>
+                  {option.label}
+                </span>
               </button>
             );
           })}
         </div>
 
         {/* Footer info */}
-        <p className="text-xs text-muted-foreground mt-6">
+        <p className="text-xs text-muted-foreground mt-5">
           Passo {currentStep + 1} de {totalSteps} • Suas respostas são sigilosas
         </p>
       </div>

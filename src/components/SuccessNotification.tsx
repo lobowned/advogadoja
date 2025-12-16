@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { m, AnimatePresence } from 'framer-motion';
-import { X, CheckCircle2, TrendingUp } from 'lucide-react';
-import { successCases, areaLabels, areaColors, type SuccessCase } from '@/data/success-cases';
+import { X, CheckCircle2, TrendingUp, Radio } from 'lucide-react';
+import { successCases, areaLabels, areaColors, avatarColors, type SuccessCase } from '@/data/success-cases';
 
 interface SuccessNotificationProps {
   disabled?: boolean;
@@ -11,6 +11,29 @@ const SuccessNotification = ({ disabled = false }: SuccessNotificationProps) => 
   const [currentCase, setCurrentCase] = useState<SuccessCase | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [usedIndices, setUsedIndices] = useState<Set<number>>(new Set());
+  const [displayTime, setDisplayTime] = useState<string>('');
+
+  // Atualizar tempo dinamicamente
+  useEffect(() => {
+    if (!currentCase) return;
+    
+    const updateTime = () => {
+      const baseMinutes = currentCase.minutesAgo;
+      const elapsed = Math.floor((Date.now() - (window as any).__notificationStartTime) / 60000);
+      const totalMinutes = baseMinutes + elapsed;
+      
+      if (totalMinutes < 60) {
+        setDisplayTime(`há ${totalMinutes} ${totalMinutes === 1 ? 'minuto' : 'minutos'}`);
+      } else {
+        const hours = Math.floor(totalMinutes / 60);
+        setDisplayTime(`há ${hours} ${hours === 1 ? 'hora' : 'horas'}`);
+      }
+    };
+    
+    updateTime();
+    const interval = setInterval(updateTime, 60000);
+    return () => clearInterval(interval);
+  }, [currentCase]);
 
   const showRandomCase = useCallback(() => {
     if (disabled) return;
@@ -28,28 +51,33 @@ const SuccessNotification = ({ disabled = false }: SuccessNotificationProps) => 
     
     const randomIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
     setUsedIndices(prev => new Set([...prev, randomIndex]));
-    setCurrentCase(successCases[randomIndex]);
+    
+    const selectedCase = successCases[randomIndex];
+    setCurrentCase(selectedCase);
+    setDisplayTime(`há ${selectedCase.minutesAgo} minutos`);
+    (window as any).__notificationStartTime = Date.now();
+    
     setIsVisible(true);
     
-    // Auto-hide after 6 seconds
+    // Auto-hide after 7 seconds
     setTimeout(() => {
       setIsVisible(false);
-    }, 6000);
+    }, 7000);
   }, [disabled, usedIndices]);
 
   useEffect(() => {
     if (disabled) return;
     
-    // Show first notification after 15 seconds
+    // Show first notification after 12 seconds
     const initialTimeout = setTimeout(() => {
       showRandomCase();
-    }, 15000);
+    }, 12000);
     
-    // Show subsequent notifications every 35-55 seconds
+    // Show subsequent notifications every 40-60 seconds
     const interval = setInterval(() => {
-      const randomDelay = 35000 + Math.random() * 20000;
-      setTimeout(showRandomCase, randomDelay - 35000);
-    }, 45000);
+      const randomDelay = Math.random() * 20000;
+      setTimeout(showRandomCase, randomDelay);
+    }, 50000);
     
     return () => {
       clearTimeout(initialTimeout);
@@ -75,14 +103,21 @@ const SuccessNotification = ({ disabled = false }: SuccessNotificationProps) => 
           animate={{ opacity: 1, x: 0, y: 0 }}
           exit={{ opacity: 0, x: -100, y: 20 }}
           transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-          className="fixed bottom-20 left-4 z-50 max-w-sm"
+          className="fixed bottom-24 sm:bottom-20 left-4 z-50 max-w-[calc(100vw-2rem)] sm:max-w-sm"
         >
           <div className="bg-card border border-border rounded-xl shadow-elegant overflow-hidden">
-            {/* Header */}
-            <div className="bg-gradient-to-r from-primary/10 to-primary/5 px-4 py-2 flex items-center justify-between">
+            {/* Header com badge AO VIVO */}
+            <div className="bg-gradient-to-r from-primary/10 to-emerald-500/10 px-4 py-2 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-primary" />
+                <div className="relative">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                </div>
                 <span className="text-xs font-medium text-primary">Caso Resolvido</span>
+                {/* Badge AO VIVO pulsante */}
+                <div className="flex items-center gap-1 bg-red-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full animate-pulse">
+                  <Radio className="w-2.5 h-2.5" />
+                  AO VIVO
+                </div>
               </div>
               <button
                 onClick={() => setIsVisible(false)}
@@ -95,9 +130,9 @@ const SuccessNotification = ({ disabled = false }: SuccessNotificationProps) => 
             {/* Content */}
             <div className="px-4 py-3">
               <div className="flex items-start gap-3">
-                {/* Avatar placeholder */}
-                <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
-                  <span className="text-lg">👤</span>
+                {/* Avatar com iniciais coloridas */}
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 font-semibold text-sm ${avatarColors[currentCase.area]}`}>
+                  {currentCase.initials}
                 </div>
                 
                 <div className="flex-1 min-w-0">
@@ -113,12 +148,19 @@ const SuccessNotification = ({ disabled = false }: SuccessNotificationProps) => 
                     )}
                   </p>
                   
+                  {/* Citação opcional */}
+                  {currentCase.quote && (
+                    <p className="text-[11px] text-muted-foreground/80 italic mt-1.5 border-l-2 border-primary/30 pl-2">
+                      "{currentCase.quote}"
+                    </p>
+                  )}
+                  
                   <div className="flex items-center gap-2 mt-2">
                     <span className={`text-[10px] px-2 py-0.5 rounded-full text-white ${areaColors[currentCase.area]}`}>
                       {areaLabels[currentCase.area]}
                     </span>
                     <span className="text-[10px] text-muted-foreground">
-                      há {currentCase.timeAgo}
+                      {displayTime}
                     </span>
                   </div>
                 </div>
@@ -129,7 +171,7 @@ const SuccessNotification = ({ disabled = false }: SuccessNotificationProps) => 
             <div className="px-4 py-2 bg-muted/30 border-t border-border">
               <a 
                 href="#lawyer-chat"
-                className="text-xs text-primary hover:underline flex items-center gap-1"
+                className="text-xs text-primary hover:underline flex items-center gap-1 font-medium"
                 onClick={() => setIsVisible(false)}
               >
                 <TrendingUp className="w-3 h-3" />

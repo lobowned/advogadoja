@@ -13,10 +13,12 @@ import NewsSection from "@/components/NewsSection";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import MobileBottomCTA from "@/components/MobileBottomCTA";
 import SuccessNotification from "@/components/SuccessNotification";
+import { DetectedProblemProvider, useDetectedProblem } from "@/contexts/DetectedProblemContext";
 
-const Index = () => {
+const IndexContent = () => {
   const [chatVisible, setChatVisible] = useState(false);
   const chatRef = useRef<HTMLDivElement>(null);
+  const { detectedArea } = useDetectedProblem();
 
   const handleCTA = () => {
     const chatSection = document.getElementById("lawyer-chat");
@@ -179,8 +181,8 @@ const Index = () => {
       {/* Credibility Section */}
       <CredibilitySection />
 
-      {/* FAQ Section */}
-      <ObjecionsFAQ />
+      {/* FAQ Section - Recebe área detectada do chat */}
+      <ObjecionsFAQ detectedArea={detectedArea} />
 
       {/* Articles Section */}
       <ArticlesSection />
@@ -238,6 +240,14 @@ const Index = () => {
       <SuccessNotification disabled={chatVisible} />
       </div>
     </>
+  );
+};
+
+const Index = () => {
+  return (
+    <DetectedProblemProvider>
+      <IndexContent />
+    </DetectedProblemProvider>
   );
 };
 

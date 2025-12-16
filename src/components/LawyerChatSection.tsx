@@ -5,12 +5,10 @@ import { Send, Phone, Video, MoreVertical, Smile, Mic, Check, Shield, RefreshCw,
 import { useLawyerChat } from "@/hooks/useLawyerChat";
 import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useRef, useState } from "react";
 import TypingIndicator from "@/components/TypingIndicator";
 import { QuickRepliesInline } from "@/components/QuickReplies";
 import UrgencyBadge, { UrgencyAlert } from "@/components/UrgencyBadge";
-import PreChatTriage from "@/components/PreChatTriage";
-import { TriageData } from "@/hooks/useTriageFlow";
 import { getLawyerAvailabilityStatus } from "@/data/lawyer-personalities";
 
 // Tipo para rastrear status do "visto" com delay
@@ -34,8 +32,6 @@ const LawyerChatSection = () => {
   const [newMessageIds, setNewMessageIds] = useState<Set<number>>(new Set());
   const previousMessagesLength = useRef(0);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const [showTriage, setShowTriage] = useState(true);
-  const [triageCompleted, setTriageCompleted] = useState(false);
   const [messageSeenStatus, setMessageSeenStatus] = useState<MessageSeenStatus>({});
 
   // Marcar que animação inicial completou
@@ -113,12 +109,6 @@ const LawyerChatSection = () => {
     return date.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
   };
 
-  const handleTriageComplete = (triageData: TriageData) => {
-    setTriageCompleted(true);
-    setShowTriage(false);
-    // Passar dados da triagem para o joinQueue
-    joinQueue(triageData);
-  };
 
   return (
     <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-background via-primary/5 to-background">
@@ -204,69 +194,62 @@ const LawyerChatSection = () => {
               }`}
             >
               {!hasJoinedQueue ? (
-                showTriage ? (
-                  <PreChatTriage 
-                    onComplete={handleTriageComplete} 
-                    onlineCount={onlineCount}
-                  />
-                ) : (
-                  <div className="flex items-center justify-center h-full">
-                    <div className="text-center max-w-md px-3">
-                      {/* Emoji e título com stagger */}
-                      <div 
-                        className="mb-3"
-                        style={{ 
-                          animation: !hasAnimated ? 'content-reveal 0.5s ease-out 0.3s forwards' : 'none',
-                          opacity: !hasAnimated ? 0 : 1 
-                        }}
-                      >
-                        <div className="text-3xl sm:text-4xl mb-2 animate-bounce">🏛️</div>
-                        <h3 className="text-xl font-bold mb-2">Assistência Jurídica Online</h3>
-                        <p className="text-sm text-muted-foreground mb-3">
-                          {onlineCount} advogados disponíveis para atender você agora mesmo
-                        </p>
+                <div className="flex items-center justify-center h-full">
+                  <div className="text-center max-w-md px-3">
+                    {/* Emoji e título com stagger */}
+                    <div 
+                      className="mb-3"
+                      style={{ 
+                        animation: !hasAnimated ? 'content-reveal 0.5s ease-out 0.3s forwards' : 'none',
+                        opacity: !hasAnimated ? 0 : 1 
+                      }}
+                    >
+                      <div className="text-3xl sm:text-4xl mb-2 animate-bounce">🏛️</div>
+                      <h3 className="text-xl font-bold mb-2">Assistência Jurídica Online</h3>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        {onlineCount} advogados disponíveis para atender você agora mesmo
+                      </p>
+                    </div>
+                    
+                    {/* Lista de benefícios com delay */}
+                    <div 
+                      className="space-y-1.5 mb-4 text-left"
+                      style={{ 
+                        animation: !hasAnimated ? 'content-reveal 0.5s ease-out 0.45s forwards' : 'none',
+                        opacity: !hasAnimated ? 0 : 1 
+                      }}
+                    >
+                      <div className="flex items-start gap-2.5">
+                        <Check className="w-4 h-4 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
+                        <p className="text-sm">Atendimento gratuito inicial</p>
                       </div>
-                      
-                      {/* Lista de benefícios com delay */}
-                      <div 
-                        className="space-y-1.5 mb-4 text-left"
-                        style={{ 
-                          animation: !hasAnimated ? 'content-reveal 0.5s ease-out 0.45s forwards' : 'none',
-                          opacity: !hasAnimated ? 0 : 1 
-                        }}
-                      >
-                        <div className="flex items-start gap-2.5">
-                          <Check className="w-4 h-4 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
-                          <p className="text-sm">Atendimento gratuito inicial</p>
-                        </div>
-                        <div className="flex items-start gap-2.5">
-                          <Shield className="w-4 h-4 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
-                          <p className="text-sm">Sigilo profissional garantido</p>
-                        </div>
-                        <div className="flex items-start gap-2.5">
-                          <Check className="w-4 h-4 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
-                          <p className="text-sm">Especialistas em diversas áreas</p>
-                        </div>
+                      <div className="flex items-start gap-2.5">
+                        <Shield className="w-4 h-4 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
+                        <p className="text-sm">Sigilo profissional garantido</p>
                       </div>
-                      
-                      {/* Botão com animação e pulse após entrada */}
-                      <div
-                        style={{ 
-                          animation: !hasAnimated ? 'content-reveal 0.5s ease-out 0.6s forwards' : 'none',
-                          opacity: !hasAnimated ? 0 : 1 
-                        }}
-                      >
-                        <Button
-                          onClick={() => joinQueue()}
-                          className={`w-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white font-medium py-4 sm:py-5 text-sm sm:text-base rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 min-h-[48px] ${hasAnimated ? 'animate-button-pulse' : ''}`}
-                        >
-                          <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
-                          Iniciar Atendimento
-                        </Button>
+                      <div className="flex items-start gap-2.5">
+                        <Check className="w-4 h-4 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
+                        <p className="text-sm">Especialistas em diversas áreas</p>
                       </div>
                     </div>
+                    
+                    {/* Botão com animação e pulse após entrada */}
+                    <div
+                      style={{ 
+                        animation: !hasAnimated ? 'content-reveal 0.5s ease-out 0.6s forwards' : 'none',
+                        opacity: !hasAnimated ? 0 : 1 
+                      }}
+                    >
+                      <Button
+                        onClick={() => joinQueue()}
+                        className={`w-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white font-medium py-4 sm:py-5 text-sm sm:text-base rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 min-h-[48px] ${hasAnimated ? 'animate-button-pulse' : ''}`}
+                      >
+                        <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
+                        Iniciar Atendimento
+                      </Button>
+                    </div>
                   </div>
-                )
+                </div>
               ) : (
                 <>
                 {messages.map((message, index) => {

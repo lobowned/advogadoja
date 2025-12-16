@@ -12,7 +12,7 @@ const CredibilitySection = () => {
   const { ref: securityRef, inView: securityInView } = useInView({ threshold: 0.2, triggerOnce: true });
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-background via-muted/30 to-background">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-background via-primary/5 to-background">
       <div className="container mx-auto px-4">
         {/* Header with fade up animation */}
         <m.div 
@@ -23,7 +23,7 @@ const CredibilitySection = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <m.div 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-primary/20 text-primary text-sm font-medium mb-4"
             initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.8 }}
             animate={headerInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.2, duration: 0.5, type: "spring" }}
@@ -82,10 +82,11 @@ const CredibilitySection = () => {
           <div className="max-w-4xl mx-auto">
             <div className="
               p-6 md:p-8 rounded-2xl
-              bg-gradient-to-br from-green-500/10 to-emerald-500/5
-              border border-green-500/20
+              glass-card
+              border border-primary/20
+              shadow-elegant
             ">
-              <h3 className="text-center text-xl md:text-2xl font-semibold text-foreground mb-6">
+              <h3 className="text-center text-xl md:text-2xl font-semibold text-foreground mb-6 font-serif">
                 🔐 Sua Segurança é Nossa Prioridade
               </h3>
               
@@ -103,7 +104,7 @@ const CredibilitySection = () => {
                 {securityFeatures.map((feature, index) => (
                   <m.div
                     key={index}
-                    className="flex items-center gap-3 p-3 rounded-lg bg-background/50"
+                    className="flex items-center gap-3 p-3 rounded-lg bg-background/80 border border-border/50 premium-card-hover"
                     variants={shouldReduceMotion ? {} : {
                       hidden: { opacity: 0, x: -20 },
                       visible: { 
@@ -115,7 +116,7 @@ const CredibilitySection = () => {
                     whileHover={shouldReduceMotion ? undefined : { scale: 1.02, x: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
                     <span className="text-foreground font-medium">{feature}</span>
                   </m.div>
                 ))}

@@ -57,8 +57,9 @@ const HeroSection = () => {
         }}
       />
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
+      {/* Premium Gold/Bronze Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(25_25%_8%/0.75)] via-[hsl(30_30%_12%/0.65)] to-[hsl(25_25%_8%/0.85)]" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-[hsl(42_65%_48%/0.08)] via-transparent to-[hsl(30_55%_42%/0.1)]" />
 
       {/* Hero Content */}
       <div className="relative z-10 container mx-auto px-4 py-6 sm:py-16 md:py-20">
@@ -70,13 +71,17 @@ const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: [0.175, 0.885, 0.32, 1.275] }}
           >
-            <m.img 
-              src={logoAdvogadoOnline} 
-              alt="Advogado Online" 
-              className="h-56 xs:h-60 sm:h-64 md:h-72 lg:h-96 mx-auto"
-              whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            />
+            <div className="relative">
+              <m.img 
+                src={logoAdvogadoOnline} 
+                alt="Advogado Online" 
+                className="h-56 xs:h-60 sm:h-64 md:h-72 lg:h-96 mx-auto drop-shadow-2xl"
+                whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              />
+              {/* Premium shine effect */}
+              <div className="absolute inset-0 gold-shine pointer-events-none rounded-full" />
+            </div>
           </m.div>
 
           {/* Badges - Simplified on mobile */}
@@ -93,11 +98,11 @@ const HeroSection = () => {
             >
               <Badge 
                 variant="secondary" 
-                className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-2.5 sm:px-4 py-1 sm:py-2 text-[11px] sm:text-sm font-medium shadow-lg"
+                className="glass-dark border-primary/30 text-white px-2.5 sm:px-4 py-1 sm:py-2 text-[11px] sm:text-sm font-medium shadow-lg"
               >
                 <div className="flex items-center gap-1.5 sm:gap-2">
-                  <div className="w-2 h-2 bg-whatsapp-send-btn rounded-full animate-pulse-dot" />
-                  <Users className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse-dot" />
+                  <Users className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
                   <span>{onlineCount} online</span>
                 </div>
               </Badge>
@@ -109,12 +114,12 @@ const HeroSection = () => {
               transition={{ delay: 0.5, duration: 0.5 }}
             >
               <Badge 
-                className="bg-amber-500/20 backdrop-blur-md border border-amber-500/30 text-amber-100 px-2.5 sm:px-4 py-1 sm:py-2 text-[11px] sm:text-sm font-medium shadow-lg"
+                className="glass-dark border-primary/40 text-primary-foreground px-2.5 sm:px-4 py-1 sm:py-2 text-[11px] sm:text-sm font-medium shadow-lg"
               >
                 <div className="flex items-center gap-1.5 sm:gap-2">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-2.5 h-2.5 sm:w-4 sm:h-4 fill-amber-400 text-amber-400" />
+                      <Star key={i} className="w-2.5 h-2.5 sm:w-4 sm:h-4 fill-primary text-primary" />
                     ))}
                   </div>
                   <span>4.9 • 2.500+</span>
@@ -136,10 +141,10 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 inline-flex items-center gap-1.5 sm:gap-2"
+              className="glass-dark border-primary/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 inline-flex items-center gap-1.5 sm:gap-2"
             >
-              <span className="text-amber-400 text-base sm:text-lg">"</span>
-              <p className="text-white/90 text-xs sm:text-base italic">
+              <span className="text-primary text-base sm:text-lg font-serif">"</span>
+              <p className="text-white/90 text-xs sm:text-base italic font-serif">
                 {testimonials[currentTestimonial].text}
               </p>
               <span className="text-white/60 text-[10px] sm:text-xs">
@@ -193,16 +198,16 @@ const HeroSection = () => {
             </p>
           </m.div>
 
-          {/* Main Title - Adjusted sizes for mobile */}
+          {/* Main Title - Premium serif typography */}
           <m.h1 
-            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-6 leading-tight"
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-6 leading-tight font-serif text-shadow-hero"
             initial={shouldReduceMotion ? false : { opacity: 0, filter: "blur(10px)", y: 30 }}
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{ delay: 0.9, duration: 0.7, ease: "easeOut" }}
           >
             Atendimento Jurídico
             <br />
-            <span className="bg-gradient-to-r from-[hsl(200,90%,55%)] to-[hsl(75,70%,55%)] bg-clip-text text-transparent">
+            <span className="text-gradient-gold">
               Gratuito e Imediato
             </span>
           </m.h1>

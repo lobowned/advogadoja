@@ -573,3 +573,45 @@
   box-shadow: 0 6px 30px -4px hsl(220 90% 56% / 0.7);
   transform: translateY(-2px);
 }
+
+/* WhatsApp Testimonials Styles */
+.whatsapp-bubble-sent {
+  background: hsl(134 61% 89%);
+  border-radius: 8px 0 8px 8px;
+  margin-left: auto;
+  max-width: 85%;
+  padding: 8px 12px;
+  position: relative;
+  box-shadow: 0 1px 2px hsl(0 0% 0% / 0.1);
+}
+
+.whatsapp-bubble-sent::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid hsl(134 61% 89%);
+  border-top: 8px solid transparent;
+}
+
+.whatsapp-bubble-received {
+  background: hsl(0 0% 100%);
+  border-radius: 0 8px 8px 8px;
+  max-width: 85%;
+  padding: 8px 12px;
+  position: relative;
+  box-shadow: 0 1px 2px hsl(0 0% 0% / 0.1);
+}
+
+.whatsapp-bubble-received::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -8px;
+  width: 0;
+  height: 0;
+  border-right: 8px solid hsl(0 0% 100%);
+  border-top: 8px solid transparent;
+}

@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import HeroSection from "@/components/HeroSection";
 import LawyerChatSection from "@/components/LawyerChatSection";
@@ -7,14 +8,34 @@ import Navbar from "@/components/Navbar";
 import ArticlesSection from "@/components/ArticlesSection";
 import NewsSection from "@/components/NewsSection";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
+import MobileBottomCTA from "@/components/MobileBottomCTA";
 
 const Index = () => {
+  const [chatVisible, setChatVisible] = useState(false);
+  const chatRef = useRef<HTMLDivElement>(null);
+
   const handleCTA = () => {
     const chatSection = document.getElementById("lawyer-chat");
     if (chatSection) {
       chatSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+
+  // Track chat section visibility for mobile CTA
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setChatVisible(entry.isIntersecting);
+      },
+      { threshold: 0.3 }
+    );
+
+    if (chatRef.current) {
+      observer.observe(chatRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   // Schema.org LegalService - Specific for legal services
   const legalServiceSchema = {
@@ -139,7 +160,7 @@ const Index = () => {
       <HeroSection onCtaClick={handleCTA} />
 
       {/* Lawyer Chat */}
-      <div id="lawyer-chat">
+      <div id="lawyer-chat" ref={chatRef}>
         <LawyerChatSection />
       </div>
 
@@ -199,6 +220,9 @@ const Index = () => {
       
       {/* Exit Intent Popup */}
       <ExitIntentPopup />
+      
+      {/* Mobile Bottom CTA */}
+      <MobileBottomCTA onCtaClick={handleCTA} chatVisible={chatVisible} />
       </div>
     </>
   );

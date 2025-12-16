@@ -144,6 +144,7 @@ All colors MUST be HSL.
   /* Mobile optimization */
   html {
     @apply scroll-smooth;
+    -webkit-tap-highlight-color: transparent;
   }
   
   /* Prevent horizontal scroll */
@@ -164,6 +165,56 @@ All colors MUST be HSL.
   .safe-bottom {
     padding-bottom: env(safe-area-inset-bottom);
   }
+  
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+  
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Disable hover effects on touch devices */
+  .hover-scale:hover {
+    transform: none;
+  }
+  
+  /* Increase touch targets */
+  button, a, [role="button"] {
+    min-height: 48px;
+  }
+  
+  /* Better active states */
+  button:active, a:active, [role="button"]:active {
+    opacity: 0.8;
+  }
+}
+
+/* Touch manipulation for smoother scrolling */
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
+/* Hide scrollbar but allow scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
 /* Animated gradient text */

@@ -17,7 +17,7 @@ const colorMap = {
 
 const TrustBadges = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+    <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 md:gap-6">
       {trustBadges.map((badge) => {
         const Icon = iconMap[badge.icon as keyof typeof iconMap];
         const colors = colorMap[badge.color as keyof typeof colorMap];
@@ -26,31 +26,31 @@ const TrustBadges = () => {
           <div
             key={badge.id}
             className={`
-              group relative p-4 md:p-6 rounded-2xl border
+              group relative p-3 sm:p-4 md:p-6 rounded-2xl border
               bg-gradient-to-br ${colors}
-              hover:scale-105 transition-all duration-300
-              hover:shadow-lg cursor-default
+              active:scale-[0.98] sm:hover:scale-105 transition-all duration-300
+              hover:shadow-lg cursor-default touch-manipulation
             `}
           >
-            <div className="flex flex-col items-center text-center space-y-2 md:space-y-3">
+            <div className="flex flex-col items-center text-center space-y-1.5 sm:space-y-2 md:space-y-3">
               <div className={`
-                p-3 rounded-xl bg-background/50 backdrop-blur-sm
+                p-2.5 sm:p-3 rounded-xl bg-background/50 backdrop-blur-sm
                 group-hover:scale-110 transition-transform duration-300
               `}>
-                <Icon className="w-6 h-6 md:w-8 md:h-8" />
+                <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" />
               </div>
               
               <div>
-                <h3 className="font-semibold text-foreground text-sm md:text-base">
+                <h3 className="font-semibold text-foreground text-xs sm:text-sm md:text-base leading-tight">
                   {badge.title}
                 </h3>
-                <p className="text-xs md:text-sm text-muted-foreground mt-1">
+                <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-0.5 sm:mt-1 leading-tight">
                   {badge.subtitle}
                 </p>
               </div>
             </div>
             
-            {/* Tooltip on hover */}
+            {/* Tooltip on hover - Desktop only */}
             <div className="
               absolute bottom-full left-1/2 -translate-x-1/2 mb-2
               px-3 py-2 rounded-lg bg-foreground text-background text-xs

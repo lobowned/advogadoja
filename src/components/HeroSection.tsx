@@ -113,7 +113,7 @@ const HeroSection = () => {
             <m.img 
               src={logoAdvogadoOnline} 
               alt="Advogado Online" 
-              className="h-56 xs:h-60 sm:h-64 md:h-72 lg:h-96 mx-auto drop-shadow-2xl logo-glow-breathe"
+              className="h-56 xs:h-60 sm:h-64 md:h-72 lg:h-96 mx-auto drop-shadow-2xl logo-glow-breathe max-w-full object-contain"
               animate={shouldReduceMotion ? undefined : { 
                 y: [0, -10, 0],
               }}
@@ -208,9 +208,9 @@ const HeroSection = () => {
                     stopOnInteraction: false,
                   }),
                 ]}
-                className="w-full max-w-[280px] sm:max-w-xl lg:max-w-2xl mx-auto overflow-visible px-2"
+                className="w-full max-w-[260px] sm:max-w-md lg:max-w-xl mx-auto px-2"
               >
-                <CarouselContent className="-ml-1 sm:-ml-2 py-1" overflowVisible>
+                <CarouselContent className="-ml-1 sm:-ml-2 py-1">
                   {[...displayLawyers, ...displayLawyers.slice(0, 12)].map((lawyer, index) => (
                     <CarouselItem 
                       key={`${lawyer.id}-${index}`} 

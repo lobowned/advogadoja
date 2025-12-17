@@ -283,7 +283,7 @@ const StaticAudioWaveform = () => {
 // Static Audio Message
 const StaticAudioMessage = ({ message }: { message: Message }) => (
   <div className="flex justify-start">
-    <div className="wa-bubble-received flex items-center gap-2 pl-2 pr-3 py-2 min-w-[240px] max-w-[85%]">
+    <div className="wa-bubble-received flex items-center gap-2 pl-2 pr-3 py-2 min-w-0 w-full max-w-[280px] sm:max-w-[320px]">
       {/* Play Button - Static */}
       <div className="w-9 h-9 rounded-full bg-[#00A884] flex items-center justify-center flex-shrink-0">
         <Play className="w-4 h-4 text-white fill-white ml-0.5" />
@@ -516,7 +516,7 @@ const WhatsAppTestimonials = () => {
         </div>
 
         {/* Testimonials Grid - Static screenshots */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-2 sm:px-0">
           {whatsappTestimonials.map((testimonial) => (
             <StaticWhatsAppConversation key={testimonial.id} testimonial={testimonial} />
           ))}

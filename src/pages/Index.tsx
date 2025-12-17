@@ -161,7 +161,7 @@ const IndexContent = () => {
         </script>
       </Helmet>
       
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background overflow-x-hidden">
         <Navbar onCtaClick={handleCTA} />
         {/* Hero Section */}
       <HeroSection />

@@ -120,7 +120,7 @@ const LawyersShowcase = () => {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section className="py-10 sm:py-16 px-2 sm:px-4 bg-gradient-to-b from-background via-muted/30 to-background">
+    <section className="py-10 sm:py-16 px-2 sm:px-4 bg-gradient-to-b from-background via-muted/30 to-background overflow-hidden">
       <div className="container mx-auto max-w-7xl">
         <m.div 
           className="text-center mb-8 sm:mb-12"
@@ -195,12 +195,12 @@ const LawyersShowcase = () => {
           /* Desktop: Marquee Infinito with cascade animation */
           <m.div 
             ref={ref}
-            className="relative overflow-hidden py-4"
+            className="relative overflow-hidden py-4 max-w-full"
             initial={shouldReduceMotion ? false : { opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex gap-6 animate-marquee hover:pause-marquee">
+            <div className="flex gap-6 animate-marquee hover:pause-marquee will-change-transform">
               {/* Cards originais */}
               {displayLawyers.map((lawyer, index) => (
                 <LawyerCard key={lawyer.id} lawyer={lawyer} index={index} />

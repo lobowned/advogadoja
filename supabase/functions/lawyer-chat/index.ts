@@ -1212,6 +1212,32 @@ serve(async (req) => {
             }
           }
           
+          // 🛡️ VALIDAÇÃO: Se ACABOU de salvar telefone (tinha nome mas não tinha telefone antes), forçar pergunta sobre o caso
+          const justSavedPhone = decision.extractedPhone && leadData?.name && !leadData?.phone;
+          
+          if (justSavedPhone) {
+            console.log("🔄 [OVERRIDE] WhatsApp acabou de ser salvo - forçando pergunta sobre o caso");
+            
+            const nameToUse = leadData?.name || decision.extractedName;
+            const askAboutCaseResponses = [
+              `Anotei, ${nameToUse}! Agora me conta: o que tá acontecendo?`,
+              `Beleza, salvei aqui! Me conta o que tá rolando, ${nameToUse}?`,
+              `Perfeito! E aí, ${nameToUse}, me conta o seu caso?`,
+              `Salvei seu contato! Agora me explica: qual é a situação?`
+            ];
+            
+            // Se a resposta original não pergunta sobre o caso, substituir
+            const asksAboutCase = decision.response?.toLowerCase().includes('conta') || 
+                                  decision.response?.toLowerCase().includes('acontec') ||
+                                  decision.response?.toLowerCase().includes('caso') ||
+                                  decision.response?.toLowerCase().includes('situa');
+            
+            if (!asksAboutCase) {
+              decision.response = askAboutCaseResponses[Math.floor(Math.random() * askAboutCaseResponses.length)];
+              console.log("✅ [OVERRIDE] Resposta alterada para perguntar sobre o caso");
+            }
+          }
+          
           // Buscar lead atualizado para disparar notificação (só se tiver telefone)
           if (decision.extractedPhone || leadData?.phone) {
             const { data: updatedLead, error: fetchError } = await supabase

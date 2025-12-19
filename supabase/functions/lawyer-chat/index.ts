@@ -1040,6 +1040,7 @@ serve(async (req) => {
     }
 
     // 🛡️ VALIDAÇÃO: Se tem nome mas não tem telefone, forçar pedido de WhatsApp
+    // AGORA: verifica se a última mensagem do usuário pode ser um nome
     if (leadData?.name && !leadData?.phone && !isTransfer) {
       // Verificar se a IA está tentando avançar sem ter coletado o telefone
       const actionsRequiringPhone = ['check_more_questions', 'request_rating', 'offer_whatsapp_call', 'redirect_to_whatsapp'];
@@ -1058,6 +1059,48 @@ serve(async (req) => {
         decision.response = phoneResponses[Math.floor(Math.random() * phoneResponses.length)];
         decision.confidence = 1.0;
         decision.reasoning = 'Forcing phone request before advancing';
+      }
+      
+      // TAMBÉM: Se a ação é normal_response e não pede WhatsApp, forçar pedido
+      if (decision.action === 'normal_response') {
+        const asksForPhone = decision.response?.toLowerCase().includes('whatsapp') || 
+                             decision.response?.toLowerCase().includes('telefone') ||
+                             decision.response?.toLowerCase().includes('número');
+        
+        if (!asksForPhone) {
+          console.warn('⚠️ [OVERRIDE] normal_response sem pedir WhatsApp - adicionando pedido');
+          
+          // Adicionar pedido de WhatsApp ao final da resposta
+          const phoneAddons = [
+            `\n\nAh, e me passa seu WhatsApp, ${leadData.name}? 📱`,
+            `\n\nE qual seu WhatsApp pra eu te enviar as orientações, ${leadData.name}? 📱`,
+            `\n\nMe passa seu WhatsApp também, ${leadData.name}? 📱`
+          ];
+          
+          decision.response += phoneAddons[Math.floor(Math.random() * phoneAddons.length)];
+          console.log("✅ [OVERRIDE] Adicionado pedido de WhatsApp à resposta");
+        }
+      }
+    }
+    
+    // 🛡️ VALIDAÇÃO: Se a IA salvou nome mas não pediu WhatsApp, forçar na resposta
+    if (decision.action === 'save_contact_data' && decision.extractedName && !decision.extractedPhone) {
+      const asksForPhone = decision.response?.toLowerCase().includes('whatsapp') || 
+                           decision.response?.toLowerCase().includes('telefone') ||
+                           decision.response?.toLowerCase().includes('contato');
+      
+      if (!asksForPhone) {
+        console.warn('⚠️ [OVERRIDE] save_contact_data sem pedir WhatsApp - substituindo resposta');
+        
+        const phoneResponses = [
+          `Beleza, ${decision.extractedName}! Me passa seu WhatsApp pra eu te mandar o resumo depois? 📱`,
+          `Legal, ${decision.extractedName}! Qual seu WhatsApp? No final te envio tudo organizado 📱`,
+          `${decision.extractedName}, me passa seu WhatsApp que depois te mando um resumão? 📱`
+        ];
+        
+        decision.response = phoneResponses[Math.floor(Math.random() * phoneResponses.length)];
+        decision.action = 'request_phone';
+        console.log("✅ [OVERRIDE] Resposta alterada para pedir WhatsApp");
       }
     }
 

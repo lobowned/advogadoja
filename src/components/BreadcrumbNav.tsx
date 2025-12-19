@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ChevronRight, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 
 export interface BreadcrumbItem {
   label: string;
@@ -22,6 +22,8 @@ export const BreadcrumbNav = ({
   className,
   showHomeIcon = true 
 }: BreadcrumbNavProps) => {
+  const shouldReduceMotion = useReducedMotion();
+  
   const baseTextClass = variant === "light" 
     ? "text-primary-foreground/70 hover:text-primary-foreground" 
     : "text-muted-foreground hover:text-foreground";
@@ -63,9 +65,9 @@ export const BreadcrumbNav = ({
             const isFirst = index === 0;
 
             return (
-              <motion.li 
+              <m.li 
                 key={item.label}
-                initial={{ opacity: 0, x: -10 }}
+                initial={shouldReduceMotion ? false : { opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.05, duration: 0.2 }}
                 className="flex items-center gap-1.5 shrink-0"
@@ -106,7 +108,7 @@ export const BreadcrumbNav = ({
                     <span>{item.label}</span>
                   </Link>
                 )}
-              </motion.li>
+              </m.li>
             );
           })}
         </ol>

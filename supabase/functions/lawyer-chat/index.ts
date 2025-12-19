@@ -1380,6 +1380,23 @@ serve(async (req) => {
           console.log("🏁 Chat already ended - no action needed");
           break;
       }
+      
+      // 🛡️ SEMPRE salvar conversation_history após QUALQUER interação
+      // Isso garante que o histórico nunca fique vazio
+      const userMessageCount = messages.filter((m: any) => m.role === 'user').length;
+      console.log("💾 [ALWAYS SAVE] Saving conversation_history with", messages.length, "messages");
+      
+      await supabase
+        .from('leads')
+        .update({
+          conversation_history: messages,
+          message_count: userMessageCount,
+          last_activity_at: new Date().toISOString(),
+          updated_at: new Date().toISOString()
+        })
+        .eq('id', leadData.id);
+      
+      console.log("✅ [ALWAYS SAVE] Conversation history saved successfully");
     }
 
     // Retornar resposta em formato SSE

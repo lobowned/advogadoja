@@ -1,7 +1,7 @@
 import { ArrowLeft } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 
 interface BackButtonProps {
   to?: string;
@@ -17,6 +17,7 @@ export const BackButton = ({
   variant = "default" 
 }: BackButtonProps) => {
   const navigate = useNavigate();
+  const shouldReduceMotion = useReducedMotion();
   
   const baseClass = "inline-flex items-center gap-2 text-sm transition-all duration-200 min-h-[44px] font-medium group";
   const variantClass = variant === "light" 
@@ -36,56 +37,56 @@ export const BackButton = ({
   
   if (to) {
     return (
-      <motion.div
-        initial="initial"
+      <m.div
+        initial={shouldReduceMotion ? false : "initial"}
         animate="animate"
-        whileTap="tap"
+        whileTap={shouldReduceMotion ? undefined : "tap"}
         variants={containerVariants}
         transition={{ duration: 0.2 }}
       >
         <Link to={to} className={cn(baseClass, variantClass, className)}>
-          <motion.span
+          <m.span
             variants={iconVariants}
             initial="initial"
-            whileHover="hover"
+            whileHover={shouldReduceMotion ? undefined : "hover"}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
             className="inline-flex"
           >
             <ArrowLeft className="h-4 w-4" />
-          </motion.span>
+          </m.span>
           <span className="relative">
             {label}
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-current transition-all duration-200 group-hover:w-full" />
           </span>
         </Link>
-      </motion.div>
+      </m.div>
     );
   }
   
   return (
-    <motion.button 
+    <m.button 
       onClick={() => navigate(-1)} 
       className={cn(baseClass, variantClass, className)}
-      initial="initial"
+      initial={shouldReduceMotion ? false : "initial"}
       animate="animate"
-      whileTap="tap"
+      whileTap={shouldReduceMotion ? undefined : "tap"}
       variants={containerVariants}
       transition={{ duration: 0.2 }}
     >
-      <motion.span
+      <m.span
         variants={iconVariants}
         initial="initial"
-        whileHover="hover"
+        whileHover={shouldReduceMotion ? undefined : "hover"}
         transition={{ type: "spring", stiffness: 400, damping: 25 }}
         className="inline-flex"
       >
         <ArrowLeft className="h-4 w-4" />
-      </motion.span>
+      </m.span>
       <span className="relative">
         {label}
         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-current transition-all duration-200 group-hover:w-full" />
       </span>
-    </motion.button>
+    </m.button>
   );
 };
 

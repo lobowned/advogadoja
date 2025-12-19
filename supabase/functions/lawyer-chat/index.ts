@@ -65,7 +65,7 @@ const orchestrateResponseTool = {
       properties: {
         action: {
           type: "string",
-          enum: ["normal_response", "suggest_transfer", "confirm_transfer", "deny_transfer", "specialist_greeting", "save_contact_data", "request_name", "request_phone", "check_more_questions", "request_rating", "offer_whatsapp_call", "redirect_to_whatsapp"],
+          enum: ["normal_response", "suggest_transfer", "confirm_transfer", "deny_transfer", "specialist_greeting", "save_contact_data", "request_name", "request_phone", "check_more_questions", "request_rating", "offer_whatsapp_call", "redirect_to_whatsapp", "chat_ended"],
           description: "Tipo de ação a executar"
         },
         response: {
@@ -661,6 +661,18 @@ PREVIDENCIÁRIO:
    - "Perfeito! Te ligo em 10 minutos. Já vou te mandar um resumo do nosso papo por mensagem. Até já! 👍"
    - "Beleza! Te chamo no WhatsApp agora. Fica de olho lá! 📱"
 
+1️⃣3️⃣ **chat_ended**: Chat já foi encerrado (ANTI-LOOP!)
+   ✅ Quando usar:
+   - O atendimento JÁ FOI CONCLUÍDO anteriormente
+   - Já foi enviada mensagem "Te chamo no WhatsApp" ou similar
+   - Você já disse que vai ligar/chamar no WhatsApp
+   - Cliente envia mensagens DEPOIS do encerramento ("estou aguardando", "?", "ok", telefone repetido)
+   - O histórico mostra que redirect_to_whatsapp já foi usado
+   🚨 CRÍTICO: Se você já disse que vai ligar no WhatsApp, NÃO REPITA!
+   ✅ Respostas:
+   - "Já te mandei mensagem no WhatsApp! Confere lá 📱"
+   - "Tá tudo certo! Dá uma olhada no WhatsApp que já enviei as informações 👍"
+   - "Já enviei pelo WhatsApp! Se não chegou, me avisa que reenvio."
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 💬 ESTILO DAS RESPOSTAS (Brasileiro informal e natural):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -937,12 +949,59 @@ serve(async (req) => {
         .eq('id', leadData.id);
     }
 
+    // 🛡️ ANTI-LOOP: Detectar se o chat já foi encerrado
+    const isChatEnded = leadData?.status === 'qualified' && leadData?.notification_sent === true;
+    const lastAssistantMessages = messages
+      .filter((m: any) => m.role === 'assistant')
+      .slice(-3)
+      .map((m: any) => m.content?.toLowerCase() || '');
+    const hasRedirectMessage = lastAssistantMessages.some((msg: string) => 
+      msg.includes('te chamo no whatsapp') || 
+      msg.includes('te ligo') || 
+      msg.includes('fica de olho') ||
+      msg.includes('já enviei')
+    );
+    
     console.log("📋 Lead data:", {
       id: leadData?.id,
       pendingTransfer: leadData?.pending_transfer_lawyer,
       assignedLawyer: leadData?.assigned_lawyer,
-      detectedProblem: leadData?.detected_problem
+      detectedProblem: leadData?.detected_problem,
+      status: leadData?.status,
+      isChatEnded,
+      hasRedirectMessage
     });
+
+    // 🛡️ Se chat já foi encerrado, responder diretamente sem chamar a IA
+    if (isChatEnded || hasRedirectMessage) {
+      console.log("🛡️ [ANTI-LOOP] Chat already ended, returning short response");
+      
+      const endedResponses = [
+        "Já te mandei mensagem no WhatsApp! Confere lá 📱",
+        "Tá tudo certo! Dá uma olhada no WhatsApp que já enviei as informações 👍",
+        "Já enviei pelo WhatsApp! Se não chegou, me avisa que reenvio.",
+        "Fica de olho no WhatsApp! Acabei de enviar 📱"
+      ];
+      
+      const randomResponse = endedResponses[Math.floor(Math.random() * endedResponses.length)];
+      
+      const responseData = {
+        choices: [{ delta: { content: randomResponse } }],
+        metadata: { action: "chat_ended", confidence: 1.0 }
+      };
+      
+      if (isTestMode) {
+        return new Response(
+          JSON.stringify({ message: randomResponse, action: "chat_ended", confidence: 1.0 }),
+          { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      
+      return new Response(
+        `data: ${JSON.stringify(responseData)}\n\ndata: [DONE]\n\n`,
+        { headers: { ...corsHeaders, 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache', 'Connection': 'keep-alive' } }
+      );
+    }
 
     // Chamar orquestrador (UMA única chamada de IA)
     const decision = await orchestrateChat({
@@ -1238,6 +1297,11 @@ serve(async (req) => {
               console.error("❌ Error sending WhatsApp:", whatsAppError);
             }
           }
+          break;
+          
+        case "chat_ended":
+          // Chat já foi encerrado - apenas logging
+          console.log("🏁 Chat already ended - no action needed");
           break;
       }
     }

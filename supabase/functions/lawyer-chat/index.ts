@@ -1039,6 +1039,28 @@ serve(async (req) => {
       decision.reasoning = 'Specialist greeting with correct lawyer';
     }
 
+    // 🛡️ VALIDAÇÃO: Se tem nome mas não tem telefone, forçar pedido de WhatsApp
+    if (leadData?.name && !leadData?.phone && !isTransfer) {
+      // Verificar se a IA está tentando avançar sem ter coletado o telefone
+      const actionsRequiringPhone = ['check_more_questions', 'request_rating', 'offer_whatsapp_call', 'redirect_to_whatsapp'];
+      
+      if (actionsRequiringPhone.includes(decision.action)) {
+        console.warn('⚠️ [OVERRIDE] Tentando avançar sem WhatsApp - forçando request_phone');
+        console.warn('⚠️ [OVERRIDE] Original action was:', decision.action);
+        
+        const phoneResponses = [
+          `Antes de continuar: qual seu WhatsApp, ${leadData.name}? 📱`,
+          `${leadData.name}, me passa seu WhatsApp? 📱`,
+          `Me passa seu WhatsApp, ${leadData.name}? Preciso pra te enviar as orientações 📱`
+        ];
+        
+        decision.action = 'request_phone';
+        decision.response = phoneResponses[Math.floor(Math.random() * phoneResponses.length)];
+        decision.confidence = 1.0;
+        decision.reasoning = 'Forcing phone request before advancing';
+      }
+    }
+
     console.log("🎯 [DECISION]", decision.action);
     console.log("💬 [RESPONSE]", decision.response.substring(0, 100));
 
@@ -1164,31 +1186,59 @@ serve(async (req) => {
             .update(updateData)
             .eq('id', leadData.id);
           
-          // Buscar lead atualizado para disparar notificação
-          const { data: updatedLead, error: fetchError } = await supabase
-            .from('leads')
-            .select('*')
-            .eq('id', leadData.id)
-            .single();
+          // 🛡️ VALIDAÇÃO: Se salvou nome mas não tem telefone, forçar pedido de WhatsApp
+          const hasNameNow = decision.extractedName || leadData?.name;
+          const hasPhoneNow = decision.extractedPhone || leadData?.phone;
           
-          if (!fetchError && updatedLead) {
-            console.log("📨 Invoking WhatsApp notification...");
-            try {
-              await supabase.functions.invoke('send-whatsapp-notification', {
-                body: { leadData: updatedLead }
-              });
-              console.log("✅ WhatsApp notification sent successfully");
-              
-              // Marcar como notificado
-              await supabase
-                .from('leads')
-                .update({
-                  notification_sent: true,
-                  notification_sent_at: new Date().toISOString()
-                })
-                .eq('id', leadData.id);
-            } catch (notifError) {
-              console.error("❌ Error sending WhatsApp notification:", notifError);
+          if (hasNameNow && !hasPhoneNow) {
+            console.log("🔄 [OVERRIDE] Nome salvo mas sem WhatsApp - forçando pedido de telefone");
+            
+            const nameToUse = decision.extractedName || leadData?.name;
+            const phoneResponses = [
+              `Beleza, ${nameToUse}! Me passa seu WhatsApp pra eu te mandar o resumo depois? 📱`,
+              `Legal, ${nameToUse}! Qual seu WhatsApp? No final te envio tudo organizado 📱`,
+              `${nameToUse}, me passa seu WhatsApp que depois te mando um resumão? 📱`
+            ];
+            
+            // Se a resposta original não pede telefone, adicionar
+            const asksForPhone = decision.response?.toLowerCase().includes('whatsapp') || 
+                                 decision.response?.toLowerCase().includes('telefone') ||
+                                 decision.response?.toLowerCase().includes('contato');
+            
+            if (!asksForPhone) {
+              decision.response = phoneResponses[Math.floor(Math.random() * phoneResponses.length)];
+              decision.action = 'request_phone';
+              console.log("✅ [OVERRIDE] Resposta alterada para pedir WhatsApp");
+            }
+          }
+          
+          // Buscar lead atualizado para disparar notificação (só se tiver telefone)
+          if (decision.extractedPhone || leadData?.phone) {
+            const { data: updatedLead, error: fetchError } = await supabase
+              .from('leads')
+              .select('*')
+              .eq('id', leadData.id)
+              .single();
+            
+            if (!fetchError && updatedLead && updatedLead.phone) {
+              console.log("📨 Invoking WhatsApp notification...");
+              try {
+                await supabase.functions.invoke('send-whatsapp-notification', {
+                  body: { leadData: updatedLead }
+                });
+                console.log("✅ WhatsApp notification sent successfully");
+                
+                // Marcar como notificado
+                await supabase
+                  .from('leads')
+                  .update({
+                    notification_sent: true,
+                    notification_sent_at: new Date().toISOString()
+                  })
+                  .eq('id', leadData.id);
+              } catch (notifError) {
+                console.error("❌ Error sending WhatsApp notification:", notifError);
+              }
             }
           }
           break;

@@ -1,181 +1,324 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
+  <!-- ============================================ -->
+  <!-- HOMEPAGE - Highest Priority -->
+  <!-- ============================================ -->
   <url>
     <loc>https://advogadoonline.com.br/</loc>
     <lastmod>2025-01-01</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Blog/Artigos -->
+
+  <!-- ============================================ -->
+  <!-- MAIN NAVIGATION PAGES -->
+  <!-- ============================================ -->
+  <url>
+    <loc>https://advogadoonline.com.br/selecionar-nicho</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos</loc>
     <lastmod>2025-01-01</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- FAQ -->
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas-frequentes</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Notícias -->
   <url>
     <loc>https://advogadoonline.com.br/noticias</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
+  <url>
+    <loc>https://advogadoonline.com.br/perguntas-frequentes</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadoras</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/casos-de-sucesso</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ============================================ -->
+  <!-- LEGAL PAGES -->
+  <!-- ============================================ -->
+  <url>
+    <loc>https://advogadoonline.com.br/privacidade</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/termos-de-uso</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- ============================================ -->
+  <!-- NICHE LANDING PAGES - High SEO Priority -->
+  <!-- ============================================ -->
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-trabalhista</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-familia</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-civil</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-previdenciario</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-criminal</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-consumidor</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- ============================================ -->
+  <!-- CALCULADORAS JURÍDICAS -->
+  <!-- ============================================ -->
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-trabalhista</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-pensao</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-aposentadoria</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-danos-morais</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-atualizacao-divida</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-partilha-bens</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-aluguel-atrasado</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-horas-extras</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-seguro-desemprego</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-fgts</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-pensao-morte</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-auxilio-doenca</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-bpc-loas</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-inventario</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-insalubridade</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-dpvat</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- ============================================ -->
+  <!-- ARTIGOS POR NICHO - Category Pages -->
+  <!-- ============================================ -->
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/familia</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/civil</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/previdenciario</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/penal</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/consumidor</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ============================================ -->
+  <!-- NOTÍCIAS POR NICHO -->
+  <!-- ============================================ -->
   <url>
     <loc>https://advogadoonline.com.br/noticias/trabalhista</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/noticias/familia</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/noticias/civil</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/noticias/previdenciario</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/noticias/penal</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/noticias/consumidor</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
-  
-  <!-- Niche Landing Pages -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-criminal</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-consumidor</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Blog Articles by Niche -->
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/trabalhista</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/familia</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/civil</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/previdenciario</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/penal</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/consumidor</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- ============ ARTIGOS TRABALHISTAS ============ -->
+
+  <!-- ============================================ -->
+  <!-- ARTIGOS TRABALHISTAS -->
+  <!-- ============================================ -->
   <url>
     <loc>https://advogadoonline.com.br/artigos/trabalhista/demissao-sem-justa-causa</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/trabalhista/demissao-justa-causa</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/trabalhista/acidente-trabalho</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/trabalhista/assedio-moral</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/trabalhista/horas-extras</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
-  <!-- Novos artigos trabalhistas SEO 2025 -->
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/assedio-moral</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/trabalhista/pejotizacao-vinculo-empregaticio</loc>
     <lastmod>2025-01-01</lastmod>
@@ -200,13 +343,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- ============ ARTIGOS FAMÍLIA ============ -->
+
+  <!-- ============================================ -->
+  <!-- ARTIGOS FAMÍLIA -->
+  <!-- ============================================ -->
   <url>
     <loc>https://advogadoonline.com.br/artigos/familia/divorcio-consensual</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/familia/divorcio-litigioso</loc>
@@ -215,16 +360,28 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/artigos/familia/guarda</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://advogadoonline.com.br/artigos/familia/pensao-alimenticia</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/familia/guarda</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/familia/uniao-estavel</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/familia/inventario-heranca</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/familia/revisao-pensao-alimenticia-2025</loc>
@@ -232,25 +389,33 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- ============ ARTIGOS CIVIL ============ -->
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/civil/cobranca</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
+  <!-- ============================================ -->
+  <!-- ARTIGOS CIVIL -->
+  <!-- ============================================ -->
   <url>
     <loc>https://advogadoonline.com.br/artigos/civil/danos-morais</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/civil/cobranca</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/civil/despejo</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/civil/contrato-inadimplencia</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/civil/juizado-especial-pequenas-causas</loc>
@@ -258,25 +423,33 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- ============ ARTIGOS PREVIDENCIÁRIO ============ -->
+
+  <!-- ============================================ -->
+  <!-- ARTIGOS PREVIDENCIÁRIO -->
+  <!-- ============================================ -->
   <url>
     <loc>https://advogadoonline.com.br/artigos/previdenciario/aposentadoria</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/previdenciario/auxilio-doenca</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/previdenciario/bpc-loas</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/previdenciario/pensao-morte</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/previdenciario/aposentadoria-novas-regras-2025</loc>
@@ -290,25 +463,27 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- ============ ARTIGOS PENAL ============ -->
+
+  <!-- ============================================ -->
+  <!-- ARTIGOS PENAL -->
+  <!-- ============================================ -->
   <url>
     <loc>https://advogadoonline.com.br/artigos/penal/defesa-flagrante</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/penal/habeas-corpus</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/penal/violencia-domestica</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/penal/crimes-transito-embriaguez-volante</loc>
@@ -316,13 +491,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- ============ ARTIGOS CONSUMIDOR (NOVA CATEGORIA) ============ -->
+
+  <!-- ============================================ -->
+  <!-- ARTIGOS CONSUMIDOR -->
+  <!-- ============================================ -->
   <url>
     <loc>https://advogadoonline.com.br/artigos/consumidor/atraso-cancelamento-voo-direitos</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/consumidor/overbooking-extravio-bagagem</loc>
@@ -334,7 +511,7 @@
     <loc>https://advogadoonline.com.br/artigos/consumidor/negativacao-indevida-spc-serasa</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/consumidor/plano-saude-negativa-cobertura</loc>

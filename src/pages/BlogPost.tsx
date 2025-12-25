@@ -296,7 +296,7 @@ const BlogPost = () => {
                 </div>
 
                 {/* Social Share */}
-                <SocialShare title={article.title} url={articleUrl} />
+                <SocialShare title={article.title} url={articleUrl} excerpt={article.excerpt} nicheId={nicheId} />
               </header>
 
               {/* Introduction */}
@@ -397,7 +397,7 @@ const BlogPost = () => {
               {/* Share Again */}
               <section className="mb-8 p-4 bg-muted/30 rounded-lg">
                 <p className="text-sm text-muted-foreground mb-3">Gostou do artigo? Compartilhe!</p>
-                <SocialShare title={article.title} url={articleUrl} />
+                <SocialShare title={article.title} url={articleUrl} excerpt={article.excerpt} nicheId={nicheId} />
               </section>
 
               {/* Newsletter Signup */}

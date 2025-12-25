@@ -497,16 +497,12 @@
   </url>
 
   <!-- ============================================ -->
-  <!-- ARTIGOS TRABALHISTAS -->
+  <!-- ARTIGOS INDIVIDUAIS - 52 páginas -->
   <!-- ============================================ -->
+
+  <!-- TRABALHISTA (14 artigos) -->
   <url>
     <loc>https://advogadoonline.com.br/artigos/trabalhista/demissao-sem-justa-causa</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/trabalhista/demissao-justa-causa</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -553,18 +549,46 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- ============================================ -->
-  <!-- ARTIGOS FAMÍLIA -->
-  <!-- ============================================ -->
   <url>
-    <loc>https://advogadoonline.com.br/artigos/familia/divorcio-consensual</loc>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/desvio-de-funcao</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/artigos/familia/divorcio-litigioso</loc>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/intervalo-intrajornada-almoco</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/trabalho-noturno-adicional</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/estabilidade-provisoria-emprego</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/home-office-teletrabalho-direitos</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/demissao-justa-causa</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- FAMÍLIA (10 artigos) -->
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/familia/divorcio-consensual</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -582,7 +606,25 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/artigos/familia/uniao-estavel</loc>
+    <loc>https://advogadoonline.com.br/artigos/familia/divorcio-litigioso</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/familia/revisao-pensao-alimenticia-2025</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/familia/uniao-estavel-direitos</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/familia/reconhecimento-paternidade</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -594,15 +636,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/artigos/familia/revisao-pensao-alimenticia-2025</loc>
+    <loc>https://advogadoonline.com.br/artigos/familia/testamento-tipos-validade</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/familia/guarda-filhos-compartilhada-unilateral</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- ============================================ -->
-  <!-- ARTIGOS CIVIL -->
-  <!-- ============================================ -->
+  <!-- CIVIL (9 artigos) -->
   <url>
     <loc>https://advogadoonline.com.br/artigos/civil/danos-morais</loc>
     <lastmod>2025-01-01</lastmod>
@@ -616,27 +662,49 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/artigos/civil/despejo</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/civil/contrato-inadimplencia</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://advogadoonline.com.br/artigos/civil/juizado-especial-pequenas-causas</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/civil/despejo-falta-pagamento</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/civil/usucapiao-aquisicao-imovel</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/civil/erro-medico-indenizacao</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/civil/acidente-transito-indenizacao</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/civil/negativacao-indevida-nome-sujo</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/civil/contratos-distrato-rescisao</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-  <!-- ============================================ -->
-  <!-- ARTIGOS PREVIDENCIÁRIO -->
-  <!-- ============================================ -->
+  <!-- PREVIDENCIÁRIO (10 artigos) -->
   <url>
     <loc>https://advogadoonline.com.br/artigos/previdenciario/aposentadoria</loc>
     <lastmod>2025-01-01</lastmod>
@@ -656,16 +724,10 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/artigos/previdenciario/pensao-morte</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://advogadoonline.com.br/artigos/previdenciario/aposentadoria-novas-regras-2025</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/previdenciario/simular-aposentadoria-meu-inss</loc>
@@ -673,10 +735,94 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/previdenciario/aposentadoria-invalidez</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/previdenciario/pensao-por-morte</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/previdenciario/salario-maternidade</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/previdenciario/revisao-aposentadoria</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/previdenciario/aposentadoria-rural</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-  <!-- ============================================ -->
-  <!-- ARTIGOS PENAL -->
-  <!-- ============================================ -->
+  <!-- CONSUMIDOR (10 artigos) -->
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/consumidor/atraso-cancelamento-voo-direitos</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/consumidor/overbooking-extravio-bagagem</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/consumidor/negativacao-indevida-spc-serasa</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/consumidor/plano-saude-negativa-cobertura</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/consumidor/compras-online-direito-arrependimento</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/consumidor/cobranca-indevida-restituicao-dobro</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/consumidor/produto-defeito-troca-reembolso</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/consumidor/tarifas-bancarias-abusivas</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/consumidor/telefonia-internet-problemas</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- PENAL (8 artigos) -->
   <url>
     <loc>https://advogadoonline.com.br/artigos/penal/defesa-flagrante</loc>
     <lastmod>2025-01-01</lastmod>
@@ -701,30 +847,26 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- ============================================ -->
-  <!-- ARTIGOS CONSUMIDOR -->
-  <!-- ============================================ -->
   <url>
-    <loc>https://advogadoonline.com.br/artigos/consumidor/atraso-cancelamento-voo-direitos</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/consumidor/overbooking-extravio-bagagem</loc>
+    <loc>https://advogadoonline.com.br/artigos/penal/calunia-difamacao-injuria</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/artigos/consumidor/negativacao-indevida-spc-serasa</loc>
+    <loc>https://advogadoonline.com.br/artigos/penal/estelionato-golpes-fraudes</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/artigos/consumidor/plano-saude-negativa-cobertura</loc>
+    <loc>https://advogadoonline.com.br/artigos/penal/prisao-flagrante-direitos</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/penal/habeas-corpus-liberdade</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

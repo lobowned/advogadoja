@@ -41,31 +41,37 @@ serve(async (req) => {
     const shortTitle = title.length > 80 ? title.substring(0, 77) + "..." : title;
     const shortExcerpt = excerpt && excerpt.length > 120 ? excerpt.substring(0, 117) + "..." : excerpt;
 
-    const prompt = `Create a professional Instagram post image (1080x1080 square format) for a Brazilian law firm article.
+    const prompt = `Create a professional Instagram post image (1080x1080 square format).
+
+CRITICAL TEXT REQUIREMENT - THIS IS MANDATORY:
+You MUST include the following headline text clearly visible and perfectly readable in the image:
+"${shortTitle}"
+
+TEXT SPECIFICATIONS:
+- The headline text MUST be LARGE (at least 60pt equivalent font size)
+- Use BOLD white or cream colored text for maximum contrast
+- Position the headline text in the CENTER of the image
+- Text must be 100% legible and spelled EXACTLY as provided above
+- The text is in Portuguese - do NOT translate, modify, or abbreviate it
+- Add a subtle dark overlay or shadow behind text to ensure readability
+- Break the text into multiple lines if needed for better composition
 
 DESIGN REQUIREMENTS:
-- Modern, clean, professional design
-- Primary color: ${colors.primary} (use as accent/highlight color)
-- Secondary color: ${colors.secondary} (use for gradients or secondary elements)
-- Dark background (deep navy or charcoal) with light text for readability
-- Include a subtle justice scale or gavel icon/silhouette
-- Legal/professional aesthetic
+- Background: Dark gradient (navy blue to charcoal/black)
+- Accent color: ${colors.primary} for decorative elements and highlights
+- Include a subtle justice scale or gavel icon as a watermark (30% opacity, background)
+- Small "${colors.name}" category badge at the top of the image
+${shortExcerpt ? `- Optional subtle excerpt below headline: "${shortExcerpt}"` : ''}
+- "Advogado Online" brand text at the bottom corner (small, subtle)
+- Modern, professional, clean legal aesthetic
 
-TEXT TO INCLUDE:
-- Main headline: "${shortTitle}"
-- Category badge: "${colors.name}"
-${shortExcerpt ? `- Brief description: "${shortExcerpt}"` : ''}
-- Brand: "Advogado Online" (small, bottom corner)
+PRIORITY ORDER:
+1. HEADLINE TEXT - This is the MOST IMPORTANT element and must dominate the image
+2. Category badge - Secondary importance
+3. Background design - Supports the text, never competes with it
+4. Brand text - Subtle presence
 
-STYLE:
-- Bold, readable typography
-- The title should be the main focus
-- Use the primary color (${colors.primary}) for highlights and accents
-- Professional gradient effects
-- Clean hierarchy with the headline as the focal point
-- Make it eye-catching for social media scrolling
-
-The image should look like a professional legal services social media post that would attract attention on Instagram.`;
+The headline text must be instantly readable at a glance. Make it the clear focal point of the entire image.`;
 
     console.log('Generating Instagram image for:', title);
     console.log('Using niche:', nicheId, 'with colors:', colors);

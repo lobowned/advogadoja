@@ -310,6 +310,158 @@ export const brazilianCities: CityData[] = [
     ],
     courtInfo: "TRT-19 (Tribunal Regional do Trabalho da 19ª Região) e TJAL (Tribunal de Justiça de Alagoas)",
     localContext: "Maceió tem demandas no setor de turismo e sucroalcooleiro, com questões trabalhistas rurais."
+  },
+
+  // NOVAS CIDADES - EXPANSÃO SEO
+  {
+    slug: "belem",
+    name: "Belém",
+    state: "Pará",
+    stateCode: "PA",
+    population: "1,5 milhões",
+    region: "Norte",
+    highlights: [
+      "Capital do Pará",
+      "Maior porto da Amazônia",
+      "Polo de serviços da região Norte"
+    ],
+    courtInfo: "TRT-8 (Tribunal Regional do Trabalho da 8ª Região) e TJPA (Tribunal de Justiça do Pará)",
+    localContext: "Belém é o principal polo econômico da Amazônia, com demandas trabalhistas nos setores portuário, de serviços e comércio, além de questões previdenciárias de trabalhadores rurais e ribeirinhos."
+  },
+  {
+    slug: "campo-grande",
+    name: "Campo Grande",
+    state: "Mato Grosso do Sul",
+    stateCode: "MS",
+    population: "906 mil",
+    region: "Centro-Oeste",
+    highlights: [
+      "Capital do Mato Grosso do Sul",
+      "Forte agronegócio",
+      "Polo de frigoríficos e agroindústria"
+    ],
+    courtInfo: "TRT-24 (Tribunal Regional do Trabalho da 24ª Região) e TJMS (Tribunal de Justiça do Mato Grosso do Sul)",
+    localContext: "Campo Grande concentra demandas trabalhistas do agronegócio e frigoríficos, com questões frequentes sobre jornada, insalubridade e acidentes de trabalho no setor rural."
+  },
+  {
+    slug: "cuiaba",
+    name: "Cuiabá",
+    state: "Mato Grosso",
+    stateCode: "MT",
+    population: "618 mil",
+    region: "Centro-Oeste",
+    highlights: [
+      "Capital do Mato Grosso",
+      "Centro do agronegócio brasileiro",
+      "Porta de entrada para o Pantanal"
+    ],
+    courtInfo: "TRT-23 (Tribunal Regional do Trabalho da 23ª Região) e TJMT (Tribunal de Justiça do Mato Grosso)",
+    localContext: "Cuiabá é polo do agronegócio brasileiro, com demandas trabalhistas no setor rural, transporte de cargas e agroindústria."
+  },
+  {
+    slug: "sao-bernardo-do-campo",
+    name: "São Bernardo do Campo",
+    state: "São Paulo",
+    stateCode: "SP",
+    population: "844 mil",
+    region: "Sudeste",
+    highlights: [
+      "Polo automotivo do Brasil",
+      "Berço do sindicalismo",
+      "Forte setor industrial"
+    ],
+    courtInfo: "TRT-2 (Tribunal Regional do Trabalho da 2ª Região) e TJSP",
+    localContext: "São Bernardo do Campo é o coração da indústria automotiva brasileira, com alta demanda em processos trabalhistas relacionados a montadoras, metalúrgicas e setor de autopeças."
+  },
+  {
+    slug: "guarulhos",
+    name: "Guarulhos",
+    state: "São Paulo",
+    stateCode: "SP",
+    population: "1,4 milhões",
+    region: "Sudeste",
+    highlights: [
+      "Maior aeroporto da América do Sul",
+      "Polo logístico e de transporte",
+      "Forte setor industrial"
+    ],
+    courtInfo: "TRT-2 (Tribunal Regional do Trabalho da 2ª Região) e TJSP",
+    localContext: "Guarulhos concentra demandas trabalhistas nos setores de logística, transporte aéreo e indústria, com processos frequentes sobre turnos, horas extras e condições de trabalho."
+  },
+  {
+    slug: "santo-andre",
+    name: "Santo André",
+    state: "São Paulo",
+    stateCode: "SP",
+    population: "721 mil",
+    region: "Sudeste",
+    highlights: [
+      "Parte do ABC Paulista",
+      "Tradicional polo industrial",
+      "Setor de comércio e serviços"
+    ],
+    courtInfo: "TRT-2 (Tribunal Regional do Trabalho da 2ª Região) e TJSP",
+    localContext: "Santo André faz parte do ABC Paulista, com tradição industrial e alta demanda em processos trabalhistas do setor metalúrgico e de serviços."
+  },
+  {
+    slug: "ribeirao-preto",
+    name: "Ribeirão Preto",
+    state: "São Paulo",
+    stateCode: "SP",
+    population: "711 mil",
+    region: "Sudeste",
+    highlights: [
+      "Capital do agronegócio paulista",
+      "Polo de saúde e educação",
+      "Forte setor de biotecnologia"
+    ],
+    courtInfo: "TRT-15 (Tribunal Regional do Trabalho da 15ª Região - Campinas) e TJSP",
+    localContext: "Ribeirão Preto é referência em agronegócio e saúde, com demandas trabalhistas nos setores sucroalcooleiro, hospitalar e de serviços qualificados."
+  },
+  {
+    slug: "uberlandia",
+    name: "Uberlândia",
+    state: "Minas Gerais",
+    stateCode: "MG",
+    population: "699 mil",
+    region: "Sudeste",
+    highlights: [
+      "Polo logístico do Brasil Central",
+      "Forte agronegócio",
+      "Centro de distribuição nacional"
+    ],
+    courtInfo: "TRT-3 (Tribunal Regional do Trabalho da 3ª Região) e TJMG",
+    localContext: "Uberlândia é um dos maiores centros de distribuição do país, com demandas trabalhistas nos setores de logística, transporte e atacado."
+  },
+  {
+    slug: "joinville",
+    name: "Joinville",
+    state: "Santa Catarina",
+    stateCode: "SC",
+    population: "597 mil",
+    region: "Sul",
+    highlights: [
+      "Maior cidade de Santa Catarina",
+      "Polo industrial diversificado",
+      "Setor metalúrgico e de tecnologia"
+    ],
+    courtInfo: "TRT-12 (Tribunal Regional do Trabalho da 12ª Região) e TJSC",
+    localContext: "Joinville é o maior polo industrial de Santa Catarina, com demandas trabalhistas nos setores metalúrgico, de tecnologia e de manufatura."
+  },
+  {
+    slug: "londrina",
+    name: "Londrina",
+    state: "Paraná",
+    stateCode: "PR",
+    population: "580 mil",
+    region: "Sul",
+    highlights: [
+      "Polo do agronegócio paranaense",
+      "Centro universitário",
+      "Forte setor de comércio"
+    ],
+    courtInfo: "TRT-9 (Tribunal Regional do Trabalho da 9ª Região) e TJPR",
+    localContext: "Londrina é polo agroindustrial do Paraná, com demandas trabalhistas nos setores de café, soja, cooperativas agrícolas e comércio."
   }
 ];
 

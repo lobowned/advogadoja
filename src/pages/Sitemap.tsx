@@ -11,6 +11,7 @@ import PageTransition from "@/components/motion/PageTransition";
 import { blogArticles, getNicheInfo } from "@/data/blog-articles";
 import { programmaticFAQs, areaLabels } from "@/data/programmatic-faqs";
 import { brazilianCities } from "@/data/cities";
+import { getAllLegalAreas } from "@/pages/CityNicheLanding";
 
 const Sitemap = () => {
   const canonicalUrl = "https://advogadoonline.com.br/sitemap";
@@ -327,12 +328,43 @@ const Sitemap = () => {
                 </div>
               </CardContent>
             </Card>
+
+            {/* City + Niche Landing Pages */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Scale className="h-5 w-5 text-primary" />
+                  Advogados por Cidade e Área ({brazilianCities.length * getAllLegalAreas().length})
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                {getAllLegalAreas().map((area) => (
+                  <div key={area.slug}>
+                    <h3 className="font-semibold flex items-center gap-2 mb-3 text-foreground">
+                      <area.icon className={`h-5 w-5 ${area.color}`} />
+                      Advogado {area.name} ({brazilianCities.length} cidades)
+                    </h3>
+                    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 pl-7">
+                      {brazilianCities.map((city) => (
+                        <Link
+                          key={`${area.slug}-${city.slug}`}
+                          to={`/advogado-${area.slug}-${city.slug}`}
+                          className="text-sm text-muted-foreground hover:text-primary transition-colors py-1 line-clamp-1"
+                        >
+                          {area.name} {city.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
           </div>
 
           {/* Stats */}
           <div className="mt-12 text-center text-sm text-muted-foreground">
             <p>
-              Total: {8 + 5 + calculators.length + blogArticles.length + programmaticFAQs.length + brazilianCities.length} páginas indexadas
+              Total: {8 + 5 + calculators.length + blogArticles.length + programmaticFAQs.length + brazilianCities.length + (brazilianCities.length * getAllLegalAreas().length)} páginas indexadas
             </p>
           </div>
         </main>

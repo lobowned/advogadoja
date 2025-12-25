@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { 
   Home, Scale, Calculator, FileText, HelpCircle, 
-  Newspaper, BookOpen, Shield, FileCheck, ChevronRight,
+  Newspaper, BookOpen, Shield, FileCheck, ChevronRight, MapPin,
   Briefcase, Heart, Building, HeartPulse, Gavel, ShoppingBag
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import PageTransition from "@/components/motion/PageTransition";
 import { blogArticles, getNicheInfo } from "@/data/blog-articles";
 import { programmaticFAQs, areaLabels } from "@/data/programmatic-faqs";
+import { brazilianCities } from "@/data/cities";
 
 const Sitemap = () => {
   const canonicalUrl = "https://advogadoonline.com.br/sitemap";
@@ -302,12 +303,36 @@ const Sitemap = () => {
                 ))}
               </CardContent>
             </Card>
+
+            {/* City Landing Pages */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <MapPin className="h-5 w-5 text-primary" />
+                  Advogados por Cidade ({brazilianCities.length})
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                  {brazilianCities.map((city) => (
+                    <Link
+                      key={city.slug}
+                      to={`/advogado/${city.slug}`}
+                      className="flex items-center gap-2 p-3 rounded-lg hover:bg-muted transition-colors"
+                    >
+                      <MapPin className="h-4 w-4 text-primary" />
+                      <span className="text-sm">Advogado em {city.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Stats */}
           <div className="mt-12 text-center text-sm text-muted-foreground">
             <p>
-              Total: {8 + 5 + calculators.length + blogArticles.length + programmaticFAQs.length} páginas indexadas
+              Total: {8 + 5 + calculators.length + blogArticles.length + programmaticFAQs.length + brazilianCities.length} páginas indexadas
             </p>
           </div>
         </main>

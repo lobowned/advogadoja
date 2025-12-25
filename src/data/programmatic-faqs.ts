@@ -1163,6 +1163,712 @@ Sim! O processo judicial brasileiro é digital. Petições, audiências e até j
     keywords: ['justiça gratuita', 'processo gratuito', 'quem tem direito justiça gratuita', 'custas judiciais gratuitas'],
     relatedQuestions: ['geral-1', 'geral-2', 'geral-3'],
     metaDescription: 'Entenda o que é justiça gratuita, quem tem direito, o que é isento e como solicitar a gratuidade nas custas do processo.'
+  },
+
+  // NOVAS FAQS - EXPANSÃO SEO
+  // TRABALHISTA (4 novas)
+  {
+    id: 'trab-7',
+    slug: 'demitido-periodo-experiencia-direitos',
+    question: 'Fui demitido no período de experiência. Tenho direitos?',
+    answer: `**Sim**, você tem direitos mesmo sendo demitido no período de experiência. Veja:
+
+**Se a empresa demitiu antes do prazo:**
+- Saldo de salário (dias trabalhados)
+- Férias proporcionais + 1/3
+- 13º proporcional
+- FGTS depositado (sem multa de 40%)
+- **Indenização** de 50% dos dias restantes do contrato
+
+**Se você pediu demissão:**
+- Saldo de salário
+- Férias proporcionais + 1/3
+- 13º proporcional
+- Pode ter que indenizar a empresa (metade do que falta)
+
+**Duração do período de experiência:**
+- Máximo de 90 dias
+- Pode ser dividido em dois períodos
+
+**Importante:** No término normal do contrato de experiência, não há multa de 40% do FGTS nem seguro-desemprego.`,
+    area: 'trabalhista',
+    keywords: ['demissão período experiência', 'contrato experiência direitos', 'demitido experiência', 'verbas rescisórias experiência'],
+    relatedQuestions: ['trab-2', 'trab-5'],
+    metaDescription: 'Fui demitido no período de experiência, tenho direitos? Sim! Saiba quais verbas você deve receber e quando tem direito a indenização.'
+  },
+  {
+    id: 'trab-8',
+    slug: 'empresa-pode-descontar-vale-refeicao-salario',
+    question: 'A empresa pode descontar vale-refeição do salário?',
+    answer: `**Sim, mas com limites.** O desconto do vale-refeição (VR) é legal, mas deve respeitar regras:
+
+**Regras do PAT (Programa de Alimentação do Trabalhador):**
+- Desconto máximo de **20%** do valor do benefício
+- Exemplo: VR de R$ 500 = desconto máximo de R$ 100
+
+**O que NÃO pode:**
+- Descontar mais que 20% do valor do benefício
+- Descontar valor superior ao fornecido
+- Usar VR para compensar outros débitos
+- Descontar VR de período de férias ou afastamento
+
+**Verifique:**
+- Convenção coletiva pode ter regras diferentes
+- Acordo individual deve ser por escrito
+- Algumas empresas oferecem VR sem desconto
+
+**Se o desconto for abusivo:**
+Você pode reclamar ao sindicato ou ajuizar ação trabalhista para restituição.`,
+    area: 'trabalhista',
+    keywords: ['desconto vale refeição', 'empresa descontar VR', 'vale refeição desconto salário', 'PAT desconto'],
+    relatedQuestions: ['trab-4', 'trab-5'],
+    metaDescription: 'A empresa pode descontar vale-refeição do salário? Sim, mas com limite de 20%. Entenda as regras e o que é abusivo.'
+  },
+  {
+    id: 'trab-9',
+    slug: 'quanto-tempo-sacar-fgts-apos-demissao',
+    question: 'Quanto tempo tenho para sacar o FGTS após demissão?',
+    answer: `Após a demissão sem justa causa, você pode sacar o FGTS **imediatamente** após a empresa fazer a comunicação à Caixa.
+
+**Prazo da empresa:**
+- A empresa tem **10 dias** para fazer a rescisão e comunicar à Caixa
+- Após isso, o saque é liberado automaticamente
+
+**Onde sacar:**
+- Aplicativo FGTS (transferência para conta)
+- Agências da Caixa
+- Casas lotéricas (valores até R$ 3.000)
+- Correspondentes Caixa Aqui
+
+**Documentos necessários:**
+- Documento de identidade
+- Carteira de Trabalho
+- Termo de rescisão (TRCT)
+- Número do PIS/PASEP
+
+**Prazo para saque:**
+- Não há prazo limite para sacar
+- O dinheiro continua rendendo na conta FGTS
+- Recomenda-se sacar em até 5 anos para evitar problemas
+
+**E a multa de 40%?**
+A multa de 40% é depositada junto com o saque rescisório.`,
+    area: 'trabalhista',
+    keywords: ['prazo sacar FGTS demissão', 'saque FGTS rescisão', 'quando posso sacar FGTS', 'FGTS após demissão'],
+    relatedQuestions: ['trab-2', 'trab-6'],
+    metaDescription: 'Quanto tempo tenho para sacar o FGTS após demissão? O saque é liberado em até 10 dias após a rescisão. Veja como sacar.'
+  },
+  {
+    id: 'trab-10',
+    slug: 'posso-recusar-fazer-hora-extra',
+    question: 'Posso me recusar a fazer hora extra?',
+    answer: `**Depende da situação.** Veja quando você pode e quando não pode recusar:
+
+**Você PODE recusar quando:**
+- Não há previsão em contrato ou convenção coletiva
+- Ultrapassa 2 horas extras diárias
+- Prejudica sua saúde ou segurança
+- Você tem compromisso inadiável comprovado
+- Está em tratamento médico
+
+**Você NÃO pode recusar quando:**
+- Há necessidade imperiosa (força maior)
+- Está previsto em contrato ou convenção
+- É serviço inadiável que causará prejuízo manifesto
+- Há acordo de compensação (banco de horas)
+
+**Limites legais:**
+- Máximo de 2 horas extras por dia
+- Total máximo de 10 horas diárias
+- Pode haver exceções em convenção coletiva
+
+**Se for obrigado ilegalmente:**
+- Faça por escrito sua recusa
+- Guarde provas
+- Pode caracterizar rescisão indireta
+- Procure o sindicato ou advogado`,
+    area: 'trabalhista',
+    keywords: ['recusar hora extra', 'obrigado fazer hora extra', 'pode negar hora extra', 'hora extra obrigatória'],
+    relatedQuestions: ['trab-4', 'trab-1'],
+    metaDescription: 'Posso me recusar a fazer hora extra? Depende: veja quando é seu direito recusar e quando a empresa pode exigir.'
+  },
+
+  // FAMÍLIA (4 novas)
+  {
+    id: 'fam-6',
+    slug: 'pai-nao-paga-pensao-pode-perder-guarda',
+    question: 'Pai que não paga pensão pode perder a guarda?',
+    answer: `**Não diretamente.** A falta de pagamento de pensão não causa automaticamente a perda da guarda, mas pode influenciar:
+
+**Consequências do não pagamento:**
+- Prisão civil (até 3 meses)
+- Negativação do nome (SPC/Serasa)
+- Penhora de bens e salário
+- Suspensão da CNH
+- Bloqueio de passaporte
+
+**Quando pode perder a guarda:**
+- Abandono afetivo comprovado
+- Negligência com o filho
+- Maus-tratos ou abuso
+- Incapacidade de cuidar adequadamente
+- Alienação parental grave
+
+**A pensão e a guarda são questões separadas:**
+- Um pai pode não pagar pensão e ter guarda compartilhada
+- A cobrança é feita por ação de execução de alimentos
+- A modificação de guarda é outra ação específica
+
+**O que fazer:**
+Se o pai não paga, entre com execução de alimentos para cobrar, inclusive com prisão.`,
+    area: 'familia',
+    keywords: ['pai não paga pensão perde guarda', 'não pagou pensão consequência', 'perda guarda pensão', 'inadimplente pensão'],
+    relatedQuestions: ['fam-2', 'fam-4'],
+    metaDescription: 'Pai que não paga pensão pode perder a guarda dos filhos? Não automaticamente, mas veja as consequências e quando pode acontecer.'
+  },
+  {
+    id: 'fam-7',
+    slug: 'mudar-nome-filho-sem-autorizacao-pai',
+    question: 'Posso mudar o nome do filho sem autorização do pai?',
+    answer: `**Em regra, não.** Mudança de nome de menor requer consentimento de ambos os pais. Mas há exceções:
+
+**Quando precisa de autorização:**
+- Qualquer alteração no nome (primeiro nome ou sobrenome)
+- Adição de sobrenome do padrasto/madrasta
+- Troca de ordem dos nomes
+
+**Quando NÃO precisa (exceções):**
+- Pai destituído do poder familiar
+- Pai desconhecido (sem registro)
+- Autorização judicial substitui o consentimento
+- Pai em local incerto e não sabido
+
+**Casos comuns de pedido judicial:**
+- Erro evidente no registro
+- Nome que expõe a criança a ridículo
+- Proteção (violência doméstica)
+- Adoção
+
+**Como fazer:**
+1. Tente acordo com o outro genitor
+2. Se recusar, entre com ação judicial
+3. Prove o melhor interesse da criança
+4. Aguarde decisão do juiz
+
+**Importante:** O interesse da criança é sempre prioridade nas decisões.`,
+    area: 'familia',
+    keywords: ['mudar nome filho', 'alteração nome menor', 'trocar sobrenome filho', 'nome filho sem autorização pai'],
+    relatedQuestions: ['fam-1', 'fam-5'],
+    metaDescription: 'Posso mudar o nome do filho sem autorização do pai? Em regra não, mas veja as exceções e como fazer judicialmente.'
+  },
+  {
+    id: 'fam-8',
+    slug: 'uniao-estavel-tempo-direito-heranca',
+    question: 'União estável de quanto tempo dá direito a herança?',
+    answer: `**Não existe tempo mínimo obrigatório.** A união estável é reconhecida pela convivência pública, contínua e duradoura com objetivo de constituir família.
+
+**Requisitos para união estável:**
+- Convivência pública (não escondida)
+- Continuidade (não relacionamento esporádico)
+- Durabilidade (certo tempo, sem prazo fixo)
+- Objetivo de constituir família
+- Sem impedimentos (não ser casado, parentesco)
+
+**Direito à herança:**
+- Companheiro(a) é herdeiro necessário
+- Concorre com filhos do falecido
+- Se não houver descendentes/ascendentes, herda tudo
+- Direito real de habitação no imóvel da família
+
+**Como provar união estável:**
+- Contrato de união estável (recomendado)
+- Contas conjuntas
+- Dependência em plano de saúde
+- Fotos, viagens, redes sociais
+- Testemunhas
+
+**Importante:**
+Mesmo 1 ano pode caracterizar união estável se preenchidos os requisitos. Não há mágica de 2 ou 5 anos.`,
+    area: 'familia',
+    keywords: ['união estável herança', 'tempo união estável', 'herança companheiro', 'direito herança união estável'],
+    relatedQuestions: ['fam-3', 'fam-4'],
+    metaDescription: 'União estável de quanto tempo dá direito a herança? Não há prazo mínimo fixo. Entenda os requisitos e como garantir seus direitos.'
+  },
+  {
+    id: 'fam-9',
+    slug: 'como-funciona-inventario-extrajudicial',
+    question: 'Como funciona o inventário extrajudicial?',
+    answer: `O inventário extrajudicial é feito em **cartório**, de forma mais rápida e simples que o judicial.
+
+**Requisitos obrigatórios:**
+- Todos os herdeiros maiores e capazes
+- Acordo total sobre a partilha
+- Ausência de testamento (ou testamento já cumprido)
+- Assistência de advogado
+- Certidões negativas de débitos
+
+**Vantagens:**
+- Muito mais rápido (dias a semanas)
+- Geralmente mais barato
+- Menos burocrático
+- Partes escolhem quando fazer
+
+**Documentos necessários:**
+- Certidão de óbito
+- Documentos dos herdeiros
+- Documentos dos bens (imóveis, veículos, contas)
+- Certidões negativas de tributos
+- Procuração para advogado
+
+**Custos:**
+- Emolumentos do cartório (tabela estadual)
+- ITCMD (imposto sobre herança - varia por estado)
+- Honorários advocatícios
+
+**Prazo:**
+Recomenda-se iniciar em até 60 dias do óbito para evitar multa no ITCMD, embora não haja prazo obrigatório.`,
+    area: 'familia',
+    keywords: ['inventário extrajudicial', 'inventário cartório', 'como fazer inventário', 'herança extrajudicial'],
+    relatedQuestions: ['fam-3', 'fam-8'],
+    metaDescription: 'Como funciona o inventário extrajudicial? Feito em cartório, é mais rápido e barato. Veja requisitos, documentos e custos.'
+  },
+
+  // PREVIDENCIÁRIO (4 novas)
+  {
+    id: 'prev-6',
+    slug: 'mei-tem-direito-aposentadoria',
+    question: 'Quem paga MEI tem direito a aposentadoria?',
+    answer: `**Sim!** O MEI (Microempreendedor Individual) que paga o DAS em dia tem direito a benefícios do INSS.
+
+**Benefícios inclusos no MEI:**
+- Aposentadoria por idade
+- Auxílio-doença
+- Salário-maternidade
+- Pensão por morte (para dependentes)
+- Auxílio-reclusão (para dependentes)
+
+**Aposentadoria por idade (MEI):**
+- Homem: 65 anos + 180 meses de contribuição
+- Mulher: 62 anos + 180 meses de contribuição
+- Valor: 1 salário mínimo
+
+**Quer aposentar com valor maior?**
+O MEI pode complementar a contribuição (mais 15% sobre o salário mínimo) para:
+- Aposentadoria por tempo de contribuição
+- Valor acima do mínimo
+- Usar o tempo para outras aposentadorias
+
+**Importante:**
+- O MEI contribui com 5% do salário mínimo
+- Essa contribuição não conta para tempo de contribuição
+- Mantenha o DAS em dia para garantir qualidade de segurado`,
+    area: 'previdenciario',
+    keywords: ['MEI aposentadoria', 'microempreendedor aposentadoria', 'MEI INSS benefícios', 'DAS MEI direitos'],
+    relatedQuestions: ['prev-1', 'prev-3'],
+    metaDescription: 'Quem paga MEI tem direito a aposentadoria? Sim! Entenda quais benefícios o MEI tem direito e como conseguir valor maior.'
+  },
+  {
+    id: 'prev-7',
+    slug: 'pode-receber-dois-beneficios-inss',
+    question: 'Posso receber dois benefícios do INSS ao mesmo tempo?',
+    answer: `**Depende de quais benefícios.** Alguns podem ser acumulados, outros não.
+
+**PODE acumular:**
+- Aposentadoria + Pensão por morte (com limitações após Reforma)
+- Pensões por morte de diferentes regimes
+- Auxílio-acidente + Aposentadoria (se o auxílio é anterior a 1997)
+- Aposentadoria + Salário-família
+
+**NÃO pode acumular:**
+- Duas aposentadorias do mesmo regime (INSS)
+- Auxílio-doença + Aposentadoria
+- Duas pensões por morte do INSS
+- Seguro-desemprego + Qualquer benefício previdenciário
+- BPC/LOAS + Aposentadoria
+
+**Regras de acumulação após Reforma (2019):**
+- Recebe 100% do benefício maior
+- + percentual do menor (60% a 100%, dependendo do valor)
+
+**Exemplo prático:**
+- Aposentadoria de R$ 2.000 (100% = R$ 2.000)
+- Pensão de R$ 1.500 (60% = R$ 900)
+- Total: R$ 2.900
+
+**Dica:** Consulte um advogado previdenciário para calcular o melhor cenário.`,
+    area: 'previdenciario',
+    keywords: ['acumular benefícios INSS', 'dois benefícios INSS', 'aposentadoria e pensão', 'acumulação benefícios'],
+    relatedQuestions: ['prev-1', 'prev-5'],
+    metaDescription: 'Posso receber dois benefícios do INSS ao mesmo tempo? Depende: veja o que pode e o que não pode acumular.'
+  },
+  {
+    id: 'prev-8',
+    slug: 'como-comprovar-tempo-trabalho-rural',
+    question: 'Como comprovar tempo de trabalho rural?',
+    answer: `Comprovar trabalho rural é essencial para aposentadoria rural ou para somar tempo de contribuição.
+
+**Documentos aceitos (início de prova material):**
+- Certidão de nascimento com profissão rural dos pais
+- Histórico escolar de escola rural
+- Certificado de reservista com profissão rural
+- Título de eleitor com profissão rural
+- Notas fiscais de venda de produção
+- Fichas de sindicato rural
+- Declaração de Aptidão ao PRONAF (DAP)
+- Contratos de arrendamento ou parceria
+
+**Testemunhas:**
+- Necessárias para complementar os documentos
+- Devem conhecer seu trabalho rural
+- Vizinhos, compradores, sindicalistas
+
+**Períodos que contam:**
+- Trabalho como segurado especial (sem contribuição)
+- Trabalho como empregado rural (com contribuição)
+- Trabalho em regime de economia familiar
+- A partir dos 12/14 anos (jurisprudência variada)
+
+**Dica importante:**
+O INSS costuma negar, mas a Justiça frequentemente reconhece. Guarde tudo que comprove vínculo com área rural.`,
+    area: 'previdenciario',
+    keywords: ['comprovar trabalho rural', 'prova atividade rural', 'aposentadoria rural documentos', 'tempo rural INSS'],
+    relatedQuestions: ['prev-1', 'prev-2'],
+    metaDescription: 'Como comprovar tempo de trabalho rural para aposentadoria? Veja os documentos aceitos e como reunir provas.'
+  },
+  {
+    id: 'prev-9',
+    slug: 'auxilio-doenca-pode-virar-aposentadoria-invalidez',
+    question: 'Auxílio-doença pode virar aposentadoria por invalidez?',
+    answer: `**Sim.** Se a incapacidade que gerou o auxílio-doença se tornar permanente, o benefício pode ser convertido.
+
+**Quando ocorre a conversão:**
+- Quando a perícia constata incapacidade total e permanente
+- Quando tratamentos não surtiram efeito
+- Quando a reabilitação profissional é impossível
+
+**Como funciona:**
+1. Durante o auxílio-doença, INSS faz perícias periódicas
+2. Se a incapacidade for considerada definitiva, converte automaticamente
+3. Você também pode pedir a conversão
+
+**Diferenças entre os benefícios:**
+| Auxílio-doença | Aposentadoria por invalidez |
+|----------------|----------------------------|
+| Incapacidade temporária | Incapacidade permanente |
+| 91% da média | 100% da média (com regras) |
+| Perícias frequentes | Perícia a cada 2 anos |
+| Pode trabalhar ao recuperar | Em regra, não pode trabalhar |
+
+**Valor:**
+- Auxílio-doença: 91% do salário de benefício
+- Aposentadoria por invalidez: 60% + 2% por ano acima de 20 anos
+
+**Importante:**
+Se você recebe auxílio-doença há muito tempo e sua doença é permanente, peça a conversão.`,
+    area: 'previdenciario',
+    keywords: ['auxílio-doença aposentadoria invalidez', 'converter auxílio aposentadoria', 'incapacidade permanente INSS'],
+    relatedQuestions: ['prev-2', 'prev-4'],
+    metaDescription: 'Auxílio-doença pode virar aposentadoria por invalidez? Sim, quando a incapacidade se torna permanente. Veja como funciona.'
+  },
+
+  // CONSUMIDOR (4 novas)
+  {
+    id: 'cons-6',
+    slug: 'loja-pode-negar-troca-sem-nota-fiscal',
+    question: 'A loja pode negar troca sem nota fiscal?',
+    answer: `**Depende do motivo da troca.** Veja as regras:
+
+**Troca por DEFEITO (direito garantido):**
+- Loja NÃO pode exigir nota fiscal como única prova
+- Pode usar: extrato de cartão, testemunhas, etiquetas
+- Prazo: 30 dias (não duráveis) ou 90 dias (duráveis)
+
+**Troca por ARREPENDIMENTO (7 dias - compras online):**
+- Direito garantido para compras fora da loja
+- Não precisa justificar
+- Reembolso total incluindo frete
+
+**Troca por TAMANHO/COR (cortesia da loja):**
+- NÃO é direito do consumidor
+- Loja pode exigir nota e recusar sem ela
+- Verifique política de troca antes de comprar
+
+**O que fazer sem nota:**
+1. Use extrato bancário ou de cartão
+2. Busque segunda via com a loja
+3. Apresente embalagem com código de barras
+4. Use registro no CPF (algumas lojas)
+
+**Lembre-se:**
+A nota fiscal é do interesse do consumidor. Sempre peça e guarde!`,
+    area: 'consumidor',
+    keywords: ['troca sem nota fiscal', 'loja negar troca', 'direito troca produto', 'nota fiscal troca'],
+    relatedQuestions: ['cons-1', 'cons-3'],
+    metaDescription: 'A loja pode negar troca sem nota fiscal? Depende: para defeito, não pode exigir. Para cortesia (tamanho), pode. Entenda.'
+  },
+  {
+    id: 'cons-7',
+    slug: 'cobranca-indevida-devolucao-em-dobro',
+    question: 'Cobrança indevida dá direito a devolução em dobro?',
+    answer: `**Sim, em regra.** O Código de Defesa do Consumidor prevê a repetição do indébito em dobro.
+
+**Requisitos para devolução em dobro:**
+- Cobrança indevida (valor que você não deve)
+- Pagamento do valor indevido
+- Ausência de engano justificável do fornecedor
+
+**Quando é em dobro:**
+- Valor cobrado a mais: devolve o excesso em dobro
+- Cobrança por serviço não contratado: devolve tudo em dobro
+- Taxa indevida: devolve em dobro
+
+**Quando NÃO é em dobro:**
+- Quando há "engano justificável" (erro de sistema, por ex.)
+- Quando você não chegou a pagar
+- Cobrança judicial (pode ser simples)
+
+**Como cobrar:**
+1. Primeiro, tente resolver com a empresa
+2. Se recusar, reclame no Procon
+3. Se não resolver, ação judicial (JEC até 40 SM)
+
+**Valores atualizados:**
+A devolução inclui correção monetária e juros desde o pagamento indevido.
+
+**Dica:** Guarde comprovantes de pagamento e da cobrança indevida.`,
+    area: 'consumidor',
+    keywords: ['cobrança indevida em dobro', 'devolução em dobro', 'repetição indébito', 'cobrou a mais'],
+    relatedQuestions: ['cons-1', 'cons-3'],
+    metaDescription: 'Cobrança indevida dá direito a devolução em dobro? Sim, na maioria dos casos. Veja os requisitos e como cobrar.'
+  },
+  {
+    id: 'cons-8',
+    slug: 'processar-banco-emprestimo-nao-autorizado',
+    question: 'Como processar banco por empréstimo não autorizado?',
+    answer: `Empréstimo que você não contratou é **fraude** e você tem direitos:
+
+**Passos imediatos:**
+1. Conteste formalmente no banco (por escrito/protocolo)
+2. Registre boletim de ocorrência
+3. Reclame no Banco Central (Registrato)
+4. Reclame no Procon
+5. Anote todos os protocolos
+
+**Seus direitos:**
+- Cancelamento do empréstimo
+- Devolução de valores descontados (em dobro)
+- Exclusão de negativações
+- Indenização por danos morais
+
+**Provas necessárias:**
+- Extratos mostrando descontos
+- Contrato (solicite cópia ao banco)
+- Protocolos de reclamação
+- BO
+- Comprovante de salário/aposentadoria
+
+**Valores de indenização:**
+- Danos morais: R$ 5.000 a R$ 20.000 (varia)
+- Danos materiais: valores descontados em dobro
+- Custas e honorários advocatícios
+
+**Prazo:**
+5 anos para pedir indenização. Mas quanto antes agir, melhor para suas provas.
+
+**Dica:** Aposentados são vítimas frequentes. Desconfie de empréstimos que você não pediu.`,
+    area: 'consumidor',
+    keywords: ['empréstimo não autorizado', 'processar banco fraude', 'empréstimo consignado fraude', 'empréstimo que não fiz'],
+    relatedQuestions: ['cons-1', 'cons-7'],
+    metaDescription: 'Como processar banco por empréstimo não autorizado? Veja os passos, direitos e como conseguir indenização por fraude.'
+  },
+  {
+    id: 'cons-9',
+    slug: 'plano-saude-pode-ter-carencia-emergencia',
+    question: 'Plano de saúde pode ter carência para emergência?',
+    answer: `**Não.** A lei proíbe carência para urgência e emergência. Prazo máximo de 24 horas.
+
+**O que diz a lei (Lei 9.656/98):**
+- Emergência: risco imediato de vida ou lesões irreparáveis
+- Urgência: complicações na gestação e acidentes pessoais
+- Carência máxima: 24 horas após contratação
+
+**O plano deve cobrir:**
+- Atendimento de emergência (PS, UTI se necessário)
+- Até 12 horas de observação
+- Após 12h: pode pedir transferência para hospital público
+
+**Carências normais (não emergência):**
+- Consultas e exames simples: até 30 dias
+- Internações e cirurgias: até 180 dias
+- Parto: até 300 dias
+- Doenças preexistentes: até 24 meses
+
+**Se o plano negar emergência:**
+1. Documente tudo (prints, protocolos)
+2. Vá ao hospital (público se necessário)
+3. Reclame na ANS
+4. Processe para reembolso + danos morais
+
+**Importante:**
+A negativa de atendimento emergencial pode configurar crime e gera direito a indenização expressiva.`,
+    area: 'consumidor',
+    keywords: ['plano saúde carência emergência', 'urgência plano saúde', 'carência atendimento emergencial', 'plano saúde negar emergência'],
+    relatedQuestions: ['cons-2', 'cons-3'],
+    metaDescription: 'Plano de saúde pode ter carência para emergência? Não! A carência máxima é 24 horas. Veja seus direitos.'
+  },
+
+  // CIVIL (4 novas)
+  {
+    id: 'civ-6',
+    slug: 'imovel-alugado-defeito-quem-paga-conserto',
+    question: 'Imóvel alugado com defeito: quem paga o conserto?',
+    answer: `**Depende do tipo de reparo.** A Lei do Inquilinato divide as responsabilidades:
+
+**Locador (proprietário) paga:**
+- Reparos estruturais (telhado, vigas, fundação)
+- Problemas anteriores à locação
+- Vícios ocultos (que você não viu ao alugar)
+- Desgaste natural (pintura externa, infiltrações antigas)
+- Instalações elétricas e hidráulicas antigas
+
+**Locatário (inquilino) paga:**
+- Manutenção do dia a dia
+- Pequenos reparos (torneiras, tomadas, fechaduras)
+- Danos causados por mau uso
+- Pintura interna ao entregar o imóvel
+- Desentupimento por uso
+
+**Regra prática:**
+- Problema estrutural/oculto = proprietário
+- Desgaste de uso/manutenção = inquilino
+
+**O que fazer se o proprietário não pagar:**
+1. Notifique por escrito com prazo
+2. Se não resolver, você pode fazer e descontar do aluguel
+3. Guarde orçamentos e notas fiscais
+4. Em último caso, rescinda o contrato
+
+**Dica:** Faça laudo de vistoria detalhado na entrada. Fotografe tudo!`,
+    area: 'civil',
+    keywords: ['conserto imóvel alugado', 'quem paga reparo aluguel', 'defeito casa alugada', 'responsabilidade inquilino proprietário'],
+    relatedQuestions: ['civ-1', 'civ-2'],
+    metaDescription: 'Imóvel alugado com defeito: quem paga o conserto? Depende do tipo de reparo. Veja as responsabilidades de inquilino e proprietário.'
+  },
+  {
+    id: 'civ-7',
+    slug: 'fiador-pode-sair-contrato-aluguel',
+    question: 'O fiador pode sair do contrato de aluguel?',
+    answer: `**Sim, mas com condições.** O fiador pode se desobrigar em algumas situações:
+
+**Quando o contrato é por prazo determinado:**
+- Fiador responde até o fim do prazo
+- Se renovar/prorrogar, pode se exonerar
+- Deve notificar por escrito
+
+**Quando o contrato é por prazo indeterminado:**
+- Pode pedir exoneração a qualquer momento
+- Continua responsável por 120 dias após notificação
+- Prazo para inquilino arranjar novo fiador
+
+**Como sair da fiança:**
+1. Notifique o locador por escrito (com AR ou cartório)
+2. Guarde comprovante da notificação
+3. Após 120 dias, está livre de novas dívidas
+
+**Você NÃO se livra de:**
+- Dívidas já existentes até a notificação
+- Período de 120 dias após notificação
+
+**Dicas para futuros fiadores:**
+- Limite o prazo da fiança no contrato
+- Preveja exoneração em caso de renovação
+- Considere seguro-fiança como alternativa
+
+**Importante:** Nunca seja fiador sem ler o contrato inteiro!`,
+    area: 'civil',
+    keywords: ['fiador sair contrato', 'exoneração fiança', 'fiador aluguel sair', 'deixar de ser fiador'],
+    relatedQuestions: ['civ-1', 'civ-6'],
+    metaDescription: 'O fiador pode sair do contrato de aluguel? Sim, com notificação e 120 dias de espera. Veja como funciona a exoneração.'
+  },
+  {
+    id: 'civ-8',
+    slug: 'como-cobrar-divida-pessoa-nao-paga',
+    question: 'Como cobrar dívida de pessoa que não paga?',
+    answer: `Existem várias formas de cobrar uma dívida, da mais simples à judicial:
+
+**1. Cobrança amigável:**
+- Contato direto (ligação, mensagem, carta)
+- Renegociação (parcelamento, desconto)
+- Mediação (acordo com terceiro neutro)
+
+**2. Protesto em cartório:**
+- Negativação do nome do devedor
+- Pressiona o pagamento
+- Custo baixo
+
+**3. Cobrança judicial:**
+- **Ação monitória:** para dívidas com documentos (contrato, cheque, nota)
+- **Ação de cobrança:** para dívidas sem documento formal
+- **Execução de título:** se você tem título executivo
+
+**Documentos importantes:**
+- Contratos ou acordos
+- Comprovantes de transferência (PIX, depósitos)
+- Mensagens reconhecendo a dívida
+- Notas promissórias ou cheques
+- E-mails e WhatsApp
+
+**Prazos:**
+- Cheque: 6 meses para executar
+- Contrato: 5 anos
+- Dívida sem documento: 10 anos
+
+**Valores baixos (até 40 SM):**
+Use o Juizado Especial (sem advogado até 20 SM).`,
+    area: 'civil',
+    keywords: ['cobrar dívida', 'pessoa não paga', 'como cobrar devedor', 'ação cobrança dívida'],
+    relatedQuestions: ['civ-1', 'civ-5'],
+    metaDescription: 'Como cobrar dívida de pessoa que não paga? Veja opções: cobrança amigável, protesto, ação judicial. Passo a passo completo.'
+  },
+  {
+    id: 'civ-9',
+    slug: 'posso-processar-promessa-nao-cumprida',
+    question: 'Posso processar por promessa não cumprida?',
+    answer: `**Depende.** Nem toda promessa é juridicamente exigível. Veja a diferença:
+
+**Promessas que você PODE cobrar:**
+- Contrato assinado (escrito)
+- Acordo verbal com testemunhas
+- Promessa de compra e venda
+- Compromissos em e-mail ou mensagem
+- Propostas comerciais aceitas
+
+**Promessas que você NÃO pode cobrar:**
+- Promessas de namoro/afetivas (em geral)
+- Meras intenções sem compromisso
+- Brincadeiras ou exageros óbvios
+- Propaganda genérica (sem oferta específica)
+
+**Requisitos para cobrar:**
+1. Promessa clara e específica
+2. Você confiou e agiu baseado nela
+3. Sofreu prejuízo pelo descumprimento
+4. Pode provar (documentos, testemunhas)
+
+**Tipos de pedido:**
+- Cumprimento forçado da promessa
+- Indenização por perdas e danos
+- Danos morais (se houver)
+
+**Exemplos cobráveis:**
+- "Vou te vender o carro por R$ 50 mil" → descumpriu → danos
+- Empresa prometeu promoção em contrato → pode cobrar
+
+**Prazo:** Geralmente 3 a 10 anos, dependendo do tipo de obrigação.`,
+    area: 'civil',
+    keywords: ['processar promessa', 'promessa não cumprida', 'descumpriu promessa', 'acordo verbal'],
+    relatedQuestions: ['civ-1', 'civ-8'],
+    metaDescription: 'Posso processar por promessa não cumprida? Depende da promessa. Veja quando você pode cobrar judicialmente.'
   }
 ];
 

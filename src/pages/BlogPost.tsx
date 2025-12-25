@@ -51,22 +51,31 @@ const BlogPost = () => {
     penal: "bg-red-500/10 text-red-600 border-red-200",
   };
 
-  // Schema.org Article
+  // Schema.org Article - Enhanced for rich snippets
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": article.title,
     "description": article.metaDescription,
+    "image": `https://advogadoonline.com.br/og-image-${nicheId}.jpg`,
     "author": {
       "@type": "Organization",
-      "name": "Advogado Online"
+      "name": "Advogado Online",
+      "url": "https://advogadoonline.com.br",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://advogadoonline.com.br/favicon.svg"
+      }
     },
     "publisher": {
       "@type": "Organization",
       "name": "Advogado Online",
+      "url": "https://advogadoonline.com.br",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://advogadoonline.com.br/favicon.svg"
+        "url": "https://advogadoonline.com.br/favicon.svg",
+        "width": 60,
+        "height": 60
       }
     },
     "datePublished": article.updatedAt,
@@ -74,10 +83,21 @@ const BlogPost = () => {
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": articleUrl
-    }
+    },
+    "keywords": article.keywords.join(", "),
+    "articleSection": nicheInfo.name,
+    "inLanguage": "pt-BR",
+    "wordCount": Math.round(
+      (article.content.intro.length + 
+       article.content.whatIs.length + 
+       article.content.whenYouHaveRight.join(' ').length +
+       article.content.documents.join(' ').length +
+       article.content.deadlines.length +
+       article.content.faq.map(f => f.question + f.answer).join(' ').length) / 5
+    )
   };
 
-  // Schema.org FAQ - Enhanced with dates, author, and URLs
+  // Schema.org FAQPage - Enhanced for FAQ rich snippets
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -100,6 +120,38 @@ const BlogPost = () => {
     }))
   };
 
+  // Schema.org BreadcrumbList - For breadcrumb rich snippets
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://advogadoonline.com.br"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Artigos",
+        "item": "https://advogadoonline.com.br/artigos"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": nicheInfo.name,
+        "item": `https://advogadoonline.com.br/artigos/${nicheId}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": article.title,
+        "item": articleUrl
+      }
+    ]
+  };
+
   // Schema.org HowTo - For guide articles with step-by-step instructions
   const isGuideArticle = article.title.toLowerCase().includes('como') || 
     article.title.toLowerCase().includes('guia') ||
@@ -118,11 +170,13 @@ const BlogPost = () => {
       "name": "Advogado Online",
       "url": "https://advogadoonline.com.br"
     },
+    "totalTime": `PT${readingTime}M`,
     "step": article.content.whenYouHaveRight.map((step, index) => ({
       "@type": "HowToStep",
       "position": index + 1,
       "name": `Passo ${index + 1}`,
-      "text": step
+      "text": step,
+      "url": `${articleUrl}#quando-tem-direito`
     })),
     "tool": article.content.documents.map(doc => ({
       "@type": "HowToTool",
@@ -160,6 +214,9 @@ const BlogPost = () => {
         </script>
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
         </script>
         {howToSchema && (
           <script type="application/ld+json">

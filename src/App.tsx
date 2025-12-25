@@ -44,6 +44,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import CasosSucesso from "./pages/CasosSucesso";
 import Sitemap from "./pages/Sitemap";
+import CityLanding from "./pages/CityLanding";
 
 const queryClient = new QueryClient();
 
@@ -100,6 +101,8 @@ const AnimatedRoutes = () => {
         <Route path="/advogado-civil" element={<NicheLanding />} />
         <Route path="/advogado-previdenciario" element={<NicheLanding />} />
         <Route path="/advogado-criminal" element={<NicheLanding />} />
+        {/* City Landing Pages - Local SEO */}
+        <Route path="/advogado/:citySlug" element={<CityLanding />} />
         {/* Admin */}
         <Route path="/admin" element={<LeadsDashboard />} />
         <Route path="/admin/leads" element={<LeadsDashboard />} />

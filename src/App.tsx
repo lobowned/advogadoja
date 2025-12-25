@@ -43,6 +43,7 @@ import News from "./pages/News";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import CasosSucesso from "./pages/CasosSucesso";
+import Sitemap from "./pages/Sitemap";
 
 const queryClient = new QueryClient();
 
@@ -69,6 +70,7 @@ const AnimatedRoutes = () => {
         {/* Legal Pages */}
         <Route path="/privacidade" element={<PrivacyPolicy />} />
         <Route path="/termos-de-uso" element={<TermsOfUse />} />
+        <Route path="/sitemap" element={<Sitemap />} />
         {/* Success Stories */}
         <Route path="/casos-de-sucesso" element={<CasosSucesso />} />
         {/* News */}

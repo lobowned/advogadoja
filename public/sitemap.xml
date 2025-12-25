@@ -15,6 +15,12 @@
   <!-- MAIN NAVIGATION PAGES -->
   <!-- ============================================ -->
   <url>
+    <loc>https://advogadoonline.com.br/sitemap</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://advogadoonline.com.br/selecionar-nicho</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>

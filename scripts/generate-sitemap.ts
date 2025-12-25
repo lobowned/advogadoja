@@ -1,16 +1,25 @@
 /**
  * Script para gerar sitemap.xml automaticamente
- * Inclui todas as páginas de FAQ programáticas
+ * Inclui TODAS as páginas dinâmicas do projeto:
+ * - Páginas estáticas
+ * - Calculadoras
+ * - Landing pages de nicho
+ * - Landing pages de cidades
+ * - Landing pages cidade + nicho
+ * - Artigos do blog
+ * - FAQs programáticas
  * 
  * Para executar: npx tsx scripts/generate-sitemap.ts
  */
 
 import { programmaticFAQs } from '../src/data/programmatic-faqs';
 import { blogArticles } from '../src/data/blog-articles';
+import { brazilianCities } from '../src/data/cities';
+import { legalNiches } from '../src/data/legal-niches';
 import * as fs from 'fs';
 import * as path from 'path';
 
-const BASE_URL = 'https://advogadoonline.com.br';
+const BASE_URL = 'https://advogado.online';
 const TODAY = new Date().toISOString().split('T')[0];
 
 interface SitemapURL {
@@ -20,93 +29,139 @@ interface SitemapURL {
   priority: number;
 }
 
-// Static pages configuration
+// ============================================
+// STATIC PAGES
+// ============================================
 const staticPages: SitemapURL[] = [
-  // Homepage
   { loc: '/', lastmod: TODAY, changefreq: 'daily', priority: 1.0 },
-  
-  // Main Navigation
-  { loc: '/selecionar-nicho', lastmod: TODAY, changefreq: 'monthly', priority: 0.9 },
   { loc: '/artigos', lastmod: TODAY, changefreq: 'daily', priority: 0.9 },
-  { loc: '/noticias', lastmod: TODAY, changefreq: 'daily', priority: 0.85 },
-  { loc: '/perguntas-frequentes', lastmod: TODAY, changefreq: 'daily', priority: 0.9 },
-  { loc: '/calculadoras', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/casos-de-sucesso', lastmod: TODAY, changefreq: 'monthly', priority: 0.7 },
-  
-  // Legal Pages
+  { loc: '/perguntas', lastmod: TODAY, changefreq: 'weekly', priority: 0.85 },
+  { loc: '/calculadoras', lastmod: TODAY, changefreq: 'weekly', priority: 0.85 },
+  { loc: '/noticias', lastmod: TODAY, changefreq: 'daily', priority: 0.8 },
+  { loc: '/casos-de-sucesso', lastmod: TODAY, changefreq: 'weekly', priority: 0.7 },
+  { loc: '/sitemap', lastmod: TODAY, changefreq: 'weekly', priority: 0.5 },
   { loc: '/privacidade', lastmod: TODAY, changefreq: 'yearly', priority: 0.3 },
   { loc: '/termos-de-uso', lastmod: TODAY, changefreq: 'yearly', priority: 0.3 },
-  
-  // Niche Landing Pages
-  { loc: '/advogado-trabalhista', lastmod: TODAY, changefreq: 'weekly', priority: 0.95 },
-  { loc: '/advogado-familia', lastmod: TODAY, changefreq: 'weekly', priority: 0.95 },
-  { loc: '/advogado-civil', lastmod: TODAY, changefreq: 'weekly', priority: 0.95 },
-  { loc: '/advogado-previdenciario', lastmod: TODAY, changefreq: 'weekly', priority: 0.95 },
-  { loc: '/advogado-criminal', lastmod: TODAY, changefreq: 'weekly', priority: 0.95 },
-  { loc: '/advogado-consumidor', lastmod: TODAY, changefreq: 'weekly', priority: 0.95 },
 ];
 
-// Calculators
+// ============================================
+// CALCULATORS
+// ============================================
 const calculators: SitemapURL[] = [
   { loc: '/calculadora-trabalhista', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/calculadora-pensao', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/calculadora-aposentadoria', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/calculadora-danos-morais', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/calculadora-atualizacao-divida', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-partilha-bens', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-aluguel-atrasado', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
   { loc: '/calculadora-horas-extras', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/calculadora-insalubridade', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
   { loc: '/calculadora-seguro-desemprego', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
   { loc: '/calculadora-fgts', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/calculadora-pensao-morte', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-pensao', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/calculadora-partilha-bens', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-inventario', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-aposentadoria', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
   { loc: '/calculadora-auxilio-doenca', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
   { loc: '/calculadora-bpc-loas', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-inventario', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-insalubridade', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-pensao-morte', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-danos-morais', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/calculadora-atualizacao-divida', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-aluguel-atrasado', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
   { loc: '/calculadora-dpvat', lastmod: TODAY, changefreq: 'monthly', priority: 0.75 },
 ];
 
-// Category pages for articles and news
-const niches = ['trabalhista', 'familia', 'civil', 'previdenciario', 'penal', 'consumidor'];
-
-const categoryPages: SitemapURL[] = [
-  // Articles by niche
-  ...niches.map(niche => ({
-    loc: `/artigos/${niche}`,
-    lastmod: TODAY,
-    changefreq: 'daily' as const,
-    priority: 0.85,
-  })),
-  // News by niche
-  ...niches.map(niche => ({
-    loc: `/noticias/${niche}`,
-    lastmod: TODAY,
-    changefreq: 'daily' as const,
-    priority: 0.75,
-  })),
-];
-
-// Generate FAQ URLs from programmatic FAQs
-function generateFAQUrls(): SitemapURL[] {
-  return programmaticFAQs.map(faq => ({
-    loc: `/perguntas/${faq.slug}`,
+// ============================================
+// NICHE LANDING PAGES
+// ============================================
+function generateNicheUrls(): SitemapURL[] {
+  return legalNiches.map(niche => ({
+    loc: `/advogado-${niche.id}`,
     lastmod: TODAY,
     changefreq: 'weekly' as const,
+    priority: 0.95,
+  }));
+}
+
+// ============================================
+// CITY LANDING PAGES
+// ============================================
+function generateCityUrls(): SitemapURL[] {
+  return brazilianCities.map(city => ({
+    loc: `/advogado/${city.slug}`,
+    lastmod: TODAY,
+    changefreq: 'weekly' as const,
+    priority: 0.85,
+  }));
+}
+
+// ============================================
+// CITY + NICHE LANDING PAGES (Combinações)
+// ============================================
+function generateCityNicheUrls(): SitemapURL[] {
+  const urls: SitemapURL[] = [];
+  
+  for (const city of brazilianCities) {
+    for (const niche of legalNiches) {
+      urls.push({
+        loc: `/advogado-${niche.id}-${city.slug}`,
+        lastmod: TODAY,
+        changefreq: 'weekly' as const,
+        priority: 0.75,
+      });
+    }
+  }
+  
+  return urls;
+}
+
+// ============================================
+// BLOG ARTICLES
+// ============================================
+function generateArticleUrls(): SitemapURL[] {
+  return blogArticles.map(article => ({
+    loc: `/artigos/${article.slug}`,
+    lastmod: article.publishedAt || TODAY,
+    changefreq: 'monthly' as const,
     priority: 0.7,
   }));
 }
 
-// Generate article URLs from blog articles
-function generateArticleUrls(): SitemapURL[] {
-  return blogArticles.map(article => ({
-    loc: `/artigos/${article.nicheId}/${article.slug}`,
+// ============================================
+// PROGRAMMATIC FAQs
+// ============================================
+function generateFAQUrls(): SitemapURL[] {
+  return programmaticFAQs.map(faq => ({
+    loc: `/perguntas/${faq.slug}`,
     lastmod: TODAY,
     changefreq: 'monthly' as const,
-    priority: 0.8,
+    priority: 0.65,
   }));
 }
 
-// Generate XML for a single URL entry
+// ============================================
+// CATEGORY PAGES
+// ============================================
+function generateCategoryUrls(): SitemapURL[] {
+  const categories = ['trabalhista', 'familia', 'previdenciario', 'civil', 'consumidor', 'penal'];
+  const urls: SitemapURL[] = [];
+  
+  for (const category of categories) {
+    urls.push({
+      loc: `/artigos/categoria/${category}`,
+      lastmod: TODAY,
+      changefreq: 'weekly' as const,
+      priority: 0.6,
+    });
+    urls.push({
+      loc: `/noticias/${category}`,
+      lastmod: TODAY,
+      changefreq: 'daily' as const,
+      priority: 0.6,
+    });
+  }
+  
+  return urls;
+}
+
+// ============================================
+// XML GENERATION
+// ============================================
 function generateUrlEntry(url: SitemapURL): string {
   return `  <url>
     <loc>${BASE_URL}${url.loc}</loc>
@@ -116,60 +171,63 @@ function generateUrlEntry(url: SitemapURL): string {
   </url>`;
 }
 
-// Generate section header comment
-function sectionHeader(title: string): string {
+function sectionHeader(title: string, count: number): string {
   return `
-  <!-- ============================================ -->
-  <!-- ${title} -->
-  <!-- ============================================ -->`;
+  <!-- ===== ${title} (${count} URLs) ===== -->`;
 }
 
-// Main function to generate sitemap
 function generateSitemap(): string {
-  const faqUrls = generateFAQUrls();
+  const nicheUrls = generateNicheUrls();
+  const cityUrls = generateCityUrls();
+  const cityNicheUrls = generateCityNicheUrls();
   const articleUrls = generateArticleUrls();
+  const faqUrls = generateFAQUrls();
+  const categoryUrls = generateCategoryUrls();
   
   const sections = [
-    sectionHeader('HOMEPAGE - Highest Priority'),
-    staticPages.filter(p => p.loc === '/').map(generateUrlEntry).join('\n'),
-    
-    sectionHeader('MAIN NAVIGATION PAGES'),
-    staticPages.filter(p => ['/selecionar-nicho', '/artigos', '/noticias', '/perguntas-frequentes', '/calculadoras', '/casos-de-sucesso'].includes(p.loc)).map(generateUrlEntry).join('\n'),
-    
-    sectionHeader('LEGAL PAGES'),
-    staticPages.filter(p => ['/privacidade', '/termos-de-uso'].includes(p.loc)).map(generateUrlEntry).join('\n'),
-    
-    sectionHeader('NICHE LANDING PAGES - High SEO Priority'),
-    staticPages.filter(p => p.loc.startsWith('/advogado-')).map(generateUrlEntry).join('\n'),
-    
-    sectionHeader('CALCULADORAS JURÍDICAS'),
-    calculators.map(generateUrlEntry).join('\n'),
-    
-    sectionHeader('ARTIGOS E NOTÍCIAS POR NICHO'),
-    categoryPages.map(generateUrlEntry).join('\n'),
-    
-    sectionHeader(`PERGUNTAS FREQUENTES (FAQs) - ${faqUrls.length} páginas`),
-    faqUrls.map(generateUrlEntry).join('\n'),
-    
-    sectionHeader(`ARTIGOS INDIVIDUAIS - ${articleUrls.length} páginas`),
-    articleUrls.map(generateUrlEntry).join('\n'),
+    { title: 'PÁGINAS ESTÁTICAS', urls: staticPages },
+    { title: 'CALCULADORAS JURÍDICAS', urls: calculators },
+    { title: 'LANDING PAGES POR NICHO', urls: nicheUrls },
+    { title: 'LANDING PAGES POR CIDADE', urls: cityUrls },
+    { title: 'LANDING PAGES CIDADE + NICHO', urls: cityNicheUrls },
+    { title: 'ARTIGOS DO BLOG', urls: articleUrls },
+    { title: 'PERGUNTAS FREQUENTES (FAQs)', urls: faqUrls },
+    { title: 'PÁGINAS DE CATEGORIA', urls: categoryUrls },
   ];
+
+  let xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+
+  let totalUrls = 0;
   
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sections.join('\n')}
-</urlset>`;
+  for (const { title, urls } of sections) {
+    xml += sectionHeader(title, urls.length);
+    xml += '\n' + urls.map(generateUrlEntry).join('\n');
+    totalUrls += urls.length;
+  }
+
+  xml += `\n</urlset>`;
+
+  // Print statistics
+  console.log('\n📊 Estatísticas do Sitemap:');
+  console.log('━'.repeat(50));
+  for (const { title, urls } of sections) {
+    console.log(`  ${title.padEnd(35)} ${urls.length.toString().padStart(4)} URLs`);
+  }
+  console.log('━'.repeat(50));
+  console.log(`  ${'TOTAL'.padEnd(35)} ${totalUrls.toString().padStart(4)} URLs\n`);
+
+  return xml;
 }
 
-// Execute and save
+// ============================================
+// EXECUTE
+// ============================================
 const sitemap = generateSitemap();
 const outputPath = path.resolve(__dirname, '../public/sitemap.xml');
 
 fs.writeFileSync(outputPath, sitemap, 'utf-8');
 
-console.log(`✅ Sitemap generated successfully!`);
-console.log(`📍 Output: ${outputPath}`);
-console.log(`📊 Stats:`);
-console.log(`   - FAQs: ${programmaticFAQs.length} pages`);
-console.log(`   - Articles: ${blogArticles.length} pages`);
-console.log(`   - Total URLs: ${sitemap.match(/<url>/g)?.length || 0}`);
+console.log(`✅ Sitemap gerado com sucesso!`);
+console.log(`📁 Arquivo: ${outputPath}`);
+console.log(`📅 Data: ${TODAY}`);

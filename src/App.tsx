@@ -36,6 +36,8 @@ import QADashboard from "./pages/admin/QADashboard";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import FAQ from "./pages/FAQ";
+import FAQIndex from "./pages/FAQIndex";
+import FAQQuestion from "./pages/FAQQuestion";
 import NicheLanding from "./pages/NicheLanding";
 import News from "./pages/News";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -62,6 +64,8 @@ const AnimatedRoutes = () => {
         <Route path="/artigos/:nicheId/:slug" element={<BlogPost />} />
         {/* FAQ */}
         <Route path="/perguntas-frequentes" element={<FAQ />} />
+        <Route path="/perguntas" element={<FAQIndex />} />
+        <Route path="/perguntas/:slug" element={<FAQQuestion />} />
         {/* Legal Pages */}
         <Route path="/privacidade" element={<PrivacyPolicy />} />
         <Route path="/termos-de-uso" element={<TermsOfUse />} />

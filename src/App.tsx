@@ -45,6 +45,7 @@ import TermsOfUse from "./pages/TermsOfUse";
 import CasosSucesso from "./pages/CasosSucesso";
 import Sitemap from "./pages/Sitemap";
 import CityLanding from "./pages/CityLanding";
+import CityNicheLanding from "./pages/CityNicheLanding";
 
 const queryClient = new QueryClient();
 
@@ -103,6 +104,8 @@ const AnimatedRoutes = () => {
         <Route path="/advogado-criminal" element={<NicheLanding />} />
         {/* City Landing Pages - Local SEO */}
         <Route path="/advogado/:citySlug" element={<CityLanding />} />
+        {/* City + Niche Landing Pages - Ultra Local SEO */}
+        <Route path="/advogado-:nicheSlug-:citySlug" element={<CityNicheLanding />} />
         {/* Admin */}
         <Route path="/admin" element={<LeadsDashboard />} />
         <Route path="/admin/leads" element={<LeadsDashboard />} />

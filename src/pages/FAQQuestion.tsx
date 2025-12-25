@@ -51,47 +51,68 @@ const FAQQuestion = () => {
     ...relatedArticles.map(a => `https://advogadoonline.com.br/artigos/${a.nicheId}/${a.slug}`)
   ];
   
-  // Schema.org FAQPage
+  // Schema.org FAQPage - Enhanced for FAQ rich snippets
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer.replace(/\*\*/g, '').replace(/\n/g, ' ')
-      }
-    }]
-  };
-
-  // Schema.org Article with related links
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": faq.question,
-    "description": faq.metaDescription || faq.answer.substring(0, 160),
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-01",
     "author": {
       "@type": "Organization",
       "name": "Advogado Online",
       "url": "https://advogadoonline.com.br"
     },
+    "mainEntity": [{
+      "@type": "Question",
+      "name": faq.question,
+      "url": canonicalUrl,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer.replace(/\*\*/g, '').replace(/\n/g, ' '),
+        "dateCreated": "2025-01-01"
+      }
+    }]
+  };
+
+  // Schema.org Article - Enhanced with more properties
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": faq.question,
+    "description": faq.metaDescription || faq.answer.substring(0, 160),
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-01",
+    "author": {
+      "@type": "Organization",
+      "name": "Advogado Online",
+      "url": "https://advogadoonline.com.br",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://advogadoonline.com.br/favicon.svg"
+      }
+    },
     "publisher": {
       "@type": "Organization",
       "name": "Advogado Online",
+      "url": "https://advogadoonline.com.br",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://advogadoonline.com.br/logo.png"
+        "url": "https://advogadoonline.com.br/favicon.svg",
+        "width": 60,
+        "height": 60
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": canonicalUrl
     },
+    "keywords": faq.keywords.join(", "),
+    "articleSection": areaLabels[faq.area],
+    "inLanguage": "pt-BR",
     ...(relatedLinks.length > 0 && { "relatedLink": relatedLinks })
   };
 
-  // Schema.org BreadcrumbList
+  // Schema.org BreadcrumbList - For breadcrumb rich snippets
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -121,6 +142,28 @@ const FAQQuestion = () => {
         "item": canonicalUrl
       }
     ]
+  };
+
+  // Schema.org WebPage - Additional context
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": faq.question,
+    "description": faq.metaDescription || faq.answer.substring(0, 160),
+    "url": canonicalUrl,
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Advogado Online",
+      "url": "https://advogadoonline.com.br"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": areaLabels[faq.area]
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".prose"]
+    }
   };
 
   const shareOnWhatsApp = () => {
@@ -218,6 +261,7 @@ const FAQQuestion = () => {
           <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
           <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
           <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+          <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
         </Helmet>
 
         <Navbar onCtaClick={() => {}} />

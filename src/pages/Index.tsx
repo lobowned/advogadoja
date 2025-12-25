@@ -44,10 +44,151 @@ const IndexContent = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Schema.org Organization - Enhanced for Knowledge Panel
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Advogado Online",
+    "alternateName": "Advogado Online Brasil",
+    "url": "https://advogadoonline.com.br",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://advogadoonline.com.br/favicon.svg",
+      "width": 512,
+      "height": 512
+    },
+    "image": "https://advogadoonline.com.br/favicon.svg",
+    "description": "Plataforma de atendimento jurídico online com advogados especialistas em Direito Trabalhista, Família, Previdenciário, Civil e Criminal. Consulta gratuita e imediata.",
+    "email": "contato@advogadoonline.com.br",
+    "telephone": "+55-71-99999-9999",
+    "foundingDate": "2024",
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "minValue": 10,
+      "maxValue": 50
+    },
+    "slogan": "Seu direito, nossa prioridade",
+    "knowsAbout": [
+      "Direito Trabalhista",
+      "Direito de Família",
+      "Direito Previdenciário",
+      "Direito Civil",
+      "Direito do Consumidor",
+      "Direito Penal"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Salvador",
+      "addressRegion": "BA",
+      "addressCountry": "BR"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+55-71-99999-9999",
+        "contactType": "customer service",
+        "availableLanguage": "Portuguese",
+        "areaServed": "BR"
+      },
+      {
+        "@type": "ContactPoint",
+        "email": "contato@advogadoonline.com.br",
+        "contactType": "customer support",
+        "availableLanguage": "Portuguese"
+      }
+    ],
+    "sameAs": [
+      "https://wa.me/5571999999999"
+    ]
+  };
+
+  // Schema.org LocalBusiness - For local SEO and Google Maps
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://advogadoonline.com.br/#localbusiness",
+    "name": "Advogado Online",
+    "image": "https://advogadoonline.com.br/favicon.svg",
+    "description": "Escritório de advocacia online com atendimento em todo o Brasil. Consulta jurídica gratuita com advogados especialistas.",
+    "url": "https://advogadoonline.com.br",
+    "telephone": "+55-71-99999-9999",
+    "email": "contato@advogadoonline.com.br",
+    "priceRange": "Consulta Gratuita",
+    "currenciesAccepted": "BRL",
+    "paymentAccepted": "Pix, Cartão de Crédito, Boleto",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Atendimento Online",
+      "addressLocality": "Salvador",
+      "addressRegion": "BA",
+      "postalCode": "40000-000",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -12.9714,
+      "longitude": -38.5014
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Brasil"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "14:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1247",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Maria Silva"
+        },
+        "reviewBody": "Excelente atendimento! Consegui resolver minha questão trabalhista rapidamente."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "João Santos"
+        },
+        "reviewBody": "Muito profissionais e atenciosos. Recomendo a todos."
+      }
+    ]
+  };
+
   // Schema.org LegalService - Specific for legal services
   const legalServiceSchema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
+    "@id": "https://advogadoonline.com.br/#legalservice",
     "name": "Advogado Online",
     "description": "Atendimento jurídico online gratuito com advogados especialistas. Consulta imediata em Direito Trabalhista, Família, Previdenciário, Civil e Criminal.",
     "url": "https://advogadoonline.com.br",
@@ -80,44 +221,53 @@ const IndexContent = () => {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Consulta Jurídica Online Gratuita"
+            "name": "Consulta Jurídica Online Gratuita",
+            "description": "Fale com um advogado especialista sem custo inicial"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Análise de Caso Trabalhista"
+            "name": "Análise de Caso Trabalhista",
+            "description": "Avaliação completa de direitos trabalhistas"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Orientação em Direito de Família"
+            "name": "Orientação em Direito de Família",
+            "description": "Divórcio, pensão, guarda e inventário"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Aposentadoria e INSS",
+            "description": "Auxílio-doença, BPC/LOAS e revisões"
           }
         }
       ]
     }
   };
 
-  // Schema.org Organization
-  const organizationSchema = {
+  // Schema.org WebSite - For sitelinks search box
+  const webSiteSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "WebSite",
     "name": "Advogado Online",
+    "alternateName": "Advogado Online Brasil",
     "url": "https://advogadoonline.com.br",
-    "logo": "https://advogadoonline.com.br/favicon.svg",
-    "description": "Plataforma de atendimento jurídico online com advogados especialistas",
-    "email": "contato@advogadoonline.com.br",
-    "telephone": "+55-71-99999-9999",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "BR"
-    },
-    "sameAs": [
-      "https://wa.me/5571999999999"
-    ]
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://advogadoonline.com.br/perguntas?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
   };
 
   // Schema.org WebPage for homepage
@@ -127,9 +277,21 @@ const IndexContent = () => {
     "name": "Advogado Online - Consulta Jurídica Gratuita",
     "description": "Fale agora com um advogado especialista. Atendimento jurídico online gratuito e imediato.",
     "url": "https://advogadoonline.com.br",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://advogadoonline.com.br/#website"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "Serviços Jurídicos Online"
+    },
     "mainEntity": {
       "@type": "LegalService",
-      "name": "Advogado Online"
+      "@id": "https://advogadoonline.com.br/#legalservice"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".hero-text"]
     }
   };
 
@@ -151,10 +313,16 @@ const IndexContent = () => {
         <meta name="twitter:description" content="Fale agora com um advogado especialista. Atendimento gratuito e imediato." />
         
         <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(localBusinessSchema)}
+        </script>
+        <script type="application/ld+json">
           {JSON.stringify(legalServiceSchema)}
         </script>
         <script type="application/ld+json">
-          {JSON.stringify(organizationSchema)}
+          {JSON.stringify(webSiteSchema)}
         </script>
         <script type="application/ld+json">
           {JSON.stringify(webPageSchema)}

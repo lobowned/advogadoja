@@ -2,14 +2,17 @@ import { useState } from "react";
 import { Share2, Link2, Check, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import InstagramShareModal from "./InstagramShareModal";
 
 interface SocialShareProps {
   title: string;
   url: string;
+  excerpt?: string;
+  nicheId?: string;
   variant?: "horizontal" | "vertical";
 }
 
-const SocialShare = ({ title, url, variant = "horizontal" }: SocialShareProps) => {
+const SocialShare = ({ title, url, excerpt, nicheId, variant = "horizontal" }: SocialShareProps) => {
   const [copied, setCopied] = useState(false);
 
   const shareLinks = {
@@ -45,6 +48,13 @@ const SocialShare = ({ title, url, variant = "horizontal" }: SocialShareProps) =
           WhatsApp
         </a>
       </Button>
+
+      <InstagramShareModal 
+        title={title} 
+        url={url} 
+        excerpt={excerpt} 
+        nicheId={nicheId} 
+      />
 
       <Button
         variant="outline"

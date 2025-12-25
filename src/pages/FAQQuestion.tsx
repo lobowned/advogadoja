@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, Share2, MessageCircle, ChevronRight, Scale, Tag } from 'lucide-react';
+import { ArrowLeft, Share2, MessageCircle, ChevronRight, Scale, Tag, Calculator, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -13,6 +13,7 @@ import {
   areaColors,
   programmaticFAQs,
 } from '@/data/programmatic-faqs';
+import { getRelatedCalculatorsForFAQ, getRelatedArticlesForFAQ } from '@/data/faq-internal-links';
 import PageTransition from '@/components/motion/PageTransition';
 
 const FAQQuestion = () => {
@@ -37,8 +38,18 @@ const FAQQuestion = () => {
   const otherFAQs = programmaticFAQs
     .filter(f => f.area === faq.area && f.id !== faq.id)
     .slice(0, 4);
+  
+  // Get related calculators and articles
+  const relatedCalculators = getRelatedCalculatorsForFAQ(faq);
+  const relatedArticles = getRelatedArticlesForFAQ(faq);
 
   const canonicalUrl = `https://advogadoonline.com.br/perguntas/${faq.slug}`;
+  
+  // Build related links for Schema.org
+  const relatedLinks = [
+    ...relatedCalculators.map(c => `https://advogadoonline.com.br${c.url}`),
+    ...relatedArticles.map(a => `https://advogadoonline.com.br/artigos/${a.nicheId}/${a.slug}`)
+  ];
   
   // Schema.org FAQPage
   const faqSchema = {
@@ -54,7 +65,7 @@ const FAQQuestion = () => {
     }]
   };
 
-  // Schema.org Article
+  // Schema.org Article with related links
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -76,7 +87,8 @@ const FAQQuestion = () => {
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": canonicalUrl
-    }
+    },
+    ...(relatedLinks.length > 0 && { "relatedLink": relatedLinks })
   };
 
   // Schema.org BreadcrumbList
@@ -226,7 +238,7 @@ const FAQQuestion = () => {
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Main Content */}
-            <article className="lg:col-span-2">
+            <article className="lg:col-span-2 space-y-6">
               <Card>
                 <CardContent className="p-6 lg:p-8">
                   {/* Header */}
@@ -264,27 +276,105 @@ const FAQQuestion = () => {
                       ))}
                     </div>
                   </div>
+                </CardContent>
+              </Card>
 
-                  {/* CTA */}
-                  <div className="mt-8 p-6 bg-primary/5 rounded-lg border border-primary/20">
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 bg-primary/10 rounded-full">
-                        <Scale className="h-6 w-6 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-foreground mb-2">
-                          Precisa de ajuda com seu caso?
-                        </h3>
-                        <p className="text-sm text-muted-foreground mb-4">
-                          Fale com um advogado especializado e receba orientação personalizada para sua situação.
-                        </p>
-                        <Link to="/">
-                          <Button className="w-full sm:w-auto">
-                            <MessageCircle className="h-4 w-4 mr-2" />
-                            Falar com Advogado
-                          </Button>
+              {/* Related Calculators Section */}
+              {relatedCalculators.length > 0 && (
+                <Card className="border-primary/20 bg-primary/5">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-2 mb-4">
+                      <Calculator className="h-5 w-5 text-primary" />
+                      <h2 className="font-semibold text-foreground">
+                        Calculadoras Úteis
+                      </h2>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Use nossas calculadoras gratuitas para simular valores relacionados:
+                    </p>
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                      {relatedCalculators.map((calc) => (
+                        <Link
+                          key={calc.type}
+                          to={calc.url}
+                          className="flex items-start gap-3 p-3 rounded-lg bg-background hover:bg-muted transition-colors border"
+                        >
+                          <span className="text-2xl">{calc.emoji}</span>
+                          <div className="flex-1 min-w-0">
+                            <p className="font-medium text-sm text-foreground line-clamp-1">
+                              {calc.title}
+                            </p>
+                            <p className="text-xs text-muted-foreground line-clamp-2">
+                              {calc.description}
+                            </p>
+                          </div>
                         </Link>
-                      </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+
+              {/* Related Articles Section */}
+              {relatedArticles.length > 0 && (
+                <Card>
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-2 mb-4">
+                      <BookOpen className="h-5 w-5 text-primary" />
+                      <h2 className="font-semibold text-foreground">
+                        Artigos Relacionados
+                      </h2>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Aprofunde seu conhecimento com nossos artigos completos:
+                    </p>
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      {relatedArticles.map((article) => (
+                        <Link
+                          key={article.id}
+                          to={`/artigos/${article.nicheId}/${article.slug}`}
+                          className="block p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+                        >
+                          <h3 className="font-medium text-sm text-foreground mb-2 line-clamp-2">
+                            {article.title}
+                          </h3>
+                          <p className="text-xs text-muted-foreground line-clamp-2">
+                            {article.excerpt}
+                          </p>
+                        </Link>
+                      ))}
+                    </div>
+                    <Link 
+                      to="/artigos"
+                      className="inline-flex items-center gap-1 mt-4 text-sm text-primary hover:underline"
+                    >
+                      Ver todos os artigos
+                      <ChevronRight className="h-4 w-4" />
+                    </Link>
+                  </CardContent>
+                </Card>
+              )}
+
+              {/* CTA */}
+              <Card className="border-primary/30">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-primary/10 rounded-full">
+                      <Scale className="h-6 w-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-foreground mb-2">
+                        Precisa de ajuda com seu caso?
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-4">
+                        Fale com um advogado especializado e receba orientação personalizada para sua situação.
+                      </p>
+                      <Link to="/">
+                        <Button className="w-full sm:w-auto">
+                          <MessageCircle className="h-4 w-4 mr-2" />
+                          Falar com Advogado
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </CardContent>

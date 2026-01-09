@@ -1343,12 +1343,23 @@ serve(async (req) => {
               .single();
             
             if (!fetchError && updatedLead && updatedLead.phone) {
-              console.log("📨 Invoking WhatsApp notification...");
+              console.log("📨 Invoking WhatsApp notifications...");
               try {
+                // 1. Notificar escritório (existente)
                 await supabase.functions.invoke('send-whatsapp-notification', {
                   body: { leadData: updatedLead }
                 });
-                console.log("✅ WhatsApp notification sent successfully");
+                console.log("✅ Office WhatsApp notification sent");
+                
+                // 2. 🆕 Enviar mensagem de boas-vindas para o LEAD
+                console.log("📱 Sending welcome message to lead...");
+                await supabase.functions.invoke('send-lead-whatsapp', {
+                  body: { 
+                    leadData: updatedLead,
+                    lawyerName: LAWYER_NAMES[updatedLead.assigned_lawyer || ''] || 'Equipe Jurídica'
+                  }
+                });
+                console.log("✅ Lead WhatsApp welcome message sent");
                 
                 // Marcar como notificado
                 await supabase
@@ -1359,7 +1370,7 @@ serve(async (req) => {
                   })
                   .eq('id', leadData.id);
               } catch (notifError) {
-                console.error("❌ Error sending WhatsApp notification:", notifError);
+                console.error("❌ Error sending WhatsApp notifications:", notifError);
               }
             }
           }

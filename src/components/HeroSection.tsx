@@ -10,7 +10,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Autoplay from "embla-carousel-autoplay";
-import { Users, Star, Zap } from "lucide-react";
+import { Users, Star, Zap, Shield } from "lucide-react";
 import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { lawyers } from "@/data/lawyers";
@@ -18,11 +18,11 @@ import logoAdvogadoOnline from "@/assets/logo-advogado-online.png";
 import { heroReveal, heroTitle, heroStagger, heroBadge } from "@/lib/motion-variants";
 
 const testimonials = [
-  { text: "Recebi minha rescisão em 3 meses!", author: "Maria S." },
-  { text: "Consegui minha pensão rapidamente", author: "João P." },
-  { text: "Atendimento excelente e rápido", author: "Ana C." },
-  { text: "Ganhei R$ 45.000 de horas extras!", author: "Carlos M." },
-  { text: "Consegui minha aposentadoria!", author: "Rosa L." },
+  { text: "Ganhei R$ 12.000 por voo cancelado!", author: "Roberto M." },
+  { text: "Recebi R$ 8.000 de indenização da operadora!", author: "Carla S." },
+  { text: "Plano de saúde pagou minha cirurgia!", author: "José L." },
+  { text: "Devolução em dobro da cobrança indevida!", author: "Ana P." },
+  { text: "Consegui cancelar contrato sem multa!", author: "Marcos R." },
 ];
 
 // Floating Particles Component
@@ -160,6 +160,17 @@ const HeroSection = () => {
                 </div>
               </Badge>
             </m.div>
+
+            <m.div variants={heroBadge}>
+              <Badge 
+                className="glass-dark border-blue-400/40 text-white px-2.5 sm:px-4 py-1 sm:py-2 text-[11px] sm:text-sm font-medium shadow-lg"
+              >
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
+                  <span>Especialistas CDC</span>
+                </div>
+              </Badge>
+            </m.div>
           </m.div>
 
           {/* Rotating Testimonial with AnimatePresence */}
@@ -264,7 +275,7 @@ const HeroSection = () => {
             animate="visible"
             transition={{ delay: 0.7 }}
           >
-            Atendimento Jurídico
+            Seus Direitos de Consumidor
             <br />
             <m.span 
               className="text-gradient-blue inline-block"
@@ -272,9 +283,19 @@ const HeroSection = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Gratuito e Imediato
+              Foram Violados?
             </m.span>
           </m.h1>
+          
+          <m.p 
+            className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.6 }}
+          >
+            Voo cancelado, cobrança indevida, produto defeituoso, plano de saúde negou?
+            <span className="text-primary font-semibold"> Resolva agora!</span>
+          </m.p>
         </div>
       </div>
     </section>

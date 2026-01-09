@@ -27,34 +27,34 @@ interface Testimonial {
 const whatsappTestimonials: Testimonial[] = [
   {
     id: 1,
-    clientName: "Maria Aparecida",
-    clientInitials: "MA",
-    avatarUrl: "https://randomuser.me/api/portraits/women/45.jpg",
-    area: "Trabalhista",
+    clientName: "Roberto Martins",
+    clientInitials: "RM",
+    avatarUrl: "https://randomuser.me/api/portraits/men/45.jpg",
+    area: "Aviação",
     date: "HOJE",
     batteryLevel: 92,
     statusBarTime: "09:38",
     messages: [
       {
         type: "sent",
-        text: "Maria, seu processo foi julgado procedente! Você vai receber R$ 47.000,00 👏",
+        text: "Roberto, ganhamos! Indenização de R$ 15.000 pelo voo cancelado! ✈️🎉",
         time: "09:32",
         seen: true
       },
       {
         type: "received",
-        text: "DOUTOR! Não acredito!! Muito obrigada mesmo! Vocês mudaram minha vida! 🙏❤️",
+        text: "DOUTOR! Não acredito!! Depois de todo aquele transtorno, finalmente justiça! 😭🙏",
         time: "09:35",
-        reaction: "❤️"
+        reaction: "🎉"
       },
       {
         type: "received",
-        text: "Vou indicar pra todo mundo da minha família!",
+        text: "Vocês resolveram tudo tão rápido! Muito obrigado mesmo!",
         time: "09:36"
       },
       {
         type: "sent",
-        text: "Que alegria Maria! Conte sempre conosco 🙏",
+        text: "Merecido Roberto! Qualquer problema com empresas, conte conosco! 💪",
         time: "09:38",
         seen: true
       }
@@ -62,24 +62,24 @@ const whatsappTestimonials: Testimonial[] = [
   },
   {
     id: 2,
-    clientName: "José Carlos",
-    clientInitials: "JC",
-    avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
-    area: "Previdenciário",
+    clientName: "Sandra Oliveira",
+    clientInitials: "SO",
+    avatarUrl: "https://randomuser.me/api/portraits/women/52.jpg",
+    area: "Telecomunicações",
     date: "HOJE",
     batteryLevel: 78,
     statusBarTime: "14:24",
     messages: [
       {
         type: "sent",
-        text: "José, sua aposentadoria foi aprovada! Parabéns! 🎉",
+        text: "Sandra, conseguimos! Devolução em dobro + R$ 6.000 de danos morais contra a Vivo! 📱💰",
         time: "14:18",
         seen: true,
-        reaction: "🎉"
+        reaction: "💰"
       },
       {
         type: "received",
-        text: "Sério doutor?! Não acredito! 😭",
+        text: "Meu Deus!! Eles me cobravam há 8 meses um serviço que eu nunca contratei! 😭",
         time: "14:19"
       },
       {
@@ -89,49 +89,49 @@ const whatsappTestimonials: Testimonial[] = [
       },
       {
         type: "received",
-        text: "Muito obrigado por tudo! Vocês são demais! 🙏",
+        text: "Vocês são maravilhosos! Vou indicar para todo mundo! 🙏❤️",
         time: "14:21",
-        reaction: "🙏"
+        reaction: "❤️"
       },
       {
         type: "sent",
-        text: "Que bom José! Foi uma luta, mas valeu a pena! 💪",
+        text: "Que bom Sandra! Operadoras não podem abusar do consumidor! 💪",
         time: "14:22",
         seen: true
       }
     ],
-    audioTranscript: "Doutor, muito obrigado! Depois de 3 anos lutando, finalmente consegui minha aposentadoria. Vocês são demais!"
+    audioTranscript: "Doutora, muito obrigada! Eu já tinha desistido, achava que nunca ia ver meu dinheiro de volta. Vocês provaram que vale a pena lutar!"
   },
   {
     id: 3,
-    clientName: "Ana Paula",
-    clientInitials: "AP",
-    avatarUrl: "https://randomuser.me/api/portraits/women/32.jpg",
-    area: "Família",
+    clientName: "José Lima",
+    clientInitials: "JL",
+    avatarUrl: "https://randomuser.me/api/portraits/men/32.jpg",
+    area: "Plano de Saúde",
     date: "ONTEM",
     batteryLevel: 65,
     statusBarTime: "16:50",
     messages: [
       {
         type: "sent",
-        text: "Ana, a guarda compartilhada foi homologada! Tudo certo ✅",
+        text: "José, a liminar saiu! O plano de saúde é obrigado a autorizar sua cirurgia! 🏥✅",
         time: "16:45",
         seen: true
       },
       {
         type: "received",
-        text: "Doutora, muito obrigada por tudo! Você foi um anjo na minha vida 😭🙏",
+        text: "Doutor... você salvou minha vida... literalmente... 😭🙏",
         time: "16:48",
         reaction: "🙏"
       },
       {
         type: "received",
-        text: "Agora posso ficar tranquila com meus filhos",
+        text: "Em menos de 48 horas vocês conseguiram o que eu tentei por 3 meses",
         time: "16:48"
       },
       {
         type: "sent",
-        text: "Fico muito feliz Ana! Você merece toda paz do mundo 💙",
+        text: "José, plano de saúde não pode negar o que está no contrato! Sua saúde é prioridade! 💙",
         time: "16:50",
         seen: true
       }
@@ -139,29 +139,34 @@ const whatsappTestimonials: Testimonial[] = [
   },
   {
     id: 4,
-    clientName: "Roberto Lima",
-    clientInitials: "RL",
-    avatarUrl: "https://randomuser.me/api/portraits/men/35.jpg",
-    area: "Consumidor",
+    clientName: "Maria Costa",
+    clientInitials: "MC",
+    avatarUrl: "https://randomuser.me/api/portraits/women/35.jpg",
+    area: "Financeiro",
     date: "12/12/2024",
     batteryLevel: 87,
     statusBarTime: "11:30",
     messages: [
       {
         type: "sent",
-        text: "Roberto, ganhamos! Indenização de R$ 15.000 pelo produto defeituoso 💪",
+        text: "Maria, vitória! Devolução em dobro do empréstimo fraudulento + R$ 8.000 de danos morais! 🏦✅",
         time: "11:20",
         seen: true,
         reaction: "💪"
       },
       {
         type: "received",
-        text: "Caramba doutor! Eu já tinha desistido de correr atrás disso! Vocês são muito bons! 👏👏",
+        text: "NOSSA!! O banco descontou R$ 400/mês durante 1 ano sem eu saber! 😭",
         time: "11:25"
       },
       {
+        type: "received",
+        text: "Vocês provaram a fraude! Obrigada por acreditarem em mim! 🙏❤️",
+        time: "11:26"
+      },
+      {
         type: "sent",
-        text: "Fico feliz Roberto! Qualquer coisa estamos aqui 👊",
+        text: "Fico feliz Maria! Banco não pode fazer empréstimo sem autorização! 👊",
         time: "11:27",
         seen: true
       }
@@ -169,23 +174,23 @@ const whatsappTestimonials: Testimonial[] = [
   },
   {
     id: 5,
-    clientName: "Francisca Souza",
-    clientInitials: "FS",
-    avatarUrl: "https://randomuser.me/api/portraits/women/68.jpg",
-    area: "Previdenciário",
+    clientName: "Carlos Silva",
+    clientInitials: "CS",
+    avatarUrl: "https://randomuser.me/api/portraits/men/68.jpg",
+    area: "Compras Online",
     date: "HOJE",
     batteryLevel: 43,
     statusBarTime: "10:27",
     messages: [
       {
         type: "sent",
-        text: "Dona Francisca, o BPC/LOAS foi aprovado! A senhora vai receber todo mês agora 🙌",
+        text: "Carlos, ganhamos! Reembolso total + R$ 4.000 de indenização pelo celular que nunca chegou! 📦💰",
         time: "10:15",
         seen: true
       },
       {
         type: "received",
-        text: "Ai meu Deus! É verdade doutor?! 😭",
+        text: "Doutor, eram R$ 3.500 perdidos! A loja sumiu e o marketplace não queria resolver! 😤",
         time: "10:18"
       },
       {
@@ -195,49 +200,49 @@ const whatsappTestimonials: Testimonial[] = [
       },
       {
         type: "received",
-        text: "Que Deus abençoe vocês! Muito obrigada! 🙏❤️",
+        text: "Vocês mostraram que dá pra confiar na justiça! Obrigado demais! 🙏💪",
         time: "10:23",
-        reaction: "❤️"
+        reaction: "💪"
       },
       {
         type: "sent",
-        text: "A senhora merece dona Francisca! Deus abençoe 🙏",
+        text: "Marketplace também responde Carlos! Conta sempre conosco! 🤝",
         time: "10:25",
         seen: true
       }
     ],
-    audioTranscript: "Meu Deus do céu! Graças a Deus e a vocês! Agora vou poder comprar meus remédios..."
+    audioTranscript: "Cara, eu achei que tinha perdido meu dinheiro pra sempre. Vocês não só recuperaram como ainda ganhei indenização!"
   },
   {
     id: 6,
-    clientName: "Carlos Eduardo",
-    clientInitials: "CE",
-    avatarUrl: "https://randomuser.me/api/portraits/men/22.jpg",
-    area: "Trabalhista",
+    clientName: "Ana Paula Reis",
+    clientInitials: "AR",
+    avatarUrl: "https://randomuser.me/api/portraits/women/22.jpg",
+    area: "Negativação Indevida",
     date: "ONTEM",
     batteryLevel: 71,
     statusBarTime: "15:48",
     messages: [
       {
         type: "sent",
-        text: "Carlos, as verbas rescisórias foram depositadas! R$ 23.500,00 na sua conta ✅",
+        text: "Ana Paula, conseguimos! Indenização de R$ 10.000 pela negativação indevida! Nome limpo! ✨",
         time: "15:40",
         seen: true
       },
       {
         type: "received",
-        text: "Doutor, não tenho nem palavras! Achei que nunca ia ver esse dinheiro 😭",
+        text: "Doutora, eu chorei de alegria! Meu nome estava sujo por uma dívida que eu já tinha pago há 2 anos! 😭",
         time: "15:45",
         reaction: "😭"
       },
       {
         type: "received",
-        text: "Deus abençoe vocês! Profissionais de verdade! 🙏❤️",
+        text: "Não conseguia nem abrir conta em banco... Vocês mudaram minha vida! 🙏❤️",
         time: "15:46"
       },
       {
         type: "sent",
-        text: "Merecido Carlos! Sucesso sempre! 🤝",
+        text: "Merecido Ana! Negativação indevida é dano moral! Sucesso sempre! 🤝",
         time: "15:48",
         seen: true
       }

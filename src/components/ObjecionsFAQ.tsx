@@ -31,30 +31,30 @@ const areaLabels: Record<string, string> = {
 
 const ObjecionsFAQ = ({ detectedArea }: ObjecionsFAQProps) => {
   const [searchParams] = useSearchParams();
-  const [currentArea, setCurrentArea] = useState<string | null>(null);
+  const [currentArea, setCurrentArea] = useState<string | null>('consumidor');
   
   useEffect(() => {
-    // Priority: prop > query param > null
+    // Priority: prop > query param > default to consumidor
     const areaFromParam = searchParams.get('area');
-    setCurrentArea(detectedArea || areaFromParam || null);
+    setCurrentArea(detectedArea || areaFromParam || 'consumidor');
   }, [detectedArea, searchParams]);
 
   const objections = [
     {
-      question: "Tenho medo de não resolver meu problema",
-      answer: "Você terá clareza total sobre riscos, caminhos e estratégias disponíveis. A transparência é a base do trabalho realizado. Nenhuma promessa irreal será feita — apenas análise técnica honesta e fundamentada."
+      question: "Será que tenho direito mesmo?",
+      answer: "O Código de Defesa do Consumidor (CDC) protege você em diversas situações: cobranças indevidas, produtos defeituosos, serviços não prestados, negativação indevida e muito mais. Nossa equipe analisa seu caso gratuitamente."
     },
     {
-      question: "Já falei com outros advogados e não senti confiança",
-      answer: "Aqui você recebe explicações diretas, fundamentadas e sem promessas irreais. O atendimento é baseado em ética profissional, comunicação clara e estratégia bem definida desde o primeiro contato."
+      question: "Processar empresa grande dá certo?",
+      answer: "Sim! Bancos, operadoras, companhias aéreas e planos de saúde perdem milhares de processos todos os dias. O Judiciário é favorável ao consumidor na maioria dos casos. Temos experiência contra todas as grandes empresas."
     },
     {
-      question: "Meu caso é muito complicado",
-      answer: "Quanto mais complexo o caso, mais essencial é uma atuação estratégica e especializada. Casos difíceis exigem análise profunda, experiência comprovada e dedicação total — exatamente o que será oferecido."
+      question: "Quanto tempo demora para resolver?",
+      answer: "Depende do caso. Liminares (como plano de saúde negando cirurgia) podem sair em 24-48h. Processos no Juizado Especial levam de 3 a 6 meses. Ações comuns, de 1 a 2 anos. Avaliamos a melhor estratégia para seu caso."
     },
     {
-      question: "Não entendo nada de assuntos jurídicos",
-      answer: "Você será guiado passo a passo, em linguagem simples e objetiva. Todo o processo será explicado de forma clara, sem jargões complicados, para que você entenda exatamente o que está acontecendo e possa tomar decisões informadas."
+      question: "Tenho que pagar algo para começar?",
+      answer: "A consulta inicial é gratuita. Analisamos seu caso e explicamos suas chances. Muitos processos de consumidor podem ser feitos sem custo inicial, com honorários apenas em caso de vitória."
     }
   ];
 

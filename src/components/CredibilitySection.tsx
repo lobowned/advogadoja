@@ -29,7 +29,7 @@ const CredibilitySection = () => {
             transition={{ delay: 0.2, duration: 0.5, type: "spring" }}
           >
             <Award className="w-4 h-4" />
-            Credibilidade e Segurança
+            Especialistas em Direito do Consumidor
           </m.div>
           
           <m.h2 
@@ -38,8 +38,8 @@ const CredibilitySection = () => {
             animate={headerInView ? { opacity: 1, filter: "blur(0px)" } : {}}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            Por Que Confiar na{" "}
-            <span className="text-gradient-blue">Nossa Equipe?</span>
+            Defendemos Você Contra{" "}
+            <span className="text-gradient-blue">Empresas</span>
           </m.h2>
           
           <m.p 
@@ -48,7 +48,7 @@ const CredibilitySection = () => {
             animate={headerInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            Credenciados, certificados e comprometidos com a excelência no atendimento jurídico
+            Somos especialistas no Código de Defesa do Consumidor. Atuamos contra companhias aéreas, bancos, operadoras, planos de saúde e e-commerces.
           </m.p>
         </m.div>
 

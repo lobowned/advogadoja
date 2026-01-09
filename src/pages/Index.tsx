@@ -14,6 +14,7 @@ import NewsSection from "@/components/NewsSection";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import MobileBottomCTA from "@/components/MobileBottomCTA";
 import SuccessNotification from "@/components/SuccessNotification";
+import ConsumerProblemsSection from "@/components/ConsumerProblemsSection";
 import { DetectedProblemProvider, useDetectedProblem } from "@/contexts/DetectedProblemContext";
 
 const IndexContent = () => {
@@ -58,7 +59,7 @@ const IndexContent = () => {
       "height": 512
     },
     "image": "https://advogadoonline.com.br/favicon.svg",
-    "description": "Plataforma de atendimento jurídico online com advogados especialistas em Direito Trabalhista, Família, Previdenciário, Civil e Criminal. Consulta gratuita e imediata.",
+    "description": "Seus direitos de consumidor foram violados? Fale agora com advogado especialista. Voo cancelado, cobrança indevida, plano de saúde negou, produto defeituoso? Resolva sem sair de casa.",
     "email": "contato@advogadoonline.com.br",
     "telephone": "+55-71-99999-9999",
     "foundingDate": "2024",
@@ -67,14 +68,15 @@ const IndexContent = () => {
       "minValue": 10,
       "maxValue": 50
     },
-    "slogan": "Seu direito, nossa prioridade",
+    "slogan": "Seus direitos de consumidor protegidos",
     "knowsAbout": [
-      "Direito Trabalhista",
-      "Direito de Família",
-      "Direito Previdenciário",
-      "Direito Civil",
       "Direito do Consumidor",
-      "Direito Penal"
+      "Voo Cancelado",
+      "Cobrança Indevida",
+      "Plano de Saúde",
+      "Negativação Indevida",
+      "Produto Defeituoso",
+      "Fraude Bancária"
     ],
     "address": {
       "@type": "PostalAddress",
@@ -109,7 +111,7 @@ const IndexContent = () => {
     "@id": "https://advogadoonline.com.br/#localbusiness",
     "name": "Advogado Online",
     "image": "https://advogadoonline.com.br/favicon.svg",
-    "description": "Escritório de advocacia online com atendimento em todo o Brasil. Consulta jurídica gratuita com advogados especialistas.",
+    "description": "Advogado do Consumidor Online. Voo cancelado, cobrança indevida, plano de saúde, produto defeituoso. Consulta gratuita em todo o Brasil.",
     "url": "https://advogadoonline.com.br",
     "telephone": "+55-71-99999-9999",
     "email": "contato@advogadoonline.com.br",
@@ -189,8 +191,8 @@ const IndexContent = () => {
     "@context": "https://schema.org",
     "@type": "LegalService",
     "@id": "https://advogadoonline.com.br/#legalservice",
-    "name": "Advogado Online",
-    "description": "Atendimento jurídico online gratuito com advogados especialistas. Consulta imediata em Direito Trabalhista, Família, Previdenciário, Civil e Criminal.",
+    "name": "Advogado do Consumidor Online",
+    "description": "Especialistas em Direito do Consumidor. Voo cancelado, cobrança indevida, plano de saúde, produto defeituoso, negativação indevida. Consulta gratuita.",
     "url": "https://advogadoonline.com.br",
     "telephone": "+55-71-99999-9999",
     "email": "contato@advogadoonline.com.br",
@@ -199,12 +201,13 @@ const IndexContent = () => {
       "name": "Brasil"
     },
     "serviceType": [
-      "Direito Trabalhista",
-      "Direito de Família",
-      "Direito Previdenciário",
-      "Direito Civil",
-      "Direito do Consumidor",
-      "Direito Penal"
+      "Voo Cancelado e Atraso",
+      "Cobrança Indevida",
+      "Plano de Saúde",
+      "Fraude Bancária",
+      "Produto Defeituoso",
+      "Negativação Indevida",
+      "Direito do Consumidor"
     ],
     "priceRange": "Consulta Gratuita",
     "openingHoursSpecification": {
@@ -221,32 +224,32 @@ const IndexContent = () => {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Consulta Jurídica Online Gratuita",
-            "description": "Fale com um advogado especialista sem custo inicial"
+            "name": "Indenização por Voo Cancelado",
+            "description": "Consiga até R$ 15.000 por voo cancelado ou atrasado"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Análise de Caso Trabalhista",
-            "description": "Avaliação completa de direitos trabalhistas"
+            "name": "Cobrança Indevida",
+            "description": "Devolução em dobro + danos morais por cobranças indevidas"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Orientação em Direito de Família",
-            "description": "Divórcio, pensão, guarda e inventário"
+            "name": "Plano de Saúde Negou",
+            "description": "Liminar em 48h para procedimentos negados"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Aposentadoria e INSS",
-            "description": "Auxílio-doença, BPC/LOAS e revisões"
+            "name": "Negativação Indevida",
+            "description": "Indenização por nome sujo indevido no SPC/Serasa"
           }
         }
       ]
@@ -341,6 +344,9 @@ const IndexContent = () => {
 
       {/* WhatsApp Testimonials Section */}
       <WhatsAppTestimonials />
+
+      {/* Consumer Problems Section */}
+      <ConsumerProblemsSection />
 
       {/* Lawyers Showcase Section */}
       <div id="advogados">

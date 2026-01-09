@@ -85,6 +85,38 @@ export const faqsByArea: Record<string, AreaFAQ[]> = {
     {
       question: "A empresa pode cobrar taxa de cancelamento?",
       answer: "Depende do contrato e do serviço. Em compras à distância (internet, telefone), há direito de arrependimento em 7 dias sem qualquer custo. Fora isso, multas abusivas podem ser contestadas."
+    },
+    {
+      question: "Comprei online e não recebi o produto. O que fazer?",
+      answer: "Reclame por escrito ao vendedor, registre no Procon e Consumidor.gov.br. Se não resolver em 7-15 dias, você pode pedir reembolso total + danos morais no JEC. O marketplace também é responsável."
+    },
+    {
+      question: "Qual o prazo de garantia legal de produtos?",
+      answer: "30 dias para produtos não duráveis e 90 dias para produtos duráveis. A garantia contratual (fabricante) soma-se à legal. Em caso de defeito, a loja tem 30 dias para resolver."
+    },
+    {
+      question: "A operadora está me cobrando por serviço que não contratei. O que fazer?",
+      answer: "Conteste a cobrança por escrito com protocolo, reclame na ANATEL (1331 ou site), registre no Consumidor.gov.br. Se indevida, você tem direito à devolução em dobro do valor pago."
+    },
+    {
+      question: "Meu voo foi cancelado. Quais meus direitos?",
+      answer: "Você pode escolher: reembolso integral em 7 dias, reacomodação em outro voo ou execução por outro meio. A partir de 4h de atraso ou cancelamento, há direito a indenização por danos morais."
+    },
+    {
+      question: "O banco descontou um empréstimo que não contratei. E agora?",
+      answer: "É fraude! Conteste formalmente no banco, faça BO, reclame no Banco Central (Registrato) e procure advogado. Você tem direito à devolução em dobro + danos morais."
+    },
+    {
+      question: "O plano de saúde negou meu procedimento. O que fazer?",
+      answer: "Negativas indevidas podem ser revertidas com liminar judicial em 24-48h. O plano não pode negar procedimentos do rol ANS nem urgências/emergências. Reclame na ANS (0800 701 9656) e procure advogado."
+    },
+    {
+      question: "Posso cancelar contrato de fidelidade antes do prazo?",
+      answer: "Sim, você pode cancelar a qualquer momento. A multa deve ser proporcional ao tempo restante e não pode ser abusiva. Se o serviço é ruim ou diferente do contratado, pode cancelar sem multa."
+    },
+    {
+      question: "Minha bagagem foi extraviada. Tenho direito a indenização?",
+      answer: "Sim! A companhia deve localizar em até 7 dias (voos nacionais) ou 21 dias (internacionais). Se não localizar, você tem direito a indenização integral. Também cabe danos morais se houver prejuízo significativo."
     }
   ]
 };

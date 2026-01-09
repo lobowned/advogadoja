@@ -836,6 +836,399 @@ No entanto, é importante considerar:
     relatedQuestions: ['cons-1', 'cons-2', 'cons-3'],
     metaDescription: 'Saiba quando a empresa pode ou não cobrar taxa de cancelamento: regras, limites e o que fazer se a cobrança for abusiva.'
   },
+  {
+    id: 'cons-5',
+    slug: 'meu-voo-foi-cancelado-direitos',
+    question: 'Meu voo foi cancelado. Quais são meus direitos?',
+    answer: `O cancelamento de voo gera direitos importantes para o passageiro conforme regulamento da ANAC:
+
+**Direitos imediatos (a partir do cancelamento):**
+- **Comunicação:** acesso a telefone e internet
+- **Alimentação:** voucher ou refeição (a partir de 1h de espera)
+- **Acomodação:** hotel + transporte (se pernoite necessário)
+
+**Opções que a companhia deve oferecer:**
+1. **Reacomodação:** em voo da mesma ou outra companhia
+2. **Reembolso integral:** em até 7 dias
+3. **Execução por outro meio:** ônibus, por exemplo
+
+**Indenização por danos morais:**
+- Cancelamento sem aviso prévio de 72h: cabe indenização
+- Valores comuns: R$ 3.000 a R$ 15.000
+- Perda de compromisso importante: valores maiores
+
+**Como proceder:**
+1. Exija o cumprimento dos direitos no aeroporto
+2. Guarde todos os comprovantes (cartão de embarque, recibos)
+3. Registre reclamação na ANAC
+4. Procure advogado para indenização
+
+**Prazo para reclamar:** 5 anos para voos nacionais, 2 anos para internacionais.`,
+    area: 'consumidor',
+    keywords: ['voo cancelado', 'cancelamento voo', 'direitos passageiro', 'indenização aérea', 'ANAC'],
+    relatedQuestions: ['cons-6', 'cons-4', 'cons-1'],
+    metaDescription: 'Saiba seus direitos quando o voo é cancelado: reacomodação, reembolso, assistência material e indenização por danos morais.'
+  },
+  {
+    id: 'cons-6',
+    slug: 'bagagem-extraviada-indenizacao',
+    question: 'Minha bagagem foi extraviada. Tenho direito a indenização?',
+    answer: `Sim, o extravio de bagagem gera direitos ao passageiro. Veja o que fazer:
+
+**No aeroporto (imediatamente):**
+1. Vá ao balcão da companhia aérea
+2. Preencha o RIB (Registro de Irregularidade de Bagagem)
+3. Anote o número do protocolo
+
+**Prazos para localização:**
+- **Voos nacionais:** até 7 dias
+- **Voos internacionais:** até 21 dias
+
+**Seus direitos imediatos:**
+- Reembolso para compras de itens essenciais
+- Roupas, higiene pessoal, medicamentos
+- Guarde todas as notas fiscais
+
+**Se a bagagem não for localizada:**
+- Indenização pelo valor declarado ou limite da convenção
+- Comprovação do conteúdo (fotos, notas)
+- Danos morais se houve prejuízo significativo
+
+**Valores de indenização:**
+- Nacional: até 1.131 DES (~R$ 7.500)
+- Internacional (Convenção de Montreal): até 1.288 DES (~R$ 8.500)
+- Danos morais: R$ 3.000 a R$ 20.000
+
+**Prazo para reclamar:** 7 dias para avaria, 21 dias para atraso, 2 anos para ação judicial.`,
+    area: 'consumidor',
+    keywords: ['bagagem extraviada', 'mala perdida', 'extravio bagagem', 'indenização bagagem', 'companhia aérea'],
+    relatedQuestions: ['cons-5', 'cons-4', 'cons-1'],
+    metaDescription: 'Saiba o que fazer quando sua bagagem é extraviada: prazos, direitos, indenização e como proceder para recuperar ou ser ressarcido.'
+  },
+  {
+    id: 'cons-7',
+    slug: 'operadora-cobranca-servico-nao-contratado',
+    question: 'A operadora está me cobrando por serviço que não contratei. O que fazer?',
+    answer: `A cobrança por serviço não contratado é prática abusiva. Veja como resolver:
+
+**Passo 1 - Conteste na operadora:**
+- Ligue para o SAC e anote o protocolo
+- Conteste por e-mail (para ter prova escrita)
+- Prazo para resposta: 5 dias úteis
+
+**Passo 2 - Reclame na ANATEL:**
+- Telefone: 1331 (gratuito)
+- Site: anatel.gov.br
+- App Anatel Consumidor
+- Prazo para resposta: 5 dias
+
+**Passo 3 - Registre no Consumidor.gov.br:**
+- Site governamental gratuito
+- Alta taxa de resolução
+- Prazo: 10 dias para resposta
+
+**Seus direitos:**
+- **Devolução em dobro** do valor pago indevidamente
+- Cancelamento imediato do serviço
+- Indenização por danos morais se houve negativação
+
+**Se não resolver:**
+- Procon da sua cidade
+- Juizado Especial Cível (até 20 salários mínimos sem advogado)
+- Ação com advogado para casos maiores
+
+**Dica:** Sempre guarde faturas, protocolos e prints de conversas.`,
+    area: 'consumidor',
+    keywords: ['cobrança indevida', 'operadora cobrança', 'serviço não contratado', 'ANATEL reclamação'],
+    relatedQuestions: ['cons-8', 'cons-1', 'cons-2'],
+    metaDescription: 'Saiba o que fazer quando a operadora cobra por serviço não contratado: passo a passo para contestar e receber de volta em dobro.'
+  },
+  {
+    id: 'cons-8',
+    slug: 'internet-velocidade-abaixo-contratado',
+    question: 'Minha internet está abaixo da velocidade contratada. Posso reclamar?',
+    answer: `Sim, a operadora deve entregar a velocidade contratada. Veja as regras:
+
+**Velocidades mínimas garantidas (ANATEL):**
+- **Velocidade instantânea:** mínimo 80% do contratado
+- **Média mensal:** mínimo 80% do contratado
+- **Upload:** mesmas regras
+
+**Como medir:**
+1. Acesse: brasilbandalarga.com.br (medidor oficial ANATEL)
+2. Faça pelo menos 10 medições em horários diferentes
+3. Salve os relatórios como prova
+
+**Se estiver abaixo do mínimo:**
+1. Reclame na operadora com protocolo
+2. Prazo para normalizar: 48 horas
+3. Se não resolver: ANATEL (1331)
+
+**Seus direitos:**
+- Desconto proporcional na fatura
+- Cancelamento sem multa
+- Migração para plano compatível
+- Indenização se houve prejuízo
+
+**Dicas importantes:**
+- Teste por cabo, não por Wi-Fi (mais preciso)
+- Verifique se não há problema no seu roteador
+- Documente tudo com prints e datas
+
+**Prazo para reclamação:** Não há prazo específico, reclame assim que identificar.`,
+    area: 'consumidor',
+    keywords: ['internet lenta', 'velocidade internet', 'operadora internet', 'banda larga'],
+    relatedQuestions: ['cons-7', 'cons-1', 'cons-4'],
+    metaDescription: 'Saiba o que fazer quando a internet está abaixo da velocidade contratada: como medir, reclamar e seus direitos.'
+  },
+  {
+    id: 'cons-9',
+    slug: 'contrato-fidelidade-multa-cancelamento',
+    question: 'Posso cancelar contrato de fidelidade antes do prazo?',
+    answer: `Sim, você pode cancelar a qualquer momento. A questão é se haverá multa:
+
+**Quando NÃO pode haver multa:**
+- Serviço diferente do contratado
+- Problemas recorrentes não resolvidos
+- Aumento de preço acima da inflação
+- Mudança para local sem cobertura
+- Falecimento do titular
+
+**Quando a multa é permitida:**
+- Cancelamento por conveniência do consumidor
+- Dentro do prazo de fidelidade
+- Desde que proporcional ao tempo restante
+
+**Cálculo da multa:**
+- Deve ser proporcional aos meses restantes
+- Exemplo: 12 meses de fidelidade, cancela no 6º mês = multa de 50% do valor original
+- Não pode ser valor fixo desproporcional
+
+**Limites para a multa:**
+- Geralmente aceita: 10% a 40% do valor restante
+- Multa maior pode ser considerada abusiva
+- Pode ser contestada no Procon ou Justiça
+
+**Como cancelar:**
+1. Notifique por escrito (e-mail com confirmação)
+2. Questione o valor da multa se parecer abusivo
+3. Reclame na ANATEL/Procon se necessário
+
+**Dica:** Academias, planos de telefonia e TV são os casos mais comuns.`,
+    area: 'consumidor',
+    keywords: ['fidelidade', 'multa cancelamento', 'cancelar contrato', 'contrato abusivo'],
+    relatedQuestions: ['cons-4', 'cons-7', 'cons-1'],
+    metaDescription: 'Saiba se pode cancelar contrato de fidelidade antes do prazo: quando há multa, como calcular e quando contestar valores abusivos.'
+  },
+  {
+    id: 'cons-10',
+    slug: 'juros-abusivos-emprestimo-banco',
+    question: 'Como saber se os juros do meu empréstimo são abusivos?',
+    answer: `Os juros podem ser considerados abusivos quando estão muito acima da média de mercado. Veja como identificar:
+
+**Sinais de juros abusivos:**
+- Taxa muito superior à média do Banco Central
+- CET (Custo Efetivo Total) não informado
+- Taxas ocultas no contrato
+- Cobranças não autorizadas embutidas
+
+**Como verificar:**
+1. Consulte a taxa média no site do Banco Central
+2. Compare com a taxa do seu contrato
+3. Verifique o CET (inclui todos os custos)
+
+**Taxas médias (consulte o BC para valores atuais):**
+- Consignado INSS: ~1,8% a 2,5% ao mês
+- Pessoal: ~3% a 7% ao mês
+- Cheque especial: limite de 8% ao mês
+- Cartão de crédito rotativo: ~10% a 15% ao mês
+
+**O que fazer se for abusivo:**
+1. Tente renegociar com o banco
+2. Reclame no Banco Central (Registrato)
+3. Registre no Consumidor.gov.br
+4. Ação judicial para revisão de contrato
+
+**Revisão judicial pode:**
+- Reduzir juros ao patamar médio de mercado
+- Devolver valores pagos a mais
+- Recalcular todo o contrato
+
+**Prazo:** Pode revisar contratos dos últimos 10 anos.`,
+    area: 'consumidor',
+    keywords: ['juros abusivos', 'empréstimo juros', 'taxa abusiva', 'revisão contrato banco'],
+    relatedQuestions: ['cons-11', 'cons-1', 'cons-2'],
+    metaDescription: 'Saiba como identificar juros abusivos em empréstimos: sinais, como verificar e o que fazer para revisar o contrato.'
+  },
+  {
+    id: 'cons-11',
+    slug: 'garantia-produto-prazo-legal',
+    question: 'Qual é o prazo de garantia legal de um produto?',
+    answer: `A garantia legal é determinada pelo Código de Defesa do Consumidor e não pode ser afastada:
+
+**Prazos de garantia LEGAL:**
+- **Produtos não duráveis:** 30 dias (alimentos, cosméticos)
+- **Produtos duráveis:** 90 dias (eletrônicos, móveis, roupas)
+
+**Início da contagem:**
+- A partir da entrega do produto
+- Em vícios ocultos: a partir da descoberta do defeito
+
+**Garantia contratual (fabricante):**
+- É ADICIONAL à garantia legal
+- Exemplo: garantia de 1 ano = 90 dias legais + 9 meses contratuais
+- As duas se somam, não se substituem
+
+**O que está coberto:**
+- Defeitos de fabricação
+- Problemas não causados pelo consumidor
+- Vícios que tornem o produto impróprio para uso
+
+**Prazos para a loja/fabricante resolver:**
+- 30 dias para reparar o defeito
+- Se não resolver, você pode exigir:
+  - Troca por produto novo
+  - Devolução do valor pago
+  - Abatimento proporcional do preço
+
+**Dica:** Guarde sempre a nota fiscal e registre reclamações por escrito.`,
+    area: 'consumidor',
+    keywords: ['garantia legal', 'prazo garantia', 'defeito produto', 'CDC garantia'],
+    relatedQuestions: ['cons-12', 'cons-4', 'cons-1'],
+    metaDescription: 'Entenda o prazo de garantia legal de produtos: 30 dias para não duráveis, 90 dias para duráveis, e como a garantia contratual se soma.'
+  },
+  {
+    id: 'cons-12',
+    slug: 'compra-online-produto-nao-chegou',
+    question: 'Comprei online e o produto não chegou. O que fazer?',
+    answer: `O não recebimento de produto comprado online é uma das reclamações mais comuns. Veja como resolver:
+
+**Passo a passo:**
+
+**1. Contate o vendedor:**
+- E-mail ou chat (guarde prints)
+- Estabeleça prazo de 7 a 15 dias para resolver
+- Anote número de protocolo
+
+**2. Se não resolver:**
+- Reclame no Reclame Aqui
+- Registre no Consumidor.gov.br
+- Acione o Procon da sua cidade
+
+**3. Marketplace também responde:**
+- Mercado Livre, Amazon, Shopee: são responsáveis solidários
+- Reclame na plataforma E no vendedor
+
+**Seus direitos:**
+- **Reembolso integral:** incluindo frete
+- **Novo envio:** às custas do vendedor
+- **Danos morais:** se houve prejuízo significativo
+
+**Se pagou no cartão de crédito:**
+- Conteste a compra na operadora (chargeback)
+- Prazo: geralmente 60-90 dias da compra
+- Pode ser feito pelo app do cartão
+
+**No Juizado Especial Cível:**
+- Até 20 salários mínimos sem advogado
+- Até 40 salários mínimos com advogado
+- Prazo: cerca de 2-4 meses para audiência
+
+**Prazo para reclamar:** 5 anos a partir da entrega prevista.`,
+    area: 'consumidor',
+    keywords: ['compra online', 'produto não chegou', 'não recebi produto', 'e-commerce fraude'],
+    relatedQuestions: ['cons-3', 'cons-11', 'cons-1'],
+    metaDescription: 'Saiba o que fazer quando o produto comprado online não chega: passo a passo para reclamar, pedir reembolso e acionar a Justiça.'
+  },
+  {
+    id: 'cons-13',
+    slug: 'plano-saude-negou-cirurgia',
+    question: 'O plano de saúde negou minha cirurgia ou tratamento. O que fazer?',
+    answer: `A negativa de procedimentos pelo plano de saúde é uma prática comum, mas frequentemente ilegal. Veja como agir:
+
+**Quando a negativa é ILEGAL:**
+- Procedimento está no rol da ANS
+- Urgência ou emergência (cobertura obrigatória)
+- Continuidade de tratamento já iniciado
+- Alegação de doença preexistente após 2 anos de contrato
+
+**Passo a passo para resolver:**
+
+**1. Exija negativa por escrito:**
+- O plano deve justificar a negativa
+- Prazo para fornecer: 48 horas
+
+**2. Reclame na ANS:**
+- Telefone: 0800 701 9656
+- Site: ans.gov.br
+- App ANS
+- Prazo de resposta: 5 a 10 dias
+
+**3. Liminar judicial:**
+- Para casos urgentes: 24 a 48 horas
+- Não precisa esperar resposta do plano
+- Procure advogado ou Defensoria Pública
+
+**Indenização por danos morais:**
+- Negativa indevida gera dano moral
+- Valores: R$ 5.000 a R$ 30.000
+- Casos graves (risco de vida): valores maiores
+
+**Documentos importantes:**
+- Relatório médico detalhado
+- Pedido médico do procedimento
+- Negativa por escrito do plano
+- Contrato do plano de saúde
+
+**Prazo:** Não há prazo para reclamar, mas aja rápido em casos urgentes.`,
+    area: 'consumidor',
+    keywords: ['plano saúde negou', 'negativa plano saúde', 'cirurgia negada', 'ANS reclamação'],
+    relatedQuestions: ['cons-14', 'cons-1', 'cons-2'],
+    metaDescription: 'Saiba o que fazer quando o plano de saúde nega cirurgia ou tratamento: como reclamar, conseguir liminar e buscar indenização.'
+  },
+  {
+    id: 'cons-14',
+    slug: 'reajuste-abusivo-plano-saude',
+    question: 'O reajuste do meu plano de saúde foi muito alto. Posso contestar?',
+    answer: `Sim, reajustes abusivos podem e devem ser contestados. Veja as regras:
+
+**Tipos de reajuste:**
+
+**1. Reajuste anual (inflação médica):**
+- Planos individuais: limitado pela ANS
+- Planos coletivos: negociado (pode ser maior)
+- Deve ser comunicado com 30 dias de antecedência
+
+**2. Reajuste por faixa etária:**
+- Permitido em faixas específicas (ex: 0-18, 19-23, etc.)
+- Última faixa: 59+ anos
+- Diferença máxima: 6x entre primeira e última faixa
+- Proibido após 60 anos para contratos antigos
+
+**Quando o reajuste é ABUSIVO:**
+- Acima do índice autorizado pela ANS (individuais)
+- Sem justificativa técnica (coletivos)
+- Reajuste por idade após os 60 anos
+- Sem comunicação prévia de 30 dias
+
+**Como contestar:**
+1. Questione por escrito na operadora
+2. Reclame na ANS (0800 701 9656)
+3. Procon ou Consumidor.gov.br
+4. Ação judicial para revisar
+
+**Na Justiça:**
+- Liminar para suspender reajuste
+- Revisão dos aumentos dos últimos 3-5 anos
+- Devolução de valores pagos a mais
+- Danos morais em casos extremos
+
+**Dica:** Compare seu reajuste com o índice ANS do ano (divulgado em maio).`,
+    area: 'consumidor',
+    keywords: ['reajuste plano saúde', 'aumento plano saúde', 'plano saúde caro', 'reajuste abusivo'],
+    relatedQuestions: ['cons-13', 'cons-1', 'cons-2'],
+    metaDescription: 'Saiba como contestar reajuste abusivo do plano de saúde: regras, limites legais e como agir na ANS ou Justiça.'
+  },
 
   // PENAL
   {

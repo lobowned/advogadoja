@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
   Plane, 
@@ -87,14 +87,14 @@ const ConsumerProblemsSection = () => {
   return (
     <section ref={ref} className="py-16 sm:py-20 bg-muted/30">
       <div className="container mx-auto px-4">
-        <motion.div
+        <m.div
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={staggerContainer}
           className="space-y-12"
         >
           {/* Header */}
-          <motion.div variants={fadeInUp} className="text-center">
+          <m.div variants={fadeInUp} className="text-center">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
               <ShoppingCart className="h-5 w-5" />
               <span className="font-semibold">Problemas que Resolvemos</span>
@@ -106,17 +106,17 @@ const ConsumerProblemsSection = () => {
               Clique no seu problema e fale agora com um advogado especialista. 
               Consulta gratuita e sem compromisso.
             </p>
-          </motion.div>
+          </m.div>
 
           {/* Problems Grid */}
-          <motion.div 
+          <m.div 
             variants={staggerContainer}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
           >
             {problems.map((problem, index) => {
               const Icon = problem.icon;
               return (
-                <motion.div
+                <m.div
                   key={index}
                   variants={fadeInUp}
                   whileHover={{ scale: 1.02, y: -4 }}
@@ -151,13 +151,13 @@ const ConsumerProblemsSection = () => {
                     <span>Falar com advogado</span>
                     <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                   </div>
-                </motion.div>
+                </m.div>
               );
             })}
-          </motion.div>
+          </m.div>
 
           {/* CTA */}
-          <motion.div variants={fadeInUp} className="text-center pt-4">
+          <m.div variants={fadeInUp} className="text-center pt-4">
             <p className="text-muted-foreground mb-4">
               Não encontrou seu problema? Fale conosco mesmo assim!
             </p>
@@ -169,8 +169,8 @@ const ConsumerProblemsSection = () => {
               Falar com Advogado do Consumidor
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
     </section>
   );

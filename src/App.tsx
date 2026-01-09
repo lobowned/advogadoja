@@ -46,6 +46,7 @@ import CasosSucesso from "./pages/CasosSucesso";
 import Sitemap from "./pages/Sitemap";
 import CityLanding from "./pages/CityLanding";
 import CityNicheLanding from "./pages/CityNicheLanding";
+import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 
 const queryClient = new QueryClient();
 
@@ -129,6 +130,7 @@ const App = () => (
                 <Sonner />
                 <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
                   <AnimatedRoutes />
+                  <FloatingWhatsApp />
                 </BrowserRouter>
               </AttendanceProvider>
             </LawyerPresenceProvider>

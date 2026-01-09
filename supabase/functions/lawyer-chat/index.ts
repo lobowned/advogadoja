@@ -198,12 +198,56 @@ const LAWYER_NAMES: { [key: string]: string } = {
   'monica-alves': 'Dra. Mônica Alves'
 };
 
-// Função para gerar saudação de especialista como fallback (SEMPRE pede nome!)
+// Mapeamento de números para IDs reais (a IA às vezes retorna o número da lista ao invés do ID)
+const NUMBER_TO_LAWYER_ID: { [key: string]: string } = {
+  '1': 'maria-santos', '2': 'rafael-oliveira', '3': 'juliana-costa',
+  '4': 'fernando-lima', '5': 'patricia-almeida', '6': 'rodrigo-barros',
+  '7': 'ricardo-mendes', '8': 'ana-rodrigues', '9': 'lucas-ferreira',
+  '10': 'carla-souza', '11': 'paulo-martins', '12': 'beatriz-campos',
+  '13': 'gustavo-reis', '14': 'camila-nunes', '15': 'diego-santos',
+  '16': 'fernanda-lima', '17': 'thiago-rocha', '18': 'marina-costa',
+  '19': 'helena-vasconcelos', '20': 'gabriel-monteiro', '21': 'renata-machado',
+  '22': 'leonardo-prado', '23': 'cristina-torres', '24': 'andre-silva',
+  '25': 'claudia-martins', '26': 'marcos-oliveira', '27': 'isabela-santos',
+  '28': 'renato-alves', '29': 'sandra-lima', '30': 'roberto-costa',
+  '31': 'vanessa-reis', '32': 'joao-fernandes', '33': 'larissa-souza',
+  '34': 'eduardo-gomes', '35': 'monica-alves'
+};
+
+// Função para corrigir IDs numéricos retornados pela IA
+function fixLawyerId(lawyerId: string | undefined): string | undefined {
+  if (!lawyerId) return undefined;
+  // Se for um número, converter para ID real
+  if (/^\d+$/.test(lawyerId)) {
+    const realId = NUMBER_TO_LAWYER_ID[lawyerId];
+    if (realId) {
+      console.warn(`⚠️ [FIX] AI returned number ${lawyerId}, converting to ${realId}`);
+      return realId;
+    }
+  }
+  return lawyerId;
+}
+
+// Função para gerar saudação de especialista como fallback
 // PRIORIZA o problema detectado sobre a especialidade padrão do advogado
-function generateSpecialistGreeting(lawyerId: string, problem: string | null): string {
+// Se já tem nome, NÃO pede novamente!
+function generateSpecialistGreeting(lawyerId: string, problem: string | null, existingName?: string | null): string {
   const lawyerName = LAWYER_NAMES[lawyerId] || 'especialista';
   // Usar o problema detectado se disponível, senão usar a especialidade do advogado
   const specialty = problem || LAWYER_SPECIALTIES[lawyerId]?.sub || 'sua área';
+  
+  // Se já tem nome, usar saudação personalizada SEM pedir nome novamente
+  if (existingName) {
+    const greetingsWithName = [
+      `E aí, ${existingName}! ${lawyerName} aqui, especialista em ${specialty}. Vi que você tá com um problema de ${specialty.toLowerCase()}, me conta mais?`,
+      `Oi, ${existingName}! Sou ${lawyerName}, trabalho com ${specialty}. Me explica melhor a situação?`,
+      `Fala, ${existingName}! ${lawyerName} aqui. Vi seu caso sobre ${specialty.toLowerCase()}, me conta o que tá acontecendo?`,
+      `Olá, ${existingName}! ${lawyerName} aqui, especialista em ${specialty}. Me conta mais sobre o que tá rolando?`
+    ];
+    return greetingsWithName[Math.floor(Math.random() * greetingsWithName.length)];
+  }
+  
+  // Sem nome - pedir (comportamento original)
   const greetings = [
     `E aí! ${lawyerName} aqui, especialista em ${specialty}. Pra abrir seu atendimento, qual seu nome?`,
     `Oi! Sou ${lawyerName}, trabalho com ${specialty}. Me diz seu nome pra gente começar?`,
@@ -1035,10 +1079,11 @@ serve(async (req) => {
         decision.targetLawyerName = LAWYER_NAMES[currentLawyerId] || 'Especialista';
       }
       
-      // Regenerar saudação com o advogado CORRETO
+      // Regenerar saudação com o advogado CORRETO E considerando se nome já existe
       decision.response = generateSpecialistGreeting(
         currentLawyerId, 
-        leadData?.detected_problem || null
+        leadData?.detected_problem || null,
+        leadData?.name || null  // Passar nome existente para não pedir novamente
       );
       decision.confidence = 1.0;
       decision.reasoning = 'Specialist greeting with correct lawyer';
@@ -1116,6 +1161,9 @@ serve(async (req) => {
     if (leadData?.id) {
       switch (decision.action) {
         case "suggest_transfer":
+          // 🛡️ CORRIGIR ID numérico retornado pela IA
+          decision.targetLawyerId = fixLawyerId(decision.targetLawyerId);
+          
           // Salvar transferência pendente COM ESPECIALIDADE GRANULAR
           console.log("💾 Saving pending transfer:", decision.targetLawyerId);
           

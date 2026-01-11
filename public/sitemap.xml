@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- ================================================ -->
   <!-- SITEMAP ADVOGADO.ONLINE - Gerado em 2026-01-11 -->
-  <!-- Total: 272 URLs                                  -->
+  <!-- Total: 332 URLs (+60 novas cidades × nichos)     -->
   <!-- ================================================ -->
 
   <!-- ============================================== -->
@@ -1668,6 +1668,393 @@
   <url>
     <loc>https://advogadoonline.com.br/advogado-penal-maceio</loc>
     <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ============================================== -->
+  <!-- NOVAS CIDADES - EXPANSÃO SEO (60 URLs)        -->
+  <!-- Belém, Campo Grande, Cuiabá, SBC, Guarulhos   -->
+  <!-- Santo André, Ribeirão Preto, Uberlândia       -->
+  <!-- Joinville, Londrina                           -->
+  <!-- ============================================== -->
+
+  <!-- Belém -->
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-consumidor-belem</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-familia-belem</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-trabalhista-belem</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-civil-belem</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-previdenciario-belem</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-penal-belem</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Campo Grande -->
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-consumidor-campo-grande</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-familia-campo-grande</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-trabalhista-campo-grande</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-civil-campo-grande</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-previdenciario-campo-grande</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-penal-campo-grande</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Cuiabá -->
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-consumidor-cuiaba</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-familia-cuiaba</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-trabalhista-cuiaba</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-civil-cuiaba</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-previdenciario-cuiaba</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-penal-cuiaba</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- São Bernardo do Campo -->
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-consumidor-sao-bernardo-do-campo</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-familia-sao-bernardo-do-campo</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-trabalhista-sao-bernardo-do-campo</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-civil-sao-bernardo-do-campo</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-previdenciario-sao-bernardo-do-campo</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-penal-sao-bernardo-do-campo</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Guarulhos -->
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-consumidor-guarulhos</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-familia-guarulhos</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-trabalhista-guarulhos</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-civil-guarulhos</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-previdenciario-guarulhos</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-penal-guarulhos</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Santo André -->
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-consumidor-santo-andre</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-familia-santo-andre</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-trabalhista-santo-andre</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-civil-santo-andre</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-previdenciario-santo-andre</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-penal-santo-andre</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Ribeirão Preto -->
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-consumidor-ribeirao-preto</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-familia-ribeirao-preto</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-trabalhista-ribeirao-preto</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-civil-ribeirao-preto</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-previdenciario-ribeirao-preto</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-penal-ribeirao-preto</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Uberlândia -->
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-consumidor-uberlandia</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-familia-uberlandia</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-trabalhista-uberlandia</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-civil-uberlandia</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-previdenciario-uberlandia</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-penal-uberlandia</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Joinville -->
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-consumidor-joinville</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-familia-joinville</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-trabalhista-joinville</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-civil-joinville</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-previdenciario-joinville</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-penal-joinville</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Londrina -->
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-consumidor-londrina</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-familia-londrina</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-trabalhista-londrina</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-civil-londrina</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-previdenciario-londrina</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/advogado-penal-londrina</loc>
+    <lastmod>2026-01-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

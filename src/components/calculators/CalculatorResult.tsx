@@ -14,7 +14,7 @@ interface ResultItem {
 interface CalculatorResultProps {
   total: number;
   items: ResultItem[];
-  specialty: "trabalhista" | "familia";
+  specialty: "trabalhista" | "familia" | "consumidor" | "previdenciario" | "civil";
   calculatorType: string;
 }
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- ================================================ -->
-  <!-- SITEMAP ADVOGADO.ONLINE - Gerado em 2025-12-25 -->
-  <!-- Total: 269 URLs                                  -->
+  <!-- SITEMAP ADVOGADO.ONLINE - Gerado em 2026-01-11 -->
+  <!-- Total: 272 URLs                                  -->
   <!-- ================================================ -->
 
   <!-- ============================================== -->
@@ -254,6 +254,24 @@
   </url>
   <url>
     <loc>https://advogadoonline.com.br/calculadora-negativacao</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-devolucao-dobro</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-plano-saude</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/calculadora-fraude-bancaria</loc>
     <lastmod>2026-01-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

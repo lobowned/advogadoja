@@ -52,6 +52,9 @@ import CalculadoraAluguelAtrasado from "./pages/CalculadoraAluguelAtrasado";
 import CalculadoraDPVAT from "./pages/CalculadoraDPVAT";
 import CalculadoraVooCancelado from "./pages/CalculadoraVooCancelado";
 import CalculadoraNegativacao from "./pages/CalculadoraNegativacao";
+import CalculadoraDevolucaoEmDobro from "./pages/CalculadoraDevolucaoEmDobro";
+import CalculadoraPlanoSaude from "./pages/CalculadoraPlanoSaude";
+import CalculadoraFraudeBancaria from "./pages/CalculadoraFraudeBancaria";
 
 // Consumer Landing Pages
 import VooCanceladoLanding from "./pages/consumer/VooCanceladoLanding";
@@ -125,6 +128,9 @@ const AnimatedRoutes = () => {
         {/* Consumer Calculators */}
         <Route path="/calculadora-voo-cancelado" element={<CalculadoraVooCancelado />} />
         <Route path="/calculadora-negativacao" element={<CalculadoraNegativacao />} />
+        <Route path="/calculadora-devolucao-dobro" element={<CalculadoraDevolucaoEmDobro />} />
+        <Route path="/calculadora-plano-saude" element={<CalculadoraPlanoSaude />} />
+        <Route path="/calculadora-fraude-bancaria" element={<CalculadoraFraudeBancaria />} />
         
         {/* Consumer Problem Landing Pages */}
         <Route path="/voo-cancelado" element={<VooCanceladoLanding />} />

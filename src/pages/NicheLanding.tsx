@@ -1,7 +1,7 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { 
-  Scale, Briefcase, Users, Shield, Gavel, 
+  Scale, Briefcase, Users, Shield, Gavel, ShoppingBag,
   CheckCircle, ArrowRight, MessageCircle, Clock, 
   Star, Phone, FileText 
 } from "lucide-react";
@@ -28,6 +28,35 @@ interface NicheData {
 }
 
 const nicheData: Record<string, NicheData> = {
+  consumidor: {
+    id: "consumidor",
+    slug: "advogado-consumidor",
+    title: "Advogado do Consumidor Online",
+    subtitle: "Especialista em Direito do Consumidor",
+    metaTitle: "Advogado do Consumidor Online | Voo Cancelado, Negativação, Plano de Saúde - Consulta Grátis",
+    metaDescription: "Fale com advogado do consumidor online. Voo cancelado, nome negativado, plano de saúde negou, fraude bancária. Indenização de até R$ 15.000. Consulta gratuita.",
+    keywords: ["advogado consumidor", "voo cancelado indenização", "negativação indevida", "plano de saúde negou", "fraude bancária", "cobrança indevida", "devolução em dobro", "direito do consumidor"],
+    heroDescription: "Especialista em voos cancelados, negativação indevida, planos de saúde e fraudes bancárias. Indenização de até R$ 15.000. Atendimento imediato.",
+    benefits: [
+      "Indenização de até R$ 15.000",
+      "Consulta gratuita imediata",
+      "Devolução em dobro garantida",
+      "Advogados especializados OAB",
+      "Sem custo inicial",
+      "Processo rápido e eficiente"
+    ],
+    commonCases: [
+      { title: "Voo Cancelado", description: "Indenização por cancelamento, atraso ou overbooking" },
+      { title: "Negativação Indevida", description: "Nome sujo no SPC/Serasa sem dever" },
+      { title: "Plano de Saúde Negou", description: "Cirurgia, exame ou tratamento negado" },
+      { title: "Fraude Bancária", description: "PIX, cartão clonado, empréstimo não contratado" },
+    ],
+    stats: [
+      { value: "R$ 5M+", label: "Indenizações obtidas" },
+      { value: "8.000+", label: "Consumidores atendidos" },
+      { value: "97%", label: "Taxa de sucesso" },
+    ]
+  },
   trabalhista: {
     id: "trabalhista",
     slug: "advogado-trabalhista",
@@ -176,6 +205,7 @@ const nicheData: Record<string, NicheData> = {
 };
 
 const nicheIcons: Record<string, React.ReactNode> = {
+  consumidor: <ShoppingBag className="w-8 h-8" />,
   trabalhista: <Briefcase className="w-8 h-8" />,
   familia: <Users className="w-8 h-8" />,
   civil: <Scale className="w-8 h-8" />,
@@ -188,6 +218,7 @@ const NicheLanding = () => {
   
   // Map slug to niche ID
   const slugToId: Record<string, string> = {
+    "advogado-consumidor": "consumidor",
     "advogado-trabalhista": "trabalhista",
     "advogado-familia": "familia",
     "advogado-civil": "civil",

@@ -6,7 +6,7 @@ interface FloatingWhatsAppProps {
   chatVisible?: boolean;
 }
 
-const WHATSAPP_NUMBER = '5571997092633';
+const WHATSAPP_NUMBER = '5571997036269';
 const DEFAULT_MESSAGE = 'Olá! Vi o site de vocês e gostaria de falar com um advogado sobre meus direitos de consumidor.';
 
 export const FloatingWhatsApp = ({ chatVisible = false }: FloatingWhatsAppProps) => {

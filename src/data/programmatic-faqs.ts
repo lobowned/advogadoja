@@ -2262,6 +2262,596 @@ Use o Juizado Especial (sem advogado até 20 SM).`,
     keywords: ['processar promessa', 'promessa não cumprida', 'descumpriu promessa', 'acordo verbal'],
     relatedQuestions: ['civ-1', 'civ-8'],
     metaDescription: 'Posso processar por promessa não cumprida? Depende da promessa. Veja quando você pode cobrar judicialmente.'
+  },
+
+  // CONSUMIDOR - Novas FAQs SEO
+  {
+    id: 'cons-15',
+    slug: 'quanto-ganho-indenizacao-voo-cancelado',
+    question: 'Quanto posso ganhar de indenização por voo cancelado?',
+    answer: `A indenização por voo cancelado varia conforme o tipo de dano e as circunstâncias:
+
+**Danos morais (jurisprudência):**
+- Cancelamento com realocação em até 4h: R$ 3.000 a R$ 5.000
+- Cancelamento com atraso de 4h a 8h: R$ 5.000 a R$ 8.000
+- Cancelamento com atraso acima de 8h: R$ 8.000 a R$ 15.000
+- Perda de compromisso importante: até R$ 20.000
+
+**Danos materiais (reembolso):**
+- Hospedagem e alimentação não fornecidas
+- Transporte alternativo que você pagou
+- Perda de diárias de hotel no destino
+- Passeios/eventos perdidos
+
+**O que influencia o valor:**
+- Tempo de atraso/espera
+- Assistência material fornecida
+- Motivo do cancelamento
+- Prejuízos comprovados
+
+**Seus direitos imediatos (ANAC):**
+- 1h de atraso: comunicação (telefone, internet)
+- 2h de atraso: alimentação (voucher)
+- 4h+ de atraso: hospedagem e transporte
+- Opção de reembolso ou reacomodação
+
+**Prazo para processar:** 5 anos.`,
+    area: 'consumidor',
+    keywords: ['indenização voo cancelado', 'quanto ganho voo cancelado', 'valor indenização aérea', 'danos morais voo'],
+    relatedQuestions: ['cons-1', 'cons-3'],
+    metaDescription: 'Quanto posso ganhar de indenização por voo cancelado? Valores variam de R$ 3.000 a R$ 20.000. Veja os critérios.'
+  },
+  {
+    id: 'cons-16',
+    slug: 'meu-nome-foi-negativado-sem-dever',
+    question: 'Meu nome foi negativado mas não devo. O que fazer?',
+    answer: `Negativação indevida é ilegal e gera direito a indenização. Veja o que fazer:
+
+**Passos imediatos:**
+1. Consulte o motivo no SPC/Serasa (gratuito)
+2. Conteste diretamente na empresa que negativou
+3. Guarde todos os protocolos
+4. Reúna provas de que não deve
+
+**Provas importantes:**
+- Comprovantes de pagamento
+- Contratos ou falta deles
+- Protocolos de reclamação
+- Prints da negativação
+
+**Seus direitos:**
+- Exclusão imediata do cadastro
+- Indenização por danos morais: R$ 5.000 a R$ 20.000
+- Devolução em dobro se pagou algo indevido
+
+**Onde reclamar:**
+1. Procon
+2. Consumidor.gov.br
+3. Reclame Aqui (pressão)
+4. Juizado Especial (até 40 salários mínimos)
+
+**Prazo para limpar o nome:**
+- A empresa tem 5 dias úteis para corrigir após contestação
+
+**Dica:** Se a empresa não resolver em 5 dias, entre com ação judicial imediatamente.`,
+    area: 'consumidor',
+    keywords: ['nome negativado sem dever', 'negativação indevida', 'SPC Serasa indevido', 'limpar nome'],
+    relatedQuestions: ['cons-1', 'cons-7'],
+    metaDescription: 'Meu nome foi negativado mas não devo. O que fazer? Veja os passos para limpar seu nome e conseguir indenização.'
+  },
+  {
+    id: 'cons-17',
+    slug: 'prazo-direito-arrependimento-7-dias',
+    question: 'Como funciona o direito de arrependimento de 7 dias?',
+    answer: `O direito de arrependimento permite desistir de compras feitas fora do estabelecimento comercial.
+
+**Quando se aplica (7 dias):**
+- Compras pela internet
+- Compras por telefone
+- Compras por catálogo
+- Vendas em domicílio
+- Compras por WhatsApp
+
+**Quando NÃO se aplica:**
+- Compras em loja física
+- Produtos personalizados/sob medida
+- Passagens aéreas (regra própria)
+- Serviços já iniciados com autorização
+
+**Como exercer o direito:**
+1. Comunique a loja em até 7 dias (da entrega)
+2. Não precisa justificar
+3. Devolva o produto (loja paga o frete)
+4. Receba reembolso total
+
+**O que você recebe de volta:**
+- Valor integral do produto
+- Frete de ida e volta
+- Sem taxas ou descontos
+
+**Prazo de reembolso:**
+- Imediato para cartão (estorno)
+- Até 30 dias para boleto/PIX
+
+**Dica:** Comunique por escrito (e-mail, WhatsApp) e guarde prints.`,
+    area: 'consumidor',
+    keywords: ['direito arrependimento 7 dias', 'devolução compra online', 'desistir compra internet', 'trocar compra online'],
+    relatedQuestions: ['cons-1', 'cons-6'],
+    metaDescription: 'Como funciona o direito de arrependimento de 7 dias? Veja quando se aplica e como devolver compras online.'
+  },
+  {
+    id: 'cons-18',
+    slug: 'golpe-pix-banco-devolve-dinheiro',
+    question: 'Caí no golpe do PIX. O banco devolve o dinheiro?',
+    answer: `Depende do tipo de golpe e da responsabilidade do banco. Veja as possibilidades:
+
+**Quando o banco DEVE devolver:**
+- Falha de segurança do aplicativo
+- Transação não autorizada (celular roubado)
+- Sistema fora do ar facilitou golpe
+- Conta do golpista no mesmo banco
+
+**Quando é mais difícil:**
+- Você passou os dados voluntariamente
+- Golpe de engenharia social (se passou por parente)
+- Transferência feita de livre vontade
+
+**MED (Mecanismo Especial de Devolução):**
+- Funciona para golpes/fraudes
+- Prazos: até 80 dias para análise
+- Bloqueia valores na conta do golpista
+- Solicite imediatamente ao banco
+
+**Passos para tentar reaver:**
+1. Faça BO imediatamente
+2. Acione o MED no seu banco (em até 80 dias)
+3. Reclame no Banco Central
+4. Se negar, processe o banco
+
+**Argumentos jurídicos:**
+- Responsabilidade objetiva dos bancos
+- Falha na segurança
+- Dever de monitorar transações atípicas
+
+**Prazo para processar:** 5 anos.`,
+    area: 'consumidor',
+    keywords: ['golpe PIX', 'banco devolver PIX', 'caí no golpe', 'fraude PIX banco'],
+    relatedQuestions: ['cons-8', 'cons-7'],
+    metaDescription: 'Caí no golpe do PIX. O banco devolve o dinheiro? Depende. Veja quando o banco é obrigado a devolver e como agir.'
+  },
+  {
+    id: 'cons-19',
+    slug: 'bagagem-extraviada-quanto-receber',
+    question: 'Bagagem extraviada: quanto posso receber de indenização?',
+    answer: `Extravio de bagagem gera direito a indenização. Veja os valores e regras:
+
+**Indenização por danos materiais:**
+- Voos nacionais: até 1.131 DES (~R$ 7.000)
+- Voos internacionais: até 1.288 DES (~R$ 8.000)
+- DES = Direitos Especiais de Saque (moeda do FMI)
+
+**Indenização por danos morais:**
+- Extravio temporário: R$ 3.000 a R$ 6.000
+- Extravio definitivo: R$ 6.000 a R$ 15.000
+- Com perdas importantes (casamento, trabalho): até R$ 20.000
+
+**O que a empresa deve fornecer imediatamente:**
+- Assistência material (itens de primeira necessidade)
+- Reembolso de compras emergenciais
+- Informações sobre localização
+
+**Prazos importantes:**
+- 7 dias para achar (voos nacionais)
+- 21 dias para achar (voos internacionais)
+- Após isso: considerado extravio definitivo
+
+**Como aumentar a indenização:**
+- Declare valor da bagagem no check-in
+- Guarde notas de compras emergenciais
+- Documente todos os itens perdidos
+
+**Prazo para processar:** 2 anos (Convenção de Montreal).`,
+    area: 'consumidor',
+    keywords: ['bagagem extraviada indenização', 'mala perdida avião', 'extravio bagagem valor', 'companhia aérea perdeu mala'],
+    relatedQuestions: ['cons-15', 'cons-1'],
+    metaDescription: 'Bagagem extraviada: quanto posso receber de indenização? Veja valores para danos materiais e morais.'
+  },
+  {
+    id: 'cons-20',
+    slug: 'overbooking-direitos-passageiro',
+    question: 'Sofri overbooking. Quais são meus direitos?',
+    answer: `Overbooking (vender mais assentos que o avião comporta) é prática ilegal. Veja seus direitos:
+
+**O que a empresa DEVE oferecer:**
+1. Reacomodação no próximo voo (mesmo ou outra empresa)
+2. Reembolso integral + transporte até origem
+3. Execução por outro meio (carro, ônibus)
+
+**Assistência material obrigatória:**
+- 1h: comunicação (internet, telefone)
+- 2h: alimentação (voucher)
+- 4h+: hospedagem e transporte
+
+**Indenização por danos morais:**
+- Overbooking simples: R$ 5.000 a R$ 8.000
+- Com perda de compromisso: R$ 8.000 a R$ 15.000
+- Tratamento desrespeitoso: até R$ 20.000
+
+**Compensação voluntária (tentativa da empresa):**
+- Upgrade, milhas, vouchers
+- Você NÃO é obrigado a aceitar
+- Aceitar não elimina direito a indenização judicial
+
+**O que fazer:**
+1. Não assine termo de acordo sem ler
+2. Guarde todos os comprovantes
+3. Anote horários e nomes de atendentes
+4. Reclame na ANAC e processe
+
+**Prazo:** 5 anos para pedir indenização.`,
+    area: 'consumidor',
+    keywords: ['overbooking direitos', 'voo lotado sem lugar', 'passageiro preterido', 'indenização overbooking'],
+    relatedQuestions: ['cons-15', 'cons-19'],
+    metaDescription: 'Sofri overbooking. Quais são meus direitos? Reacomodação, reembolso e indenização de R$ 5 mil a R$ 20 mil.'
+  },
+  {
+    id: 'cons-21',
+    slug: 'produto-defeituoso-prazo-troca',
+    question: 'Comprei produto defeituoso. Qual o prazo para trocar?',
+    answer: `O CDC garante prazos para reclamar de produtos com defeito:
+
+**Prazos de reclamação:**
+- Produtos não duráveis (alimentos, cosméticos): 30 dias
+- Produtos duráveis (eletrônicos, móveis): 90 dias
+- Conta a partir da entrega do produto
+
+**Vício oculto (defeito que aparece depois):**
+- Prazo começa quando você descobre o defeito
+- Limite: vida útil razoável do produto
+- Ex: geladeira pode ter vício oculto por anos
+
+**O que você pode exigir:**
+1. **Primeiro:** conserto em até 30 dias
+2. **Se não consertar:** escolha entre:
+   - Troca por produto novo
+   - Devolução do dinheiro (atualizado)
+   - Abatimento proporcional do preço
+
+**Quando pode exigir troca imediata:**
+- Produto essencial (geladeira, fogão)
+- Problema compromete características
+- Diminui valor do produto
+
+**Garantia legal x contratual:**
+- Legal: 30/90 dias (obrigatória)
+- Contratual: adicional da loja/fabricante
+- Somam-se os prazos
+
+**Dica:** Reclame por escrito e guarde o protocolo.`,
+    area: 'consumidor',
+    keywords: ['produto defeituoso troca', 'prazo trocar produto', 'garantia produto defeito', 'devolver produto defeito'],
+    relatedQuestions: ['cons-6', 'cons-1'],
+    metaDescription: 'Comprei produto defeituoso. Qual o prazo para trocar? 30 dias para não duráveis, 90 dias para duráveis.'
+  },
+  {
+    id: 'cons-22',
+    slug: 'plano-saude-prazo-carencia-urgencia',
+    question: 'Plano de saúde pode exigir carência para urgência?',
+    answer: `**Não.** A carência máxima para urgência e emergência é de 24 horas.
+
+**O que diz a lei (Lei 9.656/98):**
+- Emergência: risco imediato de vida
+- Urgência: acidentes e complicações na gravidez
+- Carência máxima: 24 horas após contratação
+
+**Cobertura obrigatória em urgência:**
+- Atendimento de pronto-socorro
+- Exames diagnósticos necessários
+- Até 12 horas de observação
+- UTI se necessário
+
+**Carências normais (não urgência):**
+- Consultas e exames: até 30 dias
+- Internações: até 180 dias
+- Partos: até 300 dias
+- Doenças preexistentes: até 24 meses
+
+**Se o plano negar emergência:**
+1. Vá ao hospital (público se precisar)
+2. Documente a negativa
+3. Reclame na ANS
+4. Processe: reembolso + danos morais (R$ 10.000 a R$ 30.000)
+
+**Importante:**
+Negar atendimento de emergência pode configurar crime e gera indenização alta.`,
+    area: 'consumidor',
+    keywords: ['plano saúde carência urgência', 'emergência plano saúde', 'negar atendimento emergência', 'carência 24 horas'],
+    relatedQuestions: ['cons-9', 'cons-1'],
+    metaDescription: 'Plano de saúde pode exigir carência para urgência? Não! A carência máxima é 24 horas. Veja seus direitos.'
+  },
+  {
+    id: 'cons-23',
+    slug: 'cobranca-divida-prescrita-prazo',
+    question: 'Podem cobrar dívida prescrita? Qual o prazo?',
+    answer: `Tecnicamente podem cobrar, mas você não é obrigado a pagar. Veja os detalhes:
+
+**Prazos de prescrição de dívidas:**
+- Cartão de crédito: 5 anos
+- Cheque: 6 meses (execução) ou 5 anos (cobrança)
+- Boleto bancário: 5 anos
+- Financiamento: 5 anos
+- Dívida com contrato: 5 anos
+
+**O que acontece após a prescrição:**
+- A dívida não deixa de existir
+- Você pode pagar se quiser
+- Credor pode cobrar amigavelmente
+- Mas NÃO pode processar para executar
+
+**Negativação de dívida prescrita:**
+- SPC/Serasa: máximo 5 anos de registro
+- Após isso: não podem mais negativar
+- Se negativarem: indenização!
+
+**Cuidado com "armadilhas":**
+- Pagar qualquer valor reinicia o prazo
+- Reconhecer a dívida por escrito reinicia
+- Parcelar reinicia a contagem
+
+**O que fazer:**
+- Consulte se a dívida está prescrita
+- Não pague sem analisar
+- Se cobrarem judicialmente, alegue prescrição
+
+**Dica:** Dívida prescrita negativada = danos morais.`,
+    area: 'consumidor',
+    keywords: ['dívida prescrita', 'prazo prescrição dívida', 'cobrar dívida antiga', 'dívida caduca'],
+    relatedQuestions: ['cons-7', 'cons-16'],
+    metaDescription: 'Podem cobrar dívida prescrita? Qual o prazo? Entenda quando a dívida prescreve e seus direitos.'
+  },
+  {
+    id: 'cons-24',
+    slug: 'cartao-clonado-quem-paga',
+    question: 'Meu cartão foi clonado. Quem paga as compras?',
+    answer: `Em regra, o banco/operadora paga. A responsabilidade é objetiva.
+
+**Quando o banco deve pagar:**
+- Compras que você não fez
+- Transações em locais que você nunca foi
+- Compras online sem sua autorização
+- Uso após bloqueio do cartão
+
+**O que fazer imediatamente:**
+1. Bloqueie o cartão no app
+2. Conteste as compras (ligue e anote protocolo)
+3. Faça boletim de ocorrência
+4. Solicite estorno por escrito
+
+**Prazo para contestar:**
+- Quanto antes, melhor
+- Cartão de crédito: até o vencimento da fatura
+- Cartão de débito: imediatamente
+
+**Se o banco negar o estorno:**
+- Reclame no Procon
+- Reclame no Banco Central
+- Processe no Juizado Especial
+
+**Danos morais:**
+- Se cobrarem mesmo após contestação: R$ 3.000 a R$ 8.000
+- Se negativarem seu nome: R$ 5.000 a R$ 15.000
+
+**Prevenção:**
+- Use cartão virtual para compras online
+- Ative notificações de compras
+- Não empreste o cartão`,
+    area: 'consumidor',
+    keywords: ['cartão clonado', 'fraude cartão de crédito', 'compra não autorizada', 'banco clonagem cartão'],
+    relatedQuestions: ['cons-18', 'cons-8'],
+    metaDescription: 'Meu cartão foi clonado. Quem paga as compras? O banco! Veja como contestar e pedir estorno.'
+  },
+  {
+    id: 'cons-25',
+    slug: 'atraso-entrega-produto-comprado-online',
+    question: 'Produto comprado online atrasou. Posso cancelar?',
+    answer: `**Sim.** O atraso na entrega é descumprimento contratual e você pode cancelar.
+
+**Seus direitos em caso de atraso:**
+1. Exigir a entrega imediata
+2. Aceitar produto equivalente
+3. Cancelar e receber reembolso total
+4. Pedir indenização por danos
+
+**Como cancelar:**
+- Comunique a loja por escrito (e-mail, chat)
+- Exija reembolso integral
+- Prazo de reembolso: imediato (cartão) ou até 30 dias
+
+**Quando cabe indenização:**
+- Produto era presente (frustração)
+- Você perdeu evento importante
+- Teve prejuízos comprovados
+- Valores: R$ 1.000 a R$ 5.000
+
+**O que fazer:**
+1. Print da data de entrega prometida
+2. Acompanhe o rastreamento
+3. Reclame por escrito após o prazo
+4. Cancele se não entregar em 24-48h
+
+**Entregas atrasadas recorrentes:**
+- Procon
+- Consumidor.gov.br
+- Juizado Especial (valores maiores)
+
+**Dica:** Não aceite "prazo estendido" se precisava do produto.`,
+    area: 'consumidor',
+    keywords: ['produto atrasou entrega', 'cancelar compra atraso', 'loja não entregou', 'atraso entrega online'],
+    relatedQuestions: ['cons-17', 'cons-21'],
+    metaDescription: 'Produto comprado online atrasou. Posso cancelar? Sim! Veja como exigir reembolso ou indenização.'
+  },
+  {
+    id: 'cons-26',
+    slug: 'servico-nao-contratado-cobrado-fatura',
+    question: 'Estão cobrando serviço que não contratei na fatura',
+    answer: `Cobrança de serviço não contratado é prática abusiva. Veja como agir:
+
+**Passos imediatos:**
+1. Conteste o valor na operadora (anote protocolo)
+2. Exija cancelamento do serviço
+3. Peça estorno dos valores cobrados
+4. Documente tudo por escrito
+
+**Seus direitos:**
+- Cancelamento imediato do serviço
+- Devolução em dobro dos valores pagos
+- Danos morais se houve transtorno
+
+**Valores de indenização:**
+- Devolução em dobro: obrigatória
+- Danos morais: R$ 2.000 a R$ 5.000
+- Negativação indevida: R$ 5.000 a R$ 15.000
+
+**Onde reclamar:**
+1. Anatel (telefonia)
+2. Procon
+3. Consumidor.gov.br
+4. Juizado Especial
+
+**Exemplos comuns:**
+- Seguro de cartão não contratado
+- Pacotes de dados extras
+- TV por assinatura com canais extras
+- Serviços de localização/segurança
+
+**Prazo de resposta:**
+- Operadora: 5 dias úteis
+- Se não resolver: ação judicial
+
+**Dica:** Sempre leia faturas com atenção e conteste rápido.`,
+    area: 'consumidor',
+    keywords: ['cobrança serviço não contratado', 'fatura cobrança indevida', 'cancelar serviço não pedido', 'venda casada'],
+    relatedQuestions: ['cons-7', 'cons-1'],
+    metaDescription: 'Estão cobrando serviço que não contratei na fatura. O que fazer? Veja como cancelar e pedir devolução em dobro.'
+  },
+  {
+    id: 'cons-27',
+    slug: 'recall-carro-nao-fiz-posso-processar',
+    question: 'Não fiz o recall do carro e tive problema. Posso processar?',
+    answer: `**Sim, em muitos casos.** A responsabilidade da montadora não desaparece por falta de recall.
+
+**Quando a montadora responde:**
+- Defeito de fabricação (mesmo sem recall feito)
+- Recall não foi comunicado adequadamente
+- Problema em peça não coberta pelo recall
+- Vícios ocultos de projeto
+
+**Quando você pode ter dificuldade:**
+- Recall foi amplamente divulgado e você ignorou
+- Problema específico da peça do recall
+- Manutenção irregular do veículo
+
+**Jurisprudência favorável:**
+- Comunicação por carta nem sempre é suficiente
+- Montadora deve provar que você sabia do recall
+- Responsabilidade solidária (concessionária + montadora)
+
+**O que você pode pedir:**
+- Conserto gratuito
+- Indenização por lucros cessantes (táxi, uber)
+- Danos morais se houve acidente/risco
+- Danos materiais comprovados
+
+**Provas importantes:**
+- Documentação do veículo
+- Laudos técnicos
+- Fotos e vídeos do problema
+- Comprovante de revisões
+
+**Prazo:** 5 anos para acidente ou vício oculto.`,
+    area: 'consumidor',
+    keywords: ['recall carro', 'não fiz recall', 'processar montadora', 'defeito fabricação carro'],
+    relatedQuestions: ['cons-21', 'cons-1'],
+    metaDescription: 'Não fiz o recall do carro e tive problema. Posso processar? Sim, a montadora pode responder. Veja quando.'
+  },
+  {
+    id: 'cons-28',
+    slug: 'voo-atrasado-mais-4-horas-direitos',
+    question: 'Voo atrasou mais de 4 horas. Quais meus direitos?',
+    answer: `Atraso de voo acima de 4 horas gera direitos importantes. Veja:
+
+**Assistência material obrigatória:**
+- A partir de 1h: comunicação (internet, telefone)
+- A partir de 2h: alimentação (voucher)
+- A partir de 4h: hospedagem + transporte
+
+**Opções após 4h de atraso:**
+1. Reacomodação em outro voo (mesma ou outra empresa)
+2. Reembolso integral (se não quiser mais viajar)
+3. Remarcar para data de sua preferência
+
+**Indenização por danos morais:**
+- Atraso de 4h a 8h: R$ 3.000 a R$ 6.000
+- Atraso acima de 8h: R$ 6.000 a R$ 12.000
+- Perda de compromisso: até R$ 15.000
+- Pernoite no aeroporto: valor maior
+
+**O que fazer:**
+1. Procure o balcão da empresa
+2. Exija a assistência material
+3. Guarde cartões de embarque
+4. Fotografe painéis de horário
+5. Anote protocolos e nomes
+
+**Importante:**
+- Motivo meteorológico NÃO exime de assistência
+- Motivo de "manutenção" é responsabilidade da empresa
+- Problemas operacionais: indenização devida
+
+**Prazo para processar:** 5 anos.`,
+    area: 'consumidor',
+    keywords: ['voo atrasado 4 horas', 'atraso voo direitos', 'indenização atraso voo', 'ANAC atraso voo'],
+    relatedQuestions: ['cons-15', 'cons-20'],
+    metaDescription: 'Voo atrasou mais de 4 horas. Quais meus direitos? Hospedagem, alimentação e indenização. Veja valores.'
+  },
+  {
+    id: 'cons-29',
+    slug: 'nome-sujo-quanto-tempo-limpar',
+    question: 'Quanto tempo leva para limpar meu nome após pagar?',
+    answer: `Após o pagamento, o prazo máximo para limpar o nome é de **5 dias úteis**.
+
+**Prazos legais:**
+- Credor tem 5 dias úteis para comunicar quitação
+- SPC/Serasa tem 24 horas após comunicação
+- Total máximo: cerca de 7 dias úteis
+
+**Se não limpar no prazo:**
+- Você tem direito a indenização
+- Danos morais: R$ 3.000 a R$ 8.000
+- Pode pedir no Juizado Especial
+
+**O que fazer após pagar:**
+1. Peça comprovante de quitação
+2. Aguarde 5 dias úteis
+3. Consulte SPC/Serasa (gratuito)
+4. Se continuar sujo, reclame por escrito
+5. Não resolvendo, processe
+
+**Como consultar:**
+- SPC: consumidorpositivo.com.br
+- Serasa: serasa.com.br (grátis com cadastro)
+- Boa Vista: consumidorpositivo.com.br
+
+**Dicas importantes:**
+- Pague sempre com comprovante
+- Guarde o comprovante por 5 anos
+- Verifique todas as empresas de proteção ao crédito
+
+**Importante:** O prazo de 5 anos de negativação conta da data da dívida, não do pagamento.`,
+    area: 'consumidor',
+    keywords: ['limpar nome após pagar', 'prazo limpar nome', 'tirar nome SPC Serasa', 'quitação dívida nome sujo'],
+    relatedQuestions: ['cons-16', 'cons-23'],
+    metaDescription: 'Quanto tempo leva para limpar meu nome após pagar? Até 5 dias úteis. Veja o que fazer se não limpar.'
   }
 ];
 

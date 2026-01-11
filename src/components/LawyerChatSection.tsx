@@ -276,20 +276,35 @@ const LawyerChatSection = () => {
                     </div>
                     
                     {/* Botão com animação e pulse após entrada */}
-                    <div
-                      style={{ 
-                        animation: !hasAnimated ? 'content-reveal 0.5s ease-out 0.6s forwards' : 'none',
-                        opacity: !hasAnimated ? 0 : 1 
-                      }}
-                    >
-                      <Button
-                        onClick={() => joinQueue()}
-                        className={`w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-4 sm:py-5 text-sm sm:text-base rounded-lg transition-all duration-300 flex items-center justify-center gap-2 min-h-[48px] shadow-button hover:shadow-lg ${hasAnimated ? 'btn-cta-pulse' : ''}`}
-                      >
-                        <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
-                        Iniciar Atendimento
-                      </Button>
-                    </div>
+                          <div 
+                            style={{ 
+                              animation: !hasAnimated ? 'content-reveal 0.5s ease-out 0.6s forwards' : 'none',
+                              opacity: !hasAnimated ? 0 : 1 
+                            }}
+                            className="flex flex-col sm:flex-row gap-3"
+                          >
+                            <Button
+                              onClick={() => joinQueue()}
+                              className={`flex-1 bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-4 sm:py-5 text-sm sm:text-base rounded-lg transition-all duration-300 flex items-center justify-center gap-2 min-h-[48px] shadow-button hover:shadow-lg ${hasAnimated ? 'btn-cta-pulse' : ''}`}
+                            >
+                              <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
+                              Iniciar Atendimento
+                            </Button>
+                            <Button
+                              asChild
+                              variant="outline"
+                              className="flex-1 border-green-500 text-green-600 hover:bg-green-50 hover:text-green-700 font-medium py-4 sm:py-5 text-sm sm:text-base rounded-lg transition-all duration-300 flex items-center justify-center gap-2 min-h-[48px]"
+                            >
+                              <a 
+                                href="https://wa.me/5571997036269?text=Olá! Gostaria de falar com um advogado sobre meu caso."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                                WhatsApp Direto
+                              </a>
+                            </Button>
+                          </div>
                   </div>
                 </div>
               ) : (

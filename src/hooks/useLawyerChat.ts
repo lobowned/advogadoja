@@ -235,6 +235,9 @@ export const useLawyerChat = () => {
 
   // Função para entrar na fila
   const joinQueue = async () => {
+    // Abrir página de conversão em nova aba para tracking
+    window.open('/conversao', '_blank');
+    
     setHasJoinedQueue(true);
     setIsInQueue(true);
     setPeopleAhead(2);

@@ -46,6 +46,7 @@ import CasosSucesso from "./pages/CasosSucesso";
 import Sitemap from "./pages/Sitemap";
 import CityLanding from "./pages/CityLanding";
 import CityNicheLanding from "./pages/CityNicheLanding";
+import Conversao from "./pages/Conversao";
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 
 const queryClient = new QueryClient();
@@ -107,6 +108,8 @@ const AnimatedRoutes = () => {
         <Route path="/advogado/:citySlug" element={<CityLanding />} />
         {/* City + Niche Landing Pages - Ultra Local SEO */}
         <Route path="/advogado-:nicheSlug-:citySlug" element={<CityNicheLanding />} />
+        {/* Conversion Tracking */}
+        <Route path="/conversao" element={<Conversao />} />
         {/* Admin */}
         <Route path="/admin" element={<LeadsDashboard />} />
         <Route path="/admin/leads" element={<LeadsDashboard />} />

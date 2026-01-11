@@ -6,47 +6,65 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
-import { LawyerPresenceProvider } from "@/contexts/LawyerPresenceContext";
-import { AttendanceProvider } from "@/contexts/AttendanceContext";
+import { LawyerPresenceProvider } from "./contexts/LawyerPresenceContext";
+import { AttendanceProvider } from "./contexts/AttendanceContext";
+
+// Pages
 import Index from "./pages/Index";
-import SelectNiche from "./pages/SelectNiche";
-import Calculadoras from "./pages/Calculadoras";
-import CalculadoraTrabalhista from "./pages/CalculadoraTrabalhista";
-import CalculadoraPensao from "./pages/CalculadoraPensao";
-import CalculadoraAposentadoria from "./pages/CalculadoraAposentadoria";
-import CalculadoraDanosMorais from "./pages/CalculadoraDanosMorais";
-import CalculadoraAtualizacaoDivida from "./pages/CalculadoraAtualizacaoDivida";
-import CalculadoraPartilhaBens from "./pages/CalculadoraPartilhaBens";
-import CalculadoraAluguelAtrasado from "./pages/CalculadoraAluguelAtrasado";
-import CalculadoraHorasExtras from "./pages/CalculadoraHorasExtras";
-import CalculadoraSeguroDesemprego from "./pages/CalculadoraSeguroDesemprego";
-import CalculadoraFGTS from "./pages/CalculadoraFGTS";
-import CalculadoraPensaoMorte from "./pages/CalculadoraPensaoMorte";
-import CalculadoraAuxilioDoenca from "./pages/CalculadoraAuxilioDoenca";
-import CalculadoraBPCLOAS from "./pages/CalculadoraBPCLOAS";
-import CalculadoraInventario from "./pages/CalculadoraInventario";
-import CalculadoraInsalubridade from "./pages/CalculadoraInsalubridade";
-import CalculadoraDPVAT from "./pages/CalculadoraDPVAT";
-import SelectAction from "./pages/SelectAction";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
+import Questionnaire from "./pages/Questionnaire";
 import DynamicQuestionnaire from "./pages/DynamicQuestionnaire";
 import Completed from "./pages/Completed";
 import NotFound from "./pages/NotFound";
-import LeadsDashboard from "./pages/admin/LeadsDashboard";
-import QADashboard from "./pages/admin/QADashboard";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
 import FAQ from "./pages/FAQ";
 import FAQIndex from "./pages/FAQIndex";
 import FAQQuestion from "./pages/FAQQuestion";
 import NicheLanding from "./pages/NicheLanding";
-import News from "./pages/News";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsOfUse from "./pages/TermsOfUse";
-import CasosSucesso from "./pages/CasosSucesso";
-import Sitemap from "./pages/Sitemap";
 import CityLanding from "./pages/CityLanding";
 import CityNicheLanding from "./pages/CityNicheLanding";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import SelectNiche from "./pages/SelectNiche";
+import SelectAction from "./pages/SelectAction";
+import News from "./pages/News";
+import CasosSucesso from "./pages/CasosSucesso";
+import Sitemap from "./pages/Sitemap";
 import Conversao from "./pages/Conversao";
+
+// Calculadoras
+import Calculadoras from "./pages/Calculadoras";
+import CalculadoraTrabalhista from "./pages/CalculadoraTrabalhista";
+import CalculadoraPensao from "./pages/CalculadoraPensao";
+import CalculadoraAposentadoria from "./pages/CalculadoraAposentadoria";
+import CalculadoraHorasExtras from "./pages/CalculadoraHorasExtras";
+import CalculadoraSeguroDesemprego from "./pages/CalculadoraSeguroDesemprego";
+import CalculadoraFGTS from "./pages/CalculadoraFGTS";
+import CalculadoraInsalubridade from "./pages/CalculadoraInsalubridade";
+import CalculadoraPartilhaBens from "./pages/CalculadoraPartilhaBens";
+import CalculadoraInventario from "./pages/CalculadoraInventario";
+import CalculadoraPensaoMorte from "./pages/CalculadoraPensaoMorte";
+import CalculadoraAuxilioDoenca from "./pages/CalculadoraAuxilioDoenca";
+import CalculadoraBPCLOAS from "./pages/CalculadoraBPCLOAS";
+import CalculadoraDanosMorais from "./pages/CalculadoraDanosMorais";
+import CalculadoraAtualizacaoDivida from "./pages/CalculadoraAtualizacaoDivida";
+import CalculadoraAluguelAtrasado from "./pages/CalculadoraAluguelAtrasado";
+import CalculadoraDPVAT from "./pages/CalculadoraDPVAT";
+import CalculadoraVooCancelado from "./pages/CalculadoraVooCancelado";
+import CalculadoraNegativacao from "./pages/CalculadoraNegativacao";
+
+// Consumer Landing Pages
+import VooCanceladoLanding from "./pages/consumer/VooCanceladoLanding";
+import NegativacaoIndevidaLanding from "./pages/consumer/NegativacaoIndevidaLanding";
+import PlanoSaudeNegouLanding from "./pages/consumer/PlanoSaudeNegouLanding";
+import FraudeBancariaLanding from "./pages/consumer/FraudeBancariaLanding";
+import CobrancaIndevidaLanding from "./pages/consumer/CobrancaIndevidaLanding";
+
+// Admin
+import LeadsDashboard from "./pages/admin/LeadsDashboard";
+import QADashboard from "./pages/admin/QADashboard";
+
+// Components
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 
 const queryClient = new QueryClient();
@@ -63,23 +81,29 @@ const AnimatedRoutes = () => {
         <Route path="/selecionar-acao/:nicheId" element={<SelectAction />} />
         <Route path="/questionario/:nicheId/:actionId" element={<DynamicQuestionnaire />} />
         <Route path="/concluido" element={<Completed />} />
+        
         {/* Blog/Artigos */}
         <Route path="/artigos" element={<Blog />} />
         <Route path="/artigos/:nicheId" element={<Blog />} />
         <Route path="/artigos/:nicheId/:slug" element={<BlogPost />} />
+        
         {/* FAQ */}
         <Route path="/perguntas-frequentes" element={<FAQ />} />
         <Route path="/perguntas" element={<FAQIndex />} />
         <Route path="/perguntas/:slug" element={<FAQQuestion />} />
+        
         {/* Legal Pages */}
         <Route path="/privacidade" element={<PrivacyPolicy />} />
         <Route path="/termos-de-uso" element={<TermsOfUse />} />
         <Route path="/sitemap" element={<Sitemap />} />
+        
         {/* Success Stories */}
         <Route path="/casos-de-sucesso" element={<CasosSucesso />} />
+        
         {/* News */}
         <Route path="/noticias" element={<News />} />
         <Route path="/noticias/:nicheId" element={<News />} />
+        
         {/* Calculadoras */}
         <Route path="/calculadoras" element={<Calculadoras />} />
         <Route path="/calculadora-trabalhista" element={<CalculadoraTrabalhista />} />
@@ -98,6 +122,17 @@ const AnimatedRoutes = () => {
         <Route path="/calculadora-inventario" element={<CalculadoraInventario />} />
         <Route path="/calculadora-insalubridade" element={<CalculadoraInsalubridade />} />
         <Route path="/calculadora-dpvat" element={<CalculadoraDPVAT />} />
+        {/* Consumer Calculators */}
+        <Route path="/calculadora-voo-cancelado" element={<CalculadoraVooCancelado />} />
+        <Route path="/calculadora-negativacao" element={<CalculadoraNegativacao />} />
+        
+        {/* Consumer Problem Landing Pages */}
+        <Route path="/voo-cancelado" element={<VooCanceladoLanding />} />
+        <Route path="/negativacao-indevida" element={<NegativacaoIndevidaLanding />} />
+        <Route path="/plano-saude-negou" element={<PlanoSaudeNegouLanding />} />
+        <Route path="/fraude-bancaria" element={<FraudeBancariaLanding />} />
+        <Route path="/cobranca-indevida" element={<CobrancaIndevidaLanding />} />
+        
         {/* Niche Landing Pages */}
         <Route path="/advogado-consumidor" element={<NicheLanding />} />
         <Route path="/advogado-trabalhista" element={<NicheLanding />} />
@@ -105,16 +140,21 @@ const AnimatedRoutes = () => {
         <Route path="/advogado-civil" element={<NicheLanding />} />
         <Route path="/advogado-previdenciario" element={<NicheLanding />} />
         <Route path="/advogado-criminal" element={<NicheLanding />} />
+        
         {/* City Landing Pages - Local SEO */}
         <Route path="/advogado/:citySlug" element={<CityLanding />} />
+        
         {/* City + Niche Landing Pages - Ultra Local SEO */}
         <Route path="/advogado-:nicheSlug-:citySlug" element={<CityNicheLanding />} />
+        
         {/* Conversion Tracking */}
         <Route path="/conversao" element={<Conversao />} />
+        
         {/* Admin */}
         <Route path="/admin" element={<LeadsDashboard />} />
         <Route path="/admin/leads" element={<LeadsDashboard />} />
         <Route path="/admin/qa" element={<QADashboard />} />
+        
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>

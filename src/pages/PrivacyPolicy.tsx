@@ -262,7 +262,7 @@ const PrivacyPolicy = () => {
                     privacidade@advogadoonline.com.br
                   </a>
                   <a 
-                    href="https://wa.me/5571999999999"
+                    href="https://wa.me/5571997036269"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-primary hover:underline"

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PageTransition from "@/components/motion/PageTransition";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Briefcase, Users, Calculator, ArrowRight, MessageCircle, Clock, Scale, TrendingUp, Home, Building2, Wallet, Heart, Stethoscope, HandHeart, ScrollText, ShieldAlert, Car, Plane, AlertCircle } from "lucide-react";
+import { Briefcase, Users, Calculator, ArrowRight, MessageCircle, Clock, Scale, TrendingUp, Home, Building2, Wallet, Heart, Stethoscope, HandHeart, ScrollText, ShieldAlert, Car, Plane, AlertCircle, Receipt, HeartPulse, Shield } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { getCalculatorListSchema } from "@/data/calculator-schemas";
 import { BackButton } from "@/components/BackButton";
@@ -26,7 +26,10 @@ const calculadoras = [
   { id: "aluguel", title: "Calculadora de Aluguel Atrasado", description: "Calcule o débito total do inquilino incluindo multa, juros e encargos.", icon: Building2, href: "/calculadora-aluguel-atrasado", color: "from-yellow-500 to-amber-500", bgLight: "bg-yellow-50 dark:bg-yellow-950/20", features: ["Aluguéis", "Multa", "IPTU/Cond.", "Correção"] },
   { id: "dpvat", title: "Calculadora DPVAT/SPVAT", description: "Calcule a indenização por acidente de trânsito: morte, invalidez ou despesas.", icon: Car, href: "/calculadora-dpvat", color: "from-purple-500 to-pink-500", bgLight: "bg-purple-50 dark:bg-purple-950/20", features: ["Morte", "Invalidez", "Despesas Médicas", "Documentos"] },
   { id: "voo-cancelado", title: "Calculadora de Voo Cancelado", description: "Calcule sua indenização por voo cancelado, atrasado ou overbooking.", icon: Plane, href: "/calculadora-voo-cancelado", color: "from-orange-500 to-red-500", bgLight: "bg-orange-50 dark:bg-orange-950/20", features: ["Atraso", "Cancelamento", "Overbooking", "Danos Morais"] },
-  { id: "negativacao", title: "Calculadora de Negativação Indevida", description: "Estime a indenização por nome negativado indevidamente no SPC/Serasa.", icon: AlertCircle, href: "/calculadora-negativacao", color: "from-orange-500 to-red-500", bgLight: "bg-orange-50 dark:bg-orange-950/20", features: ["Danos Morais", "Devolução Dobro", "Tempo Negativado", "Jurisprudência"] }
+  { id: "negativacao", title: "Calculadora de Negativação Indevida", description: "Estime a indenização por nome negativado indevidamente no SPC/Serasa.", icon: AlertCircle, href: "/calculadora-negativacao", color: "from-orange-500 to-red-500", bgLight: "bg-orange-50 dark:bg-orange-950/20", features: ["Danos Morais", "Devolução Dobro", "Tempo Negativado", "Jurisprudência"] },
+  { id: "devolucao-dobro", title: "Calculadora Devolução em Dobro", description: "Calcule quanto você pode receber de volta por cobrança indevida (Art. 42 CDC).", icon: Receipt, href: "/calculadora-devolucao-dobro", color: "from-orange-500 to-amber-500", bgLight: "bg-orange-50 dark:bg-orange-950/20", features: ["Art. 42 CDC", "Dobro do Valor", "Danos Morais", "Correção"] },
+  { id: "plano-saude", title: "Calculadora Plano de Saúde", description: "Estime a indenização por negativa de cobertura de plano de saúde.", icon: HeartPulse, href: "/calculadora-plano-saude", color: "from-rose-500 to-pink-500", bgLight: "bg-rose-50 dark:bg-rose-950/20", features: ["Negativa", "Liminar 48h", "Danos Morais", "Reembolso"] },
+  { id: "fraude-bancaria", title: "Calculadora Fraude Bancária", description: "Calcule indenização por golpe do PIX, cartão clonado ou empréstimo fraude.", icon: Shield, href: "/calculadora-fraude-bancaria", color: "from-blue-500 to-indigo-500", bgLight: "bg-blue-50 dark:bg-blue-950/20", features: ["Golpe PIX", "Cartão Clonado", "Empréstimo", "Danos Morais"] }
 ];
 
 const Calculadoras = () => {

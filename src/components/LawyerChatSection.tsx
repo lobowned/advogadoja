@@ -289,7 +289,7 @@ const LawyerChatSection = () => {
                         className={`flex-1 bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-700 text-white font-semibold py-5 sm:py-6 text-base sm:text-lg rounded-xl transition-all duration-300 flex items-center justify-center gap-3 min-h-[56px] shadow-lg hover:shadow-xl hover:scale-[1.02] ${hasAnimated ? 'btn-cta-pulse' : ''}`}
                       >
                         <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6" />
-                        <span>Iniciar Atendimento</span>
+                        <span>Iniciar Atendimento pelo Site</span>
                       </Button>
                       
                       {/* Botão WhatsApp - Verde Oficial com Destaque */}

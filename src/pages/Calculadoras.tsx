@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PageTransition from "@/components/motion/PageTransition";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Briefcase, Users, Calculator, ArrowRight, MessageCircle, Clock, Scale, TrendingUp, Home, Building2, Wallet, Heart, Stethoscope, HandHeart, ScrollText, ShieldAlert, Car } from "lucide-react";
+import { Briefcase, Users, Calculator, ArrowRight, MessageCircle, Clock, Scale, TrendingUp, Home, Building2, Wallet, Heart, Stethoscope, HandHeart, ScrollText, ShieldAlert, Car, Plane, AlertCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { getCalculatorListSchema } from "@/data/calculator-schemas";
 import { BackButton } from "@/components/BackButton";
@@ -24,7 +24,9 @@ const calculadoras = [
   { id: "danos-morais", title: "Calculadora de Danos Morais", description: "Estime o valor da indenização por danos morais baseado em jurisprudência.", icon: Scale, href: "/calculadora-danos-morais", color: "from-purple-500 to-pink-500", bgLight: "bg-purple-50 dark:bg-purple-950/20", features: ["Negativação", "Ofensa à Honra", "Discriminação", "Acidentes"] },
   { id: "atualizacao-divida", title: "Calculadora de Atualização de Dívida", description: "Atualize dívidas com correção monetária, juros de mora e multa.", icon: TrendingUp, href: "/calculadora-atualizacao-divida", color: "from-red-500 to-orange-500", bgLight: "bg-red-50 dark:bg-red-950/20", features: ["INPC/IPCA", "IGP-M/SELIC", "Juros 1% a.m.", "Multa 2%"] },
   { id: "aluguel", title: "Calculadora de Aluguel Atrasado", description: "Calcule o débito total do inquilino incluindo multa, juros e encargos.", icon: Building2, href: "/calculadora-aluguel-atrasado", color: "from-yellow-500 to-amber-500", bgLight: "bg-yellow-50 dark:bg-yellow-950/20", features: ["Aluguéis", "Multa", "IPTU/Cond.", "Correção"] },
-  { id: "dpvat", title: "Calculadora DPVAT/SPVAT", description: "Calcule a indenização por acidente de trânsito: morte, invalidez ou despesas.", icon: Car, href: "/calculadora-dpvat", color: "from-purple-500 to-pink-500", bgLight: "bg-purple-50 dark:bg-purple-950/20", features: ["Morte", "Invalidez", "Despesas Médicas", "Documentos"] }
+  { id: "dpvat", title: "Calculadora DPVAT/SPVAT", description: "Calcule a indenização por acidente de trânsito: morte, invalidez ou despesas.", icon: Car, href: "/calculadora-dpvat", color: "from-purple-500 to-pink-500", bgLight: "bg-purple-50 dark:bg-purple-950/20", features: ["Morte", "Invalidez", "Despesas Médicas", "Documentos"] },
+  { id: "voo-cancelado", title: "Calculadora de Voo Cancelado", description: "Calcule sua indenização por voo cancelado, atrasado ou overbooking.", icon: Plane, href: "/calculadora-voo-cancelado", color: "from-orange-500 to-red-500", bgLight: "bg-orange-50 dark:bg-orange-950/20", features: ["Atraso", "Cancelamento", "Overbooking", "Danos Morais"] },
+  { id: "negativacao", title: "Calculadora de Negativação Indevida", description: "Estime a indenização por nome negativado indevidamente no SPC/Serasa.", icon: AlertCircle, href: "/calculadora-negativacao", color: "from-orange-500 to-red-500", bgLight: "bg-orange-50 dark:bg-orange-950/20", features: ["Danos Morais", "Devolução Dobro", "Tempo Negativado", "Jurisprudência"] }
 ];
 
 const Calculadoras = () => {

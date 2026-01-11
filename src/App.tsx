@@ -99,6 +99,7 @@ const AnimatedRoutes = () => {
         <Route path="/calculadora-insalubridade" element={<CalculadoraInsalubridade />} />
         <Route path="/calculadora-dpvat" element={<CalculadoraDPVAT />} />
         {/* Niche Landing Pages */}
+        <Route path="/advogado-consumidor" element={<NicheLanding />} />
         <Route path="/advogado-trabalhista" element={<NicheLanding />} />
         <Route path="/advogado-familia" element={<NicheLanding />} />
         <Route path="/advogado-civil" element={<NicheLanding />} />

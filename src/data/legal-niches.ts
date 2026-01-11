@@ -1,12 +1,21 @@
 import { LegalNiche } from "@/types/legal-flows";
-import { Users, Briefcase, Scale, Heart, Shield } from "lucide-react";
+import { Users, Briefcase, Scale, Heart, Shield, ShoppingBag } from "lucide-react";
 import { familiaActions } from "./legal-actions/familia";
 import { trabalhistaActions } from "./legal-actions/trabalhista";
 import { civilActions } from "./legal-actions/civil";
 import { previdenciarioActions } from "./legal-actions/previdenciario";
 import { penalActions } from "./legal-actions/penal";
+import { consumidorActions } from "./legal-actions/consumidor";
 
 export const legalNiches: LegalNiche[] = [
+  {
+    id: 'consumidor',
+    name: 'Direito do Consumidor',
+    description: 'Voo cancelado, nome sujo, plano de saúde negou? Indenização garantida!',
+    icon: ShoppingBag,
+    color: 'text-emerald-600',
+    actions: consumidorActions,
+  },
   {
     id: 'familia',
     name: 'Direito de Família',

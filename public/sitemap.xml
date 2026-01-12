@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- ================================================ -->
-  <!-- SITEMAP ADVOGADO JÁ - Gerado em 2026-01-12      -->
-  <!-- Domínio: https://advogadoja.lovable.app          -->
-  <!-- ================================================ -->
 
-  <!-- ============================================== -->
-  <!-- HOMEPAGE (1 URL)                               -->
-  <!-- ============================================== -->
+  <!-- ========================================== -->
+  <!-- HOMEPAGE - Advogado Já                     -->
+  <!-- ========================================== -->
   <url>
     <loc>https://advogadoja.lovable.app/</loc>
     <lastmod>2026-01-12</lastmod>
@@ -15,2152 +11,2370 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- ============================================== -->
-  <!-- PÁGINAS PRINCIPAIS (8 URLs)                    -->
-  <!-- ============================================== -->
+  <!-- ========================================== -->
+  <!-- PÁGINAS PRINCIPAIS (7 URLs)                -->
+  <!-- ========================================== -->
   <url>
-    <loc>https://advogadoonline.com.br/sitemap</loc>
-    <lastmod>2025-12-25</lastmod>
+    <loc>https://advogadoja.lovable.app/selecionar-nicho</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/selecionar-area</loc>
-    <lastmod>2025-12-25</lastmod>
+    <loc>https://advogadoja.lovable.app/calculadoras</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/artigos</loc>
-    <lastmod>2025-12-25</lastmod>
+    <loc>https://advogadoja.lovable.app/blog</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/noticias</loc>
-    <lastmod>2025-12-25</lastmod>
+    <loc>https://advogadoja.lovable.app/artigos</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/casos-de-sucesso</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/noticias</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- ========================================== -->
+  <!-- LANDING PAGES SEO CONSUMIDOR (6 URLs)      -->
+  <!-- Novas páginas otimizadas para SEO          -->
+  <!-- ========================================== -->
   <url>
-    <loc>https://advogadoonline.com.br/perguntas</loc>
-    <lastmod>2025-12-25</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-cobranca-indevida</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadoras</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-voo-cancelado-atrasado</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/casos-de-sucesso</loc>
-    <lastmod>2025-12-25</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-negativacao-indevida</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-plano-saude-cobertura-negada</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-produto-defeituoso</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-fraude-bancaria</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
 
-  <!-- ============================================== -->
-  <!-- PÁGINAS LEGAIS (2 URLs)                        -->
-  <!-- ============================================== -->
+  <!-- ========================================== -->
+  <!-- LANDING PAGES POR NICHO (6 URLs)           -->
+  <!-- ========================================== -->
   <url>
-    <loc>https://advogadoonline.com.br/privacidade</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/termos-de-uso</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
 
-  <!-- ============================================== -->
-  <!-- LANDING PAGES DE NICHO (5 URLs)                -->
-  <!-- ============================================== -->
+  <!-- ========================================== -->
+  <!-- CALCULADORAS JURÍDICAS (21 URLs)           -->
+  <!-- ========================================== -->
   <url>
-    <loc>https://advogadoonline.com.br/advogado-familia</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://advogadoja.lovable.app/calculadora-trabalhista</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://advogadoja.lovable.app/calculadora-pensao</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-civil</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://advogadoja.lovable.app/calculadora-aposentadoria</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://advogadoja.lovable.app/calculadora-horas-extras</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-penal</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://advogadoja.lovable.app/calculadora-seguro-desemprego</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-consumidor</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://advogadoja.lovable.app/calculadora-fgts</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/voo-cancelado</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://advogadoja.lovable.app/calculadora-insalubridade</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/negativacao-indevida</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://advogadoja.lovable.app/calculadora-partilha-bens</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/plano-saude-negou</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://advogadoja.lovable.app/calculadora-inventario</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/fraude-bancaria</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://advogadoja.lovable.app/calculadora-pensao-morte</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/cobranca-indevida</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://advogadoja.lovable.app/calculadora-auxilio-doenca</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/calculadora-bpc-loas</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/calculadora-danos-morais</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/calculadora-atualizacao-divida</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/calculadora-aluguel-atrasado</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/calculadora-dpvat</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/calculadora-voo-cancelado</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/calculadora-negativacao</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/calculadora-devolucao-dobro</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/calculadora-plano-saude</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/calculadora-fraude-bancaria</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 
-  <!-- ============================================== -->
-  <!-- CALCULADORAS JURÍDICAS (18 URLs)               -->
-  <!-- ============================================== -->
+  <!-- ========================================== -->
+  <!-- LANDING PAGES POR CIDADE (30 URLs)         -->
+  <!-- ========================================== -->
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-trabalhista</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-sao-paulo</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-horas-extras</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-rio-de-janeiro</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-seguro-desemprego</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-belo-horizonte</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-fgts</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-brasilia</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-insalubridade</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-salvador</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-pensao</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-fortaleza</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-partilha-bens</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-curitiba</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-inventario</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-recife</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-aposentadoria</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-porto-alegre</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-pensao-morte</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-manaus</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-auxilio-doenca</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-goiania</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-bpc-loas</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-campinas</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-danos-morais</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-sao-luis</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-atualizacao-divida</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-natal</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-aluguel-atrasado</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-florianopolis</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-dpvat</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-vitoria</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-voo-cancelado</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-joao-pessoa</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-negativacao</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-teresina</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-devolucao-dobro</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-aracaju</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-plano-saude</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-maceio</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/calculadora-fraude-bancaria</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://advogadoja.lovable.app/advogado-belem</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-campo-grande</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-cuiaba</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-sao-bernardo-do-campo</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-guarulhos</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-santo-andre</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-ribeirao-preto</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-uberlandia</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-joinville</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-londrina</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
 
-  <!-- ============================================== -->
-  <!-- ARTIGOS TRABALHISTAS INDIVIDUAIS (10 URLs)     -->
-  <!-- ============================================== -->
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/trabalhista/demissao-sem-justa-causa</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/trabalhista/acidente-trabalho</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/trabalhista/horas-extras</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/trabalhista/assedio-moral</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/trabalhista/rescisao-indireta-quando-empregado-demite-empresa</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/trabalhista/verbas-rescisorias-o-que-voce-tem-direito</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/trabalhista/adicional-noturno-calcular-direitos</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/trabalhista/ferias-nao-pagas-como-receber</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/trabalhista/desvio-funcao-acumulo-funcoes</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/trabalhista/pejotizacao-vinculo-empregaticio</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- ============================================== -->
-  <!-- ARTIGOS POR NICHO (6 URLs)                     -->
-  <!-- ============================================== -->
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/trabalhista</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/familia</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/civil</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/previdenciario</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- ============================================== -->
-  <!-- ARTIGOS PREVIDENCIÁRIOS INDIVIDUAIS (6 URLs)   -->
-  <!-- ============================================== -->
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/previdenciario/revisao-da-vida-toda-como-aumentar-aposentadoria</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/previdenciario/pensao-por-morte-quem-tem-direito</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/previdenciario/aposentadoria-especial-atividades-insalubres</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/previdenciario/aposentadoria-por-invalidez-incapacidade-permanente</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/previdenciario/tempo-de-contribuicao-regras-transicao</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/previdenciario/inss-negou-beneficio-o-que-fazer</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/consumidor</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/penal</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- ============================================== -->
-  <!-- NOTÍCIAS POR NICHO (6 URLs)                    -->
-  <!-- ============================================== -->
-  <url>
-    <loc>https://advogadoonline.com.br/noticias/trabalhista</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/noticias/familia</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/noticias/civil</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/noticias/previdenciario</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/noticias/consumidor</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/noticias/penal</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- ============================================== -->
-  <!-- FAQs PROGRAMÁTICAS (32 URLs)                   -->
-  <!-- ============================================== -->
-  <!-- Trabalhista -->
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/quanto-tempo-para-entrar-com-processo-trabalhista</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/o-que-sao-verbas-rescisorias</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/posso-processar-empresa-ainda-trabalhando</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/empresa-nao-pagou-horas-extras</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/como-calcular-rescisao-trabalhista</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/seguro-desemprego-quem-tem-direito</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <!-- Família -->
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/como-funciona-guarda-compartilhada</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/como-calcular-pensao-alimenticia</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/quanto-tempo-demora-divorcio</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/posso-pedir-revisao-pensao-alimenticia</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/o-que-e-alienacao-parental</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <!-- Previdenciário -->
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/quanto-tempo-demora-aposentadoria-inss</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/inss-negou-beneficio-o-que-fazer</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/posso-trabalhar-recebendo-aposentadoria</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/como-comprovar-tempo-trabalho-rural</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/o-que-e-bpc-loas-quem-tem-direito</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <!-- Civil -->
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/como-funciona-processo-inventario</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/prazo-para-abrir-inventario</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/resolver-disputas-sem-ir-justica</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/como-fazer-testamento</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <!-- Consumidor -->
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/nome-negativado-indevidamente-indenizacao</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/prazo-reclamar-defeito-produto</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/direito-arrependimento-compra-online</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/empresa-pode-cobrar-taxa-cancelamento</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <!-- Penal -->
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/fui-chamado-delegacia-preciso-advogado</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/o-que-e-habeas-corpus</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/quanto-tempo-ficha-fica-limpa</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/qual-diferenca-flagrante-preventiva</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <!-- Geral -->
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/como-funciona-atendimento-advogado-online</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/quanto-custa-contratar-advogado</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/quanto-tempo-demora-processo-judicial</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/perguntas/o-que-e-justica-gratuita</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- ============================================== -->
-  <!-- ARTIGOS DO BLOG (55 URLs)                      -->
-  <!-- ============================================== -->
-  <!-- Trabalhista (14) -->
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/demissao-sem-justa-causa</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/acidente-trabalho</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/horas-extras</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/assedio-moral</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/pejotizacao-vinculo-empregaticio</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/adicional-insalubridade-periculosidade</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/rescisao-indireta</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/multa-477-atraso-rescisao</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/desvio-de-funcao</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/intervalo-intrajornada-almoco</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/trabalho-noturno-adicional</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/estabilidade-provisoria-emprego</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/home-office-teletrabalho-direitos</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/demissao-justa-causa</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Família (10) -->
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/divorcio-consensual</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/pensao-alimenticia</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/guarda</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/divorcio-litigioso</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/revisao-pensao-alimenticia-2025</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/uniao-estavel-direitos</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/reconhecimento-paternidade</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/inventario-heranca</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/testamento-tipos-validade</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/guarda-filhos-compartilhada-unilateral</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Previdenciário (10) -->
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/aposentadoria</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/auxilio-doenca</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/bpc-loas</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/aposentadoria-novas-regras-2025</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/simular-aposentadoria-meu-inss</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/aposentadoria-invalidez</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/pensao-por-morte</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/salario-maternidade</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/revisao-aposentadoria</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/aposentadoria-rural</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Civil (9) -->
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/danos-morais</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/cobranca</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/juizado-especial-pequenas-causas</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/despejo-falta-pagamento</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/usucapiao-aquisicao-imovel</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/erro-medico-indenizacao</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/acidente-transito-indenizacao</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/negativacao-indevida-nome-sujo</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/contratos-distrato-rescisao</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Consumidor (9) -->
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/atraso-cancelamento-voo-direitos</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/overbooking-extravio-bagagem</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/negativacao-indevida-spc-serasa</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/plano-saude-negativa-cobertura</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/compras-online-direito-arrependimento</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/cobranca-indevida-restituicao-dobro</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/produto-defeito-troca-reembolso</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/tarifas-bancarias-abusivas</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/telefonia-internet-problemas</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Penal (7) -->
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/defesa-flagrante</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/habeas-corpus</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/violencia-domestica</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/calunia-difamacao-injuria</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/estelionato-golpes-fraudes</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/prisao-flagrante-direitos</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/artigos/crimes-transito-embriaguez-volante</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- ============================================== -->
-  <!-- LANDING PAGES DE CIDADES (20 URLs)             -->
-  <!-- ============================================== -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/sao-paulo</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/rio-de-janeiro</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/belo-horizonte</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/brasilia</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/salvador</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/fortaleza</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/curitiba</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/recife</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/porto-alegre</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/manaus</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/goiania</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/campinas</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/sao-luis</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/natal</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/florianopolis</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/vitoria</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/joao-pessoa</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/teresina</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/aracaju</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado/maceio</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ============================================== -->
-  <!-- LANDING PAGES CIDADE + NICHO (100 URLs)        -->
-  <!-- ============================================== -->
+  <!-- ========================================== -->
+  <!-- LANDING PAGES CIDADE + NICHO (180 URLs)    -->
+  <!-- 30 cidades × 6 nichos                      -->
+  <!-- ========================================== -->
+  
   <!-- São Paulo -->
   <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-sao-paulo</loc>
-    <lastmod>2025-12-25</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-sao-paulo</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-sao-paulo</loc>
-    <lastmod>2025-12-25</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-sao-paulo</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-sao-paulo</loc>
-    <lastmod>2025-12-25</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-familia-sao-paulo</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-sao-paulo</loc>
-    <lastmod>2025-12-25</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-civil-sao-paulo</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-sao-paulo</loc>
-    <lastmod>2025-12-25</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-sao-paulo</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
-  <!-- Rio de Janeiro -->
   <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-rio-de-janeiro</loc>
-    <lastmod>2025-12-25</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-sao-paulo</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-rio-de-janeiro</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-rio-de-janeiro</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-rio-de-janeiro</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-rio-de-janeiro</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Belo Horizonte -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-belo-horizonte</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-belo-horizonte</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-belo-horizonte</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-belo-horizonte</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-belo-horizonte</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Brasília -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-brasilia</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-brasilia</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-brasilia</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-brasilia</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-brasilia</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Salvador -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-salvador</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-salvador</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-salvador</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-salvador</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-salvador</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Fortaleza -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-fortaleza</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-fortaleza</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-fortaleza</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-fortaleza</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-fortaleza</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Curitiba -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-curitiba</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-curitiba</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-curitiba</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-curitiba</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-curitiba</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Recife -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-recife</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-recife</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-recife</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-recife</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-recife</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Porto Alegre -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-porto-alegre</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-porto-alegre</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-porto-alegre</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-porto-alegre</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-porto-alegre</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Manaus -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-manaus</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-manaus</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-manaus</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-manaus</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-manaus</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Goiânia -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-goiania</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-goiania</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-goiania</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-goiania</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-goiania</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Campinas -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-campinas</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-campinas</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-campinas</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-campinas</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-campinas</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- São Luís -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-sao-luis</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-sao-luis</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-sao-luis</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-sao-luis</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-sao-luis</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Natal -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-natal</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-natal</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-natal</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-natal</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-natal</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Florianópolis -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-florianopolis</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-florianopolis</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-florianopolis</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-florianopolis</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-florianopolis</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Vitória -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-vitoria</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-vitoria</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-vitoria</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-vitoria</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-vitoria</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- João Pessoa -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-joao-pessoa</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-joao-pessoa</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-joao-pessoa</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-joao-pessoa</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-joao-pessoa</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Teresina -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-teresina</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-teresina</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-teresina</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-teresina</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-teresina</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Aracaju -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-aracaju</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-aracaju</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-aracaju</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-aracaju</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-aracaju</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Maceió -->
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-maceio</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-maceio</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-maceio</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-maceio</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-maceio</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
 
-  <!-- ============================================== -->
-  <!-- NOVAS CIDADES - EXPANSÃO SEO (60 URLs)        -->
-  <!-- Belém, Campo Grande, Cuiabá, SBC, Guarulhos   -->
-  <!-- Santo André, Ribeirão Preto, Uberlândia       -->
-  <!-- Joinville, Londrina                           -->
-  <!-- ============================================== -->
+  <!-- Rio de Janeiro -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-rio-de-janeiro</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-rio-de-janeiro</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-rio-de-janeiro</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-rio-de-janeiro</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-rio-de-janeiro</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-rio-de-janeiro</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Belo Horizonte -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-belo-horizonte</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-belo-horizonte</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-belo-horizonte</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-belo-horizonte</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-belo-horizonte</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-belo-horizonte</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Brasília -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-brasilia</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-brasilia</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-brasilia</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-brasilia</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-brasilia</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-brasilia</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Salvador -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-salvador</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-salvador</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-salvador</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-salvador</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-salvador</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-salvador</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Fortaleza -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-fortaleza</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-fortaleza</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-fortaleza</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-fortaleza</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-fortaleza</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-fortaleza</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Curitiba -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-curitiba</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-curitiba</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-curitiba</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-curitiba</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-curitiba</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-curitiba</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Recife -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-recife</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-recife</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-recife</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-recife</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-recife</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-recife</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Porto Alegre -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-porto-alegre</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-porto-alegre</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-porto-alegre</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-porto-alegre</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-porto-alegre</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-porto-alegre</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Manaus -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-manaus</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-manaus</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-manaus</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-manaus</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-manaus</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-manaus</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Goiânia -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-goiania</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-goiania</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-goiania</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-goiania</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-goiania</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-goiania</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Campinas -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-campinas</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-campinas</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-campinas</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-campinas</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-campinas</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-campinas</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- São Luís -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-sao-luis</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-sao-luis</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-sao-luis</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-sao-luis</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-sao-luis</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-sao-luis</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Natal -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-natal</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-natal</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-natal</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-natal</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-natal</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-natal</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Florianópolis -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-florianopolis</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-florianopolis</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-florianopolis</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-florianopolis</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-florianopolis</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-florianopolis</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Vitória -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-vitoria</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-vitoria</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-vitoria</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-vitoria</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-vitoria</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-vitoria</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- João Pessoa -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-joao-pessoa</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-joao-pessoa</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-joao-pessoa</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-joao-pessoa</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-joao-pessoa</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-joao-pessoa</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Teresina -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-teresina</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-teresina</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-teresina</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-teresina</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-teresina</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-teresina</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Aracaju -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-aracaju</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-aracaju</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-aracaju</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-aracaju</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-aracaju</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-aracaju</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Maceió -->
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-maceio</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-maceio</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-maceio</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-maceio</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-maceio</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-maceio</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
 
   <!-- Belém -->
   <url>
-    <loc>https://advogadoonline.com.br/advogado-consumidor-belem</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-belem</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-belem</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-belem</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-belem</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-familia-belem</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-belem</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-civil-belem</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-belem</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-belem</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-belem</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-belem</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
 
   <!-- Campo Grande -->
   <url>
-    <loc>https://advogadoonline.com.br/advogado-consumidor-campo-grande</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-campo-grande</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-campo-grande</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-campo-grande</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-campo-grande</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-familia-campo-grande</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-campo-grande</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-civil-campo-grande</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-campo-grande</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-campo-grande</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-campo-grande</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-campo-grande</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
 
   <!-- Cuiabá -->
   <url>
-    <loc>https://advogadoonline.com.br/advogado-consumidor-cuiaba</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-cuiaba</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-cuiaba</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-cuiaba</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-cuiaba</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-familia-cuiaba</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-cuiaba</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-civil-cuiaba</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-cuiaba</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-cuiaba</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-cuiaba</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-cuiaba</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
 
   <!-- São Bernardo do Campo -->
   <url>
-    <loc>https://advogadoonline.com.br/advogado-consumidor-sao-bernardo-do-campo</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-sao-bernardo-do-campo</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-sao-bernardo-do-campo</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-sao-bernardo-do-campo</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-sao-bernardo-do-campo</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-familia-sao-bernardo-do-campo</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-sao-bernardo-do-campo</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-civil-sao-bernardo-do-campo</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-sao-bernardo-do-campo</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-sao-bernardo-do-campo</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-sao-bernardo-do-campo</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-sao-bernardo-do-campo</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
 
   <!-- Guarulhos -->
   <url>
-    <loc>https://advogadoonline.com.br/advogado-consumidor-guarulhos</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-guarulhos</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-guarulhos</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-guarulhos</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-guarulhos</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-familia-guarulhos</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-guarulhos</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-civil-guarulhos</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-guarulhos</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-guarulhos</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-guarulhos</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-guarulhos</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
 
   <!-- Santo André -->
   <url>
-    <loc>https://advogadoonline.com.br/advogado-consumidor-santo-andre</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-santo-andre</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-santo-andre</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-santo-andre</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-santo-andre</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-familia-santo-andre</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-santo-andre</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-civil-santo-andre</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-santo-andre</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-santo-andre</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-santo-andre</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-santo-andre</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
 
   <!-- Ribeirão Preto -->
   <url>
-    <loc>https://advogadoonline.com.br/advogado-consumidor-ribeirao-preto</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-ribeirao-preto</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-ribeirao-preto</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-ribeirao-preto</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-ribeirao-preto</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-familia-ribeirao-preto</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-ribeirao-preto</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-civil-ribeirao-preto</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-ribeirao-preto</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-ribeirao-preto</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-ribeirao-preto</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-ribeirao-preto</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
 
   <!-- Uberlândia -->
   <url>
-    <loc>https://advogadoonline.com.br/advogado-consumidor-uberlandia</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-uberlandia</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-uberlandia</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-uberlandia</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-uberlandia</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-familia-uberlandia</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-uberlandia</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-civil-uberlandia</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-uberlandia</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-uberlandia</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-uberlandia</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-uberlandia</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
 
   <!-- Joinville -->
   <url>
-    <loc>https://advogadoonline.com.br/advogado-consumidor-joinville</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-joinville</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-joinville</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-joinville</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-joinville</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-familia-joinville</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-joinville</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-civil-joinville</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-joinville</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-joinville</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-joinville</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-joinville</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
 
   <!-- Londrina -->
   <url>
-    <loc>https://advogadoonline.com.br/advogado-consumidor-londrina</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/advogado-consumidor-londrina</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-trabalhista-londrina</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-familia-londrina</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-civil-londrina</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-previdenciario-londrina</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/advogado-criminal-londrina</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- ========================================== -->
+  <!-- BLOG POSTS NOVOS (3 URLs)                  -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://advogadoja.lovable.app/blog/como-recorrer-multa-transito-indevida</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/blog/direitos-consumidor-compras-online</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/blog/superendividamento-negociar-dividas</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ========================================== -->
+  <!-- ARTIGOS LEGACY POR NICHO (~45 URLs)        -->
+  <!-- ========================================== -->
+  
+  <!-- Trabalhista -->
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/trabalhista/rescisao-indireta</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/trabalhista/horas-extras</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/trabalhista/acidente-trabalho</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/trabalhista/assedio-moral</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/trabalhista/verbas-rescisorias</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/trabalhista/insalubridade-periculosidade</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/trabalhista/estabilidade-emprego</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Família -->
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/familia/divorcio-consensual</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/familia/pensao-alimenticia</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/familia/guarda-compartilhada</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/familia/uniao-estavel</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/familia/inventario-heranca</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/familia/regulamentacao-visitas</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/familia/alienacao-parental</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Civil -->
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/civil/indenizacao-danos-morais</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/civil/contratos-civis</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/civil/usucapiao</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/civil/cobranca-dividas</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/civil/responsabilidade-civil</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/civil/despejo-locacao</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/civil/revisao-contratual</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Previdenciário -->
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/previdenciario/aposentadoria-invalidez</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/previdenciario/auxilio-doenca</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/previdenciario/bpc-loas</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/previdenciario/pensao-por-morte</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/previdenciario/aposentadoria-tempo-contribuicao</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/previdenciario/revisao-beneficio</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/previdenciario/aposentadoria-especial</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Consumidor -->
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/cobranca-indevida</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/negativacao-indevida</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/voo-cancelado</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/produto-defeituoso</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/plano-saude</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/propaganda-enganosa</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/fraude-bancaria</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Criminal -->
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/criminal/habeas-corpus</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/criminal/prisao-preventiva</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/criminal/crimes-transito</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/criminal/violencia-domestica</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/criminal/defesa-criminal</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/criminal/fianca-liberdade</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/criminal/recursos-criminais</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ========================================== -->
+  <!-- PÁGINAS DE CATEGORIA (12 URLs)             -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/trabalhista</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-familia-londrina</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/artigos/familia</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-trabalhista-londrina</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/artigos/civil</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-civil-londrina</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/artigos/previdenciario</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-previdenciario-londrina</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://advogadoonline.com.br/advogado-penal-londrina</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://advogadoja.lovable.app/artigos/criminal</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/noticias/trabalhista</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/noticias/familia</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/noticias/civil</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/noticias/previdenciario</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/noticias/consumidor</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/noticias/criminal</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ========================================== -->
+  <!-- FAQs PROGRAMÁTICAS (~70 URLs)              -->
+  <!-- ========================================== -->
+  
+  <!-- Trabalhista -->
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/quanto-tempo-para-receber-rescisao</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/como-calcular-horas-extras</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/direitos-trabalhador-demitido-sem-justa-causa</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/o-que-e-rescisao-indireta</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/prazo-para-entrar-com-acao-trabalhista</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/empresa-nao-pagou-fgts</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/acidente-trabalho-direitos</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/adicional-insalubridade</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/assedio-moral-trabalho</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/gestante-pode-ser-demitida</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <!-- Família -->
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/como-fazer-divorcio</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/como-calcular-pensao-alimenticia</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/guarda-compartilhada-como-funciona</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/uniao-estavel-direitos</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/inventario-quanto-custa</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/regulamentacao-visitas-filhos</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/partilha-bens-divorcio</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/alienacao-parental-o-que-fazer</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/pensao-alimenticia-nao-paga</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/divorcio-litigioso</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <!-- Previdenciário -->
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/como-pedir-aposentadoria</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/auxilio-doenca-como-funciona</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/bpc-loas-quem-tem-direito</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/pensao-por-morte-requisitos</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/aposentadoria-por-invalidez</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/revisao-aposentadoria</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/aposentadoria-especial</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/inss-negou-beneficio</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/tempo-contribuicao-inss</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/aposentadoria-idade</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <!-- Civil -->
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/danos-morais-valor-indenizacao</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/usucapiao-como-funciona</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/cobranca-judicial-divida</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/despejo-inquilino</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/contrato-descumprido</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/responsabilidade-civil-acidente</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/revisao-contrato-banco</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/escritura-imovel</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/prescricao-divida</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/aluguel-atrasado-o-que-fazer</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <!-- Consumidor -->
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/cobranca-indevida-direitos</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/negativacao-indevida-indenizacao</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/voo-cancelado-direitos</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/produto-defeituoso-troca</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/plano-saude-negou-cobertura</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/fraude-cartao-credito</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/propaganda-enganosa-reclamacao</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/atraso-entrega-compra-online</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/golpe-pix-como-recuperar</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/direito-arrependimento-7-dias</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <!-- Criminal -->
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/habeas-corpus-como-pedir</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/prisao-preventiva-quando-cabe</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/crime-transito-defesa</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/violencia-domestica-lei-maria-penha</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/fianca-criminal-valor</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/defesa-criminal-acusado</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/recurso-criminal-prazo</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/antecedentes-criminais-limpar</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/medida-protetiva-urgencia</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/perguntas/prisao-domiciliar-requisitos</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <!-- ========================================== -->
+  <!-- PÁGINAS LEGAIS (2 URLs)                    -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://advogadoja.lovable.app/privacidade</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/termos-de-uso</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- ========================================== -->
+  <!-- ESTATÍSTICAS DO SITEMAP                    -->
+  <!-- ========================================== -->
+  <!--
+    Total de URLs: 383
+    - Homepage: 1
+    - Páginas Principais: 7
+    - Landing Pages SEO Consumidor: 6
+    - Landing Pages por Nicho: 6
+    - Calculadoras: 21
+    - Landing Pages por Cidade: 30
+    - Landing Pages Cidade+Nicho: 180
+    - Blog Posts Novos: 3
+    - Artigos Legacy: 45
+    - Páginas de Categoria: 12
+    - FAQs Programáticas: 70
+    - Páginas Legais: 2
+    
+    Última atualização: 2026-01-12
+    Domínio: https://advogadoja.lovable.app
+  -->
 
 </urlset>

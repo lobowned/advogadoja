@@ -112,7 +112,7 @@ const HeroSection = () => {
           >
             <m.img 
               src={logoAdvogadoOnline} 
-              alt="Advogado Online" 
+              alt="Logo Advogado Já - Especialistas em Direito do Consumidor Online" 
               className="h-56 xs:h-60 sm:h-64 md:h-72 lg:h-96 mx-auto drop-shadow-2xl logo-glow-breathe max-w-full object-contain"
               animate={shouldReduceMotion ? undefined : { 
                 y: [0, -10, 0],
@@ -234,7 +234,7 @@ const HeroSection = () => {
                               className="w-9 h-9 sm:w-12 sm:h-12 md:w-14 md:h-14 border-2 border-white/30 group-hover:border-cyan-400 transition-all duration-300 group-hover:scale-110 avatar-entrance"
                               style={{ animationDelay: `${index * 50}ms` }}
                             >
-                              <AvatarImage src={lawyer.photo} alt={lawyer.name} />
+                              <AvatarImage src={lawyer.photo} alt={`Advogado ${lawyer.name} especialista em ${lawyer.subSpecialty}`} />
                               <AvatarFallback className="bg-primary/20 text-white text-[10px] sm:text-xs">
                                 {lawyer.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
                               </AvatarFallback>

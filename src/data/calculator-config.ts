@@ -17,9 +17,14 @@ export type CalculatorType =
   | 'atualizacao-divida' 
   | 'aluguel-atrasado' 
   | 'dpvat'
+  | 'voo-cancelado'
+  | 'negativacao'
+  | 'devolucao-dobro'
+  | 'plano-saude'
+  | 'fraude-bancaria'
   | null;
 
-export type CalculatorArea = 'trabalhista' | 'familia' | 'previdenciario' | 'civil';
+export type CalculatorArea = 'trabalhista' | 'familia' | 'previdenciario' | 'civil' | 'consumidor';
 
 export interface CalculatorInfo {
   title: string;
@@ -148,6 +153,43 @@ export const calculatorInfo: Record<Exclude<CalculatorType, null>, CalculatorInf
     url: '/calculadora-dpvat',
     emoji: '🚗',
     area: 'civil'
+  },
+  
+  // Consumidor
+  'voo-cancelado': {
+    title: 'Calcule Indenização por Voo',
+    description: 'Estime quanto você pode receber por atraso ou cancelamento.',
+    url: '/calculadora-voo-cancelado',
+    emoji: '✈️',
+    area: 'consumidor'
+  },
+  'negativacao': {
+    title: 'Calcule Indenização por Negativação',
+    description: 'Estime danos morais por nome negativado indevidamente.',
+    url: '/calculadora-negativacao',
+    emoji: '📉',
+    area: 'consumidor'
+  },
+  'devolucao-dobro': {
+    title: 'Calcule Devolução em Dobro',
+    description: 'Veja quanto você pode receber por cobrança indevida.',
+    url: '/calculadora-devolucao-dobro',
+    emoji: '💸',
+    area: 'consumidor'
+  },
+  'plano-saude': {
+    title: 'Calcule Indenização Plano de Saúde',
+    description: 'Estime danos por negativa de cobertura.',
+    url: '/calculadora-plano-saude',
+    emoji: '🏥',
+    area: 'consumidor'
+  },
+  'fraude-bancaria': {
+    title: 'Calcule Prejuízo por Fraude Bancária',
+    description: 'Estime quanto você pode recuperar de fraudes.',
+    url: '/calculadora-fraude-bancaria',
+    emoji: '🔐',
+    area: 'consumidor'
   }
 };
 
@@ -171,6 +213,11 @@ export const areaColors: Record<CalculatorArea, { bg: string; border: string; te
     bg: 'from-amber-500/10 via-amber-500/5 to-orange-500/10',
     border: 'border-amber-500/20',
     text: 'text-amber-600'
+  },
+  'consumidor': {
+    bg: 'from-purple-500/10 via-purple-500/5 to-violet-500/10',
+    border: 'border-purple-500/20',
+    text: 'text-purple-600'
   }
 };
 
@@ -199,6 +246,13 @@ export const calculatorKeywords: Array<{ keywords: RegExp; calculator: Exclude<C
   { keywords: /aluguel\s*atrasado|inquilino|locação|despejo|aluguel.*devido|dívida.*aluguel/i, calculator: 'aluguel-atrasado' },
   { keywords: /atualiza[cç][aã]o.*dívida|corre[cç][aã]o\s*monetária|juros.*dívida|débito.*atualizado/i, calculator: 'atualizacao-divida' },
   { keywords: /danos?\s*morais?|indeniza[cç][aã]o|ofensa|humilha[cç][aã]o|constrangimento|abuso/i, calculator: 'danos-morais' },
+  
+  // Consumidor - específicos primeiro
+  { keywords: /voo.*cancelado|atraso.*voo|overbooking|bagagem.*extraviada|companhia.*aérea|passagem.*aérea/i, calculator: 'voo-cancelado' },
+  { keywords: /negativa[cç][aã]o|nome.*sujo|serasa|spc|cadastro.*devedor|restri[cç][aã]o.*nome/i, calculator: 'negativacao' },
+  { keywords: /devolu[cç][aã]o.*dobro|cobran[cç]a.*indevida|cobrado.*errado|art.*42|pagou.*duas.*vezes/i, calculator: 'devolucao-dobro' },
+  { keywords: /plano.*saúde|plano.*de.*saude|negativa.*cobertura|cirurgia.*negada|tratamento.*negado|operadora/i, calculator: 'plano-saude' },
+  { keywords: /fraude.*banc|golpe.*pix|cart[aã]o.*clonado|empréstimo.*indevido|saque.*indevido|conta.*invadida/i, calculator: 'fraude-bancaria' },
 ];
 
 /**

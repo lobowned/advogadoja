@@ -100,7 +100,7 @@ const ConsumerProblemsSection = () => {
               <span className="font-semibold">Problemas que Resolvemos</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Você Teve Algum Desses Problemas?
+              Problemas Mais Comuns do <span className="text-primary">Consumidor</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Clique no seu problema e fale agora com um advogado especialista. 

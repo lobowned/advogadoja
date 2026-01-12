@@ -130,7 +130,7 @@ const LawyersShowcase = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Nossa Equipe de Especialistas
+            Nossa Equipe de Especialistas em <span className="text-primary">Direito do Consumidor</span>
           </h2>
           
           {/* Contador de status */}

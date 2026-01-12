@@ -14,7 +14,7 @@ import { brazilianCities } from "@/data/cities";
 import { getAllLegalAreas } from "@/pages/CityNicheLanding";
 
 const Sitemap = () => {
-  const canonicalUrl = "https://advogadoonline.com.br/sitemap";
+  const canonicalUrl = "https://advogadoja.lovable.app/sitemap";
 
   // Group articles by niche
   const articlesByNiche = blogArticles.reduce((acc, article) => {
@@ -80,8 +80,8 @@ const Sitemap = () => {
     "url": canonicalUrl,
     "isPartOf": {
       "@type": "WebSite",
-      "name": "Advogado Online",
-      "url": "https://advogadoonline.com.br"
+      "name": "Advogado Já",
+      "url": "https://advogadoja.lovable.app"
     }
   };
 
@@ -93,7 +93,7 @@ const Sitemap = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://advogadoonline.com.br"
+        "item": "https://advogadoja.lovable.app"
       },
       {
         "@type": "ListItem",

@@ -49,18 +49,18 @@ const IndexContent = () => {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Advogado Online",
-    "alternateName": "Advogado Online Brasil",
-    "url": "https://advogadoonline.com.br",
+    "name": "Advogado Já",
+    "alternateName": "Advogado Já Brasil",
+    "url": "https://advogadoja.lovable.app",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://advogadoonline.com.br/favicon.svg",
+      "url": "https://advogadoja.lovable.app/favicon.svg",
       "width": 512,
       "height": 512
     },
-    "image": "https://advogadoonline.com.br/favicon.svg",
+    "image": "https://advogadoja.lovable.app/favicon.svg",
     "description": "Seus direitos de consumidor foram violados? Fale agora com advogado especialista. Voo cancelado, cobrança indevida, plano de saúde negou, produto defeituoso? Resolva sem sair de casa.",
-    "email": "contato@advogadoonline.com.br",
+    "email": "contato@advogadoja.com.br",
     "telephone": "+55-71-99999-9999",
     "foundingDate": "2024",
     "numberOfEmployees": {
@@ -94,7 +94,7 @@ const IndexContent = () => {
       },
       {
         "@type": "ContactPoint",
-        "email": "contato@advogadoonline.com.br",
+        "email": "contato@advogadoja.com.br",
         "contactType": "customer support",
         "availableLanguage": "Portuguese"
       }
@@ -108,13 +108,13 @@ const IndexContent = () => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://advogadoonline.com.br/#localbusiness",
-    "name": "Advogado Online",
-    "image": "https://advogadoonline.com.br/favicon.svg",
+    "@id": "https://advogadoja.lovable.app/#localbusiness",
+    "name": "Advogado Já",
+    "image": "https://advogadoja.lovable.app/favicon.svg",
     "description": "Advogado do Consumidor Online. Voo cancelado, cobrança indevida, plano de saúde, produto defeituoso. Consulta gratuita em todo o Brasil.",
-    "url": "https://advogadoonline.com.br",
+    "url": "https://advogadoja.lovable.app",
     "telephone": "+55-71-99999-9999",
-    "email": "contato@advogadoonline.com.br",
+    "email": "contato@advogadoja.com.br",
     "priceRange": "Consulta Gratuita",
     "currenciesAccepted": "BRL",
     "paymentAccepted": "Pix, Cartão de Crédito, Boleto",
@@ -190,12 +190,12 @@ const IndexContent = () => {
   const legalServiceSchema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "@id": "https://advogadoonline.com.br/#legalservice",
+    "@id": "https://advogadoja.lovable.app/#legalservice",
     "name": "Advogado do Consumidor Online",
     "description": "Especialistas em Direito do Consumidor. Voo cancelado, cobrança indevida, plano de saúde, produto defeituoso, negativação indevida. Consulta gratuita.",
-    "url": "https://advogadoonline.com.br",
+    "url": "https://advogadoja.lovable.app",
     "telephone": "+55-71-99999-9999",
-    "email": "contato@advogadoonline.com.br",
+    "email": "contato@advogadoja.com.br",
     "areaServed": {
       "@type": "Country",
       "name": "Brasil"
@@ -260,14 +260,14 @@ const IndexContent = () => {
   const webSiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Advogado Online",
-    "alternateName": "Advogado Online Brasil",
-    "url": "https://advogadoonline.com.br",
+    "name": "Advogado Já",
+    "alternateName": "Advogado Já Brasil",
+    "url": "https://advogadoja.lovable.app",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://advogadoonline.com.br/perguntas?q={search_term_string}"
+        "urlTemplate": "https://advogadoja.lovable.app/perguntas?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -279,10 +279,10 @@ const IndexContent = () => {
     "@type": "WebPage",
     "name": "Advogado de Consumidor Online | Consulta Gratuita | Advogado Já",
     "description": "Precisa de um advogado especialista em direito do consumidor? Fale agora com nossos especialistas online e resolva seu problema de cobrança indevida, voo cancelado e mais.",
-    "url": "https://advogadoonline.com.br",
+    "url": "https://advogadoja.lovable.app",
     "isPartOf": {
       "@type": "WebSite",
-      "@id": "https://advogadoonline.com.br/#website"
+      "@id": "https://advogadoja.lovable.app/#website"
     },
     "about": {
       "@type": "Thing",
@@ -290,7 +290,7 @@ const IndexContent = () => {
     },
     "mainEntity": {
       "@type": "LegalService",
-      "@id": "https://advogadoonline.com.br/#legalservice"
+      "@id": "https://advogadoja.lovable.app/#legalservice"
     },
     "speakable": {
       "@type": "SpeakableSpecification",
@@ -304,12 +304,12 @@ const IndexContent = () => {
         <title>Advogado de Consumidor Online | Consulta Gratuita | Advogado Já</title>
         <meta name="description" content="Precisa de um advogado especialista em direito do consumidor? Fale agora com nossos especialistas online e resolva seu problema de cobrança indevida, voo cancelado e mais." />
         <meta name="keywords" content="advogado do consumidor, advogado online, direito do consumidor, voo cancelado, cobrança indevida, negativação indevida, plano de saúde, consulta gratuita" />
-        <link rel="canonical" href="https://advogadoonline.com.br" />
+        <link rel="canonical" href="https://advogadoja.lovable.app" />
         
         <meta property="og:title" content="Advogado de Consumidor Online | Consulta Gratuita | Advogado Já" />
         <meta property="og:description" content="Precisa de um advogado especialista em direito do consumidor? Fale agora com nossos especialistas online e resolva seu problema de cobrança indevida, voo cancelado e mais." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://advogadoonline.com.br" />
+        <meta property="og:url" content="https://advogadoja.lovable.app" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Advogado de Consumidor Online | Consulta Gratuita | Advogado Já" />
@@ -370,7 +370,7 @@ const IndexContent = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center md:text-left text-sm text-muted-foreground">
             <div>
-              <p className="font-semibold text-foreground mb-2">Advogado Online</p>
+              <p className="font-semibold text-foreground mb-2">Advogado Já</p>
               <p>OAB/BA 46.638 | CNPJ 50.947.818/0001-94</p>
               <p>© 2025</p>
               <p className="mt-2">Atendimento: seg-sex 8h às 20h</p>
@@ -387,7 +387,7 @@ const IndexContent = () => {
                   WhatsApp
                 </a>
                 <a 
-                  href="mailto:contato@advogadoonline.com.br"
+                  href="mailto:contato@advogadoja.com.br"
                   className="hover:text-primary transition-all duration-200 hover:scale-110 flex items-center gap-2 py-2 min-h-[48px]"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>

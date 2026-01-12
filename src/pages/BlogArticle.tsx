@@ -34,25 +34,25 @@ const BlogArticle = () => {
     "@type": "Article",
     "headline": post.title,
     "description": post.metaDescription,
-    "image": post.featuredImage || "https://advogado.online/og-image.png",
+    "image": post.featuredImage || "https://advogadoja.lovable.app/og-image.png",
     "author": {
       "@type": "Organization",
       "name": post.author,
-      "url": "https://advogado.online"
+      "url": "https://advogadoja.lovable.app"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Advogado Já",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://advogado.online/logo.png"
+        "url": "https://advogadoja.lovable.app/logo.png"
       }
     },
     "datePublished": post.publishedAt,
     "dateModified": post.updatedAt,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://advogado.online/blog/${post.slug}`
+      "@id": `https://advogadoja.lovable.app/blog/${post.slug}`
     },
     "keywords": post.keywords.join(", ")
   };
@@ -65,19 +65,19 @@ const BlogArticle = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://advogado.online"
+        "item": "https://advogadoja.lovable.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Blog",
-        "item": "https://advogado.online/blog"
+        "item": "https://advogadoja.lovable.app/blog"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": post.title,
-        "item": `https://advogado.online/blog/${post.slug}`
+        "item": `https://advogadoja.lovable.app/blog/${post.slug}`
       }
     ]
   };

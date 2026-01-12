@@ -61,14 +61,14 @@ const Blog = () => {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Advogado Online",
-    "url": "https://advogadoonline.com.br",
+    "name": "Advogado Já",
+    "url": "https://advogadoja.lovable.app",
     "description": "Central de conhecimento jurídico com artigos sobre direitos trabalhistas, família, civil, previdenciário e criminal.",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://advogadoonline.com.br/artigos?q={search_term_string}"
+        "urlTemplate": "https://advogadoja.lovable.app/artigos?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -84,7 +84,7 @@ const Blog = () => {
     "itemListElement": articles.slice(0, 10).map((article, index) => ({
       "@type": "ListItem",
       "position": index + 1,
-      "url": `https://advogadoonline.com.br/artigos/${article.nicheId}/${article.slug}`,
+      "url": `https://advogadoja.lovable.app/artigos/${article.nicheId}/${article.slug}`,
       "name": article.title
     }))
   };
@@ -95,7 +95,7 @@ const Blog = () => {
     "@type": "CollectionPage",
     "name": pageTitle,
     "description": pageDescription,
-    "url": `https://advogadoonline.com.br/artigos${nicheId ? `/${nicheId}` : ""}`,
+    "url": `https://advogadoja.lovable.app/artigos${nicheId ? `/${nicheId}` : ""}`,
     "mainEntity": {
       "@type": "ItemList",
       "numberOfItems": articles.length
@@ -107,7 +107,7 @@ const Blog = () => {
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={`https://advogadoonline.com.br/artigos${nicheId ? `/${nicheId}` : ""}`} />
+        <link rel="canonical" href={`https://advogadoja.lovable.app/artigos${nicheId ? `/${nicheId}` : ""}`} />
         <script type="application/ld+json">
           {JSON.stringify(websiteSchema)}
         </script>

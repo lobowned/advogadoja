@@ -53,7 +53,7 @@ const PlanoSaudeNegouLanding = () => {
         <title>Advogado para Problemas com Plano de Saúde | Cobertura Negada</title>
         <meta name="description" content="Plano de saúde negou seu tratamento ou cirurgia? Fale com um advogado especialista em direito da saúde e garanta seus direitos." />
         <meta name="keywords" content="plano saúde negou, negativa plano de saúde, liminar plano saúde, cirurgia negada, exame negado plano, advogado plano de saúde, cobertura negada" />
-        <link rel="canonical" href="https://advogado.online/advogado-plano-saude-cobertura-negada" />
+        <link rel="canonical" href="https://advogadoja.lovable.app/advogado-plano-saude-cobertura-negada" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 

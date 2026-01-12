@@ -278,11 +278,75 @@
   </url>
 
   <!-- ============================================== -->
+  <!-- ARTIGOS TRABALHISTAS INDIVIDUAIS (10 URLs)     -->
+  <!-- ============================================== -->
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/demissao-sem-justa-causa</loc>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/acidente-trabalho</loc>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/horas-extras</loc>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/assedio-moral</loc>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/rescisao-indireta-quando-empregado-demite-empresa</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/verbas-rescisorias-o-que-voce-tem-direito</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/adicional-noturno-calcular-direitos</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/ferias-nao-pagas-como-receber</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/desvio-funcao-acumulo-funcoes</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/trabalhista/pejotizacao-vinculo-empregaticio</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ============================================== -->
   <!-- ARTIGOS POR NICHO (6 URLs)                     -->
   <!-- ============================================== -->
   <url>
     <loc>https://advogadoonline.com.br/artigos/trabalhista</loc>
-    <lastmod>2025-12-25</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

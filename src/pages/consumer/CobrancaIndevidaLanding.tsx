@@ -60,10 +60,10 @@ const CobrancaIndevidaLanding = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>Cobrança Indevida | Devolução em Dobro - Advogado Especialista</title>
-        <meta name="description" content="Pagou algo indevido? Você tem direito à devolução em dobro! Serviço não contratado, valor errado, cobrança duplicada. Advogado especialista. Consulta grátis." />
-        <meta name="keywords" content="cobrança indevida, devolução em dobro, restituição em dobro, serviço não contratado, cobrança duplicada, advogado consumidor" />
-        <link rel="canonical" href="https://advogado.online/cobranca-indevida" />
+        <title>Advogado para Cobrança Indevida | Resolva Seu Problema Agora</title>
+        <meta name="description" content="Fale com um advogado especialista em cobrança indevida. Proteja-se contra abusos de bancos e empresas. Consulta online gratuita." />
+        <meta name="keywords" content="cobrança indevida, devolução em dobro, restituição em dobro, serviço não contratado, cobrança duplicada, advogado consumidor, advogado cobrança indevida" />
+        <link rel="canonical" href="https://advogado.online/advogado-cobranca-indevida" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 

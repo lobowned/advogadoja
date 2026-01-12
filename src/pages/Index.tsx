@@ -277,8 +277,8 @@ const IndexContent = () => {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Advogado Online - Consulta Jurídica Gratuita",
-    "description": "Fale agora com um advogado especialista. Atendimento jurídico online gratuito e imediato.",
+    "name": "Advogado de Consumidor Online | Consulta Gratuita | Advogado Já",
+    "description": "Precisa de um advogado especialista em direito do consumidor? Fale agora com nossos especialistas online e resolva seu problema de cobrança indevida, voo cancelado e mais.",
     "url": "https://advogadoonline.com.br",
     "isPartOf": {
       "@type": "WebSite",
@@ -301,19 +301,19 @@ const IndexContent = () => {
   return (
     <PageTransition variant="slideUp">
       <Helmet>
-        <title>Advogado Online | Consulta Jurídica Gratuita com Especialistas</title>
-        <meta name="description" content="Fale agora com um advogado especialista. Atendimento jurídico online gratuito e imediato em Direito Trabalhista, Família, Previdenciário, Civil e Criminal." />
-        <meta name="keywords" content="advogado online, consulta jurídica gratuita, advogado trabalhista, advogado família, direitos trabalhistas, pensão alimentícia, divórcio, aposentadoria INSS" />
+        <title>Advogado de Consumidor Online | Consulta Gratuita | Advogado Já</title>
+        <meta name="description" content="Precisa de um advogado especialista em direito do consumidor? Fale agora com nossos especialistas online e resolva seu problema de cobrança indevida, voo cancelado e mais." />
+        <meta name="keywords" content="advogado do consumidor, advogado online, direito do consumidor, voo cancelado, cobrança indevida, negativação indevida, plano de saúde, consulta gratuita" />
         <link rel="canonical" href="https://advogadoonline.com.br" />
         
-        <meta property="og:title" content="Advogado Online | Consulta Jurídica Gratuita" />
-        <meta property="og:description" content="Fale agora com um advogado especialista. Atendimento gratuito e imediato." />
+        <meta property="og:title" content="Advogado de Consumidor Online | Consulta Gratuita | Advogado Já" />
+        <meta property="og:description" content="Precisa de um advogado especialista em direito do consumidor? Fale agora com nossos especialistas online e resolva seu problema de cobrança indevida, voo cancelado e mais." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://advogadoonline.com.br" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Advogado Online | Consulta Jurídica Gratuita" />
-        <meta name="twitter:description" content="Fale agora com um advogado especialista. Atendimento gratuito e imediato." />
+        <meta name="twitter:title" content="Advogado de Consumidor Online | Consulta Gratuita | Advogado Já" />
+        <meta name="twitter:description" content="Precisa de um advogado especialista em direito do consumidor? Fale agora com nossos especialistas online e resolva seu problema de cobrança indevida, voo cancelado e mais." />
         
         <script type="application/ld+json">
           {JSON.stringify(organizationSchema)}

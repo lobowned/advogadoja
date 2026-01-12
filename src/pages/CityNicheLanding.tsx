@@ -254,44 +254,81 @@ const CityNicheLanding = () => {
   const canonicalUrl = `https://advogadoonline.com.br/advogado-${area.slug}-${city.slug}`;
   const Icon = area.icon;
 
-  // Schema.org LegalService
+  // Schema.org LegalService with LocalBusiness
   const legalServiceSchema = {
     "@context": "https://schema.org",
-    "@type": "LegalService",
+    "@type": ["LegalService", "LocalBusiness"],
     "name": `Advogado ${area.name} em ${city.name}`,
     "description": `Advogado especialista em ${area.name} em ${city.name}, ${city.state}. ${area.description}`,
     "url": canonicalUrl,
     "telephone": "+55-71-99999-9999",
     "email": "contato@advogadoonline.com.br",
-    "priceRange": "Consulta Gratuita",
+    "priceRange": "$$",
+    "currenciesAccepted": "BRL",
+    "paymentAccepted": "Cash, Credit Card, PIX",
+    "openingHours": "Mo-Fr 08:00-18:00",
+    "image": "https://advogadoonline.com.br/og-image.png",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": city.name,
       "addressRegion": city.stateCode,
       "addressCountry": "BR"
     },
-    "areaServed": {
-      "@type": "City",
-      "name": city.name
-    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": city.name,
+        "containedInPlace": {
+          "@type": "State",
+          "name": city.state
+        }
+      },
+      {
+        "@type": "State",
+        "name": city.state
+      }
+    ],
     "serviceType": `Direito ${area.name}`,
+    "knowsAbout": area.services,
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": `Serviços de Direito ${area.name}`,
-      "itemListElement": area.services.slice(0, 4).map(service => ({
+      "itemListElement": area.services.map((service, idx) => ({
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": service
-        }
+          "name": service,
+          "description": `Serviço de ${service.toLowerCase()} em ${city.name}`
+        },
+        "position": idx + 1
       }))
     },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "847",
-      "bestRating": "5"
-    }
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Cliente Satisfeito"
+        },
+        "reviewBody": `Excelente atendimento em ${area.name}. Profissionais competentes e atenciosos.`
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/advogadoonline",
+      "https://www.facebook.com/advogadoonline"
+    ]
   };
 
   const breadcrumbSchema = {

@@ -25,6 +25,8 @@ import CityLanding from "./pages/CityLanding";
 import CityNicheLanding from "./pages/CityNicheLanding";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import BlogIndex from "./pages/BlogIndex";
+import BlogArticle from "./pages/BlogArticle";
 import SelectNiche from "./pages/SelectNiche";
 import SelectAction from "./pages/SelectAction";
 import News from "./pages/News";
@@ -86,7 +88,11 @@ const AnimatedRoutes = () => {
         <Route path="/questionario/:nicheId/:actionId" element={<DynamicQuestionnaire />} />
         <Route path="/concluido" element={<Completed />} />
         
-        {/* Blog/Artigos */}
+        {/* Blog - New */}
+        <Route path="/blog" element={<BlogIndex />} />
+        <Route path="/blog/:slug" element={<BlogArticle />} />
+        
+        {/* Blog/Artigos - Legacy */}
         <Route path="/artigos" element={<Blog />} />
         <Route path="/artigos/:nicheId" element={<Blog />} />
         <Route path="/artigos/:nicheId/:slug" element={<BlogPost />} />

@@ -91,9 +91,16 @@ const ObjecionsFAQ = ({ detectedArea }: ObjecionsFAQProps) => {
   const areaLabel = currentArea && areaLabels[currentArea] ? areaLabels[currentArea] : null;
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-muted/30" id="faq">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
+          {/* H2 Principal da Seção FAQ */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              Perguntas Frequentes sobre <span className="text-primary">Direito do Consumidor</span>
+            </h2>
+          </div>
+
           {/* Objections Section */}
           <div className="mb-16">
             <div className="text-center mb-12">
@@ -101,9 +108,9 @@ const ObjecionsFAQ = ({ detectedArea }: ObjecionsFAQProps) => {
                 <AlertCircle className="h-5 w-5" />
                 <span className="font-semibold">Preocupações Comuns</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                 Suas Dúvidas Respondidas
-              </h2>
+              </h3>
               <p className="text-lg text-muted-foreground">
                 Entendemos suas preocupações. Veja respostas diretas e honestas.
               </p>
@@ -140,9 +147,9 @@ const ObjecionsFAQ = ({ detectedArea }: ObjecionsFAQProps) => {
                   <AreaIcon className="h-5 w-5" />
                   <span className="font-semibold">Dúvidas sobre {areaLabel}</span>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                   Perguntas Específicas de {areaLabel}
-                </h2>
+                </h3>
                 <p className="text-muted-foreground">
                   Respostas para as dúvidas mais comuns nesta área do direito.
                 </p>
@@ -179,9 +186,9 @@ const ObjecionsFAQ = ({ detectedArea }: ObjecionsFAQProps) => {
                 <HelpCircle className="h-5 w-5" />
                 <span className="font-semibold">Perguntas Frequentes</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                 FAQ - Tire Todas as Suas Dúvidas
-              </h2>
+              </h3>
             </div>
 
             <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">

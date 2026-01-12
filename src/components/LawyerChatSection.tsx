@@ -247,7 +247,7 @@ const LawyerChatSection = () => {
                       }}
                     >
                       <div className="text-3xl sm:text-4xl mb-2 animate-bounce">🏛️</div>
-                      <h3 className="text-xl font-bold mb-2">Assistência Jurídica Online</h3>
+                      <h2 className="text-xl font-bold mb-2">Assistência Jurídica Online</h2>
                       <p className="text-sm text-muted-foreground mb-3">
                         {onlineCount} advogados disponíveis para atender você agora mesmo
                       </p>

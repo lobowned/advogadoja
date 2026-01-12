@@ -374,7 +374,7 @@ const StaticWhatsAppHeader = ({
         {avatarUrl && !imgError ? (
           <img 
             src={avatarUrl} 
-            alt={name}
+            alt={`Cliente ${name} - Depoimento sobre atendimento em direito do consumidor`}
             className="w-full h-full object-cover"
             onError={() => setImgError(true)}
           />

@@ -38,7 +38,7 @@ const LawyerCredentialsPopup = ({ lawyer, children }: LawyerCredentialsPopupProp
           {/* Header com foto e nome */}
           <div className="flex items-center gap-4">
             <Avatar className="h-20 w-20 border-4 border-primary/20">
-              <AvatarImage src={lawyer.photo} alt={lawyer.name} />
+              <AvatarImage src={lawyer.photo} alt={`Advogado ${lawyer.name} especialista em ${lawyer.subSpecialty}`} />
               <AvatarFallback className="bg-primary/10 text-primary text-xl">
                 {lawyer.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
               </AvatarFallback>

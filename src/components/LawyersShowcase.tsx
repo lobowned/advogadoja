@@ -43,7 +43,7 @@ const LawyerCard = ({ lawyer, index }: { lawyer: LawyerWithPresence; index: numb
                   ? 'border-orange-300/50 group-hover:border-orange-400/70' 
                   : 'border-primary/20 group-hover:border-primary/40'
               }`}>
-                <AvatarImage src={lawyer.photo} alt={lawyer.name} />
+                <AvatarImage src={lawyer.photo} alt={`Advogado ${lawyer.name} especialista em ${lawyer.subSpecialty}`} />
                 <AvatarFallback className="text-lg sm:text-xl font-bold bg-primary/10 text-primary">
                   {lawyer.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
                 </AvatarFallback>

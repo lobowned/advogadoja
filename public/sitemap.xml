@@ -364,8 +364,48 @@
   </url>
   <url>
     <loc>https://advogadoonline.com.br/artigos/previdenciario</loc>
-    <lastmod>2025-12-25</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ============================================== -->
+  <!-- ARTIGOS PREVIDENCIÁRIOS INDIVIDUAIS (6 URLs)   -->
+  <!-- ============================================== -->
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/previdenciario/revisao-da-vida-toda-como-aumentar-aposentadoria</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/previdenciario/pensao-por-morte-quem-tem-direito</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/previdenciario/aposentadoria-especial-atividades-insalubres</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/previdenciario/aposentadoria-por-invalidez-incapacidade-permanente</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/previdenciario/tempo-de-contribuicao-regras-transicao</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://advogadoonline.com.br/artigos/previdenciario/inss-negou-beneficio-o-que-fazer</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>

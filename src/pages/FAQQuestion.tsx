@@ -43,12 +43,12 @@ const FAQQuestion = () => {
   const relatedCalculators = getRelatedCalculatorsForFAQ(faq);
   const relatedArticles = getRelatedArticlesForFAQ(faq);
 
-  const canonicalUrl = `https://advogadoonline.com.br/perguntas/${faq.slug}`;
+  const canonicalUrl = `https://advogadoja.lovable.app/perguntas/${faq.slug}`;
   
   // Build related links for Schema.org
   const relatedLinks = [
-    ...relatedCalculators.map(c => `https://advogadoonline.com.br${c.url}`),
-    ...relatedArticles.map(a => `https://advogadoonline.com.br/artigos/${a.nicheId}/${a.slug}`)
+    ...relatedCalculators.map(c => `https://advogadoja.lovable.app${c.url}`),
+    ...relatedArticles.map(a => `https://advogadoja.lovable.app/artigos/${a.nicheId}/${a.slug}`)
   ];
   
   // Schema.org FAQPage - Enhanced for FAQ rich snippets

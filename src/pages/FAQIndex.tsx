@@ -61,7 +61,7 @@ const FAQIndex = () => {
     }));
   }, []);
 
-  const canonicalUrl = 'https://advogadoonline.com.br/perguntas';
+  const canonicalUrl = 'https://advogadoja.lovable.app/perguntas';
 
   // Schema.org for FAQ index
   const faqListSchema = {

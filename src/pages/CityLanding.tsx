@@ -20,7 +20,7 @@ const CityLanding = () => {
     return <Navigate to="/" replace />;
   }
 
-  const canonicalUrl = `https://advogadoonline.com.br/advogado/${city.slug}`;
+  const canonicalUrl = `https://advogadoja.lovable.app/advogado/${city.slug}`;
 
   const practiceAreas = [
     {

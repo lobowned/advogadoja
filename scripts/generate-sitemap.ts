@@ -14,12 +14,13 @@
 
 import { programmaticFAQs } from '../src/data/programmatic-faqs';
 import { blogArticles } from '../src/data/blog-articles';
+import { blogPosts } from '../src/data/blog-posts';
 import { brazilianCities } from '../src/data/cities';
 import { legalNiches } from '../src/data/legal-niches';
 import * as fs from 'fs';
 import * as path from 'path';
 
-const BASE_URL = 'https://advogado.online';
+const BASE_URL = 'https://advogadoja.lovable.app';
 const TODAY = new Date().toISOString().split('T')[0];
 
 interface SitemapURL {
@@ -35,6 +36,7 @@ interface SitemapURL {
 const staticPages: SitemapURL[] = [
   { loc: '/', lastmod: TODAY, changefreq: 'daily', priority: 1.0 },
   { loc: '/artigos', lastmod: TODAY, changefreq: 'daily', priority: 0.9 },
+  { loc: '/blog', lastmod: TODAY, changefreq: 'daily', priority: 0.9 },
   { loc: '/perguntas', lastmod: TODAY, changefreq: 'weekly', priority: 0.85 },
   { loc: '/calculadoras', lastmod: TODAY, changefreq: 'weekly', priority: 0.85 },
   { loc: '/noticias', lastmod: TODAY, changefreq: 'daily', priority: 0.8 },
@@ -135,6 +137,18 @@ function generateFAQUrls(): SitemapURL[] {
 }
 
 // ============================================
+// NEW BLOG POSTS (blog-posts.ts)
+// ============================================
+function generateBlogPostUrls(): SitemapURL[] {
+  return blogPosts.map(post => ({
+    loc: `/blog/${post.slug}`,
+    lastmod: post.updatedAt || TODAY,
+    changefreq: 'weekly' as const,
+    priority: 0.8,
+  }));
+}
+
+// ============================================
 // CATEGORY PAGES
 // ============================================
 function generateCategoryUrls(): SitemapURL[] {
@@ -184,13 +198,16 @@ function generateSitemap(): string {
   const faqUrls = generateFAQUrls();
   const categoryUrls = generateCategoryUrls();
   
+  const blogPostUrls = generateBlogPostUrls();
+  
   const sections = [
     { title: 'PÁGINAS ESTÁTICAS', urls: staticPages },
     { title: 'CALCULADORAS JURÍDICAS', urls: calculators },
     { title: 'LANDING PAGES POR NICHO', urls: nicheUrls },
     { title: 'LANDING PAGES POR CIDADE', urls: cityUrls },
     { title: 'LANDING PAGES CIDADE + NICHO', urls: cityNicheUrls },
-    { title: 'ARTIGOS DO BLOG', urls: articleUrls },
+    { title: 'ARTIGOS DO BLOG (LEGACY)', urls: articleUrls },
+    { title: 'BLOG POSTS (NOVOS)', urls: blogPostUrls },
     { title: 'PERGUNTAS FREQUENTES (FAQs)', urls: faqUrls },
     { title: 'PÁGINAS DE CATEGORIA', urls: categoryUrls },
   ];

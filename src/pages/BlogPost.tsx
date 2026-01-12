@@ -32,7 +32,7 @@ const BlogPost = () => {
   
   const relatedArticles = getRelatedArticles(article);
   const readingTime = getArticleReadingTime(article.content);
-  const articleUrl = `https://advogadoonline.com.br/artigos/${nicheId}/${slug}`;
+  const articleUrl = `https://advogadoja.lovable.app/artigos/${nicheId}/${slug}`;
 
   const tocItems = [
     { id: "introducao", title: "Introdução" },
@@ -57,23 +57,23 @@ const BlogPost = () => {
     "@type": "Article",
     "headline": article.title,
     "description": article.metaDescription,
-    "image": `https://advogadoonline.com.br/og-image-${nicheId}.jpg`,
+    "image": `https://advogadoja.lovable.app/og-image-${nicheId}.jpg`,
     "author": {
       "@type": "Organization",
-      "name": "Advogado Online",
-      "url": "https://advogadoonline.com.br",
+      "name": "Advogado Já",
+      "url": "https://advogadoja.lovable.app",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://advogadoonline.com.br/favicon.svg"
+        "url": "https://advogadoja.lovable.app/favicon.svg"
       }
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Advogado Online",
-      "url": "https://advogadoonline.com.br",
+      "name": "Advogado Já",
+      "url": "https://advogadoja.lovable.app",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://advogadoonline.com.br/favicon.svg",
+        "url": "https://advogadoja.lovable.app/favicon.svg",
         "width": 60,
         "height": 60
       }
@@ -105,8 +105,8 @@ const BlogPost = () => {
     "dateModified": article.updatedAt,
     "author": {
       "@type": "Organization",
-      "name": "Advogado Online",
-      "url": "https://advogadoonline.com.br"
+      "name": "Advogado Já",
+      "url": "https://advogadoja.lovable.app"
     },
     "mainEntity": article.content.faq.map((item, index) => ({
       "@type": "Question",

@@ -62,6 +62,7 @@ import NegativacaoIndevidaLanding from "./pages/consumer/NegativacaoIndevidaLand
 import PlanoSaudeNegouLanding from "./pages/consumer/PlanoSaudeNegouLanding";
 import FraudeBancariaLanding from "./pages/consumer/FraudeBancariaLanding";
 import CobrancaIndevidaLanding from "./pages/consumer/CobrancaIndevidaLanding";
+import ProdutoDefeitousoLanding from "./pages/consumer/ProdutoDefeitousoLanding";
 
 // Admin
 import LeadsDashboard from "./pages/admin/LeadsDashboard";
@@ -132,7 +133,14 @@ const AnimatedRoutes = () => {
         <Route path="/calculadora-plano-saude" element={<CalculadoraPlanoSaude />} />
         <Route path="/calculadora-fraude-bancaria" element={<CalculadoraFraudeBancaria />} />
         
-        {/* Consumer Problem Landing Pages */}
+        {/* Consumer Problem Landing Pages - SEO URLs */}
+        <Route path="/advogado-voo-cancelado-atrasado" element={<VooCanceladoLanding />} />
+        <Route path="/advogado-negativacao-indevida" element={<NegativacaoIndevidaLanding />} />
+        <Route path="/advogado-plano-saude-cobertura-negada" element={<PlanoSaudeNegouLanding />} />
+        <Route path="/advogado-cobranca-indevida" element={<CobrancaIndevidaLanding />} />
+        <Route path="/advogado-produto-defeituoso" element={<ProdutoDefeitousoLanding />} />
+        
+        {/* Consumer Problem Landing Pages - Legacy URLs */}
         <Route path="/voo-cancelado" element={<VooCanceladoLanding />} />
         <Route path="/negativacao-indevida" element={<NegativacaoIndevidaLanding />} />
         <Route path="/plano-saude-negou" element={<PlanoSaudeNegouLanding />} />

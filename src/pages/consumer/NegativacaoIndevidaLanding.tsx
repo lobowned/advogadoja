@@ -62,10 +62,10 @@ const NegativacaoIndevidaLanding = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>Negativação Indevida | Indenização Nome Sujo SPC/Serasa - Até R$ 20.000</title>
-        <meta name="description" content="Nome negativado indevidamente no SPC ou Serasa? Você tem direito a indenização de até R$ 20.000. Advogado especialista. Consulta gratuita e imediata." />
-        <meta name="keywords" content="negativação indevida, nome sujo indevido, indenização SPC, indenização Serasa, tirar nome do SPC, dívida que não é minha" />
-        <link rel="canonical" href="https://advogado.online/negativacao-indevida" />
+        <title>Advogado para Negativação Indevida | Limpe Seu Nome</title>
+        <meta name="description" content="Seu nome foi negativado indevidamente? Consulte um advogado especialista e limpe seu nome. Indenização por danos morais." />
+        <meta name="keywords" content="negativação indevida, nome sujo indevido, indenização SPC, indenização Serasa, tirar nome do SPC, dívida que não é minha, advogado negativação" />
+        <link rel="canonical" href="https://advogado.online/advogado-negativacao-indevida" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 

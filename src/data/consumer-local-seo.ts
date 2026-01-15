@@ -4948,6 +4948,495 @@ export const consumerCityData: ConsumerCityData[] = [
     ],
     coordinates: { latitude: "-16.4673", longitude: "-54.6372" },
     nearbyConsumerCities: ["cuiaba", "campo-grande", "goiania"]
+  },
+  // ========== EXPANSÃO BAHIA ==========
+  {
+    citySlug: "camacari",
+    cityName: "Camaçari",
+    state: "Bahia",
+    stateCode: "BA",
+    stats: {
+      casesWon: 289,
+      avgCompensation: "R$ 8.500",
+      avgResolutionDays: 52,
+      clientsSatisfied: 96
+    },
+    localProblems: [
+      {
+        title: "Trabalhistas no Polo Petroquímico",
+        description: "Trabalhadores do polo petroquímico enfrentam questões de insalubridade, periculosidade e acidentes de trabalho.",
+        icon: "Factory"
+      },
+      {
+        title: "Planos de Saúde Empresariais",
+        description: "Funcionários das indústrias têm problemas com planos de saúde coletivos e negativas de cobertura.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Indevidas",
+        description: "Moradores enfrentam cobranças abusivas de serviços básicos e telecomunicações.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Financiamentos de Veículos",
+        description: "Alta demanda por financiamentos de veículos gera problemas com taxas abusivas e cláusulas irregulares.",
+        icon: "Car"
+      }
+    ],
+    localContext: "Camaçari abriga o maior polo petroquímico do Hemisfério Sul, gerando alta demanda por questões trabalhistas e de consumidor para trabalhadores industriais.",
+    consumerTribunalInfo: "Fórum de Camaçari com Juizado Especial Cível. PROCON municipal atuante em questões de consumo.",
+    proconAddress: "Praça da Matriz, Centro - Camaçari/BA",
+    faqs: [
+      {
+        question: "Trabalho no polo petroquímico. Tenho direito a insalubridade?",
+        answer: "Sim! Trabalhadores expostos a agentes químicos no polo petroquímico têm direito a adicional de insalubridade de 10%, 20% ou 40% dependendo do grau de exposição."
+      },
+      {
+        question: "Meu plano de saúde da empresa negou tratamento. O que fazer?",
+        answer: "Mesmo planos empresariais devem cobrir procedimentos da ANS. Você pode pedir liminar judicial e indenização por danos morais pela negativa."
+      },
+      {
+        question: "Onde fica o PROCON de Camaçari?",
+        answer: "O PROCON de Camaçari fica na Praça da Matriz, no Centro. Funciona de segunda a sexta, das 8h às 14h."
+      },
+      {
+        question: "Posso processar empresa de outro estado morando em Camaçari?",
+        answer: "Sim! Pelo Código de Defesa do Consumidor, você pode processar no seu domicílio. Não precisa se deslocar até a sede da empresa."
+      },
+      {
+        question: "Quanto tempo demora um processo no JEC de Camaçari?",
+        answer: "Em média, processos simples no Juizado Especial de Camaçari levam de 4 a 8 meses para conclusão."
+      }
+    ],
+    coordinates: { latitude: "-12.6997", longitude: "-38.3265" },
+    nearbyConsumerCities: ["salvador", "lauro-de-freitas", "feira-de-santana"]
+  },
+  {
+    citySlug: "lauro-de-freitas",
+    cityName: "Lauro de Freitas",
+    state: "Bahia",
+    stateCode: "BA",
+    stats: {
+      casesWon: 234,
+      avgCompensation: "R$ 9.000",
+      avgResolutionDays: 48,
+      clientsSatisfied: 97
+    },
+    localProblems: [
+      {
+        title: "Problemas Imobiliários",
+        description: "Crescimento imobiliário gera conflitos com construtoras, atrasos e vícios construtivos.",
+        icon: "Building"
+      },
+      {
+        title: "Voos no Aeroporto de Salvador",
+        description: "Moradores usam frequentemente o Aeroporto de Salvador e enfrentam problemas com voos.",
+        icon: "Plane"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "População de alto padrão enfrenta negativas de planos de saúde premium.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Telecomunicações e Internet",
+        description: "Problemas com qualidade de internet e cobranças indevidas de operadoras.",
+        icon: "Wifi"
+      }
+    ],
+    localContext: "Lauro de Freitas é cidade de alto padrão na região metropolitana de Salvador, com forte demanda em direito imobiliário e do consumidor.",
+    consumerTribunalInfo: "Fórum de Lauro de Freitas com Juizado Especial Cível. Casos podem ser ajuizados também em Salvador.",
+    proconAddress: "Centro Administrativo - Lauro de Freitas/BA",
+    faqs: [
+      {
+        question: "Comprei imóvel em Lauro de Freitas e tem defeitos. O que fazer?",
+        answer: "Você pode exigir o conserto, abatimento do preço ou rescisão do contrato com devolução dos valores. Vícios construtivos também geram indenização por danos morais."
+      },
+      {
+        question: "Meu voo no Aeroporto de Salvador foi cancelado. Posso processar em Lauro de Freitas?",
+        answer: "Sim! Você pode processar no seu domicílio (Lauro de Freitas) ou no local do embarque (Salvador). Escolha o mais conveniente."
+      },
+      {
+        question: "O JEC de Lauro de Freitas é rápido?",
+        answer: "Sim! O Juizado Especial de Lauro de Freitas é relativamente ágil, com processos simples sendo resolvidos em 3 a 6 meses."
+      },
+      {
+        question: "Onde fica o PROCON de Lauro de Freitas?",
+        answer: "O PROCON funciona no Centro Administrativo de Lauro de Freitas. Atendimento de segunda a sexta."
+      },
+      {
+        question: "Minha construtora atrasou a entrega. Tenho direitos?",
+        answer: "Sim! Atrasos na entrega de imóveis geram direito a lucros cessantes (aluguéis) e indenização por danos morais. Você também pode rescindir o contrato."
+      }
+    ],
+    coordinates: { latitude: "-12.8872", longitude: "-38.3230" },
+    nearbyConsumerCities: ["salvador", "camacari", "feira-de-santana"]
+  },
+  {
+    citySlug: "itabuna",
+    cityName: "Itabuna",
+    state: "Bahia",
+    stateCode: "BA",
+    stats: {
+      casesWon: 198,
+      avgCompensation: "R$ 7.500",
+      avgResolutionDays: 55,
+      clientsSatisfied: 95
+    },
+    localProblems: [
+      {
+        title: "Negativação Indevida",
+        description: "Moradores sofrem com cobranças indevidas e negativação no SPC/Serasa.",
+        icon: "AlertTriangle"
+      },
+      {
+        title: "Comércio Local",
+        description: "Problemas com produtos defeituosos e garantias em estabelecimentos comerciais.",
+        icon: "ShoppingBag"
+      },
+      {
+        title: "Bancos e Financeiras",
+        description: "Cobranças abusivas de bancos e financeiras são reclamação frequente.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Planos de Saúde Regionais",
+        description: "Negativas de cobertura de planos de saúde locais e regionais.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Itabuna é polo comercial do sul da Bahia, com economia diversificada e crescente demanda em direito do consumidor.",
+    consumerTribunalInfo: "Fórum de Itabuna com Juizado Especial Cível atuante. PROCON municipal recebe reclamações.",
+    proconAddress: "Centro - Itabuna/BA",
+    faqs: [
+      {
+        question: "Fui negativado indevidamente em Itabuna. Tenho direito a indenização?",
+        answer: "Sim! A negativação indevida gera direito a indenização por danos morais de R$ 5.000 a R$ 15.000, além da retirada do nome dos cadastros."
+      },
+      {
+        question: "Comprei produto defeituoso no comércio local. O que fazer?",
+        answer: "Você pode exigir troca, conserto ou devolução do dinheiro. Se a loja não resolver em 30 dias, você pode escolher a solução."
+      },
+      {
+        question: "O JEC de Itabuna atende casos contra empresas de fora?",
+        answer: "Sim! Você pode processar qualquer empresa no JEC de Itabuna, mesmo que a sede seja em São Paulo ou outro estado."
+      },
+      {
+        question: "Quanto tempo demora um processo de consumidor em Itabuna?",
+        answer: "Processos no Juizado Especial de Itabuna levam em média de 4 a 8 meses para conclusão."
+      },
+      {
+        question: "Preciso de advogado para processar no JEC de Itabuna?",
+        answer: "Para causas até 20 salários mínimos, não é obrigatório. Porém, ter um advogado aumenta significativamente as chances de sucesso."
+      }
+    ],
+    coordinates: { latitude: "-14.7876", longitude: "-39.2803" },
+    nearbyConsumerCities: ["ilheus", "vitoria-da-conquista", "salvador"]
+  },
+  {
+    citySlug: "ilheus",
+    cityName: "Ilhéus",
+    state: "Bahia",
+    stateCode: "BA",
+    stats: {
+      casesWon: 167,
+      avgCompensation: "R$ 7.200",
+      avgResolutionDays: 58,
+      clientsSatisfied: 95
+    },
+    localProblems: [
+      {
+        title: "Turismo e Hotelaria",
+        description: "Problemas com reservas, cancelamentos e serviços turísticos na Costa do Cacau.",
+        icon: "Hotel"
+      },
+      {
+        title: "Voos Regionais",
+        description: "Cancelamentos e atrasos de voos no Aeroporto de Ilhéus afetam turistas e moradores.",
+        icon: "Plane"
+      },
+      {
+        title: "Fraudes Bancárias",
+        description: "Golpes e fraudes bancárias afetam moradores da região.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Cobrança Indevida",
+        description: "Problemas com cobranças de serviços não contratados.",
+        icon: "Receipt"
+      }
+    ],
+    localContext: "Ilhéus é polo turístico da Costa do Cacau, com economia baseada em turismo e comércio. Alta demanda por questões de consumidor no setor hoteleiro.",
+    consumerTribunalInfo: "Fórum de Ilhéus com Juizado Especial Cível. Atende moradores e turistas com problemas de consumo.",
+    proconAddress: "Centro - Ilhéus/BA",
+    faqs: [
+      {
+        question: "Tive problema com hotel em Ilhéus. Posso pedir indenização?",
+        answer: "Sim! Problemas como reserva não honrada, diferenças entre o anunciado e o real, ou má qualidade do serviço geram direito a indenização."
+      },
+      {
+        question: "Meu voo foi cancelado no Aeroporto de Ilhéus. Quais meus direitos?",
+        answer: "Você tem direito a reacomodação, reembolso integral ou indenização por danos morais de até R$ 15.000, dependendo do prejuízo sofrido."
+      },
+      {
+        question: "Sou turista e tive problema em Ilhéus. Posso processar aqui?",
+        answer: "Você pode processar em Ilhéus (local do problema) ou na sua cidade de origem. O CDC permite escolher o foro mais conveniente."
+      },
+      {
+        question: "Sofri golpe de PIX em Ilhéus. O banco deve me ressarcir?",
+        answer: "Sim! Bancos têm responsabilidade objetiva por falhas de segurança. Você pode pedir restituição do valor e indenização por danos morais."
+      },
+      {
+        question: "Onde fica o PROCON de Ilhéus?",
+        answer: "O PROCON de Ilhéus fica no Centro da cidade. Funciona em dias úteis para registro de reclamações."
+      }
+    ],
+    coordinates: { latitude: "-14.7934", longitude: "-39.0463" },
+    nearbyConsumerCities: ["itabuna", "salvador", "vitoria-da-conquista"]
+  },
+  {
+    citySlug: "juazeiro",
+    cityName: "Juazeiro",
+    state: "Bahia",
+    stateCode: "BA",
+    stats: {
+      casesWon: 178,
+      avgCompensation: "R$ 6.800",
+      avgResolutionDays: 60,
+      clientsSatisfied: 94
+    },
+    localProblems: [
+      {
+        title: "Trabalhistas Rurais",
+        description: "Trabalhadores da fruticultura irrigada enfrentam questões trabalhistas frequentes.",
+        icon: "Tractor"
+      },
+      {
+        title: "Cobrança Indevida",
+        description: "Problemas com cobranças de serviços básicos e telecomunicações.",
+        icon: "Receipt"
+      },
+      {
+        title: "Negativação Indevida",
+        description: "Moradores sofrem com inclusão indevida em cadastros de inadimplentes.",
+        icon: "AlertTriangle"
+      },
+      {
+        title: "Financiamentos",
+        description: "Problemas com financiamentos agrícolas e de veículos.",
+        icon: "CreditCard"
+      }
+    ],
+    localContext: "Juazeiro é polo da fruticultura irrigada no Vale do São Francisco, com economia agrícola forte e demandas específicas do setor.",
+    consumerTribunalInfo: "Fórum de Juazeiro com Juizado Especial Cível. Atende população local e trabalhadores rurais.",
+    proconAddress: "Centro - Juazeiro/BA",
+    faqs: [
+      {
+        question: "Sou trabalhador rural em Juazeiro. Tenho direitos trabalhistas?",
+        answer: "Sim! Trabalhadores rurais têm os mesmos direitos dos urbanos: carteira assinada, férias, 13º, FGTS e todos os direitos da CLT."
+      },
+      {
+        question: "Fui negativado por dívida que não fiz em Juazeiro. O que fazer?",
+        answer: "Você pode pedir a exclusão do nome e indenização por danos morais. Negativação indevida gera compensação de R$ 5.000 a R$ 15.000."
+      },
+      {
+        question: "Meu financiamento tem taxa abusiva. Posso reclamar?",
+        answer: "Sim! Taxas de juros muito acima da média do mercado podem ser consideradas abusivas e revisadas judicialmente."
+      },
+      {
+        question: "O PROCON de Juazeiro resolve meu problema?",
+        answer: "O PROCON pode intermediar acordos, mas para indenizações você precisará da via judicial. O registro no PROCON serve como prova."
+      },
+      {
+        question: "Posso processar empresa de São Paulo morando em Juazeiro?",
+        answer: "Sim! O CDC permite que você processe no seu domicílio. Não precisa viajar até a sede da empresa."
+      }
+    ],
+    coordinates: { latitude: "-9.4168", longitude: "-40.5003" },
+    nearbyConsumerCities: ["petrolina", "feira-de-santana", "salvador"]
+  },
+  {
+    citySlug: "barreiras",
+    cityName: "Barreiras",
+    state: "Bahia",
+    stateCode: "BA",
+    stats: {
+      casesWon: 156,
+      avgCompensation: "R$ 7.000",
+      avgResolutionDays: 62,
+      clientsSatisfied: 94
+    },
+    localProblems: [
+      {
+        title: "Agronegócio e Trabalhistas",
+        description: "Trabalhadores do agronegócio enfrentam questões trabalhistas específicas do setor.",
+        icon: "Tractor"
+      },
+      {
+        title: "Financiamentos Agrícolas",
+        description: "Problemas com crédito rural e financiamentos do setor agrícola.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Negativação",
+        description: "Produtores e trabalhadores enfrentam negativação indevida.",
+        icon: "AlertTriangle"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Problemas com qualidade de internet e telefonia na região.",
+        icon: "Wifi"
+      }
+    ],
+    localContext: "Barreiras é capital do agronegócio da Bahia, na região MATOPIBA. Economia baseada na produção de grãos e algodão.",
+    consumerTribunalInfo: "Fórum de Barreiras com Juizado Especial Cível. Atende demandas do consumidor e trabalhistas.",
+    proconAddress: "Centro - Barreiras/BA",
+    faqs: [
+      {
+        question: "Sou produtor rural em Barreiras. Tenho direitos de consumidor?",
+        answer: "Sim! Quando você contrata serviços pessoais (bancos, telecomunicações, etc.), é protegido pelo CDC como consumidor."
+      },
+      {
+        question: "Meu financiamento agrícola tem problemas. O que fazer?",
+        answer: "Você pode pedir revisão de cláusulas abusivas e taxas de juros. Consulte um advogado para avaliar seu contrato."
+      },
+      {
+        question: "Fui negativado por dívida de empresa em Barreiras. Tenho direitos?",
+        answer: "Se a negativação foi indevida, você tem direito a indenização por danos morais e exclusão do nome dos cadastros."
+      },
+      {
+        question: "A internet rural é ruim em Barreiras. Posso reclamar?",
+        answer: "Sim! Operadoras devem entregar a velocidade contratada. Se não entregam, você pode pedir abatimento ou rescisão sem multa."
+      },
+      {
+        question: "Onde fica o JEC de Barreiras?",
+        answer: "O Juizado Especial Cível funciona no Fórum de Barreiras, no Centro da cidade. Atendimento em dias úteis."
+      }
+    ],
+    coordinates: { latitude: "-12.1527", longitude: "-44.9900" },
+    nearbyConsumerCities: ["salvador", "feira-de-santana", "brasilia"]
+  },
+  {
+    citySlug: "jequie",
+    cityName: "Jequié",
+    state: "Bahia",
+    stateCode: "BA",
+    stats: {
+      casesWon: 145,
+      avgCompensation: "R$ 6.500",
+      avgResolutionDays: 58,
+      clientsSatisfied: 94
+    },
+    localProblems: [
+      {
+        title: "Indústria Calçadista",
+        description: "Trabalhadores da indústria calçadista enfrentam questões trabalhistas específicas.",
+        icon: "Factory"
+      },
+      {
+        title: "Comércio Local",
+        description: "Problemas com produtos defeituosos e garantias no comércio regional.",
+        icon: "ShoppingBag"
+      },
+      {
+        title: "Negativação",
+        description: "Moradores enfrentam cobranças indevidas e negativação no SPC/Serasa.",
+        icon: "AlertTriangle"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Problemas com operadoras de telefonia e internet.",
+        icon: "Smartphone"
+      }
+    ],
+    localContext: "Jequié é centro comercial e industrial do sudoeste baiano, com destaque para a indústria calçadista.",
+    consumerTribunalInfo: "Fórum de Jequié com Juizado Especial Cível. Atende demandas do consumidor da região.",
+    proconAddress: "Centro - Jequié/BA",
+    faqs: [
+      {
+        question: "Trabalho na indústria calçadista em Jequié. Tenho direitos?",
+        answer: "Sim! Trabalhadores industriais têm todos os direitos da CLT, incluindo adicional de insalubridade se expostos a produtos químicos."
+      },
+      {
+        question: "Comprei produto com defeito no comércio de Jequié. O que fazer?",
+        answer: "Você pode exigir troca, conserto ou devolução do dinheiro. O prazo para resolver é de 30 dias, depois você escolhe a solução."
+      },
+      {
+        question: "Fui negativado indevidamente em Jequié. Quanto posso receber?",
+        answer: "A indenização por negativação indevida varia de R$ 5.000 a R$ 15.000, dependendo do caso. Além disso, seu nome é limpo."
+      },
+      {
+        question: "Onde fica o PROCON de Jequié?",
+        answer: "O PROCON de Jequié funciona no Centro da cidade. Você pode registrar reclamações gratuitamente."
+      },
+      {
+        question: "Preciso de advogado para processar no JEC de Jequié?",
+        answer: "Para causas até 20 salários mínimos, não é obrigatório. Mas ter advogado aumenta muito as chances de ganhar."
+      }
+    ],
+    coordinates: { latitude: "-13.8577", longitude: "-40.0844" },
+    nearbyConsumerCities: ["vitoria-da-conquista", "itabuna", "salvador"]
+  },
+  {
+    citySlug: "alagoinhas",
+    cityName: "Alagoinhas",
+    state: "Bahia",
+    stateCode: "BA",
+    stats: {
+      casesWon: 134,
+      avgCompensation: "R$ 6.800",
+      avgResolutionDays: 55,
+      clientsSatisfied: 95
+    },
+    localProblems: [
+      {
+        title: "Indústria de Bebidas",
+        description: "Trabalhadores da Ambev e outras indústrias enfrentam questões trabalhistas.",
+        icon: "Factory"
+      },
+      {
+        title: "Cobrança Indevida",
+        description: "Moradores enfrentam cobranças abusivas de serviços e bancos.",
+        icon: "Receipt"
+      },
+      {
+        title: "Negativação",
+        description: "Problemas com inclusão indevida em cadastros de inadimplentes.",
+        icon: "AlertTriangle"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura de planos de saúde regionais.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Alagoinhas é centro industrial e comercial do agreste baiano, sede de importante unidade da Ambev.",
+    consumerTribunalInfo: "Fórum de Alagoinhas com Juizado Especial Cível. Atende demandas do consumidor regional.",
+    proconAddress: "Centro - Alagoinhas/BA",
+    faqs: [
+      {
+        question: "Trabalho na Ambev em Alagoinhas. Tenho direitos especiais?",
+        answer: "Trabalhadores industriais têm direitos da CLT. Se há exposição a agentes nocivos, você pode ter direito a adicional de insalubridade ou periculosidade."
+      },
+      {
+        question: "Recebi cobrança de dívida que não fiz em Alagoinhas. O que fazer?",
+        answer: "Não pague! Você pode contestar a cobrança e, se foi negativado indevidamente, pedir indenização por danos morais."
+      },
+      {
+        question: "Meu plano de saúde negou exame em Alagoinhas. Tenho direitos?",
+        answer: "Sim! Se o exame está no rol da ANS ou foi prescrito pelo médico, a negativa é ilegal. Você pode pedir liminar e indenização."
+      },
+      {
+        question: "Onde fica o JEC de Alagoinhas?",
+        answer: "O Juizado Especial Cível funciona no Fórum de Alagoinhas, no Centro. Atendimento em dias úteis."
+      },
+      {
+        question: "Quanto tempo demora um processo no JEC de Alagoinhas?",
+        answer: "Processos simples no JEC de Alagoinhas levam em média de 4 a 8 meses para conclusão."
+      }
+    ],
+    coordinates: { latitude: "-12.1322", longitude: "-38.4183" },
+    nearbyConsumerCities: ["salvador", "feira-de-santana", "camacari"]
   }
 ];
 

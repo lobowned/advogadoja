@@ -2904,6 +2904,111 @@
   </url>
 
   <!-- ========================================== -->
+  <!-- ARTIGOS SEO LOCAL - CONSUMIDOR (15 URLs)  -->
+  <!-- Artigos otimizados por cidade + problema  -->
+  <!-- ========================================== -->
+
+  <!-- Voos Cancelados/Atrasados por Aeroporto -->
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/voo-cancelado-guarulhos</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/voo-atrasado-congonhas</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/voo-cancelado-brasilia</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/voo-cancelado-recife</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/voo-cancelado-santos-dumont</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Plano de Saúde por Cidade -->
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/plano-saude-negou-sao-paulo</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/plano-saude-negou-rio-de-janeiro</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/plano-saude-negou-campinas</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Negativação por Cidade -->
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/nome-negativado-belo-horizonte</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/nome-negativado-porto-alegre</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Fraude Bancária/PIX por Cidade -->
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/golpe-pix-rio-de-janeiro</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/fraude-bancaria-curitiba</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/fraude-bancaria-goiania</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Outros Problemas por Cidade -->
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/produto-defeituoso-salvador</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/cobranca-indevida-fortaleza</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ========================================== -->
   <!-- PÁGINAS LEGAIS (2 URLs)                    -->
   <!-- ========================================== -->
   <url>
@@ -2923,7 +3028,7 @@
   <!-- ESTATÍSTICAS DO SITEMAP                    -->
   <!-- ========================================== -->
   <!--
-    Total de URLs: 463
+    Total de URLs: 478
     - Homepage: 1
     - Páginas Principais: 7
     - Landing Pages SEO Consumidor: 6
@@ -2931,7 +3036,8 @@
     - Calculadoras: 21
     - Landing Pages por Cidade: 30
     - Landing Pages Cidade+Nicho: 180
-    - Landing Pages Consumidor por Cidade: 80 (NOVO!)
+    - Landing Pages Consumidor por Cidade: 80
+    - Artigos SEO Local Consumidor: 15 (NOVO!)
     - Blog Posts Novos: 3
     - Artigos Legacy: 45
     - Páginas de Categoria: 12

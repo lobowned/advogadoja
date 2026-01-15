@@ -1598,7 +1598,7 @@
   </url>
 
   <!-- ========================================== -->
-  <!-- BLOG POSTS NOVOS (3 URLs)                  -->
+  <!-- BLOG POSTS NOVOS (13 URLs)                 -->
   <!-- ========================================== -->
   <url>
     <loc>https://advogadoja.lovable.app/blog/como-recorrer-multa-transito-indevida</loc>
@@ -1615,6 +1615,67 @@
   <url>
     <loc>https://advogadoja.lovable.app/blog/superendividamento-negociar-dividas</loc>
     <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Novos 10 artigos SEO - Janeiro 2026 -->
+  <url>
+    <loc>https://advogadoja.lovable.app/blog/cobranca-indevida-mensalidade-escolar</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/blog/plano-saude-negou-cirurgia-liminar</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/blog/produto-defeito-troca-devolucao</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/blog/acoes-bancos-tarifas-abusivas</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/blog/garantias-compras-online-produto-errado</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/blog/problemas-telecomunicacoes-cobranca-indevida</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/blog/recall-veiculos-indenizacao-consumidor</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/blog/problemas-pacotes-viagem-cancelamento</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/blog/responsabilidade-marketplace-compra-problema</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advogadoja.lovable.app/blog/consorcio-desistencia-direitos-consumidor</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

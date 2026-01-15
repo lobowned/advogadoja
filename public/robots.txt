@@ -1,14 +1,15 @@
 # Advogado Já - Robots.txt
 # https://advogadoja.lovable.app
 
+# Googlebot - Allow full crawling without delay
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
 
+# Bingbot
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
 
+# Social Media Bots
 User-agent: Twitterbot
 Allow: /
 
@@ -21,13 +22,21 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
+# Yandex (for IndexNow)
+User-agent: YandexBot
+Allow: /
+
+# All other bots
 User-agent: *
 Allow: /
 Crawl-delay: 2
 
-# Sitemap
+# Sitemaps
 Sitemap: https://advogadoja.lovable.app/sitemap.xml
 
 # Block admin pages from indexing
 Disallow: /admin
 Disallow: /admin/*
+
+# Host
+Host: https://advogadoja.lovable.app

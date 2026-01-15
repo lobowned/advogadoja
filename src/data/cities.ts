@@ -1228,6 +1228,127 @@ export const brazilianCities: CityData[] = [
     ],
     courtInfo: "TRT-23 e TJMT",
     localContext: "Rondonópolis é polo do agronegócio do sul de Mato Grosso."
+  },
+  // ========== EXPANSÃO BAHIA ==========
+  {
+    slug: "camacari",
+    name: "Camaçari",
+    state: "Bahia",
+    stateCode: "BA",
+    population: "300 mil",
+    region: "Nordeste",
+    highlights: [
+      "Maior polo petroquímico do Hemisfério Sul",
+      "Região metropolitana de Salvador",
+      "Polo industrial Ford/JAC"
+    ],
+    courtInfo: "TRT-5 e TJBA - Fórum de Camaçari",
+    localContext: "Camaçari abriga o maior polo petroquímico do Hemisfério Sul, com forte demanda trabalhista industrial e questões ambientais."
+  },
+  {
+    slug: "lauro-de-freitas",
+    name: "Lauro de Freitas",
+    state: "Bahia",
+    stateCode: "BA",
+    population: "200 mil",
+    region: "Nordeste",
+    highlights: [
+      "Região metropolitana de Salvador",
+      "Próximo ao Aeroporto SSA",
+      "Polo residencial de alto padrão"
+    ],
+    courtInfo: "TRT-5 e TJBA - Fórum de Lauro de Freitas",
+    localContext: "Lauro de Freitas é cidade-dormitório de Salvador, com crescente demanda em direito imobiliário e do consumidor."
+  },
+  {
+    slug: "itabuna",
+    name: "Itabuna",
+    state: "Bahia",
+    stateCode: "BA",
+    population: "215 mil",
+    region: "Nordeste",
+    highlights: [
+      "Polo cacaueiro da Bahia",
+      "Centro comercial do sul baiano",
+      "Polo universitário"
+    ],
+    courtInfo: "TRT-5 e TJBA - Fórum de Itabuna",
+    localContext: "Itabuna é polo comercial do sul da Bahia, com demandas trabalhistas no comércio e setor de serviços."
+  },
+  {
+    slug: "ilheus",
+    name: "Ilhéus",
+    state: "Bahia",
+    stateCode: "BA",
+    population: "160 mil",
+    region: "Nordeste",
+    highlights: [
+      "Histórica região cacaueira",
+      "Polo turístico Costa do Cacau",
+      "Aeroporto regional"
+    ],
+    courtInfo: "TRT-5 e TJBA - Fórum de Ilhéus",
+    localContext: "Ilhéus combina turismo e agricultura, com demandas em direito trabalhista rural e do consumidor no setor hoteleiro."
+  },
+  {
+    slug: "juazeiro",
+    name: "Juazeiro",
+    state: "Bahia",
+    stateCode: "BA",
+    population: "220 mil",
+    region: "Nordeste",
+    highlights: [
+      "Polo de fruticultura irrigada",
+      "Vale do São Francisco",
+      "Divisa com Petrolina/PE"
+    ],
+    courtInfo: "TRT-5 e TJBA - Fórum de Juazeiro",
+    localContext: "Juazeiro é polo da fruticultura irrigada no Vale do São Francisco, com forte demanda trabalhista rural."
+  },
+  {
+    slug: "barreiras",
+    name: "Barreiras",
+    state: "Bahia",
+    stateCode: "BA",
+    population: "160 mil",
+    region: "Nordeste",
+    highlights: [
+      "Capital do agronegócio baiano",
+      "Região MATOPIBA",
+      "Polo de grãos e algodão"
+    ],
+    courtInfo: "TRT-5 e TJBA - Fórum de Barreiras",
+    localContext: "Barreiras é capital do agronegócio da Bahia na região MATOPIBA, com demandas trabalhistas rurais e questões fundiárias."
+  },
+  {
+    slug: "jequie",
+    name: "Jequié",
+    state: "Bahia",
+    stateCode: "BA",
+    population: "165 mil",
+    region: "Nordeste",
+    highlights: [
+      "Centro comercial do sudoeste",
+      "Polo calçadista",
+      "Entroncamento rodoviário"
+    ],
+    courtInfo: "TRT-5 e TJBA - Fórum de Jequié",
+    localContext: "Jequié é centro comercial e industrial do sudoeste baiano, com demandas trabalhistas na indústria calçadista."
+  },
+  {
+    slug: "alagoinhas",
+    name: "Alagoinhas",
+    state: "Bahia",
+    stateCode: "BA",
+    population: "155 mil",
+    region: "Nordeste",
+    highlights: [
+      "Centro cervejeiro (Ambev)",
+      "Polo ferroviário histórico",
+      "Polo de saúde regional"
+    ],
+    courtInfo: "TRT-5 e TJBA - Fórum de Alagoinhas",
+    localContext: "Alagoinhas é centro industrial e comercial do agreste baiano, com demandas trabalhistas na indústria de bebidas."
   }
 ];
 

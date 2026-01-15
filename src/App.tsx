@@ -76,6 +76,9 @@ import CityConsumerLanding from "./pages/CityConsumerLanding";
 // Local SEO Articles
 import LocalSEOArticle from "./pages/LocalSEOArticle";
 
+// Regional Hub Pages
+import AdvogadoBahia from "./pages/AdvogadoBahia";
+
 // Components
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 
@@ -118,6 +121,9 @@ const AnimatedRoutes = () => {
         
         {/* Success Stories */}
         <Route path="/casos-de-sucesso" element={<CasosSucesso />} />
+        
+        {/* Regional Hub Pages */}
+        <Route path="/advogado-bahia" element={<AdvogadoBahia />} />
         
         {/* News */}
         <Route path="/noticias" element={<News />} />

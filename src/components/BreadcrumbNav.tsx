@@ -41,7 +41,7 @@ export const BreadcrumbNav = ({
     "@type": "ListItem",
     "position": index + 1,
     "name": item.label,
-    ...(item.href && { "item": `https://advogadoonline.com.br${item.href}` })
+    ...(item.href && { "item": `https://advogadoja.lovable.app${item.href}` })
   }));
 
   const breadcrumbSchema = {

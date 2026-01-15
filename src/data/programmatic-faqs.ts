@@ -2852,6 +2852,1807 @@ Negar atendimento de emergência pode configurar crime e gera indenização alta
     keywords: ['limpar nome após pagar', 'prazo limpar nome', 'tirar nome SPC Serasa', 'quitação dívida nome sujo'],
     relatedQuestions: ['cons-16', 'cons-23'],
     metaDescription: 'Quanto tempo leva para limpar meu nome após pagar? Até 5 dias úteis. Veja o que fazer se não limpar.'
+  },
+
+  // ============================================
+  // FAQS ESPECÍFICAS DA BAHIA (40 perguntas)
+  // ============================================
+
+  // SALVADOR (12 FAQs)
+  {
+    id: 'bahia-1',
+    slug: 'como-processar-empresa-salvador',
+    question: 'Como processar uma empresa em Salvador?',
+    answer: `Para processar uma empresa em Salvador, você pode utilizar o **Juizado Especial Cível** para causas de até 40 salários mínimos.
+
+**Passo a passo:**
+1. Reúna documentos (notas fiscais, contratos, conversas)
+2. Tente resolver com a empresa primeiro
+3. Registre reclamação no PROCON-BA se necessário
+4. Procure o Juizado Especial ou advogado
+
+**Onde processar em Salvador:**
+- **Juizado Especial Cível** - Fórum Ruy Barbosa (Centro)
+- **Juizado do Consumidor** - Av. ACM, Iguatemi
+- **PROCON-BA** - Av. Centenário, 2992, Chame-Chame
+
+**Custos:**
+- Juizado Especial: gratuito até 20 salários mínimos
+- Justiça Comum: custas processuais (pode pedir gratuidade)
+
+**Prazo para processar:**
+- Consumidor: 5 anos
+- Trabalhista: 2 anos após saída
+
+**Dica:** Causas até 20 salários mínimos dispensam advogado no Juizado Especial.`,
+    area: 'consumidor',
+    keywords: ['processar empresa salvador', 'juizado especial salvador', 'ação judicial salvador bahia', 'fórum salvador'],
+    relatedQuestions: ['bahia-2', 'bahia-3', 'bahia-5'],
+    metaDescription: 'Saiba como processar uma empresa em Salvador. Juizado Especial, PROCON-BA, documentos necessários e custos. Guia completo.'
+  },
+  {
+    id: 'bahia-2',
+    slug: 'procon-salvador-endereco-telefone',
+    question: 'Qual o endereço e telefone do PROCON Salvador?',
+    answer: `O **PROCON-BA** (Programa de Proteção e Defesa do Consumidor da Bahia) atende consumidores de Salvador e todo o estado.
+
+**Endereço do PROCON-BA:**
+- **Av. Centenário, 2992** - Chame-Chame
+- Salvador - BA, CEP 40155-150
+
+**Contatos:**
+- **Telefone:** 0800 071 2552 (ligação gratuita)
+- **WhatsApp:** (71) 3116-8587
+- **E-mail:** procon@sjdhds.ba.gov.br
+- **Site:** www.procon.ba.gov.br
+
+**Horário de funcionamento:**
+- Segunda a sexta: 8h às 17h
+- Atendimento presencial: mediante agendamento
+
+**Documentos para atendimento:**
+1. RG e CPF
+2. Comprovante de residência
+3. Documentos do caso (notas, contratos, prints)
+4. Protocolo de reclamação à empresa
+
+**Como agendar:**
+- Pelo site: www.procon.ba.gov.br
+- Pelo 0800 071 2552
+
+**Importante:** Antes de ir ao PROCON, tente resolver diretamente com a empresa e guarde todos os protocolos.`,
+    area: 'consumidor',
+    keywords: ['procon salvador', 'procon bahia telefone', 'procon-ba endereço', 'reclamar procon salvador'],
+    relatedQuestions: ['bahia-1', 'bahia-3', 'cons-1'],
+    metaDescription: 'Endereço e telefone do PROCON Salvador (PROCON-BA): Av. Centenário, 2992. Telefone 0800 071 2552. Horários e como agendar.'
+  },
+  {
+    id: 'bahia-3',
+    slug: 'juizado-especial-salvador-onde-fica',
+    question: 'Onde fica o Juizado Especial de Salvador?',
+    answer: `Salvador possui diversos **Juizados Especiais** distribuídos pela cidade para facilitar o acesso à justiça.
+
+**Principais Juizados Especiais de Salvador:**
+
+**1. Fórum Ruy Barbosa (Centro)**
+- Praça D. Pedro II, s/n - Campo Grande
+- Juizados Especiais Cíveis
+
+**2. Juizado Especial do Consumidor**
+- Av. ACM, Shopping Iguatemi
+- Especializado em relações de consumo
+
+**3. Fórum Regional de Cajazeiras**
+- Rua Tomás Gonzaga, s/n - Cajazeiras X
+- Atende região de Cajazeiras
+
+**4. Fórum Regional do Subúrbio**
+- Rua Cônego Pereira, s/n - Plataforma
+- Atende subúrbio ferroviário
+
+**Como entrar com ação:**
+1. Compareça ao Juizado com documentos
+2. Preencha formulário de reclamação
+3. Audiência de conciliação em 15-30 dias
+4. Se não houver acordo, segue para sentença
+
+**Documentos necessários:**
+- RG, CPF e comprovante de residência
+- Provas do caso (notas, fotos, prints)
+- Dados do réu (CNPJ/CPF, endereço)
+
+**Custos:** Gratuito até 20 salários mínimos.`,
+    area: 'geral',
+    keywords: ['juizado especial salvador', 'onde fica juizado salvador', 'fórum salvador', 'juizado consumidor salvador'],
+    relatedQuestions: ['bahia-1', 'bahia-2', 'bahia-5'],
+    metaDescription: 'Endereços dos Juizados Especiais de Salvador: Fórum Ruy Barbosa, Juizado do Consumidor no Iguatemi, regionais de Cajazeiras e Subúrbio.'
+  },
+  {
+    id: 'bahia-4',
+    slug: 'vara-trabalho-salvador-endereco',
+    question: 'Onde fica a Vara do Trabalho de Salvador?',
+    answer: `O **TRT da 5ª Região** (Tribunal Regional do Trabalho da Bahia) tem sede em Salvador e diversas Varas do Trabalho na cidade.
+
+**Sede do TRT5 (Tribunal):**
+- **Rua Bela Vista do Cabral, 121** - Nazaré
+- Salvador - BA, CEP 40055-010
+- Tel: (71) 3319-6000
+- Site: www.trt5.jus.br
+
+**Fórum Ministro Milton Moreira Lima:**
+- **Rua Miguel Calmon, 285** - Comércio
+- Salvador - BA
+- Várias Varas do Trabalho
+
+**Como ajuizar reclamação trabalhista:**
+1. Contrate advogado ou procure o Sindicato
+2. Reúna documentos (CTPS, holerites, rescisão)
+3. Ajuize a ação no sistema PJe
+4. Audiência inicial em 30-60 dias
+
+**Prazos importantes:**
+- 2 anos após demissão para ajuizar
+- Pode cobrar últimos 5 anos de direitos
+
+**Atendimento da Justiça Gratuita:**
+- Para quem comprova renda até 2 salários mínimos
+- Defensoria Pública: (71) 3103-6400
+
+**Dica:** Muitos escritórios trabalham com honorários apenas em caso de vitória.`,
+    area: 'trabalhista',
+    keywords: ['vara trabalho salvador', 'trt5 endereço', 'justiça trabalho bahia', 'processar empresa trabalhista salvador'],
+    relatedQuestions: ['trab-1', 'trab-2', 'bahia-8'],
+    metaDescription: 'Endereço da Vara do Trabalho de Salvador: TRT5 na Rua Bela Vista do Cabral, 121 - Nazaré. Saiba como ajuizar ação trabalhista.'
+  },
+  {
+    id: 'bahia-5',
+    slug: 'tjba-demora-processo-consumidor',
+    question: 'Quanto tempo demora um processo de consumidor no TJBA?',
+    answer: `O tempo de duração de um processo de consumidor no **TJBA (Tribunal de Justiça da Bahia)** varia conforme o tipo de procedimento.
+
+**Prazos médios no TJBA:**
+
+**Juizado Especial Cível:**
+- Audiência de conciliação: 15-45 dias
+- Sentença: 3-6 meses
+- Recurso (se houver): mais 6-12 meses
+- **Total:** 6-12 meses
+
+**Justiça Comum:**
+- Citação do réu: 1-3 meses
+- Audiência: 6-12 meses
+- Sentença: 12-24 meses
+- **Total:** 1-2 anos (pode chegar a 3-4 com recursos)
+
+**Fatores que aceleram:**
+- Escolher Juizado Especial
+- Documentação completa
+- Acordo na audiência
+- Acompanhamento constante
+
+**Fatores que atrasam:**
+- Empresa não encontrada
+- Necessidade de perícia
+- Recursos protelatórios
+
+**Consulta processual:**
+- Site: www.tjba.jus.br
+- Consulta por número ou nome das partes
+
+**Dica:** O Juizado Especial é muito mais rápido. Para causas até 40 salários mínimos, sempre prefira o Juizado.`,
+    area: 'consumidor',
+    keywords: ['demora processo tjba', 'tempo processo consumidor bahia', 'prazo juizado especial salvador', 'consultar processo tjba'],
+    relatedQuestions: ['bahia-1', 'bahia-3', 'cons-1'],
+    metaDescription: 'Quanto tempo demora processo de consumidor no TJBA? Juizado Especial: 6-12 meses. Justiça Comum: 1-2 anos. Veja como acelerar.'
+  },
+  {
+    id: 'bahia-6',
+    slug: 'inss-salvador-agendar-pericia',
+    question: 'Como agendar perícia do INSS em Salvador?',
+    answer: `Para agendar perícia médica do INSS em Salvador, você pode usar o **Meu INSS** (app ou site) ou ligar no **135**.
+
+**Como agendar pelo Meu INSS:**
+1. Baixe o app "Meu INSS" ou acesse meu.inss.gov.br
+2. Faça login com Gov.br
+3. Clique em "Agendar Perícia"
+4. Escolha data, horário e agência
+5. Anote o número do protocolo
+
+**Agências do INSS em Salvador:**
+- **Agência Centro** - Av. Estados Unidos, 397
+- **Agência Pituba** - Av. ACM, 640
+- **Agência Cajazeiras** - Rua Tomás Gonzaga, s/n
+- **Agência Periperi** - Rua Thomaz Gonzaga, s/n
+
+**Documentos para perícia:**
+- RG, CPF
+- Carteira de trabalho (se tiver)
+- Atestados e laudos médicos
+- Exames recentes
+- Receitas de medicamentos
+
+**Telefone:** 135 (ligação gratuita)
+- Horário: 7h às 22h (segunda a sábado)
+
+**Dicas importantes:**
+- Chegue 30 minutos antes
+- Leve todos os laudos e exames originais
+- Descreva suas limitações com clareza
+- Se negado, você pode recorrer ou entrar com ação judicial`,
+    area: 'previdenciario',
+    keywords: ['agendar perícia inss salvador', 'inss salvador agência', 'meu inss bahia', 'perícia médica salvador'],
+    relatedQuestions: ['prev-1', 'prev-3', 'bahia-20'],
+    metaDescription: 'Como agendar perícia do INSS em Salvador: pelo Meu INSS ou 135. Agências em Salvador, documentos necessários e dicas para a perícia.'
+  },
+  {
+    id: 'bahia-7',
+    slug: 'defensoria-publica-salvador',
+    question: 'Como conseguir advogado gratuito em Salvador?',
+    answer: `A **Defensoria Pública da Bahia** oferece assistência jurídica gratuita para quem não pode pagar advogado em Salvador.
+
+**Quem tem direito:**
+- Renda familiar até 3 salários mínimos
+- Pessoas em situação de vulnerabilidade
+- Idosos, mulheres vítimas de violência
+
+**Como conseguir atendimento:**
+
+**1. Defensoria Pública da Bahia:**
+- **Endereço:** Av. Luiz Viana Filho, 2490 - CAB
+- **Telefone:** (71) 3103-6400
+- **Site:** www.defensoria.ba.def.br
+
+**2. Núcleos de Prática Jurídica (faculdades):**
+- UFBA, UNEB, UNIFACS e outras
+- Atendimento gratuito supervisionado
+
+**3. OAB-BA (Comissão de Assistência):**
+- Pode indicar advogados dativos
+- Tel: (71) 3329-9000
+
+**Documentos para atendimento:**
+- RG e CPF
+- Comprovante de residência
+- Comprovante de renda
+- Documentos do caso
+
+**Áreas atendidas:**
+- Família (divórcio, pensão, guarda)
+- Trabalhista (via sindicatos)
+- Consumidor
+- Criminal
+- Previdenciário
+
+**Importante:** O atendimento é por ordem de chegada ou agendamento. Chegue cedo.`,
+    area: 'geral',
+    keywords: ['advogado gratuito salvador', 'defensoria pública bahia', 'assistência jurídica gratuita salvador', 'advogado de graça bahia'],
+    relatedQuestions: ['bahia-1', 'bahia-4', 'geral-5'],
+    metaDescription: 'Como conseguir advogado gratuito em Salvador: Defensoria Pública da Bahia no CAB, tel (71) 3103-6400. Requisitos e documentos.'
+  },
+  {
+    id: 'bahia-8',
+    slug: 'divorcio-cartorio-salvador',
+    question: 'Quanto custa um divórcio em cartório em Salvador?',
+    answer: `O **divórcio extrajudicial** (em cartório) é a forma mais rápida e econômica quando o casal concorda com tudo e não tem filhos menores.
+
+**Requisitos para divórcio em cartório:**
+- Consenso entre as partes
+- Sem filhos menores ou incapazes
+- Acordo sobre bens e pensão
+- Presença de advogado (obrigatório)
+
+**Custos em Salvador (2024):**
+- **Escritura pública:** R$ 300 a R$ 600
+- **Honorários advocatícios:** R$ 1.500 a R$ 4.000
+- **Total estimado:** R$ 2.000 a R$ 5.000
+
+**Cartórios que fazem divórcio:**
+- Qualquer Tabelionato de Notas de Salvador
+- Exemplos: 1º ao 10º Tabelionato de Notas
+
+**Documentos necessários:**
+- Certidão de casamento atualizada (90 dias)
+- RG e CPF dos cônjuges
+- Pacto antenupcial (se houver)
+- Escritura de bens (se houver partilha)
+
+**Prazo:** O divórcio sai no mesmo dia ou em até 3 dias úteis.
+
+**Alternativa gratuita:**
+- Defensoria Pública (para quem comprova baixa renda)
+- Juizado de Família (se tiver filhos)
+
+**Importante:** Se houver filhos menores, o divórcio deve ser feito na Justiça.`,
+    area: 'familia',
+    keywords: ['divórcio cartório salvador', 'quanto custa divórcio bahia', 'divórcio extrajudicial salvador', 'separação consensual salvador'],
+    relatedQuestions: ['fam-1', 'fam-3', 'bahia-7'],
+    metaDescription: 'Quanto custa divórcio em cartório em Salvador? De R$ 2.000 a R$ 5.000 (escritura + advogado). Requisitos e documentos necessários.'
+  },
+  {
+    id: 'bahia-9',
+    slug: 'voo-cancelado-aeroporto-salvador',
+    question: 'Voo cancelado no Aeroporto de Salvador: o que fazer?',
+    answer: `Se seu voo foi cancelado no **Aeroporto de Salvador (SSA)**, você tem direitos garantidos pela ANAC e pelo Código de Defesa do Consumidor.
+
+**Seus direitos imediatos:**
+- **Informação:** Comunicação clara sobre o motivo
+- **Reacomodação:** Em outro voo (da mesma ou outra empresa)
+- **Reembolso integral:** Se preferir não viajar
+- **Assistência material:** Conforme tempo de espera
+
+**Assistência material obrigatória:**
+- A partir de 1h: comunicação (internet, telefone)
+- A partir de 2h: alimentação
+- A partir de 4h: hospedagem e transporte
+
+**O que fazer no aeroporto:**
+1. Procure o balcão da empresa
+2. Exija assistência por escrito
+3. Fotografe os painéis de voo
+4. Guarde cartões de embarque
+5. Anote nomes e protocolos
+
+**Indenização por danos morais:**
+- Cancelamento: R$ 3.000 a R$ 10.000
+- Com perda de compromisso: R$ 5.000 a R$ 15.000
+
+**Como processar:**
+- PROCON-BA: 0800 071 2552
+- Juizado Especial do Aeroporto (se disponível)
+- Justiça: até 5 anos para ajuizar
+
+**Contatos úteis:**
+- **Infraero SSA:** (71) 3204-1010
+- **ANAC:** 163`,
+    area: 'consumidor',
+    keywords: ['voo cancelado salvador', 'aeroporto salvador cancelamento', 'direitos voo cancelado ssa', 'indenização voo bahia'],
+    relatedQuestions: ['cons-15', 'cons-28', 'bahia-1'],
+    metaDescription: 'Voo cancelado no Aeroporto de Salvador? Saiba seus direitos: reacomodação, reembolso, assistência e indenização de R$ 3.000 a R$ 10.000.'
+  },
+  {
+    id: 'bahia-10',
+    slug: 'plano-saude-negou-cirurgia-salvador',
+    question: 'Plano de saúde negou cirurgia em Salvador. O que fazer?',
+    answer: `Se o plano de saúde negou sua cirurgia em Salvador, você pode conseguir uma **liminar judicial** em poucos dias para obrigar a cobertura.
+
+**Passos para resolver:**
+
+**1. Exija a negativa por escrito:**
+- A operadora é obrigada a fornecer
+- Deve conter o motivo da negativa
+- Prazo: 24 horas
+
+**2. Reclame na ANS:**
+- Site: www.ans.gov.br
+- Telefone: 0800 701 9656
+- Prazo de resposta: 5 dias úteis
+
+**3. PROCON-BA:**
+- 0800 071 2552
+- Pode multar a operadora
+
+**4. Ação judicial com pedido de liminar:**
+- Juizado Especial ou Justiça Comum
+- Liminar sai em 24-72 horas em casos urgentes
+
+**Negativas mais comuns (e ilegais):**
+- "Procedimento não coberto" (se está no rol ANS)
+- "Carência não cumprida" (urgência dispensa)
+- "Hospital não credenciado" (em emergência)
+
+**Indenização:**
+- Danos morais: R$ 5.000 a R$ 30.000
+- Danos materiais: reembolso total
+
+**Hospitais referência em Salvador:**
+- Hospital das Clínicas (UFBA)
+- Hospital Geral Roberto Santos
+- Hospital Santo Antônio (Obras Sociais)
+
+**Importante:** Cirurgias de urgência devem ser cobertas mesmo em carência.`,
+    area: 'consumidor',
+    keywords: ['plano saúde negou cirurgia salvador', 'liminar plano saúde bahia', 'ação contra plano saúde salvador', 'ans bahia'],
+    relatedQuestions: ['cons-12', 'cons-13', 'bahia-2'],
+    metaDescription: 'Plano de saúde negou cirurgia em Salvador? Saiba como conseguir liminar em 24-72h. ANS, PROCON-BA e ação judicial.'
+  },
+  {
+    id: 'bahia-11',
+    slug: 'golpe-pix-salvador-como-recuperar',
+    question: 'Caí em golpe do Pix em Salvador. Como recuperar o dinheiro?',
+    answer: `Se você foi vítima de **golpe do Pix** em Salvador, é possível recuperar o dinheiro através do MED (Mecanismo Especial de Devolução) ou ação judicial.
+
+**Passos imediatos:**
+
+**1. Bloqueio de emergência (até 30 min):**
+- Ligue para seu banco imediatamente
+- Peça o bloqueio via MED
+- Anote protocolo
+
+**2. Registre Boletim de Ocorrência:**
+- Delegacia Online: www.delegaciavirtual.ba.gov.br
+- Presencial: qualquer delegacia de Salvador
+- Especializadas: DRCC (Crimes Cibernéticos)
+
+**3. Reclame no banco:**
+- Canal de atendimento do banco
+- Cite o MED (prazo de 24h para bloqueio)
+- Exija protocolo
+
+**4. PROCON-BA:**
+- 0800 071 2552
+- Responsabilidade do banco pode ser reconhecida
+
+**5. Ação judicial:**
+- Banco pode ser responsabilizado
+- Indenização: valor + danos morais
+
+**Mecanismo Especial de Devolução (MED):**
+- Prazo para solicitar: 80 dias
+- Banco analisa em até 7 dias
+- Devolução se houver saldo na conta do golpista
+
+**Golpes mais comuns:**
+- Falso funcionário de banco
+- QR Code adulterado
+- Perfil falso no WhatsApp
+- "Pix errado" (estorno)
+
+**Delegacia de Crimes Cibernéticos (Salvador):**
+- DRCC: Av. ACM, próximo ao Iguatemi
+- Tel: (71) 3117-6109`,
+    area: 'consumidor',
+    keywords: ['golpe pix salvador', 'recuperar dinheiro pix bahia', 'fraude pix salvador', 'delegacia crimes cibernéticos bahia'],
+    relatedQuestions: ['cons-24', 'cons-25', 'bahia-2'],
+    metaDescription: 'Caiu em golpe do Pix em Salvador? Saiba como recuperar: MED no banco, BO na Delegacia Virtual BA e ação judicial. Passo a passo completo.'
+  },
+  {
+    id: 'bahia-12',
+    slug: 'nome-negativado-indevidamente-salvador',
+    question: 'Nome negativado indevidamente em Salvador. Quanto posso ganhar?',
+    answer: `A negativação indevida do nome gera direito a **indenização por danos morais**. No TJBA, os valores variam conforme o caso.
+
+**Valores de indenização no TJBA (2024):**
+- Casos simples: R$ 3.000 a R$ 5.000
+- Casos intermediários: R$ 5.000 a R$ 10.000
+- Casos graves: R$ 10.000 a R$ 15.000
+- Casos com reincidência: R$ 15.000 a R$ 25.000
+
+**Fatores que aumentam a indenização:**
+- Negativação por dívida já paga
+- Múltiplas negativações indevidas
+- Tempo longo de negativação
+- Constrangimento comprovado (perda de crédito, emprego)
+- Empresa reincidente
+
+**Como processar em Salvador:**
+
+**1. Reúna provas:**
+- Print da negativação (Serasa/SPC)
+- Comprovante de pagamento (se já pagou)
+- Contrato que prove inexistência da dívida
+
+**2. Onde processar:**
+- Juizado Especial Cível (até 40 salários)
+- Justiça Comum (acima de 40 salários)
+
+**3. Prazos:**
+- Prescrição: 3 anos para ajuizar
+- Empresa tem 5 dias para baixar após quitação
+
+**PROCON-BA pode ajudar:**
+- Fazer notificação à empresa
+- Aplicar multa administrativa
+- Tel: 0800 071 2552
+
+**Dica:** Não aceite acordos muito baixos. Consulte um advogado para avaliar seu caso.`,
+    area: 'consumidor',
+    keywords: ['nome negativado salvador', 'indenização serasa salvador', 'negativação indevida bahia', 'danos morais spc bahia'],
+    relatedQuestions: ['cons-16', 'cons-23', 'bahia-2'],
+    metaDescription: 'Nome negativado indevidamente em Salvador? Indenização de R$ 5.000 a R$ 15.000 no TJBA. Saiba como processar e quanto ganhar.'
+  },
+
+  // FEIRA DE SANTANA (6 FAQs)
+  {
+    id: 'bahia-13',
+    slug: 'procon-feira-de-santana-endereco',
+    question: 'Onde fica o PROCON de Feira de Santana?',
+    answer: `O **PROCON de Feira de Santana** atende consumidores da cidade e região.
+
+**Endereço do PROCON Feira de Santana:**
+- **Av. Senhor dos Passos, 1225** - Centro
+- Feira de Santana - BA, CEP 44002-024
+
+**Contatos:**
+- **Telefone:** (75) 3602-1500
+- **WhatsApp:** (75) 98181-1500
+- **E-mail:** procon@feiradesantana.ba.gov.br
+
+**Horário de funcionamento:**
+- Segunda a sexta: 8h às 14h
+
+**Documentos necessários:**
+- RG e CPF
+- Comprovante de residência
+- Nota fiscal ou contrato
+- Protocolos de atendimento com a empresa
+
+**Tipos de atendimento:**
+- Reclamações de consumo
+- Orientação sobre direitos
+- Audiências de conciliação
+
+**Alternativas:**
+- PROCON-BA (atende todo o estado): 0800 071 2552
+- Juizado Especial Cível de Feira de Santana
+
+**Dica:** Antes de ir, tente resolver com a empresa e anote todos os protocolos.`,
+    area: 'consumidor',
+    keywords: ['procon feira de santana', 'procon feira santana telefone', 'defesa consumidor feira', 'reclamar procon feira'],
+    relatedQuestions: ['bahia-14', 'bahia-17', 'bahia-2'],
+    metaDescription: 'PROCON Feira de Santana: Av. Senhor dos Passos, 1225 - Centro. Telefone (75) 3602-1500. Horário, documentos e como reclamar.'
+  },
+  {
+    id: 'bahia-14',
+    slug: 'juizado-especial-feira-de-santana',
+    question: 'Como processar no Juizado Especial de Feira de Santana?',
+    answer: `O **Juizado Especial Cível de Feira de Santana** julga causas de até 40 salários mínimos de forma rápida e simplificada.
+
+**Endereço do Juizado Especial:**
+- **Fórum Desembargador Filinto Bastos**
+- Av. Maria Quitéria, s/n - Kalilândia
+- Feira de Santana - BA
+
+**Como entrar com ação:**
+1. Compareça ao Juizado com documentos
+2. Faça a reclamação no setor de atendimento
+3. Aguarde audiência de conciliação (15-30 dias)
+4. Se não houver acordo, aguarde sentença
+
+**Documentos necessários:**
+- RG e CPF
+- Comprovante de residência
+- Provas do caso (notas, fotos, prints)
+- Dados do réu (nome/CNPJ, endereço)
+
+**Custos:**
+- Até 20 salários mínimos: gratuito e sem advogado
+- De 20 a 40 salários: custas proporcionais, advogado obrigatório
+
+**Prazo médio:**
+- Audiência: 15-30 dias
+- Sentença: 2-4 meses
+
+**Tipos de causas:**
+- Consumidor (produtos, serviços)
+- Cobranças indevidas
+- Acidentes de trânsito
+- Indenizações em geral
+
+**Horário de atendimento:** Segunda a sexta, 8h às 14h`,
+    area: 'geral',
+    keywords: ['juizado especial feira santana', 'processar feira de santana', 'fórum feira santana', 'pequenas causas feira'],
+    relatedQuestions: ['bahia-13', 'bahia-15', 'bahia-3'],
+    metaDescription: 'Como processar no Juizado Especial de Feira de Santana: Fórum Desembargador Filinto Bastos. Documentos, custos e prazos.'
+  },
+  {
+    id: 'bahia-15',
+    slug: 'vara-trabalho-feira-de-santana',
+    question: 'Onde fica a Vara do Trabalho de Feira de Santana?',
+    answer: `A **Vara do Trabalho de Feira de Santana** pertence ao TRT da 5ª Região e julga ações trabalhistas da cidade e região.
+
+**Endereço:**
+- **Rua Marechal Deodoro, 339** - Centro
+- Feira de Santana - BA, CEP 44001-525
+- Tel: (75) 3602-4700
+
+**Jurisdição:**
+- Feira de Santana
+- Conceição do Jacuípe
+- São Gonçalo dos Campos
+- Santa Bárbara
+- Outras cidades da região
+
+**Como ajuizar ação trabalhista:**
+1. Contrate advogado ou procure sindicato
+2. Reúna documentos (CTPS, holerites, etc.)
+3. Ação é distribuída eletronicamente
+4. Audiência inicial em 30-60 dias
+
+**Documentos importantes:**
+- CTPS (física ou digital)
+- Contracheques
+- Termo de rescisão
+- Contrato de trabalho
+- Provas (e-mails, mensagens, testemunhas)
+
+**Prazos:**
+- 2 anos após demissão para ajuizar
+- Pode cobrar últimos 5 anos
+
+**Justiça Gratuita:**
+- Para quem ganha até 2 salários mínimos
+- Ou comprova insuficiência de recursos
+
+**Sindicatos em Feira de Santana:**
+- Podem ajudar com orientação e advogados`,
+    area: 'trabalhista',
+    keywords: ['vara trabalho feira santana', 'trt feira de santana', 'processo trabalhista feira', 'justiça trabalho feira'],
+    relatedQuestions: ['bahia-16', 'bahia-4', 'trab-1'],
+    metaDescription: 'Vara do Trabalho de Feira de Santana: Rua Marechal Deodoro, 339 - Centro. Como ajuizar ação trabalhista e documentos necessários.'
+  },
+  {
+    id: 'bahia-16',
+    slug: 'direitos-trabalhadores-feira-santana',
+    question: 'Quais os direitos dos trabalhadores em Feira de Santana?',
+    answer: `Os trabalhadores de Feira de Santana têm os mesmos direitos garantidos pela **CLT** e pela Constituição Federal, além de convenções coletivas específicas da região.
+
+**Direitos básicos de todo trabalhador:**
+- Carteira assinada desde o 1º dia
+- Salário mínimo (nacional ou estadual)
+- 13º salário
+- Férias + 1/3
+- FGTS (8% do salário)
+- Hora extra (50% ou 100%)
+- Descanso semanal remunerado
+- Vale-transporte
+
+**Direitos específicos por categoria:**
+- Piso salarial (conforme convenção coletiva)
+- Adicional de insalubridade (10%, 20% ou 40%)
+- Adicional de periculosidade (30%)
+- Adicional noturno (20%)
+
+**Principais setores em Feira de Santana:**
+- Comércio (Sindicato dos Comerciários)
+- Indústria (FIEB)
+- Construção civil
+- Serviços
+
+**Se seus direitos forem violados:**
+
+1. **Sindicato da categoria:**
+- Orientação e defesa
+
+2. **Ministério do Trabalho:**
+- Denúncia online: denuncia.sit.trabalho.gov.br
+
+3. **Justiça do Trabalho:**
+- Vara do Trabalho de Feira de Santana
+
+**Prazo para reclamar:** 2 anos após sair do emprego.`,
+    area: 'trabalhista',
+    keywords: ['direitos trabalhadores feira santana', 'clt feira de santana', 'sindicato feira santana', 'trabalhador feira de santana'],
+    relatedQuestions: ['bahia-15', 'trab-2', 'trab-6'],
+    metaDescription: 'Direitos dos trabalhadores em Feira de Santana: CLT, convenções coletivas, sindicatos e como reclamar na Justiça do Trabalho.'
+  },
+  {
+    id: 'bahia-17',
+    slug: 'produto-defeituoso-feira-santana',
+    question: 'Comprei produto com defeito em Feira de Santana. O que fazer?',
+    answer: `Se você comprou um **produto com defeito** em Feira de Santana, o Código de Defesa do Consumidor garante seus direitos.
+
+**Prazos para reclamar:**
+- Produtos não duráveis: 30 dias
+- Produtos duráveis: 90 dias
+- Vícios ocultos: prazo conta da descoberta
+
+**Seus direitos (Art. 18 do CDC):**
+1. **Troca do produto**
+2. **Devolução do dinheiro** (+ correção)
+3. **Abatimento proporcional** do preço
+4. **Reparo** (prazo máximo: 30 dias)
+
+**Passo a passo:**
+
+**1. Reclame na loja:**
+- Leve o produto e a nota fiscal
+- Peça protocolo por escrito
+
+**2. Se não resolver em 30 dias:**
+- Exija troca, devolução ou abatimento
+- É escolha SUA, não da loja
+
+**3. PROCON Feira de Santana:**
+- Av. Senhor dos Passos, 1225
+- Tel: (75) 3602-1500
+
+**4. Juizado Especial:**
+- Fórum de Feira de Santana
+- Gratuito até 20 salários mínimos
+
+**Documentos importantes:**
+- Nota fiscal
+- Prints de conversas
+- Fotos/vídeos do defeito
+- Protocolos de atendimento
+
+**Indenização:**
+- Danos materiais: valor do produto
+- Danos morais: se houver transtorno grave`,
+    area: 'consumidor',
+    keywords: ['produto defeituoso feira santana', 'trocar produto feira', 'defeito garantia feira santana', 'reclamar loja feira'],
+    relatedQuestions: ['bahia-13', 'cons-8', 'cons-9'],
+    metaDescription: 'Produto com defeito em Feira de Santana? Direito a troca, devolução ou reparo em 30 dias. PROCON, Juizado e seus direitos.'
+  },
+  {
+    id: 'bahia-18',
+    slug: 'cobranca-indevida-feira-santana',
+    question: 'Recebi cobrança indevida em Feira de Santana. Tenho direito a devolução em dobro?',
+    answer: `Sim! O Código de Defesa do Consumidor garante **devolução em dobro** de valores pagos indevidamente.
+
+**O que diz a lei (Art. 42, parágrafo único):**
+> "O consumidor cobrado em quantia indevida tem direito à repetição do indébito, por valor igual ao dobro do que pagou em excesso."
+
+**Quando tenho direito:**
+- Pagou valor maior que o devido
+- Cobrança por serviço não contratado
+- Cobrança duplicada
+- Taxa ou tarifa ilegal
+
+**Como conseguir a devolução em dobro:**
+
+**1. Contate a empresa:**
+- Peça estorno em dobro
+- Anote protocolo
+
+**2. PROCON Feira de Santana:**
+- Av. Senhor dos Passos, 1225
+- Tel: (75) 3602-1500
+
+**3. Juizado Especial:**
+- Ação de repetição de indébito
+- Pode pedir devolução em dobro + danos morais
+
+**Valores no TJBA:**
+- Devolução em dobro: valor pago x 2
+- Danos morais: R$ 2.000 a R$ 5.000 (se houver transtorno)
+
+**Prazo para reclamar:** 5 anos
+
+**Exceção:** A empresa não devolve em dobro se provar que foi erro justificável.
+
+**Documentos necessários:**
+- Comprovante de pagamento
+- Fatura/boleto original
+- Protocolo de reclamação`,
+    area: 'consumidor',
+    keywords: ['cobrança indevida feira santana', 'devolução dobro bahia', 'cobrança duplicada feira', 'restituição dobro feira'],
+    relatedQuestions: ['bahia-13', 'cons-18', 'cons-19'],
+    metaDescription: 'Cobrança indevida em Feira de Santana? Direito a devolução em dobro do valor pago. Como reclamar no PROCON e Juizado.'
+  },
+
+  // VITÓRIA DA CONQUISTA (5 FAQs)
+  {
+    id: 'bahia-19',
+    slug: 'procon-vitoria-da-conquista',
+    question: 'Onde fica o PROCON de Vitória da Conquista?',
+    answer: `O **PROCON de Vitória da Conquista** é o órgão de defesa do consumidor da cidade.
+
+**Endereço:**
+- **Praça Tancredo Neves, s/n** - Centro
+- Vitória da Conquista - BA, CEP 45000-000
+
+**Contatos:**
+- **Telefone:** (77) 3424-8500
+- Ramais: PROCON
+
+**Horário de funcionamento:**
+- Segunda a sexta: 8h às 14h
+
+**Serviços oferecidos:**
+- Registro de reclamações
+- Audiências de conciliação
+- Orientação ao consumidor
+- Fiscalização de estabelecimentos
+
+**Documentos para atendimento:**
+- RG e CPF
+- Comprovante de residência
+- Nota fiscal/contrato
+- Protocolos de atendimento à empresa
+
+**Alternativas:**
+- **PROCON-BA (estadual):** 0800 071 2552
+- **Juizado Especial Cível:** Fórum de Vitória da Conquista
+- **consumidor.gov.br:** reclamação online
+
+**Dica:** Antes de ir ao PROCON, tente resolver diretamente com a empresa. Se não resolver em até 5 dias úteis, procure o órgão com todos os protocolos em mãos.`,
+    area: 'consumidor',
+    keywords: ['procon vitória conquista', 'procon conquista telefone', 'defesa consumidor conquista', 'reclamar procon conquista'],
+    relatedQuestions: ['bahia-21', 'bahia-22', 'bahia-2'],
+    metaDescription: 'PROCON Vitória da Conquista: Praça Tancredo Neves - Centro. Telefone (77) 3424-8500. Horário, documentos e serviços.'
+  },
+  {
+    id: 'bahia-20',
+    slug: 'inss-vitoria-conquista-aposentadoria',
+    question: 'Como dar entrada na aposentadoria em Vitória da Conquista?',
+    answer: `Para dar entrada na **aposentadoria em Vitória da Conquista**, você pode usar o Meu INSS ou ir presencialmente à agência.
+
+**Agência do INSS em Vitória da Conquista:**
+- **Av. Lauro de Freitas, 330** - Recreio
+- CEP: 45020-380
+- Tel: 135
+
+**Como solicitar aposentadoria:**
+
+**1. Pelo Meu INSS (mais rápido):**
+- Acesse meu.inss.gov.br ou baixe o app
+- Faça login com Gov.br
+- Clique em "Pedir Aposentadoria"
+- Preencha os dados e anexe documentos
+- Acompanhe pelo app
+
+**2. Pelo telefone 135:**
+- Ligação gratuita
+- Horário: 7h às 22h
+- Agende atendimento presencial se necessário
+
+**Documentos necessários:**
+- RG e CPF
+- Carteira de trabalho (todas)
+- Carnês de contribuição (se autônomo)
+- Certidão de nascimento/casamento
+- Comprovante de residência
+
+**Tipos de aposentadoria:**
+- Por idade: 65 anos (homem) / 62 anos (mulher)
+- Por tempo de contribuição (regra de transição)
+- Por invalidez
+- Especial (atividade insalubre)
+
+**Prazo de análise:** 45 dias (pode variar)
+
+**Importante:** Procure um advogado previdenciário se tiver tempo especial ou rural não reconhecido.`,
+    area: 'previdenciario',
+    keywords: ['aposentadoria vitória conquista', 'inss conquista endereço', 'dar entrada aposentadoria bahia', 'agência inss conquista'],
+    relatedQuestions: ['prev-1', 'prev-2', 'bahia-6'],
+    metaDescription: 'Como dar entrada na aposentadoria em Vitória da Conquista: agência INSS, Meu INSS, 135. Documentos e tipos de aposentadoria.'
+  },
+  {
+    id: 'bahia-21',
+    slug: 'plano-saude-negou-exame-vitoria-conquista',
+    question: 'Plano de saúde negou exame em Vitória da Conquista. O que fazer?',
+    answer: `Se o plano de saúde negou um exame em Vitória da Conquista, você tem opções para reverter a decisão.
+
+**Passo a passo:**
+
+**1. Exija a negativa por escrito:**
+- A operadora deve fornecer em 24h
+- Deve conter o motivo da negativa
+- Guarde como prova
+
+**2. Verifique se o exame está no Rol da ANS:**
+- Site: www.ans.gov.br/rol
+- Se estiver, a negativa é abusiva
+
+**3. Reclame na ANS:**
+- 0800 701 9656
+- A ANS pode determinar a cobertura
+- Prazo de resposta: 5 dias
+
+**4. PROCON Vitória da Conquista:**
+- Praça Tancredo Neves - Centro
+- Tel: (77) 3424-8500
+
+**5. Ação judicial:**
+- Juizado Especial de Vitória da Conquista
+- Pode pedir liminar de urgência
+
+**Situações comuns de negativa ilegal:**
+- "Exame não coberto" (se está no rol ANS)
+- "Médico não credenciado" (pode usar reembolso)
+- "Limite de exames" (ilegal para exames necessários)
+
+**Indenização:**
+- Danos materiais: reembolso integral
+- Danos morais: R$ 3.000 a R$ 15.000
+
+**Importante:** Exames de urgência devem ser cobertos mesmo em carência.`,
+    area: 'consumidor',
+    keywords: ['plano saúde negou vitória conquista', 'exame negado plano conquista', 'ação plano saúde bahia', 'ans vitória conquista'],
+    relatedQuestions: ['bahia-19', 'cons-12', 'bahia-10'],
+    metaDescription: 'Plano de saúde negou exame em Vitória da Conquista? Reclame na ANS, PROCON ou entre com ação judicial. Seus direitos.'
+  },
+  {
+    id: 'bahia-22',
+    slug: 'juizado-especial-vitoria-conquista',
+    question: 'Como processar no Juizado Especial de Vitória da Conquista?',
+    answer: `O **Juizado Especial de Vitória da Conquista** julga causas cíveis de até 40 salários mínimos.
+
+**Endereço do Fórum:**
+- **Fórum Clériston Andrade**
+- Av. Olívia Flores, s/n - Candeias
+- Vitória da Conquista - BA
+
+**Como entrar com ação:**
+1. Compareça ao Juizado com documentos
+2. Preencha formulário de reclamação
+3. Aguarde audiência de conciliação
+4. Se não houver acordo, sentença em 30-60 dias
+
+**Causas que podem ser ajuizadas:**
+- Consumidor (compras, serviços)
+- Cobrança de dívidas
+- Acidentes de trânsito
+- Indenizações em geral
+
+**Documentos necessários:**
+- RG, CPF
+- Comprovante de residência
+- Provas (notas, fotos, prints)
+- Dados do réu
+
+**Custos:**
+- Até 20 salários mínimos: gratuito
+- De 20 a 40 salários: custas reduzidas
+
+**Advogado:**
+- Até 20 salários: dispensado
+- Acima: obrigatório
+
+**Prazo médio do processo:**
+- Audiência: 15-30 dias
+- Sentença: 2-4 meses
+
+**Dica:** Leve todas as provas organizadas e seja objetivo ao explicar o caso.`,
+    area: 'geral',
+    keywords: ['juizado especial vitória conquista', 'processar conquista', 'fórum vitória conquista', 'pequenas causas conquista'],
+    relatedQuestions: ['bahia-19', 'bahia-3', 'bahia-14'],
+    metaDescription: 'Juizado Especial de Vitória da Conquista: Fórum Clériston Andrade. Como processar, documentos, custos e prazos.'
+  },
+  {
+    id: 'bahia-23',
+    slug: 'advogado-previdenciario-vitoria-conquista',
+    question: 'Preciso de advogado previdenciário em Vitória da Conquista?',
+    answer: `Em muitos casos, **sim**, um advogado previdenciário pode fazer grande diferença em Vitória da Conquista.
+
+**Quando você PRECISA de advogado:**
+- Benefício negado pelo INSS
+- Auxílio-doença indeferido
+- Aposentadoria por invalidez negada
+- Tempo rural ou especial não reconhecido
+- Revisão de benefício
+
+**Quando pode fazer sozinho:**
+- Primeiro requerimento simples
+- Documentação completa e clara
+- Casos sem controvérsia
+
+**Vantagens do advogado previdenciário:**
+- Conhece as regras e estratégias
+- Identifica tempo "escondido"
+- Calcula melhor data de entrada
+- Recorre administrativamente
+- Ajuiza ação judicial se necessário
+
+**Onde encontrar advogado:**
+- OAB-BA (Subseção Vitória da Conquista)
+- Indicação de amigos/família
+- Sites especializados
+
+**Defensoria Pública:**
+- Para quem não pode pagar
+- Atende questões previdenciárias
+- Tel: (77) 3424-8300
+
+**Custo médio:**
+- Honorários: 20% a 30% do que conseguir
+- Muitos só cobram em caso de vitória
+
+**INSS em Vitória da Conquista:**
+- Av. Lauro de Freitas, 330 - Recreio
+- Telefone: 135`,
+    area: 'previdenciario',
+    keywords: ['advogado previdenciário vitória conquista', 'advogado inss conquista', 'aposentadoria vitória conquista', 'benefício negado conquista'],
+    relatedQuestions: ['bahia-20', 'prev-3', 'bahia-7'],
+    metaDescription: 'Precisa de advogado previdenciário em Vitória da Conquista? Quando contratar, onde encontrar e custos. INSS e Defensoria.'
+  },
+
+  // CAMAÇARI (4 FAQs)
+  {
+    id: 'bahia-24',
+    slug: 'procon-camacari-bahia',
+    question: 'Onde fica o PROCON de Camaçari?',
+    answer: `O **PROCON de Camaçari** atende os consumidores do município.
+
+**Endereço:**
+- **Rua Francisco Drumond, s/n** - Centro
+- Camaçari - BA, CEP 42800-000
+- (Prédio da Prefeitura ou anexo)
+
+**Contato:**
+- **Telefone:** (71) 3621-2100 (Prefeitura - ramal PROCON)
+
+**Horário de funcionamento:**
+- Segunda a sexta: 8h às 14h
+
+**Serviços:**
+- Reclamações contra empresas
+- Orientação ao consumidor
+- Audiências de conciliação
+- Fiscalização
+
+**Alternativas:**
+- **PROCON-BA (estadual):** 0800 071 2552
+- Atendimento pelo consumidor.gov.br
+
+**Documentos para atendimento:**
+- RG e CPF
+- Comprovante de residência
+- Nota fiscal ou contrato
+- Protocolos de reclamação
+
+**Dica:** Como Camaçari faz parte da região metropolitana de Salvador, você também pode usar o PROCON-BA estadual para reclamações.`,
+    area: 'consumidor',
+    keywords: ['procon camaçari', 'procon camacari telefone', 'defesa consumidor camaçari', 'reclamar procon camacari'],
+    relatedQuestions: ['bahia-25', 'bahia-27', 'bahia-2'],
+    metaDescription: 'PROCON Camaçari: Rua Francisco Drumond - Centro. Telefone, horário e serviços de defesa do consumidor.'
+  },
+  {
+    id: 'bahia-25',
+    slug: 'direitos-trabalhadores-polo-petroquimico',
+    question: 'Quais os direitos dos trabalhadores do Polo Petroquímico de Camaçari?',
+    answer: `Os trabalhadores do **Polo Petroquímico de Camaçari** têm direitos especiais devido às condições de trabalho.
+
+**Direitos específicos do setor:**
+
+**1. Adicional de Periculosidade (30%):**
+- Contato com inflamáveis
+- Trabalho com explosivos
+- Eletricidade de alta tensão
+- Calculado sobre o salário base
+
+**2. Adicional de Insalubridade:**
+- Grau mínimo: 10%
+- Grau médio: 20%
+- Grau máximo: 40%
+- Exposição a agentes nocivos (químicos, ruído)
+
+**3. Adicional Noturno (20%):**
+- Trabalho entre 22h e 5h
+- Hora noturna: 52 min 30 seg
+
+**4. Aposentadoria Especial:**
+- 15, 20 ou 25 anos de trabalho especial
+- Direito a se aposentar mais cedo
+- PPP é obrigatório
+
+**Documentos importantes:**
+- PPP (Perfil Profissiográfico Previdenciário)
+- LTCAT (Laudo Técnico)
+- Contracheques
+
+**Se seus direitos forem violados:**
+- Sindicato dos Químicos da Bahia
+- Vara do Trabalho de Camaçari
+- Ministério do Trabalho: 158
+
+**Sindicato dos Químicos:**
+- Representa trabalhadores do polo
+- Convenção coletiva anual
+- Assessoria jurídica`,
+    area: 'trabalhista',
+    keywords: ['trabalhadores polo petroquímico camaçari', 'direitos químicos bahia', 'periculosidade camaçari', 'insalubridade polo petroquímico'],
+    relatedQuestions: ['bahia-26', 'trab-7', 'trab-9'],
+    metaDescription: 'Direitos dos trabalhadores do Polo Petroquímico de Camaçari: periculosidade 30%, insalubridade, adicional noturno e aposentadoria especial.'
+  },
+  {
+    id: 'bahia-26',
+    slug: 'acidente-trabalho-camacari',
+    question: 'Sofri acidente de trabalho em Camaçari. Quais meus direitos?',
+    answer: `Se você sofreu **acidente de trabalho em Camaçari**, tem direitos garantidos por lei.
+
+**Direitos após acidente de trabalho:**
+
+**1. Estabilidade de 12 meses:**
+- Após alta do INSS
+- Não pode ser demitido nesse período
+- Mesmo que tenha contrato temporário
+
+**2. Auxílio-doença acidentário (B91):**
+- A partir do 16º dia de afastamento
+- 91% do salário de benefício
+- Empresa paga os primeiros 15 dias
+
+**3. Indenização (se houver culpa da empresa):**
+- Danos materiais: despesas médicas, lucros cessantes
+- Danos morais: R$ 10.000 a R$ 100.000+
+- Danos estéticos: se houver sequelas
+
+**4. FGTS continua sendo depositado:**
+- Durante todo o afastamento
+
+**O que fazer após o acidente:**
+
+**1. Comunicar a empresa imediatamente**
+**2. Exigir emissão da CAT:**
+- Comunicação de Acidente de Trabalho
+- Se a empresa recusar, você pode emitir
+- Sindicato ou médico também podem
+
+**3. Guardar documentos:**
+- Atestados e laudos
+- Fotos do local/lesão
+- Nomes de testemunhas
+
+**4. Procurar o INSS:**
+- Agendar perícia pelo 135 ou Meu INSS
+
+**Vara do Trabalho de Camaçari:**
+- Ações trabalhistas por acidente
+- Pode pedir pensão vitalícia se houver incapacidade`,
+    area: 'trabalhista',
+    keywords: ['acidente trabalho camaçari', 'cat camaçari', 'indenização acidente bahia', 'estabilidade acidente trabalho'],
+    relatedQuestions: ['bahia-25', 'trab-11', 'prev-3'],
+    metaDescription: 'Acidente de trabalho em Camaçari? Direito a estabilidade 12 meses, auxílio-doença, indenização. CAT e como buscar seus direitos.'
+  },
+  {
+    id: 'bahia-27',
+    slug: 'juizado-especial-camacari',
+    question: 'Como processar empresa no Juizado Especial de Camaçari?',
+    answer: `O **Juizado Especial de Camaçari** julga causas cíveis de até 40 salários mínimos.
+
+**Endereço do Fórum de Camaçari:**
+- **Av. Jorge Amado, s/n** - Centro
+- Camaçari - BA
+
+**Como ajuizar ação:**
+1. Vá ao Juizado com documentos
+2. Preencha o formulário de reclamação
+3. Audiência de conciliação: 15-30 dias
+4. Sentença se não houver acordo
+
+**Tipos de causas:**
+- Problemas de consumo
+- Cobranças indevidas
+- Acidentes de trânsito
+- Indenizações até 40 salários
+
+**Documentos:**
+- RG, CPF, comprovante de residência
+- Provas do caso
+- Dados do réu (CNPJ, endereço)
+
+**Custos:**
+- Até 20 salários mínimos: gratuito
+- Sem advogado até 20 salários
+
+**Prazo médio:**
+- Audiência: 15-30 dias
+- Sentença: 2-4 meses
+
+**Alternativa:**
+- Juizado Especial de Salvador (se preferir)
+- consumidor.gov.br (online)
+
+**Dica:** Organize todas as provas cronologicamente e seja objetivo na audiência.`,
+    area: 'consumidor',
+    keywords: ['juizado especial camaçari', 'processar empresa camaçari', 'fórum camaçari', 'pequenas causas camacari'],
+    relatedQuestions: ['bahia-24', 'bahia-3', 'bahia-14'],
+    metaDescription: 'Juizado Especial de Camaçari: como processar, documentos, custos. Av. Jorge Amado - Centro. Causas até 40 salários mínimos.'
+  },
+
+  // ITABUNA (3 FAQs)
+  {
+    id: 'bahia-28',
+    slug: 'procon-itabuna-bahia',
+    question: 'Onde fica o PROCON de Itabuna?',
+    answer: `O **PROCON de Itabuna** é o órgão de defesa do consumidor da cidade.
+
+**Endereço:**
+- **Av. Cinquentenário, s/n** - Centro
+- Itabuna - BA, CEP 45600-000
+- (Junto à Prefeitura Municipal)
+
+**Contato:**
+- **Telefone:** (73) 3212-7600 (Prefeitura - ramal PROCON)
+
+**Horário:**
+- Segunda a sexta: 8h às 14h
+
+**Serviços:**
+- Reclamações de consumo
+- Audiências de conciliação
+- Orientação jurídica
+- Fiscalização
+
+**Documentos:**
+- RG e CPF
+- Comprovante de residência
+- Nota fiscal/contrato
+- Protocolos anteriores
+
+**Alternativas:**
+- **PROCON-BA:** 0800 071 2552
+- **consumidor.gov.br:** reclamação online
+- **Juizado Especial de Itabuna**
+
+**Dica:** Itabuna é polo regional do sul da Bahia. O PROCON atende também consumidores de cidades vizinhas como Ilhéus, Buerarema e Ibicaraí.`,
+    area: 'consumidor',
+    keywords: ['procon itabuna', 'procon itabuna telefone', 'defesa consumidor itabuna', 'reclamar procon itabuna'],
+    relatedQuestions: ['bahia-29', 'bahia-30', 'bahia-2'],
+    metaDescription: 'PROCON Itabuna: Av. Cinquentenário - Centro. Telefone, horário e como fazer reclamação de consumidor.'
+  },
+  {
+    id: 'bahia-29',
+    slug: 'nome-negativado-itabuna-bahia',
+    question: 'Nome negativado indevidamente em Itabuna. O que fazer?',
+    answer: `Se seu nome foi **negativado indevidamente em Itabuna**, você tem direito a indenização por danos morais.
+
+**Passo a passo:**
+
+**1. Reúna provas:**
+- Print da consulta Serasa/SPC
+- Comprovante de que não deve (ou já pagou)
+- Histórico de negativações
+
+**2. Notifique a empresa:**
+- Por escrito (e-mail com AR ou protocolo)
+- Dê prazo de 5 dias para resolver
+
+**3. PROCON Itabuna:**
+- Av. Cinquentenário - Centro
+- Tel: (73) 3212-7600
+
+**4. Juizado Especial de Itabuna:**
+- Ação de indenização
+- Gratuito até 20 salários mínimos
+
+**Valores de indenização no TJBA:**
+- Primeira negativação indevida: R$ 3.000 a R$ 8.000
+- Reincidência: R$ 8.000 a R$ 15.000
+- Longa duração: até R$ 20.000
+
+**Documentos para ação:**
+- RG, CPF
+- Comprovante de residência
+- Print da negativação
+- Prova de que não deve
+
+**Prazo para processar:** 3 anos
+
+**Dica:** Não aceite acordos muito baixos. A média no TJBA está entre R$ 5.000 e R$ 10.000.`,
+    area: 'consumidor',
+    keywords: ['nome negativado itabuna', 'negativação indevida itabuna', 'serasa spc itabuna', 'danos morais itabuna'],
+    relatedQuestions: ['bahia-28', 'bahia-12', 'cons-16'],
+    metaDescription: 'Nome negativado indevidamente em Itabuna? Indenização de R$ 5.000 a R$ 15.000. Como processar no PROCON e Juizado.'
+  },
+  {
+    id: 'bahia-30',
+    slug: 'juizado-especial-itabuna',
+    question: 'Como processar no Juizado Especial de Itabuna?',
+    answer: `O **Juizado Especial de Itabuna** é a forma mais rápida de resolver disputas de até 40 salários mínimos.
+
+**Endereço:**
+- **Fórum Epaminondas Berbert de Castro**
+- Av. Juracy Magalhães Jr., s/n
+- Itabuna - BA
+
+**Como ajuizar:**
+1. Compareça ao fórum com documentos
+2. Preencha formulário no balcão
+3. Receba data de audiência
+4. Participe da conciliação
+
+**Documentos:**
+- RG e CPF
+- Comprovante de residência
+- Provas do caso
+- Dados do réu
+
+**Custos:**
+- Até 20 salários: gratuito e sem advogado
+- De 20 a 40 salários: custas + advogado
+
+**Tipos de ação:**
+- Consumidor
+- Cobranças
+- Indenizações
+- Acidentes de trânsito
+
+**Prazos:**
+- Audiência: 15-30 dias
+- Sentença: 2-4 meses
+
+**Jurisdição:**
+- Itabuna
+- Cidades da comarca (Buerarema, etc.)
+
+**Dica:** Leve cópias de todos os documentos e originais para conferência.`,
+    area: 'geral',
+    keywords: ['juizado especial itabuna', 'fórum itabuna', 'processar itabuna', 'pequenas causas itabuna'],
+    relatedQuestions: ['bahia-28', 'bahia-29', 'bahia-3'],
+    metaDescription: 'Juizado Especial de Itabuna: Fórum Epaminondas Berbert. Como processar, documentos e custos. Gratuito até 20 salários.'
+  },
+
+  // ILHÉUS (3 FAQs)
+  {
+    id: 'bahia-31',
+    slug: 'procon-ilheus-bahia',
+    question: 'Onde fica o PROCON de Ilhéus?',
+    answer: `O **PROCON de Ilhéus** atende consumidores da cidade e região.
+
+**Endereço:**
+- **Av. Soares Lopes, s/n** - Centro
+- Ilhéus - BA, CEP 45653-000
+- (Prédio da Prefeitura)
+
+**Contato:**
+- **Telefone:** (73) 3234-1600 (Prefeitura - solicitar PROCON)
+
+**Horário:**
+- Segunda a sexta: 8h às 14h
+
+**Serviços:**
+- Reclamações contra empresas
+- Conciliação consumidor x fornecedor
+- Orientação sobre direitos
+- Fiscalização de estabelecimentos
+
+**Documentos:**
+- RG, CPF
+- Comprovante de residência
+- Nota fiscal ou contrato
+- Protocolos de atendimento
+
+**Alternativas:**
+- **PROCON-BA:** 0800 071 2552
+- **consumidor.gov.br**
+- **Juizado Especial de Ilhéus**
+
+**Ilhéus - Cidade turística:**
+- Problemas com hotéis e pousadas
+- Passeios e agências de turismo
+- Restaurantes e serviços turísticos
+
+**Dica:** Turistas também podem reclamar no PROCON da cidade onde ocorreu o problema.`,
+    area: 'consumidor',
+    keywords: ['procon ilhéus', 'procon ilheus telefone', 'defesa consumidor ilhéus', 'reclamar procon ilheus'],
+    relatedQuestions: ['bahia-32', 'bahia-33', 'bahia-2'],
+    metaDescription: 'PROCON Ilhéus: Av. Soares Lopes - Centro. Telefone e horário. Reclamações de consumo incluindo serviços turísticos.'
+  },
+  {
+    id: 'bahia-32',
+    slug: 'direitos-trabalhadores-turismo-ilheus',
+    question: 'Quais os direitos dos trabalhadores de turismo em Ilhéus?',
+    answer: `Os trabalhadores do **setor de turismo em Ilhéus** têm direitos específicos garantidos pela CLT e convenções coletivas.
+
+**Direitos dos trabalhadores de hotéis e pousadas:**
+- Carteira assinada
+- Piso salarial da categoria
+- Adicional noturno (20%)
+- Hora extra (50% ou 100%)
+- Gorjetas integram o salário
+
+**Gorjetas:**
+- Fazem parte da remuneração
+- Devem ser rateadas conforme convenção
+- FGTS e 13º calculam sobre gorjetas
+
+**Direitos em bares e restaurantes:**
+- 10% do garçom: facultativo ao cliente
+- Taxa de serviço: deve ser repassada
+- Intervalo obrigatório
+
+**Adicional noturno:**
+- Trabalho entre 22h e 5h
+- 20% a mais na hora
+- Hora noturna: 52 min 30 seg
+
+**Se seus direitos forem violados:**
+
+**1. Sindicato da categoria:**
+- SINTRAHIR (Sindicato dos Trabalhadores em Hotéis)
+- SINDHOBARES
+
+**2. Ministério do Trabalho:**
+- Denúncia: 158
+
+**3. Justiça do Trabalho:**
+- Vara do Trabalho de Ilhéus
+- Prazo: 2 anos após sair
+
+**Importante:** Trabalhador temporário de alta temporada também tem direitos!`,
+    area: 'trabalhista',
+    keywords: ['trabalhadores turismo ilhéus', 'direitos garçom ilhéus', 'hotel ilhéus trabalhista', 'gorjeta ilhéus'],
+    relatedQuestions: ['bahia-31', 'trab-2', 'trab-6'],
+    metaDescription: 'Direitos dos trabalhadores de turismo em Ilhéus: hotéis, restaurantes, gorjetas, adicional noturno. Como reclamar.'
+  },
+  {
+    id: 'bahia-33',
+    slug: 'fraude-bancaria-ilheus',
+    question: 'Fui vítima de fraude bancária em Ilhéus. Como processar?',
+    answer: `Se você sofreu **fraude bancária em Ilhéus**, o banco pode ser responsabilizado judicialmente.
+
+**Passos imediatos:**
+
+**1. Contate o banco:**
+- Ligue imediatamente
+- Bloqueie cartões e acessos
+- Anote protocolo
+
+**2. Registre Boletim de Ocorrência:**
+- Delegacia de Ilhéus
+- Ou online: www.delegaciavirtual.ba.gov.br
+
+**3. Reclame formalmente:**
+- SAC do banco
+- Ouvidoria (se SAC não resolver)
+- Banco Central: bcb.gov.br
+
+**4. PROCON Ilhéus:**
+- Av. Soares Lopes - Centro
+- Pode aplicar multa ao banco
+
+**5. Ação judicial:**
+- Juizado Especial de Ilhéus
+- Até 40 salários mínimos
+
+**Responsabilidade do banco:**
+- Súmula 479 STJ: banco responde por fraudes
+- Risco do negócio é do banco
+- Não precisa provar culpa
+
+**Indenização:**
+- Danos materiais: valor integral
+- Danos morais: R$ 3.000 a R$ 15.000
+- Devolução em dobro se cobrado indevidamente
+
+**Golpes mais comuns:**
+- Clonagem de cartão
+- Falso funcionário
+- Phishing (links falsos)
+- Golpe do Pix
+
+**Prazo para processar:** 5 anos`,
+    area: 'consumidor',
+    keywords: ['fraude bancária ilhéus', 'golpe banco ilhéus', 'processar banco ilhéus', 'clonagem cartão bahia'],
+    relatedQuestions: ['bahia-31', 'bahia-11', 'cons-24'],
+    metaDescription: 'Fraude bancária em Ilhéus? Banco deve indenizar danos materiais e morais. Como processar no Juizado e PROCON.'
+  },
+
+  // JUAZEIRO (3 FAQs)
+  {
+    id: 'bahia-34',
+    slug: 'procon-juazeiro-bahia',
+    question: 'Onde fica o PROCON de Juazeiro?',
+    answer: `O **PROCON de Juazeiro** atende os consumidores da cidade e região do Vale do São Francisco.
+
+**Endereço:**
+- **Praça da Bandeira, s/n** - Centro
+- Juazeiro - BA, CEP 48900-000
+- (Prédio da Prefeitura)
+
+**Contato:**
+- **Telefone:** (74) 3613-3200 (Prefeitura - ramal PROCON)
+
+**Horário:**
+- Segunda a sexta: 8h às 14h
+
+**Serviços:**
+- Atendimento ao consumidor
+- Audiências de conciliação
+- Fiscalização
+- Orientação jurídica
+
+**Documentos:**
+- RG e CPF
+- Comprovante de residência
+- Nota fiscal/contrato
+- Protocolos anteriores
+
+**Alternativas:**
+- **PROCON-BA:** 0800 071 2552
+- **consumidor.gov.br**
+- **Juizado Especial de Juazeiro**
+
+**Região atendida:**
+- Juazeiro
+- Casa Nova
+- Curaçá
+- Sobradinho (pode usar PROCON-BA)
+
+**Dica:** Juazeiro faz divisa com Petrolina-PE. Se o problema for com empresa de Petrolina, pode reclamar no PROCON de lá também.`,
+    area: 'consumidor',
+    keywords: ['procon juazeiro bahia', 'procon juazeiro telefone', 'defesa consumidor juazeiro', 'reclamar procon juazeiro'],
+    relatedQuestions: ['bahia-35', 'bahia-36', 'bahia-2'],
+    metaDescription: 'PROCON Juazeiro-BA: Praça da Bandeira - Centro. Telefone e horário. Defesa do consumidor no Vale do São Francisco.'
+  },
+  {
+    id: 'bahia-35',
+    slug: 'inss-juazeiro-bahia',
+    question: 'Onde fica a agência do INSS em Juazeiro-BA?',
+    answer: `A **Agência do INSS em Juazeiro** atende a cidade e municípios da região.
+
+**Endereço:**
+- **Av. Adolfo Viana, s/n** - Centro
+- Juazeiro - BA, CEP 48903-000
+
+**Telefone:** 135 (ligação gratuita)
+- Horário: 7h às 22h (segunda a sábado)
+
+**Serviços disponíveis:**
+- Aposentadoria (idade, tempo, especial)
+- Auxílio-doença
+- Pensão por morte
+- Salário-maternidade
+- BPC/LOAS
+- Perícia médica
+
+**Como agendar:**
+1. **Meu INSS** (app ou site)
+2. **Telefone 135**
+3. Presencial (apenas urgências)
+
+**Documentos básicos:**
+- RG e CPF
+- Carteira de trabalho
+- Comprovante de residência
+- Documentos específicos do benefício
+
+**Municípios atendidos:**
+- Juazeiro
+- Casa Nova
+- Curaçá
+- Remanso
+- Sobradinho
+
+**Perícia médica:**
+- Agendar pelo Meu INSS ou 135
+- Levar todos os exames e laudos
+
+**Dica:** A maioria dos serviços pode ser feita online pelo Meu INSS, sem precisar ir à agência.`,
+    area: 'previdenciario',
+    keywords: ['inss juazeiro bahia', 'agência inss juazeiro', 'previdência juazeiro', 'aposentadoria juazeiro'],
+    relatedQuestions: ['bahia-34', 'bahia-6', 'prev-1'],
+    metaDescription: 'Agência INSS Juazeiro-BA: Av. Adolfo Viana - Centro. Telefone 135. Serviços, documentos e como agendar.'
+  },
+  {
+    id: 'bahia-36',
+    slug: 'cobranca-indevida-juazeiro-bahia',
+    question: 'Recebi cobrança indevida em Juazeiro. O que fazer?',
+    answer: `Se você recebeu **cobrança indevida em Juazeiro**, tem direito à devolução em dobro do valor pago.
+
+**O que diz o CDC (Art. 42):**
+- Valor pago indevidamente: devolução em dobro
+- Correção monetária incluída
+- Exceção: erro justificável
+
+**Passo a passo:**
+
+**1. Conteste com a empresa:**
+- Por escrito (e-mail, carta)
+- Peça estorno ou devolução em dobro
+- Anote protocolo
+
+**2. PROCON Juazeiro:**
+- Praça da Bandeira - Centro
+- Tel: (74) 3613-3200
+
+**3. consumidor.gov.br:**
+- Reclamação online
+- Empresas têm 10 dias para responder
+
+**4. Juizado Especial:**
+- Fórum de Juazeiro
+- Gratuito até 20 salários mínimos
+
+**Tipos comuns de cobrança indevida:**
+- Serviço não contratado
+- Cobrança duplicada
+- Taxa não informada
+- Valor acima do contratado
+- Dívida já paga
+
+**Indenização:**
+- Devolução em dobro do valor pago
+- Danos morais: R$ 2.000 a R$ 5.000 (se houver constrangimento)
+
+**Prazo:** 5 anos para reclamar
+
+**Documentos:**
+- Comprovante de pagamento
+- Fatura/boleto com cobrança indevida
+- Contrato original`,
+    area: 'consumidor',
+    keywords: ['cobrança indevida juazeiro', 'devolução dobro juazeiro', 'restituição juazeiro bahia', 'cobrança errada juazeiro'],
+    relatedQuestions: ['bahia-34', 'bahia-18', 'cons-18'],
+    metaDescription: 'Cobrança indevida em Juazeiro-BA? Direito a devolução em dobro. Como reclamar no PROCON e Juizado Especial.'
+  },
+
+  // LAURO DE FREITAS (2 FAQs)
+  {
+    id: 'bahia-37',
+    slug: 'procon-lauro-de-freitas',
+    question: 'Onde fica o PROCON de Lauro de Freitas?',
+    answer: `O **PROCON de Lauro de Freitas** atende consumidores do município, que faz parte da região metropolitana de Salvador.
+
+**Endereço:**
+- **Centro Administrativo Municipal**
+- Av. Santos Dumont, s/n - Centro
+- Lauro de Freitas - BA
+
+**Contato:**
+- **Telefone:** (71) 3288-8000 (Prefeitura - solicitar PROCON)
+
+**Horário:**
+- Segunda a sexta: 8h às 14h
+
+**Alternativa principal:**
+Como Lauro de Freitas é pequeno, muitos moradores preferem usar o **PROCON-BA (estadual)**:
+- **Telefone:** 0800 071 2552
+- **Endereço em Salvador:** Av. Centenário, 2992
+
+**Serviços:**
+- Reclamações de consumo
+- Audiências de conciliação
+- Orientação
+
+**Documentos:**
+- RG, CPF
+- Comprovante de residência
+- Nota fiscal/contrato
+- Protocolos de atendimento
+
+**Juizado Especial:**
+- Fórum de Lauro de Freitas
+- Ou Juizados de Salvador
+
+**Dica:** Para problemas com grandes empresas (operadoras, bancos), use o consumidor.gov.br, que é mais rápido.`,
+    area: 'consumidor',
+    keywords: ['procon lauro de freitas', 'procon lauro freitas telefone', 'defesa consumidor lauro', 'reclamar procon lauro'],
+    relatedQuestions: ['bahia-38', 'bahia-2', 'bahia-24'],
+    metaDescription: 'PROCON Lauro de Freitas: Centro Administrativo. Telefone e alternativa PROCON-BA. Como fazer reclamação.'
+  },
+  {
+    id: 'bahia-38',
+    slug: 'produto-defeituoso-lauro-freitas',
+    question: 'Comprei produto com defeito em Lauro de Freitas. Onde reclamar?',
+    answer: `Se você comprou **produto com defeito em Lauro de Freitas**, tem direitos garantidos pelo CDC.
+
+**Seus direitos (Art. 18 CDC):**
+- Troca do produto
+- Devolução do dinheiro
+- Abatimento proporcional
+- Reparo em até 30 dias
+
+**Onde reclamar:**
+
+**1. Na própria loja:**
+- Leve produto + nota fiscal
+- Exija protocolo por escrito
+- Prazo para resolver: 30 dias
+
+**2. PROCON Lauro de Freitas:**
+- Centro Administrativo Municipal
+- Tel: (71) 3288-8000
+
+**3. PROCON-BA (mais estruturado):**
+- 0800 071 2552
+- Av. Centenário, 2992 - Salvador
+
+**4. consumidor.gov.br:**
+- Reclamação online
+- Resposta em até 10 dias
+
+**5. Juizado Especial:**
+- Fórum de Lauro de Freitas
+- Ou Salvador (Iguatemi)
+
+**Prazos para reclamar:**
+- Produtos não duráveis: 30 dias
+- Produtos duráveis: 90 dias
+- Defeito oculto: prazo conta da descoberta
+
+**Documentos:**
+- Nota fiscal
+- Produto (se possível)
+- Fotos/vídeos do defeito
+- Protocolos anteriores
+
+**Indenização:**
+- Danos materiais: valor do produto
+- Danos morais: se houver transtorno grave`,
+    area: 'consumidor',
+    keywords: ['produto defeituoso lauro freitas', 'trocar produto lauro', 'garantia lauro de freitas', 'reclamar loja lauro'],
+    relatedQuestions: ['bahia-37', 'bahia-17', 'cons-8'],
+    metaDescription: 'Produto com defeito em Lauro de Freitas? Troca ou devolução em 30 dias. PROCON, Juizado e seus direitos.'
+  },
+
+  // BARREIRAS (1 FAQ)
+  {
+    id: 'bahia-39',
+    slug: 'procon-barreiras-bahia',
+    question: 'Onde fica o PROCON de Barreiras?',
+    answer: `O **PROCON de Barreiras** atende consumidores da cidade, polo do agronegócio no oeste baiano.
+
+**Endereço:**
+- **Av. Clériston Andrade, s/n** - Centro
+- Barreiras - BA, CEP 47800-000
+- (Prédio da Prefeitura ou Casa do Cidadão)
+
+**Contato:**
+- **Telefone:** (77) 3613-1000 (Prefeitura - ramal PROCON)
+
+**Horário:**
+- Segunda a sexta: 8h às 14h
+
+**Serviços:**
+- Atendimento ao consumidor
+- Audiências de conciliação
+- Fiscalização de preços
+- Orientação
+
+**Documentos:**
+- RG e CPF
+- Comprovante de residência
+- Nota fiscal/contrato
+- Protocolos com a empresa
+
+**Alternativas:**
+- **PROCON-BA:** 0800 071 2552
+- **consumidor.gov.br:** online
+- **Juizado Especial de Barreiras**
+
+**Região atendida:**
+- Barreiras
+- Luís Eduardo Magalhães
+- São Desidério
+- Baianópolis
+
+**Dica:** Barreiras é cidade-polo. O PROCON recebe demandas de toda a região MATOPIBA.`,
+    area: 'consumidor',
+    keywords: ['procon barreiras bahia', 'procon barreiras telefone', 'defesa consumidor barreiras', 'reclamar procon barreiras'],
+    relatedQuestions: ['bahia-2', 'bahia-34', 'cons-1'],
+    metaDescription: 'PROCON Barreiras-BA: Av. Clériston Andrade - Centro. Telefone e serviços. Defesa do consumidor no oeste baiano.'
+  },
+
+  // JEQUIÉ (1 FAQ)
+  {
+    id: 'bahia-40',
+    slug: 'procon-jequie-bahia',
+    question: 'Onde fica o PROCON de Jequié?',
+    answer: `O **PROCON de Jequié** é o órgão de defesa do consumidor da cidade.
+
+**Endereço:**
+- **Praça Rui Barbosa, s/n** - Centro
+- Jequié - BA, CEP 45200-000
+- (Prédio da Prefeitura)
+
+**Contato:**
+- **Telefone:** (73) 3525-1000 (Prefeitura - solicitar PROCON)
+
+**Horário:**
+- Segunda a sexta: 8h às 14h
+
+**Serviços oferecidos:**
+- Registro de reclamações
+- Audiências de conciliação
+- Orientação ao consumidor
+- Fiscalização de estabelecimentos
+
+**Documentos para atendimento:**
+- RG e CPF
+- Comprovante de residência
+- Nota fiscal ou contrato
+- Protocolos de atendimento
+
+**Alternativas:**
+- **PROCON-BA:** 0800 071 2552
+- **consumidor.gov.br**
+- **Juizado Especial de Jequié**
+
+**Municípios próximos:**
+- Jaguaquara
+- Ipiaú
+- Itagi
+- Aiquara
+
+**Dica:** Antes de ir ao PROCON, tente resolver diretamente com a empresa por telefone ou e-mail, guardando todos os protocolos.`,
+    area: 'consumidor',
+    keywords: ['procon jequié', 'procon jequie telefone', 'defesa consumidor jequié', 'reclamar procon jequie'],
+    relatedQuestions: ['bahia-2', 'bahia-28', 'cons-1'],
+    metaDescription: 'PROCON Jequié-BA: Praça Rui Barbosa - Centro. Telefone e horário. Como fazer reclamação de consumidor.'
   }
 ];
 

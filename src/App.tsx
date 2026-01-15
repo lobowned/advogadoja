@@ -73,6 +73,9 @@ import QADashboard from "./pages/admin/QADashboard";
 // City Consumer Landing (Ultra Local SEO)
 import CityConsumerLanding from "./pages/CityConsumerLanding";
 
+// Local SEO Articles
+import LocalSEOArticle from "./pages/LocalSEOArticle";
+
 // Components
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 
@@ -94,6 +97,9 @@ const AnimatedRoutes = () => {
         {/* Blog - New */}
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/:slug" element={<BlogArticle />} />
+        
+        {/* Local SEO Articles - Consumer + City */}
+        <Route path="/artigos/consumidor/:localSlug" element={<LocalSEOArticle />} />
         
         {/* Blog/Artigos - Legacy */}
         <Route path="/artigos" element={<Blog />} />

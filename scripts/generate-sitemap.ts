@@ -8,6 +8,9 @@
  * - Landing pages cidade + nicho
  * - Artigos do blog
  * - FAQs programáticas
+ * - Artigos SEO local
+ * - Consumer landing pages
+ * - Hub pages regionais
  * 
  * Para executar: npx tsx scripts/generate-sitemap.ts
  */
@@ -17,6 +20,7 @@ import { blogArticles } from '../src/data/blog-articles';
 import { blogPosts } from '../src/data/blog-posts';
 import { brazilianCities } from '../src/data/cities';
 import { legalNiches } from '../src/data/legal-niches';
+import { localSEOArticles } from '../src/data/local-seo-articles';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -44,6 +48,8 @@ const staticPages: SitemapURL[] = [
   { loc: '/sitemap', lastmod: TODAY, changefreq: 'weekly', priority: 0.5 },
   { loc: '/privacidade', lastmod: TODAY, changefreq: 'yearly', priority: 0.3 },
   { loc: '/termos-de-uso', lastmod: TODAY, changefreq: 'yearly', priority: 0.3 },
+  // Hub Pages Regionais
+  { loc: '/advogado-bahia', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
 ];
 
 // ============================================
@@ -66,6 +72,24 @@ const calculators: SitemapURL[] = [
   { loc: '/calculadora-atualizacao-divida', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
   { loc: '/calculadora-aluguel-atrasado', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
   { loc: '/calculadora-dpvat', lastmod: TODAY, changefreq: 'monthly', priority: 0.75 },
+  // Consumer Calculators
+  { loc: '/calculadora-voo-cancelado', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/calculadora-negativacao', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/calculadora-devolucao-dobro', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-plano-saude', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-fraude-bancaria', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+];
+
+// ============================================
+// CONSUMER PROBLEM LANDING PAGES
+// ============================================
+const consumerLandingPages: SitemapURL[] = [
+  { loc: '/advogado-voo-cancelado-atrasado', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
+  { loc: '/advogado-negativacao-indevida', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
+  { loc: '/advogado-plano-saude-cobertura-negada', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
+  { loc: '/advogado-cobranca-indevida', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
+  { loc: '/advogado-produto-defeituoso', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
+  { loc: '/fraude-bancaria', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
 ];
 
 // ============================================
@@ -137,6 +161,39 @@ function generateFAQUrls(): SitemapURL[] {
 }
 
 // ============================================
+// LOCAL SEO ARTICLES
+// ============================================
+function generateLocalSEOArticleUrls(): SitemapURL[] {
+  return localSEOArticles.map(article => ({
+    loc: `/artigos/consumidor/${article.slug}`,
+    lastmod: article.updatedAt || TODAY,
+    changefreq: 'monthly' as const,
+    priority: 0.8,
+  }));
+}
+
+// ============================================
+// CITY CONSUMER LANDING PAGES
+// ============================================
+function generateCityConsumerUrls(): SitemapURL[] {
+  // Generate consumer-specific city landing pages
+  const consumerCities = [
+    'sao-paulo', 'rio-de-janeiro', 'belo-horizonte', 'salvador', 'brasilia',
+    'fortaleza', 'curitiba', 'recife', 'porto-alegre', 'goiania',
+    'guarulhos', 'campinas', 'sao-bernardo-do-campo', 'santo-andre', 'osasco',
+    'feira-de-santana', 'vitoria-da-conquista', 'camacari', 'itabuna', 'ilheus',
+    'juazeiro', 'lauro-de-freitas', 'barreiras', 'jequie', 'alagoinhas'
+  ];
+  
+  return consumerCities.map(city => ({
+    loc: `/advogado-consumidor-${city}`,
+    lastmod: TODAY,
+    changefreq: 'weekly' as const,
+    priority: 0.8,
+  }));
+}
+
+// ============================================
 // NEW BLOG POSTS (blog-posts.ts)
 // ============================================
 function generateBlogPostUrls(): SitemapURL[] {
@@ -197,15 +254,19 @@ function generateSitemap(): string {
   const articleUrls = generateArticleUrls();
   const faqUrls = generateFAQUrls();
   const categoryUrls = generateCategoryUrls();
-  
   const blogPostUrls = generateBlogPostUrls();
+  const localSEOUrls = generateLocalSEOArticleUrls();
+  const cityConsumerUrls = generateCityConsumerUrls();
   
   const sections = [
     { title: 'PÁGINAS ESTÁTICAS', urls: staticPages },
     { title: 'CALCULADORAS JURÍDICAS', urls: calculators },
+    { title: 'LANDING PAGES CONSUMIDOR', urls: consumerLandingPages },
     { title: 'LANDING PAGES POR NICHO', urls: nicheUrls },
     { title: 'LANDING PAGES POR CIDADE', urls: cityUrls },
     { title: 'LANDING PAGES CIDADE + NICHO', urls: cityNicheUrls },
+    { title: 'LANDING PAGES CONSUMIDOR + CIDADE', urls: cityConsumerUrls },
+    { title: 'ARTIGOS SEO LOCAL', urls: localSEOUrls },
     { title: 'ARTIGOS DO BLOG (LEGACY)', urls: articleUrls },
     { title: 'BLOG POSTS (NOVOS)', urls: blogPostUrls },
     { title: 'PERGUNTAS FREQUENTES (FAQs)', urls: faqUrls },

@@ -63,7 +63,7 @@ const CobrancaIndevidaLanding = () => {
         <title>Advogado para Cobrança Indevida | Resolva Seu Problema Agora</title>
         <meta name="description" content="Fale com um advogado especialista em cobrança indevida. Proteja-se contra abusos de bancos e empresas. Consulta online gratuita." />
         <meta name="keywords" content="cobrança indevida, devolução em dobro, restituição em dobro, serviço não contratado, cobrança duplicada, advogado consumidor, advogado cobrança indevida" />
-        <link rel="canonical" href="https://advogado.online/advogado-cobranca-indevida" />
+        <link rel="canonical" href="https://advogadoja.lovable.app/advogado-cobranca-indevida" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 

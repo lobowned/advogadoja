@@ -71,7 +71,7 @@ const VooCanceladoLanding = () => {
         <title>Advogado para Voo Cancelado ou Atrasado | Indenização Aérea</title>
         <meta name="description" content="Advogado especialista em direitos do passageiro aéreo. Obtenha indenização por voo cancelado, atrasado ou extravio de bagagem." />
         <meta name="keywords" content="voo cancelado indenização, atraso de voo indenização, overbooking direitos, indenização companhia aérea, voo atrasado o que fazer, advogado voo cancelado" />
-        <link rel="canonical" href="https://advogado.online/advogado-voo-cancelado-atrasado" />
+        <link rel="canonical" href="https://advogadoja.lovable.app/advogado-voo-cancelado-atrasado" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 

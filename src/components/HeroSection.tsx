@@ -71,15 +71,17 @@ const HeroSection = () => {
 
   return (
     <section className="relative overflow-hidden min-h-screen w-full flex items-center justify-center">
-      {/* Video Background */}
+      {/* Video Background - Optimized for Core Web Vitals */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover"
         poster="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop"
+        // @ts-expect-error fetchpriority is a valid attribute
+        fetchpriority="low"
       >
         <source src="/videos/hero-background.mp4" type="video/mp4" />
       </video>

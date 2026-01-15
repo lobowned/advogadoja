@@ -1882,6 +1882,3072 @@ export const consumerCityData: ConsumerCityData[] = [
     ],
     coordinates: { latitude: "-1.4558", longitude: "-48.4902" },
     nearbyConsumerCities: ["manaus", "sao-luis"]
+  },
+
+  // =============== FASE 2 - 50 NOVAS CIDADES ESTRATÉGICAS ===============
+
+  // REGIÃO METROPOLITANA DE SÃO PAULO
+  {
+    citySlug: "osasco",
+    cityName: "Osasco",
+    state: "São Paulo",
+    stateCode: "SP",
+    stats: {
+      casesWon: 423,
+      avgCompensation: "R$ 10.500",
+      avgResolutionDays: 48,
+      clientsSatisfied: 96
+    },
+    localProblems: [
+      {
+        title: "Fraudes em Compras Online",
+        description: "Osasco registra alta incidência de golpes em e-commerce e marketplaces.",
+        icon: "ShoppingCart"
+      },
+      {
+        title: "Cobranças Bancárias Indevidas",
+        description: "Bancos e financeiras lideram reclamações em Osasco.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade e cobranças indevidas de operadoras.",
+        icon: "Wifi"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura são frequentes na região.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Osasco é a quinta maior economia de São Paulo, com forte setor de serviços e empresas de tecnologia. O PROCON local é atuante e o Fórum tem estrutura eficiente.",
+    consumerTribunalInfo: "Fórum de Osasco com JECs. Processos de consumidor têm tramitação ágil, com média de 4-6 meses.",
+    proconAddress: "Av. das Flores, 700 - Centro - Osasco/SP",
+    faqs: [
+      {
+        question: "O JEC de Osasco é rápido?",
+        answer: "Sim! O Juizado Especial Cível de Osasco tem boa eficiência, com média de 4-6 meses para conclusão."
+      },
+      {
+        question: "Posso processar empresa de SP Capital morando em Osasco?",
+        answer: "Sim! Você pode processar no seu domicílio, em Osasco, sem precisar ir a São Paulo."
+      },
+      {
+        question: "O PROCON Osasco resolve meu problema?",
+        answer: "O PROCON é útil para acordos. Para indenizações, a via judicial é necessária."
+      },
+      {
+        question: "Quanto custa um advogado em Osasco?",
+        answer: "No Advogado Online, a consulta é gratuita. Trabalhamos com honorários apenas em caso de êxito."
+      },
+      {
+        question: "Fui vítima de golpe online. Tenho direitos?",
+        answer: "Sim! Dependendo do caso, a plataforma ou banco pode ser responsabilizado."
+      }
+    ],
+    coordinates: { latitude: "-23.5324", longitude: "-46.7916" },
+    nearbyConsumerCities: ["sao-paulo", "barueri", "carapicuiba"]
+  },
+  {
+    citySlug: "diadema",
+    cityName: "Diadema",
+    state: "São Paulo",
+    stateCode: "SP",
+    stats: {
+      casesWon: 312,
+      avgCompensation: "R$ 9.200",
+      avgResolutionDays: 52,
+      clientsSatisfied: 95
+    },
+    localProblems: [
+      {
+        title: "Financiamentos de Veículos",
+        description: "A região do ABC tem alta demanda por revisão de financiamentos.",
+        icon: "Car"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Bancos e financeiras cobram juros abusivos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Cobranças indevidas e serviços não solicitados.",
+        icon: "Wifi"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura afetam moradores.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Diadema integra a região do ABC Paulista, com forte tradição industrial e comercial. O acesso à justiça é facilitado pela proximidade com São Paulo.",
+    consumerTribunalInfo: "Fórum de Diadema com JEC. Processos podem também ser ajuizados em São Bernardo do Campo.",
+    proconAddress: "Rua Manoel da Nóbrega, 374 - Centro - Diadema/SP",
+    faqs: [
+      {
+        question: "Onde processar empresa em Diadema?",
+        answer: "No Juizado Especial Cível de Diadema ou no Fórum de São Bernardo do Campo."
+      },
+      {
+        question: "Financiei carro com juros altos. Posso revisar?",
+        answer: "Sim! Você pode pedir revisão judicial para reduzir juros abusivos."
+      },
+      {
+        question: "O banco cobrou taxa indevida. O que fazer?",
+        answer: "Você pode pedir restituição em dobro de valores cobrados indevidamente."
+      },
+      {
+        question: "Meu plano negou exame. Tenho direitos?",
+        answer: "Sim! Negativas de cobertura podem ser contestadas judicialmente com pedido de liminar."
+      },
+      {
+        question: "Quanto tempo demora um processo de consumidor?",
+        answer: "No JEC, processos simples levam de 4 a 6 meses."
+      }
+    ],
+    coordinates: { latitude: "-23.6861", longitude: "-46.6228" },
+    nearbyConsumerCities: ["sao-bernardo-do-campo", "santo-andre", "sao-paulo"]
+  },
+  {
+    citySlug: "maua",
+    cityName: "Mauá",
+    state: "São Paulo",
+    stateCode: "SP",
+    stats: {
+      casesWon: 278,
+      avgCompensation: "R$ 8.800",
+      avgResolutionDays: 50,
+      clientsSatisfied: 95
+    },
+    localProblems: [
+      {
+        title: "Financiamentos Abusivos",
+        description: "Juros altos em financiamentos de veículos e empréstimos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Cobranças indevidas de operadoras são frequentes.",
+        icon: "Wifi"
+      },
+      {
+        title: "Comércio Local",
+        description: "Problemas com lojas e produtos com defeito.",
+        icon: "ShoppingBag"
+      },
+      {
+        title: "Energia Elétrica",
+        description: "Cobranças irregulares da distribuidora de energia.",
+        icon: "Zap"
+      }
+    ],
+    localContext: "Mauá integra o ABC Paulista e tem forte setor comercial. Os moradores têm acesso ao sistema judiciário da região metropolitana.",
+    consumerTribunalInfo: "Fórum de Mauá com JEC. Processos podem também ser ajuizados no ABC.",
+    proconAddress: "Av. João Ramalho, 265 - Centro - Mauá/SP",
+    faqs: [
+      {
+        question: "O JEC de Mauá é eficiente?",
+        answer: "Processos simples levam de 4 a 6 meses."
+      },
+      {
+        question: "A conta de luz está muito alta. O que fazer?",
+        answer: "Você pode contestar judicialmente e pedir perícia no medidor."
+      },
+      {
+        question: "Comprei produto com defeito. Tenho direitos?",
+        answer: "Sim! Você pode pedir troca, conserto ou devolução do dinheiro."
+      },
+      {
+        question: "Posso processar empresa de outro estado?",
+        answer: "Sim! O consumidor pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado em Mauá?",
+        answer: "No Advogado Online, a consulta é gratuita e trabalhamos com êxito."
+      }
+    ],
+    coordinates: { latitude: "-23.6678", longitude: "-46.4608" },
+    nearbyConsumerCities: ["santo-andre", "sao-bernardo-do-campo", "diadema"]
+  },
+  {
+    citySlug: "carapicuiba",
+    cityName: "Carapicuíba",
+    state: "São Paulo",
+    stateCode: "SP",
+    stats: {
+      casesWon: 234,
+      avgCompensation: "R$ 8.500",
+      avgResolutionDays: 55,
+      clientsSatisfied: 94
+    },
+    localProblems: [
+      {
+        title: "Cobranças Bancárias",
+        description: "Bancos cobram taxas e juros abusivos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Operadoras cobram por serviços não contratados.",
+        icon: "Smartphone"
+      },
+      {
+        title: "Comércio e Lojas",
+        description: "Produtos com defeito e propaganda enganosa.",
+        icon: "ShoppingBag"
+      },
+      {
+        title: "Transporte e Logística",
+        description: "Problemas com entregas e fretes.",
+        icon: "Truck"
+      }
+    ],
+    localContext: "Carapicuíba está na região metropolitana de São Paulo, com acesso ao sistema judiciário da capital.",
+    consumerTribunalInfo: "Fórum de Carapicuíba ou Fórum de Osasco. Processos têm tramitação regular.",
+    proconAddress: "Av. Presidente Vargas, 200 - Centro - Carapicuíba/SP",
+    faqs: [
+      {
+        question: "Onde processar empresa em Carapicuíba?",
+        answer: "No Fórum local ou no Fórum de Osasco."
+      },
+      {
+        question: "O banco cobrou taxa que não pedi. O que fazer?",
+        answer: "Você pode pedir restituição em dobro de valores indevidos."
+      },
+      {
+        question: "Comprei online e não recebi. Tenho direitos?",
+        answer: "Sim! Você pode pedir reembolso e indenização por danos morais."
+      },
+      {
+        question: "Posso processar empresa de SP Capital?",
+        answer: "Sim! Você pode processar no seu domicílio, em Carapicuíba."
+      },
+      {
+        question: "Quanto tempo demora um processo?",
+        answer: "No JEC, processos simples levam de 5 a 7 meses."
+      }
+    ],
+    coordinates: { latitude: "-23.5225", longitude: "-46.8356" },
+    nearbyConsumerCities: ["osasco", "barueri", "sao-paulo"]
+  },
+  {
+    citySlug: "taboao-da-serra",
+    cityName: "Taboão da Serra",
+    state: "São Paulo",
+    stateCode: "SP",
+    stats: {
+      casesWon: 198,
+      avgCompensation: "R$ 8.200",
+      avgResolutionDays: 52,
+      clientsSatisfied: 94
+    },
+    localProblems: [
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos e taxas indevidas de bancos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Cobranças irregulares de operadoras.",
+        icon: "Wifi"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura e aumentos abusivos.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "E-commerce",
+        description: "Problemas com compras online.",
+        icon: "ShoppingCart"
+      }
+    ],
+    localContext: "Taboão da Serra está na região metropolitana de São Paulo, com fácil acesso ao sistema judiciário.",
+    consumerTribunalInfo: "Fórum de Taboão da Serra com JEC. Processos têm tramitação regular.",
+    proconAddress: "Praça Miguel Ortega, 50 - Centro - Taboão da Serra/SP",
+    faqs: [
+      {
+        question: "O JEC de Taboão é eficiente?",
+        answer: "Processos simples levam de 5 a 7 meses."
+      },
+      {
+        question: "O banco cobrou juros altos. O que fazer?",
+        answer: "Você pode pedir revisão judicial do contrato."
+      },
+      {
+        question: "Meu plano negou cirurgia. Tenho direitos?",
+        answer: "Sim! Você pode pedir liminar para obrigar a cobertura."
+      },
+      {
+        question: "Comprei online e veio com defeito. O que fazer?",
+        answer: "Você pode pedir troca, conserto ou devolução do dinheiro."
+      },
+      {
+        question: "Quanto custa um advogado em Taboão?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-23.6269", longitude: "-46.7914" },
+    nearbyConsumerCities: ["sao-paulo", "osasco", "embu-das-artes"]
+  },
+  {
+    citySlug: "barueri",
+    cityName: "Barueri",
+    state: "São Paulo",
+    stateCode: "SP",
+    stats: {
+      casesWon: 387,
+      avgCompensation: "R$ 11.500",
+      avgResolutionDays: 45,
+      clientsSatisfied: 97
+    },
+    localProblems: [
+      {
+        title: "Cobranças Corporativas",
+        description: "Barueri é sede de multinacionais, com disputas empresariais.",
+        icon: "Building"
+      },
+      {
+        title: "Planos de Saúde Premium",
+        description: "Negativas de cobertura mesmo em planos de alto padrão.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Financiamentos",
+        description: "Juros abusivos em financiamentos imobiliários e veiculares.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Cobranças indevidas de operadoras empresariais.",
+        icon: "Wifi"
+      }
+    ],
+    localContext: "Barueri é um dos maiores PIBs per capita do Brasil, sede de grandes empresas. O Fórum local tem estrutura moderna.",
+    consumerTribunalInfo: "Fórum de Barueri com JECs eficientes. Média de 4-5 meses para processos simples.",
+    proconAddress: "Rua Professor João da Matta e Luz, 84 - Centro - Barueri/SP",
+    faqs: [
+      {
+        question: "O JEC de Barueri é eficiente?",
+        answer: "Sim! Um dos mais eficientes da região, com média de 4-5 meses."
+      },
+      {
+        question: "Meu plano premium negou cobertura. O que fazer?",
+        answer: "Você pode pedir liminar. Planos de alto padrão também têm obrigações legais."
+      },
+      {
+        question: "Posso revisar financiamento imobiliário?",
+        answer: "Sim! Juros e taxas abusivas podem ser revisados judicialmente."
+      },
+      {
+        question: "A empresa onde trabalho me lesou como consumidor. O que fazer?",
+        answer: "Você pode processar normalmente, pois a relação de consumo é independente da trabalhista."
+      },
+      {
+        question: "Quanto custa um advogado em Barueri?",
+        answer: "No Advogado Online, a consulta é gratuita e trabalhamos com êxito."
+      }
+    ],
+    coordinates: { latitude: "-23.5114", longitude: "-46.8761" },
+    nearbyConsumerCities: ["osasco", "carapicuiba", "sao-paulo"]
+  },
+  {
+    citySlug: "cotia",
+    cityName: "Cotia",
+    state: "São Paulo",
+    stateCode: "SP",
+    stats: {
+      casesWon: 198,
+      avgCompensation: "R$ 9.000",
+      avgResolutionDays: 55,
+      clientsSatisfied: 94
+    },
+    localProblems: [
+      {
+        title: "Imóveis e Condomínios",
+        description: "Problemas com construtoras e taxas condominiais.",
+        icon: "Building"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em empréstimos e financiamentos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade em condomínios.",
+        icon: "Wifi"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura são frequentes.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Cotia é cidade em crescimento na região metropolitana, com muitos condomínios residenciais.",
+    consumerTribunalInfo: "Fórum de Cotia com JEC. Processos podem ser ajuizados em Taboão da Serra também.",
+    proconAddress: "Av. Professor Manoel José Pedroso, 1401 - Parque São George - Cotia/SP",
+    faqs: [
+      {
+        question: "O Fórum de Cotia atende consumidor?",
+        answer: "Sim! O JEC de Cotia atende causas de consumidor."
+      },
+      {
+        question: "A construtora atrasou meu imóvel. Tenho direitos?",
+        answer: "Sim! Você pode pedir indenização por danos materiais e morais."
+      },
+      {
+        question: "O condomínio cobra taxas indevidas. O que fazer?",
+        answer: "Você pode contestar judicialmente cobranças abusivas."
+      },
+      {
+        question: "Meu plano negou tratamento. O que fazer?",
+        answer: "Procure um advogado para pedir liminar judicial."
+      },
+      {
+        question: "Quanto tempo demora um processo?",
+        answer: "No JEC, processos simples levam de 5 a 7 meses."
+      }
+    ],
+    coordinates: { latitude: "-23.6039", longitude: "-46.9186" },
+    nearbyConsumerCities: ["taboao-da-serra", "osasco", "sao-paulo"]
+  },
+
+  // REGIÃO METROPOLITANA DO RIO DE JANEIRO
+  {
+    citySlug: "niteroi",
+    cityName: "Niterói",
+    state: "Rio de Janeiro",
+    stateCode: "RJ",
+    stats: {
+      casesWon: 534,
+      avgCompensation: "R$ 11.800",
+      avgResolutionDays: 50,
+      clientsSatisfied: 97
+    },
+    localProblems: [
+      {
+        title: "Planos de Saúde",
+        description: "Niterói tem alto índice de negativas de planos de saúde.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Imóveis e Construtoras",
+        description: "Problemas com imóveis novos e reformas.",
+        icon: "Building"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Bancos cobram taxas e juros abusivos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Operadoras com cobranças indevidas.",
+        icon: "Wifi"
+      }
+    ],
+    localContext: "Niterói tem o maior IDH do Rio de Janeiro e população de alto poder aquisitivo. O TJRJ em Niterói é eficiente.",
+    consumerTribunalInfo: "Fórum de Niterói com JECs. Processos têm tramitação boa, com média de 4-6 meses.",
+    proconAddress: "Av. Ernani do Amaral Peixoto, 500 - Centro - Niterói/RJ",
+    faqs: [
+      {
+        question: "O JEC de Niterói é eficiente?",
+        answer: "Sim! Um dos melhores do RJ, com média de 4-6 meses."
+      },
+      {
+        question: "Meu plano negou internação. O que fazer?",
+        answer: "Procure um advogado para pedir liminar. O índice de deferimento é alto."
+      },
+      {
+        question: "Comprei imóvel com problemas. Tenho direitos?",
+        answer: "Sim! Vícios construtivos dão direito a reparo ou indenização."
+      },
+      {
+        question: "Posso processar empresa do RJ Capital em Niterói?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado em Niterói?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-22.8833", longitude: "-43.1036" },
+    nearbyConsumerCities: ["rio-de-janeiro", "sao-goncalo"]
+  },
+  {
+    citySlug: "duque-de-caxias",
+    cityName: "Duque de Caxias",
+    state: "Rio de Janeiro",
+    stateCode: "RJ",
+    stats: {
+      casesWon: 412,
+      avgCompensation: "R$ 9.500",
+      avgResolutionDays: 55,
+      clientsSatisfied: 95
+    },
+    localProblems: [
+      {
+        title: "Cobranças Bancárias",
+        description: "Bancos cobram juros abusivos em empréstimos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade e cobranças indevidas.",
+        icon: "Wifi"
+      },
+      {
+        title: "Energia Elétrica",
+        description: "Cobranças irregulares da Light.",
+        icon: "Zap"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura são frequentes.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Duque de Caxias é a segunda maior economia do Rio de Janeiro, com forte setor de refino de petróleo.",
+    consumerTribunalInfo: "Fórum de Duque de Caxias com JECs. Processos têm tramitação regular.",
+    proconAddress: "Rua Governador Portela, 250 - Centro - Duque de Caxias/RJ",
+    faqs: [
+      {
+        question: "O JEC de Duque de Caxias é bom?",
+        answer: "Processos simples levam de 5 a 7 meses."
+      },
+      {
+        question: "A conta de luz está errada. O que fazer?",
+        answer: "Você pode contestar judicialmente e pedir devolução de valores."
+      },
+      {
+        question: "O banco cobra juros abusivos. Posso revisar?",
+        answer: "Sim! Contratos com juros abusivos podem ser revisados."
+      },
+      {
+        question: "Meu plano negou exame. Tenho direitos?",
+        answer: "Sim! Você pode pedir liminar para obrigar a cobertura."
+      },
+      {
+        question: "Posso processar empresa do RJ Capital aqui?",
+        answer: "Sim! O consumidor pode processar no seu domicílio."
+      }
+    ],
+    coordinates: { latitude: "-22.7856", longitude: "-43.3117" },
+    nearbyConsumerCities: ["rio-de-janeiro", "nova-iguacu", "sao-joao-de-meriti"]
+  },
+  {
+    citySlug: "nova-iguacu",
+    cityName: "Nova Iguaçu",
+    state: "Rio de Janeiro",
+    stateCode: "RJ",
+    stats: {
+      casesWon: 378,
+      avgCompensation: "R$ 8.800",
+      avgResolutionDays: 58,
+      clientsSatisfied: 94
+    },
+    localProblems: [
+      {
+        title: "Cobranças Bancárias",
+        description: "Empréstimos consignados e juros abusivos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Operadoras cobram por serviços não contratados.",
+        icon: "Smartphone"
+      },
+      {
+        title: "Energia Elétrica",
+        description: "Problemas com a distribuidora Light.",
+        icon: "Zap"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura afetam moradores.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Nova Iguaçu é uma das maiores cidades da Baixada Fluminense, com forte comércio.",
+    consumerTribunalInfo: "Fórum de Nova Iguaçu com JECs. Processos têm tramitação regular.",
+    proconAddress: "Rua Dr. Luiz Guimarães, 956 - Centro - Nova Iguaçu/RJ",
+    faqs: [
+      {
+        question: "O JEC de Nova Iguaçu funciona bem?",
+        answer: "Processos simples levam de 6 a 8 meses."
+      },
+      {
+        question: "Fiz empréstimo consignado abusivo. O que fazer?",
+        answer: "Você pode pedir revisão do contrato e devolução de valores."
+      },
+      {
+        question: "A Light cobra taxa indevida. Tenho direitos?",
+        answer: "Sim! Você pode contestar e pedir restituição em dobro."
+      },
+      {
+        question: "Posso processar empresa de outro estado?",
+        answer: "Sim! O consumidor pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado em Nova Iguaçu?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-22.7556", longitude: "-43.4503" },
+    nearbyConsumerCities: ["duque-de-caxias", "rio-de-janeiro", "sao-joao-de-meriti"]
+  },
+  {
+    citySlug: "sao-goncalo",
+    cityName: "São Gonçalo",
+    state: "Rio de Janeiro",
+    stateCode: "RJ",
+    stats: {
+      casesWon: 356,
+      avgCompensation: "R$ 8.500",
+      avgResolutionDays: 55,
+      clientsSatisfied: 94
+    },
+    localProblems: [
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em empréstimos e financiamentos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade e cobranças indevidas.",
+        icon: "Wifi"
+      },
+      {
+        title: "Energia Elétrica",
+        description: "Problemas com a distribuidora de energia.",
+        icon: "Zap"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura são frequentes.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "São Gonçalo é a segunda maior cidade do RJ em população, com forte setor de comércio.",
+    consumerTribunalInfo: "Fórum de São Gonçalo com JECs. Processos têm tramitação regular.",
+    proconAddress: "Av. Presidente Kennedy, 545 - Centro - São Gonçalo/RJ",
+    faqs: [
+      {
+        question: "O JEC de São Gonçalo é eficiente?",
+        answer: "Processos simples levam de 5 a 7 meses."
+      },
+      {
+        question: "O banco cobrou taxa que não pedi. O que fazer?",
+        answer: "Você pode pedir restituição em dobro de valores indevidos."
+      },
+      {
+        question: "Meu plano negou tratamento. Tenho direitos?",
+        answer: "Sim! Você pode pedir liminar para obrigar a cobertura."
+      },
+      {
+        question: "Posso processar em Niterói?",
+        answer: "Você pode escolher entre São Gonçalo ou Niterói."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-22.8268", longitude: "-43.0634" },
+    nearbyConsumerCities: ["niteroi", "rio-de-janeiro"]
+  },
+  {
+    citySlug: "petropolis",
+    cityName: "Petrópolis",
+    state: "Rio de Janeiro",
+    stateCode: "RJ",
+    stats: {
+      casesWon: 234,
+      avgCompensation: "R$ 9.800",
+      avgResolutionDays: 50,
+      clientsSatisfied: 96
+    },
+    localProblems: [
+      {
+        title: "Turismo e Hotelaria",
+        description: "Problemas com hotéis, pousadas e pacotes turísticos.",
+        icon: "Building"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura em cidade de muitos idosos.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Bancos cobram juros abusivos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade na serra.",
+        icon: "Wifi"
+      }
+    ],
+    localContext: "Petrópolis é cidade turística e histórica, com população de classe média/alta e muitos aposentados.",
+    consumerTribunalInfo: "Fórum de Petrópolis com JECs. Processos têm tramitação boa.",
+    proconAddress: "Rua Paulo Barbosa, 52 - Centro - Petrópolis/RJ",
+    faqs: [
+      {
+        question: "O JEC de Petrópolis é bom?",
+        answer: "Sim! Processos simples levam de 4 a 6 meses."
+      },
+      {
+        question: "Hotel cancelou minha reserva. Tenho direitos?",
+        answer: "Sim! Você pode pedir reembolso e indenização por danos morais."
+      },
+      {
+        question: "Meu plano negou internação. O que fazer?",
+        answer: "Procure um advogado para pedir liminar."
+      },
+      {
+        question: "Sou aposentado e cobraram consignado indevido. O que fazer?",
+        answer: "Você pode cancelar e pedir restituição de valores descontados."
+      },
+      {
+        question: "Quanto custa um advogado em Petrópolis?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-22.5050", longitude: "-43.1784" },
+    nearbyConsumerCities: ["rio-de-janeiro", "niteroi"]
+  },
+
+  // INTERIOR DE SÃO PAULO
+  {
+    citySlug: "sorocaba",
+    cityName: "Sorocaba",
+    state: "São Paulo",
+    stateCode: "SP",
+    stats: {
+      casesWon: 467,
+      avgCompensation: "R$ 10.200",
+      avgResolutionDays: 45,
+      clientsSatisfied: 97
+    },
+    localProblems: [
+      {
+        title: "Financiamentos de Veículos",
+        description: "Sorocaba tem forte setor automotivo com muitas reclamações.",
+        icon: "Car"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura são frequentes na região.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Operadoras cobram por serviços não contratados.",
+        icon: "Wifi"
+      },
+      {
+        title: "E-commerce",
+        description: "Problemas com compras online são frequentes.",
+        icon: "ShoppingCart"
+      }
+    ],
+    localContext: "Sorocaba é a quinta maior cidade de São Paulo, com forte setor industrial e comercial. O Fórum é eficiente.",
+    consumerTribunalInfo: "Fórum de Sorocaba com JECs. Processos têm tramitação rápida, média de 4-5 meses.",
+    proconAddress: "Rua Souza Pereira, 144 - Centro - Sorocaba/SP",
+    faqs: [
+      {
+        question: "O JEC de Sorocaba é rápido?",
+        answer: "Sim! Um dos mais eficientes do interior, com média de 4-5 meses."
+      },
+      {
+        question: "Financiei carro com juros altos. Posso revisar?",
+        answer: "Sim! Você pode pedir revisão judicial para reduzir juros abusivos."
+      },
+      {
+        question: "Meu plano negou exame. O que fazer?",
+        answer: "Você pode pedir liminar para obrigar a cobertura."
+      },
+      {
+        question: "Posso processar empresa de SP Capital em Sorocaba?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado em Sorocaba?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-23.5015", longitude: "-47.4526" },
+    nearbyConsumerCities: ["sao-paulo", "campinas", "jundiai"]
+  },
+  {
+    citySlug: "jundiai",
+    cityName: "Jundiaí",
+    state: "São Paulo",
+    stateCode: "SP",
+    stats: {
+      casesWon: 398,
+      avgCompensation: "R$ 11.000",
+      avgResolutionDays: 42,
+      clientsSatisfied: 97
+    },
+    localProblems: [
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura afetam moradores de alto padrão.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Imóveis e Condomínios",
+        description: "Problemas com construtoras e taxas condominiais.",
+        icon: "Building"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Bancos cobram taxas e juros abusivos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Cobranças indevidas de operadoras.",
+        icon: "Wifi"
+      }
+    ],
+    localContext: "Jundiaí tem um dos maiores PIBs per capita do Brasil, com população de alto poder aquisitivo.",
+    consumerTribunalInfo: "Fórum de Jundiaí com JECs eficientes. Média de 4 meses para processos simples.",
+    proconAddress: "Rua Barão de Jundiaí, 200 - Centro - Jundiaí/SP",
+    faqs: [
+      {
+        question: "O JEC de Jundiaí é eficiente?",
+        answer: "Sim! Um dos melhores do interior, com média de 4 meses."
+      },
+      {
+        question: "Meu plano premium negou cobertura. O que fazer?",
+        answer: "Você pode pedir liminar. Planos de alto padrão também têm obrigações."
+      },
+      {
+        question: "A construtora entregou imóvel com defeitos. Tenho direitos?",
+        answer: "Sim! Você pode pedir reparo ou indenização por vícios construtivos."
+      },
+      {
+        question: "Posso processar empresa de SP Capital em Jundiaí?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado em Jundiaí?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-23.1857", longitude: "-46.8978" },
+    nearbyConsumerCities: ["sao-paulo", "campinas", "sorocaba"]
+  },
+  {
+    citySlug: "sao-jose-dos-campos",
+    cityName: "São José dos Campos",
+    state: "São Paulo",
+    stateCode: "SP",
+    stats: {
+      casesWon: 512,
+      avgCompensation: "R$ 11.500",
+      avgResolutionDays: 45,
+      clientsSatisfied: 97
+    },
+    localProblems: [
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura são frequentes no Vale do Paraíba.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Financiamentos",
+        description: "Juros abusivos em financiamentos imobiliários e veiculares.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Problemas com operadoras de internet e telefonia.",
+        icon: "Wifi"
+      },
+      {
+        title: "E-commerce",
+        description: "Compras online com problemas de entrega e qualidade.",
+        icon: "ShoppingCart"
+      }
+    ],
+    localContext: "São José dos Campos é polo tecnológico e aeroespacial, com população de alto poder aquisitivo.",
+    consumerTribunalInfo: "Fórum de SJC com JECs eficientes. Média de 4-5 meses para processos simples.",
+    proconAddress: "Av. Dr. Nelson D'Ávila, 495 - Centro - São José dos Campos/SP",
+    faqs: [
+      {
+        question: "O JEC de São José dos Campos é bom?",
+        answer: "Sim! Um dos mais eficientes do Vale do Paraíba, com média de 4-5 meses."
+      },
+      {
+        question: "Meu plano negou tratamento. O que fazer?",
+        answer: "Procure um advogado para pedir liminar."
+      },
+      {
+        question: "Financiei imóvel com juros altos. Posso revisar?",
+        answer: "Sim! Contratos com juros abusivos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de SP Capital?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado em SJC?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-23.1791", longitude: "-45.8872" },
+    nearbyConsumerCities: ["sao-paulo", "taubate", "jacarei"]
+  },
+  {
+    citySlug: "santos",
+    cityName: "Santos",
+    state: "São Paulo",
+    stateCode: "SP",
+    stats: {
+      casesWon: 489,
+      avgCompensation: "R$ 10.800",
+      avgResolutionDays: 48,
+      clientsSatisfied: 96
+    },
+    localProblems: [
+      {
+        title: "Turismo e Hotelaria",
+        description: "Problemas com hotéis, pousadas e pacotes turísticos.",
+        icon: "Building"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura são frequentes.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em empréstimos e financiamentos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Operadoras cobram por serviços não contratados.",
+        icon: "Wifi"
+      }
+    ],
+    localContext: "Santos é o maior porto da América Latina e importante destino turístico. O Fórum é eficiente.",
+    consumerTribunalInfo: "Fórum de Santos com JECs. Processos têm tramitação boa, média de 4-6 meses.",
+    proconAddress: "Rua Brás Cubas, 37 - Centro - Santos/SP",
+    faqs: [
+      {
+        question: "O JEC de Santos é eficiente?",
+        answer: "Sim! Processos simples levam de 4 a 6 meses."
+      },
+      {
+        question: "Hotel cancelou minha reserva. Tenho direitos?",
+        answer: "Sim! Você pode pedir reembolso e indenização."
+      },
+      {
+        question: "Meu plano negou internação. O que fazer?",
+        answer: "Procure um advogado para pedir liminar."
+      },
+      {
+        question: "Posso processar empresa de SP Capital em Santos?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado em Santos?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-23.9608", longitude: "-46.3336" },
+    nearbyConsumerCities: ["sao-paulo", "guaruja", "praia-grande"]
+  },
+  {
+    citySlug: "piracicaba",
+    cityName: "Piracicaba",
+    state: "São Paulo",
+    stateCode: "SP",
+    stats: {
+      casesWon: 345,
+      avgCompensation: "R$ 9.500",
+      avgResolutionDays: 48,
+      clientsSatisfied: 96
+    },
+    localProblems: [
+      {
+        title: "Agronegócio",
+        description: "Problemas com empresas do setor sucroalcooleiro.",
+        icon: "Leaf"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura são frequentes.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em financiamentos rurais.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade em áreas rurais.",
+        icon: "Wifi"
+      }
+    ],
+    localContext: "Piracicaba é polo agroindustrial e sede da ESALQ/USP. O Fórum tem boa estrutura.",
+    consumerTribunalInfo: "Fórum de Piracicaba com JECs. Processos têm tramitação regular.",
+    proconAddress: "Rua do Rosário, 860 - Centro - Piracicaba/SP",
+    faqs: [
+      {
+        question: "O JEC de Piracicaba é eficiente?",
+        answer: "Processos simples levam de 4 a 6 meses."
+      },
+      {
+        question: "Empresa rural me lesou. Tenho direitos?",
+        answer: "Sim! Relações de consumo no agronegócio também são protegidas."
+      },
+      {
+        question: "Meu plano negou exame. O que fazer?",
+        answer: "Você pode pedir liminar para obrigar a cobertura."
+      },
+      {
+        question: "Posso processar empresa de SP Capital?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado em Piracicaba?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-22.7255", longitude: "-47.6492" },
+    nearbyConsumerCities: ["campinas", "sao-paulo", "ribeirao-preto"]
+  },
+  {
+    citySlug: "bauru",
+    cityName: "Bauru",
+    state: "São Paulo",
+    stateCode: "SP",
+    stats: {
+      casesWon: 312,
+      avgCompensation: "R$ 9.200",
+      avgResolutionDays: 50,
+      clientsSatisfied: 95
+    },
+    localProblems: [
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura afetam moradores.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Bancos cobram juros abusivos em empréstimos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade e cobranças indevidas.",
+        icon: "Wifi"
+      },
+      {
+        title: "E-commerce",
+        description: "Problemas com compras online.",
+        icon: "ShoppingCart"
+      }
+    ],
+    localContext: "Bauru é hub ferroviário e centro regional do interior paulista.",
+    consumerTribunalInfo: "Fórum de Bauru com JECs. Processos têm tramitação regular.",
+    proconAddress: "Rua Primeiro de Agosto, 1-50 - Centro - Bauru/SP",
+    faqs: [
+      {
+        question: "O JEC de Bauru é bom?",
+        answer: "Processos simples levam de 4 a 6 meses."
+      },
+      {
+        question: "Meu plano negou tratamento. O que fazer?",
+        answer: "Procure um advogado para pedir liminar."
+      },
+      {
+        question: "O banco cobra juros abusivos. Posso revisar?",
+        answer: "Sim! Contratos com juros abusivos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de SP Capital?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado em Bauru?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-22.3246", longitude: "-49.0871" },
+    nearbyConsumerCities: ["marilia", "ribeirao-preto", "campinas"]
+  },
+  {
+    citySlug: "franca",
+    cityName: "Franca",
+    state: "São Paulo",
+    stateCode: "SP",
+    stats: {
+      casesWon: 267,
+      avgCompensation: "R$ 8.800",
+      avgResolutionDays: 52,
+      clientsSatisfied: 95
+    },
+    localProblems: [
+      {
+        title: "Indústria Calçadista",
+        description: "Problemas com produtos e garantias de calçados.",
+        icon: "ShoppingBag"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura são frequentes.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em financiamentos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      }
+    ],
+    localContext: "Franca é a capital brasileira do calçado, com forte setor industrial.",
+    consumerTribunalInfo: "Fórum de Franca com JECs. Processos têm tramitação regular.",
+    proconAddress: "Av. Dr. Hélio Palermo, 777 - Jardim Francano - Franca/SP",
+    faqs: [
+      {
+        question: "O JEC de Franca é eficiente?",
+        answer: "Processos simples levam de 5 a 7 meses."
+      },
+      {
+        question: "Comprei calçado com defeito. Tenho direitos?",
+        answer: "Sim! Você pode pedir troca, conserto ou devolução do dinheiro."
+      },
+      {
+        question: "Meu plano negou exame. O que fazer?",
+        answer: "Você pode pedir liminar para obrigar a cobertura."
+      },
+      {
+        question: "Posso processar empresa de outro estado?",
+        answer: "Sim! O consumidor pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado em Franca?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-20.5387", longitude: "-47.4008" },
+    nearbyConsumerCities: ["ribeirao-preto", "uberaba", "uberlandia"]
+  },
+  {
+    citySlug: "sao-jose-do-rio-preto",
+    cityName: "São José do Rio Preto",
+    state: "São Paulo",
+    stateCode: "SP",
+    stats: {
+      casesWon: 378,
+      avgCompensation: "R$ 9.800",
+      avgResolutionDays: 48,
+      clientsSatisfied: 96
+    },
+    localProblems: [
+      {
+        title: "Planos de Saúde",
+        description: "Rio Preto é polo de saúde com muitas reclamações de planos.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em empréstimos e financiamentos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Agronegócio",
+        description: "Problemas com empresas do setor agrícola.",
+        icon: "Leaf"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      }
+    ],
+    localContext: "São José do Rio Preto é polo de saúde e agronegócio do noroeste paulista.",
+    consumerTribunalInfo: "Fórum de Rio Preto com JECs. Processos têm boa tramitação.",
+    proconAddress: "Rua Voluntários de São Paulo, 3030 - Centro - São José do Rio Preto/SP",
+    faqs: [
+      {
+        question: "O JEC de Rio Preto é bom?",
+        answer: "Sim! Processos simples levam de 4 a 6 meses."
+      },
+      {
+        question: "Meu plano negou cirurgia. O que fazer?",
+        answer: "Procure um advogado para pedir liminar."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos com juros abusivos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de SP Capital?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado em Rio Preto?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-20.8113", longitude: "-49.3758" },
+    nearbyConsumerCities: ["ribeirao-preto", "bauru", "campinas"]
+  },
+
+  // INTERIOR DE MINAS GERAIS
+  {
+    citySlug: "contagem",
+    cityName: "Contagem",
+    state: "Minas Gerais",
+    stateCode: "MG",
+    stats: {
+      casesWon: 423,
+      avgCompensation: "R$ 9.500",
+      avgResolutionDays: 50,
+      clientsSatisfied: 96
+    },
+    localProblems: [
+      {
+        title: "Indústria e Metalurgia",
+        description: "Problemas com produtos industriais e peças.",
+        icon: "Building"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em empréstimos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Cobranças indevidas de operadoras.",
+        icon: "Wifi"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura são frequentes.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Contagem é a segunda maior cidade de MG e polo industrial da região metropolitana.",
+    consumerTribunalInfo: "Fórum de Contagem com JECs. Processos têm tramitação regular.",
+    proconAddress: "Av. João César de Oliveira, 2500 - Eldorado - Contagem/MG",
+    faqs: [
+      {
+        question: "O JEC de Contagem é eficiente?",
+        answer: "Processos simples levam de 5 a 7 meses."
+      },
+      {
+        question: "Comprei peça com defeito. Tenho direitos?",
+        answer: "Sim! Você pode pedir troca, conserto ou devolução."
+      },
+      {
+        question: "O banco cobra juros abusivos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados judicialmente."
+      },
+      {
+        question: "Posso processar empresa de BH em Contagem?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-19.9318", longitude: "-44.0539" },
+    nearbyConsumerCities: ["belo-horizonte", "betim"]
+  },
+  {
+    citySlug: "betim",
+    cityName: "Betim",
+    state: "Minas Gerais",
+    stateCode: "MG",
+    stats: {
+      casesWon: 378,
+      avgCompensation: "R$ 9.200",
+      avgResolutionDays: 52,
+      clientsSatisfied: 95
+    },
+    localProblems: [
+      {
+        title: "Indústria Automotiva",
+        description: "Problemas com veículos e peças da Fiat.",
+        icon: "Car"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em financiamentos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Cobranças indevidas.",
+        icon: "Wifi"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Betim é polo automotivo de MG, sede da Fiat. O Fórum atende grande demanda de consumidor.",
+    consumerTribunalInfo: "Fórum de Betim com JECs. Processos têm tramitação regular.",
+    proconAddress: "Av. Governador Valadares, 340 - Centro - Betim/MG",
+    faqs: [
+      {
+        question: "O JEC de Betim é bom?",
+        answer: "Processos simples levam de 5 a 7 meses."
+      },
+      {
+        question: "Comprei carro com defeito. Tenho direitos?",
+        answer: "Sim! Você pode pedir troca, conserto ou devolução do valor."
+      },
+      {
+        question: "Financiei veículo com juros altos. Posso revisar?",
+        answer: "Sim! Contratos com juros abusivos podem ser revisados."
+      },
+      {
+        question: "Posso processar a Fiat aqui em Betim?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-19.9678", longitude: "-44.1983" },
+    nearbyConsumerCities: ["contagem", "belo-horizonte"]
+  },
+  {
+    citySlug: "juiz-de-fora",
+    cityName: "Juiz de Fora",
+    state: "Minas Gerais",
+    stateCode: "MG",
+    stats: {
+      casesWon: 456,
+      avgCompensation: "R$ 9.800",
+      avgResolutionDays: 48,
+      clientsSatisfied: 96
+    },
+    localProblems: [
+      {
+        title: "Planos de Saúde",
+        description: "JF é polo de saúde com muitas reclamações de planos.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em empréstimos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      },
+      {
+        title: "E-commerce",
+        description: "Problemas com compras online.",
+        icon: "ShoppingCart"
+      }
+    ],
+    localContext: "Juiz de Fora é polo de educação e saúde da Zona da Mata mineira.",
+    consumerTribunalInfo: "Fórum de Juiz de Fora com JECs. Processos têm boa tramitação.",
+    proconAddress: "Av. Barão do Rio Branco, 2234 - Centro - Juiz de Fora/MG",
+    faqs: [
+      {
+        question: "O JEC de Juiz de Fora é eficiente?",
+        answer: "Sim! Processos simples levam de 4 a 6 meses."
+      },
+      {
+        question: "Meu plano negou tratamento. O que fazer?",
+        answer: "Procure um advogado para pedir liminar."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos com juros abusivos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de BH aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado em JF?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-21.7642", longitude: "-43.3496" },
+    nearbyConsumerCities: ["belo-horizonte", "rio-de-janeiro"]
+  },
+  {
+    citySlug: "montes-claros",
+    cityName: "Montes Claros",
+    state: "Minas Gerais",
+    stateCode: "MG",
+    stats: {
+      casesWon: 289,
+      avgCompensation: "R$ 8.200",
+      avgResolutionDays: 55,
+      clientsSatisfied: 94
+    },
+    localProblems: [
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura são frequentes no norte de MG.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em empréstimos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade na região.",
+        icon: "Wifi"
+      },
+      {
+        title: "Energia Elétrica",
+        description: "Cobranças irregulares da distribuidora.",
+        icon: "Zap"
+      }
+    ],
+    localContext: "Montes Claros é polo de serviços do norte de Minas Gerais.",
+    consumerTribunalInfo: "Fórum de Montes Claros com JECs. Processos têm tramitação regular.",
+    proconAddress: "Av. Cula Mangabeira, 211 - Centro - Montes Claros/MG",
+    faqs: [
+      {
+        question: "O JEC de Montes Claros é bom?",
+        answer: "Processos simples levam de 5 a 7 meses."
+      },
+      {
+        question: "Meu plano negou exame. O que fazer?",
+        answer: "Você pode pedir liminar para obrigar a cobertura."
+      },
+      {
+        question: "A conta de luz está errada. O que fazer?",
+        answer: "Você pode contestar judicialmente."
+      },
+      {
+        question: "Posso processar empresa de BH aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-16.7350", longitude: "-43.8617" },
+    nearbyConsumerCities: ["belo-horizonte", "brasilia"]
+  },
+  {
+    citySlug: "uberaba",
+    cityName: "Uberaba",
+    state: "Minas Gerais",
+    stateCode: "MG",
+    stats: {
+      casesWon: 312,
+      avgCompensation: "R$ 8.800",
+      avgResolutionDays: 50,
+      clientsSatisfied: 95
+    },
+    localProblems: [
+      {
+        title: "Agronegócio",
+        description: "Problemas com empresas do setor de pecuária zebuína.",
+        icon: "Leaf"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura são frequentes.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em financiamentos rurais.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      }
+    ],
+    localContext: "Uberaba é capital do zebu e polo agropecuário do Triângulo Mineiro.",
+    consumerTribunalInfo: "Fórum de Uberaba com JECs. Processos têm tramitação regular.",
+    proconAddress: "Av. Leopoldino de Oliveira, 3300 - Centro - Uberaba/MG",
+    faqs: [
+      {
+        question: "O JEC de Uberaba é eficiente?",
+        answer: "Processos simples levam de 5 a 7 meses."
+      },
+      {
+        question: "Empresa do agronegócio me lesou. Tenho direitos?",
+        answer: "Sim! Relações de consumo são protegidas pelo CDC."
+      },
+      {
+        question: "Meu plano negou exame. O que fazer?",
+        answer: "Você pode pedir liminar para obrigar a cobertura."
+      },
+      {
+        question: "Posso processar empresa de outro estado?",
+        answer: "Sim! O consumidor pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-19.7472", longitude: "-47.9381" },
+    nearbyConsumerCities: ["uberlandia", "franca", "ribeirao-preto"]
+  },
+
+  // SUL DO BRASIL
+  {
+    citySlug: "blumenau",
+    cityName: "Blumenau",
+    state: "Santa Catarina",
+    stateCode: "SC",
+    stats: {
+      casesWon: 412,
+      avgCompensation: "R$ 10.500",
+      avgResolutionDays: 45,
+      clientsSatisfied: 97
+    },
+    localProblems: [
+      {
+        title: "Indústria Têxtil",
+        description: "Problemas com roupas e produtos têxteis.",
+        icon: "ShoppingBag"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura são frequentes.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em empréstimos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Cobranças indevidas.",
+        icon: "Wifi"
+      }
+    ],
+    localContext: "Blumenau é polo têxtil e cervejeiro de Santa Catarina, com alto IDH.",
+    consumerTribunalInfo: "Fórum de Blumenau com JECs eficientes. Média de 4-5 meses.",
+    proconAddress: "Rua XV de Novembro, 1370 - Centro - Blumenau/SC",
+    faqs: [
+      {
+        question: "O JEC de Blumenau é bom?",
+        answer: "Sim! Um dos melhores de SC, com média de 4-5 meses."
+      },
+      {
+        question: "Comprei roupa com defeito. Tenho direitos?",
+        answer: "Sim! Você pode pedir troca, conserto ou devolução."
+      },
+      {
+        question: "Meu plano negou tratamento. O que fazer?",
+        answer: "Procure um advogado para pedir liminar."
+      },
+      {
+        question: "Posso processar empresa de outro estado?",
+        answer: "Sim! O consumidor pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-26.9194", longitude: "-49.0661" },
+    nearbyConsumerCities: ["joinville", "florianopolis", "itajai"]
+  },
+  {
+    citySlug: "itajai",
+    cityName: "Itajaí",
+    state: "Santa Catarina",
+    stateCode: "SC",
+    stats: {
+      casesWon: 345,
+      avgCompensation: "R$ 10.200",
+      avgResolutionDays: 48,
+      clientsSatisfied: 96
+    },
+    localProblems: [
+      {
+        title: "Porto e Logística",
+        description: "Problemas com fretes e entregas.",
+        icon: "Ship"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Cobranças indevidas.",
+        icon: "Wifi"
+      }
+    ],
+    localContext: "Itajaí é o segundo maior porto do Brasil, com forte setor de logística e pesca.",
+    consumerTribunalInfo: "Fórum de Itajaí com JECs. Processos têm boa tramitação.",
+    proconAddress: "Rua Hercílio Luz, 94 - Centro - Itajaí/SC",
+    faqs: [
+      {
+        question: "O JEC de Itajaí é eficiente?",
+        answer: "Processos simples levam de 4 a 6 meses."
+      },
+      {
+        question: "Tive problema com frete. Tenho direitos?",
+        answer: "Sim! Atrasos e extravios geram direito a indenização."
+      },
+      {
+        question: "Meu plano negou exame. O que fazer?",
+        answer: "Você pode pedir liminar para obrigar a cobertura."
+      },
+      {
+        question: "Posso processar empresa de outro estado?",
+        answer: "Sim! O consumidor pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-26.9078", longitude: "-48.6619" },
+    nearbyConsumerCities: ["blumenau", "florianopolis", "balneario-camboriu"]
+  },
+  {
+    citySlug: "balneario-camboriu",
+    cityName: "Balneário Camboriú",
+    state: "Santa Catarina",
+    stateCode: "SC",
+    stats: {
+      casesWon: 289,
+      avgCompensation: "R$ 12.500",
+      avgResolutionDays: 45,
+      clientsSatisfied: 97
+    },
+    localProblems: [
+      {
+        title: "Imóveis e Construtoras",
+        description: "Problemas com apartamentos de alto padrão.",
+        icon: "Building"
+      },
+      {
+        title: "Turismo e Hotelaria",
+        description: "Problemas com hotéis e pacotes turísticos.",
+        icon: "Plane"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos.",
+        icon: "CreditCard"
+      }
+    ],
+    localContext: "Balneário Camboriú é destino turístico de alto padrão, com os arranha-céus mais altos do Brasil.",
+    consumerTribunalInfo: "Fórum de Balneário Camboriú com JECs eficientes.",
+    proconAddress: "Av. Brasil, 500 - Centro - Balneário Camboriú/SC",
+    faqs: [
+      {
+        question: "O JEC de Balneário é bom?",
+        answer: "Sim! Processos simples levam de 4-5 meses."
+      },
+      {
+        question: "Comprei apartamento com defeitos. Tenho direitos?",
+        answer: "Sim! Você pode pedir reparo ou indenização."
+      },
+      {
+        question: "Hotel cancelou reserva. O que fazer?",
+        answer: "Você pode pedir reembolso e indenização."
+      },
+      {
+        question: "Posso processar construtora de outro estado?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-26.9906", longitude: "-48.6348" },
+    nearbyConsumerCities: ["itajai", "florianopolis", "blumenau"]
+  },
+  {
+    citySlug: "maringa",
+    cityName: "Maringá",
+    state: "Paraná",
+    stateCode: "PR",
+    stats: {
+      casesWon: 423,
+      avgCompensation: "R$ 10.200",
+      avgResolutionDays: 45,
+      clientsSatisfied: 97
+    },
+    localProblems: [
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura afetam moradores.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Agronegócio",
+        description: "Problemas com empresas do setor agrícola.",
+        icon: "Leaf"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em financiamentos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Cobranças indevidas.",
+        icon: "Wifi"
+      }
+    ],
+    localContext: "Maringá tem o maior IDH do Paraná e é polo do agronegócio.",
+    consumerTribunalInfo: "Fórum de Maringá com JECs eficientes. Média de 4-5 meses.",
+    proconAddress: "Av. XV de Novembro, 200 - Centro - Maringá/PR",
+    faqs: [
+      {
+        question: "O JEC de Maringá é eficiente?",
+        answer: "Sim! Um dos melhores do PR, com média de 4-5 meses."
+      },
+      {
+        question: "Meu plano negou tratamento. O que fazer?",
+        answer: "Procure um advogado para pedir liminar."
+      },
+      {
+        question: "Empresa rural me lesou. Tenho direitos?",
+        answer: "Sim! Relações de consumo são protegidas."
+      },
+      {
+        question: "Posso processar empresa de Curitiba aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-23.4205", longitude: "-51.9333" },
+    nearbyConsumerCities: ["londrina", "curitiba", "cascavel"]
+  },
+  {
+    citySlug: "cascavel",
+    cityName: "Cascavel",
+    state: "Paraná",
+    stateCode: "PR",
+    stats: {
+      casesWon: 312,
+      avgCompensation: "R$ 9.200",
+      avgResolutionDays: 50,
+      clientsSatisfied: 95
+    },
+    localProblems: [
+      {
+        title: "Agronegócio",
+        description: "Problemas com empresas do setor agrícola.",
+        icon: "Leaf"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em financiamentos rurais.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      }
+    ],
+    localContext: "Cascavel é polo do agronegócio do oeste do Paraná.",
+    consumerTribunalInfo: "Fórum de Cascavel com JECs. Processos têm tramitação regular.",
+    proconAddress: "Av. Brasil, 3400 - Centro - Cascavel/PR",
+    faqs: [
+      {
+        question: "O JEC de Cascavel é bom?",
+        answer: "Processos simples levam de 5 a 7 meses."
+      },
+      {
+        question: "Empresa rural me lesou. Tenho direitos?",
+        answer: "Sim! Relações de consumo são protegidas."
+      },
+      {
+        question: "Meu plano negou exame. O que fazer?",
+        answer: "Você pode pedir liminar para obrigar a cobertura."
+      },
+      {
+        question: "Posso processar empresa de Curitiba aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-24.9556", longitude: "-53.4553" },
+    nearbyConsumerCities: ["maringa", "londrina", "foz-do-iguacu"]
+  },
+  {
+    citySlug: "ponta-grossa",
+    cityName: "Ponta Grossa",
+    state: "Paraná",
+    stateCode: "PR",
+    stats: {
+      casesWon: 289,
+      avgCompensation: "R$ 8.800",
+      avgResolutionDays: 52,
+      clientsSatisfied: 95
+    },
+    localProblems: [
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura são frequentes.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em empréstimos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Cobranças indevidas.",
+        icon: "Wifi"
+      },
+      {
+        title: "E-commerce",
+        description: "Problemas com compras online.",
+        icon: "ShoppingCart"
+      }
+    ],
+    localContext: "Ponta Grossa é hub logístico do Paraná, entre Curitiba e o interior.",
+    consumerTribunalInfo: "Fórum de Ponta Grossa com JECs. Processos têm tramitação regular.",
+    proconAddress: "Rua XV de Novembro, 1220 - Centro - Ponta Grossa/PR",
+    faqs: [
+      {
+        question: "O JEC de Ponta Grossa é eficiente?",
+        answer: "Processos simples levam de 5 a 7 meses."
+      },
+      {
+        question: "Meu plano negou tratamento. O que fazer?",
+        answer: "Procure um advogado para pedir liminar."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de Curitiba aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-25.0945", longitude: "-50.1633" },
+    nearbyConsumerCities: ["curitiba", "londrina", "maringa"]
+  },
+  {
+    citySlug: "caxias-do-sul",
+    cityName: "Caxias do Sul",
+    state: "Rio Grande do Sul",
+    stateCode: "RS",
+    stats: {
+      casesWon: 456,
+      avgCompensation: "R$ 10.500",
+      avgResolutionDays: 48,
+      clientsSatisfied: 96
+    },
+    localProblems: [
+      {
+        title: "Indústria Metalúrgica",
+        description: "Problemas com produtos industriais e peças.",
+        icon: "Building"
+      },
+      {
+        title: "Vinícolas e Turismo",
+        description: "Problemas com pacotes turísticos e vinhos.",
+        icon: "Wine"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos.",
+        icon: "CreditCard"
+      }
+    ],
+    localContext: "Caxias do Sul é a segunda maior economia do RS, polo metalúrgico e vinícola.",
+    consumerTribunalInfo: "Fórum de Caxias do Sul com JECs. Processos têm boa tramitação.",
+    proconAddress: "Rua Sinimbu, 1365 - Centro - Caxias do Sul/RS",
+    faqs: [
+      {
+        question: "O JEC de Caxias é eficiente?",
+        answer: "Sim! Processos simples levam de 4 a 6 meses."
+      },
+      {
+        question: "Comprei vinho falsificado. Tenho direitos?",
+        answer: "Sim! Produtos falsificados geram direito a indenização."
+      },
+      {
+        question: "Meu plano negou tratamento. O que fazer?",
+        answer: "Procure um advogado para pedir liminar."
+      },
+      {
+        question: "Posso processar empresa de POA aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-29.1634", longitude: "-51.1797" },
+    nearbyConsumerCities: ["porto-alegre", "canoas", "gramado"]
+  },
+  {
+    citySlug: "canoas",
+    cityName: "Canoas",
+    state: "Rio Grande do Sul",
+    stateCode: "RS",
+    stats: {
+      casesWon: 378,
+      avgCompensation: "R$ 9.500",
+      avgResolutionDays: 50,
+      clientsSatisfied: 95
+    },
+    localProblems: [
+      {
+        title: "Indústria e Refino",
+        description: "Problemas com combustíveis e derivados.",
+        icon: "Factory"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em empréstimos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Cobranças indevidas.",
+        icon: "Wifi"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Canoas é cidade industrial na região metropolitana de Porto Alegre.",
+    consumerTribunalInfo: "Fórum de Canoas com JECs. Processos têm tramitação regular.",
+    proconAddress: "Av. Victor Barreto, 2000 - Centro - Canoas/RS",
+    faqs: [
+      {
+        question: "O JEC de Canoas é bom?",
+        answer: "Processos simples levam de 5 a 7 meses."
+      },
+      {
+        question: "O combustível estava adulterado. Tenho direitos?",
+        answer: "Sim! Você pode pedir indenização por danos materiais e morais."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de POA aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-29.9178", longitude: "-51.1836" },
+    nearbyConsumerCities: ["porto-alegre", "caxias-do-sul"]
+  },
+  {
+    citySlug: "pelotas",
+    cityName: "Pelotas",
+    state: "Rio Grande do Sul",
+    stateCode: "RS",
+    stats: {
+      casesWon: 267,
+      avgCompensation: "R$ 8.500",
+      avgResolutionDays: 55,
+      clientsSatisfied: 94
+    },
+    localProblems: [
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura são frequentes.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em empréstimos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      },
+      {
+        title: "E-commerce",
+        description: "Problemas com compras online.",
+        icon: "ShoppingCart"
+      }
+    ],
+    localContext: "Pelotas é polo de doces e educação do sul gaúcho.",
+    consumerTribunalInfo: "Fórum de Pelotas com JECs. Processos têm tramitação regular.",
+    proconAddress: "Rua Lobo da Costa, 1550 - Centro - Pelotas/RS",
+    faqs: [
+      {
+        question: "O JEC de Pelotas é eficiente?",
+        answer: "Processos simples levam de 5 a 7 meses."
+      },
+      {
+        question: "Meu plano negou tratamento. O que fazer?",
+        answer: "Procure um advogado para pedir liminar."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de POA aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-31.7649", longitude: "-52.3371" },
+    nearbyConsumerCities: ["porto-alegre", "rio-grande"]
+  },
+  {
+    citySlug: "chapeco",
+    cityName: "Chapecó",
+    state: "Santa Catarina",
+    stateCode: "SC",
+    stats: {
+      casesWon: 312,
+      avgCompensation: "R$ 9.500",
+      avgResolutionDays: 50,
+      clientsSatisfied: 96
+    },
+    localProblems: [
+      {
+        title: "Agroindústria",
+        description: "Problemas com produtos de frigoríficos.",
+        icon: "Leaf"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em financiamentos rurais.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      }
+    ],
+    localContext: "Chapecó é capital da agroindústria brasileira, sede de grandes frigoríficos.",
+    consumerTribunalInfo: "Fórum de Chapecó com JECs. Processos têm tramitação regular.",
+    proconAddress: "Rua Nereu Ramos, 500 - Centro - Chapecó/SC",
+    faqs: [
+      {
+        question: "O JEC de Chapecó é bom?",
+        answer: "Processos simples levam de 5 a 7 meses."
+      },
+      {
+        question: "Comprei carne com problema. Tenho direitos?",
+        answer: "Sim! Produtos alimentícios com defeito geram direito a troca e indenização."
+      },
+      {
+        question: "Meu plano negou exame. O que fazer?",
+        answer: "Você pode pedir liminar para obrigar a cobertura."
+      },
+      {
+        question: "Posso processar empresa de outro estado?",
+        answer: "Sim! O consumidor pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-27.1006", longitude: "-52.6152" },
+    nearbyConsumerCities: ["joinville", "florianopolis", "cascavel"]
+  },
+
+  // NORDESTE
+  {
+    citySlug: "caruaru",
+    cityName: "Caruaru",
+    state: "Pernambuco",
+    stateCode: "PE",
+    stats: {
+      casesWon: 267,
+      avgCompensation: "R$ 7.800",
+      avgResolutionDays: 55,
+      clientsSatisfied: 94
+    },
+    localProblems: [
+      {
+        title: "Comércio de Confecções",
+        description: "Problemas com roupas e acessórios do polo têxtil.",
+        icon: "ShoppingBag"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em empréstimos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Caruaru é a capital do agreste pernambucano e maior feira livre do Brasil.",
+    consumerTribunalInfo: "Fórum de Caruaru com JECs. Processos têm tramitação regular.",
+    proconAddress: "Rua 15 de Novembro, 195 - Centro - Caruaru/PE",
+    faqs: [
+      {
+        question: "O JEC de Caruaru é bom?",
+        answer: "Processos simples levam de 5 a 8 meses."
+      },
+      {
+        question: "Comprei roupa com defeito na feira. Tenho direitos?",
+        answer: "Sim! Mesmo em feiras, o CDC se aplica."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de Recife aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-8.2760", longitude: "-35.9819" },
+    nearbyConsumerCities: ["recife", "campina-grande"]
+  },
+  {
+    citySlug: "feira-de-santana",
+    cityName: "Feira de Santana",
+    state: "Bahia",
+    stateCode: "BA",
+    stats: {
+      casesWon: 345,
+      avgCompensation: "R$ 8.200",
+      avgResolutionDays: 55,
+      clientsSatisfied: 94
+    },
+    localProblems: [
+      {
+        title: "Comércio",
+        description: "Problemas com lojas e produtos.",
+        icon: "ShoppingBag"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em empréstimos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Cobranças indevidas.",
+        icon: "Wifi"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Feira de Santana é o maior polo comercial do interior do Nordeste.",
+    consumerTribunalInfo: "Fórum de Feira de Santana com JECs. Processos têm tramitação regular.",
+    proconAddress: "Av. Getúlio Vargas, 1850 - Centro - Feira de Santana/BA",
+    faqs: [
+      {
+        question: "O JEC de Feira é eficiente?",
+        answer: "Processos simples levam de 5 a 8 meses."
+      },
+      {
+        question: "Comprei produto com defeito. Tenho direitos?",
+        answer: "Sim! Você pode pedir troca, conserto ou devolução."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de Salvador aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-12.2667", longitude: "-38.9667" },
+    nearbyConsumerCities: ["salvador", "vitoria-da-conquista"]
+  },
+  {
+    citySlug: "campina-grande",
+    cityName: "Campina Grande",
+    state: "Paraíba",
+    stateCode: "PB",
+    stats: {
+      casesWon: 289,
+      avgCompensation: "R$ 7.800",
+      avgResolutionDays: 55,
+      clientsSatisfied: 94
+    },
+    localProblems: [
+      {
+        title: "Tecnologia",
+        description: "Problemas com produtos e serviços de TI.",
+        icon: "Laptop"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Campina Grande é polo de tecnologia do Nordeste, sede do maior São João do mundo.",
+    consumerTribunalInfo: "Fórum de Campina Grande com JECs. Processos têm tramitação regular.",
+    proconAddress: "Av. Floriano Peixoto, 700 - Centro - Campina Grande/PB",
+    faqs: [
+      {
+        question: "O JEC de Campina é bom?",
+        answer: "Processos simples levam de 5 a 8 meses."
+      },
+      {
+        question: "Comprei produto de TI com defeito. Tenho direitos?",
+        answer: "Sim! Você pode pedir troca, conserto ou devolução."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de JP aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-7.2306", longitude: "-35.8811" },
+    nearbyConsumerCities: ["joao-pessoa", "caruaru", "natal"]
+  },
+  {
+    citySlug: "mossoro",
+    cityName: "Mossoró",
+    state: "Rio Grande do Norte",
+    stateCode: "RN",
+    stats: {
+      casesWon: 234,
+      avgCompensation: "R$ 7.500",
+      avgResolutionDays: 58,
+      clientsSatisfied: 93
+    },
+    localProblems: [
+      {
+        title: "Petróleo e Sal",
+        description: "Problemas com empresas do setor extrativo.",
+        icon: "Factory"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em empréstimos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Mossoró é a segunda maior cidade do RN, polo de petróleo e sal.",
+    consumerTribunalInfo: "Fórum de Mossoró com JECs. Processos têm tramitação regular.",
+    proconAddress: "Rua Dionísio Filgueira, 1100 - Centro - Mossoró/RN",
+    faqs: [
+      {
+        question: "O JEC de Mossoró é eficiente?",
+        answer: "Processos simples levam de 6 a 8 meses."
+      },
+      {
+        question: "Empresa do setor de petróleo me lesou. Tenho direitos?",
+        answer: "Sim! Relações de consumo são protegidas pelo CDC."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de Natal aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-5.1878", longitude: "-37.3442" },
+    nearbyConsumerCities: ["natal", "fortaleza"]
+  },
+  {
+    citySlug: "imperatriz",
+    cityName: "Imperatriz",
+    state: "Maranhão",
+    stateCode: "MA",
+    stats: {
+      casesWon: 198,
+      avgCompensation: "R$ 7.200",
+      avgResolutionDays: 60,
+      clientsSatisfied: 93
+    },
+    localProblems: [
+      {
+        title: "Agronegócio",
+        description: "Problemas com empresas do setor agrícola.",
+        icon: "Leaf"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      },
+      {
+        title: "Energia Elétrica",
+        description: "Cobranças irregulares.",
+        icon: "Zap"
+      }
+    ],
+    localContext: "Imperatriz é a segunda maior cidade do Maranhão, polo do agronegócio.",
+    consumerTribunalInfo: "Fórum de Imperatriz com JECs. Processos têm tramitação em evolução.",
+    proconAddress: "Av. Getúlio Vargas, 1500 - Centro - Imperatriz/MA",
+    faqs: [
+      {
+        question: "O JEC de Imperatriz funciona bem?",
+        answer: "Processos simples levam de 6 a 9 meses."
+      },
+      {
+        question: "Empresa rural me lesou. Tenho direitos?",
+        answer: "Sim! Relações de consumo são protegidas."
+      },
+      {
+        question: "A conta de luz está errada. O que fazer?",
+        answer: "Você pode contestar judicialmente."
+      },
+      {
+        question: "Posso processar empresa de São Luís aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-5.5264", longitude: "-47.4919" },
+    nearbyConsumerCities: ["sao-luis", "belem", "palmas"]
+  },
+  {
+    citySlug: "petrolina",
+    cityName: "Petrolina",
+    state: "Pernambuco",
+    stateCode: "PE",
+    stats: {
+      casesWon: 234,
+      avgCompensation: "R$ 7.500",
+      avgResolutionDays: 55,
+      clientsSatisfied: 94
+    },
+    localProblems: [
+      {
+        title: "Agronegócio e Fruticultura",
+        description: "Problemas com empresas do polo frutícola.",
+        icon: "Leaf"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em financiamentos rurais.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Petrolina é polo frutícola do Vale do São Francisco, exportador de uvas e mangas.",
+    consumerTribunalInfo: "Fórum de Petrolina com JECs. Processos têm tramitação regular.",
+    proconAddress: "Av. Guararapes, 390 - Centro - Petrolina/PE",
+    faqs: [
+      {
+        question: "O JEC de Petrolina é bom?",
+        answer: "Processos simples levam de 5 a 8 meses."
+      },
+      {
+        question: "Empresa de frutas me lesou. Tenho direitos?",
+        answer: "Sim! Relações de consumo são protegidas."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de Recife aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-9.3917", longitude: "-40.5086" },
+    nearbyConsumerCities: ["recife", "salvador", "juazeiro-do-norte"]
+  },
+  {
+    citySlug: "juazeiro-do-norte",
+    cityName: "Juazeiro do Norte",
+    state: "Ceará",
+    stateCode: "CE",
+    stats: {
+      casesWon: 234,
+      avgCompensation: "R$ 7.200",
+      avgResolutionDays: 58,
+      clientsSatisfied: 93
+    },
+    localProblems: [
+      {
+        title: "Comércio e Varejo",
+        description: "Problemas com lojas e produtos.",
+        icon: "ShoppingBag"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Juazeiro do Norte é polo de turismo religioso e comércio do Cariri cearense.",
+    consumerTribunalInfo: "Fórum de Juazeiro do Norte com JECs. Processos têm tramitação regular.",
+    proconAddress: "Rua Padre Cícero, 120 - Centro - Juazeiro do Norte/CE",
+    faqs: [
+      {
+        question: "O JEC de Juazeiro é eficiente?",
+        answer: "Processos simples levam de 6 a 8 meses."
+      },
+      {
+        question: "Comprei produto com defeito. Tenho direitos?",
+        answer: "Sim! Você pode pedir troca, conserto ou devolução."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de Fortaleza aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-7.2131", longitude: "-39.3154" },
+    nearbyConsumerCities: ["fortaleza", "petrolina", "campina-grande"]
+  },
+  {
+    citySlug: "vitoria-da-conquista",
+    cityName: "Vitória da Conquista",
+    state: "Bahia",
+    stateCode: "BA",
+    stats: {
+      casesWon: 267,
+      avgCompensation: "R$ 7.800",
+      avgResolutionDays: 55,
+      clientsSatisfied: 94
+    },
+    localProblems: [
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura são frequentes.",
+        icon: "HeartPulse"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em empréstimos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      },
+      {
+        title: "E-commerce",
+        description: "Problemas com compras online.",
+        icon: "ShoppingCart"
+      }
+    ],
+    localContext: "Vitória da Conquista é polo de saúde e educação do sudoeste baiano.",
+    consumerTribunalInfo: "Fórum de Vitória da Conquista com JECs. Processos têm tramitação regular.",
+    proconAddress: "Rua Galdino Moreira, 200 - Centro - Vitória da Conquista/BA",
+    faqs: [
+      {
+        question: "O JEC de Conquista é bom?",
+        answer: "Processos simples levam de 5 a 8 meses."
+      },
+      {
+        question: "Meu plano negou tratamento. O que fazer?",
+        answer: "Procure um advogado para pedir liminar."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de Salvador aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-14.8661", longitude: "-40.8372" },
+    nearbyConsumerCities: ["salvador", "feira-de-santana", "belo-horizonte"]
+  },
+
+  // NORTE E CENTRO-OESTE
+  {
+    citySlug: "porto-velho",
+    cityName: "Porto Velho",
+    state: "Rondônia",
+    stateCode: "RO",
+    stats: {
+      casesWon: 198,
+      avgCompensation: "R$ 8.000",
+      avgResolutionDays: 60,
+      clientsSatisfied: 93
+    },
+    localProblems: [
+      {
+        title: "Energia Elétrica",
+        description: "Problemas com a distribuidora de energia.",
+        icon: "Zap"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Porto Velho é capital de Rondônia, com economia baseada em energia e agronegócio.",
+    consumerTribunalInfo: "Fórum de Porto Velho com JECs. Processos têm tramitação em evolução.",
+    proconAddress: "Av. 7 de Setembro, 2027 - Centro - Porto Velho/RO",
+    faqs: [
+      {
+        question: "O JEC de Porto Velho funciona bem?",
+        answer: "Processos simples levam de 6 a 9 meses."
+      },
+      {
+        question: "A conta de luz está errada. O que fazer?",
+        answer: "Você pode contestar judicialmente."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de outro estado?",
+        answer: "Sim! O consumidor pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-8.7612", longitude: "-63.9039" },
+    nearbyConsumerCities: ["manaus", "cuiaba", "rio-branco"]
+  },
+  {
+    citySlug: "rio-branco",
+    cityName: "Rio Branco",
+    state: "Acre",
+    stateCode: "AC",
+    stats: {
+      casesWon: 156,
+      avgCompensation: "R$ 7.500",
+      avgResolutionDays: 65,
+      clientsSatisfied: 92
+    },
+    localProblems: [
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em empréstimos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Energia Elétrica",
+        description: "Cobranças irregulares.",
+        icon: "Zap"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Rio Branco é capital do Acre, com desafios de infraestrutura e acesso.",
+    consumerTribunalInfo: "Fórum de Rio Branco com JECs. Processos têm tramitação em evolução.",
+    proconAddress: "Av. Getúlio Vargas, 300 - Centro - Rio Branco/AC",
+    faqs: [
+      {
+        question: "O JEC de Rio Branco funciona?",
+        answer: "Processos simples levam de 7 a 10 meses."
+      },
+      {
+        question: "A internet é péssima. Posso processar?",
+        answer: "Sim! Serviços de má qualidade geram direito a indenização."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de outro estado?",
+        answer: "Sim! O consumidor pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-9.9753", longitude: "-67.8106" },
+    nearbyConsumerCities: ["porto-velho", "manaus"]
+  },
+  {
+    citySlug: "macapa",
+    cityName: "Macapá",
+    state: "Amapá",
+    stateCode: "AP",
+    stats: {
+      casesWon: 145,
+      avgCompensation: "R$ 7.200",
+      avgResolutionDays: 65,
+      clientsSatisfied: 92
+    },
+    localProblems: [
+      {
+        title: "Energia Elétrica",
+        description: "Problemas graves com fornecimento de energia.",
+        icon: "Zap"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Macapá é capital do Amapá, com desafios históricos de fornecimento de energia.",
+    consumerTribunalInfo: "Fórum de Macapá com JECs. Processos têm tramitação em evolução.",
+    proconAddress: "Av. Mendonça Furtado, 55 - Centro - Macapá/AP",
+    faqs: [
+      {
+        question: "O JEC de Macapá funciona?",
+        answer: "Processos simples levam de 7 a 10 meses."
+      },
+      {
+        question: "Fiquei sem luz por dias. Tenho direitos?",
+        answer: "Sim! Falta de energia gera direito a indenização."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de outro estado?",
+        answer: "Sim! O consumidor pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "0.0356", longitude: "-51.0705" },
+    nearbyConsumerCities: ["belem", "manaus"]
+  },
+  {
+    citySlug: "boa-vista",
+    cityName: "Boa Vista",
+    state: "Roraima",
+    stateCode: "RR",
+    stats: {
+      casesWon: 134,
+      avgCompensation: "R$ 7.000",
+      avgResolutionDays: 68,
+      clientsSatisfied: 91
+    },
+    localProblems: [
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Energia Elétrica",
+        description: "Cobranças irregulares.",
+        icon: "Zap"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Boa Vista é capital de Roraima, com desafios de infraestrutura.",
+    consumerTribunalInfo: "Fórum de Boa Vista com JECs. Processos têm tramitação em evolução.",
+    proconAddress: "Av. Ville Roy, 4900 - Canarinho - Boa Vista/RR",
+    faqs: [
+      {
+        question: "O JEC de Boa Vista funciona?",
+        answer: "Processos simples levam de 7 a 10 meses."
+      },
+      {
+        question: "A internet é péssima. Posso processar?",
+        answer: "Sim! Serviços de má qualidade geram direito a indenização."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de outro estado?",
+        answer: "Sim! O consumidor pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "2.8197", longitude: "-60.6733" },
+    nearbyConsumerCities: ["manaus"]
+  },
+  {
+    citySlug: "palmas",
+    cityName: "Palmas",
+    state: "Tocantins",
+    stateCode: "TO",
+    stats: {
+      casesWon: 189,
+      avgCompensation: "R$ 7.800",
+      avgResolutionDays: 55,
+      clientsSatisfied: 94
+    },
+    localProblems: [
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Energia Elétrica",
+        description: "Cobranças irregulares.",
+        icon: "Zap"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Palmas é a capital mais nova do Brasil, com infraestrutura em desenvolvimento.",
+    consumerTribunalInfo: "Fórum de Palmas com JECs. Processos têm tramitação regular.",
+    proconAddress: "Quadra 104 Sul, Av. NS-2 - Plano Diretor Sul - Palmas/TO",
+    faqs: [
+      {
+        question: "O JEC de Palmas é eficiente?",
+        answer: "Processos simples levam de 5 a 8 meses."
+      },
+      {
+        question: "A internet é péssima. Posso processar?",
+        answer: "Sim! Serviços de má qualidade geram direito a indenização."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de outro estado?",
+        answer: "Sim! O consumidor pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-10.2406", longitude: "-48.3558" },
+    nearbyConsumerCities: ["brasilia", "goiania", "imperatriz"]
+  },
+  {
+    citySlug: "anapolis",
+    cityName: "Anápolis",
+    state: "Goiás",
+    stateCode: "GO",
+    stats: {
+      casesWon: 289,
+      avgCompensation: "R$ 8.500",
+      avgResolutionDays: 50,
+      clientsSatisfied: 95
+    },
+    localProblems: [
+      {
+        title: "Indústria Farmacêutica",
+        description: "Problemas com medicamentos e laboratórios.",
+        icon: "Pill"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Cobranças indevidas.",
+        icon: "Wifi"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Anápolis é polo farmacêutico e logístico de Goiás.",
+    consumerTribunalInfo: "Fórum de Anápolis com JECs. Processos têm tramitação regular.",
+    proconAddress: "Av. Brasil Norte, 500 - Centro - Anápolis/GO",
+    faqs: [
+      {
+        question: "O JEC de Anápolis é bom?",
+        answer: "Processos simples levam de 5 a 7 meses."
+      },
+      {
+        question: "Medicamento causou reação. Tenho direitos?",
+        answer: "Sim! Você pode processar fabricante e farmácia."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de Goiânia aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-16.3281", longitude: "-48.9534" },
+    nearbyConsumerCities: ["goiania", "brasilia"]
+  },
+  {
+    citySlug: "rondonopolis",
+    cityName: "Rondonópolis",
+    state: "Mato Grosso",
+    stateCode: "MT",
+    stats: {
+      casesWon: 234,
+      avgCompensation: "R$ 8.200",
+      avgResolutionDays: 52,
+      clientsSatisfied: 95
+    },
+    localProblems: [
+      {
+        title: "Agronegócio",
+        description: "Problemas com empresas do setor agrícola.",
+        icon: "Leaf"
+      },
+      {
+        title: "Cobranças Bancárias",
+        description: "Juros abusivos em financiamentos rurais.",
+        icon: "CreditCard"
+      },
+      {
+        title: "Telecomunicações",
+        description: "Internet de má qualidade.",
+        icon: "Wifi"
+      },
+      {
+        title: "Planos de Saúde",
+        description: "Negativas de cobertura.",
+        icon: "HeartPulse"
+      }
+    ],
+    localContext: "Rondonópolis é polo do agronegócio do sul de Mato Grosso.",
+    consumerTribunalInfo: "Fórum de Rondonópolis com JECs. Processos têm tramitação regular.",
+    proconAddress: "Av. Marechal Rondon, 2500 - Centro - Rondonópolis/MT",
+    faqs: [
+      {
+        question: "O JEC de Rondonópolis é eficiente?",
+        answer: "Processos simples levam de 5 a 7 meses."
+      },
+      {
+        question: "Empresa rural me lesou. Tenho direitos?",
+        answer: "Sim! Relações de consumo são protegidas."
+      },
+      {
+        question: "O banco cobra juros altos. Posso revisar?",
+        answer: "Sim! Contratos podem ser revisados."
+      },
+      {
+        question: "Posso processar empresa de Cuiabá aqui?",
+        answer: "Sim! Você pode processar no seu domicílio."
+      },
+      {
+        question: "Quanto custa um advogado?",
+        answer: "No Advogado Online, a consulta é gratuita."
+      }
+    ],
+    coordinates: { latitude: "-16.4673", longitude: "-54.6372" },
+    nearbyConsumerCities: ["cuiaba", "campo-grande", "goiania"]
   }
 ];
 

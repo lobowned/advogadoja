@@ -70,6 +70,9 @@ import ProdutoDefeitousoLanding from "./pages/consumer/ProdutoDefeitousoLanding"
 import LeadsDashboard from "./pages/admin/LeadsDashboard";
 import QADashboard from "./pages/admin/QADashboard";
 
+// City Consumer Landing (Ultra Local SEO)
+import CityConsumerLanding from "./pages/CityConsumerLanding";
+
 // Components
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 
@@ -160,6 +163,9 @@ const AnimatedRoutes = () => {
         <Route path="/advogado-civil" element={<NicheLanding />} />
         <Route path="/advogado-previdenciario" element={<NicheLanding />} />
         <Route path="/advogado-criminal" element={<NicheLanding />} />
+        
+        {/* City Consumer Landing Pages - Ultra Local SEO (BEFORE generic city+niche) */}
+        <Route path="/advogado-consumidor-:citySlug" element={<CityConsumerLanding />} />
         
         {/* City Landing Pages - Local SEO */}
         <Route path="/advogado/:citySlug" element={<CityLanding />} />

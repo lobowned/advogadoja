@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import DPVATCalculator from "@/components/calculators/DPVATCalculator";
 import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
+import RelatedContent from "@/components/RelatedContent";
 
 const CalculadoraDPVAT = () => {
   const scrollToChat = () => {
@@ -76,6 +77,9 @@ const CalculadoraDPVAT = () => {
             <DPVATCalculator />
           </div>
         </section>
+
+        {/* Related Content */}
+        <RelatedContent currentType="calculator" nicheId="civil" />
       </main>
     </>
   );

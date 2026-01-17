@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
 import LaborCalculator from "@/components/calculators/LaborCalculator";
 import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
+import RelatedContent from "@/components/RelatedContent";
 
 const CalculadoraTrabalhista = () => {
   const scrollToChat = () => {
@@ -168,6 +169,9 @@ const CalculadoraTrabalhista = () => {
             </Card>
           </div>
         </section>
+
+        {/* Related Content */}
+        <RelatedContent currentType="calculator" nicheId="trabalhista" />
       </main>
     </>
   );

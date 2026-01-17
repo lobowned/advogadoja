@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import HazardPayCalculator from "@/components/calculators/HazardPayCalculator";
 import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
+import RelatedContent from "@/components/RelatedContent";
 
 const CalculadoraInsalubridade = () => {
   const scrollToChat = () => {
@@ -61,6 +62,9 @@ const CalculadoraInsalubridade = () => {
             <HazardPayCalculator />
           </div>
         </section>
+
+        {/* Related Content */}
+        <RelatedContent currentType="calculator" nicheId="trabalhista" />
       </main>
     </>
   );

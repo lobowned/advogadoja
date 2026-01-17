@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import InventoryCalculator from "@/components/calculators/InventoryCalculator";
 import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
+import RelatedContent from "@/components/RelatedContent";
 
 const CalculadoraInventario = () => {
   const scrollToChat = () => {
@@ -61,6 +62,9 @@ const CalculadoraInventario = () => {
             <InventoryCalculator />
           </div>
         </section>
+
+        {/* Related Content */}
+        <RelatedContent currentType="calculator" nicheId="civil" />
       </main>
     </>
   );

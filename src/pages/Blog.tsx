@@ -125,9 +125,9 @@ const Blog = () => {
           <div className="container mx-auto px-4 py-6">
             <div className="flex items-center justify-between mb-6">
               <Link to="/" className="hover:opacity-80 transition-opacity">
-                <img 
+              <img 
                   src={logoAdvogadoOnline} 
-                  alt="Advogado Online" 
+                  alt="Advogado Já"
                   className="h-12 sm:h-14 md:h-16"
                 />
               </Link>

@@ -72,7 +72,7 @@ const AdvogadoMinasGerais = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": "Advogado Online em Minas Gerais",
+    "name": "Advogado Já em Minas Gerais",
     "description": "Advogado online para consulta jurídica em Minas Gerais. Atendemos BH, Uberlândia, Contagem e todas as cidades mineiras.",
     "url": "https://advogadoja.lovable.app/advogado-minas-gerais",
     "areaServed": {

@@ -70,7 +70,7 @@ const AdvogadoRioDeJaneiro = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": "Advogado Online no Rio de Janeiro",
+    "name": "Advogado Já no Rio de Janeiro",
     "description": "Advogado online para consulta jurídica no Rio de Janeiro. Atendemos capital, Baixada Fluminense, Niterói e todas as cidades fluminenses.",
     "url": "https://advogadoja.lovable.app/advogado-rio-de-janeiro",
     "areaServed": {

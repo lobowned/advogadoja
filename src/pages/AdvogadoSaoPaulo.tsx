@@ -80,7 +80,7 @@ const AdvogadoSaoPaulo = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": "Advogado Online em São Paulo",
+    "name": "Advogado Já em São Paulo",
     "description": "Advogado online para consulta jurídica em São Paulo. Atendemos capital, ABC Paulista, Campinas e todas as cidades paulistas.",
     "url": "https://advogadoja.lovable.app/advogado-sao-paulo",
     "areaServed": {

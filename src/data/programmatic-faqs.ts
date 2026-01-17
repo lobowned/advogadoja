@@ -1391,8 +1391,8 @@ No entanto, é importante considerar:
   // GERAL
   {
     id: 'geral-1',
-    slug: 'como-funciona-atendimento-advogado-online',
-    question: 'Como funciona o atendimento com advogado online?',
+    slug: 'como-funciona-atendimento-advogado-ja',
+    question: 'Como funciona o atendimento do Advogado Já?',
     answer: `O atendimento online com advogado é 100% legal e cada vez mais comum.
 
 **Como funciona:**

@@ -78,7 +78,7 @@ const AdvogadoBahia = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": "Advogado Online na Bahia",
+    "name": "Advogado Já na Bahia",
     "description": "Advogado online para consulta jurídica na Bahia. Atendemos Salvador, Feira de Santana, Vitória da Conquista e todas as cidades baianas.",
     "url": "https://advogadoja.lovable.app/advogado-bahia",
     "areaServed": {

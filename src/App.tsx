@@ -66,6 +66,12 @@ import FraudeBancariaLanding from "./pages/consumer/FraudeBancariaLanding";
 import CobrancaIndevidaLanding from "./pages/consumer/CobrancaIndevidaLanding";
 import ProdutoDefeitousoLanding from "./pages/consumer/ProdutoDefeitousoLanding";
 import LiminarCirurgiaNegadaLanding from "./pages/consumer/LiminarCirurgiaNegadaLanding";
+import LiminarBariatricaLanding from "./pages/consumer/LiminarBariatricaLanding";
+import LiminarOncologicaLanding from "./pages/consumer/LiminarOncologicaLanding";
+import LiminarOrtopedicaLanding from "./pages/consumer/LiminarOrtopedicaLanding";
+import LiminarCardiologicaLanding from "./pages/consumer/LiminarCardiologicaLanding";
+import LiminarNeurologicaLanding from "./pages/consumer/LiminarNeurologicaLanding";
+import LiminarOftalmologicaLanding from "./pages/consumer/LiminarOftalmologicaLanding";
 
 // Calculadora Liminar Cirurgia
 import CalculadoraLiminarCirurgia from "./pages/CalculadoraLiminarCirurgia";
@@ -182,6 +188,12 @@ const AnimatedRoutes = () => {
         
         {/* Liminar Cirurgia - SEO */}
         <Route path="/liminar-cirurgia-negada" element={<LiminarCirurgiaNegadaLanding />} />
+        <Route path="/liminar-cirurgia-bariatrica" element={<LiminarBariatricaLanding />} />
+        <Route path="/liminar-tratamento-cancer" element={<LiminarOncologicaLanding />} />
+        <Route path="/liminar-cirurgia-ortopedica" element={<LiminarOrtopedicaLanding />} />
+        <Route path="/liminar-cirurgia-cardiaca" element={<LiminarCardiologicaLanding />} />
+        <Route path="/liminar-neurocirurgia" element={<LiminarNeurologicaLanding />} />
+        <Route path="/liminar-cirurgia-olhos" element={<LiminarOftalmologicaLanding />} />
         
         {/* Niche Landing Pages */}
         <Route path="/advogado-consumidor" element={<NicheLanding />} />

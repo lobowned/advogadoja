@@ -16,17 +16,19 @@ import {
   Glasses,
   Sun
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import { useDetectedProblem } from "@/contexts/DetectedProblemContext";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import PageTransition from "@/components/motion/PageTransition";
+import BreadcrumbNav from "@/components/BreadcrumbNav";
 
 const LiminarOftalmologicaLanding = () => {
-  const { setDetectedProblem } = useDetectedProblem();
-  const navigate = useNavigate();
+  const breadcrumbs = [
+    { label: "Início", href: "/" },
+    { label: "Liminar Cirurgia", href: "/liminar-cirurgia-negada" },
+    { label: "Oftalmológica" }
+  ];
 
   const handleCTAClick = () => {
-    setDetectedProblem("Cirurgia Oftalmológica Negada");
-    navigate("/#chat");
+    window.location.href = "/#chat";
   };
 
   const whatsappNumber = "5511999999999";
@@ -134,7 +136,7 @@ const LiminarOftalmologicaLanding = () => {
   };
 
   return (
-    <>
+    <PageTransition>
       <Helmet>
         <title>Cirurgia de Olhos Negada? Liminar em 24-72h | Catarata, Glaucoma, Retina</title>
         <meta name="description" content="Plano negou cirurgia de catarata, glaucoma ou retina? Liminares em 24-72h. 95% de sucesso. Advogado oftalmológico. Consulta grátis." />
@@ -147,11 +149,14 @@ const LiminarOftalmologicaLanding = () => {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
-      <Navbar />
-
       <main className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-        {/* Hero Section */}
-        <section className="relative pt-24 pb-16 px-4 overflow-hidden">
+          {/* Breadcrumb */}
+          <div className="container mx-auto max-w-6xl pt-4 px-4">
+            <BreadcrumbNav items={breadcrumbs} />
+          </div>
+          
+          {/* Hero Section */}
+          <section className="relative pt-8 pb-16 px-4 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-destructive/5" />
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center mb-8">
@@ -370,7 +375,7 @@ const LiminarOftalmologicaLanding = () => {
           </div>
         </section>
       </main>
-    </>
+    </PageTransition>
   );
 };
 

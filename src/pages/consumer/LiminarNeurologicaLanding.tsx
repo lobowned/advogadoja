@@ -16,17 +16,19 @@ import {
   Activity,
   Zap
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import { useDetectedProblem } from "@/contexts/DetectedProblemContext";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import PageTransition from "@/components/motion/PageTransition";
+import BreadcrumbNav from "@/components/BreadcrumbNav";
 
 const LiminarNeurologicaLanding = () => {
-  const { setDetectedProblem } = useDetectedProblem();
-  const navigate = useNavigate();
+  const breadcrumbs = [
+    { label: "Início", href: "/" },
+    { label: "Liminar Cirurgia", href: "/liminar-cirurgia-negada" },
+    { label: "Neurocirurgia" }
+  ];
 
   const handleCTAClick = () => {
-    setDetectedProblem("Neurocirurgia Negada");
-    navigate("/#chat");
+    window.location.href = "/#chat";
   };
 
   const whatsappNumber = "5511999999999";
@@ -134,7 +136,7 @@ const LiminarNeurologicaLanding = () => {
   };
 
   return (
-    <>
+    <PageTransition>
       <Helmet>
         <title>Neurocirurgia Negada? Liminar em 6-24h | Coluna, Tumor, Aneurisma</title>
         <meta name="description" content="Plano negou cirurgia de coluna, tumor cerebral ou aneurisma? Liminares de emergência em 6-24h. 98% de sucesso. Advogado neurologista 24h." />
@@ -147,11 +149,14 @@ const LiminarNeurologicaLanding = () => {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
-      <Navbar />
-
       <main className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-        {/* Hero Section */}
-        <section className="relative pt-24 pb-16 px-4 overflow-hidden">
+          {/* Breadcrumb */}
+          <div className="container mx-auto max-w-6xl pt-4 px-4">
+            <BreadcrumbNav items={breadcrumbs} />
+          </div>
+          
+          {/* Hero Section */}
+          <section className="relative pt-8 pb-16 px-4 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-destructive/5" />
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center mb-8">
@@ -370,7 +375,7 @@ const LiminarNeurologicaLanding = () => {
           </div>
         </section>
       </main>
-    </>
+    </PageTransition>
   );
 };
 

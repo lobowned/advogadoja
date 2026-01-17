@@ -17,17 +17,19 @@ import {
   Activity,
   Stethoscope
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import { useDetectedProblem } from "@/contexts/DetectedProblemContext";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import PageTransition from "@/components/motion/PageTransition";
+import BreadcrumbNav from "@/components/BreadcrumbNav";
 
 const LiminarBariatricaLanding = () => {
-  const { setDetectedProblem } = useDetectedProblem();
-  const navigate = useNavigate();
+  const breadcrumbs = [
+    { label: "Início", href: "/" },
+    { label: "Liminar Cirurgia", href: "/liminar-cirurgia-negada" },
+    { label: "Bariátrica" }
+  ];
 
   const handleCTAClick = () => {
-    setDetectedProblem("Cirurgia Bariátrica Negada");
-    navigate("/#chat");
+    window.location.href = "/#chat";
   };
 
   const whatsappNumber = "5511999999999";
@@ -135,7 +137,7 @@ const LiminarBariatricaLanding = () => {
   };
 
   return (
-    <>
+    <PageTransition>
       <Helmet>
         <title>Cirurgia Bariátrica Negada? Liminar em 24-72h | Advogado Especialista</title>
         <meta name="description" content="Plano de saúde negou sua cirurgia bariátrica? Conseguimos liminares em 24-72h. Gastroplastia, bypass, sleeve. 97% de sucesso. Consulta grátis." />
@@ -148,11 +150,14 @@ const LiminarBariatricaLanding = () => {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
-      <Navbar />
-
       <main className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-        {/* Hero Section */}
-        <section className="relative pt-24 pb-16 px-4 overflow-hidden">
+          {/* Breadcrumb */}
+          <div className="container mx-auto max-w-6xl pt-4 px-4">
+            <BreadcrumbNav items={breadcrumbs} />
+          </div>
+          
+          {/* Hero Section */}
+          <section className="relative pt-8 pb-16 px-4 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-destructive/5" />
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center mb-8">
@@ -371,7 +376,7 @@ const LiminarBariatricaLanding = () => {
           </div>
         </section>
       </main>
-    </>
+    </PageTransition>
   );
 };
 

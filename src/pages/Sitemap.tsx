@@ -75,8 +75,8 @@ const Sitemap = () => {
   const sitemapSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Mapa do Site - Advogado Online",
-    "description": "Navegue por todas as páginas, artigos, FAQs e calculadoras do Advogado Online",
+    "name": "Mapa do Site - Advogado Já",
+    "description": "Navegue por todas as páginas, artigos, FAQs e calculadoras do Advogado Já",
     "url": canonicalUrl,
     "isPartOf": {
       "@type": "WebSite",
@@ -108,11 +108,11 @@ const Sitemap = () => {
     <PageTransition>
       <div className="min-h-screen bg-background">
         <Helmet>
-          <title>Mapa do Site | Advogado Online</title>
-          <meta name="description" content="Navegue por todas as páginas, artigos jurídicos, perguntas frequentes e calculadoras do Advogado Online. Encontre rapidamente o que você precisa." />
+          <title>Mapa do Site | Advogado Já</title>
+          <meta name="description" content="Navegue por todas as páginas, artigos jurídicos, perguntas frequentes e calculadoras do Advogado Já. Encontre rapidamente o que você precisa." />
           <link rel="canonical" href={canonicalUrl} />
-          <meta property="og:title" content="Mapa do Site | Advogado Online" />
-          <meta property="og:description" content="Navegue por todas as páginas do Advogado Online" />
+          <meta property="og:title" content="Mapa do Site | Advogado Já" />
+          <meta property="og:description" content="Navegue por todas as páginas do Advogado Já" />
           <meta property="og:url" content={canonicalUrl} />
           <script type="application/ld+json">{JSON.stringify(sitemapSchema)}</script>
           <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
@@ -131,7 +131,7 @@ const Sitemap = () => {
           <header className="text-center mb-12">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">Mapa do Site</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Navegue por todas as páginas, artigos, perguntas frequentes e calculadoras disponíveis no Advogado Online.
+              Navegue por todas as páginas, artigos, perguntas frequentes e calculadoras disponíveis no Advogado Já.
             </p>
           </header>
 
@@ -372,7 +372,7 @@ const Sitemap = () => {
         {/* Footer */}
         <footer className="border-t py-6 mt-12">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© 2025 Advogado Online | OAB/BA 46.638</p>
+            <p>© 2025 Advogado Já | OAB/BA 46.638</p>
           </div>
         </footer>
       </div>

@@ -251,7 +251,7 @@ const CityNicheLanding = () => {
     return <Navigate to="/" replace />;
   }
 
-  const canonicalUrl = `https://advogadoonline.com.br/advogado-${area.slug}-${city.slug}`;
+  const canonicalUrl = `https://advogadoja.lovable.app/advogado-${area.slug}-${city.slug}`;
   const Icon = area.icon;
 
   // Schema.org LegalService with LocalBusiness
@@ -262,12 +262,12 @@ const CityNicheLanding = () => {
     "description": `Advogado especialista em ${area.name} em ${city.name}, ${city.state}. ${area.description}`,
     "url": canonicalUrl,
     "telephone": "+55-71-99999-9999",
-    "email": "contato@advogadoonline.com.br",
+    "email": "contato@advogadoja.com.br",
     "priceRange": "$$",
     "currenciesAccepted": "BRL",
     "paymentAccepted": "Cash, Credit Card, PIX",
     "openingHours": "Mo-Fr 08:00-18:00",
-    "image": "https://advogadoonline.com.br/og-image.png",
+    "image": "https://advogadoja.lovable.app/og-image.png",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": city.name,
@@ -326,8 +326,8 @@ const CityNicheLanding = () => {
       }
     ],
     "sameAs": [
-      "https://www.instagram.com/advogadoonline",
-      "https://www.facebook.com/advogadoonline"
+      "https://www.instagram.com/advogadoja",
+      "https://www.facebook.com/advogadoja"
     ]
   };
 
@@ -335,9 +335,9 @@ const CityNicheLanding = () => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://advogadoonline.com.br" },
-      { "@type": "ListItem", "position": 2, "name": `Advogado ${area.name}`, "item": `https://advogadoonline.com.br/advogado-${area.slug}` },
-      { "@type": "ListItem", "position": 3, "name": city.name, "item": `https://advogadoonline.com.br/advogado/${city.slug}` },
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://advogadoja.lovable.app" },
+      { "@type": "ListItem", "position": 2, "name": `Advogado ${area.name}`, "item": `https://advogadoja.lovable.app/advogado-${area.slug}` },
+      { "@type": "ListItem", "position": 3, "name": city.name, "item": `https://advogadoja.lovable.app/advogado/${city.slug}` },
       { "@type": "ListItem", "position": 4, "name": `Advogado ${area.name} ${city.name}`, "item": canonicalUrl }
     ]
   };

@@ -13,6 +13,7 @@ import { getLawyerAvailabilityStatus } from "@/data/lawyer-personalities";
 import { Link } from "react-router-dom";
 import { useDetectedProblem } from "@/contexts/DetectedProblemContext";
 import { calculatorInfo, areaColors, CalculatorType } from "@/data/calculator-config";
+import ChatProgressBar from "@/components/ChatProgressBar";
 
 // Tipo para rastrear status do "visto" com delay
 type MessageSeenStatus = {
@@ -23,7 +24,7 @@ const LawyerChatSection = () => {
   const isMobile = useIsMobile();
   const { 
     messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers, 
-    isCollectingLead, leadQuestion, isInQueue, queuePosition, hasJoinedQueue, joinQueue, peopleAhead, 
+    isCollectingLead, leadQuestion, leadStep, userName, isInQueue, queuePosition, hasJoinedQueue, joinQueue, peopleAhead, 
     showRatingButton, submitRating,
     detectedProblem, urgencyLevel, contextualSuggestions, resetNudgeTimer,
     suggestedCalculator, dismissCalculator
@@ -315,6 +316,16 @@ const LawyerChatSection = () => {
                 </div>
               ) : (
                 <>
+                {/* Progress Bar for Lead Collection */}
+                {!isInQueue && (
+                  <div className="mb-2">
+                    <ChatProgressBar 
+                      currentStep={messages.length > 0 ? 1 : 0}
+                      hasName={!!userName}
+                      hasPhone={leadStep === 'none' && !!userName && !isCollectingLead && messages.filter(m => m.role === 'user').length > 3}
+                    />
+                  </div>
+                )}
                 {messages.map((message, index) => {
                 // Mensagem de fila
                 if ('isQueue' in message && message.isQueue) {

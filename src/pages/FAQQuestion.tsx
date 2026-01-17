@@ -59,8 +59,8 @@ const FAQQuestion = () => {
     "dateModified": "2025-01-01",
     "author": {
       "@type": "Organization",
-      "name": "Advogado Online",
-      "url": "https://advogadoonline.com.br"
+      "name": "Advogado Já",
+      "url": "https://advogadoja.lovable.app"
     },
     "mainEntity": [{
       "@type": "Question",
@@ -84,20 +84,20 @@ const FAQQuestion = () => {
     "dateModified": "2025-01-01",
     "author": {
       "@type": "Organization",
-      "name": "Advogado Online",
-      "url": "https://advogadoonline.com.br",
+      "name": "Advogado Já",
+      "url": "https://advogadoja.lovable.app",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://advogadoonline.com.br/favicon.svg"
+        "url": "https://advogadoja.lovable.app/favicon.svg"
       }
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Advogado Online",
-      "url": "https://advogadoonline.com.br",
+      "name": "Advogado Já",
+      "url": "https://advogadoja.lovable.app",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://advogadoonline.com.br/favicon.svg",
+        "url": "https://advogadoja.lovable.app/favicon.svg",
         "width": 60,
         "height": 60
       }
@@ -121,19 +121,19 @@ const FAQQuestion = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://advogadoonline.com.br"
+        "item": "https://advogadoja.lovable.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Perguntas Frequentes",
-        "item": "https://advogadoonline.com.br/perguntas"
+        "item": "https://advogadoja.lovable.app/perguntas"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": areaLabels[faq.area],
-        "item": `https://advogadoonline.com.br/perguntas?area=${faq.area}`
+        "item": `https://advogadoja.lovable.app/perguntas?area=${faq.area}`
       },
       {
         "@type": "ListItem",
@@ -153,8 +153,8 @@ const FAQQuestion = () => {
     "url": canonicalUrl,
     "isPartOf": {
       "@type": "WebSite",
-      "name": "Advogado Online",
-      "url": "https://advogadoonline.com.br"
+      "name": "Advogado Já",
+      "url": "https://advogadoja.lovable.app"
     },
     "about": {
       "@type": "Thing",
@@ -241,7 +241,7 @@ const FAQQuestion = () => {
     <PageTransition>
       <div className="min-h-screen bg-background">
         <Helmet>
-          <title>{faq.question} | Advogado Online</title>
+          <title>{faq.question} | Advogado Já</title>
           <meta name="description" content={faq.metaDescription || faq.answer.substring(0, 160)} />
           <meta name="keywords" content={faq.keywords.join(', ')} />
           <link rel="canonical" href={canonicalUrl} />

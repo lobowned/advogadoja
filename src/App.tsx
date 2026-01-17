@@ -78,8 +78,12 @@ import LocalSEOArticle from "./pages/LocalSEOArticle";
 
 // Regional Hub Pages
 import AdvogadoBahia from "./pages/AdvogadoBahia";
+import AdvogadoSaoPaulo from "./pages/AdvogadoSaoPaulo";
+import AdvogadoRioDeJaneiro from "./pages/AdvogadoRioDeJaneiro";
+import AdvogadoMinasGerais from "./pages/AdvogadoMinasGerais";
 
 // Components
+import StickyDesktopCTA from "./components/StickyDesktopCTA";
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 
 const queryClient = new QueryClient();
@@ -124,6 +128,9 @@ const AnimatedRoutes = () => {
         
         {/* Regional Hub Pages */}
         <Route path="/advogado-bahia" element={<AdvogadoBahia />} />
+        <Route path="/advogado-sao-paulo" element={<AdvogadoSaoPaulo />} />
+        <Route path="/advogado-rio-de-janeiro" element={<AdvogadoRioDeJaneiro />} />
+        <Route path="/advogado-minas-gerais" element={<AdvogadoMinasGerais />} />
         
         {/* News */}
         <Route path="/noticias" element={<News />} />
@@ -211,6 +218,7 @@ const App = () => (
                 <Toaster />
                 <Sonner />
                 <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+                  <StickyDesktopCTA />
                   <AnimatedRoutes />
                   <FloatingWhatsApp />
                 </BrowserRouter>

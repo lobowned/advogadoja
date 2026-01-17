@@ -224,12 +224,12 @@ const TermsOfUse = () => {
               <CardContent className="prose prose-sm max-w-none text-muted-foreground">
                 <p>
                   Todo o conteúdo da plataforma (textos, artigos, logotipos, design, código-fonte) é 
-                  propriedade do Advogado Online e está protegido por direitos autorais.
+                  propriedade do Advogado Já e está protegido por direitos autorais.
                 </p>
                 <ul className="list-disc pl-5 space-y-1 mt-4">
                   <li>Artigos podem ser compartilhados com citação da fonte</li>
                   <li>É proibida a reprodução comercial sem autorização</li>
-                  <li>A marca "Advogado Online" é protegida</li>
+                  <li>A marca "Advogado Já" é protegida</li>
                 </ul>
               </CardContent>
             </Card>

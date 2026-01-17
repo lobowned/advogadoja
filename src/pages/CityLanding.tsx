@@ -88,7 +88,7 @@ const CityLanding = () => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": `Advogado Online ${city.name}`,
+    "name": `Advogado Já ${city.name}`,
     "description": `Advogados especialistas em ${city.name}, ${city.state}. Atendimento jurídico online gratuito em Direito Trabalhista, Família, Previdenciário, Civil e Criminal.`,
     "url": canonicalUrl,
     "telephone": "+55-71-99999-9999",

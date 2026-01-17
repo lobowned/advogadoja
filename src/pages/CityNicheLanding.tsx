@@ -43,7 +43,7 @@ const legalAreas = {
       },
       {
         q: "Quanto custa um advogado trabalhista?",
-        a: "No Advogado Online, a consulta inicial é gratuita. Os honorários são geralmente cobrados apenas em caso de êxito na ação."
+        a: "No Advogado Já, a consulta inicial é gratuita. Os honorários são geralmente cobrados apenas em caso de êxito na ação."
       },
       {
         q: "Quais documentos preciso para a ação trabalhista?",

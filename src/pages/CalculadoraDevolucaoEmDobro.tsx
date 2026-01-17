@@ -7,6 +7,7 @@ import { ArrowRight, Receipt, ShieldCheck, FileCheck, Scale, MessageCircle, Chec
 import Navbar from "@/components/Navbar";
 import DevolucaoEmDobroCalculator from "@/components/calculators/DevolucaoEmDobroCalculator";
 import { BackButton } from "@/components/BackButton";
+import RelatedContent from "@/components/RelatedContent";
 
 const CalculadoraDevolucaoEmDobro = () => {
   const scrollToChat = () => {
@@ -18,7 +19,7 @@ const CalculadoraDevolucaoEmDobro = () => {
     "@type": "WebApplication",
     "name": "Calculadora de Devolução em Dobro",
     "description": "Calcule online e grátis quanto você pode receber de volta por cobrança indevida. Art. 42 do CDC garante devolução em dobro.",
-    "url": "https://advogadoonline.com.br/calculadora-devolucao-dobro",
+    "url": "https://advogadoja.lovable.app/calculadora-devolucao-dobro",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Web",
     "offers": {
@@ -73,11 +74,11 @@ const CalculadoraDevolucaoEmDobro = () => {
         <title>Calculadora de Devolução em Dobro | Cobrança Indevida 2025</title>
         <meta name="description" content="Calcule grátis quanto você pode receber de volta por cobrança indevida. Art. 42 CDC garante devolução em dobro + danos morais. Calcule agora!" />
         <meta name="keywords" content="devolução em dobro, cobrança indevida, art 42 cdc, restituição em dobro, direito do consumidor, calculadora" />
-        <link rel="canonical" href="https://advogadoonline.com.br/calculadora-devolucao-dobro" />
+        <link rel="canonical" href="https://advogadoja.lovable.app/calculadora-devolucao-dobro" />
         <meta property="og:title" content="Calculadora de Devolução em Dobro | Cobrança Indevida" />
         <meta property="og:description" content="Calcule grátis quanto você pode receber de volta por cobrança indevida. Art. 42 CDC garante devolução em dobro." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://advogadoonline.com.br/calculadora-devolucao-dobro" />
+        <meta property="og:url" content="https://advogadoja.lovable.app/calculadora-devolucao-dobro" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
@@ -235,6 +236,9 @@ const CalculadoraDevolucaoEmDobro = () => {
             </Card>
           </div>
         </section>
+
+        {/* Related Content */}
+        <RelatedContent currentType="calculator" nicheId="consumidor" />
       </main>
     </PageTransition>
   );

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import BPCLOASCalculator from "@/components/calculators/BPCLOASCalculator";
 import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
+import RelatedContent from "@/components/RelatedContent";
 
 const CalculadoraBPCLOAS = () => {
   const scrollToChat = () => {
@@ -61,6 +62,9 @@ const CalculadoraBPCLOAS = () => {
             <BPCLOASCalculator />
           </div>
         </section>
+
+        {/* Related Content */}
+        <RelatedContent currentType="calculator" nicheId="previdenciario" />
       </main>
     </>
   );

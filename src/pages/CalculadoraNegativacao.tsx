@@ -7,6 +7,7 @@ import { AlertCircle, MessageCircle, Shield, Clock, Check, ArrowRight } from "lu
 import Navbar from "@/components/Navbar";
 import { BackButton } from "@/components/BackButton";
 import NegativacaoCalculator from "@/components/calculators/NegativacaoCalculator";
+import RelatedContent from "@/components/RelatedContent";
 
 const CalculadoraNegativacao = () => {
   const scrollToChat = () => {
@@ -18,7 +19,7 @@ const CalculadoraNegativacao = () => {
     "@type": "WebApplication",
     "name": "Calculadora de Indenização por Negativação Indevida",
     "description": "Calcule gratuitamente quanto você pode receber de indenização por nome sujo indevido no SPC/Serasa. Valores de R$ 5.000 a R$ 30.000.",
-    "url": "https://advogado.online/calculadora-negativacao",
+    "url": "https://advogadoja.lovable.app/calculadora-negativacao",
     "applicationCategory": "LegalService",
     "operatingSystem": "Web",
     "offers": {
@@ -28,8 +29,8 @@ const CalculadoraNegativacao = () => {
     },
     "provider": {
       "@type": "LegalService",
-      "name": "Advogado Online",
-      "url": "https://advogado.online"
+      "name": "Advogado Já",
+      "url": "https://advogadoja.lovable.app"
     }
   };
 
@@ -70,11 +71,11 @@ const CalculadoraNegativacao = () => {
         <title>Calculadora de Indenização por Negativação Indevida 2025 | Nome Sujo SPC Serasa</title>
         <meta name="description" content="Calcule sua indenização por negativação indevida no SPC/Serasa. Nome sujo sem dever? Valores de R$ 5.000 a R$ 30.000. Cálculo gratuito e instantâneo." />
         <meta name="keywords" content="calculadora negativação indevida, indenização nome sujo, SPC Serasa indevido, danos morais negativação, quanto ganho nome sujo, advogado negativação" />
-        <link rel="canonical" href="https://advogado.online/calculadora-negativacao" />
+        <link rel="canonical" href="https://advogadoja.lovable.app/calculadora-negativacao" />
         <meta property="og:title" content="Calculadora de Indenização por Negativação Indevida 2025" />
         <meta property="og:description" content="Calcule gratuitamente quanto você pode receber de indenização por nome sujo indevido. Valores atualizados 2025." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://advogado.online/calculadora-negativacao" />
+        <meta property="og:url" content="https://advogadoja.lovable.app/calculadora-negativacao" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
@@ -254,6 +255,9 @@ const CalculadoraNegativacao = () => {
             </Card>
           </div>
         </section>
+
+        {/* Related Content */}
+        <RelatedContent currentType="calculator" nicheId="consumidor" />
       </main>
     </PageTransition>
   );

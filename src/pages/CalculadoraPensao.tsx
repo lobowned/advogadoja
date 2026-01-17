@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import AlimonyCalculator from "@/components/calculators/AlimonyCalculator";
 import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
+import RelatedContent from "@/components/RelatedContent";
 
 const CalculadoraPensao = () => {
   const scrollToChat = () => {
@@ -168,6 +169,9 @@ const CalculadoraPensao = () => {
             </Card>
           </div>
         </section>
+
+        {/* Related Content */}
+        <RelatedContent currentType="calculator" nicheId="familia" />
       </main>
     </>
   );

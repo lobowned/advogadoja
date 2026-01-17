@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import DeathPensionCalculator from "@/components/calculators/DeathPensionCalculator";
 import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
+import RelatedContent from "@/components/RelatedContent";
 
 const CalculadoraPensaoMorte = () => {
   const scrollToChat = () => {
@@ -61,6 +62,9 @@ const CalculadoraPensaoMorte = () => {
             <DeathPensionCalculator />
           </div>
         </section>
+
+        {/* Related Content */}
+        <RelatedContent currentType="calculator" nicheId="previdenciario" />
       </main>
     </>
   );

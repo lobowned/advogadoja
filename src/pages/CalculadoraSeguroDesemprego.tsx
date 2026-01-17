@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import UnemploymentInsuranceCalculator from "@/components/calculators/UnemploymentInsuranceCalculator";
 import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
+import RelatedContent from "@/components/RelatedContent";
 
 const CalculadoraSeguroDesemprego = () => {
   const scrollToChat = () => {
@@ -61,6 +62,9 @@ const CalculadoraSeguroDesemprego = () => {
             <UnemploymentInsuranceCalculator />
           </div>
         </section>
+
+        {/* Related Content */}
+        <RelatedContent currentType="calculator" nicheId="trabalhista" />
       </main>
     </>
   );

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import SicknessAidCalculator from "@/components/calculators/SicknessAidCalculator";
 import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
+import RelatedContent from "@/components/RelatedContent";
 
 const CalculadoraAuxilioDoenca = () => {
   const scrollToChat = () => {
@@ -61,6 +62,9 @@ const CalculadoraAuxilioDoenca = () => {
             <SicknessAidCalculator />
           </div>
         </section>
+
+        {/* Related Content */}
+        <RelatedContent currentType="calculator" nicheId="previdenciario" />
       </main>
     </>
   );

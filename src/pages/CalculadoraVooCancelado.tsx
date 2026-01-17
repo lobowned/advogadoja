@@ -7,6 +7,7 @@ import { Plane, MessageCircle, AlertTriangle, Clock, Check, ArrowRight } from "l
 import Navbar from "@/components/Navbar";
 import { BackButton } from "@/components/BackButton";
 import FlightDelayCalculator from "@/components/calculators/FlightDelayCalculator";
+import RelatedContent from "@/components/RelatedContent";
 
 const CalculadoraVooCancelado = () => {
   const scrollToChat = () => {
@@ -18,7 +19,7 @@ const CalculadoraVooCancelado = () => {
     "@type": "WebApplication",
     "name": "Calculadora de Indenização por Voo Cancelado",
     "description": "Calcule gratuitamente quanto você pode receber de indenização por voo cancelado, atrasado ou overbooking. Valores de R$ 3.000 a R$ 15.000.",
-    "url": "https://advogado.online/calculadora-voo-cancelado",
+    "url": "https://advogadoja.lovable.app/calculadora-voo-cancelado",
     "applicationCategory": "LegalService",
     "operatingSystem": "Web",
     "offers": {
@@ -28,8 +29,8 @@ const CalculadoraVooCancelado = () => {
     },
     "provider": {
       "@type": "LegalService",
-      "name": "Advogado Online",
-      "url": "https://advogado.online"
+      "name": "Advogado Já",
+      "url": "https://advogadoja.lovable.app"
     }
   };
 
@@ -70,11 +71,11 @@ const CalculadoraVooCancelado = () => {
         <title>Calculadora de Indenização por Voo Cancelado 2025 | Calcule Grátis</title>
         <meta name="description" content="Calcule sua indenização por voo cancelado, atrasado ou overbooking. Valores de R$ 3.000 a R$ 15.000. Resultado instantâneo e gratuito. Fale com advogado especialista." />
         <meta name="keywords" content="calculadora voo cancelado, indenização voo cancelado, voo atrasado indenização, overbooking indenização, quanto ganho voo cancelado, advogado voo cancelado" />
-        <link rel="canonical" href="https://advogado.online/calculadora-voo-cancelado" />
+        <link rel="canonical" href="https://advogadoja.lovable.app/calculadora-voo-cancelado" />
         <meta property="og:title" content="Calculadora de Indenização por Voo Cancelado 2025" />
         <meta property="og:description" content="Calcule gratuitamente quanto você pode receber de indenização por voo cancelado. Valores atualizados 2025." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://advogado.online/calculadora-voo-cancelado" />
+        <meta property="og:url" content="https://advogadoja.lovable.app/calculadora-voo-cancelado" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
@@ -252,6 +253,9 @@ const CalculadoraVooCancelado = () => {
             </Card>
           </div>
         </section>
+
+        {/* Related Content */}
+        <RelatedContent currentType="calculator" nicheId="consumidor" />
       </main>
     </PageTransition>
   );

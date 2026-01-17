@@ -7,6 +7,7 @@ import { ArrowRight, Shield, ShieldCheck, CreditCard, Smartphone, MessageCircle,
 import Navbar from "@/components/Navbar";
 import FraudeBancariaCalculator from "@/components/calculators/FraudeBancariaCalculator";
 import { BackButton } from "@/components/BackButton";
+import RelatedContent from "@/components/RelatedContent";
 
 const CalculadoraFraudeBancaria = () => {
   const scrollToChat = () => {
@@ -18,7 +19,7 @@ const CalculadoraFraudeBancaria = () => {
     "@type": "WebApplication",
     "name": "Calculadora de Indenização Fraude Bancária",
     "description": "Calcule online e grátis quanto você pode receber de indenização por fraude bancária, golpe do PIX, cartão clonado ou empréstimo não autorizado.",
-    "url": "https://advogadoonline.com.br/calculadora-fraude-bancaria",
+    "url": "https://advogadoja.lovable.app/calculadora-fraude-bancaria",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Web",
     "offers": {
@@ -73,11 +74,11 @@ const CalculadoraFraudeBancaria = () => {
         <title>Calculadora de Indenização Fraude Bancária | PIX, Cartão Clonado 2025</title>
         <meta name="description" content="Sofreu golpe do PIX ou teve cartão clonado? Calcule grátis quanto você pode receber de indenização. Banco tem responsabilidade. Advogado especializado." />
         <meta name="keywords" content="golpe pix, cartão clonado, fraude bancária, empréstimo fraude, banco devolver dinheiro, indenização banco" />
-        <link rel="canonical" href="https://advogadoonline.com.br/calculadora-fraude-bancaria" />
+        <link rel="canonical" href="https://advogadoja.lovable.app/calculadora-fraude-bancaria" />
         <meta property="og:title" content="Calculadora de Indenização Fraude Bancária | PIX, Cartão Clonado" />
         <meta property="og:description" content="Sofreu golpe do PIX ou teve cartão clonado? Calcule grátis quanto você pode receber de indenização." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://advogadoonline.com.br/calculadora-fraude-bancaria" />
+        <meta property="og:url" content="https://advogadoja.lovable.app/calculadora-fraude-bancaria" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
@@ -238,6 +239,9 @@ const CalculadoraFraudeBancaria = () => {
             </Card>
           </div>
         </section>
+
+        {/* Related Content */}
+        <RelatedContent currentType="calculator" nicheId="consumidor" />
       </main>
     </PageTransition>
   );

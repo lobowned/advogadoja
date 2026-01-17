@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import FGTSCalculator from "@/components/calculators/FGTSCalculator";
 import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
+import RelatedContent from "@/components/RelatedContent";
 
 const CalculadoraFGTS = () => {
   const scrollToChat = () => {
@@ -76,6 +77,9 @@ const CalculadoraFGTS = () => {
             <FGTSCalculator />
           </div>
         </section>
+
+        {/* Related Content */}
+        <RelatedContent currentType="calculator" nicheId="trabalhista" />
       </main>
     </>
   );

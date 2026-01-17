@@ -33,7 +33,7 @@ const CasosSucesso = () => {
       <Helmet>
         <title>Casos de Sucesso | Advogado Online - Resultados Reais</title>
         <meta name="description" content="Conheça casos reais de sucesso. Veja como ajudamos milhares de clientes a conquistar seus direitos em ações trabalhistas, de família, previdenciárias e mais." />
-        <link rel="canonical" href="https://advogadoonline.com.br/casos-de-sucesso" />
+        <link rel="canonical" href="https://advogadoja.lovable.app/casos-de-sucesso" />
       </Helmet>
 
       <div className="min-h-screen bg-background">

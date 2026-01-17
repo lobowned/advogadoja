@@ -79,6 +79,27 @@ export default function News() {
     ? currentNiche.description
     : "Fique por dentro das principais notícias jurídicas do Brasil. Atualizações semanais de fontes oficiais como STF, STJ, TST e Conjur.";
 
+  const newsSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": pageTitle,
+    "description": pageDescription,
+    "url": `https://advogadoja.lovable.app/noticias${nicheId ? `/${nicheId}` : ''}`,
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": news?.length || 0,
+      "itemListElement": news?.slice(0, 10).map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "NewsArticle",
+          "headline": item.title,
+          "datePublished": item.published_at
+        }
+      })) || []
+    }
+  };
+
   return (
     <PageTransition variant="fade">
       <Helmet>
@@ -86,7 +107,8 @@ export default function News() {
         <meta name="description" content={pageDescription} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
-        <link rel="canonical" href={`https://advogadoonline.com.br/noticias${nicheId ? `/${nicheId}` : ''}`} />
+        <link rel="canonical" href={`https://advogadoja.lovable.app/noticias${nicheId ? `/${nicheId}` : ''}`} />
+        <script type="application/ld+json">{JSON.stringify(newsSchema)}</script>
       </Helmet>
 
       <div className="min-h-screen bg-background">

@@ -104,11 +104,11 @@ const BlogArticle = () => {
         <title>{post.metaTitle}</title>
         <meta name="description" content={post.metaDescription} />
         <meta name="keywords" content={post.keywords.join(", ")} />
-        <link rel="canonical" href={`https://advogado.online/blog/${post.slug}`} />
+        <link rel="canonical" href={`https://advogadoja.lovable.app/blog/${post.slug}`} />
         
         <meta property="og:title" content={post.metaTitle} />
         <meta property="og:description" content={post.metaDescription} />
-        <meta property="og:url" content={`https://advogado.online/blog/${post.slug}`} />
+        <meta property="og:url" content={`https://advogadoja.lovable.app/blog/${post.slug}`} />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={post.publishedAt} />
         <meta property="article:modified_time" content={post.updatedAt} />

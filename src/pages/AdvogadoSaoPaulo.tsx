@@ -94,6 +94,25 @@ const AdvogadoSaoPaulo = () => {
     "serviceType": ["Direito do Consumidor", "Direito Trabalhista", "Direito Previdenciário", "Direito de Família"]
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://advogadoja.lovable.app"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Advogado São Paulo",
+        "item": "https://advogadoja.lovable.app/advogado-sao-paulo"
+      }
+    ]
+  };
+
   return (
     <PageTransition>
       <Helmet>
@@ -107,6 +126,7 @@ const AdvogadoSaoPaulo = () => {
         <meta property="og:url" content="https://advogadoja.lovable.app/advogado-sao-paulo" />
         
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
       <Navbar onCtaClick={() => window.location.href = '/'} />

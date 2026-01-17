@@ -18,7 +18,7 @@ const TermsOfUse = () => {
           name="description" 
           content="Termos de Uso do Advogado Online. Conheça as condições de uso da plataforma, responsabilidades e direitos em conformidade com a OAB." 
         />
-        <link rel="canonical" href="https://advogadoonline.com.br/termos-de-uso" />
+        <link rel="canonical" href="https://advogadoja.lovable.app/termos-de-uso" />
       </Helmet>
 
       <div className="min-h-screen bg-background">

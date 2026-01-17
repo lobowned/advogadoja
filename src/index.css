@@ -835,3 +835,19 @@
 .dark .wa-bubble-received span {
   color: #8696A0;
 }
+
+/* Sticky CTA Animation */
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease-out forwards;
+}

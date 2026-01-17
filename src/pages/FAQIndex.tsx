@@ -112,7 +112,7 @@ const FAQIndex = () => {
     <PageTransition>
       <div className="min-h-screen bg-background">
         <Helmet>
-          <title>Perguntas Frequentes sobre Direito | Advogado Online</title>
+          <title>Perguntas Frequentes sobre Direito | Advogado Já</title>
           <meta 
             name="description" 
             content="Tire suas dúvidas jurídicas: trabalhista, família, previdenciário, civil, consumidor e penal. Respostas claras e objetivas de advogados especializados." 

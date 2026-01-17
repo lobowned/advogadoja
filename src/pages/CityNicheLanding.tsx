@@ -604,7 +604,7 @@ const CityNicheLanding = () => {
 
         <footer className="border-t py-6">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© 2025 Advogado Online | OAB/BA 46.638 | Direito {area.name} em {city.name}</p>
+            <p>© 2025 Advogado Já | OAB/BA 46.638 | Direito {area.name} em {city.name}</p>
           </div>
         </footer>
       </div>

@@ -12,10 +12,10 @@ const PrivacyPolicy = () => {
   return (
     <PageTransition variant="fade">
       <Helmet>
-        <title>Política de Privacidade | Advogado Online</title>
+        <title>Política de Privacidade | Advogado Já</title>
         <meta 
           name="description" 
-          content="Política de Privacidade do Advogado Online. Saiba como coletamos, usamos e protegemos seus dados pessoais em conformidade com a LGPD." 
+          content="Política de Privacidade do Advogado Já. Saiba como coletamos, usamos e protegemos seus dados pessoais em conformidade com a LGPD." 
         />
         <link rel="canonical" href="https://advogadoja.lovable.app/privacidade" />
       </Helmet>
@@ -27,7 +27,7 @@ const PrivacyPolicy = () => {
             <div className="flex items-center justify-between gap-2">
               <Link to="/" className="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity">
                 <Scale className="w-5 h-5 sm:w-6 sm:h-6" />
-                <span className="font-bold text-base sm:text-lg">Advogado Online</span>
+                <span className="font-bold text-base sm:text-lg">Advogado Já</span>
               </Link>
               <div className="flex items-center gap-1 sm:gap-2">
                 <Button asChild variant="ghost" size="sm" className="text-xs sm:text-sm px-2 sm:px-3 min-h-[44px]">
@@ -76,7 +76,7 @@ const PrivacyPolicy = () => {
               </CardHeader>
               <CardContent className="prose prose-sm max-w-none text-muted-foreground">
                 <p>
-                  <strong className="text-foreground">Razão Social:</strong> Advogado Online<br />
+                  <strong className="text-foreground">Razão Social:</strong> Advogado Já<br />
                   <strong className="text-foreground">CNPJ:</strong> 50.947.818/0001-94<br />
                   <strong className="text-foreground">Registro OAB:</strong> OAB/BA 46.638<br />
                   <strong className="text-foreground">Endereço:</strong> Salvador, Bahia, Brasil<br />
@@ -280,7 +280,7 @@ const PrivacyPolicy = () => {
         {/* Footer */}
         <footer className="border-t py-6">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© 2025 Advogado Online | OAB/BA 46.638</p>
+            <p>© 2025 Advogado Já | OAB/BA 46.638</p>
             <div className="flex justify-center gap-4 mt-2">
               <Link to="/termos-de-uso" className="hover:text-foreground transition-colors">
                 Termos de Uso

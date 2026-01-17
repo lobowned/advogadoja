@@ -62,7 +62,7 @@ DESIGN REQUIREMENTS:
 - Include a subtle justice scale or gavel icon as a watermark (30% opacity, background)
 - Small "${colors.name}" category badge at the top of the image
 ${shortExcerpt ? `- Optional subtle excerpt below headline: "${shortExcerpt}"` : ''}
-- "Advogado Online" brand text at the bottom corner (small, subtle)
+- "Advogado Já" brand text at the bottom corner (small, subtle)
 - Modern, professional, clean legal aesthetic
 
 PRIORITY ORDER:

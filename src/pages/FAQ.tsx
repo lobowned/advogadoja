@@ -167,7 +167,7 @@ const FAQ = () => {
           name="description" 
           content="Tire suas dúvidas sobre o Advogado Online. Como funciona, custos, áreas de atuação, segurança e mais. Perguntas frequentes sobre consulta jurídica online." 
         />
-        <link rel="canonical" href="https://advogadoonline.com.br/perguntas-frequentes" />
+        <link rel="canonical" href="https://advogadoja.lovable.app/perguntas-frequentes" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>

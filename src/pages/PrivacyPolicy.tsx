@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
           name="description" 
           content="Política de Privacidade do Advogado Online. Saiba como coletamos, usamos e protegemos seus dados pessoais em conformidade com a LGPD." 
         />
-        <link rel="canonical" href="https://advogadoonline.com.br/privacidade" />
+        <link rel="canonical" href="https://advogadoja.lovable.app/privacidade" />
       </Helmet>
 
       <div className="min-h-screen bg-background">

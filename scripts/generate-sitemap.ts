@@ -50,6 +50,9 @@ const staticPages: SitemapURL[] = [
   { loc: '/termos-de-uso', lastmod: TODAY, changefreq: 'yearly', priority: 0.3 },
   // Hub Pages Regionais
   { loc: '/advogado-bahia', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
+  { loc: '/advogado-sao-paulo', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
+  { loc: '/advogado-rio-de-janeiro', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
+  { loc: '/advogado-minas-gerais', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
 ];
 
 // ============================================

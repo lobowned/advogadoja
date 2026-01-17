@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Upload } from "lucide-react";
@@ -107,6 +108,12 @@ const DynamicQuestionnaire = () => {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>{action.name} - Questionário | Advogado Já</title>
+        <meta name="description" content={`Responda o questionário sobre ${action.name}. Análise gratuita do seu caso por advogado especializado em ${niche.name}.`} />
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
     <div className="min-h-screen bg-background">
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-6">
@@ -170,6 +177,7 @@ const DynamicQuestionnaire = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

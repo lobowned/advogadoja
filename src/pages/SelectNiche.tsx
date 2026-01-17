@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { legalNiches } from "@/data/legal-niches";
 import { ArrowLeft } from "lucide-react";
 import PageTransition from "@/components/motion/PageTransition";
@@ -13,6 +14,12 @@ const SelectNiche = () => {
 
   return (
     <PageTransition variant="slideUp">
+      <Helmet>
+        <title>Selecionar Área Jurídica | Advogado Já</title>
+        <meta name="description" content="Escolha a área jurídica do seu problema: Trabalhista, Família, Consumidor, Previdenciário, Civil ou Criminal. Atendimento online gratuito." />
+        <link rel="canonical" href="https://advogadoja.lovable.app/selecionar-nicho" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b bg-card">

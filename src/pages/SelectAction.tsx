@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { legalNiches } from "@/data/legal-niches";
 import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 
@@ -29,6 +30,13 @@ const SelectAction = () => {
   const Icon = niche.icon;
 
   return (
+    <>
+      <Helmet>
+        <title>{niche.name} - Tipos de Ação | Advogado Já</title>
+        <meta name="description" content={`Selecione o tipo de ação para ${niche.name}. ${niche.actions.length} opções disponíveis. Consultoria jurídica online gratuita.`} />
+        <link rel="canonical" href={`https://advogadoja.lovable.app/selecionar-acao/${nicheId}`} />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b bg-card">
@@ -94,6 +102,7 @@ const SelectAction = () => {
         </div>
       </footer>
     </div>
+    </>
   );
 };
 

@@ -80,7 +80,7 @@ const PrivacyPolicy = () => {
                   <strong className="text-foreground">CNPJ:</strong> 50.947.818/0001-94<br />
                   <strong className="text-foreground">Registro OAB:</strong> OAB/BA 46.638<br />
                   <strong className="text-foreground">Endereço:</strong> Salvador, Bahia, Brasil<br />
-                  <strong className="text-foreground">E-mail do Encarregado (DPO):</strong> privacidade@advogadoonline.com.br
+                  <strong className="text-foreground">E-mail do Encarregado (DPO):</strong> privacidade@advogadoja.com.br
                 </p>
               </CardContent>
             </Card>
@@ -172,7 +172,7 @@ const PrivacyPolicy = () => {
                   <li><strong className="text-foreground">Oposição:</strong> opor-se ao tratamento realizado com base no legítimo interesse</li>
                 </ul>
                 <p className="mt-4">
-                  Para exercer seus direitos, entre em contato pelo e-mail: <strong className="text-foreground">privacidade@advogadoonline.com.br</strong>
+                  Para exercer seus direitos, entre em contato pelo e-mail: <strong className="text-foreground">privacidade@advogadoja.com.br</strong>
                 </p>
               </CardContent>
             </Card>
@@ -255,11 +255,11 @@ const PrivacyPolicy = () => {
                 <p>Para dúvidas, solicitações ou exercício de direitos, entre em contato:</p>
                 <div className="flex flex-col sm:flex-row gap-4 mt-4">
                   <a 
-                    href="mailto:privacidade@advogadoonline.com.br"
+                    href="mailto:privacidade@advogadoja.com.br"
                     className="flex items-center gap-2 text-primary hover:underline"
                   >
                     <Mail className="w-4 h-4" />
-                    privacidade@advogadoonline.com.br
+                    privacidade@advogadoja.com.br
                   </a>
                   <a 
                     href="https://wa.me/5571997036269"

@@ -89,7 +89,7 @@ const FAQIndex = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://advogadoonline.com.br"
+        "item": "https://advogadoja.lovable.app"
       },
       {
         "@type": "ListItem",

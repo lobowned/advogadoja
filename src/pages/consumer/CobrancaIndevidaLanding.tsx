@@ -74,7 +74,7 @@ const CobrancaIndevidaLanding = () => {
             <div className="flex items-center justify-between">
               <BackButton />
               <Link to="/" className="flex items-center gap-2">
-                <span className="text-lg font-semibold">Advogado.Online</span>
+                <span className="text-lg font-semibold">Advogado Já</span>
               </Link>
               <Button asChild size="sm" className="bg-emerald-600 hover:bg-emerald-700">
                 <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">
@@ -274,7 +274,7 @@ const CobrancaIndevidaLanding = () => {
         {/* Footer */}
         <footer className="bg-background border-t py-8">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© 2025 Advogado.Online - Todos os direitos reservados</p>
+            <p>© 2025 Advogado Já - Todos os direitos reservados</p>
           </div>
         </footer>
       </div>

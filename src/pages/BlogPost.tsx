@@ -129,19 +129,19 @@ const BlogPost = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://advogadoonline.com.br"
+        "item": "https://advogadoja.lovable.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Artigos",
-        "item": "https://advogadoonline.com.br/artigos"
+        "item": "https://advogadoja.lovable.app/artigos"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": nicheInfo.name,
-        "item": `https://advogadoonline.com.br/artigos/${nicheId}`
+        "item": `https://advogadoja.lovable.app/artigos/${nicheId}`
       },
       {
         "@type": "ListItem",
@@ -167,8 +167,8 @@ const BlogPost = () => {
     "dateModified": article.updatedAt,
     "author": {
       "@type": "Organization",
-      "name": "Advogado Online",
-      "url": "https://advogadoonline.com.br"
+      "name": "Advogado Já",
+      "url": "https://advogadoja.lovable.app"
     },
     "totalTime": `PT${readingTime}M`,
     "step": article.content.whenYouHaveRight.map((step, index) => ({
@@ -235,7 +235,7 @@ const BlogPost = () => {
             <div className="flex items-center justify-between">
               <Link to="/" className="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity">
                 <Scale className="w-6 h-6" />
-                <span className="font-bold text-lg">Advogado Online</span>
+                <span className="font-bold text-lg">Advogado Já</span>
               </Link>
               <Button asChild variant="outline" size="sm">
                 <Link to="/">Falar com Advogado</Link>
@@ -441,7 +441,7 @@ const BlogPost = () => {
         {/* Footer */}
         <footer className="border-t py-6 mt-12">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© 2025 Advogado Online | OAB/BA 46.638</p>
+            <p>© 2025 Advogado Já | OAB/BA 46.638</p>
           </div>
         </footer>
 

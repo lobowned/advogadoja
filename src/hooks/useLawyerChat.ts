@@ -1407,6 +1407,8 @@ export const useLawyerChat = () => {
     isTransferring,
     isCollectingLead,
     leadQuestion,
+    leadStep,
+    userName,
     sendMessage,
     stopGeneration,
     submitRating,

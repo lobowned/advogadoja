@@ -31,7 +31,7 @@ const CasosSucesso = () => {
   return (
     <PageTransition variant="fade">
       <Helmet>
-        <title>Casos de Sucesso | Advogado Online - Resultados Reais</title>
+        <title>Casos de Sucesso | Advogado Já - Resultados Reais</title>
         <meta name="description" content="Conheça casos reais de sucesso. Veja como ajudamos milhares de clientes a conquistar seus direitos em ações trabalhistas, de família, previdenciárias e mais." />
         <link rel="canonical" href="https://advogadoja.lovable.app/casos-de-sucesso" />
       </Helmet>

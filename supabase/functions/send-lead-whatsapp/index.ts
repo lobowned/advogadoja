@@ -154,7 +154,7 @@ serve(async (req) => {
     // Montar mensagem de boas-vindas para o lead
     const welcomeMessage = `Olá, ${leadData.name}! 👋
 
-Aqui é da equipe do *Advogado Online*.
+Aqui é da equipe do *Advogado Já*.
 
 ${contextualMessage}
 
@@ -167,7 +167,7 @@ ${lawyerDisplayName} já está analisando seu caso e entrará em contato em brev
 
 💬 Enquanto isso, guarde esta conversa! Qualquer dúvida, pode mandar mensagem aqui.
 
-_Atenciosamente, Equipe Advogado Online_`;
+_Atenciosamente, Equipe Advogado Já_`;
 
     console.log("Message length:", welcomeMessage.length);
     console.log("Sending to:", formattedPhone);

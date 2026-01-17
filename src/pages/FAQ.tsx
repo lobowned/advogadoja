@@ -21,7 +21,7 @@ const faqCategories: FAQCategory[] = [
     icon: <MessageCircle className="w-5 h-5" />,
     questions: [
       {
-        question: "Como funciona o atendimento do Advogado Online?",
+        question: "Como funciona o atendimento do Advogado Já?",
         answer: "O atendimento é simples e rápido. Você acessa nosso chat, descreve seu problema jurídico, e um de nossos advogados especializados irá atendê-lo imediatamente. A consulta inicial é gratuita e você pode tirar todas as suas dúvidas antes de decidir prosseguir com uma ação."
       },
       {
@@ -162,10 +162,10 @@ const FAQ = () => {
   return (
     <PageTransition variant="fade">
       <Helmet>
-        <title>Perguntas Frequentes | Advogado Online</title>
+        <title>Perguntas Frequentes | Advogado Já</title>
         <meta 
           name="description" 
-          content="Tire suas dúvidas sobre o Advogado Online. Como funciona, custos, áreas de atuação, segurança e mais. Perguntas frequentes sobre consulta jurídica online." 
+          content="Tire suas dúvidas sobre o Advogado Já. Como funciona, custos, áreas de atuação, segurança e mais. Perguntas frequentes sobre consulta jurídica online." 
         />
         <link rel="canonical" href="https://advogadoja.lovable.app/perguntas-frequentes" />
         <script type="application/ld+json">
@@ -180,7 +180,7 @@ const FAQ = () => {
             <div className="flex items-center justify-between gap-2">
               <Link to="/" className="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity">
                 <Scale className="w-5 h-5 sm:w-6 sm:h-6" />
-                <span className="font-bold text-base sm:text-lg">Advogado Online</span>
+                <span className="font-bold text-base sm:text-lg">Advogado Já</span>
               </Link>
               <div className="flex items-center gap-1 sm:gap-2">
                 <Button asChild variant="ghost" size="sm" className="text-xs sm:text-sm px-2 sm:px-3 min-h-[44px]">
@@ -211,7 +211,7 @@ const FAQ = () => {
               Perguntas Frequentes
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Tire suas dúvidas sobre o Advogado Online. Se não encontrar o que procura, 
+              Tire suas dúvidas sobre o Advogado Já. Se não encontrar o que procura, 
               fale conosco pelo chat.
             </p>
             </div>
@@ -267,7 +267,7 @@ const FAQ = () => {
         {/* Footer */}
         <footer className="border-t py-6">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© 2025 Advogado Online | OAB/BA 46.638</p>
+            <p>© 2025 Advogado Já | OAB/BA 46.638</p>
             <div className="flex justify-center gap-4 mt-2">
               <Link to="/termos-de-uso" className="hover:text-foreground transition-colors">
                 Termos de Uso

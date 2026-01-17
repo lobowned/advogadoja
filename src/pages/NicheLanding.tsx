@@ -270,7 +270,7 @@ const NicheLanding = () => {
             <div className="flex items-center justify-between">
               <Link to="/" className="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity">
                 <Scale className="w-6 h-6" />
-                <span className="font-bold text-lg">Advogado Online</span>
+                <span className="font-bold text-lg">Advogado Já</span>
               </Link>
               <div className="flex items-center gap-2">
                 <Button asChild variant="ghost" size="sm" className="hidden sm:flex">
@@ -456,7 +456,7 @@ const NicheLanding = () => {
         {/* Footer */}
         <footer className="border-t py-6">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© 2025 Advogado Online | OAB/BA 46.638</p>
+            <p>© 2025 Advogado Já | OAB/BA 46.638</p>
           </div>
         </footer>
       </div>

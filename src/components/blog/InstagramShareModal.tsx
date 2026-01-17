@@ -22,7 +22,7 @@ const InstagramShareModal = ({ title, excerpt, nicheId, url }: InstagramShareMod
 
 ${excerpt ? `${excerpt}\n\n` : ''}🔗 Leia mais: ${url}
 
-#advogado #direito #consultajuridica #advogadoonline #seusdireitos #justica #orientacaojuridica #direitobrasileiro`;
+#advogado #direito #consultajuridica #advogadoja #seusdireitos #justica #orientacaojuridica #direitobrasileiro`;
 
   const generateImage = async () => {
     setIsLoading(true);

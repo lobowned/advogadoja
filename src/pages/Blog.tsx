@@ -43,8 +43,8 @@ const Blog = () => {
   const remainingArticles = articles.slice(3);
 
   const pageTitle = selectedNiche 
-    ? `Artigos sobre ${selectedNiche.name} | Advogado Online`
-    : "Artigos Jurídicos | Advogado Online";
+    ? `Artigos sobre ${selectedNiche.name} | Advogado Já`
+    : "Artigos Jurídicos | Advogado Já";
   
   const pageDescription = selectedNiche
     ? `Leia artigos completos sobre ${selectedNiche.name}. ${selectedNiche.description}`
@@ -286,7 +286,7 @@ const Blog = () => {
         {/* Footer */}
         <footer className="border-t py-6">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© 2025 Advogado Online | OAB/BA 46.638</p>
+            <p>© 2025 Advogado Já | OAB/BA 46.638</p>
             <div className="flex justify-center gap-4 mt-2">
               <Link to="/termos-de-uso" className="hover:text-foreground transition-colors">
                 Termos de Uso

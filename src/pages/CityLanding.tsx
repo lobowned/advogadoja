@@ -92,7 +92,7 @@ const CityLanding = () => {
     "description": `Advogados especialistas em ${city.name}, ${city.state}. Atendimento jurídico online gratuito em Direito Trabalhista, Família, Previdenciário, Civil e Criminal.`,
     "url": canonicalUrl,
     "telephone": "+55-71-99999-9999",
-    "email": "contato@advogadoonline.com.br",
+    "email": "contato@advogadoja.com.br",
     "priceRange": "Consulta Gratuita",
     "address": {
       "@type": "PostalAddress",
@@ -138,13 +138,13 @@ const CityLanding = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://advogadoonline.com.br"
+        "item": "https://advogadoja.lovable.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Cidades",
-        "item": "https://advogadoonline.com.br/advogado"
+        "item": "https://advogadoja.lovable.app/advogado"
       },
       {
         "@type": "ListItem",

@@ -128,7 +128,7 @@ const ProdutoDefeitousoLanding = () => {
         <title>Advogado para Produto Defeituoso | Troca e Indenização</title>
         <meta name="description" content="Comprou um produto com defeito e a empresa não resolve? Advogado especialista em direito do consumidor para troca e indenização. Consulta gratuita." />
         <meta name="keywords" content="produto defeituoso, garantia produto, vício oculto, vício aparente, troca produto defeituoso, advogado consumidor, indenização produto, CDC, direito do consumidor" />
-        <link rel="canonical" href="https://advogado.online/advogado-produto-defeituoso" />
+        <link rel="canonical" href="https://advogadoja.lovable.app/advogado-produto-defeituoso" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 
@@ -139,7 +139,7 @@ const ProdutoDefeitousoLanding = () => {
             <div className="flex items-center justify-between">
               <BackButton />
               <Link to="/" className="flex items-center gap-2">
-                <span className="text-lg font-semibold">Advogado.Online</span>
+                <span className="text-lg font-semibold">Advogado Já</span>
               </Link>
               <Button asChild size="sm" className="bg-emerald-600 hover:bg-emerald-700">
                 <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">
@@ -572,7 +572,7 @@ const ProdutoDefeitousoLanding = () => {
         {/* Footer */}
         <footer className="bg-background border-t py-8">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© 2025 Advogado.Online - Todos os direitos reservados</p>
+            <p>© 2025 Advogado Já - Todos os direitos reservados</p>
             <div className="flex justify-center gap-4 mt-4">
               <Link to="/privacidade" className="hover:underline">Privacidade</Link>
               <Link to="/termos-de-uso" className="hover:underline">Termos</Link>

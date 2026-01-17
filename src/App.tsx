@@ -65,6 +65,10 @@ import PlanoSaudeNegouLanding from "./pages/consumer/PlanoSaudeNegouLanding";
 import FraudeBancariaLanding from "./pages/consumer/FraudeBancariaLanding";
 import CobrancaIndevidaLanding from "./pages/consumer/CobrancaIndevidaLanding";
 import ProdutoDefeitousoLanding from "./pages/consumer/ProdutoDefeitousoLanding";
+import LiminarCirurgiaNegadaLanding from "./pages/consumer/LiminarCirurgiaNegadaLanding";
+
+// Calculadora Liminar Cirurgia
+import CalculadoraLiminarCirurgia from "./pages/CalculadoraLiminarCirurgia";
 
 // Admin
 import LeadsDashboard from "./pages/admin/LeadsDashboard";
@@ -160,6 +164,7 @@ const AnimatedRoutes = () => {
         <Route path="/calculadora-devolucao-dobro" element={<CalculadoraDevolucaoEmDobro />} />
         <Route path="/calculadora-plano-saude" element={<CalculadoraPlanoSaude />} />
         <Route path="/calculadora-fraude-bancaria" element={<CalculadoraFraudeBancaria />} />
+        <Route path="/calculadora-liminar-cirurgia" element={<CalculadoraLiminarCirurgia />} />
         
         {/* Consumer Problem Landing Pages - SEO URLs */}
         <Route path="/advogado-voo-cancelado-atrasado" element={<VooCanceladoLanding />} />
@@ -174,6 +179,9 @@ const AnimatedRoutes = () => {
         <Route path="/plano-saude-negou" element={<PlanoSaudeNegouLanding />} />
         <Route path="/fraude-bancaria" element={<FraudeBancariaLanding />} />
         <Route path="/cobranca-indevida" element={<CobrancaIndevidaLanding />} />
+        
+        {/* Liminar Cirurgia - SEO */}
+        <Route path="/liminar-cirurgia-negada" element={<LiminarCirurgiaNegadaLanding />} />
         
         {/* Niche Landing Pages */}
         <Route path="/advogado-consumidor" element={<NicheLanding />} />

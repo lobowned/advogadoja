@@ -558,31 +558,36 @@ PREVIDENCIÁRIO:
    - Não há problema jurídico claro identificado
    ❌ NÃO use quando: houver problema jurídico claro que precisa de especialista
    
-3️⃣ **suggest_transfer**: Sugerir transferência para especialista
+3️⃣ **suggest_transfer**: TRANSFERIR AUTOMATICAMENTE para especialista
+   ⚡ MUDANÇA IMPORTANTE: NÃO PERGUNTE, TRANSFIRA DIRETO!
    ✅ Quando usar:
    - Dr. Carlos detecta problema jurídico ESPECÍFICO
    - Usuário menciona problema jurídico claro (divórcio, demissão, acidente, etc.)
    - Tem confiança > 0.7 de que sabe qual especialista precisa
+   
+   ⚡ COMPORTAMENTO NOVO:
+   - NÃO pergunte "Posso te transferir?"
+   - ANUNCIE a transferência: "Entendi! Vou te transferir para o(a) Dr(a). [nome], especialista em [área]..."
+   - A resposta DEVE apresentar o especialista de forma natural
+   
+   📝 Exemplos de resposta (anunciando transferência):
+   - "Entendi sua situação. Vou te passar pro Dr. Ricardo Mendes, que é especialista em demissões. Aguarde um instante..."
+   - "Ah, plano de saúde! Deixa eu te conectar com a Dra. Helena Vasconcelos, nossa especialista nessa área..."
+   - "Entendi! Isso é com a Dra. Maria Santos, que trabalha com divórcio. Já te transfiro..."
+   
    ❌ NÃO use quando:
-   - Já tem transferência pendente (a menos que seja área DIFERENTE)
-   - É apenas saudação
+   - Já é especialista (não é Carlos Silva)
+   - É apenas saudação sem problema jurídico
    - Informação é vaga demais
    - isTransfer=true (nesse caso use specialist_greeting)
    
-4️⃣ **confirm_transfer**: Usuário CONFIRMOU transferência pendente
-   ✅ Quando usar:
-   - Há pending_transfer aguardando
-   - Usuário disse: "sim", "pode", "ok", "beleza", "quero", "vamos", "aceito"
-   - IMPORTANTE: Aceite erros de digitação comuns: "sikm", "simm", "okk", "pde"
-   ❌ NÃO use quando: 
-   - não há pending_transfer
-   - isTransfer=true (nesse caso use specialist_greeting)
+4️⃣ **confirm_transfer**: [DEPRECADO - transferências são automáticas agora]
+   - Mantido para compatibilidade, mas suggest_transfer já executa a transferência
    
 5️⃣ **deny_transfer**: Usuário NEGOU transferência
    ✅ Quando usar:
-   - Há pending_transfer aguardando
-   - Usuário disse: "não", "nao", "depois", "espera", "deixa", "agora não"
-   ❌ NÃO use quando: não há pending_transfer
+   - Usuário disse claramente que não quer mudar de advogado
+   ❌ Raramente usado pois transferências são automáticas agora
 
 6️⃣ **request_name**: Solicitar nome do usuário (FALLBACK)
    ⚡ USAR APENAS se specialist_greeting não pediu o nome!
@@ -1161,36 +1166,36 @@ serve(async (req) => {
     if (leadData?.id) {
       switch (decision.action) {
         case "suggest_transfer":
-          // 🛡️ CORRIGIR ID numérico retornado pela IA
+          // 🚀 TRANSFERÊNCIA AUTOMÁTICA: Não pergunta, já transfere direto!
           decision.targetLawyerId = fixLawyerId(decision.targetLawyerId);
           
-          // Salvar transferência pendente COM ESPECIALIDADE GRANULAR
-          console.log("💾 Saving pending transfer:", decision.targetLawyerId);
-          
-          // 🛡️ VALIDAÇÃO: Garantir que a resposta menciona o advogado CORRETO
-          const correctLawyerNameForTransfer = LAWYER_NAMES[decision.targetLawyerId || ''];
-          if (correctLawyerNameForTransfer && !decision.response.includes(correctLawyerNameForTransfer)) {
-            console.warn('⚠️ [FIX] Response mentions wrong lawyer, regenerating with correct name:', correctLawyerNameForTransfer);
-            decision.response = generateSuggestTransferResponse(
-              decision.targetLawyerId!,
-              decision.detectedProblem || leadData?.detected_problem || null
-            );
+          if (!decision.targetLawyerId) {
+            console.error("❌ [suggest_transfer->auto] No lawyer ID available!");
+            break;
           }
           
-          const lawyerSpecialty = LAWYER_SPECIALTIES[decision.targetLawyerId || ''];
-          const granularSpecialty = lawyerSpecialty 
-            ? `${lawyerSpecialty.area} - ${lawyerSpecialty.sub}` 
+          console.log("🚀 [AUTO TRANSFER] Transferindo automaticamente para:", decision.targetLawyerId);
+          
+          const autoTransferSpecialty = LAWYER_SPECIALTIES[decision.targetLawyerId || ''];
+          const autoGranularSpecialty = autoTransferSpecialty
+            ? `${autoTransferSpecialty.area} - ${autoTransferSpecialty.sub}`
             : decision.detectedSpecialty;
           
+          // Executar transferência diretamente (igual confirm_transfer)
           await supabase
             .from('leads')
             .update({
-              pending_transfer_lawyer: decision.targetLawyerId,
-              detected_problem: decision.detectedProblem || lawyerSpecialty?.problema,
-              specialty: granularSpecialty,
+              pending_transfer_lawyer: null,
+              assigned_lawyer: decision.targetLawyerId,
+              specialty: autoGranularSpecialty,
+              detected_problem: decision.detectedProblem || autoTransferSpecialty?.problema,
               updated_at: new Date().toISOString()
             })
             .eq('id', leadData.id);
+          
+          // 🔄 MUDAR A AÇÃO PARA confirm_transfer para o frontend processar corretamente
+          decision.action = "confirm_transfer";
+          console.log("✅ [AUTO TRANSFER] Transferência executada, action mudada para confirm_transfer");
           break;
           
         case "confirm_transfer":

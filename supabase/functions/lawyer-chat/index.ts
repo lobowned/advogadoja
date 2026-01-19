@@ -1195,9 +1195,17 @@ serve(async (req) => {
           
         case "confirm_transfer":
           // Executar transferência COM ESPECIALIDADE GRANULAR
-          console.log("✅ Confirming transfer to:", decision.targetLawyerId);
+          // IMPORTANTE: Usar pending_transfer_lawyer do banco se targetLawyerId não foi retornado pela IA
+          const transferLawyerId = decision.targetLawyerId || leadData?.pending_transfer_lawyer;
           
-          const confirmedLawyerSpecialty = LAWYER_SPECIALTIES[decision.targetLawyerId || ''];
+          if (!transferLawyerId) {
+            console.error("❌ [confirm_transfer] No lawyer ID available!");
+            break;
+          }
+          
+          console.log("✅ Confirming transfer to:", transferLawyerId);
+          
+          const confirmedLawyerSpecialty = LAWYER_SPECIALTIES[transferLawyerId || ''];
           const confirmedGranularSpecialty = confirmedLawyerSpecialty
             ? `${confirmedLawyerSpecialty.area} - ${confirmedLawyerSpecialty.sub}`
             : decision.detectedSpecialty;
@@ -1206,12 +1214,15 @@ serve(async (req) => {
             .from('leads')
             .update({
               pending_transfer_lawyer: null,
-              assigned_lawyer: decision.targetLawyerId,
+              assigned_lawyer: transferLawyerId,
               specialty: confirmedGranularSpecialty,
               detected_problem: decision.detectedProblem || confirmedLawyerSpecialty?.problema,
               updated_at: new Date().toISOString()
             })
             .eq('id', leadData.id);
+          
+          // Garantir que decision.targetLawyerId está preenchido para o frontend processar a transferência
+          decision.targetLawyerId = transferLawyerId;
           break;
           
         case "deny_transfer":
@@ -1334,46 +1345,9 @@ serve(async (req) => {
             }
           }
           
-          // Buscar lead atualizado para disparar notificação (só se tiver telefone)
-          if (decision.extractedPhone || leadData?.phone) {
-            const { data: updatedLead, error: fetchError } = await supabase
-              .from('leads')
-              .select('*')
-              .eq('id', leadData.id)
-              .single();
-            
-            if (!fetchError && updatedLead && updatedLead.phone) {
-              console.log("📨 Invoking WhatsApp notifications...");
-              try {
-                // 1. Notificar escritório (existente)
-                await supabase.functions.invoke('send-whatsapp-notification', {
-                  body: { leadData: updatedLead }
-                });
-                console.log("✅ Office WhatsApp notification sent");
-                
-                // 2. 🆕 Enviar mensagem de boas-vindas para o LEAD
-                console.log("📱 Sending welcome message to lead...");
-                await supabase.functions.invoke('send-lead-whatsapp', {
-                  body: { 
-                    leadData: updatedLead,
-                    lawyerName: LAWYER_NAMES[updatedLead.assigned_lawyer || ''] || 'Equipe Jurídica'
-                  }
-                });
-                console.log("✅ Lead WhatsApp welcome message sent");
-                
-                // Marcar como notificado
-                await supabase
-                  .from('leads')
-                  .update({
-                    notification_sent: true,
-                    notification_sent_at: new Date().toISOString()
-                  })
-                  .eq('id', leadData.id);
-              } catch (notifError) {
-                console.error("❌ Error sending WhatsApp notifications:", notifError);
-              }
-            }
-          }
+          // NÃO enviar WhatsApp aqui ao coletar dados
+          // WhatsApp será enviado APENAS no final da conversa (redirect_to_whatsapp ou request_rating)
+          console.log("📱 Dados de contato salvos. WhatsApp será enviado no final da conversa.");
           break;
           
         case "request_rating":
@@ -1466,16 +1440,34 @@ serve(async (req) => {
             .single();
           
           if (!whatsAppFetchError && leadForWhatsApp && leadForWhatsApp.phone) {
-            console.log("📨 Sending personalized WhatsApp message with case summary...");
+            console.log("📨 [FINAL] Sending WhatsApp notifications at end of conversation...");
             try {
+              // 1. Enviar notificação para a EQUIPE (escritório)
               await supabase.functions.invoke('send-whatsapp-notification', {
                 body: { 
                   leadData: leadForWhatsApp,
-                  sendOrientations: true,
-                  isRedirect: true
+                  isEndConversation: true
                 }
               });
-              console.log("✅ Personalized WhatsApp message sent successfully");
+              console.log("✅ Office WhatsApp notification sent");
+              
+              // 2. Enviar mensagem personalizada para o CLIENTE
+              await supabase.functions.invoke('send-lead-whatsapp', {
+                body: { 
+                  leadData: leadForWhatsApp,
+                  lawyerName: LAWYER_NAMES[leadForWhatsApp.assigned_lawyer || ''] || 'Equipe Jurídica'
+                }
+              });
+              console.log("✅ Client WhatsApp message sent");
+              
+              // Marcar como notificado
+              await supabase
+                .from('leads')
+                .update({
+                  notification_sent: true,
+                  notification_sent_at: new Date().toISOString()
+                })
+                .eq('id', leadData.id);
             } catch (whatsAppError) {
               console.error("❌ Error sending WhatsApp:", whatsAppError);
             }

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { 
   Plane, 
@@ -20,7 +19,6 @@ import {
   Newspaper,
   Trophy,
   ChevronDown,
-  ChevronUp,
   ExternalLink
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -142,14 +140,12 @@ interface CollapsibleSectionProps {
 }
 
 const CollapsibleSection = ({ title, icon: Icon, badge, children, defaultOpen = false }: CollapsibleSectionProps) => {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
-  
   return (
-    <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-full">
+    <Collapsible defaultOpen={defaultOpen} className="w-full">
       <CollapsibleTrigger asChild>
         <Button 
           variant="ghost" 
-          className="w-full justify-between p-4 h-auto hover:bg-muted/50"
+          className="w-full justify-between p-4 h-auto hover:bg-muted/50 group"
         >
           <div className="flex items-center gap-3">
             <Icon className="w-5 h-5 text-primary" />
@@ -160,7 +156,7 @@ const CollapsibleSection = ({ title, icon: Icon, badge, children, defaultOpen = 
               </Badge>
             )}
           </div>
-          {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+          <ChevronDown className="w-5 h-5 transition-transform group-data-[state=open]:rotate-180" />
         </Button>
       </CollapsibleTrigger>
       <CollapsibleContent className="px-4 pb-4">

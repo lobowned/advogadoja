@@ -61,7 +61,7 @@ const CityConsumerLanding = () => {
     return <Navigate to="/advogado-consumidor" replace />;
   }
 
-  const whatsappNumber = "5511999999999";
+  const whatsappNumber = "5571997036269";
   const whatsappMessage = `Olá! Preciso de ajuda com um problema de consumidor em ${cityData.cityName}. Pode me ajudar?`;
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 

@@ -15,6 +15,7 @@ import ExitIntentPopup from "@/components/ExitIntentPopup";
 import MobileBottomCTA from "@/components/MobileBottomCTA";
 import SuccessNotification from "@/components/SuccessNotification";
 import ConsumerProblemsSection from "@/components/ConsumerProblemsSection";
+import ServicesSection from "@/components/ServicesSection";
 import { DetectedProblemProvider, useDetectedProblem } from "@/contexts/DetectedProblemContext";
 
 const IndexContent = () => {
@@ -358,6 +359,9 @@ const IndexContent = () => {
 
       {/* FAQ Section - Recebe área detectada do chat */}
       <ObjecionsFAQ detectedArea={detectedArea} />
+
+      {/* Services Section - ALL Landing Pages */}
+      <ServicesSection />
 
       {/* Articles Section */}
       <ArticlesSection />

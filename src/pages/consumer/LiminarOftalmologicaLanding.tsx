@@ -31,7 +31,7 @@ const LiminarOftalmologicaLanding = () => {
     window.location.href = "/#chat";
   };
 
-  const whatsappNumber = "5511999999999";
+  const whatsappNumber = "5571997036269";
   const whatsappMessage = encodeURIComponent("Olá! Meu plano de saúde negou minha cirurgia nos olhos e preciso de uma liminar urgente.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 

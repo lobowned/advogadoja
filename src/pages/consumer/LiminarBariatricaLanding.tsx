@@ -32,7 +32,7 @@ const LiminarBariatricaLanding = () => {
     window.location.href = "/#chat";
   };
 
-  const whatsappNumber = "5511999999999";
+  const whatsappNumber = "5571997036269";
   const whatsappMessage = encodeURIComponent("Olá! Tive minha cirurgia bariátrica negada pelo plano de saúde e preciso de uma liminar urgente.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 

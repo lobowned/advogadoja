@@ -173,7 +173,7 @@ const LiminarCirurgiaNegadaLanding = () => {
                 <span className="text-lg font-semibold">Advogado Já</span>
               </Link>
               <Button asChild size="sm" className="bg-red-600 hover:bg-red-700">
-                <a href="https://wa.me/5511999999999?text=Urgente:%20Minha%20cirurgia%20foi%20negada%20pelo%20plano" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/5571997036269?text=Urgente:%20Minha%20cirurgia%20foi%20negada%20pelo%20plano" target="_blank" rel="noopener noreferrer">
                   <Phone className="w-4 h-4 mr-1" />
                   URGENTE
                 </a>

@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Calculator, Trophy, Map } from "lucide-react";
 
+const WHATSAPP_NUMBER = '5571997036269';
+const DEFAULT_MESSAGE = 'Olá! Preciso de orientação jurídica.';
+
 interface NavbarProps {
-  onCtaClick: () => void;
+  onCtaClick?: () => void;
 }
 
 const Navbar = ({ onCtaClick }: NavbarProps) => {
@@ -17,6 +20,16 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleCTA = () => {
+    if (onCtaClick) {
+      onCtaClick();
+    } else {
+      // Default: open WhatsApp
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(DEFAULT_MESSAGE)}`;
+      window.open(url, '_blank');
+    }
+  };
 
   const linkClass = `font-medium transition-colors hover:text-primary py-2 ${
     isScrolled ? 'text-foreground' : 'text-white'
@@ -61,18 +74,18 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
             </a>
           </div>
 
-          {/* CTA Button with Icon */}
+          {/* CTA Button with Icon - WhatsApp */}
           <Button 
-            onClick={onCtaClick}
+            onClick={handleCTA}
             size="sm"
             className={`btn-shimmer h-9 px-3 text-xs sm:h-10 sm:px-4 sm:text-sm md:px-6 font-semibold transition-all gap-1.5 ${
               isScrolled 
-                ? 'btn-startup text-white' 
+                ? 'bg-[#25D366] hover:bg-[#20BD5A] text-white' 
                 : 'bg-white/90 text-primary hover:bg-white shadow-lg'
             }`}
           >
             <MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-            <span className="hidden xs:inline">Falar Agora</span>
+            <span className="hidden xs:inline">WhatsApp</span>
             <span className="xs:hidden">Falar</span>
           </Button>
         </div>

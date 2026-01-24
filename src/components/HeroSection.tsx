@@ -10,8 +10,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Autoplay from "embla-carousel-autoplay";
-import { Users, Star, Zap, Shield } from "lucide-react";
-import { useLawyerPresence } from "@/contexts/LawyerPresenceContext";
+import { Users, Star, Zap, Scale } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { lawyers } from "@/data/lawyers";
 import logoAdvogadoOnline from "@/assets/logo-advogado-online.png";
@@ -19,10 +18,10 @@ import { heroReveal, heroTitle, heroStagger, heroBadge } from "@/lib/motion-vari
 
 const testimonials = [
   { text: "Ganhei R$ 12.000 por voo cancelado!", author: "Roberto M." },
-  { text: "Recebi R$ 8.000 de indenização da operadora!", author: "Carla S." },
-  { text: "Plano de saúde pagou minha cirurgia!", author: "José L." },
-  { text: "Devolução em dobro da cobrança indevida!", author: "Ana P." },
-  { text: "Consegui cancelar contrato sem multa!", author: "Marcos R." },
+  { text: "Recebi todas as verbas rescisórias!", author: "Carla S." },
+  { text: "Consegui minha aposentadoria!", author: "José L." },
+  { text: "Divórcio resolvido em 30 dias!", author: "Ana P." },
+  { text: "Indenização por danos morais aprovada!", author: "Marcos R." },
 ];
 
 // Floating Particles Component
@@ -55,7 +54,6 @@ const FloatingParticles = () => (
 );
 
 const HeroSection = () => {
-  const { onlineCount } = useLawyerPresence();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const isMobile = useIsMobile();
   const shouldReduceMotion = useReducedMotion();
@@ -114,7 +112,7 @@ const HeroSection = () => {
           >
             <m.img 
               src={logoAdvogadoOnline} 
-              alt="Logo Advogado Já - Especialistas em Direito do Consumidor Online" 
+              alt="Logo Advogado Já - Escritório de Advocacia Online" 
               className="h-56 xs:h-60 sm:h-64 md:h-72 lg:h-96 mx-auto drop-shadow-2xl logo-glow-breathe max-w-full object-contain"
               animate={shouldReduceMotion ? undefined : { 
                 y: [0, -10, 0],
@@ -143,7 +141,7 @@ const HeroSection = () => {
                 <div className="flex items-center gap-1.5 sm:gap-2">
                   <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse-dot" />
                   <Users className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400" />
-                  <span>{onlineCount} online</span>
+                  <span>Advogados Online</span>
                 </div>
               </Badge>
             </m.div>
@@ -168,8 +166,8 @@ const HeroSection = () => {
                 className="glass-dark border-blue-400/40 text-white px-2.5 sm:px-4 py-1 sm:py-2 text-[11px] sm:text-sm font-medium shadow-lg"
               >
                 <div className="flex items-center gap-1.5 sm:gap-2">
-                  <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                  <span>Especialistas CDC</span>
+                  <Scale className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
+                  <span>Todas as Áreas</span>
                 </div>
               </Badge>
             </m.div>
@@ -277,7 +275,7 @@ const HeroSection = () => {
             animate="visible"
             transition={{ delay: 0.7 }}
           >
-            Seus Direitos de Consumidor
+            Precisa de Advogado
             <br />
             <m.span 
               className="text-gradient-blue inline-block"
@@ -285,7 +283,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Foram Violados?
+              Especialista?
             </m.span>
           </m.h1>
           
@@ -295,8 +293,8 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.6 }}
           >
-            Voo cancelado, cobrança indevida, produto defeituoso, plano de saúde negou?
-            <span className="text-primary font-semibold"> Resolva agora!</span>
+            Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal.
+            <span className="text-primary font-semibold"> Atendimento via WhatsApp!</span>
           </m.p>
         </div>
       </div>

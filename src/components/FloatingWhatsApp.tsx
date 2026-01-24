@@ -1,15 +1,10 @@
 import { useState, useEffect } from 'react';
-import { MessageCircle } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 
-interface FloatingWhatsAppProps {
-  chatVisible?: boolean;
-}
-
 const WHATSAPP_NUMBER = '5571997036269';
-const DEFAULT_MESSAGE = 'Olá! Vi o site de vocês e gostaria de falar com um advogado sobre meus direitos de consumidor.';
+const DEFAULT_MESSAGE = 'Olá! Vi o site de vocês e preciso de orientação jurídica.';
 
-export const FloatingWhatsApp = ({ chatVisible = false }: FloatingWhatsAppProps) => {
+export const FloatingWhatsApp = () => {
   const location = useLocation();
   const [isVisible, setIsVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -27,12 +22,8 @@ export const FloatingWhatsApp = ({ chatVisible = false }: FloatingWhatsAppProps)
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      // No mobile, esconde quando MobileBottomCTA aparece (scroll > 300)
-      if (isMobile) {
-        setIsVisible(scrollY <= 300);
-      } else {
-        setIsVisible(true);
-      }
+      // Show after scrolling 100px
+      setIsVisible(scrollY > 100);
     };
 
     handleScroll();
@@ -40,14 +31,10 @@ export const FloatingWhatsApp = ({ chatVisible = false }: FloatingWhatsAppProps)
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMobile]);
 
-  // Na home, esconde quando chat está visível
+  // Show immediately on non-home pages
   const isHomePage = location.pathname === '/';
-  if (isHomePage && chatVisible) {
-    return null;
-  }
-
-  // Esconde se não visível
-  if (!isVisible) {
+  
+  if (isHomePage && !isVisible) {
     return null;
   }
 

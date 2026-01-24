@@ -6,8 +6,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
-import { LawyerPresenceProvider } from "./contexts/LawyerPresenceContext";
-import { AttendanceProvider } from "./contexts/AttendanceContext";
 
 // Pages
 import Index from "./pages/Index";
@@ -93,7 +91,6 @@ import AdvogadoRioDeJaneiro from "./pages/AdvogadoRioDeJaneiro";
 import AdvogadoMinasGerais from "./pages/AdvogadoMinasGerais";
 
 // Components
-import StickyDesktopCTA from "./components/StickyDesktopCTA";
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 
 const queryClient = new QueryClient();
@@ -233,17 +230,12 @@ const App = () => (
       <QueryClientProvider client={queryClient}>
         <LazyMotion features={domAnimation} strict>
           <TooltipProvider>
-            <LawyerPresenceProvider>
-              <AttendanceProvider>
-                <Toaster />
-                <Sonner />
-                <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-                  <StickyDesktopCTA />
-                  <AnimatedRoutes />
-                  <FloatingWhatsApp />
-                </BrowserRouter>
-              </AttendanceProvider>
-            </LawyerPresenceProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+              <AnimatedRoutes />
+              <FloatingWhatsApp />
+            </BrowserRouter>
           </TooltipProvider>
         </LazyMotion>
       </QueryClientProvider>

@@ -13,6 +13,15 @@ import { Badge } from "@/components/ui/badge";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 
 const LiminarCirurgiaNegadaLanding = () => {
+  // WhatsApp centralizado para evitar erros
+  const WHATSAPP_NUMBER = "5571997036269";
+  const createWhatsAppLink = (message: string) => 
+    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  
+  const whatsappUrgente = createWhatsAppLink("Urgente: Minha cirurgia foi negada pelo plano e preciso de uma liminar.");
+  const whatsappDocs = createWhatsAppLink("Olá! Tenho os documentos da negativa e gostaria de enviar para análise.");
+  const whatsappDuvidas = createWhatsAppLink("Olá! Tenho dúvidas sobre liminar para cirurgia negada pelo plano.");
+
   const breadcrumbs = [
     { label: "Início", href: "/" },
     { label: "Consumidor", href: "/advogado-consumidor" },
@@ -205,11 +214,11 @@ const LiminarCirurgiaNegadaLanding = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Button asChild size="lg" className="bg-red-600 hover:bg-red-700 text-lg py-6 px-8">
-                <Link to="/selecionar-acao/consumidor">
+              <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-lg py-6 px-8">
+                <a href={whatsappUrgente} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-5 h-5 mr-2" />
-                  Preciso de Liminar URGENTE
-                </Link>
+                  Falar com Advogado Agora
+                </a>
               </Button>
               <Button asChild variant="outline" size="lg" className="text-lg py-6 px-8">
                 <Link to="/calculadora-liminar-cirurgia">
@@ -292,6 +301,16 @@ const LiminarCirurgiaNegadaLanding = () => {
               </Link>
             ))}
           </div>
+
+          {/* CTA após tipos de cirurgia */}
+          <div className="text-center mt-10">
+            <Button asChild size="lg" className="bg-green-600 hover:bg-green-700">
+              <a href={whatsappUrgente} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Qual sua cirurgia? Fale Conosco
+              </a>
+            </Button>
+          </div>
         </section>
 
         {/* Illegal Excuses */}
@@ -323,11 +342,11 @@ const LiminarCirurgiaNegadaLanding = () => {
             </div>
 
             <div className="text-center mt-8">
-              <Button asChild size="lg" className="bg-red-600 hover:bg-red-700">
-                <Link to="/selecionar-acao/consumidor">
+              <Button asChild size="lg" className="bg-green-600 hover:bg-green-700">
+                <a href={whatsappUrgente} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-5 h-5 mr-2" />
                   Analisar Minha Negativa Grátis
-                </Link>
+                </a>
               </Button>
             </div>
           </div>
@@ -393,6 +412,16 @@ const LiminarCirurgiaNegadaLanding = () => {
                   </div>
                 </Card>
               ))}
+            </div>
+
+            {/* CTA após depoimentos */}
+            <div className="text-center mt-10">
+              <Button asChild size="lg" className="bg-green-600 hover:bg-green-700">
+                <a href={whatsappUrgente} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  Quero o Mesmo Resultado
+                </a>
+              </Button>
             </div>
           </div>
         </section>
@@ -481,6 +510,17 @@ const LiminarCirurgiaNegadaLanding = () => {
               </ul>
             </Card>
           </div>
+
+          {/* CTA enviar documentos */}
+          <div className="text-center mt-10">
+            <p className="text-muted-foreground mb-4">Já tem os documentos? Envie agora pelo WhatsApp:</p>
+            <Button asChild size="lg" className="bg-green-600 hover:bg-green-700">
+              <a href={whatsappDocs} target="_blank" rel="noopener noreferrer">
+                <FileCheck className="w-5 h-5 mr-2" />
+                Enviar Documentos pelo WhatsApp
+              </a>
+            </Button>
+          </div>
         </section>
 
         {/* FAQ */}
@@ -523,6 +563,17 @@ const LiminarCirurgiaNegadaLanding = () => {
                 </p>
               </Card>
             </div>
+
+            {/* CTA após FAQ */}
+            <div className="text-center mt-10">
+              <p className="text-muted-foreground mb-4">Ainda tem dúvidas? Fale diretamente com nossa equipe:</p>
+              <Button asChild size="lg" className="bg-green-600 hover:bg-green-700">
+                <a href={whatsappDuvidas} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  Tirar Dúvidas pelo WhatsApp
+                </a>
+              </Button>
+            </div>
           </div>
         </section>
 
@@ -537,16 +588,16 @@ const LiminarCirurgiaNegadaLanding = () => {
               Não deixe o plano de saúde decidir sobre sua vida. Fale conosco agora.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="secondary" className="text-lg py-6 px-8">
-                <Link to="/selecionar-acao/consumidor">
+              <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-lg py-6 px-8">
+                <a href={whatsappUrgente} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-5 h-5 mr-2" />
                   Quero Minha Liminar Agora
-                </Link>
+                </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-lg py-6 px-8 border-white text-white hover:bg-white/10">
-                <a href="https://wa.me/5511999999999?text=Urgente:%20Minha%20cirurgia%20foi%20negada%20pelo%20plano" target="_blank" rel="noopener noreferrer">
+                <a href={`tel:+${WHATSAPP_NUMBER}`}>
                   <Phone className="w-5 h-5 mr-2" />
-                  WhatsApp Urgente
+                  Ligar Agora
                 </a>
               </Button>
             </div>
@@ -586,8 +637,28 @@ const LiminarCirurgiaNegadaLanding = () => {
 
         {/* Footer */}
         <footer className="bg-background border-t py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© 2025 Advogado Já - Todos os direitos reservados</p>
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <p className="text-sm text-muted-foreground">© 2025 Advogado Já - Todos os direitos reservados</p>
+              <div className="flex items-center gap-4">
+                <a 
+                  href={whatsappUrgente} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-green-600 hover:text-green-700 font-medium"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp: (71) 99703-6269
+                </a>
+                <a 
+                  href={`tel:+${WHATSAPP_NUMBER}`}
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+                >
+                  <Phone className="w-4 h-4" />
+                  Ligar
+                </a>
+              </div>
+            </div>
           </div>
         </footer>
       </div>

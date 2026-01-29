@@ -90,6 +90,9 @@ import AdvogadoSaoPaulo from "./pages/AdvogadoSaoPaulo";
 import AdvogadoRioDeJaneiro from "./pages/AdvogadoRioDeJaneiro";
 import AdvogadoMinasGerais from "./pages/AdvogadoMinasGerais";
 
+// Trabalhista Landing
+import TrabalhistaLanding from "./pages/trabalhista/TrabalhistaLanding";
+
 // Components
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 
@@ -191,6 +194,9 @@ const AnimatedRoutes = () => {
         <Route path="/liminar-cirurgia-cardiaca" element={<LiminarCardiologicaLanding />} />
         <Route path="/liminar-neurocirurgia" element={<LiminarNeurologicaLanding />} />
         <Route path="/liminar-cirurgia-olhos" element={<LiminarOftalmologicaLanding />} />
+        
+        {/* Trabalhista Landing Page */}
+        <Route path="/advogado-trabalhista-online" element={<TrabalhistaLanding />} />
         
         {/* Niche Landing Pages */}
         <Route path="/advogado-consumidor" element={<NicheLanding />} />

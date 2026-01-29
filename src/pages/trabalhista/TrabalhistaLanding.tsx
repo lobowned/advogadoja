@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
   Accordion,
   AccordionContent,
@@ -29,7 +30,20 @@ import {
   Banknote,
   CalendarClock,
   BadgeCheck,
+  XCircle,
+  FileCheck,
+  UserX,
+  Baby,
+  Zap,
+  Building2,
+  Truck,
+  HandMetal,
+  MapPin,
 } from "lucide-react";
+import { m, useReducedMotion } from "framer-motion";
+import PageTransition from "@/components/motion/PageTransition";
+import BreadcrumbNav from "@/components/BreadcrumbNav";
+import BackButton from "@/components/BackButton";
 import logoAdvogado from "@/assets/logo-advogado-online.png";
 
 const WHATSAPP_NUMBER = "5571997036269";
@@ -82,6 +96,89 @@ const problems = [
   },
 ];
 
+const companyLies = [
+  {
+    lie: '"Você pediu demissão"',
+    truth: "Coação é nula. Se foi pressionado a assinar, pode reverter.",
+  },
+  {
+    lie: '"Era cargo de confiança"',
+    truth: "Empresa precisa provar. Maioria das alegações é falsa.",
+  },
+  {
+    lie: '"Tinha banco de horas"',
+    truth: "Precisa de acordo formal. Sem documento, você recebe as horas.",
+  },
+  {
+    lie: '"Você era PJ, não tem direitos"',
+    truth: "Se tinha subordinação e horário fixo, vínculo é reconhecido.",
+  },
+  {
+    lie: '"Era trabalho autônomo"',
+    truth: "Autonomia é só no nome? Na prática era CLT? Tem direitos.",
+  },
+  {
+    lie: '"Estágio não gera vínculo"',
+    truth: "Estágio irregular = vínculo empregatício reconhecido.",
+  },
+  {
+    lie: '"Você fez acordo, não pode reclamar"',
+    truth: "Acordos sob coação ou com valores errados podem ser anulados.",
+  },
+  {
+    lie: '"Passou o prazo"',
+    truth: "Você tem 2 anos após sair para processar. Não desista antes de verificar!",
+  },
+];
+
+const specialCases = [
+  {
+    icon: UserX,
+    title: "Demissão Discriminatória",
+    description: "Por doença, idade ou deficiência",
+    message: "Fui demitido de forma discriminatória",
+  },
+  {
+    icon: Baby,
+    title: "Gestante Demitida",
+    description: "Estabilidade até 5 meses após o parto",
+    message: "Fui demitida grávida ou após o parto",
+  },
+  {
+    icon: Zap,
+    title: "Acidente com Sequelas",
+    description: "Indenização vitalícia, pensão, danos",
+    message: "Sofri acidente de trabalho com sequelas permanentes",
+  },
+  {
+    icon: HandMetal,
+    title: "Assédio Sexual",
+    description: "Danos morais e rescisão indireta",
+    message: "Sofri assédio sexual no trabalho",
+  },
+  {
+    icon: Building2,
+    title: "Pejotização Forçada",
+    description: "PJ que na prática era CLT",
+    message: "Trabalhei como PJ mas tinha subordinação de CLT",
+  },
+  {
+    icon: Truck,
+    title: "Horas de Motorista",
+    description: "Jornada especial não respeitada",
+    message: "Sou motorista e não recebi horas extras corretamente",
+  },
+];
+
+const documents = [
+  { name: "CTPS (física ou digital)", required: true },
+  { name: "Últimos holerites/contracheques", required: true },
+  { name: "Contrato de trabalho", required: false },
+  { name: "Termo de rescisão (TRCT)", required: true },
+  { name: "Extrato FGTS", required: false },
+  { name: "Cartões de ponto (se tiver)", required: false },
+];
+
 const indemnityTable = [
   { problem: "Demissão sem justa causa (5 anos)", value: "R$ 15.000 - R$ 50.000" },
   { problem: "Horas extras (últimos 5 anos)", value: "R$ 10.000 - R$ 100.000" },
@@ -98,27 +195,30 @@ const rights = [
 ];
 
 const steps = [
-  { step: 1, title: "Envie seus documentos", description: "CTPS, holerites, contrato" },
-  { step: 2, title: "Análise gratuita", description: "Advogado avalia seu caso" },
-  { step: 3, title: "Entramos com a ação", description: "Sem custo inicial para você" },
-  { step: 4, title: "Você recebe", description: "Só paga se ganhar a causa" },
+  { step: 1, title: "Envie seus documentos", description: "CTPS, holerites, contrato", time: "5 min" },
+  { step: 2, title: "Análise gratuita", description: "Advogado avalia seu caso", time: "24h" },
+  { step: 3, title: "Entramos com a ação", description: "Sem custo inicial para você", time: "48h" },
+  { step: 4, title: "Você recebe", description: "Só paga se ganhar a causa", time: "8-18 meses" },
 ];
 
 const testimonials = [
   {
     name: "Carlos M.",
+    city: "São Paulo, SP",
     case: "Demissão após 8 anos",
     value: "R$ 45.000",
     text: "Fui demitido após 8 anos e recebi R$ 45.000 que a empresa não queria pagar. O advogado foi fundamental.",
   },
   {
     name: "Fernanda S.",
+    city: "Rio de Janeiro, RJ",
     case: "Horas extras não pagas",
     value: "R$ 85.000",
     text: "Trabalhava 12h por dia sem receber hora extra. Ganhei R$ 85.000 após o processo.",
   },
   {
     name: "Roberto L.",
+    city: "Belo Horizonte, MG",
     case: "Assédio moral",
     value: "R$ 35.000",
     text: "Sofri assédio moral e consegui R$ 35.000 de indenização. Justiça foi feita.",
@@ -149,6 +249,11 @@ const faqs = [
     question: "Quanto tempo demora um processo trabalhista?",
     answer: "Em média, um processo trabalhista demora de 8 meses a 2 anos. Com acordos, pode ser resolvido em até 3 meses.",
   },
+];
+
+const breadcrumbs = [
+  { label: "Início", href: "/" },
+  { label: "Advogado Trabalhista" },
 ];
 
 const schemaData = {
@@ -211,9 +316,42 @@ const schemaData = {
   ]
 };
 
+const sectionVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" }
+  }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.4, ease: "easeOut" }
+  }
+};
+
 const TrabalhistaLanding = () => {
+  const prefersReducedMotion = useReducedMotion();
+
+  const MotionSection = prefersReducedMotion ? 'section' : m.section;
+  const MotionDiv = prefersReducedMotion ? 'div' : m.div;
+
   return (
-    <>
+    <PageTransition>
       <Helmet>
         <title>Advogado Trabalhista Online | Demissão, Horas Extras, Assédio | Consulta Grátis</title>
         <meta
@@ -236,9 +374,12 @@ const TrabalhistaLanding = () => {
         {/* Header Sticky */}
         <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b shadow-sm">
           <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2">
-              <img src={logoAdvogado} alt="AdvogadoJá" className="h-10 w-auto" />
-            </Link>
+            <div className="flex items-center gap-4">
+              <BackButton to="/" />
+              <Link to="/" className="flex items-center gap-2">
+                <img src={logoAdvogado} alt="AdvogadoJá" className="h-10 w-auto" />
+              </Link>
+            </div>
             <Button
               asChild
               className="bg-[#25D366] hover:bg-[#20BD5A] text-white gap-2"
@@ -251,11 +392,38 @@ const TrabalhistaLanding = () => {
           </div>
         </header>
 
+        {/* Breadcrumbs */}
+        <div className="container mx-auto px-4 py-3">
+          <BreadcrumbNav items={breadcrumbs} />
+        </div>
+
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-orange-50 via-orange-100/50 to-background py-16 md:py-24 overflow-hidden">
+        <MotionSection 
+          className="relative bg-gradient-to-br from-orange-50 via-orange-100/50 to-background py-16 md:py-24 overflow-hidden"
+          {...(!prefersReducedMotion && {
+            initial: "hidden",
+            animate: "visible",
+            variants: sectionVariants
+          })}
+        >
           <div className="absolute inset-0 bg-[url('/placeholder.svg')] opacity-5"></div>
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
+              {/* Urgency Badge */}
+              <MotionDiv 
+                className="flex justify-center mb-6"
+                {...(!prefersReducedMotion && {
+                  initial: { opacity: 0, scale: 0.9 },
+                  animate: { opacity: 1, scale: 1 },
+                  transition: { duration: 0.4 }
+                })}
+              >
+                <Badge className="animate-pulse bg-red-100 text-red-700 border-red-200 px-4 py-2 text-sm font-medium">
+                  <AlertTriangle className="w-4 h-4 mr-2" />
+                  Prazo de 2 anos! Não perca seus direitos
+                </Badge>
+              </MotionDiv>
+
               <div className="flex flex-wrap justify-center gap-3 mb-6">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-orange-500 text-white text-sm font-medium rounded-full">
                   <Clock className="h-4 w-4" />
@@ -307,34 +475,56 @@ const TrabalhistaLanding = () => {
               </p>
             </div>
           </div>
-        </section>
+        </MotionSection>
 
         {/* Stats Bar */}
-        <section className="bg-orange-600 py-6">
+        <MotionSection 
+          className="bg-orange-600 py-6"
+          {...(!prefersReducedMotion && {
+            initial: "hidden",
+            whileInView: "visible",
+            viewport: { once: true, margin: "-50px" },
+            variants: sectionVariants
+          })}
+        >
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
-              <div>
-                <p className="text-3xl md:text-4xl font-bold">8.000+</p>
-                <p className="text-orange-100 text-sm">Casos Resolvidos</p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-bold">95%</p>
-                <p className="text-orange-100 text-sm">Taxa de Sucesso</p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-bold">R$ 15M+</p>
-                <p className="text-orange-100 text-sm">Recuperados</p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-bold">24h</p>
-                <p className="text-orange-100 text-sm">Atendimento</p>
-              </div>
-            </div>
+            <MotionDiv 
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white"
+              {...(!prefersReducedMotion && {
+                variants: staggerContainer,
+                initial: "hidden",
+                whileInView: "visible",
+                viewport: { once: true }
+              })}
+            >
+              {[
+                { value: "8.000+", label: "Casos Resolvidos" },
+                { value: "95%", label: "Taxa de Sucesso" },
+                { value: "R$ 15M+", label: "Recuperados" },
+                { value: "24h", label: "Atendimento" },
+              ].map((stat, index) => (
+                <MotionDiv 
+                  key={index}
+                  {...(!prefersReducedMotion && { variants: itemVariants })}
+                >
+                  <p className="text-3xl md:text-4xl font-bold">{stat.value}</p>
+                  <p className="text-orange-100 text-sm">{stat.label}</p>
+                </MotionDiv>
+              ))}
+            </MotionDiv>
           </div>
-        </section>
+        </MotionSection>
 
         {/* Problems Grid */}
-        <section className="py-16 bg-background">
+        <MotionSection 
+          className="py-16 bg-background"
+          {...(!prefersReducedMotion && {
+            initial: "hidden",
+            whileInView: "visible",
+            viewport: { once: true, margin: "-50px" },
+            variants: sectionVariants
+          })}
+        >
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -345,42 +535,51 @@ const TrabalhistaLanding = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <MotionDiv 
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+              {...(!prefersReducedMotion && {
+                variants: staggerContainer,
+                initial: "hidden",
+                whileInView: "visible",
+                viewport: { once: true }
+              })}
+            >
               {problems.map((problem, index) => (
-                <a
-                  key={index}
-                  href={createWhatsAppLink(problem.message)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group"
-                >
-                  <Card className="h-full transition-all duration-300 hover:shadow-xl hover:border-orange-300 hover:-translate-y-1 cursor-pointer">
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-xl bg-orange-100 text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-colors">
-                          <problem.icon className="h-6 w-6" />
+                <MotionDiv key={index} {...(!prefersReducedMotion && { variants: itemVariants })}>
+                  <a
+                    href={createWhatsAppLink(problem.message)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block h-full"
+                  >
+                    <Card className="h-full transition-all duration-300 hover:shadow-xl hover:border-orange-300 hover:-translate-y-1 cursor-pointer border-l-4 border-l-orange-500">
+                      <CardContent className="p-6">
+                        <div className="flex items-start gap-4">
+                          <div className="p-3 rounded-xl bg-orange-100 text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                            <problem.icon className="h-6 w-6" />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="font-semibold text-lg text-foreground mb-1">
+                              {problem.title}
+                            </h3>
+                            <p className="text-sm text-muted-foreground mb-2">
+                              {problem.description}
+                            </p>
+                            <p className="text-orange-600 font-bold">
+                              {problem.value}
+                            </p>
+                          </div>
                         </div>
-                        <div className="flex-1">
-                          <h3 className="font-semibold text-lg text-foreground mb-1">
-                            {problem.title}
-                          </h3>
-                          <p className="text-sm text-muted-foreground mb-2">
-                            {problem.description}
-                          </p>
-                          <p className="text-orange-600 font-bold">
-                            {problem.value}
-                          </p>
+                        <div className="mt-4 flex items-center justify-end text-sm text-orange-600 group-hover:text-orange-700">
+                          Falar sobre isso
+                          <ArrowRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
                         </div>
-                      </div>
-                      <div className="mt-4 flex items-center justify-end text-sm text-orange-600 group-hover:text-orange-700">
-                        Falar sobre isso
-                        <ArrowRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
-                      </div>
-                    </CardContent>
-                  </Card>
-                </a>
+                      </CardContent>
+                    </Card>
+                  </a>
+                </MotionDiv>
               ))}
-            </div>
+            </MotionDiv>
 
             <div className="text-center mt-10">
               <Button
@@ -395,10 +594,84 @@ const TrabalhistaLanding = () => {
               </Button>
             </div>
           </div>
-        </section>
+        </MotionSection>
+
+        {/* Company Lies Section - NEW */}
+        <MotionSection 
+          className="py-16 bg-red-50"
+          {...(!prefersReducedMotion && {
+            initial: "hidden",
+            whileInView: "visible",
+            viewport: { once: true, margin: "-50px" },
+            variants: sectionVariants
+          })}
+        >
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-red-100 text-red-700 border-red-200">
+                <XCircle className="w-4 h-4 mr-1" />
+                Não caia nessa!
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Mentiras que as <span className="text-red-600">Empresas Contam</span>
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Conheça as desculpas mais comuns usadas para negar seus direitos
+              </p>
+            </div>
+
+            <MotionDiv 
+              className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto"
+              {...(!prefersReducedMotion && {
+                variants: staggerContainer,
+                initial: "hidden",
+                whileInView: "visible",
+                viewport: { once: true }
+              })}
+            >
+              {companyLies.map((item, index) => (
+                <MotionDiv key={index} {...(!prefersReducedMotion && { variants: itemVariants })}>
+                  <Card className="h-full border-l-4 border-l-red-500 hover:shadow-lg transition-shadow">
+                    <CardContent className="p-4">
+                      <p className="font-bold text-red-600 mb-2 flex items-start gap-2">
+                        <XCircle className="h-5 w-5 shrink-0 mt-0.5" />
+                        {item.lie}
+                      </p>
+                      <p className="text-sm text-foreground flex items-start gap-2">
+                        <CheckCircle className="h-5 w-5 shrink-0 mt-0.5 text-green-600" />
+                        {item.truth}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </MotionDiv>
+              ))}
+            </MotionDiv>
+
+            <div className="text-center mt-10">
+              <Button
+                asChild
+                size="lg"
+                className="bg-[#25D366] hover:bg-[#20BD5A] text-white gap-2"
+              >
+                <a href={createWhatsAppLink("Olá! A empresa usou uma dessas desculpas comigo. Quero saber meus direitos.")} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-5 w-5" />
+                  A Empresa Usou Isso Comigo
+                </a>
+              </Button>
+            </div>
+          </div>
+        </MotionSection>
 
         {/* Indemnity Table */}
-        <section className="py-16 bg-orange-50">
+        <MotionSection 
+          className="py-16 bg-orange-50"
+          {...(!prefersReducedMotion && {
+            initial: "hidden",
+            whileInView: "visible",
+            viewport: { once: true, margin: "-50px" },
+            variants: sectionVariants
+          })}
+        >
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -448,10 +721,18 @@ const TrabalhistaLanding = () => {
               </Button>
             </div>
           </div>
-        </section>
+        </MotionSection>
 
         {/* Your Rights */}
-        <section className="py-16 bg-background">
+        <MotionSection 
+          className="py-16 bg-background"
+          {...(!prefersReducedMotion && {
+            initial: "hidden",
+            whileInView: "visible",
+            viewport: { once: true, margin: "-50px" },
+            variants: sectionVariants
+          })}
+        >
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -462,24 +743,102 @@ const TrabalhistaLanding = () => {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <MotionDiv 
+              className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto"
+              {...(!prefersReducedMotion && {
+                variants: staggerContainer,
+                initial: "hidden",
+                whileInView: "visible",
+                viewport: { once: true }
+              })}
+            >
               {rights.map((right, index) => (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="mx-auto w-14 h-14 rounded-full bg-orange-100 flex items-center justify-center mb-4">
-                      <right.icon className="h-7 w-7 text-orange-600" />
-                    </div>
-                    <h3 className="font-bold text-lg text-foreground mb-2">{right.title}</h3>
-                    <p className="text-sm text-muted-foreground">{right.description}</p>
-                  </CardContent>
-                </Card>
+                <MotionDiv key={index} {...(!prefersReducedMotion && { variants: itemVariants })}>
+                  <Card className="text-center hover:shadow-lg transition-shadow h-full">
+                    <CardContent className="p-6">
+                      <div className="mx-auto w-14 h-14 rounded-full bg-orange-100 flex items-center justify-center mb-4">
+                        <right.icon className="h-7 w-7 text-orange-600" />
+                      </div>
+                      <h3 className="font-bold text-lg text-foreground mb-2">{right.title}</h3>
+                      <p className="text-sm text-muted-foreground">{right.description}</p>
+                    </CardContent>
+                  </Card>
+                </MotionDiv>
               ))}
+            </MotionDiv>
+          </div>
+        </MotionSection>
+
+        {/* Documents Section - NEW */}
+        <MotionSection 
+          className="py-16 bg-green-50"
+          {...(!prefersReducedMotion && {
+            initial: "hidden",
+            whileInView: "visible",
+            viewport: { once: true, margin: "-50px" },
+            variants: sectionVariants
+          })}
+        >
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-green-100 text-green-700 border-green-200">
+                <FileCheck className="w-4 h-4 mr-1" />
+                Prepare-se
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Documentos <span className="text-green-600">Necessários</span>
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Separe esses documentos para agilizar sua consulta
+              </p>
+            </div>
+
+            <div className="max-w-2xl mx-auto">
+              <Card>
+                <CardContent className="p-6">
+                  <ul className="space-y-3">
+                    {documents.map((doc, index) => (
+                      <li key={index} className="flex items-center gap-3">
+                        <CheckCircle className={`h-5 w-5 ${doc.required ? 'text-green-600' : 'text-muted-foreground'}`} />
+                        <span className="text-foreground">{doc.name}</span>
+                        {doc.required && (
+                          <Badge variant="outline" className="text-xs ml-auto">Importante</Badge>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-sm text-muted-foreground mt-4 pt-4 border-t">
+                    💡 Não tem todos? Não se preocupe! Nosso advogado orienta você.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="text-center mt-10">
+              <Button
+                asChild
+                size="lg"
+                className="bg-[#25D366] hover:bg-[#20BD5A] text-white gap-2"
+              >
+                <a href={createWhatsAppLink("Olá! Quero enviar meus documentos trabalhistas para análise.")} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-5 w-5" />
+                  Enviar Meus Documentos
+                </a>
+              </Button>
             </div>
           </div>
-        </section>
+        </MotionSection>
 
         {/* How It Works */}
-        <section className="py-16 bg-gradient-to-br from-orange-600 to-orange-700 text-white">
+        <MotionSection 
+          className="py-16 bg-gradient-to-br from-orange-600 to-orange-700 text-white"
+          {...(!prefersReducedMotion && {
+            initial: "hidden",
+            whileInView: "visible",
+            viewport: { once: true, margin: "-50px" },
+            variants: sectionVariants
+          })}
+        >
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -490,25 +849,130 @@ const TrabalhistaLanding = () => {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            <MotionDiv 
+              className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto"
+              {...(!prefersReducedMotion && {
+                variants: staggerContainer,
+                initial: "hidden",
+                whileInView: "visible",
+                viewport: { once: true }
+              })}
+            >
               {steps.map((item, index) => (
-                <div key={index} className="text-center relative">
+                <MotionDiv 
+                  key={index} 
+                  className="text-center relative"
+                  {...(!prefersReducedMotion && { variants: itemVariants })}
+                >
+                  <Badge variant="outline" className="mb-3 bg-white/10 text-white border-white/30 text-xs">
+                    {item.time}
+                  </Badge>
                   <div className="mx-auto w-16 h-16 rounded-full bg-white text-orange-600 flex items-center justify-center text-2xl font-bold mb-4 shadow-lg">
                     {item.step}
                   </div>
                   <h3 className="font-bold text-lg mb-2">{item.title}</h3>
                   <p className="text-orange-100 text-sm">{item.description}</p>
                   {index < steps.length - 1 && (
-                    <ArrowRight className="hidden lg:block absolute top-8 -right-4 h-6 w-6 text-orange-300" />
+                    <ArrowRight className="hidden lg:block absolute top-12 -right-4 h-6 w-6 text-orange-300" />
                   )}
-                </div>
+                </MotionDiv>
               ))}
+            </MotionDiv>
+          </div>
+        </MotionSection>
+
+        {/* Special Cases Section - NEW */}
+        <MotionSection 
+          className="py-16 bg-background"
+          {...(!prefersReducedMotion && {
+            initial: "hidden",
+            whileInView: "visible",
+            viewport: { once: true, margin: "-50px" },
+            variants: sectionVariants
+          })}
+        >
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-orange-100 text-orange-700 border-orange-200">
+                <Scale className="w-4 h-4 mr-1" />
+                Casos Especiais
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Situações que Exigem <span className="text-orange-600">Atenção Especial</span>
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Casos com maior complexidade e valores de indenização
+              </p>
+            </div>
+
+            <MotionDiv 
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+              {...(!prefersReducedMotion && {
+                variants: staggerContainer,
+                initial: "hidden",
+                whileInView: "visible",
+                viewport: { once: true }
+              })}
+            >
+              {specialCases.map((item, index) => (
+                <MotionDiv key={index} {...(!prefersReducedMotion && { variants: itemVariants })}>
+                  <a
+                    href={createWhatsAppLink(item.message)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block h-full"
+                  >
+                    <Card className="h-full transition-all duration-300 hover:shadow-xl hover:border-orange-300 hover:-translate-y-1 cursor-pointer">
+                      <CardContent className="p-6">
+                        <div className="flex items-start gap-4">
+                          <div className="p-3 rounded-xl bg-orange-100 text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                            <item.icon className="h-6 w-6" />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="font-semibold text-lg text-foreground mb-1">
+                              {item.title}
+                            </h3>
+                            <p className="text-sm text-muted-foreground">
+                              {item.description}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="mt-4 flex items-center justify-end text-sm text-orange-600 group-hover:text-orange-700">
+                          Falar sobre isso
+                          <ArrowRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </a>
+                </MotionDiv>
+              ))}
+            </MotionDiv>
+
+            <div className="text-center mt-10">
+              <Button
+                asChild
+                size="lg"
+                className="bg-[#25D366] hover:bg-[#20BD5A] text-white gap-2"
+              >
+                <a href={createWhatsAppLink("Olá! Tenho um caso especial e preciso de orientação.")} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-5 w-5" />
+                  Tenho um Caso Especial
+                </a>
+              </Button>
             </div>
           </div>
-        </section>
+        </MotionSection>
 
         {/* Testimonials */}
-        <section className="py-16 bg-background">
+        <MotionSection 
+          className="py-16 bg-orange-50"
+          {...(!prefersReducedMotion && {
+            initial: "hidden",
+            whileInView: "visible",
+            viewport: { once: true, margin: "-50px" },
+            variants: sectionVariants
+          })}
+        >
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -519,27 +983,41 @@ const TrabalhistaLanding = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <MotionDiv 
+              className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto"
+              {...(!prefersReducedMotion && {
+                variants: staggerContainer,
+                initial: "hidden",
+                whileInView: "visible",
+                viewport: { once: true }
+              })}
+            >
               {testimonials.map((testimonial, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-1 mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                      ))}
-                    </div>
-                    <p className="text-muted-foreground mb-4 italic">"{testimonial.text}"</p>
-                    <div className="border-t pt-4">
-                      <p className="font-semibold text-foreground">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.case}</p>
-                      <p className="text-orange-600 font-bold text-lg mt-1">
-                        Ganhou: {testimonial.value}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
+                <MotionDiv key={index} {...(!prefersReducedMotion && { variants: itemVariants })}>
+                  <Card className="hover:shadow-lg transition-shadow h-full">
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-1 mb-4">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+                      <p className="text-muted-foreground mb-4 italic">"{testimonial.text}"</p>
+                      <div className="border-t pt-4">
+                        <p className="font-semibold text-foreground">{testimonial.name}</p>
+                        <p className="text-sm text-muted-foreground flex items-center gap-1">
+                          <MapPin className="h-3 w-3" />
+                          {testimonial.city}
+                        </p>
+                        <p className="text-sm text-muted-foreground">{testimonial.case}</p>
+                        <p className="text-orange-600 font-bold text-lg mt-1">
+                          Ganhou: {testimonial.value}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </MotionDiv>
               ))}
-            </div>
+            </MotionDiv>
 
             <div className="text-center mt-10">
               <Button
@@ -554,10 +1032,18 @@ const TrabalhistaLanding = () => {
               </Button>
             </div>
           </div>
-        </section>
+        </MotionSection>
 
         {/* Calculators */}
-        <section className="py-16 bg-orange-50">
+        <MotionSection 
+          className="py-16 bg-background"
+          {...(!prefersReducedMotion && {
+            initial: "hidden",
+            whileInView: "visible",
+            viewport: { once: true, margin: "-50px" },
+            variants: sectionVariants
+          })}
+        >
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -568,24 +1054,42 @@ const TrabalhistaLanding = () => {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <MotionDiv 
+              className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto"
+              {...(!prefersReducedMotion && {
+                variants: staggerContainer,
+                initial: "hidden",
+                whileInView: "visible",
+                viewport: { once: true }
+              })}
+            >
               {calculators.map((calc, index) => (
-                <Link key={index} to={calc.path} className="group">
-                  <Card className="h-full hover:shadow-lg hover:border-orange-300 transition-all">
-                    <CardContent className="p-6 text-center">
-                      <Calculator className="h-10 w-10 mx-auto mb-4 text-orange-600 group-hover:scale-110 transition-transform" />
-                      <h3 className="font-semibold text-foreground mb-1">{calc.title}</h3>
-                      <p className="text-sm text-muted-foreground">{calc.description}</p>
-                    </CardContent>
-                  </Card>
-                </Link>
+                <MotionDiv key={index} {...(!prefersReducedMotion && { variants: itemVariants })}>
+                  <Link to={calc.path} className="group block h-full">
+                    <Card className="h-full hover:shadow-lg hover:border-orange-300 transition-all">
+                      <CardContent className="p-6 text-center">
+                        <Calculator className="h-10 w-10 mx-auto mb-4 text-orange-600 group-hover:scale-110 transition-transform" />
+                        <h3 className="font-semibold text-foreground mb-1">{calc.title}</h3>
+                        <p className="text-sm text-muted-foreground">{calc.description}</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                </MotionDiv>
               ))}
-            </div>
+            </MotionDiv>
           </div>
-        </section>
+        </MotionSection>
 
         {/* FAQ */}
-        <section className="py-16 bg-background">
+        <MotionSection 
+          className="py-16 bg-orange-50"
+          {...(!prefersReducedMotion && {
+            initial: "hidden",
+            whileInView: "visible",
+            viewport: { once: true, margin: "-50px" },
+            variants: sectionVariants
+          })}
+        >
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -621,10 +1125,10 @@ const TrabalhistaLanding = () => {
               </Button>
             </div>
           </div>
-        </section>
+        </MotionSection>
 
         {/* Urgency Banner */}
-        <section className="py-8 bg-red-600 text-white">
+        <section className="py-8 bg-red-600 text-white animate-pulse">
           <div className="container mx-auto px-4 text-center">
             <div className="flex items-center justify-center gap-3 mb-2">
               <AlertTriangle className="h-6 w-6" />
@@ -699,7 +1203,7 @@ const TrabalhistaLanding = () => {
           </div>
         </footer>
       </div>
-    </>
+    </PageTransition>
   );
 };
 

@@ -241,13 +241,37 @@ const TrabalhistaLanding = () => {
           </div>
         </header>
 
-        {/* HERO - Mobile-First Responsive */}
+        {/* HERO - Mobile-First Responsive with Video Background */}
         <MotionSection 
-          className="relative bg-black py-12 sm:py-16 md:py-20 lg:py-28 overflow-hidden"
+          className="relative bg-black py-12 sm:py-16 md:py-20 lg:py-28 overflow-hidden min-h-[80vh] sm:min-h-[85vh] flex items-center"
           {...(!prefersReducedMotion && { initial: "hidden", animate: "visible", variants: sectionVariants })}
         >
-          {/* Gradient overlay sutil */}
-          <div className="absolute inset-0 bg-gradient-to-br from-zinc-900/50 via-black to-zinc-950" />
+          {/* Video Background */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 w-full h-full object-cover"
+            poster="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop"
+            // @ts-expect-error fetchpriority is a valid attribute
+            fetchpriority="low"
+          >
+            <source src="/videos/hero-background.mp4" type="video/mp4" />
+          </video>
+          
+          {/* Fallback Image */}
+          <div 
+            className="absolute inset-0 w-full h-full bg-cover bg-center -z-10"
+            style={{
+              backgroundImage: "url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop')",
+            }}
+          />
+
+          {/* Dark overlay with gold accent for brand consistency */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#D4AF37]/5 via-transparent to-[#D4AF37]/5" />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-[#D4AF37]/5 rounded-full blur-3xl" />
           
           <div className="container mx-auto px-4 relative z-10">

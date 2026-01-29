@@ -1,186 +1,133 @@
 
 
-# Plano: Melhorar Landing Page Trabalhista
+# Plano: Redesign da Landing Trabalhista - Preto e Dourado
 
-## Problemas Identificados
+## Problemas Identificados na Análise
 
-A página atual está funcional, mas pode ser aprimorada com base no modelo `/liminar-cirurgia-negada`:
-
-| Problema | Impacto |
+| Problema | Detalhe |
 |----------|---------|
-| Falta de animações e transições | Página estática, menos engajamento |
-| Hero sem badge pulsante de urgência | Menor senso de urgência |
-| Sem breadcrumbs para SEO | Perde rich snippets no Google |
-| Sem PageTransition wrapper | Transição abrupta entre páginas |
-| Seção "Como Funciona" sem indicador de tempo | Menos clareza no processo |
-| Falta BackButton no header | Dificulta navegação |
-| Sem seção de "desculpas ilegais" do empregador | Menos identificação com o problema |
-| Depoimentos sem cidade/localização | Menos credibilidade |
+| **Excesso de seções** | 15+ seções diferentes sobrecarregam o usuário |
+| **Paleta laranja** | Cores `orange-50/100/500/600/700` em toda a página |
+| **Múltiplos backgrounds** | Alternância constante (branco, laranja, vermelho, verde, cinza) |
+| **Redundância de conteúdo** | Seções "Problemas" e "Casos Especiais" são similares |
+| **Header e Footer pesados** | Competem com o conteúdo principal |
+| **Banner urgência muito agressivo** | `animate-pulse` vermelho causa fadiga visual |
 
 ---
 
-## Melhorias a Implementar
+## Nova Paleta de Cores: Preto e Dourado
 
-### 1. Adicionar Animações e PageTransition
+```text
+Preto (background/texto):
+- bg-black / bg-zinc-950 / bg-zinc-900
+- text-white / text-zinc-100
 
-Envelopar com `PageTransition` e usar `framer-motion` para entrada suave das seções.
+Dourado (destaques/CTAs):
+- #D4AF37 (dourado clássico)
+- #B8860B (dourado escuro - hover)
+- #F5D86A (dourado claro - badges)
 
-### 2. Hero com Badge Pulsante
-
-```jsx
-<Badge className="animate-pulse bg-red-100 text-red-700">
-  <AlertTriangle className="w-4 h-4 mr-1" />
-  Prazo de 2 anos! Não perca seus direitos
-</Badge>
+Verde WhatsApp (mantido para CTAs):
+- #25D366 (manter para botões WhatsApp)
 ```
-
-### 3. Adicionar Breadcrumbs
-
-```jsx
-const breadcrumbs = [
-  { label: "Início", href: "/" },
-  { label: "Trabalhista" }
-];
-<BreadcrumbNav items={breadcrumbs} />
-```
-
-### 4. Nova Seção: "Mentiras que Empresas Contam"
-
-Similar às "desculpas ilegais" da página de liminar:
-
-| O que a empresa diz | A verdade |
-|---------------------|-----------|
-| "Você pediu demissão" | Coação é nula |
-| "Era cargo de confiança" | Tem que provar |
-| "Banco de horas" | Precisa acordo formal |
-| "PJ não tem direitos" | Vínculo pode ser reconhecido |
-| "Era trabalho autônomo" | Se tinha subordinação, é CLT |
-| "Estágio não gera vínculo" | Estágio irregular = vínculo |
-
-### 5. Melhorar Depoimentos com Localização
-
-```jsx
-{
-  name: "Carlos M.",
-  city: "São Paulo, SP",  // ADICIONAR
-  case: "Demissão após 8 anos",
-  value: "R$ 45.000",
-  ...
-}
-```
-
-### 6. Adicionar Indicadores de Tempo nos Passos
-
-Similar à página de liminar:
-
-```jsx
-<Badge variant="outline" className="mb-2 text-xs">24h</Badge>
-```
-
-### 7. BackButton no Header
-
-```jsx
-<BackButton />
-```
-
-### 8. Seção de Documentos Necessários
-
-Adicionar checklist de documentos para o processo trabalhista:
-
-- CTPS (física ou digital)
-- Últimos holerites
-- Contrato de trabalho
-- Termo de rescisão (TRCT)
-- Comprovante de depósito FGTS
-- Cartões de ponto (se houver)
-
-### 9. Melhorar Visual dos Cards de Problemas
-
-Adicionar borda lateral colorida como na página de liminar:
-
-```jsx
-className="border-l-4 border-l-orange-500"
-```
-
-### 10. Seção de Casos Especiais
-
-Grid com tipos específicos de ações:
-
-- Demissão discriminatória (doença, gravidez)
-- Acidente de trabalho com sequelas
-- Assédio sexual
-- Trabalho análogo à escravidão
-- Pejotização forçada
-- Horas extras de motorista/vendedor
 
 ---
 
-## Estrutura Atualizada
+## Estrutura Simplificada (8 seções vs 15+)
 
 ```text
 ┌─────────────────────────────────────────────────────────┐
-│ HEADER STICKY                                           │
-│ [←] [Logo] ─────────────────────── [WhatsApp URGENTE]  │
+│ HEADER MINIMALISTA (preto com logo dourado)            │
+│ [←] [Logo] ─────────────────────── [WhatsApp]          │
 ├─────────────────────────────────────────────────────────┤
-│ BREADCRUMB: Início > Trabalhista                       │
-├─────────────────────────────────────────────────────────┤
-│ HERO (com badge pulsante de urgência)                  │
+│ HERO (fundo preto, texto branco, destaque dourado)     │
 │ "Demitido Injustamente?"                               │
-│ [WhatsApp] [Calculadora]                               │
+│ [WhatsApp Dourado] [Calculadora]                       │
 ├─────────────────────────────────────────────────────────┤
-│ STATS BAR (animado ao entrar na viewport)              │
+│ STATS BAR (dourado elegante, sem animação excessiva)   │
+│ 8.000+ casos | 95% sucesso | R$ 15M+ recuperados       │
 ├─────────────────────────────────────────────────────────┤
-│ PROBLEMAS (6 cards com borda lateral laranja)          │
+│ PROBLEMAS + CASOS ESPECIAIS (unificados em 6 cards)    │
+│ Grid 2x3 com borda dourada                             │
 │ [WhatsApp CTA]                                         │
 ├─────────────────────────────────────────────────────────┤
-│ MENTIRAS QUE EMPRESAS CONTAM (8 cards) ← NOVO          │
+│ TABELA DE VALORES (fundo preto, bordas douradas)       │
 │ [WhatsApp CTA]                                         │
 ├─────────────────────────────────────────────────────────┤
-│ TABELA DE INDENIZAÇÕES                                 │
+│ COMO FUNCIONA (4 passos - design minimalista)          │
+├─────────────────────────────────────────────────────────┤
+│ DEPOIMENTOS (3 cards - fundo escuro elegante)          │
 │ [WhatsApp CTA]                                         │
 ├─────────────────────────────────────────────────────────┤
-│ SEUS DIREITOS (4 cards)                                │
+│ FAQ COMPACTO + CTA FINAL (seção única)                 │
 ├─────────────────────────────────────────────────────────┤
-│ DOCUMENTOS NECESSÁRIOS ← NOVO                          │
-│ [WhatsApp: Enviar Documentos]                          │
-├─────────────────────────────────────────────────────────┤
-│ COMO FUNCIONA (4 passos com tempo estimado)            │
-├─────────────────────────────────────────────────────────┤
-│ CASOS ESPECIAIS (6 cards) ← NOVO                       │
-│ [WhatsApp CTA]                                         │
-├─────────────────────────────────────────────────────────┤
-│ DEPOIMENTOS (3 cards com cidade)                       │
-│ [WhatsApp CTA]                                         │
-├─────────────────────────────────────────────────────────┤
-│ CALCULADORAS                                            │
-├─────────────────────────────────────────────────────────┤
-│ FAQ (4 perguntas)                                      │
-│ [WhatsApp CTA]                                         │
-├─────────────────────────────────────────────────────────┤
-│ BANNER URGÊNCIA (vermelho pulsante)                    │
-├─────────────────────────────────────────────────────────┤
-│ CTA FINAL                                               │
-├─────────────────────────────────────────────────────────┤
-│ FOOTER                                                  │
+│ FOOTER SIMPLES (preto)                                 │
 └─────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Arquivo a Modificar
+## Seções Removidas/Simplificadas
 
-| Arquivo | Alterações |
-|---------|------------|
-| `src/pages/trabalhista/TrabalhistaLanding.tsx` | Adicionar animações, breadcrumbs, novas seções, melhorar cards |
+| Seção Original | Ação |
+|----------------|------|
+| "Mentiras que Empresas Contam" | **REMOVER** - Redundante |
+| "Seus Direitos na Demissão" | **REMOVER** - Mover para FAQ |
+| "Documentos Necessários" | **REMOVER** - Informar no WhatsApp |
+| "Casos Especiais" | **MESCLAR** com grid de Problemas |
+| "Calculadoras" | **MOVER** para link no header ou footer |
+| "Banner Urgência" (pulsante) | **SIMPLIFICAR** - Badge estático no hero |
 
 ---
 
-## Benefícios Esperados
+## Mudanças de Estilo
 
-1. **+30% engajamento** - Animações e transições suaves
-2. **+SEO** - Breadcrumbs para rich snippets
-3. **+Credibilidade** - Depoimentos com localização
-4. **+Identificação** - Seção "mentiras das empresas"
-5. **+Conversão** - Mais pontos de contato WhatsApp
-6. **+Clareza** - Documentos necessários e tempos estimados
+### Cores a Substituir
+
+| De (Laranja) | Para (Preto/Dourado) |
+|--------------|----------------------|
+| `bg-orange-50` | `bg-zinc-950` ou `bg-black` |
+| `bg-orange-100` | `bg-zinc-900` |
+| `bg-orange-500/600` | `bg-[#D4AF37]` (dourado) |
+| `text-orange-600` | `text-[#D4AF37]` |
+| `border-l-orange-500` | `border-l-[#D4AF37]` |
+| `bg-red-50` (mentiras) | **REMOVER SEÇÃO** |
+| `bg-green-50` (documentos) | **REMOVER SEÇÃO** |
+
+### Header Minimalista
+```jsx
+<header className="sticky top-0 z-50 bg-black border-b border-[#D4AF37]/30">
+```
+
+### Cards Elegantes
+```jsx
+<Card className="bg-zinc-900 border-[#D4AF37]/30 hover:border-[#D4AF37]">
+```
+
+### Botões
+```jsx
+// CTA Principal (WhatsApp mantém verde)
+<Button className="bg-[#25D366] hover:bg-[#20BD5A] text-white">
+
+// CTA Secundário (dourado)
+<Button className="bg-[#D4AF37] hover:bg-[#B8860B] text-black">
+```
+
+---
+
+## Resultado Esperado
+
+1. **Visual premium** - Preto + dourado transmite sofisticação e confiança
+2. **Menos fadiga** - 8 seções vs 15+ seções originais
+3. **Foco na conversão** - Menos distrações, mais CTAs estratégicos
+4. **Elegância** - Sem animações pulsantes excessivas
+5. **Carregamento mais rápido** - Menos elementos DOM
+
+---
+
+## Arquivo a Modificar
+
+| Arquivo | Ação |
+|---------|------|
+| `src/pages/trabalhista/TrabalhistaLanding.tsx` | Redesign completo com nova paleta e estrutura simplificada |
 

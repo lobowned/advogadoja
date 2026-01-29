@@ -192,6 +192,16 @@
   .safe-right {
     padding-right: env(safe-area-inset-right);
   }
+  
+  /* Extra small breakpoint for xs: prefix */
+  @media (min-width: 375px) {
+    .xs\:flex-row {
+      flex-direction: row;
+    }
+    .xs\:inline {
+      display: inline;
+    }
+  }
 }
 
 /* Glassmorphism utilities - Tech version */

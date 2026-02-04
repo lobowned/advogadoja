@@ -32,7 +32,7 @@ const SelectAction = () => {
   return (
     <>
       <Helmet>
-        <title>{niche.name} - Tipos de Ação | Advogado Já</title>
+        <title>{`${niche.name} - Tipos de Ação | Advogado Já`}</title>
         <meta name="description" content={`Selecione o tipo de ação para ${niche.name}. ${niche.actions.length} opções disponíveis. Consultoria jurídica online gratuita.`} />
         <link rel="canonical" href={`https://advogadoja.lovable.app/selecionar-acao/${nicheId}`} />
         <meta name="robots" content="index, follow" />

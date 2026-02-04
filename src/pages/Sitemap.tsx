@@ -179,7 +179,7 @@ const Sitemap = () => {
     <PageTransition>
       <div className="min-h-screen bg-background">
         <Helmet>
-          <title>Mapa do Site | Advogado Já - {totalPages}+ Páginas</title>
+          <title>{`Mapa do Site | Advogado Já - ${totalPages}+ Páginas`}</title>
           <meta name="description" content="Navegue por todas as páginas, artigos jurídicos, perguntas frequentes e calculadoras do Advogado Já. Encontre rapidamente o que você precisa." />
           <link rel="canonical" href={canonicalUrl} />
           <meta property="og:title" content="Mapa do Site | Advogado Já" />

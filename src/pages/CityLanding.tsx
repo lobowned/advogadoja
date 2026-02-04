@@ -199,7 +199,7 @@ const CityLanding = () => {
     <PageTransition>
       <div className="min-h-screen bg-background">
         <Helmet>
-          <title>Advogado em {city.name} {city.stateCode} | Consulta Jurídica Online Gratuita</title>
+          <title>{`Advogado em ${city.name} ${city.stateCode} | Consulta Jurídica Online Gratuita`}</title>
           <meta 
             name="description" 
             content={`Advogado em ${city.name} online. Consulta jurídica gratuita com especialistas em Trabalhista, Família, Previdenciário e mais. Atendimento imediato para ${city.name} e região.`} 

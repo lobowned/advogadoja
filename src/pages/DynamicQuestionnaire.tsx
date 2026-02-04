@@ -110,7 +110,7 @@ const DynamicQuestionnaire = () => {
   return (
     <>
       <Helmet>
-        <title>{action.name} - Questionário | Advogado Já</title>
+        <title>{`${action.name} - Questionário | Advogado Já`}</title>
         <meta name="description" content={`Responda o questionário sobre ${action.name}. Análise gratuita do seu caso por advogado especializado em ${niche.name}.`} />
         <meta name="robots" content="noindex, follow" />
       </Helmet>

@@ -368,7 +368,7 @@ const CityNicheLanding = () => {
     <PageTransition>
       <div className="min-h-screen bg-background">
         <Helmet>
-          <title>Advogado {area.name} em {city.name} {city.stateCode} | Consulta Gratuita</title>
+          <title>{`Advogado ${area.name} em ${city.name} ${city.stateCode} | Consulta Gratuita`}</title>
           <meta 
             name="description" 
             content={`Advogado ${area.name.toLowerCase()} em ${city.name}. ${area.description} Consulta jurídica online gratuita e imediata.`} 

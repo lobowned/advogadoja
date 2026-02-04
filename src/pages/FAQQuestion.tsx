@@ -241,7 +241,7 @@ const FAQQuestion = () => {
     <PageTransition>
       <div className="min-h-screen bg-background">
         <Helmet>
-          <title>{faq.question} | Advogado Já</title>
+          <title>{`${faq.question} | Advogado Já`}</title>
           <meta name="description" content={faq.metaDescription || faq.answer.substring(0, 160)} />
           <meta name="keywords" content={faq.keywords.join(', ')} />
           <link rel="canonical" href={canonicalUrl} />

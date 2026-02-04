@@ -20,15 +20,11 @@ const Conversao = () => {
   return (
     <>
       <Helmet>
-        {/* Google tag (gtag.js) */}
+        <title>Atendimento Iniciado | Advogado Já</title>
+        <meta name="robots" content="noindex, nofollow" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17774629021"></script>
         <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-17774629021');
-          `}
+          {`window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'AW-17774629021');`}
         </script>
       </Helmet>
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 flex items-center justify-center p-4">

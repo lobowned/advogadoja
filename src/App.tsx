@@ -70,6 +70,7 @@ import LiminarOrtopedicaLanding from "./pages/consumer/LiminarOrtopedicaLanding"
 import LiminarCardiologicaLanding from "./pages/consumer/LiminarCardiologicaLanding";
 import LiminarNeurologicaLanding from "./pages/consumer/LiminarNeurologicaLanding";
 import LiminarOftalmologicaLanding from "./pages/consumer/LiminarOftalmologicaLanding";
+import ProblemasVooLanding from "./pages/consumer/ProblemasVooLanding";
 
 // Calculadora Liminar Cirurgia
 import CalculadoraLiminarCirurgia from "./pages/CalculadoraLiminarCirurgia";
@@ -197,6 +198,9 @@ const AnimatedRoutes = () => {
         
         {/* Trabalhista Landing Page */}
         <Route path="/advogado-trabalhista-online" element={<TrabalhistaLanding />} />
+        
+        {/* Problemas com Voo - Nova Landing Completa */}
+        <Route path="/advogado-problemas-voo" element={<ProblemasVooLanding />} />
         
         {/* Niche Landing Pages */}
         <Route path="/advogado-consumidor" element={<NicheLanding />} />

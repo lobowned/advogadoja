@@ -122,14 +122,14 @@ const LegalProblemsSection = () => {
           <m.div variants={fadeInUp} className="text-center">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
               <AlertTriangle className="h-5 w-5" />
-              <span className="font-semibold">Problemas que Resolvemos</span>
+              <span className="font-semibold">Direito do Consumidor</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Problemas <span className="text-primary">Jurídicos</span> Mais Comuns
+              Precisa de Ajuda <span className="text-primary">Jurídica</span> do Consumidor?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Clique no seu problema e fale agora com um advogado especialista pelo WhatsApp. 
-              Consulta gratuita e sem compromisso.
+              Problemas com empresas, bancos, planos de saúde ou compras online? 
+              Fale com advogado especialista em direito do consumidor agora!
             </p>
           </m.div>
 
@@ -185,15 +185,15 @@ const LegalProblemsSection = () => {
           {/* CTA */}
           <m.div variants={fadeInUp} className="text-center pt-4">
             <p className="text-muted-foreground mb-4">
-              Não encontrou seu problema? Fale conosco mesmo assim!
+              Precisa de orientação jurídica sobre direito do consumidor? Fale com um especialista!
             </p>
             <Button 
               size="lg" 
-              onClick={() => handleWhatsApp("Olá! Preciso de orientação jurídica.")}
+              onClick={() => handleWhatsApp("Olá! Preciso de advogado direito do consumidor para me orientar.")}
               className="bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold px-8 shadow-lg hover:shadow-xl transition-all"
             >
               <MessageCircle className="w-5 h-5 mr-2" />
-              Falar com Advogado Agora
+              Falar com Advogado do Consumidor
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </m.div>

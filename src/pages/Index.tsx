@@ -274,7 +274,7 @@ const Index = () => {
       <Helmet>
         <title>Advogado Online | Trabalhista, Família, Consumidor | Advogado Já</title>
         <meta name="description" content="Precisa de advogado? Especialistas em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp. Consulta gratuita." />
-        <meta name="keywords" content="advogado online, advogado trabalhista, advogado família, advogado consumidor, advogado previdenciário, divórcio, demissão, aposentadoria, consulta gratuita" />
+        <meta name="keywords" content="advogado online, advogado trabalhista, advogado família, advogado consumidor, advogado previdenciário, divórcio, demissão, aposentadoria, consulta gratuita, preciso de advogado direito do consumidor, falar com advogado direito do consumidor, advogado para problema reclame aqui, resolver problema reclame aqui, advogado para problema procon, resolver problema consumidor.gov, ajuda jurídica direito do consumidor, orientação jurídica direito do consumidor" />
         <link rel="canonical" href="https://advogadoja.lovable.app" />
         
         <meta property="og:title" content="Advogado Online | Trabalhista, Família, Consumidor | Advogado Já" />
@@ -337,6 +337,18 @@ const Index = () => {
 
         {/* News Section */}
         <NewsSection />
+
+        {/* SEO Keywords Section - Hidden but crawlable for Google Ads */}
+        <section className="sr-only" aria-hidden="true">
+          <h2>Preciso de Advogado Direito do Consumidor</h2>
+          <p>Se você precisa de advogado direito do consumidor, nossa equipe pode ajudar. Oferecemos atendimento especializado para quem quer falar com advogado direito do consumidor.</p>
+          <h3>Advogado para Problema Reclame Aqui</h3>
+          <p>Precisa de advogado para problema reclame aqui? Ajudamos você a resolver problema reclame aqui de forma rápida e eficiente.</p>
+          <h3>Advogado para Problema Procon</h3>
+          <p>Nosso escritório atende casos de advogado para problema procon. Também oferecemos suporte para resolver problema consumidor.gov.</p>
+          <h3>Ajuda Jurídica e Orientação Direito do Consumidor</h3>
+          <p>Busca ajuda jurídica direito do consumidor? Oferecemos orientação jurídica direito do consumidor com advogados especializados. Falar com advogado direito do consumidor nunca foi tão fácil.</p>
+        </section>
 
         {/* Footer */}
         <footer className="border-t bg-gradient-to-b from-muted/30 to-muted/50 py-8 sm:py-10 safe-bottom">

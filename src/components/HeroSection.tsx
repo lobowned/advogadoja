@@ -18,10 +18,10 @@ import { heroReveal, heroTitle, heroStagger, heroBadge } from "@/lib/motion-vari
 
 const testimonials = [
   { text: "Ganhei R$ 12.000 por voo cancelado!", author: "Roberto M." },
-  { text: "Recebi todas as verbas rescisórias!", author: "Carla S." },
-  { text: "Consegui minha aposentadoria!", author: "José L." },
-  { text: "Divórcio resolvido em 30 dias!", author: "Ana P." },
-  { text: "Indenização por danos morais aprovada!", author: "Marcos R." },
+  { text: "Resolvi problema do Reclame Aqui!", author: "Juliana F." },
+  { text: "Plano de saúde negou, consegui liminar!", author: "Carlos A." },
+  { text: "Nome limpo em 48h, ganhei indenização!", author: "Ana P." },
+  { text: "Banco devolveu cobranças indevidas!", author: "Marcos R." },
 ];
 
 // Floating Particles Component
@@ -167,7 +167,7 @@ const HeroSection = () => {
               >
                 <div className="flex items-center gap-1.5 sm:gap-2">
                   <Scale className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                  <span>Todas as Áreas</span>
+                  <span>Direito do Consumidor</span>
                 </div>
               </Badge>
             </m.div>
@@ -275,7 +275,7 @@ const HeroSection = () => {
             animate="visible"
             transition={{ delay: 0.7 }}
           >
-            Precisa de Advogado
+            Advogado Direito do
             <br />
             <m.span 
               className="text-gradient-blue inline-block"
@@ -283,7 +283,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Especialista?
+              Consumidor
             </m.span>
           </m.h1>
           
@@ -293,8 +293,8 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.6 }}
           >
-            Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal.
-            <span className="text-primary font-semibold"> Atendimento via WhatsApp!</span>
+            Problema com Reclame Aqui, Procon ou Consumidor.gov? Voo cancelado, plano de saúde, nome sujo?
+            <span className="text-primary font-semibold"> Fale com advogado especialista agora!</span>
           </m.p>
         </div>
       </div>

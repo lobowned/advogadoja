@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
 
@@ -174,14 +174,14 @@ const AnimatedRoutes = () => {
         <Route path="/calculadora-liminar-cirurgia" element={<CalculadoraLiminarCirurgia />} />
         
         {/* Consumer Problem Landing Pages - SEO URLs */}
-        <Route path="/advogado-voo-cancelado-atrasado" element={<VooCanceladoLanding />} />
+        <Route path="/advogado-voo-cancelado-atrasado" element={<Navigate to="/advogado-problemas-voo" replace />} />
         <Route path="/advogado-negativacao-indevida" element={<NegativacaoIndevidaLanding />} />
         <Route path="/advogado-plano-saude-cobertura-negada" element={<PlanoSaudeNegouLanding />} />
         <Route path="/advogado-cobranca-indevida" element={<CobrancaIndevidaLanding />} />
         <Route path="/advogado-produto-defeituoso" element={<ProdutoDefeitousoLanding />} />
         
         {/* Consumer Problem Landing Pages - Legacy URLs */}
-        <Route path="/voo-cancelado" element={<VooCanceladoLanding />} />
+        <Route path="/voo-cancelado" element={<Navigate to="/advogado-problemas-voo" replace />} />
         <Route path="/negativacao-indevida" element={<NegativacaoIndevidaLanding />} />
         <Route path="/plano-saude-negou" element={<PlanoSaudeNegouLanding />} />
         <Route path="/fraude-bancaria" element={<FraudeBancariaLanding />} />

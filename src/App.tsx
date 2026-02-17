@@ -71,6 +71,7 @@ import LiminarCardiologicaLanding from "./pages/consumer/LiminarCardiologicaLand
 import LiminarNeurologicaLanding from "./pages/consumer/LiminarNeurologicaLanding";
 import LiminarOftalmologicaLanding from "./pages/consumer/LiminarOftalmologicaLanding";
 import ProblemasVooLanding from "./pages/consumer/ProblemasVooLanding";
+import CartaoConsignadoLanding from "./pages/consumer/CartaoConsignadoLanding";
 
 // Calculadora Liminar Cirurgia
 import CalculadoraLiminarCirurgia from "./pages/CalculadoraLiminarCirurgia";
@@ -195,6 +196,9 @@ const AnimatedRoutes = () => {
         <Route path="/liminar-cirurgia-cardiaca" element={<LiminarCardiologicaLanding />} />
         <Route path="/liminar-neurocirurgia" element={<LiminarNeurologicaLanding />} />
         <Route path="/liminar-cirurgia-olhos" element={<LiminarOftalmologicaLanding />} />
+        
+        {/* Cartão Consignado Landing Page */}
+        <Route path="/advogado-cartao-consignado" element={<CartaoConsignadoLanding />} />
         
         {/* Trabalhista Landing Page */}
         <Route path="/advogado-trabalhista-online" element={<TrabalhistaLanding />} />

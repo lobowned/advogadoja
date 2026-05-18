@@ -74,6 +74,8 @@ const FloatingParticles = () => (
 
 const HeroSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [currentArea, setCurrentArea] = useState(0);
+  const [currentSubtitle, setCurrentSubtitle] = useState(0);
   const isMobile = useIsMobile();
   const shouldReduceMotion = useReducedMotion();
   
@@ -85,6 +87,13 @@ const HeroSection = () => {
     }, 4000);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    const a = setInterval(() => setCurrentArea((p) => (p + 1) % areaBadges.length), 2500);
+    const s = setInterval(() => setCurrentSubtitle((p) => (p + 1) % heroSubtitles.length), 3500);
+    return () => { clearInterval(a); clearInterval(s); };
+  }, []);
+
 
   return (
     <section className="relative overflow-hidden min-h-screen w-full flex items-center justify-center">

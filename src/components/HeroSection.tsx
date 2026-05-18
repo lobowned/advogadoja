@@ -32,9 +32,9 @@ const HeroSection = () => {
       >
         <source src="/videos/hero-background.mp4" type="video/mp4" />
       </video>
-      {/* Ivory/emerald overlay to preserve editorial readability */}
-      <div className="absolute inset-0 bg-background/85 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/80 to-background pointer-events-none" />
+      {/* Dark emerald overlay for video visibility + text readability */}
+      <div className="absolute inset-0 bg-primary/70 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/60 to-primary/80 pointer-events-none" />
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">

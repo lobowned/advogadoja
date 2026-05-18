@@ -22,8 +22,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        'display': ['Space Grotesk', 'Inter', 'sans-serif'],
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'display': ['"DM Serif Display"', 'Libre Baskerville', 'Georgia', 'serif'],
+        'serif': ['"DM Serif Display"', 'Libre Baskerville', 'Georgia', 'serif'],
+        'sans': ['"Fira Sans"', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

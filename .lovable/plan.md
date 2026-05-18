@@ -1,46 +1,66 @@
 
-# Reposicionar a Home para Capturar CTR Generalista
+# Reformulação da Home — Escritório de Advocacia (Esmeralda & Ouro)
 
-Hoje a home está calibrada para Direito do Consumidor (headline, depoimentos, badges, keywords ocultas). Vamos abrir o funil para as 6 áreas do escritório (Trabalhista, Família, Consumidor, Previdenciário, Civil, Criminal) sem perder a força do hero.
+## Direção visual
 
-## Mudanças no Hero (`src/components/HeroSection.tsx`)
+- **Paleta**: verde esmeralda profundo (#064e3b), esmeralda médio (#0d7a5f), dourado (#c9a84c), creme/marfim (#f5f0e0). Sem azul/roxo/ciano. Sem gradientes coloridos. Bordas finas em dourado, fundos predominantemente marfim ou esmeralda escuro.
+- **Tipografia**: títulos em **DM Serif Display** (autoridade clássica), corpo em **Fira Sans** (limpeza institucional). Aplicada via tokens no `tailwind.config.ts` e import no `index.css`.
+- **Estrutura**: layout **magazine** — destaque editorial no hero + grid de áreas abaixo, como uma revista jurídica.
+- **Tom**: institucional, contido, "escritório tradicional + presença digital". Animações apenas sutis (fade-in no scroll, hover discreto).
 
-1. **Headline generalista com rotação por dor**
-   - Título fixo: "Advogado Online para Qualquer Causa"
-   - Subtítulo dinâmico (rotaciona a cada 3s, mesmo padrão dos depoimentos):
-     - "Demitido sem justa causa? Buscamos suas verbas."
-     - "INSS negou seu benefício? Entramos com recurso."
-     - "Divórcio, pensão ou guarda? Resolvemos com discrição."
-     - "Voo cancelado, nome sujo, plano negado? Indenização garantida."
-     - "Inventário, contrato ou dívida? Estratégia jurídica completa."
-     - "Acusado injustamente? Defesa criminal especializada."
-2. **Badges** — trocar o badge "Direito do Consumidor" por badge rotativa de área (Trabalhista → Família → INSS → Consumidor → Civil → Criminal), mantendo os badges "Advogados Online" e "4.9 • 2.500+".
-3. **Depoimentos do hero** — substituir os 5 atuais (todos de Consumidor) por 6 cobrindo as áreas:
-   - "Ganhei minhas verbas rescisórias!" — Trabalhista
-   - "Aposentadoria aprovada em 90 dias!" — INSS
-   - "Divórcio resolvido sem briga!" — Família
-   - "Voo cancelado: R$ 12.000 de indenização!" — Consumidor
-   - "Recuperei R$ 80 mil em ação cível!" — Civil
-   - "Absolvido por falta de provas!" — Criminal
+## Hero novo (substitui o atual)
 
-## Mudanças no Index (`src/pages/Index.tsx`)
+Remover por completo:
+- Vídeo de fundo + overlays azul/roxo
+- Partículas flutuantes
+- Glow/breathe pulsante na logo
+- Carrossel de avatares
+- Badges coloridos (verde neon, ciano)
+- Subtítulos e área-badge rotativos
+- "Qualquer Causa" em gradiente azul
 
-1. **Reordenar seções** para que `PracticeAreasSection` (6 áreas) venha imediatamente após o hero — já está, mas aumentar destaque visual.
-2. **Atualizar `<title>` e `<meta description>`**:
-   - Title: "Advogado Online | Trabalhista, Família, INSS, Consumidor | Advogado Já"
-   - Description: "Advogados online para todas as áreas: Trabalhista, Família, Consumidor, INSS, Civil e Criminal. Atendimento via WhatsApp. Consulta gratuita em todo o Brasil."
-3. **Keywords meta tag** — rebalancear para incluir termos das 6 áreas (manter consumidor mas reduzir peso).
-4. **Seção SEO oculta (`sr-only`)** — substituir o bloco focado em "preciso de advogado direito do consumidor" por bloco generalista com H2/H3 por área:
-   - "Advogado Trabalhista Online", "Advogado de Família Online", "Advogado Previdenciário INSS", "Advogado Cível", "Advogado Criminal", além do existente de Consumidor.
-5. **OG/Twitter tags** — atualizar com o novo título/descrição generalistas.
+Construir:
+- Fundo marfim sólido (`#f5f0e0`) com textura sutilíssima (linha dourada fina divisória, opcional).
+- Coluna esquerda (60%): "kicker" em maiúsculas com tracking largo ("Advocacia · Desde a primeira consulta"), **headline serifa única e fixa** ("Advogados para qualquer causa, com a seriedade de sempre"), subtítulo institucional curto, dois CTAs: principal dourado ("Falar com Advogado") + secundário outline esmeralda ("Conhecer o escritório").
+- Coluna direita (40%): card editorial com a logo, selo OAB, frase de credibilidade ("+2.500 clientes · OAB ativa · 15+ anos") e mini-lista de áreas em serifa.
+- Sem rotações de texto. Sem badges piscando. Linha dourada fina abaixo separando do próximo bloco.
 
-## Não mexer
+## Demais blocos da home
 
-- `PracticeAreasSection`, `ServicesSection`, `LegalProblemsSection`, `WhatsAppTestimonials` (já generalistas).
-- Schemas JSON-LD (já cobrem todas as áreas).
-- Rotas, dados, lógica de leads.
+- **Faixa de credibilidade** (logo bar): "OAB · LGPD · SSL · Sigilo profissional" em fundo esmeralda escuro com texto marfim — substitui badges coloridos.
+- **Áreas de atuação (magazine grid)**: 6 cards em grid 3×2, cada um com ícone fino em dourado, título serifa, descrição curta. Sem cores diferentes por área — todos usam o mesmo tratamento esmeralda/marfim, distintos apenas por ícone.
+- **Casos de sucesso**: tratamento editorial (citação grande em serifa, atribuição discreta), sem balões coloridos.
+- Demais seções existentes (`PracticeAreasSection`, `ServicesSection`, `LegalProblemsSection`, `WhatsAppTestimonials`, `CredibilitySection`) recebem nova skin via tokens — sem mudar lógica nem rotas.
+
+## Tokens (index.css + tailwind.config.ts)
+
+Reescrever variáveis HSL:
+- `--background`: marfim (#f5f0e0)
+- `--foreground`: esmeralda quase preto (#0a2e22)
+- `--primary`: esmeralda (#064e3b) / foreground marfim
+- `--accent`: dourado (#c9a84c) / foreground esmeralda
+- `--secondary`: esmeralda médio (#0d7a5f)
+- `--muted`: bege esmaecido
+- `--border`: dourado em baixa opacidade
+- Remover gradientes azul/roxo de `--gradient-*`. Criar `--gradient-emerald` sutil para usos pontuais.
+- Adicionar família `font-display` (DM Serif Display) e `font-sans` (Fira Sans) no tailwind.
 
 ## Arquivos afetados
 
-- `src/components/HeroSection.tsx` (headline, badge e depoimentos rotativos)
-- `src/pages/Index.tsx` (title, description, keywords, OG/Twitter, bloco SEO oculto)
+- `src/components/HeroSection.tsx` — reescrita completa (remoção dos efeitos, novo layout magazine)
+- `src/index.css` — novas variáveis HSL + import Google Fonts (DM Serif Display, Fira Sans)
+- `src/tailwind.config.ts` — `fontFamily.display`, `fontFamily.sans`, tokens atualizados
+- `src/pages/Index.tsx` — apenas ajustes de tom/copy nos blocos H2/H3 (nada de lógica)
+- `src/components/PracticeAreasSection.tsx` — uniformizar cores dos cards para esmeralda/dourado (remover `text-emerald-600`, `text-blue-600`, etc., usando tokens)
+- `src/components/CredibilitySection.tsx` / `TrustBadges.tsx` — neutralizar para esmeralda/dourado
+
+## O que NÃO muda
+
+- Rotas, `App.tsx`, navegação
+- Lógica de leads, WhatsApp, calculadoras
+- SEO/meta já generalista do `Index.tsx` (só ajuste de tom se necessário)
+- Páginas de landing internas (continuam com seus próprios temas)
+
+## Resultado esperado
+
+Hero institucional, sóbrio, marfim com dourado e esmeralda, tipografia serifada — sensação de "escritório de advocacia tradicional + bem desenhado", sem perder os elementos de conversão (CTAs WhatsApp continuam visíveis e claros).

@@ -1,7 +1,7 @@
 import { m, useReducedMotion } from "framer-motion";
 import { Scale, ShieldCheck, MessageCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoAdvogadoOnline from "@/assets/logo-advogado-online.png";
+
 
 const WHATSAPP_URL =
   "https://wa.me/5571997036269?text=Ol%C3%A1!%20Preciso%20falar%20com%20um%20advogado.";

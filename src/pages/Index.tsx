@@ -272,19 +272,20 @@ const Index = () => {
   return (
     <PageTransition variant="slideUp">
       <Helmet>
-        <title>Advogado Online | Trabalhista, Família, Consumidor | Advogado Já</title>
-        <meta name="description" content="Precisa de advogado? Especialistas em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp. Consulta gratuita." />
-        <meta name="keywords" content="advogado online, advogado trabalhista, advogado família, advogado consumidor, advogado previdenciário, divórcio, demissão, aposentadoria, consulta gratuita, preciso de advogado direito do consumidor, falar com advogado direito do consumidor, advogado para problema reclame aqui, resolver problema reclame aqui, advogado para problema procon, resolver problema consumidor.gov, ajuda jurídica direito do consumidor, orientação jurídica direito do consumidor" />
+        <title>Advogado Online | Trabalhista, Família, INSS, Consumidor | Advogado Já</title>
+        <meta name="description" content="Advogados online para todas as áreas: Trabalhista, Família, Consumidor, INSS, Civil e Criminal. Atendimento via WhatsApp. Consulta gratuita em todo o Brasil." />
+        <meta name="keywords" content="advogado online, advogado trabalhista, advogado família, advogado consumidor, advogado previdenciário INSS, advogado civil, advogado criminal, divórcio online, pensão alimentícia, demissão sem justa causa, verbas rescisórias, aposentadoria INSS, auxílio-doença, BPC LOAS, voo cancelado, plano de saúde negou, nome sujo, negativação indevida, inventário, defesa criminal, consulta jurídica gratuita, falar com advogado agora" />
         <link rel="canonical" href="https://advogadoja.lovable.app" />
         
-        <meta property="og:title" content="Advogado Online | Trabalhista, Família, Consumidor | Advogado Já" />
-        <meta property="og:description" content="Precisa de advogado? Especialistas em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp. Consulta gratuita." />
+        <meta property="og:title" content="Advogado Online | Trabalhista, Família, INSS, Consumidor | Advogado Já" />
+        <meta property="og:description" content="Advogados online para todas as áreas do direito. Atendimento via WhatsApp. Consulta gratuita em todo o Brasil." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://advogadoja.lovable.app" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Advogado Online | Trabalhista, Família, Consumidor | Advogado Já" />
-        <meta name="twitter:description" content="Precisa de advogado? Especialistas em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp. Consulta gratuita." />
+        <meta name="twitter:title" content="Advogado Online | Trabalhista, Família, INSS, Consumidor | Advogado Já" />
+        <meta name="twitter:description" content="Advogados online para todas as áreas do direito. Atendimento via WhatsApp. Consulta gratuita em todo o Brasil." />
+
         
         <script type="application/ld+json">
           {JSON.stringify(organizationSchema)}

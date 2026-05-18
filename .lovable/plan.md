@@ -1,127 +1,46 @@
 
+# Reposicionar a Home para Capturar CTR Generalista
 
-# Landing Page: Desconto RMC e RCC - Cartao de Credito Consignado
+Hoje a home está calibrada para Direito do Consumidor (headline, depoimentos, badges, keywords ocultas). Vamos abrir o funil para as 6 áreas do escritório (Trabalhista, Família, Consumidor, Previdenciário, Civil, Criminal) sem perder a força do hero.
 
-## Pesquisa Completa do Problema
+## Mudanças no Hero (`src/components/HeroSection.tsx`)
 
-### O que sao RMC e RCC?
-- **RMC (Reserva de Margem Consignavel)**: valor reservado do beneficio do INSS para pagamento de cartao de credito consignado. Compromete ate **5% da margem** do beneficio.
-- **RCC (Reserva de Cartao Consignado)**: funciona de forma similar, e a reserva especifica para o cartao consignado vinculado ao beneficio.
-- **Diferenca pratica**: a RMC e a reserva da margem para qualquer cartao consignado; a RCC e o desconto efetivo na conta/beneficio.
+1. **Headline generalista com rotação por dor**
+   - Título fixo: "Advogado Online para Qualquer Causa"
+   - Subtítulo dinâmico (rotaciona a cada 3s, mesmo padrão dos depoimentos):
+     - "Demitido sem justa causa? Buscamos suas verbas."
+     - "INSS negou seu benefício? Entramos com recurso."
+     - "Divórcio, pensão ou guarda? Resolvemos com discrição."
+     - "Voo cancelado, nome sujo, plano negado? Indenização garantida."
+     - "Inventário, contrato ou dívida? Estratégia jurídica completa."
+     - "Acusado injustamente? Defesa criminal especializada."
+2. **Badges** — trocar o badge "Direito do Consumidor" por badge rotativa de área (Trabalhista → Família → INSS → Consumidor → Civil → Criminal), mantendo os badges "Advogados Online" e "4.9 • 2.500+".
+3. **Depoimentos do hero** — substituir os 5 atuais (todos de Consumidor) por 6 cobrindo as áreas:
+   - "Ganhei minhas verbas rescisórias!" — Trabalhista
+   - "Aposentadoria aprovada em 90 dias!" — INSS
+   - "Divórcio resolvido sem briga!" — Família
+   - "Voo cancelado: R$ 12.000 de indenização!" — Consumidor
+   - "Recuperei R$ 80 mil em ação cível!" — Civil
+   - "Absolvido por falta de provas!" — Criminal
 
-### Dimensao do Problema (Dados Reais 2025-2026)
-- **Denuncias de consignado nao contratado cresceram 113% em 2025** (fonte: Contabeis/INSS)
-- O INSS prorrogou o prazo de contestacao de descontos indevidos em aposentadorias
-- Milhoes de aposentados e pensionistas sao vitimas de contratos fraudulentos
-- O governo federal criou canal proprio no Meu INSS para exclusao de emprestimo consignado (gov.br)
+## Mudanças no Index (`src/pages/Index.tsx`)
 
-### Margem Consignavel 2026
-- **Emprestimo consignado**: ate 35% do beneficio
-- **Cartao consignado (RMC)**: ate 5% do beneficio
-- **Total**: ate 40% pode ser comprometido
-- Com reajuste do salario minimo em 2026, a margem aumentou (novo valor base)
+1. **Reordenar seções** para que `PracticeAreasSection` (6 áreas) venha imediatamente após o hero — já está, mas aumentar destaque visual.
+2. **Atualizar `<title>` e `<meta description>`**:
+   - Title: "Advogado Online | Trabalhista, Família, INSS, Consumidor | Advogado Já"
+   - Description: "Advogados online para todas as áreas: Trabalhista, Família, Consumidor, INSS, Civil e Criminal. Atendimento via WhatsApp. Consulta gratuita em todo o Brasil."
+3. **Keywords meta tag** — rebalancear para incluir termos das 6 áreas (manter consumidor mas reduzir peso).
+4. **Seção SEO oculta (`sr-only`)** — substituir o bloco focado em "preciso de advogado direito do consumidor" por bloco generalista com H2/H3 por área:
+   - "Advogado Trabalhista Online", "Advogado de Família Online", "Advogado Previdenciário INSS", "Advogado Cível", "Advogado Criminal", além do existente de Consumidor.
+5. **OG/Twitter tags** — atualizar com o novo título/descrição generalistas.
 
-### Principais Golpes e Problemas
-1. **Cartao consignado nao solicitado** - banco envia cartao sem pedido do aposentado
-2. **Contratacao por telefone sem autorizacao** - ligam oferecendo "beneficio" e contratam sem consentimento
-3. **Desconto sem contrato assinado** - aparece desconto misterioso no extrato
-4. **Taxa de juros abusiva** - juros acima do teto permitido
-5. **Cancelamento negado** - banco se recusa a cancelar o cartao consignado
-6. **Conversao irregular** - emprestimo pessoal convertido em cartao consignado sem aviso
-7. **Falta de informacao adequada** - nao explicam que o minimo do cartao vira divida rotativa
+## Não mexer
 
-### Jurisprudencia e Valores de Indenizacao
-- **TJRJ 2025**: Condenou banco por cartao consignado indevido - indenizacao por danos morais
-- **TJMT 2025**: Reconheceu cobranca indevida em cartao nao contratado e condenou banco a indenizar idosa
-- **TJMT 2025**: Obrigou banco a converter cartao consignado em emprestimo pessoal (pratica abusiva)
-- **TJDFT**: Jurisprudencia consolidada sobre informacao adequada vs abusividade em cartao consignado
-- **STJ 2025 (atencao)**: 3a Turma decidiu que fraude em consignado nao gera dano moral presumido a idosos (decisao controversa, mas nao impede acao)
-- **Valores tipicos de indenizacao**: R$ 3.000 a R$ 15.000 por danos morais + restituicao em dobro dos valores descontados
+- `PracticeAreasSection`, `ServicesSection`, `LegalProblemsSection`, `WhatsAppTestimonials` (já generalistas).
+- Schemas JSON-LD (já cobrem todas as áreas).
+- Rotas, dados, lógica de leads.
 
-### Direitos do Aposentado/Pensionista
-1. **Cancelamento imediato** via Meu INSS (site ou app)
-2. **Restituicao em dobro** dos valores descontados indevidamente (CDC art. 42)
-3. **Danos morais** por contratar sem autorizacao
-4. **Revisao contratual** de juros abusivos
-5. **Nao ha prescricao** que impeca acao em contratos antigos com descontos continuados (trato sucessivo)
+## Arquivos afetados
 
----
-
-## Plano de Implementacao
-
-### Arquivo a Criar
-- `src/pages/consumer/CartaoConsignadoLanding.tsx`
-
-### Arquivo a Modificar
-- `src/App.tsx` - adicionar rota `/advogado-cartao-consignado`
-
-### Estrutura da Landing Page (seguindo padrao premium da pagina de Voo)
-
-**1. Hero Section** (fundo escuro com gradiente)
-- Titulo: "Desconto no INSS que Voce Nao Autorizou?"
-- Subtitulo: "RMC e RCC - Cartao de Credito Consignado Indevido"
-- Badges: "Consulta Gratuita", "Denuncias cresceram 113% em 2025"
-- Prova social: "X aposentados ja recuperaram seus valores"
-- CTA WhatsApp
-
-**2. Stats Bar**
-- "+113% de denuncias em 2025"
-- "Ate 5% do beneficio comprometido"
-- "R$ 3.000 a R$ 15.000 de indenizacao"
-- "Restituicao em dobro"
-
-**3. Grid de Problemas** (7 tipos)
-- Cartao nao solicitado
-- Desconto sem contrato
-- Taxa abusiva
-- Cancelamento negado
-- Contratacao por telefone
-- Conversao irregular de emprestimo
-- Desconto apos cancelamento
-
-**4. Tabela de Valores Recuperaveis**
-- Por tipo de problema com faixas de valores estimados
-
-**5. Secao "Antes vs Depois"**
-- ANTES: "Desconto todo mes sem explicacao, sem saber o que fazer, ligando para banco sem resposta"
-- DEPOIS: "Desconto cancelado, valores devolvidos em dobro, indenizacao na conta"
-
-**6. Secao "Seus Direitos"**
-- CDC Art. 42 (devolucao em dobro)
-- Portarias INSS sobre cancelamento
-- Canal Meu INSS para exclusao
-- Nao ha prescricao para descontos continuados
-
-**7. Como Funciona** (3 passos)
-1. Fale conosco pelo WhatsApp
-2. Enviamos seus documentos (extrato INSS, HISCRE)
-3. Entramos com a acao e voce recebe a indenizacao
-
-**8. Depoimentos WhatsApp**
-- Formato bolhas de conversa (mesmo estilo da pagina de Voo)
-
-**9. FAQ** (perguntas reais)
-- "O que e RMC e RCC?"
-- "Nunca pedi cartao consignado, posso cancelar?"
-- "Como saber se tenho desconto indevido?"
-- "Quanto posso receber de indenizacao?"
-- "Preciso ir ao banco para resolver?"
-- "Quanto tempo demora o processo?"
-
-**10. CTA Final com Urgencia**
-- "Cada mes que passa e mais dinheiro descontado do seu beneficio"
-
-**11. Botao Flutuante WhatsApp**
-
-### SEO e Keywords
-- Titulo: "Advogado Cartao Consignado - Desconto RMC RCC Indevido | Indenizacao"
-- Keywords naturais: "desconto indevido INSS", "cartao consignado nao autorizado", "RMC RCC", "advogado aposentado", "cancelar cartao consignado"
-- Schema LegalService
-
-### Dependencias Existentes
-- `framer-motion` (AnimatedSection, StaggerContainer)
-- `lucide-react`
-- Componentes UI (Card, Button, Accordion, Table)
-- `FloatingWhatsApp`
-- `PageTransition`
-
+- `src/components/HeroSection.tsx` (headline, badge e depoimentos rotativos)
+- `src/pages/Index.tsx` (title, description, keywords, OG/Twitter, bloco SEO oculto)

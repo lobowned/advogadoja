@@ -17,11 +17,30 @@ import logoAdvogadoOnline from "@/assets/logo-advogado-online.png";
 import { heroReveal, heroTitle, heroStagger, heroBadge } from "@/lib/motion-variants";
 
 const testimonials = [
-  { text: "Ganhei R$ 12.000 por voo cancelado!", author: "Roberto M." },
-  { text: "Resolvi problema do Reclame Aqui!", author: "Juliana F." },
-  { text: "Plano de saúde negou, consegui liminar!", author: "Carlos A." },
-  { text: "Nome limpo em 48h, ganhei indenização!", author: "Ana P." },
-  { text: "Banco devolveu cobranças indevidas!", author: "Marcos R." },
+  { text: "Ganhei minhas verbas rescisórias!", author: "Roberto M. • Trabalhista" },
+  { text: "Aposentadoria aprovada em 90 dias!", author: "Dona Lúcia • INSS" },
+  { text: "Divórcio resolvido sem briga!", author: "Juliana F. • Família" },
+  { text: "Voo cancelado: R$ 12.000 de indenização!", author: "Carlos A. • Consumidor" },
+  { text: "Recuperei R$ 80 mil em ação cível!", author: "Marcos R. • Civil" },
+  { text: "Absolvido por falta de provas!", author: "Pedro S. • Criminal" },
+];
+
+const areaBadges = [
+  { label: "Trabalhista" },
+  { label: "Família" },
+  { label: "INSS" },
+  { label: "Consumidor" },
+  { label: "Civil" },
+  { label: "Criminal" },
+];
+
+const heroSubtitles = [
+  "Demitido sem justa causa? Buscamos suas verbas.",
+  "INSS negou seu benefício? Entramos com recurso.",
+  "Divórcio, pensão ou guarda? Resolvemos com discrição.",
+  "Voo cancelado, nome sujo, plano negado? Indenização garantida.",
+  "Inventário, contrato ou dívida? Estratégia jurídica completa.",
+  "Acusado injustamente? Defesa criminal especializada.",
 ];
 
 // Floating Particles Component

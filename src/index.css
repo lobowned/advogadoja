@@ -219,16 +219,23 @@
   }
   
   .startup-gradient {
-    background: var(--gradient-startup);
+    background: var(--gradient-emerald);
   }
-  
+
   .text-gradient-blue {
-    background: linear-gradient(135deg, hsl(220 90% 56%) 0%, hsl(190 95% 50%) 50%, hsl(260 80% 65%) 100%);
+    background: linear-gradient(135deg, hsl(43 55% 54%) 0%, hsl(43 76% 75%) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(43 55% 54%) 0%, hsl(43 76% 75%) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   .glow-blue {
     box-shadow: var(--shadow-blue-glow);
   }

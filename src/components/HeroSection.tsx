@@ -314,7 +314,7 @@ const HeroSection = () => {
             animate="visible"
             transition={{ delay: 0.7 }}
           >
-            Advogado Direito do
+            Advogado Online para
             <br />
             <m.span 
               className="text-gradient-blue inline-block"
@@ -322,19 +322,30 @@ const HeroSection = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Consumidor
+              Qualquer Causa
             </m.span>
           </m.h1>
           
-          <m.p 
-            className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-4"
+          <m.div 
+            className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-4 min-h-[3.5rem] sm:min-h-[3rem] flex items-center justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.6 }}
           >
-            Problema com Reclame Aqui, Procon ou Consumidor.gov? Voo cancelado, plano de saúde, nome sujo?
-            <span className="text-primary font-semibold"> Fale com advogado especialista agora!</span>
-          </m.p>
+            <AnimatePresence mode="wait">
+              <m.p
+                key={currentSubtitle}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.4 }}
+              >
+                {heroSubtitles[currentSubtitle].split('?')[0]}?
+                <span className="text-primary font-semibold">{heroSubtitles[currentSubtitle].split('?')[1]}</span>
+              </m.p>
+            </AnimatePresence>
+          </m.div>
+
         </div>
       </div>
     </section>

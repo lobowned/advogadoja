@@ -191,14 +191,25 @@ const HeroSection = () => {
 
             <m.div variants={heroBadge}>
               <Badge 
-                className="glass-dark border-blue-400/40 text-white px-2.5 sm:px-4 py-1 sm:py-2 text-[11px] sm:text-sm font-medium shadow-lg"
+                className="glass-dark border-blue-400/40 text-white px-2.5 sm:px-4 py-1 sm:py-2 text-[11px] sm:text-sm font-medium shadow-lg min-w-[120px] sm:min-w-[160px] justify-center"
               >
                 <div className="flex items-center gap-1.5 sm:gap-2">
                   <Scale className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                  <span>Direito do Consumidor</span>
+                  <AnimatePresence mode="wait">
+                    <m.span
+                      key={currentArea}
+                      initial={{ opacity: 0, y: 6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -6 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {areaBadges[currentArea].label}
+                    </m.span>
+                  </AnimatePresence>
                 </div>
               </Badge>
             </m.div>
+
           </m.div>
 
           {/* Rotating Testimonial with AnimatePresence */}

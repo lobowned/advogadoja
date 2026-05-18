@@ -116,13 +116,13 @@ const HeroSection = () => {
               <span className="absolute bottom-0 right-0 w-6 h-px bg-accent" />
               <span className="absolute bottom-0 right-0 w-px h-6 bg-accent" />
 
-              <div className="flex items-center justify-center mb-6">
-                <img
-                  src={logoAdvogadoOnline}
-                  alt="Logo Advogado Já"
-                  className="h-24 sm:h-28 w-auto object-contain"
-                  loading="eager"
-                />
+              <div className="flex flex-col items-center justify-center mb-6">
+                <span className="font-display text-4xl sm:text-5xl text-primary leading-none">
+                  Advogado <span className="text-accent">Já</span>
+                </span>
+                <span className="mt-2 text-[10px] font-sans tracking-[0.3em] uppercase text-muted-foreground">
+                  Sociedade de Advogados
+                </span>
               </div>
 
               <div className="flex items-center justify-center gap-3 text-foreground mb-6">

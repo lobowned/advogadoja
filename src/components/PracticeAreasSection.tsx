@@ -21,7 +21,6 @@ const practiceAreas = [
     title: "Trabalhista",
     description: "Demissão, horas extras, FGTS, assédio, rescisão",
     services: ["Rescisão indireta", "Verbas rescisórias", "Danos morais", "Assédio moral"],
-    color: "from-orange-500 to-orange-600",
     message: "Olá! Preciso de orientação sobre um problema trabalhista."
   },
   {
@@ -30,7 +29,6 @@ const practiceAreas = [
     title: "Família",
     description: "Divórcio, pensão, guarda de filhos, inventário",
     services: ["Divórcio", "Pensão alimentícia", "Guarda de filhos", "Inventário"],
-    color: "from-blue-500 to-blue-600",
     message: "Olá! Preciso de orientação sobre um problema de família."
   },
   {
@@ -39,7 +37,6 @@ const practiceAreas = [
     title: "Consumidor",
     description: "Voo cancelado, cobrança indevida, plano de saúde",
     services: ["Voo cancelado", "Nome sujo", "Plano de saúde", "Fraude bancária"],
-    color: "from-emerald-500 to-emerald-600",
     message: "Olá! Preciso de orientação sobre um problema de consumidor."
   },
   {
@@ -48,7 +45,6 @@ const practiceAreas = [
     title: "Previdenciário",
     description: "Aposentadoria, auxílio-doença, BPC/LOAS, pensão",
     services: ["Aposentadoria", "Auxílio-doença", "BPC/LOAS", "Pensão por morte"],
-    color: "from-green-500 to-green-600",
     message: "Olá! Preciso de orientação sobre um benefício do INSS."
   },
   {
@@ -57,7 +53,6 @@ const practiceAreas = [
     title: "Civil",
     description: "Contratos, danos morais, herança, imóveis",
     services: ["Danos morais", "Contratos", "Herança", "Usucapião"],
-    color: "from-purple-500 to-purple-600",
     message: "Olá! Preciso de orientação sobre um problema civil."
   },
   {
@@ -66,7 +61,6 @@ const practiceAreas = [
     title: "Criminal",
     description: "Defesa criminal, habeas corpus, recursos",
     services: ["Defesa criminal", "Habeas corpus", "Recursos", "Audiência de custódia"],
-    color: "from-red-500 to-red-600",
     message: "Olá! Preciso de orientação sobre um problema criminal."
   }
 ];

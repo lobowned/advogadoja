@@ -17,11 +17,30 @@ import logoAdvogadoOnline from "@/assets/logo-advogado-online.png";
 import { heroReveal, heroTitle, heroStagger, heroBadge } from "@/lib/motion-variants";
 
 const testimonials = [
-  { text: "Ganhei R$ 12.000 por voo cancelado!", author: "Roberto M." },
-  { text: "Resolvi problema do Reclame Aqui!", author: "Juliana F." },
-  { text: "Plano de saúde negou, consegui liminar!", author: "Carlos A." },
-  { text: "Nome limpo em 48h, ganhei indenização!", author: "Ana P." },
-  { text: "Banco devolveu cobranças indevidas!", author: "Marcos R." },
+  { text: "Ganhei minhas verbas rescisórias!", author: "Roberto M. • Trabalhista" },
+  { text: "Aposentadoria aprovada em 90 dias!", author: "Dona Lúcia • INSS" },
+  { text: "Divórcio resolvido sem briga!", author: "Juliana F. • Família" },
+  { text: "Voo cancelado: R$ 12.000 de indenização!", author: "Carlos A. • Consumidor" },
+  { text: "Recuperei R$ 80 mil em ação cível!", author: "Marcos R. • Civil" },
+  { text: "Absolvido por falta de provas!", author: "Pedro S. • Criminal" },
+];
+
+const areaBadges = [
+  { label: "Trabalhista" },
+  { label: "Família" },
+  { label: "INSS" },
+  { label: "Consumidor" },
+  { label: "Civil" },
+  { label: "Criminal" },
+];
+
+const heroSubtitles = [
+  "Demitido sem justa causa? Buscamos suas verbas.",
+  "INSS negou seu benefício? Entramos com recurso.",
+  "Divórcio, pensão ou guarda? Resolvemos com discrição.",
+  "Voo cancelado, nome sujo, plano negado? Indenização garantida.",
+  "Inventário, contrato ou dívida? Estratégia jurídica completa.",
+  "Acusado injustamente? Defesa criminal especializada.",
 ];
 
 // Floating Particles Component
@@ -55,6 +74,8 @@ const FloatingParticles = () => (
 
 const HeroSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [currentArea, setCurrentArea] = useState(0);
+  const [currentSubtitle, setCurrentSubtitle] = useState(0);
   const isMobile = useIsMobile();
   const shouldReduceMotion = useReducedMotion();
   
@@ -66,6 +87,13 @@ const HeroSection = () => {
     }, 4000);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    const a = setInterval(() => setCurrentArea((p) => (p + 1) % areaBadges.length), 2500);
+    const s = setInterval(() => setCurrentSubtitle((p) => (p + 1) % heroSubtitles.length), 3500);
+    return () => { clearInterval(a); clearInterval(s); };
+  }, []);
+
 
   return (
     <section className="relative overflow-hidden min-h-screen w-full flex items-center justify-center">
@@ -163,14 +191,25 @@ const HeroSection = () => {
 
             <m.div variants={heroBadge}>
               <Badge 
-                className="glass-dark border-blue-400/40 text-white px-2.5 sm:px-4 py-1 sm:py-2 text-[11px] sm:text-sm font-medium shadow-lg"
+                className="glass-dark border-blue-400/40 text-white px-2.5 sm:px-4 py-1 sm:py-2 text-[11px] sm:text-sm font-medium shadow-lg min-w-[120px] sm:min-w-[160px] justify-center"
               >
                 <div className="flex items-center gap-1.5 sm:gap-2">
                   <Scale className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                  <span>Direito do Consumidor</span>
+                  <AnimatePresence mode="wait">
+                    <m.span
+                      key={currentArea}
+                      initial={{ opacity: 0, y: 6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -6 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {areaBadges[currentArea].label}
+                    </m.span>
+                  </AnimatePresence>
                 </div>
               </Badge>
             </m.div>
+
           </m.div>
 
           {/* Rotating Testimonial with AnimatePresence */}
@@ -275,7 +314,7 @@ const HeroSection = () => {
             animate="visible"
             transition={{ delay: 0.7 }}
           >
-            Advogado Direito do
+            Advogado Online para
             <br />
             <m.span 
               className="text-gradient-blue inline-block"
@@ -283,19 +322,30 @@ const HeroSection = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Consumidor
+              Qualquer Causa
             </m.span>
           </m.h1>
           
-          <m.p 
-            className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-4"
+          <m.div 
+            className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-4 min-h-[3.5rem] sm:min-h-[3rem] flex items-center justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.6 }}
           >
-            Problema com Reclame Aqui, Procon ou Consumidor.gov? Voo cancelado, plano de saúde, nome sujo?
-            <span className="text-primary font-semibold"> Fale com advogado especialista agora!</span>
-          </m.p>
+            <AnimatePresence mode="wait">
+              <m.p
+                key={currentSubtitle}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.4 }}
+              >
+                {heroSubtitles[currentSubtitle].split('?')[0]}?
+                <span className="text-primary font-semibold">{heroSubtitles[currentSubtitle].split('?')[1]}</span>
+              </m.p>
+            </AnimatePresence>
+          </m.div>
+
         </div>
       </div>
     </section>

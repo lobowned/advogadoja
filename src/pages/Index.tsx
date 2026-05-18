@@ -272,19 +272,20 @@ const Index = () => {
   return (
     <PageTransition variant="slideUp">
       <Helmet>
-        <title>Advogado Online | Trabalhista, Família, Consumidor | Advogado Já</title>
-        <meta name="description" content="Precisa de advogado? Especialistas em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp. Consulta gratuita." />
-        <meta name="keywords" content="advogado online, advogado trabalhista, advogado família, advogado consumidor, advogado previdenciário, divórcio, demissão, aposentadoria, consulta gratuita, preciso de advogado direito do consumidor, falar com advogado direito do consumidor, advogado para problema reclame aqui, resolver problema reclame aqui, advogado para problema procon, resolver problema consumidor.gov, ajuda jurídica direito do consumidor, orientação jurídica direito do consumidor" />
+        <title>Advogado Online | Trabalhista, Família, INSS, Consumidor | Advogado Já</title>
+        <meta name="description" content="Advogados online para todas as áreas: Trabalhista, Família, Consumidor, INSS, Civil e Criminal. Atendimento via WhatsApp. Consulta gratuita em todo o Brasil." />
+        <meta name="keywords" content="advogado online, advogado trabalhista, advogado família, advogado consumidor, advogado previdenciário INSS, advogado civil, advogado criminal, divórcio online, pensão alimentícia, demissão sem justa causa, verbas rescisórias, aposentadoria INSS, auxílio-doença, BPC LOAS, voo cancelado, plano de saúde negou, nome sujo, negativação indevida, inventário, defesa criminal, consulta jurídica gratuita, falar com advogado agora" />
         <link rel="canonical" href="https://advogadoja.lovable.app" />
         
-        <meta property="og:title" content="Advogado Online | Trabalhista, Família, Consumidor | Advogado Já" />
-        <meta property="og:description" content="Precisa de advogado? Especialistas em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp. Consulta gratuita." />
+        <meta property="og:title" content="Advogado Online | Trabalhista, Família, INSS, Consumidor | Advogado Já" />
+        <meta property="og:description" content="Advogados online para todas as áreas do direito. Atendimento via WhatsApp. Consulta gratuita em todo o Brasil." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://advogadoja.lovable.app" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Advogado Online | Trabalhista, Família, Consumidor | Advogado Já" />
-        <meta name="twitter:description" content="Precisa de advogado? Especialistas em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp. Consulta gratuita." />
+        <meta name="twitter:title" content="Advogado Online | Trabalhista, Família, INSS, Consumidor | Advogado Já" />
+        <meta name="twitter:description" content="Advogados online para todas as áreas do direito. Atendimento via WhatsApp. Consulta gratuita em todo o Brasil." />
+
         
         <script type="application/ld+json">
           {JSON.stringify(organizationSchema)}
@@ -340,15 +341,22 @@ const Index = () => {
 
         {/* SEO Keywords Section - Hidden but crawlable for Google Ads */}
         <section className="sr-only" aria-hidden="true">
-          <h2>Preciso de Advogado Direito do Consumidor</h2>
-          <p>Se você precisa de advogado direito do consumidor, nossa equipe pode ajudar. Oferecemos atendimento especializado para quem quer falar com advogado direito do consumidor.</p>
-          <h3>Advogado para Problema Reclame Aqui</h3>
-          <p>Precisa de advogado para problema reclame aqui? Ajudamos você a resolver problema reclame aqui de forma rápida e eficiente.</p>
-          <h3>Advogado para Problema Procon</h3>
-          <p>Nosso escritório atende casos de advogado para problema procon. Também oferecemos suporte para resolver problema consumidor.gov.</p>
-          <h3>Ajuda Jurídica e Orientação Direito do Consumidor</h3>
-          <p>Busca ajuda jurídica direito do consumidor? Oferecemos orientação jurídica direito do consumidor com advogados especializados. Falar com advogado direito do consumidor nunca foi tão fácil.</p>
+          <h2>Advogado Online para Todas as Áreas do Direito</h2>
+          <p>O Advogado Já é um escritório de advocacia online com advogados especializados em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendemos em todo o Brasil via WhatsApp com consulta gratuita.</p>
+          <h3>Advogado Trabalhista Online</h3>
+          <p>Demissão sem justa causa, verbas rescisórias não pagas, horas extras, assédio moral, acidente de trabalho, FGTS e rescisão indireta. Fale com um advogado trabalhista agora mesmo.</p>
+          <h3>Advogado de Família Online</h3>
+          <p>Divórcio consensual ou litigioso, guarda de filhos, pensão alimentícia, partilha de bens, inventário, união estável e reconhecimento de paternidade.</p>
+          <h3>Advogado Previdenciário INSS</h3>
+          <p>Aposentadoria por idade, por tempo de contribuição, especial e por invalidez. Auxílio-doença, BPC LOAS, pensão por morte e revisão de benefício INSS negado.</p>
+          <h3>Advogado Direito do Consumidor</h3>
+          <p>Voo cancelado, atraso de voo, problemas com Reclame Aqui, Procon, Consumidor.gov, plano de saúde negou cobertura, negativação indevida, cobrança abusiva, fraude bancária e produto defeituoso.</p>
+          <h3>Advogado Cível</h3>
+          <p>Indenização por danos morais e materiais, contratos descumpridos, dívidas, despejo, aluguel atrasado e ações de cobrança.</p>
+          <h3>Advogado Criminal</h3>
+          <p>Defesa criminal, audiência de custódia, habeas corpus, processos criminais, recursos e assistência jurídica para acusados e vítimas.</p>
         </section>
+
 
         {/* Footer */}
         <footer className="border-t bg-gradient-to-b from-muted/30 to-muted/50 py-8 sm:py-10 safe-bottom">

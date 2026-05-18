@@ -9,81 +9,76 @@
 
 @layer base {
   :root {
-    /* Tech Blue Startup palette */
-    --background: 220 20% 99%;
-    --foreground: 220 20% 10%;
+    /* Law Firm — Esmeralda & Ouro */
+    --background: 44 47% 92%;         /* marfim #f5f0e0 */
+    --foreground: 162 64% 11%;        /* esmeralda quase preto */
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 20% 10%;
+    --card: 44 50% 96%;
+    --card-foreground: 162 64% 11%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
+    --popover: 44 50% 96%;
+    --popover-foreground: 162 64% 11%;
 
-    /* Primary: Electric Blue */
-    --primary: 220 90% 56%;
-    --primary-foreground: 0 0% 100%;
+    /* Primary: Esmeralda profundo */
+    --primary: 162 86% 16%;           /* #064e3b */
+    --primary-foreground: 44 47% 95%;
 
-    /* Secondary: Tech Cyan */
-    --secondary: 190 95% 42%;
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary: Esmeralda médio */
+    --secondary: 164 80% 26%;         /* #0d7a5f */
+    --secondary-foreground: 44 47% 95%;
 
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 15% 45%;
+    --muted: 44 30% 86%;
+    --muted-foreground: 162 30% 28%;
 
-    /* Accent: Soft Violet */
-    --accent: 260 80% 60%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent: Dourado */
+    --accent: 43 55% 54%;             /* #c9a84c */
+    --accent-foreground: 162 64% 11%;
 
-    --destructive: 0 75% 55%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 65% 42%;
+    --destructive-foreground: 44 47% 95%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 92%;
-    --ring: 220 90% 56%;
+    --border: 43 35% 70%;             /* dourado discreto */
+    --input: 44 30% 86%;
+    --ring: 43 55% 54%;
 
-    --radius: 0.75rem;
-    
-    /* Startup Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 90% 56%) 0%, hsl(190 95% 42%) 50%, hsl(260 80% 60%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 20% 98%) 100%);
-    --gradient-startup: linear-gradient(135deg, hsl(220 90% 56%) 0%, hsl(190 95% 50%) 50%, hsl(260 80% 60%) 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
-    
-    /* Tech Shadows */
-    --shadow-card: 0 4px 20px -2px hsl(220 90% 56% / 0.08);
-    --shadow-card-hover: 0 12px 35px -6px hsl(220 90% 56% / 0.15);
-    --shadow-button: 0 4px 15px -2px hsl(220 90% 56% / 0.35);
-    --shadow-elegant: 0 15px 40px -12px hsl(220 20% 10% / 0.1);
-    --shadow-glow: 0 0 50px hsl(220 90% 56% / 0.25);
-    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.06);
-    --shadow-blue-glow: 0 0 40px hsl(220 90% 56% / 0.3);
-    
-    /* Smooth Transitions */
+    --radius: 0.25rem;
+
+    --gradient-hero: linear-gradient(180deg, hsl(44 47% 92%) 0%, hsl(44 40% 88%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(44 50% 97%) 0%, hsl(44 40% 92%) 100%);
+    --gradient-startup: linear-gradient(135deg, hsl(162 86% 16%) 0%, hsl(164 80% 26%) 100%);
+    --gradient-emerald: linear-gradient(135deg, hsl(162 86% 16%) 0%, hsl(164 80% 22%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(245, 240, 224, 0.92) 0%, rgba(245, 240, 224, 0.75) 100%);
+
+    --shadow-card: 0 2px 12px -2px hsl(162 64% 11% / 0.08);
+    --shadow-card-hover: 0 10px 30px -8px hsl(162 64% 11% / 0.15);
+    --shadow-button: 0 2px 10px -2px hsl(162 86% 16% / 0.25);
+    --shadow-elegant: 0 12px 36px -12px hsl(162 64% 11% / 0.18);
+    --shadow-glow: 0 0 32px hsl(43 55% 54% / 0.22);
+    --shadow-glass: 0 8px 28px rgba(10, 46, 34, 0.08);
+    --shadow-blue-glow: 0 0 28px hsl(43 55% 54% / 0.25);
+
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    /* Stats and counters */
     --counter-duration: 2s;
-    
-    /* Chat colors - Tech Blue version */
-    --whatsapp-header: 220 85% 50%;
-    --whatsapp-header-dark: 220 85% 42%;
-    --whatsapp-bg: 220 15% 97%;
-    --whatsapp-bubble-received: 0 0% 100%;
-    --whatsapp-bubble-sent: 220 60% 96%;
-    --whatsapp-send-btn: 220 90% 56%;
-    --whatsapp-check: 190 95% 42%;
-    --whatsapp-time: 220 15% 50%;
-    --whatsapp-input-bg: 0 0% 100%;
-    --whatsapp-divider: 220 15% 92%;
 
-    --sidebar-background: 220 20% 99%;
-    --sidebar-foreground: 220 20% 15%;
-    --sidebar-primary: 220 90% 56%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 15% 96%;
-    --sidebar-accent-foreground: 220 20% 10%;
-    --sidebar-border: 220 15% 90%;
-    --sidebar-ring: 220 90% 56%;
+    --whatsapp-header: 162 86% 16%;
+    --whatsapp-header-dark: 162 86% 12%;
+    --whatsapp-bg: 44 47% 95%;
+    --whatsapp-bubble-received: 0 0% 100%;
+    --whatsapp-bubble-sent: 44 50% 90%;
+    --whatsapp-send-btn: 162 86% 16%;
+    --whatsapp-check: 43 55% 54%;
+    --whatsapp-time: 162 30% 40%;
+    --whatsapp-input-bg: 0 0% 100%;
+    --whatsapp-divider: 44 30% 86%;
+
+    --sidebar-background: 44 47% 92%;
+    --sidebar-foreground: 162 64% 15%;
+    --sidebar-primary: 162 86% 16%;
+    --sidebar-primary-foreground: 44 47% 95%;
+    --sidebar-accent: 44 40% 88%;
+    --sidebar-accent-foreground: 162 64% 11%;
+    --sidebar-border: 43 35% 70%;
+    --sidebar-ring: 43 55% 54%;
   }
 
   .dark {

@@ -32,9 +32,9 @@ const HeroSection = () => {
       >
         <source src="/videos/hero-background.mp4" type="video/mp4" />
       </video>
-      {/* Ivory/emerald overlay to preserve editorial readability */}
-      <div className="absolute inset-0 bg-background/85 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/80 to-background pointer-events-none" />
+      {/* Dark emerald overlay for video visibility + text readability */}
+      <div className="absolute inset-0 bg-primary/70 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/60 to-primary/80 pointer-events-none" />
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
@@ -54,14 +54,14 @@ const HeroSection = () => {
             </div>
 
             {/* Serif headline */}
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-foreground">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-background">
               Advogados para{" "}
-              <em className="not-italic text-primary">qualquer causa</em>,
+              <em className="not-italic text-accent">qualquer causa</em>,
               <br className="hidden sm:block" /> com a seriedade de sempre.
             </h1>
 
             {/* Subtitle */}
-            <p className="mt-6 sm:mt-8 max-w-xl text-base sm:text-lg text-muted-foreground font-sans leading-relaxed">
+            <p className="mt-6 sm:mt-8 max-w-xl text-base sm:text-lg text-background/80 font-sans leading-relaxed">
               Escritório generalista com advogados inscritos na OAB. Atendimento
               direto pelo WhatsApp, sigilo profissional e estratégia construída
               caso a caso — do trabalhista ao criminal.
@@ -72,7 +72,7 @@ const HeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-sans font-medium rounded-sm px-7 h-12 shadow-button"
+                className="bg-accent hover:bg-accent/90 text-primary font-sans font-semibold rounded-sm px-7 h-12 shadow-button"
               >
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-4 h-4 mr-2" />
@@ -83,7 +83,7 @@ const HeroSection = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-primary/40 text-primary hover:bg-primary/5 font-sans font-medium rounded-sm px-7 h-12"
+                className="border-background/60 bg-transparent text-background hover:bg-background/10 hover:text-background font-sans font-medium rounded-sm px-7 h-12"
               >
                 <a href="#advogados">
                   Conhecer o escritório
@@ -93,8 +93,8 @@ const HeroSection = () => {
             </div>
 
             {/* Quiet trust line */}
-            <p className="mt-8 text-xs sm:text-sm text-muted-foreground font-sans">
-              <span className="text-foreground font-medium">+2.500 clientes</span>
+            <p className="mt-8 text-xs sm:text-sm text-background/70 font-sans">
+              <span className="text-background font-medium">+2.500 clientes</span>
               <span className="mx-2 text-accent">·</span>
               OAB/BA 46.638
               <span className="mx-2 text-accent">·</span>

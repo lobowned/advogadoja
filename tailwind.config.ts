@@ -314,4 +314,10 @@ export default {
       boxShadow: {
         "card": "var(--shadow-card)",
         "card-hover": "var(--shadow-card-hover)",
-        "
+        "elegant": "var(--shadow-elegant)",
+        "gold": "var(--shadow-gold)"
+      }
+    }
+  },
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;

@@ -244,4 +244,59 @@ const AnimatedRoutes = () => {
         <Route path="/advogado/:citySlug" element={<CityLanding />} />
         
         {/* City + Niche Landing Pages - Ultra Local SEO */}
-        <Ro
+        <Route path="/advogado-:nicheSlug-:citySlug" element={<CityNicheLanding />} />
+        
+        {/* Conversion Tracking */}
+        <Route path="/conversao" element={<Conversao />} />
+        
+        {/* Admin */}
+        <Route path="/admin" element={<LeadsDashboard />} />
+        <Route path="/admin/leads" element={<LeadsDashboard />} />
+        <Route path="/admin/qa" element={<QADashboard />} />
+
+        {/* Área /prev - Advogado Previdenciário */}
+        <Route
+          path="/prev/*"
+          element={
+            <Suspense fallback={<div />}>
+              <Routes>
+                <Route index element={<PrevHome />} />
+                <Route path="aposentadorias" element={<PrevAposentadorias />} />
+                <Route path="aposentadoria-por-idade" element={<PrevAposentadoriaIdade />} />
+                <Route path="auxilio-doenca" element={<PrevAuxilioDoenca />} />
+                <Route path="invalidez" element={<PrevInvalidez />} />
+                <Route path="bpc-loas" element={<PrevBpcLoas />} />
+                <Route path="sobre" element={<PrevSobre />} />
+                <Route path="contato" element={<PrevContato />} />
+              </Routes>
+            </Suspense>
+          }
+        />
+        
+        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
+
+const App = () => (
+  <React.StrictMode>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <LazyMotion features={domAnimation} strict>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+              <AnimatedRoutes />
+              <ConditionalFloatingWhatsApp />
+            </BrowserRouter>
+          </TooltipProvider>
+        </LazyMotion>
+      </QueryClientProvider>
+    </HelmetProvider>
+  </React.StrictMode>
+);
+
+export default App;

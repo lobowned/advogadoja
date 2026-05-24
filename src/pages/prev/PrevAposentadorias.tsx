@@ -5,12 +5,12 @@ import { ArrowRight, ArrowUpRight, MessageCircle } from "lucide-react";
 
 import PrevLayout from "@/components/prev/PrevLayout";
 import PrevFaq from "@/components/prev/PrevFaq";
+import { IllustrationFamily } from "@/components/prev/PrevIllustrations";
 import {
   APOSENTADORIA_TYPES,
   WHATSAPP_MESSAGES,
   whatsappLink,
 } from "@/lib/prev-config";
-import { PREV_IMAGES } from "@/lib/prev-images";
 
 const FAQ_APOSENTADORIAS = [
   {
@@ -75,12 +75,11 @@ export default function PrevAposentadorias() {
                   Analisar meu caso pelo WhatsApp
                 </a>
               </div>
-              <div className="aspect-[4/5] lg:aspect-[5/6] rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
-                <img
-                  src={PREV_IMAGES.heroCouple.src}
-                  alt={PREV_IMAGES.heroCouple.alt}
-                  className="w-full h-full object-cover"
-                />
+              <div className="relative max-w-md mx-auto lg:max-w-none">
+                <div className="absolute inset-0 bg-gradient-to-br from-prev-gold/20 via-prev-salvia/15 to-transparent rounded-[40%_60%_50%_45%/45%_50%_60%_40%] blur-2xl" />
+                <div className="relative w-full max-w-[400px] mx-auto drop-shadow-2xl">
+                  <IllustrationFamily className="w-full h-auto" />
+                </div>
               </div>
             </div>
           </div>
@@ -134,9 +133,9 @@ export default function PrevAposentadorias() {
               Não pede a aposentadoria{" "}
               <span className="italic">errada</span>.
             </h2>
-            <p className="text-prev-navy/65 text-lg mb-8 leading-relaxed">
-              Antes de entrar com o pedido, vale conferir documentos, tempo de
-              contribuição e regra mais vantajosa para não perder dinheiro.
+            <p className="text-prev-navy/70 text-lg mb-8 leading-relaxed">
+              Conta sua situação pelo WhatsApp. Em algumas perguntas eu já
+              indico qual o melhor caminho pro seu caso.
             </p>
             <a
               href={whatsappLink(WHATSAPP_MESSAGES.aposentadorias)}
@@ -145,9 +144,11 @@ export default function PrevAposentadorias() {
               className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
             >
               <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
-              Falar com advogado agora
-              <ArrowRight className="w-5 h-5" strokeWidth={2} />
+              Falar pelo WhatsApp
             </a>
+            <p className="text-xs text-prev-navy/50 mt-4">
+              Resposta em até 2 horas úteis · Sigilo profissional total
+            </p>
           </div>
         </section>
       </PrevLayout>

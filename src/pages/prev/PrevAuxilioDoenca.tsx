@@ -1,6 +1,6 @@
 import PrevAreaPage from "@/components/prev/PrevAreaPage";
+import { IllustrationCare } from "@/components/prev/PrevIllustrations";
 import { WHATSAPP_MESSAGES } from "@/lib/prev-config";
-import { PREV_IMAGES } from "@/lib/prev-images";
 
 export default function PrevAuxilioDoenca() {
   return (
@@ -9,7 +9,7 @@ export default function PrevAuxilioDoenca() {
       metaDescription="Auxílio-doença do INSS para trabalhador afastado por doença. INSS negou ou cortou? A gente te ajuda a recorrer e ir pra Justiça se precisar."
       canonicalPath="/prev/auxilio-doenca"
       breadcrumb="Em quais casos eu ajudo / Auxílio-Doença"
-      heroImage={PREV_IMAGES.auxilioDoenca}
+      heroIllustration={<IllustrationCare className="w-full h-auto" />}
       heroTitle={
         <>
           INSS{" "}

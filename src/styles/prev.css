@@ -1,5 +1,16 @@
+/*
+ * Estilos exclusivos da área /prev.
+ * Aninhados em `.prev-scope` (aplicado no PrevLayout)
+ * para NÃO afetar o resto do site Advogado Já.
+ *
+ * Fontes via Google Fonts: Fraunces (serif) + Inter (sans).
+ */
+
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700;800&display=swap");
 
+/* === Tipografia base do scope /prev === */
+/* Base 17px (acima do default 16px) para conforto de leitura
+   do público previdenciário, em geral mais maduro. */
 .prev-scope {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   font-feature-settings: "ss01" on, "cv11" on;
@@ -13,6 +24,7 @@
   }
 }
 
+/* Sobrescreve font-serif global APENAS dentro do scope /prev */
 .prev-scope .font-serif,
 .prev-scope h1,
 .prev-scope h2,
@@ -24,18 +36,21 @@
   line-height: 1.15;
 }
 
+/* Itálico da Fraunces tem charme — destaque sutil */
 .prev-scope .italic {
   font-style: italic;
   font-variation-settings: "opsz" 80;
 }
 
+/* === Tap targets confortáveis no mobile (acessibilidade sênior) === */
 @media (max-width: 768px) {
   .prev-scope a,
   .prev-scope button {
-    min-height: 44px;
+    min-height: 44px; /* WCAG 2.1 - tap target mínimo */
   }
 }
 
+/* === Scrollbar discreta === */
 .prev-scope ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -48,4 +63,48 @@
 .prev-scope ::-webkit-scrollbar-thumb {
   background: rgba(11, 27, 43, 0.15);
   border-radius: 5px;
+}
+
+.prev-scope ::-webkit-scrollbar-thumb:hover {
+  background: rgba(11, 27, 43, 0.25);
+}
+
+/* === Seleção de texto === */
+.prev-scope ::selection {
+  background: rgba(201, 169, 97, 0.3);
+  color: #0B1B2B;
+}
+
+/* === Scroll suave para âncoras (calculadora rápida etc) === */
+html:has(.prev-scope) {
+  scroll-behavior: smooth;
+}
+
+/* === Foco visível (acessibilidade) === */
+.prev-scope a:focus-visible,
+.prev-scope button:focus-visible,
+.prev-scope input:focus-visible,
+.prev-scope textarea:focus-visible,
+.prev-scope select:focus-visible {
+  outline: 3px solid #C9A961;
+  outline-offset: 2px;
+}
+
+/* === Reduzir movimento se usuário preferir === */
+@media (prefers-reduced-motion: reduce) {
+  .prev-scope * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* === Cor do botão WhatsApp (#25D366) sempre garantida === */
+.prev-scope .bg-\[\#25D366\] {
+  background-color: #25D366 !important;
+}
+.prev-scope .bg-\[\#1FB855\] {
+  background-color: #1FB855 !important;
+}
+.prev-scope .hover\:bg-\[\#1FB855\]:hover {
+  background-color: #1FB855 !important;
 }

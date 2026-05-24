@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
@@ -13,20 +12,36 @@ interface FaqItem {
 }
 
 interface PrevAreaPageProps {
+  // SEO
   metaTitle: string;
   metaDescription: string;
   canonicalPath: string;
+
+  // Conteúdo
   breadcrumb: string;
-  heroTitle: ReactNode;
+  heroTitle: React.ReactNode;
   heroSubtitle: string;
+  /** URL de foto opcional para o hero (foto contextual) — legado, prefira heroIllustration */
   heroImage?: { src: string; alt: string };
+  /** Ilustração SVG componente — preferido sobre heroImage */
+  heroIllustration?: React.ReactNode;
+
+  // Quem pode pedir
   whoSectionTitle: string;
   whoItems: string[];
+
+  // Documentos necessários
   docsSectionTitle: string;
   docsItems: string[];
+
+  // Estratégia
   strategyTitle: string;
   strategyText: string;
+
+  // FAQ
   faq: FaqItem[];
+
+  // WhatsApp
   whatsappMessage: string;
   whatsappButtonText?: string;
 }
@@ -39,6 +54,7 @@ export default function PrevAreaPage({
   heroTitle,
   heroSubtitle,
   heroImage,
+  heroIllustration,
   whoSectionTitle,
   whoItems,
   docsSectionTitle,
@@ -58,44 +74,88 @@ export default function PrevAreaPage({
       </Helmet>
 
       <PrevLayout ctaMessage={whatsappMessage}>
-        <section className="bg-prev-navy text-prev-beige pt-12 pb-16 lg:pt-20 lg:pb-24 relative overflow-hidden">
-          <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-prev-gold/10 blur-3xl pointer-events-none" />
+        {/* HERO com ilustração SVG ou foto (legacy) */}
+        <section className="bg-prev-navy text-prev-beige pt-14 pb-20 lg:pt-20 lg:pb-24 relative overflow-hidden">
+          {/* Textura pontos */}
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 1px 1px, #F5F1EA 1px, transparent 0)",
+              backgroundSize: "32px 32px",
+            }}
+          />
+          <div className="absolute -top-24 -right-20 w-96 h-96 rounded-full bg-prev-gold/12 blur-[120px] pointer-events-none" />
+          <div className="absolute -bottom-32 -left-20 w-[28rem] h-[28rem] rounded-full bg-prev-salvia/12 blur-[140px] pointer-events-none" />
+
           <div className="relative max-w-6xl mx-auto px-5">
-            <div className={heroImage ? "grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-14 items-center" : "max-w-3xl"}>
-              <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-4">
+            {heroIllustration || heroImage ? (
+              <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-14 items-center">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-4 font-semibold">
+                    {breadcrumb}
+                  </p>
+                  <h1 className="font-serif text-[2.2rem] sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight mb-6">
+                    {heroTitle}
+                  </h1>
+                  <p className="text-lg text-prev-beige/85 leading-relaxed mb-8">
+                    {heroSubtitle}
+                  </p>
+                  <a
+                    href={whatsappLink(whatsappMessage)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5 hover:shadow-2xl"
+                  >
+                    <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
+                    {whatsappButtonText}
+                  </a>
+                </div>
+                {heroIllustration ? (
+                  <div className="relative max-w-md mx-auto lg:max-w-none">
+                    <div className="absolute inset-0 bg-gradient-to-br from-prev-gold/20 via-prev-salvia/15 to-transparent rounded-[40%_60%_50%_45%/45%_50%_60%_40%] blur-2xl" />
+                    <div className="relative w-full max-w-[400px] mx-auto drop-shadow-2xl">
+                      {heroIllustration}
+                    </div>
+                  </div>
+                ) : heroImage ? (
+                  <div className="aspect-[4/5] lg:aspect-[5/6] rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
+                    <img
+                      src={heroImage.src}
+                      alt={heroImage.alt}
+                      loading="eager"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ) : null}
+              </div>
+            ) : (
+              <div className="max-w-3xl">
+                <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-4 font-semibold">
                   {breadcrumb}
                 </p>
-                <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight mb-6">
+                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
                   {heroTitle}
                 </h1>
-                <p className="text-lg text-prev-beige/85 leading-relaxed mb-8">
+                <p className="text-lg text-prev-beige/85 leading-relaxed max-w-2xl mb-8">
                   {heroSubtitle}
                 </p>
                 <a
                   href={whatsappLink(whatsappMessage)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-lg shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
                 >
                   <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
                   {whatsappButtonText}
                 </a>
               </div>
-              {heroImage && (
-                <div className="aspect-[4/5] lg:aspect-[5/6] rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
-                  <img
-                    src={heroImage.src}
-                    alt={heroImage.alt}
-                    loading="eager"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              )}
-            </div>
+            )}
           </div>
         </section>
 
+        {/* QUEM PODE PEDIR */}
         <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-5">
             <div className="grid md:grid-cols-2 gap-12">
@@ -126,6 +186,7 @@ export default function PrevAreaPage({
           </div>
         </section>
 
+        {/* DOCUMENTOS */}
         <section className="py-20 bg-prev-beige">
           <div className="max-w-4xl mx-auto px-5">
             <div className="grid md:grid-cols-2 gap-12">
@@ -137,7 +198,9 @@ export default function PrevAreaPage({
                   {docsSectionTitle}
                 </h2>
                 <p className="text-prev-navy/65 leading-relaxed">
-                  Esses são pontos de partida — outros documentos podem ser pedidos conforme o caso.
+                  Esses são pontos de partida — outros documentos podem ser
+                  pedidos conforme o caso. Não se preocupe se faltar algum:
+                  ajudamos a localizar.
                 </p>
               </div>
               <ul className="space-y-3">
@@ -161,31 +224,37 @@ export default function PrevAreaPage({
           </div>
         </section>
 
+        {/* ESTRATÉGIA */}
         <section className="py-20 bg-white">
           <div className="max-w-3xl mx-auto px-5">
             <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3">
-              Estratégia
+              Como agimos
             </p>
-            <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-6">
+            <h2 className="font-serif text-3xl text-prev-navy leading-tight mb-6">
               {strategyTitle}
             </h2>
-            <div className="space-y-5 text-prev-navy/75 leading-relaxed">
-              {strategyText.split("\n\n").map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
+            <div className="prose prose-lg max-w-none text-prev-navy/75 leading-relaxed">
+              {strategyText.split("\n\n").map((para, idx) => (
+                <p key={idx} className="mb-4 last:mb-0">
+                  {para}
+                </p>
               ))}
             </div>
           </div>
         </section>
 
+        {/* FAQ */}
         <PrevFaq items={faq} />
 
-        <section className="py-20 bg-prev-navy text-prev-beige">
+        {/* CTA FINAL */}
+        <section className="py-20 bg-prev-beige">
           <div className="max-w-3xl mx-auto px-5 text-center">
-            <h2 className="font-serif text-3xl sm:text-4xl leading-tight mb-5">
-              Quer entender o melhor caminho para o seu caso?
+            <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-5">
+              Não deixe pra depois.
             </h2>
-            <p className="text-prev-beige/75 text-lg mb-8 leading-relaxed">
-              Mande uma mensagem pelo WhatsApp e receba orientação inicial sobre documentos e próximos passos.
+            <p className="text-prev-navy/70 text-lg mb-8 leading-relaxed">
+              Manda mensagem agora — me conta sua situação que eu te falo o
+              que dá pra fazer.
             </p>
             <a
               href={whatsappLink(whatsappMessage)}
@@ -194,9 +263,11 @@ export default function PrevAreaPage({
               className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
             >
               <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
-              Falar pelo WhatsApp
-              <ArrowRight className="w-5 h-5" strokeWidth={2} />
+              Falar agora pelo WhatsApp
             </a>
+            <p className="text-xs text-prev-navy/50 mt-4">
+              Resposta em até 2 horas úteis · Sigilo profissional total
+            </p>
           </div>
         </section>
       </PrevLayout>

@@ -1,6 +1,6 @@
 import PrevAreaPage from "@/components/prev/PrevAreaPage";
+import { IllustrationAccessibility } from "@/components/prev/PrevIllustrations";
 import { WHATSAPP_MESSAGES } from "@/lib/prev-config";
-import { PREV_IMAGES } from "@/lib/prev-images";
 
 export default function PrevInvalidez() {
   return (
@@ -9,7 +9,7 @@ export default function PrevInvalidez() {
       metaDescription="Aposentadoria por invalidez é pra quem não tem mais como trabalhar de forma permanente. INSS negou? Cortou seu benefício? A gente te ajuda."
       canonicalPath="/prev/aposentadoria-por-invalidez"
       breadcrumb="Em quais casos eu ajudo / Aposentadoria por Invalidez"
-      heroImage={PREV_IMAGES.invalidez}
+      heroIllustration={<IllustrationAccessibility className="w-full h-auto" />}
       heroTitle={
         <>
           Não consegue mais{" "}

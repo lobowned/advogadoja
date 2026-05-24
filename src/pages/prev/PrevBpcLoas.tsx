@@ -1,6 +1,6 @@
 import PrevAreaPage from "@/components/prev/PrevAreaPage";
+import { IllustrationFamily } from "@/components/prev/PrevIllustrations";
 import { WHATSAPP_MESSAGES } from "@/lib/prev-config";
-import { PREV_IMAGES } from "@/lib/prev-images";
 
 export default function PrevBpcLoas() {
   return (
@@ -9,7 +9,7 @@ export default function PrevBpcLoas() {
       metaDescription="BPC/LOAS é 1 salário mínimo todo mês pra idoso de 65+ ou pessoa com deficiência em família de baixa renda. Não precisa ter contribuído ao INSS. A gente te ajuda a pedir."
       canonicalPath="/prev/bpc-loas"
       breadcrumb="Em quais casos eu ajudo / BPC / LOAS"
-      heroImage={PREV_IMAGES.bpcIdoso}
+      heroIllustration={<IllustrationFamily className="w-full h-auto" />}
       heroTitle={
         <>
           1 salário do governo,{" "}

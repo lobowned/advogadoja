@@ -128,40 +128,38 @@ export default function PrevHome() {
         </section>
 
         {/* CASOS REAIS (anônimos, OAB-safe) */}
-        <section className="py-20 bg-prev-beige">
+        <section className="py-24 md:py-32 bg-prev-beige">
           <div className="max-w-6xl mx-auto px-5">
-            <div className="max-w-2xl mb-12">
-              <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3">
-                Quem já passou por aqui
-              </p>
-              <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-4">
+            <div className="max-w-2xl mb-16">
+              <span className="prev-eyebrow mb-4">Quem já passou por aqui</span>
+              <h2 className="font-serif text-4xl sm:text-5xl text-prev-navy leading-[1.05] mb-5 mt-3">
                 Casos reais (com{" "}
-                <span className="italic">identidade preservada</span>).
+                <span className="italic text-prev-gold">identidade preservada</span>).
               </h2>
-              <p className="text-prev-navy/70 text-lg leading-relaxed">
+              <p className="text-prev-navy/70 text-lg leading-[1.75]">
                 Por respeito ao sigilo profissional, não exibimos nomes
                 completos nem fotos. Mas cada caso abaixo aconteceu de verdade.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-px bg-prev-navy/10 border border-prev-navy/10">
               {CASES.map((c, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.08 }}
-                  className="bg-white p-7 rounded-2xl border border-prev-navy/8"
+                  className="relative bg-prev-beige p-8 pt-12 hover:bg-white transition-colors duration-500 overflow-hidden"
                 >
-                  <Quote className="w-8 h-8 text-prev-gold mb-4" strokeWidth={1.2} />
-                  <p className="text-prev-navy/80 leading-relaxed text-[15px] mb-5">
+                  <span aria-hidden className="prev-quote-mark absolute -top-2 left-6 select-none">"</span>
+                  <p className="relative text-prev-navy/85 leading-[1.7] text-[15.5px] mb-7 font-serif italic">
                     {c.text}
                   </p>
-                  <div className="pt-4 border-t border-prev-navy/10">
+                  <div className="pt-5 border-t border-prev-navy/12">
                     <p className="font-medium text-prev-navy text-sm">{c.name}</p>
                     <p className="text-xs text-prev-navy/55">{c.location}</p>
-                    <p className="text-xs text-prev-gold mt-1.5 font-medium uppercase tracking-wider">
+                    <p className="text-[10px] text-prev-gold mt-2 font-semibold uppercase tracking-[0.22em]">
                       {c.benefit}
                     </p>
                   </div>
@@ -169,7 +167,7 @@ export default function PrevHome() {
               ))}
             </div>
 
-            <p className="text-center text-xs text-prev-navy/45 mt-8 italic">
+            <p className="text-center text-xs text-prev-navy/45 mt-10 italic max-w-xl mx-auto">
               Resultados em direito previdenciário variam conforme cada caso.
               Não há promessa nem garantia de resultado.
             </p>

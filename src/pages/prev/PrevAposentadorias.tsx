@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, MessageCircle } from "lucide-react";
 
 import PrevLayout from "@/components/prev/PrevLayout";
 import PrevFaq from "@/components/prev/PrevFaq";
@@ -10,23 +10,24 @@ import {
   WHATSAPP_MESSAGES,
   whatsappLink,
 } from "@/lib/prev-config";
+import { PREV_IMAGES } from "@/lib/prev-images";
 
 const FAQ_APOSENTADORIAS = [
   {
     q: "Como sei qual aposentadoria pedir?",
-    a: "Depende de quando você começou a contribuir, há quanto tempo contribui, qual sua idade, se exerce ou exerceu atividade especial e várias outras variáveis. A única forma confiável é analisar seu CNIS contra todas as regras (permanente e de transição) e simular o valor de cada uma. Pedir a errada pode reduzir significativamente seu benefício.",
+    a: "Depende de várias coisas: quando você começou a contribuir, há quanto tempo paga INSS, sua idade, se trabalhou em ambiente insalubre ou na roça. A gente analisa seu CNIS e simula TODAS as regras possíveis pra escolher a que paga mais e demora menos. Pedir a errada pode te fazer perder centenas de reais todo mês — pelo resto da vida.",
   },
   {
     q: "O que mudou com a Reforma de 2019?",
-    a: "A Emenda Constitucional 103/2019 acabou com a aposentadoria por tempo de contribuição pura e criou uma idade mínima (65 anos para homem, 62 para mulher na regra permanente). Mas criou regras de transição — pedágio, pontos, idade progressiva — para quem já contribuía antes. É comum a regra de transição ser mais vantajosa que a permanente.",
+    a: "A Reforma acabou com a aposentadoria por tempo de contribuição pura (aquela só pelo tempo, sem idade mínima) e criou uma regra com idade mínima: 65 anos pra homem, 62 pra mulher. Mas criou regras de transição (pedágio, pontos, idade progressiva) pra quem já contribuía antes. É comum a transição ser mais vantajosa que a regra nova.",
   },
   {
-    q: "Vale a pena continuar contribuindo depois de cumprir o requisito mínimo?",
-    a: "Em alguns casos, sim — contribuições adicionais aumentam a média e o coeficiente do benefício. Em outros casos não compensa pelo custo. Faz parte da análise técnica: comparar o ganho marginal do benefício futuro versus o custo da contribuição hoje.",
+    q: "Vale continuar pagando INSS depois de cumprir o mínimo?",
+    a: "Em alguns casos sim — pagar mais aumenta a média e o coeficiente do benefício. Em outros casos não compensa pelo custo. Faz parte da análise: comparar o ganho marginal do benefício futuro com o custo da contribuição agora.",
   },
   {
-    q: "Quanto tempo demora reconhecer atividade especial?",
-    a: "Atividade especial (com exposição a agentes nocivos) costuma demandar PPP atual, LTCAT, prova testemunhal e às vezes perícia técnica. No INSS administrativo o tempo varia muito; em juízo, geralmente entre 1 e 2 anos. A boa notícia: se reconhecida, o ganho de tempo pode ser de 40% a 67%.",
+    q: "Quanto demora pra reconhecer atividade especial (insalubre)?",
+    a: "Geralmente precisa de PPP atual, LTCAT, às vezes prova testemunhal ou perícia técnica. No INSS administrativo varia muito. Na Justiça costuma levar de 1 a 2 anos. A boa notícia: se reconhecida, pode aumentar seu tempo de INSS em 40% a 67% (15, 20 ou 25 anos viram bem mais).",
   },
 ];
 
@@ -34,42 +35,54 @@ export default function PrevAposentadorias() {
   return (
     <>
       <Helmet>
-        <title>Aposentadorias INSS — Idade, Tempo, Especial, Híbrida, PCD</title>
+        <title>Tipos de Aposentadoria do INSS — Idade, Tempo, Especial, Rural, PCD</title>
         <meta
           name="description"
-          content="Conheça as 5 modalidades de aposentadoria no INSS após a Reforma. Análise do seu CNIS para identificar a mais vantajosa."
+          content="Conheça os 5 tipos de aposentadoria do INSS após a Reforma. A gente analisa seu CNIS e indica qual paga mais e demora menos pro seu caso."
         />
         <link rel="canonical" href="https://advogadoja.lovable.app/prev/aposentadorias" />
       </Helmet>
 
       <PrevLayout ctaMessage={WHATSAPP_MESSAGES.aposentadorias}>
         {/* HERO */}
-        <section className="bg-prev-navy text-prev-beige pt-16 pb-20 lg:pt-24 lg:pb-28">
-          <div className="max-w-5xl mx-auto px-5">
-            <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-4">
-              Áreas / Aposentadorias
-            </p>
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6 max-w-3xl">
-              Cinco caminhos para a{" "}
-              <span className="italic text-prev-gold">aposentadoria</span>.
-              <br className="hidden sm:block" /> Saber qual é o seu faz toda
-              diferença.
-            </h1>
-            <p className="text-lg text-prev-beige/80 leading-relaxed max-w-2xl mb-8">
-              Depois da Reforma de 2019, conviver com regras permanentes e de
-              transição virou regra do jogo. A escolha errada pode custar anos
-              de espera — ou centenas de reais a menos por mês para o resto da
-              vida.
-            </p>
-            <a
-              href={whatsappLink(WHATSAPP_MESSAGES.aposentadorias)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-prev-gold text-prev-navy px-7 py-3.5 rounded-full font-medium hover:bg-prev-gold/90 transition-colors"
-            >
-              Analisar meu caso pelo WhatsApp
-              <ArrowRight className="w-4 h-4" />
-            </a>
+        <section className="bg-prev-navy text-prev-beige pt-12 pb-16 lg:pt-20 lg:pb-24 relative overflow-hidden">
+          <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-prev-gold/10 blur-3xl pointer-events-none" />
+          <div className="relative max-w-6xl mx-auto px-5">
+            <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-14 items-center">
+              <div>
+                <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-4">
+                  Aposentadorias
+                </p>
+                <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight mb-6">
+                  Existem{" "}
+                  <span className="italic text-prev-gold">5 caminhos</span>{" "}
+                  pra aposentar.
+                  <br /> Qual é o seu?
+                </h1>
+                <p className="text-lg text-prev-beige/85 leading-relaxed mb-8">
+                  Depois da Reforma de 2019, escolher errado pode te fazer
+                  perder muito dinheiro — todo mês, pelo resto da vida. A gente
+                  olha junto seu CNIS e mostra qual aposentadoria é a melhor
+                  pro seu caso.
+                </p>
+                <a
+                  href={whatsappLink(WHATSAPP_MESSAGES.aposentadorias)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-lg shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
+                >
+                  <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
+                  Analisar meu caso pelo WhatsApp
+                </a>
+              </div>
+              <div className="aspect-[4/5] lg:aspect-[5/6] rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
+                <img
+                  src={PREV_IMAGES.heroCouple.src}
+                  alt={PREV_IMAGES.heroCouple.alt}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -99,7 +112,7 @@ export default function PrevAposentadorias() {
                             {type.short}
                           </span>
                         </div>
-                        <p className="text-prev-navy/70 leading-relaxed">
+                        <p className="text-prev-navy/75 leading-relaxed">
                           {type.when}
                         </p>
                       </div>
@@ -118,25 +131,5 @@ export default function PrevAposentadorias() {
         <section className="py-20 bg-prev-beige">
           <div className="max-w-3xl mx-auto px-5 text-center">
             <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-5">
-              Cada CNIS conta uma{" "}
-              <span className="italic">história diferente</span>.
-            </h2>
-            <p className="text-prev-navy/65 text-lg mb-8 leading-relaxed">
-              Mande seu caso pelo WhatsApp. Em poucas perguntas já indicamos por
-              onde começar.
-            </p>
-            <a
-              href={whatsappLink(WHATSAPP_MESSAGES.aposentadorias)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-prev-navy text-prev-beige px-7 py-3.5 rounded-full font-medium hover:bg-prev-navy/90 transition-colors"
-            >
-              Falar pelo WhatsApp
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </section>
-      </PrevLayout>
-    </>
-  );
-}
+              Não pede a aposentadoria{" "}
+              <span className="italic">errada</spa

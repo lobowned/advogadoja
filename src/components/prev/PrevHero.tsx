@@ -1,16 +1,18 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Scale } from "lucide-react";
+import { ShieldCheck, MessageCircle, Phone, Clock } from "lucide-react";
+import { PREV_IMAGES } from "@/lib/prev-images";
+import { whatsappLink, WHATSAPP_MESSAGES } from "@/lib/prev-config";
 import PrevQuickCalc from "./PrevQuickCalc";
 
 /**
- * Hero da home /prev.
- * Layout split: copy + assinatura à esquerda, calculadora à direita.
- * Background com gradiente sutil navy + textura tipográfica.
+ * Hero da home /prev — versão POPULAR (humanizada).
+ * Layout split: foto grande emocional + copy direta com CTA verde WhatsApp.
+ * A calculadora interativa foi movida para abaixo do hero (entry point secundário).
  */
 export default function PrevHero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-prev-navy via-prev-navy to-[#0F2438] text-prev-beige">
-      {/* Texture overlay */}
+      {/* Textura sutil */}
       <div
         aria-hidden
         className="absolute inset-0 opacity-[0.04]"
@@ -20,79 +22,65 @@ export default function PrevHero() {
         }}
       />
 
-      {/* Decorativos */}
-      <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-prev-gold/10 blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-prev-salvia/10 blur-3xl" />
+      <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-prev-gold/10 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-prev-salvia/10 blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto px-5 pt-16 pb-20 lg:pt-24 lg:pb-28">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Lado esquerdo: copy */}
-          <div className="max-w-xl">
+      <div className="relative max-w-6xl mx-auto px-5 pt-12 pb-16 lg:pt-20 lg:pb-24">
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-14 items-center">
+          {/* ===== Copy ===== */}
+          <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-prev-beige/10 border border-prev-beige/15 text-xs uppercase tracking-wider text-prev-beige/80 mb-7"
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-prev-gold/15 border border-prev-gold/25 text-xs uppercase tracking-wider text-prev-gold mb-6"
             >
-              <Scale className="w-3.5 h-3.5" />
-              Especialista em Direito Previdenciário
+              <ShieldCheck className="w-3.5 h-3.5" />
+              Advogado especialista em INSS
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6"
+              className="font-serif text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.05] tracking-tight mb-6"
             >
-              Aposentadoria sem{" "}
-              <span className="italic text-prev-gold">surpresa</span>.
-              <br className="hidden sm:block" /> Direito sem{" "}
-              <span className="italic text-prev-gold">juridiquês</span>.
+              Sua aposentadoria{" "}
+              <span className="italic text-prev-gold">enrolada</span> no INSS?
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg text-prev-beige/80 leading-relaxed mb-8"
+              className="text-lg sm:text-xl text-prev-beige/85 leading-relaxed mb-8 max-w-xl"
             >
-              Análise técnica do seu CNIS, estratégia personalizada e
-              acompanhamento próximo do início ao fim. Para você descobrir o que
-              tem direito — e o melhor caminho para conquistar.
+              Eu te ajudo a entender o que você tem direito e o caminho mais
+              rápido pra conseguir — sem promessa furada, sem juridiquês.
             </motion.p>
 
+            {/* CTAs principais */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-prev-beige/70"
+              className="flex flex-col sm:flex-row gap-3 mb-8"
             >
-              <span className="inline-flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-prev-gold" />
-                Atendimento humanizado
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-prev-gold" />
-                100% online
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-prev-gold" />
-                Sigilo profissional
-              </span>
+              <a
+                href={whatsappLink(WHATSAPP_MESSAGES.home)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold text-base shadow-lg shadow-[#25D366]/30 transition-all hover:shadow-xl hover:shadow-[#25D366]/40 hover:-translate-y-0.5"
+              >
+                <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
+                Conversar agora pelo WhatsApp
+              </a>
+              <a
+                href="#calculadora-rapida"
+                className="inline-flex items-center justify-center gap-2 bg-prev-beige/10 hover:bg-prev-beige/15 text-prev-beige px-7 py-4 rounded-full font-medium text-base border border-prev-beige/15 transition-colors"
+              >
+                Fazer cálculo rápido
+              </a>
             </motion.div>
-          </div>
 
-          {/* Lado direito: calculadora */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="lg:justify-self-end w-full max-w-md mx-auto lg:mx-0"
-          >
-            <PrevQuickCalc />
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-}
+            {/* Garantias *

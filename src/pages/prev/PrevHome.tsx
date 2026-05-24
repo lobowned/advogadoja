@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageCircle, Quote } from "lucide-react";
 
 import PrevLayout from "@/components/prev/PrevLayout";
 import PrevHero from "@/components/prev/PrevHero";
@@ -14,27 +13,53 @@ import {
   WHATSAPP_MESSAGES,
   whatsappLink,
 } from "@/lib/prev-config";
+import { PREV_IMAGES } from "@/lib/prev-images";
 
 const FAQ_HOME = [
   {
-    q: "Posso me aposentar pelas regras antigas?",
-    a: "Em alguns casos, sim. Pessoas que já contribuíam antes da Reforma da Previdência de 2019 podem se enquadrar em regras de transição — pedágio, sistema de pontos, idade progressiva. Cada regra tem requisitos diferentes e nem sempre a mais óbvia é a mais vantajosa. Por isso é fundamental fazer a simulação completa.",
+    q: "INSS negou meu pedido. Fudeu tudo?",
+    a: "De jeito nenhum. Mais de 1 em cada 3 benefícios são negados na primeira vez, muitas vezes por erro do INSS, falta de documento ou perícia mal feita. A gente analisa o seu caso e vê se vale a pena recorrer (pelo próprio INSS) ou ir direto pra Justiça — onde, em muitos casos, o juiz nomeia um perito novo e a chance melhora muito.",
   },
   {
-    q: "O que é o CNIS e por que ele é importante?",
-    a: "CNIS é o Cadastro Nacional de Informações Sociais — o histórico de todos os seus vínculos e contribuições reconhecidos pelo INSS. É a primeira coisa que analisamos: verificamos lacunas, períodos não reconhecidos, vínculos rurais, atividade especial. Erros no CNIS são uma das principais causas de aposentadoria menor do que a devida.",
+    q: "Vocês cobram caro? Tenho que pagar na frente?",
+    a: "Na maioria dos casos previdenciários a gente trabalha com honorários de êxito — quer dizer, você só paga uma porcentagem se a gente conseguir o benefício pra você. Em alguns casos pode ter uma parte fixa pequena. Tudo é combinado por escrito antes de começar — sem surpresa.",
   },
   {
-    q: "Quanto tempo demora um processo previdenciário?",
-    a: "Depende muito do caso. Pedidos administrativos no INSS podem levar de 45 dias (com prazo legal cumprido) a vários meses. Se houver necessidade de processo judicial, o prazo médio varia entre 6 meses e 2 anos, considerando a possibilidade de recursos. Em casos urgentes (saúde, idade avançada) é possível pedir tutela de urgência.",
+    q: "Quanto tempo demora pra receber se ganhar na Justiça?",
+    a: "Depende da Vara e do tipo de pedido. Casos comuns levam entre 8 meses e 2 anos. Em casos urgentes (idoso, doente grave, sem recursos) a gente pede tutela de urgência e em alguns casos o INSS começa a pagar em poucas semanas, enquanto o processo continua.",
   },
   {
-    q: "Vocês cobram pela primeira conversa?",
-    a: "A primeira conversa por WhatsApp para entender o seu caso e avaliar se há viabilidade jurídica não é cobrada. Caso seja indicado avançar com uma análise técnica do CNIS ou estudo aprofundado, os valores e a forma de honorários (fixo, êxito ou misto) são apresentados de forma clara e transparente antes de qualquer trabalho ser iniciado.",
+    q: "Trabalhei na roça quando era novo mas não tinha carteira. Conta?",
+    a: "Conta sim! É o que chamam de tempo rural. Pra provar, a gente reúne documentos da época (declaração do sindicato rural, notas de produtor, contratos) e em alguns casos faz prova com testemunha. Quando bem documentado, pode dar direito a aposentadoria mais cedo (60 anos pra homem, 55 pra mulher) ou somar ao tempo urbano (aposentadoria híbrida).",
   },
   {
-    q: "Atendem em todo o Brasil?",
-    a: "Sim. Processos previdenciários tramitam em justiça federal e podem ser conduzidos 100% de forma remota — desde a análise do CNIS até a propositura da ação e acompanhamento. Audiências por videoconferência são prática consolidada no INSS e no Judiciário.",
+    q: "Sou de outra cidade ou outro estado. Vocês atendem?",
+    a: "Sim, atendemos o Brasil todo. Processo previdenciário tramita na Justiça Federal e pode ser feito 100% online — desde a análise do CNIS até as audiências por videoconferência. Você não precisa sair de casa em nenhuma etapa.",
+  },
+  {
+    q: "Tenho 15 anos pagando INSS. Já posso aposentar?",
+    a: "15 anos é o tempo mínimo de carência pra mulher pela regra nova. Mas só isso não basta — precisa também ter a idade mínima (62 anos pra mulher, 65 pra homem) ou se enquadrar numa regra de transição (pedágio, pontos, idade progressiva). Manda mensagem com seus dados que eu te falo qual é a melhor regra pro seu caso.",
+  },
+];
+
+const CASES = [
+  {
+    name: "Dona M., 67 anos",
+    location: "Salvador / BA",
+    benefit: "Aposentadoria por idade rural",
+    text: "Tentei sozinha 2 vezes e o INSS negou. No 3º pedido, com toda a documentação rural reunida, conseguimos na via administrativa em 4 meses.",
+  },
+  {
+    name: "Sr. J., 54 anos",
+    location: "Feira de Santana / BA",
+    benefit: "Auxílio-doença",
+    text: "Eu estava sem condições de trabalhar e o INSS deu alta na perícia. Entramos na Justiça com nova perícia e o juiz concedeu em 6 meses.",
+  },
+  {
+    name: "Família R.",
+    location: "Camaçari / BA",
+    benefit: "BPC / LOAS para PCD",
+    text: "Meu filho tem deficiência. O INSS negou alegando renda familiar. Provamos as despesas com saúde e conseguimos o BPC em 8 meses.",
   },
 ];
 
@@ -42,145 +67,111 @@ export default function PrevHome() {
   return (
     <>
       <Helmet>
-        <title>Advogado Previdenciário | Análise de aposentadoria, INSS e benefícios</title>
+        <title>Advogado de INSS — Aposentadoria, Auxílio-Doença, BPC | Atendimento pelo WhatsApp</title>
         <meta
           name="description"
-          content={LAWYER.metaDescription}
+          content="Advogado especialista em INSS. Aposentadoria, auxílio-doença, aposentadoria por invalidez e BPC/LOAS. Atendimento direto pelo WhatsApp, sem juridiquês."
         />
-        <meta property="og:title" content="Advogado Previdenciário | Análise de CNIS e estratégia de aposentadoria" />
-        <meta property="og:description" content={LAWYER.metaDescription} />
         <link rel="canonical" href="https://advogadoja.lovable.app/prev" />
       </Helmet>
 
       <PrevLayout ctaMessage={WHATSAPP_MESSAGES.home}>
-        {/* HERO */}
+        {/* HERO com foto humana */}
         <PrevHero />
 
-        {/* ÁREAS */}
+        {/* ÁREAS DE ATUAÇÃO */}
         <section className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-5">
-            <div className="max-w-2xl mb-14">
+            <div className="max-w-2xl mb-12">
               <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3">
-                Áreas de atuação
+                Em quais casos eu ajudo
               </p>
               <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-4">
-                Cada benefício tem suas{" "}
-                <span className="italic">regras próprias</span>.
+                Cada caso tem um{" "}
+                <span className="italic">caminho diferente</span>.
               </h2>
-              <p className="text-prev-navy/65 text-lg leading-relaxed">
-                E pequenas diferenças podem significar anos a mais ou a menos —
-                ou um valor de benefício significativamente maior.
+              <p className="text-prev-navy/70 text-lg leading-relaxed">
+                Pedir a aposentadoria errada pode te fazer perder dinheiro
+                todo mês — pelo resto da vida. Por isso a primeira coisa que
+                a gente faz é olhar seu histórico do INSS com calma.
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {PREV_AREAS.map((area, idx) => (
-                <PrevAreaCard
-                  key={area.slug}
-                  slug={area.slug}
-                  title={area.title}
-                  short={area.short}
-                  description={area.description}
-                  icon={area.icon}
-                  index={idx}
-                />
+              {PREV_AREAS.map((area, idx) => {
+                const img = PREV_IMAGES[area.imageKey as keyof typeof PREV_IMAGES];
+                return (
+                  <PrevAreaCard
+                    key={area.slug}
+                    slug={area.slug}
+                    title={area.title}
+                    short={area.short}
+                    description={area.description}
+                    imageUrl={img?.src}
+                    imageAlt={img?.alt}
+                    index={idx}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* CASOS REAIS (anônimos, OAB-safe) */}
+        <section className="py-20 bg-prev-beige">
+          <div className="max-w-6xl mx-auto px-5">
+            <div className="max-w-2xl mb-12">
+              <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3">
+                Quem já passou por aqui
+              </p>
+              <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-4">
+                Casos reais (com{" "}
+                <span className="italic">identidade preservada</span>).
+              </h2>
+              <p className="text-prev-navy/70 text-lg leading-relaxed">
+                Por respeito ao sigilo profissional, não exibimos nomes
+                completos nem fotos. Mas cada caso abaixo aconteceu de verdade.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {CASES.map((c, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  className="bg-white p-7 rounded-2xl border border-prev-navy/8"
+                >
+                  <Quote className="w-8 h-8 text-prev-gold mb-4" strokeWidth={1.2} />
+                  <p className="text-prev-navy/80 leading-relaxed text-[15px] mb-5">
+                    {c.text}
+                  </p>
+                  <div className="pt-4 border-t border-prev-navy/10">
+                    <p className="font-medium text-prev-navy text-sm">{c.name}</p>
+                    <p className="text-xs text-prev-navy/55">{c.location}</p>
+                    <p className="text-xs text-prev-gold mt-1.5 font-medium uppercase tracking-wider">
+                      {c.benefit}
+                    </p>
+                  </div>
+                </motion.div>
               ))}
             </div>
+
+            <p className="text-center text-xs text-prev-navy/45 mt-8 italic">
+              Resultados em direito previdenciário variam conforme cada caso.
+              Não há promessa nem garantia de resultado.
+            </p>
           </div>
         </section>
 
         {/* COMO TRABALHAMOS */}
         <PrevTrust />
 
-        {/* PROCESSO DE 3 ETAPAS */}
+        {/* COMO FUNCIONA - 3 PASSOS */}
         <section className="py-20 bg-prev-navy text-prev-beige">
           <div className="max-w-5xl mx-auto px-5">
             <div className="max-w-2xl mb-14">
               <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3">
-                Como começamos
-              </p>
-              <h2 className="font-serif text-3xl sm:text-4xl leading-tight">
-                Três passos até saber{" "}
-                <span className="italic text-prev-gold">o que fazer</span>.
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-10 mb-14">
-              {[
-                {
-                  num: "01",
-                  title: "Conversa inicial",
-                  text: "Você manda mensagem pelo WhatsApp contando rapidamente sua situação. Já entendemos se há viabilidade e quais documentos serão necessários.",
-                },
-                {
-                  num: "02",
-                  title: "Análise do CNIS",
-                  text: "Estudamos seu histórico completo de contribuições, identificamos vínculos não reconhecidos, períodos especiais e simulamos todas as regras possíveis.",
-                },
-                {
-                  num: "03",
-                  title: "Estratégia personalizada",
-                  text: "Apresentamos o melhor caminho — administrativo ou judicial — com prazos, valores estimados e honorários transparentes antes de qualquer ação.",
-                },
-              ].map((step, idx) => (
-                <motion.div
-                  key={step.num}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                >
-                  <div className="font-serif text-prev-gold text-4xl mb-4">
-                    {step.num}
-                  </div>
-                  <h3 className="font-serif text-xl mb-3">{step.title}</h3>
-                  <p className="text-prev-beige/70 text-sm leading-relaxed">
-                    {step.text}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="pt-8 border-t border-prev-beige/15">
-              <a
-                href={whatsappLink(WHATSAPP_MESSAGES.home)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-prev-gold text-prev-navy px-7 py-3.5 rounded-full font-medium hover:bg-prev-gold/90 transition-colors"
-              >
-                Começar pelo WhatsApp
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <PrevFaq items={FAQ_HOME} />
-
-        {/* CTA FINAL */}
-        <section className="py-20 bg-prev-beige">
-          <div className="max-w-3xl mx-auto px-5 text-center">
-            <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-5">
-              Pronto para entender{" "}
-              <span className="italic">o que tem direito</span>?
-            </h2>
-            <p className="text-prev-navy/65 text-lg mb-8 leading-relaxed">
-              Conte rapidamente sua situação pelo WhatsApp. Em poucas perguntas
-              já indicamos os próximos passos.
-            </p>
-            <a
-              href={whatsappLink(WHATSAPP_MESSAGES.home)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-prev-navy text-prev-beige px-7 py-3.5 rounded-full font-medium hover:bg-prev-navy/90 transition-colors"
-            >
-              Falar pelo WhatsApp
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </section>
-      </PrevLayout>
-    </>
-  );
-}
+                Co

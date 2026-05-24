@@ -249,18 +249,12 @@ export default function PrevContato() {
 
                     <button
                       type="submit"
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-prev-navy text-prev-beige px-7 py-3.5 rounded-full font-medium hover:bg-prev-navy/90 transition-colors"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold text-base shadow-lg shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
                     >
+                      <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
                       Enviar pelo WhatsApp
-                      <ArrowRight className="w-4 h-4" />
                     </button>
                   </form>
                 )}
               </div>
-            </div>
-          </div>
-        </section>
-      </PrevLayout>
-    </>
-  );
-}
+            </d

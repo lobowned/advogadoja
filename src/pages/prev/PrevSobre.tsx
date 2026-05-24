@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { ArrowRight, GraduationCap, MapPin, Scale, Shield } from "lucide-react";
+import { GraduationCap, MapPin, Scale, Shield, MessageCircle } from "lucide-react";
 
 import PrevLayout from "@/components/prev/PrevLayout";
 import {
@@ -198,14 +198,8 @@ export default function PrevSobre() {
               href={whatsappLink(WHATSAPP_MESSAGES.sobre)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-prev-navy text-prev-beige px-7 py-3.5 rounded-full font-medium hover:bg-prev-navy/90 transition-colors"
+              className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
             >
-              Falar pelo WhatsApp
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </section>
-      </PrevLayout>
-    </>
-  );
-}
+              <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
+              Falar agora pelo WhatsApp
+      

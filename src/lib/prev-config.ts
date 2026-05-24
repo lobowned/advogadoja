@@ -76,40 +76,45 @@ export const WHATSAPP_MESSAGES = {
 
 /**
  * Lista de áreas exibida na home e no menu — ordem importa para SEO.
- * Para adicionar nova área, basta incluir aqui e criar a página.
+ * Cada área tem uma foto (PREV_IMAGES key) para o card.
+ * Copy popular (sem juridiquês) — fala direto com o público.
  */
 export const PREV_AREAS = [
   {
     slug: "aposentadorias",
     title: "Aposentadorias",
-    short: "Idade, tempo, especial, híbrida, PCD",
+    short: "Idade, tempo de INSS, atividade especial, rural",
     description:
-      "Análise do seu CNIS para identificar qual aposentadoria oferece o melhor benefício para você — considerando regras antigas, transição e novas após a Reforma.",
+      "Você está perto de se aposentar e não sabe o que pedir? A gente olha junto seu histórico do INSS e te indica o caminho que paga mais e demora menos.",
     icon: "Clock",
+    imageKey: "aposentadoriaIdade",
   },
   {
     slug: "auxilio-doenca",
     title: "Auxílio-Doença",
-    short: "Benefício por incapacidade temporária",
+    short: "Afastado do trabalho por doença",
     description:
-      "Para quem está afastado do trabalho por motivo de saúde. Orientação completa para entrada, recurso e revisão administrativa ou judicial.",
+      "INSS negou ou cortou seu auxílio-doença? A gente te ajuda a recorrer e, se precisar, ir pra Justiça — com perícia, laudos e tudo certo.",
     icon: "HeartPulse",
+    imageKey: "auxilioDoenca",
   },
   {
     slug: "aposentadoria-por-invalidez",
     title: "Aposentadoria por Invalidez",
-    short: "Incapacidade permanente",
+    short: "Quando não pode mais trabalhar",
     description:
-      "Quando a incapacidade para o trabalho se torna definitiva. Análise de laudos, perícia e estratégia para conversão do auxílio em aposentadoria.",
+      "Quando a doença ou acidente impede de trabalhar pra sempre. Te explico como pedir a aposentadoria por invalidez e os 25% a mais pra quem precisa de cuidador.",
     icon: "ShieldAlert",
+    imageKey: "invalidez",
   },
   {
     slug: "bpc-loas",
     title: "BPC / LOAS",
-    short: "Benefício assistencial",
+    short: "1 salário pra idoso ou pessoa com deficiência",
     description:
-      "Benefício de um salário mínimo para idosos a partir de 65 anos ou pessoas com deficiência em situação de baixa renda — sem necessidade de contribuição prévia ao INSS.",
+      "Idoso a partir de 65 anos ou pessoa com deficiência em família de baixa renda tem direito a 1 salário mínimo do governo todo mês. Não precisa nem ter contribuído ao INSS.",
     icon: "HandHeart",
+    imageKey: "bpcIdoso",
   },
 ] as const;
 
@@ -144,7 +149,4 @@ export const APOSENTADORIA_TYPES = [
   {
     slug: "aposentadoria-pcd",
     title: "Aposentadoria da Pessoa com Deficiência",
-    short: "Tempo reduzido conforme grau (leve, moderado, grave)",
-    when: "Para segurados com deficiência comprovada por avaliação biopsicossocial — tempo reduzido em relação às regras comuns.",
-  },
-] as const;
+    short: "Te

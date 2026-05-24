@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
 
 import PrevLayout from "./PrevLayout";
 import PrevFaq from "./PrevFaq";
@@ -15,12 +15,14 @@ interface PrevAreaPageProps {
   // SEO
   metaTitle: string;
   metaDescription: string;
-  canonicalPath: string; // ex: "/prev/auxilio-doenca"
+  canonicalPath: string;
 
   // Conteúdo
-  breadcrumb: string; // ex: "Áreas / Auxílio-Doença"
-  heroTitle: React.ReactNode; // pode incluir <span italic> p/ ênfase
+  breadcrumb: string;
+  heroTitle: React.ReactNode;
   heroSubtitle: string;
+  /** URL de foto opcional para o hero (foto contextual) */
+  heroImage?: { src: string; alt: string };
 
   // Quem pode pedir
   whoSectionTitle: string;
@@ -30,7 +32,7 @@ interface PrevAreaPageProps {
   docsSectionTitle: string;
   docsItems: string[];
 
-  // Estratégia (texto livre)
+  // Estratégia
   strategyTitle: string;
   strategyText: string;
 
@@ -49,6 +51,7 @@ export default function PrevAreaPage({
   breadcrumb,
   heroTitle,
   heroSubtitle,
+  heroImage,
   whoSectionTitle,
   whoItems,
   docsSectionTitle,
@@ -57,7 +60,7 @@ export default function PrevAreaPage({
   strategyText,
   faq,
   whatsappMessage,
-  whatsappButtonText = "Analisar meu caso pelo WhatsApp",
+  whatsappButtonText = "Conversar agora pelo WhatsApp",
 }: PrevAreaPageProps) {
   return (
     <>
@@ -68,27 +71,63 @@ export default function PrevAreaPage({
       </Helmet>
 
       <PrevLayout ctaMessage={whatsappMessage}>
-        {/* HERO */}
-        <section className="bg-prev-navy text-prev-beige pt-16 pb-20 lg:pt-24 lg:pb-28">
-          <div className="max-w-4xl mx-auto px-5">
-            <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-4">
-              {breadcrumb}
-            </p>
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
-              {heroTitle}
-            </h1>
-            <p className="text-lg text-prev-beige/80 leading-relaxed max-w-2xl mb-8">
-              {heroSubtitle}
-            </p>
-            <a
-              href={whatsappLink(whatsappMessage)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-prev-gold text-prev-navy px-7 py-3.5 rounded-full font-medium hover:bg-prev-gold/90 transition-colors"
-            >
-              {whatsappButtonText}
-              <ArrowRight className="w-4 h-4" />
-            </a>
+        {/* HERO - com ou sem foto */}
+        <section className="bg-prev-navy text-prev-beige pt-12 pb-16 lg:pt-20 lg:pb-24 relative overflow-hidden">
+          <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-prev-gold/10 blur-3xl pointer-events-none" />
+          <div className="relative max-w-6xl mx-auto px-5">
+            {heroImage ? (
+              <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-14 items-center">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-4">
+                    {breadcrumb}
+                  </p>
+                  <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight mb-6">
+                    {heroTitle}
+                  </h1>
+                  <p className="text-lg text-prev-beige/85 leading-relaxed mb-8">
+                    {heroSubtitle}
+                  </p>
+                  <a
+                    href={whatsappLink(whatsappMessage)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-lg shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
+                  >
+                    <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
+                    {whatsappButtonText}
+                  </a>
+                </div>
+                <div className="aspect-[4/5] lg:aspect-[5/6] rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
+                  <img
+                    src={heroImage.src}
+                    alt={heroImage.alt}
+                    loading="eager"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            ) : (
+              <div className="max-w-3xl">
+                <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-4">
+                  {breadcrumb}
+                </p>
+                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
+                  {heroTitle}
+                </h1>
+                <p className="text-lg text-prev-beige/85 leading-relaxed max-w-2xl mb-8">
+                  {heroSubtitle}
+                </p>
+                <a
+                  href={whatsappLink(whatsappMessage)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-lg shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
+                >
+                  <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
+                  {whatsappButtonText}
+                </a>
+              </div>
+            )}
           </div>
         </section>
 
@@ -153,59 +192,4 @@ export default function PrevAreaPage({
                     <span className="w-6 h-6 rounded-full bg-prev-navy text-prev-beige text-xs flex items-center justify-center font-medium flex-shrink-0 mt-0.5">
                       {idx + 1}
                     </span>
-                    <span className="text-prev-navy/80 text-sm leading-relaxed">{item}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* ESTRATÉGIA */}
-        <section className="py-20 bg-white">
-          <div className="max-w-3xl mx-auto px-5">
-            <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3">
-              Como agimos
-            </p>
-            <h2 className="font-serif text-3xl text-prev-navy leading-tight mb-6">
-              {strategyTitle}
-            </h2>
-            <div className="prose prose-lg max-w-none text-prev-navy/75 leading-relaxed">
-              {strategyText.split("\n\n").map((para, idx) => (
-                <p key={idx} className="mb-4 last:mb-0">
-                  {para}
-                </p>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <PrevFaq items={faq} />
-
-        {/* CTA FINAL */}
-        <section className="py-20 bg-prev-beige">
-          <div className="max-w-3xl mx-auto px-5 text-center">
-            <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-5">
-              Pronto para entender{" "}
-              <span className="italic">seu caso</span>?
-            </h2>
-            <p className="text-prev-navy/65 text-lg mb-8 leading-relaxed">
-              Mande seu caso pelo WhatsApp. Em poucas perguntas já indicamos os
-              próximos passos.
-            </p>
-            <a
-              href={whatsappLink(whatsappMessage)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-prev-navy text-prev-beige px-7 py-3.5 rounded-full font-medium hover:bg-prev-navy/90 transition-colors"
-            >
-              Falar pelo WhatsApp
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </section>
-      </PrevLayout>
-    </>
-  );
-}
+                    <span className="text-prev-navy/80 text-sm leading

@@ -132,4 +132,25 @@ export default function PrevAposentadorias() {
           <div className="max-w-3xl mx-auto px-5 text-center">
             <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-5">
               Não pede a aposentadoria{" "}
-              <span className="italic">errada</spa
+              <span className="italic">errada</span>.
+            </h2>
+            <p className="text-prev-navy/65 text-lg mb-8 leading-relaxed">
+              Antes de entrar com o pedido, vale conferir documentos, tempo de
+              contribuição e regra mais vantajosa para não perder dinheiro.
+            </p>
+            <a
+              href={whatsappLink(WHATSAPP_MESSAGES.aposentadorias)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
+            >
+              <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
+              Falar com advogado agora
+              <ArrowRight className="w-5 h-5" strokeWidth={2} />
+            </a>
+          </div>
+        </section>
+      </PrevLayout>
+    </>
+  );
+}

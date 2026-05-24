@@ -50,16 +50,27 @@ export default function PrevContato() {
 
       <PrevLayout ctaMessage={WHATSAPP_MESSAGES.contato}>
         {/* HERO */}
-        <section className="bg-prev-navy text-prev-beige pt-16 pb-20 lg:pt-24">
-          <div className="max-w-4xl mx-auto px-5">
-            <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-4">
+        <section className="bg-prev-navy text-prev-beige pt-20 pb-24 lg:pt-28 lg:pb-32 relative overflow-hidden">
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 1px 1px, #F5F1EA 1px, transparent 0)",
+              backgroundSize: "32px 32px",
+            }}
+          />
+          <div className="absolute -top-24 -right-20 w-96 h-96 rounded-full bg-prev-gold/12 blur-[120px] pointer-events-none" />
+          <div className="relative max-w-4xl mx-auto px-5">
+            <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-6 font-semibold flex items-center gap-3">
+              <span className="w-8 h-px bg-prev-gold" />
               Contato
             </p>
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
+            <h1 className="font-serif text-[2.4rem] sm:text-5xl lg:text-[3.8rem] leading-[1.02] tracking-[-0.025em] mb-7">
               Vamos conversar sobre{" "}
               <span className="italic text-prev-gold">o seu caso</span>.
             </h1>
-            <p className="text-lg text-prev-beige/80 leading-relaxed max-w-2xl">
+            <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] max-w-2xl">
               A forma mais rápida é pelo WhatsApp — respondemos no mesmo dia
               útil. Mas se preferir, deixe sua mensagem pelo formulário ou
               e-mail.
@@ -67,74 +78,68 @@ export default function PrevContato() {
           </div>
         </section>
 
-        {/* CARDS DE CONTATO */}
-        <section className="py-20 bg-prev-beige">
+        {/* CARDS DE CONTATO — grid editorial sem cantos arredondados */}
+        <section className="py-24 md:py-32 bg-prev-beige">
           <div className="max-w-5xl mx-auto px-5">
-            <div className="grid md:grid-cols-3 gap-6 mb-16">
+            <div className="grid md:grid-cols-3 gap-px bg-prev-navy/10 border border-prev-navy/10 mb-20">
               {/* WhatsApp */}
               <motion.a
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
                 href={whatsappLink(WHATSAPP_MESSAGES.contato)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white rounded-2xl p-7 border border-prev-navy/8 hover:border-prev-gold/40 transition-all"
+                className="group bg-prev-beige p-8 hover:bg-white transition-colors duration-500"
               >
-                <div className="w-12 h-12 rounded-xl bg-prev-gold/15 flex items-center justify-center mb-5 group-hover:bg-prev-gold/25 transition-colors">
-                  <MessageCircle className="w-6 h-6 text-prev-navy" strokeWidth={1.5} />
-                </div>
-                <h3 className="font-serif text-lg text-prev-navy mb-1">WhatsApp</h3>
-                <p className="text-xs uppercase tracking-wider text-prev-navy/50 mb-3">
+                <MessageCircle className="w-7 h-7 text-prev-gold mb-6 group-hover:scale-110 transition-transform duration-500" strokeWidth={1.2} />
+                <h3 className="font-serif text-[1.35rem] text-prev-navy mb-2 leading-tight">WhatsApp</h3>
+                <p className="text-[10px] uppercase tracking-[0.22em] text-prev-navy/55 mb-4 font-semibold">
                   Resposta mais rápida
                 </p>
-                <p className="text-prev-navy/70 text-sm">
+                <p className="text-prev-navy/72 text-[14.5px] leading-[1.7]">
                   Conte rapidamente sua situação. Já indicamos os próximos passos.
                 </p>
               </motion.a>
 
               {/* E-mail */}
               <motion.a
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.08 }}
                 href={`mailto:${LAWYER.email}`}
-                className="group bg-white rounded-2xl p-7 border border-prev-navy/8 hover:border-prev-gold/40 transition-all"
+                className="group bg-prev-beige p-8 hover:bg-white transition-colors duration-500"
               >
-                <div className="w-12 h-12 rounded-xl bg-prev-beige flex items-center justify-center mb-5 group-hover:bg-prev-gold/15 transition-colors">
-                  <Mail className="w-6 h-6 text-prev-navy" strokeWidth={1.5} />
-                </div>
-                <h3 className="font-serif text-lg text-prev-navy mb-1">E-mail</h3>
-                <p className="text-xs uppercase tracking-wider text-prev-navy/50 mb-3">
+                <Mail className="w-7 h-7 text-prev-gold mb-6 group-hover:scale-110 transition-transform duration-500" strokeWidth={1.2} />
+                <h3 className="font-serif text-[1.35rem] text-prev-navy mb-2 leading-tight">E-mail</h3>
+                <p className="text-[10px] uppercase tracking-[0.22em] text-prev-navy/55 mb-4 font-semibold">
                   Para anexar documentos
                 </p>
-                <p className="text-prev-navy/70 text-sm break-all">
+                <p className="text-prev-navy/72 text-[14.5px] break-all leading-[1.7]">
                   {LAWYER.email}
                 </p>
               </motion.a>
 
               {/* Atendimento */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.16 }}
-                className="bg-white rounded-2xl p-7 border border-prev-navy/8"
+                className="bg-prev-beige p-8"
               >
-                <div className="w-12 h-12 rounded-xl bg-prev-beige flex items-center justify-center mb-5">
-                  <Clock className="w-6 h-6 text-prev-navy" strokeWidth={1.5} />
-                </div>
-                <h3 className="font-serif text-lg text-prev-navy mb-1">Atendimento</h3>
-                <p className="text-xs uppercase tracking-wider text-prev-navy/50 mb-3">
+                <Clock className="w-7 h-7 text-prev-gold mb-6" strokeWidth={1.2} />
+                <h3 className="font-serif text-[1.35rem] text-prev-navy mb-2 leading-tight">Atendimento</h3>
+                <p className="text-[10px] uppercase tracking-[0.22em] text-prev-navy/55 mb-4 font-semibold">
                   Horário comercial
                 </p>
-                <p className="text-prev-navy/70 text-sm leading-relaxed">
+                <p className="text-prev-navy/72 text-[14.5px] leading-[1.7]">
                   {LAWYER.businessHours}
                   {cityKnown && (
-                    <span className="block mt-2 text-prev-navy/55">
-                      <MapPin className="inline-block w-3.5 h-3.5 mr-1" />
+                    <span className="block mt-3 text-prev-navy/55 text-xs">
+                      <MapPin className="inline-block w-3.5 h-3.5 mr-1" strokeWidth={1.5} />
                       {addressKnown ? LAWYER.addressLine : `${LAWYER.city} · ${LAWYER.state}`}
                     </span>
                   )}
@@ -142,18 +147,17 @@ export default function PrevContato() {
               </motion.div>
             </div>
 
-            {/* Formulário */}
-            <div className="bg-white rounded-2xl p-7 sm:p-10 border border-prev-navy/8">
+            {/* Formulário editorial */}
+            <div className="bg-white p-8 sm:p-12 border border-prev-navy/10">
               <div className="max-w-2xl mx-auto">
-                <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3">
-                  Ou deixe sua mensagem
-                </p>
-                <h2 className="font-serif text-2xl sm:text-3xl text-prev-navy leading-tight mb-2">
+                <span className="prev-eyebrow mb-4">Ou deixe sua mensagem</span>
+                <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-[1.05] mb-3 mt-3">
                   Preencha o formulário
                 </h2>
-                <p className="text-prev-navy/65 mb-8 text-sm">
+                <p className="text-prev-navy/65 mb-10 text-[15px] leading-relaxed">
                   Ao enviar, sua mensagem é direcionada para nosso WhatsApp.
                 </p>
+
 
                 {submitted ? (
                   <div className="text-center py-10">

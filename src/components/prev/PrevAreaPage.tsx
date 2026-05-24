@@ -333,6 +333,12 @@ export default function PrevAreaPage({
           </section>
         )}
 
+        {/* NOSSA EQUIPE */}
+        <PrevTeam />
+
+        {/* DEFENDEMOS SEUS DIREITOS */}
+        <PrevCredibility />
+
         {/* FAQ */}
         <PrevFaq items={faq} />
 

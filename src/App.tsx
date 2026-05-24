@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -6,6 +6,18 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
+
+// ===== Lazy load das páginas da área /prev =====
+// Mantemos o bundle do site original inalterado: as páginas /prev só
+// carregam quando o usuário entra em alguma URL /prev/*.
+const PrevHome = lazy(() => import("./pages/prev/PrevHome"));
+const PrevAposentadorias = lazy(() => import("./pages/prev/PrevAposentadorias"));
+const PrevAposentadoriaIdade = lazy(() => import("./pages/prev/PrevAposentadoriaIdade"));
+const PrevAuxilioDoenca = lazy(() => import("./pages/prev/PrevAuxilioDoenca"));
+const PrevInvalidez = lazy(() => import("./pages/prev/PrevInvalidez"));
+const PrevBpcLoas = lazy(() => import("./pages/prev/PrevBpcLoas"));
+const PrevSobre = lazy(() => import("./pages/prev/PrevSobre"));
+const PrevContato = lazy(() => import("./pages/prev/PrevContato"));
 
 // Pages
 import Index from "./pages/Index";
@@ -99,6 +111,17 @@ import TrabalhistaLanding from "./pages/trabalhista/TrabalhistaLanding";
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 
 const queryClient = new QueryClient();
+
+/**
+ * Esconde o FloatingWhatsApp original quando o usuário está
+ * em rotas /prev (a área /prev tem o próprio WhatsApp flutuante
+ * com paleta dourada e mensagens contextualizadas).
+ */
+const ConditionalFloatingWhatsApp = () => {
+  const location = useLocation();
+  if (location.pathname.startsWith("/prev")) return null;
+  return <FloatingWhatsApp />;
+};
 
 // Animated Routes component that uses useLocation for AnimatePresence
 const AnimatedRoutes = () => {
@@ -221,40 +244,4 @@ const AnimatedRoutes = () => {
         <Route path="/advogado/:citySlug" element={<CityLanding />} />
         
         {/* City + Niche Landing Pages - Ultra Local SEO */}
-        <Route path="/advogado-:nicheSlug-:citySlug" element={<CityNicheLanding />} />
-        
-        {/* Conversion Tracking */}
-        <Route path="/conversao" element={<Conversao />} />
-        
-        {/* Admin */}
-        <Route path="/admin" element={<LeadsDashboard />} />
-        <Route path="/admin/leads" element={<LeadsDashboard />} />
-        <Route path="/admin/qa" element={<QADashboard />} />
-        
-        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </AnimatePresence>
-  );
-};
-
-const App = () => (
-  <React.StrictMode>
-    <HelmetProvider>
-      <QueryClientProvider client={queryClient}>
-        <LazyMotion features={domAnimation} strict>
-          <TooltipProvider>
-            <Toaster />
-            <Sonner />
-            <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-              <AnimatedRoutes />
-              <FloatingWhatsApp />
-            </BrowserRouter>
-          </TooltipProvider>
-        </LazyMotion>
-      </QueryClientProvider>
-    </HelmetProvider>
-  </React.StrictMode>
-);
-
-export default App;
+        <Ro

@@ -82,6 +82,11 @@ export default {
           "input-bg": "hsl(var(--whatsapp-input-bg))",
           divider: "hsl(var(--whatsapp-divider))",
         },
+        // Paleta exclusiva da área /prev (Advogado Previdenciário)
+        "prev-navy": "#0B1B2B",
+        "prev-gold": "#C9A961",
+        "prev-beige": "#F5F1EA",
+        "prev-salvia": "#7A9583",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -309,11 +314,4 @@ export default {
       boxShadow: {
         "card": "var(--shadow-card)",
         "card-hover": "var(--shadow-card-hover)",
-        "button": "var(--shadow-button)",
-        "elegant": "var(--shadow-elegant)",
-        "glow": "var(--shadow-glow)",
-      },
-    },
-  },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+        "

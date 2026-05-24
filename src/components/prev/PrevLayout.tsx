@@ -89,7 +89,7 @@ export default function PrevLayout({
             <PrevWhatsappButton
               quizKey={quizKey}
               palette={palette}
-              className="text-sm font-medium bg-prev-navy text-prev-beige px-5 py-2.5 rounded-full hover:bg-prev-navy/90 transition-colors"
+              className="text-xs uppercase tracking-[0.18em] font-semibold text-prev-navy border border-prev-gold/60 hover:border-prev-gold hover:bg-prev-gold/10 px-5 py-2.5 rounded-full transition-all"
             >
               Falar agora
             </PrevWhatsappButton>

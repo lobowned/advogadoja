@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { CheckCircle2, MessageCircle, AlertTriangle, BarChart3 } from "lucide-react";
+import { CheckCircle2, MessageCircle } from "lucide-react";
 
 import PrevLayout from "./PrevLayout";
 import PrevFaq from "./PrevFaq";
@@ -110,15 +110,16 @@ export default function PrevAreaPage({
 
           <div className="relative max-w-6xl mx-auto px-5">
             {heroIllustration || heroImage ? (
-              <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-14 items-center">
+              <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-center">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-4 font-semibold">
+                  <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-6 font-semibold flex items-center gap-3">
+                    <span className="w-8 h-px bg-prev-gold" />
                     {breadcrumb}
                   </p>
-                  <h1 className="font-serif text-[2.2rem] sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight mb-6">
+                  <h1 className="font-serif text-[2.4rem] sm:text-5xl lg:text-[3.6rem] leading-[1.02] tracking-[-0.025em] mb-7">
                     {heroTitle}
                   </h1>
-                  <p className="text-lg text-prev-beige/85 leading-relaxed mb-8">
+                  <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] mb-9 max-w-xl">
                     {heroSubtitle}
                   </p>
                   <PrevWhatsappButton
@@ -138,7 +139,7 @@ export default function PrevAreaPage({
                     </div>
                   </div>
                 ) : heroImage ? (
-                  <div className="aspect-[4/5] lg:aspect-[5/6] rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
+                  <div className="prev-frame aspect-[4/5] lg:aspect-[5/6] rounded-sm overflow-hidden shadow-2xl shadow-black/40">
                     <img
                       src={heroImage.src}
                       alt={heroImage.alt}
@@ -150,13 +151,14 @@ export default function PrevAreaPage({
               </div>
             ) : (
               <div className="max-w-3xl">
-                <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-4 font-semibold">
+                <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-6 font-semibold flex items-center gap-3">
+                  <span className="w-8 h-px bg-prev-gold" />
                   {breadcrumb}
                 </p>
-                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
+                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.025em] mb-7">
                   {heroTitle}
                 </h1>
-                <p className="text-lg text-prev-beige/85 leading-relaxed max-w-2xl mb-8">
+                <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] max-w-2xl mb-9">
                   {heroSubtitle}
                 </p>
                 <PrevWhatsappButton
@@ -172,24 +174,24 @@ export default function PrevAreaPage({
           </div>
         </section>
 
-        {/* STATS — faixa de números */}
+        {/* STATS — faixa editorial */}
         {stats && (
-          <section className="bg-prev-beige border-y border-prev-navy/8 py-8 sm:py-10">
+          <section className="bg-prev-beige border-b border-prev-navy/8 py-12 sm:py-16">
             <div className="max-w-5xl mx-auto px-5">
-              <div className="grid grid-cols-3 gap-3 sm:gap-8">
+              <div className="grid grid-cols-3 gap-3 sm:gap-8 divide-x divide-prev-navy/10">
                 {stats.map((s, idx) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, y: 12 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: idx * 0.1 }}
-                    className="text-center"
+                    transition={{ duration: 0.5, delay: idx * 0.1 }}
+                    className="text-center px-2 sm:px-6"
                   >
-                    <div className="font-serif text-2xl sm:text-4xl text-prev-navy leading-none mb-1.5">
+                    <div className="font-serif text-3xl sm:text-5xl lg:text-6xl text-prev-navy leading-none mb-3 tnum">
                       {s.number}
                     </div>
-                    <div className="text-[11px] sm:text-xs uppercase tracking-wider text-prev-navy/55 leading-tight">
+                    <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-prev-navy/60 leading-tight">
                       {s.label}
                     </div>
                   </motion.div>
@@ -200,18 +202,16 @@ export default function PrevAreaPage({
         )}
 
         {/* QUEM PODE PEDIR */}
-        <section className="py-16 sm:py-20 bg-white">
-          <div className="max-w-4xl mx-auto px-5">
-            <div className="grid md:grid-cols-2 gap-12">
+        <section className="py-24 md:py-32 bg-white">
+          <div className="max-w-5xl mx-auto px-5">
+            <div className="grid md:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20">
               <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3">
-                  Quem se enquadra
-                </p>
-                <h2 className="font-serif text-3xl text-prev-navy leading-tight mb-6">
+                <span className="prev-eyebrow mb-4">Quem se enquadra</span>
+                <h2 className="font-serif text-4xl lg:text-5xl text-prev-navy leading-[1.05] mt-3">
                   {whoSectionTitle}
                 </h2>
               </div>
-              <ul className="space-y-4">
+              <ul className="space-y-5 pt-2">
                 {whoItems.map((item, idx) => (
                   <motion.li
                     key={idx}
@@ -219,10 +219,10 @@ export default function PrevAreaPage({
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: idx * 0.06 }}
-                    className="flex items-start gap-3"
+                    className="flex items-start gap-4 pb-5 border-b border-prev-navy/8 last:border-0"
                   >
-                    <CheckCircle2 className="w-5 h-5 text-prev-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />
-                    <span className="text-prev-navy/80 leading-relaxed">{item}</span>
+                    <CheckCircle2 className="w-5 h-5 text-prev-gold flex-shrink-0 mt-1" strokeWidth={1.2} />
+                    <span className="text-prev-navy/80 leading-[1.7] text-[16px]">{item}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -231,36 +231,32 @@ export default function PrevAreaPage({
         </section>
 
         {/* DOCUMENTOS */}
-        <section className="py-20 bg-prev-beige">
-          <div className="max-w-4xl mx-auto px-5">
-            <div className="grid md:grid-cols-2 gap-12">
+        <section className="py-24 md:py-32 bg-prev-beige">
+          <div className="max-w-5xl mx-auto px-5">
+            <div className="grid md:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20">
               <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3">
-                  Documentação inicial
-                </p>
-                <h2 className="font-serif text-3xl text-prev-navy leading-tight mb-6">
+                <span className="prev-eyebrow mb-4">Documentação inicial</span>
+                <h2 className="font-serif text-4xl lg:text-5xl text-prev-navy leading-[1.05] mb-6 mt-3">
                   {docsSectionTitle}
                 </h2>
-                <p className="text-prev-navy/65 leading-relaxed">
+                <p className="text-prev-navy/65 leading-[1.7] text-[15.5px]">
                   Esses são pontos de partida — outros documentos podem ser
                   pedidos conforme o caso. Não se preocupe se faltar algum:
                   ajudamos a localizar.
                 </p>
               </div>
-              <ul className="space-y-3">
+              <ul className="grid sm:grid-cols-2 gap-3 self-start">
                 {docsItems.map((item, idx) => (
                   <motion.li
                     key={idx}
-                    initial={{ opacity: 0, x: 10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: idx * 0.05 }}
-                    className="flex items-start gap-3 bg-white rounded-xl px-4 py-3"
+                    className="flex items-start gap-3 bg-white border border-prev-navy/8 px-4 py-3.5 hover:border-prev-gold/40 transition-colors"
                   >
-                    <span className="w-6 h-6 rounded-full bg-prev-navy text-prev-beige text-xs flex items-center justify-center font-medium flex-shrink-0 mt-0.5">
-                      {idx + 1}
-                    </span>
-                    <span className="text-prev-navy/80 text-sm leading-relaxed">{item}</span>
+                    <CheckCircle2 className="w-4 h-4 text-prev-gold flex-shrink-0 mt-1" strokeWidth={1.4} />
+                    <span className="text-prev-navy/80 text-[14.5px] leading-relaxed">{item}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -268,18 +264,22 @@ export default function PrevAreaPage({
           </div>
         </section>
 
-        {/* ESTRATÉGIA */}
-        <section className="py-20 bg-white">
-          <div className="max-w-3xl mx-auto px-5">
-            <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3">
-              Como agimos
-            </p>
-            <h2 className="font-serif text-3xl text-prev-navy leading-tight mb-6">
+        {/* ESTRATÉGIA — coluna estreita editorial com aspas decorativas */}
+        <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+          <div
+            aria-hidden
+            className="absolute top-16 left-1/2 -translate-x-[24rem] prev-quote-mark hidden md:block"
+          >
+            "
+          </div>
+          <div className="max-w-2xl mx-auto px-5 relative">
+            <span className="prev-eyebrow mb-4">Como agimos</span>
+            <h2 className="font-serif text-4xl lg:text-5xl text-prev-navy leading-[1.05] mb-8 mt-3">
               {strategyTitle}
             </h2>
-            <div className="prose prose-lg max-w-none text-prev-navy/75 leading-relaxed">
+            <div className="text-prev-navy/78 leading-[1.85] text-[17px] space-y-5">
               {strategyText.split("\n\n").map((para, idx) => (
-                <p key={idx} className="mb-4 last:mb-0">
+                <p key={idx} className={idx === 0 ? "prev-dropcap" : ""}>
                   {para}
                 </p>
               ))}
@@ -287,35 +287,41 @@ export default function PrevAreaPage({
           </div>
         </section>
 
-        {/* ERROS COMUNS */}
+        {/* ERROS COMUNS — cards numerados editoriais */}
         {commonMistakes && commonMistakes.length > 0 && (
-          <section className="py-16 sm:py-20 bg-prev-navy text-prev-beige">
-            <div className="max-w-4xl mx-auto px-5">
-              <div className="max-w-2xl mb-10">
-                <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3 font-semibold">
-                  Erros que custam caro
-                </p>
-                <h2 className="font-serif text-3xl sm:text-4xl leading-tight">
+          <section className="py-24 md:py-32 bg-prev-navy text-prev-beige relative overflow-hidden">
+            <div
+              aria-hidden
+              className="absolute inset-0 opacity-[0.04]"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 1px 1px, #F5F1EA 1px, transparent 0)",
+                backgroundSize: "32px 32px",
+              }}
+            />
+            <div className="max-w-5xl mx-auto px-5 relative">
+              <div className="max-w-2xl mb-14">
+                <span className="prev-eyebrow mb-4">Erros que custam caro</span>
+                <h2 className="font-serif text-4xl sm:text-5xl leading-[1.05] mt-3">
                   O que faz o INSS{" "}
                   <span className="italic text-prev-gold">negar</span> (e como
                   evitar)
                 </h2>
               </div>
-              <ul className="space-y-3">
+              <ul className="grid md:grid-cols-2 gap-px bg-prev-beige/10">
                 {commonMistakes.map((mistake, idx) => (
                   <motion.li
                     key={idx}
-                    initial={{ opacity: 0, x: 10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: idx * 0.06 }}
-                    className="flex items-start gap-3 bg-prev-beige/8 rounded-xl px-4 py-3.5 border border-prev-beige/10"
+                    className="bg-prev-navy p-7 border-l-2 border-prev-gold flex gap-5"
                   >
-                    <AlertTriangle
-                      className="w-5 h-5 text-prev-gold flex-shrink-0 mt-0.5"
-                      strokeWidth={1.5}
-                    />
-                    <span className="text-prev-beige/85 leading-relaxed text-[15px]">
+                    <span className="font-serif text-prev-gold/80 text-3xl leading-none tnum flex-shrink-0">
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-prev-beige/85 leading-[1.7] text-[15px]">
                       {mistake}
                     </span>
                   </motion.li>
@@ -328,25 +334,35 @@ export default function PrevAreaPage({
         {/* FAQ */}
         <PrevFaq items={faq} />
 
-        {/* CTA FINAL */}
-        <section className="py-20 bg-prev-beige">
-          <div className="max-w-3xl mx-auto px-5 text-center">
-            <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-5">
-              Não deixe pra depois.
+        {/* CTA FINAL editorial */}
+        <section className="py-24 md:py-32 bg-prev-beige relative overflow-hidden">
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-[0.025]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 1px 1px, #0B1B2B 1px, transparent 0)",
+              backgroundSize: "28px 28px",
+            }}
+          />
+          <div className="max-w-2xl mx-auto px-5 text-center relative">
+            <span className="prev-eyebrow mb-4 justify-center">Próximo passo</span>
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-prev-navy leading-[1.02] mb-6 mt-3">
+              Não deixe pra <span className="italic text-prev-gold">depois</span>.
             </h2>
-            <p className="text-prev-navy/70 text-lg mb-8 leading-relaxed">
+            <p className="text-prev-navy/72 text-lg mb-10 leading-[1.7] max-w-lg mx-auto">
               Manda mensagem agora — me conta sua situação que eu te falo o
               que dá pra fazer.
             </p>
             <PrevWhatsappButton
               quizKey={quizKey || ""}
               palette={palette}
-              className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-9 py-4 rounded-full font-semibold text-lg shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
             >
               <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
               Falar agora pelo WhatsApp
             </PrevWhatsappButton>
-            <p className="text-xs text-prev-navy/50 mt-4">
+            <p className="text-xs text-prev-navy/50 mt-5 tracking-wide">
               Resposta em até 2 horas úteis · Sigilo profissional total
             </p>
           </div>

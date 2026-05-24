@@ -34,16 +34,16 @@ export default function PrevAreaCard({
     >
       <Link
         to={`/prev/${slug}`}
-        className="group relative block bg-white rounded-2xl overflow-hidden border border-prev-navy/8 hover:border-prev-gold/40 hover:shadow-xl hover:shadow-prev-navy/10 transition-all duration-300 h-full"
+        className="group relative block bg-white rounded-lg overflow-hidden border border-prev-navy/8 hover:border-prev-gold/50 hover:shadow-[0_18px_40px_-20px_rgba(11,27,43,0.25)] transition-all duration-500 h-full"
       >
-        {/* Topo: foto ou ilustração */}
-        <div className="aspect-[5/3] overflow-hidden bg-prev-beige relative">
+        {/* Topo: foto editorial 4:5 */}
+        <div className="aspect-[4/5] overflow-hidden bg-prev-beige relative">
           {imageUrl ? (
             <img
               src={imageUrl}
               alt={imageAlt}
               loading="lazy"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              className="w-full h-full object-cover scale-100 group-hover:scale-[1.06] transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
             />
           ) : illustration ? (
             <div className="w-full h-full flex items-center justify-center p-4">
@@ -51,25 +51,29 @@ export default function PrevAreaCard({
             </div>
           ) : null}
 
-          {/* Overlay sutil pro hover */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+          {/* Overlay navy gradient editorial */}
+          <div className="absolute inset-0 bg-gradient-to-t from-prev-navy/70 via-prev-navy/10 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+
+          {/* Eyebrow sobre a imagem */}
+          <span className="absolute top-4 left-4 inline-flex items-center text-[10px] uppercase tracking-[0.22em] text-prev-gold font-semibold">
+            <span className="w-6 h-px bg-prev-gold mr-2.5" />
+            {short}
+          </span>
         </div>
 
         {/* Conteúdo */}
-        <div className="p-6">
-          <h3 className="font-serif text-xl text-prev-navy mb-1 leading-tight group-hover:text-prev-gold transition-colors">
+        <div className="p-6 pt-5">
+          <h3 className="font-serif text-[1.4rem] text-prev-navy mb-3 leading-[1.05] group-hover:text-prev-gold transition-colors">
             {title}
           </h3>
-          <p className="text-xs uppercase tracking-wider text-prev-navy/50 mb-3">
-            {short}
-          </p>
-          <p className="text-[15px] text-prev-navy/75 leading-relaxed mb-4">
+          <p className="text-[14.5px] text-prev-navy/70 leading-relaxed mb-5">
             {description}
           </p>
 
-          <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-prev-navy group-hover:text-prev-gold transition-colors">
+          <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] font-semibold text-prev-navy/70 group-hover:text-prev-gold transition-colors">
+            <span className="w-5 h-px bg-current transition-all duration-500 group-hover:w-9" />
             Saber mais
-            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" strokeWidth={2} />
           </span>
         </div>
       </Link>

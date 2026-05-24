@@ -163,7 +163,7 @@ export default function PrevHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="hidden lg:flex absolute -bottom-8 -left-6 bg-white text-prev-navy p-4 pr-5 rounded-2xl shadow-2xl shadow-black/30 max-w-[260px] border-l-4 border-prev-gold items-start gap-3"
+              className="hidden lg:flex absolute -bottom-8 -right-6 bg-white text-prev-navy p-4 pr-5 rounded-2xl shadow-2xl shadow-black/30 max-w-[260px] border-l-4 border-prev-gold items-start gap-3"
             >
               <div className="w-9 h-9 rounded-full bg-prev-gold/20 flex items-center justify-center flex-shrink-0">
                 <MessageCircle className="w-4 h-4 text-prev-navy" strokeWidth={2} />

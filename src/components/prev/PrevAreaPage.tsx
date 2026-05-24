@@ -28,8 +28,6 @@ interface PrevAreaPageProps {
   breadcrumb: string;
   heroTitle: React.ReactNode;
   heroSubtitle: string;
-  heroImage?: { src: string; alt: string };
-  heroIllustration?: React.ReactNode;
 
   // Quiz
   /** Chave do quiz (corresponde ao slug). Se omitido, usa whatsappMessage diretamente. */

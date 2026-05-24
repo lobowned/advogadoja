@@ -97,6 +97,22 @@ export default function PrevAreaPage({
       <PrevLayout ctaMessage={whatsappMessage} quizKey={quizKey} palette={palette}>
         {/* HERO com ilustração SVG ou foto (legacy) */}
         <section className="bg-prev-navy text-prev-beige pt-14 pb-20 lg:pt-20 lg:pb-24 relative overflow-hidden">
+          {/* Video background */}
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster=""
+          >
+            <source src="/videos/hero-background.mp4" type="video/mp4" />
+          </video>
+          {/* Dark navy overlay for video readability */}
+          <div className="absolute inset-0 bg-prev-navy/80 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-prev-navy/60 via-prev-navy/80 to-prev-navy/95 pointer-events-none" />
+
           {/* Textura pontos */}
           <div
             aria-hidden

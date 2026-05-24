@@ -10,6 +10,22 @@ import PrevWhatsappButton from "./PrevWhatsappButton";
 export default function PrevHero() {
   return (
     <section className="relative overflow-hidden bg-prev-navy text-prev-beige">
+      {/* Video background */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster=""
+      >
+        <source src="/videos/hero-background.mp4" type="video/mp4" />
+      </video>
+      {/* Dark navy overlay for video readability */}
+      <div className="absolute inset-0 bg-prev-navy/80 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-prev-navy/60 via-prev-navy/80 to-prev-navy/95 pointer-events-none" />
+
       {/* Textura sutil de pontos */}
       <div
         aria-hidden

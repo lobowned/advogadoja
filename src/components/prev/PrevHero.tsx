@@ -165,7 +165,6 @@ export default function PrevHero() {
             </motion.div>
 
           </motion.div>
-          </motion.div>
         </div>
 
         {/* ===== Divisor + calculadora ===== */}

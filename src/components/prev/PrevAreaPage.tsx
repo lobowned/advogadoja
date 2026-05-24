@@ -4,6 +4,8 @@ import { CheckCircle2, MessageCircle } from "lucide-react";
 
 import PrevLayout from "./PrevLayout";
 import PrevFaq from "./PrevFaq";
+import PrevTeam from "./PrevTeam";
+import PrevCredibility from "./PrevCredibility";
 import PrevWhatsappButton from "./PrevWhatsappButton";
 
 interface FaqItem {

@@ -5,7 +5,7 @@ import { ArrowRight, ArrowUpRight, MessageCircle } from "lucide-react";
 
 import PrevLayout from "@/components/prev/PrevLayout";
 import PrevFaq from "@/components/prev/PrevFaq";
-import { IllustrationFamily } from "@/components/prev/PrevIllustrations";
+import { PREV_IMAGES } from "@/lib/prev-images";
 import {
   APOSENTADORIA_TYPES,
   WHATSAPP_MESSAGES,
@@ -75,11 +75,13 @@ export default function PrevAposentadorias() {
                   Analisar meu caso pelo WhatsApp
                 </a>
               </div>
-              <div className="relative max-w-md mx-auto lg:max-w-none">
-                <div className="absolute inset-0 bg-gradient-to-br from-prev-gold/20 via-prev-salvia/15 to-transparent rounded-[40%_60%_50%_45%/45%_50%_60%_40%] blur-2xl" />
-                <div className="relative w-full max-w-[400px] mx-auto drop-shadow-2xl">
-                  <IllustrationFamily className="w-full h-auto" />
-                </div>
+              <div className="aspect-[4/5] lg:aspect-[5/6] rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
+                <img
+                  src={PREV_IMAGES.heroCouple.src}
+                  alt={PREV_IMAGES.heroCouple.alt}
+                  loading="eager"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>

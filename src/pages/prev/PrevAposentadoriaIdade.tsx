@@ -1,6 +1,6 @@
 import PrevAreaPage from "@/components/prev/PrevAreaPage";
-import { IllustrationSeniorReading } from "@/components/prev/PrevIllustrations";
 import { WHATSAPP_MESSAGES } from "@/lib/prev-config";
+import { PREV_IMAGES } from "@/lib/prev-images";
 
 export default function PrevAposentadoriaIdade() {
   return (
@@ -9,7 +9,7 @@ export default function PrevAposentadoriaIdade() {
       metaDescription="Aposentadoria por idade no INSS: homem com 65, mulher com 62. Veja quanto tempo de INSS precisa, regras de transição e como pedir o valor maior possível."
       canonicalPath="/prev/aposentadoria-por-idade"
       breadcrumb="Aposentadorias / Por idade"
-      heroIllustration={<IllustrationSeniorReading className="w-full h-auto" />}
+      heroImage={PREV_IMAGES.aposentadoriaIdade}
       heroTitle={
         <>
           Está perto de{" "}

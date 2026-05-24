@@ -1,17 +1,15 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, MessageCircle, Clock, Heart } from "lucide-react";
+import { PREV_IMAGES } from "@/lib/prev-images";
 import { whatsappLink, WHATSAPP_MESSAGES } from "@/lib/prev-config";
-import { IllustrationCare } from "./PrevIllustrations";
 import PrevQuickCalc from "./PrevQuickCalc";
 
 /**
- * Hero da home /prev — versão POPULAR com alma.
- * Sem fotos externas. Composição: copy forte + ilustração SVG + blobs orgânicos.
+ * Hero da home /prev — versão POPULAR com foto REAL de casal de idosos.
  */
 export default function PrevHero() {
   return (
     <section className="relative overflow-hidden bg-prev-navy text-prev-beige">
-      {/* ===== Background orgânico ===== */}
       {/* Textura sutil de pontos */}
       <div
         aria-hidden
@@ -23,24 +21,9 @@ export default function PrevHero() {
         }}
       />
 
-      {/* Blobs grandes - dão movimento orgânico */}
+      {/* Blobs grandes - movimento orgânico */}
       <div className="absolute -top-32 -right-20 w-[500px] h-[500px] rounded-full bg-prev-gold/12 blur-[120px] pointer-events-none" />
       <div className="absolute -bottom-32 -left-20 w-[600px] h-[600px] rounded-full bg-prev-salvia/15 blur-[140px] pointer-events-none" />
-
-      {/* Pontinhos decorativos espalhados */}
-      <svg
-        aria-hidden
-        className="absolute top-1/4 right-1/4 w-32 h-32 text-prev-gold/30 pointer-events-none hidden lg:block"
-        viewBox="0 0 100 100"
-        fill="currentColor"
-      >
-        <circle cx="20" cy="20" r="2" />
-        <circle cx="50" cy="35" r="1.5" />
-        <circle cx="80" cy="25" r="2.5" />
-        <circle cx="30" cy="60" r="1.5" />
-        <circle cx="70" cy="70" r="2" />
-        <circle cx="15" cy="85" r="1.5" />
-      </svg>
 
       <div className="relative max-w-6xl mx-auto px-5 pt-14 pb-20 lg:pt-24 lg:pb-28">
         <div className="grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-center">
@@ -65,7 +48,6 @@ export default function PrevHero() {
               Seu INSS{" "}
               <span className="relative inline-block">
                 <span className="italic text-prev-gold">travou?</span>
-                {/* Underline hand-drawn */}
                 <svg
                   aria-hidden
                   className="absolute -bottom-2 left-0 w-full text-prev-gold/60"
@@ -95,7 +77,6 @@ export default function PrevHero() {
               juridiquês, sem promessa furada.
             </motion.p>
 
-            {/* CTAs principais */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -119,7 +100,6 @@ export default function PrevHero() {
               </a>
             </motion.div>
 
-            {/* Garantias */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -141,38 +121,41 @@ export default function PrevHero() {
             </motion.div>
           </div>
 
-          {/* ===== Ilustração ===== */}
+          {/* ===== Foto REAL ===== */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="relative max-w-md mx-auto lg:max-w-none"
+            className="relative"
           >
-            {/* Blob de fundo da ilustração */}
-            <div className="absolute inset-0 bg-gradient-to-br from-prev-gold/20 via-prev-salvia/15 to-transparent rounded-[40%_60%_50%_45%/45%_50%_60%_40%] blur-2xl" />
-
-            <div className="relative">
-              <IllustrationCare className="w-full h-auto max-w-[420px] mx-auto drop-shadow-2xl" />
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-black/50">
+              <img
+                src={PREV_IMAGES.heroCouple.src}
+                alt={PREV_IMAGES.heroCouple.alt}
+                loading="eager"
+                fetchPriority="high"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-prev-navy/50 via-transparent to-transparent" />
             </div>
 
-            {/* Cartão flutuante — testemunho rápido */}
+            {/* Cartão flutuante - testemunho */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="absolute -bottom-4 -left-4 lg:left-0 bg-white text-prev-navy p-4 pr-5 rounded-2xl shadow-2xl shadow-black/30 max-w-[260px] border-l-4 border-prev-gold"
+              className="absolute -bottom-6 -left-4 lg:-left-8 bg-white text-prev-navy p-4 pr-5 rounded-2xl shadow-2xl shadow-black/30 max-w-[280px] border-l-4 border-prev-gold"
             >
               <div className="flex items-start gap-3">
                 <div className="w-9 h-9 rounded-full bg-prev-gold/20 flex items-center justify-center flex-shrink-0">
-                  <MessageCircle className="w-4.5 h-4.5 text-prev-navy" strokeWidth={2} />
+                  <MessageCircle className="w-4 h-4 text-prev-navy" strokeWidth={2} />
                 </div>
                 <div>
                   <p className="text-sm font-semibold leading-snug mb-0.5">
                     Você fala comigo direto
                   </p>
                   <p className="text-xs text-prev-navy/65 leading-relaxed">
-                    Sem call center, sem secretária. Advogado de verdade no
-                    WhatsApp.
+                    Sem call center. Advogado de verdade no WhatsApp.
                   </p>
                 </div>
               </div>
@@ -183,7 +166,7 @@ export default function PrevHero() {
               initial={{ opacity: 0, scale: 0.8, rotate: -8 }}
               animate={{ opacity: 1, scale: 1, rotate: -8 }}
               transition={{ duration: 0.5, delay: 0.9 }}
-              className="hidden lg:flex absolute -top-2 -right-2 bg-prev-gold text-prev-navy px-4 py-2.5 rounded-full shadow-xl items-center gap-1.5"
+              className="hidden lg:flex absolute -top-3 -right-3 bg-prev-gold text-prev-navy px-4 py-2.5 rounded-full shadow-xl items-center gap-1.5"
             >
               <Heart className="w-3.5 h-3.5 fill-prev-navy" strokeWidth={0} />
               <span className="text-xs font-bold uppercase tracking-wider">
@@ -193,12 +176,8 @@ export default function PrevHero() {
           </motion.div>
         </div>
 
-        {/* ===== Divisor orgânico + calculadora ===== */}
-        <div
-          id="calculadora-rapida"
-          className="mt-20 pt-10 relative"
-        >
-          {/* Linha decorativa hand-drawn */}
+        {/* ===== Divisor + calculadora ===== */}
+        <div id="calculadora-rapida" className="mt-20 pt-10 relative">
           <svg
             aria-hidden
             className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-3 text-prev-gold/40"

@@ -8,28 +8,19 @@ import PrevAreaCard from "@/components/prev/PrevAreaCard";
 import PrevTrust from "@/components/prev/PrevTrust";
 import PrevFaq from "@/components/prev/PrevFaq";
 import {
-  IllustrationSeniorReading,
-  IllustrationFamily,
-  IllustrationAccessibility,
-  IllustrationCare,
-  IllustrationCalendar,
-  IllustrationChat,
-} from "@/components/prev/PrevIllustrations";
-import {
   LAWYER,
   PREV_AREAS,
   WHATSAPP_MESSAGES,
   whatsappLink,
 } from "@/lib/prev-config";
+import { PREV_IMAGES } from "@/lib/prev-images";
 
-/** Mapa: slug da área → componente de ilustração SVG. */
-const AREA_ILLUSTRATIONS: Record<string, React.ReactNode> = {
-  aposentadorias: <IllustrationSeniorReading className="w-full h-full" />,
-  "auxilio-doenca": <IllustrationCare className="w-full h-full" />,
-  "aposentadoria-por-invalidez": (
-    <IllustrationAccessibility className="w-full h-full" />
-  ),
-  "bpc-loas": <IllustrationFamily className="w-full h-full" />,
+/** Mapa: slug da área → foto Pexels (idoso/PCD real). */
+const AREA_PHOTOS: Record<string, { src: string; alt: string }> = {
+  aposentadorias: PREV_IMAGES.aposentadoriaIdade,
+  "auxilio-doenca": PREV_IMAGES.auxilioDoenca,
+  "aposentadoria-por-invalidez": PREV_IMAGES.invalidez,
+  "bpc-loas": PREV_IMAGES.bpcFamilia,
 };
 
 const FAQ_HOME = [
@@ -115,17 +106,21 @@ export default function PrevHome() {
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {PREV_AREAS.map((area, idx) => (
-                <PrevAreaCard
-                  key={area.slug}
-                  slug={area.slug}
-                  title={area.title}
-                  short={area.short}
-                  description={area.description}
-                  illustration={AREA_ILLUSTRATIONS[area.slug]}
-                  index={idx}
-                />
-              ))}
+              {PREV_AREAS.map((area, idx) => {
+                const photo = AREA_PHOTOS[area.slug];
+                return (
+                  <PrevAreaCard
+                    key={area.slug}
+                    slug={area.slug}
+                    title={area.title}
+                    short={area.short}
+                    description={area.description}
+                    imageUrl={photo?.src}
+                    imageAlt={photo?.alt}
+                    index={idx}
+                  />
+                );
+              })}
             </div>
           </div>
         </section>

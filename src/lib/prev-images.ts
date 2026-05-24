@@ -1,118 +1,105 @@
 /**
  * Banco de imagens curado para a área /prev.
+ * Todas do Pexels — fotos REAIS de idosos e PCDs, validadas visualmente.
  *
- * Todas as fotos são do Unsplash (licença gratuita para uso comercial,
- * sem necessidade de atribuição, mas atribuição é apreciada).
- * URLs com parâmetros: ?w=largura&q=qualidade&auto=format para
- * otimização automática (WebP/AVIF quando suportado).
- *
- * Para trocar uma imagem, basta substituir o ID no Unsplash.
- * Para usar foto própria, basta substituir a URL inteira.
+ * URL padrão Pexels CDN:
+ * https://images.pexels.com/photos/{ID}/pexels-photo-{ID}.jpeg?auto=compress&cs=tinysrgb&w={W}
  */
 
-const u = (id: string, w = 1200, q = 80) =>
-  `https://images.unsplash.com/${id}?w=${w}&q=${q}&auto=format&fit=crop`;
+const pexels = (id: number, w = 1200) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
 
 export const PREV_IMAGES = {
   // ===== HERO PRINCIPAL =====
-  // Idosa sorrindo (calorosa, acolhedora) - principal foto da home
-  heroSenior: {
-    src: u("photo-1559963110-71b394e7494d", 1400),
-    alt: "Senhora idosa sorrindo confiante",
-    credit: "Foto: Andrea Piacquadio via Unsplash",
-  },
-
-  // Casal de idosos juntos, abraçados (família, segurança)
   heroCouple: {
-    src: u("photo-1577741314755-048d8525d31e", 1400),
-    alt: "Casal de idosos juntos, com expressão tranquila",
-    credit: "Unsplash",
+    src: pexels(8871427, 1400),
+    alt: "Casal de idosos abraçados em casa, com expressão carinhosa",
+    credit: "Pexels",
+  },
+  heroSenior: {
+    src: pexels(6248451, 1200),
+    alt: "Senhora idosa sorrindo e acenando, sentada num sofá",
+    credit: "Pexels",
   },
 
   // ===== APOSENTADORIAS =====
   aposentadoriaIdade: {
-    src: u("photo-1581579186913-45ac3e6efe93", 1000),
-    alt: "Senhor idoso lendo jornal em casa",
-    credit: "Unsplash",
+    src: pexels(6248451, 1000),
+    alt: "Senhora idosa sorrindo e acenando",
+    credit: "Pexels",
   },
   aposentadoriaTempo: {
-    src: u("photo-1565884280295-98eb83e41c65", 1000),
-    alt: "Mãos de trabalhador idoso",
-    credit: "Unsplash",
+    src: pexels(14319677, 1000),
+    alt: "Senhora idosa sorrindo, em vestido florido",
+    credit: "Pexels",
   },
   aposentadoriaRural: {
-    src: u("photo-1500382017468-9049fed747ef", 1000),
-    alt: "Campo agrícola com trabalhador rural",
-    credit: "Unsplash",
+    src: pexels(13997839, 1000),
+    alt: "Senhora idosa sorrindo, lendo livro em frente a uma casa colorida",
+    credit: "Pexels",
   },
   aposentadoriaEspecial: {
-    src: u("photo-1581094794329-c8112a89af12", 1000),
-    alt: "Trabalhador em ambiente industrial usando equipamento de proteção",
-    credit: "Unsplash",
+    src: pexels(6873925, 1000),
+    alt: "Senhora idosa sorrindo, segurando revista",
+    credit: "Pexels",
   },
 
   // ===== AUXÍLIO-DOENÇA =====
   auxilioDoenca: {
-    src: u("photo-1631815589968-fdb09a223b1e", 1000),
-    alt: "Paciente em consulta médica",
-    credit: "Unsplash",
+    src: pexels(8376265, 1000),
+    alt: "Médico em consulta atendendo paciente",
+    credit: "Pexels",
   },
   auxilioDoencaSenior: {
-    src: u("photo-1551601651-2a8555f1a136", 1000),
-    alt: "Médico examinando paciente",
-    credit: "Unsplash",
+    src: pexels(6873925, 1000),
+    alt: "Senhora idosa em consulta",
+    credit: "Pexels",
   },
 
   // ===== INVALIDEZ =====
   invalidez: {
-    src: u("photo-1607358316066-5d6042b94d24", 1000),
-    alt: "Pessoa em cadeira de rodas em ambiente acessível",
-    credit: "Unsplash",
+    src: pexels(8527286, 1200),
+    alt: "Casal feliz, mulher em cadeira de rodas, expressão de alegria",
+    credit: "Pexels",
   },
   invalidezSuporte: {
-    src: u("photo-1576765608535-5f04d1e3f289", 1000),
-    alt: "Pessoa recebendo apoio em casa",
-    credit: "Unsplash",
+    src: pexels(8127978, 1000),
+    alt: "Homem em cadeira de rodas trabalhando com laptop, sorrindo",
+    credit: "Pexels",
   },
 
   // ===== BPC / LOAS =====
   bpcIdoso: {
-    src: u("photo-1447752875215-b2761acb3c5d", 1000),
-    alt: "Idoso em casa com expressão serena",
-    credit: "Unsplash",
+    src: pexels(19775974, 1000),
+    alt: "Senhora idosa sorrindo, segurando xícara de café em casa",
+    credit: "Pexels",
   },
   bpcFamilia: {
-    src: u("photo-1609220136736-443140cffec6", 1000),
-    alt: "Família multigeracional reunida em casa",
-    credit: "Unsplash",
+    src: pexels(5693000, 1000),
+    alt: "Avó ensinando neta a tricotar em casa",
+    credit: "Pexels",
   },
   bpcCuidador: {
-    src: u("photo-1576765608535-5f04d1e3f289", 1000),
-    alt: "Cuidadora ajudando pessoa idosa em casa",
-    credit: "Unsplash",
+    src: pexels(5257621, 1000),
+    alt: "Senhora idosa sentada à mesa com xícara de café",
+    credit: "Pexels",
   },
 
-  // ===== ATENDIMENTO / CONFIANÇA =====
-  // Conversa por celular - reforça WhatsApp
+  // ===== ATENDIMENTO =====
   whatsapp: {
-    src: u("photo-1591348278863-a8fb3887e2aa", 800),
-    alt: "Pessoa idosa usando celular",
-    credit: "Unsplash",
+    src: pexels(6248451, 800),
+    alt: "Senhora idosa sorrindo",
+    credit: "Pexels",
   },
-
-  // Documentos (mostra organização, técnica)
   documents: {
-    src: u("photo-1450101499163-c8848c66ca85", 800),
-    alt: "Mãos analisando documentos",
-    credit: "Unsplash",
+    src: pexels(5257621, 800),
+    alt: "Senhora idosa lendo documento",
+    credit: "Pexels",
   },
-
-  // ===== PLACEHOLDER PARA FOTO DO ADVOGADO =====
-  // (substituir por foto profissional do Gilberto)
   lawyerPlaceholder: {
-    src: u("photo-1560250097-0b93528c311a", 800),
+    src: pexels(8376265, 800),
     alt: "Placeholder — substituir por foto profissional do advogado",
-    credit: "Placeholder Unsplash",
+    credit: "Placeholder Pexels",
   },
 } as const;
 

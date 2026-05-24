@@ -54,7 +54,7 @@
 
 /* Drop cap dourado editorial */
 .prev-scope .prev-dropcap::first-letter {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Instrument Serif", Georgia, serif;
   font-weight: 500;
   font-style: italic;
   font-size: 3.4em;

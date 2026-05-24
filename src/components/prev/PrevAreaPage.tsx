@@ -111,7 +111,7 @@ export default function PrevAreaPage({
 
       <PrevLayout ctaMessage={whatsappMessage} quizKey={quizKey} palette={palette}>
         {/* HERO — Premium Editorial Split */}
-        <section className="bg-prev-navy text-prev-beige pt-14 pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden">
+        <section className="bg-prev-navy text-prev-beige pt-10 pb-14 lg:pt-24 lg:pb-28 relative overflow-hidden">
           {/* Video background */}
           <video
             className="absolute inset-0 w-full h-full object-cover"

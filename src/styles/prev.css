@@ -108,3 +108,122 @@ html:has(.prev-scope) {
 .prev-scope .hover\:bg-\[\#1FB855\]:hover {
   background-color: #1FB855 !important;
 }
+
+/* ============================================
+   IDENTIDADE ROSA — Salário-Maternidade
+   Wrapper .prev-rose-theme sobrescreve a paleta navy/gold
+   ============================================ */
+.prev-rose-theme .bg-prev-navy {
+  background-color: #5C2D3A !important; /* deep maroon-rose */
+}
+.prev-rose-theme .text-prev-beige {
+  color: #FDF2F4 !important; /* blush */
+}
+.prev-rose-theme .text-prev-beige\/85 {
+  color: rgba(253, 242, 244, 0.85) !important;
+}
+.prev-rose-theme .text-prev-beige\/75,
+.prev-rose-theme .text-prev-beige\/70 {
+  color: rgba(253, 242, 244, 0.78) !important;
+}
+.prev-rose-theme .text-prev-gold {
+  color: #E8A3B0 !important; /* rose principal */
+}
+.prev-rose-theme .bg-prev-beige {
+  background-color: #FDF2F4 !important; /* blush bg */
+}
+.prev-rose-theme .bg-prev-gold {
+  background-color: #E8A3B0 !important;
+}
+.prev-rose-theme .bg-prev-gold\/15,
+.prev-rose-theme .bg-prev-gold\/12,
+.prev-rose-theme .bg-prev-gold\/10 {
+  background-color: rgba(232, 163, 176, 0.18) !important;
+}
+.prev-rose-theme .border-prev-gold\/30,
+.prev-rose-theme .border-prev-gold\/40,
+.prev-rose-theme .border-prev-gold\/25 {
+  border-color: rgba(232, 163, 176, 0.5) !important;
+}
+.prev-rose-theme .bg-prev-salvia\/15,
+.prev-rose-theme .bg-prev-salvia\/12,
+.prev-rose-theme .bg-prev-salvia\/10 {
+  background-color: rgba(245, 200, 210, 0.25) !important;
+}
+.prev-rose-theme .border-prev-beige\/15,
+.prev-rose-theme .border-prev-beige\/10 {
+  border-color: rgba(253, 242, 244, 0.2) !important;
+}
+.prev-rose-theme .bg-prev-beige\/8,
+.prev-rose-theme .bg-prev-beige\/50 {
+  background-color: rgba(253, 242, 244, 0.65) !important;
+}
+.prev-rose-theme .text-prev-navy {
+  color: #5C2D3A !important;
+}
+.prev-rose-theme .text-prev-navy\/80,
+.prev-rose-theme .text-prev-navy\/75,
+.prev-rose-theme .text-prev-navy\/70,
+.prev-rose-theme .text-prev-navy\/65 {
+  color: rgba(92, 45, 58, 0.78) !important;
+}
+.prev-rose-theme .text-prev-navy\/55,
+.prev-rose-theme .text-prev-navy\/50 {
+  color: rgba(92, 45, 58, 0.6) !important;
+}
+.prev-rose-theme .border-prev-navy\/10,
+.prev-rose-theme .border-prev-navy\/8 {
+  border-color: rgba(92, 45, 58, 0.12) !important;
+}
+.prev-rose-theme .text-prev-navy\/30 {
+  color: rgba(92, 45, 58, 0.35) !important;
+}
+/* Focus visível rosa em vez de gold */
+.prev-rose-theme a:focus-visible,
+.prev-rose-theme button:focus-visible,
+.prev-rose-theme input:focus-visible,
+.prev-rose-theme textarea:focus-visible,
+.prev-rose-theme select:focus-visible {
+  outline-color: #C56B7A !important;
+}
+/* Seleção rosa */
+.prev-rose-theme ::selection {
+  background: rgba(232, 163, 176, 0.4);
+  color: #5C2D3A;
+}
+
+/* ============================================
+   STICKY MOBILE BAR (Pacote 5)
+   Bottom bar fixa em mobile com CTA WhatsApp
+   ============================================ */
+.prev-sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 45;
+  background: rgba(11, 27, 43, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom, 0));
+  display: none;
+  border-top: 1px solid rgba(201, 169, 97, 0.2);
+}
+
+@media (max-width: 767px) {
+  .prev-scope .prev-sticky-bar {
+    display: block;
+  }
+  /* Esconde o FAB flutuante quando há sticky bar */
+  .prev-scope .prev-floating-fab {
+    display: none;
+  }
+  /* Cria espaço extra no fim da página pra não cobrir conteúdo */
+  .prev-scope footer {
+    padding-bottom: 5rem !important;
+  }
+}
+
+.prev-rose-theme .prev-sticky-bar {
+  background: rgba(92, 45, 58, 0.95);
+  border-top-color: rgba(232, 163, 176, 0.35);
+}

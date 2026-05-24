@@ -9,7 +9,20 @@ export default function PrevInvalidez() {
       metaDescription="Aposentadoria por invalidez é pra quem não tem mais como trabalhar de forma permanente. INSS negou? Cortou seu benefício? A gente te ajuda."
       canonicalPath="/prev/aposentadoria-por-invalidez"
       breadcrumb="Em quais casos eu ajudo / Aposentadoria por Invalidez"
+      quizKey="aposentadoria-por-invalidez"
       heroImage={PREV_IMAGES.invalidez}
+      stats={[
+        { number: "60% + 2%", label: "Coeficiente (com bônus por anos extras)" },
+        { number: "+25%", label: "Adicional pra quem precisa de cuidador" },
+        { number: "2 anos", label: "Periodicidade da perícia de revisão" },
+      ]}
+      commonMistakes={[
+        "Pedir invalidez sem laudo de especialista detalhado (CID, prognóstico, impossibilidade de reabilitação).",
+        "Aceitar perícia superficial do INSS sem questionar — Justiça nomeia perito independente, melhor qualidade.",
+        "Esquecer de pedir o adicional de 25% — muitas vezes esquecido mesmo quando o paciente precisa de cuidador.",
+        "Voltar a trabalhar enquanto recebe — cessa o benefício imediatamente.",
+        "Não preparar para a perícia de revisão (a cada 2 anos) — laudos desatualizados podem fazer perder.",
+      ]}
       heroTitle={
         <>
           Não consegue mais{" "}

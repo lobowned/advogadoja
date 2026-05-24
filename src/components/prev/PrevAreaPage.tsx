@@ -1,14 +1,19 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
+import { CheckCircle2, MessageCircle, AlertTriangle, BarChart3 } from "lucide-react";
 
 import PrevLayout from "./PrevLayout";
 import PrevFaq from "./PrevFaq";
-import { whatsappLink } from "@/lib/prev-config";
+import PrevWhatsappButton from "./PrevWhatsappButton";
 
 interface FaqItem {
   q: string;
   a: string;
+}
+
+interface StatItem {
+  number: string;
+  label: string;
 }
 
 interface PrevAreaPageProps {
@@ -21,18 +26,28 @@ interface PrevAreaPageProps {
   breadcrumb: string;
   heroTitle: React.ReactNode;
   heroSubtitle: string;
-  /** URL de foto opcional para o hero (foto contextual) — legado, prefira heroIllustration */
   heroImage?: { src: string; alt: string };
-  /** Ilustração SVG componente — preferido sobre heroImage */
   heroIllustration?: React.ReactNode;
+
+  // Quiz
+  /** Chave do quiz (corresponde ao slug). Se omitido, usa whatsappMessage diretamente. */
+  quizKey?: string;
+  /** Paleta do quiz modal */
+  palette?: "default" | "rose";
+
+  // Stats (faixa logo abaixo do hero)
+  stats?: [StatItem, StatItem, StatItem];
 
   // Quem pode pedir
   whoSectionTitle: string;
   whoItems: string[];
 
-  // Documentos necessários
+  // Documentos
   docsSectionTitle: string;
   docsItems: string[];
+
+  // Erros comuns
+  commonMistakes?: string[];
 
   // Estratégia
   strategyTitle: string;
@@ -55,6 +70,10 @@ export default function PrevAreaPage({
   heroSubtitle,
   heroImage,
   heroIllustration,
+  quizKey,
+  palette = "default",
+  stats,
+  commonMistakes,
   whoSectionTitle,
   whoItems,
   docsSectionTitle,
@@ -73,7 +92,7 @@ export default function PrevAreaPage({
         <link rel="canonical" href={`https://advogadoja.lovable.app${canonicalPath}`} />
       </Helmet>
 
-      <PrevLayout ctaMessage={whatsappMessage}>
+      <PrevLayout ctaMessage={whatsappMessage} quizKey={quizKey} palette={palette}>
         {/* HERO com ilustração SVG ou foto (legacy) */}
         <section className="bg-prev-navy text-prev-beige pt-14 pb-20 lg:pt-20 lg:pb-24 relative overflow-hidden">
           {/* Textura pontos */}
@@ -102,15 +121,14 @@ export default function PrevAreaPage({
                   <p className="text-lg text-prev-beige/85 leading-relaxed mb-8">
                     {heroSubtitle}
                   </p>
-                  <a
-                    href={whatsappLink(whatsappMessage)}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <PrevWhatsappButton
+                    quizKey={quizKey || ""}
+                    palette={palette}
                     className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5 hover:shadow-2xl"
                   >
                     <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
                     {whatsappButtonText}
-                  </a>
+                  </PrevWhatsappButton>
                 </div>
                 {heroIllustration ? (
                   <div className="relative max-w-md mx-auto lg:max-w-none">
@@ -141,22 +159,48 @@ export default function PrevAreaPage({
                 <p className="text-lg text-prev-beige/85 leading-relaxed max-w-2xl mb-8">
                   {heroSubtitle}
                 </p>
-                <a
-                  href={whatsappLink(whatsappMessage)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <PrevWhatsappButton
+                  quizKey={quizKey || ""}
+                  palette={palette}
                   className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
                 >
                   <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
                   {whatsappButtonText}
-                </a>
+                </PrevWhatsappButton>
               </div>
             )}
           </div>
         </section>
 
+        {/* STATS — faixa de números */}
+        {stats && (
+          <section className="bg-prev-beige border-y border-prev-navy/8 py-8 sm:py-10">
+            <div className="max-w-5xl mx-auto px-5">
+              <div className="grid grid-cols-3 gap-3 sm:gap-8">
+                {stats.map((s, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.1 }}
+                    className="text-center"
+                  >
+                    <div className="font-serif text-2xl sm:text-4xl text-prev-navy leading-none mb-1.5">
+                      {s.number}
+                    </div>
+                    <div className="text-[11px] sm:text-xs uppercase tracking-wider text-prev-navy/55 leading-tight">
+                      {s.label}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* QUEM PODE PEDIR */}
-        <section className="py-20 bg-white">
+        <section className="py-16 sm:py-20 bg-white">
           <div className="max-w-4xl mx-auto px-5">
             <div className="grid md:grid-cols-2 gap-12">
               <div>
@@ -243,6 +287,44 @@ export default function PrevAreaPage({
           </div>
         </section>
 
+        {/* ERROS COMUNS */}
+        {commonMistakes && commonMistakes.length > 0 && (
+          <section className="py-16 sm:py-20 bg-prev-navy text-prev-beige">
+            <div className="max-w-4xl mx-auto px-5">
+              <div className="max-w-2xl mb-10">
+                <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3 font-semibold">
+                  Erros que custam caro
+                </p>
+                <h2 className="font-serif text-3xl sm:text-4xl leading-tight">
+                  O que faz o INSS{" "}
+                  <span className="italic text-prev-gold">negar</span> (e como
+                  evitar)
+                </h2>
+              </div>
+              <ul className="space-y-3">
+                {commonMistakes.map((mistake, idx) => (
+                  <motion.li
+                    key={idx}
+                    initial={{ opacity: 0, x: 10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.06 }}
+                    className="flex items-start gap-3 bg-prev-beige/8 rounded-xl px-4 py-3.5 border border-prev-beige/10"
+                  >
+                    <AlertTriangle
+                      className="w-5 h-5 text-prev-gold flex-shrink-0 mt-0.5"
+                      strokeWidth={1.5}
+                    />
+                    <span className="text-prev-beige/85 leading-relaxed text-[15px]">
+                      {mistake}
+                    </span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+
         {/* FAQ */}
         <PrevFaq items={faq} />
 
@@ -256,15 +338,14 @@ export default function PrevAreaPage({
               Manda mensagem agora — me conta sua situação que eu te falo o
               que dá pra fazer.
             </p>
-            <a
-              href={whatsappLink(whatsappMessage)}
-              target="_blank"
-              rel="noopener noreferrer"
+            <PrevWhatsappButton
+              quizKey={quizKey || ""}
+              palette={palette}
               className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
             >
               <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
               Falar agora pelo WhatsApp
-            </a>
+            </PrevWhatsappButton>
             <p className="text-xs text-prev-navy/50 mt-4">
               Resposta em até 2 horas úteis · Sigilo profissional total
             </p>

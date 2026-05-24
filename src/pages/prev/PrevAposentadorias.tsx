@@ -5,11 +5,11 @@ import { ArrowRight, ArrowUpRight, MessageCircle } from "lucide-react";
 
 import PrevLayout from "@/components/prev/PrevLayout";
 import PrevFaq from "@/components/prev/PrevFaq";
+import PrevWhatsappButton from "@/components/prev/PrevWhatsappButton";
 import { PREV_IMAGES } from "@/lib/prev-images";
 import {
   APOSENTADORIA_TYPES,
   WHATSAPP_MESSAGES,
-  whatsappLink,
 } from "@/lib/prev-config";
 
 const FAQ_APOSENTADORIAS = [
@@ -43,7 +43,7 @@ export default function PrevAposentadorias() {
         <link rel="canonical" href="https://advogadoja.lovable.app/prev/aposentadorias" />
       </Helmet>
 
-      <PrevLayout ctaMessage={WHATSAPP_MESSAGES.aposentadorias}>
+      <PrevLayout ctaMessage={WHATSAPP_MESSAGES.aposentadorias} quizKey="aposentadorias">
         {/* HERO */}
         <section className="bg-prev-navy text-prev-beige pt-12 pb-16 lg:pt-20 lg:pb-24 relative overflow-hidden">
           <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-prev-gold/10 blur-3xl pointer-events-none" />
@@ -65,15 +65,13 @@ export default function PrevAposentadorias() {
                   olha junto seu CNIS e mostra qual aposentadoria é a melhor
                   pro seu caso.
                 </p>
-                <a
-                  href={whatsappLink(WHATSAPP_MESSAGES.aposentadorias)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <PrevWhatsappButton
+                  quizKey="aposentadorias"
                   className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-lg shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
                 >
                   <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
                   Analisar meu caso pelo WhatsApp
-                </a>
+                </PrevWhatsappButton>
               </div>
               <div className="aspect-[4/5] lg:aspect-[5/6] rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
                 <img
@@ -139,15 +137,13 @@ export default function PrevAposentadorias() {
               Conta sua situação pelo WhatsApp. Em algumas perguntas eu já
               indico qual o melhor caminho pro seu caso.
             </p>
-            <a
-              href={whatsappLink(WHATSAPP_MESSAGES.aposentadorias)}
-              target="_blank"
-              rel="noopener noreferrer"
+            <PrevWhatsappButton
+              quizKey="aposentadorias"
               className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
             >
               <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
               Falar pelo WhatsApp
-            </a>
+            </PrevWhatsappButton>
             <p className="text-xs text-prev-navy/50 mt-4">
               Resposta em até 2 horas úteis · Sigilo profissional total
             </p>

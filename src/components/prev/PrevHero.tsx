@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, MessageCircle, Clock, Heart } from "lucide-react";
 import { PREV_IMAGES } from "@/lib/prev-images";
-import { whatsappLink, WHATSAPP_MESSAGES } from "@/lib/prev-config";
 import PrevQuickCalc from "./PrevQuickCalc";
+import PrevWhatsappButton from "./PrevWhatsappButton";
 
 /**
  * Hero da home /prev — versão POPULAR com foto REAL de casal de idosos.
@@ -83,15 +83,13 @@ export default function PrevHero() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-3 mb-9"
             >
-              <a
-                href={whatsappLink(WHATSAPP_MESSAGES.home)}
-                target="_blank"
-                rel="noopener noreferrer"
+              <PrevWhatsappButton
+                quizKey="home"
                 className="group inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold text-base shadow-xl shadow-[#25D366]/30 transition-all hover:shadow-2xl hover:shadow-[#25D366]/40 hover:-translate-y-0.5"
               >
                 <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
                 Falar pelo WhatsApp agora
-              </a>
+              </PrevWhatsappButton>
               <a
                 href="#calculadora-rapida"
                 className="inline-flex items-center justify-center gap-2 text-prev-beige/90 hover:text-prev-gold px-5 py-4 rounded-full font-medium text-base transition-colors underline underline-offset-4 decoration-prev-gold/40 hover:decoration-prev-gold"

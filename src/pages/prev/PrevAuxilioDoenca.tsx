@@ -9,7 +9,20 @@ export default function PrevAuxilioDoenca() {
       metaDescription="Auxílio-doença do INSS para trabalhador afastado por doença. INSS negou ou cortou? A gente te ajuda a recorrer e ir pra Justiça se precisar."
       canonicalPath="/prev/auxilio-doenca"
       breadcrumb="Em quais casos eu ajudo / Auxílio-Doença"
+      quizKey="auxilio-doenca"
       heroImage={PREV_IMAGES.auxilioDoenca}
+      stats={[
+        { number: "37%", label: "Dos pedidos são negados administrativamente" },
+        { number: "12 meses", label: "Carência mínima exigida (com exceções)" },
+        { number: "8-18 meses", label: "Tempo médio na Justiça Federal" },
+      ]}
+      commonMistakes={[
+        "Ir na perícia sem laudos médicos completos e atualizados — principal causa de negativa.",
+        "Não pedir prorrogação até 15 dias ANTES da data de alta (perde o direito de continuar recebendo).",
+        "Aceitar a alta médica do INSS sem questionar quando ainda não tem condição de trabalhar.",
+        "Em acidente de trabalho, deixar a empresa não emitir a CAT — sem isso, perde a estabilidade de 12 meses no retorno.",
+        "Tentar resolver sozinho recursos administrativos cheios de tecnicidade.",
+      ]}
       heroTitle={
         <>
           INSS{" "}

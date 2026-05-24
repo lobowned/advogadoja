@@ -9,7 +9,21 @@ export default function PrevSalarioMaternidade() {
       metaDescription="Salário-maternidade do INSS é pra gestante, adotante ou guardiã. Empregada, MEI, autônoma, doméstica — todas têm direito. INSS negou? A gente te ajuda."
       canonicalPath="/prev/salario-maternidade"
       breadcrumb="Em quais casos eu ajudo / Salário-Maternidade"
+      quizKey="salario-maternidade"
+      palette="rose"
       heroImage={PREV_IMAGES.salarioMaternidade}
+      stats={[
+        { number: "120 dias", label: "Período de licença remunerada" },
+        { number: "10 meses", label: "Carência (MEI, autônoma, facultativa)" },
+        { number: "Até 180 dias", label: "Prazo para pedir após o parto" },
+      ]}
+      commonMistakes={[
+        "Não contar tempo de período de graça quando desempregada — você pode ainda ter qualidade de segurada.",
+        "Esquecer que MEI tem carência de 10 meses — pedir cedo demais é negativa garantida.",
+        "Adotantes não saberem que têm 120 dias igual mãe biológica (regra mudou em 2009).",
+        "Aceitar valor baixo da empresa (deveria ser salário integral pra CLT, não calculado errado).",
+        "Perder o prazo de 180 dias após o parto pra pedir o benefício.",
+      ]}
       heroTitle={
         <>
           Vai ser{" "}

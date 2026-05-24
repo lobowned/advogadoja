@@ -7,6 +7,7 @@ import PrevHero from "@/components/prev/PrevHero";
 import PrevAreaCard from "@/components/prev/PrevAreaCard";
 import PrevTrust from "@/components/prev/PrevTrust";
 import PrevFaq from "@/components/prev/PrevFaq";
+import PrevWhatsappButton from "@/components/prev/PrevWhatsappButton";
 import {
   LAWYER,
   PREV_AREAS,
@@ -84,7 +85,7 @@ export default function PrevHome() {
         <link rel="canonical" href="https://advogadoja.lovable.app/prev" />
       </Helmet>
 
-      <PrevLayout ctaMessage={WHATSAPP_MESSAGES.home}>
+      <PrevLayout ctaMessage={WHATSAPP_MESSAGES.home} quizKey="home">
         {/* HERO com foto humana */}
         <PrevHero />
 
@@ -228,15 +229,13 @@ export default function PrevHome() {
             </div>
 
             <div className="pt-8 border-t border-prev-beige/15">
-              <a
-                href={whatsappLink(WHATSAPP_MESSAGES.home)}
-                target="_blank"
-                rel="noopener noreferrer"
+              <PrevWhatsappButton
+                quizKey="home"
                 className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-3.5 rounded-full font-semibold shadow-lg shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
               >
                 <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
                 Começar agora pelo WhatsApp
-              </a>
+              </PrevWhatsappButton>
             </div>
           </div>
         </section>
@@ -259,15 +258,13 @@ export default function PrevHome() {
               mudanças nas regras que dificultam ainda mais. Manda uma
               mensagem agora.
             </p>
-            <a
-              href={whatsappLink(WHATSAPP_MESSAGES.home)}
-              target="_blank"
-              rel="noopener noreferrer"
+            <PrevWhatsappButton
+              quizKey="home"
               className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
             >
               <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
               Falar agora pelo WhatsApp
-            </a>
+            </PrevWhatsappButton>
             <p className="text-xs text-prev-navy/50 mt-4">
               Resposta em até 2 horas úteis · Sigilo profissional total
             </p>

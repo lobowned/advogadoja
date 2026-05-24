@@ -9,7 +9,20 @@ export default function PrevAposentadoriaIdade() {
       metaDescription="Aposentadoria por idade no INSS: homem com 65, mulher com 62. Veja quanto tempo de INSS precisa, regras de transição e como pedir o valor maior possível."
       canonicalPath="/prev/aposentadoria-por-idade"
       breadcrumb="Aposentadorias / Por idade"
+      quizKey="aposentadorias"
       heroImage={PREV_IMAGES.aposentadoriaIdade}
+      stats={[
+        { number: "65/62", label: "Idade mínima (homem/mulher)" },
+        { number: "20/15", label: "Anos mínimos de INSS (h/m)" },
+        { number: "+30%", label: "Diferença média entre regra nova e transição" },
+      ]}
+      commonMistakes={[
+        "Pedir pela regra nova sem simular as regras de transição (em muitos casos a transição paga mais e demora menos).",
+        "Não anexar PPP/LTCAT quando trabalhou em ambiente insalubre — perde direito ao tempo especial (que pode aumentar 40-67% do tempo).",
+        "Ignorar tempo de roça antigo — declaração de sindicato + testemunhas pode reduzir muito a idade necessária.",
+        "Esquecer carnês antigos de autônomo ou MEI que somam tempo de contribuição.",
+        "Pedir sem revisar o CNIS — vínculos faltando ou com datas erradas são MUITO comuns e o INSS não corrige sozinho.",
+      ]}
       heroTitle={
         <>
           Está perto de{" "}

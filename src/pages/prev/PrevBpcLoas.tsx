@@ -9,7 +9,20 @@ export default function PrevBpcLoas() {
       metaDescription="BPC/LOAS é 1 salário mínimo todo mês pra idoso de 65+ ou pessoa com deficiência em família de baixa renda. Não precisa ter contribuído ao INSS. A gente te ajuda a pedir."
       canonicalPath="/prev/bpc-loas"
       breadcrumb="Em quais casos eu ajudo / BPC / LOAS"
+      quizKey="bpc-loas"
       heroImage={PREV_IMAGES.bpcFamilia}
+      stats={[
+        { number: "1 salário", label: "Mínimo todo mês (vitalício)" },
+        { number: "65 anos", label: "Idade mínima (PCD não tem idade)" },
+        { number: "1/4", label: "Salário mín. de renda per capita máxima" },
+      ]}
+      commonMistakes={[
+        "Não atualizar o CadÚnico nos últimos 24 meses — INSS nega de cara.",
+        "Esquecer pessoas que moram na casa (ou incluir quem não mora) — composição familiar errada zera o pedido.",
+        "Não juntar comprovantes de gastos com saúde, fraldas, remédios — esses gastos diminuem a renda efetiva e podem viabilizar o benefício mesmo acima de 1/4 do salário.",
+        "Ir na perícia/avaliação social sem preparo — explicar bem o impacto da deficiência no dia a dia é decisivo.",
+        "Pedir BPC enquanto recebe outro benefício do INSS — não acumula com aposentadoria.",
+      ]}
       heroTitle={
         <>
           1 salário do governo,{" "}

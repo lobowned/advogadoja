@@ -11,6 +11,10 @@ import {
 } from "lucide-react";
 
 import PrevLayout from "@/components/prev/PrevLayout";
+import PrevTeam from "@/components/prev/PrevTeam";
+import PrevCredibility from "@/components/prev/PrevCredibility";
+import PrevFaq from "@/components/prev/PrevFaq";
+import { PREV_FAQ_GERAL } from "@/data/prev-faq-geral";
 import {
   LAWYER,
   WHATSAPP_MESSAGES,
@@ -264,6 +268,15 @@ export default function PrevContato() {
             </div>
           </div>
         </section>
+
+        {/* NOSSA EQUIPE */}
+        <PrevTeam />
+
+        {/* DEFENDEMOS SEUS DIREITOS */}
+        <PrevCredibility />
+
+        {/* FAQ */}
+        <PrevFaq items={PREV_FAQ_GERAL} />
       </PrevLayout>
     </>
   );

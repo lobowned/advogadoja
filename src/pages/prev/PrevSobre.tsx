@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { GraduationCap, MapPin, Scale, Shield, MessageCircle } from "lucide-react";
 
 import PrevLayout from "@/components/prev/PrevLayout";
+import PrevCredibility from "@/components/prev/PrevCredibility";
+import PrevFaq from "@/components/prev/PrevFaq";
+import { PREV_FAQ_GERAL } from "@/data/prev-faq-geral";
 import {
   LAWYER,
   WHATSAPP_MESSAGES,
@@ -200,6 +203,12 @@ export default function PrevSobre() {
             </div>
           </div>
         </section>
+
+        {/* DEFENDEMOS SEUS DIREITOS */}
+        <PrevCredibility />
+
+        {/* FAQ */}
+        <PrevFaq items={PREV_FAQ_GERAL} />
 
         {/* CTA editorial */}
         <section className="py-24 md:py-32 bg-white">

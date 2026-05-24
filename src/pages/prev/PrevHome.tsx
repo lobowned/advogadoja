@@ -6,6 +6,8 @@ import PrevLayout from "@/components/prev/PrevLayout";
 import PrevHero from "@/components/prev/PrevHero";
 import PrevAreaCard from "@/components/prev/PrevAreaCard";
 import PrevTrust from "@/components/prev/PrevTrust";
+import PrevTeam from "@/components/prev/PrevTeam";
+import PrevCredibility from "@/components/prev/PrevCredibility";
 import PrevFaq from "@/components/prev/PrevFaq";
 import PrevWhatsappButton from "@/components/prev/PrevWhatsappButton";
 import {
@@ -249,6 +251,12 @@ export default function PrevHome() {
             </div>
           </div>
         </section>
+
+        {/* NOSSA EQUIPE */}
+        <PrevTeam />
+
+        {/* DEFENDEMOS SEUS DIREITOS */}
+        <PrevCredibility />
 
         {/* FAQ */}
         <PrevFaq

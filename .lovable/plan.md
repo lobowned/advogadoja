@@ -1,66 +1,105 @@
+# Plano de refinamento visual — /prev (Previdenciário)
 
-# Reformulação da Home — Escritório de Advocacia (Esmeralda & Ouro)
+Objetivo: elevar todas as páginas do /prev a um padrão **editorial-jurídico premium** (estilo escritório boutique — pense Wachtell + Aesop + The New Yorker), mantendo conversão pelo WhatsApp e a paleta navy/gold/beige já consolidada.
 
-## Direção visual
+## 1. Sistema de design (base — afeta todas as páginas)
 
-- **Paleta**: verde esmeralda profundo (#064e3b), esmeralda médio (#0d7a5f), dourado (#c9a84c), creme/marfim (#f5f0e0). Sem azul/roxo/ciano. Sem gradientes coloridos. Bordas finas em dourado, fundos predominantemente marfim ou esmeralda escuro.
-- **Tipografia**: títulos em **DM Serif Display** (autoridade clássica), corpo em **Fira Sans** (limpeza institucional). Aplicada via tokens no `tailwind.config.ts` e import no `index.css`.
-- **Estrutura**: layout **magazine** — destaque editorial no hero + grid de áreas abaixo, como uma revista jurídica.
-- **Tom**: institucional, contido, "escritório tradicional + presença digital". Animações apenas sutis (fade-in no scroll, hover discreto).
+Arquivos: `src/styles/prev.css`, `tailwind.config.ts` (apenas tokens prev-*).
 
-## Hero novo (substitui o atual)
+- **Tipografia refinada**
+  - Display serif: trocar/reforçar uma fonte editorial (ex.: *Fraunces* ou *PP Editorial New*) para H1/H2 com `font-feature-settings` ligando ligaduras e oldstyle nums.
+  - Body: *Inter Tight* ou *Söhne*-like com tracking levemente negativo em títulos (-0.02em) e leading generoso no corpo (1.7).
+  - Itálicos dourados como "voz autoral" — já existe, padronizar peso e tamanho.
+- **Escala de cores estendida**
+  - `prev-navy` com 3 tons (deep / base / soft) + `prev-gold` com variação `gold-muted` para hovers.
+  - `prev-paper` (off-white quentinho #FAF7F1) para alternar com `prev-beige`.
+- **Espaçamento e ritmo**
+  - Seções com `py-24 md:py-32` (hoje py-20) para respiração editorial.
+  - Container central com max-w-6xl + margens internas mais firmes.
+- **Detalhes finos**
+  - Divisores hairline `border-prev-navy/8`.
+  - Números em destaque com `font-feature-settings: "tnum"`.
+  - Pequenas "drop caps" douradas em parágrafos de abertura de seções-chave.
 
-Remover por completo:
-- Vídeo de fundo + overlays azul/roxo
-- Partículas flutuantes
-- Glow/breathe pulsante na logo
-- Carrossel de avatares
-- Badges coloridos (verde neon, ciano)
-- Subtítulos e área-badge rotativos
-- "Qualquer Causa" em gradiente azul
+## 2. Componentes compartilhados
 
-Construir:
-- Fundo marfim sólido (`#f5f0e0`) com textura sutilíssima (linha dourada fina divisória, opcional).
-- Coluna esquerda (60%): "kicker" em maiúsculas com tracking largo ("Advocacia · Desde a primeira consulta"), **headline serifa única e fixa** ("Advogados para qualquer causa, com a seriedade de sempre"), subtítulo institucional curto, dois CTAs: principal dourado ("Falar com Advogado") + secundário outline esmeralda ("Conhecer o escritório").
-- Coluna direita (40%): card editorial com a logo, selo OAB, frase de credibilidade ("+2.500 clientes · OAB ativa · 15+ anos") e mini-lista de áreas em serifa.
-- Sem rotações de texto. Sem badges piscando. Linha dourada fina abaixo separando do próximo bloco.
+### `PrevHero.tsx`
+- Layout split 60/40: à esquerda eyebrow dourado + H1 com palavra-chave em itálico ouro + sub + 2 CTAs (WhatsApp primário, "ver como funciona" secundário ghost) + linha de trust (CNIS / OAB / atendimento Brasil).
+- À direita: foto humana com **moldura editorial** (borda 1px gold + offset shadow + legenda discreta tipo revista).
+- Micro-animação: fade-up escalonado (já há motion variants) + leve parallax na imagem ao scroll.
 
-## Demais blocos da home
+### `PrevAreaCard.tsx`
+- Card "editorial": imagem 4:5, overlay navy degradê no hover, título serif, short em sans, seta dourada animada (translate-x no hover).
+- Border-radius reduzido (rounded-xl → rounded-lg) para sensação mais sóbria.
 
-- **Faixa de credibilidade** (logo bar): "OAB · LGPD · SSL · Sigilo profissional" em fundo esmeralda escuro com texto marfim — substitui badges coloridos.
-- **Áreas de atuação (magazine grid)**: 6 cards em grid 3×2, cada um com ícone fino em dourado, título serifa, descrição curta. Sem cores diferentes por área — todos usam o mesmo tratamento esmeralda/marfim, distintos apenas por ícone.
-- **Casos de sucesso**: tratamento editorial (citação grande em serifa, atribuição discreta), sem balões coloridos.
-- Demais seções existentes (`PracticeAreasSection`, `ServicesSection`, `LegalProblemsSection`, `WhatsAppTestimonials`, `CredibilitySection`) recebem nova skin via tokens — sem mudar lógica nem rotas.
+### `PrevAreaPage.tsx` (template usado por 5 páginas)
+Refino seção a seção:
+1. **Hero interno** com breadcrumb dourado + H1 grande + foto à direita com mesma moldura.
+2. **Stats** em faixa horizontal navy, números em serif gigantes + label uppercase tracking-wide.
+3. **Quem tem direito**: lista com bullets dourados estilizados (•) + spacing maior.
+4. **Documentos**: grid 2 colunas em desktop, ícone de check fino (lucide CheckCircle2 stroke 1.2).
+5. **Estratégia**: bloco com quote-mark gigante de fundo (decorativo, opacity 5%), texto em coluna estreita (max-w-2xl) para legibilidade editorial.
+6. **Erros comuns**: cards com numeração serif + borda esquerda gold.
+7. **FAQ**: accordion com chevron dourado, divisores hairline, pergunta serif.
+8. **CTA final** com background navy + textura sutil (noise) + botão WhatsApp grande.
 
-## Tokens (index.css + tailwind.config.ts)
+### `PrevFaq.tsx`
+- Accordion com animação suave (já usa framer), adicionar leve fade no conteúdo e ícone +/− animado (rotate 45°).
 
-Reescrever variáveis HSL:
-- `--background`: marfim (#f5f0e0)
-- `--foreground`: esmeralda quase preto (#0a2e22)
-- `--primary`: esmeralda (#064e3b) / foreground marfim
-- `--accent`: dourado (#c9a84c) / foreground esmeralda
-- `--secondary`: esmeralda médio (#0d7a5f)
-- `--muted`: bege esmaecido
-- `--border`: dourado em baixa opacidade
-- Remover gradientes azul/roxo de `--gradient-*`. Criar `--gradient-emerald` sutil para usos pontuais.
-- Adicionar família `font-display` (DM Serif Display) e `font-sans` (Fira Sans) no tailwind.
+### `PrevTrust.tsx`
+- Layout em 3 colunas com ícones lineares finos (stroke 1.2), título serif curto, microcopy.
+- Faixa com selos: OAB, sigilo, atendimento Brasil — em uma régua horizontal monocromática.
 
-## Arquivos afetados
+### `PrevWhatsappButton.tsx`
+- Manter cor #25D366 (reconhecimento), mas adicionar variante "ghost-navy" para CTAs secundários e variante "inline-link" com sublinhado dourado.
 
-- `src/components/HeroSection.tsx` — reescrita completa (remoção dos efeitos, novo layout magazine)
-- `src/index.css` — novas variáveis HSL + import Google Fonts (DM Serif Display, Fira Sans)
-- `src/tailwind.config.ts` — `fontFamily.display`, `fontFamily.sans`, tokens atualizados
-- `src/pages/Index.tsx` — apenas ajustes de tom/copy nos blocos H2/H3 (nada de lógica)
-- `src/components/PracticeAreasSection.tsx` — uniformizar cores dos cards para esmeralda/dourado (remover `text-emerald-600`, `text-blue-600`, etc., usando tokens)
-- `src/components/CredibilitySection.tsx` / `TrustBadges.tsx` — neutralizar para esmeralda/dourado
+### `PrevLayout.tsx` (header + footer)
+- Header: nav slim, logo serif, link "Falar agora" em pill dourado outline.
+- Footer: 3 colunas (sobre / áreas / contato) + linha legal OAB + assinatura em itálico discreta.
 
-## O que NÃO muda
+## 3. Refinamentos por página
 
-- Rotas, `App.tsx`, navegação
-- Lógica de leads, WhatsApp, calculadoras
-- SEO/meta já generalista do `Index.tsx` (só ajuste de tom se necessário)
-- Páginas de landing internas (continuam com seus próprios temas)
+### `PrevHome.tsx`
+- Hero novo (acima) + seção "Em quais casos eu ajudo" virar **grid editorial assimétrico** (1 card grande + 4 menores) em vez de grid uniforme.
+- Casos reais: cards com aspas decorativas gigantes em ouro, separador hairline interno.
+- "Como começamos" (navy): trocar numeração por **timeline vertical em desktop / horizontal mobile** com linha dourada conectando os 3 passos.
 
-## Resultado esperado
+### `PrevAposentadorias.tsx`
+- Adicionar tabela comparativa "Qual aposentadoria é a sua?" em estilo editorial (sem zebras, só hairlines).
 
-Hero institucional, sóbrio, marfim com dourado e esmeralda, tipografia serifada — sensação de "escritório de advocacia tradicional + bem desenhado", sem perder os elementos de conversão (CTAs WhatsApp continuam visíveis e claros).
+### `PrevAposentadoriaIdade / AuxilioDoenca / Invalidez / BpcLoas / SalarioMaternidade`
+- Usam `PrevAreaPage` — herdam refino automático.
+- Revisar heroImage de cada uma para garantir consistência de moldura/legenda.
+
+### `PrevContato.tsx`
+- Layout split: à esquerda copy editorial + horários + canais; à direita card WhatsApp destacado com QR code + número grande.
+- Mapa simbólico ("Atendo Brasil todo") em vez de mapa real.
+
+### `PrevSobre.tsx`
+- Estrutura tipo "About" de escritório boutique: foto preto-e-branco grande à esquerda, biografia em coluna estreita à direita, citações em itálico ouro intercaladas, linha do tempo da carreira, OAB e formação em tipografia tabular.
+
+## 4. Microinterações e motion
+
+Arquivo: `src/lib/motion-variants.ts` (já existe).
+
+- Padronizar fade-up 0.5s ease-out com stagger 0.08.
+- Hover de cards: lift -2px + shadow editorial suave.
+- Imagens: reveal com clip-path (curtain) na primeira aparição.
+- Respeitar `prefers-reduced-motion` (já implementado, manter).
+
+## 5. Acessibilidade & QA
+
+- Contraste AA em todo texto sobre navy e sobre gold.
+- Focus rings dourados visíveis em todos interativos.
+- Alt text revisado em todas as fotos humanas.
+- Mobile: revisar `py-` reduzido, hero stack vertical com imagem abaixo do copy, CTAs full-width.
+
+## Ordem de execução sugerida
+
+1. Tokens + tipografia (`prev.css`, tailwind config).
+2. Componentes compartilhados (Hero, AreaCard, AreaPage, Faq, Trust, Layout).
+3. PrevHome (mais visível).
+4. Contato + Sobre.
+5. QA final em mobile e desktop, screenshot de cada rota.
+
+Sem mudanças de copy, sem mexer em conversão (WhatsApp continua único canal), sem tocar em lógica/backend.

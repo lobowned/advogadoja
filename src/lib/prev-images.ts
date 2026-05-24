@@ -85,6 +85,18 @@ export const PREV_IMAGES = {
     credit: "Pexels",
   },
 
+  // ===== SALÁRIO-MATERNIDADE =====
+  salarioMaternidade: {
+    src: pexels(28206889, 1200),
+    alt: "Gestante sorrindo, segurando a barriga em casa",
+    credit: "Pexels",
+  },
+  salarioMaternidadeCasal: {
+    src: pexels(5032805, 1000),
+    alt: "Casal esperando bebê, abraçados ao ar livre",
+    credit: "Pexels",
+  },
+
   // ===== ATENDIMENTO =====
   whatsapp: {
     src: pexels(6248451, 800),

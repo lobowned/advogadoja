@@ -70,6 +70,8 @@ export const WHATSAPP_MESSAGES = {
     "Olá! Preciso de orientação sobre aposentadoria por invalidez (incapacidade permanente).",
   bpcLoas:
     "Olá! Preciso de orientação sobre BPC/LOAS (benefício assistencial).",
+  salarioMaternidade:
+    "Olá! Preciso de orientação sobre Salário-Maternidade do INSS.",
   sobre: "Olá! Vi o perfil do(a) advogado(a) e quero conversar sobre meu caso.",
   contato: "Olá! Quero agendar uma conversa sobre meu caso previdenciário.",
 } as const;
@@ -115,6 +117,15 @@ export const PREV_AREAS = [
       "Idoso a partir de 65 anos ou pessoa com deficiência em família de baixa renda tem direito a 1 salário mínimo do governo todo mês. Não precisa nem ter contribuído ao INSS.",
     icon: "HandHeart",
     imageKey: "bpcIdoso",
+  },
+  {
+    slug: "salario-maternidade",
+    title: "Salário-Maternidade",
+    short: "Licença remunerada de 120 dias",
+    description:
+      "Gestante, adotante ou guardiã tem direito ao salário-maternidade do INSS durante 120 dias. Vale pra empregada, autônoma, MEI, doméstica, segurada especial e desempregada (com carência).",
+    icon: "Baby",
+    imageKey: "salarioMaternidade",
   },
 ] as const;
 

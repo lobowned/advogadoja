@@ -16,6 +16,7 @@ const PrevAposentadoriaIdade = lazy(() => import("./pages/prev/PrevAposentadoria
 const PrevAuxilioDoenca = lazy(() => import("./pages/prev/PrevAuxilioDoenca"));
 const PrevInvalidez = lazy(() => import("./pages/prev/PrevInvalidez"));
 const PrevBpcLoas = lazy(() => import("./pages/prev/PrevBpcLoas"));
+const PrevSalarioMaternidade = lazy(() => import("./pages/prev/PrevSalarioMaternidade"));
 const PrevSobre = lazy(() => import("./pages/prev/PrevSobre"));
 const PrevContato = lazy(() => import("./pages/prev/PrevContato"));
 
@@ -266,6 +267,7 @@ const AnimatedRoutes = () => {
                 <Route path="auxilio-doenca" element={<PrevAuxilioDoenca />} />
                 <Route path="invalidez" element={<PrevInvalidez />} />
                 <Route path="bpc-loas" element={<PrevBpcLoas />} />
+                <Route path="salario-maternidade" element={<PrevSalarioMaternidade />} />
                 <Route path="sobre" element={<PrevSobre />} />
                 <Route path="contato" element={<PrevContato />} />
               </Routes>

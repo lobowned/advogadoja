@@ -15,12 +15,13 @@ import {
 } from "@/lib/prev-config";
 import { PREV_IMAGES } from "@/lib/prev-images";
 
-/** Mapa: slug da área → foto Pexels (idoso/PCD real). */
+/** Mapa: slug da área → foto Pexels (idoso/PCD/gestante real). */
 const AREA_PHOTOS: Record<string, { src: string; alt: string }> = {
   aposentadorias: PREV_IMAGES.aposentadoriaIdade,
   "auxilio-doenca": PREV_IMAGES.auxilioDoenca,
   "aposentadoria-por-invalidez": PREV_IMAGES.invalidez,
   "bpc-loas": PREV_IMAGES.bpcFamilia,
+  "salario-maternidade": PREV_IMAGES.salarioMaternidade,
 };
 
 const FAQ_HOME = [
@@ -105,7 +106,7 @@ export default function PrevHome() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
               {PREV_AREAS.map((area, idx) => {
                 const photo = AREA_PHOTOS[area.slug];
                 return (

@@ -112,10 +112,10 @@
 
 /* Aspas decorativas gigantes */
 .prev-scope .prev-quote-mark {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Instrument Serif", Georgia, serif;
   font-style: italic;
-  font-size: 8rem;
-  line-height: 0.7;
+  font-size: 5rem;
+  line-height: 0.8;
   color: rgba(201, 169, 97, 0.18);
   user-select: none;
 }

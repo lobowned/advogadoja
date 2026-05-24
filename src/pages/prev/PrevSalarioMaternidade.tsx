@@ -1,6 +1,5 @@
 import PrevAreaPage from "@/components/prev/PrevAreaPage";
 import { WHATSAPP_MESSAGES } from "@/lib/prev-config";
-import { PREV_IMAGES } from "@/lib/prev-images";
 
 export default function PrevSalarioMaternidade() {
   return (
@@ -11,7 +10,6 @@ export default function PrevSalarioMaternidade() {
       breadcrumb="Em quais casos eu ajudo / Salário-Maternidade"
       quizKey="salario-maternidade"
       palette="rose"
-      heroImage={PREV_IMAGES.salarioMaternidade}
       stats={[
         { number: "120 dias", label: "Período de licença remunerada" },
         { number: "10 meses", label: "Carência (MEI, autônoma, facultativa)" },

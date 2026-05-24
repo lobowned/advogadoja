@@ -1,6 +1,5 @@
 import PrevAreaPage from "@/components/prev/PrevAreaPage";
 import { WHATSAPP_MESSAGES } from "@/lib/prev-config";
-import { PREV_IMAGES } from "@/lib/prev-images";
 
 export default function PrevBpcLoas() {
   return (
@@ -10,7 +9,6 @@ export default function PrevBpcLoas() {
       canonicalPath="/prev/bpc-loas"
       breadcrumb="Em quais casos eu ajudo / BPC / LOAS"
       quizKey="bpc-loas"
-      heroImage={PREV_IMAGES.bpcFamilia}
       stats={[
         { number: "1 salário", label: "Mínimo todo mês (vitalício)" },
         { number: "65 anos", label: "Idade mínima (PCD não tem idade)" },

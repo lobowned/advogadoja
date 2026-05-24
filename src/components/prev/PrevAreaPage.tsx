@@ -28,8 +28,6 @@ interface PrevAreaPageProps {
   breadcrumb: string;
   heroTitle: React.ReactNode;
   heroSubtitle: string;
-  heroImage?: { src: string; alt: string };
-  heroIllustration?: React.ReactNode;
 
   // Quiz
   /** Chave do quiz (corresponde ao slug). Se omitido, usa whatsappMessage diretamente. */
@@ -70,8 +68,6 @@ export default function PrevAreaPage({
   breadcrumb,
   heroTitle,
   heroSubtitle,
-  heroImage,
-  heroIllustration,
   quizKey,
   palette = "default",
   stats,
@@ -127,68 +123,26 @@ export default function PrevAreaPage({
           <div className="absolute -bottom-32 -left-20 w-[28rem] h-[28rem] rounded-full bg-prev-salvia/12 blur-[140px] pointer-events-none" />
 
           <div className="relative max-w-6xl mx-auto px-5">
-            {heroIllustration || heroImage ? (
-              <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-center">
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-6 font-semibold flex items-center gap-3">
-                    <span className="w-8 h-px bg-prev-gold" />
-                    {breadcrumb}
-                  </p>
-                  <h1 className="font-serif text-[2.4rem] sm:text-5xl lg:text-[3.6rem] leading-[1.02] tracking-[-0.025em] mb-7">
-                    {heroTitle}
-                  </h1>
-                  <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] mb-9 max-w-xl">
-                    {heroSubtitle}
-                  </p>
-                  <PrevWhatsappButton
-                    quizKey={quizKey || ""}
-                    palette={palette}
-                    className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5 hover:shadow-2xl"
-                  >
-                    <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
-                    {whatsappButtonText}
-                  </PrevWhatsappButton>
-                </div>
-                {heroIllustration ? (
-                  <div className="relative max-w-md mx-auto lg:max-w-none">
-                    <div className="absolute inset-0 bg-gradient-to-br from-prev-gold/20 via-prev-salvia/15 to-transparent rounded-[40%_60%_50%_45%/45%_50%_60%_40%] blur-2xl" />
-                    <div className="relative w-full max-w-[400px] mx-auto drop-shadow-2xl">
-                      {heroIllustration}
-                    </div>
-                  </div>
-                ) : heroImage ? (
-                  <div className="prev-frame aspect-[4/5] lg:aspect-[5/6] rounded-sm overflow-hidden shadow-2xl shadow-black/40">
-                    <img
-                      src={heroImage.src}
-                      alt={heroImage.alt}
-                      loading="eager"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ) : null}
-              </div>
-            ) : (
-              <div className="max-w-3xl">
-                <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-6 font-semibold flex items-center gap-3">
-                  <span className="w-8 h-px bg-prev-gold" />
-                  {breadcrumb}
-                </p>
-                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.025em] mb-7">
-                  {heroTitle}
-                </h1>
-                <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] max-w-2xl mb-9">
-                  {heroSubtitle}
-                </p>
-                <PrevWhatsappButton
-                  quizKey={quizKey || ""}
-                  palette={palette}
-                  className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
-                >
-                  <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
-                  {whatsappButtonText}
-                </PrevWhatsappButton>
-              </div>
-            )}
+            <div className="max-w-3xl">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-6 font-semibold flex items-center gap-3">
+                <span className="w-8 h-px bg-prev-gold" />
+                {breadcrumb}
+              </p>
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.025em] mb-7">
+                {heroTitle}
+              </h1>
+              <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] max-w-2xl mb-9">
+                {heroSubtitle}
+              </p>
+              <PrevWhatsappButton
+                quizKey={quizKey || ""}
+                palette={palette}
+                className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
+              >
+                <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
+                {whatsappButtonText}
+              </PrevWhatsappButton>
+            </div>
           </div>
         </section>
 

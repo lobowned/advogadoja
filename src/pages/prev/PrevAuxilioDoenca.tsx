@@ -1,6 +1,5 @@
 import PrevAreaPage from "@/components/prev/PrevAreaPage";
 import { WHATSAPP_MESSAGES } from "@/lib/prev-config";
-import { PREV_IMAGES } from "@/lib/prev-images";
 
 export default function PrevAuxilioDoenca() {
   return (
@@ -10,7 +9,6 @@ export default function PrevAuxilioDoenca() {
       canonicalPath="/prev/auxilio-doenca"
       breadcrumb="Em quais casos eu ajudo / Auxílio-Doença"
       quizKey="auxilio-doenca"
-      heroImage={PREV_IMAGES.auxilioDoenca}
       stats={[
         { number: "37%", label: "Dos pedidos são negados administrativamente" },
         { number: "12 meses", label: "Carência mínima exigida (com exceções)" },

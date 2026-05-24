@@ -97,6 +97,9 @@ export default function PrevAreaPage({
   faq,
   whatsappMessage,
   whatsappButtonText = "Conversar agora pelo WhatsApp",
+  experienceYears = "+10",
+  trustRows = DEFAULT_TRUST_ROWS,
+  hideTrustCard = false,
 }: PrevAreaPageProps) {
   return (
     <>
@@ -107,8 +110,8 @@ export default function PrevAreaPage({
       </Helmet>
 
       <PrevLayout ctaMessage={whatsappMessage} quizKey={quizKey} palette={palette}>
-        {/* HERO com ilustração SVG ou foto (legacy) */}
-        <section className="bg-prev-navy text-prev-beige pt-14 pb-20 lg:pt-20 lg:pb-24 relative overflow-hidden">
+        {/* HERO — Premium Editorial Split */}
+        <section className="bg-prev-navy text-prev-beige pt-14 pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden">
           {/* Video background */}
           <video
             className="absolute inset-0 w-full h-full object-cover"
@@ -121,9 +124,9 @@ export default function PrevAreaPage({
           >
             <source src="/videos/hero-background.mp4" type="video/mp4" />
           </video>
-          {/* Dark navy overlay for video readability */}
-          <div className="absolute inset-0 bg-prev-navy/80 pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-b from-prev-navy/60 via-prev-navy/80 to-prev-navy/95 pointer-events-none" />
+          {/* Horizontal navy gradient: lado esquerdo opaco pra legibilidade, direito mais leve pra revelar o vídeo atrás do card */}
+          <div className="absolute inset-0 bg-gradient-to-r from-prev-navy via-prev-navy/95 to-prev-navy/40 pointer-events-none" />
+          <div className="absolute inset-0 bg-prev-navy/30 pointer-events-none lg:hidden" />
 
           {/* Textura pontos */}
           <div
@@ -139,28 +142,101 @@ export default function PrevAreaPage({
           <div className="absolute -bottom-32 -left-20 w-[28rem] h-[28rem] rounded-full bg-prev-salvia/12 blur-[140px] pointer-events-none" />
 
           <div className="relative max-w-6xl mx-auto px-5">
-            <div className="max-w-3xl">
-              <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-6 font-semibold flex items-center gap-3">
-                <span className="w-8 h-px bg-prev-gold" />
-                {breadcrumb}
-              </p>
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.025em] mb-7">
-                {heroTitle}
-              </h1>
-              <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] max-w-2xl mb-9">
-                {heroSubtitle}
-              </p>
-              <PrevWhatsappButton
-                quizKey={quizKey || ""}
-                palette={palette}
-                className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
-              >
-                <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
-                {whatsappButtonText}
-              </PrevWhatsappButton>
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              {/* Coluna esquerda */}
+              <div className="lg:col-span-7">
+                <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-6 font-semibold flex items-center gap-3">
+                  <span className="w-8 h-px bg-prev-gold" />
+                  {breadcrumb}
+                </p>
+                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.025em] mb-7">
+                  {heroTitle}
+                </h1>
+                <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] max-w-xl mb-9">
+                  {heroSubtitle}
+                </p>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7">
+                  <PrevWhatsappButton
+                    quizKey={quizKey || ""}
+                    palette={palette}
+                    className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
+                  >
+                    <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
+                    {whatsappButtonText}
+                  </PrevWhatsappButton>
+                  <div className="flex flex-col">
+                    <div className="flex gap-0.5 text-prev-gold mb-1" aria-hidden>
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={i} className="w-3.5 h-3.5 fill-prev-gold" strokeWidth={0} />
+                      ))}
+                    </div>
+                    <span className="text-prev-beige/55 text-[10px] uppercase tracking-[0.18em] font-semibold">
+                      Resposta em até 2 horas úteis
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Coluna direita — card de confiança */}
+              {!hideTrustCard && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.15 }}
+                  className="lg:col-span-5 relative"
+                >
+                  <div className="relative">
+                    {/* Badge dourado flutuante (só desktop) */}
+                    <div className="hidden lg:block absolute -top-10 -left-6 z-20 bg-prev-gold text-prev-navy px-5 py-4 shadow-2xl border border-prev-beige/10">
+                      <div className="font-serif text-3xl font-bold leading-none tnum">
+                        {experienceYears}
+                      </div>
+                      <div className="text-[9px] font-bold uppercase tracking-[0.1em] opacity-80 leading-tight mt-1.5 max-w-[120px]">
+                        Anos de experiência em Direito Previdenciário
+                      </div>
+                    </div>
+
+                    {/* Glow */}
+                    <div aria-hidden className="absolute -inset-4 bg-prev-gold/5 blur-3xl rounded-full -z-10" />
+
+                    {/* Card */}
+                    <div className="relative bg-prev-beige/[0.04] backdrop-blur-md border border-prev-beige/10 p-7 lg:pt-14 overflow-hidden">
+                      <div aria-hidden className="absolute top-0 right-0 w-32 h-32 bg-prev-gold/10 rounded-full blur-2xl translate-x-1/2 -translate-y-1/2" />
+
+                      <div className="relative space-y-6">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 rounded-full border border-prev-gold/50 flex items-center justify-center bg-prev-navy/50 flex-shrink-0">
+                            <ShieldCheck className="w-5 h-5 text-prev-gold" strokeWidth={1.5} />
+                          </div>
+                          <div>
+                            <div className="text-prev-beige font-semibold text-[15px]">
+                              Inscrito na OAB
+                            </div>
+                            <div className="text-prev-beige/55 text-[10px] uppercase tracking-[0.18em] font-semibold mt-0.5">
+                              Advogado regularmente habilitado
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="h-px bg-prev-beige/10" />
+
+                        <div className="space-y-3.5">
+                          {trustRows.map((row, idx) => (
+                            <div key={idx} className="flex justify-between items-center text-[13.5px] gap-4">
+                              <span className="text-prev-beige/60">{row.label}</span>
+                              <span className="text-prev-gold font-semibold text-right">{row.value}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
             </div>
           </div>
         </section>
+
 
         {/* STATS — faixa editorial */}
         {stats && (

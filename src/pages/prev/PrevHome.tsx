@@ -252,6 +252,12 @@ export default function PrevHome() {
           </div>
         </section>
 
+        {/* NOSSA EQUIPE */}
+        <PrevTeam />
+
+        {/* DEFENDEMOS SEUS DIREITOS */}
+        <PrevCredibility />
+
         {/* FAQ */}
         <PrevFaq
           title="Dúvidas mais frequentes"

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, MessageCircle, Clock, Heart } from "lucide-react";
-import { PREV_IMAGES } from "@/lib/prev-images";
 import PrevQuickCalc from "./PrevQuickCalc";
 import PrevWhatsappButton from "./PrevWhatsappButton";
 

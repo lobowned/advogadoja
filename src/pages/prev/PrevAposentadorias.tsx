@@ -45,21 +45,31 @@ export default function PrevAposentadorias() {
 
       <PrevLayout ctaMessage={WHATSAPP_MESSAGES.aposentadorias} quizKey="aposentadorias">
         {/* HERO */}
-        <section className="bg-prev-navy text-prev-beige pt-12 pb-16 lg:pt-20 lg:pb-24 relative overflow-hidden">
+        <section className="bg-prev-navy text-prev-beige pt-14 pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden">
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 1px 1px, #F5F1EA 1px, transparent 0)",
+              backgroundSize: "32px 32px",
+            }}
+          />
           <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-prev-gold/10 blur-3xl pointer-events-none" />
           <div className="relative max-w-6xl mx-auto px-5">
-            <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-14 items-center">
+            <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-center">
               <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-4">
+                <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-6 font-semibold flex items-center gap-3">
+                  <span className="w-8 h-px bg-prev-gold" />
                   Aposentadorias
                 </p>
-                <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight mb-6">
+                <h1 className="font-serif text-[2.4rem] sm:text-5xl lg:text-[3.6rem] leading-[1.02] tracking-[-0.025em] mb-7">
                   Existem{" "}
                   <span className="italic text-prev-gold">5 caminhos</span>{" "}
                   pra aposentar.
                   <br /> Qual é o seu?
                 </h1>
-                <p className="text-lg text-prev-beige/85 leading-relaxed mb-8">
+                <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] mb-9 max-w-xl">
                   Depois da Reforma de 2019, escolher errado pode te fazer
                   perder muito dinheiro — todo mês, pelo resto da vida. A gente
                   olha junto seu CNIS e mostra qual aposentadoria é a melhor
@@ -73,7 +83,7 @@ export default function PrevAposentadorias() {
                   Analisar meu caso pelo WhatsApp
                 </PrevWhatsappButton>
               </div>
-              <div className="aspect-[4/5] lg:aspect-[5/6] rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
+              <div className="prev-frame aspect-[4/5] lg:aspect-[5/6] rounded-sm overflow-hidden shadow-2xl shadow-black/40">
                 <img
                   src={PREV_IMAGES.heroCouple.src}
                   alt={PREV_IMAGES.heroCouple.alt}
@@ -85,38 +95,45 @@ export default function PrevAposentadorias() {
           </div>
         </section>
 
-        {/* TIPOS DE APOSENTADORIA */}
-        <section className="py-20 bg-white">
+        {/* TIPOS DE APOSENTADORIA — lista editorial numerada */}
+        <section className="py-24 md:py-32 bg-white">
           <div className="max-w-5xl mx-auto px-5">
-            <div className="space-y-6">
+            <div className="max-w-xl mb-14">
+              <span className="prev-eyebrow mb-4">Os 5 caminhos</span>
+              <h2 className="font-serif text-4xl sm:text-5xl text-prev-navy leading-[1.05] mt-3">
+                Qual aposentadoria é a <span className="italic text-prev-gold">sua</span>?
+              </h2>
+            </div>
+            <div className="divide-y divide-prev-navy/10 border-y border-prev-navy/10">
               {APOSENTADORIA_TYPES.map((type, idx) => (
                 <motion.div
                   key={type.slug}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: idx * 0.06 }}
                 >
                   <Link
                     to={`/prev/${type.slug}`}
-                    className="group block border border-prev-navy/10 rounded-2xl p-7 hover:border-prev-gold/40 hover:bg-prev-beige/40 transition-all"
+                    className="group grid grid-cols-[auto_1fr_auto] gap-6 items-baseline py-7 px-2 hover:bg-prev-beige/40 transition-colors"
                   >
-                    <div className="flex items-start justify-between gap-6">
-                      <div className="flex-1">
-                        <div className="flex items-baseline gap-3 mb-2 flex-wrap">
-                          <h2 className="font-serif text-2xl text-prev-navy leading-tight">
-                            {type.title}
-                          </h2>
-                          <span className="text-xs uppercase tracking-wider text-prev-navy/50">
-                            {type.short}
-                          </span>
-                        </div>
-                        <p className="text-prev-navy/75 leading-relaxed">
-                          {type.when}
-                        </p>
+                    <span className="font-serif text-prev-gold/80 text-2xl tnum w-12">
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <div className="flex items-baseline gap-3 mb-1.5 flex-wrap">
+                        <h3 className="font-serif text-2xl sm:text-[1.7rem] text-prev-navy leading-tight group-hover:text-prev-gold transition-colors">
+                          {type.title}
+                        </h3>
+                        <span className="text-[10px] uppercase tracking-[0.22em] text-prev-navy/55">
+                          {type.short}
+                        </span>
                       </div>
-                      <ArrowUpRight className="flex-shrink-0 w-6 h-6 text-prev-navy/30 group-hover:text-prev-gold group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+                      <p className="text-prev-navy/72 leading-[1.65] max-w-2xl">
+                        {type.when}
+                      </p>
                     </div>
+                    <ArrowUpRight className="flex-shrink-0 w-5 h-5 text-prev-navy/30 group-hover:text-prev-gold group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" strokeWidth={1.5} />
                   </Link>
                 </motion.div>
               ))}
@@ -127,24 +144,25 @@ export default function PrevAposentadorias() {
         <PrevFaq items={FAQ_APOSENTADORIAS} />
 
         {/* CTA */}
-        <section className="py-20 bg-prev-beige">
-          <div className="max-w-3xl mx-auto px-5 text-center">
-            <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-5">
+        <section className="py-24 md:py-32 bg-prev-beige">
+          <div className="max-w-2xl mx-auto px-5 text-center">
+            <span className="prev-eyebrow mb-4 justify-center">Próximo passo</span>
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-prev-navy leading-[1.02] mb-6 mt-3">
               Não pede a aposentadoria{" "}
-              <span className="italic">errada</span>.
+              <span className="italic text-prev-gold">errada</span>.
             </h2>
-            <p className="text-prev-navy/70 text-lg mb-8 leading-relaxed">
+            <p className="text-prev-navy/72 text-lg mb-10 leading-[1.7]">
               Conta sua situação pelo WhatsApp. Em algumas perguntas eu já
               indico qual o melhor caminho pro seu caso.
             </p>
             <PrevWhatsappButton
               quizKey="aposentadorias"
-              className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-9 py-4 rounded-full font-semibold text-lg shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
             >
               <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
               Falar pelo WhatsApp
             </PrevWhatsappButton>
-            <p className="text-xs text-prev-navy/50 mt-4">
+            <p className="text-xs text-prev-navy/50 mt-5 tracking-wide">
               Resposta em até 2 horas úteis · Sigilo profissional total
             </p>
           </div>

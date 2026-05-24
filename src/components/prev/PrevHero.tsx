@@ -126,7 +126,7 @@ export default function PrevHero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="relative"
           >
-            <div className="prev-frame relative aspect-[4/5] rounded-sm overflow-hidden shadow-2xl shadow-black/50">
+            <div className="relative aspect-[4/5] rounded-sm overflow-hidden shadow-2xl shadow-black/50 ring-1 ring-prev-gold/30">
               <img
                 src={PREV_IMAGES.heroCouple.src}
                 alt={PREV_IMAGES.heroCouple.alt}
@@ -164,18 +164,6 @@ export default function PrevHero() {
               </div>
             </motion.div>
 
-            {/* Selo flutuante topo direito */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8, rotate: -8 }}
-              animate={{ opacity: 1, scale: 1, rotate: -8 }}
-              transition={{ duration: 0.5, delay: 0.9 }}
-              className="hidden lg:flex absolute -top-3 -right-3 bg-prev-gold text-prev-navy px-4 py-2.5 rounded-full shadow-xl items-center gap-1.5"
-            >
-              <Heart className="w-3.5 h-3.5 fill-prev-navy" strokeWidth={0} />
-              <span className="text-xs font-bold uppercase tracking-wider">
-                Caso por caso
-              </span>
-            </motion.div>
           </motion.div>
         </div>
 

@@ -52,8 +52,8 @@ export default function PrevTrust() {
               className="bg-prev-beige p-7 group hover:bg-white transition-colors duration-500"
             >
               <p.icon
-                className="w-7 h-7 text-prev-gold mb-6 group-hover:scale-110 transition-transform duration-500"
-                strokeWidth={1.2}
+                className="w-7 h-7 text-prev-navy/75 mb-6 group-hover:text-prev-gold transition-colors duration-500"
+                strokeWidth={1.5}
               />
               <h3 className="font-serif text-[1.35rem] text-prev-navy mb-3 leading-tight">
                 {p.title}

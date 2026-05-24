@@ -3,19 +3,21 @@
  * Aninhados em `.prev-scope` (aplicado no PrevLayout)
  * para NÃO afetar o resto do site Advogado Já.
  *
- * Fontes via Google Fonts: Fraunces (serif) + Inter (sans).
+ * Fontes via Google Fonts: Instrument Serif (display) + Inter Tight (sans).
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&display=swap");
 
 /* === Tipografia base do scope /prev === */
-/* Base 17px (acima do default 16px) para conforto de leitura
-   do público previdenciário, em geral mais maduro. */
+/* Inter Tight: sans contemporânea, ótima legibilidade
+   em telas densas (FAQ, stats). Base 17/18px para
+   conforto do público sênior. */
 .prev-scope {
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
-  font-feature-settings: "ss01" on, "cv11" on;
+  font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
+  font-feature-settings: "kern", "liga";
   font-size: 17px;
-  line-height: 1.6;
+  line-height: 1.65;
+  font-weight: 400;
 }
 
 @media (min-width: 768px) {
@@ -24,23 +26,24 @@
   }
 }
 
-/* Sobrescreve font-serif global APENAS dentro do scope /prev */
+/* Sobrescreve font-serif global APENAS dentro do scope /prev.
+   Instrument Serif: contraste alto, ar editorial moderno,
+   itálico naturalmente elegante (sem floreio). */
 .prev-scope .font-serif,
 .prev-scope h1,
 .prev-scope h2,
 .prev-scope h3,
 .prev-scope h4 {
-  font-family: "Fraunces", Georgia, "Times New Roman", serif;
-  font-feature-settings: "ss01" on, "liga" on, "dlig" on;
-  font-variation-settings: "opsz" 144;
-  letter-spacing: -0.022em;
-  line-height: 1.06;
+  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+  font-feature-settings: "kern", "liga";
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.08;
 }
 
-/* Itálico da Fraunces — voz autoral, ainda mais expressivo */
+/* Itálico — usado pontualmente em uma palavra-chave por título */
 .prev-scope .italic {
   font-style: italic;
-  font-variation-settings: "opsz" 96;
 }
 
 /* Números tabulares em stats e títulos */
@@ -51,7 +54,7 @@
 
 /* Drop cap dourado editorial */
 .prev-scope .prev-dropcap::first-letter {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Instrument Serif", Georgia, serif;
   font-weight: 500;
   font-style: italic;
   font-size: 3.4em;
@@ -109,10 +112,10 @@
 
 /* Aspas decorativas gigantes */
 .prev-scope .prev-quote-mark {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Instrument Serif", Georgia, serif;
   font-style: italic;
-  font-size: 8rem;
-  line-height: 0.7;
+  font-size: 5rem;
+  line-height: 0.8;
   color: rgba(201, 169, 97, 0.18);
   user-select: none;
 }

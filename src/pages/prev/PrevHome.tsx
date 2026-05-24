@@ -177,20 +177,29 @@ export default function PrevHome() {
         {/* COMO TRABALHAMOS */}
         <PrevTrust />
 
-        {/* COMO FUNCIONA - 3 PASSOS */}
-        <section className="py-20 bg-prev-navy text-prev-beige">
-          <div className="max-w-5xl mx-auto px-5">
-            <div className="max-w-2xl mb-14">
-              <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3">
-                Como começamos
-              </p>
-              <h2 className="font-serif text-3xl sm:text-4xl leading-tight">
+        {/* COMO FUNCIONA - 3 PASSOS — timeline editorial */}
+        <section className="py-24 md:py-32 bg-prev-navy text-prev-beige relative overflow-hidden">
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 1px 1px, #F5F1EA 1px, transparent 0)",
+              backgroundSize: "32px 32px",
+            }}
+          />
+          <div className="relative max-w-5xl mx-auto px-5">
+            <div className="max-w-2xl mb-16">
+              <span className="prev-eyebrow mb-4">Como começamos</span>
+              <h2 className="font-serif text-4xl sm:text-5xl leading-[1.05] mt-3">
                 Em 3 passos você sabe{" "}
                 <span className="italic text-prev-gold">o que fazer</span>.
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-10 mb-14">
+            <div className="relative grid md:grid-cols-3 gap-12 md:gap-8 mb-16">
+              {/* Linha dourada conectora desktop */}
+              <div aria-hidden className="hidden md:block absolute top-7 left-[8%] right-[8%] h-px bg-gradient-to-r from-transparent via-prev-gold/40 to-transparent" />
               {[
                 {
                   num: "01",
@@ -214,19 +223,23 @@ export default function PrevHome() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  className="relative"
                 >
-                  <div className="font-serif text-prev-gold text-4xl mb-4">
-                    {step.num}
+                  {/* Marker numeral em círculo dourado */}
+                  <div className="relative z-10 inline-flex items-center justify-center w-14 h-14 rounded-full bg-prev-navy border border-prev-gold/50 mb-6">
+                    <span className="font-serif text-prev-gold text-xl tnum">
+                      {step.num}
+                    </span>
                   </div>
-                  <h3 className="font-serif text-xl mb-3">{step.title}</h3>
-                  <p className="text-prev-beige/75 text-[15px] leading-relaxed">
+                  <h3 className="font-serif text-2xl mb-3 leading-tight">{step.title}</h3>
+                  <p className="text-prev-beige/75 text-[15px] leading-[1.7] max-w-xs">
                     {step.text}
                   </p>
                 </motion.div>
               ))}
             </div>
 
-            <div className="pt-8 border-t border-prev-beige/15">
+            <div className="pt-10 border-t border-prev-beige/15">
               <PrevWhatsappButton
                 quizKey="home"
                 className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-3.5 rounded-full font-semibold shadow-lg shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
@@ -245,25 +258,35 @@ export default function PrevHome() {
           items={FAQ_HOME}
         />
 
-        {/* CTA FINAL */}
-        <section className="py-20 bg-prev-beige">
-          <div className="max-w-3xl mx-auto px-5 text-center">
-            <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-5">
-              Não deixe pra depois.
+        {/* CTA FINAL editorial */}
+        <section className="py-24 md:py-32 bg-prev-beige relative overflow-hidden">
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-[0.025]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 1px 1px, #0B1B2B 1px, transparent 0)",
+              backgroundSize: "28px 28px",
+            }}
+          />
+          <div className="max-w-2xl mx-auto px-5 text-center relative">
+            <span className="prev-eyebrow mb-4 justify-center">Próximo passo</span>
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-prev-navy leading-[1.02] mb-6 mt-3">
+              Não deixe pra <span className="italic text-prev-gold">depois</span>.
             </h2>
-            <p className="text-prev-navy/70 text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-prev-navy/72 text-lg mb-10 leading-[1.7] max-w-lg mx-auto">
               Cada mês que passa pode significar atrasados acumulando — ou
               mudanças nas regras que dificultam ainda mais. Manda uma
               mensagem agora.
             </p>
             <PrevWhatsappButton
               quizKey="home"
-              className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-9 py-4 rounded-full font-semibold text-lg shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
             >
               <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
               Falar agora pelo WhatsApp
             </PrevWhatsappButton>
-            <p className="text-xs text-prev-navy/50 mt-4">
+            <p className="text-xs text-prev-navy/50 mt-5 tracking-wide">
               Resposta em até 2 horas úteis · Sigilo profissional total
             </p>
           </div>

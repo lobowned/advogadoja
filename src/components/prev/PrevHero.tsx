@@ -137,41 +137,6 @@ export default function PrevHero() {
         </div>
 
         {/* ===== Divisor + calculadora ===== */}
-        <div id="calculadora-rapida" className="mt-20 pt-10 relative">
-          <svg
-            aria-hidden
-            className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-3 text-prev-gold/40"
-            viewBox="0 0 200 12"
-            fill="none"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M2 6 Q 50 1, 100 6 T 198 6"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-
-          <div className="grid md:grid-cols-[1fr_1.2fr] gap-10 items-center">
-            <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3 font-semibold">
-                Cálculo rápido
-              </p>
-              <h2 className="font-serif text-2xl sm:text-3xl text-prev-beige leading-tight mb-3">
-                Quanto tempo falta pra você se aposentar?
-              </h2>
-              <p className="text-prev-beige/70 leading-relaxed text-base">
-                Bota sua idade e há quanto tempo paga INSS. Em 30 segundos a
-                gente mostra uma ideia. Pra saber direito mesmo, manda
-                mensagem no WhatsApp.
-              </p>
-            </div>
-            <div>
-              <PrevQuickCalc />
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

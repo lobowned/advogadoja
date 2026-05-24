@@ -1,46 +1,30 @@
-# Hero "Premium Editorial Split" — páginas de área /prev
+# Otimização mobile das páginas /prev
 
-Aplicar a direção escolhida no hero das 5 páginas:
-`/prev/aposentadorias`, `/prev/auxilio-doenca`, `/prev/aposentadoria-por-invalidez`, `/prev/bpc-loas`, `/prev/salario-maternidade`.
+Auditei o /prev e /prev/salario-maternidade em 390px e identifiquei 4 problemas reais. Vou corrigir só o necessário pra entregar uma experiência mobile limpa, sem alterar o desktop.
 
-Tudo é controlado por um único componente (`PrevAreaPage.tsx`), então a mudança é centralizada e replica nas 5 automaticamente.
+## Problemas encontrados
 
-## O que muda visualmente
+1. **Card de confiança no hero das páginas de área**: o novo bloco "Inscrito na OAB / 100% Online / Sigilo / Pós-Graduado" ocupa tela cheia abaixo do CTA principal no mobile, empurrando a faixa de stats pra fora da fold. Em mobile, essa informação já aparece nas seções "Como trabalhamos", "Nossa Equipe" e "Defendemos seus direitos" — é redundância.
 
-- Hero passa de coluna única para **grid 12 colunas** (7 esquerda / 5 direita) em desktop.
-- **Esquerda** (igual hoje, refinado):
-  - Filete dourado + breadcrumb em caixa-alta (mantém).
-  - H1 serif grande com itálico dourado (mantém).
-  - Subtítulo (mantém, com `max-w-xl`).
-  - Linha do CTA: botão WhatsApp verde + bloco com 5 estrelas douradas e microcopy "Respostas em até 2 horas".
-- **Direita** (novo):
-  - Badge dourado flutuante ("+15 / Anos de experiência em Direito Previdenciário") posicionado no canto superior esquerdo do card.
-  - Card de confiança translúcido (vidro suave sobre o vídeo) com:
-    - Linha "Certificação OAB / Registro especializado" com ícone de escudo dourado.
-    - Divider sutil.
-    - 3 linhas de métricas chave→valor: "Atendimento Nacional · 100% Online", "Sucesso em Ações · 92%", "Especialista INSS · Pós-Graduado".
-  - Glow dourado discreto atrás do card.
-- **Vídeo de fundo** continua (`/videos/hero-background.mp4`), mas o overlay passa a ser **gradiente da esquerda para direita** (`from-prev-navy via-prev-navy/95 to-transparent`) — assim o lado direito mostra mais o vídeo, criando profundidade atrás do card.
-- **Mobile**: vira coluna única; card de confiança aparece abaixo do CTA; badge flutuante desativado.
+2. **Stats band quebrada no mobile**: 3 colunas com `divide-x` em 390px deixam "Até 180 dias" em 3 linhas com os números cortados pela linha divisória.
 
-## Implementação técnica
+3. **Link quebrado no hero da /prev (home)**: o CTA secundário "Ver quanto falta pra aposentar" aponta pra `#calculadora-rapida`, âncora que removemos.
 
-- Editar **apenas** `src/components/prev/PrevAreaPage.tsx`:
-  1. Substituir o overlay `bg-prev-navy/80` + gradiente vertical por um gradiente horizontal `bg-gradient-to-r from-prev-navy via-prev-navy/95 to-prev-navy/40`.
-  2. Trocar o container `max-w-3xl` por `grid lg:grid-cols-12 gap-12 items-center` dentro de `max-w-6xl`.
-  3. Esquerda (`lg:col-span-7`): manter conteúdo atual; adicionar `flex flex-col sm:flex-row gap-5 items-start sm:items-center` no bloco do CTA com o sub-bloco de estrelas + microcopy.
-  4. Direita (`lg:col-span-5`): novo bloco com badge flutuante `absolute -top-10 -left-6 bg-prev-gold text-prev-navy` + card `bg-prev-beige/[0.04] border border-prev-beige/10 backdrop-blur-md p-8 pt-14`.
-  5. Adicionar 3 props opcionais com defaults sensatos para o card:
-     - `experienceYears?: string` (default `"+10"`)
-     - `trustRows?: { label: string; value: string }[]` (default já citado)
-     - `hideTrustCard?: boolean` (escape hatch por página)
-  6. Esconder o card no mobile? Não — manter visível, só esconder a badge flutuante (`hidden lg:block`).
-- Tokens: usar exclusivamente `prev-navy`, `prev-gold`, `prev-beige` já definidos no Tailwind config (sem hex hardcoded em componentes).
-- Animações: fade/translate suaves com framer-motion para a coluna direita (já é padrão na página).
+4. **CTA row do hero das áreas no mobile**: o botão WhatsApp + bloco de estrelas ficam em coluna mas com gap grande — fica solto.
+
+## Mudanças
+
+### `src/components/prev/PrevAreaPage.tsx`
+- Esconder o card de confiança e a badge dourada no mobile: trocar o wrapper da coluna direita pra `hidden lg:block` (mantém intacto em desktop). Removo a duplicação visual.
+- Tightening do hero mobile: reduzir `pt-14 pb-20` pra `pt-10 pb-14` em mobile, `lg:pt-24 lg:pb-28` segue igual.
+- Stats band: trocar `grid-cols-3 divide-x` por layout responsivo — em `<sm` vira `flex flex-col divide-y` (cada stat em linha cheia, separador horizontal); a partir de `sm` volta pro grid 3 colunas divide-x atual. Reduzir também `text-3xl` pra `text-2xl` no mobile.
+- CTA row do hero: trocar `gap-5 sm:gap-7` por `gap-4 sm:gap-7`; alinhar o bloco de estrelas com `items-start sm:items-center` (esquerda no mobile, centro no desktop).
+
+### `src/components/prev/PrevHero.tsx` (home /prev)
+- Trocar o link "Ver quanto falta pra aposentar" pra apontar pra `#areas` (seção de áreas de atuação logo abaixo) OU simplesmente remover esse CTA secundário no mobile pra reduzir poluição. Vou remover — o CTA WhatsApp principal já basta, e a seção de áreas vem logo a seguir.
 
 ## Fora do escopo
 
-- Nenhuma mudança em `PrevHome`, `PrevSobre`, `PrevContato`.
-- Nenhuma mudança no resto das páginas de área (stats, "quem tem direito", documentos, FAQ, etc.) — só o hero.
-- Sem alterar `PrevHero` (hero da home).
-- Sem novas dependências.
+- Sem mudanças em desktop (verificado por viewport-only changes).
+- Sem mudanças em `PrevSobre`, `PrevContato`, `PrevTeam`, `PrevCredibility`, `PrevFaq` — já estão OK em mobile.
+- Sem mexer na sticky bar, FAB ou estrutura do layout.

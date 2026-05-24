@@ -126,7 +126,7 @@ export default function PrevHero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-black/50">
+            <div className="prev-frame relative aspect-[4/5] rounded-sm overflow-hidden shadow-2xl shadow-black/50">
               <img
                 src={PREV_IMAGES.heroCouple.src}
                 alt={PREV_IMAGES.heroCouple.alt}
@@ -134,7 +134,12 @@ export default function PrevHero() {
                 fetchPriority="high"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-prev-navy/50 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-prev-navy/55 via-transparent to-transparent" />
+              {/* legenda editorial */}
+              <div className="absolute bottom-4 left-4 right-4 text-[10px] uppercase tracking-[0.22em] text-prev-beige/70 flex items-center gap-2">
+                <span className="w-6 h-px bg-prev-gold" />
+                Atendimento humano · Brasil todo
+              </div>
             </div>
 
             {/* Cartão flutuante - testemunho */}

@@ -34,6 +34,21 @@ export default function PrevContato() {
     e.preventDefault();
     // Encaminhar para WhatsApp com tudo já preenchido — sem dependência de backend
     const msg = `Olá! Meu nome é ${form.name}.\nAssunto: ${form.topic}.\n\n${form.message}`;
+
+    // ===== Conversão GTM/Google Ads (mesma do quiz) =====
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const w = window as any;
+      w.dataLayer = w.dataLayer || [];
+      w.dataLayer.push({
+        event: "whatsapp_click_prev",
+        prev_context: "contato_form",
+        prev_topic: form.topic,
+      });
+    } catch (e) {
+      console.warn("[prev] dataLayer push failed", e);
+    }
+
     window.open(whatsappLink(msg), "_blank", "noopener,noreferrer");
     setSubmitted(true);
   };

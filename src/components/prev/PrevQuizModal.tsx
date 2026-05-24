@@ -106,6 +106,25 @@ export default function PrevQuizModal({
       answers[2] || "—",
     ];
     const msg = buildWhatsappMessage(quizKey, finalAnswers);
+
+    // ===== Conversão GTM/Google Ads =====
+    // Dispara evento "whatsapp_click_prev" no dataLayer pra GTM capturar
+    // e enviar conversão pro Google Ads (campanha PREV).
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const w = window as any;
+      w.dataLayer = w.dataLayer || [];
+      w.dataLayer.push({
+        event: "whatsapp_click_prev",
+        prev_context: quizKey,
+        prev_answers_count: answers.filter(Boolean).length,
+        prev_quiz_completed: answers.filter(Boolean).length === 3,
+      });
+    } catch (e) {
+      // Falha silenciosa — não atrapalha o fluxo do WhatsApp
+      console.warn("[prev] dataLayer push failed", e);
+    }
+
     window.open(whatsappLink(msg), "_blank", "noopener,noreferrer");
     onClose();
   };

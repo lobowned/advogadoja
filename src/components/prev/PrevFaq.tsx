@@ -21,17 +21,16 @@ export default function PrevFaq({
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 md:py-32 bg-white">
       <div className="max-w-3xl mx-auto px-5">
-        <div className="mb-12 text-center">
-          <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3">
-            Dúvidas comuns
-          </p>
-          <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-3">
+        <div className="mb-14 max-w-xl">
+          <span className="prev-eyebrow mb-4">Dúvidas comuns</span>
+          <h2 className="font-serif text-4xl sm:text-5xl text-prev-navy leading-[1.05] mb-4 mt-3">
             {title}
           </h2>
-          <p className="text-prev-navy/65">{subtitle}</p>
+          <p className="text-prev-navy/65 text-lg leading-relaxed">{subtitle}</p>
         </div>
+
 
         <div className="divide-y divide-prev-navy/10 border-y border-prev-navy/10">
           {items.map((item, idx) => {

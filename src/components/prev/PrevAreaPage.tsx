@@ -170,9 +170,7 @@ export default function PrevAreaPage({
               {strategyTitle}
             </h2>
             <div className="space-y-5 text-prev-navy/75 leading-relaxed">
-              {strategyText.split("
-
-").map((paragraph, idx) => (
+              {strategyText.split("\n\n").map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>
               ))}
             </div>

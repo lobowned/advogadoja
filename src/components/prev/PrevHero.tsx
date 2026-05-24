@@ -142,7 +142,7 @@ export default function PrevHero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] rounded-sm overflow-hidden shadow-2xl shadow-black/50 ring-1 ring-prev-gold/30">
+            <div className="relative aspect-[4/5] max-h-[560px] rounded-sm overflow-hidden shadow-2xl shadow-black/50 ring-1 ring-prev-gold/30">
               <img
                 src={PREV_IMAGES.heroCouple.src}
                 alt={PREV_IMAGES.heroCouple.alt}
@@ -150,9 +150,9 @@ export default function PrevHero() {
                 fetchPriority="high"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-prev-navy/55 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-prev-navy/70 via-prev-navy/10 to-transparent" />
               {/* legenda editorial */}
-              <div className="absolute bottom-4 left-4 right-4 text-[10px] uppercase tracking-[0.22em] text-prev-beige/70 flex items-center gap-2">
+              <div className="absolute bottom-4 left-4 right-4 text-[10px] uppercase tracking-[0.22em] text-prev-beige/80 flex items-center gap-2">
                 <span className="w-6 h-px bg-prev-gold" />
                 Atendimento humano · Brasil todo
               </div>
@@ -163,20 +163,18 @@ export default function PrevHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="absolute -bottom-6 -left-4 lg:-left-8 bg-white text-prev-navy p-4 pr-5 rounded-2xl shadow-2xl shadow-black/30 max-w-[280px] border-l-4 border-prev-gold"
+              className="hidden lg:flex absolute -bottom-8 -left-6 bg-white text-prev-navy p-4 pr-5 rounded-2xl shadow-2xl shadow-black/30 max-w-[260px] border-l-4 border-prev-gold items-start gap-3"
             >
-              <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-full bg-prev-gold/20 flex items-center justify-center flex-shrink-0">
-                  <MessageCircle className="w-4 h-4 text-prev-navy" strokeWidth={2} />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold leading-snug mb-0.5">
-                    Você fala comigo direto
-                  </p>
-                  <p className="text-xs text-prev-navy/65 leading-relaxed">
-                    Sem call center. Advogado de verdade no WhatsApp.
-                  </p>
-                </div>
+              <div className="w-9 h-9 rounded-full bg-prev-gold/20 flex items-center justify-center flex-shrink-0">
+                <MessageCircle className="w-4 h-4 text-prev-navy" strokeWidth={2} />
+              </div>
+              <div>
+                <p className="text-sm font-semibold leading-snug mb-0.5">
+                  Você fala comigo direto
+                </p>
+                <p className="text-xs text-prev-navy/65 leading-relaxed">
+                  Sem call center. Advogado de verdade no WhatsApp.
+                </p>
               </div>
             </motion.div>
 

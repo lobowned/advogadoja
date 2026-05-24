@@ -240,9 +240,9 @@ export default function PrevAreaPage({
 
         {/* STATS — faixa editorial */}
         {stats && (
-          <section className="bg-prev-beige border-b border-prev-navy/8 py-12 sm:py-16">
+          <section className="bg-prev-beige border-b border-prev-navy/8 py-10 sm:py-16">
             <div className="max-w-5xl mx-auto px-5">
-              <div className="grid grid-cols-3 gap-3 sm:gap-8 divide-x divide-prev-navy/10">
+              <div className="flex flex-col divide-y divide-prev-navy/10 sm:flex-row sm:divide-y-0 sm:divide-x sm:grid sm:grid-cols-3 sm:gap-8">
                 {stats.map((s, idx) => (
                   <motion.div
                     key={idx}
@@ -250,12 +250,12 @@ export default function PrevAreaPage({
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
-                    className="text-center px-2 sm:px-6"
+                    className="flex items-baseline justify-between gap-4 py-4 sm:flex-col sm:items-center sm:justify-center sm:text-center sm:py-0 sm:px-6"
                   >
-                    <div className="font-serif text-3xl sm:text-5xl lg:text-6xl text-prev-navy leading-none mb-3 tnum">
+                    <div className="font-serif text-3xl sm:text-5xl lg:text-6xl text-prev-navy leading-none tnum sm:mb-3">
                       {s.number}
                     </div>
-                    <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-prev-navy/60 leading-tight">
+                    <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] sm:tracking-[0.22em] text-prev-navy/60 leading-tight text-right sm:text-center max-w-[55%] sm:max-w-none">
                       {s.label}
                     </div>
                   </motion.div>

@@ -111,7 +111,7 @@ export default function PrevAreaPage({
 
       <PrevLayout ctaMessage={whatsappMessage} quizKey={quizKey} palette={palette}>
         {/* HERO — Premium Editorial Split */}
-        <section className="bg-prev-navy text-prev-beige pt-14 pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden">
+        <section className="bg-prev-navy text-prev-beige pt-10 pb-14 lg:pt-24 lg:pb-28 relative overflow-hidden">
           {/* Video background */}
           <video
             className="absolute inset-0 w-full h-full object-cover"
@@ -155,7 +155,7 @@ export default function PrevAreaPage({
                 <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] max-w-xl mb-9">
                   {heroSubtitle}
                 </p>
-                <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
                   <PrevWhatsappButton
                     quizKey={quizKey || ""}
                     palette={palette}
@@ -164,7 +164,7 @@ export default function PrevAreaPage({
                     <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
                     {whatsappButtonText}
                   </PrevWhatsappButton>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col items-start sm:items-start">
                     <div className="flex gap-0.5 text-prev-gold mb-1" aria-hidden>
                       {Array.from({ length: 5 }).map((_, i) => (
                         <Star key={i} className="w-3.5 h-3.5 fill-prev-gold" strokeWidth={0} />
@@ -183,7 +183,7 @@ export default function PrevAreaPage({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.15 }}
-                  className="lg:col-span-5 relative"
+                  className="hidden lg:block lg:col-span-5 relative"
                 >
                   <div className="relative">
                     {/* Badge dourado flutuante (só desktop) */}
@@ -240,9 +240,9 @@ export default function PrevAreaPage({
 
         {/* STATS — faixa editorial */}
         {stats && (
-          <section className="bg-prev-beige border-b border-prev-navy/8 py-12 sm:py-16">
+          <section className="bg-prev-beige border-b border-prev-navy/8 py-10 sm:py-16">
             <div className="max-w-5xl mx-auto px-5">
-              <div className="grid grid-cols-3 gap-3 sm:gap-8 divide-x divide-prev-navy/10">
+              <div className="flex flex-col divide-y divide-prev-navy/10 sm:flex-row sm:divide-y-0 sm:divide-x sm:grid sm:grid-cols-3 sm:gap-8">
                 {stats.map((s, idx) => (
                   <motion.div
                     key={idx}
@@ -250,12 +250,12 @@ export default function PrevAreaPage({
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
-                    className="text-center px-2 sm:px-6"
+                    className="flex items-baseline justify-between gap-4 py-4 sm:flex-col sm:items-center sm:justify-center sm:text-center sm:py-0 sm:px-6"
                   >
-                    <div className="font-serif text-3xl sm:text-5xl lg:text-6xl text-prev-navy leading-none mb-3 tnum">
+                    <div className="font-serif text-3xl sm:text-5xl lg:text-6xl text-prev-navy leading-none tnum sm:mb-3">
                       {s.number}
                     </div>
-                    <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-prev-navy/60 leading-tight">
+                    <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] sm:tracking-[0.22em] text-prev-navy/60 leading-tight text-right sm:text-center max-w-[55%] sm:max-w-none">
                       {s.label}
                     </div>
                   </motion.div>

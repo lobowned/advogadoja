@@ -105,12 +105,6 @@ export default function PrevHero() {
                 <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
                 Falar pelo WhatsApp agora
               </PrevWhatsappButton>
-              <a
-                href="#calculadora-rapida"
-                className="inline-flex items-center justify-center gap-2 text-prev-beige/90 hover:text-prev-gold px-5 py-4 rounded-full font-medium text-base transition-colors underline underline-offset-4 decoration-prev-gold/40 hover:decoration-prev-gold"
-              >
-                Ver quanto falta pra aposentar
-              </a>
             </motion.div>
 
             <motion.div

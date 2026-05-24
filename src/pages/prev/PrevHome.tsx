@@ -1,44 +1,31 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle, Quote } from "lucide-react";
+import { MessageCircle, Quote } from "lucide-react";
 
 import PrevLayout from "@/components/prev/PrevLayout";
 import PrevHero from "@/components/prev/PrevHero";
 import PrevAreaCard from "@/components/prev/PrevAreaCard";
 import PrevTrust from "@/components/prev/PrevTrust";
 import PrevFaq from "@/components/prev/PrevFaq";
-import {
-  LAWYER,
-  PREV_AREAS,
-  WHATSAPP_MESSAGES,
-  whatsappLink,
-} from "@/lib/prev-config";
+import { PREV_AREAS, WHATSAPP_MESSAGES, whatsappLink } from "@/lib/prev-config";
 import { PREV_IMAGES } from "@/lib/prev-images";
 
 const FAQ_HOME = [
   {
-    q: "INSS negou meu pedido. Fudeu tudo?",
-    a: "De jeito nenhum. Mais de 1 em cada 3 benefícios são negados na primeira vez, muitas vezes por erro do INSS, falta de documento ou perícia mal feita. A gente analisa o seu caso e vê se vale a pena recorrer (pelo próprio INSS) ou ir direto pra Justiça — onde, em muitos casos, o juiz nomeia um perito novo e a chance melhora muito.",
+    q: "INSS negou meu pedido. O que posso fazer?",
+    a: "É possível recorrer no próprio INSS ou levar o caso à Justiça. A melhor estratégia depende do motivo da negativa, dos documentos e da urgência do benefício.",
   },
   {
-    q: "Vocês cobram caro? Tenho que pagar na frente?",
-    a: "Na maioria dos casos previdenciários a gente trabalha com honorários de êxito — quer dizer, você só paga uma porcentagem se a gente conseguir o benefício pra você. Em alguns casos pode ter uma parte fixa pequena. Tudo é combinado por escrito antes de começar — sem surpresa.",
+    q: "Preciso pagar algo antes?",
+    a: "Cada caso é avaliado individualmente. As condições são explicadas antes de qualquer contratação, por escrito e sem surpresa.",
   },
   {
-    q: "Quanto tempo demora pra receber se ganhar na Justiça?",
-    a: "Depende da Vara e do tipo de pedido. Casos comuns levam entre 8 meses e 2 anos. Em casos urgentes (idoso, doente grave, sem recursos) a gente pede tutela de urgência e em alguns casos o INSS começa a pagar em poucas semanas, enquanto o processo continua.",
-  },
-  {
-    q: "Trabalhei na roça quando era novo mas não tinha carteira. Conta?",
-    a: "Conta sim! É o que chamam de tempo rural. Pra provar, a gente reúne documentos da época (declaração do sindicato rural, notas de produtor, contratos) e em alguns casos faz prova com testemunha. Quando bem documentado, pode dar direito a aposentadoria mais cedo (60 anos pra homem, 55 pra mulher) ou somar ao tempo urbano (aposentadoria híbrida).",
-  },
-  {
-    q: "Sou de outra cidade ou outro estado. Vocês atendem?",
-    a: "Sim, atendemos o Brasil todo. Processo previdenciário tramita na Justiça Federal e pode ser feito 100% online — desde a análise do CNIS até as audiências por videoconferência. Você não precisa sair de casa em nenhuma etapa.",
+    q: "Atendem pessoas de outra cidade?",
+    a: "Sim. A análise inicial e boa parte do acompanhamento podem ser feitos online, com envio de documentos e atendimento pelo WhatsApp.",
   },
   {
     q: "Tenho 15 anos pagando INSS. Já posso aposentar?",
-    a: "15 anos é o tempo mínimo de carência pra mulher pela regra nova. Mas só isso não basta — precisa também ter a idade mínima (62 anos pra mulher, 65 pra homem) ou se enquadrar numa regra de transição (pedágio, pontos, idade progressiva). Manda mensagem com seus dados que eu te falo qual é a melhor regra pro seu caso.",
+    a: "Depende da sua idade, sexo, data de início das contribuições e possíveis regras de transição. Uma simulação do CNIS mostra o caminho mais seguro.",
   },
 ];
 
@@ -47,20 +34,26 @@ const CASES = [
     name: "Dona M., 67 anos",
     location: "Salvador / BA",
     benefit: "Aposentadoria por idade rural",
-    text: "Tentei sozinha 2 vezes e o INSS negou. No 3º pedido, com toda a documentação rural reunida, conseguimos na via administrativa em 4 meses.",
+    text: "Tinha pedidos negados por falta de documentos rurais. Com organização da prova, o novo pedido ficou mais forte.",
   },
   {
     name: "Sr. J., 54 anos",
     location: "Feira de Santana / BA",
     benefit: "Auxílio-doença",
-    text: "Eu estava sem condições de trabalhar e o INSS deu alta na perícia. Entramos na Justiça com nova perícia e o juiz concedeu em 6 meses.",
+    text: "Recebeu alta mesmo sem condições de trabalhar. A estratégia foi reunir laudos e discutir a perícia.",
   },
   {
     name: "Família R.",
     location: "Camaçari / BA",
-    benefit: "BPC / LOAS para PCD",
-    text: "Meu filho tem deficiência. O INSS negou alegando renda familiar. Provamos as despesas com saúde e conseguimos o BPC em 8 meses.",
+    benefit: "BPC / LOAS",
+    text: "O benefício foi negado por renda. A análise considerou gastos de saúde e vulnerabilidade familiar.",
   },
+];
+
+const STEPS = [
+  "Você conta sua situação pelo WhatsApp.",
+  "A gente confere documentos, CNIS e histórico do INSS.",
+  "Você recebe orientação sobre o caminho administrativo ou judicial.",
 ];
 
 export default function PrevHome() {
@@ -70,30 +63,25 @@ export default function PrevHome() {
         <title>Advogado de INSS — Aposentadoria, Auxílio-Doença, BPC | Atendimento pelo WhatsApp</title>
         <meta
           name="description"
-          content="Advogado especialista em INSS. Aposentadoria, auxílio-doença, aposentadoria por invalidez e BPC/LOAS. Atendimento direto pelo WhatsApp, sem juridiquês."
+          content="Advogado especialista em INSS. Aposentadoria, auxílio-doença, aposentadoria por invalidez e BPC/LOAS. Atendimento direto pelo WhatsApp."
         />
         <link rel="canonical" href="https://advogadoja.lovable.app/prev" />
       </Helmet>
 
       <PrevLayout ctaMessage={WHATSAPP_MESSAGES.home}>
-        {/* HERO com foto humana */}
         <PrevHero />
 
-        {/* ÁREAS DE ATUAÇÃO */}
         <section className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-5">
             <div className="max-w-2xl mb-12">
               <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3">
-                Em quais casos eu ajudo
+                Em quais casos ajudamos
               </p>
               <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-4">
-                Cada caso tem um{" "}
-                <span className="italic">caminho diferente</span>.
+                Cada caso tem um <span className="italic">caminho diferente</span>.
               </h2>
               <p className="text-prev-navy/70 text-lg leading-relaxed">
-                Pedir a aposentadoria errada pode te fazer perder dinheiro
-                todo mês — pelo resto da vida. Por isso a primeira coisa que
-                a gente faz é olhar seu histórico do INSS com calma.
+                A primeira etapa é olhar seu histórico do INSS com calma para evitar pedido errado e perda de valor.
               </p>
             </div>
 
@@ -117,7 +105,6 @@ export default function PrevHome() {
           </div>
         </section>
 
-        {/* CASOS REAIS (anônimos, OAB-safe) */}
         <section className="py-20 bg-prev-beige">
           <div className="max-w-6xl mx-auto px-5">
             <div className="max-w-2xl mb-12">
@@ -125,19 +112,17 @@ export default function PrevHome() {
                 Quem já passou por aqui
               </p>
               <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-4">
-                Casos reais (com{" "}
-                <span className="italic">identidade preservada</span>).
+                Casos reais com <span className="italic">identidade preservada</span>.
               </h2>
               <p className="text-prev-navy/70 text-lg leading-relaxed">
-                Por respeito ao sigilo profissional, não exibimos nomes
-                completos nem fotos. Mas cada caso abaixo aconteceu de verdade.
+                Exemplos anônimos para respeitar o sigilo profissional.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
-              {CASES.map((c, idx) => (
+              {CASES.map((item, idx) => (
                 <motion.div
-                  key={idx}
+                  key={item.name}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -146,32 +131,66 @@ export default function PrevHome() {
                 >
                   <Quote className="w-8 h-8 text-prev-gold mb-4" strokeWidth={1.2} />
                   <p className="text-prev-navy/80 leading-relaxed text-[15px] mb-5">
-                    {c.text}
+                    {item.text}
                   </p>
                   <div className="pt-4 border-t border-prev-navy/10">
-                    <p className="font-medium text-prev-navy text-sm">{c.name}</p>
-                    <p className="text-xs text-prev-navy/55">{c.location}</p>
+                    <p className="font-medium text-prev-navy text-sm">{item.name}</p>
+                    <p className="text-xs text-prev-navy/55">{item.location}</p>
                     <p className="text-xs text-prev-gold mt-1.5 font-medium uppercase tracking-wider">
-                      {c.benefit}
+                      {item.benefit}
                     </p>
                   </div>
                 </motion.div>
               ))}
             </div>
-
-            <p className="text-center text-xs text-prev-navy/45 mt-8 italic">
-              Resultados em direito previdenciário variam conforme cada caso.
-              Não há promessa nem garantia de resultado.
-            </p>
           </div>
         </section>
 
-        {/* COMO TRABALHAMOS */}
         <PrevTrust />
 
-        {/* COMO FUNCIONA - 3 PASSOS */}
         <section className="py-20 bg-prev-navy text-prev-beige">
           <div className="max-w-5xl mx-auto px-5">
             <div className="max-w-2xl mb-14">
               <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3">
-                Co
+                Como funciona
+              </p>
+              <h2 className="font-serif text-3xl sm:text-4xl leading-tight">
+                Três passos para entender seu direito.
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {STEPS.map((step, idx) => (
+                <div key={step} className="border border-prev-beige/15 rounded-2xl p-6">
+                  <span className="font-serif text-3xl text-prev-gold">0{idx + 1}</span>
+                  <p className="mt-4 text-prev-beige/80 leading-relaxed">{step}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <PrevFaq items={FAQ_HOME} />
+
+        <section className="py-20 bg-prev-beige">
+          <div className="max-w-3xl mx-auto px-5 text-center">
+            <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-5">
+              Quer analisar seu caso agora?
+            </h2>
+            <p className="text-prev-navy/65 text-lg mb-8 leading-relaxed">
+              Envie uma mensagem pelo WhatsApp e conte rapidamente sua situação.
+            </p>
+            <a
+              href={whatsappLink(WHATSAPP_MESSAGES.home)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
+            >
+              <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
+              Falar pelo WhatsApp
+            </a>
+          </div>
+        </section>
+      </PrevLayout>
+    </>
+  );
+}

@@ -41,7 +41,7 @@ export default function PrevHero() {
       <div className="absolute -bottom-32 -left-20 w-[600px] h-[600px] rounded-full bg-prev-salvia/15 blur-[140px] pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-5 pt-14 pb-20 lg:pt-24 lg:pb-28">
-        <div className="grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-center">
+        <div className="max-w-3xl">
           {/* ===== Copy ===== */}
           <div>
             <motion.div

@@ -164,18 +164,7 @@ export default function PrevHero() {
               </div>
             </motion.div>
 
-            {/* Selo flutuante topo direito */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8, rotate: -8 }}
-              animate={{ opacity: 1, scale: 1, rotate: -8 }}
-              transition={{ duration: 0.5, delay: 0.9 }}
-              className="hidden lg:flex absolute -top-3 -right-3 bg-prev-gold text-prev-navy px-4 py-2.5 rounded-full shadow-xl items-center gap-1.5"
-            >
-              <Heart className="w-3.5 h-3.5 fill-prev-navy" strokeWidth={0} />
-              <span className="text-xs font-bold uppercase tracking-wider">
-                Caso por caso
-              </span>
-            </motion.div>
+          </motion.div>
           </motion.div>
         </div>
 

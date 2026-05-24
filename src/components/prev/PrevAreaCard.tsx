@@ -43,7 +43,7 @@ export default function PrevAreaCard({
               src={imageUrl}
               alt={imageAlt}
               loading="lazy"
-              className="w-full h-full object-cover scale-100 group-hover:scale-[1.06] transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+              className="w-full h-full object-cover transition-transform duration-700 ease-out"
             />
           ) : illustration ? (
             <div className="w-full h-full flex items-center justify-center p-4">

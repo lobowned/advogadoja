@@ -39,7 +39,7 @@ export default function PrevFaq({
               <div key={idx} className={open ? "bg-prev-beige/30" : ""}>
                 <button
                   onClick={() => setOpenIdx(open ? null : idx)}
-                  className="w-full text-left flex items-center justify-between gap-6 px-2 py-6 group"
+                  className="w-full text-left flex items-center justify-between gap-6 px-2 py-7 group"
                 >
                   <span className="font-serif text-prev-navy text-lg sm:text-[1.35rem] leading-snug group-hover:text-prev-gold transition-colors">
                     {item.q}

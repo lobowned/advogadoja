@@ -1,73 +1,68 @@
-## Diagnóstico do /prev
+## Plano — Paridade estrutural com a home principal (mantendo estilo /prev)
 
-Olhando a home, o problema central é tipográfico: **Fraunces** está pesada, com itálicos muito "decorativos" (ss01 + dlig + opsz 144 ligados em todos os títulos), o que dá um ar de cartaz de teatro e foge do tom jurídico-editorial. Em telas densas (FAQ, stats), ela também compete com a Inter no corpo — duas vozes brigando.
-
-Além da fonte, há 6 refinamentos pontuais que elevam o conjunto sem mexer em conversão/copy/backend.
+A home principal tem 3 seções fortes que faltam no /prev: **Nossa Equipe de Especialistas**, **Defendemos Seus Direitos** e **FAQ**. Vou criar versões nativas no tema navy/gold/serif e plugar em **todas** as páginas /prev.
 
 ---
 
-## 1. Troca tipográfica (núcleo do pedido)
+## Componentes novos
 
-Proponho **3 direções** — escolha uma:
+### 1. `src/components/prev/PrevTeam.tsx` — "Nossa equipe de especialistas em INSS"
+- Filtra `lawyers` por `specialty === 'previdenciario'` (6 advogados já existem em `src/data/lawyers.ts`)
+- Grid 3-col desktop / 1-col mobile (cards editoriais sóbrios — sem rotateY/rotateX da home original)
+- Card: avatar 4:5, eyebrow gold (OAB), nome em serif, sub-especialidade, bio curta
+- Eyebrow + H2 padrão: "Quem cuida do seu caso · *Nossa equipe*"
+- Fundo bege
 
-**A. Instrument Serif + Inter Tight** *(recomendada)*
-Serif contemporânea, contraste alto, itálico elegante sem floreio. Sensação: *The New Yorker* moderno, escritório boutique.
+### 2. `src/components/prev/PrevCredibility.tsx` — "Defendemos seus direitos"
+- Estrutura igual: eyebrow + H2 + sub + stats counter + grid de garantias
+- Stats: "+2.500 clientes · OAB ativo · Brasil todo · Resposta em 2h"
+- Grid 4 garantias (Sigilo OAB, Honorários só no êxito, Contrato por escrito, Sem juridiquês)
+- Fundo navy com overlay sutil + textura de pontos
 
-**B. Newsreader + Inter**
-Serif desenhada pra leitura longa, mais sóbria e "humanista". Sensação: jornal sério, confiável, sênior-friendly.
-
-**C. Libre Caslon Text + Söhne-like (Inter)**
-Clássica, jurídica tradicional, leve ar de papel timbrado. Sensação: banca antiga, autoridade.
-
-Aplico em `src/styles/prev.css`:
-- Trocar `@import` da Fraunces pela escolhida
-- Reduzir `font-feature-settings` a `"liga", "kern"` (sem `dlig`/`ss01` agressivos)
-- Reduzir uso de itálico a momentos pontuais (eyebrow, citações) — não em todo H1
-- Ajustar `letter-spacing` dos títulos (-0.015em em vez de -0.022em)
-- Body sobe pra `line-height: 1.65` e peso 400
-
-## 2. Hierarquia de títulos
-H1 atual está em ~3.5rem com itálico colorido. Vou:
-- Tirar itálico do H1 principal ("Seu INSS travou?")
-- Reservar itálico dourado só pra **uma** palavra-chave por título
-- Reduzir H2 de seções 1 passo (de ~3rem → 2.25rem) pra dar respiro
-
-## 3. Hero
-- Remover a moldura dourada offset da foto (compete com tudo)
-- Substituir por hairline 1px + sombra suave
-- Eyebrow "ADVOGADO ESPECIALISTA EM INSS" menor e mais espaçado
-
-## 4. Cards de áreas (5 cards)
-- Padronizar altura
-- Tirar o badge "CASO POR CASO" do canto (poluição)
-- Hover: só sublinhado dourado animado em "SABER MAIS", sem zoom
-
-## 5. Seção "Casos reais"
-- Hoje são 3 quotes com aspas decorativas gigantes — funciona, mas o fundo bege quebra o ritmo navy
-- Manter bege, mas reduzir aspas de 8rem → 5rem e alinhar à esquerda do bloco
-
-## 6. "Quatro coisas que não são marketing"
-- Grid de 4 com ícones — ícones atuais somem (stroke 1.2 muito fino sobre bege)
-- Aumentar stroke pra 1.5 e dar `text-prev-navy/70`
-
-## 7. FAQ
-- Espaçamento vertical dos itens está apertado
-- `py-5` → `py-7`, e ícone +/- com transição mais lenta (300ms)
+### 3. FAQ — **reusar `PrevFaq` já existente**
+- Criar `src/data/prev-faq-geral.ts` com 6 perguntas universais (que servem em qualquer página /prev quando a página não tem FAQ próprio)
+- PrevContato e PrevSobre passam a usar esse FAQ geral
 
 ---
 
-## Escopo técnico
+## Onde plugar
 
-Arquivos tocados:
-- `src/styles/prev.css` (fontes, features, dropcap, eyebrow, frame)
-- `src/components/prev/PrevHero.tsx` (moldura + eyebrow)
-- `src/components/prev/PrevAreaCard.tsx` (hover + badge)
-- `src/components/prev/PrevFaq.tsx` (spacing)
-- `src/components/prev/PrevTrust.tsx` (ícones)
-- `src/pages/prev/PrevHome.tsx` (H1 + casos reais)
+```
+PrevHome.tsx          → adiciona PrevTeam + PrevCredibility (antes do FAQ existente)
+PrevAreaPage.tsx      → adiciona PrevTeam + PrevCredibility (auto-aplica em 5 áreas:
+                        Aposentadorias, Auxílio-Doença, Invalidez, BPC, Salário-Maternidade)
+PrevContato.tsx       → adiciona PrevTeam + PrevCredibility + PrevFaq(geral)
+PrevSobre.tsx         → adiciona PrevCredibility + PrevFaq(geral)
+                        (Sobre já fala da equipe, então só credibility+FAQ)
+```
 
-Sem mudanças em: lógica, rotas, dados, conversão WhatsApp, copy, backend.
+Ordem padrão pós-conteúdo da página:
+`hero → conteúdo da página → PrevTeam → PrevCredibility → PrevFaq → CTA final`
 
 ---
 
-**Pra eu começar, me diz: direção tipográfica A, B ou C?**
+## Tema (navy/gold/serif consistente)
+
+- Cores: `bg-prev-beige`, `bg-prev-navy`, `text-prev-navy`, `text-prev-gold`, hairlines `border-prev-navy/10`
+- Tipografia: `font-serif` (DM Serif Display) nos H2/H3, Fira Sans body
+- Eyebrow: classe `prev-eyebrow` (régua gold)
+- Sem motion exagerado: fade-up 0.5s, sem 3D/rotateY
+- Sem ícones com `strokeWidth={1.2}` invisíveis (usar 1.5)
+- Respeitar `prev-rose-theme` no Salário-Maternidade (já passa pelos overrides CSS automaticamente)
+
+---
+
+## Arquivos tocados
+
+**Novos**
+- `src/components/prev/PrevTeam.tsx`
+- `src/components/prev/PrevCredibility.tsx`
+- `src/data/prev-faq-geral.ts`
+
+**Editados**
+- `src/pages/prev/PrevHome.tsx`
+- `src/components/prev/PrevAreaPage.tsx`
+- `src/pages/prev/PrevContato.tsx`
+- `src/pages/prev/PrevSobre.tsx`
+
+Sem mudanças em: lógica, dados de lawyers, rotas, backend, copy existente.

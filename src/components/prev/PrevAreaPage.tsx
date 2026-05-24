@@ -155,7 +155,7 @@ export default function PrevAreaPage({
                 <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] max-w-xl mb-9">
                   {heroSubtitle}
                 </p>
-                <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
                   <PrevWhatsappButton
                     quizKey={quizKey || ""}
                     palette={palette}
@@ -164,7 +164,7 @@ export default function PrevAreaPage({
                     <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
                     {whatsappButtonText}
                   </PrevWhatsappButton>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col items-start sm:items-start">
                     <div className="flex gap-0.5 text-prev-gold mb-1" aria-hidden>
                       {Array.from({ length: 5 }).map((_, i) => (
                         <Star key={i} className="w-3.5 h-3.5 fill-prev-gold" strokeWidth={0} />

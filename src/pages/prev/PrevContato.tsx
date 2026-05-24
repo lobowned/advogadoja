@@ -268,6 +268,15 @@ export default function PrevContato() {
             </div>
           </div>
         </section>
+
+        {/* NOSSA EQUIPE */}
+        <PrevTeam />
+
+        {/* DEFENDEMOS SEUS DIREITOS */}
+        <PrevCredibility />
+
+        {/* FAQ */}
+        <PrevFaq items={PREV_FAQ_GERAL} />
       </PrevLayout>
     </>
   );

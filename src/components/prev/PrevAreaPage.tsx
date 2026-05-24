@@ -183,7 +183,7 @@ export default function PrevAreaPage({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.15 }}
-                  className="lg:col-span-5 relative"
+                  className="hidden lg:block lg:col-span-5 relative"
                 >
                   <div className="relative">
                     {/* Badge dourado flutuante (só desktop) */}

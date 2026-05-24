@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { GraduationCap, MapPin, Scale, Shield, MessageCircle } from "lucide-react";
 
 import PrevLayout from "@/components/prev/PrevLayout";
+import PrevCredibility from "@/components/prev/PrevCredibility";
+import PrevFaq from "@/components/prev/PrevFaq";
+import { PREV_FAQ_GERAL } from "@/data/prev-faq-geral";
 import {
   LAWYER,
   WHATSAPP_MESSAGES,

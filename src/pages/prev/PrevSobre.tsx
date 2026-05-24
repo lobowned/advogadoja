@@ -204,6 +204,12 @@ export default function PrevSobre() {
           </div>
         </section>
 
+        {/* DEFENDEMOS SEUS DIREITOS */}
+        <PrevCredibility />
+
+        {/* FAQ */}
+        <PrevFaq items={PREV_FAQ_GERAL} />
+
         {/* CTA editorial */}
         <section className="py-24 md:py-32 bg-white">
           <div className="max-w-2xl mx-auto px-5 text-center">

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
@@ -12,34 +13,20 @@ interface FaqItem {
 }
 
 interface PrevAreaPageProps {
-  // SEO
   metaTitle: string;
   metaDescription: string;
   canonicalPath: string;
-
-  // Conteúdo
   breadcrumb: string;
-  heroTitle: React.ReactNode;
+  heroTitle: ReactNode;
   heroSubtitle: string;
-  /** URL de foto opcional para o hero (foto contextual) */
   heroImage?: { src: string; alt: string };
-
-  // Quem pode pedir
   whoSectionTitle: string;
   whoItems: string[];
-
-  // Documentos necessários
   docsSectionTitle: string;
   docsItems: string[];
-
-  // Estratégia
   strategyTitle: string;
   strategyText: string;
-
-  // FAQ
   faq: FaqItem[];
-
-  // WhatsApp
   whatsappMessage: string;
   whatsappButtonText?: string;
 }
@@ -71,50 +58,18 @@ export default function PrevAreaPage({
       </Helmet>
 
       <PrevLayout ctaMessage={whatsappMessage}>
-        {/* HERO - com ou sem foto */}
         <section className="bg-prev-navy text-prev-beige pt-12 pb-16 lg:pt-20 lg:pb-24 relative overflow-hidden">
           <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-prev-gold/10 blur-3xl pointer-events-none" />
           <div className="relative max-w-6xl mx-auto px-5">
-            {heroImage ? (
-              <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-14 items-center">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-4">
-                    {breadcrumb}
-                  </p>
-                  <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight mb-6">
-                    {heroTitle}
-                  </h1>
-                  <p className="text-lg text-prev-beige/85 leading-relaxed mb-8">
-                    {heroSubtitle}
-                  </p>
-                  <a
-                    href={whatsappLink(whatsappMessage)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-lg shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
-                  >
-                    <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
-                    {whatsappButtonText}
-                  </a>
-                </div>
-                <div className="aspect-[4/5] lg:aspect-[5/6] rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
-                  <img
-                    src={heroImage.src}
-                    alt={heroImage.alt}
-                    loading="eager"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            ) : (
-              <div className="max-w-3xl">
+            <div className={heroImage ? "grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-14 items-center" : "max-w-3xl"}>
+              <div>
                 <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-4">
                   {breadcrumb}
                 </p>
-                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
+                <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight mb-6">
                   {heroTitle}
                 </h1>
-                <p className="text-lg text-prev-beige/85 leading-relaxed max-w-2xl mb-8">
+                <p className="text-lg text-prev-beige/85 leading-relaxed mb-8">
                   {heroSubtitle}
                 </p>
                 <a
@@ -127,11 +82,20 @@ export default function PrevAreaPage({
                   {whatsappButtonText}
                 </a>
               </div>
-            )}
+              {heroImage && (
+                <div className="aspect-[4/5] lg:aspect-[5/6] rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
+                  <img
+                    src={heroImage.src}
+                    alt={heroImage.alt}
+                    loading="eager"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+            </div>
           </div>
         </section>
 
-        {/* QUEM PODE PEDIR */}
         <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-5">
             <div className="grid md:grid-cols-2 gap-12">
@@ -162,7 +126,6 @@ export default function PrevAreaPage({
           </div>
         </section>
 
-        {/* DOCUMENTOS */}
         <section className="py-20 bg-prev-beige">
           <div className="max-w-4xl mx-auto px-5">
             <div className="grid md:grid-cols-2 gap-12">
@@ -174,9 +137,7 @@ export default function PrevAreaPage({
                   {docsSectionTitle}
                 </h2>
                 <p className="text-prev-navy/65 leading-relaxed">
-                  Esses são pontos de partida — outros documentos podem ser
-                  pedidos conforme o caso. Não se preocupe se faltar algum:
-                  ajudamos a localizar.
+                  Esses são pontos de partida — outros documentos podem ser pedidos conforme o caso.
                 </p>
               </div>
               <ul className="space-y-3">
@@ -192,4 +153,55 @@ export default function PrevAreaPage({
                     <span className="w-6 h-6 rounded-full bg-prev-navy text-prev-beige text-xs flex items-center justify-center font-medium flex-shrink-0 mt-0.5">
                       {idx + 1}
                     </span>
-                    <span className="text-prev-navy/80 text-sm leading
+                    <span className="text-prev-navy/80 text-sm leading-relaxed">{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-white">
+          <div className="max-w-3xl mx-auto px-5">
+            <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3">
+              Estratégia
+            </p>
+            <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-6">
+              {strategyTitle}
+            </h2>
+            <div className="space-y-5 text-prev-navy/75 leading-relaxed">
+              {strategyText.split("
+
+").map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <PrevFaq items={faq} />
+
+        <section className="py-20 bg-prev-navy text-prev-beige">
+          <div className="max-w-3xl mx-auto px-5 text-center">
+            <h2 className="font-serif text-3xl sm:text-4xl leading-tight mb-5">
+              Quer entender o melhor caminho para o seu caso?
+            </h2>
+            <p className="text-prev-beige/75 text-lg mb-8 leading-relaxed">
+              Mande uma mensagem pelo WhatsApp e receba orientação inicial sobre documentos e próximos passos.
+            </p>
+            <a
+              href={whatsappLink(whatsappMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
+            >
+              <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
+              Falar pelo WhatsApp
+              <ArrowRight className="w-5 h-5" strokeWidth={2} />
+            </a>
+          </div>
+        </section>
+      </PrevLayout>
+    </>
+  );
+}

@@ -90,24 +90,23 @@ export default function PrevHome() {
         <PrevHero />
 
         {/* ÁREAS DE ATUAÇÃO */}
-        <section className="py-20 bg-white">
+        <section className="py-24 md:py-32 bg-white">
           <div className="max-w-6xl mx-auto px-5">
-            <div className="max-w-2xl mb-12">
-              <p className="text-xs uppercase tracking-[0.18em] text-prev-gold mb-3">
-                Em quais casos eu ajudo
-              </p>
-              <h2 className="font-serif text-3xl sm:text-4xl text-prev-navy leading-tight mb-4">
+            <div className="max-w-2xl mb-16">
+              <span className="prev-eyebrow mb-4">Em quais casos eu ajudo</span>
+              <h2 className="font-serif text-4xl sm:text-5xl text-prev-navy leading-[1.05] mb-5 mt-3">
                 Cada caso tem um{" "}
-                <span className="italic">caminho diferente</span>.
+                <span className="italic text-prev-gold">caminho diferente</span>.
               </h2>
-              <p className="text-prev-navy/70 text-lg leading-relaxed">
+              <p className="text-prev-navy/70 text-lg leading-[1.75]">
                 Pedir a aposentadoria errada pode te fazer perder dinheiro
                 todo mês — pelo resto da vida. Por isso a primeira coisa que
                 a gente faz é olhar seu histórico do INSS com calma.
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+
               {PREV_AREAS.map((area, idx) => {
                 const photo = AREA_PHOTOS[area.slug];
                 return (

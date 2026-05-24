@@ -18,6 +18,11 @@ interface StatItem {
   label: string;
 }
 
+interface TrustRow {
+  label: string;
+  value: string;
+}
+
 interface PrevAreaPageProps {
   // SEO
   metaTitle: string;
@@ -59,7 +64,18 @@ interface PrevAreaPageProps {
   // WhatsApp
   whatsappMessage: string;
   whatsappButtonText?: string;
+
+  // Hero trust card (opcionais com defaults)
+  experienceYears?: string;
+  trustRows?: TrustRow[];
+  hideTrustCard?: boolean;
 }
+
+const DEFAULT_TRUST_ROWS: TrustRow[] = [
+  { label: "Atendimento Nacional", value: "100% Online" },
+  { label: "Sigilo profissional", value: "Garantido" },
+  { label: "Especialista INSS", value: "Pós-Graduado" },
+];
 
 export default function PrevAreaPage({
   metaTitle,

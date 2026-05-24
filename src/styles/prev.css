@@ -3,17 +3,17 @@
  * Aninhados em `.prev-scope` (aplicado no PrevLayout)
  * para NÃO afetar o resto do site Advogado Já.
  *
- * Fontes via Google Fonts: Instrument Serif (display) + Inter Tight (sans).
+ * Fontes via Google Fonts: DM Serif Display (display) + Fira Sans (sans).
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Fira+Sans:wght@300;400;500;600;700&display=swap");
 
 /* === Tipografia base do scope /prev === */
-/* Inter Tight: sans contemporânea, ótima legibilidade
-   em telas densas (FAQ, stats). Base 17/18px para
-   conforto do público sênior. */
+/* Mesmo par tipográfico do site principal (Advogado Já):
+   DM Serif Display (títulos) + Fira Sans (corpo).
+   Base 17/18px para conforto do público sênior. */
 .prev-scope {
-  font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
+  font-family: "Fira Sans", system-ui, -apple-system, sans-serif;
   font-feature-settings: "kern", "liga";
   font-size: 17px;
   line-height: 1.65;
@@ -26,15 +26,13 @@
   }
 }
 
-/* Sobrescreve font-serif global APENAS dentro do scope /prev.
-   Instrument Serif: contraste alto, ar editorial moderno,
-   itálico naturalmente elegante (sem floreio). */
+/* Sobrescreve font-serif global APENAS dentro do scope /prev. */
 .prev-scope .font-serif,
 .prev-scope h1,
 .prev-scope h2,
 .prev-scope h3,
 .prev-scope h4 {
-  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+  font-family: "DM Serif Display", "Libre Baskerville", Georgia, serif;
   font-feature-settings: "kern", "liga";
   font-weight: 400;
   letter-spacing: -0.015em;
@@ -54,7 +52,7 @@
 
 /* Drop cap dourado editorial */
 .prev-scope .prev-dropcap::first-letter {
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: "DM Serif Display", Georgia, serif;
   font-weight: 500;
   font-style: italic;
   font-size: 3.4em;
@@ -112,7 +110,7 @@
 
 /* Aspas decorativas gigantes */
 .prev-scope .prev-quote-mark {
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: "DM Serif Display", Georgia, serif;
   font-style: italic;
   font-size: 5rem;
   line-height: 0.8;

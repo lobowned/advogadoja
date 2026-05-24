@@ -1,6 +1,5 @@
 import PrevAreaPage from "@/components/prev/PrevAreaPage";
 import { WHATSAPP_MESSAGES } from "@/lib/prev-config";
-import { PREV_IMAGES } from "@/lib/prev-images";
 
 export default function PrevAposentadoriaIdade() {
   return (
@@ -10,7 +9,6 @@ export default function PrevAposentadoriaIdade() {
       canonicalPath="/prev/aposentadoria-por-idade"
       breadcrumb="Aposentadorias / Por idade"
       quizKey="aposentadorias"
-      heroImage={PREV_IMAGES.aposentadoriaIdade}
       stats={[
         { number: "65/62", label: "Idade mínima (homem/mulher)" },
         { number: "20/15", label: "Anos mínimos de INSS (h/m)" },

@@ -1,6 +1,5 @@
 import PrevAreaPage from "@/components/prev/PrevAreaPage";
 import { WHATSAPP_MESSAGES } from "@/lib/prev-config";
-import { PREV_IMAGES } from "@/lib/prev-images";
 
 export default function PrevInvalidez() {
   return (
@@ -10,7 +9,6 @@ export default function PrevInvalidez() {
       canonicalPath="/prev/aposentadoria-por-invalidez"
       breadcrumb="Em quais casos eu ajudo / Aposentadoria por Invalidez"
       quizKey="aposentadoria-por-invalidez"
-      heroImage={PREV_IMAGES.invalidez}
       stats={[
         { number: "60% + 2%", label: "Coeficiente (com bônus por anos extras)" },
         { number: "+25%", label: "Adicional pra quem precisa de cuidador" },

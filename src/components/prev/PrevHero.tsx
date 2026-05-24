@@ -126,7 +126,7 @@ export default function PrevHero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="relative"
           >
-            <div className="prev-frame relative aspect-[4/5] rounded-sm overflow-hidden shadow-2xl shadow-black/50">
+            <div className="relative aspect-[4/5] rounded-sm overflow-hidden shadow-2xl shadow-black/50 ring-1 ring-prev-gold/30">
               <img
                 src={PREV_IMAGES.heroCouple.src}
                 alt={PREV_IMAGES.heroCouple.alt}

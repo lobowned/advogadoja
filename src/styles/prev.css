@@ -3,7 +3,7 @@
  * Aninhados em `.prev-scope` (aplicado no PrevLayout)
  * para NÃO afetar o resto do site Advogado Já.
  *
- * Fontes via Google Fonts: Instrument Serif (display) + Inter Tight (sans).
+ * Fontes via Google Fonts: DM Serif Display (display) + Fira Sans (sans).
  */
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Fira+Sans:wght@300;400;500;600;700&display=swap");
@@ -52,7 +52,7 @@
 
 /* Drop cap dourado editorial */
 .prev-scope .prev-dropcap::first-letter {
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: "DM Serif Display", Georgia, serif;
   font-weight: 500;
   font-style: italic;
   font-size: 3.4em;
@@ -110,7 +110,7 @@
 
 /* Aspas decorativas gigantes */
 .prev-scope .prev-quote-mark {
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: "DM Serif Display", Georgia, serif;
   font-style: italic;
   font-size: 5rem;
   line-height: 0.8;

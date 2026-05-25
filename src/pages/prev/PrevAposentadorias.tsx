@@ -45,7 +45,7 @@ export default function PrevAposentadorias() {
 
       <PrevLayout ctaMessage={WHATSAPP_MESSAGES.aposentadorias} quizKey="aposentadorias">
         {/* HERO */}
-        <section className="bg-prev-navy text-prev-beige pt-14 pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden">
+        <section className="bg-prev-navy text-prev-beige pt-8 pb-12 lg:pt-24 lg:pb-28 relative overflow-hidden">
           {/* Video background */}
           <video
             className="absolute inset-0 w-full h-full object-cover"

@@ -124,9 +124,9 @@ export default function PrevAreaPage({
           >
             <source src="/videos/hero-background.mp4" type="video/mp4" />
           </video>
-          {/* Horizontal navy gradient: lado esquerdo opaco pra legibilidade, direito mais leve pra revelar o vídeo atrás do card */}
-          <div className="absolute inset-0 bg-gradient-to-r from-prev-navy via-prev-navy/95 to-prev-navy/40 pointer-events-none" />
-          <div className="absolute inset-0 bg-prev-navy/30 pointer-events-none lg:hidden" />
+          {/* Overlay sutil: deixa o vídeo do escritório aparecer mais, mantendo legibilidade do texto à esquerda */}
+          <div className="absolute inset-0 bg-gradient-to-r from-prev-navy/85 via-prev-navy/65 to-prev-navy/25 pointer-events-none" />
+          <div className="absolute inset-0 bg-prev-navy/20 pointer-events-none lg:hidden" />
 
           {/* Textura pontos */}
           <div

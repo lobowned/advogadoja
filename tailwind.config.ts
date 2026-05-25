@@ -29,9 +29,9 @@ export default {
         '44': '11rem',
       },
       fontFamily: {
-        'display': ['"DM Serif Display"', 'Libre Baskerville', 'Georgia', 'serif'],
-        'serif': ['"DM Serif Display"', 'Libre Baskerville', 'Georgia', 'serif'],
-        'sans': ['"Fira Sans"', 'system-ui', 'sans-serif'],
+        'display': ['Fraunces', 'Georgia', 'serif'],
+        'serif': ['Fraunces', 'Georgia', 'serif'],
+        'sans': ['"Inter Tight"', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

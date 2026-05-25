@@ -876,3 +876,33 @@
 .animate-slide-down {
   animation: slide-down 0.3s ease-out forwards;
 }
+/* === Utilitários editoriais /prev (globais — paleta nova) === */
+.prev-eyebrow {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-weight: 600;
+  color: var(--prev-accent);
+}
+
+.prev-dropcap::first-letter {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 4rem;
+  float: left;
+  margin-right: 0.75rem;
+  margin-top: 0.5rem;
+  line-height: 0.85;
+  color: var(--prev-ink);
+}
+
+.prev-hairline {
+  border: 1px solid var(--prev-rule);
+}
+
+.prev-hairline-top {
+  border-top: 1px solid var(--prev-rule);
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}

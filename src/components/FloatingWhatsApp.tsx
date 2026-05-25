@@ -33,7 +33,7 @@ export const FloatingWhatsApp = () => {
 
   // Show immediately on non-home pages
   const isHomePage = location.pathname === '/';
-  
+
   if (isHomePage && !isVisible) {
     return null;
   }

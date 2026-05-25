@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useRecentNews } from "@/hooks/useNews";
+import { useNews } from "@/hooks/useNews";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
@@ -32,8 +32,14 @@ const decodeHtmlEntities = (text: string): string => {
   return textarea.value;
 };
 
-const NewsSection = () => {
-  const { data: news, isLoading } = useRecentNews(6);
+interface NewsSectionProps {
+  nicheId?: string;
+  title?: string;
+  subtitle?: string;
+}
+
+const NewsSection = ({ nicheId, title, subtitle }: NewsSectionProps = {}) => {
+  const { data: news, isLoading } = useNews({ nicheId, limit: 6 });
 
   if (isLoading) {
     return (
@@ -77,10 +83,10 @@ const NewsSection = () => {
             Aconteceu Agora
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3">
-            O Que Mudou na Lei e Afeta Você
+            {title ?? "O Que Mudou na Lei e Afeta Você"}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base px-2 sm:px-0">
-            Novas leis, decisões importantes e mudanças que podem impactar seu bolso, seu trabalho e sua família. Atualizado diariamente.
+            {subtitle ?? "Novas leis, decisões importantes e mudanças que podem impactar seu bolso, seu trabalho e sua família. Atualizado diariamente."}
           </p>
         </div>
 

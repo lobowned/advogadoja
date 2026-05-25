@@ -108,6 +108,9 @@ import AdvogadoMinasGerais from "./pages/AdvogadoMinasGerais";
 // Trabalhista Landing
 import TrabalhistaLanding from "./pages/trabalhista/TrabalhistaLanding";
 
+// Criminal Landing (Riccio Advocacia - institutional)
+import CriminalLanding from "./pages/criminal/CriminalLanding";
+
 // Components
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 
@@ -127,7 +130,7 @@ const ConditionalFloatingWhatsApp = () => {
 // Animated Routes component that uses useLocation for AnimatePresence
 const AnimatedRoutes = () => {
   const location = useLocation();
-  
+
   return (
     <AnimatePresence mode="wait" initial={false}>
       <Routes location={location} key={location.pathname}>
@@ -136,42 +139,42 @@ const AnimatedRoutes = () => {
         <Route path="/selecionar-acao/:nicheId" element={<SelectAction />} />
         <Route path="/questionario/:nicheId/:actionId" element={<DynamicQuestionnaire />} />
         <Route path="/concluido" element={<Completed />} />
-        
+
         {/* Blog - New */}
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/:slug" element={<BlogArticle />} />
-        
+
         {/* Local SEO Articles - Consumer + City */}
         <Route path="/artigos/consumidor/:localSlug" element={<LocalSEOArticle />} />
-        
+
         {/* Blog/Artigos - Legacy */}
         <Route path="/artigos" element={<Blog />} />
         <Route path="/artigos/:nicheId" element={<Blog />} />
         <Route path="/artigos/:nicheId/:slug" element={<BlogPost />} />
-        
+
         {/* FAQ */}
         <Route path="/perguntas-frequentes" element={<FAQ />} />
         <Route path="/perguntas" element={<FAQIndex />} />
         <Route path="/perguntas/:slug" element={<FAQQuestion />} />
-        
+
         {/* Legal Pages */}
         <Route path="/privacidade" element={<PrivacyPolicy />} />
         <Route path="/termos-de-uso" element={<TermsOfUse />} />
         <Route path="/sitemap" element={<Sitemap />} />
-        
+
         {/* Success Stories */}
         <Route path="/casos-de-sucesso" element={<CasosSucesso />} />
-        
+
         {/* Regional Hub Pages */}
         <Route path="/advogado-bahia" element={<AdvogadoBahia />} />
         <Route path="/advogado-sao-paulo" element={<AdvogadoSaoPaulo />} />
         <Route path="/advogado-rio-de-janeiro" element={<AdvogadoRioDeJaneiro />} />
         <Route path="/advogado-minas-gerais" element={<AdvogadoMinasGerais />} />
-        
+
         {/* News */}
         <Route path="/noticias" element={<News />} />
         <Route path="/noticias/:nicheId" element={<News />} />
-        
+
         {/* Calculadoras */}
         <Route path="/calculadoras" element={<Calculadoras />} />
         <Route path="/calculadora-trabalhista" element={<CalculadoraTrabalhista />} />
@@ -197,21 +200,21 @@ const AnimatedRoutes = () => {
         <Route path="/calculadora-plano-saude" element={<CalculadoraPlanoSaude />} />
         <Route path="/calculadora-fraude-bancaria" element={<CalculadoraFraudeBancaria />} />
         <Route path="/calculadora-liminar-cirurgia" element={<CalculadoraLiminarCirurgia />} />
-        
+
         {/* Consumer Problem Landing Pages - SEO URLs */}
         <Route path="/advogado-voo-cancelado-atrasado" element={<Navigate to="/advogado-problemas-voo" replace />} />
         <Route path="/advogado-negativacao-indevida" element={<NegativacaoIndevidaLanding />} />
         <Route path="/advogado-plano-saude-cobertura-negada" element={<PlanoSaudeNegouLanding />} />
         <Route path="/advogado-cobranca-indevida" element={<CobrancaIndevidaLanding />} />
         <Route path="/advogado-produto-defeituoso" element={<ProdutoDefeitousoLanding />} />
-        
+
         {/* Consumer Problem Landing Pages - Legacy URLs */}
         <Route path="/voo-cancelado" element={<Navigate to="/advogado-problemas-voo" replace />} />
         <Route path="/negativacao-indevida" element={<NegativacaoIndevidaLanding />} />
         <Route path="/plano-saude-negou" element={<PlanoSaudeNegouLanding />} />
         <Route path="/fraude-bancaria" element={<FraudeBancariaLanding />} />
         <Route path="/cobranca-indevida" element={<CobrancaIndevidaLanding />} />
-        
+
         {/* Liminar Cirurgia - SEO */}
         <Route path="/liminar-cirurgia-negada" element={<LiminarCirurgiaNegadaLanding />} />
         <Route path="/liminar-cirurgia-bariatrica" element={<LiminarBariatricaLanding />} />
@@ -220,16 +223,19 @@ const AnimatedRoutes = () => {
         <Route path="/liminar-cirurgia-cardiaca" element={<LiminarCardiologicaLanding />} />
         <Route path="/liminar-neurocirurgia" element={<LiminarNeurologicaLanding />} />
         <Route path="/liminar-cirurgia-olhos" element={<LiminarOftalmologicaLanding />} />
-        
+
         {/* Cartão Consignado Landing Page */}
         <Route path="/advogado-cartao-consignado" element={<CartaoConsignadoLanding />} />
-        
+
         {/* Trabalhista Landing Page */}
         <Route path="/advogado-trabalhista-online" element={<TrabalhistaLanding />} />
-        
+
+        {/* Criminal Landing Page (Riccio Advocacia - institutional) */}
+        <Route path="/criminal" element={<CriminalLanding />} />
+
         {/* Problemas com Voo - Nova Landing Completa */}
         <Route path="/advogado-problemas-voo" element={<ProblemasVooLanding />} />
-        
+
         {/* Niche Landing Pages */}
         <Route path="/advogado-consumidor" element={<NicheLanding />} />
         <Route path="/advogado-trabalhista" element={<NicheLanding />} />
@@ -237,19 +243,19 @@ const AnimatedRoutes = () => {
         <Route path="/advogado-civil" element={<NicheLanding />} />
         <Route path="/advogado-previdenciario" element={<NicheLanding />} />
         <Route path="/advogado-criminal" element={<NicheLanding />} />
-        
+
         {/* City Consumer Landing Pages - Ultra Local SEO (BEFORE generic city+niche) */}
         <Route path="/advogado-consumidor-:citySlug" element={<CityConsumerLanding />} />
-        
+
         {/* City Landing Pages - Local SEO */}
         <Route path="/advogado/:citySlug" element={<CityLanding />} />
-        
+
         {/* City + Niche Landing Pages - Ultra Local SEO */}
         <Route path="/advogado-:nicheSlug-:citySlug" element={<CityNicheLanding />} />
-        
+
         {/* Conversion Tracking */}
         <Route path="/conversao" element={<Conversao />} />
-        
+
         {/* Admin */}
         <Route path="/admin" element={<LeadsDashboard />} />
         <Route path="/admin/leads" element={<LeadsDashboard />} />
@@ -275,7 +281,7 @@ const AnimatedRoutes = () => {
             </Suspense>
           }
         />
-        
+
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>

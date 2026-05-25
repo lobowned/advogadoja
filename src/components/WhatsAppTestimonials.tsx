@@ -2,7 +2,7 @@ import { ArrowLeft, Phone, Video, MoreVertical, Check, CheckCheck, Play, Mic, Si
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 
-interface Message {
+export interface Message {
   type: "sent" | "received" | "audio";
   text?: string;
   duration?: string;
@@ -11,7 +11,7 @@ interface Message {
   reaction?: string;
 }
 
-interface Testimonial {
+export interface Testimonial {
   id: number;
   clientName: string;
   clientInitials: string;
@@ -24,7 +24,7 @@ interface Testimonial {
   statusBarTime: string;
 }
 
-const whatsappTestimonials: Testimonial[] = [
+export const defaultTestimonials: Testimonial[] = [
   {
     id: 1,
     clientName: "Roberto Martins",
@@ -499,30 +499,48 @@ const StaticWhatsAppConversation = ({ testimonial }: { testimonial: Testimonial 
   );
 };
 
-const WhatsAppTestimonials = () => {
+interface WhatsAppTestimonialsProps {
+  testimonials?: Testimonial[];
+  badgeText?: string;
+  titlePrefix?: string;
+  titleHighlight?: string;
+  subtitle?: string;
+  footerText?: string;
+}
+
+const WhatsAppTestimonials = ({
+  testimonials,
+  badgeText = "💬 Depoimentos Reais",
+  titlePrefix = "O que nossos clientes",
+  titleHighlight = "dizem no WhatsApp",
+  subtitle = "Mensagens reais de agradecimento de clientes que tiveram seus casos resolvidos com sucesso",
+  footerText = "Junte-se a milhares de clientes satisfeitos",
+}: WhatsAppTestimonialsProps = {}) => {
+  const items = testimonials ?? defaultTestimonials;
+
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 dot-pattern opacity-30" />
-      
+
       <div className="container relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12">
           <Badge variant="outline" className="mb-4 text-primary border-primary/30">
-            💬 Depoimentos Reais
+            {badgeText}
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            O que nossos clientes{" "}
-            <span className="text-gradient-blue">dizem no WhatsApp</span>
+            {titlePrefix}{" "}
+            <span className="text-gradient-blue">{titleHighlight}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Mensagens reais de agradecimento de clientes que tiveram seus casos resolvidos com sucesso
+            {subtitle}
           </p>
         </div>
 
         {/* Testimonials Grid - Static screenshots */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-2 sm:px-0">
-          {whatsappTestimonials.map((testimonial) => (
+          {items.map((testimonial) => (
             <StaticWhatsAppConversation key={testimonial.id} testimonial={testimonial} />
           ))}
         </div>
@@ -530,7 +548,7 @@ const WhatsAppTestimonials = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-12">
           <p className="text-muted-foreground text-sm">
-            Junte-se a milhares de clientes satisfeitos
+            {footerText}
           </p>
         </div>
       </div>

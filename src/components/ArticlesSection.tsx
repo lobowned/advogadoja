@@ -24,16 +24,29 @@ const nicheColors: Record<string, string> = {
   penal: "bg-red-500/10 text-red-600 border-red-500/20",
 };
 
-const ArticlesSection = () => {
-  // Get 1 article from each different niche for diversity
+interface ArticlesSectionProps {
+  nicheFilter?: string;
+  title?: string;
+  subtitle?: string;
+}
+
+const ArticlesSection = ({
+  nicheFilter,
+  title,
+  subtitle,
+}: ArticlesSectionProps = {}) => {
+  // When nicheFilter is set, show 4 articles from that niche; else diversify across niches
   const featuredArticles = useMemo(() => {
+    if (nicheFilter) {
+      return blogArticles.filter(a => a.nicheId === nicheFilter).slice(0, 4);
+    }
     const seen = new Set<string>();
     return blogArticles.filter(article => {
       if (seen.has(article.nicheId)) return false;
       seen.add(article.nicheId);
       return true;
     }).slice(0, 4);
-  }, []);
+  }, [nicheFilter]);
 
   return (
     <section className="py-12 md:py-20 bg-muted/30">
@@ -44,10 +57,10 @@ const ArticlesSection = () => {
             Conhecimento Gratuito
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3">
-            Aprenda Sobre Seus Direitos — Sem Juridiquês
+            {title ?? "Aprenda Sobre Seus Direitos — Sem Juridiquês"}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base px-2 sm:px-0">
-            Explicamos de forma simples o que você precisa saber para não ser passado para trás. Escritos por advogados, para pessoas reais.
+            {subtitle ?? "Explicamos de forma simples o que você precisa saber para não ser passado para trás. Escritos por advogados, para pessoas reais."}
           </p>
         </div>
 

@@ -119,7 +119,7 @@ export default function PrevAposentadorias() {
                 >
                   <Link
                     to={`/prev/${type.slug}`}
-                    className="group grid grid-cols-[auto_1fr_auto] gap-6 items-baseline py-7 px-2 hover:bg-prev-beige/40 transition-colors"
+                    className="group grid grid-cols-[auto_1fr_auto] gap-3 sm:gap-6 items-baseline py-5 sm:py-7 px-2 hover:bg-prev-beige/40 transition-colors"
                   >
                     <span className="font-serif text-prev-gold/80 text-2xl tnum w-12">
                       {String(idx + 1).padStart(2, "0")}

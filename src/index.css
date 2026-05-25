@@ -79,6 +79,16 @@
     --sidebar-accent-foreground: 162 64% 11%;
     --sidebar-border: 43 35% 70%;
     --sidebar-ring: 43 55% 54%;
+
+    /* === Paleta /prev — editorial monocromático (Fraunces + Inter Tight) === */
+    --prev-paper: #FAF8F3;
+    --prev-ink: #0A0908;
+    --prev-ink-soft: #2A2825;
+    --prev-rule: #E8E3D8;
+    --prev-bone: #EFEAE0;
+    --prev-accent: #8B6F47;
+    --prev-accent-soft: rgba(139, 111, 71, 0.12);
+    --prev-deep: #14110D;
   }
 
   .dark {

@@ -6,6 +6,8 @@ import { ArrowRight, ArrowUpRight, MessageCircle } from "lucide-react";
 import PrevLayout from "@/components/prev/PrevLayout";
 import PrevFaq from "@/components/prev/PrevFaq";
 import PrevWhatsappButton from "@/components/prev/PrevWhatsappButton";
+import PrevHeroSplit from "@/components/prev/PrevHeroSplit";
+
 
 import {
   APOSENTADORIA_TYPES,

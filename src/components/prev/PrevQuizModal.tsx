@@ -151,11 +151,11 @@ export default function PrevQuizModal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.25 }}
-            className="fixed left-1/2 top-1/2 z-[101] w-[92vw] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-2xl shadow-2xl overflow-hidden"
+            className="fixed z-[101] inset-x-4 top-4 bottom-4 sm:inset-auto sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-[92vw] sm:max-w-md sm:max-h-[90vh] max-h-[calc(100dvh-2rem)] flex flex-col overflow-hidden rounded-2xl shadow-2xl"
             style={{ backgroundColor: p.bg }}
           >
             {/* Cabeçalho com barra de progresso */}
-            <div className="relative px-6 pt-5 pb-3" style={{ backgroundColor: p.cardBg }}>
+            <div className="relative px-6 pt-5 pb-3 flex-shrink-0" style={{ backgroundColor: p.cardBg }}>
               <button
                 onClick={onClose}
                 className="absolute right-4 top-4 p-1.5 rounded-full hover:bg-black/5 transition-colors"

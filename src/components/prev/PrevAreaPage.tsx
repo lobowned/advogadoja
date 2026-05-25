@@ -313,7 +313,7 @@ export default function PrevAreaPage({
                   evitar)
                 </h2>
               </div>
-              <ul className="grid md:grid-cols-2 gap-px bg-prev-beige/10">
+              <ul className="grid sm:grid-cols-2 gap-2 sm:gap-px bg-prev-beige/10">
                 {commonMistakes.map((mistake, idx) => (
                   <motion.li
                     key={idx}

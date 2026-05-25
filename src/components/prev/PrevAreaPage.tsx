@@ -105,7 +105,9 @@ export default function PrevAreaPage({
   experienceYears = "+10",
   trustRows = DEFAULT_TRUST_ROWS,
   hideTrustCard = false,
+  lawyerId,
 }: PrevAreaPageProps) {
+
   return (
     <>
       <Helmet>

@@ -58,7 +58,7 @@ export default function PrevHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-serif text-[2.5rem] sm:text-5xl lg:text-[3.6rem] leading-[1.02] tracking-tight mb-6"
+              className="font-serif text-[2rem] sm:text-5xl lg:text-[3.6rem] leading-[1.05] tracking-tight mb-5 sm:mb-6"
             >
               INSS{" "}
               <span className="italic text-prev-gold">sem mistério</span>.
@@ -70,12 +70,13 @@ export default function PrevHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg sm:text-xl text-prev-beige/85 leading-relaxed mb-9 max-w-xl"
+              className="text-base sm:text-xl text-prev-beige/85 leading-relaxed mb-7 sm:mb-9 max-w-xl"
             >
               Você ainda não pediu, pediu e foi negado, ou está em curso —
               conta sua situação que eu analiso seu caso e te indico o
               caminho. Sem juridiquês, sem promessa furada.
             </motion.p>
+
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

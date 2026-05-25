@@ -69,7 +69,7 @@ export default function PrevContato() {
 
       <PrevLayout ctaMessage={WHATSAPP_MESSAGES.contato}>
         {/* HERO */}
-        <section className="bg-prev-navy text-prev-beige pt-20 pb-24 lg:pt-28 lg:pb-32 relative overflow-hidden">
+        <section className="bg-prev-navy text-prev-beige pt-10 pb-14 lg:pt-28 lg:pb-32 relative overflow-hidden">
           {/* Video background */}
           <video
             className="absolute inset-0 w-full h-full object-cover"
@@ -97,19 +97,20 @@ export default function PrevContato() {
           />
           <div className="absolute -top-24 -right-20 w-96 h-96 rounded-full bg-prev-gold/12 blur-[120px] pointer-events-none" />
           <div className="relative max-w-4xl mx-auto px-5">
-            <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-6 font-semibold flex items-center gap-3">
+            <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-5 font-semibold flex items-center gap-3">
               <span className="w-8 h-px bg-prev-gold" />
               Contato
             </p>
-            <h1 className="font-serif text-[2.4rem] sm:text-5xl lg:text-[3.8rem] leading-[1.02] tracking-[-0.025em] mb-7">
+            <h1 className="font-serif text-[2rem] sm:text-5xl lg:text-[3.8rem] leading-[1.05] tracking-[-0.025em] mb-5 sm:mb-7">
               Vamos conversar sobre{" "}
               <span className="italic text-prev-gold">o seu caso</span>.
             </h1>
-            <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] max-w-2xl">
+            <p className="text-base sm:text-lg lg:text-xl text-prev-beige/85 leading-[1.65] max-w-2xl">
               A forma mais rápida é pelo WhatsApp — respondemos no mesmo dia
               útil. Mas se preferir, deixe sua mensagem pelo formulário ou
               e-mail.
             </p>
+
           </div>
         </section>
 

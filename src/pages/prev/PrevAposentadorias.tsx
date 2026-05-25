@@ -45,7 +45,7 @@ export default function PrevAposentadorias() {
 
       <PrevLayout ctaMessage={WHATSAPP_MESSAGES.aposentadorias} quizKey="aposentadorias">
         {/* HERO */}
-        <section className="bg-prev-navy text-prev-beige pt-14 pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden">
+        <section className="bg-prev-navy text-prev-beige pt-8 pb-12 lg:pt-24 lg:pb-28 relative overflow-hidden">
           {/* Video background */}
           <video
             className="absolute inset-0 w-full h-full object-cover"
@@ -72,22 +72,23 @@ export default function PrevAposentadorias() {
           <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-prev-gold/10 blur-3xl pointer-events-none" />
           <div className="relative max-w-6xl mx-auto px-5">
             <div className="max-w-2xl">
-              <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-6 font-semibold flex items-center gap-3">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-5 font-semibold flex items-center gap-3">
                 <span className="w-8 h-px bg-prev-gold" />
                 Aposentadorias
               </p>
-              <h1 className="font-serif text-[2.4rem] sm:text-5xl lg:text-[3.6rem] leading-[1.02] tracking-[-0.025em] mb-7">
+              <h1 className="font-serif text-[2rem] sm:text-5xl lg:text-[3.6rem] leading-[1.05] tracking-[-0.025em] mb-5 sm:mb-7">
                 Existem{" "}
                 <span className="italic text-prev-gold">5 caminhos</span>{" "}
                 pra aposentar.
                 <br /> Qual é o seu?
               </h1>
-              <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] mb-9 max-w-xl">
+              <p className="text-base sm:text-lg lg:text-xl text-prev-beige/85 leading-[1.65] mb-7 sm:mb-9 max-w-xl">
                 Depois da Reforma de 2019, escolher errado pode te fazer
                 perder muito dinheiro — todo mês, pelo resto da vida. A gente
                 olha junto seu CNIS e mostra qual aposentadoria é a melhor
                 pro seu caso.
               </p>
+
               <PrevWhatsappButton
                 quizKey="aposentadorias"
                 className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-lg shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
@@ -119,7 +120,7 @@ export default function PrevAposentadorias() {
                 >
                   <Link
                     to={`/prev/${type.slug}`}
-                    className="group grid grid-cols-[auto_1fr_auto] gap-6 items-baseline py-7 px-2 hover:bg-prev-beige/40 transition-colors"
+                    className="group grid grid-cols-[auto_1fr_auto] gap-3 sm:gap-6 items-baseline py-5 sm:py-7 px-2 hover:bg-prev-beige/40 transition-colors"
                   >
                     <span className="font-serif text-prev-gold/80 text-2xl tnum w-12">
                       {String(idx + 1).padStart(2, "0")}

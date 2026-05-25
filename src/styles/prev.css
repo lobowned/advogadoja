@@ -327,3 +327,62 @@ html:has(.prev-scope) {
 .prev-scope .prev-eyebrow::before {
   background: currentColor;
 }
+
+/* ============================================
+   MOBILE OPTIMIZATIONS (< 640px)
+   Reduz padding vertical, tipografia e margens herdadas das classes
+   Tailwind sem precisar editar cada componente individualmente.
+   ============================================ */
+@media (max-width: 639px) {
+  /* py-24 (96px) → 56px nas seções principais */
+  .prev-scope .py-24 {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+  /* mb-16/mb-14 entre header da seção e conteúdo */
+  .prev-scope .mb-16 {
+    margin-bottom: 2.5rem !important;
+  }
+  .prev-scope .mb-14 {
+    margin-bottom: 2.25rem !important;
+  }
+
+  /* H2 padrão: text-4xl (36px) → 28px em telas pequenas */
+  .prev-scope h2.text-4xl,
+  .prev-scope h2.text-5xl {
+    font-size: 1.75rem !important;
+    line-height: 1.1 !important;
+  }
+  /* H3 grandes (text-2xl) reduzem um pouco */
+  .prev-scope h3.text-2xl {
+    font-size: 1.35rem !important;
+  }
+
+  /* Subtítulos text-lg dentro de cabeçalho de seção: 16px */
+  .prev-scope section .max-w-2xl > p.text-lg,
+  .prev-scope section .max-w-xl > p.text-lg,
+  .prev-scope section .max-w-lg > p.text-lg {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Stats grandes (text-5xl/6xl) ficam mais comportados */
+  .prev-scope .text-5xl,
+  .prev-scope .text-6xl {
+    font-size: 2.25rem !important;
+  }
+
+  /* Padding extra no fim do conteúdo pra sticky bar não cobrir */
+  .prev-scope main {
+    padding-bottom: 4.5rem;
+  }
+
+  /* CTAs principais: garantir min tap target 44px */
+  .prev-scope a, .prev-scope button {
+    min-height: 0;
+  }
+  .prev-scope .rounded-full {
+    min-height: 44px;
+  }
+}
+

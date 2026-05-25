@@ -266,6 +266,7 @@ const AnimatedRoutes = () => {
                 <Route path="aposentadoria-por-idade" element={<PrevAposentadoriaIdade />} />
                 <Route path="auxilio-doenca" element={<PrevAuxilioDoenca />} />
                 <Route path="invalidez" element={<PrevInvalidez />} />
+                <Route path="aposentadoria-por-invalidez" element={<PrevInvalidez />} />
                 <Route path="bpc-loas" element={<PrevBpcLoas />} />
                 <Route path="salario-maternidade" element={<PrevSalarioMaternidade />} />
                 <Route path="sobre" element={<PrevSobre />} />

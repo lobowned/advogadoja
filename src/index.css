@@ -79,6 +79,16 @@
     --sidebar-accent-foreground: 162 64% 11%;
     --sidebar-border: 43 35% 70%;
     --sidebar-ring: 43 55% 54%;
+
+    /* === Paleta /prev — editorial monocromático (Fraunces + Inter Tight) === */
+    --prev-paper: #FAF8F3;
+    --prev-ink: #0A0908;
+    --prev-ink-soft: #2A2825;
+    --prev-rule: #E8E3D8;
+    --prev-bone: #EFEAE0;
+    --prev-accent: #8B6F47;
+    --prev-accent-soft: rgba(139, 111, 71, 0.12);
+    --prev-deep: #14110D;
   }
 
   .dark {
@@ -146,15 +156,16 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Fira Sans', system-ui, sans-serif;
+    font-family: 'Inter Tight', system-ui, sans-serif;
     font-weight: 400;
   }
 
-  /* Editorial serif headings — DM Serif Display */
+  /* Editorial serif headings — Fraunces */
   h1, h2, h3 {
-    font-family: 'DM Serif Display', 'Libre Baskerville', Georgia, serif;
+    font-family: 'Fraunces', Georgia, serif;
     font-weight: 400;
     letter-spacing: -0.01em;
+    font-optical-sizing: auto;
   }
   
   /* Mobile optimization */
@@ -864,4 +875,34 @@
 
 .animate-slide-down {
   animation: slide-down 0.3s ease-out forwards;
+}
+/* === Utilitários editoriais /prev (globais — paleta nova) === */
+.prev-eyebrow {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-weight: 600;
+  color: var(--prev-accent);
+}
+
+.prev-dropcap::first-letter {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 4rem;
+  float: left;
+  margin-right: 0.75rem;
+  margin-top: 0.5rem;
+  line-height: 0.85;
+  color: var(--prev-ink);
+}
+
+.prev-hairline {
+  border: 1px solid var(--prev-rule);
+}
+
+.prev-hairline-top {
+  border-top: 1px solid var(--prev-rule);
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
 }

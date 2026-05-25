@@ -3,21 +3,19 @@
  * Aninhados em `.prev-scope` (aplicado no PrevLayout)
  * para NÃO afetar o resto do site Advogado Já.
  *
- * Fontes via Google Fonts: DM Serif Display (display) + Fira Sans (sans).
+ * Fontes (Fraunces + Inter Tight) já carregadas no index.html.
  */
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Fira+Sans:wght@300;400;500;600;700&display=swap");
-
 /* === Tipografia base do scope /prev === */
-/* Mesmo par tipográfico do site principal (Advogado Já):
-   DM Serif Display (títulos) + Fira Sans (corpo).
+/* Par tipográfico editorial: Fraunces (display serif) + Inter Tight (sans).
    Base 17/18px para conforto do público sênior. */
 .prev-scope {
-  font-family: "Fira Sans", system-ui, -apple-system, sans-serif;
+  font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
   font-feature-settings: "kern", "liga";
   font-size: 17px;
   line-height: 1.65;
   font-weight: 400;
+  color: var(--prev-ink);
 }
 
 @media (min-width: 768px) {
@@ -32,11 +30,12 @@
 .prev-scope h2,
 .prev-scope h3,
 .prev-scope h4 {
-  font-family: "DM Serif Display", "Libre Baskerville", Georgia, serif;
+  font-family: "Fraunces", Georgia, serif;
   font-feature-settings: "kern", "liga";
   font-weight: 400;
   letter-spacing: -0.015em;
   line-height: 1.08;
+  font-optical-sizing: auto;
 }
 
 /* Itálico — usado pontualmente em uma palavra-chave por título */
@@ -50,16 +49,16 @@
   font-variant-numeric: tabular-nums oldstyle-nums;
 }
 
-/* Drop cap dourado editorial */
+/* Drop cap editorial — usa --prev-ink (sobrescreve global se necessário no scope) */
 .prev-scope .prev-dropcap::first-letter {
-  font-family: "DM Serif Display", Georgia, serif;
+  font-family: "Fraunces", Georgia, serif;
   font-weight: 500;
   font-style: italic;
   font-size: 3.4em;
   line-height: 0.85;
   float: left;
   padding: 0.08em 0.14em 0 0;
-  color: #C9A961;
+  color: var(--prev-ink);
 }
 
 /* Moldura editorial offset para fotos */
@@ -302,4 +301,29 @@ html:has(.prev-scope) {
 .prev-rose-theme .prev-sticky-bar {
   background: rgba(92, 45, 58, 0.95);
   border-top-color: rgba(232, 163, 176, 0.35);
+}
+
+/* ============================================
+   OVERRIDES EDITORIAIS — radius reduzido e shadows planas
+   Aplica em TODO componente dentro de .prev-scope sem refatorar JSX.
+   Botões pill (rounded-full) preservados para CTAs primários WhatsApp.
+   ============================================ */
+.prev-scope .rounded-2xl,
+.prev-scope .rounded-xl,
+.prev-scope .rounded-lg {
+  border-radius: 0.125rem !important; /* rounded-sm */
+}
+
+.prev-scope .shadow-lg,
+.prev-scope .shadow-xl,
+.prev-scope .shadow-2xl {
+  box-shadow: 0 1px 0 rgba(10, 9, 8, 0.06) !important;
+}
+
+/* Eyebrow no scope /prev usa o accent novo */
+.prev-scope .prev-eyebrow {
+  color: var(--prev-accent);
+}
+.prev-scope .prev-eyebrow::before {
+  background: currentColor;
 }

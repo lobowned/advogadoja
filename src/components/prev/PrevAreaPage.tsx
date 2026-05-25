@@ -117,73 +117,17 @@ export default function PrevAreaPage({
       </Helmet>
 
       <PrevLayout ctaMessage={whatsappMessage} quizKey={quizKey} palette={palette}>
-        {/* HERO — Premium Editorial Split */}
-        <section className="bg-prev-navy text-prev-beige pt-8 pb-12 lg:pt-24 lg:pb-28 relative overflow-hidden">
-          {/* Video background */}
-          <video
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            poster=""
-          >
-            <source src="/videos/hero-background.mp4" type="video/mp4" />
-          </video>
-          {/* Overlay sutil: deixa o vídeo do escritório aparecer mais, mantendo legibilidade do texto à esquerda */}
-          <div className="absolute inset-0 bg-gradient-to-r from-prev-navy/85 via-prev-navy/65 to-prev-navy/25 pointer-events-none" />
-          <div className="absolute inset-0 bg-prev-navy/20 pointer-events-none lg:hidden" />
+        {/* HERO — Editorial Trust Split */}
+        <PrevHeroSplit
+          breadcrumb={breadcrumb}
+          heroTitle={heroTitle}
+          heroSubtitle={heroSubtitle}
+          quizKey={quizKey}
+          palette={palette}
+          whatsappButtonText={whatsappButtonText}
+          lawyerId={lawyerId}
+        />
 
-          {/* Textura pontos */}
-          <div
-            aria-hidden
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 1px 1px, #F5F1EA 1px, transparent 0)",
-              backgroundSize: "32px 32px",
-            }}
-          />
-          <div className="absolute -top-24 -right-20 w-96 h-96 rounded-full bg-prev-gold/12 blur-[120px] pointer-events-none" />
-          <div className="absolute -bottom-32 -left-20 w-[28rem] h-[28rem] rounded-full bg-prev-salvia/12 blur-[140px] pointer-events-none" />
-
-          <div className="relative max-w-6xl mx-auto px-5">
-            <div className="max-w-2xl">
-              <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-5 font-semibold flex items-center gap-3">
-                <span className="w-8 h-px bg-prev-gold" />
-                {breadcrumb}
-              </p>
-              <h1 className="font-serif text-[2rem] sm:text-5xl lg:text-6xl leading-[1.05] tracking-[-0.025em] mb-5 sm:mb-7">
-                {heroTitle}
-              </h1>
-              <p className="text-base sm:text-lg lg:text-xl text-prev-beige/85 leading-[1.65] max-w-xl mb-7 sm:mb-9">
-                {heroSubtitle}
-              </p>
-
-              <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
-                <PrevWhatsappButton
-                  quizKey={quizKey || ""}
-                  palette={palette}
-                  className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
-                >
-                  <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
-                  {whatsappButtonText}
-                </PrevWhatsappButton>
-                <div className="flex flex-col items-start">
-                  <div className="flex gap-0.5 text-prev-gold mb-1" aria-hidden>
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-prev-gold" strokeWidth={0} />
-                    ))}
-                  </div>
-                  <span className="text-prev-beige/55 text-[10px] uppercase tracking-[0.18em] font-semibold">
-                    Resposta em até 2 horas úteis
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
 
         {/* STATS — faixa editorial */}

@@ -30,51 +30,20 @@ export default function PrevSobre() {
       </Helmet>
 
       <PrevLayout ctaMessage={WHATSAPP_MESSAGES.sobre}>
-        {/* HERO */}
-        <section className="bg-prev-navy text-prev-beige pt-10 pb-14 lg:pt-28 lg:pb-32 relative overflow-hidden">
-          {/* Video background */}
-          <video
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            poster=""
-          >
-            <source src="/videos/hero-background.mp4" type="video/mp4" />
-          </video>
-          {/* Dark navy overlay for video readability */}
-          <div className="absolute inset-0 bg-prev-navy/80 pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-b from-prev-navy/60 via-prev-navy/80 to-prev-navy/95 pointer-events-none" />
-
-          <div
-            aria-hidden
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 1px 1px, #F5F1EA 1px, transparent 0)",
-              backgroundSize: "32px 32px",
-            }}
-          />
-          <div className="absolute -bottom-32 -left-20 w-[28rem] h-[28rem] rounded-full bg-prev-salvia/12 blur-[140px] pointer-events-none" />
-          <div className="relative max-w-4xl mx-auto px-5">
-            <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-5 font-semibold flex items-center gap-3">
-              <span className="w-8 h-px bg-prev-gold" />
-              Sobre o escritório
-            </p>
-            <h1 className="font-serif text-[2rem] sm:text-5xl lg:text-[3.8rem] leading-[1.05] tracking-[-0.025em] mb-5 sm:mb-7">
+        {/* HERO — Editorial Trust Split */}
+        <PrevHeroSplit
+          breadcrumb="Sobre o escritório"
+          heroTitle={
+            <>
               Direito previdenciário,{" "}
               <span className="italic text-prev-gold">de perto</span>.
-            </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-prev-beige/85 leading-[1.65] max-w-2xl">
-              Cada caso é único — e merece atenção individual. Aqui você não é
-              número de processo. É história, contexto, e o objetivo concreto
-              de conquistar (ou recuperar) o seu direito previdenciário.
-            </p>
+            </>
+          }
+          heroSubtitle="Cada caso é único — e merece atenção individual. Aqui você não é número de processo. É história, contexto, e o objetivo concreto de conquistar (ou recuperar) o seu direito previdenciário."
+          quizKey="sobre"
+          whatsappButtonText="Falar pelo WhatsApp"
+        />
 
-          </div>
-        </section>
 
         {/* PERFIL — about boutique editorial */}
         <section className="py-24 md:py-32 bg-white">

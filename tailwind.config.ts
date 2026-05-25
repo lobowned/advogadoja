@@ -89,11 +89,20 @@ export default {
           "input-bg": "hsl(var(--whatsapp-input-bg))",
           divider: "hsl(var(--whatsapp-divider))",
         },
-        // Paleta exclusiva da área /prev (Advogado Previdenciário)
-        "prev-navy": "#0B1B2B",
-        "prev-gold": "#C9A961",
-        "prev-beige": "#F5F1EA",
-        "prev-salvia": "#7A9583",
+        // Paleta exclusiva da área /prev (Advogado Previdenciário) — editorial monocromático
+        "prev-paper": "#FAF8F3",
+        "prev-ink": "#0A0908",
+        "prev-ink-soft": "#2A2825",
+        "prev-rule": "#E8E3D8",
+        "prev-bone": "#EFEAE0",
+        "prev-accent": "#8B6F47",
+        "prev-accent-soft": "rgba(139,111,71,0.12)",
+        "prev-deep": "#14110D",
+        // Aliases legados (mapeados pra nova paleta) — não quebrar componentes existentes
+        "prev-navy": "#14110D",
+        "prev-gold": "#8B6F47",
+        "prev-beige": "#FAF8F3",
+        "prev-salvia": "#E8E3D8",
       },
       borderRadius: {
         lg: "var(--radius)",

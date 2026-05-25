@@ -49,16 +49,16 @@
   font-variant-numeric: tabular-nums oldstyle-nums;
 }
 
-/* Drop cap dourado editorial */
+/* Drop cap editorial — usa --prev-ink (sobrescreve global se necessário no scope) */
 .prev-scope .prev-dropcap::first-letter {
-  font-family: "DM Serif Display", Georgia, serif;
+  font-family: "Fraunces", Georgia, serif;
   font-weight: 500;
   font-style: italic;
   font-size: 3.4em;
   line-height: 0.85;
   float: left;
   padding: 0.08em 0.14em 0 0;
-  color: #C9A961;
+  color: var(--prev-ink);
 }
 
 /* Moldura editorial offset para fotos */

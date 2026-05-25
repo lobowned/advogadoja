@@ -6,7 +6,7 @@ import { ArrowRight, ArrowUpRight, MessageCircle } from "lucide-react";
 import PrevLayout from "@/components/prev/PrevLayout";
 import PrevFaq from "@/components/prev/PrevFaq";
 import PrevWhatsappButton from "@/components/prev/PrevWhatsappButton";
-import { PREV_IMAGES } from "@/lib/prev-images";
+
 import {
   APOSENTADORIA_TYPES,
   WHATSAPP_MESSAGES,
@@ -46,6 +46,20 @@ export default function PrevAposentadorias() {
       <PrevLayout ctaMessage={WHATSAPP_MESSAGES.aposentadorias} quizKey="aposentadorias">
         {/* HERO */}
         <section className="bg-prev-navy text-prev-beige pt-14 pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden">
+          {/* Video background */}
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster=""
+          >
+            <source src="/videos/hero-background.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-r from-prev-navy via-prev-navy/95 to-prev-navy/40 pointer-events-none" />
+          <div className="absolute inset-0 bg-prev-navy/30 pointer-events-none lg:hidden" />
           <div
             aria-hidden
             className="absolute inset-0 opacity-[0.04]"
@@ -57,40 +71,30 @@ export default function PrevAposentadorias() {
           />
           <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-prev-gold/10 blur-3xl pointer-events-none" />
           <div className="relative max-w-6xl mx-auto px-5">
-            <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-center">
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-6 font-semibold flex items-center gap-3">
-                  <span className="w-8 h-px bg-prev-gold" />
-                  Aposentadorias
-                </p>
-                <h1 className="font-serif text-[2.4rem] sm:text-5xl lg:text-[3.6rem] leading-[1.02] tracking-[-0.025em] mb-7">
-                  Existem{" "}
-                  <span className="italic text-prev-gold">5 caminhos</span>{" "}
-                  pra aposentar.
-                  <br /> Qual é o seu?
-                </h1>
-                <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] mb-9 max-w-xl">
-                  Depois da Reforma de 2019, escolher errado pode te fazer
-                  perder muito dinheiro — todo mês, pelo resto da vida. A gente
-                  olha junto seu CNIS e mostra qual aposentadoria é a melhor
-                  pro seu caso.
-                </p>
-                <PrevWhatsappButton
-                  quizKey="aposentadorias"
-                  className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-lg shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
-                >
-                  <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
-                  Analisar meu caso pelo WhatsApp
-                </PrevWhatsappButton>
-              </div>
-              <div className="prev-frame aspect-[4/5] lg:aspect-[5/6] rounded-sm overflow-hidden shadow-2xl shadow-black/40">
-                <img
-                  src={PREV_IMAGES.heroCouple.src}
-                  alt={PREV_IMAGES.heroCouple.alt}
-                  loading="eager"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <div className="max-w-2xl">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-6 font-semibold flex items-center gap-3">
+                <span className="w-8 h-px bg-prev-gold" />
+                Aposentadorias
+              </p>
+              <h1 className="font-serif text-[2.4rem] sm:text-5xl lg:text-[3.6rem] leading-[1.02] tracking-[-0.025em] mb-7">
+                Existem{" "}
+                <span className="italic text-prev-gold">5 caminhos</span>{" "}
+                pra aposentar.
+                <br /> Qual é o seu?
+              </h1>
+              <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] mb-9 max-w-xl">
+                Depois da Reforma de 2019, escolher errado pode te fazer
+                perder muito dinheiro — todo mês, pelo resto da vida. A gente
+                olha junto seu CNIS e mostra qual aposentadoria é a melhor
+                pro seu caso.
+              </p>
+              <PrevWhatsappButton
+                quizKey="aposentadorias"
+                className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-lg shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
+              >
+                <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
+                Analisar meu caso pelo WhatsApp
+              </PrevWhatsappButton>
             </div>
           </div>
         </section>

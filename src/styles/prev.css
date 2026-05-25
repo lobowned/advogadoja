@@ -302,3 +302,28 @@ html:has(.prev-scope) {
   background: rgba(92, 45, 58, 0.95);
   border-top-color: rgba(232, 163, 176, 0.35);
 }
+
+/* ============================================
+   OVERRIDES EDITORIAIS — radius reduzido e shadows planas
+   Aplica em TODO componente dentro de .prev-scope sem refatorar JSX.
+   Botões pill (rounded-full) preservados para CTAs primários WhatsApp.
+   ============================================ */
+.prev-scope .rounded-2xl,
+.prev-scope .rounded-xl,
+.prev-scope .rounded-lg {
+  border-radius: 0.125rem !important; /* rounded-sm */
+}
+
+.prev-scope .shadow-lg,
+.prev-scope .shadow-xl,
+.prev-scope .shadow-2xl {
+  box-shadow: 0 1px 0 rgba(10, 9, 8, 0.06) !important;
+}
+
+/* Eyebrow no scope /prev usa o accent novo */
+.prev-scope .prev-eyebrow {
+  color: var(--prev-accent);
+}
+.prev-scope .prev-eyebrow::before {
+  background: currentColor;
+}

@@ -7,11 +7,6 @@ interface PrevAreaCardProps {
   title: string;
   short: string;
   description: string;
-  /** URL de foto (Unsplash ou própria) — se omitido, usa apenas ilustração */
-  imageUrl?: string;
-  imageAlt?: string;
-  /** Ilustração SVG (componente React) - cobre o card quando não tem foto */
-  illustration?: React.ReactNode;
   index?: number;
 }
 
@@ -20,62 +15,52 @@ export default function PrevAreaCard({
   title,
   short,
   description,
-  imageUrl,
-  imageAlt = "",
-  illustration,
-  index = 0,
+  index = 1,
 }: PrevAreaCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
+      initial={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -2 }}
+      transition={{ duration: 0.4 }}
+      className="h-full"
     >
       <Link
         to={`/prev/${slug}`}
-        className="group relative block bg-white rounded-lg overflow-hidden border border-prev-navy/8 hover:border-prev-gold/50 hover:shadow-[0_18px_40px_-20px_rgba(11,27,43,0.25)] transition-all duration-500 h-full"
+        className="group block h-full bg-prev-paper border border-prev-rule p-7 sm:p-8 transition-colors duration-500 hover:border-prev-accent/40"
       >
-        {/* Topo: foto editorial 4:5 */}
-        <div className="aspect-[4/5] overflow-hidden bg-prev-beige relative">
-          {imageUrl ? (
-            <img
-              src={imageUrl}
-              alt={imageAlt}
-              loading="lazy"
-              className="w-full h-full object-cover transition-transform duration-700 ease-out"
-            />
-          ) : illustration ? (
-            <div className="w-full h-full flex items-center justify-center p-4">
-              {illustration}
-            </div>
-          ) : null}
-
-          {/* Overlay navy gradient editorial */}
-          <div className="absolute inset-0 bg-gradient-to-t from-prev-navy/70 via-prev-navy/10 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-
-          {/* Eyebrow sobre a imagem */}
-          <span className="absolute top-4 left-4 inline-flex items-center text-[10px] uppercase tracking-[0.22em] text-prev-gold font-semibold">
-            <span className="w-6 h-px bg-prev-gold mr-2.5" />
+        {/* Eyebrow: número + label */}
+        <div className="flex items-center gap-2 mb-6">
+          <span className="text-[10px] uppercase tracking-[0.22em] text-prev-accent font-semibold">
             {short}
           </span>
-        </div>
-
-        {/* Conteúdo */}
-        <div className="p-6 pt-5">
-          <h3 className="font-serif text-[1.4rem] text-prev-navy mb-3 leading-[1.05] group-hover:text-prev-gold transition-colors">
-            {title}
-          </h3>
-          <p className="text-[14.5px] text-prev-navy/70 leading-relaxed mb-5">
-            {description}
-          </p>
-
-          <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] font-semibold text-prev-navy/70 group-hover:text-prev-gold transition-colors">
-            <span className="w-5 h-px bg-current transition-all duration-500 group-hover:w-9" />
-            Saber mais
-            <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" strokeWidth={2} />
+          <span className="w-4 h-px bg-prev-accent/30" />
+          <span className="font-serif text-prev-accent/60 text-sm tnum">
+            {String(index).padStart(2, "0")}
           </span>
         </div>
+
+        {/* Título */}
+        <h3 className="font-serif text-2xl sm:text-[1.65rem] text-prev-ink leading-[1.1] mb-4">
+          {title}
+        </h3>
+
+        {/* Hairline */}
+        <div className="w-8 h-px bg-prev-accent/40 mb-5" />
+
+        {/* Descrição */}
+        <p className="text-[14.5px] text-prev-ink/65 leading-relaxed mb-8 line-clamp-2">
+          {description}
+        </p>
+
+        {/* Link rodapé */}
+        <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] font-semibold text-prev-ink/50 group-hover:text-prev-accent transition-colors duration-500">
+          <span className="w-5 h-px bg-current transition-all duration-500 group-hover:w-9" />
+          Saber mais
+          <ArrowUpRight
+            className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+            strokeWidth={2}
+          />
+        </span>
       </Link>
     </motion.div>
   );

@@ -11,21 +11,9 @@ import PrevCredibility from "@/components/prev/PrevCredibility";
 import PrevFaq from "@/components/prev/PrevFaq";
 import PrevWhatsappButton from "@/components/prev/PrevWhatsappButton";
 import {
-  LAWYER,
   PREV_AREAS,
   WHATSAPP_MESSAGES,
-  whatsappLink,
 } from "@/lib/prev-config";
-import { PREV_IMAGES } from "@/lib/prev-images";
-
-/** Mapa: slug da área → foto Pexels (idoso/PCD/gestante real). */
-const AREA_PHOTOS: Record<string, { src: string; alt: string }> = {
-  aposentadorias: PREV_IMAGES.aposentadoriaIdade,
-  "auxilio-doenca": PREV_IMAGES.auxilioDoenca,
-  "aposentadoria-por-invalidez": PREV_IMAGES.invalidez,
-  "bpc-loas": PREV_IMAGES.bpcFamilia,
-  "salario-maternidade": PREV_IMAGES.salarioMaternidade,
-};
 
 const FAQ_HOME = [
   {
@@ -108,22 +96,16 @@ export default function PrevHome() {
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
-
-              {PREV_AREAS.map((area, idx) => {
-                const photo = AREA_PHOTOS[area.slug];
-                return (
-                  <PrevAreaCard
-                    key={area.slug}
-                    slug={area.slug}
-                    title={area.title}
-                    short={area.short}
-                    description={area.description}
-                    imageUrl={photo?.src}
-                    imageAlt={photo?.alt}
-                    index={idx}
-                  />
-                );
-              })}
+              {PREV_AREAS.map((area, idx) => (
+                <PrevAreaCard
+                  key={area.slug}
+                  slug={area.slug}
+                  title={area.title}
+                  short={area.short}
+                  description={area.description}
+                  index={idx + 1}
+                />
+              ))}
             </div>
           </div>
         </section>

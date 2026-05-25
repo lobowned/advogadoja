@@ -71,7 +71,10 @@ interface PrevAreaPageProps {
   experienceYears?: string;
   trustRows?: TrustRow[];
   hideTrustCard?: boolean;
+  /** Slug do advogado em lawyers.ts pra exibir no card de autoridade do hero */
+  lawyerId?: string;
 }
+
 
 const DEFAULT_TRUST_ROWS: TrustRow[] = [
   { label: "Atendimento Nacional", value: "100% Online" },

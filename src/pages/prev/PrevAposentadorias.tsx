@@ -62,7 +62,7 @@ export default function PrevAposentadorias() {
           lawyerId="andre-silva"
         />
 
-        </section>
+
 
         {/* TIPOS DE APOSENTADORIA — lista editorial numerada */}
         <section className="py-24 md:py-32 bg-white">

@@ -40,7 +40,7 @@ export default function PrevHero() {
       <div className="absolute -top-32 -right-20 w-[500px] h-[500px] rounded-full bg-prev-gold/12 blur-[120px] pointer-events-none" />
       <div className="absolute -bottom-32 -left-20 w-[600px] h-[600px] rounded-full bg-prev-salvia/15 blur-[140px] pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto px-5 pt-14 pb-20 lg:pt-24 lg:pb-28">
+      <div className="relative max-w-6xl mx-auto px-5 pt-10 pb-14 lg:pt-24 lg:pb-28">
         <div className="max-w-3xl">
           {/* ===== Copy ===== */}
           <div>

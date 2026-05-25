@@ -14,7 +14,9 @@ import PrevLayout from "@/components/prev/PrevLayout";
 import PrevTeam from "@/components/prev/PrevTeam";
 import PrevCredibility from "@/components/prev/PrevCredibility";
 import PrevFaq from "@/components/prev/PrevFaq";
+import PrevHeroSplit from "@/components/prev/PrevHeroSplit";
 import { PREV_FAQ_GERAL } from "@/data/prev-faq-geral";
+
 import {
   LAWYER,
   WHATSAPP_MESSAGES,

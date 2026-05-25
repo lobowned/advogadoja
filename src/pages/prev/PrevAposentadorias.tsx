@@ -58,8 +58,8 @@ export default function PrevAposentadorias() {
           >
             <source src="/videos/hero-background.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-prev-navy via-prev-navy/95 to-prev-navy/40 pointer-events-none" />
-          <div className="absolute inset-0 bg-prev-navy/30 pointer-events-none lg:hidden" />
+          <div className="absolute inset-0 bg-gradient-to-r from-prev-navy/85 via-prev-navy/65 to-prev-navy/25 pointer-events-none" />
+          <div className="absolute inset-0 bg-prev-navy/20 pointer-events-none lg:hidden" />
           <div
             aria-hidden
             className="absolute inset-0 opacity-[0.04]"

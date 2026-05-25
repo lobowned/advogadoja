@@ -196,7 +196,7 @@ export default function PrevQuizModal({
             </div>
 
             {/* Conteúdo */}
-            <div className="p-6">
+            <div className="p-6 flex-1 overflow-y-auto">
               <AnimatePresence mode="wait">
                 {step === 0 && (
                   <motion.div

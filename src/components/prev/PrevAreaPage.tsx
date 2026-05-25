@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { CheckCircle2, MessageCircle, ShieldCheck, Star } from "lucide-react";
+import { CheckCircle2, MessageCircle, Star } from "lucide-react";
 
 import PrevLayout from "./PrevLayout";
 import PrevFaq from "./PrevFaq";
@@ -142,97 +142,37 @@ export default function PrevAreaPage({
           <div className="absolute -bottom-32 -left-20 w-[28rem] h-[28rem] rounded-full bg-prev-salvia/12 blur-[140px] pointer-events-none" />
 
           <div className="relative max-w-6xl mx-auto px-5">
-            <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-              {/* Coluna esquerda */}
-              <div className="lg:col-span-7">
-                <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-6 font-semibold flex items-center gap-3">
-                  <span className="w-8 h-px bg-prev-gold" />
-                  {breadcrumb}
-                </p>
-                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.025em] mb-7">
-                  {heroTitle}
-                </h1>
-                <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] max-w-xl mb-9">
-                  {heroSubtitle}
-                </p>
-                <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
-                  <PrevWhatsappButton
-                    quizKey={quizKey || ""}
-                    palette={palette}
-                    className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
-                  >
-                    <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
-                    {whatsappButtonText}
-                  </PrevWhatsappButton>
-                  <div className="flex flex-col items-start sm:items-start">
-                    <div className="flex gap-0.5 text-prev-gold mb-1" aria-hidden>
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-prev-gold" strokeWidth={0} />
-                      ))}
-                    </div>
-                    <span className="text-prev-beige/55 text-[10px] uppercase tracking-[0.18em] font-semibold">
-                      Resposta em até 2 horas úteis
-                    </span>
+            <div className="max-w-2xl">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-6 font-semibold flex items-center gap-3">
+                <span className="w-8 h-px bg-prev-gold" />
+                {breadcrumb}
+              </p>
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.025em] mb-7">
+                {heroTitle}
+              </h1>
+              <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] max-w-xl mb-9">
+                {heroSubtitle}
+              </p>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+                <PrevWhatsappButton
+                  quizKey={quizKey || ""}
+                  palette={palette}
+                  className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
+                >
+                  <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
+                  {whatsappButtonText}
+                </PrevWhatsappButton>
+                <div className="flex flex-col items-start">
+                  <div className="flex gap-0.5 text-prev-gold mb-1" aria-hidden>
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="w-3.5 h-3.5 fill-prev-gold" strokeWidth={0} />
+                    ))}
                   </div>
+                  <span className="text-prev-beige/55 text-[10px] uppercase tracking-[0.18em] font-semibold">
+                    Resposta em até 2 horas úteis
+                  </span>
                 </div>
               </div>
-
-              {/* Coluna direita — card de confiança */}
-              {!hideTrustCard && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.15 }}
-                  className="hidden lg:block lg:col-span-5 relative"
-                >
-                  <div className="relative">
-                    {/* Badge dourado flutuante (só desktop) */}
-                    <div className="hidden lg:block absolute -top-10 -left-6 z-20 bg-prev-gold text-prev-navy px-5 py-4 shadow-2xl border border-prev-beige/10">
-                      <div className="font-serif text-3xl font-bold leading-none tnum">
-                        {experienceYears}
-                      </div>
-                      <div className="text-[9px] font-bold uppercase tracking-[0.1em] opacity-80 leading-tight mt-1.5 max-w-[120px]">
-                        Anos de experiência em Direito Previdenciário
-                      </div>
-                    </div>
-
-                    {/* Glow */}
-                    <div aria-hidden className="absolute -inset-4 bg-prev-gold/5 blur-3xl rounded-full -z-10" />
-
-                    {/* Card */}
-                    <div className="relative bg-prev-beige/[0.04] backdrop-blur-md border border-prev-beige/10 p-7 lg:pt-14 overflow-hidden">
-                      <div aria-hidden className="absolute top-0 right-0 w-32 h-32 bg-prev-gold/10 rounded-full blur-2xl translate-x-1/2 -translate-y-1/2" />
-
-                      <div className="relative space-y-6">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 rounded-full border border-prev-gold/50 flex items-center justify-center bg-prev-navy/50 flex-shrink-0">
-                            <ShieldCheck className="w-5 h-5 text-prev-gold" strokeWidth={1.5} />
-                          </div>
-                          <div>
-                            <div className="text-prev-beige font-semibold text-[15px]">
-                              Inscrito na OAB
-                            </div>
-                            <div className="text-prev-beige/55 text-[10px] uppercase tracking-[0.18em] font-semibold mt-0.5">
-                              Advogado regularmente habilitado
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="h-px bg-prev-beige/10" />
-
-                        <div className="space-y-3.5">
-                          {trustRows.map((row, idx) => (
-                            <div key={idx} className="flex justify-between items-center text-[13.5px] gap-4">
-                              <span className="text-prev-beige/60">{row.label}</span>
-                              <span className="text-prev-gold font-semibold text-right">{row.value}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
             </div>
           </div>
         </section>
@@ -421,8 +361,8 @@ export default function PrevAreaPage({
               Não deixe pra <span className="italic text-prev-gold">depois</span>.
             </h2>
             <p className="text-prev-navy/72 text-lg mb-10 leading-[1.7] max-w-lg mx-auto">
-              Manda mensagem agora — me conta sua situação que eu te falo o
-              que dá pra fazer.
+              Conta sua situação — se já pediu, se pretende pedir, se foi
+              negado. Te indico o caminho concreto.
             </p>
             <PrevWhatsappButton
               quizKey={quizKey || ""}

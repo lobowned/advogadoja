@@ -29,7 +29,7 @@ const AREA_PHOTOS: Record<string, { src: string; alt: string }> = {
 
 const FAQ_HOME = [
   {
-    q: "INSS negou meu pedido. Fudeu tudo?",
+    q: "INSS negou meu pedido. Dá pra reverter?",
     a: "De jeito nenhum. Mais de 1 em cada 3 benefícios são negados na primeira vez, muitas vezes por erro do INSS, falta de documento ou perícia mal feita. A gente analisa o seu caso e vê se vale a pena recorrer (pelo próprio INSS) ou ir direto pra Justiça — onde, em muitos casos, o juiz nomeia um perito novo e a chance melhora muito.",
   },
   {

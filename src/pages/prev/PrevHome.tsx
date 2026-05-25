@@ -96,22 +96,16 @@ export default function PrevHome() {
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
-
-              {PREV_AREAS.map((area, idx) => {
-                const photo = AREA_PHOTOS[area.slug];
-                return (
-                  <PrevAreaCard
-                    key={area.slug}
-                    slug={area.slug}
-                    title={area.title}
-                    short={area.short}
-                    description={area.description}
-                    imageUrl={photo?.src}
-                    imageAlt={photo?.alt}
-                    index={idx}
-                  />
-                );
-              })}
+              {PREV_AREAS.map((area, idx) => (
+                <PrevAreaCard
+                  key={area.slug}
+                  slug={area.slug}
+                  title={area.title}
+                  short={area.short}
+                  description={area.description}
+                  index={idx + 1}
+                />
+              ))}
             </div>
           </div>
         </section>

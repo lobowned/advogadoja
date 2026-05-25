@@ -8,6 +8,7 @@ export default function PrevAuxilioDoenca() {
       metaDescription="Auxílio-doença do INSS para trabalhador afastado por doença. INSS negou ou cortou? A gente te ajuda a recorrer e ir pra Justiça se precisar."
       canonicalPath="/prev/auxilio-doenca"
       breadcrumb="Em quais casos eu ajudo / Auxílio-Doença"
+      lawyerId="claudia-martins"
       quizKey="auxilio-doenca"
       stats={[
         { number: "37%", label: "Dos pedidos são negados administrativamente" },

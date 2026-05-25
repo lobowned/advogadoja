@@ -8,6 +8,7 @@ export default function PrevAposentadoriaIdade() {
       metaDescription="Aposentadoria por idade no INSS: homem com 65, mulher com 62. Veja quanto tempo de INSS precisa, regras de transição e como pedir o valor maior possível."
       canonicalPath="/prev/aposentadoria-por-idade"
       breadcrumb="Aposentadorias / Por idade"
+      lawyerId="andre-silva"
       quizKey="aposentadorias"
       stats={[
         { number: "65/62", label: "Idade mínima (homem/mulher)" },

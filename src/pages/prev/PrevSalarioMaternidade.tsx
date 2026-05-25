@@ -8,6 +8,7 @@ export default function PrevSalarioMaternidade() {
       metaDescription="Salário-maternidade do INSS é pra gestante, adotante ou guardiã. Empregada, MEI, autônoma, doméstica — todas têm direito. INSS negou? A gente te ajuda."
       canonicalPath="/prev/salario-maternidade"
       breadcrumb="Em quais casos eu ajudo / Salário-Maternidade"
+      lawyerId="claudia-martins"
       quizKey="salario-maternidade"
       palette="rose"
       stats={[

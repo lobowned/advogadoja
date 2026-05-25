@@ -46,60 +46,22 @@ export default function PrevAposentadorias() {
       </Helmet>
 
       <PrevLayout ctaMessage={WHATSAPP_MESSAGES.aposentadorias} quizKey="aposentadorias">
-        {/* HERO */}
-        <section className="bg-prev-navy text-prev-beige pt-8 pb-12 lg:pt-24 lg:pb-28 relative overflow-hidden">
-          {/* Video background */}
-          <video
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            poster=""
-          >
-            <source src="/videos/hero-background.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-prev-navy/85 via-prev-navy/65 to-prev-navy/25 pointer-events-none" />
-          <div className="absolute inset-0 bg-prev-navy/20 pointer-events-none lg:hidden" />
-          <div
-            aria-hidden
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 1px 1px, #F5F1EA 1px, transparent 0)",
-              backgroundSize: "32px 32px",
-            }}
-          />
-          <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-prev-gold/10 blur-3xl pointer-events-none" />
-          <div className="relative max-w-6xl mx-auto px-5">
-            <div className="max-w-2xl">
-              <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-5 font-semibold flex items-center gap-3">
-                <span className="w-8 h-px bg-prev-gold" />
-                Aposentadorias
-              </p>
-              <h1 className="font-serif text-[2rem] sm:text-5xl lg:text-[3.6rem] leading-[1.05] tracking-[-0.025em] mb-5 sm:mb-7">
-                Existem{" "}
-                <span className="italic text-prev-gold">5 caminhos</span>{" "}
-                pra aposentar.
-                <br /> Qual é o seu?
-              </h1>
-              <p className="text-base sm:text-lg lg:text-xl text-prev-beige/85 leading-[1.65] mb-7 sm:mb-9 max-w-xl">
-                Depois da Reforma de 2019, escolher errado pode te fazer
-                perder muito dinheiro — todo mês, pelo resto da vida. A gente
-                olha junto seu CNIS e mostra qual aposentadoria é a melhor
-                pro seu caso.
-              </p>
+        {/* HERO — Editorial Trust Split */}
+        <PrevHeroSplit
+          breadcrumb="Aposentadorias"
+          heroTitle={
+            <>
+              Existem <span className="italic text-prev-gold">5 caminhos</span>{" "}
+              pra aposentar.
+              <br /> Qual é o seu?
+            </>
+          }
+          heroSubtitle="Depois da Reforma de 2019, escolher errado pode te fazer perder muito dinheiro — todo mês, pelo resto da vida. A gente olha junto seu CNIS e mostra qual aposentadoria é a melhor pro seu caso."
+          quizKey="aposentadorias"
+          whatsappButtonText="Analisar meu caso pelo WhatsApp"
+          lawyerId="andre-silva"
+        />
 
-              <PrevWhatsappButton
-                quizKey="aposentadorias"
-                className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-4 rounded-full font-semibold shadow-lg shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
-              >
-                <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
-                Analisar meu caso pelo WhatsApp
-              </PrevWhatsappButton>
-            </div>
-          </div>
         </section>
 
         {/* TIPOS DE APOSENTADORIA — lista editorial numerada */}

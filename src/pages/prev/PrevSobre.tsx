@@ -57,19 +57,20 @@ export default function PrevSobre() {
           />
           <div className="absolute -bottom-32 -left-20 w-[28rem] h-[28rem] rounded-full bg-prev-salvia/12 blur-[140px] pointer-events-none" />
           <div className="relative max-w-4xl mx-auto px-5">
-            <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-6 font-semibold flex items-center gap-3">
+            <p className="text-[11px] uppercase tracking-[0.22em] text-prev-gold mb-5 font-semibold flex items-center gap-3">
               <span className="w-8 h-px bg-prev-gold" />
               Sobre o escritório
             </p>
-            <h1 className="font-serif text-[2.4rem] sm:text-5xl lg:text-[3.8rem] leading-[1.02] tracking-[-0.025em] mb-7">
+            <h1 className="font-serif text-[2rem] sm:text-5xl lg:text-[3.8rem] leading-[1.05] tracking-[-0.025em] mb-5 sm:mb-7">
               Direito previdenciário,{" "}
               <span className="italic text-prev-gold">de perto</span>.
             </h1>
-            <p className="text-lg lg:text-xl text-prev-beige/85 leading-[1.65] max-w-2xl">
+            <p className="text-base sm:text-lg lg:text-xl text-prev-beige/85 leading-[1.65] max-w-2xl">
               Cada caso é único — e merece atenção individual. Aqui você não é
               número de processo. É história, contexto, e o objetivo concreto
               de conquistar (ou recuperar) o seu direito previdenciário.
             </p>
+
           </div>
         </section>
 

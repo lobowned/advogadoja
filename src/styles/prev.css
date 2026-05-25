@@ -3,21 +3,19 @@
  * Aninhados em `.prev-scope` (aplicado no PrevLayout)
  * para NÃO afetar o resto do site Advogado Já.
  *
- * Fontes via Google Fonts: DM Serif Display (display) + Fira Sans (sans).
+ * Fontes (Fraunces + Inter Tight) já carregadas no index.html.
  */
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Fira+Sans:wght@300;400;500;600;700&display=swap");
-
 /* === Tipografia base do scope /prev === */
-/* Mesmo par tipográfico do site principal (Advogado Já):
-   DM Serif Display (títulos) + Fira Sans (corpo).
+/* Par tipográfico editorial: Fraunces (display serif) + Inter Tight (sans).
    Base 17/18px para conforto do público sênior. */
 .prev-scope {
-  font-family: "Fira Sans", system-ui, -apple-system, sans-serif;
+  font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
   font-feature-settings: "kern", "liga";
   font-size: 17px;
   line-height: 1.65;
   font-weight: 400;
+  color: var(--prev-ink);
 }
 
 @media (min-width: 768px) {
@@ -32,11 +30,12 @@
 .prev-scope h2,
 .prev-scope h3,
 .prev-scope h4 {
-  font-family: "DM Serif Display", "Libre Baskerville", Georgia, serif;
+  font-family: "Fraunces", Georgia, serif;
   font-feature-settings: "kern", "liga";
   font-weight: 400;
   letter-spacing: -0.015em;
   line-height: 1.08;
+  font-optical-sizing: auto;
 }
 
 /* Itálico — usado pontualmente em uma palavra-chave por título */

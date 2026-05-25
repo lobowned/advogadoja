@@ -156,15 +156,16 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Fira Sans', system-ui, sans-serif;
+    font-family: 'Inter Tight', system-ui, sans-serif;
     font-weight: 400;
   }
 
-  /* Editorial serif headings — DM Serif Display */
+  /* Editorial serif headings — Fraunces */
   h1, h2, h3 {
-    font-family: 'DM Serif Display', 'Libre Baskerville', Georgia, serif;
+    font-family: 'Fraunces', Georgia, serif;
     font-weight: 400;
     letter-spacing: -0.01em;
+    font-optical-sizing: auto;
   }
   
   /* Mobile optimization */

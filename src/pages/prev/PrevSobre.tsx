@@ -29,7 +29,7 @@ export default function PrevSobre() {
 
       <PrevLayout ctaMessage={WHATSAPP_MESSAGES.sobre}>
         {/* HERO */}
-        <section className="bg-prev-navy text-prev-beige pt-20 pb-24 lg:pt-28 lg:pb-32 relative overflow-hidden">
+        <section className="bg-prev-navy text-prev-beige pt-10 pb-14 lg:pt-28 lg:pb-32 relative overflow-hidden">
           {/* Video background */}
           <video
             className="absolute inset-0 w-full h-full object-cover"

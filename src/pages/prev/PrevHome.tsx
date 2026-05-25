@@ -11,21 +11,9 @@ import PrevCredibility from "@/components/prev/PrevCredibility";
 import PrevFaq from "@/components/prev/PrevFaq";
 import PrevWhatsappButton from "@/components/prev/PrevWhatsappButton";
 import {
-  LAWYER,
   PREV_AREAS,
   WHATSAPP_MESSAGES,
-  whatsappLink,
 } from "@/lib/prev-config";
-import { PREV_IMAGES } from "@/lib/prev-images";
-
-/** Mapa: slug da área → foto Pexels (idoso/PCD/gestante real). */
-const AREA_PHOTOS: Record<string, { src: string; alt: string }> = {
-  aposentadorias: PREV_IMAGES.aposentadoriaIdade,
-  "auxilio-doenca": PREV_IMAGES.auxilioDoenca,
-  "aposentadoria-por-invalidez": PREV_IMAGES.invalidez,
-  "bpc-loas": PREV_IMAGES.bpcFamilia,
-  "salario-maternidade": PREV_IMAGES.salarioMaternidade,
-};
 
 const FAQ_HOME = [
   {

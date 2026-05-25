@@ -1,12 +1,14 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { CheckCircle2, MessageCircle, Star } from "lucide-react";
+import { CheckCircle2, MessageCircle } from "lucide-react";
 
 import PrevLayout from "./PrevLayout";
 import PrevFaq from "./PrevFaq";
 import PrevTeam from "./PrevTeam";
 import PrevCredibility from "./PrevCredibility";
 import PrevWhatsappButton from "./PrevWhatsappButton";
+import PrevHeroSplit from "./PrevHeroSplit";
+
 
 interface FaqItem {
   q: string;

@@ -60,25 +60,10 @@ export default function PrevHero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-serif text-[2.5rem] sm:text-5xl lg:text-[3.6rem] leading-[1.02] tracking-tight mb-6"
             >
-              Seu INSS{" "}
-              <span className="relative inline-block">
-                <span className="italic text-prev-gold">travou?</span>
-                <svg
-                  aria-hidden
-                  className="absolute -bottom-2 left-0 w-full text-prev-gold/60"
-                  viewBox="0 0 200 12"
-                  fill="none"
-                  preserveAspectRatio="none"
-                >
-                  <path
-                    d="M2 9 Q 50 2, 100 6 T 198 4"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </span>
-              <br />A gente destrava.
+              INSS{" "}
+              <span className="italic text-prev-gold">sem mistério</span>.
+              <br />
+              Do primeiro pedido à concessão.
             </motion.h1>
 
             <motion.p
@@ -87,9 +72,9 @@ export default function PrevHero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg sm:text-xl text-prev-beige/85 leading-relaxed mb-9 max-w-xl"
             >
-              Aposentadoria, auxílio-doença, BPC, invalidez — você conta o que
-              tá acontecendo, eu olho seu caso e te falo a real. Sem
-              juridiquês, sem promessa furada.
+              Você ainda não pediu, pediu e foi negado, ou está em curso —
+              conta sua situação que eu analiso seu caso e te indico o
+              caminho. Sem juridiquês, sem promessa furada.
             </motion.p>
 
             <motion.div

@@ -23,12 +23,11 @@ export default function PrevAuxilioDoenca() {
       ]}
       heroTitle={
         <>
-          INSS{" "}
-          <span className="italic text-prev-gold">negou</span> seu
-          auxílio-doença?
+          Auxílio-doença, do{" "}
+          <span className="italic text-prev-gold">pedido</span> à concessão.
         </>
       }
-      heroSubtitle="Você ficou doente, parou de trabalhar, foi pedir auxílio e o INSS negou ou cortou. Calma. Isso acontece muito — geralmente por perícia mal feita, falta de laudo ou erro do INSS. A gente analisa seu caso e mostra o caminho pra reverter."
+      heroSubtitle="Você ficou doente e ainda não pediu, já pediu e foi negado, ou está em curso — conta sua situação que eu analiso e te indico o caminho. Sem juridiquês, sem promessa furada."
       whoSectionTitle="Quem tem direito ao auxílio-doença?"
       whoItems={[
         "Quem paga INSS (carteira assinada, MEI, autônomo, doméstica, contribuinte facultativo).",

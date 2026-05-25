@@ -8,6 +8,7 @@ export default function PrevInvalidez() {
       metaDescription="Aposentadoria por invalidez é pra quem não tem mais como trabalhar de forma permanente. INSS negou? Cortou seu benefício? A gente te ajuda."
       canonicalPath="/prev/aposentadoria-por-invalidez"
       breadcrumb="Em quais casos eu ajudo / Aposentadoria por Invalidez"
+      lawyerId="claudia-martins"
       quizKey="aposentadoria-por-invalidez"
       stats={[
         { number: "60% + 2%", label: "Coeficiente (com bônus por anos extras)" },

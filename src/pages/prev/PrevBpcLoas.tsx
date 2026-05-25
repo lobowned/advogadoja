@@ -8,6 +8,7 @@ export default function PrevBpcLoas() {
       metaDescription="BPC/LOAS é 1 salário mínimo todo mês pra idoso de 65+ ou pessoa com deficiência em família de baixa renda. Não precisa ter contribuído ao INSS. A gente te ajuda a pedir."
       canonicalPath="/prev/bpc-loas"
       breadcrumb="Em quais casos eu ajudo / BPC / LOAS"
+      lawyerId="marcos-oliveira"
       quizKey="bpc-loas"
       stats={[
         { number: "1 salário", label: "Mínimo todo mês (vitalício)" },

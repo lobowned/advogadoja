@@ -3,6 +3,7 @@ import { m, useReducedMotion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { MessageCircle, ArrowRight } from "lucide-react";
 import { heroStagger, heroBadge } from "@/lib/motion-variants";
+import { trackWhatsAppConversion } from "@/lib/trackWhatsApp";
 
 const WHATSAPP_NUMBER = "5571997036269";
 
@@ -18,6 +19,7 @@ const CriminalHeroSection = () => {
   }, []);
 
   const handleWhatsApp = () => {
+    trackWhatsAppConversion();
     const message = "Olá! Preciso falar com advogado criminalista.";
     window.open(
       `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,

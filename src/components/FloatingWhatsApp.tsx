@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { trackWhatsAppConversion } from '@/lib/trackWhatsApp';
 
 const WHATSAPP_NUMBER = '5571997036269';
 const DEFAULT_MESSAGE = 'Olá! Vi o site de vocês e preciso de orientação jurídica.';
@@ -40,11 +41,19 @@ export const FloatingWhatsApp = () => {
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(DEFAULT_MESSAGE)}`;
 
+  const handleClick = () => {
+    // Páginas onde o GTM existente não cobre o trigger — disparar gtag explicitamente
+    if (location.pathname === '/criminal') {
+      trackWhatsAppConversion();
+    }
+  };
+
   return (
     <a
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleClick}
       className="fixed z-50 bottom-6 right-6 md:bottom-8 md:right-8 group"
       aria-label="Fale conosco pelo WhatsApp"
     >

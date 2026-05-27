@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
 import { MessageCircle, ShieldCheck, Award, Star } from "lucide-react";
 import PrevWhatsappButton from "./PrevWhatsappButton";
-import { lawyers } from "@/data/lawyers";
+import drGilbertoPhoto from "@/assets/dr-gilberto-riccio.jpg";
+
+const DEFAULT_LAWYER = {
+  name: "Dr. Gilberto Riccio",
+  photo: drGilbertoPhoto,
+  oab: "OAB/BA 46.638",
+};
 
 interface PrevHeroSplitProps {
   breadcrumb: string;

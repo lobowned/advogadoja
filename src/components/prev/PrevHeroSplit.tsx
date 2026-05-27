@@ -37,15 +37,6 @@ const DEFAULTS = {
   whatsappButtonText: "Conversar agora pelo WhatsApp",
 };
 
-function pickLawyer(lawyerId?: string) {
-  const previd = lawyers.filter((l) => l.specialty === "previdenciario");
-  if (lawyerId) {
-    const found = previd.find((l) => l.id === lawyerId);
-    if (found) return found;
-  }
-  return previd[0];
-}
-
 export default function PrevHeroSplit({
   breadcrumb,
   heroTitle,
@@ -53,7 +44,6 @@ export default function PrevHeroSplit({
   quizKey,
   palette = "default",
   whatsappButtonText = DEFAULTS.whatsappButtonText,
-  lawyerId,
   lawyerName,
   lawyerPhoto,
   lawyerOAB,
@@ -63,10 +53,9 @@ export default function PrevHeroSplit({
   onlineLabel = DEFAULTS.onlineLabel,
   sectionClassName = "pt-8 pb-14 lg:pt-24 lg:pb-28",
 }: PrevHeroSplitProps) {
-  const lawyer = pickLawyer(lawyerId);
-  const name = lawyerName ?? lawyer?.name ?? "Equipe Previdenciária";
-  const photo = lawyerPhoto ?? lawyer?.photo;
-  const oab = lawyerOAB ?? lawyer?.oab ?? "OAB";
+  const name = lawyerName ?? DEFAULT_LAWYER.name;
+  const photo = lawyerPhoto ?? DEFAULT_LAWYER.photo;
+  const oab = lawyerOAB ?? DEFAULT_LAWYER.oab;
 
   return (
     <section

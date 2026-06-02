@@ -68,7 +68,7 @@ const Index = () => {
       }
     ],
     "sameAs": [
-      "https://wa.me/5571997036269"
+      "https://wa.me/5571997092633"
     ]
   };
 
@@ -371,7 +371,7 @@ const Index = () => {
               <div className="flex flex-col items-center md:items-end gap-3">
                 <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
                   <a 
-                    href="https://wa.me/5571997036269?text=Olá!%20Preciso%20de%20ajuda%20jurídica.%20Pode%20me%20atender%3F" 
+                    href="https://wa.me/5571997092633?text=Olá!%20Preciso%20de%20ajuda%20jurídica.%20Pode%20me%20atender%3F" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="hover:text-[#25D366] transition-all duration-200 hover:scale-110 flex items-center gap-2 py-2 min-h-[48px]"

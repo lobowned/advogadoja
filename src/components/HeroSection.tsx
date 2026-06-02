@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 
 const WHATSAPP_URL =
-  "https://wa.me/5571997036269?text=Ol%C3%A1!%20Preciso%20falar%20com%20um%20advogado.";
+  "https://wa.me/5571997092633?text=Ol%C3%A1!%20Preciso%20falar%20com%20um%20advogado.";
 
 const practiceAreas = [
   "Trabalhista",

@@ -150,7 +150,7 @@ const LocalSEOArticle = () => {
     ]
   };
 
-  const whatsappLink = `https://wa.me/5571997036269?text=Olá! Vi o artigo sobre ${article.problemLabel} em ${article.cityName} e gostaria de falar com um advogado.`;
+  const whatsappLink = `https://wa.me/5571997092633?text=Olá! Vi o artigo sobre ${article.problemLabel} em ${article.cityName} e gostaria de falar com um advogado.`;
 
   return (
     <>

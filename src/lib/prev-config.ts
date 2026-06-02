@@ -21,7 +21,7 @@ export const LAWYER = {
   // ---- CONTATO ----
   // Número WhatsApp herdado do site atual (Salvador/BA). Troque para o
   // seu WhatsApp profissional pessoal/escritório.
-  whatsappNumber: "5571997036269",
+  whatsappNumber: "5571997092633",
   email: "contato@advogadoja.com.br",
   addressLine: "{{ENDEREÇO}}", // ex: "Rua das Flores, 123, sala 45 — Salvador/BA"
 

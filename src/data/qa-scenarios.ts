@@ -1349,7 +1349,7 @@ export const qaScenarios: TestScenario[] = [
     conversationHistory: [
       { role: 'assistant', content: 'Qual seu telefone?' }
     ],
-    userMessage: '5571997036269',
+    userMessage: '5571997092633',
     assertions: [
       { type: 'lead_field_saved', value: 'phone', message: 'Deve salvar telefone' }
     ],

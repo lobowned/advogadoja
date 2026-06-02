@@ -31,7 +31,7 @@ const LiminarOrtopedicaLanding = () => {
     window.location.href = "/#chat";
   };
 
-  const whatsappNumber = "5571997036269";
+  const whatsappNumber = "5571997092633";
   const whatsappMessage = encodeURIComponent("Olá! Meu plano de saúde negou minha cirurgia ortopédica e preciso de uma liminar urgente.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 

@@ -17,7 +17,7 @@ export const TestWhatsAppNotification = () => {
       // Dados de teste simulando um lead completo
       const testLeadData = {
         name: "João Silva (TESTE)",
-        phone: "5571997036269",
+        phone: "5571997092633",
         email: "teste@exemplo.com",
         specialty: "trabalhista",
         assigned_lawyer: "Dr. Carlos Silva",
@@ -55,7 +55,7 @@ export const TestWhatsAppNotification = () => {
 
       toast({
         title: "✅ Notificação Enviada!",
-        description: "A notificação de teste foi enviada para o WhatsApp. Verifique o número 5571997036269.",
+        description: "A notificação de teste foi enviada para o WhatsApp. Verifique o número 5571997092633.",
       });
 
     } catch (error: any) {

@@ -32,7 +32,7 @@ import PageTransition from "@/components/motion/PageTransition";
 import BackButton from "@/components/BackButton";
 import logoAdvogado from "@/assets/logo-advogado-online.png";
 
-const WHATSAPP_NUMBER = "5571997036269";
+const WHATSAPP_NUMBER = "5571997092633";
 
 const createWhatsAppLink = (message: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;

@@ -37,10 +37,9 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/60 to-primary/80 pointer-events-none" />
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 gap-10 lg:gap-16 items-center">
           {/* Editorial column */}
           <m.div
-            className="lg:col-span-7"
             initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -102,52 +101,6 @@ const HeroSection = () => {
             </p>
           </m.div>
 
-          {/* Editorial card column */}
-          <m.aside
-            className="lg:col-span-5"
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <div className="relative bg-card border border-accent/50 shadow-elegant rounded-sm p-6 sm:p-8">
-              {/* Corner accents */}
-              <span className="absolute top-0 left-0 w-6 h-px bg-accent" />
-              <span className="absolute top-0 left-0 w-px h-6 bg-accent" />
-              <span className="absolute bottom-0 right-0 w-6 h-px bg-accent" />
-              <span className="absolute bottom-0 right-0 w-px h-6 bg-accent" />
-
-              <div className="flex flex-col items-center justify-center mb-6">
-                <span className="font-display text-4xl sm:text-5xl text-primary leading-none">
-                  Advogado <span className="text-accent">Já</span>
-                </span>
-                <span className="mt-2 text-[10px] font-sans tracking-[0.3em] uppercase text-muted-foreground">
-                  Sociedade de Advogados
-                </span>
-              </div>
-
-              <div className="flex items-center justify-center gap-3 text-foreground mb-6">
-                <ShieldCheck className="w-5 h-5 text-accent" />
-                <span className="font-sans text-sm tracking-wide">
-                  Advogados inscritos na OAB
-                </span>
-              </div>
-
-              <div className="h-px w-full bg-accent/40 my-6" />
-
-              <p className="text-center font-display text-xl text-foreground mb-5">
-                Áreas de atuação
-              </p>
-
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 font-sans text-sm text-foreground">
-                {practiceAreas.map((area) => (
-                  <li key={area} className="flex items-center gap-2">
-                    <Scale className="w-3.5 h-3.5 text-accent shrink-0" />
-                    <span>{area}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </m.aside>
         </div>
       </div>
 

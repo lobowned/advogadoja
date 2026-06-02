@@ -37,7 +37,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/60 to-primary/80 pointer-events-none" />
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 gap-10 lg:gap-16 items-center">
           {/* Editorial column */}
           <m.div
             className="lg:col-span-7"

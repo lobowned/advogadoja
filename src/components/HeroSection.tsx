@@ -40,7 +40,6 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 gap-10 lg:gap-16 items-center">
           {/* Editorial column */}
           <m.div
-            className="lg:col-span-7"
             initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}

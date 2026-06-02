@@ -261,7 +261,7 @@ const CityLanding = () => {
                     Falar com Advogado Agora
                   </Button>
                   <Button size="lg" variant="outline" className="text-lg" asChild>
-                    <a href="tel:+5571997036269">
+                    <a href="tel:+5571997092633">
                       <Phone className="h-5 w-5 mr-2" />
                       Ligar Agora
                     </a>

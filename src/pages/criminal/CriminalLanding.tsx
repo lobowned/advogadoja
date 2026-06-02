@@ -266,7 +266,7 @@ const CriminalLanding = () => {
               <div className="flex flex-col items-center md:items-end gap-3">
                 <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
                   <a
-                    href="https://wa.me/5571997036269?text=Olá!%20Preciso%20de%20advogado%20criminalista."
+                    href="https://wa.me/5571997092633?text=Olá!%20Preciso%20de%20advogado%20criminalista."
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={trackWhatsAppConversion}

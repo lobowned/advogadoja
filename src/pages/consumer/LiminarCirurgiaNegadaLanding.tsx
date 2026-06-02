@@ -30,7 +30,7 @@ const LiminarCirurgiaNegadaLanding = () => {
   const prefersReducedMotion = useReducedMotion();
   
   // WhatsApp centralizado
-  const WHATSAPP_NUMBER = "5571997036269";
+  const WHATSAPP_NUMBER = "5571997092633";
   const createWhatsAppLink = (message: string) => 
     `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
   

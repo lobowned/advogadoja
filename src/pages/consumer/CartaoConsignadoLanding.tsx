@@ -44,7 +44,7 @@ import StaggerContainer, { StaggerItem } from "@/components/motion/StaggerContai
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import logoAdvogado from "@/assets/logo-advogado-online.png";
 
-const WHATSAPP_NUMBER = "5571997036269";
+const WHATSAPP_NUMBER = "5571997092633";
 const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 const consignadoProblems = [
@@ -276,7 +276,7 @@ const schemaData = {
       "name": "Advogado Cartão Consignado - Desconto RMC RCC Indevido | Advogado Já",
       "description": "Desconto indevido de cartão consignado no INSS? Advogado especialista em RMC e RCC. Restituição em dobro + indenização. Consulta gratuita.",
       "url": "https://advogadoja.lovable.app/advogado-cartao-consignado",
-      "telephone": "+5571997036269",
+      "telephone": "+5571997092633",
       "areaServed": "BR",
       "serviceType": ["Direito do Consumidor", "Cartão Consignado Indevido", "RMC RCC INSS"],
       "priceRange": "Consulta Gratuita",

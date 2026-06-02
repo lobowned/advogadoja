@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const WHATSAPP_NUMBER = '5571997036269';
+const WHATSAPP_NUMBER = '5571997092633';
 
 const practiceAreas = [
   {

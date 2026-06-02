@@ -85,7 +85,7 @@ const VooCanceladoLanding = () => {
                 <span className="text-lg font-semibold">Advogado Já</span>
               </Link>
               <Button asChild size="sm" className="bg-emerald-600 hover:bg-emerald-700">
-                <a href="https://wa.me/5571997036269" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/5571997092633" target="_blank" rel="noopener noreferrer">
                   <Phone className="w-4 h-4 mr-1" />
                   WhatsApp
                 </a>
@@ -316,7 +316,7 @@ const VooCanceladoLanding = () => {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-lg py-6 px-8 border-white text-white hover:bg-white/10">
-                <a href="https://wa.me/5571997036269" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/5571997092633" target="_blank" rel="noopener noreferrer">
                   <Phone className="w-5 h-5 mr-2" />
                   WhatsApp Direto
                 </a>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { trackWhatsAppConversion } from '@/lib/trackWhatsApp';
 
-const WHATSAPP_NUMBER = '5571997036269';
+const WHATSAPP_NUMBER = '5571997092633';
 const DEFAULT_MESSAGE = 'Olá! Vi o site de vocês e preciso de orientação jurídica.';
 
 export const FloatingWhatsApp = () => {

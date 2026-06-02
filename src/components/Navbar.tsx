@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Calculator, Trophy, Map } from "lucide-react";
 
-const WHATSAPP_NUMBER = '5571997036269';
+const WHATSAPP_NUMBER = '5571997092633';
 const DEFAULT_MESSAGE = 'Olá! Preciso de orientação jurídica.';
 
 interface NavbarProps {

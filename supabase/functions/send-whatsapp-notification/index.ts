@@ -53,7 +53,7 @@ serve(async (req) => {
     const zapiUrl = `https://api.z-api.io/instances/${ZAPI_INSTANCE_ID}/token/${ZAPI_TOKEN}/send-text`;
     
     console.log("Sending to Z-API URL:", zapiUrl.replace(ZAPI_TOKEN || '', 'TOKEN_HIDDEN'));
-    console.log("Target WhatsApp:", "5571997036269");
+    console.log("Target WhatsApp:", "5571997092633");
     
     const response = await fetch(zapiUrl, {
       method: 'POST',
@@ -62,7 +62,7 @@ serve(async (req) => {
         'Client-Token': ZAPI_CLIENT_TOKEN,
       },
       body: JSON.stringify({
-        phone: "5571997036269",
+        phone: "5571997092633",
         message: message
       })
     });

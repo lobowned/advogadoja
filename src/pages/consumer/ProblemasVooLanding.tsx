@@ -47,7 +47,7 @@ import StaggerContainer, { StaggerItem } from "@/components/motion/StaggerContai
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import logoAdvogado from "@/assets/logo-advogado-online.png";
 
-const WHATSAPP_NUMBER = "5571997036269";
+const WHATSAPP_NUMBER = "5571997092633";
 const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 // 9 tipos de problemas com voos
@@ -310,7 +310,7 @@ const schemaData = {
       "name": "Advogado Especialista em Problemas Aéreos | Advogado Já",
       "description": "Indenização por voo cancelado, atrasado, overbooking, bagagem extraviada e outros problemas aéreos. Consulta gratuita. Só paga se ganhar. Advogado aviação.",
       "url": "https://advogadoja.lovable.app/advogado-problemas-voo",
-      "telephone": "+5571997036269",
+      "telephone": "+5571997092633",
       "areaServed": "BR",
       "serviceType": ["Direito do Consumidor", "Direitos do Passageiro Aéreo", "Indenização Voo Cancelado"],
       "priceRange": "Consulta Gratuita",

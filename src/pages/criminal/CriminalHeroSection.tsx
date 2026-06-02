@@ -5,7 +5,7 @@ import { MessageCircle, ArrowRight } from "lucide-react";
 import { heroStagger, heroBadge } from "@/lib/motion-variants";
 import { trackWhatsAppConversion } from "@/lib/trackWhatsApp";
 
-const WHATSAPP_NUMBER = "5571997036269";
+const WHATSAPP_NUMBER = "5571997092633";
 
 const CriminalHeroSection = () => {
   const shouldReduceMotion = useReducedMotion();

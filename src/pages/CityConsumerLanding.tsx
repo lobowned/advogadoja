@@ -446,6 +446,18 @@ const CityConsumerLanding = () => {
           </div>
         </section>
 
+        {(() => {
+          const baseCity = getCityBySlug(citySlug!);
+          return baseCity ? (
+            <CityLocalGuide
+              city={baseCity}
+              area="Direito do Consumidor"
+              tribunalInfo={cityData.consumerTribunalInfo}
+              proconAddress={cityData.proconAddress}
+            />
+          ) : null;
+        })()}
+
         {/* FAQ Section */}
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4">

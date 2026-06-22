@@ -507,6 +507,8 @@ const CityNicheLanding = () => {
             </div>
           </section>
 
+          <CityLocalGuide city={city} area={`Direito ${area.name}`} />
+
           {/* FAQ Section */}
           <section className="py-12 md:py-16">
             <div className="container mx-auto px-4">

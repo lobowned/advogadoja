@@ -12,6 +12,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Navbar from "@/components/Navbar";
 import PageTransition from "@/components/motion/PageTransition";
 import { getCityBySlug, brazilianCities } from "@/data/cities";
+import { CityLocalGuide } from "@/components/CityLocalGuide";
 
 // Legal area configurations
 const legalAreas = {
@@ -506,6 +507,8 @@ const CityNicheLanding = () => {
               </div>
             </div>
           </section>
+
+          <CityLocalGuide city={city} area={`Direito ${area.name}`} />
 
           {/* FAQ Section */}
           <section className="py-12 md:py-16">

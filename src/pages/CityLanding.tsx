@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import PageTransition from "@/components/motion/PageTransition";
 import { getCityBySlug, brazilianCities } from "@/data/cities";
+import { CityLocalGuide } from "@/components/CityLocalGuide";
 
 const CityLanding = () => {
   const { citySlug } = useParams<{ citySlug: string }>();
@@ -321,6 +322,9 @@ const CityLanding = () => {
               </Card>
             </div>
           </section>
+
+          <CityLocalGuide city={city} area="atendimento jurídico generalista" />
+
 
           {/* Practice Areas */}
           <section className="py-12 md:py-16">

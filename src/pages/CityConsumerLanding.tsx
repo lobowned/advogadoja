@@ -31,6 +31,8 @@ import {
 } from "@/components/ui/accordion";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { consumerCityData, type ConsumerCityData } from "@/data/consumer-local-seo";
+import { getCityBySlug } from "@/data/cities";
+import { CityLocalGuide } from "@/components/CityLocalGuide";
 
 // Create a lookup map for city data by slug
 const cityDataMap: Record<string, ConsumerCityData> = {};
@@ -443,6 +445,18 @@ const CityConsumerLanding = () => {
             </div>
           </div>
         </section>
+
+        {(() => {
+          const baseCity = getCityBySlug(citySlug!);
+          return baseCity ? (
+            <CityLocalGuide
+              city={baseCity}
+              area="Direito do Consumidor"
+              tribunalInfo={cityData.consumerTribunalInfo}
+              proconAddress={cityData.proconAddress}
+            />
+          ) : null;
+        })()}
 
         {/* FAQ Section */}
         <section className="py-12 md:py-16">

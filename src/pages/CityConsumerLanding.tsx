@@ -31,6 +31,8 @@ import {
 } from "@/components/ui/accordion";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { consumerCityData, type ConsumerCityData } from "@/data/consumer-local-seo";
+import { getCityBySlug } from "@/data/cities";
+import { CityLocalGuide } from "@/components/CityLocalGuide";
 
 // Create a lookup map for city data by slug
 const cityDataMap: Record<string, ConsumerCityData> = {};

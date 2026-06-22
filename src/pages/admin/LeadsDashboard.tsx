@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
 import { Download, RefreshCw } from 'lucide-react';
 import { LeadStats } from '@/components/admin/LeadStats';
@@ -24,6 +25,9 @@ const LeadsDashboard = () => {
 
   return (
     <div className="min-h-screen bg-background p-4 md:p-8">
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <div className="mx-auto max-w-7xl space-y-6">
         <div className="flex items-center justify-between">
           <div>

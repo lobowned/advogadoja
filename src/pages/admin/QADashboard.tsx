@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { 
@@ -36,6 +37,9 @@ const QADashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       {/* Header */}
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-4">

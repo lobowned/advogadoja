@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
 import { ChevronLeft, ChevronRight, Upload } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 interface QuestionnaireData {
   problemType: string;
@@ -287,6 +288,9 @@ const Questionnaire = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       {/* Header */}
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-6">

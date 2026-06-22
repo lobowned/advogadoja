@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
 import { ChevronLeft, ChevronRight, Upload } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 interface QuestionnaireData {
   problemType: string;

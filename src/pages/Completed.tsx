@@ -20,6 +20,11 @@ const Completed = () => {
 
   return (
     <PageTransition variant="scale">
+    <Helmet>
+      <title>{`Informações recebidas | Advogado Já`}</title>
+      <meta name="robots" content="noindex, nofollow" />
+      <link rel="canonical" href="https://advogadoja.lovable.app/concluido" />
+    </Helmet>
     <div className="min-h-screen bg-background">
       <section className="container mx-auto flex min-h-screen items-center justify-center px-4 py-12">
         <Card className="max-w-2xl p-8 text-center shadow-card-hover md:p-12">

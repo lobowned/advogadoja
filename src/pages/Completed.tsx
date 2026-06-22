@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, MessageCircle, Mail, FileText } from "lucide-react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import PageTransition from "@/components/motion/PageTransition";
 
 const Completed = () => {

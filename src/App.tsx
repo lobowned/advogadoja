@@ -113,6 +113,8 @@ import CriminalLanding from "./pages/criminal/CriminalLanding";
 
 // Components
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
+import { DynamicSocialProof } from "./components/social/DynamicSocialProof";
+import { ExitIntentModal } from "./components/social/ExitIntentModal";
 
 const queryClient = new QueryClient();
 
@@ -300,6 +302,8 @@ const App = () => (
             <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
               <AnimatedRoutes />
               <ConditionalFloatingWhatsApp />
+              <DynamicSocialProof />
+              <ExitIntentModal />
             </BrowserRouter>
           </TooltipProvider>
         </LazyMotion>

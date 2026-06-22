@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import PageTransition from "@/components/motion/PageTransition";
 import { getCityBySlug, brazilianCities } from "@/data/cities";
+import { CityLocalGuide } from "@/components/CityLocalGuide";
 
 const CityLanding = () => {
   const { citySlug } = useParams<{ citySlug: string }>();

@@ -322,6 +322,9 @@ const CityLanding = () => {
             </div>
           </section>
 
+          <CityLocalGuide city={city} area="atendimento jurídico generalista" />
+
+
           {/* Practice Areas */}
           <section className="py-12 md:py-16">
             <div className="container mx-auto px-4">

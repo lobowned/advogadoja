@@ -3,7 +3,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+  Navigate,
+} from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
 
@@ -11,14 +17,23 @@ import { LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
 // Mantemos o bundle do site original inalterado: as páginas /prev só
 // carregam quando o usuário entra em alguma URL /prev/*.
 const PrevHome = lazy(() => import("./pages/prev/PrevHome"));
-const PrevAposentadorias = lazy(() => import("./pages/prev/PrevAposentadorias"));
-const PrevAposentadoriaIdade = lazy(() => import("./pages/prev/PrevAposentadoriaIdade"));
+const PrevAposentadorias = lazy(
+  () => import("./pages/prev/PrevAposentadorias"),
+);
+const PrevAposentadoriaIdade = lazy(
+  () => import("./pages/prev/PrevAposentadoriaIdade"),
+);
 const PrevAuxilioDoenca = lazy(() => import("./pages/prev/PrevAuxilioDoenca"));
 const PrevInvalidez = lazy(() => import("./pages/prev/PrevInvalidez"));
 const PrevBpcLoas = lazy(() => import("./pages/prev/PrevBpcLoas"));
-const PrevSalarioMaternidade = lazy(() => import("./pages/prev/PrevSalarioMaternidade"));
+const PrevSalarioMaternidade = lazy(
+  () => import("./pages/prev/PrevSalarioMaternidade"),
+);
 const PrevSobre = lazy(() => import("./pages/prev/PrevSobre"));
 const PrevContato = lazy(() => import("./pages/prev/PrevContato"));
+
+// Landing independente da Riccio Advocacia (preto & ouro, mobile-first) — lazy pra não pesar o bundle.
+const RiccioAdvocacia = lazy(() => import("./pages/RiccioAdvocacia"));
 
 // Pages
 import Index from "./pages/Index";
@@ -125,7 +140,11 @@ const queryClient = new QueryClient();
  */
 const ConditionalFloatingWhatsApp = () => {
   const location = useLocation();
-  if (location.pathname.startsWith("/prev")) return null;
+  if (
+    location.pathname.startsWith("/prev") ||
+    location.pathname.startsWith("/riccioadvocacia")
+  )
+    return null;
   return <FloatingWhatsApp />;
 };
 
@@ -139,7 +158,10 @@ const AnimatedRoutes = () => {
         <Route path="/" element={<Index />} />
         <Route path="/selecionar-nicho" element={<SelectNiche />} />
         <Route path="/selecionar-acao/:nicheId" element={<SelectAction />} />
-        <Route path="/questionario/:nicheId/:actionId" element={<DynamicQuestionnaire />} />
+        <Route
+          path="/questionario/:nicheId/:actionId"
+          element={<DynamicQuestionnaire />}
+        />
         <Route path="/concluido" element={<Completed />} />
 
         {/* Blog - New */}
@@ -147,7 +169,10 @@ const AnimatedRoutes = () => {
         <Route path="/blog/:slug" element={<BlogArticle />} />
 
         {/* Local SEO Articles - Consumer + City */}
-        <Route path="/artigos/consumidor/:localSlug" element={<LocalSEOArticle />} />
+        <Route
+          path="/artigos/consumidor/:localSlug"
+          element={<LocalSEOArticle />}
+        />
 
         {/* Blog/Artigos - Legacy */}
         <Route path="/artigos" element={<Blog />} />
@@ -170,8 +195,14 @@ const AnimatedRoutes = () => {
         {/* Regional Hub Pages */}
         <Route path="/advogado-bahia" element={<AdvogadoBahia />} />
         <Route path="/advogado-sao-paulo" element={<AdvogadoSaoPaulo />} />
-        <Route path="/advogado-rio-de-janeiro" element={<AdvogadoRioDeJaneiro />} />
-        <Route path="/advogado-minas-gerais" element={<AdvogadoMinasGerais />} />
+        <Route
+          path="/advogado-rio-de-janeiro"
+          element={<AdvogadoRioDeJaneiro />}
+        />
+        <Route
+          path="/advogado-minas-gerais"
+          element={<AdvogadoMinasGerais />}
+        />
 
         {/* News */}
         <Route path="/noticias" element={<News />} />
@@ -179,64 +210,172 @@ const AnimatedRoutes = () => {
 
         {/* Calculadoras */}
         <Route path="/calculadoras" element={<Calculadoras />} />
-        <Route path="/calculadora-trabalhista" element={<CalculadoraTrabalhista />} />
+        <Route
+          path="/calculadora-trabalhista"
+          element={<CalculadoraTrabalhista />}
+        />
         <Route path="/calculadora-pensao" element={<CalculadoraPensao />} />
-        <Route path="/calculadora-aposentadoria" element={<CalculadoraAposentadoria />} />
-        <Route path="/calculadora-danos-morais" element={<CalculadoraDanosMorais />} />
-        <Route path="/calculadora-atualizacao-divida" element={<CalculadoraAtualizacaoDivida />} />
-        <Route path="/calculadora-partilha-bens" element={<CalculadoraPartilhaBens />} />
-        <Route path="/calculadora-aluguel-atrasado" element={<CalculadoraAluguelAtrasado />} />
-        <Route path="/calculadora-horas-extras" element={<CalculadoraHorasExtras />} />
-        <Route path="/calculadora-seguro-desemprego" element={<CalculadoraSeguroDesemprego />} />
+        <Route
+          path="/calculadora-aposentadoria"
+          element={<CalculadoraAposentadoria />}
+        />
+        <Route
+          path="/calculadora-danos-morais"
+          element={<CalculadoraDanosMorais />}
+        />
+        <Route
+          path="/calculadora-atualizacao-divida"
+          element={<CalculadoraAtualizacaoDivida />}
+        />
+        <Route
+          path="/calculadora-partilha-bens"
+          element={<CalculadoraPartilhaBens />}
+        />
+        <Route
+          path="/calculadora-aluguel-atrasado"
+          element={<CalculadoraAluguelAtrasado />}
+        />
+        <Route
+          path="/calculadora-horas-extras"
+          element={<CalculadoraHorasExtras />}
+        />
+        <Route
+          path="/calculadora-seguro-desemprego"
+          element={<CalculadoraSeguroDesemprego />}
+        />
         <Route path="/calculadora-fgts" element={<CalculadoraFGTS />} />
-        <Route path="/calculadora-pensao-morte" element={<CalculadoraPensaoMorte />} />
-        <Route path="/calculadora-auxilio-doenca" element={<CalculadoraAuxilioDoenca />} />
+        <Route
+          path="/calculadora-pensao-morte"
+          element={<CalculadoraPensaoMorte />}
+        />
+        <Route
+          path="/calculadora-auxilio-doenca"
+          element={<CalculadoraAuxilioDoenca />}
+        />
         <Route path="/calculadora-bpc-loas" element={<CalculadoraBPCLOAS />} />
-        <Route path="/calculadora-inventario" element={<CalculadoraInventario />} />
-        <Route path="/calculadora-insalubridade" element={<CalculadoraInsalubridade />} />
+        <Route
+          path="/calculadora-inventario"
+          element={<CalculadoraInventario />}
+        />
+        <Route
+          path="/calculadora-insalubridade"
+          element={<CalculadoraInsalubridade />}
+        />
         <Route path="/calculadora-dpvat" element={<CalculadoraDPVAT />} />
         {/* Consumer Calculators */}
-        <Route path="/calculadora-voo-cancelado" element={<CalculadoraVooCancelado />} />
-        <Route path="/calculadora-negativacao" element={<CalculadoraNegativacao />} />
-        <Route path="/calculadora-devolucao-dobro" element={<CalculadoraDevolucaoEmDobro />} />
-        <Route path="/calculadora-plano-saude" element={<CalculadoraPlanoSaude />} />
-        <Route path="/calculadora-fraude-bancaria" element={<CalculadoraFraudeBancaria />} />
-        <Route path="/calculadora-liminar-cirurgia" element={<CalculadoraLiminarCirurgia />} />
+        <Route
+          path="/calculadora-voo-cancelado"
+          element={<CalculadoraVooCancelado />}
+        />
+        <Route
+          path="/calculadora-negativacao"
+          element={<CalculadoraNegativacao />}
+        />
+        <Route
+          path="/calculadora-devolucao-dobro"
+          element={<CalculadoraDevolucaoEmDobro />}
+        />
+        <Route
+          path="/calculadora-plano-saude"
+          element={<CalculadoraPlanoSaude />}
+        />
+        <Route
+          path="/calculadora-fraude-bancaria"
+          element={<CalculadoraFraudeBancaria />}
+        />
+        <Route
+          path="/calculadora-liminar-cirurgia"
+          element={<CalculadoraLiminarCirurgia />}
+        />
 
         {/* Consumer Problem Landing Pages - SEO URLs */}
-        <Route path="/advogado-voo-cancelado-atrasado" element={<Navigate to="/advogado-problemas-voo" replace />} />
-        <Route path="/advogado-negativacao-indevida" element={<NegativacaoIndevidaLanding />} />
-        <Route path="/advogado-plano-saude-cobertura-negada" element={<PlanoSaudeNegouLanding />} />
-        <Route path="/advogado-cobranca-indevida" element={<CobrancaIndevidaLanding />} />
-        <Route path="/advogado-produto-defeituoso" element={<ProdutoDefeitousoLanding />} />
+        <Route
+          path="/advogado-voo-cancelado-atrasado"
+          element={<Navigate to="/advogado-problemas-voo" replace />}
+        />
+        <Route
+          path="/advogado-negativacao-indevida"
+          element={<NegativacaoIndevidaLanding />}
+        />
+        <Route
+          path="/advogado-plano-saude-cobertura-negada"
+          element={<PlanoSaudeNegouLanding />}
+        />
+        <Route
+          path="/advogado-cobranca-indevida"
+          element={<CobrancaIndevidaLanding />}
+        />
+        <Route
+          path="/advogado-produto-defeituoso"
+          element={<ProdutoDefeitousoLanding />}
+        />
 
         {/* Consumer Problem Landing Pages - Legacy URLs */}
-        <Route path="/voo-cancelado" element={<Navigate to="/advogado-problemas-voo" replace />} />
-        <Route path="/negativacao-indevida" element={<NegativacaoIndevidaLanding />} />
+        <Route
+          path="/voo-cancelado"
+          element={<Navigate to="/advogado-problemas-voo" replace />}
+        />
+        <Route
+          path="/negativacao-indevida"
+          element={<NegativacaoIndevidaLanding />}
+        />
         <Route path="/plano-saude-negou" element={<PlanoSaudeNegouLanding />} />
         <Route path="/fraude-bancaria" element={<FraudeBancariaLanding />} />
-        <Route path="/cobranca-indevida" element={<CobrancaIndevidaLanding />} />
+        <Route
+          path="/cobranca-indevida"
+          element={<CobrancaIndevidaLanding />}
+        />
 
         {/* Liminar Cirurgia - SEO */}
-        <Route path="/liminar-cirurgia-negada" element={<LiminarCirurgiaNegadaLanding />} />
-        <Route path="/liminar-cirurgia-bariatrica" element={<LiminarBariatricaLanding />} />
-        <Route path="/liminar-tratamento-cancer" element={<LiminarOncologicaLanding />} />
-        <Route path="/liminar-cirurgia-ortopedica" element={<LiminarOrtopedicaLanding />} />
-        <Route path="/liminar-cirurgia-cardiaca" element={<LiminarCardiologicaLanding />} />
-        <Route path="/liminar-neurocirurgia" element={<LiminarNeurologicaLanding />} />
-        <Route path="/liminar-cirurgia-olhos" element={<LiminarOftalmologicaLanding />} />
+        <Route
+          path="/liminar-cirurgia-negada"
+          element={<LiminarCirurgiaNegadaLanding />}
+        />
+        <Route
+          path="/liminar-cirurgia-bariatrica"
+          element={<LiminarBariatricaLanding />}
+        />
+        <Route
+          path="/liminar-tratamento-cancer"
+          element={<LiminarOncologicaLanding />}
+        />
+        <Route
+          path="/liminar-cirurgia-ortopedica"
+          element={<LiminarOrtopedicaLanding />}
+        />
+        <Route
+          path="/liminar-cirurgia-cardiaca"
+          element={<LiminarCardiologicaLanding />}
+        />
+        <Route
+          path="/liminar-neurocirurgia"
+          element={<LiminarNeurologicaLanding />}
+        />
+        <Route
+          path="/liminar-cirurgia-olhos"
+          element={<LiminarOftalmologicaLanding />}
+        />
 
         {/* Cartão Consignado Landing Page */}
-        <Route path="/advogado-cartao-consignado" element={<CartaoConsignadoLanding />} />
+        <Route
+          path="/advogado-cartao-consignado"
+          element={<CartaoConsignadoLanding />}
+        />
 
         {/* Trabalhista Landing Page */}
-        <Route path="/advogado-trabalhista-online" element={<TrabalhistaLanding />} />
+        <Route
+          path="/advogado-trabalhista-online"
+          element={<TrabalhistaLanding />}
+        />
 
         {/* Criminal Landing Page (Riccio Advocacia - institutional) */}
         <Route path="/criminal" element={<CriminalLanding />} />
 
         {/* Problemas com Voo - Nova Landing Completa */}
-        <Route path="/advogado-problemas-voo" element={<ProblemasVooLanding />} />
+        <Route
+          path="/advogado-problemas-voo"
+          element={<ProblemasVooLanding />}
+        />
 
         {/* Niche Landing Pages */}
         <Route path="/advogado-consumidor" element={<NicheLanding />} />
@@ -247,16 +386,32 @@ const AnimatedRoutes = () => {
         <Route path="/advogado-criminal" element={<NicheLanding />} />
 
         {/* City Consumer Landing Pages - Ultra Local SEO (BEFORE generic city+niche) */}
-        <Route path="/advogado-consumidor-:citySlug" element={<CityConsumerLanding />} />
+        <Route
+          path="/advogado-consumidor-:citySlug"
+          element={<CityConsumerLanding />}
+        />
 
         {/* City Landing Pages - Local SEO */}
         <Route path="/advogado/:citySlug" element={<CityLanding />} />
 
         {/* City + Niche Landing Pages - Ultra Local SEO */}
-        <Route path="/advogado-:nicheSlug-:citySlug" element={<CityNicheLanding />} />
+        <Route
+          path="/advogado-:nicheSlug-:citySlug"
+          element={<CityNicheLanding />}
+        />
 
         {/* Conversion Tracking */}
         <Route path="/conversao" element={<Conversao />} />
+
+        {/* Landing Riccio Advocacia (nova, independente) */}
+        <Route
+          path="/riccioadvocacia"
+          element={
+            <Suspense fallback={<div className="min-h-screen bg-[#0b0b0d]" />}>
+              <RiccioAdvocacia />
+            </Suspense>
+          }
+        />
 
         {/* Admin */}
         <Route path="/admin" element={<LeadsDashboard />} />
@@ -271,12 +426,21 @@ const AnimatedRoutes = () => {
               <Routes>
                 <Route index element={<PrevHome />} />
                 <Route path="aposentadorias" element={<PrevAposentadorias />} />
-                <Route path="aposentadoria-por-idade" element={<PrevAposentadoriaIdade />} />
+                <Route
+                  path="aposentadoria-por-idade"
+                  element={<PrevAposentadoriaIdade />}
+                />
                 <Route path="auxilio-doenca" element={<PrevAuxilioDoenca />} />
                 <Route path="invalidez" element={<PrevInvalidez />} />
-                <Route path="aposentadoria-por-invalidez" element={<PrevInvalidez />} />
+                <Route
+                  path="aposentadoria-por-invalidez"
+                  element={<PrevInvalidez />}
+                />
                 <Route path="bpc-loas" element={<PrevBpcLoas />} />
-                <Route path="salario-maternidade" element={<PrevSalarioMaternidade />} />
+                <Route
+                  path="salario-maternidade"
+                  element={<PrevSalarioMaternidade />}
+                />
                 <Route path="sobre" element={<PrevSobre />} />
                 <Route path="contato" element={<PrevContato />} />
               </Routes>
@@ -299,7 +463,9 @@ const App = () => (
           <TooltipProvider>
             <Toaster />
             <Sonner />
-            <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+            <BrowserRouter
+              future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+            >
               <AnimatedRoutes />
               <ConditionalFloatingWhatsApp />
               <DynamicSocialProof />

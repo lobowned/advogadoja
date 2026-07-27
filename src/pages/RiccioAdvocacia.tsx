@@ -215,10 +215,10 @@ export default function RiccioAdvocacia() {
       <header className="sticky top-0 z-40 border-b border-[#c9a227]/15 bg-[#0b0b0d]/85 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
           <a href="#topo" className="flex flex-col leading-none">
-            <span className="font-['Playfair_Display'] text-lg font-extrabold tracking-[0.14em] text-[#e7c766] sm:text-xl">
+            <span className="font-['Cinzel'] text-lg font-semibold tracking-[0.18em] text-[#e7c766] sm:text-xl">
               RICCIO
             </span>
-            <span className="mt-0.5 text-[9px] font-medium uppercase tracking-[0.24em] text-[#8b857a]">
+            <span className="mt-1 font-['Cinzel'] text-[9px] font-medium uppercase tracking-[0.22em] text-[#8b857a]">
               Advocacia
             </span>
           </a>
@@ -465,7 +465,7 @@ export default function RiccioAdvocacia() {
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
           <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
             <div>
-              <p className="font-['Playfair_Display'] text-xl font-extrabold tracking-[0.14em] text-[#e7c766]">
+              <p className="font-['Cinzel'] text-xl font-semibold tracking-[0.18em] text-[#e7c766]">
                 RICCIO ADVOCACIA
               </p>
               <p className="mt-2 max-w-xs text-sm leading-relaxed text-[#8b857a]">

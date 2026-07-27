@@ -120,7 +120,8 @@ const AREAS = [
   {
     icon: Scale,
     titulo: "Direito Previdenciário",
-    desc: "Do INSS ao Judiciário, cuidando do seu benefício com atenção a cada detalhe.",
+    desc: "Quando o INSS nega ou faz você esperar sem explicação, eu analiso o seu caso com atenção e mostro o caminho possível.",
+    cta: "Falar sobre o INSS e benefícios",
     itens: [
       { icon: UserCheck, t: "Aposentadorias (idade, tempo, especial)" },
       { icon: HeartHandshake, t: "BPC/LOAS — idoso e deficiência" },
@@ -133,7 +134,8 @@ const AREAS = [
   {
     icon: Briefcase,
     titulo: "Direito Trabalhista",
-    desc: "Seus direitos na relação de trabalho, do acerto à reparação — com clareza.",
+    desc: "Se você sentiu que foi tratado com injustiça no trabalho, vamos entender juntos o que a lei garante a você.",
+    cta: "Falar sobre meus direitos no trabalho",
     itens: [
       { icon: ScrollText, t: "Verbas rescisórias e acertos" },
       { icon: Clock, t: "Horas extras e adicionais" },
@@ -148,7 +150,7 @@ const AREAS = [
 const PILARES = [
   {
     icon: UserCheck,
-    t: "Atendimento direto com advogado",
+    t: "Atendimento direto com o advogado",
     d: "Você conversa com quem cuida do seu caso — não com um atendente de call center.",
   },
   {
@@ -163,7 +165,7 @@ const PILARES = [
   },
   {
     icon: ShieldCheck,
-    t: "Transparência do começo ao fim",
+    t: "Tudo explicado sem juridiquês",
     d: "Você entende cada passo e acompanha o andamento com tranquilidade.",
   },
 ];
@@ -171,19 +173,23 @@ const PILARES = [
 const FAQ = [
   {
     q: "Como funciona o atendimento?",
-    a: "O primeiro contato é pelo WhatsApp, direto com advogado. Você conta o seu caso, a gente analisa e te explica os caminhos — sem compromisso.",
+    a: "Você me chama no WhatsApp e conta o que está acontecendo. Eu escuto, analiso o seu caso e explico, em português claro, quais são as opções. Do começo ao fim, você fala direto comigo.",
   },
   {
     q: "Preciso ir até o escritório?",
-    a: "Não é obrigatório. Atendemos de Salvador para todo o Brasil de forma online. Se você preferir presencial, também dá pra combinar.",
+    a: "Não precisa. O atendimento é pelo WhatsApp e, quando faz sentido, por chamada de vídeo. O escritório fica em Salvador, mas eu atendo pessoas de todo o Brasil dessa forma.",
+  },
+  {
+    q: "Já tive o pedido negado pelo INSS. Ainda dá pra fazer alguma coisa?",
+    a: "Muitas vezes, sim. Uma negativa nem sempre é o fim do caminho. Eu analiso o motivo da recusa e te explico quais opções existem a partir dali.",
   },
   {
     q: "Vou saber como está o meu processo?",
-    a: "Sim. Mantemos você informado em cada etapa, de forma clara, pelo WhatsApp.",
+    a: "Sim. Eu te aviso nas etapas importantes e respondo às suas dúvidas ao longo do caminho. A ideia é que você nunca fique no escuro sobre o próprio caso.",
   },
   {
     q: "Quais documentos eu preciso separar?",
-    a: "Depende do caso. Logo no primeiro contato a gente te diz exatamente o que reunir, sem exigir papelada desnecessária.",
+    a: "Depende do seu caso, e eu te digo certinho na conversa. No geral ajuda ter documento com foto, CPF e o que você já tiver guardado: carta do INSS, carteira de trabalho, holerites, exames. Se faltar algo, eu te oriento sobre como buscar.",
   },
 ];
 
@@ -236,13 +242,14 @@ export default function RiccioAdvocacia() {
               loading="eager"
             />
             <div className="absolute inset-x-0 bottom-0 flex flex-col items-center bg-gradient-to-t from-[#0b0b0d] via-[#0b0b0d]/85 to-transparent px-5 pb-9 pt-28 text-center">
-              <Kicker>Salvador · BA · em todo o Brasil</Kicker>
-              <p className="mt-3 max-w-[19rem] text-[15px] leading-relaxed text-[#cfc7b8]">
-                Atendimento humano e direto com advogado, pelo WhatsApp — do
-                primeiro contato ao fim do processo.
+              <Kicker>OAB/BA 46.638 · Salvador · todo o Brasil</Kicker>
+              <p className="mt-3 max-w-[20rem] text-[15px] leading-relaxed text-[#cfc7b8]">
+                Aqui você fala direto com o advogado, pelo WhatsApp, e entende
+                cada passo do seu caso. Com calma, com honestidade e sem
+                promessa vazia.
               </p>
               <ZapButton className="mt-5 w-full px-7 py-4 text-base">
-                Falar agora no WhatsApp
+                Falar com o advogado no WhatsApp
               </ZapButton>
               <a
                 href="#areas"
@@ -281,22 +288,21 @@ export default function RiccioAdvocacia() {
                 delay={120}
                 className="mx-auto mt-9 max-w-2xl text-center"
               >
-                <Kicker>Salvador · BA · atendimento em todo o Brasil</Kicker>
+                <Kicker>
+                  OAB/BA 46.638 · Salvador · atendimento em todo o Brasil
+                </Kicker>
                 <h1 className="mt-5 font-['Playfair_Display'] text-5xl font-extrabold leading-[1.08] tracking-tight text-[#f6f1e6]">
-                  Seu direito{" "}
-                  <span className="text-[#e7c766]">
-                    previdenciário e trabalhista
-                  </span>{" "}
-                  em mãos que cuidam.
+                  Você não precisa enfrentar o INSS, ou a empresa,{" "}
+                  <span className="text-[#e7c766]">sozinho</span>.
                 </h1>
                 <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-[#b8b1a4]">
-                  Atendimento humano e direto com advogado, pelo WhatsApp — do
-                  primeiro contato até o fim do processo. Sem enrolação e sem
-                  promessa vazia.
+                  Aqui você fala direto com o advogado, pelo WhatsApp, e entende
+                  cada passo do seu caso — do primeiro contato até o fim. Com
+                  calma, com honestidade e sem promessa vazia.
                 </p>
                 <div className="mt-8 flex flex-row justify-center gap-3">
                   <ZapButton className="px-7 py-4 text-base">
-                    Falar agora no WhatsApp
+                    Falar com o advogado no WhatsApp
                   </ZapButton>
                   <a
                     href="#areas"
@@ -378,7 +384,7 @@ export default function RiccioAdvocacia() {
                     ))}
                   </ul>
                   <ZapButton msg={area.msg} className="mt-7 w-full px-6 py-3.5">
-                    Falar sobre {area.titulo.replace("Direito ", "")}
+                    {area.cta}
                   </ZapButton>
                 </div>
               </Reveal>
@@ -386,12 +392,13 @@ export default function RiccioAdvocacia() {
           </div>
 
           <Reveal className="mt-8 text-center">
-            <p className="text-sm text-[#8b857a]">
-              Também atuamos em{" "}
+            <p className="mx-auto max-w-xl text-sm leading-relaxed text-[#8b857a]">
+              Seu problema é de{" "}
               <span className="text-[#d7d0c2]">
-                Família, Consumidor, Cível e Criminal
+                Família, Consumidor, Cível ou Criminal
               </span>
-              . Fale com a gente e a gente te orienta.
+              ? Também cuido dessas causas — me conte o que aconteceu que eu te
+              oriento.
             </p>
           </Reveal>
         </section>
@@ -436,15 +443,16 @@ export default function RiccioAdvocacia() {
                 strokeWidth={1.5}
               />
               <h2 className="mt-5 font-['Playfair_Display'] text-[1.8rem] font-extrabold leading-tight text-[#f6f1e6] sm:text-[2.6rem]">
-                Vamos conversar sobre o seu caso?
+                Me conta o que está te preocupando?
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-[15px] leading-relaxed text-[#b8b1a4] sm:text-lg">
-                O primeiro passo é uma conversa — sem compromisso. Manda uma
-                mensagem que a gente te responde.
+                O começo é simples: você manda uma mensagem, conta a sua
+                situação e eu te digo com sinceridade o que é possível fazer no
+                seu caso.
               </p>
               <div className="mt-8 flex justify-center">
                 <ZapButton className="px-8 py-4 text-base sm:text-lg">
-                  Falar com a Riccio agora
+                  Chamar o advogado no WhatsApp
                 </ZapButton>
               </div>
             </Reveal>

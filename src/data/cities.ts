@@ -1363,3 +1363,25 @@ export const getCitiesByRegion = (region: string): CityData[] => {
 export const getCitiesByState = (stateCode: string): CityData[] => {
   return brazilianCities.filter(city => city.stateCode === stateCode);
 };
+
+// SEO: só indexamos combinações cidade+nicho em cidades da nossa captação (Bahia).
+// Tudo que estiver fora dessa lista recebe <meta robots="noindex, follow">
+// — a página continua acessível para quem clicar, mas sai do Google.
+// Motivo: 180 páginas-template de cidades fora da BA eram sinal de doorway
+// e derrubaram o site todo nos Core Updates de 2024/2025.
+export const INDEXED_CITY_SLUGS: ReadonlySet<string> = new Set([
+  "salvador",
+  "camacari",
+  "lauro-de-freitas",
+  "feira-de-santana",
+  "vitoria-da-conquista",
+  "itabuna",
+  "ilheus",
+  "juazeiro",
+  "barreiras",
+  "jequie",
+  "alagoinhas",
+]);
+
+export const isCityIndexable = (slug: string): boolean =>
+  INDEXED_CITY_SLUGS.has(slug);

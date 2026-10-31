@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Navbar from "@/components/Navbar";
 import PageTransition from "@/components/motion/PageTransition";
-import { getCityBySlug, brazilianCities } from "@/data/cities";
+import { getCityBySlug, brazilianCities, isCityIndexable } from "@/data/cities";
 import { CityLocalGuide } from "@/components/CityLocalGuide";
 
 // Legal area configurations
@@ -254,6 +254,7 @@ const CityNicheLanding = () => {
 
   const canonicalUrl = `https://advogadoja.lovable.app/advogado-${area.slug}-${city.slug}`;
   const Icon = area.icon;
+  const indexable = isCityIndexable(city.slug);
 
   // Schema.org LegalService with LocalBusiness
   const legalServiceSchema = {
@@ -379,6 +380,9 @@ const CityNicheLanding = () => {
             content={`advogado ${area.slug} ${city.name}, ${area.slug} ${city.name}, advogado ${area.name.toLowerCase()} ${city.stateCode}, consulta ${area.slug} ${city.name}`} 
           />
           <link rel="canonical" href={canonicalUrl} />
+          {!indexable && (
+            <meta name="robots" content="noindex, follow" />
+          )}
           
           <meta property="og:title" content={`Advogado ${area.name} em ${city.name} | Consulta Gratuita`} />
           <meta property="og:description" content={`${area.description} Atendimento online em ${city.name}.`} />

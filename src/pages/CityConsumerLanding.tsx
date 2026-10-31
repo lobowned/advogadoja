@@ -31,7 +31,7 @@ import {
 } from "@/components/ui/accordion";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { consumerCityData, type ConsumerCityData } from "@/data/consumer-local-seo";
-import { getCityBySlug } from "@/data/cities";
+import { getCityBySlug, isCityIndexable } from "@/data/cities";
 import { CityLocalGuide } from "@/components/CityLocalGuide";
 
 // Create a lookup map for city data by slug
@@ -193,7 +193,10 @@ const CityConsumerLanding = () => {
           content={`advogado consumidor ${cityData.cityName.toLowerCase()}, advogado direito do consumidor ${cityData.cityName.toLowerCase()}, especialista consumidor ${cityData.stateCode}, indenização consumidor ${cityData.cityName.toLowerCase()}, processar empresa ${cityData.cityName.toLowerCase()}`} 
         />
         <link rel="canonical" href={pageUrl} />
-        
+        {!isCityIndexable(citySlug ?? "") && (
+          <meta name="robots" content="noindex, follow" />
+        )}
+
         {/* Geo Tags */}
         <meta name="geo.region" content={`BR-${cityData.stateCode}`} />
         <meta name="geo.placename" content={cityData.cityName} />

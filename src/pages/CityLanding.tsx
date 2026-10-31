@@ -10,7 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import PageTransition from "@/components/motion/PageTransition";
-import { getCityBySlug, brazilianCities } from "@/data/cities";
+import { getCityBySlug, brazilianCities, isCityIndexable } from "@/data/cities";
 import { CityLocalGuide } from "@/components/CityLocalGuide";
 
 const CityLanding = () => {
@@ -22,6 +22,7 @@ const CityLanding = () => {
   }
 
   const canonicalUrl = `https://advogadoja.lovable.app/advogado/${city.slug}`;
+  const indexable = isCityIndexable(city.slug);
 
   const practiceAreas = [
     {
@@ -210,6 +211,9 @@ const CityLanding = () => {
             content={`advogado ${city.name}, advogado online ${city.name}, consulta jurídica ${city.name}, advogado trabalhista ${city.name}, advogado família ${city.name}, advogado ${city.stateCode}`} 
           />
           <link rel="canonical" href={canonicalUrl} />
+          {!indexable && (
+            <meta name="robots" content="noindex, follow" />
+          )}
           
           <meta property="og:title" content={`Advogado em ${city.name} | Consulta Gratuita`} />
           <meta property="og:description" content={`Fale agora com advogados especialistas em ${city.name}. Atendimento online gratuito e imediato.`} />

@@ -258,7 +258,7 @@ const TrabalhistaLanding = () => {
             // @ts-expect-error fetchpriority is a valid attribute
             fetchpriority="low"
           >
-            <source src="/videos/hero-background.mp4" type="video/mp4" />
+            <source src="/__l5e/assets-v1/7004c786-16f1-47cb-abc9-55e25ba451de/hero-law-office.mp4" type="video/mp4" />
           </video>
           
           {/* Fallback Image */}

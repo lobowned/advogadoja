@@ -286,7 +286,7 @@ const LiminarCirurgiaNegadaLanding = () => {
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover"
               >
-                <source src="/videos/hero-background.mp4" type="video/mp4" />
+                <source src="/__l5e/assets-v1/7004c786-16f1-47cb-abc9-55e25ba451de/hero-law-office.mp4" type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90" />
               <div className="absolute inset-0 bg-[#D4AF37]/5" />

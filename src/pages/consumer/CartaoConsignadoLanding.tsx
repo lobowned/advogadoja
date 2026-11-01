@@ -369,9 +369,9 @@ const CartaoConsignadoLanding = () => {
             loop
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
-            poster="/videos/hero-background.mp4"
+            poster="/__l5e/assets-v1/7004c786-16f1-47cb-abc9-55e25ba451de/hero-law-office.mp4"
           >
-            <source src="/videos/hero-background.mp4" type="video/mp4" />
+            <source src="/__l5e/assets-v1/7004c786-16f1-47cb-abc9-55e25ba451de/hero-law-office.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black" />
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#D4AF37]/10 rounded-full blur-[100px] pointer-events-none" />

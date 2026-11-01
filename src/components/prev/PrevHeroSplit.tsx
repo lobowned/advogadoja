@@ -71,6 +71,11 @@ export default function PrevHeroSplit({
         preload="auto"
         poster=""
       >
+        <source
+          media="(max-width: 767px)"
+          src="/videos/hero-background-mobile.mp4"
+          type="video/mp4"
+        />
         <source src="/videos/hero-background.mp4" type="video/mp4" />
       </video>
       {/* Overlay sutil — PRESERVADO (gradient navy + dim mobile) */}

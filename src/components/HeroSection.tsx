@@ -30,7 +30,7 @@ const HeroSection = () => {
         preload="auto"
         poster=""
       >
-        <source src="/__l5e/assets-v1/7004c786-16f1-47cb-abc9-55e25ba451de/hero-law-office.mp4" type="video/mp4" />
+        <source src="/videos/hero-background.mp4" type="video/mp4" />
       </video>
 
       {/* Subtle top gradient for navbar + badge legibility */}

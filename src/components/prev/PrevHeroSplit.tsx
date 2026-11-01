@@ -71,7 +71,7 @@ export default function PrevHeroSplit({
         preload="auto"
         poster=""
       >
-        <source src="/__l5e/assets-v1/7004c786-16f1-47cb-abc9-55e25ba451de/hero-law-office.mp4" type="video/mp4" />
+        <source src="/videos/hero-background.mp4" type="video/mp4" />
       </video>
       {/* Overlay sutil — PRESERVADO (gradient navy + dim mobile) */}
       <div className="absolute inset-0 bg-gradient-to-r from-prev-navy/85 via-prev-navy/65 to-prev-navy/25 pointer-events-none" />

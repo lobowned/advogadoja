@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
+import { LawyerPresenceProvider } from "@/contexts/LawyerPresenceContext";
 
 // ===== Lazy load das páginas da área /prev =====
 // Mantemos o bundle do site original inalterado: as páginas /prev só
@@ -461,16 +462,18 @@ const App = () => (
       <QueryClientProvider client={queryClient}>
         <LazyMotion features={domAnimation}>
           <TooltipProvider>
-            <Toaster />
-            <Sonner />
-            <BrowserRouter
-              future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-            >
-              <AnimatedRoutes />
-              <ConditionalFloatingWhatsApp />
-              <DynamicSocialProof />
-              <ExitIntentModal />
-            </BrowserRouter>
+            <LawyerPresenceProvider>
+              <Toaster />
+              <Sonner />
+              <BrowserRouter
+                future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+              >
+                <AnimatedRoutes />
+                <ConditionalFloatingWhatsApp />
+                <DynamicSocialProof />
+                <ExitIntentModal />
+              </BrowserRouter>
+            </LawyerPresenceProvider>
           </TooltipProvider>
         </LazyMotion>
       </QueryClientProvider>

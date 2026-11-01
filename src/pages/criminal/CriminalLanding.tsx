@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import PageTransition from "@/components/motion/PageTransition";
 import { Link } from "react-router-dom";
 import WhatsAppTestimonials from "@/components/WhatsAppTestimonials";
+import LawyerChatSection from "@/components/LawyerChatSection";
 import Navbar from "@/components/Navbar";
 import ArticlesSection from "@/components/ArticlesSection";
 import NewsSection from "@/components/NewsSection";
@@ -177,6 +178,9 @@ const CriminalLanding = () => {
 
         {/* Hero Section — Criminal */}
         <CriminalHeroSection />
+
+        {/* Chat Virtual — triagem criminal 24/7 (abre com Dr. Roberto Costa — flagrante/prisão) */}
+        <LawyerChatSection defaultLawyerId="roberto-costa" area="penal" />
 
         {/* Áreas de atuação — 10 subáreas criminais */}
         <CriminalPracticeAreasSection />

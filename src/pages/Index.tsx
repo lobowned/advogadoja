@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import PageTransition from "@/components/motion/PageTransition";
 import { Link } from "react-router-dom";
 import HeroSection from "@/components/HeroSection";
+import LawyerChatSection from "@/components/LawyerChatSection";
 import LawyersShowcase from "@/components/LawyersShowcase";
 import WhatsAppTestimonials from "@/components/WhatsAppTestimonials";
 import CredibilitySection from "@/components/CredibilitySection";
@@ -309,6 +310,9 @@ const Index = () => {
         
         {/* Hero Section */}
         <HeroSection />
+
+        {/* Chat Virtual — triagem automática 24/7 que vira WhatsApp pro Dr. Gilberto */}
+        <LawyerChatSection />
 
         {/* Practice Areas Section - 6 Legal Areas */}
         <PracticeAreasSection />

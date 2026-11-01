@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { Star, Briefcase } from "lucide-react";
+import { Bot, Zap } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 
 // Lawyer type for this component
@@ -21,10 +21,8 @@ interface LawyerDisplay {
 }
 
 // Componente de Card reutilizável
-const LawyerCard = ({ lawyer, index }: { lawyer: LawyerDisplay; index: number }) => {
+const LawyerCard = ({ lawyer, index: _index }: { lawyer: LawyerDisplay; index: number }) => {
   const shouldReduceMotion = useReducedMotion();
-  const casesWon = 500 + (index * 50);
-  const avgRating = 4.7 + (Math.random() * 0.3);
 
   return (
     <m.div
@@ -63,6 +61,10 @@ const LawyerCard = ({ lawyer, index }: { lawyer: LawyerDisplay; index: number })
           <h3 className="font-bold text-base sm:text-lg leading-tight group-hover:text-primary transition-colors">
             {lawyer.name}
           </h3>
+          <Badge variant="outline" className="mx-auto mt-1.5 text-[10px] px-2 py-0.5 border-primary/30 text-primary/80 font-normal gap-1">
+            <Bot className="w-2.5 h-2.5" />
+            Assistente Virtual
+          </Badge>
         </CardHeader>
 
         <CardContent className="space-y-2 sm:space-y-3 px-4 sm:px-6">
@@ -70,26 +72,22 @@ const LawyerCard = ({ lawyer, index }: { lawyer: LawyerDisplay; index: number })
             {lawyer.subSpecialty}
           </Badge>
 
-          {/* Estatísticas rápidas */}
-          <div className="flex justify-center gap-4 text-xs text-muted-foreground">
+          <div className="flex justify-center gap-2 text-[11px] text-muted-foreground">
             <div className="flex items-center gap-1">
-              <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" />
-              <span>{avgRating.toFixed(1)}</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <Briefcase className="w-3 h-3" />
-              <span>{casesWon.toLocaleString()}+ casos</span>
+              <Zap className="w-3 h-3 text-emerald-500" />
+              <span>Resposta em segundos</span>
             </div>
           </div>
 
-          <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2 leading-relaxed">
+          <p className="text-xs sm:text-sm text-muted-foreground line-clamp-3 leading-relaxed">
             {lawyer.bio}
           </p>
 
           <div className="pt-2 border-t border-border/50">
-            <Badge variant="outline" className="w-full justify-center text-[10px] sm:text-xs">
-              {lawyer.oab}
-            </Badge>
+            <p className="text-[10px] text-center text-muted-foreground/70 leading-tight">
+              Triagem inicial automatizada.<br />
+              Após qualificação, o Dr. Gilberto Riccio (OAB/BA 46.638) assume o caso.
+            </p>
           </div>
         </CardContent>
       </Card>
@@ -113,12 +111,15 @@ const LawyersShowcase = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Nossa Equipe de <span className="text-primary">Especialistas</span>
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
+            Equipe de <span className="text-primary">Assistentes Virtuais</span>
           </h2>
-          
+          <p className="text-sm sm:text-base text-muted-foreground mt-2 max-w-2xl mx-auto">
+            Nossa triagem automatizada cobre {displayLawyers.length} subáreas do direito. Em segundos, o assistente certo analisa seu caso e, se for pertinente, encaminha pro Dr. Gilberto Riccio (OAB/BA 46.638).
+          </p>
+
           {/* Contador de status */}
-          <m.div 
+          <m.div
             className="flex justify-center gap-4 mt-3"
             initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -126,12 +127,12 @@ const LawyersShowcase = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
           >
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <m.div 
+              <m.div
                 className="w-2 h-2 bg-green-500 rounded-full"
                 animate={shouldReduceMotion ? {} : { scale: [1, 1.3, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               />
-              <span>{displayLawyers.length} advogados disponíveis</span>
+              <span>{displayLawyers.length} assistentes virtuais online 24/7</span>
             </div>
           </m.div>
         </m.div>

@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle, Quote } from "lucide-react";
 
+import LawyerChatSection from "@/components/LawyerChatSection";
 import PrevLayout from "@/components/prev/PrevLayout";
 import PrevHero from "@/components/prev/PrevHero";
 import PrevAreaCard from "@/components/prev/PrevAreaCard";
@@ -78,6 +79,9 @@ export default function PrevHome() {
       <PrevLayout ctaMessage={WHATSAPP_MESSAGES.home} quizKey="home">
         {/* HERO com foto humana */}
         <PrevHero />
+
+        {/* Chat de triagem virtual (Assistente Virtual previdenciário) */}
+        <LawyerChatSection area="previdenciario" />
 
         {/* ÁREAS DE ATUAÇÃO */}
         <section className="py-24 md:py-32 bg-white">

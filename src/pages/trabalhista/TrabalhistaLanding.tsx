@@ -30,6 +30,7 @@ import {
 import { m, useReducedMotion } from "framer-motion";
 import PageTransition from "@/components/motion/PageTransition";
 import BackButton from "@/components/BackButton";
+import LawyerChatSection from "@/components/LawyerChatSection";
 import logoAdvogado from "@/assets/logo-advogado-online.png";
 
 const WHATSAPP_NUMBER = "5571997092633";
@@ -343,8 +344,11 @@ const TrabalhistaLanding = () => {
           </div>
         </MotionSection>
 
+        {/* Chat de triagem virtual (Assistente Virtual trabalhista) */}
+        <LawyerChatSection area="trabalhista" />
+
         {/* Stats Bar - Mobile Optimized */}
-        <MotionSection 
+        <MotionSection
           className="py-6 sm:py-8 bg-gradient-to-r from-[#D4AF37] via-[#F5D86A] to-[#D4AF37]"
           {...(!prefersReducedMotion && { initial: "hidden", whileInView: "visible", viewport: { once: true, margin: "-50px" }, variants: sectionVariants })}
         >

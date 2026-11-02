@@ -129,6 +129,7 @@ import CriminalLanding from "./pages/criminal/CriminalLanding";
 
 // Components
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
+import { FloatingChatWidget } from "./components/FloatingChatWidget";
 import { DynamicSocialProof } from "./components/social/DynamicSocialProof";
 import { ExitIntentModal } from "./components/social/ExitIntentModal";
 
@@ -470,6 +471,7 @@ const App = () => (
               >
                 <AnimatedRoutes />
                 <ConditionalFloatingWhatsApp />
+                <FloatingChatWidget />
                 <DynamicSocialProof />
                 <ExitIntentModal />
               </BrowserRouter>

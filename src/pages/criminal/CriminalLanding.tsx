@@ -1,18 +1,13 @@
 import { Helmet } from "react-helmet-async";
 import PageTransition from "@/components/motion/PageTransition";
 import { Link } from "react-router-dom";
-import WhatsAppTestimonials from "@/components/WhatsAppTestimonials";
 import LawyerChatSection from "@/components/LawyerChatSection";
 import Navbar from "@/components/Navbar";
-import ArticlesSection from "@/components/ArticlesSection";
-import NewsSection from "@/components/NewsSection";
 import { trackWhatsAppConversion } from "@/lib/trackWhatsApp";
 
 import CriminalHeroSection from "./CriminalHeroSection";
 import CriminalPracticeAreasSection from "./CriminalPracticeAreasSection";
-import CriminalProblemsSection from "./CriminalProblemsSection";
 import CriminalObjecionsFAQ from "./CriminalObjecionsFAQ";
-import { criminalTestimonials } from "./criminal-testimonials";
 
 const CriminalLanding = () => {
   const legalServiceSchema = {
@@ -182,38 +177,11 @@ const CriminalLanding = () => {
         {/* Chat Virtual — triagem criminal 24/7 (abre com Dr. Roberto Costa — flagrante/prisão) */}
         <LawyerChatSection defaultLawyerId="roberto-costa" area="penal" />
 
-        {/* Áreas de atuação — 10 subáreas criminais */}
+        {/* Áreas de atuação — 6 principais */}
         <CriminalPracticeAreasSection />
-
-        {/* WhatsApp Testimonials — criminais */}
-        <WhatsAppTestimonials
-          testimonials={criminalTestimonials}
-          badgeText="💬 Casos atendidos"
-          titlePrefix="Mensagens do dia a dia"
-          titleHighlight="do escritório"
-          subtitle="Diálogos reais com clientes — flagrante, júri, habeas corpus, execução e medidas protetivas."
-          footerText="Cada caso é único. Sigilo profissional preservado em toda comunicação."
-        />
-
-        {/* Situações de urgência criminal */}
-        <CriminalProblemsSection />
 
         {/* FAQ Criminal */}
         <CriminalObjecionsFAQ />
-
-        {/* Artigos — penal */}
-        <ArticlesSection
-          nicheFilter="penal"
-          title="Artigos sobre Direito Criminal"
-          subtitle="Conhecimento jurídico sobre defesa criminal, processo penal e execução da pena — sem juridiquês."
-        />
-
-        {/* Notícias — penal */}
-        <NewsSection
-          nicheId="penal"
-          title="Notícias do Direito Penal"
-          subtitle="Decisões, mudanças legislativas e acontecimentos relevantes na área criminal. Atualizado diariamente."
-        />
 
         {/* SEO Keywords - Criminal */}
         <section className="sr-only" aria-hidden="true">

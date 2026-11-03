@@ -6,7 +6,7 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 type Area = "familia" | "trabalhista" | "civil" | "previdenciario" | "penal" | "geral";
 
-const INLINE_CHAT_ROUTES: RegExp[] = [
+export const INLINE_CHAT_ROUTES: RegExp[] = [
   /^\/$/,
   /^\/criminal$/,
   /^\/advogado-trabalhista-online$/,

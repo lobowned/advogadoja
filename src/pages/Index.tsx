@@ -3,16 +3,9 @@ import PageTransition from "@/components/motion/PageTransition";
 import { Link } from "react-router-dom";
 import HeroSection from "@/components/HeroSection";
 import LawyerChatSection from "@/components/LawyerChatSection";
-import LawyersShowcase from "@/components/LawyersShowcase";
-import WhatsAppTestimonials from "@/components/WhatsAppTestimonials";
-import CredibilitySection from "@/components/CredibilitySection";
 import ObjecionsFAQ from "@/components/ObjecionsFAQ";
 import Navbar from "@/components/Navbar";
-import ArticlesSection from "@/components/ArticlesSection";
-import NewsSection from "@/components/NewsSection";
 import PracticeAreasSection from "@/components/PracticeAreasSection";
-import LegalProblemsSection from "@/components/LegalProblemsSection";
-import ServicesSection from "@/components/ServicesSection";
 
 const Index = () => {
   // Schema.org Organization - Enhanced for Knowledge Panel
@@ -314,34 +307,9 @@ const Index = () => {
         {/* Chat Virtual — triagem automática 24/7 que vira WhatsApp pro Dr. Gilberto */}
         <LawyerChatSection />
 
-        {/* Practice Areas Section - 6 Legal Areas */}
         <PracticeAreasSection />
 
-        {/* WhatsApp Testimonials Section */}
-        <WhatsAppTestimonials />
-
-        {/* Legal Problems Section - Common issues */}
-        <LegalProblemsSection />
-
-        {/* Lawyers Showcase Section */}
-        <div id="advogados">
-          <LawyersShowcase />
-        </div>
-
-        {/* Credibility Section */}
-        <CredibilitySection />
-
-        {/* FAQ Section */}
         <ObjecionsFAQ />
-
-        {/* Services Section - ALL Landing Pages */}
-        <ServicesSection />
-
-        {/* Articles Section */}
-        <ArticlesSection />
-
-        {/* News Section */}
-        <NewsSection />
 
         {/* SEO Keywords Section - Hidden but crawlable for Google Ads */}
         <section className="sr-only" aria-hidden="true">

@@ -129,9 +129,7 @@ import CriminalLanding from "./pages/criminal/CriminalLanding";
 
 // Components
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
-import { FloatingChatWidget } from "./components/FloatingChatWidget";
-import { DynamicSocialProof } from "./components/social/DynamicSocialProof";
-import { ExitIntentModal } from "./components/social/ExitIntentModal";
+import { FloatingChatWidget, INLINE_CHAT_ROUTES } from "./components/FloatingChatWidget";
 
 const queryClient = new QueryClient();
 
@@ -147,6 +145,8 @@ const ConditionalFloatingWhatsApp = () => {
     location.pathname.startsWith("/riccioadvocacia")
   )
     return null;
+  // Uma bolinha só por página: onde o chat flutuante aparece, o WhatsApp flutuante some.
+  if (!INLINE_CHAT_ROUTES.some((r) => r.test(location.pathname))) return null;
   return <FloatingWhatsApp />;
 };
 
@@ -472,8 +472,6 @@ const App = () => (
                 <AnimatedRoutes />
                 <ConditionalFloatingWhatsApp />
                 <FloatingChatWidget />
-                <DynamicSocialProof />
-                <ExitIntentModal />
               </BrowserRouter>
             </LawyerPresenceProvider>
           </TooltipProvider>

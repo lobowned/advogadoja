@@ -1,16 +1,11 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle, Quote } from "lucide-react";
 
 import LawyerChatSection from "@/components/LawyerChatSection";
 import PrevLayout from "@/components/prev/PrevLayout";
 import PrevHero from "@/components/prev/PrevHero";
 import PrevAreaCard from "@/components/prev/PrevAreaCard";
-import PrevTrust from "@/components/prev/PrevTrust";
-import PrevTeam from "@/components/prev/PrevTeam";
-import PrevCredibility from "@/components/prev/PrevCredibility";
 import PrevFaq from "@/components/prev/PrevFaq";
-import PrevWhatsappButton from "@/components/prev/PrevWhatsappButton";
 import {
   PREV_AREAS,
   WHATSAPP_MESSAGES,
@@ -36,10 +31,6 @@ const FAQ_HOME = [
   {
     q: "Sou de outra cidade ou outro estado. Vocês atendem?",
     a: "Sim, atendemos o Brasil todo. Processo previdenciário tramita na Justiça Federal e pode ser feito 100% online — desde a análise do CNIS até as audiências por videoconferência. Você não precisa sair de casa em nenhuma etapa.",
-  },
-  {
-    q: "Tenho 15 anos pagando INSS. Já posso aposentar?",
-    a: "15 anos é o tempo mínimo de carência pra mulher pela regra nova. Mas só isso não basta — precisa também ter a idade mínima (62 anos pra mulher, 65 pra homem) ou se enquadrar numa regra de transição (pedágio, pontos, idade progressiva). Manda mensagem com seus dados que eu te falo qual é a melhor regra pro seu caso.",
   },
 ];
 
@@ -161,89 +152,6 @@ export default function PrevHome() {
           </div>
         </section>
 
-        {/* COMO TRABALHAMOS */}
-        <PrevTrust />
-
-        {/* COMO FUNCIONA - 3 PASSOS — timeline editorial */}
-        <section className="py-24 md:py-32 bg-prev-navy text-prev-beige relative overflow-hidden">
-          <div
-            aria-hidden
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 1px 1px, #F5F1EA 1px, transparent 0)",
-              backgroundSize: "32px 32px",
-            }}
-          />
-          <div className="relative max-w-5xl mx-auto px-5">
-            <div className="max-w-2xl mb-16">
-              <span className="prev-eyebrow mb-4">Como começamos</span>
-              <h2 className="font-serif text-4xl sm:text-5xl leading-[1.05] mt-3">
-                Em 3 passos você sabe{" "}
-                <span className="italic text-prev-gold">o que fazer</span>.
-              </h2>
-            </div>
-
-            <div className="relative grid md:grid-cols-3 gap-12 md:gap-8 mb-16">
-              {/* Linha dourada conectora desktop */}
-              <div aria-hidden className="hidden md:block absolute top-7 left-[8%] right-[8%] h-px bg-gradient-to-r from-transparent via-prev-gold/40 to-transparent" />
-              {[
-                {
-                  num: "01",
-                  title: "Você manda mensagem",
-                  text: "Conta rapidinho sua situação pelo WhatsApp. Idade, se trabalha ou está afastado, há quanto tempo paga INSS — só o básico.",
-                },
-                {
-                  num: "02",
-                  title: "Eu analiso seu CNIS",
-                  text: "Você manda seu extrato do INSS (a gente te ensina como pegar) e eu olho com calma. Vejo o que tem direito, o que ainda falta, e o que pode dar problema.",
-                },
-                {
-                  num: "03",
-                  title: "Decidimos juntos",
-                  text: "Te explico em linguagem clara o que dá pra fazer, quanto custa, quanto tempo demora. Você decide se quer seguir comigo ou não.",
-                },
-              ].map((step, idx) => (
-                <motion.div
-                  key={step.num}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="relative"
-                >
-                  {/* Marker numeral em círculo dourado */}
-                  <div className="relative z-10 inline-flex items-center justify-center w-14 h-14 rounded-full bg-prev-navy border border-prev-gold/50 mb-6">
-                    <span className="font-serif text-prev-gold text-xl tnum">
-                      {step.num}
-                    </span>
-                  </div>
-                  <h3 className="font-serif text-2xl mb-3 leading-tight">{step.title}</h3>
-                  <p className="text-prev-beige/75 text-[15px] leading-[1.7] max-w-xs">
-                    {step.text}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="pt-10 border-t border-prev-beige/15">
-              <PrevWhatsappButton
-                quizKey="home"
-                className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-7 py-3.5 rounded-full font-semibold shadow-lg shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
-              >
-                <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
-                Começar agora pelo WhatsApp
-              </PrevWhatsappButton>
-            </div>
-          </div>
-        </section>
-
-        {/* NOSSA EQUIPE */}
-        <PrevTeam />
-
-        {/* DEFENDEMOS SEUS DIREITOS */}
-        <PrevCredibility />
-
         {/* FAQ */}
         <PrevFaq
           title="Dúvidas mais frequentes"
@@ -251,39 +159,6 @@ export default function PrevHome() {
           items={FAQ_HOME}
         />
 
-        {/* CTA FINAL editorial */}
-        <section className="py-24 md:py-32 bg-prev-beige relative overflow-hidden">
-          <div
-            aria-hidden
-            className="absolute inset-0 opacity-[0.025]"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 1px 1px, #0B1B2B 1px, transparent 0)",
-              backgroundSize: "28px 28px",
-            }}
-          />
-          <div className="max-w-2xl mx-auto px-5 text-center relative">
-            <span className="prev-eyebrow mb-4 justify-center">Próximo passo</span>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-prev-navy leading-[1.02] mb-6 mt-3">
-              Não deixe pra <span className="italic text-prev-gold">depois</span>.
-            </h2>
-            <p className="text-prev-navy/72 text-lg mb-10 leading-[1.7] max-w-lg mx-auto">
-              Cada mês que passa pode significar atrasados acumulando — ou
-              mudanças nas regras que dificultam ainda mais. Manda uma
-              mensagem agora.
-            </p>
-            <PrevWhatsappButton
-              quizKey="home"
-              className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1FB855] text-white px-9 py-4 rounded-full font-semibold text-lg shadow-xl shadow-[#25D366]/30 transition-all hover:-translate-y-0.5"
-            >
-              <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
-              Falar agora pelo WhatsApp
-            </PrevWhatsappButton>
-            <p className="text-xs text-prev-navy/50 mt-5 tracking-wide">
-              Resposta em até 2 horas úteis · Sigilo profissional total
-            </p>
-          </div>
-        </section>
       </PrevLayout>
     </>
   );

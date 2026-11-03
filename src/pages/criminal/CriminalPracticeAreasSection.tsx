@@ -2,21 +2,12 @@ import { m } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import {
   Banknote,
-  Heart,
   Gavel,
   ShieldAlert,
   Pill,
-  Building2,
-  Landmark,
-  Laptop,
   KeyRound,
   Scale,
-  ArrowRight,
-  MessageCircle,
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-
-const WHATSAPP_NUMBER = '5571997092633';
 
 const practiceAreas = [
   {
@@ -24,80 +15,36 @@ const practiceAreas = [
     icon: Banknote,
     title: 'Crimes contra o patrimônio',
     description: 'Furto, roubo, estelionato, apropriação indébita e congêneres. Análise da prova desde a fase pré-processual.',
-    services: ['Furto', 'Roubo', 'Estelionato', 'Apropriação indébita'],
-    message: 'Olá! Preciso de orientação sobre crime contra o patrimônio.',
-  },
-  {
-    id: 'pessoa',
-    icon: Heart,
-    title: 'Crimes contra a pessoa',
-    description: 'Homicídio, lesão corporal, ameaça, perseguição e crimes de trânsito com resultado grave.',
-    services: ['Homicídio', 'Lesão corporal', 'Ameaça', 'Crime de trânsito'],
-    message: 'Olá! Preciso de orientação sobre crime contra a pessoa.',
   },
   {
     id: 'juri',
     icon: Gavel,
     title: 'Tribunal do Júri',
     description: 'Acompanhamento integral do procedimento bifásico — da pronúncia ao Plenário —, com o cuidado que a tribuna exige.',
-    services: ['Pronúncia', 'Plenário', 'Recursos'],
-    message: 'Olá! Preciso de defesa em processo de Tribunal do Júri.',
   },
   {
     id: 'maria-penha',
     icon: ShieldAlert,
     title: 'Violência doméstica · Lei Maria da Penha',
     description: 'Defesa técnica em medidas protetivas, ações penais e incidentes correlatos, atenta às particularidades probatórias.',
-    services: ['Medidas protetivas', 'Ação penal', 'Recursos'],
-    message: 'Olá! Preciso de defesa em processo de violência doméstica.',
   },
   {
     id: 'drogas',
     icon: Pill,
     title: 'Lei de Drogas',
     description: 'Tráfico, associação, uso e modalidade privilegiada. Exame minucioso da abordagem policial e da cadeia de custódia.',
-    services: ['Tráfico', 'Associação', 'Tráfico privilegiado', 'Uso'],
-    message: 'Olá! Preciso de orientação sobre Lei de Drogas.',
-  },
-  {
-    id: 'economicos',
-    icon: Building2,
-    title: 'Crimes econômicos e empresariais',
-    description: 'Ordem tributária e financeira, lavagem de capitais e responsabilização penal de pessoas jurídicas e seus administradores.',
-    services: ['Crimes tributários', 'Lavagem', 'Crimes financeiros', 'Responsab. PJ'],
-    message: 'Olá! Preciso de orientação sobre crime econômico/empresarial.',
-  },
-  {
-    id: 'admin-publica',
-    icon: Landmark,
-    title: 'Crimes contra a Administração Pública',
-    description: 'Peculato, corrupção, prevaricação e investigações correlatas, conduzidas com a discrição que o tema requer.',
-    services: ['Peculato', 'Corrupção', 'Prevaricação'],
-    message: 'Olá! Preciso de orientação sobre crime contra a Administração Pública.',
-  },
-  {
-    id: 'ciberneticos',
-    icon: Laptop,
-    title: 'Crimes cibernéticos',
-    description: 'Estelionatos digitais, invasão de dispositivo, divulgação não autorizada de conteúdo e crimes contra a honra em meio virtual.',
-    services: ['Estelionato digital', 'Invasão', 'Crimes contra honra'],
-    message: 'Olá! Preciso de orientação sobre crime cibernético.',
   },
   {
     id: 'execucao',
     icon: KeyRound,
     title: 'Execução Penal',
     description: 'Progressão de regime, livramento condicional, remição, indulto, comutação e incidentes da execução.',
-    services: ['Progressão', 'Livramento', 'Remição', 'Indulto'],
-    message: 'Olá! Preciso de orientação sobre execução penal.',
   },
   {
     id: 'hc-recursos',
     icon: Scale,
     title: 'Habeas Corpus e recursos',
     description: 'Impetração em todas as instâncias, recursos ordinários, especial e extraordinário, e revisão criminal.',
-    services: ['Habeas corpus', 'Recurso especial', 'Recurso extraordinário', 'Revisão'],
-    message: 'Olá! Preciso de orientação sobre habeas corpus/recurso criminal.',
   },
 ];
 
@@ -121,11 +68,6 @@ const CriminalPracticeAreasSection = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
-
-  const handleWhatsApp = (message: string) => {
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  };
 
   return (
     <section ref={ref} id="areas" className="py-16 sm:py-20 bg-gradient-to-b from-background to-muted/30">
@@ -175,47 +117,12 @@ const CriminalPracticeAreasSection = () => {
                     {area.title}
                   </h3>
 
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     {area.description}
                   </p>
-
-                  <div className="flex flex-wrap gap-1.5 mb-5">
-                    {area.services.slice(0, 3).map((service, i) => (
-                      <span
-                        key={i}
-                        className="text-xs bg-muted text-muted-foreground px-2 py-0.5 rounded font-medium border border-border"
-                      >
-                        {service}
-                      </span>
-                    ))}
-                  </div>
-
-                  <button
-                    onClick={() => handleWhatsApp(area.message)}
-                    className="text-sm text-foreground border-b border-foreground/30 pb-0.5 hover:border-foreground transition-colors inline-flex items-center gap-1.5"
-                  >
-                    Falar com o escritório
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
                 </m.div>
               );
             })}
-          </m.div>
-
-          <m.div variants={fadeInUp} className="text-center pt-4">
-            <p className="text-muted-foreground mb-6 text-sm">
-              Sua matéria não está listada acima? O escritório atua em todo o espectro do Direito Penal.
-            </p>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => handleWhatsApp('Olá! Preciso falar com advogado criminalista.')}
-              className="border-foreground/30 text-foreground hover:bg-foreground hover:text-background transition-colors px-8"
-            >
-              <MessageCircle className="w-4 h-4 mr-2" strokeWidth={1.5} />
-              Falar com o escritório
-              <ArrowRight className="w-4 h-4 ml-2" strokeWidth={1.5} />
-            </Button>
           </m.div>
         </m.div>
       </div>

@@ -19,12 +19,10 @@ interface PrevLayoutProps {
 }
 
 const NAV_ITEMS = [
-  { label: "Início", to: "/prev" },
   { label: "Aposentadorias", to: "/prev/aposentadorias" },
   { label: "Auxílio-Doença", to: "/prev/auxilio-doenca" },
   { label: "BPC/LOAS", to: "/prev/bpc-loas" },
   { label: "Maternidade", to: "/prev/salario-maternidade" },
-  { label: "Sobre", to: "/prev/sobre" },
   { label: "Contato", to: "/prev/contato" },
 ];
 
@@ -284,7 +282,6 @@ export default function PrevLayout({
         ariaLabel="Fale conosco pelo WhatsApp"
       >
         <div className="relative">
-          <span className="absolute inset-0 rounded-full bg-prev-gold/40 animate-ping" />
           <div className="relative w-14 h-14 rounded-full bg-prev-gold flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
             <svg
               viewBox="0 0 24 24"

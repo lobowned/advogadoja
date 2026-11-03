@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { m, useReducedMotion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
-import { MessageCircle, ArrowRight } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { heroStagger, heroBadge } from "@/lib/motion-variants";
 import { trackWhatsAppConversion } from "@/lib/trackWhatsApp";
 
@@ -67,14 +67,6 @@ const CriminalHeroSection = () => {
               </span>
             </Badge>
           </m.div>
-          <m.div variants={heroBadge}>
-            <Badge
-              variant="outline"
-              className="bg-background/5 backdrop-blur-sm border-background/30 text-background px-3 py-1.5 text-[11px] sm:text-xs font-normal tracking-wide"
-            >
-              OAB/BA 46.638
-            </Badge>
-          </m.div>
         </m.div>
       </div>
 
@@ -84,26 +76,25 @@ const CriminalHeroSection = () => {
       {/* Bottom — CTAs */}
       <div className="relative z-10 container mx-auto px-4 pb-8 sm:pb-14 md:pb-16">
         <m.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4"
+          className="flex flex-col items-center justify-center gap-3 sm:gap-4"
           variants={heroStagger}
           initial="hidden"
           animate="visible"
           transition={shouldReduceMotion ? undefined : { delay: 0.2 }}
         >
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-background text-center">
+            Advogado criminalista
+          </h1>
+          <p className="text-base sm:text-lg text-background/80 text-center max-w-xl mb-2">
+            Prisão, inquérito ou processo? Fale agora com o escritório.
+          </p>
           <button
             onClick={handleWhatsApp}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-background text-foreground px-6 sm:px-7 py-3 sm:py-3.5 text-sm tracking-wide hover:bg-background/90 transition-colors rounded-sm"
           >
             <MessageCircle className="w-4 h-4" strokeWidth={1.5} />
-            Falar com o escritório
+            Falar no WhatsApp
           </button>
-          <a
-            href="#areas"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-background border border-background/40 px-6 sm:px-7 py-3 sm:py-3.5 text-sm tracking-wide hover:bg-background hover:text-foreground transition-colors rounded-sm"
-          >
-            Conhecer as áreas
-            <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
-          </a>
         </m.div>
       </div>
     </section>

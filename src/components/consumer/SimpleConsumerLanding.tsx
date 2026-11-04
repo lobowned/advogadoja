@@ -25,7 +25,7 @@ interface Props {
   faqs?: FaqItem[];
 }
 
-const WHATSAPP = "5571997092633";
+const WHATSAPP = "5571997036269";
 
 const SimpleConsumerLanding = ({
   seo,

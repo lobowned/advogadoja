@@ -93,7 +93,7 @@ const CityLanding = () => {
     "name": `Advogado Já ${city.name}`,
     "description": `Advogados especialistas em ${city.name}, ${city.state}. Atendimento jurídico online gratuito em Direito Trabalhista, Família, Previdenciário, Civil e Criminal.`,
     "url": canonicalUrl,
-    "telephone": "+55-71-99709-2633",
+    "telephone": "+55-71-99703-6269",
     "email": "contato@advogadoja.com.br",
     "priceRange": "Consulta Gratuita",
     "address": {
@@ -260,7 +260,7 @@ const CityLanding = () => {
                     Falar com Advogado Agora
                   </Button>
                   <Button size="lg" variant="outline" className="text-lg" asChild>
-                    <a href="tel:+5571997092633">
+                    <a href="tel:+5571997036269">
                       <Phone className="h-5 w-5 mr-2" />
                       Ligar Agora
                     </a>

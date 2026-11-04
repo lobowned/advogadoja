@@ -11,7 +11,7 @@ const Completed = () => {
   const protocolId = searchParams.get("protocol");
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "5571997092633";
+    const phoneNumber = "5571997036269";
     const message = encodeURIComponent(
       "Olá! Acabei de preencher o formulário no site e gostaria de agendar uma consulta."
     );

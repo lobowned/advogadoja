@@ -33,7 +33,7 @@ const schemaData = {
       "name": "Advogado Cartão Consignado - Desconto RMC RCC Indevido | Advogado Já",
       "description": "Desconto indevido de cartão consignado no INSS? Advogado especialista em RMC e RCC. Restituição em dobro + indenização.",
       "url": "https://advogadoja.lovable.app/advogado-cartao-consignado",
-      "telephone": "+5571997092633",
+      "telephone": "+5571997036269",
       "areaServed": "BR",
       "serviceType": ["Direito do Consumidor", "Cartão Consignado Indevido", "RMC RCC INSS"],
     },

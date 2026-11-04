@@ -17,7 +17,7 @@ import {
   getLocalPage, type LocalPageContent, LOCAL_PAGE_ROUTES, LOCAL_CITY_NAMES, LOCAL_NICHE_NAMES,
 } from "@/data/local-pages";
 
-const WHATSAPP_NUMBER = "5571997092633";
+const WHATSAPP_NUMBER = "5571997036269";
 
 // Legal area configurations
 const legalAreas = {
@@ -278,7 +278,7 @@ const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
     "name": `Advogado ${area.name} em ${city.name}`,
     "description": `Advogado especialista em ${area.name} em ${city.name}, ${city.state}. ${area.description}`,
     "url": canonicalUrl,
-    "telephone": "+55-71-99709-2633",
+    "telephone": "+55-71-99703-6269",
     "priceRange": "$$",
     "currenciesAccepted": "BRL",
     "paymentAccepted": "Cash, Credit Card, PIX",
@@ -430,7 +430,7 @@ const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
                     Falar com Advogado {area.name}
                   </Button>
                   <Button size="lg" variant="outline" asChild>
-                    <a href="tel:+5571997092633">
+                    <a href="tel:+5571997036269">
                       <Phone className="h-5 w-5 mr-2" />
                       Ligar Agora
                     </a>
@@ -624,7 +624,7 @@ function LocalNichePage({
     "name": "Riccio Advocacia",
     "description": local.metaDescription,
     "url": canonicalUrl,
-    "telephone": "+55-71-99709-2633",
+    "telephone": "+55-71-99703-6269",
     "serviceType": `Direito ${areaName}`,
     "areaServed": {
       "@type": "City",

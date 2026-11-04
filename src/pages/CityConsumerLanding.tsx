@@ -63,7 +63,7 @@ const CityConsumerLanding = () => {
     return <Navigate to="/advogado-consumidor" replace />;
   }
 
-  const whatsappNumber = "5571997092633";
+  const whatsappNumber = "5571997036269";
   const whatsappMessage = `Olá! Preciso de ajuda com um problema de consumidor em ${cityData.cityName}. Pode me ajudar?`;
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -78,7 +78,7 @@ const CityConsumerLanding = () => {
     "name": `Advogado do Consumidor em ${cityData.cityName}`,
     "description": `Especialista em Direito do Consumidor em ${cityData.cityName}, ${cityData.stateCode}. Consulta gratuita.`,
     "url": pageUrl,
-    "telephone": "+55-71-99709-2633",
+    "telephone": "+55-71-99703-6269",
     "areaServed": {
       "@type": "City",
       "name": cityData.cityName,
@@ -297,7 +297,7 @@ const CityConsumerLanding = () => {
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="gap-2 text-lg px-8" asChild>
-                  <a href="tel:+5571997092633">
+                  <a href="tel:+5571997036269">
                     <Phone className="w-5 h-5" />
                     Ligar Agora
                   </a>

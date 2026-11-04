@@ -29,7 +29,7 @@ const schemaData = {
       "name": "Advogado Especialista em Problemas Aéreos | Advogado Já",
       "description": "Indenização por voo cancelado, atrasado, overbooking, bagagem extraviada e outros problemas aéreos.",
       "url": "https://advogadoja.lovable.app/advogado-problemas-voo",
-      "telephone": "+5571997092633",
+      "telephone": "+5571997036269",
       "areaServed": "BR",
       "serviceType": ["Direito do Consumidor", "Direitos do Passageiro Aéreo", "Indenização Voo Cancelado"],
     },

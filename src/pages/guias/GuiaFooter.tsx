@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const WHATSAPP_GUIAS = "5571997092633";
+export const WHATSAPP_GUIAS = "5571997036269";
 export const waLink = (texto: string) =>
   `https://wa.me/${WHATSAPP_GUIAS}?text=${encodeURIComponent(texto)}`;
 

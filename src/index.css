@@ -9,30 +9,30 @@
 
 @layer base {
   :root {
-    /* Law Firm — Esmeralda & Ouro */
-    --background: 44 47% 92%;         /* marfim #f5f0e0 */
-    --foreground: 162 64% 11%;        /* esmeralda quase preto */
+    /* Law Firm — Preto & Ouro */
+    --background: 40 33% 96%;         /* marfim claro */
+    --foreground: 30 8% 8%;           /* preto quente */
 
-    --card: 44 50% 96%;
-    --card-foreground: 162 64% 11%;
+    --card: 40 30% 98%;
+    --card-foreground: 30 8% 8%;
 
-    --popover: 44 50% 96%;
-    --popover-foreground: 162 64% 11%;
+    --popover: 40 30% 98%;
+    --popover-foreground: 30 8% 8%;
 
-    /* Primary: Esmeralda profundo */
-    --primary: 162 86% 16%;           /* #064e3b */
-    --primary-foreground: 44 47% 95%;
+    /* Primary: Preto ônix */
+    --primary: 30 8% 7%;              /* #131110 */
+    --primary-foreground: 40 33% 96%;
 
-    /* Secondary: Esmeralda médio */
-    --secondary: 164 80% 26%;         /* #0d7a5f */
-    --secondary-foreground: 44 47% 95%;
+    /* Secondary: Grafite */
+    --secondary: 30 6% 16%;
+    --secondary-foreground: 40 33% 96%;
 
-    --muted: 44 30% 86%;
-    --muted-foreground: 162 30% 28%;
+    --muted: 40 18% 90%;
+    --muted-foreground: 30 6% 32%;
 
-    /* Accent: Dourado */
-    --accent: 43 55% 54%;             /* #c9a84c */
-    --accent-foreground: 162 64% 11%;
+    /* Accent: Ouro */
+    --accent: 42 62% 52%;             /* #d0a439 */
+    --accent-foreground: 30 8% 7%;
 
     --destructive: 0 65% 42%;
     --destructive-foreground: 44 47% 95%;
@@ -45,8 +45,8 @@
 
     --gradient-hero: linear-gradient(180deg, hsl(44 47% 92%) 0%, hsl(44 40% 88%) 100%);
     --gradient-card: linear-gradient(180deg, hsl(44 50% 97%) 0%, hsl(44 40% 92%) 100%);
-    --gradient-startup: linear-gradient(135deg, hsl(162 86% 16%) 0%, hsl(164 80% 26%) 100%);
-    --gradient-emerald: linear-gradient(135deg, hsl(162 86% 16%) 0%, hsl(164 80% 22%) 100%);
+    --gradient-startup: linear-gradient(135deg, hsl(30 8% 7%) 0%, hsl(30 6% 16%) 100%);
+    --gradient-emerald: linear-gradient(135deg, hsl(30 8% 7%) 0%, hsl(30 6% 14%) 100%);
     --gradient-glass: linear-gradient(135deg, rgba(245, 240, 224, 0.92) 0%, rgba(245, 240, 224, 0.75) 100%);
 
     --shadow-card: 0 2px 12px -2px hsl(162 64% 11% / 0.08);

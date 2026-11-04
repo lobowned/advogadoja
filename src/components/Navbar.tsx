@@ -81,7 +81,7 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
             className={`btn-shimmer h-9 px-3 text-xs sm:h-10 sm:px-4 sm:text-sm md:px-6 font-semibold transition-all gap-1.5 ${
               isScrolled 
                 ? 'bg-[#25D366] hover:bg-[#20BD5A] text-white' 
-                : 'bg-white/90 text-primary hover:bg-white shadow-lg'
+                : 'bg-transparent border border-[#d4af37]/70 text-[#f3d98b] hover:bg-[#d4af37]/10 rounded-none'
             }`}
           >
             <MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4" />

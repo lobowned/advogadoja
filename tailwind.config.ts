@@ -29,9 +29,10 @@ export default {
         '44': '11rem',
       },
       fontFamily: {
-        'display': ['Fraunces', 'Georgia', 'serif'],
-        'serif': ['Fraunces', 'Georgia', 'serif'],
-        'sans': ['"Inter Tight"', 'system-ui', 'sans-serif'],
+        'display': ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        'serif': ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        'sans': ['Manrope', 'system-ui', 'sans-serif'],
+        'roman': ['Cinzel', 'Georgia', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

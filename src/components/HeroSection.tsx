@@ -19,10 +19,10 @@ const HeroSection = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative w-full bg-background border-b border-accent/40 overflow-hidden">
+    <section className="relative w-full bg-black overflow-hidden">
       {/* Video background */}
       <video
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover grayscale contrast-125"
         autoPlay
         muted
         loop
@@ -32,35 +32,35 @@ const HeroSection = () => {
       >
         <source src="/videos/hero-background.mp4" type="video/mp4" />
       </video>
-      {/* Dark emerald overlay for video visibility + text readability */}
-      <div className="absolute inset-0 bg-primary/70 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/60 to-primary/80 pointer-events-none" />
+      {/* Véu preto: vídeo aparece em tons de cinza, texto fica legível */}
+      <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_30%_50%,rgba(0,0,0,0.25)_0%,rgba(0,0,0,0.85)_75%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent pointer-events-none" />
 
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-40 pb-20 sm:pb-24 lg:pb-32">
         <div className="grid grid-cols-1 gap-10 lg:gap-16 items-center">
-          {/* Editorial column */}
           <m.div
             initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Kicker */}
-            <div className="flex items-center gap-3 mb-6">
-              <span className="h-px w-10 bg-accent" />
-              <span className="text-[11px] sm:text-xs font-sans font-medium tracking-[0.25em] uppercase text-accent">
-                Advocacia · Atendimento Online
+            {/* Assinatura */}
+            <div className="flex items-center gap-4 mb-8">
+              <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#d4af37]" />
+              <span className="font-roman text-xs sm:text-sm tracking-[0.4em] uppercase text-[#d4af37]">
+                Riccio Advocacia
               </span>
             </div>
 
-            {/* Serif headline */}
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-background">
-              Advogados para{" "}
-              <em className="not-italic text-accent">qualquer causa</em>,
-              <br className="hidden sm:block" /> com a seriedade de sempre.
+            <h1 className="font-display font-medium text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1] tracking-[-0.01em] text-[#f5efe0]">
+              A defesa que o seu
+              <br />
+              <em className="italic font-normal bg-gradient-to-r from-[#b8892b] via-[#f3d98b] to-[#b8892b] bg-clip-text text-transparent">
+                patrimônio merece.
+              </em>
             </h1>
 
-            {/* Subtitle */}
-            <p className="mt-6 sm:mt-8 max-w-xl text-base sm:text-lg text-background/80 font-sans leading-relaxed">
+            <p className="mt-8 max-w-lg text-base sm:text-lg text-[#f5efe0]/75 font-sans font-light leading-relaxed">
               Escritório generalista com advogados inscritos na OAB. Atendimento
               direto pelo WhatsApp, sigilo profissional e estratégia construída
               caso a caso — do trabalhista ao criminal.
@@ -71,7 +71,7 @@ const HeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-accent hover:bg-accent/90 text-primary font-sans font-semibold rounded-sm px-7 h-12 shadow-button"
+                className="bg-gradient-to-r from-[#b8892b] via-[#e6c66e] to-[#b8892b] hover:brightness-110 text-black font-sans font-semibold tracking-wide rounded-none px-8 h-13 py-4 shadow-[0_8px_30px_-8px_rgba(212,175,55,0.6)]"
               >
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-4 h-4 mr-2" />
@@ -82,7 +82,7 @@ const HeroSection = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-background/60 bg-transparent text-background hover:bg-background/10 hover:text-background font-sans font-medium rounded-sm px-7 h-12"
+                className="border-[#d4af37]/60 bg-transparent text-[#f5efe0] hover:bg-[#d4af37]/10 hover:text-[#f5efe0] font-sans font-medium tracking-wide rounded-none px-8 h-13 py-4"
               >
                 <a href="#advogados">
                   Conhecer o escritório
@@ -92,12 +92,12 @@ const HeroSection = () => {
             </div>
 
             {/* Quiet trust line */}
-            <p className="mt-8 text-xs sm:text-sm text-background/70 font-sans">
-              <span className="text-background font-medium">+2.500 clientes</span>
-              <span className="mx-2 text-accent">·</span>
-              OAB/BA 46.638
-              <span className="mx-2 text-accent">·</span>
-              Sigilo profissional garantido
+            <p className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 font-roman text-[11px] sm:text-xs tracking-[0.25em] uppercase text-[#f5efe0]/60">
+              <span className="whitespace-nowrap">OAB/BA 46.638</span>
+              <span className="text-[#d4af37]">◆</span>
+              <span className="whitespace-nowrap">Sigilo absoluto</span>
+              <span className="text-[#d4af37]">◆</span>
+              <span className="whitespace-nowrap">Todo o Brasil</span>
             </p>
           </m.div>
 
@@ -106,7 +106,7 @@ const HeroSection = () => {
 
       {/* Closing gold rule */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-px w-full bg-accent/50" />
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-[#d4af37]/70 to-transparent" />
       </div>
     </section>
   );

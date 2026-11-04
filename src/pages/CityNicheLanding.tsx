@@ -13,7 +13,9 @@ import Navbar from "@/components/Navbar";
 import PageTransition from "@/components/motion/PageTransition";
 import { getCityBySlug, brazilianCities, isCityIndexable } from "@/data/cities";
 import { CityLocalGuide } from "@/components/CityLocalGuide";
-import { getLocalPage, type LocalPageContent } from "@/data/local-pages";
+import {
+  getLocalPage, type LocalPageContent, LOCAL_PAGE_ROUTES, LOCAL_CITY_NAMES, LOCAL_NICHE_NAMES,
+} from "@/data/local-pages";
 
 const WHATSAPP_NUMBER = "5571997092633";
 
@@ -717,16 +719,44 @@ function LocalNichePage({
 
           <section>
             <h2 className="text-lg font-semibold mb-3">Saiba mais</h2>
-            <Link to={local.areaLink.href} className="flex items-center gap-2 text-primary hover:underline">
-              <ChevronRight className="h-4 w-4" />
-              {local.areaLink.label}
-            </Link>
+            <ul className="space-y-2">
+              <li>
+                <Link to={local.areaLink.href} className="flex items-center gap-2 text-primary hover:underline">
+                  <ChevronRight className="h-4 w-4" />
+                  {local.areaLink.label}
+                </Link>
+              </li>
+              <li>
+                <Link to={`/guia/${areaSlug}`} className="flex items-center gap-2 text-primary hover:underline">
+                  <ChevronRight className="h-4 w-4" />
+                  Guia completo: direito {areaName.toLowerCase()}
+                </Link>
+              </li>
+              {LOCAL_PAGE_ROUTES.filter((r) => r.nicheSlug === areaSlug && r.citySlug !== citySlug).map((r) => (
+                <li key={r.key}>
+                  <Link to={`/advogado-${r.key}`} className="flex items-center gap-2 text-primary hover:underline">
+                    <ChevronRight className="h-4 w-4" />
+                    Advogado {areaName.toLowerCase()} em {LOCAL_CITY_NAMES[r.citySlug] ?? r.citySlug}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h3 className="text-base font-semibold mt-6 mb-2">Outras áreas em {cityName}</h3>
+            <ul className="flex flex-wrap gap-x-4 gap-y-2">
+              {LOCAL_PAGE_ROUTES.filter((r) => r.citySlug === citySlug && r.nicheSlug !== areaSlug).map((r) => (
+                <li key={r.key}>
+                  <Link to={`/advogado-${r.key}`} className="text-primary hover:underline">
+                    {LOCAL_NICHE_NAMES[r.nicheSlug] ?? r.nicheSlug}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </section>
         </main>
 
         <footer className="border-t py-6">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>Riccio Advocacia | Dr. Gilberto Riccio, OAB/BA 46.638 | Salvador e Camaçari (BA)</p>
+            <p>Riccio Advocacia | Dr. Gilberto Riccio, OAB/BA 46.638 | Salvador, Camaçari e Lauro de Freitas (BA)</p>
           </div>
         </footer>
       </div>

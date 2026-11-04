@@ -31,16 +31,15 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
     }
   };
 
-  const linkClass = `font-medium transition-colors hover:text-primary py-2 ${
-    isScrolled ? 'text-foreground' : 'text-white'
-  }`;
+  // Barra sempre escura: legível sobre o hero de vídeo e sobre páginas claras
+  const linkClass = 'font-medium transition-colors text-[#f5efe0] hover:text-[#f3d98b] py-2';
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'bg-background/80 backdrop-blur-xl shadow-elegant border-b border-border/50' 
-          : 'bg-transparent'
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur-md ${
+        isScrolled
+          ? 'bg-black/90 border-b border-[#d4af37]/30'
+          : 'bg-black/80'
       }`}
     >
       <div className="container mx-auto px-3 md:px-4">
@@ -78,11 +77,7 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
           <Button 
             onClick={handleCTA}
             size="sm"
-            className={`btn-shimmer h-9 px-3 text-xs sm:h-10 sm:px-4 sm:text-sm md:px-6 font-semibold transition-all gap-1.5 ${
-              isScrolled 
-                ? 'bg-[#25D366] hover:bg-[#20BD5A] text-white' 
-                : 'bg-transparent border border-[#d4af37]/70 text-[#f3d98b] hover:bg-[#d4af37]/10 rounded-none'
-            }`}
+            className="h-9 px-3 text-xs sm:h-10 sm:px-4 sm:text-sm md:px-6 font-semibold transition-all gap-1.5 bg-transparent border border-[#d4af37]/70 text-[#f3d98b] hover:bg-[#d4af37]/10 rounded-none"
           >
             <MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             <span className="hidden xs:inline">WhatsApp</span>

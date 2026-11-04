@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { m, useReducedMotion } from "framer-motion";
 import { Scale, ShieldCheck, MessageCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -17,21 +18,41 @@ const practiceAreas = [
 
 const HeroSection = () => {
   const shouldReduceMotion = useReducedMotion();
+  // Vídeo só depois do primeiro paint e só em conexão boa: o poster é o LCP.
+  const [playVideo, setPlayVideo] = useState(false);
+  useEffect(() => {
+    if (shouldReduceMotion) return;
+    const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+    if (conn?.saveData || /(^|-)2g$|^3g$/.test(conn?.effectiveType ?? "")) return;
+    const id = window.setTimeout(() => setPlayVideo(true), 1200);
+    return () => window.clearTimeout(id);
+  }, [shouldReduceMotion]);
 
   return (
     <section className="relative w-full bg-black overflow-hidden">
       {/* Video background */}
-      <video
+      <img
+        src="/videos/hero-poster.jpg"
+        alt=""
+        aria-hidden="true"
+        {...{ fetchpriority: "high" }}
+        decoding="async"
         className="absolute inset-0 w-full h-full object-cover grayscale contrast-125"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        poster=""
-      >
-        <source src="/videos/hero-background.mp4" type="video/mp4" />
-      </video>
+      />
+      {playVideo && (
+        <video
+          className="absolute inset-0 w-full h-full object-cover grayscale contrast-125"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/videos/hero-poster.jpg"
+          aria-hidden="true"
+        >
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
+        </video>
+      )}
       {/* Véu preto: vídeo aparece em tons de cinza, texto fica legível */}
       <div className="absolute inset-0 bg-black/60 pointer-events-none" />
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_30%_50%,rgba(0,0,0,0.25)_0%,rgba(0,0,0,0.85)_75%)]" />

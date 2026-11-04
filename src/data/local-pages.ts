@@ -421,9 +421,393 @@ export const localPages: Record<string, LocalPageContent> = {
     areaLink: { href: "/advogado-familia", label: "Direito de família: divórcio, pensão e guarda" },
     whatsappText: "Olá, Dr. Gilberto. Preciso de um advogado de família em Camaçari.",
   },
+
+  // ───────────────────────── Lauro de Freitas ─────────────────────────
+
+  "criminal-lauro-de-freitas": {
+    title: "Advogado Criminalista em Lauro de Freitas (BA) | Riccio Advocacia",
+    metaDescription:
+      "Advogado criminalista em Lauro de Freitas: flagrante, audiência de custódia, habeas corpus e defesa na comarca de Lauro de Freitas (TJBA). OAB/BA 46.638.",
+    h1: "Advogado criminalista em Lauro de Freitas",
+    intro:
+      "Lauro de Freitas faz divisa com Salvador, e muita família não sabe se o parente preso vai responder lá ou aqui. A resposta depende de onde o fato aconteceu, e é por ela que a defesa começa.",
+    sections: [
+      {
+        h2: "Onde o processo vai correr",
+        body:
+          "A competência criminal é definida pelo lugar em que o crime se consumou (art. 70 do CPP). Fato ocorrido em Lauro de Freitas, em bairros como Itinga, Portão, Centro ou Vilas do Atlântico, é processado na comarca de Lauro de Freitas do TJBA, mesmo que a pessoa more em Salvador. Fato do outro lado da divisa vai para Salvador. Errar isso atrasa o pedido de liberdade.",
+      },
+      {
+        h2: "Depois da prisão: custódia e liberdade provisória",
+        body:
+          "O preso em flagrante deve ser levado a um juiz em até 24 horas (art. 310 do CPP). Nessa audiência a defesa pode pedir o relaxamento de prisão ilegal, a liberdade provisória ou a troca da preventiva por medidas cautelares do art. 319 do CPP. Ter em mãos comprovante de endereço e de trabalho do preso ajuda.",
+      },
+      {
+        h2: "Recursos e crimes federais",
+        body:
+          "Habeas corpus e apelações contra decisões da comarca vão ao Tribunal de Justiça da Bahia, em Salvador. Se o fato atinge interesse da União, como fraude contra o INSS, contra a Caixa ou contrabando, o caso sai da Justiça Estadual e vai para a Justiça Federal – Seção Judiciária da Bahia.",
+      },
+      {
+        h2: "Atendimento",
+        body:
+          "Mande pelo WhatsApp o nome completo do preso, onde ele está e o número do processo, se já houver. O Dr. Gilberto Riccio (OAB/BA 46.638) consulta a situação e orienta a família sobre o próximo passo.",
+      },
+    ],
+    faq: [
+      {
+        q: "Meu parente mora em Salvador, mas foi preso em Lauro de Freitas. Onde ele responde?",
+        a: "Em regra, no lugar do fato. Se o crime aconteceu em Lauro de Freitas, o processo corre na comarca de Lauro de Freitas.",
+      },
+      {
+        q: "Quanto tempo depois da prisão é a audiência de custódia?",
+        a: "Até 24 horas depois da prisão em flagrante, pelo art. 310 do CPP e pela Resolução 213/2015 do CNJ.",
+      },
+      {
+        q: "A família pode contratar o advogado antes de falar com o preso?",
+        a: "Pode. O advogado se apresenta ao preso e formaliza a procuração. O primeiro contato pode ser pelo WhatsApp.",
+      },
+      {
+        q: "Qual o prazo para entrar com habeas corpus?",
+        a: "Não há prazo. O habeas corpus cabe sempre que houver prisão ou ameaça de prisão ilegal.",
+      },
+    ],
+    areaLink: { href: "/criminal", label: "Defesa criminal: como o escritório atua" },
+    whatsappText: "Olá, Dr. Gilberto. Preciso de um advogado criminalista em Lauro de Freitas.",
+  },
+
+  "previdenciario-lauro-de-freitas": {
+    title: "Advogado Previdenciário (INSS) em Lauro de Freitas | Riccio Advocacia",
+    metaDescription:
+      "Advogado de INSS em Lauro de Freitas: aposentadoria, BPC/LOAS, auxílio por incapacidade, pensão por morte e revisão. Pedido no Meu INSS e ação na Justiça Federal.",
+    h1: "Advogado previdenciário (INSS) em Lauro de Freitas",
+    intro:
+      "Ação contra o INSS não corre no fórum de Lauro de Freitas: é da Justiça Federal. Quem mora no município precisa entender esse caminho antes de desistir de um benefício negado.",
+    sections: [
+      {
+        h2: "Benefício negado não é o fim",
+        body:
+          "O indeferimento do INSS pode ser contestado por recurso administrativo ao Conselho de Recursos da Previdência Social ou por ação judicial. Muitas negativas acontecem por falta de documento: vínculo que não aparece no CNIS, laudo médico sem descrição da limitação para o trabalho, tempo especial sem PPP. Corrigir isso costuma ser o primeiro passo.",
+      },
+      {
+        h2: "Justiça Federal e Juizado Especial Federal",
+        body:
+          "Benefícios do INSS são discutidos na Justiça Federal – Seção Judiciária da Bahia. Causas de até 60 salários mínimos vão ao Juizado Especial Federal, sem custas no primeiro grau. O processo é eletrônico, e a perícia médica judicial é feita por perito nomeado pelo juiz, não pelo INSS.",
+      },
+      {
+        h2: "Revisão e pensão por morte",
+        body:
+          "Além de pedidos novos, há revisões de aposentadoria já concedida, que em regra precisam ser pedidas em até 10 anos (art. 103 da Lei 8.213/1991), e pensão por morte, cuja duração depende da idade do dependente e do tempo de união ou casamento.",
+      },
+      {
+        h2: "Atendimento",
+        body:
+          "Envie pelo WhatsApp a carta de indeferimento, o CNIS, laudos e exames. O Dr. Gilberto Riccio (OAB/BA 46.638) analisa se cabe recurso, novo pedido ou ação.",
+      },
+    ],
+    faq: [
+      {
+        q: "Preciso ir a Salvador para o processo contra o INSS?",
+        a: "O processo é eletrônico. A presença pode ser exigida em perícia ou audiência, no local que o juízo designar.",
+      },
+      {
+        q: "Recurso administrativo ou ação judicial: qual escolher?",
+        a: "Depende do motivo da negativa e da prova disponível. Em alguns casos o recurso resolve; em outros, a ação é o caminho mais direto.",
+      },
+      {
+        q: "Tenho direito a atrasados?",
+        a: "Se o benefício for concedido na Justiça, em regra os valores são devidos desde a data do pedido ao INSS, respeitada a prescrição de 5 anos.",
+      },
+      {
+        q: "Quanto custa?",
+        a: "Os honorários são combinados com o cliente, em geral sobre os atrasados recebidos ao final.",
+      },
+    ],
+    areaLink: { href: "/prev", label: "Direito previdenciário: benefícios e calculadoras" },
+    whatsappText: "Olá, Dr. Gilberto. Tenho um problema com o INSS e moro em Lauro de Freitas.",
+  },
+
+  "trabalhista-lauro-de-freitas": {
+    title: "Advogado Trabalhista em Lauro de Freitas (BA) | Riccio Advocacia",
+    metaDescription:
+      "Advogado trabalhista em Lauro de Freitas: rescisão, horas extras, vínculo sem carteira, justa causa e acidente de trabalho. Ações na Justiça do Trabalho (TRT5).",
+    h1: "Advogado trabalhista em Lauro de Freitas",
+    intro:
+      "Muita gente mora em Lauro de Freitas e trabalha em Salvador, ou o contrário. Para a Justiça do Trabalho, o que conta, em regra, é onde o serviço foi prestado, não onde o trabalhador mora.",
+    sections: [
+      {
+        h2: "Qual cidade é a competente",
+        body:
+          "A ação trabalhista é proposta, em regra, no local onde o empregado prestou serviço (art. 651 da CLT). Quem trabalhou em Lauro de Freitas ajuíza na Justiça do Trabalho com jurisdição sobre o município; quem trabalhou em Salvador, nas Varas do Trabalho da capital. As duas pertencem ao TRT da 5ª Região, e os recursos são julgados pelo TRT5 em Salvador.",
+      },
+      {
+        h2: "Demandas comuns no município",
+        body:
+          "Comércio, condomínios residenciais, hotelaria e serviços ligados ao aeroporto e à orla concentram pedidos de horas extras, trabalho em domingos e feriados, vínculo sem carteira assinada, acúmulo de função e verbas rescisórias não pagas. Empregada doméstica também tem direito a FGTS, horas extras e férias desde a LC 150/2015.",
+      },
+      {
+        h2: "Prazos que não podem passar",
+        body:
+          "São 2 anos depois do fim do contrato para entrar com a ação, cobrando os direitos dos últimos 5 anos (art. 7º, XXIX, da Constituição). Depois desse prazo, o direito se perde mesmo que a dívida seja evidente.",
+      },
+      {
+        h2: "Atendimento",
+        body:
+          "Envie pelo WhatsApp carteira de trabalho, contracheques, termo de rescisão e conversas com a empresa. O Dr. Gilberto Riccio (OAB/BA 46.638) avalia o que pode ser cobrado.",
+      },
+    ],
+    faq: [
+      {
+        q: "Moro em Lauro de Freitas e trabalhava em Salvador. Onde entro com a ação?",
+        a: "Em regra, em Salvador, onde o serviço foi prestado. Há exceções, como para quem trabalhava viajando.",
+      },
+      {
+        q: "Trabalhei sem carteira assinada. Posso cobrar?",
+        a: "Sim. Provando a relação de emprego, com testemunhas, mensagens ou comprovantes de pagamento, a Justiça reconhece o vínculo e as verbas.",
+      },
+      {
+        q: "Doméstica tem direito a hora extra?",
+        a: "Sim. Desde a Lei Complementar 150/2015, a jornada da doméstica é de 8 horas diárias e 44 semanais, com horas extras e FGTS.",
+      },
+      {
+        q: "Quanto custa?",
+        a: "Os honorários são combinados com o cliente, em geral sobre o valor obtido ao final. Quem não pode pagar custas pode pedir justiça gratuita.",
+      },
+    ],
+    areaLink: { href: "/advogado-trabalhista-online", label: "Advogado trabalhista online: como funciona" },
+    whatsappText: "Olá, Dr. Gilberto. Tenho uma questão trabalhista em Lauro de Freitas.",
+  },
+
+  "familia-lauro-de-freitas": {
+    title: "Advogado de Família em Lauro de Freitas (BA) | Riccio Advocacia",
+    metaDescription:
+      "Advogado de família em Lauro de Freitas: divórcio judicial ou em cartório, pensão alimentícia, guarda, união estável e partilha. Atendimento pelo WhatsApp. OAB/BA 46.638.",
+    h1: "Advogado de família em Lauro de Freitas",
+    intro:
+      "Em Lauro de Freitas, divórcio, pensão e guarda correm na comarca local do TJBA ou, havendo acordo e sem filhos menores ou incapazes, podem ser resolvidos em cartório.",
+    sections: [
+      {
+        h2: "Partilha do imóvel financiado",
+        body:
+          "Muitos casais de Lauro de Freitas compraram apartamento ou casa financiada em condomínio. Na separação, o que se divide em regra é o que foi pago durante o casamento ou a união estável, e não o valor total do imóvel. A dívida restante com o banco também precisa entrar no acordo ou na sentença, para que ninguém fique pagando sozinho.",
+      },
+      {
+        h2: "Pensão e guarda quando os pais moram em cidades vizinhas",
+        body:
+          "É comum um dos pais morar em Lauro de Freitas e o outro em Salvador ou Camaçari. A ação de alimentos pode ser proposta no domicílio de quem pede a pensão (art. 53, II, do CPC). A guarda compartilhada continua sendo a regra mesmo com cidades diferentes, com a fixação de uma residência base para a criança.",
+      },
+      {
+        h2: "Divórcio em cartório ou na Justiça",
+        body:
+          "Com acordo sobre tudo, o divórcio pode ser feito por escritura pública (Lei 11.441/2007), com advogado. Sem acordo, ou quando há questões de filhos que precisam do juiz, a ação vai para a Vara de Família da comarca.",
+      },
+      {
+        h2: "Atendimento",
+        body:
+          "Envie pelo WhatsApp um resumo do caso, a certidão de casamento ou de nascimento dos filhos e os documentos dos bens. O Dr. Gilberto Riccio (OAB/BA 46.638) orienta o caminho.",
+      },
+    ],
+    faq: [
+      {
+        q: "O imóvel financiado está só no nome de um. O outro tem direito?",
+        a: "Em regra sim, na comunhão parcial ou na união estável, quanto às parcelas pagas durante a convivência, mesmo que o contrato esteja em um só nome.",
+      },
+      {
+        q: "Posso pedir pensão em Lauro de Freitas se o pai mora em Salvador?",
+        a: "Sim. A ação de alimentos pode correr no domicílio de quem pede a pensão.",
+      },
+      {
+        q: "Dá para fazer divórcio em cartório com filho menor?",
+        a: "Depende. As questões de guarda e pensão do filho menor precisam passar pelo juiz; com elas já resolvidas judicialmente, alguns cartórios aceitam a escritura do divórcio. Cada caso precisa ser conferido.",
+      },
+      {
+        q: "Preciso de advogado no divórcio em cartório?",
+        a: "Sim. A escritura exige assistência de advogado ou defensor público.",
+      },
+    ],
+    areaLink: { href: "/advogado-familia", label: "Direito de família: divórcio, pensão e guarda" },
+    whatsappText: "Olá, Dr. Gilberto. Preciso de um advogado de família em Lauro de Freitas.",
+  },
+
+  // ───────────────────────── Consumidor ─────────────────────────
+
+  "consumidor-salvador": {
+    title: "Advogado do Consumidor em Salvador (BA) | Riccio Advocacia",
+    metaDescription:
+      "Advogado do consumidor em Salvador: cobrança indevida, nome negativado, fraude bancária, plano de saúde, voo cancelado e conta de luz. Juizado ou Justiça comum.",
+    h1: "Advogado do consumidor em Salvador",
+    intro:
+      "Desconto que você não autorizou, nome no Serasa por dívida que não existe, plano de saúde que negou cirurgia. Em Salvador, esses casos podem ir ao Procon, ao Juizado Especial ou à vara cível, e a escolha muda o resultado.",
+    sections: [
+      {
+        h2: "Procon, consumidor.gov.br ou Justiça",
+        body:
+          "A reclamação no Procon-BA ou no consumidor.gov.br resolve parte dos casos sem processo e ainda gera prova de que a empresa foi avisada. Quando há dano moral, negativação indevida ou valor alto em jogo, a ação judicial costuma ser necessária. O Código de Defesa do Consumidor permite que ela seja proposta no domicílio do consumidor (art. 101, I).",
+      },
+      {
+        h2: "Juizado Especial Cível ou vara cível",
+        body:
+          "Causas de até 40 salários mínimos podem ir aos Juizados Especiais Cíveis de Salvador, sem custas no primeiro grau (Lei 9.099/1995). Casos que exigem perícia complexa, como erro médico ou defeito técnico grave, vão para as Varas de Relações de Consumo ou cíveis da comarca, no TJBA.",
+      },
+      {
+        h2: "Casos mais comuns",
+        body:
+          "Empréstimo consignado ou cartão de crédito não contratado, descontos em conta e em benefício do INSS, golpe do Pix com falha de segurança do banco, negativação indevida, negativa de cobertura de plano de saúde, cobranças abusivas de energia (Neoenergia Coelba) e água (Embasa), voo cancelado ou atrasado e bagagem extraviada.",
+      },
+      {
+        h2: "Atendimento",
+        body:
+          "Envie pelo WhatsApp prints, faturas, extratos, protocolos de atendimento e a consulta do Serasa ou SPC. O Dr. Gilberto Riccio (OAB/BA 46.638) avalia o caso e indica o caminho.",
+      },
+    ],
+    faq: [
+      {
+        q: "Cobraram um valor que eu não devia. Recebo de volta em dobro?",
+        a: "Se você pagou cobrança indevida, o CDC prevê devolução em dobro, salvo engano justificável da empresa (art. 42, parágrafo único).",
+      },
+      {
+        q: "Preciso de advogado no Juizado?",
+        a: "Em causas de até 20 salários mínimos não é obrigatório. Acima disso, até 40 salários mínimos, é obrigatório. Mesmo nas menores, o advogado ajuda a pedir o que a lei garante e a produzir a prova certa.",
+      },
+      {
+        q: "Qual o prazo para reclamar?",
+        a: "Defeito aparente: 30 dias para produto ou serviço não durável e 90 dias para durável (art. 26 do CDC). Dano causado por produto ou serviço: 5 anos (art. 27). Outros casos têm prazos próprios.",
+      },
+      {
+        q: "Guardar protocolo de atendimento ajuda?",
+        a: "Muito. O número do protocolo, a data e o nome do atendente mostram que você tentou resolver e a empresa não resolveu.",
+      },
+    ],
+    areaLink: { href: "/advogado-consumidor", label: "Direito do consumidor: como o escritório atua" },
+    whatsappText: "Olá, Dr. Gilberto. Tenho um problema de consumidor em Salvador.",
+  },
+
+  "consumidor-camacari": {
+    title: "Advogado do Consumidor em Camaçari (BA) | Riccio Advocacia",
+    metaDescription:
+      "Advogado do consumidor em Camaçari: consignado não contratado, cobrança indevida, negativação, plano de saúde e imóvel na planta. Ação na comarca de Camaçari.",
+    h1: "Advogado do consumidor em Camaçari",
+    intro:
+      "Quem mora em Camaçari não precisa processar a empresa em Salvador nem em São Paulo. O Código de Defesa do Consumidor garante que a ação seja proposta aqui, na comarca de Camaçari.",
+    sections: [
+      {
+        h2: "Processar a empresa na sua cidade",
+        body:
+          "Bancos, operadoras e lojas virtuais costumam ter sede em outro estado, mas o consumidor pode ajuizar no próprio domicílio (art. 101, I, do CDC). Causas de até 40 salários mínimos vão ao Juizado Especial Cível da comarca de Camaçari; as demais, às varas cíveis do Fórum de Camaçari.",
+      },
+      {
+        h2: "Desconto em salário e em benefício",
+        body:
+          "Com muitos trabalhadores do polo industrial e aposentados, são frequentes os empréstimos consignados e cartões de crédito consignado (RMC) que a pessoa diz nunca ter contratado. Sem prova de contratação válida, é possível pedir o cancelamento, a devolução dos descontos, inclusive em dobro quando cabível, e indenização.",
+      },
+      {
+        h2: "Imóvel na planta e condomínio",
+        body:
+          "A expansão de loteamentos e condomínios em Camaçari e na orla trouxe disputas sobre atraso na entrega de imóvel, cobrança de taxas não previstas e distrato. A Lei 13.786/2018 regula a desistência e a multa por atraso nesses contratos.",
+      },
+      {
+        h2: "Atendimento",
+        body:
+          "Envie pelo WhatsApp extratos, contrato, protocolos e prints. O Dr. Gilberto Riccio (OAB/BA 46.638) avalia o caso e orienta sobre Procon, Juizado ou ação comum.",
+      },
+    ],
+    faq: [
+      {
+        q: "O banco tem sede em São Paulo. Tenho que processar lá?",
+        a: "Não. O consumidor pode propor a ação no próprio domicílio, em Camaçari.",
+      },
+      {
+        q: "Apareceu um consignado no meu contracheque que não contratei. O que fazer?",
+        a: "Guarde o contracheque ou o extrato do INSS, peça ao banco a cópia do contrato e procure orientação. Sem contratação válida, é possível cancelar e pedir a devolução.",
+      },
+      {
+        q: "A construtora atrasou a entrega. Tenho direito a quê?",
+        a: "Passado o prazo de tolerância de 180 dias, a Lei 13.786/2018 prevê resolução do contrato com devolução ou indenização pelo atraso, conforme o caso.",
+      },
+      {
+        q: "Preciso de advogado no Juizado?",
+        a: "Até 20 salários mínimos não é obrigatório; entre 20 e 40, é.",
+      },
+    ],
+    areaLink: { href: "/advogado-consumidor", label: "Direito do consumidor: como o escritório atua" },
+    whatsappText: "Olá, Dr. Gilberto. Tenho um problema de consumidor em Camaçari.",
+  },
+
+  "consumidor-lauro-de-freitas": {
+    title: "Advogado do Consumidor em Lauro de Freitas (BA) | Riccio Advocacia",
+    metaDescription:
+      "Advogado do consumidor em Lauro de Freitas: voo cancelado, bagagem extraviada, construtora, plano de saúde, fraude bancária e negativação indevida. OAB/BA 46.638.",
+    h1: "Advogado do consumidor em Lauro de Freitas",
+    intro:
+      "Lauro de Freitas fica colada ao aeroporto de Salvador e cresceu com condomínios novos. Não por acaso, problemas com companhia aérea e construtora estão entre as queixas mais comuns de quem mora aqui.",
+    sections: [
+      {
+        h2: "Voo cancelado, atraso e bagagem",
+        body:
+          "Em voo nacional, a Resolução 400/2016 da ANAC obriga a companhia a oferecer assistência material conforme o tempo de espera e opções de reacomodação ou reembolso. Se houver dano além do transtorno comum, como perda de compromisso importante ou bagagem extraviada, cabe ação de indenização. Guarde cartão de embarque, recibos e os registros feitos no balcão.",
+      },
+      {
+        h2: "Construtora e condomínio",
+        body:
+          "Atraso na entrega das chaves, vícios na construção, como infiltração e rachaduras, e cobranças indevidas no distrato são discutidos com base no CDC e na Lei 13.786/2018. Defeitos de construção devem ser registrados com fotos e notificação à construtora assim que aparecem.",
+      },
+      {
+        h2: "Onde a ação corre",
+        body:
+          "O consumidor pode processar no próprio domicílio (art. 101, I, do CDC). Quem mora em Lauro de Freitas ajuíza na comarca local do TJBA: no Juizado Especial Cível, para causas de até 40 salários mínimos, ou na vara cível, quando o caso exige perícia ou o valor é maior.",
+      },
+      {
+        h2: "Atendimento",
+        body:
+          "Envie pelo WhatsApp contrato, comprovantes, fotos e protocolos. O Dr. Gilberto Riccio (OAB/BA 46.638) avalia o caso e indica o caminho.",
+      },
+    ],
+    faq: [
+      {
+        q: "Meu voo foi cancelado. A companhia tem que me indenizar?",
+        a: "Ela tem que prestar assistência e oferecer reacomodação ou reembolso. A indenização por dano moral depende de prova do prejuízo concreto, conforme a Lei 14.034/2020 alterou o Código Brasileiro de Aeronáutica.",
+      },
+      {
+        q: "Apareceu infiltração no apartamento novo. Ainda dá tempo?",
+        a: "Vícios aparentes devem ser reclamados em 90 dias; defeitos ocultos, a partir de quando aparecem. Problemas de solidez e segurança da obra têm garantia de 5 anos (art. 618 do Código Civil). Quanto antes notificar, melhor.",
+      },
+      {
+        q: "Fui vítima de golpe e o banco não devolve. Tenho direito?",
+        a: "O banco responde por falhas na segurança dos seus serviços (Súmula 479 do STJ). Cada caso depende de como o golpe ocorreu.",
+      },
+      {
+        q: "Preciso de advogado no Juizado?",
+        a: "Até 20 salários mínimos não é obrigatório; entre 20 e 40, é.",
+      },
+    ],
+    areaLink: { href: "/advogado-consumidor", label: "Direito do consumidor: como o escritório atua" },
+    whatsappText: "Olá, Dr. Gilberto. Tenho um problema de consumidor em Lauro de Freitas.",
+  },
 };
 
 export const LOCAL_PAGE_KEYS = Object.keys(localPages);
+
+/** Cidades e áreas com página local. A cidade pode ter hífen (lauro-de-freitas), a área não. */
+export const LOCAL_CITY_NAMES: Record<string, string> = {
+  salvador: "Salvador",
+  camacari: "Camaçari",
+  "lauro-de-freitas": "Lauro de Freitas",
+};
+
+export const LOCAL_NICHE_NAMES: Record<string, string> = {
+  criminal: "Criminal",
+  previdenciario: "Previdenciário",
+  trabalhista: "Trabalhista",
+  familia: "Família",
+  consumidor: "Consumidor",
+};
+
+/** Separa a chave só no PRIMEIRO hífen: "familia-lauro-de-freitas" → familia / lauro-de-freitas. */
+export const splitLocalKey = (key: string) => {
+  const i = key.indexOf("-");
+  return { nicheSlug: key.slice(0, i), citySlug: key.slice(i + 1) };
+};
+
+export const LOCAL_PAGE_ROUTES = LOCAL_PAGE_KEYS.map((key) => ({ key, ...splitLocalKey(key) }));
 
 export const getLocalPage = (nicheSlug: string, citySlug: string) =>
   localPages[`${nicheSlug}-${citySlug}`];

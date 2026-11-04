@@ -23,9 +23,20 @@ import { legalNiches } from '../src/data/legal-niches';
 import { localSEOArticles } from '../src/data/local-seo-articles';
 import * as fs from 'fs';
 import * as path from 'path';
+import { pathToFileURL } from 'url';
 
 const BASE_URL = 'https://advogadoja.lovable.app';
 const TODAY = new Date().toISOString().split('T')[0];
+// lastmod só quando a data é real (updatedAt/publishedAt do conteúdo). Sem data conhecida, omitimos a tag
+// em vez de mentir "hoje" para o Google. Páginas estáticas: sem lastmod.
+const UNKNOWN = '';
+function realDate(...cands: (string | undefined | null)[]): string {
+  for (const c of cands) {
+    if (c && /^\d{4}-\d{2}-\d{2}/.test(c)) return c.slice(0, 10);
+  }
+  return UNKNOWN;
+}
+
 
 interface SitemapURL {
   loc: string;
@@ -38,25 +49,25 @@ interface SitemapURL {
 // STATIC PAGES
 // ============================================
 const staticPages: SitemapURL[] = [
-  { loc: '/', lastmod: TODAY, changefreq: 'weekly', priority: 1.0 },
-  { loc: '/criminal', lastmod: TODAY, changefreq: 'weekly', priority: 0.95 },
-  { loc: '/advogado-trabalhista-online', lastmod: TODAY, changefreq: 'weekly', priority: 0.95 },
-  { loc: '/prev', lastmod: TODAY, changefreq: 'weekly', priority: 0.95 },
-  { loc: '/prev/aposentadorias', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/prev/aposentadoria-por-idade', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/prev/auxilio-doenca', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/prev/invalidez', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/prev/bpc-loas', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/prev/salario-maternidade', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/prev/sobre', lastmod: TODAY, changefreq: 'yearly', priority: 0.5 },
-  { loc: '/prev/contato', lastmod: TODAY, changefreq: 'yearly', priority: 0.5 },
-  { loc: '/artigos', lastmod: TODAY, changefreq: 'weekly', priority: 0.8 },
-  { loc: '/blog', lastmod: TODAY, changefreq: 'weekly', priority: 0.8 },
-  { loc: '/perguntas', lastmod: TODAY, changefreq: 'weekly', priority: 0.7 },
-  { loc: '/calculadoras', lastmod: TODAY, changefreq: 'monthly', priority: 0.7 },
-  { loc: '/privacidade', lastmod: TODAY, changefreq: 'yearly', priority: 0.2 },
-  { loc: '/termos-de-uso', lastmod: TODAY, changefreq: 'yearly', priority: 0.2 },
-  { loc: '/advogado-bahia', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/', lastmod: UNKNOWN, changefreq: 'weekly', priority: 1.0 },
+  { loc: '/criminal', lastmod: UNKNOWN, changefreq: 'weekly', priority: 0.95 },
+  { loc: '/advogado-trabalhista-online', lastmod: UNKNOWN, changefreq: 'weekly', priority: 0.95 },
+  { loc: '/prev', lastmod: UNKNOWN, changefreq: 'weekly', priority: 0.95 },
+  { loc: '/prev/aposentadorias', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/prev/aposentadoria-por-idade', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/prev/auxilio-doenca', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/prev/invalidez', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/prev/bpc-loas', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/prev/salario-maternidade', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/prev/sobre', lastmod: UNKNOWN, changefreq: 'yearly', priority: 0.5 },
+  { loc: '/prev/contato', lastmod: UNKNOWN, changefreq: 'yearly', priority: 0.5 },
+  { loc: '/artigos', lastmod: UNKNOWN, changefreq: 'weekly', priority: 0.8 },
+  { loc: '/blog', lastmod: UNKNOWN, changefreq: 'weekly', priority: 0.8 },
+  { loc: '/perguntas', lastmod: UNKNOWN, changefreq: 'weekly', priority: 0.7 },
+  { loc: '/calculadoras', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.7 },
+  { loc: '/privacidade', lastmod: UNKNOWN, changefreq: 'yearly', priority: 0.2 },
+  { loc: '/termos-de-uso', lastmod: UNKNOWN, changefreq: 'yearly', priority: 0.2 },
+  { loc: '/advogado-bahia', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
 ];
 
 // Só as cidades onde o escritório atende de fato; o resto fica fora do sitemap.
@@ -66,48 +77,48 @@ const LOCAL_CITIES = ['salvador', 'camacari', 'lauro-de-freitas'];
 // CALCULATORS
 // ============================================
 const calculators: SitemapURL[] = [
-  { loc: '/calculadora-trabalhista', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/calculadora-horas-extras', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/calculadora-insalubridade', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-seguro-desemprego', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/calculadora-fgts', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/calculadora-pensao', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/calculadora-partilha-bens', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-inventario', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-aposentadoria', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/calculadora-auxilio-doenca', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-bpc-loas', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-pensao-morte', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-danos-morais', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/calculadora-atualizacao-divida', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-aluguel-atrasado', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-dpvat', lastmod: TODAY, changefreq: 'monthly', priority: 0.75 },
+  { loc: '/calculadora-trabalhista', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/calculadora-horas-extras', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/calculadora-insalubridade', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-seguro-desemprego', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/calculadora-fgts', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/calculadora-pensao', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/calculadora-partilha-bens', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-inventario', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-aposentadoria', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/calculadora-auxilio-doenca', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-bpc-loas', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-pensao-morte', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-danos-morais', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/calculadora-atualizacao-divida', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-aluguel-atrasado', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-dpvat', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.75 },
   // Consumer Calculators
-  { loc: '/calculadora-voo-cancelado', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/calculadora-negativacao', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/calculadora-devolucao-dobro', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-plano-saude', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-fraude-bancaria', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-voo-cancelado', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/calculadora-negativacao', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/calculadora-devolucao-dobro', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-plano-saude', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/calculadora-fraude-bancaria', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
 ];
 
 // ============================================
 // CONSUMER PROBLEM LANDING PAGES
 // ============================================
 const consumerLandingPages: SitemapURL[] = [
-  { loc: '/advogado-problemas-voo', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/advogado-negativacao-indevida', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/advogado-plano-saude-cobertura-negada', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/advogado-cobranca-indevida', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/advogado-produto-defeituoso', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/fraude-bancaria', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/advogado-cartao-consignado', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/liminar-cirurgia-negada', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/liminar-cirurgia-bariatrica', lastmod: TODAY, changefreq: 'monthly', priority: 0.75 },
-  { loc: '/liminar-tratamento-cancer', lastmod: TODAY, changefreq: 'monthly', priority: 0.75 },
-  { loc: '/liminar-cirurgia-ortopedica', lastmod: TODAY, changefreq: 'monthly', priority: 0.75 },
-  { loc: '/liminar-cirurgia-cardiaca', lastmod: TODAY, changefreq: 'monthly', priority: 0.75 },
-  { loc: '/liminar-neurocirurgia', lastmod: TODAY, changefreq: 'monthly', priority: 0.75 },
-  { loc: '/liminar-cirurgia-olhos', lastmod: TODAY, changefreq: 'monthly', priority: 0.75 },
+  { loc: '/advogado-problemas-voo', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/advogado-negativacao-indevida', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/advogado-plano-saude-cobertura-negada', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/advogado-cobranca-indevida', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/advogado-produto-defeituoso', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/fraude-bancaria', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/advogado-cartao-consignado', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/liminar-cirurgia-negada', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/liminar-cirurgia-bariatrica', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.75 },
+  { loc: '/liminar-tratamento-cancer', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.75 },
+  { loc: '/liminar-cirurgia-ortopedica', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.75 },
+  { loc: '/liminar-cirurgia-cardiaca', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.75 },
+  { loc: '/liminar-neurocirurgia', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.75 },
+  { loc: '/liminar-cirurgia-olhos', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.75 },
 ];
 
 // ============================================
@@ -116,7 +127,7 @@ const consumerLandingPages: SitemapURL[] = [
 function generateNicheUrls(): SitemapURL[] {
   return legalNiches.map(niche => ({
     loc: `/advogado-${niche.id === 'penal' ? 'criminal' : niche.id}`,
-    lastmod: TODAY,
+    lastmod: UNKNOWN,
     changefreq: 'weekly' as const,
     priority: 0.95,
   }));
@@ -128,7 +139,7 @@ function generateNicheUrls(): SitemapURL[] {
 function generateCityUrls(): SitemapURL[] {
   return brazilianCities.filter(c => LOCAL_CITIES.includes(c.slug)).map(city => ({
     loc: `/advogado/${city.slug}`,
-    lastmod: TODAY,
+    lastmod: UNKNOWN,
     changefreq: 'weekly' as const,
     priority: 0.85,
   }));
@@ -139,11 +150,11 @@ function generateCityUrls(): SitemapURL[] {
 // ============================================
 function generateCityNicheUrls(): SitemapURL[] {
   // Só as páginas com rota explícita no App.tsx: o padrão /advogado-:nicho-:cidade não casa no React Router v6.
-  const niches = ['criminal', 'previdenciario', 'trabalhista', 'familia'];
-  const cities = ['salvador', 'camacari'];
+  const niches = ['criminal', 'previdenciario', 'trabalhista', 'familia', 'consumidor'];
+  const cities = ['salvador', 'camacari', 'lauro-de-freitas'];
   return niches.flatMap(n => cities.map(c => ({
     loc: `/advogado-${n}-${c}`,
-    lastmod: TODAY,
+    lastmod: UNKNOWN,
     changefreq: 'monthly' as const,
     priority: 0.95,
   })));
@@ -155,7 +166,7 @@ function generateCityNicheUrls(): SitemapURL[] {
 function generateArticleUrls(): SitemapURL[] {
   return blogArticles.map(article => ({
     loc: `/artigos/${article.nicheId}/${article.slug}`,
-    lastmod: article.updatedAt || TODAY,
+    lastmod: realDate(article.updatedAt, (article as { publishedAt?: string }).publishedAt),
     changefreq: 'monthly' as const,
     priority: 0.7,
   }));
@@ -167,7 +178,7 @@ function generateArticleUrls(): SitemapURL[] {
 function generateFAQUrls(): SitemapURL[] {
   return programmaticFAQs.map(faq => ({
     loc: `/perguntas/${faq.slug}`,
-    lastmod: TODAY,
+    lastmod: UNKNOWN,
     changefreq: 'monthly' as const,
     priority: 0.65,
   }));
@@ -179,7 +190,7 @@ function generateFAQUrls(): SitemapURL[] {
 function generateLocalSEOArticleUrls(): SitemapURL[] {
   return localSEOArticles.map(article => ({
     loc: `/artigos/consumidor/${article.slug}`,
-    lastmod: article.updatedAt || TODAY,
+    lastmod: realDate(article.updatedAt, (article as { publishedAt?: string }).publishedAt),
     changefreq: 'monthly' as const,
     priority: 0.8,
   }));
@@ -192,7 +203,7 @@ function generateCityConsumerUrls(): SitemapURL[] {
   // Generate consumer-specific city landing pages
   return LOCAL_CITIES.map(city => ({
     loc: `/advogado-consumidor-${city}`,
-    lastmod: TODAY,
+    lastmod: UNKNOWN,
     changefreq: 'weekly' as const,
     priority: 0.8,
   }));
@@ -204,7 +215,7 @@ function generateCityConsumerUrls(): SitemapURL[] {
 function generateBlogPostUrls(): SitemapURL[] {
   return blogPosts.map(post => ({
     loc: `/blog/${post.slug}`,
-    lastmod: post.updatedAt || TODAY,
+    lastmod: realDate(post.updatedAt, (post as { publishedAt?: string }).publishedAt),
     changefreq: 'weekly' as const,
     priority: 0.8,
   }));
@@ -220,13 +231,13 @@ function generateCategoryUrls(): SitemapURL[] {
   for (const category of categories) {
     urls.push({
       loc: `/artigos/categoria/${category}`,
-      lastmod: TODAY,
+      lastmod: UNKNOWN,
       changefreq: 'weekly' as const,
       priority: 0.6,
     });
     urls.push({
       loc: `/noticias/${category}`,
-      lastmod: TODAY,
+      lastmod: UNKNOWN,
       changefreq: 'daily' as const,
       priority: 0.6,
     });
@@ -240,8 +251,8 @@ function generateCategoryUrls(): SitemapURL[] {
 // ============================================
 function generateUrlEntry(url: SitemapURL): string {
   return `  <url>
-    <loc>${BASE_URL}${url.loc}</loc>
-    <lastmod>${url.lastmod}</lastmod>
+    <loc>${BASE_URL}${url.loc}</loc>${url.lastmod ? `
+    <lastmod>${url.lastmod}</lastmod>` : ''}
     <changefreq>${url.changefreq}</changefreq>
     <priority>${url.priority}</priority>
   </url>`;
@@ -252,7 +263,29 @@ function sectionHeader(title: string, count: number): string {
   <!-- ===== ${title} (${count} URLs) ===== -->`;
 }
 
-function generateSitemap(): string {
+// ============================================
+// GUIAS PILARES (/guia/:slug) — opcional: só entra se src/data/guias.ts existir
+// ============================================
+async function generateGuiaUrls(): Promise<SitemapURL[]> {
+  const guiasPath = path.resolve(process.cwd(), 'src/data/guias.ts');
+  if (!fs.existsSync(guiasPath)) return [];
+  try {
+    const mod = await import(pathToFileURL(guiasPath).href);
+    const list: Array<{ slug: string; updatedAt?: string; publishedAt?: string }> =
+      mod.guias || mod.default || Object.values(mod).find(Array.isArray) || [];
+    return list.filter(g => g && g.slug).map(g => ({
+      loc: `/guia/${g.slug}`,
+      lastmod: realDate(g.updatedAt, g.publishedAt),
+      changefreq: 'monthly' as const,
+      priority: 0.9,
+    }));
+  } catch (e) {
+    console.warn('⚠️  src/data/guias.ts existe mas não carregou; guias fora do sitemap.', e);
+    return [];
+  }
+}
+
+function generateSitemap(guiaUrls: SitemapURL[]): string {
   const nicheUrls = generateNicheUrls();
   const cityUrls = generateCityUrls();
   const cityNicheUrls = generateCityNicheUrls();
@@ -265,6 +298,7 @@ function generateSitemap(): string {
   
   const sections = [
     { title: 'PÁGINAS ESTÁTICAS', urls: staticPages },
+    { title: 'GUIAS PILARES', urls: guiaUrls },
     { title: 'CALCULADORAS JURÍDICAS', urls: calculators },
     { title: 'LANDING PAGES CONSUMIDOR', urls: consumerLandingPages },
     { title: 'LANDING PAGES POR NICHO', urls: nicheUrls },
@@ -304,7 +338,7 @@ function generateSitemap(): string {
 // ============================================
 // EXECUTE
 // ============================================
-const sitemap = generateSitemap();
+const sitemap = generateSitemap(await generateGuiaUrls());
 const outputPath = path.resolve(process.cwd(), 'public/sitemap.xml');
 
 fs.writeFileSync(outputPath, sitemap, 'utf-8');

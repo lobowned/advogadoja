@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
     id: "multa-transito-indevida",
     slug: "como-recorrer-multa-transito-indevida",
     title: "Como Recorrer de Multa de Trânsito Indevida: Guia Completo",
-    metaTitle: "Como Recorrer de Multa de Trânsito Indevida: Guia Completo 2024",
+    metaTitle: "Como Recorrer de Multa de Trânsito Indevida: Guia Completo",
     metaDescription: "Guia completo sobre como recorrer de multas de trânsito indevidas. Conheça seus direitos e aumente suas chances de sucesso.",
     keywords: ["multa de trânsito indevida", "recurso multa", "JARI", "DETRAN", "defesa prévia", "cancelar multa"],
     category: "Trânsito",
@@ -150,7 +150,7 @@ export const blogPosts: BlogPost[] = [
 
       <div class="bg-gradient-to-r from-primary/20 to-secondary/20 p-8 rounded-xl my-10 text-center">
         <h3 class="text-2xl font-bold text-foreground mb-3">Precisa de Ajuda com Sua Multa?</h3>
-        <p class="text-muted-foreground mb-6">Nossa equipe de advogados especializados pode analisar seu caso gratuitamente e orientar sobre as melhores chances de recurso.</p>
+        <p class="text-muted-foreground mb-6">Um advogado pode analisar os documentos do seu caso e explicar os caminhos possíveis, sem promessa de resultado.</p>
         <a href="/" class="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
           Falar com Advogado Agora
         </a>
@@ -184,14 +184,14 @@ export const blogPosts: BlogPost[] = [
       
       <p class="mb-4">Recorrer de uma multa de trânsito indevida é um direito seu. Com organização, documentação adequada e conhecimento dos prazos, você aumenta significativamente suas chances de sucesso. Não deixe de exercer seu direito de defesa.</p>
       
-      <p class="mb-4">Se precisar de orientação especializada, nossa equipe está pronta para ajudar. Entre em contato e saiba como podemos auxiliar no seu caso.</p>
+      <p class="mb-4">Se precisar de orientação especializada, procure um advogado de sua confiança. Entre em contato e saiba como podemos auxiliar no seu caso.</p>
     `
   },
   {
     id: "direitos-consumidor-online",
     slug: "direitos-consumidor-compras-online",
     title: "Direitos do Consumidor em Compras Online: Evite Fraudes e Problemas",
-    metaTitle: "Direitos do Consumidor em Compras Online: Guia Completo 2024",
+    metaTitle: "Direitos do Consumidor em Compras Online: Guia Completo",
     metaDescription: "Proteja-se ao comprar online. Conheça seus direitos como consumidor e evite fraudes e problemas com entregas e produtos.",
     keywords: ["direitos consumidor online", "compras pela internet", "direito de arrependimento", "e-commerce", "fraude online", "devolução produto"],
     category: "Consumidor",
@@ -336,7 +336,7 @@ export const blogPosts: BlogPost[] = [
 
       <div class="bg-gradient-to-r from-primary/20 to-secondary/20 p-8 rounded-xl my-10 text-center">
         <h3 class="text-2xl font-bold text-foreground mb-3">Teve Problemas com Compra Online?</h3>
-        <p class="text-muted-foreground mb-6">Nossa equipe de advogados especializados em direito do consumidor pode analisar seu caso e orientar sobre os próximos passos.</p>
+        <p class="text-muted-foreground mb-6">Um advogado pode analisar os documentos do seu caso e explicar os caminhos possíveis, sem promessa de resultado. Veja também o <a href="/guia/consumidor" class="text-primary underline">guia de direito do consumidor</a> e o <a href="/advogado-consumidor-salvador" class="text-primary underline">atendimento em Salvador</a>.</p>
         <a href="/" class="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
           Consultar Advogado Grátis
         </a>
@@ -373,14 +373,14 @@ export const blogPosts: BlogPost[] = [
       
       <p class="mb-4">Comprar online é conveniente, mas exige atenção. Conhecer seus direitos é a melhor forma de se proteger e garantir que problemas sejam resolvidos rapidamente. Não hesite em buscar ajuda quando necessário – o Código de Defesa do Consumidor está do seu lado.</p>
       
-      <p class="mb-4">Se você está enfrentando problemas com uma compra online e precisa de orientação jurídica, nossa equipe está pronta para ajudar. Entre em contato para uma consulta gratuita.</p>
+      <p class="mb-4">Se você está enfrentando problemas com uma compra online e precisa de orientação jurídica, procure um advogado de sua confiança.</p>
     `
   },
   {
     id: "superendividamento-dividas",
     slug: "superendividamento-negociar-dividas",
     title: "Superendividamento: Como Negociar Dívidas e Sair do Vermelho",
-    metaTitle: "Superendividamento: Como Negociar Dívidas e Sair do Vermelho | Guia 2024",
+    metaTitle: "Superendividamento: Como Negociar Dívidas e Sair do Vermelho",
     metaDescription: "Guia para quem está superendividado. Aprenda a negociar suas dívidas e reorganize sua vida financeira com apoio jurídico.",
     keywords: ["superendividamento", "negociar dívidas", "lei do superendividamento", "dívidas", "nome sujo", "renegociação"],
     category: "Financeiro",
@@ -549,9 +549,9 @@ export const blogPosts: BlogPost[] = [
 
       <div class="bg-gradient-to-r from-primary/20 to-secondary/20 p-8 rounded-xl my-10 text-center">
         <h3 class="text-2xl font-bold text-foreground mb-3">Está Superendividado?</h3>
-        <p class="text-muted-foreground mb-6">Nossos advogados especializados podem analisar sua situação, identificar cláusulas abusivas em seus contratos e ajudar na negociação das suas dívidas.</p>
+        <p class="text-muted-foreground mb-6">Um advogado pode analisar os documentos do seu caso e explicar os caminhos possíveis, sem promessa de resultado. Veja também o <a href="/guia/consumidor" class="text-primary underline">guia de direito do consumidor</a> e o <a href="/advogado-consumidor-salvador" class="text-primary underline">atendimento em Salvador</a>.</p>
         <a href="/" class="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
-          Consulta Gratuita
+          Falar com Advogado
         </a>
       </div>
 
@@ -603,14 +603,14 @@ export const blogPosts: BlogPost[] = [
       
       <p class="mb-4">O superendividamento é uma situação difícil, mas não é sem saída. Com a Lei 14.181/2021, você tem ferramentas legais para reorganizar suas finanças e voltar a ter uma vida digna. O mais importante é agir – quanto mais tempo você esperar, mais os juros crescem e mais difícil fica a situação.</p>
       
-      <p class="mb-4">Se você está nessa situação, não tenha vergonha de buscar ajuda. Muitos brasileiros passam pelo mesmo problema. Entre em contato conosco para uma análise gratuita da sua situação e orientação sobre os melhores caminhos para sair do vermelho.</p>
+      <p class="mb-4">Se você está nessa situação, não tenha vergonha de buscar ajuda. Muitos brasileiros passam pelo mesmo problema. Um advogado pode analisar sua situação e indicar os caminhos possíveis para sair do vermelho.</p>
     `
   },
   {
     id: "cobranca-indevida-mensalidade-escolar",
     slug: "cobranca-indevida-mensalidade-escolar",
     title: "Cobrança Indevida em Mensalidades Escolares: O Que Fazer Quando a Escola Cobra Além do Devido",
-    metaTitle: "Mensalidade Escolar Indevida: Como Reclamar e Ter Reembolso 2026",
+    metaTitle: "Mensalidade Escolar Indevida: Como Reclamar e Ter Reembolso",
     metaDescription: "Descubra como identificar cobranças indevidas em mensalidades escolares, seus direitos pelo CDC e como obter reembolso. Guia completo com passo a passo.",
     keywords: ["mensalidade escolar indevida", "cobrança ilegal escola", "taxa abusiva escola", "reembolso mensalidade", "direito consumidor escola", "matrícula taxa ilegal", "reajuste abusivo escola"],
     category: "Consumidor",
@@ -644,7 +644,7 @@ export const blogPosts: BlogPost[] = [
       <p class="mb-4">Esta lei é a principal norma que regula as mensalidades escolares no Brasil. Entre seus pontos principais:</p>
       
       <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li>A <strong>taxa de matrícula não pode exceder o valor da mensalidade</strong></li>
+        <li>A <strong>matrícula, em regra, equivale a uma parcela da anuidade</strong></li>
         <li>É vedada a <strong>suspensão de provas</strong> por inadimplência</li>
         <li>A escola deve apresentar <strong>planilha de custos</strong> detalhada</li>
         <li>Reajustes devem ter <strong>divulgação prévia de 45 dias</strong></li>
@@ -672,7 +672,7 @@ export const blogPosts: BlogPost[] = [
       <p class="mb-4">A escola não pode <strong>obrigar a compra de material didático exclusivamente em seu estabelecimento</strong>. Você tem o direito de adquirir livros e materiais onde preferir. Forçar a compra na escola configura venda casada, prática proibida pelo art. 39 do CDC.</p>
       
       <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">2. Taxa de Matrícula Acima da Mensalidade</h3>
-      <p class="mb-4">A Lei 9.870/1999 é clara: a matrícula não pode custar mais que a mensalidade. Se a escola cobra R$ 2.000 de matrícula e a mensalidade é R$ 1.500, a cobrança é ilegal.</p>
+      <p class="mb-4">A Lei 9.870/1999 trata a anuidade como valor total dividido em parcelas, e a matrícula costuma ser uma delas. Matrícula muito acima da mensalidade é forte indício de cobrança abusiva, que pode ser questionada pelo CDC.</p>
       
       <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">3. Reajustes Sem Transparência</h3>
       <p class="mb-4">A escola deve apresentar <strong>planilha detalhada</strong> justificando o reajuste e divulgá-lo com antecedência mínima de 45 dias. Reajustes acima da inflação precisam de justificativa clara (novos investimentos, ampliação de serviços, etc.).</p>
@@ -742,7 +742,7 @@ export const blogPosts: BlogPost[] = [
 
       <div class="bg-gradient-to-r from-primary/20 to-secondary/20 p-8 rounded-xl my-10 text-center">
         <h3 class="text-2xl font-bold text-foreground mb-3">Está Enfrentando Cobranças Abusivas da Escola?</h3>
-        <p class="text-muted-foreground mb-6">Nossa equipe de advogados especializados em Direito do Consumidor pode analisar seu caso gratuitamente e orientar sobre como recuperar valores pagos indevidamente.</p>
+        <p class="text-muted-foreground mb-6">Um advogado pode analisar os documentos do seu caso e explicar os caminhos possíveis, sem promessa de resultado. Veja também o <a href="/guia/consumidor" class="text-primary underline">guia de direito do consumidor</a> e o <a href="/advogado-consumidor-salvador" class="text-primary underline">atendimento em Salvador</a>.</p>
         <a href="/" class="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
           Falar com Advogado Agora
         </a>
@@ -759,8 +759,8 @@ export const blogPosts: BlogPost[] = [
     id: "plano-saude-negou-cirurgia-liminar",
     slug: "plano-saude-negou-cirurgia-liminar",
     title: "Planos de Saúde e Negativas de Cirurgias: Como Obter uma Liminar para Garantir Seu Direito",
-    metaTitle: "Plano de Saúde Negou Cirurgia? Saiba Como Conseguir Liminar 2026",
-    metaDescription: "Seu plano de saúde negou uma cirurgia necessária? Aprenda como obter uma liminar judicial para garantir seu tratamento. Guia completo com prazos e documentos.",
+    metaTitle: "Plano de Saúde Negou Cirurgia? Saiba Como Conseguir Liminar",
+    metaDescription: "Seu plano de saúde negou uma cirurgia necessária? Aprenda como obter uma liminar judicial para buscar seu tratamento. Prazos e documentos.",
     keywords: ["plano saúde negou cirurgia", "liminar plano de saúde", "negativa cirurgia", "tutela urgência saúde", "mandado liminar plano", "cobertura negada cirurgia", "ANS cobertura obrigatória"],
     category: "Consumidor",
     excerpt: "Seu plano de saúde negou autorização para uma cirurgia urgente? Saiba como a Justiça pode garantir seu direito ao tratamento através de uma liminar.",
@@ -891,7 +891,7 @@ export const blogPosts: BlogPost[] = [
 
       <div class="bg-gradient-to-r from-primary/20 to-secondary/20 p-8 rounded-xl my-10 text-center">
         <h3 class="text-2xl font-bold text-foreground mb-3">Plano de Saúde Negou Sua Cirurgia?</h3>
-        <p class="text-muted-foreground mb-6">Nossa equipe de advogados especializados pode analisar seu caso gratuitamente e orientar sobre como obter uma liminar rapidamente.</p>
+        <p class="text-muted-foreground mb-6">Um advogado pode analisar os documentos do seu caso e explicar os caminhos possíveis, sem promessa de resultado. Veja também o <a href="/guia/consumidor" class="text-primary underline">guia de direito do consumidor</a> e o <a href="/advogado-consumidor-salvador" class="text-primary underline">atendimento em Salvador</a>.</p>
         <a href="/" class="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
           Falar com Advogado Agora
         </a>
@@ -908,7 +908,7 @@ export const blogPosts: BlogPost[] = [
     id: "produto-defeito-troca-devolucao",
     slug: "produto-defeito-troca-devolucao",
     title: "Produtos com Defeito e o Direito à Troca ou Devolução: Como Proceder Legalmente",
-    metaTitle: "Produto com Defeito: Seus Direitos de Troca pelo CDC 2026",
+    metaTitle: "Produto com Defeito: Seus Direitos de Troca pelo CDC",
     metaDescription: "Comprou produto com defeito? Conheça seus direitos de troca, devolução e reembolso pelo Código de Defesa do Consumidor. Guia completo com prazos.",
     keywords: ["produto com defeito", "direito troca produto", "devolução produto defeituoso", "CDC troca", "garantia produto", "prazo reclamação defeito", "reembolso produto"],
     category: "Consumidor",
@@ -1035,7 +1035,7 @@ export const blogPosts: BlogPost[] = [
 
       <div class="bg-gradient-to-r from-primary/20 to-secondary/20 p-8 rounded-xl my-10 text-center">
         <h3 class="text-2xl font-bold text-foreground mb-3">Problema com Produto Defeituoso?</h3>
-        <p class="text-muted-foreground mb-6">Nossa equipe de advogados especializados pode analisar seu caso gratuitamente e orientar sobre como garantir seus direitos.</p>
+        <p class="text-muted-foreground mb-6">Um advogado pode analisar os documentos do seu caso e explicar os caminhos possíveis, sem promessa de resultado. Veja também o <a href="/guia/consumidor" class="text-primary underline">guia de direito do consumidor</a> e o <a href="/advogado-consumidor-salvador" class="text-primary underline">atendimento em Salvador</a>.</p>
         <a href="/" class="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
           Falar com Advogado Agora
         </a>
@@ -1052,7 +1052,7 @@ export const blogPosts: BlogPost[] = [
     id: "acoes-bancos-tarifas-abusivas",
     slug: "acoes-bancos-tarifas-abusivas",
     title: "Ações Contra Bancos: Contestando Tarifas e Encargos Abusivos no Seu Financiamento",
-    metaTitle: "Tarifas Bancárias Abusivas: Como Contestar e Reaver Seu Dinheiro 2026",
+    metaTitle: "Tarifas Bancárias Abusivas: Como Contestar e Reaver",
     metaDescription: "Descubra como identificar tarifas e juros abusivos em financiamentos bancários e como entrar com ação para reaver valores pagos indevidamente.",
     keywords: ["tarifas bancárias abusivas", "juros abusivos banco", "ação contra banco", "encargos indevidos", "revisional bancário", "financiamento abusivo", "cobrança indevida banco"],
     category: "Consumidor",
@@ -1176,7 +1176,7 @@ export const blogPosts: BlogPost[] = [
 
       <div class="bg-gradient-to-r from-primary/20 to-secondary/20 p-8 rounded-xl my-10 text-center">
         <h3 class="text-2xl font-bold text-foreground mb-3">Suspeita de Cobranças Abusivas no Seu Financiamento?</h3>
-        <p class="text-muted-foreground mb-6">Nossa equipe de advogados pode analisar seu contrato gratuitamente e identificar irregularidades que podem estar custando caro para você.</p>
+        <p class="text-muted-foreground mb-6">Um advogado pode analisar os documentos do seu caso e explicar os caminhos possíveis, sem promessa de resultado. Veja também o <a href="/guia/consumidor" class="text-primary underline">guia de direito do consumidor</a> e o <a href="/advogado-consumidor-salvador" class="text-primary underline">atendimento em Salvador</a>.</p>
         <a href="/" class="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
           Falar com Advogado Agora
         </a>
@@ -1193,7 +1193,7 @@ export const blogPosts: BlogPost[] = [
     id: "garantias-compras-online-produto-errado",
     slug: "garantias-compras-online-produto-errado",
     title: "Direito do Consumidor em Compras Online: Garantias Quando o Produto Não Chega ou Vem Errado",
-    metaTitle: "Compra Online Não Chegou ou Veio Errado? Seus Direitos 2026",
+    metaTitle: "Compra Online Não Chegou ou Veio Errado? Seus Direitos",
     metaDescription: "Produto comprado online não chegou, veio errado ou danificado? Conheça seus direitos pelo CDC e como resolver o problema rapidamente.",
     keywords: ["compra online não chegou", "produto errado internet", "direito consumidor online", "e-commerce problema", "arrependimento compra", "devolução compra online", "reembolso loja virtual"],
     category: "Consumidor",
@@ -1305,7 +1305,7 @@ export const blogPosts: BlogPost[] = [
 
       <div class="bg-gradient-to-r from-primary/20 to-secondary/20 p-8 rounded-xl my-10 text-center">
         <h3 class="text-2xl font-bold text-foreground mb-3">Problema com Compra Online?</h3>
-        <p class="text-muted-foreground mb-6">Nossa equipe de advogados especializados pode analisar seu caso gratuitamente e orientar sobre como resolver rapidamente.</p>
+        <p class="text-muted-foreground mb-6">Um advogado pode analisar os documentos do seu caso e explicar os caminhos possíveis, sem promessa de resultado. Veja também o <a href="/guia/consumidor" class="text-primary underline">guia de direito do consumidor</a> e o <a href="/advogado-consumidor-salvador" class="text-primary underline">atendimento em Salvador</a>.</p>
         <a href="/" class="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
           Falar com Advogado Agora
         </a>
@@ -1322,7 +1322,7 @@ export const blogPosts: BlogPost[] = [
     id: "problemas-telecomunicacoes-cobranca-indevida",
     slug: "problemas-telecomunicacoes-cobranca-indevida",
     title: "Reclamações em Serviços de Telecomunicações: Como Proceder com Falhas e Cobranças Indevidas",
-    metaTitle: "Problemas com Internet, TV ou Telefone? Seus Direitos 2026",
+    metaTitle: "Problemas com Internet, TV ou Telefone? Seus Direitos",
     metaDescription: "Falhas constantes na internet ou cobranças indevidas de operadora? Conheça seus direitos e como reclamar formalmente para resolver o problema.",
     keywords: ["problema operadora internet", "cobrança indevida telefone", "ANATEL reclamação", "falha serviço telecomunicação", "cancelar operadora", "desconto falha internet", "direito consumidor telecom"],
     category: "Consumidor",
@@ -1460,7 +1460,7 @@ export const blogPosts: BlogPost[] = [
 
       <div class="bg-gradient-to-r from-primary/20 to-secondary/20 p-8 rounded-xl my-10 text-center">
         <h3 class="text-2xl font-bold text-foreground mb-3">Problemas com Sua Operadora?</h3>
-        <p class="text-muted-foreground mb-6">Nossa equipe pode analisar seu caso gratuitamente e orientar sobre como resolver e buscar indenização.</p>
+        <p class="text-muted-foreground mb-6">Um advogado pode analisar os documentos do seu caso e explicar os caminhos possíveis, sem promessa de resultado. Veja também o <a href="/guia/consumidor" class="text-primary underline">guia de direito do consumidor</a> e o <a href="/advogado-consumidor-salvador" class="text-primary underline">atendimento em Salvador</a>.</p>
         <a href="/" class="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
           Falar com Advogado Agora
         </a>
@@ -1477,7 +1477,7 @@ export const blogPosts: BlogPost[] = [
     id: "recall-veiculos-indenizacao-consumidor",
     slug: "recall-veiculos-indenizacao-consumidor",
     title: "Ações Coletivas por Recall de Veículos: Como os Consumidores Podem Buscar Indenização",
-    metaTitle: "Recall de Veículo: Seus Direitos e Como Pedir Indenização 2026",
+    metaTitle: "Recall de Veículo: Seus Direitos e Como Pedir Indenização",
     metaDescription: "Seu carro foi convocado para recall? Conheça seus direitos, como funciona o processo e quando você pode pedir indenização por danos.",
     keywords: ["recall veículo", "indenização recall carro", "ação coletiva automóvel", "defeito fabricação carro", "direito consumidor recall", "montadora recall", "reembolso recall"],
     category: "Consumidor",
@@ -1597,7 +1597,7 @@ export const blogPosts: BlogPost[] = [
 
       <div class="bg-gradient-to-r from-primary/20 to-secondary/20 p-8 rounded-xl my-10 text-center">
         <h3 class="text-2xl font-bold text-foreground mb-3">Teve Prejuízos com Recall?</h3>
-        <p class="text-muted-foreground mb-6">Nossa equipe pode analisar seu caso gratuitamente e verificar se você tem direito a indenização.</p>
+        <p class="text-muted-foreground mb-6">Um advogado pode analisar os documentos do seu caso e explicar os caminhos possíveis, sem promessa de resultado. Veja também o <a href="/guia/consumidor" class="text-primary underline">guia de direito do consumidor</a> e o <a href="/advogado-consumidor-salvador" class="text-primary underline">atendimento em Salvador</a>.</p>
         <a href="/" class="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
           Falar com Advogado Agora
         </a>
@@ -1614,7 +1614,7 @@ export const blogPosts: BlogPost[] = [
     id: "problemas-pacotes-viagem-cancelamento",
     slug: "problemas-pacotes-viagem-cancelamento",
     title: "Problemas com Pacotes de Viagens e Turismo: Direitos do Consumidor Diante de Cancelamentos",
-    metaTitle: "Viagem Cancelada ou Alterada? Seus Direitos pelo CDC 2026",
+    metaTitle: "Viagem Cancelada ou Alterada? Seus Direitos pelo CDC",
     metaDescription: "Agência cancelou sua viagem ou fez mudanças sem avisar? Conheça seus direitos de reembolso, remarcação e indenização por danos.",
     keywords: ["viagem cancelada", "pacote turismo problema", "agência cancelou viagem", "reembolso viagem", "direito consumidor turismo", "CVC problema", "decolar reclamação"],
     category: "Consumidor",
@@ -1745,7 +1745,7 @@ export const blogPosts: BlogPost[] = [
 
       <div class="bg-gradient-to-r from-primary/20 to-secondary/20 p-8 rounded-xl my-10 text-center">
         <h3 class="text-2xl font-bold text-foreground mb-3">Problemas com Sua Viagem?</h3>
-        <p class="text-muted-foreground mb-6">Nossa equipe pode analisar seu caso gratuitamente e orientar sobre como buscar reembolso ou indenização.</p>
+        <p class="text-muted-foreground mb-6">Um advogado pode analisar os documentos do seu caso e explicar os caminhos possíveis, sem promessa de resultado. Veja também o <a href="/guia/consumidor" class="text-primary underline">guia de direito do consumidor</a> e o <a href="/advogado-consumidor-salvador" class="text-primary underline">atendimento em Salvador</a>.</p>
         <a href="/" class="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
           Falar com Advogado Agora
         </a>
@@ -1762,7 +1762,7 @@ export const blogPosts: BlogPost[] = [
     id: "responsabilidade-marketplace-compra-problema",
     slug: "responsabilidade-marketplace-compra-problema",
     title: "Responsabilidade de Marketplaces: O Que Fazer Quando a Compra Mediada por um Intermediário Dá Errado",
-    metaTitle: "Problema em Compra no Marketplace? Quem É Responsável 2026",
+    metaTitle: "Problema em Compra no Marketplace? Quem É Responsável",
     metaDescription: "Comprou no Mercado Livre, Amazon ou Shopee e deu problema? Descubra quem é responsável e como resolver quando a compra mediada dá errado.",
     keywords: ["marketplace responsabilidade", "Mercado Livre problema", "Amazon reclamação", "Shopee devolução", "compra intermediário", "vendedor marketplace", "plataforma responsável"],
     category: "Consumidor",
@@ -1885,7 +1885,7 @@ export const blogPosts: BlogPost[] = [
 
       <div class="bg-gradient-to-r from-primary/20 to-secondary/20 p-8 rounded-xl my-10 text-center">
         <h3 class="text-2xl font-bold text-foreground mb-3">Problema com Compra em Marketplace?</h3>
-        <p class="text-muted-foreground mb-6">Nossa equipe pode analisar seu caso gratuitamente e orientar sobre como responsabilizar plataforma e vendedor.</p>
+        <p class="text-muted-foreground mb-6">Um advogado pode analisar os documentos do seu caso e explicar os caminhos possíveis, sem promessa de resultado. Veja também o <a href="/guia/consumidor" class="text-primary underline">guia de direito do consumidor</a> e o <a href="/advogado-consumidor-salvador" class="text-primary underline">atendimento em Salvador</a>.</p>
         <a href="/" class="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
           Falar com Advogado Agora
         </a>
@@ -1902,7 +1902,7 @@ export const blogPosts: BlogPost[] = [
     id: "consorcio-desistencia-direitos-consumidor",
     slug: "consorcio-desistencia-direitos-consumidor",
     title: "Contratos de Consórcio e Desistência: Quais São os Direitos do Consumidor ao Sair de um Grupo",
-    metaTitle: "Como Sair do Consórcio: Seus Direitos de Desistência 2026",
+    metaTitle: "Como Sair do Consórcio: Seus Direitos de Desistência",
     metaDescription: "Quer desistir do consórcio? Conheça seus direitos de cancelamento, como receber seu dinheiro de volta e os prazos envolvidos.",
     keywords: ["sair consórcio", "desistir consórcio", "cancelar consórcio", "devolução consórcio", "consórcio direitos", "consórcio contemplado", "consórcio cancelamento"],
     category: "Consumidor",
@@ -2061,7 +2061,7 @@ export const blogPosts: BlogPost[] = [
 
       <div class="bg-gradient-to-r from-primary/20 to-secondary/20 p-8 rounded-xl my-10 text-center">
         <h3 class="text-2xl font-bold text-foreground mb-3">Quer Sair do Consórcio?</h3>
-        <p class="text-muted-foreground mb-6">Nossa equipe pode analisar seu contrato gratuitamente e orientar sobre a melhor forma de desistir e recuperar seu dinheiro.</p>
+        <p class="text-muted-foreground mb-6">Um advogado pode analisar os documentos do seu caso e explicar os caminhos possíveis, sem promessa de resultado. Veja também o <a href="/guia/consumidor" class="text-primary underline">guia de direito do consumidor</a> e o <a href="/advogado-consumidor-salvador" class="text-primary underline">atendimento em Salvador</a>.</p>
         <a href="/" class="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
           Falar com Advogado Agora
         </a>

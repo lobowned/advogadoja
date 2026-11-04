@@ -183,43 +183,6 @@ const CriminalLanding = () => {
         {/* FAQ Criminal */}
         <CriminalObjecionsFAQ />
 
-        {/* SEO Keywords - Criminal */}
-        <section className="sr-only" aria-hidden="true">
-          <h2>Advogado Criminalista — Defesa Penal</h2>
-          <p>
-            Advogado criminalista para defesa em inquérito policial, ação penal, Tribunal
-            do Júri, habeas corpus, execução penal e recursos. Atendimento em prisões em
-            flagrante, audiências de custódia e situações de urgência. Plantão 24 horas.
-          </p>
-          <h3>Audiência de Custódia em Flagrante</h3>
-          <p>
-            Acompanhamento técnico desde a delegacia. Acionamento imediato no caso de
-            prisão em flagrante de familiar. Audiência de custódia em até 24 horas.
-          </p>
-          <h3>Tribunal do Júri</h3>
-          <p>
-            Defesa em procedimento bifásico — da pronúncia ao Plenário. Crimes contra a
-            vida: homicídio, infanticídio, induzimento ao suicídio e aborto.
-          </p>
-          <h3>Lei de Drogas e Lei Maria da Penha</h3>
-          <p>
-            Defesa em crimes de tráfico, associação, uso e modalidade privilegiada. Defesa
-            técnica em medidas protetivas e ações penais de violência doméstica.
-          </p>
-          <h3>Execução Penal</h3>
-          <p>
-            Progressão de regime, livramento condicional, remição de pena, indulto e
-            comutação. Incidentes da execução em Vara de Execuções Penais.
-          </p>
-          <h3>Habeas Corpus e Recursos</h3>
-          <p>
-            Impetração de habeas corpus em todas as instâncias, incluindo Tribunais de
-            Justiça, Tribunais Regionais Federais, Superior Tribunal de Justiça e Supremo
-            Tribunal Federal. Recursos ordinários, especial, extraordinário e revisão
-            criminal.
-          </p>
-        </section>
-
         {/* Footer */}
         <footer className="border-t bg-gradient-to-b from-muted/30 to-muted/50 py-8 sm:py-10 safe-bottom">
           <div className="container mx-auto px-4">

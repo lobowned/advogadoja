@@ -9,6 +9,7 @@ import Navbar from "@/components/Navbar";
 import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import ReadingProgressBar from "@/components/blog/ReadingProgressBar";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import AuthorBox, { authorSchema } from "@/components/blog/AuthorBox";
 
 const BlogArticle = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -35,11 +36,7 @@ const BlogArticle = () => {
     "headline": post.title,
     "description": post.metaDescription,
     "image": post.featuredImage || "https://advogadoja.lovable.app/og-image.png",
-    "author": {
-      "@type": "Organization",
-      "name": post.author,
-      "url": "https://advogadoja.lovable.app"
-    },
+    "author": authorSchema,
     "publisher": {
       "@type": "Organization",
       "name": "Advogado Já",
@@ -186,6 +183,8 @@ const BlogArticle = () => {
               prose-li:text-muted-foreground"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+
+          <AuthorBox />
 
           <footer className="mt-12 pt-8 border-t border-border">
             <div className="flex flex-wrap gap-2 mb-8">

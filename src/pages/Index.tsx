@@ -25,11 +25,13 @@ const Index = () => {
     "description": "Escritório de advocacia online especializado em todas as áreas do direito. Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp.",
     "email": "contato@advogadoja.com.br",
     "telephone": "+55-71-99703-6269",
-    "foundingDate": "2024",
-    "numberOfEmployees": {
-      "@type": "QuantitativeValue",
-      "minValue": 10,
-      "maxValue": 50
+    "legalName": "Riccio Advocacia",
+    "taxID": "50.947.818/0001-94",
+    "founder": {
+      "@type": "Person",
+      "name": "Gilberto Riccio",
+      "jobTitle": "Advogado",
+      "identifier": "OAB/BA 46.638"
     },
     "slogan": "Seu direito, nossa missão",
     "knowsAbout": [
@@ -82,10 +84,8 @@ const Index = () => {
     "paymentAccepted": "Pix, Cartão de Crédito, Boleto",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Atendimento Online",
       "addressLocality": "Salvador",
       "addressRegion": "BA",
-      "postalCode": "40000-000",
       "addressCountry": "BR"
     },
     "geo": {
@@ -109,41 +109,6 @@ const Index = () => {
         "dayOfWeek": "Saturday",
         "opens": "09:00",
         "closes": "14:00"
-      }
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "1247",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Maria Silva"
-        },
-        "reviewBody": "Excelente atendimento! Consegui resolver minha questão trabalhista rapidamente."
-      },
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "João Santos"
-        },
-        "reviewBody": "Muito profissionais e atenciosos. Recomendo a todos."
       }
     ]
   };
@@ -310,24 +275,6 @@ const Index = () => {
         <PracticeAreasSection />
 
         <ObjecionsFAQ />
-
-        {/* SEO Keywords Section - Hidden but crawlable for Google Ads */}
-        <section className="sr-only" aria-hidden="true">
-          <h2>Advogado Online para Todas as Áreas do Direito</h2>
-          <p>O Advogado Já é um escritório de advocacia online com advogados especializados em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendemos em todo o Brasil via WhatsApp com consulta gratuita.</p>
-          <h3>Advogado Trabalhista Online</h3>
-          <p>Demissão sem justa causa, verbas rescisórias não pagas, horas extras, assédio moral, acidente de trabalho, FGTS e rescisão indireta. Fale com um advogado trabalhista agora mesmo.</p>
-          <h3>Advogado de Família Online</h3>
-          <p>Divórcio consensual ou litigioso, guarda de filhos, pensão alimentícia, partilha de bens, inventário, união estável e reconhecimento de paternidade.</p>
-          <h3>Advogado Previdenciário INSS</h3>
-          <p>Aposentadoria por idade, por tempo de contribuição, especial e por invalidez. Auxílio-doença, BPC LOAS, pensão por morte e revisão de benefício INSS negado.</p>
-          <h3>Advogado Direito do Consumidor</h3>
-          <p>Voo cancelado, atraso de voo, problemas com Reclame Aqui, Procon, Consumidor.gov, plano de saúde negou cobertura, negativação indevida, cobrança abusiva, fraude bancária e produto defeituoso.</p>
-          <h3>Advogado Cível</h3>
-          <p>Indenização por danos morais e materiais, contratos descumpridos, dívidas, despejo, aluguel atrasado e ações de cobrança.</p>
-          <h3>Advogado Criminal</h3>
-          <p>Defesa criminal, audiência de custódia, habeas corpus, processos criminais, recursos e assistência jurídica para acusados e vítimas.</p>
-        </section>
 
 
         {/* Footer */}

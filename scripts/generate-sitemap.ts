@@ -38,22 +38,29 @@ interface SitemapURL {
 // STATIC PAGES
 // ============================================
 const staticPages: SitemapURL[] = [
-  { loc: '/', lastmod: TODAY, changefreq: 'daily', priority: 1.0 },
-  { loc: '/artigos', lastmod: TODAY, changefreq: 'daily', priority: 0.9 },
-  { loc: '/blog', lastmod: TODAY, changefreq: 'daily', priority: 0.9 },
-  { loc: '/perguntas', lastmod: TODAY, changefreq: 'weekly', priority: 0.85 },
-  { loc: '/calculadoras', lastmod: TODAY, changefreq: 'weekly', priority: 0.85 },
-  { loc: '/noticias', lastmod: TODAY, changefreq: 'daily', priority: 0.8 },
-  { loc: '/casos-de-sucesso', lastmod: TODAY, changefreq: 'weekly', priority: 0.7 },
-  { loc: '/sitemap', lastmod: TODAY, changefreq: 'weekly', priority: 0.5 },
-  { loc: '/privacidade', lastmod: TODAY, changefreq: 'yearly', priority: 0.3 },
-  { loc: '/termos-de-uso', lastmod: TODAY, changefreq: 'yearly', priority: 0.3 },
-  // Hub Pages Regionais
-  { loc: '/advogado-bahia', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
-  { loc: '/advogado-sao-paulo', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
-  { loc: '/advogado-rio-de-janeiro', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
-  { loc: '/advogado-minas-gerais', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
+  { loc: '/', lastmod: TODAY, changefreq: 'weekly', priority: 1.0 },
+  { loc: '/criminal', lastmod: TODAY, changefreq: 'weekly', priority: 0.95 },
+  { loc: '/advogado-trabalhista-online', lastmod: TODAY, changefreq: 'weekly', priority: 0.95 },
+  { loc: '/prev', lastmod: TODAY, changefreq: 'weekly', priority: 0.95 },
+  { loc: '/prev/aposentadorias', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/prev/aposentadoria-por-idade', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/prev/auxilio-doenca', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/prev/invalidez', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/prev/bpc-loas', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/prev/salario-maternidade', lastmod: TODAY, changefreq: 'monthly', priority: 0.85 },
+  { loc: '/prev/sobre', lastmod: TODAY, changefreq: 'yearly', priority: 0.5 },
+  { loc: '/prev/contato', lastmod: TODAY, changefreq: 'yearly', priority: 0.5 },
+  { loc: '/artigos', lastmod: TODAY, changefreq: 'weekly', priority: 0.8 },
+  { loc: '/blog', lastmod: TODAY, changefreq: 'weekly', priority: 0.8 },
+  { loc: '/perguntas', lastmod: TODAY, changefreq: 'weekly', priority: 0.7 },
+  { loc: '/calculadoras', lastmod: TODAY, changefreq: 'monthly', priority: 0.7 },
+  { loc: '/privacidade', lastmod: TODAY, changefreq: 'yearly', priority: 0.2 },
+  { loc: '/termos-de-uso', lastmod: TODAY, changefreq: 'yearly', priority: 0.2 },
+  { loc: '/advogado-bahia', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
 ];
+
+// Só as cidades onde o escritório atende de fato; o resto fica fora do sitemap.
+const LOCAL_CITIES = ['salvador', 'camacari', 'lauro-de-freitas'];
 
 // ============================================
 // CALCULATORS
@@ -87,12 +94,20 @@ const calculators: SitemapURL[] = [
 // CONSUMER PROBLEM LANDING PAGES
 // ============================================
 const consumerLandingPages: SitemapURL[] = [
-  { loc: '/advogado-voo-cancelado-atrasado', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
-  { loc: '/advogado-negativacao-indevida', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
-  { loc: '/advogado-plano-saude-cobertura-negada', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
-  { loc: '/advogado-cobranca-indevida', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
-  { loc: '/advogado-produto-defeituoso', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
-  { loc: '/fraude-bancaria', lastmod: TODAY, changefreq: 'weekly', priority: 0.9 },
+  { loc: '/advogado-problemas-voo', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/advogado-negativacao-indevida', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/advogado-plano-saude-cobertura-negada', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/advogado-cobranca-indevida', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/advogado-produto-defeituoso', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/fraude-bancaria', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/advogado-cartao-consignado', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/liminar-cirurgia-negada', lastmod: TODAY, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/liminar-cirurgia-bariatrica', lastmod: TODAY, changefreq: 'monthly', priority: 0.75 },
+  { loc: '/liminar-tratamento-cancer', lastmod: TODAY, changefreq: 'monthly', priority: 0.75 },
+  { loc: '/liminar-cirurgia-ortopedica', lastmod: TODAY, changefreq: 'monthly', priority: 0.75 },
+  { loc: '/liminar-cirurgia-cardiaca', lastmod: TODAY, changefreq: 'monthly', priority: 0.75 },
+  { loc: '/liminar-neurocirurgia', lastmod: TODAY, changefreq: 'monthly', priority: 0.75 },
+  { loc: '/liminar-cirurgia-olhos', lastmod: TODAY, changefreq: 'monthly', priority: 0.75 },
 ];
 
 // ============================================
@@ -100,7 +115,7 @@ const consumerLandingPages: SitemapURL[] = [
 // ============================================
 function generateNicheUrls(): SitemapURL[] {
   return legalNiches.map(niche => ({
-    loc: `/advogado-${niche.id}`,
+    loc: `/advogado-${niche.id === 'penal' ? 'criminal' : niche.id}`,
     lastmod: TODAY,
     changefreq: 'weekly' as const,
     priority: 0.95,
@@ -111,7 +126,7 @@ function generateNicheUrls(): SitemapURL[] {
 // CITY LANDING PAGES
 // ============================================
 function generateCityUrls(): SitemapURL[] {
-  return brazilianCities.map(city => ({
+  return brazilianCities.filter(c => LOCAL_CITIES.includes(c.slug)).map(city => ({
     loc: `/advogado/${city.slug}`,
     lastmod: TODAY,
     changefreq: 'weekly' as const,
@@ -123,20 +138,15 @@ function generateCityUrls(): SitemapURL[] {
 // CITY + NICHE LANDING PAGES (Combinações)
 // ============================================
 function generateCityNicheUrls(): SitemapURL[] {
-  const urls: SitemapURL[] = [];
-  
-  for (const city of brazilianCities) {
-    for (const niche of legalNiches) {
-      urls.push({
-        loc: `/advogado-${niche.id}-${city.slug}`,
-        lastmod: TODAY,
-        changefreq: 'weekly' as const,
-        priority: 0.75,
-      });
-    }
-  }
-  
-  return urls;
+  // Só as páginas com rota explícita no App.tsx: o padrão /advogado-:nicho-:cidade não casa no React Router v6.
+  const niches = ['criminal', 'previdenciario', 'trabalhista', 'familia'];
+  const cities = ['salvador', 'camacari'];
+  return niches.flatMap(n => cities.map(c => ({
+    loc: `/advogado-${n}-${c}`,
+    lastmod: TODAY,
+    changefreq: 'monthly' as const,
+    priority: 0.95,
+  })));
 }
 
 // ============================================
@@ -144,8 +154,8 @@ function generateCityNicheUrls(): SitemapURL[] {
 // ============================================
 function generateArticleUrls(): SitemapURL[] {
   return blogArticles.map(article => ({
-    loc: `/artigos/${article.slug}`,
-    lastmod: article.publishedAt || TODAY,
+    loc: `/artigos/${article.nicheId}/${article.slug}`,
+    lastmod: article.updatedAt || TODAY,
     changefreq: 'monthly' as const,
     priority: 0.7,
   }));
@@ -180,15 +190,7 @@ function generateLocalSEOArticleUrls(): SitemapURL[] {
 // ============================================
 function generateCityConsumerUrls(): SitemapURL[] {
   // Generate consumer-specific city landing pages
-  const consumerCities = [
-    'sao-paulo', 'rio-de-janeiro', 'belo-horizonte', 'salvador', 'brasilia',
-    'fortaleza', 'curitiba', 'recife', 'porto-alegre', 'goiania',
-    'guarulhos', 'campinas', 'sao-bernardo-do-campo', 'santo-andre', 'osasco',
-    'feira-de-santana', 'vitoria-da-conquista', 'camacari', 'itabuna', 'ilheus',
-    'juazeiro', 'lauro-de-freitas', 'barreiras', 'jequie', 'alagoinhas'
-  ];
-  
-  return consumerCities.map(city => ({
+  return LOCAL_CITIES.map(city => ({
     loc: `/advogado-consumidor-${city}`,
     lastmod: TODAY,
     changefreq: 'weekly' as const,
@@ -268,12 +270,10 @@ function generateSitemap(): string {
     { title: 'LANDING PAGES POR NICHO', urls: nicheUrls },
     { title: 'LANDING PAGES POR CIDADE', urls: cityUrls },
     { title: 'LANDING PAGES CIDADE + NICHO', urls: cityNicheUrls },
-    { title: 'LANDING PAGES CONSUMIDOR + CIDADE', urls: cityConsumerUrls },
     { title: 'ARTIGOS SEO LOCAL', urls: localSEOUrls },
     { title: 'ARTIGOS DO BLOG (LEGACY)', urls: articleUrls },
     { title: 'BLOG POSTS (NOVOS)', urls: blogPostUrls },
     { title: 'PERGUNTAS FREQUENTES (FAQs)', urls: faqUrls },
-    { title: 'PÁGINAS DE CATEGORIA', urls: categoryUrls },
   ];
 
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -305,7 +305,7 @@ function generateSitemap(): string {
 // EXECUTE
 // ============================================
 const sitemap = generateSitemap();
-const outputPath = path.resolve(__dirname, '../public/sitemap.xml');
+const outputPath = path.resolve(process.cwd(), 'public/sitemap.xml');
 
 fs.writeFileSync(outputPath, sitemap, 'utf-8');
 

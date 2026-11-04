@@ -93,7 +93,7 @@ const CityLanding = () => {
     "name": `Advogado Já ${city.name}`,
     "description": `Advogados especialistas em ${city.name}, ${city.state}. Atendimento jurídico online gratuito em Direito Trabalhista, Família, Previdenciário, Civil e Criminal.`,
     "url": canonicalUrl,
-    "telephone": "+55-71-99999-9999",
+    "telephone": "+55-71-99709-2633",
     "email": "contato@advogadoja.com.br",
     "priceRange": "Consulta Gratuita",
     "address": {
@@ -123,12 +123,6 @@ const CityLanding = () => {
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       "opens": "08:00",
       "closes": "20:00"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "1247",
-      "bestRating": "5"
     }
   };
 

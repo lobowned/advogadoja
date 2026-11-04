@@ -50,6 +50,7 @@ import FAQQuestion from "./pages/FAQQuestion";
 import NicheLanding from "./pages/NicheLanding";
 import CityLanding from "./pages/CityLanding";
 import CityNicheLanding from "./pages/CityNicheLanding";
+import { LOCAL_PAGE_KEYS } from "./data/local-pages";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import BlogIndex from "./pages/BlogIndex";
@@ -395,6 +396,19 @@ const AnimatedRoutes = () => {
 
         {/* City Landing Pages - Local SEO */}
         <Route path="/advogado/:citySlug" element={<CityLanding />} />
+
+        {/* Páginas locais prioritárias (Salvador/Camaçari) — rotas explícitas:
+            o React Router v6 não interpreta params parciais como "advogado-:nicheSlug-:citySlug" */}
+        {LOCAL_PAGE_KEYS.map((key) => {
+          const [nicheSlug, citySlug] = key.split("-");
+          return (
+            <Route
+              key={key}
+              path={`/advogado-${key}`}
+              element={<CityNicheLanding nicheSlug={nicheSlug} citySlug={citySlug} />}
+            />
+          );
+        })}
 
         {/* City + Niche Landing Pages - Ultra Local SEO */}
         <Route

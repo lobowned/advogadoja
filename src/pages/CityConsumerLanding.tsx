@@ -76,9 +76,9 @@ const CityConsumerLanding = () => {
     "@type": ["LegalService", "LocalBusiness", "ProfessionalService"],
     "@id": pageUrl,
     "name": `Advogado do Consumidor em ${cityData.cityName}`,
-    "description": `Especialista em Direito do Consumidor em ${cityData.cityName}, ${cityData.stateCode}. Consulta gratuita. ${cityData.stats.casesWon} casos ganhos.`,
+    "description": `Especialista em Direito do Consumidor em ${cityData.cityName}, ${cityData.stateCode}. Consulta gratuita.`,
     "url": pageUrl,
-    "telephone": "+55-11-99999-9999",
+    "telephone": "+55-71-99709-2633",
     "areaServed": {
       "@type": "City",
       "name": cityData.cityName,
@@ -104,13 +104,6 @@ const CityConsumerLanding = () => {
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       "opens": "08:00",
       "closes": "18:00"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": cityData.stats.casesWon,
-      "bestRating": "5",
-      "worstRating": "1"
     },
     "knowsAbout": [
       "Direito do Consumidor",
@@ -186,7 +179,7 @@ const CityConsumerLanding = () => {
         <title>{`Advogado Consumidor ${cityData.cityName} ${cityData.stateCode} | Indenização até R$15.000 - Consulta Grátis`}</title>
         <meta 
           name="description" 
-          content={`Advogado especialista em Direito do Consumidor em ${cityData.cityName}. ${cityData.stats.casesWon} casos ganhos. Indenização média de ${cityData.stats.avgCompensation}. Consulta gratuita pelo WhatsApp.`} 
+          content={`Advogado especialista em Direito do Consumidor em ${cityData.cityName}. Consulta gratuita pelo WhatsApp.`} 
         />
         <meta 
           name="keywords" 
@@ -205,7 +198,7 @@ const CityConsumerLanding = () => {
         
         {/* Open Graph */}
         <meta property="og:title" content={`Advogado do Consumidor em ${cityData.cityName} - Consulta Gratuita`} />
-        <meta property="og:description" content={`Especialista em Direito do Consumidor em ${cityData.cityName}. ${cityData.stats.casesWon} casos ganhos. Indenização média ${cityData.stats.avgCompensation}.`} />
+        <meta property="og:description" content={`Especialista em Direito do Consumidor em ${cityData.cityName}. Atendimento pelo WhatsApp.`} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="pt_BR" />
@@ -213,7 +206,7 @@ const CityConsumerLanding = () => {
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`Advogado Consumidor ${cityData.cityName}`} />
-        <meta name="twitter:description" content={`Especialista em Direito do Consumidor. ${cityData.stats.casesWon} casos ganhos em ${cityData.cityName}.`} />
+        <meta name="twitter:description" content={`Especialista em Direito do Consumidor. Atendimento em ${cityData.cityName}.`} />
         
         {/* Schema.org JSON-LD */}
         <script type="application/ld+json">
@@ -304,43 +297,13 @@ const CityConsumerLanding = () => {
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="gap-2 text-lg px-8" asChild>
-                  <a href="tel:+5511999999999">
+                  <a href="tel:+5571997092633">
                     <Phone className="w-5 h-5" />
                     Ligar Agora
                   </a>
                 </Button>
               </div>
 
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto">
-                <div className="text-center p-4 rounded-lg bg-card border">
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <Award className="w-5 h-5 text-primary" />
-                    <span className="text-2xl md:text-3xl font-bold text-primary">
-                      {cityData.stats.casesWon.toLocaleString('pt-BR')}
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Casos Ganhos</p>
-                </div>
-                <div className="text-center p-4 rounded-lg bg-card border">
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <TrendingUp className="w-5 h-5 text-green-500" />
-                    <span className="text-2xl md:text-3xl font-bold text-green-500">
-                      {cityData.stats.avgCompensation}
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Indenização Média</p>
-                </div>
-                <div className="text-center p-4 rounded-lg bg-card border">
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <Clock className="w-5 h-5 text-blue-500" />
-                    <span className="text-2xl md:text-3xl font-bold text-blue-500">
-                      {cityData.stats.avgResolutionDays}
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Dias em Média</p>
-                </div>
-              </div>
             </div>
           </div>
         </section>

@@ -15,6 +15,7 @@ import BreadcrumbNav from "@/components/BreadcrumbNav";
 import PageTransition from "@/components/motion/PageTransition";
 import { getArticleBySlug, getNicheInfo, getRelatedArticles } from "@/data/blog-articles";
 import { getArticleReadingTime } from "@/utils/reading-time";
+import AuthorBox, { authorSchema } from "@/components/blog/AuthorBox";
 
 const BlogPost = () => {
   const { nicheId, slug } = useParams();
@@ -58,15 +59,7 @@ const BlogPost = () => {
     "headline": article.title,
     "description": article.metaDescription,
     "image": `https://advogadoja.lovable.app/og-image-${nicheId}.jpg`,
-    "author": {
-      "@type": "Organization",
-      "name": "Advogado Já",
-      "url": "https://advogadoja.lovable.app",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://advogadoja.lovable.app/favicon.svg"
-      }
-    },
+    "author": authorSchema,
     "publisher": {
       "@type": "Organization",
       "name": "Advogado Já",
@@ -103,11 +96,7 @@ const BlogPost = () => {
     "@type": "FAQPage",
     "datePublished": article.updatedAt,
     "dateModified": article.updatedAt,
-    "author": {
-      "@type": "Organization",
-      "name": "Advogado Já",
-      "url": "https://advogadoja.lovable.app"
-    },
+    "author": authorSchema,
     "mainEntity": article.content.faq.map((item, index) => ({
       "@type": "Question",
       "name": item.question,
@@ -165,11 +154,7 @@ const BlogPost = () => {
     "description": article.content.intro,
     "datePublished": article.updatedAt,
     "dateModified": article.updatedAt,
-    "author": {
-      "@type": "Organization",
-      "name": "Advogado Já",
-      "url": "https://advogadoja.lovable.app"
-    },
+    "author": authorSchema,
     "totalTime": `PT${readingTime}M`,
     "step": article.content.whenYouHaveRight.map((step, index) => ({
       "@type": "HowToStep",
@@ -393,6 +378,8 @@ const BlogPost = () => {
                   ))}
                 </Accordion>
               </section>
+
+              <AuthorBox />
 
               {/* Share Again */}
               <section className="mb-8 p-4 bg-muted/30 rounded-lg">

@@ -13,6 +13,9 @@ import Navbar from "@/components/Navbar";
 import PageTransition from "@/components/motion/PageTransition";
 import { getCityBySlug, brazilianCities, isCityIndexable } from "@/data/cities";
 import { CityLocalGuide } from "@/components/CityLocalGuide";
+import { getLocalPage, type LocalPageContent } from "@/data/local-pages";
+
+const WHATSAPP_NUMBER = "5571997092633";
 
 // Legal area configurations
 const legalAreas = {
@@ -242,8 +245,15 @@ export const getLegalAreaBySlug = (slug: string) => {
 
 export const getAllLegalAreas = () => Object.values(legalAreas);
 
-const CityNicheLanding = () => {
-  const { nicheSlug, citySlug } = useParams<{ nicheSlug: string; citySlug: string }>();
+interface CityNicheLandingProps {
+  nicheSlug?: string;
+  citySlug?: string;
+}
+
+const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
+  const params = useParams<{ nicheSlug: string; citySlug: string }>();
+  const nicheSlug = props.nicheSlug ?? params.nicheSlug;
+  const citySlug = props.citySlug ?? params.citySlug;
   
   const city = citySlug ? getCityBySlug(citySlug) : undefined;
   const area = nicheSlug ? getLegalAreaBySlug(nicheSlug) : undefined;
@@ -251,6 +261,9 @@ const CityNicheLanding = () => {
   if (!city || !area) {
     return <Navigate to="/" replace />;
   }
+
+  const local = getLocalPage(area.slug, city.slug);
+  if (local) return <LocalNichePage local={local} areaName={area.name} areaSlug={area.slug} cityName={city.name} citySlug={city.slug} />;
 
   const canonicalUrl = `https://advogadoja.lovable.app/advogado-${area.slug}-${city.slug}`;
   const Icon = area.icon;
@@ -263,8 +276,7 @@ const CityNicheLanding = () => {
     "name": `Advogado ${area.name} em ${city.name}`,
     "description": `Advogado especialista em ${area.name} em ${city.name}, ${city.state}. ${area.description}`,
     "url": canonicalUrl,
-    "telephone": "+55-71-99999-9999",
-    "email": "contato@advogadoja.com.br",
+    "telephone": "+55-71-99709-2633",
     "priceRange": "$$",
     "currenciesAccepted": "BRL",
     "paymentAccepted": "Cash, Credit Card, PIX",
@@ -305,28 +317,6 @@ const CityNicheLanding = () => {
         "position": idx + 1
       }))
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "847",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Cliente Satisfeito"
-        },
-        "reviewBody": `Excelente atendimento em ${area.name}. Profissionais competentes e atenciosos.`
-      }
-    ],
     "sameAs": [
       "https://www.instagram.com/advogadoja",
       "https://www.facebook.com/advogadoja"
@@ -498,7 +488,7 @@ const CityNicheLanding = () => {
                   { icon: <Award className="h-6 w-6" />, title: "Especialização", desc: `Advogados focados em ${area.name}` },
                   { icon: <Clock className="h-6 w-6" />, title: "Rapidez", desc: "Atendimento em minutos" },
                   { icon: <Shield className="h-6 w-6" />, title: "Sigilo", desc: "Total confidencialidade" },
-                  { icon: <Users className="h-6 w-6" />, title: "Experiência", desc: `+1.000 casos em ${city.name}` }
+                  { icon: <Users className="h-6 w-6" />, title: "Atendimento online", desc: `Para ${city.name} e região` }
                 ].map((item, idx) => (
                   <div key={idx} className="text-center">
                     <div className={`w-14 h-14 rounded-full ${area.bgColor} ${area.color} flex items-center justify-center mx-auto mb-4`}>
@@ -618,5 +608,130 @@ const CityNicheLanding = () => {
     </PageTransition>
   );
 };
+
+function LocalNichePage({
+  local, areaName, areaSlug, cityName, citySlug,
+}: { local: LocalPageContent; areaName: string; areaSlug: string; cityName: string; citySlug: string }) {
+  const base = "https://advogadoja.lovable.app";
+  const canonicalUrl = `${base}/advogado-${areaSlug}-${citySlug}`;
+  const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(local.whatsappText)}`;
+
+  const legalServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Riccio Advocacia",
+    "description": local.metaDescription,
+    "url": canonicalUrl,
+    "telephone": "+55-71-99709-2633",
+    "serviceType": `Direito ${areaName}`,
+    "areaServed": {
+      "@type": "City",
+      "name": cityName,
+      "containedInPlace": { "@type": "State", "name": "Bahia" },
+    },
+    "employee": {
+      "@type": "Person",
+      "name": "Gilberto Riccio",
+      "jobTitle": "Advogado",
+      "identifier": "OAB/BA 46.638",
+    },
+  };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": local.faq.map((f) => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a },
+    })),
+  };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": base },
+      { "@type": "ListItem", "position": 2, "name": local.areaLink.label, "item": `${base}${local.areaLink.href}` },
+      { "@type": "ListItem", "position": 3, "name": local.h1, "item": canonicalUrl },
+    ],
+  };
+
+  return (
+    <PageTransition>
+      <div className="min-h-screen bg-background">
+        <Helmet>
+          <title>{local.title}</title>
+          <meta name="description" content={local.metaDescription} />
+          <link rel="canonical" href={canonicalUrl} />
+          <meta property="og:title" content={local.title} />
+          <meta property="og:description" content={local.metaDescription} />
+          <meta property="og:url" content={canonicalUrl} />
+          <meta name="geo.region" content="BR-BA" />
+          <meta name="geo.placename" content={cityName} />
+          <script type="application/ld+json">{JSON.stringify(legalServiceSchema)}</script>
+          <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+          <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        </Helmet>
+
+        <Navbar onCtaClick={() => { window.location.href = waUrl; }} />
+
+        <main className="container mx-auto px-4 py-10 md:py-16 max-w-3xl">
+          <nav className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground mb-6">
+            <Link to="/" className="hover:text-primary">Início</Link>
+            <ChevronRight className="h-4 w-4" />
+            <Link to={local.areaLink.href} className="hover:text-primary">{areaName}</Link>
+            <ChevronRight className="h-4 w-4" />
+            <span className="text-foreground">{cityName}</span>
+          </nav>
+
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">{local.h1}</h1>
+          <p className="text-lg text-muted-foreground mb-10">{local.intro}</p>
+
+          {local.sections.map((sec) => (
+            <section key={sec.h2} className="mb-8">
+              <h2 className="text-xl md:text-2xl font-semibold mb-3">{sec.h2}</h2>
+              <p className="text-foreground/90 leading-relaxed">{sec.body}</p>
+            </section>
+          ))}
+
+          <section className="my-10 rounded-xl border bg-muted/40 p-6 text-center">
+            <p className="font-medium mb-4">Fale direto com o Dr. Gilberto Riccio, OAB/BA 46.638.</p>
+            <Button size="lg" asChild>
+              <a href={waUrl} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="h-5 w-5 mr-2" />
+                Conversar pelo WhatsApp
+              </a>
+            </Button>
+          </section>
+
+          <section className="mb-10">
+            <h2 className="text-xl md:text-2xl font-semibold mb-4">Perguntas frequentes</h2>
+            <Accordion type="single" collapsible className="w-full">
+              {local.faq.map((item, idx) => (
+                <AccordionItem key={idx} value={`faq-${idx}`}>
+                  <AccordionTrigger className="text-left font-medium">{item.q}</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">{item.a}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </section>
+
+          <section>
+            <h2 className="text-lg font-semibold mb-3">Saiba mais</h2>
+            <Link to={local.areaLink.href} className="flex items-center gap-2 text-primary hover:underline">
+              <ChevronRight className="h-4 w-4" />
+              {local.areaLink.label}
+            </Link>
+          </section>
+        </main>
+
+        <footer className="border-t py-6">
+          <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
+            <p>Riccio Advocacia | Dr. Gilberto Riccio, OAB/BA 46.638 | Salvador e Camaçari (BA)</p>
+          </div>
+        </footer>
+      </div>
+    </PageTransition>
+  );
+}
 
 export default CityNicheLanding;

@@ -88,8 +88,29 @@ const HeroSection = () => {
         </m.div>
       </div>
 
-      {/* Spacer — lets the video breathe */}
-      <div className="flex-1" />
+      {/* Center — Wordmark */}
+      <div className="relative z-10 flex-1 flex items-center justify-center container mx-auto px-4 py-10">
+        <m.div
+          className="relative flex flex-col items-center text-center"
+          variants={heroStagger}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Localized scrim so the wordmark stays readable over the video */}
+          <div
+            className="absolute -inset-x-24 sm:-inset-x-40 -inset-y-24 sm:-inset-y-32 bg-[radial-gradient(ellipse_60%_50%_at_center,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0.34)_38%,rgba(0,0,0,0.12)_62%,rgba(0,0,0,0)_82%)]"
+            aria-hidden="true"
+          />
+          <m.div variants={heroBadge} className="relative h-px w-12 sm:w-16 bg-accent/60 mb-6 sm:mb-8" />
+          <m.h1
+            variants={heroBadge}
+            className="relative font-display text-background text-[2.5rem] leading-[1.05] sm:text-6xl lg:text-7xl font-light tracking-[0.01em] drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)]"
+          >
+            Riccio <span className="text-accent">Advocacia</span>
+          </m.h1>
+          <m.div variants={heroBadge} className="relative h-px w-12 sm:w-16 bg-accent/60 mt-6 sm:mt-8" />
+        </m.div>
+      </div>
 
       {/* Bottom — CTAs */}
       <div className="relative z-10 container mx-auto px-4 pb-8 sm:pb-14 md:pb-16">

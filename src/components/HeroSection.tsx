@@ -88,8 +88,24 @@ const HeroSection = () => {
         </m.div>
       </div>
 
-      {/* Spacer — lets the video breathe */}
-      <div className="flex-1" />
+      {/* Center — Wordmark */}
+      <div className="relative z-10 flex-1 flex items-center justify-center container mx-auto px-4 py-10">
+        <m.div
+          className="flex flex-col items-center text-center"
+          variants={heroStagger}
+          initial="hidden"
+          animate="visible"
+        >
+          <m.div variants={heroBadge} className="h-px w-12 sm:w-16 bg-accent/60 mb-6 sm:mb-8" />
+          <m.h1
+            variants={heroBadge}
+            className="font-display text-background text-[2.5rem] leading-[1.05] sm:text-6xl lg:text-7xl font-light tracking-[0.01em]"
+          >
+            Riccio <span className="text-accent">Advocacia</span>
+          </m.h1>
+          <m.div variants={heroBadge} className="h-px w-12 sm:w-16 bg-accent/60 mt-6 sm:mt-8" />
+        </m.div>
+      </div>
 
       {/* Bottom — CTAs */}
       <div className="relative z-10 container mx-auto px-4 pb-8 sm:pb-14 md:pb-16">

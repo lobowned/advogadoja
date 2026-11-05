@@ -98,7 +98,7 @@ const HeroSection = () => {
         >
           {/* Localized scrim so the wordmark stays readable over the video */}
           <div
-            className="absolute -inset-x-16 sm:-inset-x-28 -inset-y-10 sm:-inset-y-14 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.66)_0%,rgba(0,0,0,0.4)_45%,rgba(0,0,0,0)_78%)]"
+            className="absolute -inset-x-24 sm:-inset-x-40 -inset-y-24 sm:-inset-y-32 bg-[radial-gradient(ellipse_60%_50%_at_center,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0.34)_38%,rgba(0,0,0,0.12)_62%,rgba(0,0,0,0)_82%)]"
             aria-hidden="true"
           />
           <m.div variants={heroBadge} className="relative h-px w-12 sm:w-16 bg-accent/60 mb-6 sm:mb-8" />

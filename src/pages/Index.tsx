@@ -207,7 +207,7 @@ const Index = () => {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Advogado Online | Trabalhista, Família, Consumidor | Riccio Advocacia",
+    "name": "Advogado em Salvador e Online | Riccio Advocacia",
     "description": "Precisa de advogado? Especialistas em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp. Consulta gratuita.",
     "url": "https://advogadoja.lovable.app",
     "isPartOf": {
@@ -231,18 +231,18 @@ const Index = () => {
   return (
     <PageTransition variant="slideUp">
       <Helmet>
-        <title>Advogado Online | Trabalhista, Família, INSS, Consumidor | Riccio Advocacia</title>
-        <meta name="description" content="Advogados online para todas as áreas: Trabalhista, Família, Consumidor, INSS, Civil e Criminal. Atendimento via WhatsApp. Consulta gratuita em todo o Brasil." />
+        <title>Advogado em Salvador e Online | Riccio Advocacia</title>
+        <meta name="description" content="Riccio Advocacia (OAB/BA 46.638): trabalhista, INSS, família, consumidor, cível e criminal. Atendimento em Salvador, Camaçari, Lauro de Freitas e online pelo WhatsApp." />
         <meta name="keywords" content="advogado online, advogado trabalhista, advogado família, advogado consumidor, advogado previdenciário INSS, advogado civil, advogado criminal, divórcio online, pensão alimentícia, demissão sem justa causa, verbas rescisórias, aposentadoria INSS, auxílio-doença, BPC LOAS, voo cancelado, plano de saúde negou, nome sujo, negativação indevida, inventário, defesa criminal, consulta jurídica gratuita, falar com advogado agora" />
         <link rel="canonical" href="https://advogadoja.lovable.app" />
         
-        <meta property="og:title" content="Advogado Online | Trabalhista, Família, INSS, Consumidor | Riccio Advocacia" />
+        <meta property="og:title" content="Advogado em Salvador e Online | Riccio Advocacia" />
         <meta property="og:description" content="Advogados online para todas as áreas do direito. Atendimento via WhatsApp. Consulta gratuita em todo o Brasil." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://advogadoja.lovable.app" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Advogado Online | Trabalhista, Família, INSS, Consumidor | Riccio Advocacia" />
+        <meta name="twitter:title" content="Advogado em Salvador e Online | Riccio Advocacia" />
         <meta name="twitter:description" content="Advogados online para todas as áreas do direito. Atendimento via WhatsApp. Consulta gratuita em todo o Brasil." />
 
         

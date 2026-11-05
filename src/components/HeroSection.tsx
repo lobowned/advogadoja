@@ -68,18 +68,18 @@ const HeroSection = () => {
             {/* Assinatura */}
             <div className="flex items-center gap-4 mb-8">
               <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#d4af37]" />
-              <span className="font-roman text-xs sm:text-sm tracking-[0.4em] uppercase text-[#d4af37]">
-                Riccio Advocacia
-              </span>
+              <h1 className="font-roman text-xs sm:text-sm tracking-[0.3em] uppercase text-[#d4af37]">
+                Riccio Advocacia · Advogado em Salvador e online
+              </h1>
             </div>
 
-            <h1 className="font-display font-medium text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1] tracking-[-0.01em] text-[#f5efe0]">
+            <p className="font-display font-medium text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1] tracking-[-0.01em] text-[#f5efe0]">
               A defesa que o seu
               <br />
               <em className="italic font-normal bg-gradient-to-r from-[#b8892b] via-[#f3d98b] to-[#b8892b] bg-clip-text text-transparent">
                 patrimônio merece.
               </em>
-            </h1>
+            </p>
 
             <p className="mt-8 max-w-lg text-base sm:text-lg text-[#f5efe0]/75 font-sans font-light leading-relaxed">
               Escritório generalista com advogados inscritos na OAB. Atendimento

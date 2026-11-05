@@ -1,4 +1,5 @@
 // Auto-generated blog articles based on legal actions
+import { articleExpansions } from "./article-expansions";
 export interface BlogArticle {
   id: string;
   nicheId: string;
@@ -140,7 +141,7 @@ export const blogArticles: BlogArticle[] = [
     slug: 'acidente-trabalho',
     title: 'Acidente de Trabalho: Direitos e Como Proceder',
     metaTitle: 'Acidente de Trabalho | Direitos, CAT e Indenização',
-    metaDescription: 'Sofreu acidente de trabalho? Saiba seus direitos: estabilidade, CAT, auxílio-doença acidentário, indenização. Advogado trabalhista especializado.',
+    metaDescription: 'Sofreu acidente de trabalho? Saiba seus direitos: estabilidade, CAT, auxílio-doença acidentário, indenização. Fale com um advogado.',
     keywords: ['acidente de trabalho', 'CAT', 'estabilidade acidentária', 'auxílio-doença acidentário', 'indenização acidente trabalho', 'doença ocupacional'],
     excerpt: 'Conheça seus direitos após um acidente de trabalho: estabilidade de 12 meses, auxílio-doença acidentário, e como buscar indenização.',
     content: {
@@ -240,7 +241,7 @@ export const blogArticles: BlogArticle[] = [
     slug: 'assedio-moral',
     title: 'Assédio Moral no Trabalho: Identificar e Combater',
     metaTitle: 'Assédio Moral no Trabalho | Como Denunciar e Processar',
-    metaDescription: 'Está sofrendo assédio moral no trabalho? Saiba identificar, reunir provas e buscar indenização. Advogado trabalhista especializado.',
+    metaDescription: 'Está sofrendo assédio moral no trabalho? Saiba identificar, reunir provas e buscar indenização. Fale com um advogado.',
     keywords: ['assédio moral', 'assédio no trabalho', 'humilhação trabalho', 'danos morais trabalho', 'perseguição no trabalho', 'ambiente hostil'],
     excerpt: 'Aprenda a identificar o assédio moral no trabalho, como reunir provas e quais medidas legais tomar para proteger seus direitos.',
     content: {
@@ -270,7 +271,7 @@ export const blogArticles: BlogArticle[] = [
         },
         {
           question: 'Qual o valor da indenização por assédio moral?',
-          answer: 'O valor varia conforme a gravidade, duração do assédio e porte da empresa. Pode variar de alguns milhares a centenas de milhares de reais.',
+          answer: 'O valor depende da gravidade e da duração do assédio, das provas e das condições das partes, e é fixado pelo juiz em cada caso.',
         },
         {
           question: 'Preciso de testemunhas para provar?',
@@ -572,7 +573,7 @@ export const blogArticles: BlogArticle[] = [
     keywords: ['férias não pagas', 'férias vencidas', 'férias em dobro', 'período aquisitivo', 'férias atrasadas', 'direito a férias'],
     excerpt: 'Saiba quando você tem direito a receber férias em dobro e como cobrar férias não pagas ou vencidas do seu empregador.',
     content: {
-      intro: 'As férias são um direito constitucional do trabalhador. Quando a empresa não concede ou paga as férias no prazo correto, o empregado tem direito a receber o valor em dobro.',
+      intro: 'As férias são um direito constitucional do trabalhador. Quando a empresa não concede as férias dentro do prazo legal (os 12 meses seguintes ao período aquisitivo), o empregado tem direito a receber o valor em dobro (art. 137 da CLT).',
       whatIs: 'Férias são o período de 30 dias de descanso remunerado a que todo trabalhador tem direito após 12 meses de trabalho (período aquisitivo). A empresa tem mais 12 meses para conceder as férias (período concessivo).',
       whenYouHaveRight: [
         'Férias não concedidas dentro do período concessivo (dobra)',
@@ -594,7 +595,7 @@ export const blogArticles: BlogArticle[] = [
       faq: [
         {
           question: 'Quando as férias devem ser pagas?',
-          answer: 'Até 2 dias antes do início das férias. Se pagar em atraso, deve pagar o valor em dobro.',
+          answer: 'Até 2 dias antes do início das férias (art. 145 da CLT). Se só o pagamento atrasar, o STF decidiu em 2022 (ADPF 501) que não cabe o pagamento em dobro, mas o atraso pode gerar outras consequências, como correção e multa administrativa.',
         },
         {
           question: 'Quando tenho direito a receber em dobro?',
@@ -1070,7 +1071,7 @@ export const blogArticles: BlogArticle[] = [
       faq: [
         {
           question: 'Quanto posso receber de indenização?',
-          answer: 'O valor varia muito. Pode ir de alguns milhares a centenas de milhares de reais, dependendo da gravidade, repercussão e condição econômica das partes.',
+          answer: 'Não há tabela. O juiz fixa o valor em cada caso, considerando a gravidade, a repercussão e a condição das partes.',
         },
         {
           question: 'Mero aborrecimento dá dano moral?',
@@ -1121,7 +1122,7 @@ export const blogArticles: BlogArticle[] = [
       faq: [
         {
           question: 'Posso cobrar juros sobre a dívida?',
-          answer: 'Sim, juros de mora de 1% ao mês (ou o contratado) mais correção monetária a partir do vencimento.',
+          answer: 'Sim. Incidem juros de mora (o que foi contratado ou, na falta, a taxa legal do art. 406 do Código Civil, alterado pela Lei 14.905/2024) e correção monetária desde o vencimento.',
         },
         {
           question: 'E se o devedor não tiver bens?',
@@ -1645,7 +1646,7 @@ export const blogArticles: BlogArticle[] = [
         'Holerites e contracheques',
         'Descrição das atividades realizadas',
         'Fotos do ambiente de trabalho',
-        'PPRA e PCMSO da empresa',
+        'PGR (antigo PPRA) e PCMSO da empresa',
         'Testemunhos de colegas',
       ],
       deadlines: 'Prazo de 2 anos após a demissão para entrar com ação, podendo cobrar os últimos 5 anos. Durante o contrato, pode ser pedido a qualquer momento.',
@@ -1688,7 +1689,7 @@ export const blogArticles: BlogArticle[] = [
         'Quando as verbas rescisórias não são pagas em 10 dias',
         'Quando a empresa paga valor inferior ao devido',
         'Quando há atraso na entrega das guias de FGTS/seguro-desemprego',
-        'Quando a homologação não é feita no prazo',
+        'Quando o pagamento e a entrega dos documentos da rescisão não são feitos no prazo',
       ],
       documents: [
         'Carteira de trabalho com data de saída',
@@ -1701,7 +1702,7 @@ export const blogArticles: BlogArticle[] = [
       faq: [
         {
           question: 'Qual o valor da multa do artigo 477?',
-          answer: 'O valor é de um salário do empregado. Se você ganhava R$ 3.000, a multa é de R$ 3.000.',
+          answer: 'O valor é de um salário do empregado (art. 477, §8º, da CLT).',
         },
         {
           question: 'Sábados e domingos contam no prazo de 10 dias?',
@@ -2331,7 +2332,7 @@ export const blogArticles: BlogArticle[] = [
     keywords: ['embriaguez volante', 'crime trânsito', 'Lei Seca', 'bafômetro', 'homicídio culposo trânsito', 'lesão corporal trânsito'],
     excerpt: 'Entenda os principais crimes de trânsito, as penas previstas, quando há prisão e como se defender adequadamente.',
     content: {
-      intro: 'Crimes de trânsito são cada vez mais severamente punidos no Brasil. A embriaguez ao volante pode levar à prisão, e acidentes fatais podem resultar em penas de até 12 anos. Conheça seus direitos e como se defender.',
+      intro: 'Crimes de trânsito são cada vez mais severamente punidos no Brasil. A embriaguez ao volante pode levar à prisão, e o homicídio no trânsito com embriaguez tem pena de 5 a 8 anos de reclusão. Conheça seus direitos e como se defender.',
       whatIs: 'Crimes de trânsito são infrações penais previstas no Código de Trânsito Brasileiro (CTB). Diferem das infrações administrativas (multas) por terem consequências criminais: prisão, ficha criminal e suspensão da CNH.',
       whenYouHaveRight: [
         'Defesa em caso de flagrante por embriaguez',
@@ -2361,7 +2362,7 @@ export const blogArticles: BlogArticle[] = [
         },
         {
           question: 'Qual a pena por matar alguém no trânsito?',
-          answer: 'Homicídio culposo no trânsito: 2 a 4 anos. Com embriaguez, racha ou fuga: 5 a 8 anos. Recentemente pode chegar a 12 anos em casos graves.',
+          answer: 'Homicídio culposo no trânsito: 2 a 4 anos de detenção (art. 302 do CTB), com aumento em algumas situações, como omissão de socorro. Sob influência de álcool ou outra substância: 5 a 8 anos de reclusão (art. 302, §3º).',
         },
         {
           question: 'Posso perder a CNH definitivamente?',
@@ -2604,7 +2605,7 @@ export const blogArticles: BlogArticle[] = [
         'Certidão de nascimento dos filhos (se houver)',
         'Documentos pessoais de ambos',
       ],
-      deadlines: 'Não há prazo para reconhecimento. Dissolução consensual pode ser feita em cartório se não houver filhos menores.',
+      deadlines: 'Não há prazo para reconhecimento. Dissolução consensual pode ser feita em cartório; havendo filhos menores, isso é possível quando guarda, convivência e alimentos já tiverem sido resolvidos na Justiça (Resolução CNJ 571/2024).',
       faq: [
         {
           question: 'Precisa morar junto para ser união estável?',
@@ -2708,11 +2709,11 @@ export const blogArticles: BlogArticle[] = [
       faq: [
         {
           question: 'Posso fazer inventário em cartório?',
-          answer: 'Sim, se todos os herdeiros forem maiores e capazes, houver consenso e não existir testamento. É mais rápido e barato.',
+          answer: 'Sim, quando há consenso entre os herdeiros. Desde a Resolução CNJ 571/2024, o inventário em cartório também pode ser feito em alguns casos com herdeiro menor ou com testamento, desde que cumpridas as condições da norma. Costuma ser mais rápido que o judicial.',
         },
         {
           question: 'Quanto custa um inventário?',
-          answer: 'Custos incluem: ITCMD (4-8% dos bens), custas cartorário/judiciais, honorários advocatícios (geralmente 6-10% do patrimônio).',
+          answer: 'Os custos incluem o ITCMD (imposto estadual, com alíquota definida pela lei de cada estado), as custas do cartório ou do processo e os honorários advocatícios, combinados em contrato conforme a tabela da OAB.',
         },
         {
           question: 'O que acontece se não fizer inventário?',
@@ -2817,7 +2818,7 @@ export const blogArticles: BlogArticle[] = [
         },
         {
           question: 'Consigo liminar para despejo rápido?',
-          answer: 'Sim, a lei permite liminar de despejo em 15 dias se for aluguel residencial e houver garantia (caução, fiador, seguro).',
+          answer: 'Sim. Na falta de pagamento, a Lei do Inquilinato permite liminar para desocupação em 15 dias quando o contrato está sem nenhuma garantia (art. 59, §1º, IX, da Lei 8.245/91), mediante caução de três aluguéis.',
         },
         {
           question: 'Posso cobrar aluguel durante o processo?',
@@ -2867,7 +2868,7 @@ export const blogArticles: BlogArticle[] = [
         },
         {
           question: 'Imóvel financiado pode sofrer usucapião?',
-          answer: 'Não enquanto houver financiamento ativo. O banco tem interesse jurídico no imóvel.',
+          answer: 'Depende. Imóvel de financiamento do Sistema Financeiro da Habitação ligado a recursos públicos costuma ser tratado pelos tribunais como insuscetível de usucapião, e a alienação fiduciária ao banco também cria obstáculo. Cada caso precisa ser analisado com os documentos do imóvel.',
         },
         {
           question: 'Preciso pagar pelo imóvel no usucapião?',
@@ -2935,11 +2936,11 @@ export const blogArticles: BlogArticle[] = [
     slug: 'acidente-transito-indenizacao',
     title: 'Acidente de Trânsito: Como Buscar Indenização',
     metaTitle: 'Acidente de Trânsito | Indenização e Direitos',
-    metaDescription: 'Sofreu acidente de trânsito? Saiba como buscar indenização: seguro DPVAT, danos materiais, morais e lucros cessantes.',
-    keywords: ['acidente trânsito', 'indenização acidente', 'DPVAT', 'danos materiais', 'seguro acidente', 'colisão veículos'],
+    metaDescription: 'Sofreu acidente de trânsito? Saiba como buscar indenização: danos materiais, morais, lucros cessantes e seguros.',
+    keywords: ['acidente trânsito', 'indenização acidente', 'seguro obrigatório', 'danos materiais', 'seguro acidente', 'colisão veículos'],
     excerpt: 'Guia completo sobre direitos após acidente de trânsito: indenizações, seguros e como proceder.',
     content: {
-      intro: 'Acidentes de trânsito podem gerar diversos direitos: DPVAT, seguro do veículo, indenização do causador por danos materiais e morais. Saiba como proceder.',
+      intro: 'Acidentes de trânsito podem gerar diversos direitos: seguro do veículo, seguro obrigatório quando vigente e indenização do causador por danos materiais e morais. Saiba como proceder.',
       whatIs: 'Indenização por acidente de trânsito é a compensação financeira pelos danos sofridos, que pode incluir reparo do veículo, despesas médicas, lucros cessantes e danos morais.',
       whenYouHaveRight: [
         'Colisão causada por terceiro',
@@ -2957,11 +2958,11 @@ export const blogArticles: BlogArticle[] = [
         'Comprovantes de despesas',
         'Dados do causador e testemunhas',
       ],
-      deadlines: 'Prazo de 3 anos para ação de indenização. DPVAT pode ser pedido em até 3 anos do acidente.',
+      deadlines: 'Prazo de 3 anos para ação de indenização contra o causador (art. 206, §3º, V, do Código Civil).',
       faq: [
         {
-          question: 'O que é e como pedir o DPVAT?',
-          answer: 'DPVAT é seguro obrigatório que cobre morte, invalidez e despesas médicas, independente de culpa. Pede-se junto ao Seguradora Líder.',
+          question: 'Ainda existe o seguro obrigatório (antigo DPVAT)?',
+          answer: 'O DPVAT e a Seguradora Líder foram extintos e as regras do seguro obrigatório mudaram nos últimos anos. Antes de pedir, confira a situação vigente na data do acidente; acidentes antigos seguem a regra da época.',
         },
         {
           question: 'Posso cobrar indenização mesmo tendo culpa parcial?',
@@ -2973,7 +2974,7 @@ export const blogArticles: BlogArticle[] = [
         },
         {
           question: 'Posso processar se o outro fugiu?',
-          answer: 'Pode tentar identificá-lo pela placa. Se não conseguir, pode pedir DPVAT normalmente. Seguro próprio também cobre.',
+          answer: 'Pode tentar identificá-lo pela placa. Se não conseguir, o seguro próprio pode cobrir, conforme a apólice. Registre boletim de ocorrência.',
         },
       ],
     },
@@ -3016,7 +3017,7 @@ export const blogArticles: BlogArticle[] = [
         },
         {
           question: 'A multa contratual pode ser reduzida?',
-          answer: 'Sim, o juiz pode reduzir multas abusivas. Multas acima de 10% do valor do contrato são geralmente consideradas excessivas.',
+          answer: 'Sim. O juiz deve reduzir a multa quando ela for manifestamente excessiva ou quando parte da obrigação já tiver sido cumprida (art. 413 do Código Civil). Não há um percentual fixo: depende do contrato e do caso.',
         },
         {
           question: 'E se a empresa que descumpriu o contrato?',
@@ -4106,7 +4107,7 @@ export const blogArticles: BlogArticle[] = [
     slug: 'golpe-pix-como-recuperar-dinheiro',
     title: 'Golpe do PIX: Como Recuperar o Dinheiro em 2025',
     metaTitle: 'Golpe do PIX | Como Recuperar Dinheiro | MED',
-    metaDescription: 'Caiu no golpe do PIX? Saiba como usar o MED (Mecanismo Especial de Devolução) para recuperar seu dinheiro. Advogado especializado explica passo a passo.',
+    metaDescription: 'Caiu no golpe do PIX? Saiba como usar o MED (Mecanismo Especial de Devolução) para recuperar seu dinheiro. Entenda o passo a passo.',
     keywords: ['golpe pix', 'recuperar pix', 'fraude pix', 'MED pix', 'mecanismo especial devolução', 'golpe whatsapp pix', 'banco devolver pix'],
     excerpt: 'Saiba como acionar o MED (Mecanismo Especial de Devolução) e recuperar seu dinheiro após cair em golpe do PIX. Guia completo com prazos e documentos.',
     content: {
@@ -4162,7 +4163,7 @@ export const blogArticles: BlogArticle[] = [
     slug: 'cartao-clonado-responsabilidade-banco',
     title: 'Cartão Clonado: Quem é Responsável e Como Recuperar',
     metaTitle: 'Cartão Clonado | Responsabilidade do Banco',
-    metaDescription: 'Teve o cartão clonado? Saiba por que o banco é responsável e como recuperar seu dinheiro. Advogado especializado explica seus direitos.',
+    metaDescription: 'Teve o cartão clonado? Saiba por que o banco é responsável e como recuperar seu dinheiro. Entenda seus direitos.',
     keywords: ['cartão clonado', 'fraude cartão crédito', 'banco responsável fraude', 'compra não reconhecida', 'clonagem cartão', 'estorno cartão'],
     excerpt: 'Entenda por que o banco é responsável pela clonagem do seu cartão e como recuperar os valores das compras não reconhecidas.',
     content: {
@@ -4381,6 +4382,15 @@ export const blogArticles: BlogArticle[] = [
 ];
 
 // Helper function to get articles by niche
+// Junta as expansões (src/data/article-expansions) aos artigos curtos
+for (const a of blogArticles) {
+  const x = articleExpansions[`${a.nicheId}/${a.slug}`];
+  if (!x) continue;
+  a.content.sections = [...(a.content.sections ?? []), ...x.sections];
+  if (x.faq) a.content.faq = [...a.content.faq, ...x.faq];
+  if (x.updatedAt) a.updatedAt = x.updatedAt;
+}
+
 export function getArticlesByNiche(nicheId: string): BlogArticle[] {
   return blogArticles.filter(article => article.nicheId === nicheId);
 }

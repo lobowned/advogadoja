@@ -48,13 +48,13 @@ const Calculadoras = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://advogadoja.lovable.app"
+        "item": "https://riccio-advocacia.lovable.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Calculadoras",
-        "item": "https://advogadoja.lovable.app/calculadoras"
+        "item": "https://riccio-advocacia.lovable.app/calculadoras"
       }
     ]
   };
@@ -65,7 +65,7 @@ const Calculadoras = () => {
         <title>Calculadoras de Direitos | Calcule Grátis suas Verbas</title>
         <meta name="description" content="Calculadoras jurídicas gratuitas: calcule rescisão trabalhista, pensão alimentícia e mais. Descubra quanto você tem direito a receber." />
         <meta name="keywords" content="calculadora trabalhista, calculadora pensão alimentícia, calcular rescisão, verbas rescisórias, direitos trabalhistas" />
-        <link rel="canonical" href="https://advogadoja.lovable.app/calculadoras" />
+        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadoras" />
         {itemListSchema && <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>}
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>

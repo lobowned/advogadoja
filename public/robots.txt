@@ -6,4 +6,4 @@ Disallow: /questionario/
 Disallow: /conversao
 Disallow: /selecionar-acao/
 
-Sitemap: https://advogadoja.lovable.app/sitemap.xml
+Sitemap: https://riccio-advocacia.lovable.app/sitemap.xml

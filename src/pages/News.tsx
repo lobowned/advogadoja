@@ -84,7 +84,7 @@ export default function News() {
     "@type": "CollectionPage",
     "name": pageTitle,
     "description": pageDescription,
-    "url": `https://advogadoja.lovable.app/noticias${nicheId ? `/${nicheId}` : ''}`,
+    "url": `https://riccio-advocacia.lovable.app/noticias${nicheId ? `/${nicheId}` : ''}`,
     "mainEntity": {
       "@type": "ItemList",
       "numberOfItems": news?.length || 0,
@@ -107,7 +107,7 @@ export default function News() {
         <meta name="description" content={pageDescription} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
-        <link rel="canonical" href={`https://advogadoja.lovable.app/noticias${nicheId ? `/${nicheId}` : ''}`} />
+        <link rel="canonical" href={`https://riccio-advocacia.lovable.app/noticias${nicheId ? `/${nicheId}` : ''}`} />
         <script type="application/ld+json">{JSON.stringify(newsSchema)}</script>
       </Helmet>
 

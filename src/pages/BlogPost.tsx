@@ -61,7 +61,7 @@ const BlogPost = ({ nicheIdOverride, slugOverride }: BlogPostProps = {}) => {
   const area = AREA_BY_NICHE[nicheId] ?? AREA_BY_NICHE.consumidor;
   const extraSections = article.content.sections ?? [];
   const readingTime = getArticleReadingTime(article.content);
-  const articleUrl = `https://advogadoja.lovable.app/artigos/${nicheId}/${slug}`;
+  const articleUrl = `https://riccio-advocacia.lovable.app/artigos/${nicheId}/${slug}`;
 
   const tocItems = [
     { id: "introducao", title: "Introdução" },
@@ -92,10 +92,10 @@ const BlogPost = ({ nicheIdOverride, slugOverride }: BlogPostProps = {}) => {
     "publisher": {
       "@type": "Organization",
       "name": "Riccio Advocacia",
-      "url": "https://advogadoja.lovable.app",
+      "url": "https://riccio-advocacia.lovable.app",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://advogadoja.lovable.app/favicon.svg",
+        "url": "https://riccio-advocacia.lovable.app/favicon.svg",
         "width": 60,
         "height": 60
       }

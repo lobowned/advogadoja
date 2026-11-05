@@ -64,7 +64,7 @@ export default function PrevHome() {
           name="description"
           content="Advogado especialista em INSS. Aposentadoria, auxílio-doença, aposentadoria por invalidez e BPC/LOAS. Atendimento direto pelo WhatsApp, sem juridiquês."
         />
-        <link rel="canonical" href="https://advogadoja.lovable.app/prev" />
+        <link rel="canonical" href="https://riccio-advocacia.lovable.app/prev" />
       </Helmet>
 
       <PrevLayout ctaMessage={WHATSAPP_MESSAGES.home} quizKey="home">

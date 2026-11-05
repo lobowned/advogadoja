@@ -67,7 +67,7 @@ const CityConsumerLanding = () => {
   const whatsappMessage = `Olá! Preciso de ajuda com um problema de consumidor em ${cityData.cityName}. Pode me ajudar?`;
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-  const baseUrl = "https://advogadoja.lovable.app";
+  const baseUrl = "https://riccio-advocacia.lovable.app";
   const pageUrl = `${baseUrl}/advogado-consumidor-${citySlug}`;
 
   // Schema.org structured data

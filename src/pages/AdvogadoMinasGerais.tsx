@@ -74,7 +74,7 @@ const AdvogadoMinasGerais = () => {
     "@type": "LegalService",
     "name": "Riccio Advocacia em Minas Gerais",
     "description": "Advogado online para consulta jurídica em Minas Gerais. Atendemos BH, Uberlândia, Contagem e todas as cidades mineiras.",
-    "url": "https://advogadoja.lovable.app/advogado-minas-gerais",
+    "url": "https://riccio-advocacia.lovable.app/advogado-minas-gerais",
     "areaServed": {
       "@type": "State",
       "name": "Minas Gerais",
@@ -93,13 +93,13 @@ const AdvogadoMinasGerais = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://advogadoja.lovable.app"
+        "item": "https://riccio-advocacia.lovable.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Advogado Minas Gerais",
-        "item": "https://advogadoja.lovable.app/advogado-minas-gerais"
+        "item": "https://riccio-advocacia.lovable.app/advogado-minas-gerais"
       }
     ]
   };
@@ -110,11 +110,11 @@ const AdvogadoMinasGerais = () => {
         <title>Advogado Online em Minas Gerais | BH, Uberlândia, Contagem | Consulta Grátis</title>
         <meta name="description" content="Advogado online em Minas Gerais: Belo Horizonte, Uberlândia, Contagem, Juiz de Fora e todas as cidades. Direito do consumidor, trabalhista, previdenciário. Consulta gratuita." />
         <meta name="keywords" content="advogado minas gerais, advogado mg, advogado belo horizonte, advogado bh, advogado uberlandia, advogado consumidor mg, advogado trabalhista mg" />
-        <link rel="canonical" href="https://advogadoja.lovable.app/advogado-minas-gerais" />
+        <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-minas-gerais" />
         
         <meta property="og:title" content="Advogado Online em Minas Gerais | Consulta Jurídica Gratuita" />
         <meta property="og:description" content="Advogado online para todo o estado de Minas Gerais." />
-        <meta property="og:url" content="https://advogadoja.lovable.app/advogado-minas-gerais" />
+        <meta property="og:url" content="https://riccio-advocacia.lovable.app/advogado-minas-gerais" />
         
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>

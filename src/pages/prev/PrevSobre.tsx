@@ -26,7 +26,7 @@ export default function PrevSobre() {
           name="description"
           content="Conheça a trajetória profissional e a forma de atuar do escritório especializado em direito previdenciário."
         />
-        <link rel="canonical" href="https://advogadoja.lovable.app/prev/sobre" />
+        <link rel="canonical" href="https://riccio-advocacia.lovable.app/prev/sobre" />
       </Helmet>
 
       <PrevLayout ctaMessage={WHATSAPP_MESSAGES.sobre}>

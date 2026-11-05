@@ -267,7 +267,7 @@ const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
   const local = getLocalPage(area.slug, city.slug);
   if (local) return <LocalNichePage local={local} areaName={area.name} areaSlug={area.slug} cityName={city.name} citySlug={city.slug} />;
 
-  const canonicalUrl = `https://advogadoja.lovable.app/advogado-${area.slug}-${city.slug}`;
+  const canonicalUrl = `https://riccio-advocacia.lovable.app/advogado-${area.slug}-${city.slug}`;
   const Icon = area.icon;
   const indexable = isCityIndexable(city.slug);
 
@@ -283,7 +283,7 @@ const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
     "currenciesAccepted": "BRL",
     "paymentAccepted": "Cash, Credit Card, PIX",
     "openingHours": "Mo-Fr 08:00-18:00",
-    "image": "https://advogadoja.lovable.app/og-image.png",
+    "image": "https://riccio-advocacia.lovable.app/og-image.png",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": city.name,
@@ -329,9 +329,9 @@ const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://advogadoja.lovable.app" },
-      { "@type": "ListItem", "position": 2, "name": `Advogado ${area.name}`, "item": `https://advogadoja.lovable.app/advogado-${area.slug}` },
-      { "@type": "ListItem", "position": 3, "name": city.name, "item": `https://advogadoja.lovable.app/advogado/${city.slug}` },
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://riccio-advocacia.lovable.app" },
+      { "@type": "ListItem", "position": 2, "name": `Advogado ${area.name}`, "item": `https://riccio-advocacia.lovable.app/advogado-${area.slug}` },
+      { "@type": "ListItem", "position": 3, "name": city.name, "item": `https://riccio-advocacia.lovable.app/advogado/${city.slug}` },
       { "@type": "ListItem", "position": 4, "name": `Advogado ${area.name} ${city.name}`, "item": canonicalUrl }
     ]
   };
@@ -614,7 +614,7 @@ const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
 function LocalNichePage({
   local, areaName, areaSlug, cityName, citySlug,
 }: { local: LocalPageContent; areaName: string; areaSlug: string; cityName: string; citySlug: string }) {
-  const base = "https://advogadoja.lovable.app";
+  const base = "https://riccio-advocacia.lovable.app";
   const canonicalUrl = `${base}/advogado-${areaSlug}-${citySlug}`;
   const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(local.whatsappText)}`;
 

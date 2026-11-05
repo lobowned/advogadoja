@@ -13,11 +13,11 @@ const CriminalLanding = () => {
   const legalServiceSchema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "@id": "https://advogadoja.lovable.app/criminal#legalservice",
+    "@id": "https://riccio-advocacia.lovable.app/criminal#legalservice",
     "name": "Riccio Advocacia — Direito Criminal",
     "description":
       "Advocacia criminal: inquérito policial, ação penal, Tribunal do Júri, habeas corpus, execução penal e recursos. Atendimento em todo o Brasil. OAB/BA 46.638.",
-    "url": "https://advogadoja.lovable.app/criminal",
+    "url": "https://riccio-advocacia.lovable.app/criminal",
     "telephone": "+55-71-99703-6269",
     "email": "contato@advogadoja.com.br",
     "areaServed": { "@type": "Country", "name": "Brasil" },
@@ -61,7 +61,7 @@ const CriminalLanding = () => {
     "identifier": "OAB/BA 46.638",
     "description":
       "Advogado dedicado ao Direito Penal e Processual Penal, com prática em Justiça Estadual, Federal e tribunais superiores.",
-    "url": "https://advogadoja.lovable.app/criminal",
+    "url": "https://riccio-advocacia.lovable.app/criminal",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Camaçari",
@@ -146,7 +146,7 @@ const CriminalLanding = () => {
           name="keywords"
           content="advogado criminalista, advogado criminal, defesa criminal, habeas corpus, tribunal do júri, execução penal, prisão em flagrante, audiência de custódia, advogado lei maria da penha, advogado lei de drogas, recurso criminal, revisão criminal, advogado penal salvador, advogado criminal bahia"
         />
-        <link rel="canonical" href="https://advogadoja.lovable.app/criminal" />
+        <link rel="canonical" href="https://riccio-advocacia.lovable.app/criminal" />
 
         <meta property="og:title" content="Advogado Criminalista | Defesa Criminal | Riccio Advocacia" />
         <meta
@@ -154,7 +154,7 @@ const CriminalLanding = () => {
           content="Advogado criminalista: flagrante, júri, habeas corpus, execução penal e recursos. Plantão 24h. OAB/BA 46.638."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://advogadoja.lovable.app/criminal" />
+        <meta property="og:url" content="https://riccio-advocacia.lovable.app/criminal" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Advogado Criminalista | Riccio Advocacia" />

@@ -10,7 +10,7 @@ export interface CalculatorSchemaData {
   faqs: Array<{ question: string; answer: string }>;
 }
 
-const BASE_URL = "https://advogadoja.lovable.app";
+const BASE_URL = "https://riccio-advocacia.lovable.app";
 
 export const calculatorSchemas: Record<string, CalculatorSchemaData> = {
   trabalhista: {

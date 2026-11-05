@@ -43,12 +43,12 @@ const FAQQuestion = () => {
   const relatedCalculators = getRelatedCalculatorsForFAQ(faq);
   const relatedArticles = getRelatedArticlesForFAQ(faq);
 
-  const canonicalUrl = `https://advogadoja.lovable.app/perguntas/${faq.slug}`;
+  const canonicalUrl = `https://riccio-advocacia.lovable.app/perguntas/${faq.slug}`;
   
   // Build related links for Schema.org
   const relatedLinks = [
-    ...relatedCalculators.map(c => `https://advogadoja.lovable.app${c.url}`),
-    ...relatedArticles.map(a => `https://advogadoja.lovable.app/artigos/${a.nicheId}/${a.slug}`)
+    ...relatedCalculators.map(c => `https://riccio-advocacia.lovable.app${c.url}`),
+    ...relatedArticles.map(a => `https://riccio-advocacia.lovable.app/artigos/${a.nicheId}/${a.slug}`)
   ];
   
   // Schema.org FAQPage - Enhanced for FAQ rich snippets
@@ -60,7 +60,7 @@ const FAQQuestion = () => {
     "author": {
       "@type": "Organization",
       "name": "Riccio Advocacia",
-      "url": "https://advogadoja.lovable.app"
+      "url": "https://riccio-advocacia.lovable.app"
     },
     "mainEntity": [{
       "@type": "Question",
@@ -85,19 +85,19 @@ const FAQQuestion = () => {
     "author": {
       "@type": "Organization",
       "name": "Riccio Advocacia",
-      "url": "https://advogadoja.lovable.app",
+      "url": "https://riccio-advocacia.lovable.app",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://advogadoja.lovable.app/favicon.svg"
+        "url": "https://riccio-advocacia.lovable.app/favicon.svg"
       }
     },
     "publisher": {
       "@type": "Organization",
       "name": "Riccio Advocacia",
-      "url": "https://advogadoja.lovable.app",
+      "url": "https://riccio-advocacia.lovable.app",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://advogadoja.lovable.app/favicon.svg",
+        "url": "https://riccio-advocacia.lovable.app/favicon.svg",
         "width": 60,
         "height": 60
       }
@@ -121,19 +121,19 @@ const FAQQuestion = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://advogadoja.lovable.app"
+        "item": "https://riccio-advocacia.lovable.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Perguntas Frequentes",
-        "item": "https://advogadoja.lovable.app/perguntas"
+        "item": "https://riccio-advocacia.lovable.app/perguntas"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": areaLabels[faq.area],
-        "item": `https://advogadoja.lovable.app/perguntas?area=${faq.area}`
+        "item": `https://riccio-advocacia.lovable.app/perguntas?area=${faq.area}`
       },
       {
         "@type": "ListItem",
@@ -154,7 +154,7 @@ const FAQQuestion = () => {
     "isPartOf": {
       "@type": "WebSite",
       "name": "Riccio Advocacia",
-      "url": "https://advogadoja.lovable.app"
+      "url": "https://riccio-advocacia.lovable.app"
     },
     "about": {
       "@type": "Thing",

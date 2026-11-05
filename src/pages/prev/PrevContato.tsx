@@ -66,7 +66,7 @@ export default function PrevContato() {
           name="description"
           content="Entre em contato pelo WhatsApp, e-mail ou formulário para uma primeira análise do seu caso previdenciário."
         />
-        <link rel="canonical" href="https://advogadoja.lovable.app/prev/contato" />
+        <link rel="canonical" href="https://riccio-advocacia.lovable.app/prev/contato" />
       </Helmet>
 
       <PrevLayout ctaMessage={WHATSAPP_MESSAGES.contato}>

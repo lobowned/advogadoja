@@ -19,7 +19,7 @@ const CalculadoraNegativacao = () => {
     "@type": "WebApplication",
     "name": "Calculadora de Indenização por Negativação Indevida",
     "description": "Calcule gratuitamente quanto você pode receber de indenização por nome sujo indevido no SPC/Serasa. Valores de R$ 5.000 a R$ 30.000.",
-    "url": "https://advogadoja.lovable.app/calculadora-negativacao",
+    "url": "https://riccio-advocacia.lovable.app/calculadora-negativacao",
     "applicationCategory": "LegalService",
     "operatingSystem": "Web",
     "offers": {
@@ -30,7 +30,7 @@ const CalculadoraNegativacao = () => {
     "provider": {
       "@type": "LegalService",
       "name": "Riccio Advocacia",
-      "url": "https://advogadoja.lovable.app"
+      "url": "https://riccio-advocacia.lovable.app"
     }
   };
 
@@ -71,11 +71,11 @@ const CalculadoraNegativacao = () => {
         <title>Calculadora de Indenização por Negativação Indevida 2025 | Nome Sujo SPC Serasa</title>
         <meta name="description" content="Calcule sua indenização por negativação indevida no SPC/Serasa. Nome sujo sem dever? Valores de R$ 5.000 a R$ 30.000. Cálculo gratuito e instantâneo." />
         <meta name="keywords" content="calculadora negativação indevida, indenização nome sujo, SPC Serasa indevido, danos morais negativação, quanto ganho nome sujo, advogado negativação" />
-        <link rel="canonical" href="https://advogadoja.lovable.app/calculadora-negativacao" />
+        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-negativacao" />
         <meta property="og:title" content="Calculadora de Indenização por Negativação Indevida 2025" />
         <meta property="og:description" content="Calcule gratuitamente quanto você pode receber de indenização por nome sujo indevido. Valores atualizados 2025." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://advogadoja.lovable.app/calculadora-negativacao" />
+        <meta property="og:url" content="https://riccio-advocacia.lovable.app/calculadora-negativacao" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>

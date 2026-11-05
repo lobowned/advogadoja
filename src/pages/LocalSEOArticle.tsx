@@ -73,14 +73,14 @@ const LocalSEOArticle = () => {
     "author": {
       "@type": "Organization",
       "name": "Riccio Advocacia",
-      "url": "https://advogadoja.lovable.app"
+      "url": "https://riccio-advocacia.lovable.app"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Riccio Advocacia",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://advogadoja.lovable.app/logo.png"
+        "url": "https://riccio-advocacia.lovable.app/logo.png"
       }
     },
     "datePublished": article.updatedAt,
@@ -114,7 +114,7 @@ const LocalSEOArticle = () => {
     "@type": "LegalService",
     "name": `Advogado do Consumidor em ${article.cityName}`,
     "description": `Advogado especializado em direito do consumidor em ${article.cityName}, ${article.state}`,
-    "url": `https://advogadoja.lovable.app/artigos/consumidor/${article.slug}`,
+    "url": `https://riccio-advocacia.lovable.app/artigos/consumidor/${article.slug}`,
     "areaServed": {
       "@type": "City",
       "name": article.cityName,
@@ -135,25 +135,25 @@ const LocalSEOArticle = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://advogadoja.lovable.app"
+        "item": "https://riccio-advocacia.lovable.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Artigos",
-        "item": "https://advogadoja.lovable.app/artigos"
+        "item": "https://riccio-advocacia.lovable.app/artigos"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Consumidor",
-        "item": "https://advogadoja.lovable.app/artigos/consumidor"
+        "item": "https://riccio-advocacia.lovable.app/artigos/consumidor"
       },
       {
         "@type": "ListItem",
         "position": 4,
         "name": article.title,
-        "item": `https://advogadoja.lovable.app/artigos/consumidor/${article.slug}`
+        "item": `https://riccio-advocacia.lovable.app/artigos/consumidor/${article.slug}`
       }
     ]
   };
@@ -168,13 +168,13 @@ const LocalSEOArticle = () => {
         <meta name="keywords" content={article.keywords.join(", ")} />
         {/* Fora da Bahia o escritório não atende presencialmente: página fica acessível, mas fora do índice. */}
         {!isIndexableLocalSEOArticle(article) && <meta name="robots" content="noindex,follow" />}
-        <link rel="canonical" href={`https://advogadoja.lovable.app/artigos/consumidor/${article.slug}`} />
+        <link rel="canonical" href={`https://riccio-advocacia.lovable.app/artigos/consumidor/${article.slug}`} />
         
         {/* Open Graph */}
         <meta property="og:title" content={article.metaTitle} />
         <meta property="og:description" content={article.metaDescription} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://advogadoja.lovable.app/artigos/consumidor/${article.slug}`} />
+        <meta property="og:url" content={`https://riccio-advocacia.lovable.app/artigos/consumidor/${article.slug}`} />
         <meta property="og:locale" content="pt_BR" />
         
         {/* Geo Tags */}

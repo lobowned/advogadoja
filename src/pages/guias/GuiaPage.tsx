@@ -10,7 +10,7 @@ import { blogArticles } from "@/data/blog-articles";
 import { trackWhatsAppConversion } from "@/lib/trackWhatsApp";
 import GuiaFooter, { waLink } from "./GuiaFooter";
 
-const SITE = "https://advogadoja.lovable.app";
+const SITE = "https://riccio-advocacia.lovable.app";
 
 const tituloDoArtigo = (url: string) => {
   const [, , nicheId, slug] = url.split("/");

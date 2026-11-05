@@ -80,7 +80,7 @@ const AdvogadoBahia = () => {
     "@type": "LegalService",
     "name": "Riccio Advocacia na Bahia",
     "description": "Advogado online para consulta jurídica na Bahia. Atendemos Salvador, Feira de Santana, Vitória da Conquista e todas as cidades baianas.",
-    "url": "https://advogadoja.lovable.app/advogado-bahia",
+    "url": "https://riccio-advocacia.lovable.app/advogado-bahia",
     "areaServed": {
       "@type": "State",
       "name": "Bahia",
@@ -108,8 +108,8 @@ const AdvogadoBahia = () => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://advogadoja.lovable.app/" },
-      { "@type": "ListItem", "position": 2, "name": "Advogado Bahia", "item": "https://advogadoja.lovable.app/advogado-bahia" }
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://riccio-advocacia.lovable.app/" },
+      { "@type": "ListItem", "position": 2, "name": "Advogado Bahia", "item": "https://riccio-advocacia.lovable.app/advogado-bahia" }
     ]
   };
 
@@ -119,11 +119,11 @@ const AdvogadoBahia = () => {
         <title>Advogado Online na Bahia | Salvador, Feira de Santana e Mais | Consulta Grátis</title>
         <meta name="description" content="Advogado online na Bahia: Salvador, Feira de Santana, Vitória da Conquista e todas as cidades baianas. Direito do consumidor, trabalhista, previdenciário. Consulta gratuita." />
         <meta name="keywords" content="advogado bahia, advogado salvador, advogado feira de santana, advogado online bahia, advogado consumidor bahia, advogado trabalhista bahia, advogado INSS bahia" />
-        <link rel="canonical" href="https://advogadoja.lovable.app/advogado-bahia" />
+        <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-bahia" />
         
         <meta property="og:title" content="Advogado Online na Bahia | Consulta Jurídica Gratuita" />
         <meta property="og:description" content="Advogado online para toda a Bahia. Atendemos Salvador, Feira de Santana, Vitória da Conquista e mais 8 cidades." />
-        <meta property="og:url" content="https://advogadoja.lovable.app/advogado-bahia" />
+        <meta property="og:url" content="https://riccio-advocacia.lovable.app/advogado-bahia" />
         <meta property="og:type" content="website" />
         
         <script type="application/ld+json">{JSON.stringify(schema)}</script>

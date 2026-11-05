@@ -21,7 +21,7 @@ const CityLanding = () => {
     return <Navigate to="/" replace />;
   }
 
-  const canonicalUrl = `https://advogadoja.lovable.app/advogado/${city.slug}`;
+  const canonicalUrl = `https://riccio-advocacia.lovable.app/advogado/${city.slug}`;
   const indexable = isCityIndexable(city.slug);
 
   const practiceAreas = [
@@ -134,13 +134,13 @@ const CityLanding = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://advogadoja.lovable.app"
+        "item": "https://riccio-advocacia.lovable.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Cidades",
-        "item": "https://advogadoja.lovable.app/advogado"
+        "item": "https://riccio-advocacia.lovable.app/advogado"
       },
       {
         "@type": "ListItem",

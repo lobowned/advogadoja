@@ -6,7 +6,7 @@ const corsHeaders = {
 };
 
 const INDEXNOW_KEY = "7f8e9a2b3c4d5e6f";
-const SITE_HOST = "advogadoja.lovable.app";
+const SITE_HOST = "riccio-advocacia.lovable.app";
 const KEY_LOCATION = `https://${SITE_HOST}/${INDEXNOW_KEY}.txt`;
 
 interface IndexNowRequest {

@@ -5,7 +5,7 @@ import PageTransition from "@/components/motion/PageTransition";
 import { guias } from "@/data/guias";
 import GuiaFooter from "./GuiaFooter";
 
-const SITE = "https://advogadoja.lovable.app";
+const SITE = "https://riccio-advocacia.lovable.app";
 
 const GuiasIndex = () => {
   const itemList = {

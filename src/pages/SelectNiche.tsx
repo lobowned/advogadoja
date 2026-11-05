@@ -17,7 +17,7 @@ const SelectNiche = () => {
       <Helmet>
         <title>Selecionar Área Jurídica | Riccio Advocacia</title>
         <meta name="description" content="Escolha a área jurídica do seu problema: Trabalhista, Família, Consumidor, Previdenciário, Civil ou Criminal. Atendimento online gratuito." />
-        <link rel="canonical" href="https://advogadoja.lovable.app/selecionar-nicho" />
+        <link rel="canonical" href="https://riccio-advocacia.lovable.app/selecionar-nicho" />
         <meta name="robots" content="index, follow" />
       </Helmet>
     <div className="min-h-screen bg-background">

@@ -19,7 +19,7 @@ const CalculadoraPlanoSaude = () => {
     "@type": "WebApplication",
     "name": "Calculadora de Indenização Plano de Saúde",
     "description": "Calcule online e grátis quanto você pode receber de indenização quando o plano de saúde nega cobertura de procedimento, cirurgia ou internação.",
-    "url": "https://advogadoja.lovable.app/calculadora-plano-saude",
+    "url": "https://riccio-advocacia.lovable.app/calculadora-plano-saude",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Web",
     "offers": {
@@ -74,11 +74,11 @@ const CalculadoraPlanoSaude = () => {
         <title>Calculadora de Indenização Plano de Saúde | Negativa de Cobertura 2025</title>
         <meta name="description" content="Plano de saúde negou seu procedimento? Calcule grátis sua indenização por negativa de cobertura. Saiba sobre liminar em 48h. Advogado especializado." />
         <meta name="keywords" content="plano saúde negou, negativa cobertura, liminar plano saúde, indenização plano saúde, calculadora, processo plano saúde" />
-        <link rel="canonical" href="https://advogadoja.lovable.app/calculadora-plano-saude" />
+        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-plano-saude" />
         <meta property="og:title" content="Calculadora de Indenização Plano de Saúde | Negativa de Cobertura" />
         <meta property="og:description" content="Plano de saúde negou seu procedimento? Calcule grátis sua indenização. Saiba sobre liminar em 48h." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://advogadoja.lovable.app/calculadora-plano-saude" />
+        <meta property="og:url" content="https://riccio-advocacia.lovable.app/calculadora-plano-saude" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>

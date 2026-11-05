@@ -61,7 +61,7 @@ const FAQIndex = () => {
     }));
   }, []);
 
-  const canonicalUrl = 'https://advogadoja.lovable.app/perguntas';
+  const canonicalUrl = 'https://riccio-advocacia.lovable.app/perguntas';
 
   // Schema.org for FAQ index
   const faqListSchema = {
@@ -89,7 +89,7 @@ const FAQIndex = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://advogadoja.lovable.app"
+        "item": "https://riccio-advocacia.lovable.app"
       },
       {
         "@type": "ListItem",

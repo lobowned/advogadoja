@@ -2,7 +2,7 @@
  * Builders de JSON-LD com SOMENTE dados reais do escritório (já presentes no código).
  * Não acrescentar nota, avaliação, nº de clientes ou endereço de rua sem confirmação.
  */
-export const SITE_URL = "https://advogadoja.lovable.app";
+export const SITE_URL = "https://riccio-advocacia.lovable.app";
 export const OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 export const FIRM = {

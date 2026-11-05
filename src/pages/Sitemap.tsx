@@ -18,7 +18,7 @@ import { localSEOArticles } from "@/data/local-seo-articles";
 import { getAllLegalAreas } from "@/pages/CityNicheLanding";
 
 const Sitemap = () => {
-  const canonicalUrl = "https://advogadoja.lovable.app/sitemap";
+  const canonicalUrl = "https://riccio-advocacia.lovable.app/sitemap";
 
   // Group articles by niche
   const articlesByNiche = blogArticles.reduce((acc, article) => {
@@ -152,7 +152,7 @@ const Sitemap = () => {
     "isPartOf": {
       "@type": "WebSite",
       "name": "Riccio Advocacia",
-      "url": "https://advogadoja.lovable.app"
+      "url": "https://riccio-advocacia.lovable.app"
     }
   };
 
@@ -164,7 +164,7 @@ const Sitemap = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://advogadoja.lovable.app"
+        "item": "https://riccio-advocacia.lovable.app"
       },
       {
         "@type": "ListItem",

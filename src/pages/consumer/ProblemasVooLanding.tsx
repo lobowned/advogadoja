@@ -26,7 +26,7 @@ const schemaData = {
   "@graph": [
     {
       "@type": "LegalService",
-      "name": "Advogado Especialista em Problemas Aéreos | Advogado Já",
+      "name": "Advogado Especialista em Problemas Aéreos | Riccio Advocacia",
       "description": "Indenização por voo cancelado, atrasado, overbooking, bagagem extraviada e outros problemas aéreos.",
       "url": "https://advogadoja.lovable.app/advogado-problemas-voo",
       "telephone": "+5571997036269",
@@ -49,13 +49,13 @@ const ProblemasVooLanding = () => (
     <SimpleConsumerLanding
       seo={
         <Helmet>
-          <title>{`Problemas com Voo? Conheça Seus Direitos | Advogado Já`}</title>
+          <title>{`Problemas com Voo? Conheça Seus Direitos | Riccio Advocacia`}</title>
           <meta
             name="description"
             content="Voo cancelado, atrasado, overbooking ou bagagem perdida? Advogado especialista em direitos do passageiro aéreo. Indenização por voo cancelado."
           />
           <link rel="canonical" href="https://advogadoja.lovable.app/advogado-problemas-voo" />
-          <meta property="og:title" content="Problemas com Voo? Conheça Seus Direitos | Advogado Já" />
+          <meta property="og:title" content="Problemas com Voo? Conheça Seus Direitos | Riccio Advocacia" />
           <meta property="og:description" content="Voo cancelado, atrasado, overbooking ou bagagem perdida? Advogado especialista em direitos do passageiro aéreo." />
           <meta property="og:url" content="https://advogadoja.lovable.app/advogado-problemas-voo" />
           <meta property="og:type" content="website" />

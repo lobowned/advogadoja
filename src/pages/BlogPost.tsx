@@ -11,14 +11,40 @@ import TableOfContents from "@/components/blog/TableOfContents";
 import SocialShare from "@/components/blog/SocialShare";
 import FloatingCTA from "@/components/blog/FloatingCTA";
 import NewsletterSignup from "@/components/blog/NewsletterSignup";
-import BreadcrumbNav from "@/components/BreadcrumbNav";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import { OG_IMAGE } from "@/lib/seo/schema";
 import PageTransition from "@/components/motion/PageTransition";
 import { getArticleBySlug, getNicheInfo, getRelatedArticles } from "@/data/blog-articles";
 import { getArticleReadingTime } from "@/utils/reading-time";
 import AuthorBox, { authorSchema } from "@/components/blog/AuthorBox";
 
-const BlogPost = () => {
-  const { nicheId, slug } = useParams();
+/** Área do guia pilar / páginas locais a partir do nicho do artigo. */
+const AREA_BY_NICHE: Record<string, { slug: string; guide: string; lawyer: string }> = {
+  trabalhista: { slug: "trabalhista", guide: "Direito Trabalhista", lawyer: "Advogado trabalhista" },
+  previdenciario: { slug: "previdenciario", guide: "Direito Previdenciário", lawyer: "Advogado previdenciário" },
+  familia: { slug: "familia", guide: "Direito de Família", lawyer: "Advogado de família" },
+  consumidor: { slug: "consumidor", guide: "Direito do Consumidor", lawyer: "Advogado do consumidor" },
+  civil: { slug: "consumidor", guide: "Direito do Consumidor", lawyer: "Advogado do consumidor" },
+  penal: { slug: "criminal", guide: "Direito Criminal", lawyer: "Advogado criminal" },
+  criminal: { slug: "criminal", guide: "Direito Criminal", lawyer: "Advogado criminal" },
+};
+
+const LOCAL_CITIES = [
+  { slug: "salvador", name: "Salvador" },
+  { slug: "camacari", name: "Camaçari" },
+  { slug: "lauro-de-freitas", name: "Lauro de Freitas" },
+];
+
+interface BlogPostProps {
+  /** Usado quando outra rota (ex.: /artigos/consumidor/:localSlug) delega para cá. */
+  nicheIdOverride?: string;
+  slugOverride?: string;
+}
+
+const BlogPost = ({ nicheIdOverride, slugOverride }: BlogPostProps = {}) => {
+  const params = useParams();
+  const nicheId = nicheIdOverride ?? params.nicheId;
+  const slug = slugOverride ?? params.slug;
   
   if (!nicheId || !slug) {
     return <Navigate to="/artigos" replace />;
@@ -32,12 +58,15 @@ const BlogPost = () => {
   }
   
   const relatedArticles = getRelatedArticles(article);
+  const area = AREA_BY_NICHE[nicheId] ?? AREA_BY_NICHE.consumidor;
+  const extraSections = article.content.sections ?? [];
   const readingTime = getArticleReadingTime(article.content);
   const articleUrl = `https://advogadoja.lovable.app/artigos/${nicheId}/${slug}`;
 
   const tocItems = [
     { id: "introducao", title: "Introdução" },
     { id: "o-que-e", title: "O que é?" },
+    ...extraSections.map((s, i) => ({ id: `secao-${i + 1}`, title: s.title })),
     { id: "quando-tem-direito", title: "Quando você tem direito?" },
     { id: "documentos", title: "Documentos Necessários" },
     { id: "prazos", title: "Prazos Importantes" },
@@ -58,11 +87,11 @@ const BlogPost = () => {
     "@type": "Article",
     "headline": article.title,
     "description": article.metaDescription,
-    "image": `https://advogadoja.lovable.app/og-image-${nicheId}.jpg`,
+    "image": OG_IMAGE,
     "author": authorSchema,
     "publisher": {
       "@type": "Organization",
-      "name": "Advogado Já",
+      "name": "Riccio Advocacia",
       "url": "https://advogadoja.lovable.app",
       "logo": {
         "@type": "ImageObject",
@@ -86,7 +115,8 @@ const BlogPost = () => {
        article.content.whenYouHaveRight.join(' ').length +
        article.content.documents.join(' ').length +
        article.content.deadlines.length +
-       article.content.faq.map(f => f.question + f.answer).join(' ').length) / 5
+       article.content.faq.map(f => f.question + f.answer).join(' ').length +
+       extraSections.map(s => s.title + ' ' + s.paragraphs.join(' ')).join(' ').length) / 5
     )
   };
 
@@ -107,38 +137,6 @@ const BlogPost = () => {
         "dateCreated": article.updatedAt
       }
     }))
-  };
-
-  // Schema.org BreadcrumbList - For breadcrumb rich snippets
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Início",
-        "item": "https://advogadoja.lovable.app"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Artigos",
-        "item": "https://advogadoja.lovable.app/artigos"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": nicheInfo.name,
-        "item": `https://advogadoja.lovable.app/artigos/${nicheId}`
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "name": article.title,
-        "item": articleUrl
-      }
-    ]
   };
 
   // Schema.org HowTo - For guide articles with step-by-step instructions
@@ -169,12 +167,12 @@ const BlogPost = () => {
     }))
   } : null;
 
-  // Breadcrumb items for BreadcrumbNav component
+  // Trilha (Início › Artigos › Área › título) — o componente também emite o JSON-LD BreadcrumbList
   const breadcrumbItems = [
-    { label: "Início", href: "/" },
-    { label: "Artigos", href: "/artigos" },
-    { label: nicheInfo.name, href: `/artigos/${nicheId}` },
-    { label: article.title }
+    { name: "Início", href: "/" },
+    { name: "Artigos", href: "/artigos" },
+    { name: nicheInfo.name, href: `/artigos/${nicheId}` },
+    { name: article.title },
   ];
 
   return (
@@ -189,6 +187,8 @@ const BlogPost = () => {
         <meta property="og:description" content={article.metaDescription} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={articleUrl} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta name="twitter:image" content={OG_IMAGE} />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={article.metaTitle} />
@@ -199,9 +199,6 @@ const BlogPost = () => {
         </script>
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
         </script>
         {howToSchema && (
           <script type="application/ld+json">
@@ -220,7 +217,7 @@ const BlogPost = () => {
             <div className="flex items-center justify-between">
               <Link to="/" className="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity">
                 <Scale className="w-6 h-6" />
-                <span className="font-bold text-lg">Advogado Já</span>
+                <span className="font-bold text-lg">Riccio Advocacia</span>
               </Link>
               <Button asChild variant="outline" size="sm">
                 <Link to="/">Falar com Advogado</Link>
@@ -229,10 +226,10 @@ const BlogPost = () => {
           </div>
         </header>
 
-        {/* Breadcrumb - Using BreadcrumbNav component */}
+        {/* Breadcrumb (Início › Artigos › Área › título) */}
         <nav className="border-b bg-muted/30">
           <div className="container mx-auto px-4 py-3">
-            <BreadcrumbNav items={breadcrumbItems} showHomeIcon={false} />
+            <Breadcrumbs items={breadcrumbItems} className="font-sans" />
           </div>
         </nav>
 
@@ -303,6 +300,18 @@ const BlogPost = () => {
                   </CardContent>
                 </Card>
               </section>
+
+              {/* Seções extras (artigos consolidados) */}
+              {extraSections.map((section, i) => (
+                <section key={section.title} id={`secao-${i + 1}`} className="mb-8">
+                  <h2 className="text-2xl font-bold mb-4">{section.title}</h2>
+                  <div className="space-y-4 text-muted-foreground leading-relaxed">
+                    {section.paragraphs.map((p, j) => (
+                      <p key={j}>{p}</p>
+                    ))}
+                  </div>
+                </section>
+              ))}
 
               {/* When You Have Right */}
               <section id="quando-tem-direito" className="mb-8">
@@ -410,6 +419,40 @@ const BlogPost = () => {
                 </Card>
               </section>
 
+              {/* Links internos: guia pilar + páginas locais da área */}
+              <section
+                aria-label="Continue lendo"
+                className="mb-12 grid gap-px overflow-hidden rounded-sm border border-[#d4af37]/30 bg-[#d4af37]/20 sm:grid-cols-2"
+              >
+                <div className="bg-[#0b0b0b] p-6">
+                  <p className="font-sans text-[11px] uppercase tracking-[0.25em] text-[#d4af37]">Guia completo da área</p>
+                  <Link
+                    to={`/guia/${area.slug}`}
+                    className="mt-3 block font-display text-2xl leading-tight text-[#f5efe0] hover:text-[#d4af37] transition-colors"
+                  >
+                    Guia de {area.guide} →
+                  </Link>
+                  <p className="mt-2 font-sans text-sm text-[#f5efe0]/70">
+                    Visão geral dos direitos, prazos e caminhos da área, em um só lugar.
+                  </p>
+                </div>
+                <div className="bg-[#0b0b0b] p-6">
+                  <p className="font-sans text-[11px] uppercase tracking-[0.25em] text-[#d4af37]">Atendimento na sua cidade</p>
+                  <ul className="mt-3 space-y-2">
+                    {LOCAL_CITIES.map((c) => (
+                      <li key={c.slug}>
+                        <Link
+                          to={`/advogado-${area.slug}-${c.slug}`}
+                          className="font-sans text-sm text-[#f5efe0]/85 hover:text-[#d4af37] transition-colors"
+                        >
+                          {area.lawyer} em {c.name} →
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </section>
+
               {/* Related Articles */}
               {relatedArticles.length > 0 && (
                 <section>
@@ -428,7 +471,7 @@ const BlogPost = () => {
         {/* Footer */}
         <footer className="border-t py-6 mt-12">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© 2025 Advogado Já | OAB/BA 46.638</p>
+            <p>© 2025 Riccio Advocacia | OAB/BA 46.638</p>
           </div>
         </footer>
 

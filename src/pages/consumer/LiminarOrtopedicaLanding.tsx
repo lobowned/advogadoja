@@ -43,7 +43,7 @@ const schemaData = {
   },
   "provider": {
     "@type": "LegalService",
-    "name": "Advogado Já"
+    "name": "Riccio Advocacia"
   }
 };
 

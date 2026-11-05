@@ -28,8 +28,11 @@ import CTASection from "@/components/CTASection";
 import { 
   getLocalSEOArticleBySlug, 
   getRelatedLocalSEOArticles,
-  LocalSEOArticle as LocalSEOArticleType 
+  LocalSEOArticle as LocalSEOArticleType,
+  isIndexableLocalSEOArticle,
 } from "@/data/local-seo-articles";
+import { getArticleBySlug } from "@/data/blog-articles";
+import BlogPost from "@/pages/BlogPost";
 
 const problemIcons: Record<string, React.ReactNode> = {
   "voo-cancelado": <Plane className="h-5 w-5" />,
@@ -46,6 +49,11 @@ const LocalSEOArticle = () => {
   const article = localSlug ? getLocalSEOArticleBySlug(localSlug) : undefined;
   
   if (!article) {
+    // /artigos/consumidor/:slug também serve os artigos do blog do nicho consumidor
+    // (esta rota ranqueia acima de /artigos/:nicheId/:slug no React Router v6).
+    if (localSlug && getArticleBySlug("consumidor", localSlug)) {
+      return <BlogPost nicheIdOverride="consumidor" slugOverride={localSlug} />;
+    }
     return <Navigate to="/404" replace />;
   }
   
@@ -64,12 +72,12 @@ const LocalSEOArticle = () => {
     "description": article.metaDescription,
     "author": {
       "@type": "Organization",
-      "name": "Advogado Já",
+      "name": "Riccio Advocacia",
       "url": "https://advogadoja.lovable.app"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Advogado Já",
+      "name": "Riccio Advocacia",
       "logo": {
         "@type": "ImageObject",
         "url": "https://advogadoja.lovable.app/logo.png"
@@ -158,6 +166,8 @@ const LocalSEOArticle = () => {
         <title>{article.metaTitle}</title>
         <meta name="description" content={article.metaDescription} />
         <meta name="keywords" content={article.keywords.join(", ")} />
+        {/* Fora da Bahia o escritório não atende presencialmente: página fica acessível, mas fora do índice. */}
+        {!isIndexableLocalSEOArticle(article) && <meta name="robots" content="noindex,follow" />}
         <link rel="canonical" href={`https://advogadoja.lovable.app/artigos/consumidor/${article.slug}`} />
         
         {/* Open Graph */}
@@ -191,7 +201,7 @@ const LocalSEOArticle = () => {
       {/* Simple header with logo */}
       <header className="bg-background border-b py-4">
         <div className="container mx-auto px-4">
-          <Link to="/" className="text-2xl font-bold text-primary">Advogado Já</Link>
+          <Link to="/" className="text-2xl font-bold text-primary">Riccio Advocacia</Link>
         </div>
       </header>
       

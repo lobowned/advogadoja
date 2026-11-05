@@ -13,10 +13,10 @@ const TermsOfUse = () => {
   return (
     <PageTransition variant="fade">
       <Helmet>
-        <title>Termos de Uso | Advogado Já</title>
+        <title>Termos de Uso | Riccio Advocacia</title>
         <meta 
           name="description" 
-          content="Termos de Uso do Advogado Já. Conheça as condições de uso da plataforma, responsabilidades e direitos em conformidade com a OAB." 
+          content="Termos de Uso do Riccio Advocacia. Conheça as condições de uso da plataforma, responsabilidades e direitos em conformidade com a OAB." 
         />
         <link rel="canonical" href="https://advogadoja.lovable.app/termos-de-uso" />
       </Helmet>
@@ -28,7 +28,7 @@ const TermsOfUse = () => {
             <div className="flex items-center justify-between gap-2">
               <Link to="/" className="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity">
                 <Scale className="w-5 h-5 sm:w-6 sm:h-6" />
-                <span className="font-bold text-base sm:text-lg">Advogado Já</span>
+                <span className="font-bold text-base sm:text-lg">Riccio Advocacia</span>
               </Link>
               <div className="flex items-center gap-1 sm:gap-2">
                 <Button asChild variant="ghost" size="sm" className="text-xs sm:text-sm px-2 sm:px-3 min-h-[44px]">
@@ -56,7 +56,7 @@ const TermsOfUse = () => {
               Termos de Uso
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Leia atentamente os termos e condições de uso da plataforma Advogado Já, 
+              Leia atentamente os termos e condições de uso da plataforma Riccio Advocacia, 
               em conformidade com o Código de Ética da OAB e legislação brasileira.
             </p>
             <p className="text-sm text-muted-foreground mt-4">
@@ -87,7 +87,7 @@ const TermsOfUse = () => {
               </CardHeader>
               <CardContent className="prose prose-sm max-w-none text-muted-foreground">
                 <p>
-                  <strong className="text-foreground">Razão Social:</strong> Advogado Já<br />
+                  <strong className="text-foreground">Razão Social:</strong> Riccio Advocacia<br />
                   <strong className="text-foreground">CNPJ:</strong> 50.947.818/0001-94<br />
                   <strong className="text-foreground">Inscrição OAB:</strong> OAB/BA 46.638<br />
                   <strong className="text-foreground">Endereço:</strong> Salvador, Bahia, Brasil<br />
@@ -103,7 +103,7 @@ const TermsOfUse = () => {
               </CardHeader>
               <CardContent className="prose prose-sm max-w-none text-muted-foreground">
                 <p>
-                  O Advogado Já é uma plataforma de atendimento jurídico que oferece:
+                  O Riccio Advocacia é uma plataforma de atendimento jurídico que oferece:
                 </p>
                 <ul className="list-disc pl-5 space-y-1">
                   <li><strong className="text-foreground">Triagem inicial:</strong> coleta de informações sobre seu caso por meio de assistente virtual</li>
@@ -224,12 +224,12 @@ const TermsOfUse = () => {
               <CardContent className="prose prose-sm max-w-none text-muted-foreground">
                 <p>
                   Todo o conteúdo da plataforma (textos, artigos, logotipos, design, código-fonte) é 
-                  propriedade do Advogado Já e está protegido por direitos autorais.
+                  propriedade do Riccio Advocacia e está protegido por direitos autorais.
                 </p>
                 <ul className="list-disc pl-5 space-y-1 mt-4">
                   <li>Artigos podem ser compartilhados com citação da fonte</li>
                   <li>É proibida a reprodução comercial sem autorização</li>
-                  <li>A marca "Advogado Já" é protegida</li>
+                  <li>A marca "Riccio Advocacia" é protegida</li>
                 </ul>
               </CardContent>
             </Card>
@@ -347,7 +347,7 @@ const TermsOfUse = () => {
         {/* Footer */}
         <footer className="border-t py-6">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© 2025 Advogado Já | OAB/BA 46.638</p>
+            <p>© 2025 Riccio Advocacia | OAB/BA 46.638</p>
             <div className="flex justify-center gap-4 mt-2">
               <Link to="/termos-de-uso" className="hover:text-foreground transition-colors font-medium text-foreground">
                 Termos de Uso

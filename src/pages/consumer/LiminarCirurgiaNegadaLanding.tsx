@@ -38,7 +38,7 @@ const schema = {
     "Tratamento Oncológico Negado",
     "Cirurgia Ortopédica Negada",
   ],
-  "provider": { "@type": "LegalService", "name": "Advogado Já" },
+  "provider": { "@type": "LegalService", "name": "Riccio Advocacia" },
 };
 
 const faqSchema = {
@@ -56,7 +56,7 @@ const LiminarCirurgiaNegadaLanding = () => (
     <SimpleConsumerLanding
       seo={
         <Helmet>
-          <title>Liminar Cirurgia Negada pelo Plano de Saúde | Advogado Já</title>
+          <title>Liminar Cirurgia Negada pelo Plano de Saúde | Riccio Advocacia</title>
           <meta name="description" content="Teve cirurgia negada pelo plano de saúde? Advogado para pedido de liminar judicial que garanta seu tratamento. Bariátrica, câncer, ortopedia e mais." />
           <meta name="keywords" content="liminar cirurgia plano saúde, cirurgia negada, tutela urgência saúde, bariátrica negada, quimioterapia negada, prótese negada, advogado plano saúde" />
           <link rel="canonical" href="https://advogadoja.lovable.app/liminar-cirurgia-negada" />

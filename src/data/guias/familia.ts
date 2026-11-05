@@ -156,7 +156,7 @@ export const guiaFamilia: Guia = {
     "/artigos/familia/pensao-alimenticia",
     "/artigos/familia/revisao-pensao-alimenticia-2025",
     "/artigos/familia/guarda-filhos-compartilhada-unilateral",
-    "/artigos/familia/guarda",
+    "/artigos/familia/guarda-filhos-compartilhada-unilateral",
     "/artigos/familia/uniao-estavel-direitos",
     "/artigos/familia/reconhecimento-paternidade",
     "/artigos/familia/inventario-heranca",

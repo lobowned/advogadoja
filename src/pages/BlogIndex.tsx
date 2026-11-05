@@ -20,12 +20,12 @@ const BlogIndex = () => {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "Blog Advogado Já",
+    "name": "Blog Riccio Advocacia",
     "description": "Artigos sobre direitos do consumidor, trânsito, finanças e orientação jurídica gratuita.",
     "url": "https://advogadoja.lovable.app/blog",
     "publisher": {
       "@type": "Organization",
-      "name": "Advogado Já",
+      "name": "Riccio Advocacia",
       "logo": {
         "@type": "ImageObject",
         "url": "https://advogadoja.lovable.app/logo.png"
@@ -48,12 +48,12 @@ const BlogIndex = () => {
   return (
     <>
       <Helmet>
-        <title>Blog Advogado Já | Artigos sobre Direito do Consumidor, Trânsito e Finanças</title>
+        <title>Blog Riccio Advocacia | Artigos sobre Direito do Consumidor, Trânsito e Finanças</title>
         <meta name="description" content="Artigos completos sobre direitos do consumidor, multas de trânsito, superendividamento e muito mais. Orientação jurídica gratuita." />
         <meta name="keywords" content="blog jurídico, direito do consumidor, multas de trânsito, superendividamento, orientação jurídica, advogado online" />
         <link rel="canonical" href="https://advogadoja.lovable.app/blog" />
         
-        <meta property="og:title" content="Blog Advogado Já | Orientação Jurídica Gratuita" />
+        <meta property="og:title" content="Blog Riccio Advocacia | Orientação Jurídica Gratuita" />
         <meta property="og:description" content="Artigos completos sobre direitos do consumidor, multas de trânsito, superendividamento e muito mais." />
         <meta property="og:url" content="https://advogadoja.lovable.app/blog" />
         <meta property="og:type" content="website" />
@@ -71,7 +71,7 @@ const BlogIndex = () => {
           
           <header className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Blog Advogado Já
+              Blog Riccio Advocacia
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Artigos completos sobre seus direitos. Informação jurídica de qualidade para você tomar as melhores decisões.

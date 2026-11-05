@@ -1392,7 +1392,7 @@ No entanto, é importante considerar:
   {
     id: 'geral-1',
     slug: 'como-funciona-atendimento-advogado-ja',
-    question: 'Como funciona o atendimento do Advogado Já?',
+    question: 'Como funciona o atendimento do Riccio Advocacia?',
     answer: `O atendimento online com advogado é 100% legal e cada vez mais comum.
 
 **Como funciona:**

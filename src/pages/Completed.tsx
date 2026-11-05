@@ -21,7 +21,7 @@ const Completed = () => {
   return (
     <PageTransition variant="scale">
     <Helmet>
-      <title>{`Informações recebidas | Advogado Já`}</title>
+      <title>{`Informações recebidas | Riccio Advocacia`}</title>
       <meta name="robots" content="noindex, nofollow" />
       <link rel="canonical" href="https://advogadoja.lovable.app/concluido" />
     </Helmet>

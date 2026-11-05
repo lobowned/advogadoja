@@ -147,10 +147,10 @@ export const guiaCriminal: Guia = {
     },
   ],
   artigosRelacionados: [
-    "/artigos/penal/defesa-flagrante",
+    "/artigos/penal/prisao-flagrante-direitos",
     "/artigos/penal/prisao-flagrante-direitos",
     "/artigos/penal/habeas-corpus",
-    "/artigos/penal/habeas-corpus-liberdade",
+    "/artigos/penal/habeas-corpus",
     "/artigos/penal/violencia-domestica",
     "/artigos/penal/estelionato-golpes-fraudes",
     "/artigos/penal/calunia-difamacao-injuria",

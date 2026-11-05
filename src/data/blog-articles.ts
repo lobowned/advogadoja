@@ -16,6 +16,8 @@ export interface BlogArticle {
     documents: string[];
     deadlines: string;
     faq: { question: string; answer: string }[];
+    /** Seções extras (artigos consolidados): título + parágrafos. */
+    sections?: { title: string; paragraphs: string[] }[];
   };
   relatedActions: string[];
   updatedAt: string;
@@ -284,62 +286,118 @@ export const blogArticles: BlogArticle[] = [
     updatedAt: '2025-01-01',
   },
   {
-    id: 'rescisao-indireta',
-    nicheId: 'trabalhista',
-    slug: 'rescisao-indireta-quando-empregado-demite-empresa',
-    title: 'Rescisão Indireta: Quando o Empregado Pode "Demitir" a Empresa',
-    metaTitle: 'Rescisão Indireta | Falta Grave do Empregador',
-    metaDescription: 'Sua empresa não paga salário, FGTS ou comete faltas graves? Saiba como pedir rescisão indireta e receber todos os direitos. Advogado trabalhista.',
-    keywords: ['rescisão indireta', 'falta grave empregador', 'justa causa empresa', 'demitir empresa', 'art 483 clt', 'rescisão por culpa do empregador'],
-    excerpt: 'Entenda quando o empregado pode aplicar a "justa causa" na empresa e receber todos os direitos trabalhistas, como se fosse demitido sem justa causa.',
-    content: {
-      intro: 'A rescisão indireta é conhecida como a "justa causa do empregador". Ocorre quando a empresa comete faltas graves que tornam impossível a continuidade do contrato de trabalho. Nesses casos, o empregado pode "demitir" a empresa e receber todos os direitos.',
-      whatIs: 'A rescisão indireta está prevista no artigo 483 da CLT. É o direito do empregado de encerrar o contrato de trabalho por culpa do empregador, recebendo todas as verbas como se fosse demitido sem justa causa, incluindo multa de 40% do FGTS e seguro-desemprego.',
-      whenYouHaveRight: [
-        'Atraso ou falta de pagamento de salário por mais de 2 meses',
-        'FGTS não depositado pela empresa',
-        'Assédio moral ou sexual no ambiente de trabalho',
-        'Exigência de serviços superiores às forças do empregado',
-        'Condições insalubres sem pagamento de adicional',
-        'Tratamento com rigor excessivo pelo empregador',
-        'Descumprimento de obrigações do contrato de trabalho',
-        'Redução do trabalho que afeta significativamente o salário',
+    "id": "rescisao-indireta",
+    "nicheId": "trabalhista",
+    "slug": "rescisao-indireta",
+    "title": "Rescisão Indireta: Quando o Empregado Pode “Demitir” a Empresa",
+    "metaTitle": "Rescisão Indireta | Art. 483 da CLT e Falta Grave do Empregador",
+    "metaDescription": "A empresa atrasa salário, não deposita FGTS ou comete assédio? Entenda a rescisão indireta (art. 483 da CLT), como pedir, as provas e os direitos envolvidos.",
+    "keywords": [
+      "rescisão indireta",
+      "falta grave empregador",
+      "justa causa da empresa",
+      "art 483 clt",
+      "demissão indireta",
+      "rescisão por culpa do empregador",
+      "FGTS não depositado",
+      "atraso de salário"
+    ],
+    "excerpt": "Entenda quando a falta grave do empregador permite encerrar o contrato com os mesmos direitos da dispensa sem justa causa, e como fazer o pedido com segurança.",
+    "content": {
+      "intro": "A rescisão indireta é conhecida como a “justa causa do empregador”. Quando a empresa descumpre obrigações graves, como pagar salário, depositar o FGTS ou tratar o empregado com dignidade, o trabalhador pode encerrar o contrato e pedir na Justiça os mesmos direitos de quem é dispensado sem justa causa. É um caminho legítimo, mas exige preparo: se o juiz não reconhecer a falta grave, a saída pode ser tratada como pedido de demissão.",
+      "whatIs": "A rescisão indireta está prevista no artigo 483 da CLT. É o término do contrato por culpa do empregador, reconhecido pela Justiça do Trabalho. Se a ação for julgada procedente, o empregado recebe as verbas da dispensa imotivada: saldo de salário, aviso prévio indenizado, férias vencidas e proporcionais com um terço, 13º proporcional, saque do FGTS com multa de 40% e guias para o seguro-desemprego, quando preenchidos os requisitos.",
+      "sections": [
+        {
+          "title": "As hipóteses do artigo 483 da CLT",
+          "paragraphs": [
+            "A lei lista situações que autorizam a rescisão indireta: exigir serviços superiores às forças do empregado, proibidos por lei, contrários aos bons costumes ou alheios ao contrato; tratar o empregado com rigor excessivo; expô-lo a perigo manifesto de mal considerável; descumprir as obrigações do contrato; praticar ato lesivo à honra e à boa fama do empregado ou de sua família; ofendê-lo fisicamente; e reduzir o trabalho, quando pago por peça ou tarefa, de forma a afetar sensivelmente o salário.",
+            "Na prática, os casos mais frequentes são atrasos salariais repetidos, ausência de depósitos de FGTS, assédio moral ou sexual, rebaixamento de função ou salário sem acordo e falta de condições mínimas de segurança. O Tribunal Superior do Trabalho entende que a ausência ou irregularidade reiterada dos depósitos de FGTS é falta grave suficiente, e o atraso salarial contumaz também costuma ser reconhecido."
+          ]
+        },
+        {
+          "title": "Continuar trabalhando ou sair?",
+          "paragraphs": [
+            "O §3º do artigo 483 permite que, nas hipóteses de descumprimento do contrato e de redução do trabalho por peça, o empregado continue trabalhando enquanto aguarda a decisão. Nas demais, o afastamento costuma ser necessário, principalmente quando a permanência expõe o trabalhador a risco, como no assédio.",
+            "A escolha tem consequências: quem continua trabalhando segue recebendo salário, mas convive com o ambiente do conflito; quem se afasta deixa de receber e assume o risco de a falta não ser reconhecida. Essa decisão deve ser tomada com orientação jurídica, antes de qualquer comunicação à empresa."
+          ]
+        },
+        {
+          "title": "Imediatidade e perdão tácito",
+          "paragraphs": [
+            "No caso do empregador, a jurisprudência trabalhista tende a flexibilizar a exigência de reação imediata, porque o empregado depende do emprego e muitas vezes tolera a situação para não perder a renda. Ainda assim, é recomendável agir assim que a falta se tornar insustentável e documentar tudo, para evitar o argumento de que a situação foi aceita."
+          ]
+        },
+        {
+          "title": "Como funciona o pedido",
+          "paragraphs": [
+            "O empregado comunica a saída (ou permanece, quando a lei permite) e ajuíza reclamação trabalhista pedindo o reconhecimento da rescisão indireta e o pagamento das verbas. A prova é do trabalhador: extratos do FGTS, holerites com datas de pagamento, mensagens, testemunhas e registros de reclamações internas. Se houver urgência, é possível pedir tutela antecipada, por exemplo para liberação do FGTS. Também é comum haver tentativa de acordo na audiência inicial."
+          ]
+        },
+        {
+          "title": "Rescisão indireta, pedido de demissão e acordo: compare",
+          "paragraphs": [
+            "No pedido de demissão, o empregado recebe saldo de salário, férias vencidas e proporcionais com um terço e 13º proporcional, mas não saca o FGTS, não recebe a multa de 40% nem o seguro-desemprego, e ainda pode ter de cumprir ou indenizar o aviso prévio. No acordo previsto no artigo 484-A da CLT, as partes dividem algumas verbas: metade do aviso prévio indenizado, multa de 20% do FGTS, saque de até 80% do saldo e nenhum seguro-desemprego.",
+            "Na rescisão indireta reconhecida, o trabalhador recebe tudo o que receberia numa dispensa sem justa causa. Por isso, quando há falta grave do empregador bem documentada, pedir demissão ou aceitar um acordo pode significar abrir mão de direitos. Antes de assinar qualquer documento de desligamento, vale comparar as três hipóteses com um advogado, considerando as provas disponíveis e o risco de a falta não ser reconhecida."
+          ]
+        }
       ],
-      documents: [
-        'Comprovantes de atraso ou falta de pagamento',
-        'Extrato do FGTS mostrando ausência de depósitos',
-        'Provas de assédio (mensagens, e-mails, gravações)',
-        'Atestados médicos relacionados às condições',
-        'Contrato de trabalho e alterações',
-        'Testemunhos de colegas',
-        'Registros de reclamações ao RH ou sindicato',
+      "whenYouHaveRight": [
+        "Atrasos salariais repetidos ou falta de pagamento do salário",
+        "FGTS não depositado ou depositado de forma irregular",
+        "Assédio moral ou sexual no ambiente de trabalho",
+        "Rebaixamento de função ou redução salarial sem acordo",
+        "Exigência de serviços superiores às forças, ilegais ou alheios ao contrato",
+        "Tratamento com rigor excessivo ou ofensas à honra",
+        "Exposição a perigo sem condições de segurança",
+        "Descumprimento grave de obrigações do contrato de trabalho"
       ],
-      deadlines: 'Não há prazo específico para pedir rescisão indireta, mas é importante agir assim que identificar a falta grave. A demora pode ser interpretada como perdão tácito. Após ajuizar a ação, o prazo geral de prescrição é de 2 anos.',
-      faq: [
-        {
-          question: 'O que é rescisão indireta?',
-          answer: 'É quando o empregado encerra o contrato por culpa do empregador. Funciona como uma "justa causa ao contrário": quem comete a falta grave é a empresa, e o trabalhador recebe todos os direitos.',
-        },
-        {
-          question: 'Quais são as faltas graves do empregador que permitem rescisão indireta?',
-          answer: 'As principais são: atraso de salário, FGTS não depositado, assédio moral ou sexual, condições degradantes de trabalho, exigência de tarefas impossíveis, e descumprimento do contrato.',
-        },
-        {
-          question: 'Preciso continuar trabalhando enquanto o processo corre?',
-          answer: 'Depende. Se a falta for muito grave (assédio, por exemplo), você pode deixar de trabalhar imediatamente. Em outros casos, pode ser mais seguro continuar até a decisão judicial.',
-        },
-        {
-          question: 'Recebo todos os direitos como na demissão sem justa causa?',
-          answer: 'Sim! Você recebe: saldo de salário, aviso prévio indenizado, férias + 1/3, 13º proporcional, multa de 40% do FGTS, liberação do FGTS e seguro-desemprego.',
-        },
-        {
-          question: 'Quanto tempo demora um processo de rescisão indireta?',
-          answer: 'Em média, de 1 a 3 anos na Justiça do Trabalho. Mas se houver urgência (atraso de salário causando problemas), é possível pedir tutela antecipada.',
-        },
+      "documents": [
+        "Carteira de trabalho e contrato",
+        "Holerites e comprovantes que mostrem os atrasos",
+        "Extrato do FGTS com a ausência de depósitos",
+        "Mensagens, e-mails ou gravações que provem assédio ou ordens abusivas",
+        "Atestados médicos relacionados às condições de trabalho",
+        "Registros de reclamações ao RH, ouvidoria ou sindicato",
+        "Nome e contato de colegas que possam testemunhar"
       ],
+      "deadlines": "Não há prazo específico para pedir a rescisão indireta, mas é recomendável agir quando a falta se tornar insustentável, para afastar a tese de perdão tácito. Depois do fim do contrato, o prazo para ajuizar a ação é de 2 anos, podendo ser cobrados os últimos 5 anos de direitos.",
+      "faq": [
+        {
+          "question": "O que é rescisão indireta?",
+          "answer": "É o fim do contrato por culpa do empregador, reconhecido pela Justiça do Trabalho com base no art. 483 da CLT. O trabalhador recebe as mesmas verbas da dispensa sem justa causa."
+        },
+        {
+          "question": "Atraso de salário dá rescisão indireta?",
+          "answer": "Atrasos repetidos ou a falta de pagamento costumam ser reconhecidos como falta grave. Um atraso isolado e pequeno pode não bastar; o caso concreto é avaliado pelo juiz."
+        },
+        {
+          "question": "FGTS não depositado é motivo suficiente?",
+          "answer": "Segundo a jurisprudência do TST, a ausência ou irregularidade reiterada dos depósitos do FGTS é falta grave que autoriza a rescisão indireta."
+        },
+        {
+          "question": "Preciso continuar trabalhando enquanto o processo corre?",
+          "answer": "Depende da hipótese. No descumprimento do contrato a lei permite continuar trabalhando; em casos como assédio, o afastamento costuma ser necessário. Avalie com um advogado antes de agir."
+        },
+        {
+          "question": "E se o juiz não reconhecer a rescisão indireta?",
+          "answer": "Se o empregado se afastou, a saída tende a ser tratada como pedido de demissão, com perda de aviso prévio indenizado, multa de 40% e seguro-desemprego. Por isso a prova deve ser reunida antes."
+        },
+        {
+          "question": "Recebo seguro-desemprego?",
+          "answer": "Sim, se a rescisão indireta for reconhecida e os requisitos do seguro-desemprego estiverem preenchidos."
+        },
+        {
+          "question": "Quanto tempo leva o processo?",
+          "answer": "Varia conforme a vara e a complexidade. Pode haver acordo na primeira audiência, e pedidos urgentes podem ser analisados antes da sentença."
+        }
+      ]
     },
-    relatedActions: ['demissao-sem-justa-causa', 'assedio-moral'],
-    updatedAt: '2026-01-12',
+    "relatedActions": [
+      "assedio-moral",
+      "demissao-sem-justa-causa",
+      "verbas-rescisorias"
+    ],
+    "updatedAt": "2026-11-05"
   },
   {
     id: 'verbas-rescisorias',
@@ -396,58 +454,113 @@ export const blogArticles: BlogArticle[] = [
     updatedAt: '2026-01-12',
   },
   {
-    id: 'adicional-noturno',
-    nicheId: 'trabalhista',
-    slug: 'adicional-noturno-calcular-direitos',
-    title: 'Adicional Noturno: Como Calcular e Garantir Seus Direitos',
-    metaTitle: 'Adicional Noturno | Cálculo e Direitos',
-    metaDescription: 'Trabalha à noite e não recebe adicional noturno? Saiba como calcular, qual o percentual e como cobrar. Advogado trabalhista explica.',
-    keywords: ['adicional noturno', 'hora noturna', 'trabalho noturno', 'cálculo adicional noturno', 'horário noturno', 'trabalhar de noite'],
-    excerpt: 'Entenda como funciona o adicional noturno, quanto você deve receber por hora trabalhada à noite e como cobrar valores não pagos.',
-    content: {
-      intro: 'O trabalho noturno desgasta mais o corpo e prejudica a vida social do trabalhador. Por isso, a CLT garante um adicional mínimo de 20% sobre a hora diurna, além de uma hora noturna reduzida.',
-      whatIs: 'O adicional noturno é um acréscimo de no mínimo 20% sobre a hora normal de trabalho para quem trabalha entre 22h e 5h (trabalhadores urbanos). Além disso, a hora noturna vale 52 minutos e 30 segundos.',
-      whenYouHaveRight: [
-        'Trabalho realizado entre 22h e 5h (urbano)',
-        'Trabalho entre 21h e 5h (agricultura)',
-        'Trabalho entre 20h e 4h (pecuária)',
-        'Horas extras realizadas após as 5h em continuidade ao trabalho noturno',
-        'Mesmo em regime de escala ou plantão',
+    "id": "adicional-noturno",
+    "nicheId": "trabalhista",
+    "slug": "adicional-noturno-calcular-direitos",
+    "title": "Adicional Noturno: Como Calcular e Garantir Seus Direitos",
+    "metaTitle": "Adicional Noturno e Trabalho Noturno | Cálculo e Hora Reduzida",
+    "metaDescription": "Trabalha à noite? Entenda o adicional noturno de 20%, a hora reduzida de 52min30s, a prorrogação após as 5h, os reflexos e como cobrar valores não pagos.",
+    "keywords": [
+      "adicional noturno",
+      "trabalho noturno",
+      "hora noturna reduzida",
+      "cálculo adicional noturno",
+      "horário noturno",
+      "jornada 12x36 noturna",
+      "hora extra noturna"
+    ],
+    "excerpt": "Entenda o horário noturno de cada categoria, a hora reduzida, como calcular o adicional e a hora extra noturna, e como cobrar o que não foi pago.",
+    "content": {
+      "intro": "O trabalho noturno desgasta mais o corpo e afeta a vida familiar e social. Por isso a lei garante a quem trabalha à noite uma remuneração maior e uma hora de trabalho mais curta. Mesmo assim, erros no pagamento são comuns, principalmente na hora reduzida, na prorrogação após as 5h e nos reflexos em outras verbas.",
+      "whatIs": "O artigo 73 da CLT garante ao trabalhador urbano um adicional de pelo menos 20% sobre a hora diurna para o trabalho realizado entre 22h e 5h, e determina que a hora noturna seja computada como 52 minutos e 30 segundos. Na prática, 7 horas de relógio no período noturno correspondem a 8 horas para fins de pagamento. Convenções coletivas podem prever percentuais maiores.",
+      "sections": [
+        {
+          "title": "Horário noturno de cada categoria",
+          "paragraphs": [
+            "Para o trabalhador urbano, o horário noturno vai das 22h às 5h. No trabalho rural, a Lei 5.889/1973 define horários diferentes: das 21h às 5h na lavoura (agricultura) e das 20h às 4h na pecuária. No meio rural, o adicional é de 25% e não há hora reduzida. Empregados domésticos seguem a regra urbana, conforme a Lei Complementar 150/2015."
+          ]
+        },
+        {
+          "title": "Como calcular, passo a passo",
+          "paragraphs": [
+            "Primeiro, encontre o valor da hora normal: divida o salário mensal pelo divisor da jornada (220 para quem trabalha 44 horas semanais). Depois, acrescente o adicional de 20%. Exemplo ilustrativo: salário de R$ 2.200,00 dividido por 220 resulta em hora de R$ 10,00; com o adicional, a hora noturna vale R$ 12,00.",
+            "Em seguida, converta as horas de relógio em horas noturnas. Quem trabalha das 22h às 5h cumpre 7 horas de relógio, que equivalem a 8 horas noturnas (420 minutos divididos por 52,5). No exemplo, seriam 8 horas de R$ 12,00 por noite. Os valores são apenas ilustrativos; o cálculo real depende do salário, da jornada e da norma coletiva."
+          ]
+        },
+        {
+          "title": "Prorrogação após as 5h e hora extra noturna",
+          "paragraphs": [
+            "Quando a jornada é cumprida integralmente no período noturno e se estende após as 5h, as horas seguintes também recebem o adicional noturno (art. 73, §5º, da CLT e Súmula 60, II, do TST). É o caso, por exemplo, de quem trabalha das 22h às 7h: as horas entre 5h e 7h continuam sendo noturnas para fins de pagamento.",
+            "A hora extra feita à noite recebe os dois adicionais: o adicional noturno compõe a base de cálculo da hora extra (OJ 97 da SDI-1 do TST). Na jornada 12x36, o TST entende que também é devido o adicional sobre as horas prorrogadas após as 5h (OJ 388 da SDI-1)."
+          ]
+        },
+        {
+          "title": "Reflexos e mudança de turno",
+          "paragraphs": [
+            "O adicional noturno pago com habitualidade integra o salário para todos os efeitos (Súmula 60, I, do TST), refletindo em férias com um terço, 13º, FGTS, aviso prévio e descanso semanal remunerado. Se o empregado for transferido para o turno diurno, perde o direito ao adicional (Súmula 265 do TST), o que não caracteriza redução salarial ilícita. A transferência do dia para a noite, por outro lado, é alteração contratual que em regra depende de concordância do empregado (art. 468 da CLT)."
+          ]
+        },
+        {
+          "title": "Erros comuns no pagamento e como conferir o holerite",
+          "paragraphs": [
+            "Os erros mais frequentes são pagar o adicional apenas sobre as horas de relógio, ignorando a hora reduzida; deixar de pagar o adicional sobre as horas trabalhadas depois das 5h quando a jornada noturna se prorroga; calcular a hora extra noturna sem incluir o adicional na base; e não refletir a média do adicional nas férias, no 13º e no FGTS.",
+            "Para conferir, compare os horários do cartão de ponto com as rubricas do holerite. Some os minutos trabalhados entre 22h e 5h, divida por 52,5 para encontrar as horas noturnas e multiplique pelo valor da hora com adicional. Verifique também se a convenção coletiva da sua categoria prevê percentual maior que 20%, o que é comum em alguns setores. Diferenças encontradas podem ser cobradas do empregador e, se não forem pagas, discutidas na Justiça do Trabalho, sempre com base nos registros de jornada e nas normas coletivas aplicáveis."
+          ]
+        }
       ],
-      documents: [
-        'Cartões de ponto mostrando horários noturnos',
-        'Holerites/contracheques',
-        'Escalas de trabalho',
-        'Contrato de trabalho',
-        'Testemunhos de colegas',
-        'Registros eletrônicos de entrada/saída',
+      "whenYouHaveRight": [
+        "Trabalho realizado entre 22h e 5h (trabalhador urbano e doméstico)",
+        "Trabalho entre 21h e 5h na lavoura ou entre 20h e 4h na pecuária (rural)",
+        "Horas trabalhadas após as 5h em prorrogação da jornada noturna",
+        "Horas extras realizadas no período noturno",
+        "Jornada em escala, plantão ou 12x36 que inclua horário noturno",
+        "Adicional pago sem considerar a hora reduzida de 52min30s"
       ],
-      deadlines: 'Você pode cobrar adicional noturno dos últimos 5 anos. O prazo para entrar com ação é de 2 anos após o fim do contrato.',
-      faq: [
-        {
-          question: 'Qual o valor do adicional noturno?',
-          answer: 'No mínimo 20% sobre a hora diurna. Algumas convenções coletivas preveem percentuais maiores, como 25%, 30% ou até 50%.',
-        },
-        {
-          question: 'Qual o horário considerado noturno?',
-          answer: 'Para trabalhadores urbanos, é de 22h às 5h. Para agricultores, de 21h às 5h. Para pecuaristas, de 20h às 4h.',
-        },
-        {
-          question: 'A hora noturna é menor que 60 minutos?',
-          answer: 'Sim! A hora noturna vale 52 minutos e 30 segundos. Ou seja, quem trabalha 7 horas noturnas na prática trabalha 8 horas para fins de remuneração.',
-        },
-        {
-          question: 'O adicional noturno reflete nas férias e 13º?',
-          answer: 'Sim. O adicional noturno habitual integra o salário e reflete em férias, 13º, FGTS, aviso prévio e outras verbas.',
-        },
-        {
-          question: 'E se eu trabalhar além das 5h da manhã?',
-          answer: 'Se você começou a trabalhar no período noturno e continua após as 5h, as horas seguintes também são consideradas noturnas para fins de pagamento.',
-        },
+      "documents": [
+        "Cartões de ponto ou registros eletrônicos de entrada e saída",
+        "Holerites e contracheques",
+        "Escalas de trabalho",
+        "Contrato de trabalho",
+        "Acordo ou convenção coletiva da categoria",
+        "Nome e contato de colegas que possam testemunhar"
       ],
+      "deadlines": "Podem ser cobradas as diferenças dos últimos 5 anos anteriores ao ajuizamento. Depois do fim do contrato, o prazo para entrar com a ação é de 2 anos (art. 7º, XXIX, da Constituição).",
+      "faq": [
+        {
+          "question": "Qual o valor do adicional noturno?",
+          "answer": "No mínimo 20% sobre a hora diurna para o trabalhador urbano e 25% para o rural. Convenções coletivas podem prever percentuais maiores."
+        },
+        {
+          "question": "Qual o horário considerado noturno?",
+          "answer": "Urbano: das 22h às 5h. Rural na lavoura: das 21h às 5h. Rural na pecuária: das 20h às 4h."
+        },
+        {
+          "question": "O que é a hora noturna reduzida?",
+          "answer": "No trabalho urbano, cada hora noturna é computada como 52 minutos e 30 segundos. Assim, 7 horas de relógio entre 22h e 5h equivalem a 8 horas para pagamento."
+        },
+        {
+          "question": "E se eu continuar trabalhando depois das 5h?",
+          "answer": "Se a jornada foi cumprida no período noturno e se prorrogou, as horas após as 5h também recebem o adicional noturno (Súmula 60, II, do TST)."
+        },
+        {
+          "question": "Hora extra noturna tem adicional duplo?",
+          "answer": "Sim. A hora extra feita à noite é calculada sobre a hora já acrescida do adicional noturno, somando os dois adicionais."
+        },
+        {
+          "question": "O adicional noturno reflete nas férias e no 13º?",
+          "answer": "Sim, quando pago com habitualidade ele integra o salário e reflete em férias, 13º, FGTS, aviso prévio e DSR."
+        },
+        {
+          "question": "Posso ser obrigado a mudar para o turno da noite?",
+          "answer": "Em regra, a transferência para o noturno é alteração contratual que depende de concordância do empregado. Já a volta ao turno diurno pode suprimir o adicional (Súmula 265 do TST)."
+        }
+      ]
     },
-    relatedActions: ['horas-extras', 'demissao-sem-justa-causa'],
-    updatedAt: '2026-01-12',
+    "relatedActions": [
+      "horas-extras",
+      "intervalo-intrajornada"
+    ],
+    "updatedAt": "2026-11-05"
   },
   {
     id: 'ferias-nao-pagas',
@@ -505,118 +618,210 @@ export const blogArticles: BlogArticle[] = [
     updatedAt: '2026-01-12',
   },
   {
-    id: 'desvio-funcao',
-    nicheId: 'trabalhista',
-    slug: 'desvio-funcao-acumulo-funcoes',
-    title: 'Desvio e Acúmulo de Função: Direito a Diferenças Salariais',
-    metaTitle: 'Desvio de Função | Acúmulo de Função CLT',
-    metaDescription: 'Exerce função diferente da registrada? Acumula duas funções? Saiba como receber diferenças salariais. Advogado trabalhista.',
-    keywords: ['desvio de função', 'acúmulo de função', 'diferença salarial', 'função diferente', 'equiparação salarial', 'salário por fora'],
-    excerpt: 'Descubra se você tem direito a diferenças salariais por exercer função diferente da registrada ou acumular mais de uma função.',
-    content: {
-      intro: 'Muitos trabalhadores exercem funções diferentes daquelas para as quais foram contratados ou acumulam múltiplas funções sem receber por isso. A CLT garante o direito a diferenças salariais nesses casos.',
-      whatIs: 'Desvio de função ocorre quando o trabalhador exerce atividades diferentes das previstas no contrato. Acúmulo de função é quando o empregado exerce sua função normal mais outra, sem receber adicional.',
-      whenYouHaveRight: [
-        'Exerce função diferente da registrada na carteira',
-        'Acumula duas ou mais funções distintas',
-        'Recebe menos que colega que faz o mesmo trabalho',
-        'Foi promovido "de boca" sem registro',
-        'Realiza tarefas de cargo superior sem promoção',
-        'Substituição permanente de colega em férias/licença',
+    "id": "desvio-funcao",
+    "nicheId": "trabalhista",
+    "slug": "desvio-funcao-acumulo-funcoes",
+    "title": "Desvio e Acúmulo de Função: Quando Há Direito a Diferenças Salariais",
+    "metaTitle": "Desvio de Função e Acúmulo de Função | Diferenças Salariais",
+    "metaDescription": "Faz o trabalho de outro cargo ou acumula funções sem receber a mais? Entenda desvio e acúmulo de função, equiparação salarial, provas e prazos para cobrar.",
+    "keywords": [
+      "desvio de função",
+      "acúmulo de função",
+      "diferença salarial",
+      "equiparação salarial",
+      "reenquadramento",
+      "função diferente da carteira",
+      "plano de cargos"
+    ],
+    "excerpt": "Entenda a diferença entre desvio de função, acúmulo de função e equiparação salarial, quando cada um gera direito a diferenças e como provar.",
+    "content": {
+      "intro": "Muitos trabalhadores são contratados para um cargo e, com o tempo, passam a fazer tarefas de outro, geralmente mais complexo e mais bem pago, sem qualquer reajuste. Outros acumulam a própria função com a de um colega que saiu. Dependendo da situação, isso pode gerar direito a diferenças salariais, mas cada hipótese tem regras próprias.",
+      "whatIs": "Desvio de função é exercer, de forma habitual, as atividades de um cargo diferente daquele registrado, sem a alteração contratual e o salário correspondentes. Acúmulo de função é exercer a própria função somada a outra distinta, que não faz parte das atribuições contratadas. Equiparação salarial (art. 461 da CLT) é receber menos que um colega que faz o mesmo trabalho, para o mesmo empregador, no mesmo estabelecimento. São três pedidos diferentes, com requisitos diferentes.",
+      "sections": [
+        {
+          "title": "Desvio de função na prática",
+          "paragraphs": [
+            "O desvio é mais fácil de demonstrar quando a empresa tem plano de cargos e salários ou descrição formal de funções, porque fica claro qual é o salário do cargo efetivamente exercido. Exemplo: o empregado registrado como auxiliar administrativo que, todos os dias, faz o trabalho de analista. Nesse caso, a jurisprudência costuma reconhecer as diferenças salariais do período, com reflexos.",
+            "A Orientação Jurisprudencial 125 da SDI-1 do TST esclarece que o desvio de função não gera direito a novo enquadramento, mas apenas às diferenças salariais. Ou seja, o pedido é de pagamento da diferença, e não de “promoção” forçada. No serviço público, a regra é ainda mais restrita, pois a mudança de cargo exige concurso."
+          ]
+        },
+        {
+          "title": "Acúmulo de função: quando gera adicional",
+          "paragraphs": [
+            "A CLT não prevê um adicional genérico por acúmulo. O parágrafo único do artigo 456 estabelece que, sem cláusula expressa, o empregado se obriga a todo serviço compatível com a sua condição pessoal. Por isso, tarefas acessórias e compatíveis com o cargo, executadas dentro da mesma jornada, normalmente não geram acréscimo.",
+            "O adicional costuma ser reconhecido quando a nova atribuição é claramente distinta, mais complexa ou de maior responsabilidade, ou quando há previsão em convenção coletiva ou lei específica da profissão. Algumas categorias, como radialistas (Lei 6.615/1978), têm previsão legal de adicional por acúmulo."
+          ]
+        },
+        {
+          "title": "Equiparação salarial",
+          "paragraphs": [
+            "Para pedir equiparação, é preciso apontar um colega paradigma que exerça função idêntica, com igual produtividade e perfeição técnica, para o mesmo empregador e no mesmo estabelecimento. Após a Lei 13.467/2017, a diferença de tempo de serviço para o mesmo empregador não pode ser superior a quatro anos, e a diferença de tempo na função não pode ser superior a dois anos. Se a empresa tiver quadro de carreira válido, a equiparação não se aplica."
+          ]
+        },
+        {
+          "title": "Como provar",
+          "paragraphs": [
+            "A prova mais forte combina documentos e testemunhas: e-mails com delegação de tarefas, assinaturas em relatórios do cargo superior, organogramas, descrições de cargo, crachás e prints de sistemas que mostrem os acessos. Colegas que acompanharam a rotina podem confirmar o que era feito. Contracheques de quem ocupa o cargo exercido ajudam a calcular a diferença, mas não é necessário obtê-los antes da ação."
+          ]
+        },
+        {
+          "title": "Como é calculada a diferença e o que a empresa costuma alegar",
+          "paragraphs": [
+            "O cálculo parte do salário do cargo efetivamente exercido, conforme plano de cargos, norma coletiva ou salário pago a quem ocupa a função, e subtrai o salário recebido. A diferença mensal, no período comprovado e dentro do limite de 5 anos, gera reflexos em férias com um terço, 13º, FGTS, aviso prévio e horas extras, quando habituais. No acúmulo, quando reconhecido, os tribunais costumam fixar um percentual sobre o salário, definido por norma coletiva ou pelo juiz conforme a extensão das novas tarefas.",
+            "As defesas mais comuns das empresas são que as tarefas eram compatíveis com o cargo, que eram eventuais, que se tratava de substituição temporária ou que a empresa não tem plano de cargos. Por isso, a prova da habitualidade e da diferença real entre as atribuições é decisiva. Substituições meramente eventuais, como cobrir um colega por poucos dias, em regra não geram diferenças; já a substituição que não tem caráter meramente eventual, inclusive nas férias do titular, garante ao substituto o mesmo salário do substituído enquanto durar (Súmula 159 do TST)."
+          ]
+        }
       ],
-      documents: [
-        'Carteira de Trabalho (função registrada)',
-        'Descrição de cargo original',
-        'E-mails e comunicações sobre suas tarefas',
-        'Organograma da empresa',
-        'Testemunhos de colegas',
-        'Holerites comparativos (seus e de colegas)',
-        'Fotos ou vídeos do trabalho realizado',
+      "whenYouHaveRight": [
+        "Exerce habitualmente as funções de cargo diferente do registrado na carteira",
+        "Realiza tarefas de cargo superior sem promoção nem reajuste",
+        "Acumula sua função com outra distinta e de maior responsabilidade",
+        "Recebe menos que colega que faz o mesmo trabalho, no mesmo estabelecimento",
+        "Foi promovido apenas verbalmente, sem registro nem aumento",
+        "Substitui de forma permanente um colega de cargo mais bem remunerado"
       ],
-      deadlines: 'Você pode cobrar diferenças salariais dos últimos 5 anos. O prazo para entrar com ação é de 2 anos após o fim do contrato.',
-      faq: [
-        {
-          question: 'O que é desvio de função?',
-          answer: 'É quando você foi contratado para uma função, mas exerce outra diferente no dia a dia. Por exemplo: contratado como auxiliar, mas trabalha como supervisor.',
-        },
-        {
-          question: 'Qual a diferença entre desvio e acúmulo de função?',
-          answer: 'No desvio, você faz função diferente da contratada. No acúmulo, você faz sua função normal mais outra adicional. Ambos geram direito a diferenças.',
-        },
-        {
-          question: 'Quanto posso receber de diferença salarial?',
-          answer: 'Depende da diferença entre os salários. Se você faz trabalho de quem ganha R$ 3.000, mas recebe R$ 2.000, tem direito à diferença de R$ 1.000 por mês, com reflexos.',
-        },
-        {
-          question: 'Preciso de testemunhas para provar?',
-          answer: 'Testemunhas ajudam muito, mas não são a única prova. E-mails, mensagens, organogramas e documentos também servem.',
-        },
-        {
-          question: 'Qual o prazo para reclamar?',
-          answer: 'Você pode cobrar os últimos 5 anos de diferenças. O prazo para processar é de 2 anos após sair da empresa.',
-        },
+      "documents": [
+        "Carteira de trabalho com a função registrada",
+        "Descrição de cargos ou plano de cargos e salários da empresa",
+        "E-mails e mensagens com delegação de tarefas",
+        "Relatórios, documentos assinados e registros de sistema",
+        "Organograma da empresa",
+        "Holerites seus e, se possível, de quem ocupa o cargo exercido",
+        "Nome e contato de colegas que possam testemunhar"
       ],
+      "deadlines": "Podem ser cobradas as diferenças dos últimos 5 anos anteriores ao ajuizamento da ação. Depois do fim do contrato, o prazo para entrar com a ação é de 2 anos (art. 7º, XXIX, da Constituição).",
+      "faq": [
+        {
+          "question": "Qual a diferença entre desvio e acúmulo de função?",
+          "answer": "No desvio, você exerce as tarefas de outro cargo no lugar das suas. No acúmulo, faz as suas e mais as de outra função. Os dois podem gerar diferenças, mas o acúmulo só gera adicional quando a nova tarefa é realmente distinta ou há previsão em norma coletiva ou lei."
+        },
+        {
+          "question": "Desvio de função garante promoção?",
+          "answer": "Não. Segundo a OJ 125 da SDI-1 do TST, o desvio gera direito às diferenças salariais do período, e não ao reenquadramento no novo cargo."
+        },
+        {
+          "question": "Quanto posso receber de diferença?",
+          "answer": "A diferença entre o seu salário e o do cargo efetivamente exercido, no período comprovado, com reflexos em férias, 13º, FGTS e outras verbas. O valor depende das provas e de cada caso."
+        },
+        {
+          "question": "Preciso de testemunhas?",
+          "answer": "Ajudam bastante, mas não são a única prova. E-mails, relatórios, organogramas e registros de sistema também demonstram as tarefas realizadas."
+        },
+        {
+          "question": "A empresa pode me demitir se eu reclamar?",
+          "answer": "Não há estabilidade por esse motivo, mas a dispensa comprovadamente retaliatória pode ser considerada discriminatória e gerar indenização."
+        }
+      ]
     },
-    relatedActions: ['horas-extras', 'demissao-sem-justa-causa'],
-    updatedAt: '2026-01-12',
+    "relatedActions": [
+      "horas-extras",
+      "demissao-sem-justa-causa"
+    ],
+    "updatedAt": "2026-11-05"
   },
   {
-    id: 'pejotizacao',
-    nicheId: 'trabalhista',
-    slug: 'pejotizacao-vinculo-empregaticio',
-    title: 'Pejotização: Quando Você Tem Direito a Reconhecer Vínculo',
-    metaTitle: 'Pejotização | Reconhecimento de Vínculo CLT',
-    metaDescription: 'Trabalha como PJ mas tem chefe, horário e salário fixo? Pode ser fraude trabalhista. Saiba como reconhecer vínculo e receber direitos.',
-    keywords: ['pejotização', 'vínculo empregatício', 'PJ fraude', 'MEI CLT', 'fraude trabalhista', 'pessoa jurídica fraude'],
-    excerpt: 'Entenda o que é pejotização fraudulenta e quando você pode exigir o reconhecimento do vínculo empregatício com todos os direitos da CLT.',
-    content: {
-      intro: 'A pejotização é uma prática cada vez mais comum onde empresas contratam trabalhadores como PJ (Pessoa Jurídica) para evitar pagar direitos trabalhistas. Quando há fraude, o trabalhador pode buscar o reconhecimento do vínculo.',
-      whatIs: 'Pejotização é a contratação de um trabalhador através de pessoa jurídica (MEI, LTDA, etc.) ao invés de carteira assinada. É legal quando genuína, mas fraudulenta quando mascara uma relação de emprego.',
-      whenYouHaveRight: [
-        'Trabalha com subordinação (tem chefe que dá ordens)',
-        'Tem horário fixo definido pela empresa',
-        'Trabalha com pessoalidade (só você pode fazer)',
-        'Presta serviço de forma habitual e contínua',
-        'Recebe valor fixo mensal como salário',
-        'Trabalha com exclusividade para uma empresa',
-        'Usa equipamentos e estrutura da empresa',
+    "id": "pejotizacao",
+    "nicheId": "trabalhista",
+    "slug": "pejotizacao-vinculo-empregaticio",
+    "title": "Pejotização: Quando o Contrato PJ Esconde um Vínculo de Emprego",
+    "metaTitle": "Pejotização e Vínculo Empregatício | Quando o PJ é Fraude",
+    "metaDescription": "Trabalha como PJ ou MEI, mas cumpre horário e recebe ordens? Entenda quando a pejotização é fraude, como provar o vínculo e quais direitos podem ser cobrados.",
+    "keywords": [
+      "pejotização",
+      "vínculo empregatício",
+      "PJ fraude",
+      "MEI CLT",
+      "reconhecimento de vínculo",
+      "CLT disfarçada",
+      "fraude trabalhista",
+      "trabalho PJ direitos"
+    ],
+    "excerpt": "Entenda quando a contratação como PJ ou MEI é legítima, quando é fraude trabalhista e como buscar o reconhecimento do vínculo de emprego com os direitos da CLT.",
+    "content": {
+      "intro": "A pejotização acontece quando a empresa exige que o trabalhador abra um CNPJ (MEI, ME ou LTDA) para prestar serviços que, na prática, são de empregado. O contrato diz “prestação de serviços”, as notas fiscais saem todo mês, mas o dia a dia é de emprego: chefe, horário, metas, exclusividade. Quando isso acontece, a Justiça do Trabalho olha para a realidade, e não para o papel.",
+      "whatIs": "Pejotização é a contratação de uma pessoa física por meio de pessoa jurídica para afastar a aplicação da CLT. Contratar um PJ é lícito quando há autonomia de verdade: o profissional organiza o próprio trabalho, atende vários clientes, assume o risco do negócio e pode se fazer substituir. A contratação é fraudulenta quando estão presentes os requisitos da relação de emprego dos artigos 2º e 3º da CLT, e o artigo 9º da CLT declara nulos os atos praticados para desvirtuar esses direitos. Nesse caso, o que se busca é o reconhecimento do vínculo, com anotação na carteira e pagamento de todas as verbas do período.",
+      "sections": [
+        {
+          "title": "Os quatro requisitos do vínculo de emprego",
+          "paragraphs": [
+            "A CLT considera empregado quem presta serviço com pessoalidade, não eventualidade, onerosidade e subordinação. Pessoalidade significa que é você quem precisa fazer o trabalho, sem poder mandar outra pessoa no seu lugar. Não eventualidade é a prestação contínua, ligada à rotina da empresa. Onerosidade é o pagamento pelo serviço, ainda que chamado de honorário ou “valor do contrato”. Subordinação é estar sujeito a ordens, controle de horário, metas, cobrança de resultado e punições.",
+            "A subordinação é o ponto que costuma decidir o caso. Grupos de WhatsApp com ordens diárias, obrigação de bater ponto ou avisar ausências, necessidade de pedir “férias” ao gestor, uso de crachá, e-mail corporativo e equipamento da empresa, e participação obrigatória em reuniões internas são indícios comuns. A dependência econômica de um único contratante também pesa, embora sozinha não baste."
+          ]
+        },
+        {
+          "title": "Quando o contrato PJ é válido",
+          "paragraphs": [
+            "Nem toda contratação como PJ é fraude. A reforma trabalhista (Lei 13.467/2017) e decisões do Supremo Tribunal Federal reconheceram a licitude de outras formas de divisão do trabalho, como a terceirização (ADPF 324 e Tema 725). O profissional que negocia o próprio preço, define como e quando trabalha, atende outros clientes e não está inserido na hierarquia da empresa tende a ser considerado autônomo.",
+            "A discussão sobre contratos de PJ chegou ao STF no Tema 1.389 da repercussão geral, que trata da competência da Justiça do Trabalho, da licitude da contratação de autônomo ou pessoa jurídica e do ônus da prova da fraude. Em 2025, o relator determinou a suspensão nacional dos processos sobre o tema até o julgamento. Por isso, antes de ajuizar a ação, é importante verificar com o advogado o andamento atualizado desse julgamento e como ele afeta o seu caso."
+          ]
+        },
+        {
+          "title": "O que pode ser cobrado se o vínculo for reconhecido",
+          "paragraphs": [
+            "Reconhecido o vínculo, o trabalhador passa a ter direito a tudo o que um empregado teria recebido no período: anotação da carteira, 13º salário, férias com um terço, depósitos de FGTS, recolhimentos previdenciários, horas extras e adicionais, se houver. Se o contrato terminou por iniciativa da empresa, somam-se aviso prévio, multa de 40% do FGTS e liberação das guias de seguro-desemprego, conforme o caso.",
+            "O valor exato depende da remuneração, do tempo de serviço, da convenção coletiva da categoria e das provas produzidas. Não existe resultado garantido: o juiz avalia a prova de cada processo. Por isso o trabalho de reunir documentos antes de sair da empresa faz diferença."
+          ]
+        },
+        {
+          "title": "Como reunir provas sem se expor",
+          "paragraphs": [
+            "Guarde cópias do contrato, das notas fiscais e dos comprovantes de pagamento, que mostram a regularidade e o valor fixo. Salve prints de conversas com gestores contendo ordens, cobranças de horário e escalas. Anote nomes de colegas que viveram a mesma situação e possam testemunhar. Evite copiar documentos sigilosos da empresa ou dados de clientes: a prova deve ser sobre a sua relação de trabalho, obtida de forma lícita."
+          ]
+        }
       ],
-      documents: [
-        'Contrato de prestação de serviços',
-        'Notas fiscais emitidas',
-        'E-mails com ordens e instruções',
-        'Prints de grupos de trabalho',
-        'Escalas de trabalho definidas pela empresa',
-        'Comprovantes de pagamento regular',
-        'Testemunhos de outros trabalhadores',
-        'Crachá ou identificação da empresa',
+      "whenYouHaveRight": [
+        "Cumpre horário fixo definido pela empresa ou precisa justificar ausências",
+        "Recebe ordens diretas de superiores e tem metas cobradas",
+        "Não pode enviar outra pessoa em seu lugar (pessoalidade)",
+        "Presta serviço de forma contínua, ligada à rotina da empresa",
+        "Recebe valor fixo mensal, como se fosse salário",
+        "Trabalha com exclusividade ou depende economicamente de um único contratante",
+        "Usa equipamentos, e-mail, crachá e estrutura da empresa",
+        "Foi obrigado a abrir MEI ou CNPJ como condição para ser contratado"
       ],
-      deadlines: 'Você pode reclamar direitos dos últimos 5 anos da relação. O prazo para entrar com ação é de 2 anos após o fim do contrato/prestação de serviços.',
-      faq: [
-        {
-          question: 'O que é pejotização?',
-          answer: 'É quando a empresa contrata um trabalhador como PJ ao invés de CLT para não pagar direitos trabalhistas. Se há subordinação, horário e pessoalidade, é fraude.',
-        },
-        {
-          question: 'Quais são os requisitos do vínculo empregatício?',
-          answer: 'São 4: pessoalidade (só você faz), habitualidade (trabalho contínuo), subordinação (recebe ordens) e onerosidade (recebe pagamento). Com esses 4, há vínculo.',
-        },
-        {
-          question: 'Posso processar mesmo tendo assinado como PJ?',
-          answer: 'Sim! A Justiça analisa a realidade, não o contrato. Se você trabalhava como empregado, o contrato de PJ é considerado fraude.',
-        },
-        {
-          question: 'Quais direitos recebo se reconhecer o vínculo?',
-          answer: 'Todos! FGTS + multa 40%, férias + 1/3, 13º salário, horas extras, aviso prévio, seguro-desemprego e contribuições ao INSS.',
-        },
-        {
-          question: 'Quanto tempo posso reclamar retroativo?',
-          answer: 'Você pode pedir o reconhecimento de todo o período trabalhado e cobrar as verbas dos últimos 5 anos.',
-        },
+      "documents": [
+        "Contrato de prestação de serviços e aditivos",
+        "Notas fiscais emitidas e comprovantes de pagamento regulares",
+        "E-mails, mensagens e prints de grupos com ordens e cobranças",
+        "Escalas, controles de horário ou registros de acesso",
+        "Crachá, e-mail corporativo ou outra identificação da empresa",
+        "Nome e contato de colegas que possam testemunhar",
+        "Extrato do CNIS, para conferir os recolhimentos ao INSS"
       ],
+      "deadlines": "O prazo para ajuizar a reclamação trabalhista é de 2 anos contados do fim da prestação de serviços, e podem ser cobradas as verbas dos últimos 5 anos anteriores ao ajuizamento (art. 7º, XXIX, da Constituição). O pedido de reconhecimento do vínculo em si é declaratório e abrange todo o período trabalhado. Como o Tema 1.389 do STF pode influenciar o andamento, convém buscar orientação antes que o prazo de 2 anos se aproxime.",
+      "faq": [
+        {
+          "question": "O que é pejotização?",
+          "answer": "É a contratação de um trabalhador como pessoa jurídica para evitar os encargos da CLT. Se há pessoalidade, habitualidade, pagamento e subordinação, o contrato PJ pode ser considerado fraude (art. 9º da CLT)."
+        },
+        {
+          "question": "Posso ter o vínculo reconhecido mesmo tendo emitido notas fiscais?",
+          "answer": "Sim. A emissão de notas e a assinatura do contrato PJ não impedem o reconhecimento. A Justiça do Trabalho analisa como o trabalho era prestado na realidade."
+        },
+        {
+          "question": "MEI também pode pedir vínculo?",
+          "answer": "Pode. Ser MEI não impede o reconhecimento. Se a abertura do MEI foi exigida para trabalhar como empregado subordinado, a contratação pode ser considerada fraudulenta."
+        },
+        {
+          "question": "Quais direitos recebo se o vínculo for reconhecido?",
+          "answer": "Os direitos de qualquer empregado no período: anotação na carteira, FGTS, férias com um terço, 13º, recolhimentos ao INSS, horas extras e, se a empresa encerrou o contrato, aviso prévio, multa de 40% e guias do seguro-desemprego."
+        },
+        {
+          "question": "Posso entrar com ação enquanto ainda trabalho como PJ?",
+          "answer": "Pode, não é preciso esperar o fim do contrato. Mas os riscos de continuar na empresa durante o processo devem ser avaliados com um advogado antes."
+        },
+        {
+          "question": "O que é o Tema 1.389 do STF?",
+          "answer": "É o recurso em que o Supremo vai definir regras sobre a contratação de autônomos e pessoas jurídicas, incluindo competência e ônus da prova da fraude. Em 2025 houve ordem de suspensão nacional dos processos sobre o assunto; confira a situação atualizada com seu advogado."
+        }
+      ]
     },
-    relatedActions: ['demissao-sem-justa-causa', 'horas-extras'],
-    updatedAt: '2026-01-12',
+    "relatedActions": [
+      "demissao-sem-justa-causa",
+      "horas-extras",
+      "verbas-rescisorias"
+    ],
+    "updatedAt": "2026-11-05"
   },
 
   // FAMÍLIA
@@ -719,54 +924,117 @@ export const blogArticles: BlogArticle[] = [
     updatedAt: '2025-01-01',
   },
   {
-    id: 'guarda',
-    nicheId: 'familia',
-    slug: 'guarda',
-    title: 'Guarda de Filhos: Compartilhada, Unilateral e Alternada',
-    metaTitle: 'Guarda de Filhos | Compartilhada vs Unilateral',
-    metaDescription: 'Entenda os tipos de guarda de filhos: compartilhada, unilateral e alternada. Saiba qual a melhor opção e como fazer o pedido.',
-    keywords: ['guarda de filhos', 'guarda compartilhada', 'guarda unilateral', 'guarda alternada', 'direito de visita', 'regulamentação de visitas'],
-    excerpt: 'Conheça os diferentes tipos de guarda de filhos, suas vantagens e desvantagens, e como funciona o processo para definir a guarda.',
-    content: {
-      intro: 'A definição da guarda dos filhos é uma das questões mais importantes em casos de separação. A lei brasileira prioriza a guarda compartilhada, mas cada caso deve ser analisado individualmente.',
-      whatIs: 'A guarda é o direito e dever de cuidar, proteger e tomar decisões importantes na vida dos filhos. Pode ser compartilhada (ambos os pais decidem juntos) ou unilateral (apenas um genitor decide).',
-      whenYouHaveRight: [
-        'Separação ou divórcio do casal',
-        'Dissolução de união estável',
-        'Quando nunca houve convivência entre os genitores',
-        'Necessidade de modificar guarda existente',
-        'Situações de risco para a criança',
+    "id": "guarda-filhos-tipos",
+    "nicheId": "familia",
+    "slug": "guarda-filhos-compartilhada-unilateral",
+    "title": "Guarda de Filhos: Compartilhada, Unilateral e Alternada",
+    "metaTitle": "Guarda de Filhos | Compartilhada, Unilateral e Alternada",
+    "metaDescription": "Separou e precisa definir a guarda? Entenda a guarda compartilhada, unilateral e alternada, a convivência, a mudança de cidade e como pedir ou revisar a guarda.",
+    "keywords": [
+      "guarda de filhos",
+      "guarda compartilhada",
+      "guarda unilateral",
+      "guarda alternada",
+      "direito de visita",
+      "regulamentação de visitas",
+      "convivência",
+      "modificação de guarda"
+    ],
+    "excerpt": "Conheça os tipos de guarda, como o juiz decide pelo melhor interesse da criança, como funciona a convivência e quando é possível pedir a mudança da guarda.",
+    "content": {
+      "intro": "A definição da guarda é uma das decisões mais delicadas de uma separação. A lei brasileira adota a guarda compartilhada como regra, mas a escolha final sempre parte do melhor interesse da criança ou do adolescente. Entender os tipos de guarda e como o Judiciário decide ajuda os pais a construir um acordo realista ou a se preparar para um processo.",
+      "whatIs": "Guarda é o conjunto de direitos e deveres dos pais de cuidar, proteger, educar e tomar as decisões importantes da vida dos filhos. Ela está regulada nos artigos 1.583 a 1.590 do Código Civil. A guarda não se confunde com a pensão alimentícia, nem com a residência da criança: mesmo na guarda compartilhada a criança normalmente tem uma casa de referência, e o outro genitor tem convivência ampla. O poder familiar continua com os dois pais em qualquer modalidade.",
+      "sections": [
+        {
+          "title": "Guarda compartilhada: a regra desde 2014",
+          "paragraphs": [
+            "Com a Lei 13.058/2014, o artigo 1.584, §2º, do Código Civil passou a determinar que, não havendo acordo, o juiz aplique a guarda compartilhada quando ambos os pais estiverem aptos a exercer o poder familiar. Ela só não será aplicada se um dos genitores declarar que não deseja a guarda ou se houver elementos que indiquem risco à criança, como violência doméstica (regra reforçada pela Lei 14.713/2023).",
+            "Na guarda compartilhada, decisões sobre escola, saúde, religião, viagens e mudança de cidade são tomadas em conjunto. O tempo de convivência deve ser dividido de forma equilibrada, considerando a rotina da criança, e o juiz fixa a cidade considerada base de moradia. Compartilhar a guarda não elimina a pensão: quem tem mais recursos continua contribuindo na proporção das possibilidades."
+          ]
+        },
+        {
+          "title": "Guarda unilateral e guarda alternada",
+          "paragraphs": [
+            "Na guarda unilateral, apenas um dos pais detém a guarda, e o outro mantém o direito de convivência e o dever de supervisionar os interesses do filho, podendo pedir informações e prestação de contas (art. 1.583, §5º). Ela é aplicada quando um dos pais não quer ou não pode exercer a guarda, ou quando a compartilhada não atende ao melhor interesse da criança.",
+            "A guarda alternada, em que a criança muda de casa em períodos iguais e cada genitor decide sozinho enquanto está com ela, não tem previsão expressa no Código Civil e costuma ser vista com cautela pelos tribunais, pela instabilidade que pode gerar na rotina. Não confunda com a compartilhada com convivência equilibrada, que é a regra."
+          ]
+        },
+        {
+          "title": "Como o juiz decide",
+          "paragraphs": [
+            "O juiz analisa a rotina da criança, os vínculos afetivos, a disponibilidade de cada genitor, a escola, a saúde e, conforme a idade e maturidade, a opinião do próprio filho. Em casos de conflito, é comum a realização de estudo psicossocial por equipe técnica. Indícios de alienação parental (Lei 12.318/2010), violência ou negligência são levados em conta. Não existe preferência legal pela mãe ou pelo pai.",
+            "A guarda também pode ser atribuída a terceiros, como avós ou tios, quando os pais não tiverem condições, sempre considerando o grau de parentesco e a relação de afinidade e afetividade (art. 1.584, §5º)."
+          ]
+        },
+        {
+          "title": "Mudança de cidade e revisão da guarda",
+          "paragraphs": [
+            "Mudar de cidade com o filho, quando isso altera a convivência, depende de concordância do outro genitor ou de autorização judicial. A mudança unilateral pode levar a pedido de modificação da guarda e, conforme o caso, ser apontada como ato de alienação parental. Viagens ao exterior exigem autorização de ambos os pais ou do juiz.",
+            "A guarda pode ser revista a qualquer tempo quando houver mudança relevante das circunstâncias, como alteração de rotina, descumprimento reiterado da convivência ou situação de risco. O pedido é feito na Vara de Família, com provas da nova realidade."
+          ]
+        },
+        {
+          "title": "Acordo ou processo judicial",
+          "paragraphs": [
+            "Quando os pais chegam a um consenso, o acordo de guarda e convivência pode ser homologado pelo juiz, junto com o divórcio ou de forma autônoma, com participação do Ministério Público por envolver interesse de criança. Um bom acordo detalha a residência de referência, os dias de convivência, feriados, férias escolares, aniversários, viagens e a forma de comunicação entre os pais. Quanto mais claro, menor a chance de novos conflitos."
+          ]
+        }
       ],
-      documents: [
-        'Certidão de nascimento do filho',
-        'Comprovante de residência',
-        'Documentos pessoais dos genitores',
-        'Comprovantes de renda',
-        'Documentos escolares da criança',
-        'Relatórios médicos (se relevante)',
+      "whenYouHaveRight": [
+        "Separação, divórcio ou dissolução de união estável com filhos menores",
+        "Pais que nunca viveram juntos e precisam regularizar guarda e convivência",
+        "Necessidade de modificar uma guarda já fixada por mudança de circunstâncias",
+        "Descumprimento reiterado do regime de convivência",
+        "Situações de risco, negligência ou violência contra a criança",
+        "Avós e outros parentes, em situações especiais e no melhor interesse da criança"
       ],
-      deadlines: 'O pedido pode ser feito a qualquer momento. Modificações de guarda podem ser solicitadas quando houver mudança nas circunstâncias.',
-      faq: [
-        {
-          question: 'O que é guarda compartilhada?',
-          answer: 'É quando ambos os pais têm responsabilidade conjunta nas decisões importantes da vida do filho. A criança pode morar com um deles (residência base) mas ambos decidem juntos.',
-        },
-        {
-          question: 'A mãe sempre tem preferência na guarda?',
-          answer: 'Não, a lei não dá preferência a nenhum dos genitores. A decisão é baseada no melhor interesse da criança.',
-        },
-        {
-          question: 'O que é guarda alternada?',
-          answer: 'É quando a criança alterna a residência entre as casas dos pais por períodos iguais. Não é comum no Brasil e geralmente não é recomendada.',
-        },
-        {
-          question: 'Posso perder a guarda dos meus filhos?',
-          answer: 'Sim, em casos graves como abandono, maus-tratos, abuso ou negligência. A perda da guarda requer processo judicial e provas.',
-        },
+      "documents": [
+        "Certidão de nascimento dos filhos",
+        "Documentos pessoais dos genitores",
+        "Comprovante de residência",
+        "Comprovantes de renda",
+        "Documentos escolares e de saúde da criança",
+        "Provas relevantes em caso de conflito (mensagens, relatórios, boletins)",
+        "Laudo psicológico ou estudo psicossocial, quando houver"
       ],
+      "deadlines": "Não há prazo para pedir a guarda ou a regulamentação da convivência. A revisão pode ser solicitada sempre que houver mudança relevante nas circunstâncias. Em situações de risco, é possível pedir medida de urgência ao juiz.",
+      "faq": [
+        {
+          "question": "A guarda compartilhada é obrigatória?",
+          "answer": "É a regra legal desde 2014, mesmo sem acordo, quando os dois pais estão aptos. Não se aplica se um deles declarar que não quer a guarda ou houver elementos de risco, como violência doméstica."
+        },
+        {
+          "question": "Qual a diferença entre guarda compartilhada e alternada?",
+          "answer": "Na compartilhada, os pais decidem juntos e a criança tem uma casa de referência, com convivência equilibrada. Na alternada, a criança muda de casa por períodos iguais e cada um decide sozinho no seu período; ela não está prevista no Código Civil e é pouco aplicada."
+        },
+        {
+          "question": "A mãe tem preferência na guarda?",
+          "answer": "Não. A lei não dá preferência a nenhum dos genitores. A decisão segue o melhor interesse da criança."
+        },
+        {
+          "question": "Na guarda compartilhada ainda existe pensão?",
+          "answer": "Sim. A guarda compartilhada não afasta o dever de sustento. A pensão é fixada conforme as necessidades do filho e as possibilidades de cada genitor."
+        },
+        {
+          "question": "Posso mudar de cidade com meu filho?",
+          "answer": "Se a mudança afeta a convivência, é preciso concordância do outro genitor ou autorização judicial. A mudança sem acordo pode levar a pedido de modificação da guarda."
+        },
+        {
+          "question": "Posso perder a guarda?",
+          "answer": "Em casos graves, como abandono, maus-tratos ou negligência, a guarda pode ser modificada por decisão judicial, com direito de defesa e produção de provas."
+        },
+        {
+          "question": "Avós podem pedir guarda?",
+          "answer": "Sim, em situações especiais, como falecimento ou impossibilidade dos pais, desde que demonstrem que a medida atende ao melhor interesse da criança."
+        }
+      ]
     },
-    relatedActions: ['pensao-alimenticia', 'regulamentacao-visita', 'alienacao-parental'],
-    updatedAt: '2025-01-01',
+    "relatedActions": [
+      "pensao-alimenticia",
+      "divorcio-consensual",
+      "guarda-netos-avos"
+    ],
+    "updatedAt": "2026-11-05"
   },
 
   // CIVIL
@@ -875,54 +1143,113 @@ export const blogArticles: BlogArticle[] = [
 
   // PREVIDENCIÁRIO
   {
-    id: 'aposentadoria',
-    nicheId: 'previdenciario',
-    slug: 'aposentadoria',
-    title: 'Aposentadoria: Guia Completo de Requisitos e Tipos',
-    metaTitle: 'Aposentadoria INSS | Idade, Tempo, Especial',
-    metaDescription: 'Quer se aposentar? Conheça todos os tipos de aposentadoria, requisitos após a reforma, como calcular e como dar entrada no INSS.',
-    keywords: ['aposentadoria', 'aposentadoria por idade', 'aposentadoria por tempo', 'aposentadoria especial', 'INSS', 'reforma previdência'],
-    excerpt: 'Conheça todos os tipos de aposentadoria disponíveis, os requisitos após a reforma da previdência e como dar entrada no seu pedido.',
-    content: {
-      intro: 'A aposentadoria é um benefício previdenciário que garante renda ao trabalhador após anos de contribuição. Com a reforma de 2019, as regras mudaram significativamente.',
-      whatIs: 'A aposentadoria é o benefício pago pelo INSS ao trabalhador que cumpriu os requisitos de idade e/ou tempo de contribuição. Existem diferentes modalidades com regras específicas.',
-      whenYouHaveRight: [
-        'Aposentadoria por idade (65 homens / 62 mulheres)',
-        'Aposentadoria por tempo de contribuição (regras de transição)',
-        'Aposentadoria especial (atividades insalubres)',
-        'Aposentadoria por invalidez (incapacidade permanente)',
-        'Aposentadoria rural (idade reduzida)',
+    "id": "aposentadoria",
+    "nicheId": "previdenciario",
+    "slug": "aposentadoria",
+    "title": "Aposentadoria pelo INSS: Regras Atuais e Regras de Transição",
+    "metaTitle": "Aposentadoria INSS | Idade, Pontos, Pedágio e Regras de Transição",
+    "metaDescription": "Entenda as regras de aposentadoria após a Reforma de 2019: idade mínima, regra dos pontos, idade progressiva, pedágios de 50% e 100%, cálculo do valor e como pedir.",
+    "keywords": [
+      "aposentadoria",
+      "regras de transição",
+      "aposentadoria por idade",
+      "tempo de contribuição",
+      "regra dos pontos",
+      "pedágio 50%",
+      "pedágio 100%",
+      "reforma da previdência",
+      "cálculo aposentadoria"
+    ],
+    "excerpt": "Guia das regras de aposentadoria após a Reforma da Previdência: regra definitiva, as cinco transições, como o valor é calculado e como escolher a melhor opção.",
+    "content": {
+      "intro": "A Reforma da Previdência (Emenda Constitucional 103/2019) mudou as regras de aposentadoria a partir de 13 de novembro de 2019. A aposentadoria apenas por tempo de contribuição, sem idade mínima, deixou de existir para quem começou a contribuir depois disso, mas quem já contribuía ganhou regras de transição. Escolher a regra certa pode mudar a data da aposentadoria e o valor do benefício.",
+      "whatIs": "Aposentadoria é o benefício pago pelo INSS ao segurado que cumpre os requisitos de idade, tempo de contribuição e carência. Hoje existem a regra definitiva por idade, as regras de transição para quem já era segurado antes da reforma, a aposentadoria especial para atividades nocivas à saúde, a aposentadoria da pessoa com deficiência, a aposentadoria rural e a aposentadoria por incapacidade permanente. Quem completou todos os requisitos até 13/11/2019 tem direito adquirido às regras antigas.",
+      "sections": [
+        {
+          "title": "Regra definitiva (para quem entrou depois da reforma)",
+          "paragraphs": [
+            "A regra permanente exige 62 anos de idade para mulheres e 65 para homens. O tempo mínimo de contribuição é de 15 anos para mulheres e de 20 anos para homens que se filiaram após a reforma. Homens já filiados antes de 13/11/2019 que se aposentam pela regra de transição por idade continuam com o mínimo de 15 anos.",
+            "Trabalhadores rurais e segurados especiais mantêm idade reduzida: 55 anos para mulheres e 60 para homens, com 15 anos de atividade rural comprovada."
+          ]
+        },
+        {
+          "title": "As regras de transição",
+          "paragraphs": [
+            "Regra dos pontos: soma de idade e tempo de contribuição, com mínimo de 30 anos de contribuição para mulheres e 35 para homens. A pontuação sobe um ponto por ano: em 2026 são 93 pontos para mulheres e 103 para homens, até o limite de 100 e 105 pontos.",
+            "Idade mínima progressiva: 30 anos de contribuição (mulher) ou 35 (homem) e uma idade mínima que aumenta seis meses por ano. Em 2026 são 59 anos e meio para mulheres e 64 anos e meio para homens, até chegar a 62 e 65.",
+            "Pedágio de 50%: vale para quem, em 13/11/2019, estava a no máximo dois anos de completar 30 (mulher) ou 35 (homem) anos de contribuição. Basta cumprir o tempo que faltava mais metade dele, sem idade mínima, mas o valor sofre a incidência do fator previdenciário.",
+            "Pedágio de 100%: exige 57 anos de idade (mulher) ou 60 (homem), 30 ou 35 anos de contribuição e o dobro do tempo que faltava na data da reforma. O valor é de 100% da média salarial, o que pode compensar para quem ganha mais.",
+            "Transição por idade: para quem já era segurado, a idade da mulher subiu de 60 para 62 anos até 2023 e a do homem permaneceu em 65, com 15 anos de contribuição."
+          ]
+        },
+        {
+          "title": "Como o valor é calculado",
+          "paragraphs": [
+            "Na maioria das regras, o INSS calcula a média de todos os salários de contribuição desde julho de 1994 e aplica 60% mais 2% por ano de contribuição que exceder 15 anos (mulheres) ou 20 anos (homens). Por exemplo, um homem com 30 anos de contribuição recebe 80% da média. As exceções são o pedágio de 100%, que paga 100% da média, e o pedágio de 50%, que usa o fator previdenciário. O benefício nunca é inferior ao salário mínimo.",
+            "Desde a reforma, é possível excluir da média os salários que reduzam o valor, desde que mantido o tempo mínimo exigido, mas o tempo descartado deixa de contar para o acréscimo de 2%. Essa e outras escolhas de cálculo são o motivo pelo qual vale simular todas as regras antes de pedir."
+          ]
+        },
+        {
+          "title": "Como pedir e o que fazer se o INSS negar",
+          "paragraphs": [
+            "O pedido é feito pelo Meu INSS (site ou aplicativo) ou pela central 135. Antes, confira o extrato do CNIS: vínculos faltando, salários errados e períodos especiais não reconhecidos são as causas mais comuns de indeferimento ou de valor menor. A data de entrada do requerimento define o início dos pagamentos, por isso não convém adiar o pedido sem motivo.",
+            "Se o pedido for negado, cabe recurso administrativo ao Conselho de Recursos da Previdência Social em 30 dias, ou ação judicial. Causas até 60 salários mínimos tramitam no Juizado Especial Federal."
+          ]
+        }
       ],
-      documents: [
-        'Carteira de Trabalho (CTPS)',
-        'CNIS (extrato de contribuições)',
-        'PPP (para aposentadoria especial)',
-        'Documentos pessoais (RG, CPF)',
-        'Comprovante de residência',
-        'Laudos médicos (se invalidez)',
+      "whenYouHaveRight": [
+        "Regra definitiva: 62 anos (mulher) ou 65 anos (homem) com o tempo mínimo de contribuição",
+        "Regra dos pontos: soma de idade e contribuição, com 30 ou 35 anos de contribuição",
+        "Idade mínima progressiva com 30 ou 35 anos de contribuição",
+        "Pedágio de 50% para quem estava a até 2 anos de completar o tempo em 2019",
+        "Pedágio de 100% com 57 anos (mulher) ou 60 anos (homem)",
+        "Aposentadoria especial para atividades nocivas à saúde",
+        "Aposentadoria rural com idade reduzida",
+        "Direito adquirido para quem completou os requisitos até 13/11/2019"
       ],
-      deadlines: 'O INSS tem até 30 dias para analisar o pedido (pode ser prorrogado). Se negado, você tem 30 dias para recorrer administrativamente ou 5 anos para ação judicial.',
-      faq: [
-        {
-          question: 'Qual a idade mínima para aposentar?',
-          answer: 'Após a reforma: 65 anos (homens) e 62 anos (mulheres), com tempo mínimo de contribuição de 20 e 15 anos, respectivamente.',
-        },
-        {
-          question: 'Posso me aposentar só por tempo de contribuição?',
-          answer: 'Quem já contribuía antes da reforma pode usar regras de transição. Para novos segurados, é necessário idade mínima.',
-        },
-        {
-          question: 'O que é aposentadoria especial?',
-          answer: 'É a aposentadoria para quem trabalhou em condições prejudiciais à saúde (insalubridade, periculosidade). Exige tempo menor de contribuição.',
-        },
-        {
-          question: 'INSS negou minha aposentadoria. O que fazer?',
-          answer: 'Você pode recorrer administrativamente (Junta de Recursos) ou entrar com ação judicial para revisar a decisão.',
-        },
+      "documents": [
+        "Documento de identidade e CPF",
+        "Extrato do CNIS atualizado",
+        "Todas as carteiras de trabalho",
+        "Carnês e comprovantes de contribuição como autônomo ou facultativo",
+        "Certidão de Tempo de Contribuição, se houve serviço público",
+        "PPP e laudos técnicos para períodos especiais",
+        "Documentos de atividade rural, se for o caso"
       ],
+      "deadlines": "Não há prazo para pedir aposentadoria, e os pagamentos começam na data do requerimento. O INSS deve observar os prazos de análise fixados no acordo homologado pelo STF, que variam conforme o benefício. Se o pedido for negado, o recurso administrativo deve ser apresentado em 30 dias. Na Justiça, as parcelas atrasadas prescrevem em 5 anos.",
+      "faq": [
+        {
+          "question": "Qual a idade mínima para se aposentar hoje?",
+          "answer": "Na regra definitiva, 62 anos para mulheres e 65 para homens. Nas regras de transição, a idade pode ser menor, como na idade progressiva (59 anos e meio para mulheres e 64 anos e meio para homens em 2026) ou no pedágio de 50%, que não tem idade mínima."
+        },
+        {
+          "question": "Ainda existe aposentadoria só por tempo de contribuição?",
+          "answer": "Para quem se filiou depois da reforma, não. Quem já contribuía antes pode usar as transições; a do pedágio de 50% é a única sem idade mínima, mas com fator previdenciário."
+        },
+        {
+          "question": "O que é a regra dos pontos?",
+          "answer": "É a soma da idade com o tempo de contribuição. Em 2026, são exigidos 93 pontos para mulheres e 103 para homens, com mínimo de 30 e 35 anos de contribuição. A exigência sobe um ponto por ano."
+        },
+        {
+          "question": "Quanto vou receber?",
+          "answer": "Em regra, 60% da média de todos os salários desde 1994, mais 2% por ano que passar de 15 anos (mulher) ou 20 anos (homem) de contribuição. O pedágio de 100% paga 100% da média."
+        },
+        {
+          "question": "Como saber qual regra é melhor para mim?",
+          "answer": "É preciso simular todas as regras com o CNIS corrigido, comparando data e valor. O Meu INSS faz uma simulação básica, e um advogado previdenciário pode conferir períodos que o INSS deixou de considerar."
+        },
+        {
+          "question": "O INSS negou minha aposentadoria. E agora?",
+          "answer": "Você pode recorrer ao Conselho de Recursos da Previdência Social em 30 dias ou ajuizar ação. Antes, verifique o motivo da negativa e se faltou algum documento ou período no CNIS."
+        }
+      ]
     },
-    relatedActions: ['auxilio-doenca', 'revisao-vida-toda'],
-    updatedAt: '2025-01-01',
+    "relatedActions": [
+      "simulacao-aposentadoria",
+      "aposentadoria-especial",
+      "revisao-aposentadoria"
+    ],
+    "updatedAt": "2026-11-05"
   },
   {
     id: 'auxilio-doenca',
@@ -1025,106 +1352,218 @@ export const blogArticles: BlogArticle[] = [
 
   // PENAL
   {
-    id: 'defesa-flagrante',
-    nicheId: 'penal',
-    slug: 'defesa-flagrante',
-    title: 'Defesa em Flagrante: O Que Fazer Quando Alguém é Preso',
-    metaTitle: 'Preso em Flagrante | Defesa, Audiência de Custódia',
-    metaDescription: 'Familiar preso em flagrante? Saiba como funciona a prisão, audiência de custódia e como um advogado criminal pode ajudar.',
-    keywords: ['preso em flagrante', 'defesa criminal', 'audiência de custódia', 'advogado criminal', 'liberdade provisória', 'fiança'],
-    excerpt: 'Entenda como funciona a prisão em flagrante, os direitos do preso, a audiência de custódia e como buscar a liberdade provisória.',
-    content: {
-      intro: 'A prisão em flagrante ocorre quando alguém é pego no momento do crime ou logo após. O preso tem direitos garantidos e pode buscar a liberdade provisória, com ou sem fiança.',
-      whatIs: 'Flagrante é a prisão feita no momento do crime, logo após ou quando o suspeito é perseguido ou encontrado com objetos do crime. É uma prisão provisória que precisa ser analisada por um juiz em 24 horas.',
-      whenYouHaveRight: [
-        'Ter advogado em todos os atos',
-        'Permanecer em silêncio',
-        'Comunicar a prisão a familiares',
-        'Audiência de custódia em 24 horas',
-        'Relaxamento se a prisão for ilegal',
-        'Liberdade provisória em certos casos',
+    "id": "prisao-flagrante",
+    "nicheId": "penal",
+    "slug": "prisao-flagrante-direitos",
+    "title": "Prisão em Flagrante: Direitos do Preso e o Que a Família Deve Fazer",
+    "metaTitle": "Prisão em Flagrante | Direitos, Audiência de Custódia e Fiança",
+    "metaDescription": "Familiar preso em flagrante? Entenda os direitos do preso, a audiência de custódia, a fiança, a liberdade provisória e o que fazer nas primeiras horas.",
+    "keywords": [
+      "prisão em flagrante",
+      "preso em flagrante",
+      "audiência de custódia",
+      "direitos do preso",
+      "liberdade provisória",
+      "fiança",
+      "relaxamento de prisão",
+      "advogado criminal"
+    ],
+    "excerpt": "Entenda o que é o flagrante, os direitos de quem é preso, como funciona a audiência de custódia e quais são os caminhos para a liberdade.",
+    "content": {
+      "intro": "A prisão em flagrante costuma pegar a família de surpresa, normalmente à noite ou no fim de semana. As primeiras horas são decisivas: é nelas que se lavra o auto de prisão, se decide sobre fiança na delegacia e se prepara a audiência de custódia. Conhecer os direitos do preso e os passos seguintes ajuda a agir com calma e a evitar erros.",
+      "whatIs": "O artigo 302 do Código de Processo Penal considera em flagrante quem está cometendo a infração, quem acaba de cometê-la, quem é perseguido logo após em situação que faça presumir ser o autor, e quem é encontrado logo depois com instrumentos, armas ou objetos que façam presumir a autoria. A prisão em flagrante pode ser feita sem ordem judicial, mas precisa seguir o procedimento legal e é obrigatoriamente analisada por um juiz.",
+      "sections": [
+        {
+          "title": "Direitos de quem é preso",
+          "paragraphs": [
+            "A Constituição garante ao preso o direito de permanecer em silêncio, de ser informado de seus direitos, de ter a assistência da família e de advogado, e de conhecer a identidade de quem o prendeu (art. 5º, LXII a LXIV). A prisão deve ser comunicada imediatamente ao juiz e à família ou pessoa indicada. O preso também tem direito à integridade física e moral, e o uso de algemas só é admitido nas hipóteses da Súmula Vinculante 11 do STF.",
+            "O silêncio não pode ser interpretado em prejuízo da defesa. A orientação mais segura é não dar versão dos fatos antes de conversar reservadamente com um advogado, que tem direito de acesso ao preso e aos autos do flagrante."
+          ]
+        },
+        {
+          "title": "Na delegacia: auto de prisão e nota de culpa",
+          "paragraphs": [
+            "O delegado ouve o condutor, as testemunhas e o preso, e lavra o auto de prisão em flagrante. Em até 24 horas, o auto deve ser encaminhado ao juiz e, se o preso não tiver advogado, à Defensoria Pública, e o preso recebe a nota de culpa com o motivo da prisão (art. 306 do CPP).",
+            "Nos crimes com pena máxima de até 4 anos, o próprio delegado pode arbitrar fiança (art. 322). Nas infrações de menor potencial ofensivo, com pena máxima de até 2 anos, em regra é lavrado termo circunstanciado e a pessoa é liberada se se comprometer a comparecer ao Juizado (Lei 9.099/1995)."
+          ]
+        },
+        {
+          "title": "Audiência de custódia: as três decisões possíveis",
+          "paragraphs": [
+            "O artigo 310 do CPP determina que o juiz, em até 24 horas após a prisão, realize audiência de custódia com a presença do preso, do Ministério Público e da defesa. Nela, o juiz deve relaxar a prisão se for ilegal; converter o flagrante em preventiva, apenas se presentes os requisitos do artigo 312 e se as medidas cautelares não bastarem; ou conceder liberdade provisória, com ou sem fiança e com ou sem medidas cautelares, como comparecimento periódico em juízo ou monitoração eletrônica.",
+            "A audiência não discute se a pessoa é culpada, mas a legalidade da prisão, eventuais abusos e a necessidade de manter alguém preso. Por isso, documentos que mostrem residência fixa, trabalho e vínculos familiares ajudam a defesa a demonstrar que a liberdade não oferece risco ao processo."
+          ]
+        },
+        {
+          "title": "O que a família pode fazer nas primeiras horas",
+          "paragraphs": [
+            "Descubra em qual delegacia a pessoa está e o número do procedimento. Reúna documento de identidade, comprovante de residência, carteira de trabalho ou declaração do empregador, certidões de nascimento de filhos e receitas ou laudos de saúde, se houver. Procure um advogado criminal ou a Defensoria Pública. Evite conversar sobre os fatos por telefone ou mensagens e não entregue objetos ou valores sem orientação.",
+            "Se a prisão for mantida, a defesa pode pedir revogação da preventiva ao juiz e, sendo o caso, impetrar habeas corpus no tribunal. Cada caso é diferente, e não há como garantir o resultado: a decisão depende do crime imputado, dos antecedentes e das provas."
+          ]
+        }
       ],
-      documents: [
-        'Documentos do preso (se disponível)',
-        'Endereço de residência fixa',
-        'Comprovante de trabalho',
-        'Comprovantes de vínculos familiares',
-        'Antecedentes criminais (para estratégia)',
-        'Testemunhas de defesa',
+      "whenYouHaveRight": [
+        "Permanecer em silêncio sem que isso prejudique a defesa",
+        "Ter advogado ou defensor desde a prisão, com entrevista reservada",
+        "Comunicação imediata da prisão à família e ao juiz",
+        "Receber a nota de culpa em até 24 horas",
+        "Audiência de custódia em até 24 horas",
+        "Relaxamento da prisão se o flagrante for ilegal",
+        "Liberdade provisória, com ou sem fiança, quando cabível",
+        "Integridade física e moral, sem tortura ou maus-tratos"
       ],
-      deadlines: 'O preso deve ser apresentado ao juiz em até 24 horas (audiência de custódia). A decisão sobre manutenção ou liberdade deve ser imediata.',
-      faq: [
-        {
-          question: 'O que é audiência de custódia?',
-          answer: 'É a apresentação do preso a um juiz em até 24 horas para verificar a legalidade da prisão e decidir sobre liberdade, fiança ou prisão preventiva.',
-        },
-        {
-          question: 'Posso pagar fiança e sair?',
-          answer: 'Depende do crime. Crimes afiançáveis permitem pagamento de fiança fixada pelo delegado ou juiz. Crimes hediondos e outros graves não admitem fiança.',
-        },
-        {
-          question: 'Quais os direitos do preso?',
-          answer: 'Direito ao silêncio, a advogado, a informar a família, a não ser torturado, a saber os motivos da prisão e a audiência de custódia.',
-        },
-        {
-          question: 'Se for crime de menor potencial, sai preso?',
-          answer: 'Não necessariamente. Para crimes com pena máxima até 4 anos, o delegado pode lavrar Termo Circunstanciado e liberar mediante compromisso de comparecer ao Juizado.',
-        },
+      "documents": [
+        "Documento de identidade do preso",
+        "Comprovante de residência fixa",
+        "Comprovante de trabalho ou declaração do empregador",
+        "Certidões de nascimento de filhos e prova de dependentes",
+        "Laudos ou receitas, se houver problema de saúde",
+        "Certidão de antecedentes",
+        "Cópia do auto de prisão em flagrante, obtida pelo advogado"
       ],
+      "deadlines": "O auto de prisão deve ser enviado ao juiz em até 24 horas, com entrega da nota de culpa ao preso no mesmo prazo, e a audiência de custódia deve ocorrer em até 24 horas após a prisão (arts. 306 e 310 do CPP). A partir daí, a defesa pode pedir a revogação de eventual preventiva a qualquer tempo.",
+      "faq": [
+        {
+          "question": "Posso ficar em silêncio durante a prisão?",
+          "answer": "Sim, é direito constitucional, e o silêncio não pode ser usado contra você. O recomendado é falar sobre os fatos apenas depois de conversar com o advogado."
+        },
+        {
+          "question": "O que é audiência de custódia?",
+          "answer": "É a apresentação do preso ao juiz em até 24 horas, com Ministério Público e defesa, para verificar a legalidade da prisão e decidir entre relaxamento, liberdade provisória ou preventiva."
+        },
+        {
+          "question": "Posso pagar fiança e sair?",
+          "answer": "Depende do crime. Em crimes com pena máxima de até 4 anos, o delegado pode fixar fiança. Nos demais, quem decide é o juiz. Crimes como racismo, tortura, tráfico, terrorismo e hediondos são inafiançáveis, o que não impede a liberdade provisória sem fiança."
+        },
+        {
+          "question": "Quando a prisão em flagrante é ilegal?",
+          "answer": "Quando não há situação de flagrante prevista no art. 302 do CPP, quando o procedimento legal não é respeitado, quando o flagrante é forjado ou provocado, ou quando há abuso na abordagem. Nesses casos, a defesa pede o relaxamento."
+        },
+        {
+          "question": "O que é liberdade provisória?",
+          "answer": "É a soltura enquanto o processo tramita, com ou sem fiança, podendo vir acompanhada de medidas cautelares como comparecimento em juízo, proibição de contato ou tornozeleira."
+        },
+        {
+          "question": "Crime de menor potencial ofensivo leva à prisão?",
+          "answer": "Em regra não. Para infrações com pena máxima de até 2 anos, lavra-se termo circunstanciado e a pessoa é liberada se assumir o compromisso de comparecer ao Juizado."
+        }
+      ]
     },
-    relatedActions: ['habeas-corpus', 'acompanhamento-delegacia'],
-    updatedAt: '2025-01-01',
+    "relatedActions": [
+      "habeas-corpus",
+      "acompanhamento-delegacia"
+    ],
+    "updatedAt": "2026-11-05"
   },
   {
-    id: 'habeas-corpus',
-    nicheId: 'penal',
-    slug: 'habeas-corpus',
-    title: 'Habeas Corpus: Quando e Como Pedir a Liberdade',
-    metaTitle: 'Habeas Corpus | Como Pedir Liberdade Prisão Ilegal',
-    metaDescription: 'Prisão ilegal ou abusiva? Saiba quando cabe habeas corpus, como fazer o pedido e quanto tempo leva para ser julgado.',
-    keywords: ['habeas corpus', 'liberdade', 'prisão ilegal', 'prisão preventiva', 'excesso de prazo', 'relaxamento prisão'],
-    excerpt: 'O habeas corpus é o remédio constitucional para combater prisões ilegais ou arbitrárias. Saiba quando você pode usar essa medida.',
-    content: {
-      intro: 'O habeas corpus é um remédio constitucional utilizado para proteger o direito de ir e vir de qualquer pessoa que sofra ou esteja ameaçada de sofrer violência ou coação ilegal.',
-      whatIs: 'É uma ação que pode ser impetrada por qualquer pessoa (não precisa ser advogado) em favor de quem está preso ilegalmente ou ameaçado de prisão ilegal. É julgado com prioridade.',
-      whenYouHaveRight: [
-        'Prisão sem fundamentação adequada',
-        'Excesso de prazo da prisão provisória',
-        'Prisão quando caberia medida alternativa',
-        'Descumprimento de requisitos legais',
-        'Ausência de flagrante delito',
-        'Quando a conduta não é crime',
+    "id": "habeas-corpus",
+    "nicheId": "penal",
+    "slug": "habeas-corpus",
+    "title": "Habeas Corpus: Quando e Como Pedir a Liberdade",
+    "metaTitle": "Habeas Corpus | Quando Cabe e Como Pedir Liberdade",
+    "metaDescription": "Prisão ilegal, sem fundamentação ou com excesso de prazo? Entenda quando cabe habeas corpus, preventivo ou liberatório, quem pode impetrar e como é julgado.",
+    "keywords": [
+      "habeas corpus",
+      "pedido de liberdade",
+      "prisão ilegal",
+      "prisão preventiva",
+      "excesso de prazo",
+      "habeas corpus preventivo",
+      "liminar habeas corpus",
+      "soltura"
+    ],
+    "excerpt": "O habeas corpus é a ação constitucional que protege a liberdade de locomoção. Entenda quando cabe, quem pode impetrar, como é julgado e seus limites.",
+    "content": {
+      "intro": "O habeas corpus é a garantia constitucional mais conhecida da liberdade. Ele serve para fazer cessar, ou impedir, qualquer prisão ou ameaça de prisão ilegal ou abusiva. Por envolver a liberdade, tem tramitação prioritária e pode ser decidido por liminar. Mas não é um recurso para qualquer insatisfação com o processo: tem hipóteses próprias e limites.",
+      "whatIs": "Previsto no artigo 5º, LXVIII, da Constituição e nos artigos 647 a 667 do Código de Processo Penal, o habeas corpus é concedido sempre que alguém sofrer ou se achar ameaçado de sofrer violência ou coação em sua liberdade de locomoção, por ilegalidade ou abuso de poder. Quem impetra é chamado de impetrante, a pessoa beneficiada é o paciente, e a autoridade responsável pela coação é a autoridade coatora. É gratuito e pode ser impetrado por qualquer pessoa, inclusive sem advogado.",
+      "sections": [
+        {
+          "title": "As hipóteses do artigo 648 do CPP",
+          "paragraphs": [
+            "A lei considera a coação ilegal quando não houver justa causa; quando alguém estiver preso por mais tempo do que a lei determina; quando quem ordenou a coação não tiver competência; quando houver cessado o motivo que autorizou a coação; quando não se admitir fiança nos casos em que a lei a permite; quando o processo for manifestamente nulo; e quando estiver extinta a punibilidade.",
+            "Na prática, os casos mais comuns são prisão preventiva sem fundamentação concreta (art. 315 do CPP), prisão quando bastariam medidas cautelares alternativas (art. 319), excesso de prazo na formação da culpa, falta de revisão periódica da preventiva a cada 90 dias (art. 316, parágrafo único) e prisão por fato que não constitui crime."
+          ]
+        },
+        {
+          "title": "Preventivo ou liberatório",
+          "paragraphs": [
+            "O habeas corpus liberatório (ou repressivo) é usado quando a prisão já aconteceu, e busca a soltura. O preventivo é usado quando há ameaça concreta e iminente de prisão ilegal, e o resultado é um salvo-conduto. A ameaça precisa ser real: um temor genérico de ser preso não basta.",
+            "Também é possível usar o habeas corpus para trancar inquérito ou ação penal sem justa causa, desde que a ilegalidade seja demonstrada de plano, sem necessidade de produzir provas."
+          ]
+        },
+        {
+          "title": "Quem julga e os limites",
+          "paragraphs": [
+            "A competência depende da autoridade coatora. Contra ato de delegado, o pedido vai ao juiz de primeiro grau; contra ato de juiz, ao Tribunal de Justiça ou ao Tribunal Regional Federal; contra ato desses tribunais, ao Superior Tribunal de Justiça; e, em hipóteses previstas na Constituição, ao Supremo Tribunal Federal. A Súmula 691 do STF, como regra, impede o Supremo de conhecer habeas corpus contra decisão que apenas negou liminar em tribunal superior, salvo flagrante ilegalidade.",
+            "O habeas corpus não admite dilação probatória: a prova da ilegalidade deve vir pronta, com cópia da decisão de prisão e dos documentos do processo. Ele também não substitui, em regra, o recurso próprio, embora os tribunais possam conceder a ordem de ofício quando constatam ilegalidade evidente."
+          ]
+        },
+        {
+          "title": "O que deve constar no pedido",
+          "paragraphs": [
+            "O artigo 654 do CPP exige o nome do paciente e de quem exerce a coação, a descrição da ameaça ou da prisão, as razões da ilegalidade e a assinatura do impetrante. Embora qualquer pessoa possa impetrar, o pedido técnico, com cópia integral das decisões e argumentos baseados na jurisprudência atual, aumenta a chance de ser bem compreendido. A defesa deve também avaliar, em paralelo, pedidos ao próprio juiz da causa, como revogação da preventiva ou liberdade provisória, que às vezes são mais rápidos."
+          ]
+        },
+        {
+          "title": "Habeas corpus e outros pedidos da defesa",
+          "paragraphs": [
+            "O habeas corpus convive com outros instrumentos. Ao juiz da causa, a defesa pode pedir o relaxamento da prisão ilegal, a revogação da preventiva quando os motivos desaparecem, a substituição por medidas cautelares e, em situações de saúde ou de responsabilidade por filhos pequenos, a prisão domiciliar (arts. 317 e 318 do CPP). Esses pedidos muitas vezes resolvem a situação mais rápido, e uma eventual negativa abre caminho para o habeas corpus no tribunal.",
+            "Também é possível usar o habeas corpus em favor de várias pessoas na mesma situação, o chamado habeas corpus coletivo, já admitido pelo STF, por exemplo, em favor de gestantes e mães de crianças presas preventivamente (HC 143.641). A escolha do instrumento adequado e o momento certo de usá-lo fazem parte da estratégia da defesa."
+          ]
+        }
       ],
-      documents: [
-        'Cópia da decisão de prisão',
-        'Documentos do processo criminal',
-        'Comprovantes de residência e trabalho',
-        'Antecedentes do paciente',
-        'Documentos que provem a ilegalidade',
-        'Qualquer prova relevante',
+      "whenYouHaveRight": [
+        "Prisão preventiva sem fundamentação concreta",
+        "Prisão quando medidas cautelares alternativas seriam suficientes",
+        "Excesso de prazo na prisão provisória ou na formação da culpa",
+        "Prisão sem ordem judicial válida e fora das hipóteses de flagrante",
+        "Prisão decretada por autoridade incompetente",
+        "Falta de revisão periódica da preventiva",
+        "Ameaça concreta de prisão ilegal (habeas corpus preventivo)",
+        "Processo manifestamente nulo ou punibilidade extinta"
       ],
-      deadlines: 'O habeas corpus deve ser julgado com prioridade. Pedidos liminares são analisados em horas ou dias. O mérito é julgado em dias ou semanas.',
-      faq: [
-        {
-          question: 'Qualquer pessoa pode impetrar habeas corpus?',
-          answer: 'Sim, qualquer pessoa pode impetrar em favor do preso, não precisa ser advogado. Pode ser feito até por familiares.',
-        },
-        {
-          question: 'Quanto tempo demora o julgamento?',
-          answer: 'É julgado com prioridade. Pedidos liminares (urgentes) podem ser analisados no mesmo dia. O mérito pode levar alguns dias ou semanas.',
-        },
-        {
-          question: 'Se negado, posso recorrer?',
-          answer: 'Sim, pode-se impetrar novo habeas corpus em tribunal superior. A ordem é: TJ → STJ → STF.',
-        },
-        {
-          question: 'Habeas corpus preventivo é possível?',
-          answer: 'Sim, quando há ameaça concreta e iminente de prisão ilegal, pode-se impetrar habeas corpus preventivo para impedir a prisão.',
-        },
+      "documents": [
+        "Cópia da decisão que decretou ou manteve a prisão",
+        "Mandado de prisão, se houver",
+        "Cópia do inquérito ou da ação penal",
+        "Documentos pessoais do paciente",
+        "Comprovantes de residência fixa e de trabalho",
+        "Certidão de antecedentes",
+        "Documentos que provem a ilegalidade alegada"
       ],
+      "deadlines": "Não há prazo para impetrar habeas corpus: ele cabe enquanto durar a ilegalidade ou a ameaça. Por envolver liberdade, tem prioridade de julgamento, e a liminar pode ser analisada rapidamente, inclusive em regime de plantão. O tempo de decisão varia conforme o tribunal.",
+      "faq": [
+        {
+          "question": "Qualquer pessoa pode impetrar habeas corpus?",
+          "answer": "Sim. O próprio preso, familiares ou qualquer pessoa podem impetrar, sem advogado e sem custas. A atuação técnica de um advogado, porém, costuma tornar o pedido mais completo."
+        },
+        {
+          "question": "Existe habeas corpus preventivo?",
+          "answer": "Sim. Quando há ameaça concreta e iminente de prisão ilegal, é possível pedir um salvo-conduto antes que a prisão aconteça."
+        },
+        {
+          "question": "Quanto tempo demora o julgamento?",
+          "answer": "O habeas corpus tem prioridade. A liminar pode ser apreciada em horas ou dias, e o mérito em seguida; o tempo exato depende do tribunal e da complexidade do caso."
+        },
+        {
+          "question": "Se o habeas corpus for negado, o que fazer?",
+          "answer": "Contra a decisão de tribunal cabe recurso ordinário ou nova impetração na instância superior (TJ, depois STJ e STF), observando os limites da jurisprudência, como a Súmula 691 do STF."
+        },
+        {
+          "question": "Habeas corpus serve para discutir se sou culpado?",
+          "answer": "Em regra não. Ele não admite produção de provas; serve para ilegalidades demonstráveis de plano. A discussão de mérito ocorre no processo e nos recursos próprios."
+        },
+        {
+          "question": "Qual a diferença entre habeas corpus e relaxamento de prisão?",
+          "answer": "O relaxamento é pedido ao próprio juiz quando a prisão é ilegal, por exemplo um flagrante irregular. O habeas corpus é dirigido à instância superior à autoridade que mantém a coação."
+        }
+      ]
     },
-    relatedActions: ['defesa-flagrante', 'acompanhamento-delegacia'],
-    updatedAt: '2025-01-01',
+    "relatedActions": [
+      "prisao-flagrante",
+      "acompanhamento-delegacia"
+    ],
+    "updatedAt": "2026-11-05"
   },
   {
     id: 'violencia-domestica',
@@ -1181,57 +1620,6 @@ export const blogArticles: BlogArticle[] = [
 
   // TRABALHISTA - Artigos de Alta Demanda
   {
-    id: 'pejotizacao-vinculo',
-    nicheId: 'trabalhista',
-    slug: 'pejotizacao-vinculo-empregaticio',
-    title: 'Pejotização: Quando a Empresa Frauda Seus Direitos Trabalhistas',
-    metaTitle: 'Pejotização e Vínculo Empregatício | Fraude Trabalhista',
-    metaDescription: 'Trabalha como PJ mas cumpre horário e recebe ordens? Pode ser fraude. Saiba reconhecer a pejotização ilegal e recuperar seus direitos CLT.',
-    keywords: ['pejotização fraude', 'vínculo empregatício PJ', 'reconhecimento de vínculo', 'CLT disfarçada', 'trabalho PJ direitos', 'fraude trabalhista MEI', 'pejotização o que é'],
-    excerpt: 'Entenda o que é pejotização fraudulenta, como identificar se você é vítima e como buscar o reconhecimento do vínculo empregatício.',
-    content: {
-      intro: 'A pejotização ocorre quando a empresa obriga o trabalhador a abrir CNPJ (MEI, ME, etc.) para prestar serviços que, na prática, são de empregado CLT. Essa prática cresceu 57% em 2024 e é considerada fraude trabalhista quando há subordinação, pessoalidade e habitualidade.',
-      whatIs: 'Pejotização é a contratação de trabalhador como pessoa jurídica (PJ) quando na verdade existe relação de emprego. A empresa faz isso para não pagar direitos trabalhistas como FGTS, férias, 13º e INSS patronal. Se você recebe ordens, cumpre horário fixo e não pode se fazer substituir, provavelmente é empregado disfarçado.',
-      whenYouHaveRight: [
-        'Quando cumpre horário fixo determinado pela empresa',
-        'Quando recebe ordens diretas de superiores',
-        'Quando não pode enviar outra pessoa em seu lugar',
-        'Quando presta serviços de forma contínua e não eventual',
-        'Quando depende economicamente daquele contratante',
-        'Quando usa equipamentos e estrutura da empresa',
-      ],
-      documents: [
-        'Contrato de prestação de serviços',
-        'Comprovantes de pagamento (notas fiscais)',
-        'E-mails e mensagens com ordens e cobranças',
-        'Registros de entrada e saída (se houver)',
-        'Testemunhos de colegas',
-        'Prints de grupos de trabalho no WhatsApp',
-      ],
-      deadlines: 'O prazo para entrar com ação é de 2 anos após o término do contrato. Você pode pleitear os direitos dos últimos 5 anos de trabalho.',
-      faq: [
-        {
-          question: 'Posso ter meu vínculo reconhecido mesmo tendo emitido notas fiscais?',
-          answer: 'Sim! O contrato formal como PJ não impede o reconhecimento do vínculo. O que vale é a realidade do trabalho. Se havia subordinação e habitualidade, a Justiça pode reconhecer o emprego.',
-        },
-        {
-          question: 'Quais direitos recebo se ganhar a ação?',
-          answer: 'Todos os direitos de CLT retroativos: registro em carteira, FGTS + multa 40%, férias + 1/3, 13º salário, horas extras, e contribuições previdenciárias corretas.',
-        },
-        {
-          question: 'MEI também pode pedir vínculo?',
-          answer: 'Sim. Ser MEI não impede o reconhecimento. Se você foi obrigado a abrir MEI para trabalhar como empregado subordinado, é fraude.',
-        },
-        {
-          question: 'E se eu ainda estiver trabalhando como PJ?',
-          answer: 'Você pode entrar com ação durante o contrato. Não precisa esperar terminar. Mas avalie os riscos com um advogado antes.',
-        },
-      ],
-    },
-    relatedActions: ['demissao-sem-justa-causa', 'horas-extras', 'verbas-rescissorias'],
-    updatedAt: '2025-01-01',
-  },
-  {
     id: 'adicional-insalubridade',
     nicheId: 'trabalhista',
     slug: 'adicional-insalubridade-periculosidade',
@@ -1281,59 +1669,6 @@ export const blogArticles: BlogArticle[] = [
       ],
     },
     relatedActions: ['acidente-trabalho', 'demissao-sem-justa-causa', 'horas-extras'],
-    updatedAt: '2025-01-01',
-  },
-  {
-    id: 'rescisao-indireta',
-    nicheId: 'trabalhista',
-    slug: 'rescisao-indireta',
-    title: 'Rescisão Indireta: Demissão por Culpa do Empregador',
-    metaTitle: 'Rescisão Indireta | Demissão por Culpa da Empresa',
-    metaDescription: 'Seu patrão comete faltas graves? Saiba como pedir demissão por culpa do empregador e garantir todos os direitos de demissão sem justa causa.',
-    keywords: ['rescisão indireta', 'demissão indireta', 'falta grave empregador', 'justa causa empresa', 'artigo 483 CLT', 'demissão por culpa patrão'],
-    excerpt: 'Saiba como a rescisão indireta funciona, quais situações dão direito e como garantir todos os benefícios de uma demissão sem justa causa.',
-    content: {
-      intro: 'A rescisão indireta é a "justa causa do empregador". Quando a empresa comete faltas graves, o empregado pode pedir a rescisão do contrato e receber todos os direitos como se tivesse sido demitido sem justa causa, incluindo FGTS + 40%, aviso prévio e seguro-desemprego.',
-      whatIs: 'Prevista no artigo 483 da CLT, a rescisão indireta permite que o empregado encerre o contrato quando o empregador não cumpre suas obrigações. É como uma demissão causada pela empresa, garantindo ao trabalhador todos os direitos.',
-      whenYouHaveRight: [
-        'Atraso ou não pagamento de salários por mais de 1 mês',
-        'Não recolhimento de FGTS',
-        'Rebaixamento de função ou salário sem acordo',
-        'Exigência de serviços superiores às forças ou ilegais',
-        'Tratamento com rigor excessivo',
-        'Assédio moral ou sexual comprovados',
-        'Exposição a perigo sem condições de segurança',
-        'Descumprimento grave do contrato de trabalho',
-      ],
-      documents: [
-        'Carteira de trabalho',
-        'Holerites mostrando atrasos',
-        'Extrato do FGTS não depositado',
-        'Provas de rebaixamento ou assédio',
-        'Testemunhos de colegas',
-        'Qualquer documento que comprove a falta grave',
-      ],
-      deadlines: 'A ação deve ser proposta enquanto o contrato ainda está vigente ou logo após a saída. Provas devem ser reunidas antes do pedido.',
-      faq: [
-        {
-          question: 'Preciso continuar trabalhando enquanto espero a decisão?',
-          answer: 'Depende da gravidade. Em casos muito graves, você pode deixar o trabalho imediatamente. Em outros, é recomendado continuar até a decisão judicial.',
-        },
-        {
-          question: 'E se a empresa não aceitar?',
-          answer: 'Você entra com ação trabalhista. O juiz vai analisar as provas e decidir. Se procedente, você recebe todos os direitos.',
-        },
-        {
-          question: 'Recebo seguro-desemprego na rescisão indireta?',
-          answer: 'Sim, se ganhar a ação. A rescisão indireta reconhecida dá direito a seguro-desemprego, FGTS + 40% e aviso prévio.',
-        },
-        {
-          question: 'Quanto tempo leva o processo?',
-          answer: 'Em média, de 6 meses a 2 anos, dependendo da vara e da complexidade. Há possibilidade de acordo antes da sentença.',
-        },
-      ],
-    },
-    relatedActions: ['assedio-moral', 'demissao-sem-justa-causa', 'horas-extras'],
     updatedAt: '2025-01-01',
   },
   {
@@ -1440,214 +1775,347 @@ export const blogArticles: BlogArticle[] = [
     updatedAt: '2025-01-01',
   },
   {
-    id: 'overbooking-extravio',
-    nicheId: 'consumidor',
-    slug: 'overbooking-extravio-bagagem',
-    title: 'Overbooking e Extravio de Bagagem: Como Ser Indenizado',
-    metaTitle: 'Overbooking e Bagagem Extraviada | Indenização',
-    metaDescription: 'Perderam sua mala ou não deixaram você embarcar por overbooking? Saiba seus direitos e quanto você pode receber de indenização.',
-    keywords: ['overbooking direitos', 'bagagem extraviada', 'mala perdida', 'extravio bagagem indenização', 'preterição embarque', 'bagagem danificada'],
-    excerpt: 'Entenda o que fazer quando sua bagagem é extraviada ou você é impedido de embarcar por overbooking, e quanto pode receber.',
-    content: {
-      intro: 'Overbooking (vender mais passagens que assentos) e extravio de bagagem são problemas frequentes. A legislação brasileira protege o passageiro e garante indenizações que podem chegar a milhares de reais.',
-      whatIs: 'Overbooking ocorre quando a companhia vende mais passagens do que lugares disponíveis, impedindo passageiros de embarcar. Extravio é quando sua bagagem não chega ao destino junto com você. Ambos geram direito a compensações.',
-      whenYouHaveRight: [
-        'Impedimento de embarcar por overbooking',
-        'Bagagem que não chegou no mesmo voo',
-        'Bagagem extraviada definitivamente (após 21 dias)',
-        'Bagagem danificada ou violada',
-        'Furto de itens dentro da mala',
-        'Atraso na devolução da bagagem',
+    "id": "overbooking-extravio",
+    "nicheId": "consumidor",
+    "slug": "overbooking-extravio-bagagem",
+    "title": "Overbooking e Extravio de Bagagem: Direitos do Passageiro",
+    "metaTitle": "Overbooking e Bagagem Extraviada | Direitos e Indenização",
+    "metaDescription": "Foi impedido de embarcar por overbooking ou teve a mala extraviada? Entenda a Resolução ANAC 400, a compensação, a assistência material, os prazos e a indenização.",
+    "keywords": [
+      "overbooking",
+      "preterição de embarque",
+      "bagagem extraviada",
+      "mala perdida",
+      "extravio bagagem indenização",
+      "bagagem danificada",
+      "resolução anac 400",
+      "convenção de montreal"
+    ],
+    "excerpt": "Entenda seus direitos na preterição de embarque e no extravio, atraso ou dano da bagagem, os prazos da ANAC e como buscar ressarcimento e indenização.",
+    "content": {
+      "intro": "Ser impedido de embarcar com passagem confirmada ou chegar ao destino sem a mala são problemas frequentes na aviação. A Resolução 400/2016 da ANAC, o Código Brasileiro de Aeronáutica, o Código de Defesa do Consumidor e, nos voos internacionais, a Convenção de Montreal garantem ao passageiro assistência, alternativas de viagem e ressarcimento. Conhecer os passos certos no aeroporto faz diferença depois.",
+      "whatIs": "Overbooking é a venda de mais passagens do que assentos disponíveis. Quando um passageiro com reserva confirmada e apresentação no horário é impedido de embarcar, ocorre a preterição de embarque. Extravio é quando a bagagem despachada não chega ao destino com o passageiro; ela pode ser localizada depois ou ser considerada perdida. Também há danos à mala e violação, com furto de itens.",
+      "sections": [
+        {
+          "title": "Preterição de embarque: o que a companhia deve fazer",
+          "paragraphs": [
+            "Antes de impedir alguém de embarcar, a companhia deve procurar voluntários que aceitem viajar em outro voo mediante compensação negociada. Se houver preterição, a Resolução ANAC 400/2016 obriga o pagamento imediato de compensação financeira ao passageiro preterido, fixada em Direitos Especiais de Saque (DES): 250 DES em voos domésticos e 500 DES em voos internacionais, valor convertido em reais conforme a cotação do dia. Essa compensação pode ser paga em dinheiro, transferência ou, se o passageiro concordar, em crédito.",
+            "Além disso, o passageiro escolhe entre reacomodação no próximo voo, inclusive de outra companhia, reembolso integral, ou execução do serviço por outro meio de transporte. A assistência material é devida enquanto ele aguarda: comunicação a partir de 1 hora, alimentação a partir de 2 horas e hospedagem com traslado a partir de 4 horas, quando houver pernoite."
+          ]
+        },
+        {
+          "title": "Bagagem extraviada, atrasada ou danificada",
+          "paragraphs": [
+            "Ao perceber o problema, registre ainda no aeroporto o Registro de Irregularidade de Bagagem (RIB) ou protesto junto à companhia, e guarde o número. Pela Resolução 400, a companhia tem até 7 dias para localizar e entregar a bagagem em voos domésticos e até 21 dias em voos internacionais. Se a mala não for encontrada nesse prazo, a companhia deve indenizar em até 7 dias.",
+            "Enquanto a mala não chega, o passageiro que está fora do seu domicílio deve ser ressarcido de despesas emergenciais, como roupas e itens de higiene; guarde todas as notas fiscais. Para bagagem danificada ou violada, o protesto deve ser feito em até 7 dias do recebimento."
+          ]
+        },
+        {
+          "title": "Limites de indenização e danos morais",
+          "paragraphs": [
+            "Em voos internacionais, a Convenção de Montreal fixa limites de responsabilidade para a bagagem, em DES, e o STF decidiu (Tema 210) que ela prevalece sobre o CDC quanto aos danos materiais. O passageiro pode ampliar esse limite fazendo declaração especial de valor no check-in. Já em relação aos danos morais, o STF entendeu (Tema 1.240) que a convenção não se aplica, valendo a legislação brasileira.",
+            "Nos voos domésticos, o artigo 251-A do Código Brasileiro de Aeronáutica, incluído pela Lei 14.034/2020, exige a demonstração do efetivo prejuízo e de sua extensão para que haja indenização por dano extrapatrimonial. Por isso, provas como compromissos perdidos, tempo de espera, ausência de assistência e gastos realizados são essenciais. O valor é fixado pelo juiz conforme o caso, sem garantia de resultado."
+          ]
+        },
+        {
+          "title": "Objetos de valor e documentação",
+          "paragraphs": [
+            "Joias, dinheiro, eletrônicos e documentos devem viajar na bagagem de mão. Se forem despachados e se perderem, o passageiro precisará comprovar a existência e o valor dos itens, o que nem sempre é simples, e poderá esbarrar nos limites de indenização. Fotos da mala e do conteúdo antes da viagem ajudam a demonstrar o prejuízo."
+          ]
+        },
+        {
+          "title": "Como reclamar antes de ir à Justiça",
+          "paragraphs": [
+            "Além do atendimento da companhia, o passageiro pode registrar reclamação no consumidor.gov.br, plataforma acompanhada pela ANAC, e no Procon. Esses registros, com protocolos e respostas, também servem de prova num eventual processo, que pode tramitar no Juizado Especial Cível."
+          ]
+        }
       ],
-      documents: [
-        'Passagem aérea e cartão de embarque',
-        'Comprovante de despacho de bagagem (tag)',
-        'Registro de Irregularidade de Bagagem (RIB)',
-        'Fotos da mala danificada',
-        'Notas fiscais de itens perdidos',
-        'Comprovantes de compras emergenciais',
+      "whenYouHaveRight": [
+        "Impedido de embarcar mesmo com reserva confirmada e check-in no prazo",
+        "Companhia não pagou a compensação imediata ou não ofereceu alternativas",
+        "Falta de assistência material durante a espera",
+        "Bagagem que não chegou no mesmo voo",
+        "Bagagem não localizada em 7 dias (doméstico) ou 21 dias (internacional)",
+        "Bagagem danificada ou violada, com furto de itens",
+        "Gastos emergenciais enquanto aguardava a mala",
+        "Compromissos perdidos por causa da preterição ou do extravio"
       ],
-      deadlines: 'Reclame imediatamente no desembarque. A companhia tem 7 dias (voo nacional) ou 21 dias (internacional) para localizar a mala antes de ser considerada extravio definitivo.',
-      faq: [
-        {
-          question: 'Quanto recebo por overbooking?',
-          answer: 'A Resolução ANAC 400/2016 prevê assistência, reacomodação ou reembolso e compensação ao passageiro preterido. Danos morais dependem da prova do prejuízo concreto; o valor depende das circunstâncias de cada caso e é fixado pelo juiz; não há valor garantido.',
-        },
-        {
-          question: 'E se perderem minha mala definitivamente?',
-          answer: 'Você tem direito ao valor dos itens (com comprovação) ou um valor fixado em convenção (limite em DES previsto na Convenção de Montreal; o valor em reais varia com o câmbio). Mais danos morais.',
-        },
-        {
-          question: 'Posso comprar roupas se a mala atrasou?',
-          answer: 'Sim, a companhia deve reembolsar gastos essenciais como roupas e itens de higiene. Guarde todas as notas fiscais.',
-        },
-        {
-          question: 'Objetos de valor na mala são indenizados?',
-          answer: 'Joias, eletrônicos e dinheiro não devem ir na mala despachada. Mas se forem extraviados, você pode tentar comprovar e pedir ressarcimento.',
-        },
+      "documents": [
+        "Passagem, cartão de embarque ou comprovante de check-in",
+        "E-mail de confirmação da reserva",
+        "Comprovante de despacho da bagagem (etiqueta)",
+        "Registro de Irregularidade de Bagagem (RIB) ou protesto",
+        "Fotos da mala danificada e do conteúdo",
+        "Notas fiscais de itens perdidos e de compras emergenciais",
+        "Comprovantes de gastos extras e de compromissos perdidos",
+        "Prints da comunicação com a companhia"
       ],
+      "deadlines": "Registre o RIB ainda no aeroporto. A companhia tem 7 dias (doméstico) ou 21 dias (internacional) para localizar a mala e, se não localizar, 7 dias para indenizar. Danos à bagagem devem ser protestados em até 7 dias. Para a ação judicial, voos internacionais seguem o prazo de 2 anos da Convenção de Montreal quanto aos danos materiais; voos domésticos seguem em regra o prazo de 5 anos do CDC.",
+      "faq": [
+        {
+          "question": "Quanto recebo por overbooking?",
+          "answer": "A Resolução ANAC 400 garante compensação imediata de 250 DES (doméstico) ou 500 DES (internacional), além de reacomodação ou reembolso e assistência material. Danos morais dependem da prova do prejuízo concreto e são fixados pelo juiz."
+        },
+        {
+          "question": "A companhia pode oferecer voucher em vez de dinheiro?",
+          "answer": "Pode oferecer, mas o passageiro não é obrigado a aceitar. A compensação e o reembolso podem ser exigidos em dinheiro."
+        },
+        {
+          "question": "Quais assistências são obrigatórias?",
+          "answer": "Comunicação a partir de 1 hora de espera, alimentação a partir de 2 horas e hospedagem com traslado a partir de 4 horas, quando houver necessidade de pernoite."
+        },
+        {
+          "question": "E se perderem minha mala definitivamente?",
+          "answer": "Você tem direito a ser indenizado pelos itens perdidos, comprovando seu valor. Em voos internacionais incidem os limites da Convenção de Montreal para os danos materiais, salvo declaração especial de valor."
+        },
+        {
+          "question": "Posso comprar roupas se a mala atrasou?",
+          "answer": "Sim. Fora do seu domicílio, as despesas emergenciais devem ser ressarcidas. Guarde todas as notas fiscais."
+        },
+        {
+          "question": "Objetos de valor na mala são indenizados?",
+          "answer": "Podem ser, mas é preciso comprovar a existência e o valor, e há limites nos voos internacionais. O ideal é levá-los na bagagem de mão."
+        }
+      ]
     },
-    relatedActions: ['atraso-cancelamento-voo', 'danos-morais'],
-    updatedAt: '2025-01-01',
+    "relatedActions": [
+      "atraso-cancelamento-voo",
+      "danos-morais"
+    ],
+    "updatedAt": "2026-11-05"
   },
   {
-    id: 'negativacao-indevida',
-    nicheId: 'consumidor',
-    slug: 'negativacao-indevida-spc-serasa',
-    title: 'Nome Sujo Indevido: Como Limpar e Ser Indenizado',
-    metaTitle: 'Negativação Indevida SPC Serasa | Danos Morais',
-    metaDescription: 'Teve o nome negativado indevidamente? Saiba como limpar seu nome e receber indenização por danos morais. Entenda o dano moral presumido.',
-    keywords: ['nome sujo indevido', 'negativação indevida', 'danos morais SPC', 'limpar nome Serasa', 'cobrança indevida', 'score negativado errado'],
-    excerpt: 'Entenda o que fazer quando seu nome é negativado por dívida que você não tem, como limpar e quanto pode receber de indenização.',
-    content: {
-      intro: 'A negativação indevida do nome é uma das principais causas de ações no Juizado Especial. Quando você é cobrado por dívida inexistente ou já paga e tem o nome incluído no SPC/Serasa, tem direito a indenização por danos morais presumidos.',
-      whatIs: 'Negativação indevida é a inclusão do nome do consumidor em cadastros restritivos (SPC, Serasa, Boa Vista) por dívida inexistente, já paga, prescrita ou decorrente de fraude. O dano moral é presumido (in re ipsa), ou seja, não precisa provar sofrimento.',
-      whenYouHaveRight: [
-        'Cobrança de dívida já paga',
-        'Negativação por fraude (cartão clonado, documentos roubados)',
-        'Cobrança de produto ou serviço não contratado',
-        'Dívida prescrita (mais de 5 anos)',
-        'Negativação após acordo de quitação',
-        'Manutenção do nome após pagamento',
-        'Cobrança de valor incorreto',
+    "id": "negativacao-indevida",
+    "nicheId": "consumidor",
+    "slug": "negativacao-indevida-spc-serasa",
+    "title": "Negativação Indevida no SPC e Serasa: Como Limpar o Nome e Buscar Indenização",
+    "metaTitle": "Negativação Indevida SPC Serasa | Limpar Nome e Danos Morais",
+    "metaDescription": "Nome sujo por dívida que você não tem ou já pagou? Entenda a negativação indevida, a Súmula 385 do STJ, os prazos de baixa e como pedir exclusão e indenização.",
+    "keywords": [
+      "negativação indevida",
+      "nome sujo indevido",
+      "SPC Serasa",
+      "limpar nome",
+      "danos morais negativação",
+      "dívida já paga",
+      "Súmula 385 STJ",
+      "fraude no CPF"
+    ],
+    "excerpt": "Entenda quando a inclusão no SPC, Serasa ou Boa Vista é indevida, o que dizem as súmulas do STJ, os prazos para retirada e como agir para limpar o nome.",
+    "content": {
+      "intro": "Ter o nome incluído no SPC, na Serasa ou na Boa Vista por uma dívida que você não reconhece, já pagou ou que nasceu de fraude é uma situação comum e traz consequências reais: crédito negado, compras recusadas, constrangimento. O Código de Defesa do Consumidor e a jurisprudência do Superior Tribunal de Justiça dão ferramentas para retirar a restrição e, em muitos casos, buscar indenização.",
+      "whatIs": "Negativação indevida é a inclusão do nome do consumidor em cadastro de inadimplentes sem dívida válida que a justifique, ou em desacordo com as regras do artigo 43 do CDC. Isso ocorre quando a dívida é inexistente, já foi paga, foi contratada por terceiro com os seus dados, é cobrada em valor errado ou continua registrada depois do prazo legal. Na maioria desses casos, o STJ entende que o dano moral é presumido (in re ipsa), ou seja, decorre da própria inscrição indevida.",
+      "sections": [
+        {
+          "title": "O que diz a lei e o STJ",
+          "paragraphs": [
+            "O artigo 43 do CDC exige que o consumidor seja comunicado por escrito antes da abertura do registro (§2º), que os dados sejam verdadeiros, e que as informações negativas não fiquem registradas por mais de 5 anos (§1º), nem depois de consumada a prescrição da cobrança (§5º). Se houver erro, o consumidor pode exigir a correção imediata (§3º).",
+            "Algumas súmulas do STJ são decisivas. A Súmula 359 diz que cabe ao órgão mantenedor do cadastro notificar o devedor antes da inscrição, e a Súmula 404 dispensa o aviso de recebimento nessa carta. A Súmula 548 fixa que, quitada a dívida, o credor deve pedir a exclusão do registro em até 5 dias úteis a partir do pagamento. A Súmula 323 limita a permanência do registro a 5 anos."
+          ]
+        },
+        {
+          "title": "A Súmula 385 e quem já tem outras restrições",
+          "paragraphs": [
+            "Pela Súmula 385 do STJ, quem já possui inscrição legítima preexistente não tem direito a indenização por dano moral em razão de nova anotação irregular, ressalvado o direito ao cancelamento. Em outras palavras: se o seu nome já estava negativado por uma dívida verdadeira, a nova restrição indevida deve ser excluída, mas a indenização, em regra, não é devida.",
+            "Por isso, antes de qualquer ação, é importante consultar o relatório completo dos três birôs e verificar se as outras anotações também são indevidas ou estão sendo questionadas. Essa análise muda a estratégia e evita pedidos sem chance de êxito."
+          ]
+        },
+        {
+          "title": "Fraude com seus dados",
+          "paragraphs": [
+            "Quando a dívida foi contratada por terceiro com documentos falsos ou dados vazados, a responsabilidade da empresa é objetiva. A Súmula 479 do STJ estabelece que as instituições financeiras respondem objetivamente pelos danos causados por fraudes praticadas por terceiros em operações bancárias, por se tratar de risco do negócio. Registre boletim de ocorrência, conteste a dívida por escrito e guarde os protocolos."
+          ]
+        },
+        {
+          "title": "Passo a passo para agir",
+          "paragraphs": [
+            "Primeiro, emita o relatório gratuito nos sites da Serasa, do SPC e da Boa Vista e identifique credor, valor e data. Segundo, conteste a cobrança junto à empresa por canal que gere protocolo e, se possível, também pelo consumidor.gov.br ou pelo Procon. Terceiro, guarde comprovantes de pagamento, contratos e mensagens.",
+            "Se a restrição não for retirada, a ação judicial pode pedir a declaração de inexistência do débito, a exclusão do nome por tutela de urgência e indenização por danos morais. Causas de até 40 salários mínimos podem ir ao Juizado Especial Cível, sem custas em primeiro grau, sendo obrigatória a assistência de advogado acima de 20 salários mínimos. O valor de eventual indenização é fixado pelo juiz conforme as circunstâncias e não há resultado garantido."
+          ]
+        },
+        {
+          "title": "Cadastro positivo e score",
+          "paragraphs": [
+            "A exclusão da restrição não apaga imediatamente o histórico de pontuação de crédito. O score é calculado por cada birô com base em vários fatores e pode levar algum tempo para refletir a retirada. O consumidor pode consultar seus dados no Cadastro Positivo (Lei 12.414/2011) e pedir a correção de informações erradas."
+          ]
+        }
       ],
-      documents: [
-        'Carta de negativação (se recebeu)',
-        'Consulta ao SPC/Serasa mostrando a restrição',
-        'Comprovante de pagamento da dívida',
-        'Boletim de ocorrência (em caso de fraude)',
-        'Protocolos de reclamação à empresa',
-        'Contrato ou fatura mostrando valores incorretos',
+      "whenYouHaveRight": [
+        "Dívida que você nunca contraiu, inclusive por fraude com seus dados",
+        "Dívida já paga e não baixada em até 5 dias úteis",
+        "Negativação após acordo de quitação ou renegociação cumprida",
+        "Cobrança de valor errado ou em duplicidade",
+        "Registro mantido por mais de 5 anos ou após a prescrição da cobrança",
+        "Negativação sem a comunicação prévia exigida pelo art. 43, §2º, do CDC",
+        "Cobrança de produto ou serviço não contratado"
       ],
-      deadlines: 'O prazo para ação é de 5 anos. A empresa tem até 5 dias úteis para retirar a negativação após comunicação ou quitação.',
-      faq: [
-        {
-          question: 'Quanto posso receber de indenização?',
-          answer: 'O valor depende das circunstâncias de cada caso e é fixado pelo juiz; não há valor garantido. Atenção: quem já tem outra negativação legítima, em regra, não recebe dano moral (Súmula 385 do STJ).',
-        },
-        {
-          question: 'Preciso provar que sofri constrangimento?',
-          answer: 'Não. O dano moral por negativação indevida é presumido (in re ipsa). Basta provar que a negativação foi indevida.',
-        },
-        {
-          question: 'E se eu tiver outras dívidas verdadeiras no nome?',
-          answer: 'Isso pode reduzir a indenização (Súmula 385 STJ), mas não elimina. Você ainda tem direito, só em valor menor.',
-        },
-        {
-          question: 'Como limpar meu nome rapidamente?',
-          answer: 'Você pode pedir liminar na Justiça para exclusão imediata enquanto o processo corre. Também pode reclamar no Procon ou Consumidor.gov.br.',
-        },
+      "documents": [
+        "Relatório da Serasa, do SPC e da Boa Vista mostrando a restrição",
+        "Carta de comunicação da negativação, se recebida",
+        "Comprovantes de pagamento ou do acordo",
+        "Boletim de ocorrência, em caso de fraude",
+        "Protocolos de reclamação à empresa, ao Procon ou ao consumidor.gov.br",
+        "Contrato, faturas e mensagens trocadas com a empresa",
+        "Documentos pessoais"
       ],
+      "deadlines": "Quitada a dívida, o credor tem 5 dias úteis para pedir a exclusão do registro (Súmula 548 do STJ). Nenhuma informação negativa pode permanecer por mais de 5 anos. Para a ação de indenização em relação de consumo, aplica-se em regra o prazo de 5 anos do art. 27 do CDC; fora do CDC, o prazo pode ser de 3 anos. Como há divergências, é melhor agir assim que descobrir a restrição.",
+      "faq": [
+        {
+          "question": "Preciso provar que sofri constrangimento?",
+          "answer": "Em regra, não. Para o STJ, o dano moral pela inscrição indevida é presumido. Basta provar que a negativação foi irregular."
+        },
+        {
+          "question": "E se eu já tiver outras dívidas verdadeiras no nome?",
+          "answer": "Pela Súmula 385 do STJ, quem tem inscrição legítima anterior não recebe dano moral pela nova anotação irregular, mas mantém o direito de exigir o cancelamento dela."
+        },
+        {
+          "question": "Preciso provar que não devo?",
+          "answer": "Não é possível provar um fato negativo. Cabe à empresa demonstrar que a dívida existe e foi contratada por você, com contrato, gravação ou documentos válidos."
+        },
+        {
+          "question": "Quanto tempo a empresa tem para tirar meu nome depois que eu pago?",
+          "answer": "Cinco dias úteis a partir do pagamento, conforme a Súmula 548 do STJ."
+        },
+        {
+          "question": "Dívida antiga pode ficar no meu nome?",
+          "answer": "Não por mais de 5 anos, nem depois de prescrita a cobrança (art. 43, §§1º e 5º, do CDC). Passado esse prazo, a anotação deve ser retirada."
+        },
+        {
+          "question": "Como limpar meu nome rapidamente?",
+          "answer": "Reclame com a empresa e no consumidor.gov.br. Se não resolver, a ação judicial pode incluir pedido de tutela de urgência para exclusão do nome enquanto o processo tramita."
+        },
+        {
+          "question": "Quanto posso receber de indenização?",
+          "answer": "Não há valor tabelado nem garantido. O juiz fixa conforme as circunstâncias: tempo da restrição, prejuízos comprovados, conduta da empresa e existência de outras anotações."
+        }
+      ]
     },
-    relatedActions: ['danos-morais', 'cobranca'],
-    updatedAt: '2025-01-01',
+    "relatedActions": [
+      "danos-morais",
+      "cobranca-indevida-dobro",
+      "cartao-clonado-banco"
+    ],
+    "updatedAt": "2026-11-05"
   },
   {
-    id: 'plano-saude-negativa',
-    nicheId: 'consumidor',
-    slug: 'plano-saude-negativa-cobertura',
-    title: 'Plano de Saúde Negou Cobertura? Saiba Seus Direitos',
-    metaTitle: 'Plano de Saúde Negou | Cirurgia, Exame, Internação',
-    metaDescription: 'O plano de saúde negou sua cirurgia, exame ou internação? Saiba como reverter a negativa e obter indenização por danos morais.',
-    keywords: ['plano negou cirurgia', 'cobertura plano de saúde', 'ANS', 'negativa plano saúde', 'liminar plano saúde', 'rol ANS', 'carência plano'],
-    excerpt: 'Entenda quando a negativa do plano de saúde é abusiva, como conseguir a cobertura na Justiça e se você tem direito a indenização.',
-    content: {
-      intro: 'As negativas de cobertura por planos de saúde são extremamente comuns e, em muitos casos, ilegais. A ANS estabelece regras mínimas de cobertura, e os Tribunais frequentemente revertem negativas abusivas, além de condenar as operadoras a pagar indenização.',
-      whatIs: 'A negativa de cobertura ocorre quando o plano recusa pagar por um procedimento, alegando que não está coberto, há carência, ou outras justificativas. Muitas dessas negativas são consideradas abusivas pela Justiça e pela ANS.',
-      whenYouHaveRight: [
-        'Negativa de procedimento previsto no rol ANS',
-        'Negativa de emergência ou urgência',
-        'Negativa de tratamento oncológico',
-        'Exigência de carência em urgência',
-        'Negativa de home care quando prescrito',
-        'Recusa de próteses e órteses vinculadas a cirurgia',
-        'Limitação de dias de internação em UTI',
-        'Negativa de medicamentos quimioterápicos',
+    "id": "plano-saude-negativa",
+    "nicheId": "consumidor",
+    "slug": "plano-saude-negativa-cobertura",
+    "title": "Plano de Saúde Negou Cobertura ou Cirurgia? Direitos e Como Pedir Liminar",
+    "metaTitle": "Plano de Saúde Negou Cirurgia ou Exame | Direitos e Liminar",
+    "metaDescription": "O plano negou cirurgia, exame, internação ou tratamento? Entenda o rol da ANS após a Lei 14.454/2022, carência, prazos de autorização e como pedir liminar na urgência.",
+    "keywords": [
+      "plano de saúde negou cirurgia",
+      "negativa de cobertura",
+      "liminar plano de saúde",
+      "rol da ANS",
+      "tutela de urgência",
+      "carência plano de saúde",
+      "doença preexistente",
+      "home care"
+    ],
+    "excerpt": "Guia completo para quem teve cirurgia, exame ou tratamento negado: quando a negativa é abusiva, prazos da ANS, carência, rol, liminar e danos morais.",
+    "content": {
+      "intro": "Receber a negativa do plano de saúde para uma cirurgia, exame ou tratamento indicado pelo médico é uma das situações mais angustiantes que um consumidor pode viver. Muitas dessas negativas são consideradas abusivas pela ANS e pelos tribunais, e há caminhos rápidos para tentar reverter a recusa, inclusive com pedido de liminar quando há urgência. O resultado, porém, depende do contrato, da indicação médica e das provas de cada caso.",
+      "whatIs": "Negativa de cobertura é a recusa da operadora em autorizar ou custear procedimento, exame, internação, medicamento ou material. As justificativas mais comuns são “fora do rol da ANS”, carência, doença preexistente, tratamento experimental ou off-label, rede credenciada indisponível e limitação de dias de internação. Os contratos de plano de saúde são regidos pela Lei 9.656/1998 e pelo Código de Defesa do Consumidor (Súmula 608 do STJ), salvo os de autogestão.",
+      "sections": [
+        {
+          "title": "O rol da ANS depois da Lei 14.454/2022",
+          "paragraphs": [
+            "O rol de procedimentos da ANS é a lista de coberturas mínimas obrigatórias. Em 2022, depois de o STJ entender que o rol era, em regra, taxativo, a Lei 14.454/2022 alterou a Lei 9.656/1998 para prever que o rol é referência básica e que tratamentos fora dele devem ser cobertos quando houver comprovação de eficácia à luz das ciências da saúde baseada em evidências, ou recomendação da Conitec ou de órgão de avaliação de tecnologias em saúde de renome internacional.",
+            "Em 2025, ao julgar a ADI 7.265, o STF manteve a lei, mas estabeleceu critérios técnicos para a cobertura fora do rol, como prescrição pelo médico assistente, ausência de alternativa terapêutica no rol, comprovação científica de eficácia e segurança e registro na Anvisa. Na prática, um relatório médico bem fundamentado, explicando por que o tratamento é necessário e por que as alternativas do rol não servem, é a peça central do pedido."
+          ]
+        },
+        {
+          "title": "Carência, urgência e doença preexistente",
+          "paragraphs": [
+            "A Lei 9.656/1998 limita a carência para urgência e emergência a 24 horas (art. 12, V, c), e a Súmula 597 do STJ considera abusiva a cláusula que imponha carência maior nesses casos. Para partos a termo, o limite é de 300 dias, e para os demais procedimentos, 180 dias.",
+            "Para doenças preexistentes declaradas, a operadora pode aplicar cobertura parcial temporária de até 24 meses para procedimentos de alta complexidade ligados à doença. A Súmula 609 do STJ estabelece que a recusa por doença preexistente é ilícita se a operadora não exigiu exames prévios à contratação ou não provou a má-fé do consumidor."
+          ]
+        },
+        {
+          "title": "Prazos máximos de autorização",
+          "paragraphs": [
+            "A ANS fixa prazos máximos para garantia de atendimento: 7 dias úteis para consultas básicas, 3 dias úteis para exames laboratoriais, 10 dias úteis para os demais exames e terapias, 21 dias úteis para procedimentos de alta complexidade e para cirurgias e internações eletivas, e atendimento imediato para urgência e emergência. Ultrapassado o prazo sem solução, o consumidor pode registrar reclamação na ANS pela Notificação de Intermediação Preliminar (NIP)."
+          ]
+        },
+        {
+          "title": "A liminar (tutela de urgência)",
+          "paragraphs": [
+            "Quando a demora pode agravar a saúde ou colocar a vida em risco, a ação judicial pode trazer pedido de tutela de urgência (art. 300 do CPC), que obriga a operadora a autorizar o procedimento antes do julgamento final. É preciso demonstrar a probabilidade do direito, com prescrição médica e negativa injustificada, e o perigo de dano, com relatório que explique a urgência. Nos casos mais graves, o pedido pode ser apresentado no plantão judiciário.",
+            "O tempo de análise depende de cada juízo e do caso concreto; não há prazo garantido. Se a liminar for concedida e descumprida, o juiz pode fixar multa diária e outras medidas para assegurar o cumprimento. A operadora pode recorrer, mas deve cumprir a decisão enquanto ela estiver em vigor. Planos individuais só podem ser rescindidos por fraude ou inadimplência superior a 60 dias, com notificação (art. 13 da Lei 9.656/1998)."
+          ]
+        },
+        {
+          "title": "Reembolso e danos morais",
+          "paragraphs": [
+            "Se o paciente precisou pagar o procedimento por conta própria diante de negativa indevida ou falta de rede, pode pedir reembolso, guardando notas, recibos e a negativa. A recusa indevida de cobertura em situação de urgência costuma ser reconhecida pelo STJ como causa de dano moral, por agravar a aflição de quem já está doente. O valor é fixado pelo juiz conforme as circunstâncias."
+          ]
+        }
       ],
-      documents: [
-        'Carteirinha do plano de saúde',
-        'Pedido médico do procedimento',
-        'Negativa por escrito do plano',
-        'Laudos e exames que justifiquem o tratamento',
-        'Protocolo de reclamação à ANS',
-        'Contrato do plano',
+      "whenYouHaveRight": [
+        "Negativa de procedimento previsto no rol da ANS",
+        "Negativa de tratamento fora do rol com indicação médica fundamentada e evidência científica",
+        "Negativa em urgência ou emergência, ou carência acima de 24 horas nesses casos",
+        "Negativa de tratamento oncológico, quimioterapia ou medicamento durante internação",
+        "Recusa de próteses e órteses ligadas ao ato cirúrgico",
+        "Limitação de dias de internação, inclusive em UTI (Súmula 302 do STJ)",
+        "Negativa por doença preexistente sem exame prévio ou prova de má-fé",
+        "Demora acima dos prazos máximos de autorização da ANS"
       ],
-      deadlines: 'A operadora tem prazos para responder: 21 dias úteis para procedimentos de alta complexidade, 10 para demais cirurgias. Urgências devem ser atendidas imediatamente.',
-      faq: [
-        {
-          question: 'O que fazer quando o plano nega?',
-          answer: 'Primeiro, exija a negativa por escrito. Depois, reclame na ANS (NIP). Se não resolver, entre com liminar na Justiça para obrigar o atendimento.',
-        },
-        {
-          question: 'Posso pedir indenização além da cobertura?',
-          answer: 'Sim, se a negativa causou agravamento da doença, sofrimento intenso ou situação de risco, você pode pedir danos morais.',
-        },
-        {
-          question: 'O plano pode negar procedimento fora do rol da ANS?',
-          answer: 'Pode, mas se o médico justificar que não há alternativa eficaz, a Justiça pode obrigar a cobertura mesmo assim.',
-        },
-        {
-          question: 'Quanto tempo leva para conseguir liminar?',
-          answer: 'Liminares urgentes podem sair em 24 a 48 horas. Em casos de risco de vida, no mesmo dia.',
-        },
+      "documents": [
+        "Carteirinha e contrato do plano de saúde",
+        "Pedido e relatório médico detalhado, com CID, justificativa e urgência",
+        "Exames e laudos que comprovem a necessidade",
+        "Negativa por escrito da operadora (pode ser exigida por lei)",
+        "Protocolos de atendimento e reclamação na ANS",
+        "Comprovantes de pagamento das mensalidades",
+        "Orçamentos ou notas fiscais, se houve pagamento particular"
       ],
+      "deadlines": "A operadora deve responder dentro dos prazos máximos da ANS (até 21 dias úteis para cirurgias eletivas e alta complexidade; imediato na urgência). A negativa deve ser informada por escrito quando o consumidor pedir, em até 24 horas. Não há prazo para ajuizar a ação de cobertura enquanto houver necessidade; pedidos de reembolso e indenização devem ser feitos o quanto antes para evitar discussões de prescrição.",
+      "faq": [
+        {
+          "question": "O que fazer quando o plano nega?",
+          "answer": "Peça a negativa por escrito com o motivo, reúna o relatório médico e registre reclamação na ANS. Se houver urgência, procure um advogado para avaliar o pedido de liminar."
+        },
+        {
+          "question": "O plano pode negar procedimento fora do rol da ANS?",
+          "answer": "Pode, em alguns casos. Pela Lei 14.454/2022 e pelos critérios fixados pelo STF na ADI 7.265, a cobertura fora do rol depende de prescrição médica, ausência de alternativa no rol, evidência científica de eficácia e segurança e registro na Anvisa."
+        },
+        {
+          "question": "Quanto tempo demora para sair a liminar?",
+          "answer": "Não há prazo fixo. Pedidos urgentes costumam ser analisados com prioridade, e em situações de risco de vida podem ser levados ao plantão judiciário. O tempo depende do juízo e do caso."
+        },
+        {
+          "question": "O plano pode exigir carência numa emergência?",
+          "answer": "Não acima de 24 horas. A Súmula 597 do STJ considera abusiva cláusula que imponha carência maior em urgência e emergência."
+        },
+        {
+          "question": "Posso fazer o procedimento particular e cobrar depois?",
+          "answer": "Em situações de urgência ou negativa indevida, é possível pedir reembolso. Guarde notas, recibos, relatório médico e a negativa da operadora."
+        },
+        {
+          "question": "O plano pode cancelar meu contrato porque entrei na Justiça?",
+          "answer": "Não. Planos individuais só podem ser rescindidos por fraude ou inadimplência acima de 60 dias, com notificação prévia. Retaliação pode gerar nova discussão judicial."
+        },
+        {
+          "question": "Quanto custa entrar com ação contra o plano?",
+          "answer": "Causas de até 40 salários mínimos podem tramitar no Juizado Especial Cível, sem custas em primeiro grau. Casos complexos, que exijam perícia, costumam ir à Justiça comum."
+        },
+        {
+          "question": "Tenho direito a danos morais?",
+          "answer": "Pode haver, especialmente quando a negativa indevida ocorre em urgência ou agrava o sofrimento do paciente. Não há valor garantido: o juiz avalia cada caso."
+        }
+      ]
     },
-    relatedActions: ['danos-morais', 'erro-medico'],
-    updatedAt: '2025-01-01',
+    "relatedActions": [
+      "danos-morais",
+      "erro-medico"
+    ],
+    "updatedAt": "2026-11-05"
   },
 
   // PREVIDENCIÁRIO - Artigos Atualizados 2025
-  {
-    id: 'aposentadoria-2025',
-    nicheId: 'previdenciario',
-    slug: 'aposentadoria-novas-regras-2025',
-    title: 'Novas Regras de Aposentadoria 2025: Guia Completo',
-    metaTitle: 'Aposentadoria | Novas Regras, Idade, Tempo',
-    metaDescription: 'Conheça as novas regras de aposentadoria em 2025: idade mínima, tempo de contribuição, regras de transição. Guia atualizado INSS.',
-    keywords: ['aposentadoria 2025', 'regras aposentadoria INSS', 'idade aposentadoria 2025', 'tempo contribuição', 'reforma previdência', 'regras transição'],
-    excerpt: 'Entenda as regras de aposentadoria válidas em 2025, incluindo as mudanças progressivas de idade e as regras de transição.',
-    content: {
-      intro: 'Em 2025, as regras de aposentadoria continuam evoluindo conforme a Reforma da Previdência de 2019. A idade mínima para mulheres subiu para 59 anos, e os homens precisam de 65 anos. Conheça todas as opções e regras de transição.',
-      whatIs: 'A aposentadoria é o benefício do INSS pago a quem cumpriu os requisitos de idade e/ou tempo de contribuição. Após a Reforma de 2019, existem várias regras, incluindo transições para quem já contribuía antes da mudança.',
-      whenYouHaveRight: [
-        'Mulheres: 62 anos de idade + 15 anos de contribuição (regra definitiva)',
-        'Homens: 65 anos de idade + 20 anos de contribuição',
-        'Regra de transição por pontos: soma de idade + tempo',
-        'Regra de transição por idade progressiva',
-        'Regra do pedágio 50% ou 100%',
-        'Aposentadoria especial (atividades insalubres)',
-      ],
-      documents: [
-        'Carteiras de trabalho (todas)',
-        'Carnês de contribuição como autônomo',
-        'Certidão de Tempo de Contribuição (CTC)',
-        'Extrato CNIS do INSS',
-        'Documentos de atividade rural (se aplicável)',
-        'PPP para aposentadoria especial',
-      ],
-      deadlines: 'Não há prazo para pedir aposentadoria, mas quanto mais cedo você organizar os documentos e contribuições, melhor. O INSS tem 90 dias para analisar.',
-      faq: [
-        {
-          question: 'Qual a idade mínima em 2025?',
-          answer: 'Para a regra geral: mulheres 62 anos, homens 65 anos. Nas regras de transição, pode ser menor dependendo do tempo de contribuição.',
-        },
-        {
-          question: 'Quanto vou receber de aposentadoria?',
-          answer: 'O cálculo é: 60% da média de todos os salários + 2% por ano que exceder 15 anos (mulheres) ou 20 anos (homens) de contribuição.',
-        },
-        {
-          question: 'Posso me aposentar antes da idade mínima?',
-          answer: 'Só nas regras de transição ou aposentadoria especial (atividade insalubre). A aposentadoria por tempo de contribuição pura acabou.',
-        },
-        {
-          question: 'Como saber qual regra é melhor para mim?',
-          answer: 'Depende do seu tempo de contribuição e idade. Um advogado previdenciário pode fazer a simulação de cada regra e identificar a mais vantajosa.',
-        },
-      ],
-    },
-    relatedActions: ['auxilio-doenca', 'bpc-loas', 'revisao-beneficio'],
-    updatedAt: '2025-01-01',
-  },
   {
     id: 'simulacao-aposentadoria',
     nicheId: 'previdenciario',
@@ -1906,56 +2374,6 @@ export const blogArticles: BlogArticle[] = [
   },
   // NOVOS ARTIGOS - TRABALHISTA
   {
-    id: 'desvio-funcao',
-    nicheId: 'trabalhista',
-    slug: 'desvio-de-funcao',
-    title: 'Desvio de Função: Quando Você Pode Exigir Aumento Salarial',
-    metaTitle: 'Desvio de Função | Direito a Diferenças Salariais',
-    metaDescription: 'Trabalha em função diferente do que foi contratado? Saiba seus direitos: diferenças salariais, reenquadramento e como processar.',
-    keywords: ['desvio de função', 'diferenças salariais', 'reenquadramento', 'função diferente contrato', 'acúmulo função', 'direitos trabalhistas'],
-    excerpt: 'Entenda o que é desvio de função, quando você tem direito a diferenças salariais e como buscar seus direitos na Justiça.',
-    content: {
-      intro: 'O desvio de função ocorre quando o trabalhador é contratado para uma função, mas acaba exercendo atividades diferentes e geralmente mais complexas. Essa prática é ilegal e gera direito a diferenças salariais.',
-      whatIs: 'Desvio de função é a situação em que o empregado realiza tarefas de cargo diferente daquele para o qual foi contratado, sem a devida alteração contratual ou aumento de salário correspondente.',
-      whenYouHaveRight: [
-        'Quando exerce funções de cargo superior ao seu',
-        'Quando há diferença salarial entre os cargos',
-        'Quando a atividade é habitual, não eventual',
-        'Quando não houve alteração formal no contrato',
-        'Quando colegas na mesma função ganham mais',
-      ],
-      documents: [
-        'Contrato de trabalho',
-        'Descrição de cargos da empresa',
-        'E-mails com delegação de tarefas',
-        'Holerites e contracheques',
-        'Testemunhos de colegas',
-        'Organograma da empresa',
-      ],
-      deadlines: 'O prazo para cobrar diferenças salariais é de 5 anos. Após a demissão, você tem 2 anos para entrar com a ação.',
-      faq: [
-        {
-          question: 'Qual a diferença entre desvio e acúmulo de função?',
-          answer: 'Desvio é exercer função diferente; acúmulo é exercer sua função mais outra adicional. Ambos geram direito a aumento salarial.',
-        },
-        {
-          question: 'Quanto posso receber de diferenças salariais?',
-          answer: 'Você pode receber a diferença entre seu salário e o do cargo efetivamente exercido, dos últimos 5 anos, com reflexos em férias, 13º e FGTS.',
-        },
-        {
-          question: 'A empresa pode me demitir se eu reclamar?',
-          answer: 'Tecnicamente não há estabilidade, mas uma demissão por reclamação pode configurar retaliação e gerar indenização adicional.',
-        },
-        {
-          question: 'Preciso de testemunhas para provar?',
-          answer: 'Testemunhas ajudam muito. E-mails, mensagens e documentos que mostrem as tarefas realizadas também são provas valiosas.',
-        },
-      ],
-    },
-    relatedActions: ['horas-extras', 'demissao-sem-justa-causa'],
-    updatedAt: '2025-01-01',
-  },
-  {
     id: 'intervalo-intrajornada',
     nicheId: 'trabalhista',
     slug: 'intervalo-intrajornada-almoco',
@@ -1999,56 +2417,6 @@ export const blogArticles: BlogArticle[] = [
         {
           question: 'Vale para home office também?',
           answer: 'Sim, no teletrabalho também deve haver intervalo. Se você trabalha durante o almoço, pode cobrar.',
-        },
-      ],
-    },
-    relatedActions: ['horas-extras', 'demissao-sem-justa-causa'],
-    updatedAt: '2025-01-01',
-  },
-  {
-    id: 'trabalho-noturno',
-    nicheId: 'trabalhista',
-    slug: 'trabalho-noturno-adicional',
-    title: 'Trabalho Noturno: Adicional, Hora Reduzida e Direitos',
-    metaTitle: 'Trabalho Noturno | Adicional Noturno e Hora Reduzida',
-    metaDescription: 'Trabalha à noite? Conheça seus direitos: adicional de 20%, hora noturna reduzida de 52min30s e mais. Advogado explica.',
-    keywords: ['trabalho noturno', 'adicional noturno', 'hora noturna', 'hora reduzida', 'jornada noturna', 'direitos trabalho noite'],
-    excerpt: 'Conheça todos os direitos de quem trabalha no período noturno, incluindo adicional de 20% e hora reduzida.',
-    content: {
-      intro: 'O trabalho noturno tem regras especiais na CLT, incluindo adicional mínimo de 20% e hora reduzida de 52 minutos e 30 segundos. Muitos trabalhadores não recebem corretamente esses valores.',
-      whatIs: 'Trabalho noturno urbano é aquele realizado entre 22h e 5h. A hora noturna é computada como 52min30s, o que significa que 7 horas trabalhadas equivalem a 8 horas. Além disso, há adicional de no mínimo 20%.',
-      whenYouHaveRight: [
-        'Quando trabalha entre 22h e 5h (urbano)',
-        'Quando trabalha entre 21h e 5h (rural pecuária)',
-        'Quando trabalha entre 20h e 4h (rural agricultura)',
-        'Quando as horas extras são em horário noturno',
-        'Quando há prorrogação da jornada noturna após as 5h',
-      ],
-      documents: [
-        'Cartões de ponto',
-        'Holerites com adicional noturno',
-        'Escalas de trabalho',
-        'Contrato de trabalho',
-        'Acordo ou convenção coletiva',
-        'Testemunhos de colegas',
-      ],
-      deadlines: 'Prazo de 5 anos para cobrar diferenças do adicional noturno. Após demissão, 2 anos para ajuizar a ação.',
-      faq: [
-        {
-          question: 'Qual o valor do adicional noturno?',
-          answer: 'O mínimo legal é 20% sobre a hora diurna. Convenções coletivas podem prever percentuais maiores, como 30% ou 40%.',
-        },
-        {
-          question: 'O que é hora noturna reduzida?',
-          answer: 'Cada hora noturna equivale a 52min30s. Ou seja, 7 horas trabalhadas à noite equivalem a 8 horas para fins de pagamento.',
-        },
-        {
-          question: 'Hora extra noturna tem adicional duplo?',
-          answer: 'Sim! A hora extra noturna deve ter adicional de 50% (hora extra) + 20% (noturno), calculados sobre a hora normal.',
-        },
-        {
-          question: 'Posso ser obrigado a mudar para turno noturno?',
-          answer: 'Em geral, mudança de turno exige acordo. Transferência unilateral para horário noturno pode ser contestada.',
         },
       ],
     },
@@ -2408,56 +2776,6 @@ export const blogArticles: BlogArticle[] = [
     relatedActions: ['inventario-heranca', 'divorcio-consensual'],
     updatedAt: '2025-01-01',
   },
-  {
-    id: 'guarda-filhos-tipos',
-    nicheId: 'familia',
-    slug: 'guarda-filhos-compartilhada-unilateral',
-    title: 'Guarda de Filhos: Compartilhada, Unilateral e Alternada',
-    metaTitle: 'Guarda de Filhos | Compartilhada vs Unilateral',
-    metaDescription: 'Separou e precisa definir guarda? Conheça os tipos: compartilhada, unilateral, alternada. Saiba qual é melhor para seu caso.',
-    keywords: ['guarda filhos', 'guarda compartilhada', 'guarda unilateral', 'guarda alternada', 'custódia filhos', 'direito visitas'],
-    excerpt: 'Entenda os diferentes tipos de guarda de filhos e como funciona a definição após separação ou divórcio.',
-    content: {
-      intro: 'A definição da guarda dos filhos é uma das questões mais delicadas em separações. Conheça os tipos de guarda, quando cada uma é aplicada e como funciona na prática.',
-      whatIs: 'Guarda é o instituto que define quem será responsável pelo cuidado diário dos filhos. Pode ser compartilhada (regra), unilateral ou alternada.',
-      whenYouHaveRight: [
-        'Após separação ou divórcio',
-        'Quando há filhos menores',
-        'Em casos de revisão de guarda',
-        'Quando há mudança de circunstâncias',
-        'Para avós e outros parentes (situações especiais)',
-      ],
-      documents: [
-        'Certidão de nascimento dos filhos',
-        'Comprovante de residência',
-        'Comprovantes de renda',
-        'Documentos pessoais dos pais',
-        'Provas relevantes (se for litigiosa)',
-        'Laudo psicológico (quando solicitado)',
-      ],
-      deadlines: 'Não há prazo para pedir guarda. A revisão pode ser feita sempre que houver mudança relevante nas circunstâncias.',
-      faq: [
-        {
-          question: 'Qual a diferença entre guarda compartilhada e alternada?',
-          answer: 'Compartilhada: ambos decidem juntos, mas o filho mora com um. Alternada: o filho mora períodos iguais com cada um (não é o padrão).',
-        },
-        {
-          question: 'A guarda compartilhada é obrigatória?',
-          answer: 'É a regra desde 2014, mesmo sem acordo entre os pais. Só não se aplica se um dos pais não quiser ou houver risco à criança.',
-        },
-        {
-          question: 'Posso mudar de cidade com meu filho?',
-          answer: 'Na guarda compartilhada, precisa de autorização do outro genitor ou judicial. Mudar sem autorização pode ser crime.',
-        },
-        {
-          question: 'Avós podem pedir guarda?',
-          answer: 'Sim, em situações especiais (falecimento, abandono, incapacidade dos pais). Precisam provar que é melhor para a criança.',
-        },
-      ],
-    },
-    relatedActions: ['divorcio-consensual', 'pensao-alimenticia'],
-    updatedAt: '2025-01-01',
-  },
 
   // NOVOS ARTIGOS - CIVIL
   {
@@ -2663,57 +2981,6 @@ export const blogArticles: BlogArticle[] = [
     updatedAt: '2025-01-01',
   },
   {
-    id: 'negativacao-indevida',
-    nicheId: 'civil',
-    slug: 'negativacao-indevida-nome-sujo',
-    title: 'Negativação Indevida: Como Limpar o Nome e Ser Indenizado',
-    metaTitle: 'Negativação Indevida | Limpar Nome e Indenização',
-    metaDescription: 'Nome sujo sem dever? Saiba como limpar seu nome, provar que a dívida é indevida e receber indenização por danos morais.',
-    keywords: ['negativação indevida', 'nome sujo', 'limpar nome', 'SPC SERASA', 'danos morais negativação', 'dívida indevida'],
-    excerpt: 'Se seu nome foi negativado indevidamente, você tem direito a limpar o registro e receber indenização por danos morais.',
-    content: {
-      intro: 'A negativação indevida - quando seu nome vai para SPC/SERASA sem você dever - é prática comum e gera direito a indenização. Saiba como agir.',
-      whatIs: 'Negativação indevida ocorre quando uma empresa inclui seu nome em cadastros de inadimplentes (SPC, SERASA, etc.) por dívida que você não tem ou já pagou.',
-      whenYouHaveRight: [
-        'Dívida que você nunca contraiu (fraude)',
-        'Dívida já paga mas não baixada',
-        'Cobrança de valor errado',
-        'Dívida prescrita (mais de 5 anos)',
-        'Negativação sem aviso prévio',
-        'Duplicidade de cobrança',
-      ],
-      documents: [
-        'Consulta ao SPC/SERASA (print)',
-        'Comprovante de pagamento (se já pagou)',
-        'Documentos pessoais',
-        'Protocolos de reclamação',
-        'Boletim de ocorrência (se fraude)',
-        'Comunicações com a empresa',
-      ],
-      deadlines: 'Prazo de 5 anos para pedir indenização. A empresa tem 5 dias úteis para excluir negativação indevida após notificada.',
-      faq: [
-        {
-          question: 'Quanto posso receber de indenização?',
-          answer: 'O valor depende das circunstâncias de cada caso e é fixado pelo juiz; não há valor garantido. Prejuízo comprovado (perda de crédito, negócio frustrado) pesa na fixação.',
-        },
-        {
-          question: 'Preciso provar que não devo?',
-          answer: 'Não. O ônus de provar que a dívida existe é da empresa. Você só precisa comprovar a negativação.',
-        },
-        {
-          question: 'Dívida prescrita pode negativar?',
-          answer: 'Não. Após 5 anos da data de vencimento, a dívida prescreve e a negativação deve ser excluída automaticamente.',
-        },
-        {
-          question: 'Posso resolver sem processo?',
-          answer: 'Tente primeiro reclamar com a empresa e no Procon. Se não resolver, o processo é a garantia de indenização.',
-        },
-      ],
-    },
-    relatedActions: ['danos-morais', 'cobranca'],
-    updatedAt: '2025-01-01',
-  },
-  {
     id: 'contratos-distrato',
     nicheId: 'civil',
     slug: 'contratos-distrato-rescisao',
@@ -2767,104 +3034,223 @@ export const blogArticles: BlogArticle[] = [
 
   // NOVOS ARTIGOS - PREVIDENCIÁRIO
   {
-    id: 'aposentadoria-invalidez',
-    nicheId: 'previdenciario',
-    slug: 'aposentadoria-invalidez',
-    title: 'Aposentadoria por Invalidez: Requisitos e Como Conseguir',
-    metaTitle: 'Aposentadoria por Invalidez | Requisitos INSS',
-    metaDescription: 'Não consegue mais trabalhar por doença? Saiba como pedir aposentadoria por invalidez: requisitos, perícia, valor e direitos.',
-    keywords: ['aposentadoria invalidez', 'incapacidade permanente', 'perícia INSS', 'benefício invalidez', 'auxílio doença', 'invalidez INSS'],
-    excerpt: 'Guia completo sobre aposentadoria por invalidez: quem tem direito, como pedir e o que fazer se for negada.',
-    content: {
-      intro: 'A aposentadoria por invalidez é concedida quando o segurado está permanentemente incapaz para qualquer trabalho. Conheça os requisitos e como solicitar.',
-      whatIs: 'Aposentadoria por invalidez (hoje chamada aposentadoria por incapacidade permanente) é o benefício para quem não pode mais trabalhar devido a doença ou acidente.',
-      whenYouHaveRight: [
-        'Incapacidade total e permanente para o trabalho',
-        'Impossibilidade de reabilitação profissional',
-        'Carência de 12 meses (regra geral)',
-        'Qualidade de segurado mantida',
-        'Doença ou acidente após filiação ao INSS',
+    "id": "aposentadoria-invalidez",
+    "nicheId": "previdenciario",
+    "slug": "aposentadoria-por-invalidez-incapacidade-permanente",
+    "title": "Aposentadoria por Invalidez: Direitos na Incapacidade Permanente",
+    "metaTitle": "Aposentadoria por Invalidez | Incapacidade Permanente INSS",
+    "metaDescription": "Não consegue mais trabalhar por doença ou acidente? Entenda os requisitos da aposentadoria por incapacidade permanente, a perícia, o valor, o adicional de 25% e a revisão.",
+    "keywords": [
+      "aposentadoria por invalidez",
+      "incapacidade permanente",
+      "perícia INSS",
+      "adicional de 25%",
+      "grande invalidez",
+      "carência",
+      "auxílio-doença",
+      "B32 INSS"
+    ],
+    "excerpt": "Guia sobre a aposentadoria por incapacidade permanente: quem tem direito, carência, perícia, cálculo do valor, adicional de 25% e perícias de revisão.",
+    "content": {
+      "intro": "A aposentadoria por invalidez, chamada desde a Reforma da Previdência de aposentadoria por incapacidade permanente, protege quem não consegue mais trabalhar por causa de doença ou acidente e não pode ser reabilitado para outra atividade. É um benefício que depende fortemente da prova médica e da perícia do INSS, por isso a preparação faz diferença.",
+      "whatIs": "Prevista nos artigos 42 a 47 da Lei 8.213/1991, é o benefício pago ao segurado considerado incapaz de forma total e permanente para o trabalho e insuscetível de reabilitação para atividade que lhe garanta o sustento. Diferente do auxílio por incapacidade temporária (antigo auxílio-doença), aqui a incapacidade é considerada definitiva. Muitas vezes o segurado recebe primeiro o auxílio temporário, que depois é convertido em aposentadoria.",
+      "sections": [
+        {
+          "title": "Requisitos",
+          "paragraphs": [
+            "São três: qualidade de segurado na data do início da incapacidade, carência de 12 contribuições mensais e incapacidade total e permanente comprovada em perícia. A carência é dispensada quando a incapacidade decorre de acidente de qualquer natureza, doença profissional ou do trabalho, ou das doenças graves listadas em lei e em portaria ministerial, como neoplasia maligna, cardiopatia grave, doença de Parkinson, esclerose múltipla e HIV/aids (art. 26, II, e art. 151 da Lei 8.213/1991).",
+            "A doença que já existia antes da filiação ao INSS não dá direito ao benefício, salvo quando a incapacidade resulta do agravamento ou da progressão dessa doença depois da filiação (art. 42, §2º)."
+          ]
+        },
+        {
+          "title": "Incapacidade total e permanente na prática",
+          "paragraphs": [
+            "A análise não é apenas médica. Idade, escolaridade, profissão e condições sociais também pesam: a Súmula 47 da TNU orienta que, reconhecida a incapacidade parcial, o juiz analise as condições pessoais e sociais do segurado para decidir sobre a aposentadoria. Um trabalhador braçal de 58 anos com pouca escolaridade e uma lesão grave na coluna, por exemplo, pode ter dificuldade real de reabilitação.",
+            "Na perícia, leve laudos atualizados com CID, descrição das limitações, tratamentos realizados e prognóstico, além de exames e receitas. Relatórios que expliquem por que a pessoa não consegue exercer a sua atividade são mais úteis do que atestados genéricos."
+          ]
+        },
+        {
+          "title": "Valor do benefício e adicional de 25%",
+          "paragraphs": [
+            "Após a reforma, o valor corresponde a 60% da média de todos os salários de contribuição, mais 2% por ano que exceder 15 anos (mulheres) ou 20 anos (homens) de contribuição. Quando a incapacidade decorre de acidente do trabalho, doença profissional ou doença do trabalho, o valor é de 100% da média. O benefício não pode ser inferior ao salário mínimo.",
+            "Quem precisa da assistência permanente de outra pessoa para as atividades do dia a dia tem direito a um acréscimo de 25% (art. 45), mesmo que o total ultrapasse o teto do INSS. O adicional cessa com a morte do aposentado e não passa para a pensão. O STF decidiu (Tema 1.095) que ele não se estende a outras espécies de aposentadoria."
+          ]
+        },
+        {
+          "title": "Revisões e retorno ao trabalho",
+          "paragraphs": [
+            "O aposentado por incapacidade pode ser convocado para perícias de revisão (art. 101). Ficam dispensados, em regra, os que têm mais de 60 anos, os que têm mais de 55 anos e recebem benefício por incapacidade há mais de 15 anos, e as pessoas com HIV/aids, ressalvadas situações previstas em lei. Se a perícia constatar recuperação, a cessação é gradual em certos casos, conforme o artigo 47.",
+            "O retorno voluntário ao trabalho leva ao cancelamento automático do benefício a partir da volta (art. 46). Antes de aceitar qualquer atividade remunerada, converse com um advogado."
+          ]
+        },
+        {
+          "title": "Se o INSS negar",
+          "paragraphs": [
+            "A negativa geralmente se baseia na conclusão pericial de que não há incapacidade, de que ela é apenas parcial ou temporária, ou de que começou antes da filiação. É possível recorrer administrativamente ou ajuizar ação, na qual um perito nomeado pelo juiz fará nova avaliação. Causas de até 60 salários mínimos tramitam no Juizado Especial Federal. Se a incapacidade decorre de acidente do trabalho, a competência é da Justiça Estadual. Em qualquer caso, laudos atualizados e coerentes entre si são a base do pedido."
+          ]
+        }
       ],
-      documents: [
-        'Laudos médicos detalhados',
-        'Exames e resultados',
-        'Histórico de tratamentos',
-        'Carteira de trabalho',
-        'Carnês de contribuição (se autônomo)',
-        'Documentos pessoais',
+      "whenYouHaveRight": [
+        "Incapacidade total para o trabalho, comprovada em perícia",
+        "Incapacidade de caráter permanente",
+        "Impossibilidade de reabilitação para outra atividade",
+        "Carência de 12 contribuições, dispensada em acidentes e doenças graves previstas em lei",
+        "Qualidade de segurado na data do início da incapacidade",
+        "Doença posterior à filiação ou agravada depois dela",
+        "Necessidade de ajuda permanente de terceiros (adicional de 25%)"
       ],
-      deadlines: 'Pedido pode ser feito a qualquer momento. INSS tem 45 dias para responder. Benefício é revisado a cada 2 anos.',
-      faq: [
-        {
-          question: 'Qual o valor da aposentadoria por invalidez?',
-          answer: 'É 60% da média salarial + 2% por ano acima de 20 anos de contribuição. Se for por acidente, pode ser 100%.',
-        },
-        {
-          question: 'Quem está aposentado por invalidez pode trabalhar?',
-          answer: 'Não. Se voltar a trabalhar, perde o benefício. Há exceção para trabalho que não agrave a condição.',
-        },
-        {
-          question: 'A perícia pode ser refeita?',
-          answer: 'Sim, o INSS pode convocar para nova perícia a qualquer momento. Se constatada melhora, o benefício é cessado.',
-        },
-        {
-          question: 'E se meu pedido for negado?',
-          answer: 'Pode recorrer administrativamente (30 dias) ou entrar com ação judicial. Muitos casos são revertidos na Justiça.',
-        },
+      "documents": [
+        "Laudos médicos detalhados e atualizados, com CID e prognóstico",
+        "Exames comprobatórios (ressonância, tomografia etc.)",
+        "Receitas de medicamentos de uso contínuo",
+        "Histórico de tratamentos, cirurgias e internações",
+        "Carteira de trabalho, CNIS e carnês, se contribuinte individual",
+        "CAT, quando a incapacidade decorre de acidente do trabalho",
+        "Documentos do INSS, se já recebe auxílio por incapacidade"
       ],
+      "deadlines": "O pedido pode ser feito a qualquer momento. Se negado, o recurso administrativo deve ser apresentado em 30 dias, ou pode ser ajuizada ação. As parcelas em atraso prescrevem em 5 anos. Após a concessão, o benefício pode ser revisto em perícias periódicas, salvo nas hipóteses de dispensa previstas em lei.",
+      "faq": [
+        {
+          "question": "Qual a diferença entre auxílio-doença e aposentadoria por invalidez?",
+          "answer": "O auxílio por incapacidade temporária é pago enquanto há expectativa de recuperação. A aposentadoria por incapacidade permanente é concedida quando a incapacidade é total, definitiva e sem possibilidade de reabilitação."
+        },
+        {
+          "question": "Qual o valor da aposentadoria por invalidez?",
+          "answer": "Em regra, 60% da média salarial mais 2% por ano acima de 15 anos (mulher) ou 20 anos (homem) de contribuição. Se a causa for acidente do trabalho ou doença ocupacional, 100% da média."
+        },
+        {
+          "question": "Preciso ter 12 contribuições?",
+          "answer": "Em regra sim, mas a carência é dispensada em acidentes de qualquer natureza, doenças ocupacionais e doenças graves listadas em lei, como câncer, cardiopatia grave e Parkinson."
+        },
+        {
+          "question": "O que é o adicional de 25%?",
+          "answer": "É um acréscimo para quem precisa da assistência permanente de outra pessoa. Vale apenas para a aposentadoria por incapacidade permanente e não passa para a pensão por morte."
+        },
+        {
+          "question": "A aposentadoria por invalidez pode ser cessada?",
+          "answer": "Sim, se a perícia de revisão constatar recuperação ou se o aposentado voltar a trabalhar voluntariamente. Há dispensa de revisão para maiores de 60 anos e em outras hipóteses legais."
+        },
+        {
+          "question": "Posso trabalhar recebendo aposentadoria por invalidez?",
+          "answer": "Não. O retorno voluntário à atividade leva ao cancelamento automático do benefício (art. 46 da Lei 8.213/1991)."
+        }
+      ]
     },
-    relatedActions: ['auxilio-doenca', 'bpc-loas'],
-    updatedAt: '2025-01-01',
+    "relatedActions": [
+      "auxilio-doenca",
+      "bpc-loas",
+      "inss-negou-beneficio"
+    ],
+    "updatedAt": "2026-11-05"
   },
   {
-    id: 'pensao-morte',
-    nicheId: 'previdenciario',
-    slug: 'pensao-por-morte',
-    title: 'Pensão por Morte: Quem Tem Direito e Como Pedir',
-    metaTitle: 'Pensão por Morte | Quem Tem Direito INSS',
-    metaDescription: 'Perdeu familiar segurado do INSS? Saiba quem tem direito à pensão por morte, valor, duração e como solicitar o benefício.',
-    keywords: ['pensão morte', 'benefício óbito', 'viúva pensão', 'dependentes INSS', 'pensão INSS', 'morte segurado'],
-    excerpt: 'Entenda quem são os dependentes que têm direito à pensão por morte e como solicitar o benefício ao INSS.',
-    content: {
-      intro: 'A pensão por morte é o benefício pago aos dependentes do segurado do INSS que falece. Conheça quem tem direito, valores e como solicitar.',
-      whatIs: 'Pensão por morte é o benefício previdenciário pago aos dependentes do segurado que falece, desde que ele estivesse contribuindo ou recebendo benefício do INSS.',
-      whenYouHaveRight: [
-        'Cônjuge ou companheiro(a)',
-        'Filhos menores de 21 anos',
-        'Filhos inválidos ou com deficiência',
-        'Pais (se dependiam economicamente)',
-        'Irmãos menores de 21 ou inválidos (se dependiam)',
+    "id": "pensao-morte",
+    "nicheId": "previdenciario",
+    "slug": "pensao-por-morte",
+    "title": "Pensão por Morte: Quem Tem Direito, Valor e Duração",
+    "metaTitle": "Pensão por Morte INSS | Dependentes, Valor e Duração",
+    "metaDescription": "Perdeu um familiar segurado do INSS? Entenda quem tem direito à pensão por morte, como é calculado o valor, quanto tempo dura, prazos e a acumulação com aposentadoria.",
+    "keywords": [
+      "pensão por morte",
+      "dependentes INSS",
+      "pensão viúva",
+      "quanto recebe pensão",
+      "duração pensão por morte",
+      "união estável pensão",
+      "acumular pensão e aposentadoria"
+    ],
+    "excerpt": "Entenda as classes de dependentes, o cálculo da pensão após a reforma, a tabela de duração para cônjuges, os prazos para pedir e as regras de acumulação.",
+    "content": {
+      "intro": "A pensão por morte garante renda à família de quem contribuía ao INSS ou já recebia benefício. As regras mudaram em 2015 e de novo com a Reforma da Previdência de 2019, especialmente quanto ao valor, à duração para cônjuges e à acumulação com outros benefícios. Conhecer esses pontos evita surpresas e perda de valores retroativos.",
+      "whatIs": "Prevista nos artigos 74 a 79 da Lei 8.213/1991, a pensão por morte é paga mensalmente aos dependentes do segurado falecido. Não exige carência, mas o falecido precisava ter qualidade de segurado na data do óbito, ou já ter direito adquirido a alguma aposentadoria. Também é devida quando o segurado estava em período de graça, isto é, sem contribuir, mas ainda coberto pelo INSS.",
+      "sections": [
+        {
+          "title": "Quem são os dependentes",
+          "paragraphs": [
+            "O artigo 16 da Lei 8.213/1991 divide os dependentes em três classes. Na primeira estão cônjuge, companheiro ou companheira, inclusive em união homoafetiva, e filhos menores de 21 anos ou inválidos, ou com deficiência intelectual, mental ou grave. Para essa classe, a dependência econômica é presumida. Enteado e menor tutelado se equiparam a filho, se comprovada a dependência.",
+            "Na segunda classe estão os pais e, na terceira, os irmãos menores de 21 anos ou inválidos ou com deficiência. Essas classes precisam comprovar dependência econômica e só recebem se não houver dependente de classe anterior. O ex-cônjuge que recebia pensão alimentícia concorre em igualdade com o novo cônjuge ou companheiro."
+          ]
+        },
+        {
+          "title": "Como o valor é calculado",
+          "paragraphs": [
+            "Para óbitos após a reforma, a pensão corresponde a uma cota familiar de 50% do valor da aposentadoria que o segurado recebia, ou daquela a que teria direito se fosse aposentado por incapacidade permanente, mais 10% por dependente, até 100%. Exemplo: viúva sozinha recebe 60%; viúva com um filho, 70%; com dois filhos, 80%. Quando um dependente perde a qualidade, sua cota não é redistribuída.",
+            "Se houver dependente inválido ou com deficiência intelectual, mental ou grave, a pensão é de 100% até o limite do teto do INSS. O valor total nunca é inferior ao salário mínimo quando a pensão é a única fonte de renda formal do dependente."
+          ]
+        },
+        {
+          "title": "Por quanto tempo a pensão é paga",
+          "paragraphs": [
+            "Para filhos e irmãos, a pensão dura até os 21 anos, salvo invalidez ou deficiência. Para cônjuge ou companheiro, se o falecido tinha menos de 18 contribuições ou o casamento ou união estável tinha menos de 2 anos, a pensão dura apenas 4 meses, exceto quando o óbito decorre de acidente ou doença do trabalho.",
+            "Cumpridos esses requisitos, a duração depende da idade do cônjuge na data do óbito, conforme tabela atualizada por portaria: menos de 22 anos, 3 anos; de 22 a 27 anos, 6 anos; de 28 a 30 anos, 10 anos; de 31 a 41 anos, 15 anos; de 42 a 44 anos, 20 anos; a partir de 45 anos, vitalícia."
+          ]
+        },
+        {
+          "title": "Acumulação com aposentadoria e outros benefícios",
+          "paragraphs": [
+            "É permitido acumular pensão por morte com aposentadoria própria, mas desde a reforma o beneficiário recebe integralmente o benefício mais vantajoso e apenas uma parte do outro, calculada por faixas: 100% até um salário mínimo, 60% do que exceder um até dois salários mínimos, 40% entre dois e três, 20% entre três e quatro e 10% do que passar de quatro salários mínimos (art. 24 da EC 103/2019).",
+            "Não é permitido receber mais de uma pensão deixada por cônjuge ou companheiro no mesmo regime, ressalvado o direito de optar pela mais vantajosa. Quem tinha direito adquirido antes da reforma mantém as regras anteriores."
+          ]
+        },
+        {
+          "title": "Como pedir",
+          "paragraphs": [
+            "O requerimento é feito pelo Meu INSS ou pela central 135, com a certidão de óbito e os documentos dos dependentes. Se o falecido não tinha vínculos ou contribuições em dia, vale verificar se estava em período de graça ou se tinha direito adquirido a alguma aposentadoria, situações que garantem a pensão mesmo sem contribuições recentes."
+          ]
+        }
       ],
-      documents: [
-        'Certidão de óbito',
-        'Documentos do falecido',
-        'Prova de dependência (certidão casamento, união estável)',
-        'Certidão nascimento dos filhos',
-        'Documentos do requerente',
-        'Comprovante de última contribuição ou benefício',
+      "whenYouHaveRight": [
+        "Cônjuge ou companheiro(a), inclusive em união homoafetiva",
+        "Filhos menores de 21 anos",
+        "Filhos inválidos ou com deficiência intelectual, mental ou grave, sem limite de idade",
+        "Ex-cônjuge que recebia pensão alimentícia do falecido",
+        "Pais, se comprovada a dependência econômica e não houver dependentes da 1ª classe",
+        "Irmãos menores de 21 anos ou inválidos, se dependentes e sem dependentes das classes anteriores",
+        "Falecido com qualidade de segurado, em período de graça ou com direito adquirido a aposentadoria"
       ],
-      deadlines: 'Pedido em até 90 dias garante pagamento desde o óbito. Após 90 dias, paga-se a partir do requerimento.',
-      faq: [
-        {
-          question: 'Qual o valor da pensão por morte?',
-          answer: 'É 50% do valor da aposentadoria + 10% por dependente, até 100%. Mínimo de um salário mínimo.',
-        },
-        {
-          question: 'Por quanto tempo recebo a pensão?',
-          answer: 'Depende da idade e tempo de casamento. Pode ser de 3 anos a vitalícia. Filhos recebem até 21 anos.',
-        },
-        {
-          question: 'Ex-cônjuge tem direito à pensão?',
-          answer: 'Sim, se recebia pensão alimentícia do falecido. Divide a pensão com o cônjuge atual.',
-        },
-        {
-          question: 'Posso acumular pensão com aposentadoria?',
-          answer: 'Sim, mas com restrições após a Reforma. Recebe integral o maior e percentual do menor.',
-        },
+      "documents": [
+        "Certidão de óbito do segurado",
+        "Documentos pessoais do falecido e dos dependentes",
+        "Certidão de casamento ou provas da união estável (conta conjunta, endereço comum, declaração de IR, filhos)",
+        "Certidão de nascimento dos filhos",
+        "Carteira de trabalho, CNIS ou carnês do falecido",
+        "Prova de dependência econômica, no caso de pais e irmãos",
+        "Decisão ou acordo de alimentos, no caso de ex-cônjuge"
       ],
+      "deadlines": "Para receber desde a data do óbito, o pedido deve ser feito em até 90 dias; para filhos menores de 16 anos, o prazo é de 180 dias. Depois disso, a pensão é paga a partir da data do requerimento (art. 74 da Lei 8.213/1991). Não há prazo final para pedir o benefício, mas as parcelas atrasadas prescrevem em 5 anos.",
+      "faq": [
+        {
+          "question": "Quem tem direito à pensão por morte?",
+          "answer": "Em primeiro lugar, cônjuge, companheiro e filhos menores de 21 anos ou inválidos/com deficiência. Pais e irmãos só recebem se não houver dependentes da primeira classe e se comprovarem dependência econômica."
+        },
+        {
+          "question": "Qual o valor da pensão por morte?",
+          "answer": "Em regra, 50% da aposentadoria do falecido (ou da que ele teria por incapacidade permanente) mais 10% por dependente, até 100%. Com dependente inválido ou com deficiência grave, 100%."
+        },
+        {
+          "question": "Por quanto tempo recebo a pensão?",
+          "answer": "Depende da idade do cônjuge, do tempo de união e das contribuições. Pode durar 4 meses, de 3 a 20 anos, ou ser vitalícia a partir dos 45 anos na data do óbito. Filhos recebem até os 21 anos, salvo invalidez ou deficiência."
+        },
+        {
+          "question": "Companheiro em união estável tem direito?",
+          "answer": "Sim. É preciso comprovar a união com documentos, e o INSS exige início de prova material produzida em período não superior a 24 meses antes do óbito."
+        },
+        {
+          "question": "Ex-cônjuge tem direito à pensão?",
+          "answer": "Sim, se recebia pensão alimentícia do falecido. Nesse caso, divide a pensão em igualdade com o cônjuge ou companheiro atual."
+        },
+        {
+          "question": "Posso acumular pensão com aposentadoria?",
+          "answer": "Sim, mas desde a reforma você recebe 100% do benefício maior e uma parte do menor, calculada por faixas de salário mínimo."
+        }
+      ]
     },
-    relatedActions: ['aposentadoria', 'auxilio-doenca'],
-    updatedAt: '2025-01-01',
+    "relatedActions": [
+      "aposentadoria",
+      "auxilio-doenca",
+      "bpc-loas"
+    ],
+    "updatedAt": "2026-11-05"
   },
   {
     id: 'salario-maternidade',
@@ -3019,155 +3405,229 @@ export const blogArticles: BlogArticle[] = [
 
   // NOVOS ARTIGOS - CONSUMIDOR
   {
-    id: 'plano-saude-negativa',
-    nicheId: 'consumidor',
-    slug: 'plano-saude-negativa-cobertura',
-    title: 'Plano de Saúde: O Que Fazer Quando Negam Cobertura',
-    metaTitle: 'Plano de Saúde Negou | Como Conseguir Cobertura',
-    metaDescription: 'Plano de saúde negou exame, cirurgia ou tratamento? Saiba seus direitos, como recorrer e conseguir liminar na Justiça.',
-    keywords: ['plano saúde', 'negativa cobertura', 'cirurgia negada', 'tratamento negado', 'ANS reclamação', 'liminar plano saúde'],
-    excerpt: 'Guia completo sobre o que fazer quando o plano de saúde nega cobertura para exames, cirurgias ou tratamentos.',
-    content: {
-      intro: 'A negativa de cobertura pelos planos de saúde é uma das maiores reclamações dos consumidores. Conheça seus direitos e como garantir o atendimento.',
-      whatIs: 'Negativa de cobertura é quando o plano de saúde recusa autorização para exame, consulta, internação, cirurgia ou tratamento que deveria ser coberto pelo contrato.',
-      whenYouHaveRight: [
-        'Procedimento no rol da ANS',
-        'Urgência e emergência',
-        'Continuidade de tratamento',
-        'Medicamentos durante internação',
-        'Próteses e órteses ligadas ao procedimento',
-        'Segunda opinião médica',
+    "id": "direito-arrependimento-7-dias",
+    "nicheId": "consumidor",
+    "slug": "direito-arrependimento-compras-online-7-dias",
+    "title": "Direito de Arrependimento: Como Devolver Compras Online em 7 Dias",
+    "metaTitle": "Direito de Arrependimento | Devolver Compra Online em 7 Dias",
+    "metaDescription": "Comprou pela internet e se arrependeu? Entenda o art. 49 do CDC, como contar os 7 dias, quem paga o frete, prazos de estorno, marketplaces e exceções.",
+    "keywords": [
+      "direito de arrependimento",
+      "7 dias para devolver",
+      "compra online arrependimento",
+      "art 49 cdc",
+      "devolver produto internet",
+      "cancelar compra online",
+      "estorno cartão",
+      "marketplace"
+    ],
+    "excerpt": "Entenda como funciona o direito de arrependimento nas compras pela internet, telefone ou WhatsApp, como contar o prazo, o reembolso integral e as situações especiais.",
+    "content": {
+      "intro": "Comprar pela internet é prático, mas o produto pode chegar diferente do que parecia na tela ou simplesmente não agradar. Para equilibrar essa relação, o Código de Defesa do Consumidor garante o direito de arrependimento: em compras feitas fora da loja física, o consumidor pode desistir em até 7 dias, sem justificar, e receber de volta tudo o que pagou.",
+      "whatIs": "O artigo 49 do CDC permite ao consumidor desistir do contrato no prazo de 7 dias, contados da assinatura ou do recebimento do produto ou serviço, sempre que a contratação ocorrer fora do estabelecimento comercial, especialmente por telefone ou a domicílio. A regra vale para sites, aplicativos, redes sociais, WhatsApp, catálogos e vendas porta a porta. Exercido o arrependimento, os valores pagos, a qualquer título, devem ser devolvidos de imediato e corrigidos.",
+      "sections": [
+        {
+          "title": "Como contar os 7 dias",
+          "paragraphs": [
+            "O prazo é contado em dias corridos, incluindo sábados, domingos e feriados, a partir do recebimento do produto (ou da contratação, no caso de serviços). Se o produto chegou numa sexta-feira, o prazo termina na sexta seguinte. O que importa é comunicar a desistência dentro do prazo; a devolução física pode ocorrer logo depois, conforme a logística combinada.",
+            "Faça a comunicação por um canal que deixe registro: formulário do site, e-mail ou chat com protocolo. Guarde prints com data e hora. Se a loja não responder, registre reclamação no consumidor.gov.br ou no Procon."
+          ]
+        },
+        {
+          "title": "O que diz o Decreto do comércio eletrônico",
+          "paragraphs": [
+            "O Decreto 7.962/2013 regulamenta o CDC no comércio eletrônico. Ele obriga o fornecedor a informar de forma clara e ostensiva os meios para o exercício do arrependimento, permite que o consumidor desista pela mesma ferramenta usada na compra e determina que o arrependimento implica a rescisão dos contratos acessórios, sem ônus. O fornecedor deve comunicar imediatamente a administradora do cartão para que a transação não seja lançada na fatura ou seja estornada, e enviar ao consumidor a confirmação do recebimento da desistência."
+          ]
+        },
+        {
+          "title": "Uso do produto e frete",
+          "paragraphs": [
+            "Você pode abrir a embalagem e examinar o produto, assim como faria na loja física: experimentar a roupa, ligar o aparelho, conferir as funções. O que se recomenda evitar é o uso prolongado que gere desgaste, porque a loja pode discutir eventual dano. A exigência de embalagem lacrada, por si só, não pode impedir o exercício do direito.",
+            "O frete de envio e o de devolução são custos do fornecedor. Não pode haver multa, “taxa de arrependimento” ou retenção de valores. Se a loja oferecer crédito ou vale-compras, o consumidor pode recusar e exigir o dinheiro de volta."
+          ]
+        },
+        {
+          "title": "Marketplaces e situações especiais",
+          "paragraphs": [
+            "Em marketplaces, a plataforma e o vendedor integram a cadeia de fornecimento e, segundo o CDC, podem responder solidariamente pelos problemas da compra. Na prática, abra o pedido de devolução pela própria plataforma, que costuma ter fluxo próprio, e guarde o número do atendimento.",
+            "Passagens aéreas seguem regra específica da ANAC (Resolução 400/2016): o passageiro pode desistir sem custo em até 24 horas do recebimento do comprovante, desde que a compra tenha sido feita com pelo menos 7 dias de antecedência do voo. Há discussões sobre produtos personalizados, perecíveis e conteúdos digitais já baixados; nesses casos, vale analisar o caso concreto. Compras feitas dentro da loja física não têm direito de arrependimento, salvo política da própria loja, mas produtos com defeito seguem as regras de garantia do CDC."
+          ]
+        },
+        {
+          "title": "Arrependimento não se confunde com defeito",
+          "paragraphs": [
+            "O direito de arrependimento existe mesmo que o produto esteja perfeito: basta a compra ter sido feita fora da loja física. Já o produto com defeito é regido por outras regras do CDC, que valem para qualquer compra, inclusive em loja física. Para vícios aparentes, o consumidor tem 30 dias para reclamar no caso de produtos não duráveis e 90 dias para produtos duráveis (art. 26). O fornecedor tem até 30 dias para resolver; se não resolver, o consumidor escolhe entre a troca do produto, a devolução do dinheiro ou o abatimento do preço (art. 18).",
+            "Na prática, se o produto chegou com defeito dentro dos 7 dias, o consumidor pode escolher o caminho mais simples, que normalmente é o arrependimento, porque dispensa discussão técnica sobre o vício. Se o prazo de 7 dias já passou, ainda restam as garantias legais e eventual garantia contratual oferecida pelo fabricante, que se soma à legal."
+          ]
+        }
       ],
-      documents: [
-        'Pedido médico detalhado',
-        'Negativa por escrito do plano',
-        'Contrato do plano de saúde',
-        'Protocolo de atendimento',
-        'Laudos e exames anteriores',
-        'Orçamentos do procedimento',
+      "whenYouHaveRight": [
+        "Compras pela internet, em sites, aplicativos ou redes sociais",
+        "Compras por telefone ou WhatsApp",
+        "Compras por catálogo ou revista",
+        "Compras em domicílio (porta a porta)",
+        "Serviços contratados a distância",
+        "Compras em marketplaces, com responsabilidade da plataforma e do vendedor"
       ],
-      deadlines: 'Plano tem 21 dias úteis (procedimentos eletivos) ou imediatamente (urgência) para autorizar. Na Justiça, liminar pode sair em 24-48h.',
-      faq: [
-        {
-          question: 'O que fazer se o plano negar?',
-          answer: 'Peça negativa por escrito, reclame na ANS, procure o Procon e, se urgente, entre com ação judicial para liminar.',
-        },
-        {
-          question: 'Posso fazer o procedimento e cobrar depois?',
-          answer: 'Sim, se houver urgência. Guarde todos os comprovantes para reembolso ou reembolso judicial.',
-        },
-        {
-          question: 'O plano pode negar por doença preexistente?',
-          answer: 'Após 24 meses de carência para doenças preexistentes declaradas, não pode mais negar. Sem declaração, é considerada má-fé do plano.',
-        },
-        {
-          question: 'Tratamento fora do rol da ANS pode ser coberto?',
-          answer: 'O STJ decidiu que o rol é exemplificativo. Se houver indicação médica e eficácia comprovada, pode haver cobertura.',
-        },
+      "documents": [
+        "Comprovante de compra (pedido, e-mail de confirmação ou nota fiscal)",
+        "Comprovante de entrega com a data de recebimento",
+        "Prints ou protocolo do pedido de cancelamento",
+        "Comprovante de postagem ou de coleta da devolução",
+        "Fatura do cartão ou extrato com a cobrança",
+        "Fotos do produto, se houver problema"
       ],
+      "deadlines": "O consumidor tem 7 dias corridos, contados do recebimento do produto ou da contratação, para comunicar a desistência (art. 49 do CDC). O reembolso deve ser imediato, com estorno solicitado pela loja à administradora do cartão. Passagens aéreas têm regra própria de 24 horas.",
+      "faq": [
+        {
+          "question": "Preciso justificar o arrependimento?",
+          "answer": "Não. É um direito do consumidor nas compras fora da loja física. Basta comunicar a desistência dentro dos 7 dias."
+        },
+        {
+          "question": "Os 7 dias são corridos ou úteis?",
+          "answer": "Corridos, contados do recebimento do produto. Se chegou numa sexta, o prazo vai até a sexta seguinte."
+        },
+        {
+          "question": "Quem paga o frete da devolução?",
+          "answer": "O fornecedor. O arrependimento não pode gerar custos ao consumidor, nem multa ou taxa."
+        },
+        {
+          "question": "O produto precisa estar lacrado?",
+          "answer": "Não. Você pode abrir e examinar o produto como faria numa loja. Evite apenas o uso que cause desgaste."
+        },
+        {
+          "question": "A loja pode me obrigar a aceitar vale-compras?",
+          "answer": "Não. O CDC garante a devolução dos valores pagos, corrigidos. O crédito na loja só vale se você aceitar."
+        },
+        {
+          "question": "Vale para compras em marketplace?",
+          "answer": "Sim. A plataforma e o vendedor fazem parte da cadeia de fornecimento e podem ser responsabilizados pelo cumprimento do direito."
+        },
+        {
+          "question": "Funciona para passagens aéreas?",
+          "answer": "Há regra própria da ANAC: desistência sem custo em até 24 horas da compra, se feita com 7 dias ou mais de antecedência do voo."
+        }
+      ]
     },
-    relatedActions: ['danos-morais', 'cobranca'],
-    updatedAt: '2025-01-01',
+    "relatedActions": [
+      "produto-defeito",
+      "cobranca-indevida-dobro"
+    ],
+    "updatedAt": "2026-11-05"
   },
   {
-    id: 'compras-online-arrependimento',
-    nicheId: 'consumidor',
-    slug: 'compras-online-direito-arrependimento',
-    title: 'Compras Online: Direito de Arrependimento e Devolução',
-    metaTitle: 'Compras Online | Arrependimento e Devolução',
-    metaDescription: 'Comprou online e se arrependeu? Conheça o direito de arrependimento: 7 dias para devolver sem justificativa e receber reembolso total.',
-    keywords: ['compra online', 'arrependimento', 'devolução produto', '7 dias', 'reembolso', 'e-commerce direitos'],
-    excerpt: 'Entenda seu direito de se arrepender de compras online em até 7 dias e como proceder para devolução e reembolso.',
-    content: {
-      intro: 'O direito de arrependimento permite desistir de compras feitas fora do estabelecimento comercial (internet, telefone) em até 7 dias, sem precisar justificar.',
-      whatIs: 'Direito de arrependimento é a prerrogativa do consumidor de desistir de compras feitas fora da loja física, no prazo de 7 dias, com devolução integral do valor pago.',
-      whenYouHaveRight: [
-        'Compras pela internet',
-        'Compras por telefone',
-        'Compras em domicílio',
-        'Compras por catálogo',
-        'Serviços contratados a distância',
+    "id": "cobranca-indevida-dobro",
+    "nicheId": "consumidor",
+    "slug": "cobranca-indevida-restituicao-dobro",
+    "title": "Cobrança Indevida: Quando Cabe a Devolução em Dobro (Art. 42 do CDC)",
+    "metaTitle": "Cobrança Indevida e Devolução em Dobro | Art. 42 do CDC",
+    "metaDescription": "Pagou valor que não devia? Entenda quando o art. 42 do CDC garante a devolução em dobro, o que mudou com o STJ em 2021, o engano justificável e como pedir.",
+    "keywords": [
+      "cobrança indevida",
+      "devolução em dobro",
+      "restituição em dobro",
+      "art 42 cdc",
+      "repetição de indébito",
+      "tarifa indevida",
+      "cobrança após cancelamento",
+      "engano justificável"
+    ],
+    "excerpt": "Entenda a repetição do indébito em dobro, os requisitos do art. 42 do CDC, o entendimento atual do STJ, o engano justificável e como recuperar o valor.",
+    "content": {
+      "intro": "Cobranças por serviço não contratado, valores acima do combinado, parcelas lançadas em duplicidade e tarifas que nunca foram autorizadas estão entre as reclamações mais comuns dos consumidores. Quando o consumidor paga uma cobrança indevida, o Código de Defesa do Consumidor prevê, em regra, a devolução do valor em dobro, e não apenas do que foi pago a mais.",
+      "whatIs": "O parágrafo único do artigo 42 do CDC estabelece que o consumidor cobrado em quantia indevida tem direito à repetição do indébito por valor igual ao dobro do que pagou em excesso, acrescido de correção monetária e juros, salvo hipótese de engano justificável. É a chamada repetição do indébito em dobro. Ela tem caráter também pedagógico: desestimular cobranças descuidadas ou abusivas.",
+      "sections": [
+        {
+          "title": "Os três requisitos",
+          "paragraphs": [
+            "Para a devolução em dobro, é preciso que tenha havido cobrança de quantia indevida, que o consumidor tenha efetivamente pago esse valor, e que não se trate de engano justificável por parte do fornecedor. Sem pagamento, não há o que devolver: nesse caso, o consumidor pode pedir a declaração de inexistência do débito, a suspensão da cobrança e, se houver dano, indenização.",
+            "O artigo 42 se aplica às cobranças em relações de consumo. Para cobranças judiciais de dívida já paga, existe regra própria no artigo 940 do Código Civil, que também prevê pagamento em dobro, mas exige outros requisitos."
+          ]
+        },
+        {
+          "title": "O que mudou com o STJ em 2021",
+          "paragraphs": [
+            "Por muito tempo, os tribunais exigiram a prova de má-fé do fornecedor para conceder o dobro. Em 2020, no julgamento do EAREsp 676.608, a Corte Especial do STJ fixou a tese de que a restituição em dobro independe da natureza do elemento volitivo do fornecedor, sendo cabível quando a cobrança indevida representar conduta contrária à boa-fé objetiva. Na prática, não é mais necessário provar que a empresa agiu de propósito.",
+            "O STJ modulou os efeitos dessa decisão: para indébitos não decorrentes de prestação de serviço público, o novo entendimento vale para cobranças realizadas após a publicação do acórdão, em 30 de março de 2021. Cobranças anteriores seguem o entendimento antigo, o que pode exigir demonstração de má-fé."
+          ]
+        },
+        {
+          "title": "O que é engano justificável",
+          "paragraphs": [
+            "O fornecedor pode afastar o dobro se provar que o erro era justificável, por exemplo um equívoco pontual, logo corrigido, decorrente de informação incorreta fornecida pelo próprio consumidor. O ônus dessa prova é da empresa. Falhas sistêmicas, cobranças repetidas após reclamação e lançamentos de serviços nunca contratados dificilmente são vistos como engano justificável."
+          ]
+        },
+        {
+          "title": "Como pedir a devolução",
+          "paragraphs": [
+            "Reúna faturas, extratos e comprovantes que mostrem o valor cobrado e pago. Reclame primeiro à empresa por canal com protocolo, pedindo o estorno em dobro, e registre a reclamação no consumidor.gov.br ou no Procon. No caso de bancos, a reclamação também pode ser registrada no Banco Central.",
+            "Se não houver solução, a ação pode ser proposta no Juizado Especial Cível, para causas de até 40 salários mínimos. Danos morais podem ser pedidos quando a cobrança causou transtornos relevantes, como negativação indevida ou desconto em verba alimentar, mas o simples erro de cobrança nem sempre gera indenização. Cada caso é avaliado pelo juiz."
+          ]
+        },
+        {
+          "title": "Exemplos práticos",
+          "paragraphs": [
+            "Um consumidor cancela o plano de internet com protocolo, mas continua recebendo faturas por três meses e as paga em débito automático. Comprovado o cancelamento e o pagamento, ele pode pedir a devolução em dobro das três mensalidades, com correção e juros. Outro exemplo é a cobrança de seguro ou serviço adicional embutido na fatura do cartão sem contratação: pago o valor, cabe pedir o estorno em dobro.",
+            "Já quando a empresa cobra um valor indevido, mas o consumidor percebe antes de pagar e contesta, o caminho é pedir o cancelamento da cobrança. Se houver negativação ou ameaça de corte de serviço essencial por causa dessa dívida inexistente, a situação pode justificar pedido de urgência e indenização. A análise das provas é sempre individual."
+          ]
+        }
       ],
-      documents: [
-        'Comprovante de compra (e-mail, nota)',
-        'Prints da comunicação com a loja',
-        'Comprovante de devolução (postagem)',
-        'Fotos do produto (se houver problema)',
-        'Protocolo de atendimento',
+      "whenYouHaveRight": [
+        "Cobrança de serviço ou produto não contratado",
+        "Valor maior que o combinado em contrato",
+        "Cobrança em duplicidade na fatura",
+        "Cobrança após o cancelamento do serviço",
+        "Tarifas bancárias não previstas ou não autorizadas",
+        "Débito automático ou desconto em folha não autorizado",
+        "Multa indevida ou parcela já quitada cobrada novamente",
+        "Cobrança de produto não entregue"
       ],
-      deadlines: '7 dias corridos a partir do recebimento do produto ou contratação do serviço. Reembolso deve ser imediato.',
-      faq: [
-        {
-          question: 'Preciso justificar o arrependimento?',
-          answer: 'Não. É direito potestativo do consumidor. Pode devolver simplesmente porque não gostou.',
-        },
-        {
-          question: 'Quem paga o frete da devolução?',
-          answer: 'O fornecedor. A devolução deve ser gratuita para o consumidor, incluindo frete e eventuais taxas.',
-        },
-        {
-          question: 'O produto precisa estar lacrado?',
-          answer: 'Não necessariamente. Pode ter sido aberto e testado. Porém, deve estar em condições de revenda.',
-        },
-        {
-          question: 'Vale para compras em marketplace?',
-          answer: 'Sim, tanto o vendedor quanto a plataforma podem ser responsabilizados pelo cumprimento do direito.',
-        },
+      "documents": [
+        "Comprovante de pagamento da cobrança indevida",
+        "Faturas, boletos ou extratos com os valores errados",
+        "Contrato com os valores corretos ou prova do cancelamento",
+        "Protocolos de atendimento e reclamações",
+        "Prints de e-mails, chats e mensagens",
+        "Reclamações no Procon, consumidor.gov.br ou Banco Central"
       ],
+      "deadlines": "Não há um prazo único: dependendo da natureza da relação, os tribunais aplicam prazos diferentes para a repetição do indébito. Para tarifas de serviços como água e esgoto, a Súmula 412 do STJ aplica o prazo geral de 10 anos do Código Civil; em outros casos, a discussão envolve prazos menores. Como a regra varia, o mais seguro é agir assim que identificar a cobrança.",
+      "faq": [
+        {
+          "question": "Quando tenho direito à devolução em dobro?",
+          "answer": "Quando você foi cobrado em valor indevido, pagou, e o erro não foi um engano justificável do fornecedor (art. 42, parágrafo único, do CDC)."
+        },
+        {
+          "question": "Preciso provar a má-fé da empresa?",
+          "answer": "Para cobranças posteriores a 30/03/2021, não. O STJ entendeu que basta a cobrança indevida contrária à boa-fé objetiva. Para cobranças anteriores, pode ser exigida a prova de má-fé."
+        },
+        {
+          "question": "E se eu não paguei a cobrança indevida?",
+          "answer": "Não há devolução em dobro sem pagamento. Você pode pedir a declaração de inexistência do débito, o cancelamento da cobrança e, se houver dano, indenização."
+        },
+        {
+          "question": "A devolução em dobro é automática?",
+          "answer": "Não. É preciso pedir à empresa e, se ela recusar, ajuizar ação. Muitas empresas oferecem apenas o valor simples."
+        },
+        {
+          "question": "Banco cobrou tarifa indevida. O que fazer?",
+          "answer": "Peça o estorno ao banco com protocolo, registre reclamação no Banco Central e, se necessário, entre com ação pedindo a devolução em dobro."
+        },
+        {
+          "question": "Posso pedir danos morais também?",
+          "answer": "Pode, se a cobrança causou transtornos relevantes, como negativação indevida ou desconto em verba alimentar. O mero erro de cobrança nem sempre gera indenização."
+        },
+        {
+          "question": "Os juros e a correção entram no cálculo?",
+          "answer": "Sim. O art. 42 do CDC determina que o valor pago em excesso seja devolvido em dobro, acrescido de correção monetária e juros legais. A correção conta desde cada pagamento indevido, e os juros, em regra, desde a citação ou desde o pagamento, conforme a natureza da relação definida pelo juiz."
+        }
+      ]
     },
-    relatedActions: ['danos-morais', 'cobranca'],
-    updatedAt: '2025-01-01',
-  },
-  {
-    id: 'cobranca-indevida-dobro',
-    nicheId: 'consumidor',
-    slug: 'cobranca-indevida-restituicao-dobro',
-    title: 'Cobrança Indevida: Direito à Restituição em Dobro',
-    metaTitle: 'Cobrança Indevida | Restituição em Dobro',
-    metaDescription: 'Pagou algo que não devia? O CDC garante restituição em dobro! Saiba quando se aplica e como pedir seu dinheiro de volta.',
-    keywords: ['cobrança indevida', 'restituição dobro', 'pagou errado', 'valor indevido', 'CDC repetição', 'devolução dobrada'],
-    excerpt: 'Se você pagou valor indevido, tem direito à restituição em dobro. Entenda quando se aplica e como cobrar.',
-    content: {
-      intro: 'O Código de Defesa do Consumidor garante a restituição em dobro quando o consumidor paga valor indevido. Conheça seus direitos e como receber de volta.',
-      whatIs: 'Repetição do indébito em dobro é o direito de receber em dobro valores pagos indevidamente, quando a cobrança foi abusiva ou errada, acrescido de correção e juros.',
-      whenYouHaveRight: [
-        'Cobrança de valor maior que o devido',
-        'Cobrança de serviço não contratado',
-        'Tarifas bancárias não autorizadas',
-        'Dupla cobrança pelo mesmo serviço',
-        'Cobrança de taxa ilegal',
-        'Débito automático não autorizado',
-      ],
-      documents: [
-        'Comprovante do pagamento indevido',
-        'Extrato bancário ou fatura',
-        'Contrato do serviço (se houver)',
-        'Reclamações anteriores',
-        'Protocolos de atendimento',
-        'Comunicações com a empresa',
-      ],
-      deadlines: 'Prazo de 5 anos para pedir restituição. Valores devem ser corrigidos desde o pagamento.',
-      faq: [
-        {
-          question: 'Quando tenho direito ao dobro?',
-          answer: 'Quando pagar valor indevido e a empresa agiu com má-fé ou culpa. Se foi erro escusável, recebe valor simples.',
-        },
-        {
-          question: 'Banco cobrou tarifa indevida. E agora?',
-          answer: 'Peça estorno. Se negarem, reclame no BC e entre com ação. Tarifas não previstas em contrato geram restituição em dobro.',
-        },
-        {
-          question: 'Preciso provar a má-fé da empresa?',
-          answer: 'Não. A jurisprudência presume culpa quando a cobrança é manifestamente indevida. A empresa que deve provar que agiu corretamente.',
-        },
-        {
-          question: 'Posso pedir danos morais também?',
-          answer: 'Se a cobrança indevida causou transtornos significativos (negativação, constrangimento), pode cumular com danos morais.',
-        },
-      ],
-    },
-    relatedActions: ['negativacao-indevida', 'danos-morais'],
-    updatedAt: '2025-01-01',
+    "relatedActions": [
+      "negativacao-indevida",
+      "tarifas-bancarias",
+      "danos-morais"
+    ],
+    "updatedAt": "2026-11-05"
   },
   {
     id: 'produto-defeito',
@@ -3425,108 +3885,6 @@ export const blogArticles: BlogArticle[] = [
     relatedActions: ['danos-morais', 'defesa-criminal'],
     updatedAt: '2025-01-01',
   },
-  {
-    id: 'prisao-flagrante',
-    nicheId: 'penal',
-    slug: 'prisao-flagrante-direitos',
-    title: 'Prisão em Flagrante: Direitos do Acusado',
-    metaTitle: 'Prisão em Flagrante | Direitos do Preso',
-    metaDescription: 'Foi preso em flagrante ou conhece quem foi? Conheça os direitos do acusado: advogado, silêncio, audiência de custódia e liberdade.',
-    keywords: ['prisão flagrante', 'direitos preso', 'audiência custódia', 'liberdade provisória', 'fiança', 'habeas corpus'],
-    excerpt: 'Conheça os direitos de quem é preso em flagrante: silêncio, advogado, audiência de custódia e como buscar liberdade.',
-    content: {
-      intro: 'A prisão em flagrante é uma situação grave que exige conhecimento dos direitos. Mesmo preso, a pessoa tem garantias constitucionais que devem ser respeitadas.',
-      whatIs: 'Flagrante é a prisão de quem está cometendo crime ou acabou de cometê-lo. Pode ocorrer sem ordem judicial, mas deve seguir procedimentos legais.',
-      whenYouHaveRight: [
-        'Direito de permanecer em silêncio',
-        'Direito a advogado desde a prisão',
-        'Comunicação imediata à família',
-        'Audiência de custódia em 24 horas',
-        'Não ser torturado ou maltratado',
-        'Relaxamento se o flagrante for ilegal',
-      ],
-      documents: [
-        'Auto de prisão em flagrante',
-        'Documentos pessoais',
-        'Comprovante de residência',
-        'Comprovante de trabalho',
-        'Certidão de antecedentes',
-        'Documentos de família (dependentes)',
-      ],
-      deadlines: 'Audiência de custódia em 24 horas. Comunicação à família e advogado imediatamente. Juiz decide sobre liberdade na audiência.',
-      faq: [
-        {
-          question: 'Posso ficar em silêncio durante a prisão?',
-          answer: 'Sim, é direito constitucional. O silêncio não pode ser usado contra você. Fale apenas com seu advogado.',
-        },
-        {
-          question: 'O que é audiência de custódia?',
-          answer: 'É a apresentação do preso ao juiz em 24 horas para verificar a legalidade da prisão e decidir sobre liberdade.',
-        },
-        {
-          question: 'Quando a prisão em flagrante é ilegal?',
-          answer: 'Quando não há flagrante real, quando há abuso policial, quando os procedimentos legais não são seguidos.',
-        },
-        {
-          question: 'O que é liberdade provisória?',
-          answer: 'É a soltura do preso enquanto aguarda o processo, com ou sem fiança, podendo haver medidas cautelares (tornozeleira, etc.).',
-        },
-      ],
-    },
-    relatedActions: ['habeas-corpus', 'defesa-criminal'],
-    updatedAt: '2025-01-01',
-  },
-  {
-    id: 'habeas-corpus',
-    nicheId: 'penal',
-    slug: 'habeas-corpus-liberdade',
-    title: 'Habeas Corpus: Quando e Como Pedir Liberdade',
-    metaTitle: 'Habeas Corpus | Como Pedir Liberdade',
-    metaDescription: 'Preso ilegalmente ou com direito à liberdade? Saiba o que é habeas corpus, quando usar e como funciona o pedido na Justiça.',
-    keywords: ['habeas corpus', 'liberdade', 'prisão ilegal', 'soltura', 'pedido liberdade', 'direito liberdade'],
-    excerpt: 'Entenda o habeas corpus: instrumento para garantir a liberdade quando há prisão ilegal ou abusiva.',
-    content: {
-      intro: 'O habeas corpus é a garantia constitucional mais importante para a liberdade. Pode ser usado sempre que alguém sofrer ou estiver ameaçado de sofrer violência ou coação ilegal.',
-      whatIs: 'Habeas corpus é uma ação constitucional que visa proteger a liberdade de locomoção de qualquer pessoa que sofra ou esteja ameaçada de sofrer restrição ilegal ou abusiva.',
-      whenYouHaveRight: [
-        'Prisão sem ordem judicial válida',
-        'Prisão após prazo legal sem denúncia',
-        'Excesso de prazo na prisão preventiva',
-        'Prisão em desacordo com a lei',
-        'Ameaça de prisão ilegal',
-        'Decisão judicial manifestamente ilegal',
-      ],
-      documents: [
-        'Mandado de prisão (se houver)',
-        'Decisão judicial contestada',
-        'Documentos pessoais do preso',
-        'Procuração do advogado',
-        'Provas da ilegalidade',
-        'Informações sobre o local de prisão',
-      ],
-      deadlines: 'Não há prazo para impetrar habeas corpus. Pode ser feito a qualquer momento enquanto durar a ilegalidade.',
-      faq: [
-        {
-          question: 'Qualquer pessoa pode pedir habeas corpus?',
-          answer: 'Sim, qualquer pessoa pode impetrar, inclusive o próprio preso. Não precisa ser advogado (mas recomenda-se).',
-        },
-        {
-          question: 'Habeas corpus preventivo existe?',
-          answer: 'Sim, pode ser usado quando há ameaça de prisão ilegal, antes mesmo de ela ocorrer.',
-        },
-        {
-          question: 'Quanto tempo demora para ser julgado?',
-          answer: 'Por envolver liberdade, tem prioridade. Pode ser julgado em horas ou dias. Liminares podem ser concedidas imediatamente.',
-        },
-        {
-          question: 'Se o habeas corpus for negado, posso recorrer?',
-          answer: 'Sim, cabe recurso para o tribunal superior. HC negado em Vara pode ir ao TJ; negado no TJ, ao STJ/STF.',
-        },
-      ],
-    },
-    relatedActions: ['prisao-flagrante', 'defesa-criminal'],
-    updatedAt: '2025-01-01',
-  },
 
   // NOVOS ARTIGOS CAUDA LONGA - SEO EXPANSION
   {
@@ -3630,57 +3988,6 @@ export const blogArticles: BlogArticle[] = [
       ],
     },
     relatedActions: ['aposentadoria', 'auxilio-doenca'],
-    updatedAt: '2025-01-01',
-  },
-  {
-    id: 'plano-saude-negou-cirurgia',
-    nicheId: 'consumidor',
-    slug: 'plano-saude-negou-cirurgia-direitos',
-    title: 'Plano de Saúde Negou Cirurgia: Conheça Seus Direitos e Como Agir',
-    metaTitle: 'Plano de Saúde Negou Cirurgia | Seus Direitos',
-    metaDescription: 'Plano de saúde negou sua cirurgia? Saiba o que fazer, seus direitos e como conseguir autorização ou indenização.',
-    keywords: ['plano saúde negou cirurgia o que fazer', 'negativa plano saúde', 'plano saúde recusou procedimento', 'processo plano de saúde', 'direitos plano saúde'],
-    excerpt: 'Descubra o que fazer quando o plano de saúde nega uma cirurgia indicada pelo seu médico e como garantir seus direitos.',
-    content: {
-      intro: 'A negativa de cirurgia pelo plano de saúde é uma das reclamações mais comuns no Brasil. Quando seu médico indica um procedimento e o plano recusa, você tem direitos. A maioria das negativas é abusiva e pode ser revertida.',
-      whatIs: 'A negativa de cobertura ocorre quando o plano de saúde se recusa a autorizar um procedimento, exame ou internação. Muitas vezes, essas negativas são ilegais, especialmente quando o procedimento é indicado pelo médico assistente.',
-      whenYouHaveRight: [
-        'Cirurgia indicada por médico credenciado ou não',
-        'Procedimento previsto no rol da ANS',
-        'Emergência ou urgência médica',
-        'Procedimento não no rol, mas com indicação médica justificada',
-        'Negativa por "ausência de código" ou "procedimento experimental"',
-        'Demora excessiva na autorização',
-      ],
-      documents: [
-        'Pedido médico com justificativa clínica',
-        'Exames e laudos que comprovem a necessidade',
-        'Negativa por escrito do plano de saúde',
-        'Contrato do plano de saúde',
-        'Protocolos de atendimento/reclamação',
-        'Comprovantes de pagamento do plano',
-      ],
-      deadlines: 'A ANS estabelece prazos máximos para autorização: cirurgias eletivas em 21 dias úteis, urgência em 24 horas. Após a negativa, você pode recorrer à ANS ou à Justiça imediatamente.',
-      faq: [
-        {
-          question: 'O plano pode negar cirurgia indicada pelo meu médico?',
-          answer: 'Em geral, não. Se a cirurgia tem indicação médica e está no rol da ANS (ou é urgente/emergência), a negativa é abusiva.',
-        },
-        {
-          question: 'O que é o rol da ANS?',
-          answer: 'É a lista de procedimentos que todo plano de saúde é obrigado a cobrir. Mas mesmo fora do rol, o STJ já decidiu que o plano pode ter que cobrir se houver indicação médica.',
-        },
-        {
-          question: 'Posso conseguir liminar para fazer a cirurgia?',
-          answer: 'Sim. Em casos urgentes, advogados conseguem liminares em 24-48 horas obrigando o plano a autorizar o procedimento.',
-        },
-        {
-          question: 'Tenho direito a indenização por danos morais?',
-          answer: 'Em muitos casos sim, especialmente se a negativa causou agravamento da saúde, sofrimento ou risco de vida.',
-        },
-      ],
-    },
-    relatedActions: ['danos-morais', 'cobranca-indevida'],
     updatedAt: '2025-01-01',
   },
   {
@@ -3850,221 +4157,6 @@ export const blogArticles: BlogArticle[] = [
     updatedAt: '2026-01-11',
   },
   {
-    id: 'devolucao-dobro-cdc',
-    nicheId: 'consumidor',
-    slug: 'devolucao-dobro-cobranca-indevida',
-    title: 'Devolução em Dobro: Guia Completo do Art. 42 do CDC',
-    metaTitle: 'Devolução em Dobro | Cobrança Indevida CDC',
-    metaDescription: 'Pagou cobrança indevida? Saiba como receber em dobro conforme Art. 42 do CDC. Advogado explica quando você tem direito e como processar.',
-    keywords: ['devolução em dobro', 'cobrança indevida', 'art 42 cdc', 'restituição dobro', 'pagou errado', 'cobrado indevidamente'],
-    excerpt: 'Entenda quando você tem direito à devolução em dobro do valor pago indevidamente, conforme o Art. 42 do Código de Defesa do Consumidor.',
-    content: {
-      intro: 'O Art. 42 do Código de Defesa do Consumidor é claro: quem for cobrado indevidamente e pagar tem direito a receber o dobro do valor. Essa é uma das proteções mais importantes do consumidor brasileiro.',
-      whatIs: 'A repetição de indébito em dobro é a obrigação do fornecedor de devolver ao consumidor o dobro do valor cobrado e pago indevidamente. Não basta simplesmente devolver o que cobrou errado - a lei pune a cobrança indevida.',
-      whenYouHaveRight: [
-        'Cobrança de serviço não contratado',
-        'Valor maior que o combinado',
-        'Cobrança após cancelamento',
-        'Taxa já quitada cobrada novamente',
-        'Cobrança de multa indevida',
-        'Valor duplicado na fatura',
-        'Cobrança de produto não entregue',
-      ],
-      documents: [
-        'Comprovante de pagamento da cobrança indevida',
-        'Fatura ou boleto com valor errado',
-        'Contrato original com valores corretos',
-        'Prints de tentativas de solução',
-        'Protocolos de atendimento',
-        'E-mails e mensagens trocadas',
-      ],
-      deadlines: 'O prazo para pedir devolução em dobro é de 5 anos a partir do pagamento indevido. Se a cobrança indevida ainda está ativa, você pode pedir declaração de inexistência do débito.',
-      faq: [
-        {
-          question: 'Quando tenho direito à devolução em dobro?',
-          answer: 'Quando você foi cobrado indevidamente E pagou o valor. Se não pagou, pode pedir indenização por danos morais, mas não a devolução em dobro.',
-        },
-        {
-          question: 'A devolução em dobro é automática?',
-          answer: 'Não. Você precisa cobrar da empresa ou processar. Muitas empresas tentam devolver apenas o valor simples, mas a lei garante o dobro.',
-        },
-        {
-          question: 'Preciso provar má-fé da empresa?',
-          answer: 'Não mais! O STJ decidiu em 2021 que basta provar o erro e que não foi exclusivamente você quem causou. A empresa responde objetivamente.',
-        },
-        {
-          question: 'Posso pedir danos morais além da devolução em dobro?',
-          answer: 'Sim. Se a cobrança indevida causou transtornos, negativação indevida ou constrangimentos, você pode pedir danos morais separadamente.',
-        },
-      ],
-    },
-    relatedActions: ['cobranca-indevida', 'danos-morais'],
-    updatedAt: '2026-01-11',
-  },
-  {
-    id: 'overbooking-indenizacao',
-    nicheId: 'consumidor',
-    slug: 'overbooking-direitos-indenizacao',
-    title: 'Overbooking: Seus Direitos e Valores de Indenização',
-    metaTitle: 'Overbooking | Direitos do Passageiro e Indenização',
-    metaDescription: 'Foi vítima de overbooking? Saiba seus direitos: reacomodação, reembolso e indenização por danos morais. Advogado especializado explica.',
-    keywords: ['overbooking', 'preterição de embarque', 'voo lotado', 'indenização overbooking', 'passageiro preterido', 'anac overbooking'],
-    excerpt: 'Conheça todos os seus direitos quando a companhia aérea vende mais passagens do que lugares no avião e você é impedido de embarcar.',
-    content: {
-      intro: 'Overbooking é a prática de vender mais passagens do que assentos disponíveis. Quando isso acontece e você é impedido de embarcar, tem direito a assistência imediata, reacomodação e pode receber indenização.',
-      whatIs: 'A preterição de embarque por overbooking ocorre quando a companhia aérea impede o passageiro de embarcar por falta de assentos, mesmo com passagem confirmada. É diferente de cancelamento ou atraso.',
-      whenYouHaveRight: [
-        'Impedido de embarcar mesmo com check-in feito',
-        'Sua reserva foi confirmada mas não há assento',
-        'Companhia não ofereceu compensação adequada',
-        'Perdeu compromisso importante',
-        'Ficou sem assistência no aeroporto',
-        'Não ofereceram reacomodação em outro voo',
-      ],
-      documents: [
-        'Cartão de embarque ou comprovante de check-in',
-        'E-mail de confirmação da reserva',
-        'Fotos do painel mostrando voo cheio',
-        'Comprovantes de gastos extras',
-        'Declaração de contingência (solicitar no balcão)',
-        'Prints de comunicação com a companhia',
-      ],
-      deadlines: 'O prazo para processar a companhia aérea é de 5 anos para voos nacionais e 2 anos para internacionais. Guarde todos os documentos.',
-      faq: [
-        {
-          question: 'Quanto posso receber de indenização por overbooking?',
-          answer: 'Gastos extras comprovados devem ser reembolsados. Danos morais dependem da prova do prejuízo concreto (art. 251-A do Código Brasileiro de Aeronáutica). O valor depende das circunstâncias de cada caso e é fixado pelo juiz; não há valor garantido.',
-        },
-        {
-          question: 'A companhia pode oferecer voucher ao invés de dinheiro?',
-          answer: 'Pode oferecer, mas você não é obrigado a aceitar. Tem direito a reembolso integral em dinheiro ou reacomodação gratuita.',
-        },
-        {
-          question: 'Quais as assistências obrigatórias?',
-          answer: 'A partir de 1h de espera: comunicação (internet/telefone). A partir de 2h: alimentação. A partir de 4h: hospedagem e transporte.',
-        },
-        {
-          question: 'Posso recusar a reacomodação e pedir reembolso total?',
-          answer: 'Sim. Se não quiser mais viajar, pode cancelar e receber reembolso integral sem multa, mais indenização pelos transtornos.',
-        },
-      ],
-    },
-    relatedActions: ['voo-cancelado', 'danos-morais'],
-    updatedAt: '2026-01-11',
-  },
-  {
-    id: 'direito-arrependimento-7-dias',
-    nicheId: 'consumidor',
-    slug: 'direito-arrependimento-compras-online-7-dias',
-    title: 'Direito de Arrependimento: Tudo Sobre os 7 Dias',
-    metaTitle: 'Direito de Arrependimento | Devolver Compra Online 7 Dias',
-    metaDescription: 'Comprou online e se arrependeu? Saiba como exercer o direito de arrependimento em 7 dias. Advogado explica regras e exceções.',
-    keywords: ['direito de arrependimento', '7 dias para devolver', 'compra online arrependimento', 'devolver produto internet', 'cancelar compra online'],
-    excerpt: 'Entenda como funciona o direito de arrependimento nas compras online, o prazo de 7 dias e como proceder para devolver o produto e receber seu dinheiro.',
-    content: {
-      intro: 'O direito de arrependimento é uma das maiores proteções do consumidor brasileiro nas compras feitas fora do estabelecimento comercial. Você tem 7 dias para desistir da compra, sem precisar dar explicações.',
-      whatIs: 'Previsto no Art. 49 do CDC, o direito de arrependimento permite que o consumidor desista de compras feitas fora da loja física (internet, telefone, catálogo) em até 7 dias, recebendo o valor integral de volta, incluindo o frete.',
-      whenYouHaveRight: [
-        'Compras pela internet (e-commerce)',
-        'Compras por telefone ou WhatsApp',
-        'Compras por catálogo ou revista',
-        'Compras em domicílio (porta a porta)',
-        'Compras em feiras ou exposições',
-        'Contratação de serviços online',
-      ],
-      documents: [
-        'Comprovante de compra (nota fiscal)',
-        'Comprovante de entrega do produto',
-        'Prints do pedido de cancelamento',
-        'Protocolo de atendimento',
-        'Comprovante de postagem da devolução',
-        'Extrato bancário com a cobrança',
-      ],
-      deadlines: 'O prazo de 7 dias começa a contar da assinatura do contrato OU do recebimento do produto, o que ocorrer por último. É um prazo corrido (conta sábados, domingos e feriados).',
-      faq: [
-        {
-          question: 'Os 7 dias são corridos ou úteis?',
-          answer: 'Corridos. Se o produto chegar sexta, você tem até a sexta seguinte para exercer o arrependimento.',
-        },
-        {
-          question: 'Posso usar o produto e depois devolver?',
-          answer: 'Você pode abrir e testar, mas não pode usar de forma que deprecie o produto. Roupas podem ser experimentadas, eletrônicos testados, mas não usados normalmente.',
-        },
-        {
-          question: 'Quem paga o frete da devolução?',
-          answer: 'A loja paga. O arrependimento é gratuito para o consumidor. Qualquer custo de devolução é responsabilidade do fornecedor.',
-        },
-        {
-          question: 'A loja pode cobrar taxa de arrependimento?',
-          answer: 'Não! Qualquer taxa é ilegal. Você tem direito ao reembolso integral: preço do produto + frete + qualquer outro valor pago.',
-        },
-        {
-          question: 'Funciona para passagens aéreas?',
-          answer: 'Sim, com ressalvas. Passagens compradas online podem ser canceladas em 24h após a compra, desde que a viagem seja com mais de 7 dias de antecedência.',
-        },
-      ],
-    },
-    relatedActions: ['cobranca-indevida', 'danos-morais'],
-    updatedAt: '2026-01-11',
-  },
-  {
-    id: 'liminar-plano-saude',
-    nicheId: 'consumidor',
-    slug: 'liminar-plano-saude-48-horas',
-    title: 'Liminar Contra Plano de Saúde: Como Pedir na Urgência',
-    metaTitle: 'Liminar Plano de Saúde | Negativa de Cobertura',
-    metaDescription: 'Plano de saúde negou cirurgia ou tratamento? Saiba como pedir liminar judicial para obter a cobertura com urgência.',
-    keywords: ['liminar plano de saúde', 'plano negou cirurgia', 'negativa de cobertura', 'tutela antecipada plano saúde', 'urgência médica plano'],
-    excerpt: 'Aprenda como conseguir uma liminar judicial rápida quando o plano de saúde nega cobertura de cirurgia, exame ou tratamento urgente.',
-    content: {
-      intro: 'Quando o plano de saúde nega cobertura de um procedimento urgente, cada hora conta. Nesses casos é possível pedir tutela de urgência, que costuma ser analisada com prioridade; o tempo depende de cada juízo.',
-      whatIs: 'A liminar (tutela de urgência) é uma decisão judicial rápida que obriga o plano de saúde a cobrir o procedimento imediatamente, antes mesmo do julgamento final do processo.',
-      whenYouHaveRight: [
-        'Negativa de cirurgia de urgência',
-        'Negativa de medicamento para tratamento',
-        'Negativa de internação em UTI',
-        'Negativa de exame diagnóstico',
-        'Negativa de home care',
-        'Negativa de tratamento oncológico',
-        'Negativa de prótese ou órtese',
-      ],
-      documents: [
-        'Negativa formal do plano (por escrito)',
-        'Relatório médico detalhado',
-        'Prescrição do tratamento/medicamento',
-        'Exames que justificam a necessidade',
-        'Carteirinha do plano de saúde',
-        'Contrato com o plano',
-        'Histórico de pagamentos em dia',
-      ],
-      deadlines: 'A liminar pode ser concedida em 24 a 72 horas em casos de urgência. Se houver risco de vida, pode sair no mesmo dia. Não há prazo para entrar com a ação.',
-      faq: [
-        {
-          question: 'Quanto tempo demora para sair a liminar?',
-          answer: 'Em casos de urgência/emergência médica, a liminar pode sair em 24 a 48 horas. Em casos extremos de risco de vida, no mesmo dia.',
-        },
-        {
-          question: 'O plano pode recorrer da liminar?',
-          answer: 'Sim, mas enquanto não for derrubada, deve cumprir. Na prática, a maioria das liminares é mantida porque os tribunais protegem o direito à saúde.',
-        },
-        {
-          question: 'Quanto custa entrar com ação contra plano de saúde?',
-          answer: 'Casos de até 20 salários mínimos podem ir ao Juizado Especial sem custas. Acima disso, há custas processuais, mas muitos advogados trabalham com êxito.',
-        },
-        {
-          question: 'Posso pedir danos morais também?',
-          answer: 'Sim. A negativa indevida de cobertura gera danos morais, especialmente quando causa sofrimento, demora no tratamento ou risco à saúde.',
-        },
-        {
-          question: 'Quais são as negativas mais comuns dos planos?',
-          answer: 'Medicamentos importados, cirurgias bariátricas, tratamentos experimentais, home care, e próteses são as negativas mais frequentes - e também as mais revertidas na Justiça.',
-        },
-      ],
-    },
-    relatedActions: ['plano-saude-negou', 'danos-morais'],
-    updatedAt: '2026-01-11',
-  },
-  {
     id: 'cartao-clonado-banco',
     nicheId: 'consumidor',
     slug: 'cartao-clonado-responsabilidade-banco',
@@ -4177,61 +4269,6 @@ export const blogArticles: BlogArticle[] = [
     updatedAt: '2026-01-12',
   },
   {
-    id: 'pensao-por-morte-completo',
-    nicheId: 'previdenciario',
-    slug: 'pensao-por-morte-quem-tem-direito',
-    title: 'Pensão por Morte: Quem Tem Direito e Como Pedir',
-    metaTitle: 'Pensão por Morte | Dependentes, Valor e Duração',
-    metaDescription: 'Perdeu um familiar que contribuía ao INSS? Saiba quem tem direito à pensão por morte, quanto vai receber e como pedir o benefício.',
-    keywords: ['pensão por morte', 'benefício viúva', 'dependentes INSS', 'quanto recebe pensão', 'viúvo pensão', 'filho pensão morte'],
-    excerpt: 'Entenda quem são os dependentes que têm direito à pensão por morte, qual o valor do benefício e como solicitar ao INSS.',
-    content: {
-      intro: 'A pensão por morte é o benefício pago aos dependentes do segurado do INSS que falece. Cônjuges, companheiros, filhos e, em alguns casos, pais têm direito a receber esse benefício.',
-      whatIs: 'A pensão por morte é um benefício previdenciário pago mensalmente aos dependentes econômicos do segurado que faleceu. O falecido precisa estar contribuindo ao INSS ou recebendo algum benefício na data do óbito.',
-      whenYouHaveRight: [
-        'Cônjuge ou companheiro(a) de união estável',
-        'Filhos menores de 21 anos',
-        'Filhos com deficiência (sem limite de idade)',
-        'Filhos inválidos (sem limite de idade)',
-        'Pais, se comprovada dependência econômica',
-        'Irmãos menores de 21 ou inválidos (se sem outros dependentes)',
-      ],
-      documents: [
-        'Certidão de óbito do segurado',
-        'Documentos pessoais dos dependentes',
-        'Certidão de casamento ou declaração de união estável',
-        'Certidão de nascimento dos filhos',
-        'Documentos do segurado (CTPS, carnês)',
-        'Comprovante de residência',
-      ],
-      deadlines: 'O pedido pode ser feito a qualquer momento, mas para ter direito aos valores retroativos, deve ser requerido em até 90 dias do óbito. Após 90 dias, recebe apenas a partir do pedido.',
-      faq: [
-        {
-          question: 'Quem tem direito à pensão por morte?',
-          answer: 'Dependentes preferenciais são cônjuge/companheiro e filhos. Pais só recebem se não houver dependentes da primeira classe. O falecido precisava estar contribuindo ou em benefício.',
-        },
-        {
-          question: 'Qual o valor da pensão por morte?',
-          answer: 'É 50% do valor que o segurado recebia ou teria direito + 10% por dependente, até o máximo de 100%. Exemplo: viúva sozinha recebe 60%; viúva + 1 filho recebe 80%.',
-        },
-        {
-          question: 'Por quanto tempo recebo a pensão?',
-          answer: 'Depende da idade e tempo de casamento. Casamentos com mais de 2 anos e cônjuge acima de 44 anos recebem vitalício. Abaixo disso, pode ser de 3 a 20 anos.',
-        },
-        {
-          question: 'Companheiro de união estável tem direito?',
-          answer: 'Sim, a união estável é equiparada ao casamento. Você precisará comprovar a união através de documentos como conta conjunta, plano de saúde, declaração de IR, etc.',
-        },
-        {
-          question: 'Posso acumular pensão com aposentadoria?',
-          answer: 'Sim, mas com restrições. Você recebe 100% do benefício maior e uma porcentagem do menor (de 10% a 100%, dependendo do valor).',
-        },
-      ],
-    },
-    relatedActions: ['auxilio-doenca', 'bpc-loas'],
-    updatedAt: '2026-01-12',
-  },
-  {
     id: 'aposentadoria-especial',
     nicheId: 'previdenciario',
     slug: 'aposentadoria-especial-atividades-insalubres',
@@ -4284,115 +4321,6 @@ export const blogArticles: BlogArticle[] = [
       ],
     },
     relatedActions: ['aposentadoria-2025', 'auxilio-doenca'],
-    updatedAt: '2026-01-12',
-  },
-  {
-    id: 'aposentadoria-invalidez-completo',
-    nicheId: 'previdenciario',
-    slug: 'aposentadoria-por-invalidez-incapacidade-permanente',
-    title: 'Aposentadoria por Invalidez: Direitos na Incapacidade Permanente',
-    metaTitle: 'Aposentadoria por Invalidez | Incapacidade Permanente INSS',
-    metaDescription: 'Não consegue mais trabalhar por doença ou acidente? Saiba como pedir aposentadoria por invalidez, valor, adicional de 25% e seus direitos.',
-    keywords: ['aposentadoria por invalidez', 'incapacidade permanente', 'perícia INSS', 'adicional 25%', 'grande invalidez', 'B32 INSS'],
-    excerpt: 'Guia completo sobre aposentadoria por invalidez: requisitos, como pedir, valor do benefício e o adicional de 25% para grande invalidez.',
-    content: {
-      intro: 'A aposentadoria por invalidez, hoje chamada de aposentadoria por incapacidade permanente, é destinada a quem não pode mais trabalhar devido a doença ou acidente. Entenda seus direitos.',
-      whatIs: 'É o benefício pago a quem está total e permanentemente incapaz para qualquer atividade de trabalho e não pode ser reabilitado para outra profissão. Diferente do auxílio-doença, a incapacidade aqui é definitiva.',
-      whenYouHaveRight: [
-        'Incapacidade total para qualquer trabalho',
-        'Incapacidade de caráter permanente',
-        'Impossibilidade de reabilitação profissional',
-        'Carência de 12 contribuições (regra geral)',
-        'Qualidade de segurado mantida',
-        'Doença ou acidente que não seja preexistente à filiação',
-      ],
-      documents: [
-        'Laudos médicos detalhados e atualizados',
-        'Exames comprobatórios (ressonância, tomografia, etc.)',
-        'Receituário de medicamentos de uso contínuo',
-        'Histórico de tratamentos e internações',
-        'Atestados de incapacidade de outros médicos',
-        'Documentos do INSS (se já recebe auxílio-doença)',
-      ],
-      deadlines: 'O INSS tem 45 dias para decidir. Se negar, você pode recorrer em 30 dias ou entrar com ação judicial. O benefício passa por perícia de revisão a cada 2 anos.',
-      faq: [
-        {
-          question: 'Qual a diferença entre auxílio-doença e aposentadoria por invalidez?',
-          answer: 'O auxílio-doença é temporário (você pode voltar a trabalhar). A aposentadoria por invalidez é permanente. Em geral, primeiro você recebe auxílio, depois converte para aposentadoria.',
-        },
-        {
-          question: 'A aposentadoria por invalidez pode ser cessada?',
-          answer: 'Sim, o INSS pode convocar para perícia de revisão. Se constatar recuperação da capacidade, o benefício pode ser cessado ou convertido em auxílio.',
-        },
-        {
-          question: 'O que é o adicional de 25%?',
-          answer: 'É o acréscimo para quem precisa de assistência permanente de terceiros (grande invalidez). Exemplos: cegos, amputados, acamados. Esse adicional não entra na pensão por morte.',
-        },
-        {
-          question: 'Como funciona a perícia do INSS?',
-          answer: 'Um médico perito avalia sua condição. Leve todos os laudos, exames e documentos médicos. Se discordar, pode pedir nova perícia ou recorrer.',
-        },
-        {
-          question: 'Posso trabalhar recebendo aposentadoria por invalidez?',
-          answer: 'Em regra, não. Se voltar a trabalhar, presume-se que recuperou a capacidade e o benefício é cessado. Há exceções para trabalho que não prejudique a condição.',
-        },
-      ],
-    },
-    relatedActions: ['auxilio-doenca', 'bpc-loas'],
-    updatedAt: '2026-01-12',
-  },
-  {
-    id: 'tempo-contribuicao-transicao',
-    nicheId: 'previdenciario',
-    slug: 'tempo-de-contribuicao-regras-transicao',
-    title: 'Tempo de Contribuição: Entenda as Regras de Transição',
-    metaTitle: 'Regras de Transição | Tempo de Contribuição INSS',
-    metaDescription: 'Entenda as regras de transição da Reforma da Previdência: pontos, idade progressiva, pedágio 50% e 100%. Descubra qual é a melhor para você.',
-    keywords: ['tempo de contribuição', 'regra de transição', 'reforma previdência', 'pontos aposentadoria', 'pedágio 50%', 'pedágio 100%'],
-    excerpt: 'Descubra qual regra de transição é mais vantajosa para você: pontos, idade progressiva, pedágio 50% ou pedágio 100%.',
-    content: {
-      intro: 'Após a Reforma da Previdência de 2019, a aposentadoria apenas por tempo de contribuição acabou. Quem já contribuía tem direito a regras de transição que podem ser mais vantajosas que a regra nova.',
-      whatIs: 'As regras de transição são formas intermediárias de aposentadoria criadas para quem já contribuía antes da Reforma de 2019. Permitem aposentar com requisitos menos rígidos que a regra definitiva.',
-      whenYouHaveRight: [
-        'Regra dos pontos: soma idade + tempo = pontuação mínima',
-        'Idade progressiva: idade mínima que aumenta a cada ano',
-        'Pedágio 50%: para quem faltava até 2 anos para aposentar em 2019',
-        'Pedágio 100%: cumprir o dobro do tempo que faltava em 2019',
-        'Todas exigem que você já contribuísse antes de 13/11/2019',
-      ],
-      documents: [
-        'CNIS (extrato de contribuições)',
-        'Carteiras de trabalho',
-        'Carnês de contribuição',
-        'Certidão de tempo de contribuição (se servidor)',
-        'Simulação do Meu INSS',
-        'Documentos pessoais',
-      ],
-      deadlines: 'Não há prazo para pedir, mas as regras de transição vão ficando menos vantajosas a cada ano (idade e pontuação aumentam). Quanto antes você se aposentar dentro de uma regra, melhor.',
-      faq: [
-        {
-          question: 'Ainda existe aposentadoria só por tempo?',
-          answer: 'Não. A aposentadoria só por tempo de contribuição (sem idade mínima) acabou. Agora, todas as regras exigem idade mínima ou pontuação que inclui idade.',
-        },
-        {
-          question: 'O que é a regra dos pontos?',
-          answer: 'Você soma sua idade + tempo de contribuição. Em 2025, precisa de 92 pontos (mulher) ou 102 pontos (homem). Aumenta 1 ponto por ano até 2033.',
-        },
-        {
-          question: 'Qual a melhor regra de transição para mim?',
-          answer: 'Depende do seu tempo de contribuição e idade. Geralmente, quem tem muito tempo prefere pedágio; quem tem mais idade prefere pontos. Um advogado pode simular todas.',
-        },
-        {
-          question: 'Como calcular meus pontos?',
-          answer: 'Some sua idade + tempo de contribuição. Exemplo: mulher com 55 anos e 35 anos de contribuição = 90 pontos. Precisaria de 92 em 2025.',
-        },
-        {
-          question: 'A reforma prejudicou quem faltava pouco?',
-          answer: 'Para quem faltava muito pouco (até 2 anos), o pedágio 50% permite aposentar relativamente rápido. Mas o cálculo do valor mudou e geralmente é menor.',
-        },
-      ],
-    },
-    relatedActions: ['aposentadoria-2025', 'revisao-vida-toda'],
     updatedAt: '2026-01-12',
   },
   {

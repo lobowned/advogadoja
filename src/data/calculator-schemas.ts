@@ -245,7 +245,7 @@ export function getWebApplicationSchema(calculatorId: string) {
     "featureList": data.features,
     "provider": {
       "@type": "Organization",
-      "name": "Advogado Já",
+      "name": "Riccio Advocacia",
       "url": BASE_URL
     }
   };

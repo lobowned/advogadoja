@@ -20,7 +20,8 @@ import { blogArticles } from '../src/data/blog-articles';
 import { blogPosts } from '../src/data/blog-posts';
 import { brazilianCities } from '../src/data/cities';
 import { legalNiches } from '../src/data/legal-niches';
-import { localSEOArticles } from '../src/data/local-seo-articles';
+import { localSEOArticles, isIndexableLocalSEOArticle } from '../src/data/local-seo-articles';
+import { redirectedPaths } from '../src/data/article-redirects';
 import * as fs from 'fs';
 import * as path from 'path';
 import { pathToFileURL } from 'url';
@@ -164,7 +165,8 @@ function generateCityNicheUrls(): SitemapURL[] {
 // BLOG ARTICLES
 // ============================================
 function generateArticleUrls(): SitemapURL[] {
-  return blogArticles.map(article => ({
+  // Artigos fundidos viram redirect: nunca entram no sitemap.
+  return blogArticles.filter(a => !redirectedPaths.has(`/artigos/${a.nicheId}/${a.slug}`)).map(article => ({
     loc: `/artigos/${article.nicheId}/${article.slug}`,
     lastmod: realDate(article.updatedAt, (article as { publishedAt?: string }).publishedAt),
     changefreq: 'monthly' as const,
@@ -188,7 +190,8 @@ function generateFAQUrls(): SitemapURL[] {
 // LOCAL SEO ARTICLES
 // ============================================
 function generateLocalSEOArticleUrls(): SitemapURL[] {
-  return localSEOArticles.map(article => ({
+  // Fora da Bahia: noindex,follow na página e fora do sitemap.
+  return localSEOArticles.filter(isIndexableLocalSEOArticle).map(article => ({
     loc: `/artigos/consumidor/${article.slug}`,
     lastmod: realDate(article.updatedAt, (article as { publishedAt?: string }).publishedAt),
     changefreq: 'monthly' as const,
@@ -213,7 +216,7 @@ function generateCityConsumerUrls(): SitemapURL[] {
 // NEW BLOG POSTS (blog-posts.ts)
 // ============================================
 function generateBlogPostUrls(): SitemapURL[] {
-  return blogPosts.map(post => ({
+  return blogPosts.filter(p => !redirectedPaths.has(`/blog/${p.slug}`)).map(post => ({
     loc: `/blog/${post.slug}`,
     lastmod: realDate(post.updatedAt, (post as { publishedAt?: string }).publishedAt),
     changefreq: 'weekly' as const,

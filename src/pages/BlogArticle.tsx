@@ -39,7 +39,7 @@ const BlogArticle = () => {
     "author": authorSchema,
     "publisher": {
       "@type": "Organization",
-      "name": "Advogado Já",
+      "name": "Riccio Advocacia",
       "logo": {
         "@type": "ImageObject",
         "url": "https://advogadoja.lovable.app/logo.png"

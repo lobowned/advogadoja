@@ -90,7 +90,7 @@ const CityLanding = () => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": `Advogado Já ${city.name}`,
+    "name": `Riccio Advocacia ${city.name}`,
     "description": `Advogados especialistas em ${city.name}, ${city.state}. Atendimento jurídico online gratuito em Direito Trabalhista, Família, Previdenciário, Civil e Criminal.`,
     "url": canonicalUrl,
     "telephone": "+55-71-99703-6269",

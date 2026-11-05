@@ -53,6 +53,7 @@ import NicheLanding from "./pages/NicheLanding";
 import CityLanding from "./pages/CityLanding";
 import CityNicheLanding from "./pages/CityNicheLanding";
 import { LOCAL_PAGE_ROUTES } from "./data/local-pages";
+import { articleRedirects } from "./data/article-redirects";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import BlogIndex from "./pages/BlogIndex";
@@ -178,6 +179,11 @@ const AnimatedRoutes = () => {
           path="/artigos/consumidor/:localSlug"
           element={<LocalSEOArticle />}
         />
+
+        {/* Artigos fundidos (canibalização) → slug final */}
+        {articleRedirects.map((r) => (
+          <Route key={r.from} path={r.from} element={<Navigate to={r.to} replace />} />
+        ))}
 
         {/* Blog/Artigos - Legacy */}
         <Route path="/artigos" element={<Blog />} />

@@ -14,7 +14,7 @@ const CriminalLanding = () => {
     "@context": "https://schema.org",
     "@type": "LegalService",
     "@id": "https://advogadoja.lovable.app/criminal#legalservice",
-    "name": "Advogado Já — Direito Criminal",
+    "name": "Riccio Advocacia — Direito Criminal",
     "description":
       "Advocacia criminal: inquérito policial, ação penal, Tribunal do Júri, habeas corpus, execução penal e recursos. Atendimento em todo o Brasil. OAB/BA 46.638.",
     "url": "https://advogadoja.lovable.app/criminal",
@@ -137,7 +137,7 @@ const CriminalLanding = () => {
   return (
     <PageTransition variant="slideUp">
       <Helmet>
-        <title>Advogado Criminalista | Defesa Criminal, Júri, Habeas Corpus | Advogado Já</title>
+        <title>Advogado Criminalista | Defesa Criminal, Júri, Habeas Corpus | Riccio Advocacia</title>
         <meta
           name="description"
           content="Advogado criminalista para prisão em flagrante, inquérito, denúncia, Tribunal do Júri, habeas corpus, execução penal e recursos. Plantão 24h. OAB/BA 46.638. Atendimento em todo o Brasil."
@@ -148,7 +148,7 @@ const CriminalLanding = () => {
         />
         <link rel="canonical" href="https://advogadoja.lovable.app/criminal" />
 
-        <meta property="og:title" content="Advogado Criminalista | Defesa Criminal | Advogado Já" />
+        <meta property="og:title" content="Advogado Criminalista | Defesa Criminal | Riccio Advocacia" />
         <meta
           property="og:description"
           content="Advogado criminalista: flagrante, júri, habeas corpus, execução penal e recursos. Plantão 24h. OAB/BA 46.638."
@@ -157,7 +157,7 @@ const CriminalLanding = () => {
         <meta property="og:url" content="https://advogadoja.lovable.app/criminal" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Advogado Criminalista | Advogado Já" />
+        <meta name="twitter:title" content="Advogado Criminalista | Riccio Advocacia" />
         <meta
           name="twitter:description"
           content="Advogado criminalista: flagrante, júri, habeas corpus, execução penal e recursos. Plantão 24h."
@@ -188,7 +188,7 @@ const CriminalLanding = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center md:text-left text-sm text-muted-foreground">
               <div>
-                <p className="font-semibold text-foreground mb-2">Advogado Já — Direito Criminal</p>
+                <p className="font-semibold text-foreground mb-2">Riccio Advocacia — Direito Criminal</p>
                 <p>Dr. Gilberto Gonçalves Magalhães Riccio</p>
                 <p>OAB/BA 46.638 | CNPJ 50.947.818/0001-94</p>
                 <p>Camaçari · Bahia · Brasil</p>

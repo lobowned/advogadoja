@@ -29,7 +29,7 @@ const CalculadoraNegativacao = () => {
     },
     "provider": {
       "@type": "LegalService",
-      "name": "Advogado Já",
+      "name": "Riccio Advocacia",
       "url": "https://advogadoja.lovable.app"
     }
   };

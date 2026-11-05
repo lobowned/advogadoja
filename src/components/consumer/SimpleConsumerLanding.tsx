@@ -49,7 +49,7 @@ const SimpleConsumerLanding = ({
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
             <BackButton />
             <Link to="/" className="text-lg font-semibold">
-              Advogado Já
+              Riccio Advocacia
             </Link>
             <span className="w-10" />
           </div>
@@ -107,7 +107,7 @@ const SimpleConsumerLanding = ({
 
         <footer className="border-t py-8">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© {new Date().getFullYear()} Advogado Já — Todos os direitos reservados</p>
+            <p>© {new Date().getFullYear()} Riccio Advocacia — Todos os direitos reservados</p>
           </div>
         </footer>
       </div>

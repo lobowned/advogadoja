@@ -49,7 +49,7 @@ const legalAreas = {
       },
       {
         q: "Quanto custa um advogado trabalhista?",
-        a: "No Advogado Já, a consulta inicial é gratuita. Os honorários são geralmente cobrados apenas em caso de êxito na ação."
+        a: "No Riccio Advocacia, a consulta inicial é gratuita. Os honorários são geralmente cobrados apenas em caso de êxito na ação."
       },
       {
         q: "Quais documentos preciso para a ação trabalhista?",
@@ -603,7 +603,7 @@ const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
 
         <footer className="border-t py-6">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© 2025 Advogado Já | OAB/BA 46.638 | Direito {area.name} em {city.name}</p>
+            <p>© 2025 Riccio Advocacia | OAB/BA 46.638 | Direito {area.name} em {city.name}</p>
           </div>
         </footer>
       </div>

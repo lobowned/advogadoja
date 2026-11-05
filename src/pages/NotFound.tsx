@@ -15,7 +15,7 @@ const NotFound = () => {
   return (
     <PageTransition variant="fade">
       <Helmet>
-        <title>Página Não Encontrada | Advogado Já</title>
+        <title>Página Não Encontrada | Riccio Advocacia</title>
         <meta name="robots" content="noindex, nofollow" />
         <meta name="description" content="A página que você procura não foi encontrada. Navegue para nossa página inicial ou explore nossos serviços jurídicos." />
       </Helmet>

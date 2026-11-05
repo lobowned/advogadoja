@@ -2502,3 +2502,12 @@ export function getRelatedLocalSEOArticles(currentSlug: string, limit: number = 
     .filter((article): article is LocalSEOArticle => article !== undefined)
     .slice(0, limit);
 }
+
+/**
+ * Só os artigos da Bahia (onde o escritório atende) são indexáveis.
+ * Os demais (Guarulhos, Congonhas/SP, BH, RJ, Brasília, Curitiba, Recife, Fortaleza,
+ * Porto Alegre, Campinas, Santos Dumont, Goiânia) recebem noindex,follow e ficam fora do sitemap.
+ */
+export function isIndexableLocalSEOArticle(article: Pick<LocalSEOArticle, "stateCode">): boolean {
+  return article.stateCode === "BA";
+}

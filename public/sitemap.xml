@@ -422,93 +422,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
-  <!-- ===== ARTIGOS SEO LOCAL (30 URLs) ===== -->
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/voo-cancelado-guarulhos</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/voo-atrasado-congonhas</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/plano-saude-negou-sao-paulo</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/nome-negativado-belo-horizonte</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/golpe-pix-rio-de-janeiro</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/voo-cancelado-brasilia</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/plano-saude-negou-rio-de-janeiro</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/fraude-bancaria-curitiba</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- ===== ARTIGOS SEO LOCAL (16 URLs) ===== -->
   <url>
     <loc>https://advogadoja.lovable.app/artigos/consumidor/produto-defeituoso-salvador</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/voo-cancelado-recife</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/cobranca-indevida-fortaleza</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/nome-negativado-porto-alegre</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/plano-saude-negou-campinas</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/voo-cancelado-santos-dumont</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/fraude-bancaria-goiania</loc>
     <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -603,7 +519,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- ===== ARTIGOS DO BLOG (LEGACY) (84 URLs) ===== -->
+  <!-- ===== ARTIGOS DO BLOG (LEGACY) (66 URLs) ===== -->
   <url>
     <loc>https://advogadoja.lovable.app/artigos/trabalhista/demissao-sem-justa-causa</loc>
     <lastmod>2025-01-01</lastmod>
@@ -629,8 +545,8 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://advogadoja.lovable.app/artigos/trabalhista/rescisao-indireta-quando-empregado-demite-empresa</loc>
-    <lastmod>2026-01-12</lastmod>
+    <loc>https://advogadoja.lovable.app/artigos/trabalhista/rescisao-indireta</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -642,7 +558,7 @@
   </url>
   <url>
     <loc>https://advogadoja.lovable.app/artigos/trabalhista/adicional-noturno-calcular-direitos</loc>
-    <lastmod>2026-01-12</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -654,13 +570,13 @@
   </url>
   <url>
     <loc>https://advogadoja.lovable.app/artigos/trabalhista/desvio-funcao-acumulo-funcoes</loc>
-    <lastmod>2026-01-12</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://advogadoja.lovable.app/artigos/trabalhista/pejotizacao-vinculo-empregaticio</loc>
-    <lastmod>2026-01-12</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -677,8 +593,8 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://advogadoja.lovable.app/artigos/familia/guarda</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://advogadoja.lovable.app/artigos/familia/guarda-filhos-compartilhada-unilateral</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -696,7 +612,7 @@
   </url>
   <url>
     <loc>https://advogadoja.lovable.app/artigos/previdenciario/aposentadoria</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -713,14 +629,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://advogadoja.lovable.app/artigos/penal/defesa-flagrante</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://advogadoja.lovable.app/artigos/penal/prisao-flagrante-direitos</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://advogadoja.lovable.app/artigos/penal/habeas-corpus</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -731,19 +647,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://advogadoja.lovable.app/artigos/trabalhista/pejotizacao-vinculo-empregaticio</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://advogadoja.lovable.app/artigos/trabalhista/adicional-insalubridade-periculosidade</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/trabalhista/rescisao-indireta</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -762,25 +666,19 @@
   </url>
   <url>
     <loc>https://advogadoja.lovable.app/artigos/consumidor/overbooking-extravio-bagagem</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://advogadoja.lovable.app/artigos/consumidor/negativacao-indevida-spc-serasa</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://advogadoja.lovable.app/artigos/consumidor/plano-saude-negativa-cobertura</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/previdenciario/aposentadoria-novas-regras-2025</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -815,19 +713,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://advogadoja.lovable.app/artigos/trabalhista/desvio-de-funcao</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://advogadoja.lovable.app/artigos/trabalhista/intervalo-intrajornada-almoco</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/trabalhista/trabalho-noturno-adicional</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -875,12 +761,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://advogadoja.lovable.app/artigos/familia/guarda-filhos-compartilhada-unilateral</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://advogadoja.lovable.app/artigos/civil/despejo-falta-pagamento</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -905,26 +785,20 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://advogadoja.lovable.app/artigos/civil/negativacao-indevida-nome-sujo</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://advogadoja.lovable.app/artigos/civil/contratos-distrato-rescisao</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://advogadoja.lovable.app/artigos/previdenciario/aposentadoria-invalidez</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://advogadoja.lovable.app/artigos/previdenciario/aposentadoria-por-invalidez-incapacidade-permanente</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://advogadoja.lovable.app/artigos/previdenciario/pensao-por-morte</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -947,20 +821,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/plano-saude-negativa-cobertura</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/compras-online-direito-arrependimento</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://advogadoja.lovable.app/artigos/consumidor/direito-arrependimento-compras-online-7-dias</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://advogadoja.lovable.app/artigos/consumidor/cobranca-indevida-restituicao-dobro</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -995,18 +863,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://advogadoja.lovable.app/artigos/penal/prisao-flagrante-direitos</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/penal/habeas-corpus-liberdade</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://advogadoja.lovable.app/artigos/trabalhista/empresa-faliu-nao-pagou-o-que-fazer</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -1014,12 +870,6 @@
   </url>
   <url>
     <loc>https://advogadoja.lovable.app/artigos/previdenciario/aposentadoria-especial-motorista-onibus</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/plano-saude-negou-cirurgia-direitos</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1043,30 +893,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/devolucao-dobro-cobranca-indevida</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/overbooking-direitos-indenizacao</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/direito-arrependimento-compras-online-7-dias</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/consumidor/liminar-plano-saude-48-horas</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://advogadoja.lovable.app/artigos/consumidor/cartao-clonado-responsabilidade-banco</loc>
     <lastmod>2026-01-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -1079,25 +905,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://advogadoja.lovable.app/artigos/previdenciario/pensao-por-morte-quem-tem-direito</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://advogadoja.lovable.app/artigos/previdenciario/aposentadoria-especial-atividades-insalubres</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/previdenciario/aposentadoria-por-invalidez-incapacidade-permanente</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/artigos/previdenciario/tempo-de-contribuicao-regras-transicao</loc>
     <lastmod>2026-01-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1108,7 +916,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- ===== BLOG POSTS (NOVOS) (13 URLs) ===== -->
+  <!-- ===== BLOG POSTS (NOVOS) (12 URLs) ===== -->
   <url>
     <loc>https://advogadoja.lovable.app/blog/como-recorrer-multa-transito-indevida</loc>
     <lastmod>2024-01-10</lastmod>
@@ -1129,12 +937,6 @@
   </url>
   <url>
     <loc>https://advogadoja.lovable.app/blog/cobranca-indevida-mensalidade-escolar</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advogadoja.lovable.app/blog/plano-saude-negou-cirurgia-liminar</loc>
     <lastmod>2026-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

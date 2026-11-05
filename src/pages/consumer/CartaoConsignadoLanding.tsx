@@ -30,7 +30,7 @@ const schemaData = {
   "@graph": [
     {
       "@type": "LegalService",
-      "name": "Advogado Cartão Consignado - Desconto RMC RCC Indevido | Advogado Já",
+      "name": "Advogado Cartão Consignado - Desconto RMC RCC Indevido | Riccio Advocacia",
       "description": "Desconto indevido de cartão consignado no INSS? Advogado especialista em RMC e RCC. Restituição em dobro + indenização.",
       "url": "https://advogadoja.lovable.app/advogado-cartao-consignado",
       "telephone": "+5571997036269",
@@ -53,13 +53,13 @@ const CartaoConsignadoLanding = () => (
     <SimpleConsumerLanding
       seo={
         <Helmet>
-          <title>{`Desconto Indevido INSS? Cartão Consignado RMC RCC | Advogado Já`}</title>
+          <title>{`Desconto Indevido INSS? Cartão Consignado RMC RCC | Riccio Advocacia`}</title>
           <meta
             name="description"
             content="Desconto de cartão consignado no INSS que você não autorizou? Advogado especialista em RMC e RCC. Restituição em dobro e indenização."
           />
           <link rel="canonical" href="https://advogadoja.lovable.app/advogado-cartao-consignado" />
-          <meta property="og:title" content="Desconto Indevido INSS? Cartão Consignado RMC RCC | Advogado Já" />
+          <meta property="og:title" content="Desconto Indevido INSS? Cartão Consignado RMC RCC | Riccio Advocacia" />
           <meta property="og:description" content="Cartão consignado que você não pediu descontando do seu INSS? Restituição em dobro e indenização." />
           <meta property="og:url" content="https://advogadoja.lovable.app/advogado-cartao-consignado" />
           <meta property="og:type" content="website" />

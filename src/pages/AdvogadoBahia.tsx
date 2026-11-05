@@ -78,7 +78,7 @@ const AdvogadoBahia = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": "Advogado Já na Bahia",
+    "name": "Riccio Advocacia na Bahia",
     "description": "Advogado online para consulta jurídica na Bahia. Atendemos Salvador, Feira de Santana, Vitória da Conquista e todas as cidades baianas.",
     "url": "https://advogadoja.lovable.app/advogado-bahia",
     "areaServed": {
@@ -406,7 +406,7 @@ const AdvogadoBahia = () => {
         {/* Footer */}
         <footer className="bg-muted/50 border-t py-8">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© 2025 Advogado Já - Todos os direitos reservados</p>
+            <p>© 2025 Riccio Advocacia - Todos os direitos reservados</p>
             <div className="flex justify-center gap-4 mt-4">
               <Link to="/privacidade" className="hover:underline">Privacidade</Link>
               <Link to="/termos-de-uso" className="hover:underline">Termos</Link>

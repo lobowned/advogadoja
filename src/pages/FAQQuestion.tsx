@@ -59,7 +59,7 @@ const FAQQuestion = () => {
     "dateModified": "2025-01-01",
     "author": {
       "@type": "Organization",
-      "name": "Advogado Já",
+      "name": "Riccio Advocacia",
       "url": "https://advogadoja.lovable.app"
     },
     "mainEntity": [{
@@ -84,7 +84,7 @@ const FAQQuestion = () => {
     "dateModified": "2025-01-01",
     "author": {
       "@type": "Organization",
-      "name": "Advogado Já",
+      "name": "Riccio Advocacia",
       "url": "https://advogadoja.lovable.app",
       "logo": {
         "@type": "ImageObject",
@@ -93,7 +93,7 @@ const FAQQuestion = () => {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Advogado Já",
+      "name": "Riccio Advocacia",
       "url": "https://advogadoja.lovable.app",
       "logo": {
         "@type": "ImageObject",
@@ -153,7 +153,7 @@ const FAQQuestion = () => {
     "url": canonicalUrl,
     "isPartOf": {
       "@type": "WebSite",
-      "name": "Advogado Já",
+      "name": "Riccio Advocacia",
       "url": "https://advogadoja.lovable.app"
     },
     "about": {
@@ -241,7 +241,7 @@ const FAQQuestion = () => {
     <PageTransition>
       <div className="min-h-screen bg-background">
         <Helmet>
-          <title>{`${faq.question} | Advogado Já`}</title>
+          <title>{`${faq.question} | Riccio Advocacia`}</title>
           <meta name="description" content={faq.metaDescription || faq.answer.substring(0, 160)} />
           <meta name="keywords" content={faq.keywords.join(', ')} />
           <link rel="canonical" href={canonicalUrl} />

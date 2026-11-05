@@ -29,7 +29,7 @@ export const LAWYER = {
   businessHours: "Segunda a sexta, 9h às 18h",
 
   // ---- IDENTIDADE DA ÁREA ----
-  brandName: "Previdenciário", // sub-marca dentro do Advogado Já
+  brandName: "Previdenciário", // sub-marca dentro do Riccio Advocacia
   tagline: "Especialista em Direito Previdenciário",
   metaDescription:
     "Assessoria jurídica especializada em aposentadorias, auxílio-doença e BPC/LOAS. Atendimento humanizado, análise técnica do seu CNIS e estratégia personalizada.",

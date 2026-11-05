@@ -72,8 +72,8 @@ export default function News() {
   const NicheIcon = currentNiche?.icon || Newspaper;
 
   const pageTitle = currentNiche 
-    ? `Notícias de ${currentNiche.label} | Advogado Já`
-    : "Notícias Jurídicas | Advogado Já";
+    ? `Notícias de ${currentNiche.label} | Riccio Advocacia`
+    : "Notícias Jurídicas | Riccio Advocacia";
 
   const pageDescription = currentNiche
     ? currentNiche.description
@@ -221,7 +221,7 @@ export default function News() {
         {/* Footer */}
         <footer className="bg-muted py-8 mt-12">
           <div className="container mx-auto px-4 text-center text-muted-foreground">
-            <p>© {new Date().getFullYear()} Advogado Já. Todos os direitos reservados.</p>
+            <p>© {new Date().getFullYear()} Riccio Advocacia. Todos os direitos reservados.</p>
             <p className="text-sm mt-2">
               Notícias atualizadas semanalmente de fontes oficiais.
             </p>

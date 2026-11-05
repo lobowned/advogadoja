@@ -6,7 +6,7 @@ import PrevWhatsappButton from "./PrevWhatsappButton";
 
 /**
  * Layout exclusivo da área /prev — header e footer próprios,
- * independente da plataforma Advogado Já original.
+ * independente da plataforma Riccio Advocacia original.
  *
  * Paleta: navy #0B1B2B + dourado #C9A961 + bege #F5F1EA + sálvia #7A9583
  * Tipografia: Fraunces (títulos) + Inter (corpo)

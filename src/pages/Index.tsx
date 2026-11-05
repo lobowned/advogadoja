@@ -12,8 +12,8 @@ const Index = () => {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Advogado Já",
-    "alternateName": "Advogado Já Brasil",
+    "name": "Riccio Advocacia",
+    "alternateName": "Riccio Advocacia Brasil",
     "url": "https://advogadoja.lovable.app",
     "logo": {
       "@type": "ImageObject",
@@ -73,7 +73,7 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://advogadoja.lovable.app/#localbusiness",
-    "name": "Advogado Já",
+    "name": "Riccio Advocacia",
     "image": "https://advogadoja.lovable.app/favicon.svg",
     "description": "Escritório de advocacia online. Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Consulta gratuita em todo o Brasil.",
     "url": "https://advogadoja.lovable.app",
@@ -118,7 +118,7 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "LegalService",
     "@id": "https://advogadoja.lovable.app/#legalservice",
-    "name": "Advogado Já - Escritório de Advocacia Online",
+    "name": "Riccio Advocacia - Escritório de Advocacia Online",
     "description": "Escritório especializado em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp em todo o Brasil.",
     "url": "https://advogadoja.lovable.app",
     "telephone": "+55-71-99703-6269",
@@ -190,8 +190,8 @@ const Index = () => {
   const webSiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Advogado Já",
-    "alternateName": "Advogado Já Brasil",
+    "name": "Riccio Advocacia",
+    "alternateName": "Riccio Advocacia Brasil",
     "url": "https://advogadoja.lovable.app",
     "potentialAction": {
       "@type": "SearchAction",
@@ -207,7 +207,7 @@ const Index = () => {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Advogado Online | Trabalhista, Família, Consumidor | Advogado Já",
+    "name": "Advogado Online | Trabalhista, Família, Consumidor | Riccio Advocacia",
     "description": "Precisa de advogado? Especialistas em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp. Consulta gratuita.",
     "url": "https://advogadoja.lovable.app",
     "isPartOf": {
@@ -231,18 +231,18 @@ const Index = () => {
   return (
     <PageTransition variant="slideUp">
       <Helmet>
-        <title>Advogado Online | Trabalhista, Família, INSS, Consumidor | Advogado Já</title>
+        <title>Advogado Online | Trabalhista, Família, INSS, Consumidor | Riccio Advocacia</title>
         <meta name="description" content="Advogados online para todas as áreas: Trabalhista, Família, Consumidor, INSS, Civil e Criminal. Atendimento via WhatsApp. Consulta gratuita em todo o Brasil." />
         <meta name="keywords" content="advogado online, advogado trabalhista, advogado família, advogado consumidor, advogado previdenciário INSS, advogado civil, advogado criminal, divórcio online, pensão alimentícia, demissão sem justa causa, verbas rescisórias, aposentadoria INSS, auxílio-doença, BPC LOAS, voo cancelado, plano de saúde negou, nome sujo, negativação indevida, inventário, defesa criminal, consulta jurídica gratuita, falar com advogado agora" />
         <link rel="canonical" href="https://advogadoja.lovable.app" />
         
-        <meta property="og:title" content="Advogado Online | Trabalhista, Família, INSS, Consumidor | Advogado Já" />
+        <meta property="og:title" content="Advogado Online | Trabalhista, Família, INSS, Consumidor | Riccio Advocacia" />
         <meta property="og:description" content="Advogados online para todas as áreas do direito. Atendimento via WhatsApp. Consulta gratuita em todo o Brasil." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://advogadoja.lovable.app" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Advogado Online | Trabalhista, Família, INSS, Consumidor | Advogado Já" />
+        <meta name="twitter:title" content="Advogado Online | Trabalhista, Família, INSS, Consumidor | Riccio Advocacia" />
         <meta name="twitter:description" content="Advogados online para todas as áreas do direito. Atendimento via WhatsApp. Consulta gratuita em todo o Brasil." />
 
         
@@ -282,7 +282,7 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center md:text-left text-sm text-muted-foreground">
               <div>
-                <p className="font-semibold text-foreground mb-2">Advogado Já</p>
+                <p className="font-semibold text-foreground mb-2">Riccio Advocacia</p>
                 <p>OAB/BA 46.638 | CNPJ 50.947.818/0001-94</p>
                 <p>© 2025</p>
                 <p className="mt-2">Atendimento: seg-sex 8h às 20h</p>

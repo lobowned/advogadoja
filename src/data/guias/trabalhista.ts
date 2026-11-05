@@ -155,7 +155,7 @@ export const guiaTrabalhista: Guia = {
   artigosRelacionados: [
     "/artigos/trabalhista/demissao-sem-justa-causa",
     "/artigos/trabalhista/verbas-rescisorias-o-que-voce-tem-direito",
-    "/artigos/trabalhista/rescisao-indireta-quando-empregado-demite-empresa",
+    "/artigos/trabalhista/rescisao-indireta",
     "/artigos/trabalhista/horas-extras",
     "/artigos/trabalhista/demissao-justa-causa",
     "/artigos/trabalhista/multa-477-atraso-rescisao",

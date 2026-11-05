@@ -91,19 +91,24 @@ const HeroSection = () => {
       {/* Center — Wordmark */}
       <div className="relative z-10 flex-1 flex items-center justify-center container mx-auto px-4 py-10">
         <m.div
-          className="flex flex-col items-center text-center"
+          className="relative flex flex-col items-center text-center"
           variants={heroStagger}
           initial="hidden"
           animate="visible"
         >
-          <m.div variants={heroBadge} className="h-px w-12 sm:w-16 bg-accent/60 mb-6 sm:mb-8" />
+          {/* Localized scrim so the wordmark stays readable over the video */}
+          <div
+            className="absolute -inset-x-16 sm:-inset-x-28 -inset-y-10 sm:-inset-y-14 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.66)_0%,rgba(0,0,0,0.4)_45%,rgba(0,0,0,0)_78%)]"
+            aria-hidden="true"
+          />
+          <m.div variants={heroBadge} className="relative h-px w-12 sm:w-16 bg-accent/60 mb-6 sm:mb-8" />
           <m.h1
             variants={heroBadge}
-            className="font-display text-background text-[2.5rem] leading-[1.05] sm:text-6xl lg:text-7xl font-light tracking-[0.01em]"
+            className="relative font-display text-background text-[2.5rem] leading-[1.05] sm:text-6xl lg:text-7xl font-light tracking-[0.01em] drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)]"
           >
             Riccio <span className="text-accent">Advocacia</span>
           </m.h1>
-          <m.div variants={heroBadge} className="h-px w-12 sm:w-16 bg-accent/60 mt-6 sm:mt-8" />
+          <m.div variants={heroBadge} className="relative h-px w-12 sm:w-16 bg-accent/60 mt-6 sm:mt-8" />
         </m.div>
       </div>
 

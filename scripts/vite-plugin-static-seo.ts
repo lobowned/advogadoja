@@ -188,6 +188,7 @@ async function loadData(root: string) {
     return {
       guias: await load("src/data/guias.ts"),
       local: await load("src/data/local-pages.ts"),
+      niches: await load("src/data/niche-pages.ts"),
       articles: await load("src/data/blog-articles.ts"),
       posts: await load("src/data/blog-posts.ts"),
     };
@@ -214,6 +215,7 @@ function buildPages(d: Awaited<ReturnType<typeof loadData>>, baseTitle: string, 
     links: [
       { href: "/guias", label: "Guias jurídicos por área" },
       ...guias.map((g) => ({ href: `/guia/${g.slug}`, label: g.h1 })),
+      ...Object.values(d.niches?.nicheData || {}).map((n: any) => ({ href: `/${n.slug}`, label: n.title })),
       ...localRoutes.map((r) => ({ href: `/advogado-${r.key}`, label: localPages[r.key]?.h1 || r.key })),
     ],
     jsonLd: [{ "@context": "https://schema.org", ...org }],
@@ -290,6 +292,44 @@ function buildPages(d: Awaited<ReturnType<typeof loadData>>, baseTitle: string, 
         },
         ...(faq.length ? [faqLd(faq)] : []),
         breadcrumb([home, { name: p.h1, path: route }]),
+      ],
+    });
+  }
+
+  // Páginas de área (/advogado-<area>): prazos da lei, casos e links para guia e cidades
+  const nicheDataMap: Record<string, any> = d.niches?.nicheData || {};
+  for (const n of Object.values(nicheDataMap)) {
+    const route = `/${n.slug}`;
+    const cityLinks = n.localNiche
+      ? localRoutes
+          .filter((r) => r.nicheSlug === n.localNiche)
+          .map((r) => ({ href: `/advogado-${r.key}`, label: `${n.title.replace(" Online", "")} em ${cityNames[r.citySlug] || r.citySlug}` }))
+      : [];
+    pages.push({
+      route,
+      title: n.metaTitle,
+      description: n.metaDescription,
+      h1: n.title,
+      intro: n.heroDescription,
+      sections: [
+        { h2: "Prazos que você precisa conhecer", paragraphs: [], list: (n.stats || []).map((s: any) => `${s.value}: ${s.label}`) },
+        { h2: "Casos atendidos", paragraphs: [], list: (n.commonCases || []).map((c: any) => `${c.title}: ${c.description}`) },
+        { h2: "Como funciona o atendimento", paragraphs: [], list: n.benefits || [] },
+      ],
+      links: [
+        ...(n.guideSlug ? [{ href: `/guia/${n.guideSlug}`, label: "Guia completo da área" }] : []),
+        ...cityLinks,
+        { href: "/guias", label: "Guias jurídicos por área" },
+      ],
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          ...org,
+          "@id": `${abs(route)}#legalservice`,
+          description: n.metaDescription,
+          areaServed: { "@type": "State", name: "Bahia" },
+        },
+        breadcrumb([home, { name: n.title, path: route }]),
       ],
     });
   }

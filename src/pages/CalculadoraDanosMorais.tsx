@@ -26,7 +26,7 @@ const CalculadoraDanosMorais = () => {
           content="Calculadora gratuita de danos morais. Estime o valor da indenização baseado em jurisprudência. Negativação indevida, ofensa à honra, discriminação e mais." 
         />
         <meta name="keywords" content="calculadora danos morais, indenização, negativação indevida, Serasa, SPC, ofensa honra, discriminação" />
-        <link rel="canonical" href="/calculadora-danos-morais" />
+        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-danos-morais" />
         {webAppSchema && (
           <script type="application/ld+json">
             {JSON.stringify(webAppSchema)}

@@ -26,7 +26,7 @@ const CalculadoraHorasExtras = () => {
           content="Calculadora gratuita de horas extras. Calcule o valor com adicional de 50%, 100% em feriados, reflexos em férias, 13º e DSR. Banco de horas irregular." 
         />
         <meta name="keywords" content="calculadora horas extras, direitos trabalhistas, adicional noturno, banco de horas, reflexos CLT" />
-        <link rel="canonical" href="/calculadora-horas-extras" />
+        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-horas-extras" />
         {webAppSchema && (
           <script type="application/ld+json">
             {JSON.stringify(webAppSchema)}

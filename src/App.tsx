@@ -66,7 +66,6 @@ import {
   CalculadoraFGTS,
   CalculadoraInsalubridade,
   CalculadoraPartilhaBens,
-  CalculadoraInventario,
   CalculadoraPensaoMorte,
   CalculadoraAuxilioDoenca,
   CalculadoraBPCLOAS,
@@ -228,7 +227,7 @@ const AnimatedRoutes = () => {
         <Route path="/calculadora-bpc-loas" element={<CalculadoraBPCLOAS />} />
         <Route
           path="/calculadora-inventario"
-          element={<CalculadoraInventario />}
+          element={<Navigate to="/artigos/familia/inventario-heranca" replace />}
         />
         <Route
           path="/calculadora-insalubridade"

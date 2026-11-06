@@ -26,7 +26,7 @@ const CalculadoraAluguelAtrasado = () => {
           content="Calculadora gratuita de aluguel atrasado. Calcule multa, juros, correção e encargos. Ideal para locadores que precisam cobrar inquilinos inadimplentes." 
         />
         <meta name="keywords" content="calculadora aluguel atrasado, inquilino devedor, despejo, multa aluguel, cobrança aluguel" />
-        <link rel="canonical" href="/calculadora-aluguel-atrasado" />
+        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-aluguel-atrasado" />
         {webAppSchema && (
           <script type="application/ld+json">
             {JSON.stringify(webAppSchema)}

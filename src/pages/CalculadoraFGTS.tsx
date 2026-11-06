@@ -24,7 +24,7 @@ const CalculadoraFGTS = () => {
           content="Calcule seu saldo de FGTS, multa rescisória e compare saque-rescisão e saque-aniversário." 
         />
         <meta name="keywords" content="calculadora fgts, calcular saldo fgts, multa 40 fgts, saque aniversário, saque rescisão fgts" />
-        <link rel="canonical" href="/calculadora-fgts" />
+        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-fgts" />
         {webAppSchema && (
           <script type="application/ld+json">
             {JSON.stringify(webAppSchema)}

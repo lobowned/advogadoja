@@ -7,7 +7,7 @@ import { ProgrammaticFAQ } from './programmatic-faqs';
 // Area to calculator mapping
 export const areaCalculatorMap: Record<string, CalculatorType[]> = {
   trabalhista: ['trabalhista', 'horas-extras', 'seguro-desemprego', 'fgts', 'insalubridade'],
-  familia: ['pensao', 'partilha-bens', 'inventario'],
+  familia: ['pensao', 'partilha-bens'],
   previdenciario: ['aposentadoria', 'pensao-morte', 'auxilio-doenca', 'bpc-loas'],
   civil: ['atualizacao-divida', 'aluguel-atrasado'],
   consumidor: ['devolucao-dobro'],
@@ -34,9 +34,6 @@ const keywordCalculatorMap: Record<string, CalculatorType> = {
   'alimentos': 'pensao',
   'partilha': 'partilha-bens',
   'divisão de bens': 'partilha-bens',
-  'inventário': 'inventario',
-  'inventario': 'inventario',
-  'herança': 'inventario',
   'aposentadoria': 'aposentadoria',
   'aposentar': 'aposentadoria',
   'inss': 'aposentadoria',

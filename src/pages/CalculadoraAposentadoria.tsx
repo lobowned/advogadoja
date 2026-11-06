@@ -26,7 +26,7 @@ const CalculadoraAposentadoria = () => {
           content="Calculadora gratuita de aposentadoria INSS. Verifique se você atende aos requisitos e estime o valor do seu benefício. Regras atualizadas pós-reforma." 
         />
         <meta name="keywords" content="calculadora aposentadoria, INSS, reforma previdência, tempo contribuição, idade mínima, benefício INSS" />
-        <link rel="canonical" href="/calculadora-aposentadoria" />
+        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-aposentadoria" />
         {webAppSchema && (
           <script type="application/ld+json">
             {JSON.stringify(webAppSchema)}

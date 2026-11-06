@@ -26,7 +26,7 @@ const CalculadoraPensao = () => {
           content="Calcule grátis o valor estimado de pensão alimentícia. Saiba quanto você ou seus filhos têm direito a receber baseado na renda do alimentante." 
         />
         <meta name="keywords" content="calculadora pensão alimentícia, calcular pensão filhos, valor pensão, direito família, alimentos" />
-        <link rel="canonical" href="/calculadora-pensao" />
+        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-pensao" />
         
         {webAppSchema && (
           <script type="application/ld+json">

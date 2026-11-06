@@ -84,7 +84,6 @@ const Sitemap = () => {
     // Família
     { name: "Pensão Alimentícia", url: "/calculadora-pensao", emoji: "👨‍👩‍👧", area: "familia" },
     { name: "Partilha de Bens", url: "/calculadora-partilha-bens", emoji: "🏠", area: "familia" },
-    { name: "Inventário", url: "/calculadora-inventario", emoji: "📜", area: "familia" },
     // Previdenciário
     { name: "Aposentadoria INSS", url: "/calculadora-aposentadoria", emoji: "🧓", area: "previdenciario" },
     { name: "Auxílio-Doença", url: "/calculadora-auxilio-doenca", emoji: "🏥", area: "previdenciario" },

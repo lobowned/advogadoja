@@ -65,7 +65,6 @@ export const CalculadoraSeguroDesemprego = lazyPage(() => import("@/pages/Calcul
 export const CalculadoraFGTS = lazyPage(() => import("@/pages/CalculadoraFGTS"));
 export const CalculadoraInsalubridade = lazyPage(() => import("@/pages/CalculadoraInsalubridade"));
 export const CalculadoraPartilhaBens = lazyPage(() => import("@/pages/CalculadoraPartilhaBens"));
-export const CalculadoraInventario = lazyPage(() => import("@/pages/CalculadoraInventario"));
 export const CalculadoraPensaoMorte = lazyPage(() => import("@/pages/CalculadoraPensaoMorte"));
 export const CalculadoraAuxilioDoenca = lazyPage(() => import("@/pages/CalculadoraAuxilioDoenca"));
 export const CalculadoraBPCLOAS = lazyPage(() => import("@/pages/CalculadoraBPCLOAS"));
@@ -117,7 +116,7 @@ const ROUTE_PRELOADS: Array<[RegExp, Preloadable[]]> = [
   [/^\/noticias(\/[^/]+)?$/, [News]],
   [/^\/calculadoras$/, [Calculadoras]],
   // Calculadoras de indenização aposentadas em 06/11/2026: redirecionam para o artigo da área
-  [/^\/calculadora-(danos-morais|dpvat|voo-cancelado|negativacao|plano-saude|fraude-bancaria|liminar-cirurgia)$/, [BlogPost]],
+  [/^\/calculadora-(danos-morais|dpvat|voo-cancelado|negativacao|plano-saude|fraude-bancaria|liminar-cirurgia|inventario)$/, [BlogPost]],
   [/^\/calculadora-trabalhista$/, [CalculadoraTrabalhista]],
   [/^\/calculadora-pensao$/, [CalculadoraPensao]],
   [/^\/calculadora-aposentadoria$/, [CalculadoraAposentadoria]],
@@ -130,7 +129,6 @@ const ROUTE_PRELOADS: Array<[RegExp, Preloadable[]]> = [
   [/^\/calculadora-pensao-morte$/, [CalculadoraPensaoMorte]],
   [/^\/calculadora-auxilio-doenca$/, [CalculadoraAuxilioDoenca]],
   [/^\/calculadora-bpc-loas$/, [CalculadoraBPCLOAS]],
-  [/^\/calculadora-inventario$/, [CalculadoraInventario]],
   [/^\/calculadora-insalubridade$/, [CalculadoraInsalubridade]],
   [/^\/calculadora-devolucao-dobro$/, [CalculadoraDevolucaoEmDobro]],
   [/^\/(advogado-)?negativacao-indevida$/, [NegativacaoIndevidaLanding]],

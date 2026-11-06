@@ -72,7 +72,6 @@ const calculatorGroups = {
   familia: [
     { title: "Pensão Alimentícia", href: "/calculadora-pensao" },
     { title: "Partilha de Bens", href: "/calculadora-partilha-bens" },
-    { title: "Inventário", href: "/calculadora-inventario" },
   ],
   previdenciario: [
     { title: "Aposentadoria", href: "/calculadora-aposentadoria" },

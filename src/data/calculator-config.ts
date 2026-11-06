@@ -8,7 +8,6 @@ export type CalculatorType =
   | 'insalubridade'
   | 'pensao' 
   | 'partilha-bens' 
-  | 'inventario'
   | 'aposentadoria' 
   | 'pensao-morte' 
   | 'auxilio-doenca' 
@@ -79,13 +78,6 @@ export const calculatorInfo: Record<Exclude<CalculatorType, null>, CalculatorInf
     description: 'Entenda como ficarão os bens no divórcio.',
     url: '/calculadora-partilha-bens',
     emoji: '🏠',
-    area: 'familia'
-  },
-  'inventario': {
-    title: 'Calcule Custos do Inventário',
-    description: 'Estime ITCMD, custas e honorários do inventário.',
-    url: '/calculadora-inventario',
-    emoji: '📜',
     area: 'familia'
   },
   
@@ -185,7 +177,6 @@ export const calculatorKeywords: Array<{ keywords: RegExp; calculator: Exclude<C
   // Família - específicos primeiro
   { keywords: /pens[aã]o\s*aliment[ií]cia|valor\s*da\s*pens[aã]o|pagar\s*pens[aã]o|receber\s*pens[aã]o|alimentos/i, calculator: 'pensao' },
   { keywords: /partilha|divis[aã]o\s*de\s*bens|separa[cç][aã]o\s*de\s*bens|patrimônio|divórcio.*bens|bens.*divórcio/i, calculator: 'partilha-bens' },
-  { keywords: /inventário|herança|heran[cç]a|faleceu.*bens|óbito.*bens|itcmd|sucess[aã]o/i, calculator: 'inventario' },
   
   // Previdenciário - específicos primeiro
   { keywords: /pens[aã]o\s*por\s*morte|morte.*pens[aã]o|dependente.*falec|viúv[oa]/i, calculator: 'pensao-morte' },

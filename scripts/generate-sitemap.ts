@@ -85,7 +85,6 @@ const calculators: SitemapURL[] = [
   { loc: '/calculadora-fgts', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
   { loc: '/calculadora-pensao', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
   { loc: '/calculadora-partilha-bens', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-inventario', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
   { loc: '/calculadora-aposentadoria', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
   { loc: '/calculadora-auxilio-doenca', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
   { loc: '/calculadora-bpc-loas', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },

@@ -32,7 +32,21 @@ import {
   isIndexableLocalSEOArticle,
 } from "@/data/local-seo-articles";
 import { getArticleBySlug } from "@/data/blog-articles";
+import { LOCAL_PAGE_KEYS } from "@/data/local-page-keys";
 import BlogPost from "@/pages/BlogPost";
+
+// Links internos só para páginas que existem: os dados apontavam para
+// /advogado-consumidor-<cidade> sem página local e para /problemas/..., que davam 404.
+const LOCAL_KEYS = new Set<string>(LOCAL_PAGE_KEYS);
+const PROBLEM_PAGES: Record<string, string> = {
+  "/problemas/voo-cancelado": "/advogado-problemas-voo",
+  "/problemas/negativacao": "/advogado-negativacao-indevida",
+  "/problemas/negativacao-indevida": "/advogado-negativacao-indevida",
+  "/problemas/plano-saude": "/advogado-plano-saude-cobertura-negada",
+  "/problemas/fraude-bancaria": "/fraude-bancaria",
+  "/problemas/cobranca-indevida": "/advogado-cobranca-indevida",
+  "/problemas/produto-defeituoso": "/advogado-produto-defeituoso",
+};
 
 const problemIcons: Record<string, React.ReactNode> = {
   "voo-cancelado": <Plane className="h-5 w-5" />,
@@ -58,6 +72,12 @@ const LocalSEOArticle = () => {
   }
   
   const relatedArticles = getRelatedLocalSEOArticles(article.slug, 3);
+  const hasLocalLanding = LOCAL_KEYS.has(article.relatedLandingPage.replace(/^\/advogado-/, ""));
+  const landingHref = hasLocalLanding ? article.relatedLandingPage : "/advogado-consumidor";
+  const landingLabel = hasLocalLanding
+    ? `Advogado do Consumidor em ${article.cityName}`
+    : "Advogado do Consumidor Online";
+  const problemHref = PROBLEM_PAGES[article.relatedProblemPage] ?? "/guia/consumidor";
   const readingTime = Math.ceil(
     (article.content.intro.length + 
      article.content.localContext.length + 
@@ -261,7 +281,7 @@ const LocalSEOArticle = () => {
               <Button asChild size="lg" className="shadow-lg">
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                   <Phone className="h-5 w-5 mr-2" />
-                  Falar com Advogado Especialista
+                  Falar com Advogado
                 </a>
               </Button>
             </div>
@@ -393,9 +413,9 @@ const LocalSEOArticle = () => {
                             <Calculator className="h-8 w-8 text-primary" />
                           </div>
                           <div>
-                            <h3 className="font-semibold text-lg">Calcule Sua Indenização</h3>
+                            <h3 className="font-semibold text-lg">Faça a conta do seu caso</h3>
                             <p className="text-muted-foreground text-sm">
-                              Use nossa calculadora gratuita para estimar o valor que você pode receber
+                              A calculadora estima o valor pela regra da lei. É uma estimativa, não uma garantia.
                             </p>
                           </div>
                         </div>
@@ -424,7 +444,7 @@ const LocalSEOArticle = () => {
                     <Button asChild size="lg" variant="secondary" className="shadow-lg">
                       <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                         <Phone className="h-5 w-5 mr-2" />
-                        Falar com Advogado Especialista
+                        Falar com Advogado
                       </a>
                     </Button>
                   </CardContent>
@@ -464,14 +484,14 @@ const LocalSEOArticle = () => {
               <section className="border-t pt-8">
                 <h3 className="font-semibold mb-4">Veja também:</h3>
                 <div className="flex flex-wrap gap-2">
-                  <Link 
-                    to={article.relatedLandingPage}
+                  <Link
+                    to={landingHref}
                     className="text-sm px-3 py-1.5 bg-muted rounded-full hover:bg-muted/80 transition-colors"
                   >
-                    Advogado do Consumidor em {article.cityName}
+                    {landingLabel}
                   </Link>
-                  <Link 
-                    to={article.relatedProblemPage}
+                  <Link
+                    to={problemHref}
                     className="text-sm px-3 py-1.5 bg-muted rounded-full hover:bg-muted/80 transition-colors"
                   >
                     {article.problemLabel}: Seus Direitos
@@ -481,7 +501,7 @@ const LocalSEOArticle = () => {
                       to={article.relatedCalculator}
                       className="text-sm px-3 py-1.5 bg-muted rounded-full hover:bg-muted/80 transition-colors"
                     >
-                      Calculadora de Indenização
+                      Calculadora
                     </Link>
                   )}
                 </div>

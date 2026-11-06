@@ -90,16 +90,10 @@ const calculators: SitemapURL[] = [
   { loc: '/calculadora-auxilio-doenca', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
   { loc: '/calculadora-bpc-loas', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
   { loc: '/calculadora-pensao-morte', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-danos-morais', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
   { loc: '/calculadora-atualizacao-divida', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
   { loc: '/calculadora-aluguel-atrasado', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-dpvat', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.75 },
   // Consumer Calculators
-  { loc: '/calculadora-voo-cancelado', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
-  { loc: '/calculadora-negativacao', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.85 },
   { loc: '/calculadora-devolucao-dobro', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-plano-saude', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
-  { loc: '/calculadora-fraude-bancaria', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
 ];
 
 // ============================================

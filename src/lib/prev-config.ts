@@ -30,7 +30,7 @@ export const LAWYER = {
 
   // ---- IDENTIDADE DA ÁREA ----
   brandName: "Previdenciário", // sub-marca dentro do Riccio Advocacia
-  tagline: "Especialista em Direito Previdenciário",
+  tagline: "Atuação em Direito Previdenciário",
   metaDescription:
     "Assessoria jurídica especializada em aposentadorias, auxílio-doença e BPC/LOAS. Atendimento humanizado, análise técnica do seu CNIS e estratégia personalizada.",
 } as const;

@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,122 +14,83 @@ import { HelmetProvider } from "react-helmet-async";
 import { LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
 import { LawyerPresenceProvider } from "@/contexts/LawyerPresenceContext";
 
-// ===== Lazy load das páginas da área /prev =====
-// Mantemos o bundle do site original inalterado: as páginas /prev só
-// carregam quando o usuário entra em alguma URL /prev/*.
-const PrevHome = lazy(() => import("./pages/prev/PrevHome"));
-const GuiaPage = lazy(() => import("./pages/guias/GuiaPage"));
-const GuiasIndex = lazy(() => import("./pages/guias/GuiasIndex"));
-const PrevAposentadorias = lazy(
-  () => import("./pages/prev/PrevAposentadorias"),
-);
-const PrevAposentadoriaIdade = lazy(
-  () => import("./pages/prev/PrevAposentadoriaIdade"),
-);
-const PrevAuxilioDoenca = lazy(() => import("./pages/prev/PrevAuxilioDoenca"));
-const PrevInvalidez = lazy(() => import("./pages/prev/PrevInvalidez"));
-const PrevBpcLoas = lazy(() => import("./pages/prev/PrevBpcLoas"));
-const PrevSalarioMaternidade = lazy(
-  () => import("./pages/prev/PrevSalarioMaternidade"),
-);
-const PrevSobre = lazy(() => import("./pages/prev/PrevSobre"));
-const PrevContato = lazy(() => import("./pages/prev/PrevContato"));
-
-// Landing independente da Riccio Advocacia (preto & ouro, mobile-first) — lazy pra não pesar o bundle.
-const RiccioAdvocacia = lazy(() => import("./pages/RiccioAdvocacia"));
-
-// Pages
+// Só a página inicial e a 404 vão no pacote principal; as demais carregam quando abertas
+// (src/routes/pages.ts, com preload antes do primeiro render em main.tsx).
 import Index from "./pages/Index";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsOfUse from "./pages/TermsOfUse";
-import Questionnaire from "./pages/Questionnaire";
-import DynamicQuestionnaire from "./pages/DynamicQuestionnaire";
-import Completed from "./pages/Completed";
 import NotFound from "./pages/NotFound";
-import FAQ from "./pages/FAQ";
-import FAQIndex from "./pages/FAQIndex";
-import FAQQuestion from "./pages/FAQQuestion";
-import NicheLanding from "./pages/NicheLanding";
-import CityLanding from "./pages/CityLanding";
-import CityNicheLanding from "./pages/CityNicheLanding";
-import { LOCAL_PAGE_ROUTES } from "./data/local-pages";
+import { LOCAL_PAGE_ROUTES } from "./data/local-page-keys";
 import { articleRedirects } from "./data/article-redirects";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
-import BlogIndex from "./pages/BlogIndex";
-import BlogArticle from "./pages/BlogArticle";
-import SelectNiche from "./pages/SelectNiche";
-import SelectAction from "./pages/SelectAction";
-import News from "./pages/News";
-import CasosSucesso from "./pages/CasosSucesso";
-import Sitemap from "./pages/Sitemap";
-import Conversao from "./pages/Conversao";
-
-// Calculadoras
-import Calculadoras from "./pages/Calculadoras";
-import CalculadoraTrabalhista from "./pages/CalculadoraTrabalhista";
-import CalculadoraPensao from "./pages/CalculadoraPensao";
-import CalculadoraAposentadoria from "./pages/CalculadoraAposentadoria";
-import CalculadoraHorasExtras from "./pages/CalculadoraHorasExtras";
-import CalculadoraSeguroDesemprego from "./pages/CalculadoraSeguroDesemprego";
-import CalculadoraFGTS from "./pages/CalculadoraFGTS";
-import CalculadoraInsalubridade from "./pages/CalculadoraInsalubridade";
-import CalculadoraPartilhaBens from "./pages/CalculadoraPartilhaBens";
-import CalculadoraInventario from "./pages/CalculadoraInventario";
-import CalculadoraPensaoMorte from "./pages/CalculadoraPensaoMorte";
-import CalculadoraAuxilioDoenca from "./pages/CalculadoraAuxilioDoenca";
-import CalculadoraBPCLOAS from "./pages/CalculadoraBPCLOAS";
-import CalculadoraDanosMorais from "./pages/CalculadoraDanosMorais";
-import CalculadoraAtualizacaoDivida from "./pages/CalculadoraAtualizacaoDivida";
-import CalculadoraAluguelAtrasado from "./pages/CalculadoraAluguelAtrasado";
-import CalculadoraDPVAT from "./pages/CalculadoraDPVAT";
-import CalculadoraVooCancelado from "./pages/CalculadoraVooCancelado";
-import CalculadoraNegativacao from "./pages/CalculadoraNegativacao";
-import CalculadoraDevolucaoEmDobro from "./pages/CalculadoraDevolucaoEmDobro";
-import CalculadoraPlanoSaude from "./pages/CalculadoraPlanoSaude";
-import CalculadoraFraudeBancaria from "./pages/CalculadoraFraudeBancaria";
-
-// Consumer Landing Pages
-import VooCanceladoLanding from "./pages/consumer/VooCanceladoLanding";
-import NegativacaoIndevidaLanding from "./pages/consumer/NegativacaoIndevidaLanding";
-import PlanoSaudeNegouLanding from "./pages/consumer/PlanoSaudeNegouLanding";
-import FraudeBancariaLanding from "./pages/consumer/FraudeBancariaLanding";
-import CobrancaIndevidaLanding from "./pages/consumer/CobrancaIndevidaLanding";
-import ProdutoDefeitousoLanding from "./pages/consumer/ProdutoDefeitousoLanding";
-import LiminarCirurgiaNegadaLanding from "./pages/consumer/LiminarCirurgiaNegadaLanding";
-import LiminarBariatricaLanding from "./pages/consumer/LiminarBariatricaLanding";
-import LiminarOncologicaLanding from "./pages/consumer/LiminarOncologicaLanding";
-import LiminarOrtopedicaLanding from "./pages/consumer/LiminarOrtopedicaLanding";
-import LiminarCardiologicaLanding from "./pages/consumer/LiminarCardiologicaLanding";
-import LiminarNeurologicaLanding from "./pages/consumer/LiminarNeurologicaLanding";
-import LiminarOftalmologicaLanding from "./pages/consumer/LiminarOftalmologicaLanding";
-import ProblemasVooLanding from "./pages/consumer/ProblemasVooLanding";
-import CartaoConsignadoLanding from "./pages/consumer/CartaoConsignadoLanding";
-
-// Calculadora Liminar Cirurgia
-import CalculadoraLiminarCirurgia from "./pages/CalculadoraLiminarCirurgia";
-
-// Admin
-import LeadsDashboard from "./pages/admin/LeadsDashboard";
-import QADashboard from "./pages/admin/QADashboard";
-
-// City Consumer Landing (Ultra Local SEO)
-import CityConsumerLanding from "./pages/CityConsumerLanding";
-
-// Local SEO Articles
-import LocalSEOArticle from "./pages/LocalSEOArticle";
-
-// Regional Hub Pages
-import AdvogadoBahia from "./pages/AdvogadoBahia";
-import AdvogadoSaoPaulo from "./pages/AdvogadoSaoPaulo";
-import AdvogadoRioDeJaneiro from "./pages/AdvogadoRioDeJaneiro";
-import AdvogadoMinasGerais from "./pages/AdvogadoMinasGerais";
-
-// Trabalhista Landing
-import TrabalhistaLanding from "./pages/trabalhista/TrabalhistaLanding";
-
-// Criminal Landing (Riccio Advocacia - institutional)
-import CriminalLanding from "./pages/criminal/CriminalLanding";
+import {
+  PrevHome,
+  PrevAposentadorias,
+  PrevAposentadoriaIdade,
+  PrevAuxilioDoenca,
+  PrevInvalidez,
+  PrevBpcLoas,
+  PrevSalarioMaternidade,
+  PrevSobre,
+  PrevContato,
+  GuiaPage,
+  GuiasIndex,
+  RiccioAdvocacia,
+  PrivacyPolicy,
+  TermsOfUse,
+  DynamicQuestionnaire,
+  Completed,
+  FAQ,
+  FAQIndex,
+  FAQQuestion,
+  NicheLanding,
+  CityLanding,
+  CityNicheLanding,
+  Blog,
+  BlogPost,
+  BlogIndex,
+  BlogArticle,
+  SelectNiche,
+  SelectAction,
+  News,
+  CasosSucesso,
+  Sitemap,
+  Conversao,
+  CityConsumerLanding,
+  LocalSEOArticle,
+  AdvogadoBahia,
+  TrabalhistaLanding,
+  CriminalLanding,
+  Calculadoras,
+  CalculadoraTrabalhista,
+  CalculadoraPensao,
+  CalculadoraAposentadoria,
+  CalculadoraHorasExtras,
+  CalculadoraSeguroDesemprego,
+  CalculadoraFGTS,
+  CalculadoraInsalubridade,
+  CalculadoraPartilhaBens,
+  CalculadoraInventario,
+  CalculadoraPensaoMorte,
+  CalculadoraAuxilioDoenca,
+  CalculadoraBPCLOAS,
+  CalculadoraAtualizacaoDivida,
+  CalculadoraAluguelAtrasado,
+  CalculadoraDevolucaoEmDobro,
+  NegativacaoIndevidaLanding,
+  PlanoSaudeNegouLanding,
+  FraudeBancariaLanding,
+  CobrancaIndevidaLanding,
+  ProdutoDefeitousoLanding,
+  LiminarCirurgiaNegadaLanding,
+  LiminarBariatricaLanding,
+  LiminarOncologicaLanding,
+  LiminarOrtopedicaLanding,
+  LiminarCardiologicaLanding,
+  LiminarNeurologicaLanding,
+  LiminarOftalmologicaLanding,
+  ProblemasVooLanding,
+  CartaoConsignadoLanding,
+  LeadsDashboard,
+  QADashboard,
+} from "./routes/pages";
 
 // Components
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
@@ -158,7 +119,9 @@ const ConditionalFloatingWhatsApp = () => {
 const AnimatedRoutes = () => {
   const location = useLocation();
 
+  // Fallback só aparece se a página não foi pré-carregada (preloadRoute em main.tsx)
   return (
+    <Suspense fallback={<div className="min-h-screen bg-background" />}>
     <AnimatePresence mode="wait" initial={false}>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Index />} />
@@ -205,14 +168,14 @@ const AnimatedRoutes = () => {
 
         {/* Regional Hub Pages */}
         <Route path="/advogado-bahia" element={<AdvogadoBahia />} />
-        <Route path="/advogado-sao-paulo" element={<AdvogadoSaoPaulo />} />
+        <Route path="/advogado-sao-paulo" element={<Navigate to="/" replace />} />
         <Route
           path="/advogado-rio-de-janeiro"
-          element={<AdvogadoRioDeJaneiro />}
+          element={<Navigate to="/" replace />}
         />
         <Route
           path="/advogado-minas-gerais"
-          element={<AdvogadoMinasGerais />}
+          element={<Navigate to="/" replace />}
         />
 
         {/* News */}
@@ -232,7 +195,7 @@ const AnimatedRoutes = () => {
         />
         <Route
           path="/calculadora-danos-morais"
-          element={<CalculadoraDanosMorais />}
+          element={<Navigate to="/artigos/civil/danos-morais" replace />}
         />
         <Route
           path="/calculadora-atualizacao-divida"
@@ -272,15 +235,15 @@ const AnimatedRoutes = () => {
           path="/calculadora-insalubridade"
           element={<CalculadoraInsalubridade />}
         />
-        <Route path="/calculadora-dpvat" element={<CalculadoraDPVAT />} />
+        <Route path="/calculadora-dpvat" element={<Navigate to="/artigos/civil/acidente-transito-indenizacao" replace />} />
         {/* Consumer Calculators */}
         <Route
           path="/calculadora-voo-cancelado"
-          element={<CalculadoraVooCancelado />}
+          element={<Navigate to="/artigos/consumidor/atraso-cancelamento-voo-direitos" replace />}
         />
         <Route
           path="/calculadora-negativacao"
-          element={<CalculadoraNegativacao />}
+          element={<Navigate to="/artigos/consumidor/negativacao-indevida-spc-serasa" replace />}
         />
         <Route
           path="/calculadora-devolucao-dobro"
@@ -288,15 +251,15 @@ const AnimatedRoutes = () => {
         />
         <Route
           path="/calculadora-plano-saude"
-          element={<CalculadoraPlanoSaude />}
+          element={<Navigate to="/artigos/consumidor/plano-saude-negativa-cobertura" replace />}
         />
         <Route
           path="/calculadora-fraude-bancaria"
-          element={<CalculadoraFraudeBancaria />}
+          element={<Navigate to="/artigos/consumidor/golpe-pix-como-recuperar-dinheiro" replace />}
         />
         <Route
           path="/calculadora-liminar-cirurgia"
-          element={<CalculadoraLiminarCirurgia />}
+          element={<Navigate to="/artigos/consumidor/plano-saude-negativa-cobertura" replace />}
         />
 
         {/* Consumer Problem Landing Pages - SEO URLs */}
@@ -475,6 +438,7 @@ const AnimatedRoutes = () => {
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
+    </Suspense>
   );
 };
 

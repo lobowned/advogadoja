@@ -31,9 +31,9 @@ interface PrevHeroSplitProps {
 
 const DEFAULTS = {
   experienceLabel: "10+ anos de experiência previdenciária",
-  clientsCount: "+2.500 famílias atendidas",
+  clientsCount: "Atendimento online em todo o Brasil",
   urgencyText: "Resposta em até 5 min úteis",
-  onlineLabel: "Especialista online agora",
+  onlineLabel: "Atendimento online",
   whatsappButtonText: "Conversar agora pelo WhatsApp",
 };
 
@@ -198,7 +198,7 @@ export default function PrevHeroSplit({
                     {name}
                   </h3>
                   <p className="text-prev-gold text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-6 sm:mb-7">
-                    Especialista em INSS
+                    Atuação em INSS
                   </p>
 
                   <div className="w-full space-y-3 sm:space-y-4 text-left">

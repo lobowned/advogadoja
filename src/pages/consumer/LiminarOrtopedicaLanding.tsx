@@ -35,7 +35,7 @@ const schemaData = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Advogado Liminar Cirurgia Ortopédica",
-  "description": "Advogado especialista em liminares para cirurgias ortopédicas negadas. Próteses, artroscopias, cirurgias de coluna.",
+  "description": "Advogado que atua em liminares para cirurgias ortopédicas negadas. Próteses, artroscopias, cirurgias de coluna.",
   "serviceType": ["Liminar Cirurgia Ortopédica", "Direito à Saúde", "Prótese Negada"],
   "areaServed": {
     "@type": "Country",

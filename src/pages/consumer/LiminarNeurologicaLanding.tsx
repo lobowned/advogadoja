@@ -35,7 +35,7 @@ const schemaData = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Advogado Liminar Neurocirurgia",
-  "description": "Advogado especialista em liminares para neurocirurgias negadas. Cirurgia de coluna, tumor cerebral, aneurisma.",
+  "description": "Advogado que atua em liminares para neurocirurgias negadas. Cirurgia de coluna, tumor cerebral, aneurisma.",
   "serviceType": ["Liminar Neurocirurgia", "Direito à Saúde", "Cirurgia de Coluna"],
   "areaServed": {
     "@type": "Country",

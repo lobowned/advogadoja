@@ -156,7 +156,7 @@ const Blog = () => {
               <p className="text-lg text-muted-foreground mb-6">
                 {selectedNiche 
                   ? selectedNiche.description
-                  : "Artigos completos e gratuitos sobre seus direitos. Escrito por advogados especialistas."}
+                  : "Artigos completos e gratuitos sobre seus direitos. Escrito por advogados."}
               </p>
               
               {/* Search */}
@@ -275,7 +275,7 @@ const Blog = () => {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-2xl font-bold mb-3">Tem dúvidas sobre seu caso?</h2>
             <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-              Fale agora com um advogado especialista. Atendimento gratuito e imediato.
+              Fale agora com um advogado. Atendimento gratuito e imediato.
             </p>
             <Button asChild size="lg">
               <Link to="/">Falar com Advogado Agora</Link>

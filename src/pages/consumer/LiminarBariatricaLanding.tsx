@@ -35,7 +35,7 @@ const schemaData = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Advogado Liminar Cirurgia Bariátrica",
-  "description": "Advogado especialista em liminares para cirurgias bariátricas negadas por planos de saúde. Gastroplastia, bypass gástrico, sleeve.",
+  "description": "Advogado que atua em liminares para cirurgias bariátricas negadas por planos de saúde. Gastroplastia, bypass gástrico, sleeve.",
   "serviceType": ["Liminar Cirurgia Bariátrica", "Direito à Saúde", "Direito do Consumidor"],
   "areaServed": {
     "@type": "Country",
@@ -62,7 +62,7 @@ const LiminarBariatricaLanding = () => (
     <SimpleConsumerLanding
       seo={
         <Helmet>
-          <title>Cirurgia Bariátrica Negada? Advogado Especialista</title>
+          <title>Cirurgia Bariátrica Negada? Advogado</title>
           <meta name="description" content="Plano de saúde negou sua cirurgia bariátrica? Advogado para pedido de liminar. Gastroplastia, bypass, sleeve." />
           <meta name="keywords" content="cirurgia bariátrica negada, liminar gastroplastia, plano saúde obesidade, bypass gástrico negado, sleeve negado, advogado bariátrica" />
           <link rel="canonical" href="https://advogadoja.com/liminar-cirurgia-bariatrica" />

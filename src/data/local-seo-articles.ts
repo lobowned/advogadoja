@@ -108,7 +108,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-voo-cancelado",
     relatedLandingPage: "/advogado-consumidor-guarulhos",
     relatedProblemPage: "/problemas/voo-cancelado",
     relatedArticles: ["voo-atrasado-congonhas", "voo-cancelado-brasilia", "voo-cancelado-santos-dumont"],
@@ -191,7 +190,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-voo-cancelado",
     relatedLandingPage: "/advogado-consumidor-sao-paulo",
     relatedProblemPage: "/problemas/voo-cancelado",
     relatedArticles: ["voo-cancelado-guarulhos", "voo-cancelado-brasilia", "voo-cancelado-santos-dumont"],
@@ -274,7 +272,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-plano-saude",
     relatedLandingPage: "/advogado-consumidor-sao-paulo",
     relatedProblemPage: "/problemas/plano-saude",
     relatedArticles: ["plano-saude-negou-rio-de-janeiro", "plano-saude-negou-campinas"],
@@ -356,7 +353,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-negativacao",
     relatedLandingPage: "/advogado-consumidor-belo-horizonte",
     relatedProblemPage: "/problemas/negativacao-indevida",
     relatedArticles: ["nome-negativado-porto-alegre", "golpe-pix-rio-de-janeiro"],
@@ -438,7 +434,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-fraude-bancaria",
     relatedLandingPage: "/advogado-consumidor-rio-de-janeiro",
     relatedProblemPage: "/problemas/fraude-bancaria",
     relatedArticles: ["fraude-bancaria-curitiba", "fraude-bancaria-goiania"],
@@ -520,7 +515,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-voo-cancelado",
     relatedLandingPage: "/advogado-consumidor-brasilia",
     relatedProblemPage: "/problemas/voo-cancelado",
     relatedArticles: ["voo-cancelado-guarulhos", "voo-atrasado-congonhas", "voo-cancelado-recife"],
@@ -603,7 +597,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-plano-saude",
     relatedLandingPage: "/advogado-consumidor-rio-de-janeiro",
     relatedProblemPage: "/problemas/plano-saude",
     relatedArticles: ["plano-saude-negou-sao-paulo", "plano-saude-negou-campinas"],
@@ -685,7 +678,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-fraude-bancaria",
     relatedLandingPage: "/advogado-consumidor-curitiba",
     relatedProblemPage: "/problemas/fraude-bancaria",
     relatedArticles: ["golpe-pix-rio-de-janeiro", "fraude-bancaria-goiania"],
@@ -849,7 +841,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-voo-cancelado",
     relatedLandingPage: "/advogado-consumidor-recife",
     relatedProblemPage: "/problemas/voo-cancelado",
     relatedArticles: ["voo-cancelado-guarulhos", "voo-cancelado-brasilia"],
@@ -1014,7 +1005,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-negativacao",
     relatedLandingPage: "/advogado-consumidor-porto-alegre",
     relatedProblemPage: "/problemas/negativacao-indevida",
     relatedArticles: ["nome-negativado-belo-horizonte", "cobranca-indevida-fortaleza"],
@@ -1096,7 +1086,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-plano-saude",
     relatedLandingPage: "/advogado-consumidor-campinas",
     relatedProblemPage: "/problemas/plano-saude",
     relatedArticles: ["plano-saude-negou-sao-paulo", "plano-saude-negou-rio-de-janeiro"],
@@ -1178,7 +1167,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-voo-cancelado",
     relatedLandingPage: "/advogado-consumidor-rio-de-janeiro",
     relatedProblemPage: "/problemas/voo-cancelado",
     relatedArticles: ["voo-cancelado-guarulhos", "voo-atrasado-congonhas", "voo-cancelado-brasilia"],
@@ -1261,7 +1249,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-fraude-bancaria",
     relatedLandingPage: "/advogado-consumidor-goiania",
     relatedProblemPage: "/problemas/fraude-bancaria",
     relatedArticles: ["golpe-pix-rio-de-janeiro", "fraude-bancaria-curitiba"],
@@ -1345,7 +1332,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-voo-cancelado",
     relatedLandingPage: "/advogado-consumidor-salvador",
     relatedProblemPage: "/problemas/voo-cancelado",
     relatedArticles: ["produto-defeituoso-salvador", "plano-saude-negou-salvador", "voo-cancelado-guarulhos"],
@@ -1426,7 +1412,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-plano-saude",
     relatedLandingPage: "/advogado-consumidor-salvador",
     relatedProblemPage: "/problemas/plano-saude",
     relatedArticles: ["voo-cancelado-salvador", "nome-negativado-salvador", "plano-saude-negou-sao-paulo"],
@@ -1506,7 +1491,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-negativacao",
     relatedLandingPage: "/advogado-consumidor-salvador",
     relatedProblemPage: "/problemas/negativacao",
     relatedArticles: ["voo-cancelado-salvador", "plano-saude-negou-salvador", "nome-negativado-belo-horizonte"],
@@ -1586,7 +1570,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-fraude-bancaria",
     relatedLandingPage: "/advogado-consumidor-salvador",
     relatedProblemPage: "/problemas/fraude-bancaria",
     relatedArticles: ["nome-negativado-salvador", "plano-saude-negou-salvador", "produto-defeituoso-salvador"],
@@ -1748,7 +1731,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-danos-morais",
     relatedLandingPage: "/advogado-consumidor-feira-de-santana",
     relatedProblemPage: "/problemas/produto-defeituoso",
     relatedArticles: ["cobranca-indevida-feira-de-santana", "produto-defeituoso-salvador", "nome-negativado-itabuna"],
@@ -1908,7 +1890,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-plano-saude",
     relatedLandingPage: "/advogado-consumidor-vitoria-da-conquista",
     relatedProblemPage: "/problemas/plano-saude",
     relatedArticles: ["plano-saude-negou-salvador", "nome-negativado-itabuna", "produto-defeituoso-feira-de-santana"],
@@ -1988,7 +1969,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-negativacao",
     relatedLandingPage: "/advogado-consumidor-itabuna",
     relatedProblemPage: "/problemas/negativacao",
     relatedArticles: ["fraude-bancaria-ilheus", "plano-saude-negou-vitoria-conquista", "nome-negativado-salvador"],
@@ -2068,7 +2048,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-fraude-bancaria",
     relatedLandingPage: "/advogado-consumidor-ilheus",
     relatedProblemPage: "/problemas/fraude-bancaria",
     relatedArticles: ["nome-negativado-itabuna", "golpe-pix-salvador", "cobranca-indevida-juazeiro"],
@@ -2228,7 +2207,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-plano-saude",
     relatedLandingPage: "/advogado-consumidor-camacari",
     relatedProblemPage: "/problemas/plano-saude",
     relatedArticles: ["plano-saude-negou-salvador", "produto-defeituoso-lauro-freitas", "plano-saude-negou-vitoria-conquista"],
@@ -2308,7 +2286,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-danos-morais",
     relatedLandingPage: "/advogado-consumidor-lauro-de-freitas",
     relatedProblemPage: "/problemas/produto-defeituoso",
     relatedArticles: ["plano-saude-negou-camacari", "produto-defeituoso-salvador", "nome-negativado-barreiras"],
@@ -2388,7 +2365,6 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ]
     },
-    relatedCalculator: "/calculadora-negativacao",
     relatedLandingPage: "/advogado-consumidor-barreiras",
     relatedProblemPage: "/problemas/negativacao",
     relatedArticles: ["cobranca-indevida-jequie", "nome-negativado-salvador", "produto-defeituoso-lauro-freitas"],

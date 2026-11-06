@@ -35,7 +35,7 @@ const schemaData = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Advogado Liminar Tratamento Câncer",
-  "description": "Advogado especialista em liminares para tratamentos oncológicos negados. Quimioterapia, radioterapia, imunoterapia, cirurgias.",
+  "description": "Advogado que atua em liminares para tratamentos oncológicos negados. Quimioterapia, radioterapia, imunoterapia, cirurgias.",
   "serviceType": ["Liminar Tratamento Câncer", "Direito à Saúde", "Plano de Saúde"],
   "areaServed": {
     "@type": "Country",

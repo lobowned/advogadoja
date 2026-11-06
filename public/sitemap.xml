@@ -122,7 +122,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  <!-- ===== CALCULADORAS JURÍDICAS (21 URLs) ===== -->
+  <!-- ===== CALCULADORAS JURÍDICAS (15 URLs) ===== -->
   <url>
     <loc>https://riccio-advocacia.lovable.app/calculadora-trabalhista</loc>
     <changefreq>monthly</changefreq>
@@ -184,11 +184,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://riccio-advocacia.lovable.app/calculadora-danos-morais</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://riccio-advocacia.lovable.app/calculadora-atualizacao-divida</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -199,32 +194,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://riccio-advocacia.lovable.app/calculadora-dpvat</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://riccio-advocacia.lovable.app/calculadora-voo-cancelado</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://riccio-advocacia.lovable.app/calculadora-negativacao</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://riccio-advocacia.lovable.app/calculadora-devolucao-dobro</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://riccio-advocacia.lovable.app/calculadora-plano-saude</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://riccio-advocacia.lovable.app/calculadora-fraude-bancaria</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

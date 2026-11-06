@@ -170,7 +170,7 @@ const CasosSucesso = () => {
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               Cada caso é único, mas nossa experiência e dedicação são constantes. 
-              Fale com um advogado especialista e descubra como podemos ajudar você.
+              Fale com um advogado e descubra como podemos ajudar você.
             </p>
             <Button asChild size="lg" className="btn-startup text-white gap-2">
               <Link to="/#lawyer-chat">

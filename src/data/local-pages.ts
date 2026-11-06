@@ -1,6 +1,18 @@
 // Conteúdo próprio (não-template) das páginas locais prioritárias.
 // Só fatos verificáveis: nada de endereço, telefone, juiz, estatística ou resultado inventado.
 // Chave: `${nicheSlug}-${citySlug}` — os mesmos slugs de CityNicheLanding/legalAreas e cities.ts.
+// A lista de chaves mora em local-page-keys.ts (o App usa só ela, sem carregar este conteúdo).
+import {
+  LOCAL_PAGE_KEYS,
+  LOCAL_PAGE_ROUTES,
+  LOCAL_CITY_NAMES,
+  LOCAL_NICHE_NAMES,
+  splitLocalKey,
+  type LocalPageKey,
+} from "./local-page-keys";
+
+export { LOCAL_PAGE_KEYS, LOCAL_PAGE_ROUTES, LOCAL_CITY_NAMES, LOCAL_NICHE_NAMES, splitLocalKey };
+export type { LocalPageKey };
 
 export interface LocalPageContent {
   title: string;
@@ -13,7 +25,7 @@ export interface LocalPageContent {
   whatsappText: string;
 }
 
-export const localPages: Record<string, LocalPageContent> = {
+export const localPages: Record<LocalPageKey, LocalPageContent> = {
   "criminal-salvador": {
     title: "Advogado Criminalista em Salvador (BA) | Riccio Advocacia",
     metaDescription:
@@ -2226,37 +2238,5 @@ export const localPages: Record<string, LocalPageContent> = {
   },
 };
 
-export const LOCAL_PAGE_KEYS = Object.keys(localPages);
-
-/** Cidades e áreas com página local. A cidade pode ter hífen (lauro-de-freitas), a área não. */
-export const LOCAL_CITY_NAMES: Record<string, string> = {
-  salvador: "Salvador",
-  camacari: "Camaçari",
-  "lauro-de-freitas": "Lauro de Freitas",
-  "feira-de-santana": "Feira de Santana",
-  "vitoria-da-conquista": "Vitória da Conquista",
-  ilheus: "Ilhéus",
-  itabuna: "Itabuna",
-  juazeiro: "Juazeiro",
-  "porto-seguro": "Porto Seguro",
-  barreiras: "Barreiras",
-};
-
-export const LOCAL_NICHE_NAMES: Record<string, string> = {
-  criminal: "Criminal",
-  previdenciario: "Previdenciário",
-  trabalhista: "Trabalhista",
-  familia: "Família",
-  consumidor: "Consumidor",
-};
-
-/** Separa a chave só no PRIMEIRO hífen: "familia-lauro-de-freitas" → familia / lauro-de-freitas. */
-export const splitLocalKey = (key: string) => {
-  const i = key.indexOf("-");
-  return { nicheSlug: key.slice(0, i), citySlug: key.slice(i + 1) };
-};
-
-export const LOCAL_PAGE_ROUTES = LOCAL_PAGE_KEYS.map((key) => ({ key, ...splitLocalKey(key) }));
-
-export const getLocalPage = (nicheSlug: string, citySlug: string) =>
-  localPages[`${nicheSlug}-${citySlug}`];
+export const getLocalPage = (nicheSlug: string, citySlug: string): LocalPageContent | undefined =>
+  (localPages as Record<string, LocalPageContent>)[`${nicheSlug}-${citySlug}`];

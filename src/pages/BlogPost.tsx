@@ -379,7 +379,7 @@ const BlogPost = ({ nicheIdOverride, slugOverride }: BlogPostProps = {}) => {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <p className="text-muted-foreground">
-                      Fale agora com um advogado especialista em {nicheInfo.name}. 
+                      Fale agora com um advogado que atua em {nicheInfo.name}. 
                       Atendimento gratuito e imediato.
                     </p>
                     <Button asChild size="lg">

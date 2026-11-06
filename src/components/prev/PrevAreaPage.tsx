@@ -79,7 +79,7 @@ interface PrevAreaPageProps {
 const DEFAULT_TRUST_ROWS: TrustRow[] = [
   { label: "Atendimento Nacional", value: "100% Online" },
   { label: "Sigilo profissional", value: "Garantido" },
-  { label: "Especialista INSS", value: "Pós-Graduado" },
+  { label: "Advogado responsável", value: "OAB/BA 46.638" },
 ];
 
 export default function PrevAreaPage({

@@ -62,7 +62,7 @@ export default function PrevHome() {
         <title>Advogado de INSS — Aposentadoria, Auxílio-Doença, BPC | Atendimento pelo WhatsApp</title>
         <meta
           name="description"
-          content="Advogado especialista em INSS. Aposentadoria, auxílio-doença, aposentadoria por invalidez e BPC/LOAS. Atendimento direto pelo WhatsApp, sem juridiquês."
+          content="Advogado que atua em INSS. Aposentadoria, auxílio-doença, aposentadoria por invalidez e BPC/LOAS. Atendimento direto pelo WhatsApp, sem juridiquês."
         />
         <link rel="canonical" href="https://riccio-advocacia.lovable.app/prev" />
       </Helmet>

@@ -13,15 +13,9 @@ export type CalculatorType =
   | 'pensao-morte' 
   | 'auxilio-doenca' 
   | 'bpc-loas'
-  | 'danos-morais' 
-  | 'atualizacao-divida' 
-  | 'aluguel-atrasado' 
-  | 'dpvat'
-  | 'voo-cancelado'
-  | 'negativacao'
+  | 'atualizacao-divida'
+  | 'aluguel-atrasado'
   | 'devolucao-dobro'
-  | 'plano-saude'
-  | 'fraude-bancaria'
   | null;
 
 export type CalculatorArea = 'trabalhista' | 'familia' | 'previdenciario' | 'civil' | 'consumidor';
@@ -126,13 +120,6 @@ export const calculatorInfo: Record<Exclude<CalculatorType, null>, CalculatorInf
   },
   
   // Civil
-  'danos-morais': {
-    title: 'Estime Danos Morais',
-    description: 'Calcule uma estimativa de indenização por danos morais.',
-    url: '/calculadora-danos-morais',
-    emoji: '⚖️',
-    area: 'civil'
-  },
   'atualizacao-divida': {
     title: 'Atualize uma Dívida',
     description: 'Calcule correção monetária e juros de uma dívida.',
@@ -147,48 +134,13 @@ export const calculatorInfo: Record<Exclude<CalculatorType, null>, CalculatorInf
     emoji: '🏢',
     area: 'civil'
   },
-  'dpvat': {
-    title: 'Calcule Indenização DPVAT',
-    description: 'Veja quanto você pode receber por acidente de trânsito.',
-    url: '/calculadora-dpvat',
-    emoji: '🚗',
-    area: 'civil'
-  },
   
   // Consumidor
-  'voo-cancelado': {
-    title: 'Calcule Indenização por Voo',
-    description: 'Estime quanto você pode receber por atraso ou cancelamento.',
-    url: '/calculadora-voo-cancelado',
-    emoji: '✈️',
-    area: 'consumidor'
-  },
-  'negativacao': {
-    title: 'Calcule Indenização por Negativação',
-    description: 'Estime danos morais por nome negativado indevidamente.',
-    url: '/calculadora-negativacao',
-    emoji: '📉',
-    area: 'consumidor'
-  },
   'devolucao-dobro': {
     title: 'Calcule Devolução em Dobro',
     description: 'Veja quanto você pode receber por cobrança indevida.',
     url: '/calculadora-devolucao-dobro',
     emoji: '💸',
-    area: 'consumidor'
-  },
-  'plano-saude': {
-    title: 'Calcule Indenização Plano de Saúde',
-    description: 'Estime danos por negativa de cobertura.',
-    url: '/calculadora-plano-saude',
-    emoji: '🏥',
-    area: 'consumidor'
-  },
-  'fraude-bancaria': {
-    title: 'Calcule Prejuízo por Fraude Bancária',
-    description: 'Estime quanto você pode recuperar de fraudes.',
-    url: '/calculadora-fraude-bancaria',
-    emoji: '🔐',
     area: 'consumidor'
   }
 };
@@ -242,17 +194,11 @@ export const calculatorKeywords: Array<{ keywords: RegExp; calculator: Exclude<C
   { keywords: /aposentadoria|aposentar|inss|tempo\s*de\s*contribui[cç][aã]o|quando\s*vou\s*aposentar/i, calculator: 'aposentadoria' },
   
   // Civil - específicos primeiro
-  { keywords: /dpvat|spvat|acidente\s*de\s*trânsito|acidente.*carro|atropelamento|colisão|indeniza[cç][aã]o.*acidente/i, calculator: 'dpvat' },
   { keywords: /aluguel\s*atrasado|inquilino|locação|despejo|aluguel.*devido|dívida.*aluguel/i, calculator: 'aluguel-atrasado' },
   { keywords: /atualiza[cç][aã]o.*dívida|corre[cç][aã]o\s*monetária|juros.*dívida|débito.*atualizado/i, calculator: 'atualizacao-divida' },
-  { keywords: /danos?\s*morais?|indeniza[cç][aã]o|ofensa|humilha[cç][aã]o|constrangimento|abuso/i, calculator: 'danos-morais' },
   
   // Consumidor - específicos primeiro
-  { keywords: /voo.*cancelado|atraso.*voo|overbooking|bagagem.*extraviada|companhia.*aérea|passagem.*aérea/i, calculator: 'voo-cancelado' },
-  { keywords: /negativa[cç][aã]o|nome.*sujo|serasa|spc|cadastro.*devedor|restri[cç][aã]o.*nome/i, calculator: 'negativacao' },
   { keywords: /devolu[cç][aã]o.*dobro|cobran[cç]a.*indevida|cobrado.*errado|art.*42|pagou.*duas.*vezes/i, calculator: 'devolucao-dobro' },
-  { keywords: /plano.*saúde|plano.*de.*saude|negativa.*cobertura|cirurgia.*negada|tratamento.*negado|operadora/i, calculator: 'plano-saude' },
-  { keywords: /fraude.*banc|golpe.*pix|cart[aã]o.*clonado|empréstimo.*indevido|saque.*indevido|conta.*invadida/i, calculator: 'fraude-bancaria' },
 ];
 
 /**

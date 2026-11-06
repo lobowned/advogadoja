@@ -29,7 +29,7 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Advogado para Produto Defeituoso - Troca e Indenização",
-  "description": "Advogado especialista em direito do consumidor para casos de produto com defeito. Troca, reparo, devolução do dinheiro e indenização por danos morais.",
+  "description": "Advogado que atua em direito do consumidor para casos de produto com defeito. Troca, reparo, devolução do dinheiro e indenização por danos morais.",
   "areaServed": "Brasil",
   "serviceType": ["Produto Defeituoso", "Vício de Produto", "Direito do Consumidor", "Indenização"],
 };
@@ -40,7 +40,7 @@ const ProdutoDefeitousoLanding = () => (
       seo={
         <Helmet>
           <title>Advogado para Produto Defeituoso | Troca e Indenização</title>
-          <meta name="description" content="Comprou um produto com defeito e a empresa não resolve? Advogado especialista em direito do consumidor para troca e indenização. Consulta gratuita." />
+          <meta name="description" content="Comprou um produto com defeito e a empresa não resolve? Advogado que atua em direito do consumidor para troca e indenização. Consulta gratuita." />
           <meta name="keywords" content="produto defeituoso, garantia produto, vício oculto, vício aparente, troca produto defeituoso, advogado consumidor, indenização produto, CDC, direito do consumidor" />
           <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-produto-defeituoso" />
           <script type="application/ld+json">{JSON.stringify(schema)}</script>

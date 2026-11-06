@@ -54,18 +54,13 @@ const practiceAreas = [
   { title: "Direito de Família", href: "/advogado-familia", icon: Users, color: "text-pink-600" },
   { title: "Direito Civil", href: "/advogado-civil", icon: Home, color: "text-amber-600" },
   { title: "Direito Previdenciário", href: "/advogado-previdenciario", icon: Shield, color: "text-green-600" },
-  { title: "Direito Penal", href: "/advogado-penal", icon: Scale, color: "text-red-600" },
+  { title: "Direito Penal", href: "/advogado-criminal", icon: Scale, color: "text-red-600" },
 ];
 
 // Calculators grouped by area
 const calculatorGroups = {
   consumidor: [
-    { title: "Voo Cancelado", href: "/calculadora-voo-cancelado" },
-    { title: "Negativação", href: "/calculadora-negativacao" },
     { title: "Devolução em Dobro", href: "/calculadora-devolucao-dobro" },
-    { title: "Plano de Saúde", href: "/calculadora-plano-saude" },
-    { title: "Fraude Bancária", href: "/calculadora-fraude-bancaria" },
-    { title: "Liminar Cirurgia", href: "/calculadora-liminar-cirurgia" },
   ],
   trabalhista: [
     { title: "Rescisão Trabalhista", href: "/calculadora-trabalhista" },
@@ -86,19 +81,14 @@ const calculatorGroups = {
     { title: "Pensão por Morte", href: "/calculadora-pensao-morte" },
   ],
   civil: [
-    { title: "Danos Morais", href: "/calculadora-danos-morais" },
     { title: "Atualização de Dívida", href: "/calculadora-atualizacao-divida" },
     { title: "Aluguel Atrasado", href: "/calculadora-aluguel-atrasado" },
-    { title: "DPVAT", href: "/calculadora-dpvat" },
   ],
 };
 
 // Regional Hubs
 const regionalHubs = [
   { title: "Bahia", href: "/advogado-bahia", cities: ["Salvador", "Feira de Santana", "Vitória da Conquista", "Camaçari"] },
-  { title: "São Paulo", href: "/advogado-sao-paulo", cities: ["São Paulo", "Campinas", "Guarulhos", "Santos"] },
-  { title: "Rio de Janeiro", href: "/advogado-rio-de-janeiro", cities: ["Rio de Janeiro", "Niterói", "Duque de Caxias"] },
-  { title: "Minas Gerais", href: "/advogado-minas-gerais", cities: ["Belo Horizonte", "Uberlândia", "Contagem"] },
 ];
 
 // Resources

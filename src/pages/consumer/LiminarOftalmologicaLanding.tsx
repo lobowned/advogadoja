@@ -35,7 +35,7 @@ const schemaData = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Advogado Liminar Cirurgia Oftalmológica",
-  "description": "Advogado especialista em liminares para cirurgias oftalmológicas negadas. Catarata, glaucoma, retina, transplante de córnea.",
+  "description": "Advogado que atua em liminares para cirurgias oftalmológicas negadas. Catarata, glaucoma, retina, transplante de córnea.",
   "serviceType": ["Liminar Cirurgia Olhos", "Direito à Saúde", "Catarata Negada"],
   "areaServed": {
     "@type": "Country",

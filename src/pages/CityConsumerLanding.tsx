@@ -74,7 +74,7 @@ const CityConsumerLanding = () => {
     "@type": ["LegalService", "LocalBusiness", "ProfessionalService"],
     "@id": pageUrl,
     "name": `Advogado do Consumidor em ${cityData.cityName}`,
-    "description": `Especialista em Direito do Consumidor em ${cityData.cityName}, ${cityData.stateCode}. Atendimento online.`,
+    "description": `Atuação em Direito do Consumidor em ${cityData.cityName}, ${cityData.stateCode}. Atendimento online.`,
     "url": pageUrl,
     "telephone": "+55-71-99703-6269",
     "areaServed": {
@@ -160,7 +160,7 @@ const CityConsumerLanding = () => {
         <title>{`Advogado Consumidor ${cityData.cityName} ${cityData.stateCode} | Indenização até R$15.000 - Consulta Grátis`}</title>
         <meta 
           name="description" 
-          content={`Advogado especialista em Direito do Consumidor em ${cityData.cityName}. Atendimento online pelo WhatsApp.`} 
+          content={`Advogado que atua em Direito do Consumidor em ${cityData.cityName}. Atendimento online pelo WhatsApp.`} 
         />
         <meta 
           name="keywords" 
@@ -179,7 +179,7 @@ const CityConsumerLanding = () => {
         
         {/* Open Graph */}
         <meta property="og:title" content={`Advogado do Consumidor em ${cityData.cityName} - Fale com advogado`} />
-        <meta property="og:description" content={`Especialista em Direito do Consumidor em ${cityData.cityName}. Atendimento pelo WhatsApp.`} />
+        <meta property="og:description" content={`Atuação em Direito do Consumidor em ${cityData.cityName}. Atendimento pelo WhatsApp.`} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="pt_BR" />
@@ -187,7 +187,7 @@ const CityConsumerLanding = () => {
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`Advogado Consumidor ${cityData.cityName}`} />
-        <meta name="twitter:description" content={`Especialista em Direito do Consumidor. Atendimento em ${cityData.cityName}.`} />
+        <meta name="twitter:description" content={`Atuação em Direito do Consumidor. Atendimento em ${cityData.cityName}.`} />
         
         {/* Schema.org JSON-LD */}
         <script type="application/ld+json">
@@ -479,14 +479,14 @@ const CityConsumerLanding = () => {
               Precisa de Ajuda com Problema de Consumidor em {cityData.cityName}?
             </h2>
             <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-              Fale agora com um advogado especialista. Atendimento online e sem compromisso.
+              Fale agora com um advogado. Atendimento online e sem compromisso.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" className="gap-2 text-lg px-8" asChild>
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-5 h-5" />
-                  Falar com Advogado Especialista
+                  Falar com Advogado
                 </a>
               </Button>
             </div>

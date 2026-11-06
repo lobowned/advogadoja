@@ -6,7 +6,7 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Advogado Fraude Bancária - Recuperar Dinheiro",
-  "description": "Advogado especialista em fraude bancária. PIX não autorizado, cartão clonado, empréstimo fraudulento. Recupere seu dinheiro.",
+  "description": "Advogado que atua em fraude bancária. PIX não autorizado, cartão clonado, empréstimo fraudulento. Recupere seu dinheiro.",
   "areaServed": "Brasil",
   "serviceType": ["Fraude Bancária", "Golpe PIX", "Cartão Clonado", "Empréstimo Fraudulento"],
 };
@@ -17,7 +17,7 @@ const FraudeBancariaLanding = () => (
       seo={
         <Helmet>
           <title>Fraude Bancária | Golpe PIX, Cartão Clonado - Recupere Seu Dinheiro</title>
-          <meta name="description" content="Vítima de fraude bancária? PIX não autorizado, cartão clonado, empréstimo fraudulento. Advogado especialista. Recupere seu dinheiro e receba indenização." />
+          <meta name="description" content="Vítima de fraude bancária? PIX não autorizado, cartão clonado, empréstimo fraudulento. Advogado. Recupere seu dinheiro e receba indenização." />
           <meta name="keywords" content="fraude bancária, golpe PIX, cartão clonado, empréstimo fraudulento, recuperar dinheiro banco, advogado fraude" />
           <link rel="canonical" href="https://riccio-advocacia.lovable.app/fraude-bancaria" />
           <script type="application/ld+json">{JSON.stringify(schema)}</script>

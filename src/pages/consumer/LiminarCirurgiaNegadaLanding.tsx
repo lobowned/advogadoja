@@ -29,7 +29,7 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Advogado Liminar Cirurgia Plano de Saúde",
-  "description": "Advogado especialista em liminares para cirurgias negadas por planos de saúde.",
+  "description": "Advogado que atua em liminares para cirurgias negadas por planos de saúde.",
   "areaServed": "Brasil",
   "serviceType": [
     "Liminar Cirurgia Plano de Saúde",
@@ -61,7 +61,7 @@ const LiminarCirurgiaNegadaLanding = () => (
           <meta name="keywords" content="liminar cirurgia plano saúde, cirurgia negada, tutela urgência saúde, bariátrica negada, quimioterapia negada, prótese negada, advogado plano saúde" />
           <link rel="canonical" href="https://riccio-advocacia.lovable.app/liminar-cirurgia-negada" />
           <meta property="og:title" content="Cirurgia Negada? Advogado para Liminar" />
-          <meta property="og:description" content="Plano negou sua cirurgia? Peça autorização judicial urgente com advogado especialista." />
+          <meta property="og:description" content="Plano negou sua cirurgia? Peça autorização judicial urgente com advogado." />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://riccio-advocacia.lovable.app/liminar-cirurgia-negada" />
           <script type="application/ld+json">{JSON.stringify(schema)}</script>

@@ -167,7 +167,7 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Advogado em Salvador e Online | Riccio Advocacia",
-    "description": "Precisa de advogado? Especialistas em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp. Atendimento online.",
+    "description": "Precisa de advogado? Atuação em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp. Atendimento online.",
     "url": "https://riccio-advocacia.lovable.app",
     "isPartOf": {
       "@type": "WebSite",

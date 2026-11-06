@@ -6,7 +6,7 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Advogado Voo Cancelado - Indenização",
-  "description": "Advogado especialista em indenização por voo cancelado, atrasado ou overbooking.",
+  "description": "Advogado que atua em indenização por voo cancelado, atrasado ou overbooking.",
   "areaServed": "Brasil",
   "serviceType": ["Indenização por Voo Cancelado", "Direito do Consumidor", "Danos Morais"],
 };
@@ -17,7 +17,7 @@ const VooCanceladoLanding = () => (
       seo={
         <Helmet>
           <title>Advogado para Voo Cancelado ou Atrasado | Indenização Aérea</title>
-          <meta name="description" content="Advogado especialista em direitos do passageiro aéreo. Obtenha indenização por voo cancelado, atrasado ou extravio de bagagem." />
+          <meta name="description" content="Advogado que atua em direitos do passageiro aéreo. Obtenha indenização por voo cancelado, atrasado ou extravio de bagagem." />
           <meta name="keywords" content="voo cancelado indenização, atraso de voo indenização, overbooking direitos, indenização companhia aérea, voo atrasado o que fazer, advogado voo cancelado" />
           <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-voo-cancelado-atrasado" />
           <script type="application/ld+json">{JSON.stringify(schema)}</script>

@@ -223,7 +223,7 @@ const AdvogadoSaoPaulo = () => {
               Áreas de Atuação em São Paulo
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Advogados especialistas em todas as áreas do Direito. Atendimento online e presencial quando necessário.
+              Advogados que atuam em todas as áreas do Direito. Atendimento online e presencial quando necessário.
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">

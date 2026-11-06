@@ -79,7 +79,7 @@ export const consumerCityData: ConsumerCityData[] = [
       }
     ],
     localContext: "São Paulo concentra mais de 35% das reclamações de consumidores do Brasil, sendo o maior mercado de consumo da América Latina. O PROCON-SP recebe mais de 800 mil reclamações por ano, com destaque para telecomunicações, bancos e planos de saúde.",
-    consumerTribunalInfo: "Juizados Especiais Cíveis (JECs) em todas as regiões. Forum Central na Praça João Mendes. Processos de até 40 salários mínimos não precisam de advogado, mas ter um especialista aumenta as chances de sucesso em 70%.",
+    consumerTribunalInfo: "Juizados Especiais Cíveis (JECs) em todas as regiões. Forum Central na Praça João Mendes. No Juizado Especial Cível, causas de até 20 salários mínimos podem ser propostas sem advogado; de 20 a 40 salários mínimos, o advogado é obrigatório (Lei 9.099/1995, art. 9º).",
     proconAddress: "Rua São Bento, 380 - Centro - São Paulo/SP",
     faqs: [
       {

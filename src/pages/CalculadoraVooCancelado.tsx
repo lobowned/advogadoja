@@ -69,7 +69,7 @@ const CalculadoraVooCancelado = () => {
     <PageTransition variant="fade">
       <Helmet>
         <title>Calculadora de Indenização por Voo Cancelado 2025 | Calcule Grátis</title>
-        <meta name="description" content="Calcule sua indenização por voo cancelado, atrasado ou overbooking. Valores de R$ 3.000 a R$ 15.000. Resultado instantâneo e gratuito. Fale com advogado especialista." />
+        <meta name="description" content="Calcule sua indenização por voo cancelado, atrasado ou overbooking. Valores de R$ 3.000 a R$ 15.000. Resultado instantâneo e gratuito. Fale com advogado." />
         <meta name="keywords" content="calculadora voo cancelado, indenização voo cancelado, voo atrasado indenização, overbooking indenização, quanto ganho voo cancelado, advogado voo cancelado" />
         <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-voo-cancelado" />
         <meta property="og:title" content="Calculadora de Indenização por Voo Cancelado 2025" />
@@ -235,7 +235,7 @@ const CalculadoraVooCancelado = () => {
                 Teve Problema com Voo?
               </h2>
               <p className="text-muted-foreground mb-6">
-                Nossos advogados especialistas em direito do consumidor estão prontos para analisar 
+                Nossos advogados que atuam em direito do consumidor estão prontos para analisar 
                 seu caso gratuitamente e garantir sua indenização.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

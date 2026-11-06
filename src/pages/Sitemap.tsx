@@ -62,9 +62,6 @@ const Sitemap = () => {
   // Regional Hubs - NOVO
   const regionalHubs = [
     { name: "Advogados na Bahia", url: "/advogado-bahia", state: "BA" },
-    { name: "Advogados em São Paulo", url: "/advogado-sao-paulo", state: "SP" },
-    { name: "Advogados no Rio de Janeiro", url: "/advogado-rio-de-janeiro", state: "RJ" },
-    { name: "Advogados em Minas Gerais", url: "/advogado-minas-gerais", state: "MG" },
   ];
 
   // Consumer Cities - NOVO
@@ -94,17 +91,10 @@ const Sitemap = () => {
     { name: "BPC/LOAS", url: "/calculadora-bpc-loas", emoji: "♿", area: "previdenciario" },
     { name: "Pensão por Morte", url: "/calculadora-pensao-morte", emoji: "🕯️", area: "previdenciario" },
     // Civil
-    { name: "Danos Morais", url: "/calculadora-danos-morais", emoji: "⚖️", area: "civil" },
     { name: "Atualização de Dívida", url: "/calculadora-atualizacao-divida", emoji: "📊", area: "civil" },
     { name: "Aluguel Atrasado", url: "/calculadora-aluguel-atrasado", emoji: "🏢", area: "civil" },
-    { name: "DPVAT", url: "/calculadora-dpvat", emoji: "🚗", area: "civil" },
     // Consumidor - NOVO
-    { name: "Voo Cancelado", url: "/calculadora-voo-cancelado", emoji: "✈️", area: "consumidor" },
-    { name: "Negativação Indevida", url: "/calculadora-negativacao", emoji: "🚫", area: "consumidor" },
     { name: "Devolução em Dobro", url: "/calculadora-devolucao-dobro", emoji: "💸", area: "consumidor" },
-    { name: "Plano de Saúde", url: "/calculadora-plano-saude", emoji: "🏥", area: "consumidor" },
-    { name: "Fraude Bancária", url: "/calculadora-fraude-bancaria", emoji: "🔒", area: "consumidor" },
-    { name: "Liminar Cirurgia", url: "/calculadora-liminar-cirurgia", emoji: "💉", area: "consumidor" },
   ];
 
   const nicheIcons: Record<string, React.ReactNode> = {

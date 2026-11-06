@@ -6,7 +6,7 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Advogado Cobrança Indevida - Devolução em Dobro",
-  "description": "Advogado especialista em cobrança indevida. Direito à devolução em dobro. Serviço não contratado, valor errado, cobrança duplicada.",
+  "description": "Advogado que atua em cobrança indevida. Direito à devolução em dobro. Serviço não contratado, valor errado, cobrança duplicada.",
   "areaServed": "Brasil",
   "serviceType": ["Cobrança Indevida", "Devolução em Dobro", "Direito do Consumidor"],
 };
@@ -17,7 +17,7 @@ const CobrancaIndevidaLanding = () => (
       seo={
         <Helmet>
           <title>Advogado para Cobrança Indevida | Resolva Seu Problema Agora</title>
-          <meta name="description" content="Fale com um advogado especialista em cobrança indevida. Proteja-se contra abusos de bancos e empresas. Consulta online gratuita." />
+          <meta name="description" content="Fale com um advogado que atua em cobrança indevida. Proteja-se contra abusos de bancos e empresas. Consulta online gratuita." />
           <meta name="keywords" content="cobrança indevida, devolução em dobro, restituição em dobro, serviço não contratado, cobrança duplicada, advogado consumidor, advogado cobrança indevida" />
           <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-cobranca-indevida" />
           <script type="application/ld+json">{JSON.stringify(schema)}</script>

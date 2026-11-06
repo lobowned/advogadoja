@@ -6,7 +6,7 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Advogado Plano de Saúde - Negativa de Cobertura",
-  "description": "Advogado especialista em negativas de plano de saúde. Cirurgia negada, exame negado. Pedido de liminar.",
+  "description": "Advogado que atua em negativas de plano de saúde. Cirurgia negada, exame negado. Pedido de liminar.",
   "areaServed": "Brasil",
   "serviceType": ["Negativa Plano de Saúde", "Liminar de Saúde", "Direito do Consumidor"],
 };
@@ -17,7 +17,7 @@ const PlanoSaudeNegouLanding = () => (
       seo={
         <Helmet>
           <title>Advogado para Problemas com Plano de Saúde | Cobertura Negada</title>
-          <meta name="description" content="Plano de saúde negou seu tratamento ou cirurgia? Fale com um advogado especialista em direito da saúde e garanta seus direitos." />
+          <meta name="description" content="Plano de saúde negou seu tratamento ou cirurgia? Fale com um advogado que atua em direito da saúde e garanta seus direitos." />
           <meta name="keywords" content="plano saúde negou, negativa plano de saúde, liminar plano saúde, cirurgia negada, exame negado plano, advogado plano de saúde, cobertura negada" />
           <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-plano-saude-cobertura-negada" />
           <script type="application/ld+json">{JSON.stringify(schema)}</script>

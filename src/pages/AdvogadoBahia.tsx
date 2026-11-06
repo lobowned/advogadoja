@@ -37,9 +37,7 @@ const legalAreas = [
 
 const localInfo = {
   procon: {
-    address: "Av. Centenário, 2992 - Chame-Chame, Salvador",
-    phone: "0800 071 2552",
-    hours: "Segunda a Sexta, 8h às 17h"
+    site: "procon.ba.gov.br"
   },
   tjba: {
     name: "Tribunal de Justiça da Bahia",
@@ -47,19 +45,18 @@ const localInfo = {
   },
   trt5: {
     name: "Tribunal Regional do Trabalho da 5ª Região",
-    address: "Rua Bela Vista do Cabral, 121 - Nazaré, Salvador"
+    site: "trt5.jus.br"
   },
   defensoria: {
-    address: "Av. Luiz Viana Filho, 2490 - CAB, Salvador",
     site: "defensoria.ba.def.br"
   }
 };
 
 const stats = [
-  { value: "3.500+", label: "Casos na Bahia" },
-  { value: "11", label: "Cidades atendidas" },
-  { value: "97%", label: "Taxa de sucesso" },
-  { value: "R$ 8M+", label: "Em indenizações" }];
+  { value: "10", label: "Cidades com página própria" },
+  { value: "Online", label: "Atendimento em todo o estado" },
+  { value: "TJBA", label: "Justiça estadual" },
+  { value: "TRT5", label: "Justiça do Trabalho" }];
 
 const AdvogadoBahia = () => {
   const breadcrumbs = [
@@ -228,7 +225,7 @@ const AdvogadoBahia = () => {
               Áreas de Atuação na Bahia
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Advogados especialistas em todas as áreas do Direito. Atendimento online e presencial quando necessário.
+              Advogados que atuam em todas as áreas do Direito. Atendimento online e presencial quando necessário.
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -276,9 +273,8 @@ const AdvogadoBahia = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
-                  <p className="text-sm"><strong>Endereço:</strong> {localInfo.procon.address}</p>
-                  <p className="text-sm"><strong>Telefone:</strong> {localInfo.procon.phone}</p>
-                  <p className="text-sm"><strong>Horário:</strong> {localInfo.procon.hours}</p>
+                  <p className="text-sm"><strong>Site oficial:</strong> <a href={`https://www.${localInfo.procon.site}`} target="_blank" rel="noopener noreferrer" className="underline">{localInfo.procon.site}</a></p>
+                  <p className="text-sm text-muted-foreground">Endereços, telefones e horários das unidades estão no site oficial.</p>
                 </CardContent>
               </Card>
 
@@ -291,7 +287,7 @@ const AdvogadoBahia = () => {
                 </CardHeader>
                 <CardContent className="space-y-2">
                   <p className="text-sm"><strong>Nome:</strong> {localInfo.tjba.name}</p>
-                  <p className="text-sm"><strong>Site:</strong> {localInfo.tjba.site}</p>
+                  <p className="text-sm"><strong>Site oficial:</strong> <a href={`https://www.${localInfo.tjba.site}`} target="_blank" rel="noopener noreferrer" className="underline">{localInfo.tjba.site}</a></p>
                   <p className="text-sm text-muted-foreground">Juizados Especiais em todas as comarcas</p>
                 </CardContent>
               </Card>
@@ -305,7 +301,7 @@ const AdvogadoBahia = () => {
                 </CardHeader>
                 <CardContent className="space-y-2">
                   <p className="text-sm"><strong>Nome:</strong> {localInfo.trt5.name}</p>
-                  <p className="text-sm"><strong>Endereço:</strong> {localInfo.trt5.address}</p>
+                  <p className="text-sm"><strong>Site oficial:</strong> <a href={`https://www.${localInfo.trt5.site}`} target="_blank" rel="noopener noreferrer" className="underline">{localInfo.trt5.site}</a></p>
                 </CardContent>
               </Card>
 
@@ -317,8 +313,7 @@ const AdvogadoBahia = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
-                  <p className="text-sm"><strong>Endereço:</strong> {localInfo.defensoria.address}</p>
-                  <p className="text-sm"><strong>Site:</strong> {localInfo.defensoria.site}</p>
+                  <p className="text-sm"><strong>Site oficial:</strong> <a href={`https://www.${localInfo.defensoria.site}`} target="_blank" rel="noopener noreferrer" className="underline">{localInfo.defensoria.site}</a></p>
                 </CardContent>
               </Card>
             </div>

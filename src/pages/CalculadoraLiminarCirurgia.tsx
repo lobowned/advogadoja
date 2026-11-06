@@ -81,7 +81,7 @@ const CalculadoraLiminarCirurgia = () => {
     <PageTransition variant="fade">
       <Helmet>
         <title>Calculadora Liminar Cirurgia Negada | Probabilidade e Indenização 2025</title>
-        <meta name="description" content="Cirurgia negada pelo plano? Calcule grátis a probabilidade de conseguir liminar em 24-48h. Estimativa de danos morais. Advogado especialista em plano de saúde." />
+        <meta name="description" content="Cirurgia negada pelo plano? Calcule grátis a probabilidade de conseguir liminar em 24-48h. Estimativa de danos morais. Advogado que atua em plano de saúde." />
         <meta name="keywords" content="calculadora liminar cirurgia, cirurgia negada plano saúde, probabilidade liminar, indenização cirurgia negada, tutela urgência saúde, advogado plano saúde" />
         <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-liminar-cirurgia" />
         <meta property="og:title" content="Calculadora Liminar Cirurgia Negada | Probabilidade e Tempo" />

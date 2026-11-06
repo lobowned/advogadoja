@@ -6,7 +6,7 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Advogado Negativação Indevida - Indenização Nome Sujo",
-  "description": "Advogado especialista em negativação indevida. Nome sujo no SPC/Serasa sem dever? Saiba como limpar seu nome e pedir indenização.",
+  "description": "Advogado que atua em negativação indevida. Nome sujo no SPC/Serasa sem dever? Saiba como limpar seu nome e pedir indenização.",
   "areaServed": "Brasil",
   "serviceType": ["Negativação Indevida", "Indenização Nome Sujo", "Danos Morais"],
 };
@@ -17,7 +17,7 @@ const NegativacaoIndevidaLanding = () => (
       seo={
         <Helmet>
           <title>Advogado para Negativação Indevida | Limpe Seu Nome</title>
-          <meta name="description" content="Seu nome foi negativado indevidamente? Consulte um advogado especialista e limpe seu nome. Indenização por danos morais." />
+          <meta name="description" content="Seu nome foi negativado indevidamente? Consulte um advogado e limpe seu nome. Indenização por danos morais." />
           <meta name="keywords" content="negativação indevida, nome sujo indevido, indenização SPC, indenização Serasa, tirar nome do SPC, dívida que não é minha, advogado negativação" />
           <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-negativacao-indevida" />
           <script type="application/ld+json">{JSON.stringify(schema)}</script>

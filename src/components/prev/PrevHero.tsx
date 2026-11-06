@@ -6,7 +6,7 @@ import PrevHeroSplit from "./PrevHeroSplit";
 export default function PrevHero() {
   return (
     <PrevHeroSplit
-      breadcrumb="Advogado Especialista em INSS"
+      breadcrumb="Advogado para INSS"
       heroTitle={
         <>
           INSS <span className="italic text-prev-gold">sem mistério</span>.

@@ -47,7 +47,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'familia',
     subSpecialty: 'Divórcio e Separação',
     keywords: ['divórcio', 'separação', 'separar', 'casar', 'casamento', 'cônjuge', 'esposa', 'marido', 'matrimônio', 'divorciar', 'ex-marido', 'ex-esposa', 'regime de bens', 'partilha de bens', 'fim do casamento', 'quero me separar', 'quero divorciar'],
-    bio: 'Especialista em processos de divórcio consensual e litigioso em casos recorrentes dessa subárea.'
+    bio: 'Orienta sobre processos de divórcio consensual e litigioso em casos recorrentes dessa subárea.'
   },
   {
     id: 'rafael-oliveira',
@@ -57,7 +57,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'familia',
     subSpecialty: 'Guarda de Filhos',
     keywords: ['guarda', 'filho', 'filha', 'criança', 'menor', 'visitação', 'convivência', 'guarda compartilhada', 'guarda unilateral', 'direito de visita', 'pai não deixa ver', 'mãe não deixa ver', 'tirar a guarda', 'perder guarda', 'regulamentar visita'],
-    bio: 'Especialista em disputas de guarda e regulamentação de visitas, focado no melhor interesse da criança.'
+    bio: 'Orienta sobre disputas de guarda e regulamentação de visitas, focado no melhor interesse da criança.'
   },
   {
     id: 'juliana-costa',
@@ -67,7 +67,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'familia',
     subSpecialty: 'Pensão Alimentícia',
     keywords: ['pensão alimentícia', 'pensão de alimentos', 'alimentos', 'não paga pensão', 'pensão atrasada', 'aumentar pensão', 'diminuir pensão', 'exoneração de alimentos', 'pai não paga', 'mãe não paga', 'sustento filho', 'obrigação alimentar'],
-    bio: 'Especialista em ações de alimentos, revisão e execução de pensão alimentícia.'
+    bio: 'Orienta sobre ações de alimentos, revisão e execução de pensão alimentícia.'
   },
   {
     id: 'fernando-lima',
@@ -77,7 +77,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'familia',
     subSpecialty: 'Alienação Parental',
     keywords: ['alienação parental', 'manipulação', 'fala mal', 'afastar do pai', 'afastar da mãe', 'impede visita', 'dificulta convivência', 'síndrome de alienação', 'manipular filho', 'criança contra mim'],
-    bio: 'Especialista em casos de alienação parental e proteção do convívio familiar saudável.'
+    bio: 'Orienta sobre casos de alienação parental e proteção do convívio familiar saudável.'
   },
   {
     id: 'patricia-almeida',
@@ -87,7 +87,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'familia',
     subSpecialty: 'União Estável',
     keywords: ['união estável', 'companheiro', 'companheira', 'morar junto', 'vivemos juntos', 'relacionamento', 'namorando há anos', 'reconhecer união', 'dissolução de união', 'direitos do companheiro', 'moramos juntos'],
-    bio: 'Especialista em reconhecimento e dissolução de união estável, partilha de bens.'
+    bio: 'Orienta sobre reconhecimento e dissolução de união estável, partilha de bens.'
   },
   {
     id: 'rodrigo-barros',
@@ -97,7 +97,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'familia',
     subSpecialty: 'Inventário e Herança',
     keywords: ['herança', 'inventário', 'falecido', 'morreu', 'morte', 'testamento', 'partilha herança', 'herdeiro', 'espólio', 'bens do falecido', 'deixou bens', 'arrolamento', 'divisão de bens', 'direito sucessório'],
-    bio: 'Especialista em inventários judiciais e extrajudiciais, planejamento sucessório.'
+    bio: 'Orienta sobre inventários judiciais e extrajudiciais, planejamento sucessório.'
   },
 
   // DIREITO TRABALHISTA (6)
@@ -109,7 +109,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'trabalhista',
     subSpecialty: 'Demissão Sem Justa Causa',
     keywords: ['demissão', 'demitido', 'demitida', 'mandaram embora', 'dispensado', 'justa causa', 'sem justa causa', 'foi mandado embora', 'perdeu emprego', 'mandaram sair', 'desligamento', 'rescisão contrato trabalho', 'verbas rescisórias'],
-    bio: 'Especialista em ações trabalhistas de rescisão indevida e verbas rescisórias.'
+    bio: 'Orienta sobre ações trabalhistas de rescisão indevida e verbas rescisórias.'
   },
   {
     id: 'ana-rodrigues',
@@ -119,7 +119,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'trabalhista',
     subSpecialty: 'Acidente de Trabalho',
     keywords: ['acidente de trabalho', 'acidentei no trabalho', 'machucado no trabalho', 'lesão trabalho', 'CAT', 'doença ocupacional', 'afastamento inss trabalho', 'doença do trabalho', 'LER', 'DORT', 'me machuquei trabalhando'],
-    bio: 'Especialista em indenizações por acidentes de trabalho e doenças ocupacionais.'
+    bio: 'Orienta sobre indenizações por acidentes de trabalho e doenças ocupacionais.'
   },
   {
     id: 'lucas-ferreira',
@@ -129,7 +129,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'trabalhista',
     subSpecialty: 'Assédio Moral',
     keywords: ['assédio moral', 'humilhação', 'humilhado', 'xingamento', 'ofensa no trabalho', 'perseguição', 'chefe xinga', 'ambiente hostil', 'constrangimento trabalho', 'abuso psicológico', 'chefe me humilha'],
-    bio: 'Especialista em ações de dano moral no ambiente de trabalho e assédio moral.'
+    bio: 'Orienta sobre ações de dano moral no ambiente de trabalho e assédio moral.'
   },
   {
     id: 'carla-souza',
@@ -139,7 +139,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'trabalhista',
     subSpecialty: 'Assédio Sexual',
     keywords: ['assédio sexual', 'cantada', 'investida sexual', 'importunação', 'abuso sexual trabalho', 'proposta indecente', 'toque indesejado', 'chefe assediando', 'constrangimento sexual'],
-    bio: 'Especialista em casos de assédio sexual no trabalho com atendimento humanizado e sigiloso.'
+    bio: 'Orienta sobre casos de assédio sexual no trabalho com atendimento humanizado e sigiloso.'
   },
   {
     id: 'paulo-martins',
@@ -149,7 +149,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'trabalhista',
     subSpecialty: 'Horas Extras',
     keywords: ['hora extra', 'horas extras', 'trabalho além', 'banco de horas', 'adicional noturno', 'não pagam hora extra', 'trabalho demais', 'excesso de jornada', 'intervalo não concedido', 'trabalho mais que 8 horas'],
-    bio: 'Especialista em cobrança de horas extras, adicional noturno e intervalos não concedidos.'
+    bio: 'Orienta sobre cobrança de horas extras, adicional noturno e intervalos não concedidos.'
   },
   {
     id: 'beatriz-campos',
@@ -159,7 +159,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'trabalhista',
     subSpecialty: 'Rescisão Indireta',
     keywords: ['rescisão indireta', 'salário atrasado', 'não pagam salário', 'falta grave do empregador', 'empresa não cumpre', 'descumpre contrato', 'forçando a pedir demissão', 'não deposita fgts'],
-    bio: 'Especialista em rescisão indireta do contrato por falta grave do empregador.'
+    bio: 'Orienta sobre rescisão indireta do contrato por falta grave do empregador.'
   },
 
   // DIREITO CIVIL (6)
@@ -171,7 +171,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'civil',
     subSpecialty: 'Cobranças e Dívidas',
     keywords: ['cobrança', 'dívida', 'devo dinheiro', 'devedor', 'empréstimo', 'cheque', 'promissória', 'título', 'execução', 'credor', 'me cobrando', 'não consigo pagar', 'protesto'],
-    bio: 'Especialista em ações de cobrança, execução de títulos e negociação de dívidas.'
+    bio: 'Orienta sobre ações de cobrança, execução de títulos e negociação de dívidas.'
   },
   {
     id: 'camila-nunes',
@@ -181,7 +181,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'civil',
     subSpecialty: 'Danos Morais',
     keywords: ['dano moral', 'ofensa', 'constrangimento', 'humilhação pública', 'injúria', 'difamação', 'calúnia', 'exposto ridículo', 'passou vergonha', 'ofendido', 'xingaram'],
-    bio: 'Especialista em ações de danos morais e materiais, indenizações por abuso de direito.'
+    bio: 'Orienta sobre ações de danos morais e materiais, indenizações por abuso de direito.'
   },
   {
     id: 'diego-santos',
@@ -191,7 +191,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'civil',
     subSpecialty: 'Contratos',
     keywords: ['contrato', 'descumpriu contrato', 'acordo', 'inadimplente', 'quebra de contrato', 'cláusula', 'rescisão contrato', 'não cumpriram o combinado', 'violação contrato'],
-    bio: 'Especialista em elaboração, análise e litígios de contratos civis e comerciais.'
+    bio: 'Orienta sobre elaboração, análise e litígios de contratos civis e comerciais.'
   },
   {
     id: 'fernanda-lima',
@@ -201,7 +201,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'civil',
     subSpecialty: 'Despejo e Locação',
     keywords: ['despejo', 'aluguel', 'inquilino', 'locação', 'imóvel alugado', 'locador', 'locatário', 'não paga aluguel', 'ação de despejo', 'contrato de aluguel', 'renovação aluguel'],
-    bio: 'Especialista em ações de despejo, revisão de aluguel e contratos de locação.'
+    bio: 'Orienta sobre ações de despejo, revisão de aluguel e contratos de locação.'
   },
   {
     id: 'thiago-rocha',
@@ -211,7 +211,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'civil',
     subSpecialty: 'Imóveis e Usucapião',
     keywords: ['imóvel', 'casa', 'terreno', 'usucapião', 'propriedade', 'posse', 'registro imóvel', 'escritura', 'regularização', 'morando há anos', 'invasão', 'propriedade irregular'],
-    bio: 'Especialista em direito imobiliário, usucapião e regularização de imóveis.'
+    bio: 'Atuação em direito imobiliário, usucapião e regularização de imóveis.'
   },
   {
     id: 'marina-costa',
@@ -221,7 +221,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'civil',
     subSpecialty: 'Direito do Consumidor',
     keywords: ['consumidor', 'compra', 'produto', 'defeito', 'serviço', 'loja', 'empresa', 'negativação', 'negativado', 'negativada', 'nome sujo', 'serasa', 'spc', 'boa vista', 'cobrança indevida', 'produto defeituoso', 'serviço ruim', 'procon', 'reembolso', 'estorno', 'golpe', 'fraude', 'não reconheço', 'clonaram cartão', 'banco', 'operadora', 'telefonia', 'vivo', 'claro', 'tim', 'oi', 'cancelar plano', 'cancelamento', 'cobraram errado', 'débito automático'],
-    bio: 'Especialista em defesa do consumidor, vícios de produtos e serviços, danos materiais.'
+    bio: 'Orienta sobre defesa do consumidor, vícios de produtos e serviços, danos materiais.'
   },
 
   // DIREITO PREVIDENCIÁRIO (6)
@@ -233,7 +233,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'previdenciario',
     subSpecialty: 'Aposentadoria',
     keywords: ['aposentadoria', 'aposentar', 'idade', 'tempo de contribuição', 'tempo de serviço', 'inss aposentadoria', 'quero aposentar', 'já posso aposentar', 'cálculo aposentadoria', 'aposentadoria por idade'],
-    bio: 'Especialista em concessão e revisão de aposentadorias por idade, tempo e invalidez.'
+    bio: 'Orienta sobre concessão e revisão de aposentadorias por idade, tempo e invalidez.'
   },
   {
     id: 'claudia-martins',
@@ -243,7 +243,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'previdenciario',
     subSpecialty: 'Auxílio-Doença e Auxílio-Acidente',
     keywords: ['auxílio doença', 'auxílio-doença', 'doente', 'incapaz', 'perícia', 'negado auxílio', 'cortaram auxílio', 'afastado doença', 'não consigo trabalhar', 'laudo médico', 'perícia médica inss', 'auxílio-acidente', 'auxílio acidente', 'acidentário', 'B94', 'sequela', 'fiquei com sequela', 'sequela acidente'],
-    bio: 'Especialista em concessão e restabelecimento de auxílio-doença e auxílio-acidente.'
+    bio: 'Orienta sobre concessão e restabelecimento de auxílio-doença e auxílio-acidente.'
   },
   {
     id: 'marcos-oliveira',
@@ -253,7 +253,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'previdenciario',
     subSpecialty: 'BPC/LOAS',
     keywords: ['bpc', 'loas', 'benefício assistencial', 'idoso carente', 'deficiente', 'baixa renda', 'nunca contribuiu', 'não tem aposentadoria', 'salário mínimo', 'benefício deficiente'],
-    bio: 'Especialista em concessão de BPC/LOAS para idosos e pessoas com deficiência.'
+    bio: 'Orienta sobre concessão de BPC/LOAS para idosos e pessoas com deficiência.'
   },
   {
     id: 'isabela-santos',
@@ -263,7 +263,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'previdenciario',
     subSpecialty: 'Pensão por Morte',
     keywords: ['pensão por morte', 'pensão morte', 'faleceu', 'dependente', 'viúva', 'viúvo', 'marido morreu', 'esposa morreu', 'pai morreu', 'mãe morreu', 'filho menor', 'pensão falecimento'],
-    bio: 'Especialista em concessão de pensão por morte e habilitação de dependentes.'
+    bio: 'Orienta sobre concessão de pensão por morte e habilitação de dependentes.'
   },
   {
     id: 'renato-alves',
@@ -273,7 +273,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'previdenciario',
     subSpecialty: 'Revisão de Benefícios',
     keywords: ['revisão benefício', 'revisar aposentadoria', 'benefício baixo', 'valor errado', 'recalcular', 'buraco negro', 'teto previdenciário', 'revisão da vida toda'],
-    bio: 'Especialista em revisões de benefícios previdenciários e recuperação de valores atrasados.'
+    bio: 'Orienta sobre revisões de benefícios previdenciários e recuperação de valores atrasados.'
   },
   {
     id: 'sandra-lima',
@@ -283,7 +283,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'previdenciario',
     subSpecialty: 'Aposentadoria Rural',
     keywords: ['rural', 'trabalhador rural', 'agricultura', 'roça', 'campo', 'lavrador', 'sitiante', 'meeiro', 'boia-fria', 'trabalho no campo', 'aposentadoria rural'],
-    bio: 'Especialista em aposentadoria rural e comprovação de atividade no campo.'
+    bio: 'Orienta sobre aposentadoria rural e comprovação de atividade no campo.'
   },
 
   // DIREITO PENAL (6)
@@ -295,7 +295,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'penal',
     subSpecialty: 'Flagrante e Prisão',
     keywords: ['preso', 'presa', 'prisão', 'flagrante', 'detido', 'delegacia', 'cadeia', 'audiência custódia', 'algemado', 'apreendido', 'foi preso'],
-    bio: 'Especialista em defesa em flagrante, audiências de custódia e liberdade provisória.'
+    bio: 'Orienta sobre defesa em flagrante, audiências de custódia e liberdade provisória.'
   },
   {
     id: 'vanessa-reis',
@@ -305,7 +305,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'penal',
     subSpecialty: 'Habeas Corpus',
     keywords: ['habeas corpus', 'soltar', 'liberdade', 'prisão preventiva', 'mandado prisão', 'preso injustamente', 'ilegal', 'relaxamento', 'tirar da cadeia'],
-    bio: 'Especialista em Habeas Corpus e recursos em prisões ilegais ou abusivas.'
+    bio: 'Orienta sobre Habeas Corpus e recursos em prisões ilegais ou abusivas.'
   },
   {
     id: 'joao-fernandes',
@@ -315,7 +315,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'penal',
     subSpecialty: 'Violência Doméstica',
     keywords: ['violência doméstica', 'maria da penha', 'agressão', 'medida protetiva', 'espancou', 'bateu', 'agrediu', 'ameaça', 'ameaçou matar', 'violência familiar'],
-    bio: 'Especialista em casos de violência doméstica e familiar, Lei Maria da Penha.'
+    bio: 'Orienta sobre casos de violência doméstica e familiar, Lei Maria da Penha.'
   },
   {
     id: 'larissa-souza',
@@ -325,7 +325,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'penal',
     subSpecialty: 'Crimes Patrimoniais',
     keywords: ['roubo', 'furto', 'estelionato', 'apropriação', 'receptação', 'roubaram', 'furtaram', 'golpe', 'caí em golpe', 'perdeu dinheiro', 'me roubaram'],
-    bio: 'Especialista em defesa e acusação de crimes contra o patrimônio.'
+    bio: 'Orienta sobre defesa e acusação de crimes contra o patrimônio.'
   },
   {
     id: 'eduardo-gomes',
@@ -335,7 +335,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'penal',
     subSpecialty: 'Crimes de Trânsito',
     keywords: ['trânsito', 'acidente carro', 'acidente moto', 'dirigir embriagado', 'bêbado volante', 'alcoolemia', 'CNH cassada', 'atropelamento', 'bateu carro', 'suspensão CNH'],
-    bio: 'Especialista em crimes de trânsito, embriaguez ao volante e suspensão de CNH.'
+    bio: 'Orienta sobre crimes de trânsito, embriaguez ao volante e suspensão de CNH.'
   },
   {
     id: 'monica-alves',
@@ -345,7 +345,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'penal',
     subSpecialty: 'Defesa Criminal Geral',
     keywords: ['acusado', 'processo criminal', 'denúncia', 'réu', 'crime', 'inquérito', 'processado', 'respondendo processo', 'defesa criminal'],
-    bio: 'Especialista em defesa criminal geral em todas as fases processuais.'
+    bio: 'Orienta sobre defesa criminal geral em todas as fases processuais.'
   },
 
   // DIREITO DA SAÚDE E OUTROS (5)
@@ -357,7 +357,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'civil',
     subSpecialty: 'Direito da Saúde',
     keywords: ['plano de saúde', 'plano saúde', 'cirurgia negada', 'medicamento negado', 'carência', 'reajuste abusivo', 'ANS', 'cobertura negada', 'home care', 'UTI negada', 'quimioterapia negada', 'tratamento negado', 'exame negado', 'unimed', 'bradesco saúde', 'sul américa', 'amil', 'hapvida', 'procedimento negado', 'autorização negada'],
-    bio: 'Especialista em ações contra planos de saúde, cobertura de tratamentos e procedimentos médicos.'
+    bio: 'Orienta sobre ações contra planos de saúde, cobertura de tratamentos e procedimentos médicos.'
   },
   {
     id: 'gabriel-monteiro',
@@ -367,7 +367,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'penal',
     subSpecialty: 'Crimes Digitais e Cibernéticos',
     keywords: ['golpe pix', 'golpe whatsapp', 'golpe internet', 'golpe banco', 'conta invadida', 'hackeado', 'hackear', 'perfil falso', 'vazamento dados', 'lgpd', 'fotos vazadas', 'nudes vazados', 'extorsão', 'ransomware', 'fake news', 'deepfake', 'stalker', 'perseguição online', 'crimes digitais', 'crimes virtuais', 'fraude digital', 'phishing', 'estelionato digital', 'calúnia', 'difamação', 'injúria'],
-    bio: 'Especialista em crimes digitais, vazamento de dados, golpes virtuais e proteção de dados pessoais.'
+    bio: 'Orienta sobre crimes digitais, vazamento de dados, golpes virtuais e proteção de dados pessoais.'
   },
   {
     id: 'renata-machado',
@@ -377,7 +377,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'civil',
     subSpecialty: 'Erro Médico e Responsabilidade Hospitalar',
     keywords: ['erro médico', 'negligência médica', 'negligência hospitalar', 'cirurgia errada', 'diagnóstico errado', 'infecção hospitalar', 'imperícia', 'imprudência', 'parto errado', 'sequela', 'morte hospital', 'morte médico', 'tratamento errado', 'medicamento errado', 'procedimento errado', 'médico errou', 'cirurgia mal feita'],
-    bio: 'Especialista em ações de indenização por erro médico, imperícia e negligência hospitalar.'
+    bio: 'Orienta sobre ações de indenização por erro médico, imperícia e negligência hospitalar.'
   },
   {
     id: 'leonardo-prado',
@@ -387,7 +387,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'civil',
     subSpecialty: 'Direito Aéreo e do Passageiro',
     keywords: ['voo cancelado', 'voo atrasado', 'overbooking', 'mala extraviada', 'bagagem perdida', 'companhia aérea', 'gol', 'latam', 'azul', 'avianca', 'reembolso passagem', 'conexão perdida', 'atraso aeroporto', 'perdi voo', 'extravio bagagem', 'não embarcaram', 'voo atrasou'],
-    bio: 'Especialista em direitos do passageiro aéreo, indenizações por atrasos, cancelamentos e extravios.'
+    bio: 'Atuação em direitos do passageiro aéreo, indenizações por atrasos, cancelamentos e extravios.'
   },
   {
     id: 'cristina-torres',
@@ -397,7 +397,7 @@ export const lawyers: Lawyer[] = [
     specialty: 'civil',
     subSpecialty: 'Direito de Trânsito Administrativo',
     keywords: ['multa trânsito', 'multa de trânsito', 'recurso multa', 'pontos cnh', 'suspensão cnh', 'cassação cnh', 'detran', 'radar', 'blitz', 'autuação', 'auto infração', 'jari', 'cetran', 'velocidade', 'estacionamento', 'rodízio', 'multa injusta', 'pontos carteira'],
-    bio: 'Especialista em recursos administrativos de trânsito, defesas de multas e recuperação de CNH.'
+    bio: 'Orienta sobre recursos administrativos de trânsito, defesas de multas e recuperação de CNH.'
   },
 ];
 

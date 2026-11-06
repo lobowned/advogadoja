@@ -91,7 +91,7 @@ const CityLanding = () => {
     "@context": "https://schema.org",
     "@type": "LegalService",
     "name": `Riccio Advocacia ${city.name}`,
-    "description": `Advogados especialistas em ${city.name}, ${city.state}. Atendimento jurídico online gratuito em Direito Trabalhista, Família, Previdenciário, Civil e Criminal.`,
+    "description": `Advogados que atuam em ${city.name}, ${city.state}. Atendimento jurídico online gratuito em Direito Trabalhista, Família, Previdenciário, Civil e Criminal.`,
     "url": canonicalUrl,
     "telephone": "+55-71-99703-6269",
     "priceRange": "$$",
@@ -154,7 +154,7 @@ const CityLanding = () => {
         "name": `Qual o valor de uma consulta com advogado em ${city.name}?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `No Advogado Online, a consulta inicial é gratuita. Você pode tirar suas dúvidas com advogados especialistas de ${city.name} sem custo.`
+          "text": `No Advogado Online, a consulta inicial é gratuita. Você pode tirar suas dúvidas com advogados de ${city.name} sem custo.`
         }
       },
       {
@@ -196,7 +196,7 @@ const CityLanding = () => {
           )}
           
           <meta property="og:title" content={`Advogado em ${city.name} | Fale com advogado`} />
-          <meta property="og:description" content={`Fale agora com advogados especialistas em ${city.name}. Atendimento online gratuito e imediato.`} />
+          <meta property="og:description" content={`Fale agora com advogados que atuam em ${city.name}. Atendimento online gratuito e imediato.`} />
           <meta property="og:url" content={canonicalUrl} />
           <meta property="og:type" content="website" />
           
@@ -236,7 +236,7 @@ const CityLanding = () => {
                 </h1>
                 
                 <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
-                  Fale agora com advogados especialistas em {city.name}. 
+                  Fale agora com advogados que atuam em {city.name}. 
                   Atendimento online, gratuito e imediato para resolver seu problema jurídico.
                 </p>
 
@@ -381,7 +381,7 @@ const CityLanding = () => {
                     <h3 className="font-semibold mb-2">Qual o valor de uma consulta com advogado em {city.name}?</h3>
                     <p className="text-muted-foreground">
                       No Advogado Online, a consulta inicial é gratuita. Você pode tirar suas dúvidas com 
-                      advogados especialistas de {city.name} sem custo. Após a análise do seu caso, você 
+                      advogados de {city.name} sem custo. Após a análise do seu caso, você 
                       receberá um orçamento transparente se houver necessidade de ação judicial.
                     </p>
                   </CardContent>

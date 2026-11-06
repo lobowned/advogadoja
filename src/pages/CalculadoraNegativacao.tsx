@@ -237,7 +237,7 @@ const CalculadoraNegativacao = () => {
                 Nome Sujo Indevidamente?
               </h2>
               <p className="text-muted-foreground mb-6">
-                Nossos advogados especialistas em direito do consumidor podem conseguir a exclusão 
+                Nossos advogados que atuam em direito do consumidor podem conseguir a exclusão 
                 do seu nome e garantir sua indenização. Análise gratuita!
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

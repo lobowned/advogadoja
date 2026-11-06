@@ -4,19 +4,19 @@ const AuthorBio = () => {
   const credentials = [
     {
       icon: Award,
-      text: "Mais de 15 anos de experiência"
+      text: "Inscrito na OAB/BA sob o nº 46.638"
     },
     {
       icon: Users,
-      text: "Centenas de casos resolvidos"
+      text: "Atendimento online em todo o Brasil"
     },
     {
       icon: BookOpen,
-      text: "Especialização contínua"
+      text: "Atualização constante na legislação"
     },
     {
       icon: TrendingUp,
-      text: "Alta taxa de sucesso"
+      text: "Sigilo profissional"
     }
   ];
 
@@ -34,7 +34,7 @@ const AuthorBio = () => {
                   </div>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4 sm:p-6">
-                  <p className="text-white font-semibold text-base sm:text-lg">Advogado Especializado</p>
+                  <p className="text-white font-semibold text-base sm:text-lg">Advogado</p>
                   <p className="text-white/80 text-xs sm:text-sm">OAB/BA 46.638</p>
                 </div>
               </div>

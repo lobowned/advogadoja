@@ -26,7 +26,7 @@ const legalAreas = {
     icon: Briefcase,
     color: "text-blue-600",
     bgColor: "bg-blue-100",
-    description: "Especialistas em direitos trabalhistas, rescisões, horas extras, FGTS e ações contra empresas",
+    description: "Atuação em direitos trabalhistas, rescisões, horas extras, FGTS e ações contra empresas",
     services: [
       "Rescisão de contrato de trabalho",
       "Cálculo e cobrança de horas extras",
@@ -170,7 +170,7 @@ const legalAreas = {
     icon: ShoppingBag,
     color: "text-purple-600",
     bgColor: "bg-purple-100",
-    description: "Especialistas em direito do consumidor, cobranças indevidas, produtos defeituosos e planos de saúde",
+    description: "Atuação em direito do consumidor, cobranças indevidas, produtos defeituosos e planos de saúde",
     services: [
       "Cobrança indevida e restituição em dobro",
       "Produto com defeito (troca ou reembolso)",
@@ -275,7 +275,7 @@ const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
     "@context": "https://schema.org",
     "@type": ["LegalService", "LocalBusiness"],
     "name": `Advogado ${area.name} em ${city.name}`,
-    "description": `Advogado especialista em ${area.name} em ${city.name}, ${city.state}. ${area.description}`,
+    "description": `Advogado que atua em ${area.name} em ${city.name}, ${city.state}. ${area.description}`,
     "url": canonicalUrl,
     "telephone": "+55-71-99703-6269",
     "priceRange": "$$",
@@ -454,7 +454,7 @@ const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
                 Serviços de Direito {area.name} em {city.name}
               </h2>
               <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
-                Nossos advogados especialistas em {area.name.toLowerCase()} atendem os seguintes casos:
+                Nossos advogados que atuam em {area.name.toLowerCase()} atendem os seguintes casos:
               </p>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">

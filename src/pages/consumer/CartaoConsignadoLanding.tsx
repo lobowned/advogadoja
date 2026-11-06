@@ -31,7 +31,7 @@ const schemaData = {
     {
       "@type": "LegalService",
       "name": "Advogado Cartão Consignado - Desconto RMC RCC Indevido | Riccio Advocacia",
-      "description": "Desconto indevido de cartão consignado no INSS? Advogado especialista em RMC e RCC. Restituição em dobro + indenização.",
+      "description": "Desconto indevido de cartão consignado no INSS? Advogado que atua em RMC e RCC. Restituição em dobro + indenização.",
       "url": "https://riccio-advocacia.lovable.app/advogado-cartao-consignado",
       "telephone": "+5571997036269",
       "areaServed": "BR",
@@ -56,7 +56,7 @@ const CartaoConsignadoLanding = () => (
           <title>{`Desconto Indevido INSS? Cartão Consignado RMC RCC | Riccio Advocacia`}</title>
           <meta
             name="description"
-            content="Desconto de cartão consignado no INSS que você não autorizou? Advogado especialista em RMC e RCC. Restituição em dobro e indenização."
+            content="Desconto de cartão consignado no INSS que você não autorizou? Advogado que atua em RMC e RCC. Restituição em dobro e indenização."
           />
           <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-cartao-consignado" />
           <meta property="og:title" content="Desconto Indevido INSS? Cartão Consignado RMC RCC | Riccio Advocacia" />

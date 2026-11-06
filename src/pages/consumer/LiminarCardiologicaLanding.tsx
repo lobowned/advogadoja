@@ -35,7 +35,7 @@ const schemaData = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Advogado Liminar Cirurgia Cardíaca",
-  "description": "Advogado especialista em liminares para cirurgias cardíacas negadas. Ponte de safena, stent, angioplastia, marca-passo.",
+  "description": "Advogado que atua em liminares para cirurgias cardíacas negadas. Ponte de safena, stent, angioplastia, marca-passo.",
   "serviceType": ["Liminar Cirurgia Cardíaca", "Direito à Saúde", "Emergência Cardiológica"],
   "areaServed": {
     "@type": "Country",

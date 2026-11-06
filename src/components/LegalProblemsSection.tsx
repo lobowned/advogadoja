@@ -129,7 +129,7 @@ const LegalProblemsSection = () => {
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Problemas com empresas, bancos, planos de saúde ou compras online? 
-              Fale com advogado especialista em direito do consumidor agora!
+              Fale com advogado que atua em direito do consumidor agora!
             </p>
           </m.div>
 

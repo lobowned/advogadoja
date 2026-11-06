@@ -234,7 +234,7 @@ export default function RiccioAdvocacia() {
           {/* ── MOBILE: hero full-screen com a arte VERTICAL + CTA sobreposto na base limpa ── */}
           <div className="relative sm:hidden">
             <img
-              src="/riccio-hero-mobile.png"
+              src="/riccio-hero-mobile.webp"
               alt="Riccio Advocacia — Advocacia Previdenciária e Trabalhista. Direitos. Dignidade. Resultados."
               className="h-[100svh] min-h-[600px] w-full object-cover object-top"
               width={1080}
@@ -274,7 +274,7 @@ export default function RiccioAdvocacia() {
               <Reveal className="mx-auto max-w-3xl">
                 <div className="overflow-hidden rounded-2xl ring-1 ring-[#c9a227]/25 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.9)]">
                   <img
-                    src="/riccio-hero.png"
+                    src="/riccio-hero.webp"
                     alt="Riccio Advocacia — Advocacia Previdenciária e Trabalhista."
                     className="block w-full"
                     width={1690}

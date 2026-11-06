@@ -14,7 +14,7 @@ const CriminalHeroSection = () => {
   // Preload the desktop hero to know when to fade in; mobile loads via CSS
   useEffect(() => {
     const img = new Image();
-    img.src = "/hero-criminal.png";
+    img.src = "/hero-criminal.webp";
     img.onload = () => setImageLoaded(true);
   }, []);
 
@@ -31,7 +31,7 @@ const CriminalHeroSection = () => {
     <section className="relative overflow-hidden min-h-screen w-full flex flex-col bg-foreground">
       {/* Background image — portrait on mobile, landscape on desktop. Tailwind JIT needs literal class strings (no template-string interpolation). */}
       <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transition-opacity duration-700 bg-[url('/hero-criminal-mobile.png')] md:bg-[url('/hero-criminal.png')]"
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transition-opacity duration-700 bg-[url('/hero-criminal-mobile.webp')] md:bg-[url('/hero-criminal.webp')]"
         style={{ opacity: imageLoaded ? 1 : 0.6 }}
         aria-hidden="true"
       />

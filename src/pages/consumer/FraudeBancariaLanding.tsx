@@ -5,8 +5,8 @@ import SimpleConsumerLanding from "@/components/consumer/SimpleConsumerLanding";
 const schema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
-  "name": "Advogado Fraude Bancária - Recuperar Dinheiro",
-  "description": "Advogado que atua em fraude bancária. PIX não autorizado, cartão clonado, empréstimo fraudulento. Recupere seu dinheiro.",
+  "name": "Advogado Fraude Bancária - Devolução de Valores",
+  "description": "Advogado que atua em fraude bancária. PIX não autorizado, cartão clonado, empréstimo fraudulento. Pedido de devolução dos valores.",
   "areaServed": "Brasil",
   "serviceType": ["Fraude Bancária", "Golpe PIX", "Cartão Clonado", "Empréstimo Fraudulento"],
 };
@@ -16,8 +16,8 @@ const FraudeBancariaLanding = () => (
     <SimpleConsumerLanding
       seo={
         <Helmet>
-          <title>Fraude Bancária | Golpe PIX, Cartão Clonado - Recupere Seu Dinheiro</title>
-          <meta name="description" content="Vítima de fraude bancária? PIX não autorizado, cartão clonado, empréstimo fraudulento. Advogado. Recupere seu dinheiro e receba indenização." />
+          <title>Fraude Bancária | Golpe PIX, Cartão Clonado - Devolução de Valores</title>
+          <meta name="description" content="Vítima de fraude bancária? PIX não autorizado, cartão clonado, empréstimo fraudulento. Advogado para pedir a devolução e indenização, conforme o caso." />
           <meta name="keywords" content="fraude bancária, golpe PIX, cartão clonado, empréstimo fraudulento, recuperar dinheiro banco, advogado fraude" />
           <link rel="canonical" href="https://riccio-advocacia.lovable.app/fraude-bancaria" />
           <script type="application/ld+json">{JSON.stringify(schema)}</script>

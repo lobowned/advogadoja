@@ -156,7 +156,7 @@ const Blog = () => {
               <p className="text-lg text-muted-foreground mb-6">
                 {selectedNiche 
                   ? selectedNiche.description
-                  : "Artigos completos e gratuitos sobre seus direitos. Escrito por advogados."}
+                  : "Artigos completos e gratuitos sobre seus direitos, escritos pelo Dr. Gilberto Riccio (OAB/BA 46.638)."}
               </p>
               
               {/* Search */}
@@ -275,10 +275,10 @@ const Blog = () => {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-2xl font-bold mb-3">Tem dúvidas sobre seu caso?</h2>
             <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-              Fale com um advogado pelo WhatsApp ou pelo chat.
+              Fale com o advogado pelo WhatsApp ou comece pelo chat, com o assistente virtual.
             </p>
             <Button asChild size="lg">
-              <Link to="/">Falar com Advogado Agora</Link>
+              <Link to="/">Falar com o advogado</Link>
             </Button>
           </div>
         </section>

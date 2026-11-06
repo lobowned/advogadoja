@@ -141,8 +141,8 @@ const CalculadoraDevolucaoEmDobro = () => {
                 </div>
                 <h3 className="font-semibold mb-2">Cobrança de Serviço Não Contratado</h3>
                 <p className="text-sm text-muted-foreground">
-                  Apareceu na fatura um serviço que você nunca pediu? Você tem direito à devolução em dobro 
-                  do que pagou, mais danos morais.
+                  Apareceu na fatura um serviço que você nunca pediu? Você pode pedir a devolução em dobro
+                  do que pagou e, conforme o caso, danos morais.
                 </p>
               </Card>
 
@@ -218,8 +218,8 @@ const CalculadoraDevolucaoEmDobro = () => {
               <ShieldCheck className="w-12 h-12 text-orange-500 mx-auto mb-4" />
               <h2 className="text-2xl font-bold mb-4">Quer recuperar seu dinheiro?</h2>
               <p className="text-muted-foreground mb-6">
-                Nossos advogados que atuam em Direito do Consumidor podem te ajudar a 
-                receber a devolução em dobro e indenização por danos morais.
+                O Dr. Gilberto Riccio (OAB/BA 46.638) pode analisar o seu caso e
+                indicar como pedir a devolução em dobro e indenização, conforme o caso.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button onClick={scrollToChat} size="lg" className="gap-2 bg-orange-500 hover:bg-orange-600">

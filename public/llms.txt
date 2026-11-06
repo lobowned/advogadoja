@@ -1,8 +1,8 @@
 # Riccio Advocacia
 
-> Escritório de advocacia digital do Dr. Gilberto Riccio (OAB/BA 46.638). Atendimento online em toda a Bahia e no Brasil, pelo WhatsApp. Áreas: direito trabalhista, previdenciário (INSS), família, consumidor, cível e criminal. Conteúdo informativo, escrito em linguagem simples, com base legal citada.
+> Escritório de advocacia digital do Dr. Gilberto Riccio (OAB/BA 46.638). Atendimento online em toda a Bahia, pelo WhatsApp; casos de outros estados são avaliados um a um. Áreas: direito trabalhista, previdenciário (INSS), família, consumidor, cível e criminal. Conteúdo informativo, escrito em linguagem simples, com base legal citada.
 
-O site não tem escritório físico para atendimento presencial. Contato: WhatsApp +55 71 99703-6269.
+O escritório não tem endereço físico para atendimento presencial. Contato: WhatsApp +55 71 99703-6269.
 
 ## Guias por área
 - [Direitos trabalhistas](https://riccio-advocacia.lovable.app/guia/trabalhista): rescisão, horas extras, prazos para cobrar
@@ -19,6 +19,7 @@ O site não tem escritório físico para atendimento presencial. Contato: WhatsA
 - [Advogado criminal](https://riccio-advocacia.lovable.app/advogado-criminal)
 
 ## Atendimento por cidade (Bahia)
+- [Bahia: todas as cidades](https://riccio-advocacia.lovable.app/advogado-bahia)
 - [Salvador](https://riccio-advocacia.lovable.app/advogado/salvador)
 - [Camaçari](https://riccio-advocacia.lovable.app/advogado/camacari)
 - [Lauro de Freitas](https://riccio-advocacia.lovable.app/advogado/lauro-de-freitas)
@@ -29,9 +30,14 @@ O site não tem escritório físico para atendimento presencial. Contato: WhatsA
 - [Juazeiro](https://riccio-advocacia.lovable.app/advogado/juazeiro)
 - [Porto Seguro](https://riccio-advocacia.lovable.app/advogado/porto-seguro)
 - [Barreiras](https://riccio-advocacia.lovable.app/advogado/barreiras)
+- [Jequié](https://riccio-advocacia.lovable.app/advogado/jequie)
+- [Alagoinhas](https://riccio-advocacia.lovable.app/advogado/alagoinhas)
+
+Para cada uma das 10 primeiras cidades há páginas por área, no formato /advogado-<área>-<cidade> (por exemplo, [advogado trabalhista em Feira de Santana](https://riccio-advocacia.lovable.app/advogado-trabalhista-feira-de-santana)). A lista completa está no mapa do site.
 
 ## Outras páginas
 - [Todos os artigos](https://riccio-advocacia.lovable.app/artigos)
 - [Calculadoras](https://riccio-advocacia.lovable.app/calculadoras): seguro-desemprego, FGTS, rescisão, BPC/LOAS e outras, com valores de 2026
-- [Perguntas frequentes](https://riccio-advocacia.lovable.app/perguntas)
+- [Perguntas frequentes](https://riccio-advocacia.lovable.app/perguntas): mais de 100 perguntas, cada uma com resposta própria e base legal
+- [Mapa do site](https://riccio-advocacia.lovable.app/sitemap)
 - [Mapa do site (XML)](https://riccio-advocacia.lovable.app/sitemap.xml)

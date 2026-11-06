@@ -77,7 +77,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           title: "Procure orientação jurídica",
-          description: "Entre em contato com um advogado especializado em direito do consumidor para avaliar seu caso e calcular o valor da indenização que você pode receber."
+          description: "Entre em contato com um advogado que atua em direito do consumidor para avaliar seu caso e calcular o valor da indenização que você pode receber."
         }
       ],
       localInfo: {
@@ -240,7 +240,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
           description: "Abra uma NIP (Notificação de Intermediação Preliminar) no site da ANS. O plano tem 5 dias para resolver."
         },
         {
-          title: "Procure um advogado especializado",
+          title: "Procure um advogado",
           description: "Em situações urgentes é possível pedir tutela de urgência; o tempo de análise depende de cada juízo e de cada caso."
         }
       ],
@@ -702,7 +702,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     excerpt: "Comprou produto com defeito em Salvador? Conheça seus direitos e como exigir troca ou reembolso.",
     content: {
       intro: "Salvador é a maior cidade do Nordeste e possui um mercado de consumo aquecido. Problemas com produtos defeituosos são comuns, especialmente em eletrônicos, eletrodomésticos e móveis. O Código de Defesa do Consumidor garante seus direitos: troca, conserto ou dinheiro de volta, dependendo do caso e do prazo.",
-      localContext: "O PROCON Bahia registra mais de 35 mil reclamações por ano relacionadas a produtos defeituosos. Lojas de shopping, marketplaces e importados lideram as queixas. O TJBA tem aplicado o CDC com rigor, determinando trocas e indenizações. Salvador possui Juizados Especiais em vários bairros.",
+      localContext: "Em Salvador, o consumidor pode reclamar no Procon-BA (sede no Centro e postos nos SACs), na Codecon, órgão de defesa do consumidor da Prefeitura, e no consumidor.gov.br. Problemas comuns envolvem eletrônicos, eletrodomésticos, móveis e compras pela internet. Se não houver acordo, os Juizados Especiais Cíveis e do Consumidor da capital funcionam na Central dos Juizados, no Imbuí, e julgam causas de até 40 salários mínimos sem custas no 1º grau.",
       statistics: [
         { label: "Não durável", value: "30 dias" },
         { label: "Durável", value: "90 dias" },
@@ -732,9 +732,9 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ],
       localInfo: {
-        procon: "PROCON Salvador: Rua Carlos Gomes, 57 - Centro. Tel: (71) 3116-6510. Também no SAC dos shoppings.",
-        tribunal: "Fórum Ruy Barbosa: Rua do Tesouro, 101 - Centro. Juizados Especiais Cíveis.",
-        additionalInfo: "Defensoria Pública da Bahia: Av. Sete de Setembro, 75 - Centro. Atendimento gratuito."
+        procon: "Procon-BA: sede (Procon Central) na Rua Carlos Gomes, 746, Centro, e postos nos SACs, como o SAC Barra (Av. Centenário, 2992, Chame-Chame). Agendamento: portal ba.gov.br, 0800 071 5353 ou WhatsApp (71) 4020-5353. Lista oficial atualizada em ba.gov.br/justica.",
+        tribunal: "Juizados Especiais Cíveis e do Consumidor de Salvador: Central dos Juizados (Fórum Ministro Adhemar Raymundo da Silva), Rua Padre Casimiro Quiroga, Loteamento Rio das Pedras, Imbuí. Causas até 40 salários mínimos, sem custas no 1º grau; até 20, sem advogado.",
+        additionalInfo: "Defensoria Pública da Bahia: Disque Defensoria 129; sede na Av. Ulysses Guimarães, 3386, Centro Administrativo da Bahia. Lista de unidades em defensoria.ba.def.br."
       },
       faqs: [
         {
@@ -747,11 +747,11 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Qual o prazo para reclamar de produto defeituoso na Bahia?",
-          answer: "Para produtos não duráveis (alimentos, cosméticos): 30 dias. Para duráveis (eletrônicos, móveis): 90 dias. O prazo começa quando você descobre o defeito."
+          answer: "Para produtos não duráveis (alimentos, cosméticos): 30 dias. Para duráveis (eletrônicos, móveis): 90 dias. Se o defeito é aparente, o prazo conta da entrega; se é oculto, conta de quando o defeito aparece (CDC, art. 26). Reclamar por escrito ao fornecedor suspende o prazo até a resposta."
         },
         {
           question: "Posso processar a loja no Juizado Especial em Salvador?",
-          answer: "Sim! Salvador tem vários Juizados Especiais. O principal fica no Fórum Ruy Barbosa, Centro. Para causas até 20 salários, não precisa advogado."
+          answer: "Sim! Os Juizados Especiais Cíveis e do Consumidor de Salvador ficam na Central dos Juizados, no Imbuí (Rua Padre Casimiro Quiroga). Para causas até 20 salários mínimos, não precisa de advogado; de 20 a 40, é obrigatório. Não há custas no 1º grau."
         },
         {
           question: "Produto importado tem garantia no Brasil?",
@@ -764,7 +764,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     relatedProblemPage: "/problemas/produto-defeituoso",
     relatedArticles: ["cobranca-indevida-fortaleza", "voo-cancelado-recife"],
     coordinates: { latitude: "-12.9714", longitude: "-38.5014" },
-    updatedAt: "2026-01-15"
+    updatedAt: "2026-11-06"
   },
 
   // 10. Voo Cancelado em Recife
@@ -1274,8 +1274,8 @@ export const localSEOArticles: LocalSEOArticle[] = [
     keywords: ["voo cancelado salvador", "voo cancelado ssa", "atraso voo salvador", "indenização voo bahia", "direitos passageiro salvador", "cancelamento aeroporto salvador"],
     excerpt: "Guia completo sobre seus direitos quando seu voo é cancelado no Aeroporto de Salvador (SSA). Saiba como pedir indenização.",
     content: {
-      intro: "O Aeroporto Internacional de Salvador - Deputado Luís Eduardo Magalhães (SSA) é o principal hub aéreo do Nordeste, operando mais de 200 voos diários e conectando a Bahia ao Brasil e ao mundo. Com esse volume, cancelamentos e atrasos são frequentes, especialmente em alta temporada (verão e Carnaval). Se você teve seu voo cancelado em Salvador, saiba que possui direitos garantidos por lei e pode receber indenização por danos morais.",
-      localContext: "Em 2024, o Aeroporto de Salvador registrou mais de 4.200 cancelamentos de voos. Os meses de dezembro, janeiro, fevereiro (Carnaval) e julho concentram o maior número de problemas. As companhias com mais reclamações em SSA são GOL, LATAM e Azul. Em situações urgentes é possível pedir tutela de urgência; o tempo de análise depende de cada juízo e de cada caso.",
+      intro: "O Aeroporto Internacional de Salvador - Deputado Luís Eduardo Magalhães (SSA) é um dos mais movimentados do Nordeste e conecta a Bahia ao Brasil e ao exterior. Cancelamentos e atrasos tendem a pesar mais em períodos de alta demanda, como verão, Carnaval e férias de julho. Se você teve seu voo cancelado em Salvador, a Resolução ANAC 400/2016 e o Código de Defesa do Consumidor garantem assistência material, reacomodação ou reembolso e, conforme o caso, indenização.",
+      localContext: "O aeroporto foi concedido à iniciativa privada em 2017 e é administrado por concessionária do grupo VINCI Airports, e não mais pela Infraero, segundo a ANAC. As obrigações de assistência, reacomodação e reembolso, porém, são da companhia aérea. Reclamações podem ser registradas na plataforma Anac Passageiro (gov.br/anac) e no Procon-BA. Em situações urgentes é possível pedir tutela de urgência; o tempo de análise depende de cada juízo e de cada caso.",
       statistics: [
         { label: "Base legal", value: "Res. ANAC 400/2016" },
         { label: "Aviso de alteração", value: "72h antes" },
@@ -1289,7 +1289,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           title: "Solicite a Declaração de Contingência",
-          description: "Vá ao balcão da companhia aérea no Aeroporto de Salvador e peça por escrito a declaração explicando o motivo do cancelamento. Este documento é essencial para seu processo."
+          description: "Vá ao balcão da companhia aérea no Aeroporto de Salvador e peça por escrito o motivo do cancelamento: a empresa deve fornecer essa informação quando o passageiro solicita (Resolução ANAC 400/2016, art. 20, §2º). Este documento ajuda a comprovar o que aconteceu."
         },
         {
           title: "Registre tudo em fotos e prints",
@@ -1301,30 +1301,30 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           title: "Procure orientação jurídica",
-          description: "Entre em contato com um advogado especializado em direito do consumidor na Bahia para avaliar seu caso e calcular o valor da indenização."
+          description: "Entre em contato com um advogado que atua em direito do consumidor na Bahia para avaliar se cabe indenização no seu caso e quais provas reunir. Não existe valor tabelado: a indenização depende das circunstâncias e é fixada pelo juiz."
         }
       ],
       localInfo: {
-        procon: "PROCON Salvador: Av. Centenário, 2411 - Vale dos Barris. Tel: (71) 3116-6500. Horário: Segunda a Sexta, 8h às 17h.",
-        tribunal: "Juizados Especiais Cíveis de Salvador (TJBA): causas até 40 salários mínimos; confira a unidade competente no site do TJBA.",
-        additionalInfo: "O Aeroporto de Salvador possui posto da ANAC onde você pode registrar reclamações. SAC ANAC: 163."
+        procon: "Procon-BA: sede na Rua Carlos Gomes, 746, Centro, e postos nos SACs, como o SAC Barra (Av. Centenário, 2992) e o SAC Salvador Shopping (Av. Tancredo Neves, 2915). Agendamento: ba.gov.br, 0800 071 5353 ou WhatsApp (71) 4020-5353.",
+        tribunal: "Juizados Especiais Cíveis e do Consumidor de Salvador: Central dos Juizados, Rua Padre Casimiro Quiroga, Imbuí. Causas até 40 salários mínimos, sem custas no 1º grau; até 20, sem advogado. Lista oficial em tjba.jus.br/juizadosespeciais.",
+        additionalInfo: "Reclamações contra a companhia aérea: plataforma Anac Passageiro (gov.br/anac), com resposta da empresa em até 10 dias corridos. Dúvidas: telefone 163 da ANAC."
       },
       faqs: [
         {
           question: "Qual o PROCON mais próximo do Aeroporto de Salvador?",
-          answer: "O PROCON Salvador fica na Av. Centenário, 2411, no Vale dos Barris, a cerca de 25 minutos do aeroporto. Funciona de segunda a sexta, das 8h às 17h. Telefone: (71) 3116-6500."
+          answer: "A lista oficial do Procon-BA (ba.gov.br/justica) tem postos em vários SACs de Salvador, como o SAC Salvador Shopping (Av. Tancredo Neves, 2915) e o SAC Barra (Av. Centenário, 2992), além da sede na Rua Carlos Gomes, 746, Centro. Em Lauro de Freitas, cidade vizinha ao aeroporto, há posto no SAC do Parque Shopping Bahia. Agende pelo ba.gov.br, pelo 0800 071 5353 ou pelo WhatsApp (71) 4020-5353."
         },
         {
           question: "Quanto tempo tenho para reclamar de voo cancelado em Salvador?",
-          answer: "Para voos nacionais, você tem até 5 anos para entrar com ação judicial. Para voos internacionais, o prazo é de 2 anos. Porém, quanto antes você agir, mais fácil é reunir provas."
+          answer: "Para voos nacionais, o prazo para a ação é de 5 anos (CDC, art. 27). Para voos internacionais, são 2 anos para danos materiais (Convenção de Montreal, conforme o STF) e 5 anos para danos morais (STF, Tema 1.240). Quanto antes você agir, mais fácil é reunir provas."
         },
         {
           question: "Posso processar a companhia aérea no Juizado de Salvador?",
-          answer: "Sim! Você pode processar no Juizado Especial Cível de Salvador (Fórum Ruy Barbosa) se embarcou ou desembarcou na cidade, ou se mora em Salvador. Causas até 20 salários mínimos não precisam de advogado."
+          answer: "Sim! Você pode processar nos Juizados Especiais de Salvador (Central dos Juizados, no Imbuí) se mora em Salvador ou se o fato ocorreu aqui (Lei 9.099/1995, art. 4º, e CDC, art. 101). Causas até 20 salários mínimos não precisam de advogado; de 20 a 40, é obrigatório."
         },
         {
           question: "Qual o valor médio de indenização por voo cancelado saindo de Salvador?",
-          answer: "O valor de eventual indenização depende das circunstâncias de cada caso e é fixado pelo juiz; não há valor garantido."
+          answer: "Não existe valor médio oficial nem tabela. O STJ entende que, em atraso e cancelamento de voo, o dano moral precisa ser demonstrado; pesam o tempo de espera, a falta de assistência e a perda de compromissos. O valor de eventual indenização depende das circunstâncias de cada caso e é fixado pelo juiz; não há valor garantido."
         },
         {
           question: "A companhia aérea deve fornecer hotel se meu voo for cancelado em Salvador?",
@@ -1337,7 +1337,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     relatedArticles: ["produto-defeituoso-salvador", "plano-saude-negou-salvador", "voo-cancelado-guarulhos"],
     coordinates: { latitude: "-12.9086", longitude: "-38.3225" },
     airportCode: "SSA",
-    updatedAt: "2026-01-15"
+    updatedAt: "2026-11-06"
   },
   {
     id: "plano-saude-negou-salvador",
@@ -1352,10 +1352,10 @@ export const localSEOArticles: LocalSEOArticle[] = [
     metaTitle: "Plano de Saúde Negou em Salvador | Liminar",
     metaDescription: "Seu plano de saúde negou cirurgia, exame ou tratamento em Salvador? Saiba como reverter a negativa e conseguir indenização. Fale com um advogado.",
     keywords: ["plano saúde negou salvador", "plano saúde negou cirurgia bahia", "processar plano saúde ba", "unimed negou salvador", "hapvida negou bahia"],
-    excerpt: "Teve cobertura negada pelo plano de saúde em Salvador? Conheça seus direitos e como reverter a decisão com liminar em até 72 horas.",
+    excerpt: "Teve cobertura negada pelo plano de saúde em Salvador? Conheça seus direitos, os prazos de resposta da ANS e como reverter a decisão na ANS ou na Justiça.",
     content: {
       intro: "Salvador concentra grande parte dos beneficiários de planos de saúde da Bahia, com destaque para operadoras como Hapvida, Unimed Salvador, Bradesco Saúde e SulAmérica. Infelizmente, negativas de cobertura são extremamente comuns, especialmente para procedimentos de alto custo e tratamentos oncológicos. Em situações urgentes é possível pedir tutela de urgência; o tempo de análise depende de cada juízo e de cada caso.",
-      localContext: "A capital baiana possui importantes hospitais como Hospital da Bahia, Hospital São Rafael, Hospital Português e Aristides Maltez. O TJBA reconhece o direito à saúde como fundamental, concedendo liminares rapidamente em casos urgentes. O valor de eventual indenização depende das circunstâncias de cada caso e é fixado pelo juiz; não há valor garantido.",
+      localContext: "A capital baiana possui importantes hospitais como Hospital da Bahia, Hospital São Rafael, Hospital Português e Aristides Maltez. Em casos urgentes, é possível pedir tutela de urgência ao Judiciário, inclusive ao plantão do TJBA fora do expediente; o tempo de análise depende de cada juízo e de cada caso. O valor de eventual indenização depende das circunstâncias de cada caso e é fixado pelo juiz; não há valor garantido.",
       statistics: [
         { label: "Negativa por escrito", value: "Direito do beneficiário" },
         { label: "Rol da ANS", value: "Lei 14.454/2022" },
@@ -1365,7 +1365,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
       steps: [
         {
           title: "Solicite a negativa por escrito",
-          description: "Peça ao plano de saúde um documento formal explicando o motivo da negativa. Por lei, eles têm 24 horas para fornecer."
+          description: "Peça ao plano um documento formal explicando o motivo da negativa. Pela RN ANS 623/2024, a resposta deve ser imediata em urgência e emergência e, nos demais casos, vir em até 5 dias úteis (ou 10 dias úteis em alguns procedimentos eletivos); a negativa deve ser entregue por escrito, com o motivo."
         },
         {
           title: "Verifique a cobertura no rol da ANS",
@@ -1377,30 +1377,30 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           title: "Registre reclamação na ANS",
-          description: "Abra uma NIP (Notificação de Intermediação Preliminar) no site da ANS. O plano tem 5 dias para resolver."
+          description: "Abra uma NIP (Notificação de Intermediação Preliminar) no site da ANS ou pelo Disque ANS (0800 701 9656). Em questões de cobertura, o plano tem até 5 dias úteis para resolver."
         },
         {
-          title: "Procure um advogado especializado",
+          title: "Procure um advogado",
           description: "Em situações urgentes é possível pedir tutela de urgência; o tempo de análise depende de cada juízo e de cada caso."
         }
       ],
       localInfo: {
-        procon: "PROCON Salvador: Av. Centenário, 2411 - Vale dos Barris. Tel: (71) 3116-6500. Atendimento especializado em planos de saúde.",
-        tribunal: "Fórum Ruy Barbosa - Sussuarana. Plantão Judiciário 24h do TJBA para emergências: (71) 3372-5700.",
-        additionalInfo: "A Defensoria Pública da Bahia oferece atendimento gratuito para casos de saúde. Sede: Av. Ulysses Guimarães, 3386."
+        procon: "Procon-BA: sede na Rua Carlos Gomes, 746, Centro, e postos nos SACs de Salvador. Agendamento: ba.gov.br, 0800 071 5353 ou WhatsApp (71) 4020-5353. Reclamações sobre planos também podem ser feitas na ANS.",
+        tribunal: "Juizados Especiais (causas até 40 salários mínimos): Central dos Juizados, Rua Padre Casimiro Quiroga, Imbuí. Causas maiores ou com perícia complexa: Varas de Relações de Consumo. Fora do expediente, pedidos urgentes vão ao Plantão Judiciário do TJBA, pelo PJe.",
+        additionalInfo: "A Defensoria Pública da Bahia oferece atendimento gratuito a quem não pode pagar advogado: Disque Defensoria 129; sede na Av. Ulysses Guimarães, 3386, CAB (defensoria.ba.def.br)."
       },
       faqs: [
         {
           question: "O plano pode negar tratamento que o médico prescreveu em Salvador?",
-          answer: "Em regra, não. Se o tratamento está no rol da ANS ou é necessário para a doença coberta, a negativa é ilegal. Mesmo fora do rol, o TJBA tem obrigado planos a cobrir quando há indicação médica."
+          answer: "Em regra, não. Se o tratamento está no rol da ANS e foi indicado pelo médico, a negativa é ilegal. Fora do rol, a cobertura pode ser obrigatória se cumpridos os 5 requisitos fixados pelo STF em setembro de 2025 (ADI 7.265): prescrição do médico assistente, ausência de negativa expressa da ANS, falta de alternativa no rol, comprovação científica de eficácia e segurança e registro na Anvisa."
         },
         {
           question: "Quanto tempo leva para conseguir uma liminar contra plano de saúde na Bahia?",
-          answer: "O plantão judiciário do TJBA funciona 24h para emergências. Em situações urgentes é possível pedir tutela de urgência; o tempo de análise depende de cada juízo e de cada caso."
+          answer: "Fora do expediente, pedidos urgentes podem ser feitos ao Plantão Judiciário do TJBA, pelo PJe. Em situações urgentes é possível pedir tutela de urgência; o tempo de análise depende de cada juízo e de cada caso."
         },
         {
           question: "Hapvida negou meu procedimento. O que fazer?",
-          answer: "A Hapvida é uma das operadoras com mais reclamações na Bahia. Você pode pedir liminar judicial para forçar a cobertura e, após o tratamento, processar por danos morais."
+          answer: "Os passos são os mesmos para qualquer operadora: peça a negativa por escrito, reclame na ANS (0800 701 9656) e, se houver urgência, procure um advogado ou a Defensoria para pedir tutela de urgência. Depois, conforme o caso, é possível pedir indenização por danos morais."
         },
         {
           question: "Tenho direito a indenização além da cobertura do tratamento?",
@@ -1408,7 +1408,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Onde processar plano de saúde em Salvador?",
-          answer: "Você pode processar no Juizado Especial Cível do Fórum Ruy Barbosa (causas até 40 salários) ou nas Varas Cíveis para valores maiores."
+          answer: "Você pode processar nos Juizados Especiais da Central dos Juizados, no Imbuí (causas até 40 salários mínimos, sem perícia complexa), ou nas Varas de Relações de Consumo, para valores maiores ou casos complexos."
         }
       ]
     },
@@ -1416,7 +1416,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     relatedProblemPage: "/problemas/plano-saude",
     relatedArticles: ["voo-cancelado-salvador", "nome-negativado-salvador", "plano-saude-negou-sao-paulo"],
     coordinates: { latitude: "-12.9714", longitude: "-38.5014" },
-    updatedAt: "2026-01-15"
+    updatedAt: "2026-11-06"
   },
   {
     id: "nome-negativado-salvador",
@@ -1433,8 +1433,8 @@ export const localSEOArticles: LocalSEOArticle[] = [
     keywords: ["nome negativado salvador", "limpar nome bahia", "serasa salvador", "spc bahia", "indenização negativação salvador"],
     excerpt: "Guia completo para quem teve o nome negativado indevidamente em Salvador. Saiba como limpar seu nome e receber indenização.",
     content: {
-      intro: "Salvador é uma das capitais com maior índice de negativação no Brasil, afetando milhares de consumidores baianos. Muitas dessas negativações são indevidas, seja por fraudes, cobranças já pagas ou dívidas prescritas. O valor de eventual indenização depende das circunstâncias de cada caso e é fixado pelo juiz; não há valor garantido.",
-      localContext: "Na capital baiana, os setores de telecomunicações (operadoras de celular e internet), bancos e financeiras são os maiores responsáveis por negativações indevidas. O TJBA tem jurisprudência consolidada sobre o tema, reconhecendo o dano moral presumido (in re ipsa) em casos de negativação irregular.",
+      intro: "A negativação indevida afeta muitos consumidores em Salvador. Muitas vezes ela decorre de fraude, de cobrança de dívida já paga ou de registro que já deveria ter saído do cadastro. O valor de eventual indenização depende das circunstâncias de cada caso e é fixado pelo juiz; não há valor garantido.",
+      localContext: "Na capital baiana, operadoras de telefonia e internet, bancos e financeiras aparecem com frequência em casos de negativação indevida. O STJ entende que, em regra, a inscrição indevida gera dano moral presumido (in re ipsa), salvo quando já existia outra negativação legítima (Súmula 385).",
       statistics: [
         { label: "Aviso prévio obrigatório", value: "Art. 43 §2º CDC" },
         { label: "Prazo máximo no cadastro", value: "5 anos" },
@@ -1448,7 +1448,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           title: "Verifique se a dívida é sua",
-          description: "Analise se você realmente contraiu a dívida, se já foi paga, ou se está prescrita (mais de 5 anos). Fraudes são comuns."
+          description: "Analise se você realmente contraiu a dívida, se já foi paga ou se já passou do prazo máximo de 5 anos no cadastro. Fraudes são comuns."
         },
         {
           title: "Reúna documentos comprobatórios",
@@ -1459,14 +1459,14 @@ export const localSEOArticles: LocalSEOArticle[] = [
           description: "Entre em contato com a empresa responsável pela negativação. Se não resolver em 5 dias úteis, é hora de processar."
         },
         {
-          title: "Procure um advogado especializado",
-          description: "Em situações urgentes é possível pedir tutela de urgência; o tempo de análise depende de cada juízo e de cada caso."
+          title: "Procure um advogado",
+          description: "Um advogado ou a Defensoria Pública pode pedir a exclusão do nome com urgência e avaliar o pedido de indenização. Em situações urgentes é possível pedir tutela de urgência; o tempo de análise depende de cada juízo e de cada caso."
         }
       ],
       localInfo: {
-        procon: "PROCON Salvador: Av. Centenário, 2411 - Vale dos Barris. Tel: (71) 3116-6500. Registre reclamação contra a empresa.",
-        tribunal: "Juizado Especial Cível de Salvador: Fórum Ruy Barbosa. Processos até 40 salários mínimos são gratuitos.",
-        additionalInfo: "A Defensoria Pública da Bahia atende gratuitamente casos de negativação indevida: (71) 3117-4500."
+        procon: "Procon-BA: sede na Rua Carlos Gomes, 746, Centro, e postos nos SACs de Salvador. Agendamento: ba.gov.br, 0800 071 5353 ou WhatsApp (71) 4020-5353. Registre reclamação contra a empresa.",
+        tribunal: "Juizados Especiais Cíveis e do Consumidor de Salvador: Central dos Juizados, Rua Padre Casimiro Quiroga, Imbuí. Processos até 40 salários mínimos não têm custas no 1º grau.",
+        additionalInfo: "A Defensoria Pública da Bahia atende gratuitamente quem não pode pagar advogado: Disque Defensoria 129 (defensoria.ba.def.br)."
       },
       faqs: [
         {
@@ -1475,19 +1475,19 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Quanto tempo leva para limpar meu nome na Bahia?",
-          answer: "Administrativamente, as empresas têm até 5 dias úteis. Em situações urgentes é possível pedir tutela de urgência; o tempo de análise depende de cada juízo e de cada caso."
+          answer: "Depois do pagamento, o credor tem 5 dias úteis para pedir a baixa (Súmula 548 do STJ). Se o nome continuar negativado, reclame e procure o Juizado; em situações urgentes é possível pedir tutela de urgência, e o tempo de análise depende de cada juízo e de cada caso."
         },
         {
           question: "Dívida prescrita pode negativar meu nome?",
-          answer: "Não! Dívidas com mais de 5 anos estão prescritas e não podem constar em cadastros de inadimplentes. Se constarem, você tem direito a indenização."
+          answer: "O registro pode ficar no máximo 5 anos, contados do dia seguinte ao vencimento da dívida (CDC, art. 43, §1º), e deve sair antes se a cobrança prescrever (art. 43, §5º). Se continuar no cadastro, você pode pedir a exclusão e, conforme o caso, indenização."
         },
         {
           question: "Fui vítima de fraude em Salvador. O que fazer?",
-          answer: "Registre boletim de ocorrência na Delegacia Virtual da Bahia, notifique a empresa e procure um advogado. Você não é responsável por dívidas de fraude."
+          answer: "Registre boletim de ocorrência (online, pela Delegacia Virtual indicada no site da Polícia Civil da Bahia, ou em uma delegacia), notifique a empresa e procure um advogado ou a Defensoria. Você não é responsável por dívidas feitas por fraudadores."
         },
         {
           question: "Posso processar a empresa no Juizado de Salvador?",
-          answer: "Sim! O Juizado Especial Cível de Salvador (Fórum Ruy Barbosa) atende causas até 40 salários mínimos. Para valores até 20 salários, não precisa de advogado."
+          answer: "Sim! Os Juizados Especiais Cíveis e do Consumidor de Salvador (Central dos Juizados, no Imbuí) atendem causas até 40 salários mínimos. Para valores até 20 salários, não precisa de advogado."
         }
       ]
     },
@@ -1495,7 +1495,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     relatedProblemPage: "/problemas/negativacao",
     relatedArticles: ["voo-cancelado-salvador", "plano-saude-negou-salvador", "nome-negativado-belo-horizonte"],
     coordinates: { latitude: "-12.9714", longitude: "-38.5014" },
-    updatedAt: "2026-01-15"
+    updatedAt: "2026-11-06"
   },
   {
     id: "golpe-pix-salvador",
@@ -1513,7 +1513,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     excerpt: "Caiu em golpe de PIX em Salvador? Saiba como recuperar seu dinheiro e responsabilizar o banco por falhas de segurança.",
     content: {
       intro: "Os golpes envolvendo PIX se tornaram uma epidemia em Salvador e em todo o Brasil. Criminosos usam engenharia social, clonagem de WhatsApp, falsos atendentes de banco e até sequestros-relâmpago para obter transferências indevidas. A boa notícia é que os bancos têm responsabilidade objetiva por falhas de segurança, devendo ressarcir o cliente em muitos casos.",
-      localContext: "Em Salvador, os golpes mais comuns são: falso funcionário de banco, clonagem de WhatsApp, golpe do falso leilão e sequestro-relâmpago. O TJBA reconhece a responsabilidade dos bancos quando há falha nos mecanismos de segurança, como transferências de valores atípicos para o perfil do cliente.",
+      localContext: "Em Salvador, os golpes mais comuns são: falso funcionário de banco, clonagem de WhatsApp, golpe do falso leilão e sequestro-relâmpago. Com base na Súmula 479 do STJ, os tribunais reconhecem a responsabilidade dos bancos quando há falha nos mecanismos de segurança, como transferências de valores atípicos para o perfil do cliente.",
       statistics: [
         { label: "Responsabilidade do banco", value: "Súmula 479 STJ" },
         { label: "Devolução via Pix", value: "MED do Banco Central" },
@@ -1523,11 +1523,11 @@ export const localSEOArticles: LocalSEOArticle[] = [
       steps: [
         {
           title: "Acione o MED (Mecanismo Especial de Devolução)",
-          description: "Ligue imediatamente para seu banco e peça o bloqueio via MED. O banco deve tentar recuperar o valor em até 7 dias."
+          description: "Ligue imediatamente para seu banco (ou use a opção de contestação no app) e peça o MED. O pedido pode ser feito em até 80 dias da transação, mas quanto antes, maior a chance de bloquear o dinheiro na conta de quem recebeu."
         },
         {
           title: "Registre boletim de ocorrência",
-          description: "Faça B.O. na Delegacia Virtual da Bahia (www.delegaciavirtual.ba.gov.br) ou na delegacia mais próxima. Isso é fundamental para o processo."
+          description: "Faça B.O. online pela Delegacia Virtual (link oficial no site da Polícia Civil da Bahia, ba.gov.br/policiacivil) ou na delegacia mais próxima. Isso é fundamental para o processo."
         },
         {
           title: "Notifique o banco formalmente",
@@ -1538,19 +1538,19 @@ export const localSEOArticles: LocalSEOArticle[] = [
           description: "Prints de conversas, comprovantes de transferência, protocolos de atendimento, B.O. e qualquer outra evidência do golpe."
         },
         {
-          title: "Procure um advogado especializado",
+          title: "Procure um advogado",
           description: "Se o banco negar a restituição, um advogado pode demonstrar a falha de segurança e buscar indenização por danos materiais e morais."
         }
       ],
       localInfo: {
-        procon: "PROCON Salvador: Av. Centenário, 2411 - Vale dos Barris. Tel: (71) 3116-6500. Registre reclamação contra o banco.",
-        tribunal: "Juizado Especial Cível de Salvador: Fórum Ruy Barbosa. Ideal para valores até 40 salários mínimos.",
-        additionalInfo: "Delegacia de Crimes Cibernéticos da Bahia: Av. Centenário, 2441 - Vale dos Barris. Tel: (71) 3116-0357."
+        procon: "Procon-BA: sede na Rua Carlos Gomes, 746, Centro, e postos nos SACs de Salvador. Agendamento: ba.gov.br, 0800 071 5353 ou WhatsApp (71) 4020-5353. Registre reclamação contra o banco.",
+        tribunal: "Juizados Especiais Cíveis e do Consumidor de Salvador: Central dos Juizados, Rua Padre Casimiro Quiroga, Imbuí. Ideal para valores até 40 salários mínimos.",
+        additionalInfo: "Polícia Civil da Bahia: B.O. online pela Delegacia Virtual (link no site ba.gov.br/policiacivil). Reclamação contra o banco: Banco Central, bcb.gov.br (Meu BC)."
       },
       faqs: [
         {
           question: "O banco é obrigado a devolver o dinheiro do golpe de PIX?",
-          answer: "Depende do caso. Se houve falha de segurança do banco (transferência atípica não bloqueada, por exemplo), ele deve restituir. O TJBA tem decidido favoravelmente ao consumidor em muitos casos."
+          answer: "Depende do caso. Se houve falha de segurança do banco (transferência atípica não bloqueada, por exemplo), ele deve restituir. Pela Súmula 479 do STJ, o banco responde pelas fraudes praticadas por terceiros em operações bancárias quando há falha no serviço."
         },
         {
           question: "Quanto tempo tenho para pedir a devolução do PIX?",
@@ -1562,11 +1562,11 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Fui vítima de sequestro-relâmpago em Salvador. Tenho direitos?",
-          answer: "Sim! Transferências sob coação são passíveis de ressarcimento pelo banco, especialmente se os valores foram atípicos para seu perfil. Além disso, você pode ter direito a indenização por danos morais."
+          answer: "Pode haver responsabilidade do banco se as transações fugiram muito do seu perfil e não foram bloqueadas, mas cada caso é analisado. Registre o B.O. imediatamente, avise o banco e peça o MED. A indenização por danos morais depende das provas."
         },
         {
           question: "Onde registrar ocorrência de golpe de PIX em Salvador?",
-          answer: "Você pode fazer B.O. online na Delegacia Virtual (www.delegaciavirtual.ba.gov.br) ou presencialmente na Delegacia de Crimes Cibernéticos (Av. Centenário, 2441)."
+          answer: "Online, pela Delegacia Virtual (link oficial no site da Polícia Civil da Bahia), com conta gov.br, ou presencialmente em qualquer delegacia de Salvador. A Polícia Civil tem unidades especializadas em crimes cibernéticos e fraudes; informe-se no site oficial."
         }
       ]
     },
@@ -1574,7 +1574,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     relatedProblemPage: "/problemas/fraude-bancaria",
     relatedArticles: ["nome-negativado-salvador", "plano-saude-negou-salvador", "produto-defeituoso-salvador"],
     coordinates: { latitude: "-12.9714", longitude: "-38.5014" },
-    updatedAt: "2026-01-15"
+    updatedAt: "2026-11-06"
   },
   {
     id: "cobranca-indevida-salvador",
@@ -1592,7 +1592,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     excerpt: "Recebeu cobrança indevida em Salvador? Saiba como pedir a devolução em dobro e indenização por danos morais.",
     content: {
       intro: "Cobranças indevidas são extremamente comuns em Salvador, afetando consumidores em relações com bancos, operadoras de celular, TV a cabo, empresas de energia e água. Pelo Código de Defesa do Consumidor, quem paga valor cobrado indevidamente tem direito à devolução em dobro, acrescida de juros e correção monetária.",
-      localContext: "Em Salvador, os maiores vilões de cobranças indevidas são: operadoras de telefonia (Oi, Claro, Vivo, TIM), bancos (taxas não contratadas), Coelba (contas de luz) e Embasa (contas de água). O PROCON Salvador recebe milhares de reclamações mensais sobre o tema.",
+      localContext: "Em Salvador, reclamações de cobrança indevida costumam envolver telefonia e internet, bancos (tarifas e seguros não contratados), energia (Neoenergia Coelba) e água (Embasa). Antes de ir à Justiça, registre a reclamação na empresa e anote o protocolo; depois, procure o Procon-BA, a Codecon (Prefeitura) ou o consumidor.gov.br.",
       statistics: [
         { label: "Devolução", value: "Em dobro (art. 42 CDC)" },
         { label: "Correção", value: "Juros e correção" },
@@ -1622,9 +1622,9 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ],
       localInfo: {
-        procon: "PROCON Salvador: Av. Centenário, 2411 - Vale dos Barris. Tel: (71) 3116-6500. Registre sua reclamação.",
-        tribunal: "Juizado Especial Cível de Salvador: Fórum Ruy Barbosa. Causas até 40 salários mínimos.",
-        additionalInfo: "ANATEL (operadoras): 1331. ANEEL/COELBA: 0800 071 0800. EMBASA: 0800 071 0000."
+        procon: "Procon-BA: sede na Rua Carlos Gomes, 746, Centro, e postos nos SACs de Salvador. Agendamento: ba.gov.br, 0800 071 5353 ou WhatsApp (71) 4020-5353. Registre sua reclamação.",
+        tribunal: "Juizados Especiais Cíveis e do Consumidor de Salvador: Central dos Juizados, Rua Padre Casimiro Quiroga, Imbuí. Causas até 40 salários mínimos.",
+        additionalInfo: "Anatel (telefonia e internet): 1331. Neoenergia Coelba: 116. Embasa: 0800 0555 195. Anote sempre o número do protocolo."
       },
       faqs: [
         {
@@ -1637,7 +1637,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Minha conta de luz veio com valor absurdo. Como resolver?",
-          answer: "Conteste junto à COELBA e peça revisão. Se não resolver, registre no PROCON ou processe. Cobranças com erros de leitura são comuns."
+          answer: "Conteste na Neoenergia Coelba (116, app ou site) e peça a revisão da leitura; guarde o protocolo. Se não resolver, registre no Procon-BA ou procure o Juizado. Cobranças com erro de leitura são comuns."
         },
         {
           question: "Tenho direito a danos morais por cobrança indevida?",
@@ -1645,7 +1645,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Quanto tempo tenho para pedir devolução em dobro?",
-          answer: "O prazo é de 5 anos a partir da cobrança indevida. Porém, quanto antes você agir, mais fácil é reunir provas."
+          answer: "Depende do caso. Para serviços de telefonia não contratados e para água e esgoto, o STJ fixou o prazo de 10 anos para pedir de volta o que foi pago indevidamente (EAREsp 738.991 e Súmula 412). Em outras situações, o prazo pode ser diferente; quanto antes você agir, mais fácil é reunir provas."
         }
       ]
     },
@@ -1654,7 +1654,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     relatedProblemPage: "/problemas/cobranca-indevida",
     relatedArticles: ["nome-negativado-salvador", "golpe-pix-salvador", "produto-defeituoso-salvador"],
     coordinates: { latitude: "-12.9714", longitude: "-38.5014" },
-    updatedAt: "2026-01-15"
+    updatedAt: "2026-11-06"
   },
 
   // INTERIOR DA BAHIA - 10 artigos
@@ -1673,8 +1673,8 @@ export const localSEOArticles: LocalSEOArticle[] = [
     keywords: ["produto defeituoso feira de santana", "troca produto bahia", "garantia feira de santana", "direito consumidor feira"],
     excerpt: "Comprou produto com defeito em Feira de Santana? Conheça seus direitos de troca, reembolso ou conserto e como exigi-los.",
     content: {
-      intro: "Feira de Santana é o maior polo comercial do interior do Nordeste, com intenso fluxo de compras em seus shopping centers, lojas de rua e feiras. Com tanto comércio, problemas com produtos defeituosos são frequentes. Se você comprou um produto com defeito, tem direitos garantidos pelo Código de Defesa do Consumidor.",
-      localContext: "O comércio de Feira de Santana movimenta bilhões por ano, atraindo consumidores de toda a região. Os setores com mais reclamações são eletrodomésticos, eletrônicos, móveis e vestuário. O PROCON de Feira é um dos mais atuantes do interior baiano.",
+      intro: "Feira de Santana é um dos maiores polos comerciais do interior do Nordeste, com intenso fluxo de compras em shopping centers, lojas de rua e feiras. Com tanto comércio, problemas com produtos defeituosos são frequentes. Se você comprou um produto com defeito, tem direitos garantidos pelo Código de Defesa do Consumidor.",
+      localContext: "Feira de Santana recebe consumidores de toda a região, e problemas com eletrodomésticos, eletrônicos, móveis e vestuário são comuns. Para reclamar, o consumidor pode procurar o Procon municipal, usar o consumidor.gov.br ou, se não houver acordo, ir aos Juizados Especiais da cidade, na Av. Presidente Dutra.",
       statistics: [
         { label: "Não durável", value: "30 dias" },
         { label: "Durável", value: "90 dias" },
@@ -1704,9 +1704,9 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ],
       localInfo: {
-        procon: "PROCON Feira de Santana: Centro Administrativo - Av. Senhor dos Passos. Tel: (75) 3602-8500.",
-        tribunal: "Juizado Especial Cível de Feira de Santana: Fórum Desembargador Filinto Bastos. Causas até 40 salários mínimos.",
-        additionalInfo: "Shopping Sumaré, Boulevard Shopping e Shopping Cidade têm SAC para resolver problemas com lojistas."
+        procon: "Procon de Feira de Santana (Prefeitura): endereço e telefones atualizados em feiradesantana.ba.gov.br (página do PROCON). Reclamação online: consumidor.gov.br.",
+        tribunal: "Sistema dos Juizados Especiais de Feira de Santana: Av. Presidente Dutra, s/n, Santa Mônica, CEP 44050-054, (75) 3615-1900. Causas até 40 salários mínimos, sem custas no 1º grau.",
+        additionalInfo: "Defensoria Pública em Feira de Santana: Av. Maria Quitéria, 1.235, Centro, (75) 3614-6963 / 3614-8355."
       },
       faqs: [
         {
@@ -1727,7 +1727,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Onde fica o PROCON de Feira de Santana?",
-          answer: "O PROCON funciona no Centro Administrativo, na Av. Senhor dos Passos. Atendimento de segunda a sexta, das 8h às 14h."
+          answer: "Não conseguimos confirmar em fonte oficial atualizada o endereço e o horário do Procon municipal. Consulte o site da Prefeitura (feiradesantana.ba.gov.br, página do PROCON) antes de ir. Pela internet, você pode reclamar no consumidor.gov.br."
         }
       ]
     },
@@ -1735,7 +1735,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     relatedProblemPage: "/problemas/produto-defeituoso",
     relatedArticles: ["cobranca-indevida-feira-de-santana", "produto-defeituoso-salvador", "nome-negativado-itabuna"],
     coordinates: { latitude: "-12.2669", longitude: "-38.9586" },
-    updatedAt: "2026-01-15"
+    updatedAt: "2026-11-06"
   },
   {
     id: "cobranca-indevida-feira-de-santana",
@@ -1753,7 +1753,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     excerpt: "Recebeu cobrança indevida em Feira de Santana? Saiba como pedir a devolução em dobro do valor pago.",
     content: {
       intro: "Cobranças indevidas afetam milhares de consumidores em Feira de Santana todos os meses. Operadoras de telefonia, bancos, lojas e prestadores de serviços frequentemente cobram valores indevidos. Se você pagou algo que não devia, tem direito à devolução em dobro do valor, com juros e correção.",
-      localContext: "Em Feira de Santana, as principais reclamações de cobrança indevida envolvem: operadoras de telefonia móvel, bancos (taxas não contratadas), lojas de crediário e concessionárias de energia (Coelba). O PROCON local recebe centenas de reclamações mensais.",
+      localContext: "Em Feira de Santana, as principais reclamações de cobrança indevida envolvem operadoras de telefonia móvel, bancos (taxas não contratadas), lojas de crediário e a distribuidora de energia (Neoenergia Coelba). Antes de ir à Justiça, registre a reclamação na empresa, no Procon ou no consumidor.gov.br e guarde os protocolos.",
       statistics: [
         { label: "Devolução", value: "Em dobro (art. 42 CDC)" },
         { label: "Correção", value: "Juros e correção" },
@@ -1783,9 +1783,9 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ],
       localInfo: {
-        procon: "PROCON Feira de Santana: Centro Administrativo - Av. Senhor dos Passos. Tel: (75) 3602-8500.",
-        tribunal: "Juizado Especial Cível: Fórum Desembargador Filinto Bastos. Causas até 40 salários mínimos.",
-        additionalInfo: "Agências dos principais bancos e operadoras ficam concentradas no centro e shoppings."
+        procon: "Procon de Feira de Santana (Prefeitura): endereço e telefones atualizados em feiradesantana.ba.gov.br (página do PROCON). Reclamação online: consumidor.gov.br.",
+        tribunal: "Sistema dos Juizados Especiais de Feira de Santana: Av. Presidente Dutra, s/n, Santa Mônica, (75) 3615-1900. Causas até 40 salários mínimos.",
+        additionalInfo: "Defensoria Pública em Feira de Santana: Av. Maria Quitéria, 1.235, Centro, (75) 3614-6963. Anatel (telefonia): 1331. Neoenergia Coelba: 116."
       },
       faqs: [
         {
@@ -1798,7 +1798,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Minha conta de celular veio com valor errado. Como resolver?",
-          answer: "Conteste na operadora, não pague o valor contestado e registre no PROCON. Você pode pedir restituição e danos morais."
+          answer: "Conteste na operadora, anote o protocolo e peça a fatura corrigida. Se não resolver, reclame na Anatel (1331 ou Anatel Consumidor) e no Procon. Se pagou a mais, pode pedir a devolução em dobro e, conforme o caso, danos morais."
         },
         {
           question: "Tenho direito a danos morais por cobrança indevida?",
@@ -1806,7 +1806,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Quanto tempo tenho para pedir devolução em dobro?",
-          answer: "O prazo é de 5 anos a partir da cobrança/pagamento indevido."
+          answer: "Depende do caso. Para serviços de telefonia não contratados e para água e esgoto, o STJ fixou 10 anos (EAREsp 738.991 e Súmula 412). Em outras situações, o prazo pode ser diferente; não deixe para depois."
         }
       ]
     },
@@ -1815,7 +1815,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     relatedProblemPage: "/problemas/cobranca-indevida",
     relatedArticles: ["produto-defeituoso-feira-de-santana", "cobranca-indevida-salvador", "nome-negativado-itabuna"],
     coordinates: { latitude: "-12.2669", longitude: "-38.9586" },
-    updatedAt: "2026-01-15"
+    updatedAt: "2026-11-06"
   },
   {
     id: "plano-saude-negou-vitoria-conquista",
@@ -1830,10 +1830,10 @@ export const localSEOArticles: LocalSEOArticle[] = [
     metaTitle: "Plano de Saúde Negou Vitória da Conquista | Liminar",
     metaDescription: "Seu plano de saúde negou tratamento em Vitória da Conquista? Saiba como conseguir liminar e indenização. Fale com um advogado.",
     keywords: ["plano saúde negou vitória conquista", "plano saúde sudoeste bahia", "processar plano saúde conquista", "liminar plano saúde ba"],
-    excerpt: "Teve tratamento negado pelo plano de saúde em Vitória da Conquista? Saiba como reverter a negativa com liminar em até 72 horas.",
+    excerpt: "Teve tratamento negado pelo plano de saúde em Vitória da Conquista? Saiba como exigir a resposta por escrito, reclamar na ANS e pedir tutela de urgência.",
     content: {
       intro: "Vitória da Conquista é polo de saúde do sudoeste baiano, com hospitais de referência e alta concentração de beneficiários de planos de saúde. Negativas de cobertura são frequentes, especialmente para procedimentos de alta complexidade. Se seu plano negou tratamento, você tem direitos garantidos por lei.",
-      localContext: "A cidade conta com hospitais importantes como o Hospital Geral de Vitória da Conquista e o Hospital Samur. As operadoras com mais reclamações na região são Hapvida, Unimed e Cassi. O Fórum de Vitória da Conquista tem concedido liminares em casos urgentes.",
+      localContext: "A cidade conta com hospitais de referência, como o Hospital Geral de Vitória da Conquista. Em casos urgentes, é possível pedir tutela de urgência ao Judiciário; o tempo de análise depende de cada juízo e de cada caso. Os Juizados Especiais da cidade funcionam no Fórum João Mangabeira, no Centro.",
       statistics: [
         { label: "Negativa por escrito", value: "Direito do beneficiário" },
         { label: "Rol da ANS", value: "Lei 14.454/2022" },
@@ -1843,7 +1843,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
       steps: [
         {
           title: "Solicite a negativa por escrito",
-          description: "Peça ao plano de saúde um documento formal explicando o motivo da negativa. Eles têm 24 horas para fornecer."
+          description: "Peça ao plano um documento formal explicando o motivo da negativa. Pela RN ANS 623/2024, a resposta deve ser imediata em urgência e emergência e, nos demais casos, vir em até 5 dias úteis (ou 10 dias úteis em alguns procedimentos eletivos), com a negativa por escrito."
         },
         {
           title: "Verifique o rol da ANS",
@@ -1855,7 +1855,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           title: "Registre reclamação na ANS",
-          description: "Abra uma NIP no site da ANS. O plano tem 5 dias para resolver. Se não resolver, guarde a resposta."
+          description: "Abra uma NIP no site da ANS ou pelo Disque ANS (0800 701 9656). Em questões de cobertura, o plano tem até 5 dias úteis para resolver. Se não resolver, guarde a resposta."
         },
         {
           title: "Procure um advogado",
@@ -1863,9 +1863,9 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ],
       localInfo: {
-        procon: "PROCON Vitória da Conquista: Centro Administrativo. Tel: (77) 3424-8500.",
-        tribunal: "Fórum Filinto Bastos - Juizado Especial Cível. Plantão para urgências de saúde.",
-        additionalInfo: "Hospital de referência da região: Hospital Geral de Vitória da Conquista - Tel: (77) 3424-9000."
+        procon: "Posto do Procon-BA no SAC Vitória da Conquista: Av. Olívia Flores, 2500, Boulevard Shopping Candeias (segunda a sexta, 9h às 18h). Agendamento: ba.gov.br, 0800 071 5353 ou WhatsApp (71) 4020-5353.",
+        tribunal: "Sistema dos Juizados Especiais de Vitória da Conquista: Fórum João Mangabeira, Praça Estevão Santos, 5º andar, Centro, CEP 45020-070. Fora do expediente, pedidos urgentes vão ao plantão judiciário do TJBA.",
+        additionalInfo: "Defensoria Pública em Vitória da Conquista: Rua Rio Doce, 2294, Loteamento Itamaraty, Candeias, (77) 3229-2050. ANS: 0800 701 9656."
       },
       faqs: [
         {
@@ -1878,7 +1878,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Hapvida negou meu exame. Posso processar?",
-          answer: "Sim! A Hapvida é uma das operadoras com mais reclamações. Se o exame foi prescrito pelo médico e está no rol da ANS, a negativa é ilegal."
+          answer: "Sim. Se o exame foi prescrito pelo médico e está no rol da ANS, a negativa é, em regra, ilegal. Peça a negativa por escrito, reclame na ANS (0800 701 9656) e, se houver urgência, procure a Justiça."
         },
         {
           question: "Tenho direito a indenização por negativa de plano de saúde?",
@@ -1886,7 +1886,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Onde fica o Fórum de Vitória da Conquista?",
-          answer: "O Fórum Filinto Bastos fica na Av. Juracy Magalhães, no Centro. O Juizado Especial Cível atende causas de consumidor."
+          answer: "Os Juizados Especiais de Vitória da Conquista funcionam no Fórum João Mangabeira, na Praça Estevão Santos, 5º andar, Centro (dados do TJBA). Atendem causas de consumidor de até 40 salários mínimos."
         }
       ]
     },
@@ -1894,7 +1894,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     relatedProblemPage: "/problemas/plano-saude",
     relatedArticles: ["plano-saude-negou-salvador", "nome-negativado-itabuna", "produto-defeituoso-feira-de-santana"],
     coordinates: { latitude: "-14.8619", longitude: "-40.8444" },
-    updatedAt: "2026-01-15"
+    updatedAt: "2026-11-06"
   },
   {
     id: "nome-negativado-itabuna",
@@ -1926,7 +1926,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           title: "Analise a legitimidade",
-          description: "Verifique se a dívida é sua, se já foi paga ou se está prescrita (mais de 5 anos)."
+          description: "Verifique se a dívida é sua, se já foi paga ou se já passou do prazo máximo de 5 anos no cadastro."
         },
         {
           title: "Reúna documentos",
@@ -1934,7 +1934,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           title: "Conteste com a empresa",
-          description: "Entre em contato e peça a exclusão. Eles têm 5 dias úteis para resolver."
+          description: "Entre em contato e peça a exclusão. Se você pagou, o credor tem 5 dias úteis para pedir a baixa (Súmula 548 do STJ)."
         },
         {
           title: "Procure um advogado",
@@ -1942,9 +1942,9 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ],
       localInfo: {
-        procon: "PROCON Itabuna: Centro da cidade. Tel: (73) 3211-3500.",
-        tribunal: "Juizado Especial Cível de Itabuna: Fórum local. Causas até 40 salários mínimos.",
-        additionalInfo: "Delegacia Virtual da Bahia para B.O. de fraude: www.delegaciavirtual.ba.gov.br"
+        procon: "Procon de Itabuna (Prefeitura): endereço e telefones atualizados em itabuna.ba.gov.br. Reclamação online: consumidor.gov.br.",
+        tribunal: "Sistema dos Juizados Especiais de Itabuna: Av. Fernando Gomes, 442, Nossa Senhora das Graças, Fórum Módulo 2, 2º andar, (73) 3214-0960. Causas até 40 salários mínimos.",
+        additionalInfo: "B.O. de fraude: Delegacia Virtual, pelo link oficial no site da Polícia Civil da Bahia (ba.gov.br/policiacivil). Defensoria Pública em Itabuna: Av. Nações Unidas, 732, Centro, (73) 3214-5997."
       },
       faqs: [
         {
@@ -1953,11 +1953,11 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Quanto tempo leva para limpar meu nome?",
-          answer: "Em situações urgentes é possível pedir tutela de urgência; o tempo de análise depende de cada juízo e de cada caso."
+          answer: "Depois do pagamento, o credor tem 5 dias úteis para pedir a baixa (Súmula 548 do STJ). Se o nome continuar negativado, reclame e procure o Juizado; em situações urgentes é possível pedir tutela de urgência, e o tempo de análise depende de cada juízo e de cada caso."
         },
         {
           question: "Dívida prescrita pode negativar?",
-          answer: "Não! Dívidas com mais de 5 anos estão prescritas e não podem constar em cadastros. Se constarem, você tem direito a indenização."
+          answer: "O registro pode ficar no máximo 5 anos, contados do dia seguinte ao vencimento (CDC, art. 43, §1º), e deve sair antes se a cobrança prescrever (art. 43, §5º). Se continuar, você pode pedir a exclusão e, conforme o caso, indenização."
         },
         {
           question: "Fui vítima de fraude. Sou obrigado a pagar?",
@@ -1965,7 +1965,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Onde fica o Juizado Especial de Itabuna?",
-          answer: "O Juizado funciona no Fórum de Itabuna, no Centro. Atende causas até 40 salários mínimos."
+          answer: "Os Juizados Especiais de Itabuna ficam na Av. Fernando Gomes, 442, Nossa Senhora das Graças, Fórum Módulo 2, 2º andar (dados do TJBA). Atendem causas até 40 salários mínimos."
         }
       ]
     },
@@ -1973,7 +1973,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     relatedProblemPage: "/problemas/negativacao",
     relatedArticles: ["fraude-bancaria-ilheus", "plano-saude-negou-vitoria-conquista", "nome-negativado-salvador"],
     coordinates: { latitude: "-14.7876", longitude: "-39.2803" },
-    updatedAt: "2026-01-15"
+    updatedAt: "2026-11-06"
   },
   {
     id: "fraude-bancaria-ilheus",
@@ -1990,8 +1990,8 @@ export const localSEOArticles: LocalSEOArticle[] = [
     keywords: ["fraude bancária ilhéus", "golpe pix costa cacau", "golpe banco ilhéus", "restituição fraude bahia"],
     excerpt: "Sofreu fraude bancária ou golpe de PIX em Ilhéus? Saiba como recuperar seu dinheiro e responsabilizar o banco.",
     content: {
-      intro: "Ilhéus, polo turístico da Costa do Cacau, também enfrenta o aumento de golpes e fraudes bancárias. Criminosos aproveitam a menor estrutura bancária do interior para aplicar golpes em moradores e turistas. A boa notícia é que os bancos têm responsabilidade por falhas de segurança.",
-      localContext: "Na região de Ilhéus, os golpes mais comuns são: falso funcionário de banco por telefone, clonagem de WhatsApp, links falsos de PIX e golpes contra turistas. O TJBA reconhece a responsabilidade dos bancos em muitos desses casos.",
+      intro: "Ilhéus, polo turístico da Costa do Cacau, também enfrenta golpes e fraudes bancárias que atingem moradores e turistas, como em todo o país. A boa notícia é que os bancos têm responsabilidade por falhas de segurança.",
+      localContext: "Na região de Ilhéus, os golpes mais comuns são: falso funcionário de banco por telefone, clonagem de WhatsApp, links falsos de PIX e golpes contra turistas. Com base na Súmula 479 do STJ, os bancos respondem por fraudes de terceiros quando há falha na segurança do serviço.",
       statistics: [
         { label: "Responsabilidade do banco", value: "Súmula 479 STJ" },
         { label: "Devolução via Pix", value: "MED do Banco Central" },
@@ -2001,7 +2001,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
       steps: [
         {
           title: "Acione o MED imediatamente",
-          description: "Ligue para seu banco e peça o bloqueio via MED (Mecanismo Especial de Devolução). Faça isso nas primeiras horas após o golpe."
+          description: "Ligue para seu banco e peça o bloqueio via MED (Mecanismo Especial de Devolução). O pedido pode ser feito em até 80 dias, mas faça isso nas primeiras horas após o golpe."
         },
         {
           title: "Registre boletim de ocorrência",
@@ -2021,18 +2021,18 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ],
       localInfo: {
-        procon: "PROCON Ilhéus: Centro. Tel: (73) 3234-5500.",
-        tribunal: "Juizado Especial Cível de Ilhéus: Fórum local.",
-        additionalInfo: "Delegacia de Ilhéus: Av. Itabuna, Centro. Delegacia Virtual: www.delegaciavirtual.ba.gov.br"
+        procon: "Procon de Ilhéus (Prefeitura): endereço e telefones atualizados em ilheus.ba.gov.br. Reclamação online: consumidor.gov.br. Contra o banco: Banco Central (bcb.gov.br).",
+        tribunal: "Sistema dos Juizados Especiais de Ilhéus: Av. Osvaldo Cruz, anexo do Fórum Epaminondas Berbert de Castro, 3º andar, Cidade Nova, (73) 3234-3453.",
+        additionalInfo: "B.O.: em delegacia de Ilhéus ou online, pela Delegacia Virtual (link oficial em ba.gov.br/policiacivil). Defensoria Pública em Ilhéus: Rua Rotary, 255, Cidade Nova, (73) 3234-4600."
       },
       faqs: [
         {
           question: "O banco deve devolver o dinheiro do golpe de PIX?",
-          answer: "Se houve falha de segurança do banco (transferência atípica não bloqueada), ele deve restituir. O TJBA tem decidido favoravelmente em muitos casos."
+          answer: "Se houve falha de segurança do banco (transferência atípica não bloqueada), ele deve restituir. Pela Súmula 479 do STJ, o banco responde por fraudes de terceiros quando há falha no serviço."
         },
         {
           question: "Sou turista e sofri golpe em Ilhéus. Onde processo?",
-          answer: "Você pode processar em Ilhéus (local do golpe) ou na sua cidade de origem. O CDC permite escolher o foro mais conveniente."
+          answer: "Você pode processar na sua cidade de origem, onde mora (CDC, art. 101, I), ou em Ilhéus, onde ocorreu o fato (Lei 9.099/1995, art. 4º, III)."
         },
         {
           question: "Clonaram meu WhatsApp em Ilhéus. O banco é responsável?",
@@ -2044,7 +2044,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Tenho direito a danos morais por fraude bancária?",
-          answer: "Sim! Além da restituição do valor, você pode pedir indenização por danos morais pelos transtornos sofridos."
+          answer: "Pode ter, conforme o caso. Além da restituição do valor, é possível pedir indenização por danos morais quando houver transtorno relevante; não há valor tabelado e quem decide é o juiz."
         }
       ]
     },
@@ -2052,7 +2052,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     relatedProblemPage: "/problemas/fraude-bancaria",
     relatedArticles: ["nome-negativado-itabuna", "golpe-pix-salvador", "cobranca-indevida-juazeiro"],
     coordinates: { latitude: "-14.7934", longitude: "-39.0463" },
-    updatedAt: "2026-01-15"
+    updatedAt: "2026-11-06"
   },
   {
     id: "cobranca-indevida-juazeiro",
@@ -2087,8 +2087,8 @@ export const localSEOArticles: LocalSEOArticle[] = [
           description: "Entre em contato e peça explicações e cancelamento. Anote protocolos."
         },
         {
-          title: "Não pague o valor contestado",
-          description: "Se a fatura ainda não venceu, pague apenas o valor correto e conteste o restante."
+          title: "Peça a fatura corrigida",
+          description: "Antes do vencimento, peça à empresa a fatura corrigida e guarde o protocolo. Se pagar com a cobrança indevida, guarde o comprovante para pedir a devolução em dobro."
         },
         {
           title: "Registre no PROCON",
@@ -2100,9 +2100,9 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ],
       localInfo: {
-        procon: "PROCON Juazeiro: Centro. Tel: (74) 3611-5500.",
-        tribunal: "Juizado Especial Cível de Juazeiro: Fórum local.",
-        additionalInfo: "COELBA Juazeiro: 0800 071 0800. Embasa: 0800 071 0000."
+        procon: "Posto do Procon-BA no SAC Juazeiro: Juá Garden Shopping, Rodovia Lomanto Júnior, km 6 (segunda a sexta, 8h às 17h). Agendamento: ba.gov.br, 0800 071 5353 ou WhatsApp (71) 4020-5353.",
+        tribunal: "Sistema dos Juizados Especiais de Juazeiro: Travessa José Guerra de Santana, s/n, Alagadiço, CEP 48904-350, (74) 3614-7100.",
+        additionalInfo: "Neoenergia Coelba: 116. Embasa: 0800 0555 195. Defensoria Pública em Juazeiro: Rua do Paraíso, 306, Santo Antônio, (74) 3162-1079."
       },
       faqs: [
         {
@@ -2115,15 +2115,15 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Financiamento agrícola cobrou taxa indevida. Tenho direitos?",
-          answer: "Sim! Taxas não previstas em contrato são abusivas e você pode pedir revisão e devolução em dobro."
+          answer: "Pode ter. Taxas não previstas no contrato não podem ser cobradas. Se o financiamento foi feito para a atividade produtiva, pode não haver relação de consumo, e a devolução em dobro do CDC pode não se aplicar; ainda assim, cabe pedir a devolução do que foi cobrado indevidamente. Analise o contrato com um advogado."
         },
         {
           question: "Quanto tempo tenho para pedir devolução?",
-          answer: "O prazo é de 5 anos a partir da cobrança/pagamento indevido."
+          answer: "Depende do caso. Para serviços de telefonia não contratados e para água e esgoto, o STJ fixou 10 anos (EAREsp 738.991 e Súmula 412). Em outras situações, o prazo pode ser diferente; não deixe para depois."
         },
         {
           question: "Onde fica o PROCON de Juazeiro?",
-          answer: "O PROCON funciona no Centro de Juazeiro. Atendimento em dias úteis."
+          answer: "O posto do Procon-BA fica no SAC Juazeiro, no Juá Garden Shopping (Rodovia Lomanto Júnior, km 6, João Paulo II), de segunda a sexta, das 8h às 17h, segundo a lista oficial do Procon-BA. Agende pelo ba.gov.br, pelo 0800 071 5353 ou pelo WhatsApp (71) 4020-5353."
         }
       ]
     },
@@ -2132,7 +2132,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     relatedProblemPage: "/problemas/cobranca-indevida",
     relatedArticles: ["fraude-bancaria-ilheus", "nome-negativado-barreiras", "cobranca-indevida-salvador"],
     coordinates: { latitude: "-9.4168", longitude: "-40.5003" },
-    updatedAt: "2026-01-15"
+    updatedAt: "2026-11-06"
   },
   {
     id: "plano-saude-negou-camacari",
@@ -2150,7 +2150,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     excerpt: "Teve tratamento negado pelo plano de saúde em Camaçari? Saiba como reverter, mesmo sendo plano empresarial do polo industrial.",
     content: {
       intro: "Camaçari abriga o maior polo petroquímico do Hemisfério Sul, com milhares de trabalhadores cobertos por planos de saúde empresariais. Mesmo esses planos estão sujeitos às regras da ANS e não podem negar cobertura indevidamente. Se seu plano negou tratamento, você tem direitos.",
-      localContext: "Trabalhadores das indústrias de Camaçari geralmente possuem planos de saúde coletivos empresariais (Petrobras, Braskem, Ford, etc.). Negativas são comuns para procedimentos de alta complexidade, tratamentos continuados e doenças ocupacionais.",
+      localContext: "Trabalhadores das indústrias de Camaçari costumam ter planos de saúde coletivos empresariais. Negativas aparecem em procedimentos de alta complexidade, tratamentos continuados e doenças ocupacionais. Mesmo nesses planos, valem as regras de cobertura da ANS.",
       statistics: [
         { label: "Negativa por escrito", value: "Direito do beneficiário" },
         { label: "Rol da ANS", value: "Lei 14.454/2022" },
@@ -2160,7 +2160,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
       steps: [
         {
           title: "Solicite a negativa por escrito",
-          description: "Peça ao plano um documento formal explicando a negativa. Mesmo plano empresarial deve fornecer em 24h."
+          description: "Peça ao plano um documento formal explicando a negativa. Pela RN ANS 623/2024, mesmo no plano empresarial, a resposta é imediata em urgência e emergência e, nos demais casos, vem em até 5 dias úteis (ou 10 dias úteis em alguns procedimentos eletivos), com a negativa por escrito."
         },
         {
           title: "Comunique o RH da empresa",
@@ -2172,7 +2172,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           title: "Registre reclamação na ANS",
-          description: "Abra NIP no site da ANS. O plano tem 5 dias para resolver."
+          description: "Abra NIP no site da ANS ou pelo Disque ANS (0800 701 9656). Em questões de cobertura, o plano tem até 5 dias úteis para resolver."
         },
         {
           title: "Procure um advogado",
@@ -2180,18 +2180,18 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ],
       localInfo: {
-        procon: "PROCON Camaçari: Praça da Matriz, Centro. Tel: (71) 3621-5500.",
-        tribunal: "Juizado Especial Cível de Camaçari: Fórum local. Causas até 40 salários mínimos.",
-        additionalInfo: "Casos urgentes podem ser ajuizados em Salvador, onde há plantão judiciário 24h."
+        procon: "Procon-BA em Camaçari: postos no Shopping Boulevard Camaçari (Rodovia BA-535) e no Shopping Busca Vida, em Abrantes. Agendamento: ba.gov.br, 0800 071 5353 ou WhatsApp (71) 4020-5353.",
+        tribunal: "Sistema dos Juizados Especiais de Camaçari: Centro Administrativo, anexo do Fórum Clemente Mariani, subsolo, (71) 3621-8740. Causas até 40 salários mínimos.",
+        additionalInfo: "Fora do expediente, pedidos urgentes vão ao plantão judiciário do TJBA, pelo PJe. Defensoria Pública em Camaçari: Rua Monte Gordo, 63, Bela Vista, (71) 3622-6478."
       },
       faqs: [
         {
           question: "Plano empresarial pode negar tratamento?",
-          answer: "Não! Planos empresariais estão sujeitos às mesmas regras da ANS. Se o procedimento está no rol ou há indicação médica, a negativa é ilegal."
+          answer: "Planos empresariais seguem as mesmas regras de cobertura da ANS. Se o procedimento está no rol e há indicação médica, a negativa é, em regra, ilegal. Fora do rol, a cobertura depende dos 5 requisitos fixados pelo STF (ADI 7.265)."
         },
         {
           question: "Meu tratamento é por doença ocupacional. O plano pode negar?",
-          answer: "Não! Doenças ocupacionais são cobertas normalmente. Além do plano, você pode ter direitos trabalhistas."
+          answer: "Em regra, não: os planos regulamentados cobrem as doenças da Classificação Internacional de Doenças (CID), inclusive as relacionadas ao trabalho, conforme o tipo de plano (Lei 9.656/1998, art. 10). Além do plano, você pode ter direitos trabalhistas e previdenciários, como o auxílio-doença acidentário."
         },
         {
           question: "A empresa pode me prejudicar se eu processar o plano?",
@@ -2203,7 +2203,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Tenho direito a indenização mesmo com plano empresarial?",
-          answer: "Sim! A negativa indevida gera direito a indenização por danos morais, independente de ser plano individual ou empresarial."
+          answer: "Pode ter. A negativa indevida pode gerar indenização por danos morais, seja o plano individual ou empresarial; o valor depende do caso e é fixado pelo juiz."
         }
       ]
     },
@@ -2211,7 +2211,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     relatedProblemPage: "/problemas/plano-saude",
     relatedArticles: ["plano-saude-negou-salvador", "produto-defeituoso-lauro-freitas", "plano-saude-negou-vitoria-conquista"],
     coordinates: { latitude: "-12.6997", longitude: "-38.3265" },
-    updatedAt: "2026-01-15"
+    updatedAt: "2026-11-06"
   },
   {
     id: "produto-defeituoso-lauro-freitas",
@@ -2229,7 +2229,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     excerpt: "Comprou produto com defeito em Lauro de Freitas? Conheça seus direitos e como exigir troca ou reembolso.",
     content: {
       intro: "Lauro de Freitas, na região metropolitana de Salvador, possui forte comércio local e shopping centers que atendem moradores de alto padrão. Problemas com produtos defeituosos acontecem mesmo em estabelecimentos premium. Se você comprou algo com defeito, tem direitos garantidos.",
-      localContext: "O comércio de Lauro de Freitas é concentrado no Shopping Estrada do Coco e lojas do centro. Reclamações comuns envolvem eletrônicos, eletrodomésticos, móveis e automóveis.",
+      localContext: "O comércio de Lauro de Freitas inclui shoppings e lojas ao longo da Estrada do Coco e no Centro. Reclamações comuns envolvem eletrônicos, eletrodomésticos, móveis e automóveis.",
       statistics: [
         { label: "Não durável", value: "30 dias" },
         { label: "Durável", value: "90 dias" },
@@ -2251,7 +2251,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           title: "Registre no PROCON",
-          description: "Se não resolver, registre reclamação no PROCON de Lauro de Freitas ou Salvador."
+          description: "Se não resolver, registre reclamação no Procon Municipal de Lauro de Freitas ou no posto do Procon-BA no SAC do Parque Shopping Bahia."
         },
         {
           title: "Procure um advogado",
@@ -2259,9 +2259,9 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ],
       localInfo: {
-        procon: "PROCON Lauro de Freitas: Centro Administrativo. Também pode usar PROCON Salvador.",
-        tribunal: "Juizado Especial Cível: Fórum de Lauro de Freitas ou Salvador.",
-        additionalInfo: "Shopping Estrada do Coco possui SAC para reclamações com lojistas."
+        procon: "Procon Municipal de Lauro de Freitas: Shopping Passeio Norte, Estrada do Coco, 4487, subsolo, (71) 3288-8919, segunda a sexta, 8h às 14h. Procon-BA: posto no SAC do Parque Shopping Bahia.",
+        tribunal: "Sistema dos Juizados Especiais de Lauro de Freitas: Fórum Des. João Mendes da Silva, Rua da Saúde, Centro, (71) 3283-1911.",
+        additionalInfo: "Defensoria Pública em Lauro de Freitas: Rua Mucugê, 87, Edifício Norte Garden, Centro, (71) 3288-8729."
       },
       faqs: [
         {
@@ -2278,7 +2278,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Posso processar em Salvador morando em Lauro de Freitas?",
-          answer: "Você pode escolher: processar em Lauro de Freitas (seu domicílio) ou Salvador. Escolha o mais conveniente."
+          answer: "Pela Lei 9.099/1995 (art. 4º) e pelo CDC (art. 101), você pode processar no seu domicílio (Lauro de Freitas) ou no foro do domicílio ou estabelecimento da empresa, ou onde a obrigação deveria ser cumprida. Se a loja fica em Salvador, por exemplo, também é possível processar lá."
         },
         {
           question: "Tenho direito a danos morais por produto defeituoso?",
@@ -2290,7 +2290,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     relatedProblemPage: "/problemas/produto-defeituoso",
     relatedArticles: ["plano-saude-negou-camacari", "produto-defeituoso-salvador", "nome-negativado-barreiras"],
     coordinates: { latitude: "-12.8872", longitude: "-38.3230" },
-    updatedAt: "2026-01-15"
+    updatedAt: "2026-11-06"
   },
   {
     id: "nome-negativado-barreiras",
@@ -2330,7 +2330,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           title: "Conteste com a empresa",
-          description: "Peça a exclusão do nome. Eles têm 5 dias úteis para resolver."
+          description: "Peça a exclusão do nome. Se você pagou, o credor tem 5 dias úteis para pedir a baixa (Súmula 548 do STJ)."
         },
         {
           title: "Procure um advogado",
@@ -2338,9 +2338,9 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ],
       localInfo: {
-        procon: "PROCON Barreiras: Centro. Tel: (77) 3611-4500.",
-        tribunal: "Juizado Especial Cível de Barreiras: Fórum local.",
-        additionalInfo: "Sindicatos rurais podem auxiliar produtores com problemas de crédito."
+        procon: "Procon Municipal de Barreiras: Travessa 15 de Novembro, 42, Centro Histórico, 0800 000 5915 (ramal 7576), procon@barreiras.ba.gov.br, segunda a sexta, 8h às 14h.",
+        tribunal: "Sistema dos Juizados Especiais de Barreiras: Av. Benedita Silveira, 201, Centro, (77) 3611-8706 / 3611-3785.",
+        additionalInfo: "Defensoria Pública em Barreiras: Rua 26 de Maio, 568, Centro, (77) 3612-8720. Sindicatos rurais podem orientar produtores com problemas de crédito."
       },
       faqs: [
         {
@@ -2349,19 +2349,19 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Sou produtor rural e fui negativado por financiamento pago. O que fazer?",
-          answer: "Reúna os comprovantes de pagamento e procure um advogado. Você tem direito a limpar o nome e receber indenização."
+          answer: "Reúna os comprovantes de pagamento e procure um advogado ou a Defensoria. O credor deve pedir a baixa em 5 dias úteis após o pagamento (Súmula 548 do STJ); se não fizer, você pode pedir a exclusão do nome e, conforme o caso, indenização."
         },
         {
           question: "Dívida prescrita pode negativar?",
-          answer: "Não! Dívidas com mais de 5 anos estão prescritas e não podem constar em cadastros de inadimplentes."
+          answer: "O registro pode ficar no máximo 5 anos, contados do dia seguinte ao vencimento (CDC, art. 43, §1º), e deve sair antes se a cobrança prescrever (art. 43, §5º). Se continuar, você pode pedir a exclusão."
         },
         {
           question: "Quanto tempo leva para limpar meu nome?",
-          answer: "Em situações urgentes é possível pedir tutela de urgência; o tempo de análise depende de cada juízo e de cada caso."
+          answer: "Depois do pagamento, o credor tem 5 dias úteis para pedir a baixa (Súmula 548 do STJ). Se o nome continuar negativado, reclame e procure o Juizado; em situações urgentes é possível pedir tutela de urgência, e o tempo de análise depende de cada juízo e de cada caso."
         },
         {
           question: "Onde fica o Juizado Especial de Barreiras?",
-          answer: "O Juizado funciona no Fórum de Barreiras, no Centro. Atende causas até 40 salários mínimos."
+          answer: "Os Juizados Especiais de Barreiras ficam na Av. Benedita Silveira, 201, Centro (dados do TJBA), telefones (77) 3611-8706 / 3611-3785. Atendem causas até 40 salários mínimos."
         }
       ]
     },
@@ -2369,7 +2369,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     relatedProblemPage: "/problemas/negativacao",
     relatedArticles: ["cobranca-indevida-jequie", "nome-negativado-salvador", "produto-defeituoso-lauro-freitas"],
     coordinates: { latitude: "-12.1527", longitude: "-44.9900" },
-    updatedAt: "2026-01-15"
+    updatedAt: "2026-11-06"
   },
   {
     id: "cobranca-indevida-jequie",
@@ -2387,7 +2387,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     excerpt: "Recebeu cobrança indevida em Jequié? Saiba como pedir a devolução em dobro do valor pago.",
     content: {
       intro: "Jequié, centro comercial do sudoeste baiano, enfrenta problemas de cobrança indevida que afetam trabalhadores, comerciantes e consumidores em geral. Se você pagou valor indevido, tem direito à devolução em dobro.",
-      localContext: "Em Jequié, as principais reclamações de cobrança indevida envolvem: operadoras de telefonia, Coelba (energia), lojas de crediário e bancos. A indústria calçadista também gera problemas trabalhistas.",
+      localContext: "Em Jequié, as principais reclamações de cobrança indevida envolvem operadoras de telefonia, a distribuidora de energia (Neoenergia Coelba), lojas de crediário e bancos. Antes de ir à Justiça, registre a reclamação na empresa, no posto do Procon-BA no SAC Jequié ou no consumidor.gov.br.",
       statistics: [
         { label: "Devolução", value: "Em dobro (art. 42 CDC)" },
         { label: "Correção", value: "Juros e correção" },
@@ -2417,9 +2417,9 @@ export const localSEOArticles: LocalSEOArticle[] = [
         }
       ],
       localInfo: {
-        procon: "PROCON Jequié: Centro. Tel: (73) 3525-4500.",
-        tribunal: "Juizado Especial Cível de Jequié: Fórum local.",
-        additionalInfo: "COELBA Jequié: 0800 071 0800."
+        procon: "Posto do Procon-BA no SAC Jequié: Av. Otávio Mangabeira, s/n, Mandacaru (segunda a sexta, 7h às 15h). Agendamento: ba.gov.br, 0800 071 5353 ou WhatsApp (71) 4020-5353.",
+        tribunal: "Sistema dos Juizados Especiais de Jequié: Fórum Bertino Passos, Praça Duque de Caxias, s/n, Jequiezinho, (73) 3527-8360.",
+        additionalInfo: "Neoenergia Coelba: 116. Defensoria Pública em Jequié: Rua Manoel Vitorino, 510, Campo do América, (73) 3527-8811."
       },
       faqs: [
         {
@@ -2428,19 +2428,19 @@ export const localSEOArticles: LocalSEOArticle[] = [
         },
         {
           question: "Minha conta de luz veio errada. O que fazer?",
-          answer: "Conteste na Coelba e peça revisão. Se pagou a mais, exija restituição. Não pagando, registre no PROCON."
+          answer: "Conteste na Neoenergia Coelba (116, app ou site) e peça a revisão. Se pagou a mais, exija a restituição. Se não resolver, registre no Procon."
         },
         {
-          question: "Trabalho na indústria calçadista e descontaram valor indevido. Tenho direitos?",
-          answer: "Descontos salariais indevidos são ilegais. Você pode reclamar na Justiça do Trabalho."
+          question: "Trabalho com carteira assinada e descontaram valor indevido do meu salário. Tenho direitos?",
+          answer: "Sim. A empresa só pode descontar do salário o que a lei, o contrato ou a convenção coletiva permitem (CLT, art. 462). Reclame no sindicato, denuncie ao Ministério do Trabalho (158) ou procure a Justiça do Trabalho em até 2 anos da saída do emprego."
         },
         {
           question: "Quanto tempo tenho para pedir devolução?",
-          answer: "O prazo é de 5 anos a partir da cobrança/pagamento indevido."
+          answer: "Depende do caso. Para serviços de telefonia não contratados e para água e esgoto, o STJ fixou 10 anos (EAREsp 738.991 e Súmula 412). Em outras situações, o prazo pode ser diferente; não deixe para depois."
         },
         {
           question: "Onde fica o PROCON de Jequié?",
-          answer: "O PROCON funciona no Centro de Jequié. Atendimento em dias úteis."
+          answer: "O posto do Procon-BA fica no SAC Jequié, na Av. Otávio Mangabeira, s/n, bairro Mandacaru, de segunda a sexta, das 7h às 15h (lista oficial do Procon-BA). Agende pelo ba.gov.br, 0800 071 5353 ou WhatsApp (71) 4020-5353."
         }
       ]
     },
@@ -2449,7 +2449,7 @@ export const localSEOArticles: LocalSEOArticle[] = [
     relatedProblemPage: "/problemas/cobranca-indevida",
     relatedArticles: ["nome-negativado-barreiras", "cobranca-indevida-salvador", "plano-saude-negou-vitoria-conquista"],
     coordinates: { latitude: "-13.8577", longitude: "-40.0844" },
-    updatedAt: "2026-01-15"
+    updatedAt: "2026-11-06"
   }
 ];
 

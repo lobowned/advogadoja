@@ -68,7 +68,7 @@ const FAQIndex = () => {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Perguntas Frequentes sobre Direito",
-    "description": "Tire suas dúvidas jurídicas: trabalhista, família, previdenciário, civil, consumidor e penal. Respostas claras de advogados.",
+    "description": "Tire suas dúvidas jurídicas: trabalhista, família, previdenciário, civil, consumidor e penal. Respostas do Dr. Gilberto Riccio, OAB/BA 46.638.",
     "url": canonicalUrl,
     "mainEntity": {
       "@type": "ItemList",
@@ -115,7 +115,7 @@ const FAQIndex = () => {
           <title>Perguntas Frequentes sobre Direito | Riccio Advocacia</title>
           <meta 
             name="description" 
-            content="Tire suas dúvidas jurídicas: trabalhista, família, previdenciário, civil, consumidor e penal. Respostas claras e objetivas de advogados." 
+            content="Tire suas dúvidas jurídicas: trabalhista, família, previdenciário, civil, consumidor e penal. Respostas claras e objetivas do Dr. Gilberto Riccio, OAB/BA 46.638."
           />
           <meta 
             name="keywords" 
@@ -124,7 +124,7 @@ const FAQIndex = () => {
           <link rel="canonical" href={canonicalUrl} />
           
           <meta property="og:title" content="Perguntas Frequentes sobre Direito" />
-          <meta property="og:description" content="Tire suas dúvidas jurídicas com respostas claras de advogados." />
+          <meta property="og:description" content="Tire suas dúvidas jurídicas com respostas claras do Dr. Gilberto Riccio, OAB/BA 46.638." />
           <meta property="og:url" content={canonicalUrl} />
           <meta property="og:type" content="website" />
           
@@ -149,7 +149,7 @@ const FAQIndex = () => {
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Encontre respostas claras e objetivas para suas dúvidas jurídicas. 
-              Conteúdo elaborado por advogados.
+              Conteúdo elaborado pelo Dr. Gilberto Riccio, OAB/BA 46.638.
             </p>
           </div>
 

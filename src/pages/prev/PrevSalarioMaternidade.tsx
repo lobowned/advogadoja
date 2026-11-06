@@ -18,7 +18,7 @@ export default function PrevSalarioMaternidade() {
       ]}
       commonMistakes={[
         "Não contar tempo de período de graça quando desempregada — você pode ainda ter qualidade de segurada.",
-        "Esquecer que MEI tem carência de 10 meses — pedir cedo demais é negativa garantida.",
+        "Aceitar negativa por falta de carência sendo MEI ou autônoma: o STF derrubou a exigência de 10 meses em 2024 (ADI 2.110).",
         "Adotantes não saberem que têm 120 dias igual mãe biológica (regra mudou em 2009).",
         "Aceitar valor baixo da empresa (deveria ser salário integral pra CLT, não calculado errado).",
         "Perder o prazo de 180 dias após o parto pra pedir o benefício.",
@@ -60,7 +60,7 @@ Salário-maternidade pode ser pedido até 180 dias depois do parto, então não 
       faq={[
         {
           q: "Sou MEI. Tenho direito ao salário-maternidade?",
-          a: "Tem sim. Mas precisa ter pago pelo menos 10 meses de INSS (mesmo que sejam contribuições do MEI, que é 5% do mínimo). Se você abriu MEI agora e ainda não tem 10 meses, pode complementar contribuições pra cumprir carência mais rápido. A gente te orienta.",
+          a: "Tem sim. Desde março de 2024 o INSS não pode exigir 10 meses de contribuição da MEI e da contribuinte individual: o STF derrubou essa carência (ADI 2.110). O que conta é ter a qualidade de segurada na data do parto, com a contribuição do MEI (5% do salário mínimo) em dia. Se o INSS negar por falta de carência, dá pra recorrer.",
         },
         {
           q: "Quanto vou receber de salário-maternidade?",
@@ -72,11 +72,11 @@ Salário-maternidade pode ser pedido até 180 dias depois do parto, então não 
         },
         {
           q: "Pedi pelo Meu INSS e negaram. Posso recorrer?",
-          a: "Pode. Tem 2 caminhos: recurso administrativo na Junta de Recursos do INSS (30 dias pra pedir) ou ação direto na Justiça. Quando o motivo da negativa é discutível (perda da qualidade de segurada, cálculo errado de carência), Justiça costuma ser mais rápida e favorável. Pedimos tutela de urgência por causa do prazo da licença.",
+          a: "Pode. Tem 2 caminhos: recurso administrativo na Junta de Recursos do INSS (30 dias pra pedir) ou ação direto na Justiça. Quando o motivo da negativa é discutível (perda da qualidade de segurada, cálculo errado de carência), a Justiça costuma ser o caminho mais direto. Pedimos tutela de urgência por causa do prazo da licença.",
         },
         {
           q: "Adotei uma criança. Tenho direito?",
-          a: "Tem sim, e tem desde 2009. Não importa a idade da criança (antes era diferente por faixa etária). Adotantes e quem tem guarda judicial pra fins de adoção recebem 120 dias de salário-maternidade, igual mãe biológica. Mesmo casal homoafetivo: o casal escolhe quem fica com a licença.",
+          a: "Tem sim. Desde 2013 (Lei 12.873/2013), não importa a idade da criança (antes variava por faixa etária). Adotantes e quem tem guarda judicial pra fins de adoção recebem 120 dias de salário-maternidade, igual mãe biológica. Mesmo casal homoafetivo: o casal escolhe quem fica com a licença.",
         },
         {
           q: "E se eu tiver gêmeos? Aumenta o período?",

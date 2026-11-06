@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MessageCircle, ShieldCheck, Award, Star } from "lucide-react";
+import { MessageCircle, ShieldCheck, Award } from "lucide-react";
 import PrevWhatsappButton from "./PrevWhatsappButton";
 import drGilbertoPhoto from "@/assets/dr-gilberto-riccio.jpg";
 
@@ -29,10 +29,12 @@ interface PrevHeroSplitProps {
   sectionClassName?: string;
 }
 
+// Sem tempo de experiência, prazo de resposta ou estrelas de avaliação que não dá para
+// comprovar (Provimento OAB 205/2021).
 const DEFAULTS = {
-  experienceLabel: "10+ anos de experiência previdenciária",
+  experienceLabel: "Conduz pessoalmente cada caso",
   clientsCount: "Atendimento online em todo o Brasil",
-  urgencyText: "Resposta em até 5 min úteis",
+  urgencyText: "WhatsApp (71) 99703-6269",
   onlineLabel: "Atendimento online",
   whatsappButtonText: "Conversar agora pelo WhatsApp",
 };
@@ -146,23 +148,11 @@ export default function PrevHeroSplit({
               </div>
 
               <div className="flex flex-col gap-1.5 sm:border-l sm:border-prev-beige/15 sm:pl-7">
-                <div
-                  className="flex gap-0.5 text-prev-gold"
-                  aria-hidden
-                >
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-3.5 h-3.5 fill-prev-gold"
-                      strokeWidth={0}
-                    />
-                  ))}
-                </div>
                 <p className="text-prev-beige font-medium text-sm tracking-tight">
                   {clientsCount}
                 </p>
                 <p className="text-prev-beige/45 text-[10px] uppercase tracking-[0.18em]">
-                  Atendimento em todo o Brasil
+                  Escritório digital · Riccio Advocacia
                 </p>
               </div>
             </div>

@@ -11,7 +11,7 @@ const breadcrumbs = [
 const faqItems = [
   {
     question: "Plano pode negar lente multifocal para catarata?",
-    answer: "Não pode. A RN 428/ANS determina cobertura da lente indicada pelo médico. Se há indicação de lente multifocal ou tórica, o plano deve cobrir integralmente."
+    answer: "Depende. A cirurgia de catarata com implante de lente está no rol da ANS. A lente multifocal ou tórica é discutida: quando ela serve para corrigir grau, e não para tratar a doença, muitos planos negam e a Justiça nem sempre obriga. Com relatório médico explicando por que essa lente é necessária no seu caso, vale analisar."
   },
   {
     question: "Cirurgia de catarata é estética?",
@@ -19,11 +19,11 @@ const faqItems = [
   },
   {
     question: "Quanto tempo demora liminar oftalmológica?",
-    answer: "Casos com risco de cegueira (descolamento de retina, glaucoma agudo) são decididos em 6 a 24 horas. Cataratas e outros: 24 a 72 horas."
+    answer: "Não há prazo fixo. Em urgência, como risco de perda da visão, o pedido pode ser levado ao plantão judiciário, inclusive à noite e em fins de semana. Quem decide o prazo é o juiz."
   },
   {
     question: "Injeções intravítreas são cobertas?",
-    answer: "Sim. Medicamentos como Lucentis, Eylea e similares para DMRI e edema macular estão no rol e devem ser cobertos quando indicados."
+    answer: "Sim, nos casos previstos na diretriz da ANS: o tratamento ocular com antiangiogênico (como ranibizumabe e aflibercepte) para DMRI, edema macular e outras indicações da diretriz está no rol."
   },
   {
     question: "Posso escolher o oftalmologista?",

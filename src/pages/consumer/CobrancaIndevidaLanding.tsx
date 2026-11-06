@@ -16,8 +16,8 @@ const CobrancaIndevidaLanding = () => (
     <SimpleConsumerLanding
       seo={
         <Helmet>
-          <title>Advogado para Cobrança Indevida | Resolva Seu Problema Agora</title>
-          <meta name="description" content="Fale com um advogado que atua em cobrança indevida. Proteja-se contra abusos de bancos e empresas. Consulta online gratuita." />
+          <title>Advogado para Cobrança Indevida | Devolução em Dobro</title>
+          <meta name="description" content="Fale com um advogado que atua em cobrança indevida. Proteja-se contra abusos de bancos e empresas. Atendimento online pelo WhatsApp." />
           <meta name="keywords" content="cobrança indevida, devolução em dobro, restituição em dobro, serviço não contratado, cobrança duplicada, advogado consumidor, advogado cobrança indevida" />
           <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-cobranca-indevida" />
           <script type="application/ld+json">{JSON.stringify(schema)}</script>

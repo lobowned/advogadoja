@@ -108,7 +108,7 @@ export const faqsByArea: Record<string, AreaFAQ[]> = {
     },
     {
       question: "O plano de saúde negou meu procedimento. O que fazer?",
-      answer: "Negativas indevidas podem ser revertidas com liminar judicial em 24-48h. O plano não pode negar procedimentos do rol ANS nem urgências/emergências. Reclame na ANS (0800 701 9656) e procure advogado."
+      answer: "Peça a negativa por escrito e reclame na ANS (0800 701 9656). Negativa indevida pode ser levada à Justiça com pedido de liminar; em urgência, até no plantão judiciário, e quem decide o prazo é o juiz. O plano não pode negar procedimento do rol da ANS nem atendimento de urgência e emergência depois de 24 horas da contratação."
     },
     {
       question: "Posso cancelar contrato de fidelidade antes do prazo?",

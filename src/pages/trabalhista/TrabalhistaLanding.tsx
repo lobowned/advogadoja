@@ -24,7 +24,6 @@ import { m, useReducedMotion } from "framer-motion";
 import PageTransition from "@/components/motion/PageTransition";
 import BackButton from "@/components/BackButton";
 import LawyerChatSection from "@/components/LawyerChatSection";
-import logoAdvogado from "@/assets/logo-advogado-online.png";
 
 const WHATSAPP_NUMBER = "5571997036269";
 
@@ -69,15 +68,15 @@ const problems = [
 const faqs = [
   {
     question: "Quanto tempo tenho para entrar com ação trabalhista?",
-    answer: "Você tem até 2 anos após a demissão para entrar com a ação, podendo cobrar os últimos 5 anos de trabalho.",
+    answer: "Você tem até 2 anos após o fim do contrato para entrar com a ação e pode cobrar os direitos dos 5 anos anteriores à data em que a ação é proposta (CF, art. 7º, XXIX).",
   },
   {
     question: "Preciso pagar algo para iniciar a ação?",
-    answer: "Não! Trabalhamos no modelo de honorários de êxito: você só paga se ganhar a causa.",
+    answer: "Os honorários dependem do tipo de caso e são combinados por escrito antes de qualquer ação.",
   },
   {
     question: "Quanto tempo demora um processo trabalhista?",
-    answer: "Em média, de 8 meses a 2 anos. Com acordos, pode ser resolvido em até 3 meses.",
+    answer: "Depende da Vara e do caso; costuma levar de meses a alguns anos. Um acordo entre as partes pode encerrar o processo antes.",
   },
   {
     question: "Quais documentos preciso?",
@@ -91,8 +90,8 @@ const schemaData = {
     {
       "@type": "LegalService",
       "@id": "https://riccio-advocacia.lovable.app/advogado-trabalhista-online#service",
-      "name": "Advogado Trabalhista Online - AdvogadoJá",
-      "description": "Advogado trabalhista especializado em demissão, horas extras, assédio moral e acidente de trabalho. Atendimento online.",
+      "name": "Advogado Trabalhista Online - Riccio Advocacia",
+      "description": "Advogado trabalhista que atua em demissão, horas extras, assédio moral e acidente de trabalho. Atendimento online. OAB/BA 46.638.",
       "url": "https://riccio-advocacia.lovable.app/advogado-trabalhista-online",
       "telephone": "+55 71 99703-6269",
       "areaServed": { "@type": "Country", "name": "Brasil" },
@@ -135,7 +134,7 @@ const TrabalhistaLanding = () => {
     <PageTransition>
       <Helmet>
         <title>Advogado Trabalhista Online | Demissão, Horas Extras | Riccio Advocacia</title>
-        <meta name="description" content="Advogado trabalhista online para demissão, horas extras, pejotização e acidente de trabalho. Atendimento online. Só paga se ganhar." />
+        <meta name="description" content="Advogado trabalhista online para demissão, horas extras, pejotização e acidente de trabalho. Atendimento online. OAB/BA 46.638." />
         <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-trabalhista-online" />
         <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
       </Helmet>
@@ -147,7 +146,7 @@ const TrabalhistaLanding = () => {
             <div className="flex items-center gap-2 sm:gap-4">
               <BackButton to="/" className="text-zinc-400 hover:text-[#D4AF37] active:scale-95 transition-transform p-1" />
               <Link to="/" className="flex items-center gap-2" aria-label="Ir para página inicial">
-                <img src={logoAdvogado} alt="AdvogadoJá" className="h-8 sm:h-10 w-auto brightness-0 invert" />
+                <span className="font-semibold text-white text-lg sm:text-xl tracking-tight">Riccio Advocacia</span>
               </Link>
             </div>
               <Button 
@@ -222,7 +221,7 @@ const TrabalhistaLanding = () => {
               </h1>
               
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-400 mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto px-2">
-                Advogado trabalhista online. Consulta <span className="text-white font-semibold">100% gratuita</span>.
+                Advogado trabalhista online: <span className="text-white font-semibold">Dr. Gilberto Riccio, OAB/BA 46.638</span>.
                 Atendimento para todo o Brasil.
               </p>
 
@@ -329,7 +328,7 @@ const TrabalhistaLanding = () => {
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
               <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-                <img src={logoAdvogado} alt="AdvogadoJá" className="h-7 sm:h-8 w-auto brightness-0 invert opacity-70" />
+                <span className="font-semibold text-white/70 text-base sm:text-lg tracking-tight">Riccio Advocacia</span>
                 <span className="text-zinc-500 text-xs sm:text-sm">Advocacia Trabalhista Online</span>
               </div>
               <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-zinc-500">
@@ -339,7 +338,7 @@ const TrabalhistaLanding = () => {
               </div>
             </div>
             <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-zinc-900 text-center text-xs sm:text-sm text-zinc-600">
-              © {new Date().getFullYear()} AdvogadoJá. Todos os direitos reservados.
+              © {new Date().getFullYear()} Riccio Advocacia · Dr. Gilberto Riccio, OAB/BA 46.638. Todos os direitos reservados.
             </div>
           </div>
         </footer>

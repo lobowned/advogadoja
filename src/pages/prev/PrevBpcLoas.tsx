@@ -11,7 +11,7 @@ export default function PrevBpcLoas() {
       lawyerId="marcos-oliveira"
       quizKey="bpc-loas"
       stats={[
-        { number: "1 salário", label: "Mínimo todo mês (vitalício)" },
+        { number: "1 salário", label: "Mínimo todo mês (revisto a cada 2 anos)" },
         { number: "65 anos", label: "Idade mínima (PCD não tem idade)" },
         { number: "1/4", label: "Salário mín. de renda per capita máxima" },
       ]}
@@ -53,7 +53,7 @@ No caso de pessoa com deficiência, o INSS faz 2 avaliações: uma com médico, 
 
 Se o INSS negar por renda, a gente prova judicialmente que mesmo com a renda formal acima do limite, os gastos com saúde, medicamentos e cuidado fazem a família ser considerada vulnerável (chamada "renda ampliada"). A Justiça reconhece esse argumento há anos.
 
-Casos urgentes (idoso sem condições, PCD sem atendimento) podem ter tutela de urgência — pagamento imediato durante o processo, quando o juiz vê que tem risco grave.`}
+Casos urgentes (idoso sem condições, PCD sem atendimento) podem ter tutela de urgência — pagamento durante o processo, quando o juiz vê que tem risco grave.`}
       faq={[
         {
           q: "Preciso ter contribuído pro INSS pra receber BPC?",
@@ -61,7 +61,7 @@ Casos urgentes (idoso sem condições, PCD sem atendimento) podem ter tutela de 
         },
         {
           q: "Recebo Bolsa Família. Posso pedir BPC também?",
-          a: "Pode sim. São benefícios diferentes. Mas o valor do Bolsa entra na conta da renda familiar pra avaliar o BPC. Quando começa a receber BPC, em alguns casos o Bolsa pode ser ajustado. Vale analisar caso a caso.",
+          a: "Pode sim. O valor do Bolsa Família não entra na conta da renda familiar para o BPC (Decreto 6.214/2007, art. 4º, § 2º). Já quando o BPC começa a ser pago, o Bolsa Família pode ser revisto. Vale analisar caso a caso.",
         },
         {
           q: "BPC dá 13º?",
@@ -69,11 +69,11 @@ Casos urgentes (idoso sem condições, PCD sem atendimento) podem ter tutela de 
         },
         {
           q: "Quanto demora pra sair o BPC pelo INSS?",
-          a: "Pela lei, o INSS tem 90 dias. Na prática varia, especialmente em pedido de pessoa com deficiência (são 2 avaliações). Quando passa muito do prazo ou nega injusto, a gente entra na Justiça com pedido de tutela de urgência — em casos urgentes, sai pagamento em poucas semanas.",
+          a: "Pelo acordo homologado no STF (Tema 1.066), o INSS tem até 90 dias para analisar. Na prática varia, especialmente em pedido de pessoa com deficiência (são 2 avaliações). Quando passa muito do prazo ou nega injusto, a gente entra na Justiça com pedido de tutela de urgência — se o juiz conceder, o pagamento pode começar antes do fim do processo. Quem decide o prazo é o juiz.",
         },
         {
           q: "Pessoa com deficiência pode trabalhar e continuar com BPC?",
-          a: "Existe regra específica. PCD pode trabalhar como aprendiz por até 2 anos sem perder o benefício (fica suspenso, não perdido). Em emprego formal comum, geralmente o BPC para — mas tem hipóteses de retorno se perder o emprego. É um ponto delicado, sempre vale conversar antes.",
+          a: "Existe regra específica. Como aprendiz, a pessoa com deficiência pode receber o salário e o BPC juntos por até 2 anos (Lei 8.742/1993, art. 21-A, § 2º). Em emprego comum, o BPC é suspenso e pode voltar a ser pago quando o trabalho acabar; quem começa a trabalhar pode ter direito ao auxílio-inclusão. É um ponto delicado: vale conversar antes.",
         },
       ]}
       whatsappMessage={WHATSAPP_MESSAGES.bpcLoas}

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Send, Phone, Video, MoreVertical, Smile, Mic, Check, Bot, RefreshCw, MessageSquare, ChevronLeft, Paperclip, Lock } from "lucide-react";
 import { useLawyerChat } from "@/hooks/useLawyerChat";
@@ -10,7 +10,9 @@ import { useEffect, useRef, useState } from "react";
 import TypingIndicator from "@/components/TypingIndicator";
 import { QuickRepliesInline } from "@/components/QuickReplies";
 import UrgencyBadge, { UrgencyAlert } from "@/components/UrgencyBadge";
-import { getLawyerAvailabilityStatus } from "@/data/lawyer-personalities";
+
+// O chat é um assistente virtual, não um advogado: não exibe nome com "Dr./Dra.", foto de
+// pessoa, "plantão" nem tempo de resposta inventado. O único advogado é o Dr. Gilberto Riccio.
 
 // Tipo para rastrear status do "visto" com delay
 type MessageSeenStatus = {
@@ -137,19 +139,18 @@ const LawyerChatSection = ({ defaultLawyerId, area }: LawyerChatSectionProps = {
                 </button>
                 
                 <Avatar className="h-9 w-9 sm:h-10 sm:w-10 border-2 border-white/30 flex-shrink-0 ring-2 ring-white/10">
-                  <AvatarImage src={currentLawyer.photo} alt={currentLawyer.name} />
-                  <AvatarFallback className="bg-white/20 text-white text-xs">
-                    {currentLawyer.name.split(' ').map(n => n[0]).join('')}
+                  <AvatarFallback className="bg-white/20 text-white">
+                    <Bot className="w-5 h-5" />
                   </AvatarFallback>
                 </Avatar>
-                
+
                 <div className="flex-1 min-w-0 ml-1">
                   <div className="flex items-center gap-1.5 flex-wrap">
-                    <h3 className="font-semibold text-sm sm:text-base truncate">{currentLawyer.name}</h3>
+                    <h3 className="font-semibold text-sm sm:text-base truncate">Riccio Advocacia</h3>
                     <Badge
                       variant="outline"
                       className="h-4 px-1.5 text-[9px] gap-0.5 bg-white/10 border-white/30 text-white font-normal shrink-0"
-                      title={`Assistente virtual que atua em ${currentLawyer.subSpecialty}`}
+                      title={`Assistente virtual (não é advogado) · triagem de ${currentLawyer.subSpecialty}`}
                     >
                       <Bot className="w-2.5 h-2.5" />
                       Assistente Virtual
@@ -158,28 +159,10 @@ const LawyerChatSection = ({ defaultLawyerId, area }: LawyerChatSectionProps = {
                       <UrgencyBadge level={urgencyLevel as 'alta' | 'critica'} showLabel={false} />
                     )}
                   </div>
-                  {(() => {
-                    const availability = getLawyerAvailabilityStatus();
-                    return (
-                      <div className="flex flex-col">
-                        <div className="flex items-center gap-1.5">
-                          <div className={`w-2 h-2 rounded-full ${
-                            availability.status === 'online' 
-                              ? 'bg-emerald-400 animate-header-status' 
-                              : availability.status === 'away' 
-                                ? 'bg-amber-400' 
-                                : 'bg-gray-400'
-                          }`} />
-                          <p className="text-xs text-white/80 truncate">{availability.label}</p>
-                        </div>
-                        {availability.responseTime && availability.status !== 'online' && (
-                          <p className="text-[10px] text-white/50 truncate ml-3.5">
-                            {availability.responseTime}
-                          </p>
-                        )}
-                      </div>
-                    );
-                  })()}
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-2 h-2 rounded-full bg-emerald-400" />
+                    <p className="text-xs text-white/80 truncate">resposta automática</p>
+                  </div>
                 </div>
               </div>
 
@@ -221,7 +204,7 @@ const LawyerChatSection = ({ defaultLawyerId, area }: LawyerChatSectionProps = {
                       </div>
                       <h3 className="text-xl font-bold mb-1">Atendimento Virtual Riccio Advocacia</h3>
                       <p className="text-xs text-muted-foreground mb-3">
-                        Assistente virtual com IA que faz a triagem do seu caso em segundos. Depois, o Dr. Gilberto Riccio assume pelo WhatsApp.
+                        Assistente virtual com IA que organiza o relato do seu caso. Quando o caso é pertinente, o Dr. Gilberto Riccio assume pelo WhatsApp.
                       </p>
                     </div>
 
@@ -235,11 +218,11 @@ const LawyerChatSection = ({ defaultLawyerId, area }: LawyerChatSectionProps = {
                     >
                       <div className="flex items-start gap-2.5">
                         <Check className="w-4 h-4 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
-                        <p className="text-sm">Triagem automatizada gratuita</p>
+                        <p className="text-sm">Triagem automatizada: organiza o seu relato e os documentos</p>
                       </div>
                       <div className="flex items-start gap-2.5">
                         <Check className="w-4 h-4 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
-                        <p className="text-sm">Responde em segundos, 24 horas por dia</p>
+                        <p className="text-sm">O assistente é automático e pode ser usado a qualquer hora, mas não é advogado</p>
                       </div>
                       <div className="flex items-start gap-2.5">
                         <Check className="w-4 h-4 text-whatsapp-send-btn flex-shrink-0 mt-0.5" />
@@ -346,15 +329,6 @@ const LawyerChatSection = ({ defaultLawyerId, area }: LawyerChatSectionProps = {
                         <RefreshCw className="h-5 w-5 text-yellow-600 animate-spin" />
                         <div className="flex-1">
                           <p className="text-sm font-medium text-yellow-800">{message.content}</p>
-                          <div className="flex items-center gap-2 mt-1">
-                            <Avatar className="h-6 w-6 border border-yellow-300">
-                              <AvatarImage src={message.fromLawyer.photo} alt={message.fromLawyer.name} />
-                            </Avatar>
-                            <span className="text-xs text-yellow-600">→</span>
-                            <Avatar className="h-6 w-6 border border-yellow-300">
-                              <AvatarImage src={message.toLawyer.photo} alt={message.toLawyer.name} />
-                            </Avatar>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -380,9 +354,8 @@ const LawyerChatSection = ({ defaultLawyerId, area }: LawyerChatSectionProps = {
                   >
                     {!isUser && messageLawyer && (
                       <Avatar className="h-7 w-7 sm:h-8 sm:w-8 mr-1.5 flex-shrink-0 shadow-sm">
-                        <AvatarImage src={messageLawyer.photo} alt={messageLawyer.name} />
-                        <AvatarFallback className="bg-primary/10 text-primary text-xs">
-                          {messageLawyer.name.split(' ').map(n => n[0]).join('')}
+                        <AvatarFallback className="bg-primary/10 text-primary">
+                          <Bot className="w-4 h-4" />
                         </AvatarFallback>
                       </Avatar>
                     )}
@@ -428,13 +401,12 @@ const LawyerChatSection = ({ defaultLawyerId, area }: LawyerChatSectionProps = {
                 <div className="flex justify-center py-4">
                   <div className="bg-gradient-to-r from-primary/20 to-yellow-500/20 border border-primary/30 rounded-xl px-6 py-4 flex items-center gap-4 animate-pulse shadow-lg">
                     <Avatar className="h-10 w-10 border-2 border-primary/20">
-                      <AvatarImage src={currentLawyer.photo} />
-                      <AvatarFallback className="bg-primary/10 text-primary text-xs">
-                        {currentLawyer.name.split(' ').map(n => n[0]).join('')}
+                      <AvatarFallback className="bg-primary/10 text-primary">
+                        <Bot className="w-5 h-5" />
                       </AvatarFallback>
                     </Avatar>
                     <RefreshCw className="h-6 w-6 text-primary animate-spin" />
-                    <div className="text-sm font-medium text-primary">Conectando com especialista...</div>
+                    <div className="text-sm font-medium text-primary">Ajustando a triagem à área do seu caso...</div>
                   </div>
                 </div>
               )}
@@ -466,15 +438,14 @@ const LawyerChatSection = ({ defaultLawyerId, area }: LawyerChatSectionProps = {
               {(isThinking || isTyping) && !isTransferring && (
                 <div className="flex justify-start animate-bubble-pop">
                   <Avatar className="h-7 w-7 sm:h-8 sm:w-8 mr-1.5 flex-shrink-0 shadow-sm ring-2 ring-emerald-400/30">
-                    <AvatarImage src={currentLawyer.photo} alt={currentLawyer.name} />
-                    <AvatarFallback className="bg-primary/10 text-primary text-xs">
-                      {currentLawyer.name.split(' ').map(n => n[0]).join('')}
+                    <AvatarFallback className="bg-primary/10 text-primary">
+                      <Bot className="w-4 h-4" />
                     </AvatarFallback>
                   </Avatar>
                   <div className="space-y-0.5">
                     <div className="flex items-center gap-1 text-[10px] text-muted-foreground px-1">
                       <span className="font-medium text-emerald-600">
-                        {currentLawyer.name.split(' ')[0]}
+                        Assistente
                       </span>
                       <span>{isThinking ? 'está lendo...' : 'está digitando...'}</span>
                     </div>
@@ -561,7 +532,7 @@ const LawyerChatSection = ({ defaultLawyerId, area }: LawyerChatSectionProps = {
               <div className="flex items-center justify-center gap-1.5 mb-2">
                 <Lock className="h-3 w-3 text-amber-600" />
                 <span className="text-[10px] text-amber-700 font-medium">
-                  Mensagens protegidas com criptografia de ponta-a-ponta
+                  Conexão segura (HTTPS)
                 </span>
               </div>
               

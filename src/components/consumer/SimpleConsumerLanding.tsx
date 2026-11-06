@@ -107,7 +107,7 @@ const SimpleConsumerLanding = ({
 
         <footer className="border-t py-8">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© {new Date().getFullYear()} Riccio Advocacia — Todos os direitos reservados</p>
+            <p>© {new Date().getFullYear()} Riccio Advocacia · Dr. Gilberto Riccio, OAB/BA 46.638 — Todos os direitos reservados</p>
           </div>
         </footer>
       </div>

@@ -50,8 +50,8 @@ export const NUDGE_CONFIG: NudgeConfig[] = [
     delay: 45000, // 45 segundos após 1º nudge
     getMessage: (problem, userName) => {
       const messages = [
-        "Se tiver alguma dúvida, é só falar. Sigilo total garantido! 🔒",
-        "Fique à vontade pra perguntar, tá? Sem compromisso!",
+        "Se tiver alguma dúvida, é só falar. O que você contar fica sob sigilo profissional. 🔒",
+        "Fique à vontade pra perguntar, tá?",
         "Estou aqui se precisar de alguma orientação...",
         "Posso te ajudar a entender seus direitos se quiser 👍"
       ];
@@ -64,7 +64,7 @@ export const NUDGE_CONFIG: NudgeConfig[] = [
     delay: 90000, // 90 segundos após 2º nudge
     getMessage: (problem, userName) => {
       if (problem) {
-        return `Entendo que decisões sobre ${problem} são difíceis. Se quiser, posso explicar como funciona o processo de forma tranquila e sem compromisso 😊`;
+        return `Entendo que decisões sobre ${problem} são difíceis. Se quiser, posso explicar como funciona o processo de forma tranquila 😊`;
       }
       
       return userName
@@ -93,7 +93,7 @@ export const CONTEXTUAL_NUDGES: Record<string, string[]> = {
   ],
   'prisão': [
     "Isso é urgente! Me conta mais pra te ajudar rápido",
-    "Posso te explicar os próximos passos imediatamente",
+    "Posso te explicar os próximos passos",
     "Quanto mais rápido agir, melhor. Me diz mais detalhes"
   ],
   'golpe': [

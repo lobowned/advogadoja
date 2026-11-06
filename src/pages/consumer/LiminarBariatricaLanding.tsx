@@ -15,7 +15,7 @@ const faqItems = [
   },
   {
     question: "O plano pode exigir 2 anos de tratamento conservador?",
-    answer: "Não pode exigir prazo fixo. A indicação cirúrgica é decisão médica. Se o médico entende que o paciente já tentou tratamentos conservadores sem sucesso, tem direito à cirurgia independente do tempo."
+    answer: "A diretriz da ANS para a cirurgia (DUT) fala em falha do tratamento clínico por pelo menos 2 anos. A Justiça tem afastado essa exigência quando o relatório médico mostra que a cirurgia é necessária antes disso. Por isso, o relatório do médico é a peça principal do pedido."
   },
   {
     question: "Cirurgia bariátrica é considerada estética?",
@@ -27,7 +27,7 @@ const faqItems = [
   },
   {
     question: "Quanto tempo demora a liminar para bariátrica?",
-    answer: "Em média 24 a 72 horas. Casos com comorbidades graves e risco de vida podem ser decididos em plantão judicial no mesmo dia."
+    answer: "Não há prazo fixo. Em urgência, o pedido pode ser levado ao plantão judiciário, inclusive à noite e em fins de semana. Quem decide o prazo é o juiz."
   },
 ];
 

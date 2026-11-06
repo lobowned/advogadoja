@@ -101,7 +101,7 @@ const CalculadoraAluguelAtrasado = () => {
                 Inquilino não paga o aluguel?
               </h2>
               <p className="text-muted-foreground mb-6">
-                Nossos advogados podem ajudar com notificação extrajudicial ou ação de despejo.
+                O Dr. Gilberto Riccio (OAB/BA 46.638) pode ajudar com notificação extrajudicial ou ação de despejo.
               </p>
               <Button onClick={scrollToChat} size="lg" className="gap-2 bg-yellow-600 hover:bg-yellow-700">
                 <MessageCircle className="w-5 h-5" />

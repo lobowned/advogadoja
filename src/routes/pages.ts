@@ -34,7 +34,6 @@ export const PrivacyPolicy = lazyPage(() => import("@/pages/PrivacyPolicy"));
 export const TermsOfUse = lazyPage(() => import("@/pages/TermsOfUse"));
 export const DynamicQuestionnaire = lazyPage(() => import("@/pages/DynamicQuestionnaire"));
 export const Completed = lazyPage(() => import("@/pages/Completed"));
-export const FAQ = lazyPage(() => import("@/pages/FAQ"));
 export const FAQIndex = lazyPage(() => import("@/pages/FAQIndex"));
 export const FAQQuestion = lazyPage(() => import("@/pages/FAQQuestion"));
 export const NicheLanding = lazyPage(() => import("@/pages/NicheLanding"));
@@ -106,7 +105,8 @@ const ROUTE_PRELOADS: Array<[RegExp, Preloadable[]]> = [
   [/^\/artigos\/consumidor\/[^/]+$/, [LocalSEOArticle, BlogPost]],
   [/^\/artigos(\/[^/]+)?$/, [Blog]],
   [/^\/artigos\/[^/]+\/[^/]+$/, [BlogPost]],
-  [/^\/perguntas-frequentes$/, [FAQ]],
+  // /perguntas-frequentes redireciona para /perguntas (App.tsx)
+  [/^\/perguntas-frequentes$/, [FAQIndex]],
   [/^\/perguntas$/, [FAQIndex]],
   [/^\/perguntas\/[^/]+$/, [FAQQuestion]],
   [/^\/privacidade$/, [PrivacyPolicy]],

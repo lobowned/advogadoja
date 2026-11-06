@@ -12,6 +12,7 @@ import Navbar from "@/components/Navbar";
 import PageTransition from "@/components/motion/PageTransition";
 import { getCityBySlug, brazilianCities, isCityIndexable } from "@/data/cities";
 import { LOCAL_PAGE_ROUTES, LOCAL_NICHE_NAMES } from "@/data/local-page-keys";
+import { cityFaq, cityPageMeta } from "@/data/city-page";
 import { CityLocalGuide } from "@/components/CityLocalGuide";
 
 const CityLanding = () => {
@@ -24,6 +25,9 @@ const CityLanding = () => {
 
   const canonicalUrl = `https://riccio-advocacia.lovable.app/advogado/${city.slug}`;
   const indexable = isCityIndexable(city.slug);
+
+  const meta = cityPageMeta(city);
+  const faqItems = cityFaq(city);
 
   const practiceAreas = [
     {
@@ -68,7 +72,7 @@ const CityLanding = () => {
     {
       icon: <MessageCircle className="h-5 w-5" />,
       title: "Atendimento Online",
-      description: `Fale com advogados de ${city.name} sem sair de casa`
+      description: `Fale com o advogado pelo WhatsApp, de qualquer bairro de ${city.name}`
     },
     {
       icon: <Clock className="h-5 w-5" />,
@@ -82,8 +86,8 @@ const CityLanding = () => {
     },
     {
       icon: <Award className="h-5 w-5" />,
-      title: "Advogados OAB",
-      description: `Profissionais registrados na OAB/${city.stateCode}`
+      title: "Inscrição na OAB",
+      description: "Dr. Gilberto Riccio, OAB/BA 46.638"
     }
   ];
 
@@ -91,8 +95,8 @@ const CityLanding = () => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": `Riccio Advocacia ${city.name}`,
-    "description": `Advogados que atuam em ${city.name}, ${city.state}. Atendimento jurídico online em Direito Trabalhista, Família, Previdenciário, Civil e Criminal.`,
+    "name": "Riccio Advocacia",
+    "description": `Atendimento jurídico online para quem mora em ${city.name}, ${city.state}: Direito Trabalhista, Família, Previdenciário, Civil, Consumidor e Criminal. Dr. Gilberto Riccio, OAB/BA 46.638.`,
     "url": canonicalUrl,
     "telephone": "+55-71-99703-6269",
     "priceRange": "$$",
@@ -123,15 +127,13 @@ const CityLanding = () => {
         "name": "Início",
         "item": "https://riccio-advocacia.lovable.app"
       },
+      // A página da Bahia é o índice das cidades (não existe /advogado sozinho)
+      ...(city.stateCode === "BA"
+        ? [{ "@type": "ListItem", "position": 2, "name": "Bahia", "item": "https://riccio-advocacia.lovable.app/advogado-bahia" }]
+        : []),
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "Cidades",
-        "item": "https://riccio-advocacia.lovable.app/advogado"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
+        "position": city.stateCode === "BA" ? 3 : 2,
         "name": `Advogado em ${city.name}`,
         "item": canonicalUrl
       }
@@ -141,32 +143,11 @@ const CityLanding = () => {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": `Como encontrar um advogado em ${city.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Você pode falar com um advogado em ${city.name} pelo WhatsApp ou pelo chat da Riccio Advocacia. O atendimento é online.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `Qual o valor de uma consulta com advogado em ${city.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Os honorários dependem do tipo de caso e são combinados por escrito antes de qualquer ação. Conte o caso pelo WhatsApp para receber a orientação inicial.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `Quais áreas do direito são atendidas em ${city.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Atendemos todas as principais áreas: Direito Trabalhista, Família, Previdenciário, Civil, Consumidor e Penal em ${city.name} e região.`
-        }
-      }
-    ]
+    "mainEntity": faqItems.map((f) => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
   };
 
   const handleCTA = () => {
@@ -187,11 +168,8 @@ const CityLanding = () => {
     <PageTransition>
       <div className="min-h-screen bg-background">
         <Helmet>
-          <title>{`Advogado em ${city.name} ${city.stateCode} | Riccio Advocacia`}</title>
-          <meta 
-            name="description" 
-            content={`Advogado em ${city.name} online. Atendimento jurídico online em Trabalhista, Família, Previdenciário e mais, para ${city.name} e região.`} 
-          />
+          <title>{meta.title}</title>
+          <meta name="description" content={meta.description} />
           <meta 
             name="keywords" 
             content={`advogado ${city.name}, advogado online ${city.name}, consulta jurídica ${city.name}, advogado trabalhista ${city.name}, advogado família ${city.name}, advogado ${city.stateCode}`} 
@@ -202,16 +180,13 @@ const CityLanding = () => {
           )}
           
           <meta property="og:title" content={`Advogado em ${city.name} | Fale com advogado`} />
-          <meta property="og:description" content={`Fale agora com advogados que atuam em ${city.name}. Atendimento online pelo WhatsApp.`} />
+          <meta property="og:description" content={`Atendimento jurídico online para quem mora em ${city.name}. Dr. Gilberto Riccio, OAB/BA 46.638, pelo WhatsApp.`} />
           <meta property="og:url" content={canonicalUrl} />
           <meta property="og:type" content="website" />
-          
+
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content={`Advogado em ${city.name} | Fale com advogado`} />
-          
-          <meta name="geo.region" content={`BR-${city.stateCode}`} />
-          <meta name="geo.placename" content={city.name} />
-          
+
           <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
           <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
           <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -227,6 +202,12 @@ const CityLanding = () => {
               <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
                 <Link to="/" className="hover:text-primary">Início</Link>
                 <ChevronRight className="h-4 w-4" />
+                {city.stateCode === "BA" && (
+                  <>
+                    <Link to="/advogado-bahia" className="hover:text-primary">Bahia</Link>
+                    <ChevronRight className="h-4 w-4" />
+                  </>
+                )}
                 <span className="text-foreground">Advogado em {city.name}</span>
               </nav>
 
@@ -241,10 +222,7 @@ const CityLanding = () => {
                   <span className="text-primary block mt-2">Atendimento Jurídico Online</span>
                 </h1>
                 
-                <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
-                  Fale agora com advogados que atuam em {city.name}. 
-                  Atendimento online para orientar sobre o seu problema jurídico.
-                </p>
+                <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">{meta.intro}</p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="text-lg px-8" onClick={handleCTA}>
@@ -263,15 +241,15 @@ const CityLanding = () => {
                 <div className="flex flex-wrap gap-4 mt-8 text-sm text-muted-foreground">
                   <span className="flex items-center gap-1">
                     <CheckCircle className="h-4 w-4 text-green-600" />
-                    Atendimento 24h
+                    Atendimento online
                   </span>
                   <span className="flex items-center gap-1">
                     <CheckCircle className="h-4 w-4 text-green-600" />
-                    Advogados OAB/{city.stateCode}
+                    OAB/BA 46.638
                   </span>
                   <span className="flex items-center gap-1">
                     <CheckCircle className="h-4 w-4 text-green-600" />
-                    Fale com advogado
+                    Sigilo profissional
                   </span>
                 </div>
               </div>
@@ -323,7 +301,7 @@ const CityLanding = () => {
                 Áreas de Atuação em {city.name}
               </h2>
               <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
-                Nossos advogados atendem todas as principais áreas do direito em {city.name} e região
+                Atendimento online nas principais áreas do direito para {city.name} e região
               </p>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -371,38 +349,14 @@ const CityLanding = () => {
               </h2>
 
               <div className="max-w-3xl mx-auto space-y-6">
-                <Card>
-                  <CardContent className="pt-6">
-                    <h3 className="font-semibold mb-2">Como encontrar um advogado em {city.name}?</h3>
-                    <p className="text-muted-foreground">
-                      Você pode falar com um advogado em {city.name} pelo WhatsApp ou pelo chat da Riccio Advocacia. 
-                      O atendimento é online. Basta clicar no botão "Falar com Advogado" 
-                      e você será atendido pelo escritório.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="pt-6">
-                    <h3 className="font-semibold mb-2">Qual o valor de uma consulta com advogado em {city.name}?</h3>
-                    <p className="text-muted-foreground">
-                      Os honorários dependem do tipo de caso e são combinados por escrito antes de
-                      qualquer ação. Conte o seu caso pelo WhatsApp: a primeira resposta indica o
-                      caminho e quais documentos reunir.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="pt-6">
-                    <h3 className="font-semibold mb-2">O atendimento online tem validade em {city.name}?</h3>
-                    <p className="text-muted-foreground">
-                      Sim! O atendimento jurídico online é regulamentado pela OAB e tem a mesma validade 
-                      do atendimento presencial. Nossos advogados são registrados na OAB/{city.stateCode} e podem 
-                      atuar em processos no {city.courtInfo}.
-                    </p>
-                  </CardContent>
-                </Card>
+                {faqItems.map((f) => (
+                  <Card key={f.q}>
+                    <CardContent className="pt-6">
+                      <h3 className="font-semibold mb-2">{f.q}</h3>
+                      <p className="text-muted-foreground">{f.a}</p>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </div>
           </section>

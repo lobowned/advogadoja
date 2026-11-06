@@ -60,6 +60,10 @@ const SiteLinks = () => (
         <Link to="/calculadoras" className="hover:text-foreground hover:underline underline-offset-4">Calculadoras</Link>
         {" · "}
         <Link to="/perguntas" className="hover:text-foreground hover:underline underline-offset-4">Perguntas frequentes</Link>
+        {" · "}
+        <Link to="/advogado-bahia" className="hover:text-foreground hover:underline underline-offset-4">Todas as cidades da Bahia</Link>
+        {" · "}
+        <Link to="/sitemap" className="hover:text-foreground hover:underline underline-offset-4">Mapa do site</Link>
       </p>
     </div>
   </nav>

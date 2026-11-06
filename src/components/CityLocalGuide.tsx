@@ -42,7 +42,7 @@ export function CityLocalGuide({
   // Bloco do tribunal — duas formulações alternativas
   const tribunalParagraph =
     variant === 0
-      ? `Os processos da cidade tramitam principalmente no ${courtText}. Essa estrutura define prazos, jurisprudência aplicável e até mesmo a estratégia inicial — em muitos casos, o juizado especial cível resolve disputas de até 40 salários mínimos em poucos meses, sem necessidade de advogado para a parte autora, mas com chances bem maiores de êxito quando há acompanhamento técnico desde o primeiro contato.`
+      ? `Os processos da cidade tramitam principalmente no ${courtText}. Essa estrutura define prazos, jurisprudência aplicável e até mesmo a estratégia inicial — em muitos casos, o juizado especial cível é a via para disputas de até 40 salários mínimos; até 20 salários mínimos, a parte pode ir sem advogado, mas a orientação técnica desde o primeiro contato ajuda a evitar erros de pedido e de prova.`
       : `Os litígios são distribuídos no ${courtText}, e isso importa porque cada tribunal tem suas próprias súmulas, entendimentos consolidados e ritmo de tramitação. Conhecer o tribunal competente é o que separa uma petição genérica de uma estratégia local — incluindo a opção, em causas menores, de usar o juizado especial cível (até 40 salários mínimos), que costuma ser mais rápido.`;
 
   // Bloco de destaques — converte highlights em prose corrida

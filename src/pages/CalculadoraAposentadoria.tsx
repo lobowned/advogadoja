@@ -101,7 +101,7 @@ const CalculadoraAposentadoria = () => {
                 Dúvidas sobre sua aposentadoria?
               </h2>
               <p className="text-muted-foreground mb-6">
-                Nossos advogados previdenciários podem analisar seu caso e encontrar a melhor estratégia.
+                O Dr. Gilberto Riccio (OAB/BA 46.638) pode analisar o seu caso no INSS e indicar a melhor estratégia.
               </p>
               <Button onClick={scrollToChat} size="lg" className="gap-2 bg-emerald-600 hover:bg-emerald-700">
                 <MessageCircle className="w-5 h-5" />

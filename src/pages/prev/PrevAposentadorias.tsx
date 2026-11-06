@@ -14,10 +14,13 @@ import {
   WHATSAPP_MESSAGES,
 } from "@/lib/prev-config";
 
+// Só a aposentadoria por idade tem página própria em /prev; as outras levam ao guia do INSS (evita link quebrado)
+const PAGINAS_PREV_EXISTENTES = new Set<string>(["aposentadoria-por-idade"]);
+
 const FAQ_APOSENTADORIAS = [
   {
     q: "Como sei qual aposentadoria pedir?",
-    a: "Depende de várias coisas: quando você começou a contribuir, há quanto tempo paga INSS, sua idade, se trabalhou em ambiente insalubre ou na roça. A gente analisa seu CNIS e simula TODAS as regras possíveis pra escolher a que paga mais e demora menos. Pedir a errada pode te fazer perder centenas de reais todo mês — pelo resto da vida.",
+    a: "Depende de várias coisas: quando você começou a contribuir, há quanto tempo paga INSS, sua idade, se trabalhou em ambiente insalubre ou na roça. A gente analisa seu CNIS e simula TODAS as regras possíveis pra escolher a que paga mais e demora menos. Pedir a errada pode fazer você receber menos todo mês, pelo resto da vida.",
   },
   {
     q: "O que mudou com a Reforma de 2019?",
@@ -29,7 +32,7 @@ const FAQ_APOSENTADORIAS = [
   },
   {
     q: "Quanto demora pra reconhecer atividade especial (insalubre)?",
-    a: "Geralmente precisa de PPP atual, LTCAT, às vezes prova testemunhal ou perícia técnica. No INSS administrativo varia muito. Na Justiça costuma levar de 1 a 2 anos. A boa notícia: se reconhecida, pode aumentar seu tempo de INSS em 40% a 67% (15, 20 ou 25 anos viram bem mais).",
+    a: "Geralmente precisa de PPP atual, LTCAT e, às vezes, prova testemunhal ou perícia técnica. O prazo varia muito, no INSS e na Justiça. Se reconhecida, a atividade especial pode dar direito à aposentadoria especial ou, para o período trabalhado até 13/11/2019, ser convertida em tempo comum com acréscimo (na atividade de 25 anos, 40% para homem e 20% para mulher).",
   },
 ];
 
@@ -83,7 +86,7 @@ export default function PrevAposentadorias() {
                   transition={{ duration: 0.4, delay: idx * 0.06 }}
                 >
                   <Link
-                    to={`/prev/${type.slug}`}
+                    to={PAGINAS_PREV_EXISTENTES.has(type.slug) ? `/prev/${type.slug}` : "/guia/previdenciario"}
                     className="group grid grid-cols-[auto_1fr_auto] gap-3 sm:gap-6 items-baseline py-5 sm:py-7 px-2 hover:bg-prev-beige/40 transition-colors"
                   >
                     <span className="font-serif text-prev-gold/80 text-2xl tnum w-12">
@@ -132,7 +135,7 @@ export default function PrevAposentadorias() {
               Falar pelo WhatsApp
             </PrevWhatsappButton>
             <p className="text-xs text-prev-navy/50 mt-5 tracking-wide">
-              Resposta em até 2 horas úteis · Sigilo profissional total
+              Atendimento online pelo WhatsApp · Sigilo profissional
             </p>
           </div>
         </section>

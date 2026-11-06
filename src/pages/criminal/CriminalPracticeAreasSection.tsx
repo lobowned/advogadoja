@@ -88,8 +88,8 @@ const CriminalPracticeAreasSection = () => {
               Matérias em que o escritório atua
             </h2>
             <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-              Dentro do Direito Criminal, há especialidades. Estas são as nossas — do
-              inquérito policial à execução da pena.
+              Dentro do Direito Criminal, estas são as matérias em que o escritório
+              atua — do inquérito policial à execução da pena.
             </p>
           </m.div>
 

@@ -101,7 +101,7 @@ const CalculadoraPartilhaBens = () => {
                 Passando por um divórcio?
               </h2>
               <p className="text-muted-foreground mb-6">
-                Nossos advogados de família podem orientar sobre a melhor forma de conduzir a partilha.
+                O Dr. Gilberto Riccio (OAB/BA 46.638) pode orientar sobre a melhor forma de conduzir a partilha.
               </p>
               <Button onClick={scrollToChat} size="lg" className="gap-2 bg-blue-600 hover:bg-blue-700">
                 <MessageCircle className="w-5 h-5" />

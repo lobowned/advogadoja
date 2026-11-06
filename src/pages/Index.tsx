@@ -193,17 +193,17 @@ const Index = () => {
       <Helmet>
         <title>Advogado em Salvador e Online | Riccio Advocacia</title>
         <meta name="description" content="Riccio Advocacia (OAB/BA 46.638): trabalhista, INSS, família, consumidor, cível e criminal. Atendimento em Salvador, Camaçari, Lauro de Freitas e online pelo WhatsApp." />
-        <meta name="keywords" content="advogado online, advogado trabalhista, advogado família, advogado consumidor, advogado previdenciário INSS, advogado civil, advogado criminal, divórcio online, pensão alimentícia, demissão sem justa causa, verbas rescisórias, aposentadoria INSS, auxílio-doença, BPC LOAS, voo cancelado, plano de saúde negou, nome sujo, negativação indevida, inventário, defesa criminal, consulta jurídica gratuita, falar com advogado agora" />
+        <meta name="keywords" content="advogado online, advogado trabalhista, advogado família, advogado consumidor, advogado previdenciário INSS, advogado civil, advogado criminal, divórcio online, pensão alimentícia, demissão sem justa causa, verbas rescisórias, aposentadoria INSS, auxílio-doença, BPC LOAS, voo cancelado, plano de saúde negou, nome sujo, negativação indevida, inventário, defesa criminal, falar com advogado agora" />
         <link rel="canonical" href="https://riccio-advocacia.lovable.app" />
         
         <meta property="og:title" content="Advogado em Salvador e Online | Riccio Advocacia" />
-        <meta property="og:description" content="Advogados online para todas as áreas do direito. Atendimento via WhatsApp. Atendimento online em todo o Brasil." />
+        <meta property="og:description" content="Riccio Advocacia (OAB/BA 46.638): trabalhista, INSS, família, consumidor, cível e criminal. Atendimento online pelo WhatsApp." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://riccio-advocacia.lovable.app" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Advogado em Salvador e Online | Riccio Advocacia" />
-        <meta name="twitter:description" content="Advogados online para todas as áreas do direito. Atendimento via WhatsApp. Atendimento online em todo o Brasil." />
+        <meta name="twitter:description" content="Riccio Advocacia (OAB/BA 46.638): trabalhista, INSS, família, consumidor, cível e criminal. Atendimento online pelo WhatsApp." />
 
         
         <script type="application/ld+json">
@@ -271,7 +271,7 @@ const Index = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 text-xs">
                   <Link to="/artigos" className="hover:text-foreground transition-colors relative after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full py-2 min-h-[44px] flex items-center justify-center">Artigos</Link>
-                  <Link to="/perguntas-frequentes" className="hover:text-foreground transition-colors relative after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full py-2 min-h-[44px] flex items-center justify-center">FAQ</Link>
+                  <Link to="/perguntas" className="hover:text-foreground transition-colors relative after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full py-2 min-h-[44px] flex items-center justify-center">FAQ</Link>
                   <Link to="/sitemap" className="hover:text-foreground transition-colors relative after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full py-2 min-h-[44px] flex items-center justify-center">Sitemap</Link>
                   <Link to="/termos-de-uso" className="hover:text-foreground transition-colors relative after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full py-2 min-h-[44px] flex items-center justify-center">Termos</Link>
                   <Link to="/privacidade" className="hover:text-foreground transition-colors relative after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full py-2 min-h-[44px] flex items-center justify-center">Privacidade</Link>

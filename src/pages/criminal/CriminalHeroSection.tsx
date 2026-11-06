@@ -63,7 +63,7 @@ const CriminalHeroSection = () => {
             >
               <span className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 bg-background/80 rounded-full animate-pulse-dot" />
-                Plantão 24h
+                Atendimento online · OAB/BA 46.638
               </span>
             </Badge>
           </m.div>

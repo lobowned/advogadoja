@@ -20,7 +20,7 @@ const GuiaFooter = () => (
         <nav className="flex flex-wrap justify-center md:justify-end gap-4 text-xs">
           <Link to="/guias" className="hover:text-foreground py-2">Guias</Link>
           <Link to="/artigos" className="hover:text-foreground py-2">Artigos</Link>
-          <Link to="/perguntas-frequentes" className="hover:text-foreground py-2">FAQ</Link>
+          <Link to="/perguntas" className="hover:text-foreground py-2">FAQ</Link>
           <Link to="/termos-de-uso" className="hover:text-foreground py-2">Termos</Link>
           <Link to="/privacidade" className="hover:text-foreground py-2">Privacidade</Link>
         </nav>

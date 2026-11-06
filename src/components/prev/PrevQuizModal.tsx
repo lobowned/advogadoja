@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowRight, MessageCircle, CheckCircle2 } from "lucide-react";
 
-import { LAWYER, whatsappLink } from "@/lib/prev-config";
+import { whatsappLink } from "@/lib/prev-config";
 import {
   QUIZZES,
   buildWhatsappMessage,
@@ -306,7 +306,7 @@ export default function PrevQuizModal({
                       className="text-sm leading-relaxed mb-6 text-center"
                       style={{ color: p.textMuted }}
                     >
-                      Suas respostas vão direto pro WhatsApp do advogado. Ele responde em até 2h úteis.
+                      Suas respostas vão direto pro WhatsApp do Dr. Gilberto Riccio, que responde por lá.
                     </p>
 
                     {/* Recap das respostas */}
@@ -338,7 +338,7 @@ export default function PrevQuizModal({
                       className="text-[11px] text-center mt-3"
                       style={{ color: p.textMuted }}
                     >
-                      Sigilo profissional — LGPD respeitada — OAB/{LAWYER.oabState}
+                      Sigilo profissional — LGPD respeitada — OAB/BA 46.638
                     </p>
                   </motion.div>
                 )}

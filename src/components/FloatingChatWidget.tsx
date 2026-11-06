@@ -89,7 +89,7 @@ export const FloatingChatWidget = () => {
           )}
         </span>
         <span className="hidden sm:inline text-sm font-semibold whitespace-nowrap">
-          Falar com advogado
+          Assistente virtual
         </span>
       </button>
 

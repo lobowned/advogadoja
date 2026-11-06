@@ -137,14 +137,14 @@ const Calculadoras = () => {
           <div className="container mx-auto px-4">
             <Card className="max-w-3xl mx-auto p-8 text-center bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Prefere falar diretamente com um advogado?
+                Quer ajuda com o seu caso?
               </h2>
               <p className="text-muted-foreground mb-6">
-                Nossos especialistas estão online agora para analisar seu caso gratuitamente.
+                Conte o caso no chat: o assistente virtual organiza o relato e, se for pertinente, o Dr. Gilberto Riccio (OAB/BA 46.638) assume pelo WhatsApp.
               </p>
               <Button onClick={scrollToChat} size="lg" className="gap-2">
                 <MessageCircle className="w-5 h-5" />
-                Falar com Advogado Agora
+                Conversar no chat
               </Button>
             </Card>
           </div>

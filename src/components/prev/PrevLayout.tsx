@@ -159,7 +159,7 @@ export default function PrevLayout({
                 </div>
               </div>
               <p className="text-sm text-prev-beige/75 leading-relaxed">
-                Assessoria jurídica especializada em direito previdenciário.
+                Assessoria jurídica em direito previdenciário.
                 Análise técnica do seu CNIS e estratégia personalizada para
                 cada caso.
               </p>

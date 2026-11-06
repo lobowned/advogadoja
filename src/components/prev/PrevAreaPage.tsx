@@ -325,7 +325,7 @@ export default function PrevAreaPage({
               Falar agora pelo WhatsApp
             </PrevWhatsappButton>
             <p className="text-xs text-prev-navy/50 mt-5 tracking-wide">
-              Resposta em até 2 horas úteis · Sigilo profissional total
+              Atendimento online pelo WhatsApp · Sigilo profissional
             </p>
           </div>
         </section>

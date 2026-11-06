@@ -159,8 +159,8 @@ const CalculadoraTrabalhista = () => {
                 Precisa de ajuda com sua rescisão?
               </h2>
               <p className="text-muted-foreground mb-6">
-                Nossos advogados trabalhistas estão prontos para analisar seu caso 
-                e garantir que você receba tudo que tem direito.
+                O Dr. Gilberto Riccio (OAB/BA 46.638) pode analisar o seu caso
+                e indicar como cobrar as verbas que forem devidas.
               </p>
               <Button onClick={scrollToChat} size="lg" className="gap-2 bg-amber-600 hover:bg-amber-700">
                 <MessageCircle className="w-5 h-5" />

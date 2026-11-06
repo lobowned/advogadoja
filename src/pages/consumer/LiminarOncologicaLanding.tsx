@@ -11,23 +11,23 @@ const breadcrumbs = [
 const faqItems = [
   {
     question: "Plano de saúde pode negar quimioterapia?",
-    answer: "Não pode. A Lei 9.656/98 garante cobertura para tratamento oncológico. A negativa configura prática abusiva e dá direito a liminar e indenização por danos morais."
+    answer: "Não pode. A Lei 9.656/98 garante cobertura para tratamento oncológico. A negativa pode configurar prática abusiva e permite pedir liminar e indenização por danos morais."
   },
   {
     question: "E se o medicamento não estiver no rol da ANS?",
-    answer: "O rol da ANS é exemplificativo (Lei 14.454/22). Medicamentos aprovados pela ANVISA com indicação médica devem ser cobertos, mesmo fora do rol."
+    answer: "O rol da ANS não é a lista final (Lei 14.454/2022). Medicamento com registro na Anvisa e prescrição médica pode ter cobertura obrigatória mesmo fora do rol, se houver comprovação científica e não existir alternativa equivalente no rol (critérios do STF na ADI 7.265). Para câncer, a lei já garante quimioterapia e antineoplásicos orais (Lei 9.656/1998, art. 12)."
   },
   {
     question: "Quanto tempo demora a liminar em casos de câncer?",
-    answer: "Casos oncológicos são tratados como urgência máxima. Liminares podem sair em 12 a 48 horas, inclusive em plantão judicial."
+    answer: "Não há prazo fixo. Em urgência, o pedido pode ser levado ao plantão judiciário, inclusive à noite e em fins de semana. Quem decide o prazo é o juiz."
   },
   {
     question: "O plano pode exigir que eu use medicamento genérico?",
-    answer: "O plano não pode substituir o medicamento prescrito pelo médico. A escolha do tratamento é prerrogativa do profissional de saúde, não do plano."
+    answer: "A escolha do tratamento é do médico: o plano não pode trocar o remédio prescrito por outro de efeito diferente. Genérico do mesmo princípio ativo é outra situação e pode ser usado, salvo se o médico justificar que não serve no seu caso."
   },
   {
     question: "Posso ser indenizado pela negativa?",
-    answer: "Sim. Além da autorização do tratamento, é possível pleitear danos morais (R$ 10 mil a R$ 50 mil em média) pela angústia causada."
+    answer: "Sim. Além da autorização do tratamento, é possível pedir indenização por danos morais pela angústia causada. Se houver condenação, o valor é fixado pelo juiz conforme o caso."
   },
 ];
 

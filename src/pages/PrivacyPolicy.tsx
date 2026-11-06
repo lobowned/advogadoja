@@ -208,7 +208,7 @@ const PrivacyPolicy = () => {
                   <li>Controles de acesso baseados em privilégio mínimo</li>
                   <li>Monitoramento contínuo de segurança e detecção de intrusões</li>
                   <li>Backup regular com armazenamento seguro</li>
-                  <li>Treinamento da equipe em proteção de dados e sigilo profissional</li>
+                  <li>Dever de sigilo profissional do advogado sobre as informações do caso</li>
                   <li>Servidores em ambiente de nuvem certificado</li>
                 </ul>
               </CardContent>

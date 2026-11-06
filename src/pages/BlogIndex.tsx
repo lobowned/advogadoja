@@ -21,14 +21,14 @@ const BlogIndex = () => {
     "@context": "https://schema.org",
     "@type": "Blog",
     "name": "Blog Riccio Advocacia",
-    "description": "Artigos sobre direitos do consumidor, trânsito, finanças e orientação jurídica gratuita.",
+    "description": "Artigos sobre direitos do consumidor, trânsito e finanças, escritos pelo Dr. Gilberto Riccio (OAB/BA 46.638).",
     "url": "https://riccio-advocacia.lovable.app/blog",
     "publisher": {
       "@type": "Organization",
       "name": "Riccio Advocacia",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://riccio-advocacia.lovable.app/logo.png"
+        "url": "https://riccio-advocacia.lovable.app/og-image.png"
       }
     },
     "blogPost": posts.map(post => ({
@@ -49,11 +49,11 @@ const BlogIndex = () => {
     <>
       <Helmet>
         <title>Blog Riccio Advocacia | Artigos sobre Direito do Consumidor, Trânsito e Finanças</title>
-        <meta name="description" content="Artigos completos sobre direitos do consumidor, multas de trânsito, superendividamento e muito mais. Orientação jurídica gratuita." />
+        <meta name="description" content="Artigos completos sobre direitos do consumidor, multas de trânsito, superendividamento e muito mais. Conteúdo informativo do Dr. Gilberto Riccio, OAB/BA 46.638." />
         <meta name="keywords" content="blog jurídico, direito do consumidor, multas de trânsito, superendividamento, orientação jurídica, advogado online" />
         <link rel="canonical" href="https://riccio-advocacia.lovable.app/blog" />
         
-        <meta property="og:title" content="Blog Riccio Advocacia | Orientação Jurídica Gratuita" />
+        <meta property="og:title" content="Blog Riccio Advocacia | Artigos sobre seus direitos" />
         <meta property="og:description" content="Artigos completos sobre direitos do consumidor, multas de trânsito, superendividamento e muito mais." />
         <meta property="og:url" content="https://riccio-advocacia.lovable.app/blog" />
         <meta property="og:type" content="website" />
@@ -124,11 +124,11 @@ const BlogIndex = () => {
               Não encontrou o que procurava?
             </h2>
             <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-              Nossa equipe de advogados está pronta para esclarecer suas dúvidas e orientar sobre seu caso específico.
+              O Dr. Gilberto Riccio (OAB/BA 46.638) pode esclarecer suas dúvidas e orientar sobre o seu caso específico.
             </p>
             <Button size="lg" asChild>
               <Link to="/">
-                Falar com Advogado Grátis
+                Falar com o advogado
               </Link>
             </Button>
           </section>

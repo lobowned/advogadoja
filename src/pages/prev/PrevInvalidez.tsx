@@ -70,7 +70,7 @@ Por fim, monitoramos o benefício depois de concedido — o INSS pode chamar pra
         },
         {
           q: "INSS pode cortar minha aposentadoria depois de concedida?",
-          a: "Pode, em revisão administrativa (a cada 2 anos) ou se entender que houve recuperação. Tem proteção pra idoso e pra quem está há muito tempo no benefício. Se cortarem injustamente, a gente reverte na Justiça com perícia nova.",
+          a: "Pode, em revisão por perícia ou se o INSS entender que houve recuperação. Em regra, quem tem 60 anos ou mais, ou 55 anos e 15 anos de benefício, fica dispensado dessas revisões (Lei 8.213/1991, art. 101, § 1º). Se o corte for indevido, dá para questionar na Justiça, com perícia nova.",
         },
         {
           q: "Como conseguir o adicional de 25%?",

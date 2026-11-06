@@ -159,8 +159,8 @@ const CalculadoraPensao = () => {
                 Precisa de ajuda com pensão alimentícia?
               </h2>
               <p className="text-muted-foreground mb-6">
-                Nossos advogados de família estão prontos para analisar seu caso 
-                e garantir o valor justo para você ou seus filhos.
+                O Dr. Gilberto Riccio (OAB/BA 46.638) pode analisar o seu caso
+                e orientar sobre o pedido de pensão para você ou seus filhos.
               </p>
               <Button onClick={scrollToChat} size="lg" className="gap-2 bg-blue-600 hover:bg-blue-700">
                 <MessageCircle className="w-5 h-5" />

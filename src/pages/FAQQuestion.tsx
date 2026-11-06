@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, Share2, MessageCircle, ChevronRight, Scale, Tag, Calculator, BookOpen } from 'lucide-react';
+import { ArrowLeft, Share2, MessageCircle, ChevronRight, Scale, Calculator, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -12,7 +12,12 @@ import {
   areaLabels, 
   areaColors,
   programmaticFAQs,
+  FAQS_PUBLICADAS_EM,
+  FAQS_REVISADAS_EM,
 } from '@/data/programmatic-faqs';
+
+/** "2026-11-06" → "06/11/2026" sem passar por Date (evita o dia anterior no fuso de Brasília). */
+const dataBr = (iso: string) => iso.slice(0, 10).split("-").reverse().join("/");
 import { getRelatedCalculatorsForFAQ, getRelatedArticlesForFAQ } from '@/data/faq-internal-links';
 import PageTransition from '@/components/motion/PageTransition';
 
@@ -44,7 +49,12 @@ const FAQQuestion = () => {
   const relatedArticles = getRelatedArticlesForFAQ(faq);
 
   const canonicalUrl = `https://riccio-advocacia.lovable.app/perguntas/${faq.slug}`;
-  
+  const whatsappUrl = `https://wa.me/5571997036269?text=${encodeURIComponent(`Olá, li a pergunta "${faq.question}" no site e quero falar sobre o meu caso.`)}`;
+  // Descrição sem a marcação de negrito/lista quando a pergunta não tem metaDescription própria
+  const description =
+    faq.metaDescription ||
+    faq.answer.replace(/\*\*/g, "").replace(/^\s*(?:[-•]|\d+[.)])\s+/gm, "").replace(/\s+/g, " ").trim().slice(0, 158);
+
   // Build related links for Schema.org
   const relatedLinks = [
     ...relatedCalculators.map(c => `https://riccio-advocacia.lovable.app${c.url}`),
@@ -55,8 +65,8 @@ const FAQQuestion = () => {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-01-01",
+    "datePublished": FAQS_PUBLICADAS_EM,
+    "dateModified": FAQS_REVISADAS_EM,
     "author": {
       "@type": "Organization",
       "name": "Riccio Advocacia",
@@ -69,7 +79,7 @@ const FAQQuestion = () => {
       "acceptedAnswer": {
         "@type": "Answer",
         "text": faq.answer.replace(/\*\*/g, '').replace(/\n/g, ' '),
-        "dateCreated": "2025-01-01"
+        "dateCreated": FAQS_PUBLICADAS_EM
       }
     }]
   };
@@ -79,17 +89,13 @@ const FAQQuestion = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": faq.question,
-    "description": faq.metaDescription || faq.answer.substring(0, 160),
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-01-01",
+    "description": description,
+    "datePublished": FAQS_PUBLICADAS_EM,
+    "dateModified": FAQS_REVISADAS_EM,
     "author": {
-      "@type": "Organization",
-      "name": "Riccio Advocacia",
-      "url": "https://riccio-advocacia.lovable.app",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://riccio-advocacia.lovable.app/favicon.svg"
-      }
+      "@type": "Person",
+      "name": "Gilberto Riccio",
+      "jobTitle": "Advogado OAB/BA 46.638"
     },
     "publisher": {
       "@type": "Organization",
@@ -97,9 +103,7 @@ const FAQQuestion = () => {
       "url": "https://riccio-advocacia.lovable.app",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://riccio-advocacia.lovable.app/favicon.svg",
-        "width": 60,
-        "height": 60
+        "url": "https://riccio-advocacia.lovable.app/og-image.png"
       }
     },
     "mainEntityOfPage": {
@@ -149,7 +153,7 @@ const FAQQuestion = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": faq.question,
-    "description": faq.metaDescription || faq.answer.substring(0, 160),
+    "description": description,
     "url": canonicalUrl,
     "isPartOf": {
       "@type": "WebSite",
@@ -171,70 +175,107 @@ const FAQQuestion = () => {
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
   };
 
-  // Process markdown-like formatting
+  // Markdown simples das respostas, linha a linha: título em negrito, listas com "-" ou
+  // numeradas, tabelas com "|" e **negrito** no meio do texto. A versão anterior juntava a
+  // lista abaixo de um título "**Algo:**" num parágrafo corrido e perdia itens numerados.
+  const inline = (s: string, key: number) =>
+    s.split(/(\*\*[^*]+\*\*)/).map((part, i) =>
+      part.length > 4 && part.startsWith("**") && part.endsWith("**") ? (
+        <strong key={`${key}-${i}`} className="font-semibold text-foreground">{part.slice(2, -2)}</strong>
+      ) : (
+        part
+      ),
+    );
+
   const formatAnswer = (text: string) => {
-    return text
-      .split('\n\n')
-      .map((paragraph, idx) => {
-        // Headers
-        if (paragraph.startsWith('**') && paragraph.endsWith(':**')) {
-          return (
-            <h3 key={idx} className="font-semibold text-lg mt-6 mb-3 text-foreground">
-              {paragraph.replace(/\*\*/g, '').replace(':', '')}
-            </h3>
-          );
-        }
-        
-        // Bold headers in the middle
-        if (paragraph.includes(':**')) {
-          const parts = paragraph.split(':**');
-          if (parts.length === 2) {
-            return (
-              <div key={idx} className="mb-4">
-                <h4 className="font-semibold text-foreground mb-2">
-                  {parts[0].replace(/\*\*/g, '')}
-                </h4>
-                <p className="text-muted-foreground">{parts[1].trim()}</p>
-              </div>
-            );
-          }
-        }
+    const out: React.ReactNode[] = [];
+    const state: { list: { type: "ul" | "ol"; items: string[] } | null; table: string[][] | null } = {
+      list: null,
+      table: null,
+    };
+    let k = 0;
 
-        // Lists
-        if (paragraph.includes('\n- ')) {
-          const lines = paragraph.split('\n');
-          const title = lines[0];
-          const items = lines.slice(1).filter(l => l.startsWith('- '));
-          return (
-            <div key={idx} className="mb-4">
-              {title && (
-                <p className="font-medium text-foreground mb-2">
-                  {title.replace(/\*\*/g, '')}
-                </p>
-              )}
-              <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                {items.map((item, i) => (
-                  <li key={i}>{item.replace('- ', '').replace(/\*\*/g, '')}</li>
-                ))}
-              </ul>
-            </div>
-          );
+    const flushList = () => {
+      const list = state.list;
+      if (!list) return;
+      const items = list.items.map((it, i) => <li key={i}>{inline(it, i)}</li>);
+      out.push(
+        list.type === "ul" ? (
+          <ul key={k++} className="list-disc pl-6 space-y-1 mb-4 text-muted-foreground">{items}</ul>
+        ) : (
+          <ol key={k++} className="list-decimal pl-6 space-y-1 mb-4 text-muted-foreground">{items}</ol>
+        ),
+      );
+      state.list = null;
+    };
+
+    const flushTable = () => {
+      const rows = state.table;
+      if (!rows?.length) return;
+      const [head, ...body] = rows;
+      out.push(
+        <div key={k++} className="overflow-x-auto mb-4">
+          <table className="w-full text-sm text-muted-foreground border-collapse">
+            <thead>
+              <tr>{head.map((c, i) => <th key={i} className="border-b p-2 text-left font-semibold text-foreground">{inline(c, i)}</th>)}</tr>
+            </thead>
+            <tbody>
+              {body.map((r, ri) => (
+                <tr key={ri}>{r.map((c, i) => <td key={i} className="border-b p-2">{inline(c, i)}</td>)}</tr>
+              ))}
+            </tbody>
+          </table>
+        </div>,
+      );
+      state.table = null;
+    };
+
+    for (const raw of text.split("\n")) {
+      const line = raw.trim();
+      if (!line) {
+        flushList();
+        flushTable();
+        continue;
+      }
+      const bullet = line.match(/^[-•]\s+(.*)$/);
+      const numbered = line.match(/^\d+[.)]\s+(.*)$/);
+      if (bullet || numbered) {
+        flushTable();
+        const type = bullet ? "ul" : "ol";
+        if (!state.list || state.list.type !== type) {
+          flushList();
+          state.list = { type, items: [] };
         }
-
-        // Regular paragraphs with bold
-        const formattedText = paragraph.split(/(\*\*.*?\*\*)/).map((part, i) => {
-          if (part.startsWith('**') && part.endsWith('**')) {
-            return <strong key={i} className="font-semibold text-foreground">{part.slice(2, -2)}</strong>;
-          }
-          return part;
-        });
-
-        return (
-          <p key={idx} className="text-muted-foreground mb-4 leading-relaxed">
-            {formattedText}
-          </p>
+        state.list.items.push((bullet ?? numbered)![1]);
+        continue;
+      }
+      if (line.startsWith("|")) {
+        flushList();
+        if (/^\|[\s:|-]+\|?$/.test(line)) continue; // linha separadora da tabela
+        const cells = line.replace(/^\||\|$/g, "").split("|").map((c) => c.trim());
+        (state.table ??= []).push(cells);
+        continue;
+      }
+      flushList();
+      flushTable();
+      const heading = line.match(/^\*\*([^*]+?)\*\*:?$/);
+      if (heading) {
+        out.push(
+          <h3 key={k++} className="font-semibold text-lg mt-6 mb-3 text-foreground">
+            {heading[1].replace(/:$/, "")}
+          </h3>,
         );
-      });
+        continue;
+      }
+      out.push(
+        <p key={k++} className="text-muted-foreground mb-4 leading-relaxed">
+          {inline(line, k)}
+        </p>,
+      );
+    }
+    flushList();
+    flushTable();
+    return out;
   };
 
   return (
@@ -242,20 +283,20 @@ const FAQQuestion = () => {
       <div className="min-h-screen bg-background">
         <Helmet>
           <title>{`${faq.question} | Riccio Advocacia`}</title>
-          <meta name="description" content={faq.metaDescription || faq.answer.substring(0, 160)} />
+          <meta name="description" content={description} />
           <meta name="keywords" content={faq.keywords.join(', ')} />
           <link rel="canonical" href={canonicalUrl} />
-          
+
           {/* Open Graph */}
           <meta property="og:title" content={faq.question} />
-          <meta property="og:description" content={faq.metaDescription || faq.answer.substring(0, 160)} />
+          <meta property="og:description" content={description} />
           <meta property="og:url" content={canonicalUrl} />
           <meta property="og:type" content="article" />
           
           {/* Twitter */}
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content={faq.question} />
-          <meta name="twitter:description" content={faq.metaDescription || faq.answer.substring(0, 160)} />
+          <meta name="twitter:description" content={description} />
           
           {/* Schema.org */}
           <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -306,20 +347,10 @@ const FAQQuestion = () => {
                     {formatAnswer(faq.answer)}
                   </div>
 
-                  {/* Keywords */}
-                  <div className="mt-8 pt-6 border-t">
-                    <div className="flex items-center gap-2 mb-3">
-                      <Tag className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-sm font-medium text-muted-foreground">Palavras-chave:</span>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {faq.keywords.map((keyword, idx) => (
-                        <Badge key={idx} variant="secondary" className="text-xs">
-                          {keyword}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
+                  <p className="mt-8 pt-6 border-t text-sm text-muted-foreground">
+                    Atualizado em {dataBr(FAQS_REVISADAS_EM)} · Riccio Advocacia, Dr. Gilberto Riccio (OAB/BA 46.638).
+                    Resposta informativa: cada caso depende dos documentos e dos fatos.
+                  </p>
                 </CardContent>
               </Card>
 
@@ -411,14 +442,14 @@ const FAQQuestion = () => {
                         Precisa de ajuda com seu caso?
                       </h3>
                       <p className="text-sm text-muted-foreground mb-4">
-                        Fale com um advogado e receba orientação personalizada para sua situação.
+                        Conte o seu caso pelo WhatsApp ao Dr. Gilberto Riccio (OAB/BA 46.638) e saiba o caminho e os documentos.
                       </p>
-                      <Link to="/">
-                        <Button className="w-full sm:w-auto">
+                      <Button asChild className="w-full sm:w-auto">
+                        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                           <MessageCircle className="h-4 w-4 mr-2" />
                           Falar com Advogado
-                        </Button>
-                      </Link>
+                        </a>
+                      </Button>
                     </div>
                   </div>
                 </CardContent>

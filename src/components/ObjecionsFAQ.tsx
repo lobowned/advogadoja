@@ -42,15 +42,15 @@ const ObjecionsFAQ = ({ detectedArea }: ObjecionsFAQProps) => {
   const objections = [
     {
       question: "Será que tenho direito mesmo?",
-      answer: "O Código de Defesa do Consumidor (CDC) protege você em diversas situações: cobranças indevidas, produtos defeituosos, serviços não prestados, negativação indevida e muito mais. Nossa equipe analisa seu caso gratuitamente."
+      answer: "O Código de Defesa do Consumidor (CDC) protege você em diversas situações: cobranças indevidas, produtos defeituosos, serviços não prestados, negativação indevida e muito mais. Se há direito no seu caso, depende dos fatos e das provas que você tem."
     },
     {
       question: "Processar empresa grande dá certo?",
-      answer: "Sim! Bancos, operadoras, companhias aéreas e planos de saúde perdem milhares de processos todos os dias. O Judiciário é favorável ao consumidor na maioria dos casos. Temos experiência contra todas as grandes empresas."
+      answer: "Bancos, operadoras, companhias aéreas e planos de saúde respondem pelos danos que causam ao consumidor como qualquer outro fornecedor. O resultado depende das provas e do caso concreto, e ninguém pode garantir o desfecho de um processo."
     },
     {
       question: "Quanto tempo demora para resolver?",
-      answer: "Depende do caso. Liminares (como plano de saúde negando cirurgia) podem sair em 24-48h. Processos no Juizado Especial levam de 3 a 6 meses. Ações comuns, de 1 a 2 anos. Avaliamos a melhor estratégia para seu caso."
+      answer: "Depende do caso. Em urgência, como cirurgia negada pelo plano de saúde, o pedido pode ser levado ao plantão judiciário, inclusive à noite e em fins de semana; quem decide o prazo é o juiz. Processos no Juizado Especial costumam levar alguns meses, e ações comuns, mais tempo. O caminho é avaliado caso a caso."
     },
     {
       question: "Tenho que pagar algo para começar?",
@@ -77,7 +77,7 @@ const ObjecionsFAQ = ({ detectedArea }: ObjecionsFAQProps) => {
     },
     {
       question: "O escritório atua em todo o Brasil?",
-      answer: "Sim, o escritório está capacitado para atuar em processos em todo território nacional, utilizando recursos digitais e presenciais conforme a necessidade de cada caso."
+      answer: "O escritório é digital, sem endereço físico, e o foco é a Bahia, onde o Dr. Gilberto Riccio tem inscrição (OAB/BA 46.638). O atendimento é online, pelo WhatsApp; casos de outros estados são avaliados um a um."
     },
     {
       question: "Posso fazer uma consulta antes de decidir?",

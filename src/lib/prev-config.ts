@@ -10,20 +10,19 @@
 
 export const LAWYER = {
   // ---- DADOS PROFISSIONAIS ----
-  fullName: "Dr. {{NOME}} {{SOBRENOME}}",
-  shortName: "Dr. {{NOME}}",
-  oabNumber: "{{NUMERO}}",
-  oabState: "{{UF}}",
-  city: "{{CIDADE}}",
-  state: "{{UF}}",
-  yearsOfExperience: 0, // número de anos atuando — preencher quando souber
+  // Antes eram marcadores ("Dr. {{NOME}}", "OAB/{{UF}}") que apareciam assim no site.
+  fullName: "Dr. Gilberto Riccio",
+  shortName: "Gilberto Riccio", // usado só no monograma (inicial "G")
+  oabNumber: "46.638",
+  oabState: "BA",
+  city: "Salvador",
+  state: "BA",
+  yearsOfExperience: 0, // número de anos atuando — só preencher com dado confirmado pelo Dr.
 
   // ---- CONTATO ----
-  // Número WhatsApp herdado do site atual (Salvador/BA). Troque para o
-  // seu WhatsApp profissional pessoal/escritório.
   whatsappNumber: "5571997036269",
   email: "contato@advogadoja.com.br",
-  addressLine: "{{ENDEREÇO}}", // ex: "Rua das Flores, 123, sala 45 — Salvador/BA"
+  addressLine: "" as string, // escritório digital, sem endereço físico
 
   // Horários reais de atendimento (não prometer 24h se não atende 24h)
   businessHours: "Segunda a sexta, 9h às 18h",
@@ -32,7 +31,7 @@ export const LAWYER = {
   brandName: "Previdenciário", // sub-marca dentro do Riccio Advocacia
   tagline: "Atuação em Direito Previdenciário",
   metaDescription:
-    "Assessoria jurídica especializada em aposentadorias, auxílio-doença e BPC/LOAS. Atendimento humanizado, análise técnica do seu CNIS e estratégia personalizada.",
+    "Assessoria jurídica em aposentadorias, auxílio-doença e BPC/LOAS. Atendimento humanizado, análise técnica do seu CNIS e estratégia personalizada.",
 } as const;
 
 /**

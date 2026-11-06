@@ -107,7 +107,7 @@ const TermsOfUse = () => {
                 </p>
                 <ul className="list-disc pl-5 space-y-1">
                   <li><strong className="text-foreground">Triagem inicial:</strong> coleta de informações sobre seu caso por meio de assistente virtual</li>
-                  <li><strong className="text-foreground">Consulta jurídica gratuita:</strong> análise preliminar por advogados habilitados</li>
+                  <li><strong className="text-foreground">Análise preliminar:</strong> leitura do relato pelo advogado, para indicar caminhos e documentos</li>
                   <li><strong className="text-foreground">Orientação jurídica:</strong> esclarecimento de dúvidas e direcionamento sobre possíveis ações</li>
                   <li><strong className="text-foreground">Representação judicial:</strong> mediante contratação formal de serviços advocatícios</li>
                 </ul>
@@ -134,7 +134,7 @@ const TermsOfUse = () => {
                   <li>Todas as comunicações são confidenciais e invioláveis</li>
                   <li>Nenhuma informação será divulgada sem sua autorização expressa</li>
                   <li>O sigilo abrange advogados, funcionários e prestadores de serviço</li>
-                  <li>Utilizamos criptografia de ponta a ponta em todas as comunicações</li>
+                  <li>As páginas do site usam conexão segura (HTTPS)</li>
                 </ul>
               </CardContent>
             </Card>
@@ -182,7 +182,7 @@ const TermsOfUse = () => {
               </CardHeader>
               <CardContent className="prose prose-sm max-w-none text-muted-foreground">
                 <p>
-                  <strong className="text-foreground">Consulta inicial:</strong> A triagem e consulta inicial pelo chat são gratuitas.
+                  <strong className="text-foreground">Honorários:</strong> só existem se houver contratação, com valores combinados por escrito antes de qualquer ação.
                 </p>
                 <p className="mt-4">
                   <strong className="text-foreground">Contratação de serviços:</strong> Caso decida prosseguir com uma ação judicial, 

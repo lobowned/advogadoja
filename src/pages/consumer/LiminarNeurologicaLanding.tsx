@@ -15,11 +15,11 @@ const faqItems = [
   },
   {
     question: "Material de neurocirurgia é coberto?",
-    answer: "Sim. Parafusos, cages, placas, derivações - todos os materiais indicados pelo neurocirurgião devem ser cobertos, independente do custo."
+    answer: "Em regra, sim: material ligado ao ato cirúrgico (parafusos, cages, placas, derivações) tem cobertura (Lei 9.656/1998, art. 10, VII). Se o plano discordar do material indicado, deve abrir junta médica (RN 424/2017 da ANS) em vez de negar."
   },
   {
     question: "Quanto tempo demora liminar para tumor cerebral?",
-    answer: "Tumores cerebrais são tratados como urgência máxima. Liminares podem sair em 6 a 24 horas, inclusive em plantão judicial."
+    answer: "Não há prazo fixo. Em urgência, o pedido pode ser levado ao plantão judiciário, inclusive à noite e em fins de semana. Quem decide o prazo é o juiz."
   },
   {
     question: "O plano pode exigir que use hospital da rede?",
@@ -27,7 +27,7 @@ const faqItems = [
   },
   {
     question: "Estimulador cerebral (DBS) para Parkinson é coberto?",
-    answer: "Sim. O DBS está no rol da ANS e é indicado para Parkinson avançado. A negativa é ilegal e dá direito a liminar."
+    answer: "O implante de eletrodos para estimulação cerebral profunda consta do rol da ANS, com diretriz de utilização que inclui a doença de Parkinson. Se o caso cumpre a diretriz e há indicação médica, a negativa pode ser questionada na Justiça com pedido de liminar."
   },
 ];
 

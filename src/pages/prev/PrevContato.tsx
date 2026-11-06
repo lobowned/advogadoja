@@ -56,7 +56,7 @@ export default function PrevContato() {
   };
 
   const cityKnown = !LAWYER.city.includes("{");
-  const addressKnown = !LAWYER.addressLine.includes("{");
+  const addressKnown = LAWYER.addressLine.length > 0 && !LAWYER.addressLine.includes("{");
 
   return (
     <>
@@ -79,7 +79,7 @@ export default function PrevContato() {
               <span className="italic text-prev-gold">o seu caso</span>.
             </>
           }
-          heroSubtitle="A forma mais rápida é pelo WhatsApp — respondemos no mesmo dia útil. Mas se preferir, deixe sua mensagem pelo formulário ou e-mail."
+          heroSubtitle="O caminho mais direto é o WhatsApp. Mas se preferir, deixe sua mensagem pelo formulário ou e-mail."
           quizKey="contato"
           whatsappButtonText="Falar pelo WhatsApp agora"
         />
@@ -103,10 +103,10 @@ export default function PrevContato() {
                 <MessageCircle className="w-7 h-7 text-prev-gold mb-6 group-hover:scale-110 transition-transform duration-500" strokeWidth={1.2} />
                 <h3 className="font-serif text-[1.35rem] text-prev-navy mb-2 leading-tight">WhatsApp</h3>
                 <p className="text-[10px] uppercase tracking-[0.22em] text-prev-navy/55 mb-4 font-semibold">
-                  Resposta mais rápida
+                  Canal principal
                 </p>
                 <p className="text-prev-navy/72 text-[14.5px] leading-[1.7]">
-                  Conte rapidamente sua situação. Já indicamos os próximos passos.
+                  Conte sua situação e veja quais são os próximos passos.
                 </p>
               </motion.a>
 

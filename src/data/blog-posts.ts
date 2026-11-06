@@ -338,7 +338,7 @@ export const blogPosts: BlogPost[] = [
         <h3 class="text-2xl font-bold text-foreground mb-3">Teve Problemas com Compra Online?</h3>
         <p class="text-muted-foreground mb-6">Um advogado pode analisar os documentos do seu caso e explicar os caminhos possíveis, sem promessa de resultado. Veja também o <a href="/guia/consumidor" class="text-primary underline">guia de direito do consumidor</a> e o <a href="/advogado-consumidor-salvador" class="text-primary underline">atendimento em Salvador</a>.</p>
         <a href="/" class="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
-          Consultar Advogado Grátis
+          Falar com o advogado
         </a>
       </div>
 

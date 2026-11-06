@@ -43,13 +43,13 @@ const Conversao = () => {
 
           {/* Description */}
           <p className="text-gray-600 mb-6 leading-relaxed">
-            Você será atendido em instantes por um de nossos advogados.
+            Seu contato foi registrado. O atendimento segue com o Dr. Gilberto Riccio (OAB/BA 46.638).
           </p>
 
           {/* Instructions */}
           <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
             <p className="text-amber-800 text-sm">
-              👈 <strong>Volte para a aba anterior</strong> para continuar sua conversa com nosso advogado.
+              👈 <strong>Volte para a aba anterior</strong> para continuar a sua conversa.
             </p>
           </div>
 

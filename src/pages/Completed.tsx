@@ -51,8 +51,8 @@ const Completed = () => {
           )}
 
           <p className="mb-8 text-lg text-muted-foreground">
-            Agradecemos por compartilhar sua situação conosco. Nossa equipe jurídica
-            especializada irá analisar cuidadosamente seu caso.
+            Agradecemos por compartilhar sua situação conosco. O Dr. Gilberto Riccio
+            (OAB/BA 46.638) vai analisar com cuidado as informações enviadas.
           </p>
 
           <div className="mb-8 rounded-lg bg-muted/50 p-6">
@@ -89,13 +89,13 @@ const Completed = () => {
                   <span className="font-medium">Entre em contato por e-mail:</span>
                 </div>
                 <a
-                  href="mailto:contato@escritorio.com.br"
+                  href="mailto:contato@advogadoja.com.br"
                   className="text-primary hover:underline"
                 >
-                  contato@escritorio.com.br
+                  contato@advogadoja.com.br
                 </a>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Responderemos em até 24 horas úteis
+                  O e-mail também serve para enviar documentos do caso.
                 </p>
               </div>
             </div>

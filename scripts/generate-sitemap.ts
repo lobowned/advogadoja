@@ -18,7 +18,7 @@
 import { programmaticFAQs } from '../src/data/programmatic-faqs';
 import { blogArticles } from '../src/data/blog-articles';
 import { blogPosts } from '../src/data/blog-posts';
-import { brazilianCities } from '../src/data/cities';
+import { brazilianCities, isCityIndexable } from '../src/data/cities';
 import { legalNiches } from '../src/data/legal-niches';
 import { localSEOArticles, isIndexableLocalSEOArticle } from '../src/data/local-seo-articles';
 import { redirectedPaths } from '../src/data/article-redirects';
@@ -131,7 +131,8 @@ function generateNicheUrls(): SitemapURL[] {
 // CITY LANDING PAGES
 // ============================================
 function generateCityUrls(): SitemapURL[] {
-  return brazilianCities.filter(c => LOCAL_CITIES.includes(c.slug)).map(city => ({
+  // Todas as cidades indexáveis (as mesmas que a página marca sem noindex), não só as 10 com página por área
+  return brazilianCities.filter(c => isCityIndexable(c.slug)).map(city => ({
     loc: `/advogado/${city.slug}`,
     lastmod: UNKNOWN,
     changefreq: 'weekly' as const,

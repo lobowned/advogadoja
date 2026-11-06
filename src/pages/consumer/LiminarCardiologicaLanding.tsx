@@ -11,23 +11,23 @@ const breadcrumbs = [
 const faqItems = [
   {
     question: "Cirurgia cardíaca de emergência tem carência?",
-    answer: "Não. A Lei 9.656/98 determina cobertura imediata para urgência e emergência, inclusive cardiológicas. Não há carência para procedimentos de risco de vida."
+    answer: "Para urgência e emergência, a carência máxima é de 24 horas depois da contratação (Lei 9.656/1998, art. 12, V, c; Súmula 597 do STJ). Passado esse prazo, o plano não pode negar o atendimento de emergência alegando carência."
   },
   {
     question: "O plano pode negar stent farmacológico?",
-    answer: "Não pode. Desde 2014 (RN 338/ANS), os planos são obrigados a cobrir stents farmacológicos quando indicados pelo médico. A negativa é ilegal."
+    answer: "Em regra, não. O stent é material ligado ao ato cirúrgico (Lei 9.656/1998, art. 10, VII) e a escolha do tipo cabe ao médico, com justificativa. Se o plano discordar, deve seguir o procedimento de junta médica da ANS, em vez de simplesmente negar."
   },
   {
     question: "Quanto tempo demora liminar cardíaca?",
-    answer: "Casos cardíacos são prioridade máxima. Liminares podem sair em 6 a 24 horas, inclusive em plantão judicial durante a noite e finais de semana."
+    answer: "Não há prazo fixo. Em urgência, o pedido pode ser levado ao plantão judiciário, inclusive à noite e em fins de semana. Quem decide o prazo é o juiz."
   },
   {
     question: "Posso escolher o cardiologista?",
-    answer: "Dentro da rede credenciada, sim. Se seu cardiologista de confiança estiver fora, pode-se pleitear reembolso integral ou autorização excepcional."
+    answer: "Dentro da rede credenciada, sim. Fora da rede, o reembolso segue o contrato; ele só é integral quando o plano não oferece profissional ou hospital apto na rede nos prazos da ANS."
   },
   {
     question: "Qual o valor de danos morais em negativas cardíacas?",
-    answer: "Por envolver risco de vida, os tribunais costumam fixar valores mais altos: entre R$ 15 mil e R$ 50 mil, dependendo da gravidade."
+    answer: "Depende do caso. Os tribunais consideram a gravidade, o risco à saúde e a conduta do plano. Não há valor fixo nem garantido."
   },
 ];
 

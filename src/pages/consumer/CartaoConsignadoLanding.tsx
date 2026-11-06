@@ -5,7 +5,7 @@ import SimpleConsumerLanding from "@/components/consumer/SimpleConsumerLanding";
 const faqItems = [
   {
     question: "O que é RMC e RCC?",
-    answer: "RMC (Reserva de Margem Consignável) é o valor reservado do seu benefício do INSS para pagamento de cartão de crédito consignado. RCC (Reserva de Cartão Consignado) é o desconto que aparece no seu extrato. Muitas vezes o aposentado nunca pediu esse cartão.",
+    answer: "RMC (Reserva de Margem Consignável) é a parte do benefício do INSS reservada para o cartão de crédito consignado. RCC (Reserva de Cartão Consignado) é a reserva do chamado cartão consignado de benefício. As duas aparecem como desconto no extrato do INSS, e muitas vezes o aposentado nunca pediu o cartão.",
   },
   {
     question: "Nunca pedi cartão consignado, posso cancelar?",

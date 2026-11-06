@@ -11,9 +11,9 @@ export default function PrevAuxilioDoenca() {
       lawyerId="claudia-martins"
       quizKey="auxilio-doenca"
       stats={[
-        { number: "37%", label: "Dos pedidos são negados administrativamente" },
+        { number: "91%", label: "Do salário-de-benefício (regra geral)" },
         { number: "12 meses", label: "Carência mínima exigida (com exceções)" },
-        { number: "8-18 meses", label: "Tempo médio na Justiça Federal" },
+        { number: "30 dias", label: "Prazo para recorrer ao próprio INSS" },
       ]}
       commonMistakes={[
         "Ir na perícia sem laudos médicos completos e atualizados — principal causa de negativa.",
@@ -56,15 +56,15 @@ Se sua incapacidade vira permanente, a gente converte em aposentadoria por inval
       faq={[
         {
           q: "INSS negou. E agora, posso recorrer?",
-          a: "Pode sim. Tem 2 caminhos: recorrer pelo próprio INSS (Junta de Recursos, prazo de 30 dias) ou ir direto pra Justiça. Quando o motivo foi a perícia médica, ir pra Justiça costuma ser mais rápido e mais favorável — o juiz nomeia perito novo. Vou avaliar o seu caso e dizer qual o melhor caminho.",
+          a: "Pode sim. Tem 2 caminhos: recorrer pelo próprio INSS (Junta de Recursos, prazo de 30 dias) ou ir direto pra Justiça. Quando o motivo foi a perícia médica, ir pra Justiça costuma valer a pena, porque o juiz nomeia perito novo. Vou avaliar o seu caso e dizer qual o melhor caminho.",
         },
         {
           q: "Sou MEI / autônomo. Recebo auxílio-doença?",
-          a: "Recebe sim. Se você paga INSS regularmente (pelo MEI ou como contribuinte individual) e já contribuiu por pelo menos 12 meses, tem direito igual qualquer outro trabalhador. Só precisa estar com o INSS em dia quando ficar doente.",
+          a: "Recebe sim. Se você paga INSS regularmente (pelo MEI ou como contribuinte individual) e já tem 12 contribuições, tem o mesmo direito de qualquer trabalhador. Acidente de qualquer natureza e algumas doenças graves dispensam essas 12 contribuições. Precisa estar com a qualidade de segurado quando ficar doente.",
         },
         {
           q: "Quanto vou receber de auxílio-doença?",
-          a: "Em geral é 91% do salário-de-benefício, calculado pela média de tudo que você ganhou desde julho/1994. Tem teto máximo (igual ao salário do INSS) e mínimo (1 salário mínimo). Erros no cálculo são comuns — sempre vale conferir.",
+          a: "Em geral é 91% do salário de benefício (a média das contribuições desde julho de 1994), limitado à média dos últimos 12 salários de contribuição e ao teto do INSS, e nunca abaixo de 1 salário mínimo (Lei 8.213/1991, arts. 29, § 10, e 61). Erros no cálculo acontecem; vale conferir.",
         },
         {
           q: "Meu chefe pode me demitir enquanto recebo auxílio?",

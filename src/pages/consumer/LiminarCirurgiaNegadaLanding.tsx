@@ -5,15 +5,15 @@ import SimpleConsumerLanding from "@/components/consumer/SimpleConsumerLanding";
 const faqItems = [
   {
     question: "Quanto tempo demora para conseguir a liminar?",
-    answer: "Em casos urgentes, a liminar pode ser decidida em poucos dias. Casos de emergência, com risco de vida, podem ser levados ao plantão judicial.",
+    answer: "Não há prazo fixo. Em urgência, o pedido pode ser levado ao plantão judiciário, inclusive à noite e em fins de semana. Quem decide o prazo é o juiz.",
   },
   {
     question: "Minha cirurgia foi negada por não estar no rol da ANS. Posso conseguir liminar?",
-    answer: "Sim. Pela Lei 14.454/2022, o rol da ANS é exemplificativo. Havendo indicação médica e comprovação científica, o plano pode ser obrigado a cobrir.",
+    answer: "Pode. Pela Lei 14.454/2022, o rol da ANS não é a lista final. Com prescrição médica, registro na Anvisa, comprovação científica de eficácia e sem alternativa equivalente no rol, o plano pode ser obrigado a cobrir (critérios fixados pelo STF na ADI 7.265, em 2025).",
   },
   {
     question: "O plano negou alegando carência. Tenho direito à liminar?",
-    answer: "Em urgência e emergência, a carência não pode ser oposta além do prazo legal (Lei 9.656/98). Se há risco à saúde, é possível pedir liminar.",
+    answer: "Em urgência e emergência, a carência máxima é de 24 horas depois da contratação (Lei 9.656/1998, art. 12, V, c; Súmula 597 do STJ). Se há risco à saúde, é possível pedir liminar.",
   },
   {
     question: "E se a liminar for negada?",
@@ -57,7 +57,7 @@ const LiminarCirurgiaNegadaLanding = () => (
       seo={
         <Helmet>
           <title>Liminar Cirurgia Negada pelo Plano de Saúde | Riccio Advocacia</title>
-          <meta name="description" content="Teve cirurgia negada pelo plano de saúde? Advogado para pedido de liminar judicial que garanta seu tratamento. Bariátrica, câncer, ortopedia e mais." />
+          <meta name="description" content="Teve cirurgia negada pelo plano de saúde? Advogado para pedido de liminar judicial de urgência para o seu tratamento. Bariátrica, câncer, ortopedia e mais." />
           <meta name="keywords" content="liminar cirurgia plano saúde, cirurgia negada, tutela urgência saúde, bariátrica negada, quimioterapia negada, prótese negada, advogado plano saúde" />
           <link rel="canonical" href="https://riccio-advocacia.lovable.app/liminar-cirurgia-negada" />
           <meta property="og:title" content="Cirurgia Negada? Advogado para Liminar" />

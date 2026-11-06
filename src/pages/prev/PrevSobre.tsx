@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { GraduationCap, MapPin, Scale, Shield, MessageCircle } from "lucide-react";
+import { Briefcase, MapPin, Scale, Shield, MessageCircle } from "lucide-react";
 
 import PrevLayout from "@/components/prev/PrevLayout";
 import PrevCredibility from "@/components/prev/PrevCredibility";
@@ -59,8 +59,7 @@ export default function PrevSobre() {
                       </span>
                     </div>
                     <p className="text-xs text-prev-beige/50 leading-relaxed">
-                      Espaço para sua foto profissional. Recomendamos fundo
-                      neutro, traje sóbrio.
+                      Dr. Gilberto Riccio · OAB/BA 46.638
                     </p>
                   </div>
                 </div>
@@ -82,9 +81,10 @@ export default function PrevSobre() {
                 </div>
 
                 <p className="text-prev-navy/80 leading-[1.75] text-lg prev-dropcap">
-                  [Espaço para sua biografia profissional. Sugestão de
-                  estrutura: formação, principais atuações, posicionamento
-                  pessoal sobre o que move sua advocacia previdenciária.]
+                  O Dr. Gilberto Riccio é advogado inscrito na OAB/BA sob o nº
+                  46.638 e conduz pessoalmente os casos do escritório. A Riccio
+                  Advocacia é um escritório digital: o atendimento é online, pelo
+                  WhatsApp, a partir de Salvador.
                 </p>
 
                 {/* Citação editorial intercalada */}
@@ -96,17 +96,17 @@ export default function PrevSobre() {
                 </blockquote>
 
                 <p className="text-prev-navy/75 leading-[1.75] text-[16.5px]">
-                  [Continue contando sua trajetória — pós-graduações,
-                  associações, casos relevantes (sem identificar clientes),
-                  filosofia de atendimento. Mantenha entre 2 e 4 parágrafos.
-                  Linguagem em primeira pessoa funciona bem aqui.]
+                  Nos casos previdenciários, o trabalho começa pela leitura do
+                  CNIS e dos documentos, passa pela simulação das regras que se
+                  aplicam ao seu caso e só então indica o pedido ao INSS ou a
+                  ação na Justiça.
                 </p>
 
-                {/* Credenciais em grid hairline */}
+                {/* Credenciais em grid hairline (sem título de especialista: o Dr. não tem) */}
                 <div className="grid sm:grid-cols-2 gap-px bg-prev-navy/10 border border-prev-navy/10 mt-8">
                   {[
-                    { icon: GraduationCap, label: "Formação", value: "[Faculdade / pós-graduação]" },
-                    { icon: Scale, label: "Especialização", value: "Direito Previdenciário" },
+                    { icon: Shield, label: "Inscrição", value: `OAB/${LAWYER.oabState} ${LAWYER.oabNumber}` },
+                    { icon: Scale, label: "Área", value: "Direito Previdenciário" },
                     {
                       icon: MapPin,
                       label: "Atuação",
@@ -115,9 +115,9 @@ export default function PrevSobre() {
                         : "Sua cidade · UF · Brasil (online)",
                     },
                     {
-                      icon: Shield,
-                      label: "Filiação",
-                      value: `OAB — Seccional ${LAWYER.oabState}`,
+                      icon: Briefcase,
+                      label: "Escritório",
+                      value: "Riccio Advocacia · CNPJ 50.947.818/0001-94",
                     },
                   ].map((item) => (
                     <div
@@ -220,7 +220,7 @@ export default function PrevSobre() {
               Falar agora pelo WhatsApp
             </a>
             <p className="text-xs text-prev-navy/50 mt-5 tracking-wide">
-              Resposta em até 2 horas úteis · Sigilo profissional total
+              Atendimento online pelo WhatsApp · Sigilo profissional
             </p>
           </div>
         </section>

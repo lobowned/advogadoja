@@ -101,7 +101,7 @@ const CalculadoraHorasExtras = () => {
                 Trabalhou horas extras sem receber?
               </h2>
               <p className="text-muted-foreground mb-6">
-                Nossos advogados trabalhistas podem analisar seu caso e buscar seus direitos.
+                O Dr. Gilberto Riccio (OAB/BA 46.638) pode analisar o seu caso e indicar como cobrar o que for devido.
               </p>
               <Button onClick={scrollToChat} size="lg" className="gap-2 bg-amber-600 hover:bg-amber-700">
                 <MessageCircle className="w-5 h-5" />

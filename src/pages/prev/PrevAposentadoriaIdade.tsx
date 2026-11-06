@@ -13,7 +13,7 @@ export default function PrevAposentadoriaIdade() {
       stats={[
         { number: "65/62", label: "Idade mínima (homem/mulher)" },
         { number: "20/15", label: "Anos mínimos de INSS (h/m)" },
-        { number: "+30%", label: "Diferença média entre regra nova e transição" },
+        { number: "60%", label: "Da média, + 2% por ano a mais de INSS (regra nova)" },
       ]}
       commonMistakes={[
         "Pedir pela regra nova sem simular as regras de transição (em muitos casos a transição paga mais e demora menos).",
@@ -64,7 +64,7 @@ Só aí montamos o pedido, com toda documentação certa, pra não dar problema 
         },
         {
           q: "INSS demora quanto pra liberar?",
-          a: "Pela lei, 45 dias depois do pedido. Na prática varia: 1 a 6 meses em muitos casos, mais em outros. Se passar muito do prazo, dá pra entrar com mandado de segurança pra obrigar o INSS a analisar. A gente faz isso.",
+          a: "A lei fala em 45 dias para o primeiro pagamento depois de entregue a documentação (Lei 8.213/1991, art. 41-A, § 5º), e o acordo homologado no STF (Tema 1.066) dá ao INSS até 90 dias para analisar pedidos de aposentadoria. Na prática varia. Se passar do prazo, dá pra entrar com mandado de segurança pra obrigar o INSS a decidir.",
         },
         {
           q: "Trabalhei na roça quando era novo, conta como INSS?",

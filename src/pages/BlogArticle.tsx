@@ -42,7 +42,7 @@ const BlogArticle = () => {
       "name": "Riccio Advocacia",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://riccio-advocacia.lovable.app/logo.png"
+        "url": "https://riccio-advocacia.lovable.app/og-image.png"
       }
     },
     "datePublished": post.publishedAt,
@@ -236,11 +236,11 @@ const BlogArticle = () => {
                 Precisa de Ajuda Jurídica?
               </h2>
               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                Nossa equipe de advogados está pronta para analisar seu caso gratuitamente e orientar sobre os próximos passos.
+                O Dr. Gilberto Riccio (OAB/BA 46.638) pode analisar o seu caso e orientar sobre os próximos passos.
               </p>
               <Button size="lg" asChild>
                 <Link to="/">
-                  Falar com Advogado Agora
+                  Falar com o advogado
                 </Link>
               </Button>
             </section>

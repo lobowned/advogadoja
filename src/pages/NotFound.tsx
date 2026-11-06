@@ -72,7 +72,7 @@ const NotFound = () => {
           {/* CTA */}
           <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
             <p className="text-sm text-muted-foreground mb-3">
-              Precisa de ajuda jurídica? Fale com um advogado agora mesmo.
+              Precisa de ajuda jurídica? Conte o seu caso pelo chat ou pelo WhatsApp.
             </p>
             <Button asChild size="lg" className="w-full gap-2">
               <Link to="/">

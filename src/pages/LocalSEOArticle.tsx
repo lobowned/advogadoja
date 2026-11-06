@@ -91,16 +91,16 @@ const LocalSEOArticle = () => {
     "headline": article.title,
     "description": article.metaDescription,
     "author": {
-      "@type": "Organization",
-      "name": "Riccio Advocacia",
-      "url": "https://riccio-advocacia.lovable.app"
+      "@type": "Person",
+      "name": "Gilberto Riccio",
+      "jobTitle": "Advogado OAB/BA 46.638"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Riccio Advocacia",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://riccio-advocacia.lovable.app/logo.png"
+        "url": "https://riccio-advocacia.lovable.app/og-image.png"
       }
     },
     "datePublished": article.updatedAt,
@@ -132,19 +132,12 @@ const LocalSEOArticle = () => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": `Advogado do Consumidor em ${article.cityName}`,
-    "description": `Advogado que atua em direito do consumidor em ${article.cityName}, ${article.state}`,
+    "name": "Riccio Advocacia",
+    "description": `Atendimento online em direito do consumidor para quem mora em ${article.cityName}, ${article.state}. Dr. Gilberto Riccio, OAB/BA 46.638.`,
     "url": `https://riccio-advocacia.lovable.app/artigos/consumidor/${article.slug}`,
-    "areaServed": {
-      "@type": "City",
-      "name": article.cityName,
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": article.coordinates.latitude,
-        "longitude": article.coordinates.longitude
-      }
-    },
-    "priceRange": "$$"
+    "telephone": "+55-71-99703-6269",
+    // Escritório digital: só a cidade atendida, sem coordenadas nem endereço
+    "areaServed": { "@type": "City", "name": article.cityName }
   };
   
   const breadcrumbSchema = {
@@ -178,7 +171,7 @@ const LocalSEOArticle = () => {
     ]
   };
 
-  const whatsappLink = `https://wa.me/5571997036269?text=Olá! Vi o artigo sobre ${article.problemLabel} em ${article.cityName} e gostaria de falar com um advogado.`;
+  const whatsappLink = `https://wa.me/5571997036269?text=${encodeURIComponent(`Olá! Vi o artigo sobre ${article.problemLabel} em ${article.cityName} e gostaria de falar com um advogado.`)}`;
 
   return (
     <>
@@ -196,12 +189,6 @@ const LocalSEOArticle = () => {
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://riccio-advocacia.lovable.app/artigos/consumidor/${article.slug}`} />
         <meta property="og:locale" content="pt_BR" />
-        
-        {/* Geo Tags */}
-        <meta name="geo.region" content={`BR-${article.stateCode}`} />
-        <meta name="geo.placename" content={article.cityName} />
-        <meta name="geo.position" content={`${article.coordinates.latitude};${article.coordinates.longitude}`} />
-        <meta name="ICBM" content={`${article.coordinates.latitude}, ${article.coordinates.longitude}`} />
         
         {/* Article meta */}
         <meta property="article:published_time" content={article.updatedAt} />
@@ -274,7 +261,7 @@ const LocalSEOArticle = () => {
                   <Clock className="h-4 w-4" />
                   {readingTime} min de leitura
                 </span>
-                <span>Atualizado em {new Date(article.updatedAt).toLocaleDateString('pt-BR')}</span>
+                <span>Atualizado em {new Date(article.updatedAt.slice(0, 10) + "T12:00:00").toLocaleDateString('pt-BR')}</span>
               </div>
               
               {/* CTA Button */}
@@ -293,7 +280,7 @@ const LocalSEOArticle = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-lg font-semibold text-center mb-6">
-                Estatísticas de {article.problemLabel} em {article.cityName}
+                Em resumo: {article.problemLabel} em {article.cityName}
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {article.content.statistics.map((stat, index) => (

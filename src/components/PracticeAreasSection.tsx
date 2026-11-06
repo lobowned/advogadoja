@@ -113,9 +113,9 @@ const PracticeAreasSection = () => {
               Um escritório, <em className="not-italic text-primary">seis áreas</em> do direito.
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground font-sans leading-relaxed">
-              Atendimento generalista com advogados. Do trabalhista
-              ao criminal, conduzimos cada caso com a discrição e a estratégia
-              que ele exige.
+              Atendimento generalista, feito pelo Dr. Gilberto Riccio (OAB/BA 46.638).
+              Do trabalhista ao criminal, cada caso é conduzido com a discrição e a
+              estratégia que ele exige.
             </p>
           </m.div>
 
@@ -173,7 +173,7 @@ const PracticeAreasSection = () => {
           {/* CTA */}
           <m.div variants={fadeInUp} className="text-center pt-4">
             <p className="text-muted-foreground font-sans mb-5 text-sm sm:text-base">
-              Não sabe em qual área se enquadra seu caso? Fale conosco — orientamos sem compromisso.
+              Não sabe em qual área se enquadra seu caso? Conte o que aconteceu pelo WhatsApp.
             </p>
             <Button
               size="lg"

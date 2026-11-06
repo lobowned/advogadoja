@@ -5,7 +5,7 @@ import SimpleConsumerLanding from "@/components/consumer/SimpleConsumerLanding";
 const faqItems = [
   {
     question: "Qual o prazo para entrar com ação por problemas com voo?",
-    answer: "Para voos nacionais, o prazo é de 5 anos. Para voos internacionais, o prazo é de 2 anos. É importante agir rápido para preservar provas e documentos.",
+    answer: "Voos nacionais: 5 anos (CDC). Voos internacionais: 2 anos para danos materiais (Convenção de Montreal); para danos morais, o STF aplica o CDC, com prazo de 5 anos (Tema 1.240). Mesmo assim, vale agir rápido para guardar as provas.",
   },
   {
     question: "Quais documentos preciso guardar?",

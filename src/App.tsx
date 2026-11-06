@@ -20,6 +20,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { LOCAL_PAGE_ROUTES } from "./data/local-page-keys";
 import { articleRedirects } from "./data/article-redirects";
+import { routeRedirects } from "./data/route-redirects";
 import {
   PrevHome,
   PrevAposentadorias,
@@ -37,7 +38,6 @@ import {
   TermsOfUse,
   DynamicQuestionnaire,
   Completed,
-  FAQ,
   FAQIndex,
   FAQQuestion,
   NicheLanding,
@@ -146,13 +146,18 @@ const AnimatedRoutes = () => {
           <Route key={r.from} path={r.from} element={<Navigate to={r.to} replace />} />
         ))}
 
+        {/* Endereços antigos (calculadoras aposentadas, outros estados, FAQ antiga): lista em data/route-redirects.ts,
+            que o gerador de HTML estático também usa */}
+        {routeRedirects.map((r) => (
+          <Route key={r.from} path={r.from} element={<Navigate to={r.to} replace />} />
+        ))}
+
         {/* Blog/Artigos - Legacy */}
         <Route path="/artigos" element={<Blog />} />
         <Route path="/artigos/:nicheId" element={<Blog />} />
         <Route path="/artigos/:nicheId/:slug" element={<BlogPost />} />
 
-        {/* FAQ */}
-        <Route path="/perguntas-frequentes" element={<FAQ />} />
+        {/* FAQ (a antiga /perguntas-frequentes redireciona via route-redirects.ts) */}
         <Route path="/perguntas" element={<FAQIndex />} />
         <Route path="/perguntas/:slug" element={<FAQQuestion />} />
 
@@ -161,20 +166,8 @@ const AnimatedRoutes = () => {
         <Route path="/termos-de-uso" element={<TermsOfUse />} />
         <Route path="/sitemap" element={<Sitemap />} />
 
-        {/* Success Stories */}
-        <Route path="/casos-de-sucesso" element={<Navigate to="/" replace />} />
-
         {/* Regional Hub Pages */}
         <Route path="/advogado-bahia" element={<AdvogadoBahia />} />
-        <Route path="/advogado-sao-paulo" element={<Navigate to="/" replace />} />
-        <Route
-          path="/advogado-rio-de-janeiro"
-          element={<Navigate to="/" replace />}
-        />
-        <Route
-          path="/advogado-minas-gerais"
-          element={<Navigate to="/" replace />}
-        />
 
         {/* News */}
         <Route path="/noticias" element={<News />} />
@@ -190,10 +183,6 @@ const AnimatedRoutes = () => {
         <Route
           path="/calculadora-aposentadoria"
           element={<CalculadoraAposentadoria />}
-        />
-        <Route
-          path="/calculadora-danos-morais"
-          element={<Navigate to="/artigos/civil/danos-morais" replace />}
         />
         <Route
           path="/calculadora-atualizacao-divida"
@@ -226,45 +215,16 @@ const AnimatedRoutes = () => {
         />
         <Route path="/calculadora-bpc-loas" element={<CalculadoraBPCLOAS />} />
         <Route
-          path="/calculadora-inventario"
-          element={<Navigate to="/artigos/familia/inventario-heranca" replace />}
-        />
-        <Route
           path="/calculadora-insalubridade"
           element={<CalculadoraInsalubridade />}
         />
-        <Route path="/calculadora-dpvat" element={<Navigate to="/artigos/civil/acidente-transito-indenizacao" replace />} />
         {/* Consumer Calculators */}
-        <Route
-          path="/calculadora-voo-cancelado"
-          element={<Navigate to="/artigos/consumidor/atraso-cancelamento-voo-direitos" replace />}
-        />
-        <Route
-          path="/calculadora-negativacao"
-          element={<Navigate to="/artigos/consumidor/negativacao-indevida-spc-serasa" replace />}
-        />
         <Route
           path="/calculadora-devolucao-dobro"
           element={<CalculadoraDevolucaoEmDobro />}
         />
-        <Route
-          path="/calculadora-plano-saude"
-          element={<Navigate to="/artigos/consumidor/plano-saude-negativa-cobertura" replace />}
-        />
-        <Route
-          path="/calculadora-fraude-bancaria"
-          element={<Navigate to="/artigos/consumidor/golpe-pix-como-recuperar-dinheiro" replace />}
-        />
-        <Route
-          path="/calculadora-liminar-cirurgia"
-          element={<Navigate to="/artigos/consumidor/plano-saude-negativa-cobertura" replace />}
-        />
 
         {/* Consumer Problem Landing Pages - SEO URLs */}
-        <Route
-          path="/advogado-voo-cancelado-atrasado"
-          element={<Navigate to="/advogado-problemas-voo" replace />}
-        />
         <Route
           path="/advogado-negativacao-indevida"
           element={<NegativacaoIndevidaLanding />}
@@ -282,11 +242,7 @@ const AnimatedRoutes = () => {
           element={<ProdutoDefeitousoLanding />}
         />
 
-        {/* Consumer Problem Landing Pages - Legacy URLs */}
-        <Route
-          path="/voo-cancelado"
-          element={<Navigate to="/advogado-problemas-voo" replace />}
-        />
+        {/* Consumer Problem Landing Pages - Legacy URLs (abrem a página direto: podem ser destino de anúncio) */}
         <Route
           path="/negativacao-indevida"
           element={<NegativacaoIndevidaLanding />}

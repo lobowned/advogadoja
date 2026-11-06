@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { 
   Scale, MapPin, Users, ShoppingBag, Briefcase, Shield, 
-  HeartPulse, Gavel, CheckCircle, ArrowRight, MessageCircle, 
-  Phone, Star, Building, Clock
+  Gavel, CheckCircle, ArrowRight, MessageCircle, Star, Lock
 } from "lucide-react";
 import PageTransition from "@/components/motion/PageTransition";
 import { Button } from "@/components/ui/button";
@@ -12,32 +11,25 @@ import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { programmaticFAQs } from "@/data/programmatic-faqs";
+import { brazilianCities, isCityIndexable } from "@/data/cities";
 
-// Bahia cities data
-const bahiaCities = [
-  { name: "Salvador", slug: "salvador", population: "2.9M", isCapital: true },
-  { name: "Feira de Santana", slug: "feira-de-santana", population: "619K" },
-  { name: "Vitória da Conquista", slug: "vitoria-da-conquista", population: "343K" },
-  { name: "Camaçari", slug: "camacari", population: "304K" },
-  { name: "Itabuna", slug: "itabuna", population: "213K" },
-  { name: "Ilhéus", slug: "ilheus", population: "157K" },
-  { name: "Juazeiro", slug: "juazeiro", population: "220K" },
-  { name: "Lauro de Freitas", slug: "lauro-de-freitas", population: "204K" },
-  { name: "Barreiras", slug: "barreiras", population: "158K" },
-  { name: "Jequié", slug: "jequie", population: "155K" },
-  { name: "Alagoinhas", slug: "alagoinhas", population: "155K" }];
+// As mesmas cidades indexáveis do sitemap (cada uma tem /advogado/<cidade>)
+const bahiaCities = brazilianCities.filter((c) => c.stateCode === "BA" && isCityIndexable(c.slug));
+
+const WHATSAPP_URL = `https://wa.me/5571997036269?text=${encodeURIComponent("Olá, vim pelo site (página da Bahia) e quero falar sobre um caso.")}`;
 
 const legalAreas = [
-  { id: "consumidor", name: "Consumidor", icon: ShoppingBag, color: "text-emerald-600 bg-emerald-50" },
-  { id: "trabalhista", name: "Trabalhista", icon: Briefcase, color: "text-blue-600 bg-blue-50" },
-  { id: "previdenciario", name: "Previdenciário", icon: Shield, color: "text-purple-600 bg-purple-50" },
-  { id: "familia", name: "Família", icon: Users, color: "text-pink-600 bg-pink-50" },
-  { id: "civil", name: "Civil", icon: Scale, color: "text-amber-600 bg-amber-50" },
-  { id: "penal", name: "Criminal", icon: Gavel, color: "text-red-600 bg-red-50" }];
+  { id: "consumidor", name: "Consumidor", icon: ShoppingBag, color: "text-emerald-600 bg-emerald-50", text: "Cobrança indevida, nome negativado, produto com defeito, voo e plano de saúde." },
+  { id: "trabalhista", name: "Trabalhista", icon: Briefcase, color: "text-blue-600 bg-blue-50", text: "Rescisão, horas extras, FGTS, vínculo sem carteira e acidente de trabalho." },
+  { id: "previdenciario", name: "Previdenciário", icon: Shield, color: "text-purple-600 bg-purple-50", text: "Aposentadoria, auxílio-doença, BPC/LOAS, pensão por morte e revisão." },
+  { id: "familia", name: "Família", icon: Users, color: "text-pink-600 bg-pink-50", text: "Divórcio, pensão alimentícia, guarda, união estável e inventário." },
+  { id: "civil", name: "Civil", icon: Scale, color: "text-amber-600 bg-amber-50", text: "Contratos, cobranças, indenizações, aluguel e imóveis." },
+  { id: "criminal", name: "Criminal", icon: Gavel, color: "text-red-600 bg-red-50", text: "Prisão em flagrante, inquérito, audiência de custódia e defesa no processo." }];
 
 const localInfo = {
   procon: {
-    site: "procon.ba.gov.br"
+    // procon.ba.gov.br saiu do ar; os postos do Procon-BA estão no portal da Secretaria de Justiça
+    site: "ba.gov.br/justica"
   },
   tjba: {
     name: "Tribunal de Justiça da Bahia",
@@ -53,7 +45,7 @@ const localInfo = {
 };
 
 const stats = [
-  { value: "10", label: "Cidades com página própria" },
+  { value: String(bahiaCities.length), label: "Cidades com página própria" },
   { value: "Online", label: "Atendimento em todo o estado" },
   { value: "TJBA", label: "Justiça estadual" },
   { value: "TRT5", label: "Justiça do Trabalho" }];
@@ -72,9 +64,10 @@ const AdvogadoBahia = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": "Riccio Advocacia na Bahia",
-    "description": "Advogado online para consulta jurídica na Bahia. Atendemos Salvador, Feira de Santana, Vitória da Conquista e todas as cidades baianas.",
+    "name": "Riccio Advocacia",
+    "description": "Atendimento jurídico online em toda a Bahia: Salvador, Feira de Santana, Vitória da Conquista e demais cidades baianas. Dr. Gilberto Riccio, OAB/BA 46.638.",
     "url": "https://riccio-advocacia.lovable.app/advogado-bahia",
+    "telephone": "+55-71-99703-6269",
     "areaServed": {
       "@type": "State",
       "name": "Bahia",
@@ -83,7 +76,7 @@ const AdvogadoBahia = () => {
         "name": "Brasil"
       }
     },
-    "serviceType": ["Direito do Consumidor", "Direito Trabalhista", "Direito Previdenciário", "Direito de Família"],
+    "serviceType": ["Direito do Consumidor", "Direito Trabalhista", "Direito Previdenciário", "Direito de Família", "Direito Civil", "Direito Criminal"],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Serviços Jurídicos na Bahia",
@@ -115,8 +108,8 @@ const AdvogadoBahia = () => {
         <meta name="keywords" content="advogado bahia, advogado salvador, advogado feira de santana, advogado online bahia, advogado consumidor bahia, advogado trabalhista bahia, advogado INSS bahia" />
         <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-bahia" />
         
-        <meta property="og:title" content="Advogado Online na Bahia | Consulta Jurídica Gratuita" />
-        <meta property="og:description" content="Advogado online para toda a Bahia. Atendemos Salvador, Feira de Santana, Vitória da Conquista e mais 8 cidades." />
+        <meta property="og:title" content="Advogado Online na Bahia | Riccio Advocacia" />
+        <meta property="og:description" content="Atendimento jurídico online para toda a Bahia, com o Dr. Gilberto Riccio (OAB/BA 46.638)." />
         <meta property="og:url" content="https://riccio-advocacia.lovable.app/advogado-bahia" />
         <meta property="og:type" content="website" />
         
@@ -144,21 +137,15 @@ const AdvogadoBahia = () => {
               </h1>
               
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Atendemos Salvador, Feira de Santana, Vitória da Conquista e todas as cidades baianas. 
-                Consulta jurídica gratuita e imediata.
+                Atendimento online para Salvador, Feira de Santana, Vitória da Conquista e qualquer cidade
+                baiana, com o Dr. Gilberto Riccio (OAB/BA 46.638).
               </p>
-              
+
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
                 <Button asChild size="lg" className="w-full sm:w-auto">
-                  <Link to="/">
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-5 h-5 mr-2" />
-                    Falar com Advogado Agora
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
-                  <a href="tel:08007112552">
-                    <Phone className="w-5 h-5 mr-2" />
-                    0800 071 2552
+                    WhatsApp (71) 99703-6269
                   </a>
                 </Button>
               </div>
@@ -180,10 +167,11 @@ const AdvogadoBahia = () => {
         <section className="py-16 bg-muted/30">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-4">
-              Advogados em Todas as Cidades da Bahia
+              Atendimento online em toda a Bahia
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Atendimento online para todas as cidades baianas. Clique na sua cidade para ver serviços específicos.
+              Escolha a sua cidade para ver onde o caso tramita e as áreas atendidas. Se a sua cidade não
+              está na lista, o atendimento é o mesmo: online, pelo WhatsApp.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
@@ -200,14 +188,13 @@ const AdvogadoBahia = () => {
                           <h3 className="font-semibold group-hover:text-primary transition-colors">
                             {city.name}
                           </h3>
-                          <p className="text-sm text-muted-foreground">{city.population} hab.</p>
                         </div>
-                        {city.isCapital && (
+                        {city.slug === "salvador" && (
                           <Badge variant="secondary" className="text-xs">Capital</Badge>
                         )}
                       </div>
-                      <div className="flex items-center mt-2 text-sm text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span>Ver advogados</span>
+                      <div className="flex items-center mt-2 text-sm text-primary">
+                        <span>Ver a página</span>
                         <ArrowRight className="w-4 h-4 ml-1" />
                       </div>
                     </CardContent>
@@ -225,7 +212,7 @@ const AdvogadoBahia = () => {
               Áreas de Atuação na Bahia
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Advogados que atuam em todas as áreas do Direito. Atendimento online e presencial quando necessário.
+              Atendimento online nas principais áreas do Direito, para qualquer cidade da Bahia.
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -242,7 +229,7 @@ const AdvogadoBahia = () => {
                       <CardContent>
                         <CardTitle className="mb-2">Advogado {area.name}</CardTitle>
                         <p className="text-sm text-muted-foreground mb-3">
-                          Especialistas em {area.name} para toda a Bahia.
+                          {area.text}
                         </p>
                         <div className="flex items-center text-sm text-primary">
                           <span>Saiba mais</span>
@@ -365,16 +352,16 @@ const AdvogadoBahia = () => {
               Precisa de Advogado na Bahia?
             </h2>
             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-              Fale agora com um de nossos advogados. 
-              Atendimento imediato para toda a Bahia.
+              Fale com o Dr. Gilberto Riccio pelo WhatsApp. Conte o caso e receba a orientação sobre
+              o caminho e os documentos.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild size="lg" variant="secondary">
-                <Link to="/">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-5 h-5 mr-2" />
-                  Iniciar Fale com advogado
-                </Link>
+                  Falar com o advogado
+                </a>
               </Button>
             </div>
 
@@ -384,12 +371,12 @@ const AdvogadoBahia = () => {
                 <span>Atendimento online</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5" />
-                <span>Resposta imediata</span>
+                <Lock className="w-5 h-5" />
+                <span>Sigilo profissional</span>
               </div>
               <div className="flex items-center gap-2">
                 <Star className="w-5 h-5" />
-                <span>Advogados OAB/BA</span>
+                <span>OAB/BA 46.638</span>
               </div>
             </div>
           </div>
@@ -398,7 +385,7 @@ const AdvogadoBahia = () => {
         {/* Footer */}
         <footer className="bg-muted/50 border-t py-8">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© 2025 Riccio Advocacia - Todos os direitos reservados</p>
+            <p>© {new Date().getFullYear()} Riccio Advocacia · Dr. Gilberto Riccio, OAB/BA 46.638</p>
             <div className="flex justify-center gap-4 mt-4">
               <Link to="/privacidade" className="hover:underline">Privacidade</Link>
               <Link to="/termos-de-uso" className="hover:underline">Termos</Link>

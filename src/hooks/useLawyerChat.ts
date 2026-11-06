@@ -4,7 +4,7 @@ import { Lawyer, lawyers, type DynamicLawyer } from '@/data/lawyers';
 import { supabase } from '@/integrations/supabase/client';
 import { NUDGE_CONFIG, detectUrgencyLevel } from '@/data/nudge-messages';
 import { getSuggestionsByProblem } from '@/data/contextual-suggestions';
-import { getPersonalityByLawyerId, getInterruptionMessages, getHourMultiplier } from '@/data/lawyer-personalities';
+import { getPersonalityByLawyerId, getHourMultiplier } from '@/data/lawyer-personalities';
 
 type Message = {
   role: 'user' | 'assistant';
@@ -240,62 +240,18 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
     }
   };
 
-  // Função para entrar na fila
+  // Abre a conversa. Antes havia uma "fila de atendimento" encenada (2 pessoas na frente,
+  // depois 1, "você é o próximo") que não correspondia a nada real: foi retirada.
+  // O assistente também não se apresenta mais com nome de pessoa ("Dr./Dra."): é assistente virtual.
   const joinQueue = async () => {
     setHasJoinedQueue(true);
-    setIsInQueue(true);
-    setPeopleAhead(2);
-    
-    // Mensagem inicial: 2 pessoas na frente
-    setMessages([
-      {
-        role: 'system',
-        content: '🎫 Você entrou na fila de atendimento',
-        timestamp: new Date(),
-        isQueue: true,
-        queuePosition: 2,
-      } as QueueMessage,
-    ]);
-
-    // Após 8 segundos: 1 pessoa na frente
-    await new Promise(resolve => setTimeout(resolve, 8000));
-    playNotificationSound('position');
-    setPeopleAhead(1);
-    setQueuePosition(1);
-    setMessages([
-      {
-        role: 'system',
-        content: '🎫 Atualizando sua posição na fila',
-        timestamp: new Date(),
-        isQueue: true,
-        queuePosition: 1,
-      } as QueueMessage,
-    ]);
-
-    // Após mais 10 segundos: Você é o próximo
-    await new Promise(resolve => setTimeout(resolve, 10000));
-    playNotificationSound('position');
-    setPeopleAhead(0);
-    setMessages([
-      {
-        role: 'system',
-        content: '🎫 Você é o próximo!',
-        timestamp: new Date(),
-        isQueue: true,
-        queuePosition: 0,
-      } as QueueMessage,
-    ]);
-
-    // Após 2 segundos: Atendimento iniciado
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    playNotificationSound('ready');
     setIsInQueue(false);
+    setPeopleAhead(0);
 
-    const firstName = currentLawyer.name.replace(/^(Dr\.|Dra\.)\s*/, '').split(' ')[0];
     const introBase =
       currentLawyer.id === 'carlos-silva'
-        ? `Oi! Eu sou a assistência virtual da Riccio Advocacia. Vou te ouvir primeiro em segundos e, se o caso for pertinente, o Dr. Gilberto Riccio (OAB/BA 46.638) assume o atendimento pelo WhatsApp. Me conta o que tá acontecendo?`
-        : `Oi! Eu sou ${firstName}, assistente virtual da Riccio Advocacia na área de ${currentLawyer.subSpecialty}. Faço a triagem inicial do seu caso em segundos e, se for pertinente, chamo o Dr. Gilberto Riccio (OAB/BA 46.638) no WhatsApp. Me conta o que tá acontecendo?`;
+        ? `Oi! Sou o assistente virtual da Riccio Advocacia (não sou advogado). Organizo o seu relato e, se o caso for pertinente, o Dr. Gilberto Riccio (OAB/BA 46.638) assume o atendimento pelo WhatsApp. Me conta o que está acontecendo?`
+        : `Oi! Sou o assistente virtual da Riccio Advocacia (não sou advogado) e faço a triagem de casos de ${currentLawyer.subSpecialty}. Se o caso for pertinente, o Dr. Gilberto Riccio (OAB/BA 46.638) assume o atendimento pelo WhatsApp. Me conta o que está acontecendo?`;
 
     setMessages([
       {
@@ -437,7 +393,7 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
           // Add confirmation message
           const confirmMessage: Message = {
             role: 'assistant',
-            content: 'Perfeito! 📱 Vamos entrar em contato imediatamente pelo WhatsApp para dar seguimento ao seu atendimento. Fique atento às mensagens!',
+            content: 'Perfeito! 📱 Seu relato foi registrado e o contato segue pelo WhatsApp. Fique atento às mensagens.',
             timestamp: new Date(),
             lawyerId: currentLawyer.id,
           };
@@ -509,39 +465,10 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
       const totalDelay = (readingTime + baseThinkingTime) * hourMultiplier;
       
       await new Promise(resolve => setTimeout(resolve, totalDelay));
-      
-      // 5% de chance de interrupção natural (apenas após 4+ mensagens)
-      const shouldInterrupt = Math.random() < 0.05 && messages.length > 4;
-      
-      if (shouldInterrupt) {
-        const interruptions = getInterruptionMessages(currentLawyer.name);
-        const interruption = interruptions[Math.floor(Math.random() * interruptions.length)];
-        
-        // Enviar mensagem de interrupção
-        const interruptMessage: Message = {
-          role: 'assistant',
-          content: interruption.message,
-          timestamp: new Date(),
-          lawyerId: currentLawyer.id,
-        };
-        setMessages(prev => [...prev, interruptMessage]);
-        
-        // Pausar 3-5 segundos
-        await new Promise(resolve => setTimeout(resolve, 3000 + Math.random() * 2000));
-        
-        // Enviar mensagem de retorno
-        const returnMessage: Message = {
-          role: 'assistant',
-          content: interruption.returnMessage,
-          timestamp: new Date(),
-          lawyerId: currentLawyer.id,
-        };
-        setMessages(prev => [...prev, returnMessage]);
-        
-        // Pequena pausa antes de continuar
-        await new Promise(resolve => setTimeout(resolve, 800));
-      }
-      
+
+      // (Retirada a "interrupção natural" — "preciso atender uma ligação urgente", "meu colega
+      // está me chamando" —, que fazia o assistente virtual se passar por advogado humano.)
+
       setIsThinking(false);
       setIsTyping(true);
 
@@ -907,7 +834,7 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
                     hasTrulyForeignChars,
                     contentSample: contentWithoutEmojis.substring(0, 100)
                   });
-                  fullResponseContent = "Olá! Sou o especialista. Vi seu caso e vou te ajudar. Pode me contar mais detalhes?";
+                  fullResponseContent = "Desculpe, não consegui responder direito agora. Pode me contar mais detalhes do seu caso?";
                   break; // Parar de processar chunks
                 }
               }
@@ -1026,7 +953,7 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
         // NOVO: Adicionar mensagem visual de transferência
         const transferMessage: TransferMessage = {
           role: 'system',
-          content: `Transferindo para ${targetLawyer.name}...`,
+          content: `Direcionando a triagem para a área de ${targetLawyer.subSpecialty}...`,
           timestamp: new Date(),
           isTransfer: true,
           fromLawyer: currentLawyer,
@@ -1194,7 +1121,7 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
               // Fallback se não recebeu conteúdo
               if (newLawyerContent.length === 0) {
                 console.warn('⚠️ [TRANSFER] No content received, using fallback');
-                const fallbackMessage = `Olá! Sou ${(targetLawyer.name.split(' ')[1] || targetLawyer.name.split(' ')[0])}, especialista em ${targetLawyer.subSpecialty}. Vi que você precisa de ajuda. Pode me dar mais detalhes?`;
+                const fallbackMessage = `Certo, sigo com a triagem na área de ${targetLawyer.subSpecialty}. Pode me contar mais detalhes?`;
                 setMessages(prev => [
                   ...prev,
                   {
@@ -1216,7 +1143,7 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
               setIsTyping(false);
               
               // Fallback para resposta com erro
-              const fallbackMessage = `Olá! Sou ${(targetLawyer.name.split(' ')[1] || targetLawyer.name.split(' ')[0])}, especialista em ${targetLawyer.subSpecialty}. Vi que você precisa de ajuda. Pode me dar mais detalhes?`;
+              const fallbackMessage = `Certo, sigo com a triagem na área de ${targetLawyer.subSpecialty}. Pode me contar mais detalhes?`;
               setMessages(prev => [
                 ...prev,
                 {
@@ -1231,7 +1158,7 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
             console.error('❌ [TRANSFER ERROR]', error);
             setIsTyping(false);
             // Fallback para mensagem estática em caso de erro
-            const fallbackMessage = `Olá! Sou ${(targetLawyer.name.split(' ')[1] || targetLawyer.name.split(' ')[0])}, especialista em ${targetLawyer.subSpecialty}. Vi que você precisa de ajuda. Pode me dar mais detalhes?`;
+            const fallbackMessage = `Certo, sigo com a triagem na área de ${targetLawyer.subSpecialty}. Pode me contar mais detalhes?`;
             setMessages(prev => [
               ...prev,
               {

@@ -13,13 +13,13 @@ const GUARANTEES = [
   },
   {
     icon: Scale,
-    title: "Honorários só no êxito",
-    text: "Na maioria dos casos, você só paga uma porcentagem se a gente conseguir o benefício pra você.",
+    title: "Advogado responsável",
+    text: "Seu caso é conduzido pelo Dr. Gilberto Riccio, inscrito na OAB/BA sob o nº 46.638.",
   },
   {
     icon: FileSignature,
     title: "Contrato por escrito",
-    text: "Tudo combinado antes de começar. Valor, prazo, fases do processo — sem letra miúda, sem surpresa.",
+    text: "Os honorários dependem do tipo de caso e são combinados por escrito antes de qualquer ação. Sem letra miúda, sem surpresa.",
   },
   {
     icon: MessagesSquare,
@@ -28,11 +28,12 @@ const GUARANTEES = [
   },
 ];
 
+// Só dados verificáveis: sem número de clientes nem tempo de resposta (Provimento OAB 205/2021).
 const STATS = [
-  { num: "+2.500", label: "Clientes atendidos" },
-  { num: "OAB", label: "Inscrição ativa" },
+  { num: "OAB", label: "Inscrição ativa · BA 46.638" },
+  { num: "100%", label: "Atendimento online" },
   { num: "BR", label: "Atendimento Brasil todo" },
-  { num: "2h", label: "Tempo médio de resposta" },
+  { num: "CNIS", label: "Análise do histórico no INSS" },
 ];
 
 export default function PrevCredibility() {
@@ -58,8 +59,8 @@ export default function PrevCredibility() {
             <span className="italic text-prev-gold">direitos</span>.
           </h2>
           <p className="text-prev-beige/75 text-lg leading-[1.75] mt-5">
-            Mais de 2.500 famílias atendidas com seriedade, transparência e
-            estratégia construída caso a caso.
+            Atendimento com seriedade, transparência e estratégia construída
+            caso a caso, pelo Dr. Gilberto Riccio (OAB/BA 46.638).
           </p>
         </div>
 

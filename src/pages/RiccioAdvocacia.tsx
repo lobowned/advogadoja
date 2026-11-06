@@ -177,7 +177,7 @@ const FAQ = [
   },
   {
     q: "Preciso ir até o escritório?",
-    a: "Não precisa. O atendimento é pelo WhatsApp e, quando faz sentido, por chamada de vídeo. O escritório fica em Salvador, mas eu atendo pessoas de todo o Brasil dessa forma.",
+    a: "Não precisa. O atendimento é pelo WhatsApp e, quando faz sentido, por chamada de vídeo. O escritório é digital, com base em Salvador, e eu atendo pessoas de todo o Brasil dessa forma.",
   },
   {
     q: "Já tive o pedido negado pelo INSS. Ainda dá pra fazer alguma coisa?",

@@ -295,7 +295,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
-  <!-- ===== LANDING PAGES POR CIDADE (10 URLs) ===== -->
+  <!-- ===== LANDING PAGES POR CIDADE (12 URLs) ===== -->
   <url>
     <loc>https://riccio-advocacia.lovable.app/advogado/salvador</loc>
     <changefreq>weekly</changefreq>
@@ -338,6 +338,16 @@
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/advogado/barreiras</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado/jequie</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado/alagoinhas</loc>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -565,97 +575,97 @@
   <!-- ===== ARTIGOS SEO LOCAL (16 URLs) ===== -->
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/produto-defeituoso-salvador</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/voo-cancelado-salvador</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/plano-saude-negou-salvador</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/nome-negativado-salvador</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/golpe-pix-salvador</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/cobranca-indevida-salvador</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/produto-defeituoso-feira-de-santana</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/cobranca-indevida-feira-de-santana</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/plano-saude-negou-vitoria-conquista</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/nome-negativado-itabuna</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/fraude-bancaria-ilheus</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/cobranca-indevida-juazeiro</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/plano-saude-negou-camacari</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/produto-defeituoso-lauro-freitas</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/nome-negativado-barreiras</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/cobranca-indevida-jequie</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1249,7 +1259,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- ===== PERGUNTAS FREQUENTES (FAQs) (117 URLs) ===== -->
+  <!-- ===== PERGUNTAS FREQUENTES (FAQs) (116 URLs) ===== -->
   <url>
     <loc>https://riccio-advocacia.lovable.app/perguntas/quanto-tempo-para-entrar-com-processo-trabalhista</loc>
     <changefreq>monthly</changefreq>
@@ -1507,11 +1517,6 @@
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/perguntas/pode-receber-dois-beneficios-inss</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-  <url>
-    <loc>https://riccio-advocacia.lovable.app/perguntas/como-comprovar-tempo-trabalho-rural</loc>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>

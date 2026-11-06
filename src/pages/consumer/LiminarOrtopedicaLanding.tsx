@@ -11,19 +11,19 @@ const breadcrumbs = [
 const faqItems = [
   {
     question: "O plano pode escolher o tipo de prótese?",
-    answer: "Não. A escolha do material ortopédico é prerrogativa do médico, não do plano de saúde. O plano deve fornecer a prótese indicada pelo cirurgião."
+    answer: "A indicação do material é do médico, que descreve as características e, pela regra do CFM, indica ao menos três marcas. Se o plano discordar, a ANS prevê junta médica para desempate (RN 424/2017). O plano não pode simplesmente negar o material sem esse procedimento."
   },
   {
     question: "Cirurgia ortopédica eletiva pode ser negada?",
-    answer: "A maioria das cirurgias ortopédicas, mesmo classificadas como eletivas, são necessárias. Se há indicação médica e o paciente sofre com dor ou limitação, o plano deve cobrir."
+    answer: "Eletiva não quer dizer opcional. Com indicação médica e passada a carência (até 180 dias para procedimentos eletivos), o plano deve cobrir a cirurgia prevista no rol da ANS."
   },
   {
     question: "Prótese importada é coberta?",
-    answer: "Sim. Se o médico indica prótese importada por razões técnicas (durabilidade, compatibilidade), o plano deve cobrir. A Lei 9.656/98 garante os materiais necessários ao procedimento."
+    answer: "Pode ser. Prótese ligada ao ato cirúrgico tem cobertura (Lei 9.656/1998, art. 10, VII). Se o médico justifica tecnicamente uma prótese importada com registro na Anvisa, a negativa pode ser discutida; havendo divergência, cabe a junta médica da ANS."
   },
   {
     question: "Quanto tempo demora a liminar ortopédica?",
-    answer: "Entre 24 e 72 horas na maioria dos casos. Situações de dor intensa ou risco de sequelas permanentes podem ser decididas em plantão judicial."
+    answer: "Não há prazo fixo. Em urgência, como dor intensa ou risco de sequela permanente, o pedido pode ser levado ao plantão judiciário, inclusive à noite e em fins de semana. Quem decide o prazo é o juiz."
   },
   {
     question: "Posso escolher o hospital e médico?",

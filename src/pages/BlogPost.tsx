@@ -139,33 +139,8 @@ const BlogPost = ({ nicheIdOverride, slugOverride }: BlogPostProps = {}) => {
     }))
   };
 
-  // Schema.org HowTo - For guide articles with step-by-step instructions
-  const isGuideArticle = article.title.toLowerCase().includes('como') || 
-    article.title.toLowerCase().includes('guia') ||
-    article.title.toLowerCase().includes('passo') ||
-    article.content.whenYouHaveRight.length >= 3;
-
-  const howToSchema = isGuideArticle ? {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": article.title,
-    "description": article.content.intro,
-    "datePublished": article.updatedAt,
-    "dateModified": article.updatedAt,
-    "author": authorSchema,
-    "totalTime": `PT${readingTime}M`,
-    "step": article.content.whenYouHaveRight.map((step, index) => ({
-      "@type": "HowToStep",
-      "position": index + 1,
-      "name": `Passo ${index + 1}`,
-      "text": step,
-      "url": `${articleUrl}#quando-tem-direito`
-    })),
-    "tool": article.content.documents.map(doc => ({
-      "@type": "HowToTool",
-      "name": doc
-    }))
-  } : null;
+  // Sem marcação HowTo: a lista "quando você tem direito" não é passo a passo, e marcar
+  // condições como passos é dado estruturado enganoso (e o Google não exibe HowTo desde 2023).
 
   // Trilha (Início › Artigos › Área › título) — o componente também emite o JSON-LD BreadcrumbList
   const breadcrumbItems = [
@@ -200,11 +175,6 @@ const BlogPost = ({ nicheIdOverride, slugOverride }: BlogPostProps = {}) => {
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>
-        {howToSchema && (
-          <script type="application/ld+json">
-            {JSON.stringify(howToSchema)}
-          </script>
-        )}
       </Helmet>
 
       {/* Reading Progress Bar */}
@@ -274,7 +244,7 @@ const BlogPost = ({ nicheIdOverride, slugOverride }: BlogPostProps = {}) => {
                     <Clock className="w-4 h-4" />
                     {readingTime} min de leitura
                   </span>
-                  <span>Atualizado em {new Date(article.updatedAt).toLocaleDateString('pt-BR')}</span>
+                  <span>Atualizado em {new Date(article.updatedAt.slice(0, 10) + "T12:00:00").toLocaleDateString('pt-BR')}</span>
                 </div>
 
                 {/* Social Share */}

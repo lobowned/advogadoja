@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { PISO_INSS, ANO_VIGENTE, brl } from "@/data/valores-vigentes";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -9,7 +10,7 @@ import CalculatorDisclaimer from "./CalculatorDisclaimer";
 
 interface CalculationResult {
   total: number;
-  items: { label: string; value: number; description?: string }[];
+  items: { label: string; value: number; description?: string; format?: "currency" | "count" | "percent" }[];
 }
 
 const DeathPensionCalculator = () => {
@@ -21,7 +22,8 @@ const DeathPensionCalculator = () => {
   const [result, setResult] = useState<CalculationResult | null>(null);
 
   const parseValue = (value: string): number => {
-    return parseFloat(value.replace(/[^\d,]/g, "").replace(",", ".")) || 0;
+    // CalculatorInput (currency) entrega centavos em dígitos: "300000" = R$ 3.000,00
+    return parseInt(value.replace(/\D/g, "") || "0", 10) / 100;
   };
 
   const parseNumber = (value: string): number => {
@@ -63,7 +65,7 @@ const DeathPensionCalculator = () => {
         duracao = "Conforme tipo de dependência";
       }
 
-      const pisoINSS = 1412; // Salário mínimo 2024
+      const pisoINSS = PISO_INSS;
       const valorFinal = Math.max(valorPensao, pisoINSS);
 
       const items = [
@@ -75,7 +77,8 @@ const DeathPensionCalculator = () => {
         {
           label: "Percentual da Pensão",
           value: percentualBase,
-          description: `50% + 10% × ${dependentes} dependente(s)`
+          description: `50% + 10% × ${dependentes} dependente(s)`,
+          format: "percent" as const,
         },
         {
           label: "Cota por Dependente",
@@ -177,7 +180,7 @@ const DeathPensionCalculator = () => {
         <h3 className="font-semibold mb-3">Regras da Pensão por Morte (Pós-Reforma 2019)</h3>
         <ul className="text-sm text-muted-foreground space-y-2">
           <li>• <strong>Cálculo:</strong> 50% do valor + 10% por dependente (máximo 100%)</li>
-          <li>• <strong>Piso:</strong> 1 salário mínimo (R$ 1.412,00 em 2024)</li>
+          <li>• <strong>Piso:</strong> 1 salário mínimo ({brl(PISO_INSS)} em {ANO_VIGENTE})</li>
           <li>• <strong>Cônjuge:</strong> duração varia conforme idade (3 anos a vitalícia)</li>
           <li>• <strong>Filhos:</strong> até 21 anos (ou 24 se universitário)</li>
           <li>• <strong>Filhos inválidos:</strong> enquanto durar a invalidez</li>

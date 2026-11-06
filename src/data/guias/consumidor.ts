@@ -158,7 +158,7 @@ export const guiaConsumidor: Guia = {
     "/artigos/consumidor/golpe-pix-como-recuperar-dinheiro",
     "/artigos/consumidor/cartao-clonado-responsabilidade-banco",
     "/artigos/consumidor/plano-saude-negativa-cobertura",
-    "/artigos/consumidor/plano-saude-negativa-cobertura",
+    "/artigos/consumidor/desistencia-consorcio-como-receber-dinheiro-de-volta",
     "/artigos/consumidor/atraso-cancelamento-voo-direitos",
     "/artigos/consumidor/overbooking-extravio-bagagem",
     "/artigos/consumidor/telefonia-internet-problemas",

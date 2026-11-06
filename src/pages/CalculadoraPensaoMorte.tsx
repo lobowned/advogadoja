@@ -5,6 +5,7 @@ import DeathPensionCalculator from "@/components/calculators/DeathPensionCalcula
 import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 import RelatedContent from "@/components/RelatedContent";
+import { ANO_VIGENTE } from "@/data/valores-vigentes";
 
 const CalculadoraPensaoMorte = () => {
   const scrollToChat = () => {
@@ -18,7 +19,7 @@ const CalculadoraPensaoMorte = () => {
   return (
     <>
       <Helmet>
-        <title>Calculadora de Pensão por Morte 2024 | Calcule Benefício INSS</title>
+        <title>{`Calculadora de Pensão por Morte ${ANO_VIGENTE}: valor do benefício`}</title>
         <meta name="description" content="Calcule o valor da pensão por morte do INSS. Simulador com regras pós-reforma 2019. Descubra quanto os dependentes podem receber." />
         <meta name="keywords" content="calculadora pensão por morte, pensão por morte inss, valor pensão morte, benefício dependentes inss" />
         <link rel="canonical" href="/calculadora-pensao-morte" />

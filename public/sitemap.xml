@@ -659,7 +659,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- ===== ARTIGOS DO BLOG (LEGACY) (81 URLs) ===== -->
+  <!-- ===== ARTIGOS DO BLOG (LEGACY) (86 URLs) ===== -->
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/trabalhista/demissao-sem-justa-causa</loc>
     <lastmod>2026-11-05</lastmod>
@@ -1142,6 +1142,36 @@
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/penal/crime-hediondo-o-que-e</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/desistencia-consorcio-como-receber-dinheiro-de-volta</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/parei-de-pagar-consorcio-e-agora</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/cancelamento-consorcio-como-fazer</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/nova-lei-consorcio-devolucao-2026</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/terminei-de-pagar-consorcio-e-agora</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

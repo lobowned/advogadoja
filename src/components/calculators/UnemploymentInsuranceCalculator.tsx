@@ -6,10 +6,11 @@ import { Label } from "@/components/ui/label";
 import CalculatorInput from "./CalculatorInput";
 import CalculatorResult from "./CalculatorResult";
 import CalculatorDisclaimer from "./CalculatorDisclaimer";
+import { ANO_VIGENTE, SEGURO_DESEMPREGO, brl } from "@/data/valores-vigentes";
 
 interface CalculationResult {
   total: number;
-  items: { label: string; value: number; description?: string }[];
+  items: { label: string; value: number; description?: string; format?: "currency" | "count" | "percent" }[];
 }
 
 const UnemploymentInsuranceCalculator = () => {
@@ -22,7 +23,8 @@ const UnemploymentInsuranceCalculator = () => {
   const [result, setResult] = useState<CalculationResult | null>(null);
 
   const parseValue = (value: string): number => {
-    return parseFloat(value.replace(/[^\d,]/g, "").replace(",", ".")) || 0;
+    // CalculatorInput (currency) entrega centavos em dígitos: "300000" = R$ 3.000,00
+    return parseInt(value.replace(/\D/g, "") || "0", 10) / 100;
   };
 
   const parseNumber = (value: string): number => {
@@ -42,42 +44,28 @@ const UnemploymentInsuranceCalculator = () => {
       // Calcular média salarial
       const mediaSalarial = (sal1 + sal2 + sal3) / 3;
 
-      // Calcular valor da parcela (faixas 2024)
-      // Faixa 1: até R$ 2.041,39 - média x 0,8
-      // Faixa 2: de R$ 2.041,40 a R$ 3.402,65 - excedente x 0,5 + 1.633,10
-      // Faixa 3: acima de R$ 3.402,65 - valor fixo R$ 2.313,74
+      // Valor da parcela: tabela vigente (src/data/valores-vigentes.ts)
+      const t = SEGURO_DESEMPREGO;
       let valorParcela = 0;
-      const pisoSalario = 1412; // Salário mínimo 2024
-      const tetoSeguro = 2313.74;
-
-      if (mediaSalarial <= 2041.39) {
+      if (mediaSalarial <= t.faixa1Ate) {
         valorParcela = mediaSalarial * 0.8;
-      } else if (mediaSalarial <= 3402.65) {
-        valorParcela = ((mediaSalarial - 2041.39) * 0.5) + 1633.10;
+      } else if (mediaSalarial <= t.faixa2Ate) {
+        valorParcela = (mediaSalarial - t.faixa1Ate) * 0.5 + t.faixa2Base;
       } else {
-        valorParcela = tetoSeguro;
+        valorParcela = t.teto;
       }
 
-      // Garantir que não seja menor que o salário mínimo
-      valorParcela = Math.max(valorParcela, pisoSalario);
-      valorParcela = Math.min(valorParcela, tetoSeguro);
+      // Nunca abaixo do salário mínimo nem acima do teto
+      valorParcela = Math.max(valorParcela, t.piso);
+      valorParcela = Math.min(valorParcela, t.teto);
 
-      // Calcular número de parcelas
+      // Número de parcelas: Lei 7.998/1990, art. 4º, § 2º (meses nos 36 meses antes da dispensa)
+      const minimoPorSolicitacao = vezes === 0 ? 12 : vezes === 1 ? 9 : 6;
       let numParcelas = 0;
-      if (vezes === 0) {
-        // Primeira solicitação
-        if (meses >= 12) numParcelas = 4;
-        else numParcelas = 0;
-      } else if (vezes === 1) {
-        // Segunda solicitação
-        if (meses >= 9) numParcelas = 3;
-        else numParcelas = 0;
-      } else {
-        // Terceira ou mais
-        if (meses >= 6 && meses < 12) numParcelas = 3;
-        else if (meses >= 12 && meses < 24) numParcelas = 4;
-        else if (meses >= 24) numParcelas = 5;
-      }
+      if (meses >= 24) numParcelas = 5;
+      else if (meses >= 12) numParcelas = 4;
+      else if (meses >= minimoPorSolicitacao) numParcelas = 3;
+      if (meses < minimoPorSolicitacao) numParcelas = 0;
 
       const valorTotal = valorParcela * numParcelas;
 
@@ -95,7 +83,8 @@ const UnemploymentInsuranceCalculator = () => {
         {
           label: "Número de Parcelas",
           value: numParcelas,
-          description: `${numParcelas} parcelas conforme tempo trabalhado`
+          description: `${numParcelas} parcelas conforme tempo trabalhado`,
+          format: "count" as const,
         }
       ];
 
@@ -151,7 +140,7 @@ const UnemploymentInsuranceCalculator = () => {
             value={mesesTrabalhados}
             onChange={setMesesTrabalhados}
             placeholder="Ex: 18"
-            tooltip="Total de meses no último emprego"
+            tooltip="Meses com carteira assinada nos 36 meses antes da demissão (pode somar mais de um emprego)"
             type="number"
             min={0}
             max={480}
@@ -194,13 +183,14 @@ const UnemploymentInsuranceCalculator = () => {
       <CalculatorDisclaimer />
 
       <Card className="p-6 bg-amber-50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-800">
-        <h3 className="font-semibold mb-3">Regras do Seguro-Desemprego (2024)</h3>
+        <h3 className="font-semibold mb-3">Regras do Seguro-Desemprego ({ANO_VIGENTE})</h3>
         <ul className="text-sm text-muted-foreground space-y-2">
-          <li>• <strong>1ª solicitação:</strong> mínimo 12 meses trabalhados → 4 parcelas</li>
-          <li>• <strong>2ª solicitação:</strong> mínimo 9 meses trabalhados → 3 parcelas</li>
-          <li>• <strong>3ª em diante:</strong> 6-11 meses → 3 parcelas | 12-23 meses → 4 parcelas | 24+ meses → 5 parcelas</li>
-          <li>• <strong>Piso:</strong> R$ 1.412,00 (salário mínimo)</li>
-          <li>• <strong>Teto:</strong> R$ 2.313,74</li>
+          <li>• <strong>1ª solicitação:</strong> salário em pelo menos 12 dos últimos 18 meses → 4 parcelas (12 a 23 meses) ou 5 parcelas (24 meses ou mais)</li>
+          <li>• <strong>2ª solicitação:</strong> salário em pelo menos 9 dos últimos 12 meses → 3 parcelas (9 a 11 meses), 4 (12 a 23) ou 5 (24 ou mais)</li>
+          <li>• <strong>3ª em diante:</strong> salário em cada um dos 6 meses antes da demissão → 3 parcelas (6 a 11 meses), 4 (12 a 23) ou 5 (24 ou mais)</li>
+          <li>• <strong>Valor:</strong> média até {brl(SEGURO_DESEMPREGO.faixa1Ate)} recebe 80%; de {brl(SEGURO_DESEMPREGO.faixa1Ate + 0.01)} a {brl(SEGURO_DESEMPREGO.faixa2Ate)}, {brl(SEGURO_DESEMPREGO.faixa2Base)} + 50% do que passar de {brl(SEGURO_DESEMPREGO.faixa1Ate)}; acima disso, o teto</li>
+          <li>• <strong>Piso:</strong> {brl(SEGURO_DESEMPREGO.piso)} (salário mínimo) · <strong>Teto:</strong> {brl(SEGURO_DESEMPREGO.teto)}</li>
+          <li>• Tabela do Ministério do Trabalho em vigor desde {SEGURO_DESEMPREGO.vigencia}. Contagem de meses: Lei 7.998/1990, art. 4º.</li>
         </ul>
       </Card>
     </div>

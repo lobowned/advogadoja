@@ -5,6 +5,7 @@ import SicknessAidCalculator from "@/components/calculators/SicknessAidCalculato
 import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 import RelatedContent from "@/components/RelatedContent";
+import { ANO_VIGENTE } from "@/data/valores-vigentes";
 
 const CalculadoraAuxilioDoenca = () => {
   const scrollToChat = () => {
@@ -18,8 +19,8 @@ const CalculadoraAuxilioDoenca = () => {
   return (
     <>
       <Helmet>
-        <title>Calculadora de Auxílio-Doença 2024 | Calcule Benefício INSS</title>
-        <meta name="description" content="Calcule o valor do auxílio-doença do INSS. Simulador atualizado com regras 2024. Comum e acidentário." />
+        <title>{`Calculadora de Auxílio-Doença ${ANO_VIGENTE}: valor do benefício`}</title>
+        <meta name="description" content={`Calcule o valor estimado do auxílio-doença (benefício por incapacidade temporária) do INSS, com piso e teto de ${ANO_VIGENTE}. Comum e acidentário.`} />
         <meta name="keywords" content="calculadora auxílio doença, auxílio doença inss, valor auxílio doença, benefício incapacidade inss" />
         <link rel="canonical" href="/calculadora-auxilio-doenca" />
         {webAppSchema && <script type="application/ld+json">{JSON.stringify(webAppSchema)}</script>}

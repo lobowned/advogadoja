@@ -13,7 +13,7 @@ import CalculatorDisclaimer from "./CalculatorDisclaimer";
 
 interface CalculationResult {
   total: number;
-  items: { label: string; value: number; description?: string }[];
+  items: { label: string; value: number; description?: string; format?: "currency" | "count" | "percent" }[];
 }
 
 const LiminarCirurgiaCalculator = () => {
@@ -28,9 +28,9 @@ const LiminarCirurgiaCalculator = () => {
   const [isCalculating, setIsCalculating] = useState(false);
   const [result, setResult] = useState<CalculationResult | null>(null);
 
-  const parseValue = (val: string) => {
-    const cleaned = val.replace(/[^\d,]/g, "").replace(",", ".");
-    return parseFloat(cleaned) || 0;
+  const parseValue = (val: string): number => {
+    // CalculatorInput (currency) entrega centavos em dígitos: "300000" = R$ 3.000,00
+    return parseInt(val.replace(/\D/g, "") || "0", 10) / 100;
   };
 
   const handleCalculate = () => {
@@ -156,7 +156,7 @@ const LiminarCirurgiaCalculator = () => {
           { 
             label: "Tempo Estimado para Liminar", 
             value: tempoEstimadoHoras, 
-            description: `${tempoEstimadoHoras}h em média` 
+            description: `${tempoEstimadoHoras}h em média`, format: "count" as const 
           },
           { 
             label: "Danos Morais (estimativa)", 

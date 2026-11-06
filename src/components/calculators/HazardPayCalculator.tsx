@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SALARIO_MINIMO } from "@/data/valores-vigentes";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -21,7 +22,8 @@ const HazardPayCalculator = () => {
   const [result, setResult] = useState<CalculationResult | null>(null);
 
   const parseValue = (value: string): number => {
-    return parseFloat(value.replace(/[^\d,]/g, "").replace(",", ".")) || 0;
+    // CalculatorInput (currency) entrega centavos em dígitos: "300000" = R$ 3.000,00
+    return parseInt(value.replace(/\D/g, "") || "0", 10) / 100;
   };
 
   const parseNumber = (value: string): number => {
@@ -34,7 +36,7 @@ const HazardPayCalculator = () => {
     setTimeout(() => {
       const salario = parseValue(salarioBase);
       const meses = parseNumber(mesesDevidos) || 1;
-      const salarioMinimo = 1412; // 2024
+      const salarioMinimo = SALARIO_MINIMO;
       
       let adicionalMensal = 0;
       let percentual = 0;

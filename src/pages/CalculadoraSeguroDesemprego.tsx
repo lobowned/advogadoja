@@ -5,6 +5,7 @@ import UnemploymentInsuranceCalculator from "@/components/calculators/Unemployme
 import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 import RelatedContent from "@/components/RelatedContent";
+import { ANO_VIGENTE } from "@/data/valores-vigentes";
 
 const CalculadoraSeguroDesemprego = () => {
   const scrollToChat = () => {
@@ -18,10 +19,10 @@ const CalculadoraSeguroDesemprego = () => {
   return (
     <>
       <Helmet>
-        <title>Calculadora de Seguro-Desemprego 2024 | Calcule Parcelas Grátis</title>
-        <meta name="description" content="Calcule o valor e número de parcelas do seguro-desemprego. Simulador atualizado com as regras 2024. Descubra quanto você vai receber." />
-        <meta name="keywords" content="calculadora seguro desemprego, calcular parcelas seguro desemprego, valor seguro desemprego 2024, quantas parcelas seguro desemprego" />
-        <link rel="canonical" href="/calculadora-seguro-desemprego" />
+        <title>{`Calculadora de Seguro-Desemprego ${ANO_VIGENTE}: valor e parcelas`}</title>
+        <meta name="description" content={`Quanto vou receber de seguro-desemprego? Simule o valor e o número de parcelas com a tabela oficial de ${ANO_VIGENTE}: informe os 3 últimos salários e o tempo trabalhado.`} />
+        <meta name="keywords" content={`calcular seguro desemprego, calculadora seguro desemprego, simulador seguro desemprego, quanto vou receber de seguro desemprego, seguro desemprego ${ANO_VIGENTE}`} />
+        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-seguro-desemprego" />
         {webAppSchema && <script type="application/ld+json">{JSON.stringify(webAppSchema)}</script>}
         {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
         {breadcrumbSchema && <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>}
@@ -50,7 +51,7 @@ const CalculadoraSeguroDesemprego = () => {
                   Calculadora de Seguro-Desemprego
                 </h1>
                 <p className="text-muted-foreground">
-                  Descubra o valor e quantas parcelas você pode receber
+                  Descubra o valor e quantas parcelas você pode receber, pela tabela de {ANO_VIGENTE}
                 </p>
               </div>
             </div>

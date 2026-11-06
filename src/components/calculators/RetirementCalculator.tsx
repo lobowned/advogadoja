@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { TETO_INSS } from "@/data/valores-vigentes";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -11,7 +12,7 @@ import CalculatorDisclaimer from "./CalculatorDisclaimer";
 
 interface CalculationResult {
   total: number;
-  items: { label: string; value: number; description?: string }[];
+  items: { label: string; value: number; description?: string; format?: "currency" | "count" | "percent" }[];
 }
 
 const RetirementCalculator = () => {
@@ -47,7 +48,7 @@ const RetirementCalculator = () => {
     const percentual = Math.min(100, 60 + (anosExcedentes * 2));
     
     const valorEstimado = elegivel ? (salarioNum * percentual) / 100 : 0;
-    const tetoINSS = 7786.02; // Teto 2024
+    const tetoINSS = TETO_INSS;
     const valorFinal = Math.min(valorEstimado, tetoINSS);
 
     setTimeout(() => {
@@ -62,17 +63,17 @@ const RetirementCalculator = () => {
           { 
             label: "Idade Mínima Necessária", 
             value: idadeMinima, 
-            description: `${idadeNum} anos (necessário: ${idadeMinima})` 
+            description: `${idadeNum} anos (necessário: ${idadeMinima})`, format: "count" as const 
           },
           { 
             label: "Tempo Mínimo", 
             value: tempoMinimo, 
-            description: `${tempoNum} anos (necessário: ${tempoMinimo})` 
+            description: `${tempoNum} anos (necessário: ${tempoMinimo})`, format: "count" as const 
           },
           { 
             label: "Percentual do Benefício", 
             value: percentual, 
-            description: `${percentual}% da média salarial` 
+            description: `${percentual}% da média salarial`, format: "percent" as const 
           },
           { 
             label: "Estimativa Mensal", 

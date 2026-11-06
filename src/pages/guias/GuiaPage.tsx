@@ -23,7 +23,8 @@ const GuiaPage = () => {
   if (!guia) return <NotFound />;
 
   const canonical = `${SITE}/guia/${guia.slug}`;
-  const artigos = guia.artigosRelacionados
+  // Set: a fusão de artigos deixou links repetidos em alguns guias
+  const artigos = [...new Set(guia.artigosRelacionados)]
     .map((href) => ({ href, titulo: tituloDoArtigo(href) }))
     .filter((a): a is { href: string; titulo: string } => Boolean(a.titulo));
 

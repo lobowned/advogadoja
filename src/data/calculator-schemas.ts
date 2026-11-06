@@ -1,4 +1,5 @@
 // Centralized JSON-LD Schema configuration for all calculator pages
+import { ANO_VIGENTE, SALARIO_MINIMO, SEGURO_DESEMPREGO, brl } from "./valores-vigentes";
 
 export interface CalculatorSchemaData {
   id: string;
@@ -42,14 +43,14 @@ export const calculatorSchemas: Record<string, CalculatorSchemaData> = {
   "seguro-desemprego": {
     id: "seguro-desemprego",
     name: "Calculadora de Seguro-Desemprego",
-    description: "Calcule o valor e quantidade de parcelas do seguro-desemprego. Tabela atualizada 2024 com todos os requisitos.",
+    description: `Calcule o valor e a quantidade de parcelas do seguro-desemprego com a tabela oficial de ${ANO_VIGENTE} e os requisitos da Lei 7.998/1990.`,
     url: `${BASE_URL}/calculadora-seguro-desemprego`,
     category: "trabalhista",
-    features: ["Valor da Parcela", "Número de Parcelas", "Faixas 2024", "Requisitos"],
+    features: ["Valor da Parcela", "Número de Parcelas", `Faixas ${ANO_VIGENTE}`, "Requisitos"],
     faqs: [
       { question: "Quantas parcelas de seguro-desemprego posso receber?", answer: "O número de parcelas varia conforme seu histórico: na 1ª solicitação, de 4 a 5 parcelas (mínimo 12 meses trabalhados); na 2ª, de 3 a 5 parcelas (mínimo 9 meses); a partir da 3ª, de 3 a 5 parcelas (mínimo 6 meses)." },
-      { question: "Qual o valor máximo do seguro-desemprego em 2024?", answer: "Em 2024, o valor máximo do seguro-desemprego é de R$ 2.313,74 por parcela. O valor mínimo é de 1 salário mínimo (R$ 1.412,00)." },
-      { question: "Quem tem direito ao seguro-desemprego?", answer: "Tem direito quem foi demitido sem justa causa, trabalhou com carteira assinada pelo período mínimo exigido, não tem renda própria suficiente para sua manutenção e não está recebendo outro benefício previdenciário (exceto pensão por morte)." }
+      { question: `Qual o valor máximo do seguro-desemprego em ${ANO_VIGENTE}?`, answer: `Pela tabela em vigor desde ${SEGURO_DESEMPREGO.vigencia}, a parcela máxima é de ${brl(SEGURO_DESEMPREGO.teto)}. A mínima é de 1 salário mínimo (${brl(SEGURO_DESEMPREGO.piso)}).` },
+      { question: "Quem tem direito ao seguro-desemprego?", answer: "Tem direito quem foi demitido sem justa causa, trabalhou com carteira assinada pelo período mínimo exigido, não tem renda própria suficiente para sua manutenção e não está recebendo outro benefício previdenciário (exceto pensão por morte e auxílio-acidente)." }
     ]
   },
   fgts: {
@@ -164,8 +165,8 @@ export const calculatorSchemas: Record<string, CalculatorSchemaData> = {
     category: "previdenciario",
     features: ["Renda Per Capita", "Idoso 65+", "Deficiência", "Documentos"],
     faqs: [
-      { question: "Quem tem direito ao BPC/LOAS?", answer: "Têm direito idosos com 65 anos ou mais e pessoas com deficiência de qualquer idade, desde que a renda familiar per capita seja inferior a 1/4 do salário mínimo." },
-      { question: "Qual o valor do BPC/LOAS?", answer: "O valor é sempre 1 salário mínimo por mês. Em 2024, isso equivale a R$ 1.412,00." },
+      { question: "Quem tem direito ao BPC/LOAS?", answer: "Têm direito idosos com 65 anos ou mais e pessoas com deficiência de qualquer idade, desde que a renda familiar por pessoa seja igual ou inferior a 1/4 do salário mínimo (art. 20, § 3º, da Lei 8.742/1993)." },
+      { question: "Qual o valor do BPC/LOAS?", answer: `O valor é sempre 1 salário mínimo por mês. Em ${ANO_VIGENTE}, isso equivale a ${brl(SALARIO_MINIMO)}.` },
       { question: "Preciso ter contribuído ao INSS para receber BPC?", answer: "Não. O BPC é um benefício assistencial e não exige contribuição prévia ao INSS. É pago pela Assistência Social, não pela Previdência." }
     ]
   },

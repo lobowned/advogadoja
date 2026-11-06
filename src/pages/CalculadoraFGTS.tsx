@@ -18,10 +18,10 @@ const CalculadoraFGTS = () => {
   return (
     <>
       <Helmet>
-        <title>Calculadora de FGTS 2024 | Simule Saldo e Multa Grátis</title>
+        <title>Calculadora de FGTS: saldo, multa de 40% e saque</title>
         <meta 
           name="description" 
-          content="Calcule seu saldo de FGTS, multa rescisória e compare saque-rescisão vs saque-aniversário. Simulador atualizado 2024." 
+          content="Calcule seu saldo de FGTS, multa rescisória e compare saque-rescisão e saque-aniversário." 
         />
         <meta name="keywords" content="calculadora fgts, calcular saldo fgts, multa 40 fgts, saque aniversário, saque rescisão fgts" />
         <link rel="canonical" href="/calculadora-fgts" />

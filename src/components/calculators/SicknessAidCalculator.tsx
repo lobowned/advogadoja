@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { PISO_INSS, TETO_INSS, ANO_VIGENTE, brl } from "@/data/valores-vigentes";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -9,7 +10,7 @@ import CalculatorDisclaimer from "./CalculatorDisclaimer";
 
 interface CalculationResult {
   total: number;
-  items: { label: string; value: number; description?: string }[];
+  items: { label: string; value: number; description?: string; format?: "currency" | "count" | "percent" }[];
 }
 
 const SicknessAidCalculator = () => {
@@ -20,7 +21,8 @@ const SicknessAidCalculator = () => {
   const [result, setResult] = useState<CalculationResult | null>(null);
 
   const parseValue = (value: string): number => {
-    return parseFloat(value.replace(/[^\d,]/g, "").replace(",", ".")) || 0;
+    // CalculatorInput (currency) entrega centavos em dígitos: "300000" = R$ 3.000,00
+    return parseInt(value.replace(/\D/g, "") || "0", 10) / 100;
   };
 
   const parseNumber = (value: string): number => {
@@ -40,8 +42,8 @@ const SicknessAidCalculator = () => {
       let valorBeneficio = media * percentual;
       
       // Limites
-      const pisoINSS = 1412; // Salário mínimo 2024
-      const tetoINSS = 7786.02; // Teto INSS 2024
+      const pisoINSS = PISO_INSS;
+      const tetoINSS = TETO_INSS;
       
       // Verificar carência
       let carenciaAtingida = true;
@@ -76,7 +78,8 @@ const SicknessAidCalculator = () => {
         {
           label: "Percentual do Benefício",
           value: 91,
-          description: "91% da média (regra pós-reforma)"
+          description: "91% do salário de benefício (Lei 8.213/1991, art. 61)",
+          format: "percent" as const,
         },
         {
           label: "Carência",
@@ -164,8 +167,8 @@ const SicknessAidCalculator = () => {
           <li>• <strong>Valor:</strong> 91% da média de todos os salários de contribuição</li>
           <li>• <strong>Carência (comum):</strong> 12 meses de contribuição</li>
           <li>• <strong>Carência (acidentário):</strong> sem carência</li>
-          <li>• <strong>Piso:</strong> 1 salário mínimo (R$ 1.412,00)</li>
-          <li>• <strong>Teto:</strong> R$ 7.786,02 (teto INSS 2024)</li>
+          <li>• <strong>Piso:</strong> 1 salário mínimo ({brl(PISO_INSS)})</li>
+          <li>• <strong>Teto:</strong> {brl(TETO_INSS)} (teto do INSS em {ANO_VIGENTE})</li>
           <li>• <strong>Primeiros 15 dias:</strong> pagos pelo empregador (CLT)</li>
           <li>• <strong>Duração:</strong> enquanto persistir a incapacidade (perícia médica)</li>
         </ul>

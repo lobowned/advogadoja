@@ -5,6 +5,7 @@ import HazardPayCalculator from "@/components/calculators/HazardPayCalculator";
 import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import { getWebApplicationSchema, getFAQPageSchema, getBreadcrumbSchema } from "@/data/calculator-schemas";
 import RelatedContent from "@/components/RelatedContent";
+import { ANO_VIGENTE } from "@/data/valores-vigentes";
 
 const CalculadoraInsalubridade = () => {
   const scrollToChat = () => {
@@ -18,7 +19,7 @@ const CalculadoraInsalubridade = () => {
   return (
     <>
       <Helmet>
-        <title>Calculadora de Insalubridade e Periculosidade 2024 | Calcule Adicional</title>
+        <title>{`Calculadora de Insalubridade e Periculosidade ${ANO_VIGENTE}`}</title>
         <meta name="description" content="Calcule o adicional de insalubridade ou periculosidade. Simulador com todos os graus e reflexos trabalhistas." />
         <meta name="keywords" content="calculadora insalubridade, calculadora periculosidade, adicional insalubridade, adicional periculosidade, graus insalubridade" />
         <link rel="canonical" href="/calculadora-insalubridade" />

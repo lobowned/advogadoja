@@ -128,27 +128,6 @@ export function articleSchema(a: {
   };
 }
 
-export function howToSchema(opts: {
-  name: string;
-  description?: string;
-  steps: { name: string; text: string }[];
-  totalTime?: string;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: opts.name,
-    ...(opts.description ? { description: opts.description } : {}),
-    ...(opts.totalTime ? { totalTime: opts.totalTime } : {}),
-    step: opts.steps.map((s, i) => ({
-      "@type": "HowToStep",
-      position: i + 1,
-      name: s.name,
-      text: s.text,
-    })),
-  };
-}
-
 export interface BreadcrumbItem {
   name: string;
   /** caminho relativo ("/blog") ou URL absoluta; omitir no item atual */

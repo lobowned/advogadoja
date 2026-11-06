@@ -9,6 +9,8 @@ interface ResultItem {
   label: string;
   value: number;
   description?: string;
+  /** "count" para quantidades (parcelas, anos, horas), "percent" para %; padrão é moeda */
+  format?: "currency" | "count" | "percent";
 }
 
 interface CalculatorResultProps {
@@ -137,7 +139,13 @@ const CalculatorResult = ({ total, items, specialty, calculatorType }: Calculato
                   <p className="text-xs text-muted-foreground">{item.description}</p>
                 )}
               </div>
-              <p className="text-sm font-semibold">{formatCurrency(item.value)}</p>
+              <p className="text-sm font-semibold">
+                {item.format === "count"
+                  ? item.value.toLocaleString("pt-BR")
+                  : item.format === "percent"
+                    ? `${item.value.toLocaleString("pt-BR")}%`
+                    : formatCurrency(item.value)}
+              </p>
             </m.div>
           ))}
         </m.div>

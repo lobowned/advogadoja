@@ -1,6 +1,7 @@
 // Auto-generated blog articles based on legal actions
 import { articleExpansions } from "./article-expansions";
 import { newArticles2026 } from "./blog-articles-new";
+import { consorcioArticles } from "./blog-articles-consorcio";
 export interface BlogArticle {
   id: string;
   nicheId: string;
@@ -4384,6 +4385,8 @@ export const blogArticles: BlogArticle[] = [
 
 // Adiciona os artigos novos (2026-11) ao acervo antes de aplicar expansions
 blogArticles.push(...newArticles2026);
+// Cluster de consórcio (2026-11-06), a partir das buscas reais do Search Console
+blogArticles.push(...consorcioArticles);
 
 // Helper function to get articles by niche
 // Junta as expansões (src/data/article-expansions) aos artigos curtos

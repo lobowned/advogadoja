@@ -19,6 +19,7 @@ export const getArticleReadingTime = (content: {
   documents: string[];
   deadlines: string;
   faq: { question: string; answer: string }[];
+  sections?: { title: string; paragraphs: string[] }[];
 }): number => {
   const allText = [
     content.intro,
@@ -27,6 +28,8 @@ export const getArticleReadingTime = (content: {
     ...content.documents,
     content.deadlines,
     ...content.faq.flatMap((f) => [f.question, f.answer]),
+    // Seções extras dos artigos expandidos também contam
+    ...(content.sections ?? []).flatMap((s) => [s.title, ...s.paragraphs]),
   ].join(" ");
 
   return calculateReadingTime(allText);

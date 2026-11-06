@@ -30,7 +30,8 @@ const InventoryCalculator = () => {
   const [result, setResult] = useState<CalculationResult | null>(null);
 
   const parseValue = (value: string): number => {
-    return parseFloat(value.replace(/[^\d,]/g, "").replace(",", ".")) || 0;
+    // CalculatorInput (currency) entrega centavos em dígitos: "300000" = R$ 3.000,00
+    return parseInt(value.replace(/\D/g, "") || "0", 10) / 100;
   };
 
   const parseNumber = (value: string): number => {

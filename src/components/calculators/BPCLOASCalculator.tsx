@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SALARIO_MINIMO, ANO_VIGENTE, brl } from "@/data/valores-vigentes";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -22,7 +23,8 @@ const BPCLOASCalculator = () => {
   } | null>(null);
 
   const parseValue = (value: string): number => {
-    return parseFloat(value.replace(/[^\d,]/g, "").replace(",", ".")) || 0;
+    // CalculatorInput (currency) entrega centavos em dígitos: "300000" = R$ 3.000,00
+    return parseInt(value.replace(/\D/g, "") || "0", 10) / 100;
   };
 
   const parseNumber = (value: string): number => {
@@ -37,7 +39,7 @@ const BPCLOASCalculator = () => {
       const renda = parseValue(rendaFamiliar);
       const pessoas = parseNumber(numPessoas);
       
-      const salarioMinimo = 1412; // 2024
+      const salarioMinimo = SALARIO_MINIMO;
       const limiteRendaPerCapita = salarioMinimo / 4; // 1/4 do salário mínimo
       const rendaPerCapita = renda / pessoas;
       
@@ -51,7 +53,7 @@ const BPCLOASCalculator = () => {
       
       if (!atendeCriterioRenda) {
         elegivel = false;
-        motivo = `Renda per capita (R$ ${rendaPerCapita.toFixed(2)}) excede o limite de R$ ${limiteRendaPerCapita.toFixed(2)} (1/4 do salário mínimo)`;
+        motivo = `Renda por pessoa (${brl(rendaPerCapita)}) acima do limite de ${brl(limiteRendaPerCapita)} (1/4 do salário mínimo)`;
       } else if (atendeCriterioIdade || atendeCriterioDeficiencia) {
         elegivel = true;
         if (atendeCriterioIdade) {
@@ -169,13 +171,13 @@ const BPCLOASCalculator = () => {
           <div className="grid gap-4 md:grid-cols-2 mb-6">
             <div className="bg-background/50 p-4 rounded-lg">
               <p className="text-sm text-muted-foreground">Renda Per Capita</p>
-              <p className="text-xl font-bold">R$ {result.rendaPerCapita.toFixed(2)}</p>
-              <p className="text-xs text-muted-foreground">Limite: R$ 353,00 (1/4 SM)</p>
+              <p className="text-xl font-bold">{brl(result.rendaPerCapita)}</p>
+              <p className="text-xs text-muted-foreground">Limite: {brl(SALARIO_MINIMO / 4)} (1/4 do salário mínimo de {ANO_VIGENTE})</p>
             </div>
             <div className="bg-background/50 p-4 rounded-lg">
               <p className="text-sm text-muted-foreground">Valor do Benefício</p>
               <p className="text-xl font-bold text-primary">
-                {result.elegivel ? `R$ ${result.valorBeneficio.toFixed(2)}` : "---"}
+                {result.elegivel ? brl(result.valorBeneficio) : "---"}
               </p>
               <p className="text-xs text-muted-foreground">1 salário mínimo mensal</p>
             </div>

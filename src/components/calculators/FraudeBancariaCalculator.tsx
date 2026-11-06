@@ -26,9 +26,9 @@ const FraudeBancariaCalculator = () => {
   const [isCalculating, setIsCalculating] = useState(false);
   const [result, setResult] = useState<CalculationResult | null>(null);
 
-  const parseValue = (val: string) => {
-    const cleaned = val.replace(/[^\d,]/g, "").replace(",", ".");
-    return parseFloat(cleaned) || 0;
+  const parseValue = (val: string): number => {
+    // CalculatorInput (currency) entrega centavos em dígitos: "300000" = R$ 3.000,00
+    return parseInt(val.replace(/\D/g, "") || "0", 10) / 100;
   };
 
   const handleCalculate = () => {

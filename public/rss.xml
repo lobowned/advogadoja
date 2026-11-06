@@ -5,7 +5,7 @@
     <link>https://riccio-advocacia.lovable.app</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Fri, 06 Nov 2026 20:10:42 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 21:22:12 GMT</lastBuildDate>
     <atom:link href="https://riccio-advocacia.lovable.app/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccio-advocacia.lovable.app/og-image.png</url>
@@ -146,6 +146,51 @@
       <category>penal</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Lista de crimes hediondos, efeitos penais após a Lei 8.072/90 e o Pacote Anticrime: progressão, fiança, livramento, anistia e graça.</description>
+    </item>
+    <item>
+      <title>Desistência de consórcio: como receber de volta | Riccio</title>
+      <link>https://riccio-advocacia.lovable.app/artigos/consumidor/desistencia-consorcio-como-receber-dinheiro-de-volta</link>
+      <guid isPermaLink="true">https://riccio-advocacia.lovable.app/artigos/consumidor/desistencia-consorcio-como-receber-dinheiro-de-volta</guid>
+      <pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate>
+      <category>consumidor</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Desistiu ou foi excluído do consórcio? Veja o que dizem a Lei 11.795/2008 e o STJ: quando o dinheiro volta, como é calculado e o que pode ser descontado.</description>
+    </item>
+    <item>
+      <title>Parei de pagar o consórcio: e agora? | Riccio</title>
+      <link>https://riccio-advocacia.lovable.app/artigos/consumidor/parei-de-pagar-consorcio-e-agora</link>
+      <guid isPermaLink="true">https://riccio-advocacia.lovable.app/artigos/consumidor/parei-de-pagar-consorcio-e-agora</guid>
+      <pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate>
+      <category>consumidor</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Parou de pagar o consórcio? Veja o que acontece com a sua cota, por que formalizar a saída evita custo extra e como receber de volta o que pagou.</description>
+    </item>
+    <item>
+      <title>Cancelamento de consórcio: como fazer o pedido | Riccio</title>
+      <link>https://riccio-advocacia.lovable.app/artigos/consumidor/cancelamento-consorcio-como-fazer</link>
+      <guid isPermaLink="true">https://riccio-advocacia.lovable.app/artigos/consumidor/cancelamento-consorcio-como-fazer</guid>
+      <pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate>
+      <category>consumidor</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Veja como pedir o cancelamento do consórcio, quando cabe o arrependimento em 7 dias, o que exigir por escrito e quando o dinheiro volta.</description>
+    </item>
+    <item>
+      <title>Nova lei do consórcio em 2026: o que mudou? | Riccio</title>
+      <link>https://riccio-advocacia.lovable.app/artigos/consumidor/nova-lei-consorcio-devolucao-2026</link>
+      <guid isPermaLink="true">https://riccio-advocacia.lovable.app/artigos/consumidor/nova-lei-consorcio-devolucao-2026</guid>
+      <pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate>
+      <category>consumidor</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Existe nova lei do consórcio em 2026? Veja o que está em vigor sobre devolução a quem desiste, o que é boato e como evitar golpes de resgate rápido.</description>
+    </item>
+    <item>
+      <title>Terminei de pagar o consórcio: e agora? | Riccio</title>
+      <link>https://riccio-advocacia.lovable.app/artigos/consumidor/terminei-de-pagar-consorcio-e-agora</link>
+      <guid isPermaLink="true">https://riccio-advocacia.lovable.app/artigos/consumidor/terminei-de-pagar-consorcio-e-agora</guid>
+      <pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate>
+      <category>consumidor</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Quitou o consórcio? Veja como pedir o termo de quitação e a baixa da garantia, o que acontece se você não foi contemplado e quando o crédito vira dinheiro.</description>
     </item>
     <item>
       <title>Demissão sem Justa Causa | Direitos e Verbas Rescisórias</title>
@@ -416,51 +461,6 @@
       <category>familia</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Precisa revisar o valor da pensão? Saiba quando pode pedir aumento ou redução. Veja quando a mudança de renda justifica.</description>
-    </item>
-    <item>
-      <title>Juizado Especial | Pequenas Causas Sem Advogado</title>
-      <link>https://riccio-advocacia.lovable.app/artigos/civil/juizado-especial-pequenas-causas</link>
-      <guid isPermaLink="true">https://riccio-advocacia.lovable.app/artigos/civil/juizado-especial-pequenas-causas</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>civil</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Precisa processar alguém? Saiba como usar o Juizado Especial: causas até 40 salários mínimos, sem advogado até 20 e sem custas no 1º grau.</description>
-    </item>
-    <item>
-      <title>Crimes de Trânsito | Embriaguez ao Volante, Lei Seca</title>
-      <link>https://riccio-advocacia.lovable.app/artigos/penal/crimes-transito-embriaguez-volante</link>
-      <guid isPermaLink="true">https://riccio-advocacia.lovable.app/artigos/penal/crimes-transito-embriaguez-volante</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>penal</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Foi pego na Lei Seca ou envolvido em acidente grave? Saiba as penas, como se defender e quando pode haver prisão.</description>
-    </item>
-    <item>
-      <title>Intervalo Intrajornada | Horário Almoço Não Concedido</title>
-      <link>https://riccio-advocacia.lovable.app/artigos/trabalhista/intervalo-intrajornada-almoco</link>
-      <guid isPermaLink="true">https://riccio-advocacia.lovable.app/artigos/trabalhista/intervalo-intrajornada-almoco</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>trabalhista</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Não tem intervalo de almoço completo? Saiba que você tem direito a receber hora extra. Entenda a CLT e como cobrar.</description>
-    </item>
-    <item>
-      <title>Estabilidade Provisória | Gestante, CIPA, Acidentado</title>
-      <link>https://riccio-advocacia.lovable.app/artigos/trabalhista/estabilidade-provisoria-emprego</link>
-      <guid isPermaLink="true">https://riccio-advocacia.lovable.app/artigos/trabalhista/estabilidade-provisoria-emprego</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>trabalhista</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Saiba quem tem estabilidade no emprego: gestante, membro CIPA, acidentado, pré-aposentadoria. Não pode ser demitido!</description>
-    </item>
-    <item>
-      <title>Home Office | Teletrabalho Direitos CLT</title>
-      <link>https://riccio-advocacia.lovable.app/artigos/trabalhista/home-office-teletrabalho-direitos</link>
-      <guid isPermaLink="true">https://riccio-advocacia.lovable.app/artigos/trabalhista/home-office-teletrabalho-direitos</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>trabalhista</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Trabalha de casa? Conheça seus direitos no home office: equipamentos, jornada, horas extras, ajuda de custo e mais.</description>
     </item>
   </channel>
 </rss>

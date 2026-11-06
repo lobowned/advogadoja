@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { ANO_VIGENTE } from "@/data/valores-vigentes";
 import { Link } from "react-router-dom";
 import PageTransition from "@/components/motion/PageTransition";
 import { Card } from "@/components/ui/card";
@@ -12,7 +13,7 @@ import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 const calculadoras = [
   { id: "trabalhista", title: "Calculadora Trabalhista", description: "Calcule suas verbas rescisórias: aviso prévio, FGTS, 13º salário, férias e multas.", icon: Briefcase, href: "/calculadora-trabalhista", color: "from-amber-500 to-orange-500", bgLight: "bg-amber-50 dark:bg-amber-950/20", features: ["Aviso Prévio", "FGTS + Multa 40%", "13º Proporcional", "Férias + 1/3"] },
   { id: "horas-extras", title: "Calculadora de Horas Extras", description: "Calcule horas extras não pagas com adicional de 50%, 100% e todos os reflexos.", icon: Clock, href: "/calculadora-horas-extras", color: "from-amber-500 to-orange-500", bgLight: "bg-amber-50 dark:bg-amber-950/20", features: ["Adicional 50%", "Feriados 100%", "Reflexos", "Ad. Noturno"] },
-  { id: "seguro-desemprego", title: "Calculadora de Seguro-Desemprego", description: "Descubra o valor e quantas parcelas do seguro-desemprego você pode receber.", icon: Briefcase, href: "/calculadora-seguro-desemprego", color: "from-amber-500 to-orange-500", bgLight: "bg-amber-50 dark:bg-amber-950/20", features: ["Valor Parcela", "Nº Parcelas", "Faixas 2024", "Requisitos"] },
+  { id: "seguro-desemprego", title: "Calculadora de Seguro-Desemprego", description: "Descubra o valor e quantas parcelas do seguro-desemprego você pode receber.", icon: Briefcase, href: "/calculadora-seguro-desemprego", color: "from-amber-500 to-orange-500", bgLight: "bg-amber-50 dark:bg-amber-950/20", features: ["Valor Parcela", "Nº Parcelas", `Faixas ${ANO_VIGENTE}`, "Requisitos"] },
   { id: "fgts", title: "Calculadora de FGTS", description: "Simule seu saldo de FGTS, multa rescisória e compare modalidades de saque.", icon: Wallet, href: "/calculadora-fgts", color: "from-amber-500 to-orange-500", bgLight: "bg-amber-50 dark:bg-amber-950/20", features: ["Saldo FGTS", "Multa 40%", "Saque-Aniversário", "Saque-Rescisão"] },
   { id: "insalubridade", title: "Calculadora de Insalubridade", description: "Calcule o adicional de insalubridade ou periculosidade e reflexos.", icon: ShieldAlert, href: "/calculadora-insalubridade", color: "from-amber-500 to-orange-500", bgLight: "bg-amber-50 dark:bg-amber-950/20", features: ["Insalubridade", "Periculosidade", "Reflexos", "FGTS"] },
   { id: "pensao", title: "Calculadora de Pensão Alimentícia", description: "Estime o valor da pensão alimentícia baseado na renda e número de dependentes.", icon: Users, href: "/calculadora-pensao", color: "from-blue-500 to-indigo-500", bgLight: "bg-blue-50 dark:bg-blue-950/20", features: ["% sobre Renda", "Custos Especiais", "Múltiplos Filhos", "Valor Anual"] },

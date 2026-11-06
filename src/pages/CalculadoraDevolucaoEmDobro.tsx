@@ -71,8 +71,8 @@ const CalculadoraDevolucaoEmDobro = () => {
   return (
     <PageTransition variant="fade">
       <Helmet>
-        <title>Calculadora de Devolução em Dobro | Cobrança Indevida 2025</title>
-        <meta name="description" content="Calcule grátis quanto você pode receber de volta por cobrança indevida. Art. 42 CDC garante devolução em dobro + danos morais. Calcule agora!" />
+        <title>Calculadora de Devolução em Dobro | Cobrança Indevida (CDC)</title>
+        <meta name="description" content="Pagou cobrança indevida? Calcule quanto pode voltar: o art. 42 do CDC prevê a devolução em dobro do valor pago, salvo engano justificável." />
         <meta name="keywords" content="devolução em dobro, cobrança indevida, art 42 cdc, restituição em dobro, direito do consumidor, calculadora" />
         <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-devolucao-dobro" />
         <meta property="og:title" content="Calculadora de Devolução em Dobro | Cobrança Indevida" />

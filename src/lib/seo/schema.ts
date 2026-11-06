@@ -15,11 +15,12 @@ export const FIRM = {
   country: "BR",
 } as const;
 
-const address = {
-  "@type": "PostalAddress",
-  addressLocality: FIRM.locality,
-  addressRegion: FIRM.region,
-  addressCountry: FIRM.country,
+// Atendimento ONLINE, sem endereço físico. Usamos areaServed (região de atuação)
+// em vez de PostalAddress (endereço fixo) para não declarar escritório onde não há.
+const serviceArea = {
+  "@type": "AdministrativeArea",
+  name: "Brasil",
+  containedIn: { "@type": "Country", name: "Brasil" },
 };
 
 export function attorneySchema() {
@@ -49,7 +50,7 @@ export function attorneySchema() {
     ],
     knowsLanguage: "pt-BR",
     worksFor: { "@id": `${SITE_URL}/#legalservice` },
-    address,
+    workLocation: { "@type": "Place", name: "Atendimento online em todo o Brasil" },
   };
 }
 
@@ -62,10 +63,10 @@ export function legalServiceSchema(opts: { areaServed?: string[]; description?: 
     url: SITE_URL,
     image: OG_IMAGE,
     telephone: FIRM.telephone,
-    address,
     priceRange: "$$",
-    openingHours: "Mo-Fr 08:00-18:00",
+    // Negócio de atendimento remoto; sem endereço nem horário fixo
     availableLanguage: "pt-BR",
+    serviceArea,
     knowsAbout: [
       "Direito Trabalhista",
       "Direito Previdenciário",
@@ -86,9 +87,9 @@ export function legalServiceSchema(opts: { areaServed?: string[]; description?: 
       ],
     },
     ...(opts.description ? { description: opts.description } : {}),
-    ...(opts.areaServed?.length
-      ? { areaServed: opts.areaServed.map((name) => ({ "@type": "City", name })) }
-      : {}),
+    areaServed: (opts.areaServed?.length
+      ? opts.areaServed.map((name) => ({ "@type": "City", name }))
+      : [{ "@type": "Country", name: "Brasil" }]),
     employee: { "@id": `${SITE_URL}/#attorney` },
   };
 }

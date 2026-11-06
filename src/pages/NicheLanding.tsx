@@ -34,12 +34,12 @@ const nicheData: Record<string, NicheData> = {
     title: "Advogado do Consumidor Online",
     subtitle: "Especialista em Direito do Consumidor",
     metaTitle: "Advogado do Consumidor Online | Voo Cancelado, Negativação, Plano de Saúde - Consulta Grátis",
-    metaDescription: "Fale com advogado do consumidor online. Voo cancelado, nome negativado, plano de saúde negou, fraude bancária. Indenização de até R$ 15.000. Consulta gratuita.",
+    metaDescription: "Fale com advogado do consumidor online. Voo cancelado, nome negativado, plano de saúde negou, fraude bancária. Indenização de até R$ 15.000. Atendimento online.",
     keywords: ["advogado consumidor", "voo cancelado indenização", "negativação indevida", "plano de saúde negou", "fraude bancária", "cobrança indevida", "devolução em dobro", "direito do consumidor"],
     heroDescription: "Especialista em voos cancelados, negativação indevida, planos de saúde e fraudes bancárias. Indenização de até R$ 15.000. Atendimento imediato.",
     benefits: [
       "Indenização de até R$ 15.000",
-      "Consulta gratuita imediata",
+      "Atendimento online imediata",
       "Devolução em dobro garantida",
       "Advogados especializados OAB",
       "Sem custo inicial",
@@ -63,7 +63,7 @@ const nicheData: Record<string, NicheData> = {
     title: "Advogado Trabalhista Online",
     subtitle: "Especialista em Direito do Trabalho",
     metaTitle: "Advogado Trabalhista Online | Consulta Grátis - Demissão, Horas Extras",
-    metaDescription: "Fale agora com advogado trabalhista online. Demissão sem justa causa, horas extras, acidente de trabalho, assédio moral. Consulta gratuita e imediata.",
+    metaDescription: "Fale agora com advogado trabalhista online. Demissão sem justa causa, horas extras, acidente de trabalho, assédio moral. Atendimento online e imediata.",
     keywords: ["advogado trabalhista", "demissão sem justa causa", "horas extras", "advogado do trabalho", "direitos trabalhistas", "reclamação trabalhista"],
     heroDescription: "Especialista em demissão, horas extras, acidente de trabalho, assédio moral e verbas rescisórias. Atendimento imediato e gratuito.",
     benefits: [

@@ -24,8 +24,7 @@ const mgCities = [
   { name: "Governador Valadares", slug: "governador-valadares", population: "279K" },
   { name: "Ipatinga", slug: "ipatinga", population: "263K" },
   { name: "Sete Lagoas", slug: "sete-lagoas", population: "239K" },
-  { name: "Divinópolis", slug: "divinopolis", population: "238K" },
-];
+  { name: "Divinópolis", slug: "divinopolis", population: "238K" }];
 
 const legalAreas = [
   { id: "consumidor", name: "Consumidor", icon: ShoppingBag, color: "text-emerald-600 bg-emerald-50" },
@@ -33,8 +32,7 @@ const legalAreas = [
   { id: "previdenciario", name: "Previdenciário", icon: Shield, color: "text-purple-600 bg-purple-50" },
   { id: "familia", name: "Família", icon: Users, color: "text-pink-600 bg-pink-50" },
   { id: "civil", name: "Civil", icon: Scale, color: "text-amber-600 bg-amber-50" },
-  { id: "penal", name: "Criminal", icon: Gavel, color: "text-red-600 bg-red-50" },
-];
+  { id: "penal", name: "Criminal", icon: Gavel, color: "text-red-600 bg-red-50" }];
 
 const localInfo = {
   procon: {
@@ -60,8 +58,7 @@ const stats = [
   { value: "6.800+", label: "Casos em MG" },
   { value: "12", label: "Cidades atendidas" },
   { value: "97%", label: "Taxa de sucesso" },
-  { value: "R$ 15M+", label: "Em indenizações" },
-];
+  { value: "R$ 15M+", label: "Em indenizações" }];
 
 const AdvogadoMinasGerais = () => {
   const breadcrumbs = [
@@ -108,7 +105,7 @@ const AdvogadoMinasGerais = () => {
     <PageTransition>
       <Helmet>
         <title>Advogado Online em Minas Gerais | BH, Uberlândia, Contagem | Consulta Grátis</title>
-        <meta name="description" content="Advogado online em Minas Gerais: Belo Horizonte, Uberlândia, Contagem, Juiz de Fora e todas as cidades. Direito do consumidor, trabalhista, previdenciário. Consulta gratuita." />
+        <meta name="description" content="Advogado online em Minas Gerais: Belo Horizonte, Uberlândia, Contagem, Juiz de Fora e todas as cidades. Direito do consumidor, trabalhista, previdenciário. Atendimento online." />
         <meta name="keywords" content="advogado minas gerais, advogado mg, advogado belo horizonte, advogado bh, advogado uberlandia, advogado consumidor mg, advogado trabalhista mg" />
         <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-minas-gerais" />
         
@@ -317,20 +314,20 @@ const AdvogadoMinasGerais = () => {
               Precisa de Advogado em Minas Gerais?
             </h2>
             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-              Fale agora com um de nossos advogados especializados.
+              Fale agora com um de nossos advogados.
             </p>
             
             <Button asChild size="lg" variant="secondary">
               <Link to="/">
                 <MessageCircle className="w-5 h-5 mr-2" />
-                Iniciar Consulta Gratuita
+                Iniciar Fale com advogado
               </Link>
             </Button>
 
             <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm opacity-80">
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5" />
-                <span>Consulta gratuita</span>
+                <span>Atendimento online</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5" />

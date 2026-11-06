@@ -25,8 +25,7 @@ const bahiaCities = [
   { name: "Lauro de Freitas", slug: "lauro-de-freitas", population: "204K" },
   { name: "Barreiras", slug: "barreiras", population: "158K" },
   { name: "Jequié", slug: "jequie", population: "155K" },
-  { name: "Alagoinhas", slug: "alagoinhas", population: "155K" },
-];
+  { name: "Alagoinhas", slug: "alagoinhas", population: "155K" }];
 
 const legalAreas = [
   { id: "consumidor", name: "Consumidor", icon: ShoppingBag, color: "text-emerald-600 bg-emerald-50" },
@@ -34,8 +33,7 @@ const legalAreas = [
   { id: "previdenciario", name: "Previdenciário", icon: Shield, color: "text-purple-600 bg-purple-50" },
   { id: "familia", name: "Família", icon: Users, color: "text-pink-600 bg-pink-50" },
   { id: "civil", name: "Civil", icon: Scale, color: "text-amber-600 bg-amber-50" },
-  { id: "penal", name: "Criminal", icon: Gavel, color: "text-red-600 bg-red-50" },
-];
+  { id: "penal", name: "Criminal", icon: Gavel, color: "text-red-600 bg-red-50" }];
 
 const localInfo = {
   procon: {
@@ -61,8 +59,7 @@ const stats = [
   { value: "3.500+", label: "Casos na Bahia" },
   { value: "11", label: "Cidades atendidas" },
   { value: "97%", label: "Taxa de sucesso" },
-  { value: "R$ 8M+", label: "Em indenizações" },
-];
+  { value: "R$ 8M+", label: "Em indenizações" }];
 
 const AdvogadoBahia = () => {
   const breadcrumbs = [
@@ -117,7 +114,7 @@ const AdvogadoBahia = () => {
     <PageTransition>
       <Helmet>
         <title>Advogado Online na Bahia | Salvador, Feira de Santana e Mais | Consulta Grátis</title>
-        <meta name="description" content="Advogado online na Bahia: Salvador, Feira de Santana, Vitória da Conquista e todas as cidades baianas. Direito do consumidor, trabalhista, previdenciário. Consulta gratuita." />
+        <meta name="description" content="Advogado online na Bahia: Salvador, Feira de Santana, Vitória da Conquista e todas as cidades baianas. Direito do consumidor, trabalhista, previdenciário. Atendimento online." />
         <meta name="keywords" content="advogado bahia, advogado salvador, advogado feira de santana, advogado online bahia, advogado consumidor bahia, advogado trabalhista bahia, advogado INSS bahia" />
         <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-bahia" />
         
@@ -373,7 +370,7 @@ const AdvogadoBahia = () => {
               Precisa de Advogado na Bahia?
             </h2>
             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-              Fale agora com um de nossos advogados especializados. 
+              Fale agora com um de nossos advogados. 
               Atendimento imediato para toda a Bahia.
             </p>
             
@@ -381,7 +378,7 @@ const AdvogadoBahia = () => {
               <Button asChild size="lg" variant="secondary">
                 <Link to="/">
                   <MessageCircle className="w-5 h-5 mr-2" />
-                  Iniciar Consulta Gratuita
+                  Iniciar Fale com advogado
                 </Link>
               </Button>
             </div>
@@ -389,7 +386,7 @@ const AdvogadoBahia = () => {
             <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm opacity-80">
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5" />
-                <span>Consulta gratuita</span>
+                <span>Atendimento online</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5" />

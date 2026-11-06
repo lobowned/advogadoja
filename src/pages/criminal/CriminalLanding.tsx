@@ -19,7 +19,6 @@ const CriminalLanding = () => {
       "Advocacia criminal: inquérito policial, ação penal, Tribunal do Júri, habeas corpus, execução penal e recursos. Atendimento em todo o Brasil. OAB/BA 46.638.",
     "url": "https://riccio-advocacia.lovable.app/criminal",
     "telephone": "+55-71-99703-6269",
-    "email": "contato@advogadoja.com.br",
     "areaServed": { "@type": "Country", "name": "Brasil" },
     "serviceType": [
       "Defesa Criminal",
@@ -34,25 +33,8 @@ const CriminalLanding = () => {
       "Crimes contra a Administração Pública",
       "Crimes cibernéticos",
       "Recurso Criminal",
-      "Revisão Criminal",
-    ],
-    "priceRange": "Consulta inicial",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
-      ],
-      "opens": "00:00",
-      "closes": "23:59",
-      "description": "Plantão 24h para urgências criminais",
-    },
-  };
+      "Revisão Criminal"],
+    "priceRange": "Consulta inicial"};
 
   const attorneySchema = {
     "@context": "https://schema.org",
@@ -62,12 +44,6 @@ const CriminalLanding = () => {
     "description":
       "Advogado dedicado ao Direito Penal e Processual Penal, com prática em Justiça Estadual, Federal e tribunais superiores.",
     "url": "https://riccio-advocacia.lovable.app/criminal",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Camaçari",
-      "addressRegion": "BA",
-      "addressCountry": "BR",
-    },
     "areaServed": { "@type": "Country", "name": "Brasil" },
     "knowsAbout": [
       "Direito Penal",
@@ -78,9 +54,7 @@ const CriminalLanding = () => {
       "Lei de Drogas",
       "Lei Maria da Penha",
       "Crimes econômicos",
-      "Crimes cibernéticos",
-    ],
-  };
+      "Crimes cibernéticos"]};
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -92,47 +66,35 @@ const CriminalLanding = () => {
         "acceptedAnswer": {
           "@type": "Answer",
           "text":
-            "Quanto antes, melhor. A defesa que se constrói ainda no inquérito tem instrumentos que a defesa tardia já não dispõe.",
-        },
-      },
+            "Quanto antes, melhor. A defesa que se constrói ainda no inquérito tem instrumentos que a defesa tardia já não dispõe."}},
       {
         "@type": "Question",
         "name": "E em caso de prisão em flagrante de um familiar?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text":
-            "Anote a delegacia, o nome da autoridade policial e a tipificação preliminar. Em seguida, procure um advogado para acompanhar a lavratura do auto e a audiência de custódia, que ocorre em até 24 horas.",
-        },
-      },
+            "Anote a delegacia, o nome da autoridade policial e a tipificação preliminar. Em seguida, procure um advogado para acompanhar a lavratura do auto e a audiência de custódia, que ocorre em até 24 horas."}},
       {
         "@type": "Question",
         "name": "O advogado garante resultado?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text":
-            "Não. O Código de Ética da OAB veda promessas. O que se compromete é a atuação técnica e diligente, fundada em legislação, doutrina e jurisprudência.",
-        },
-      },
+            "Não. O Código de Ética da OAB veda promessas. O que se compromete é a atuação técnica e diligente, fundada em legislação, doutrina e jurisprudência."}},
       {
         "@type": "Question",
         "name": "O que eu contar ao advogado fica em sigilo?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text":
-            "Sim. O sigilo profissional é dever do advogado, protegido por lei, inclusive diante de autoridades.",
-        },
-      },
+            "Sim. O sigilo profissional é dever do advogado, protegido por lei, inclusive diante de autoridades."}},
       {
         "@type": "Question",
         "name": "Atendem em todo o Brasil?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text":
-            "Sim. O escritório atua em todo o território nacional, mediante prévia avaliação do caso.",
-        },
-      },
-    ],
-  };
+            "Sim. O escritório atua em todo o território nacional, mediante prévia avaliação do caso."}}]};
 
   return (
     <PageTransition variant="slideUp">

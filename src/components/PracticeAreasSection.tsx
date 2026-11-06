@@ -113,7 +113,7 @@ const PracticeAreasSection = () => {
               Um escritório, <em className="not-italic text-primary">seis áreas</em> do direito.
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground font-sans leading-relaxed">
-              Atendimento generalista com advogados especializados. Do trabalhista
+              Atendimento generalista com advogados. Do trabalhista
               ao criminal, conduzimos cada caso com a discrição e a estratégia
               que ele exige.
             </p>

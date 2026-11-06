@@ -27,8 +27,7 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+  AccordionTrigger} from "@/components/ui/accordion";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { consumerCityData, type ConsumerCityData } from "@/data/consumer-local-seo";
 import { getCityBySlug, isCityIndexable } from "@/data/cities";
@@ -49,8 +48,7 @@ const getIconForProblem = (iconName: string) => {
     "CreditCard": <CreditCard className="w-6 h-6" />,
     "AlertTriangle": <AlertTriangle className="w-6 h-6" />,
     "ShoppingCart": <ShoppingCart className="w-6 h-6" />,
-    "Building": <Building className="w-6 h-6" />,
-  };
+    "Building": <Building className="w-6 h-6" />};
   return icons[iconName] || <Scale className="w-6 h-6" />;
 };
 
@@ -76,7 +74,7 @@ const CityConsumerLanding = () => {
     "@type": ["LegalService", "LocalBusiness", "ProfessionalService"],
     "@id": pageUrl,
     "name": `Advogado do Consumidor em ${cityData.cityName}`,
-    "description": `Especialista em Direito do Consumidor em ${cityData.cityName}, ${cityData.stateCode}. Consulta gratuita.`,
+    "description": `Especialista em Direito do Consumidor em ${cityData.cityName}, ${cityData.stateCode}. Atendimento online.`,
     "url": pageUrl,
     "telephone": "+55-71-99703-6269",
     "areaServed": {
@@ -87,24 +85,7 @@ const CityConsumerLanding = () => {
         "name": cityData.state
       }
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": cityData.coordinates.latitude,
-      "longitude": cityData.coordinates.longitude
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": cityData.cityName,
-      "addressRegion": cityData.stateCode,
-      "addressCountry": "BR"
-    },
     "priceRange": "$$",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "08:00",
-      "closes": "18:00"
-    },
     "knowsAbout": [
       "Direito do Consumidor",
       "Voo Cancelado",
@@ -179,7 +160,7 @@ const CityConsumerLanding = () => {
         <title>{`Advogado Consumidor ${cityData.cityName} ${cityData.stateCode} | Indenização até R$15.000 - Consulta Grátis`}</title>
         <meta 
           name="description" 
-          content={`Advogado especialista em Direito do Consumidor em ${cityData.cityName}. Consulta gratuita pelo WhatsApp.`} 
+          content={`Advogado especialista em Direito do Consumidor em ${cityData.cityName}. Atendimento online pelo WhatsApp.`} 
         />
         <meta 
           name="keywords" 
@@ -197,7 +178,7 @@ const CityConsumerLanding = () => {
         <meta name="ICBM" content={`${cityData.coordinates.latitude}, ${cityData.coordinates.longitude}`} />
         
         {/* Open Graph */}
-        <meta property="og:title" content={`Advogado do Consumidor em ${cityData.cityName} - Consulta Gratuita`} />
+        <meta property="og:title" content={`Advogado do Consumidor em ${cityData.cityName} - Fale com advogado`} />
         <meta property="og:description" content={`Especialista em Direito do Consumidor em ${cityData.cityName}. Atendimento pelo WhatsApp.`} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
@@ -498,7 +479,7 @@ const CityConsumerLanding = () => {
               Precisa de Ajuda com Problema de Consumidor em {cityData.cityName}?
             </h2>
             <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-              Fale agora com um advogado especialista. Consulta gratuita e sem compromisso.
+              Fale agora com um advogado especialista. Atendimento online e sem compromisso.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -513,7 +494,7 @@ const CityConsumerLanding = () => {
             <div className="flex items-center justify-center gap-6 mt-8 text-sm opacity-80">
               <span className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4" />
-                Consulta Gratuita
+                Fale com advogado
               </span>
               <span className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4" />

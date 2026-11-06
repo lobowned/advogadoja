@@ -14,8 +14,7 @@ import PageTransition from "@/components/motion/PageTransition";
 import { getCityBySlug, brazilianCities, isCityIndexable } from "@/data/cities";
 import { CityLocalGuide } from "@/components/CityLocalGuide";
 import {
-  getLocalPage, type LocalPageContent, LOCAL_PAGE_ROUTES, LOCAL_CITY_NAMES, LOCAL_NICHE_NAMES,
-} from "@/data/local-pages";
+  getLocalPage, type LocalPageContent, LOCAL_PAGE_ROUTES, LOCAL_CITY_NAMES, LOCAL_NICHE_NAMES} from "@/data/local-pages";
 
 const WHATSAPP_NUMBER = "5571997036269";
 
@@ -282,14 +281,7 @@ const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
     "priceRange": "$$",
     "currenciesAccepted": "BRL",
     "paymentAccepted": "Cash, Credit Card, PIX",
-    "openingHours": "Mo-Fr 08:00-18:00",
     "image": "https://riccio-advocacia.lovable.app/og-image.png",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": city.name,
-      "addressRegion": city.stateCode,
-      "addressCountry": "BR"
-    },
     "areaServed": [
       {
         "@type": "City",
@@ -362,7 +354,7 @@ const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
     <PageTransition>
       <div className="min-h-screen bg-background">
         <Helmet>
-          <title>{`Advogado ${area.name} em ${city.name} ${city.stateCode} | Consulta Gratuita`}</title>
+          <title>{`Advogado ${area.name} em ${city.name} ${city.stateCode} | Fale com advogado`}</title>
           <meta 
             name="description" 
             content={`Advogado ${area.name.toLowerCase()} em ${city.name}. ${area.description} Consulta jurídica online gratuita e imediata.`} 
@@ -376,7 +368,7 @@ const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
             <meta name="robots" content="noindex, follow" />
           )}
           
-          <meta property="og:title" content={`Advogado ${area.name} em ${city.name} | Consulta Gratuita`} />
+          <meta property="og:title" content={`Advogado ${area.name} em ${city.name} | Fale com advogado`} />
           <meta property="og:description" content={`${area.description} Atendimento online em ${city.name}.`} />
           <meta property="og:url" content={canonicalUrl} />
           
@@ -444,7 +436,7 @@ const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
                   </span>
                   <span className="flex items-center gap-1">
                     <CheckCircle className="h-4 w-4 text-green-600" />
-                    Consulta Gratuita
+                    Fale com advogado
                   </span>
                   <span className="flex items-center gap-1">
                     <CheckCircle className="h-4 w-4 text-green-600" />
@@ -545,7 +537,7 @@ const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
               </p>
               <Button size="lg" className="text-lg px-8" onClick={handleCTA}>
                 <MessageCircle className="h-5 w-5 mr-2" />
-                Iniciar Consulta Gratuita
+                Iniciar Fale com advogado
               </Button>
             </div>
           </section>
@@ -612,8 +604,7 @@ const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
 };
 
 function LocalNichePage({
-  local, areaName, areaSlug, cityName, citySlug,
-}: { local: LocalPageContent; areaName: string; areaSlug: string; cityName: string; citySlug: string }) {
+  local, areaName, areaSlug, cityName, citySlug}: { local: LocalPageContent; areaName: string; areaSlug: string; cityName: string; citySlug: string }) {
   const base = "https://riccio-advocacia.lovable.app";
   const canonicalUrl = `${base}/advogado-${areaSlug}-${citySlug}`;
   const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(local.whatsappText)}`;
@@ -629,33 +620,26 @@ function LocalNichePage({
     "areaServed": {
       "@type": "City",
       "name": cityName,
-      "containedInPlace": { "@type": "State", "name": "Bahia" },
-    },
+      "containedInPlace": { "@type": "State", "name": "Bahia" }},
     "employee": {
       "@type": "Person",
       "name": "Gilberto Riccio",
       "jobTitle": "Advogado",
-      "identifier": "OAB/BA 46.638",
-    },
-  };
+      "identifier": "OAB/BA 46.638"}};
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": local.faq.map((f) => ({
       "@type": "Question",
       "name": f.q,
-      "acceptedAnswer": { "@type": "Answer", "text": f.a },
-    })),
-  };
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }}))};
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Início", "item": base },
       { "@type": "ListItem", "position": 2, "name": local.areaLink.label, "item": `${base}${local.areaLink.href}` },
-      { "@type": "ListItem", "position": 3, "name": local.h1, "item": canonicalUrl },
-    ],
-  };
+      { "@type": "ListItem", "position": 3, "name": local.h1, "item": canonicalUrl }]};
 
   return (
     <PageTransition>

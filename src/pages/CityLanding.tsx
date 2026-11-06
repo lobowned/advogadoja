@@ -94,14 +94,7 @@ const CityLanding = () => {
     "description": `Advogados especialistas em ${city.name}, ${city.state}. Atendimento jurídico online gratuito em Direito Trabalhista, Família, Previdenciário, Civil e Criminal.`,
     "url": canonicalUrl,
     "telephone": "+55-71-99703-6269",
-    "email": "contato@advogadoja.com.br",
-    "priceRange": "Consulta Gratuita",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": city.name,
-      "addressRegion": city.stateCode,
-      "addressCountry": "BR"
-    },
+    "priceRange": "$$",
     "areaServed": {
       "@type": "City",
       "name": city.name,
@@ -117,14 +110,7 @@ const CityLanding = () => {
       "Direito Civil",
       "Direito do Consumidor",
       "Direito Penal"
-    ],
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "08:00",
-      "closes": "20:00"
-    }
-  };
+    ]};
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -209,13 +195,13 @@ const CityLanding = () => {
             <meta name="robots" content="noindex, follow" />
           )}
           
-          <meta property="og:title" content={`Advogado em ${city.name} | Consulta Gratuita`} />
+          <meta property="og:title" content={`Advogado em ${city.name} | Fale com advogado`} />
           <meta property="og:description" content={`Fale agora com advogados especialistas em ${city.name}. Atendimento online gratuito e imediato.`} />
           <meta property="og:url" content={canonicalUrl} />
           <meta property="og:type" content="website" />
           
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content={`Advogado em ${city.name} | Consulta Gratuita`} />
+          <meta name="twitter:title" content={`Advogado em ${city.name} | Fale com advogado`} />
           
           <meta name="geo.region" content={`BR-${city.stateCode}`} />
           <meta name="geo.placename" content={city.name} />
@@ -279,7 +265,7 @@ const CityLanding = () => {
                   </span>
                   <span className="flex items-center gap-1">
                     <CheckCircle className="h-4 w-4 text-green-600" />
-                    Consulta Gratuita
+                    Fale com advogado
                   </span>
                 </div>
               </div>

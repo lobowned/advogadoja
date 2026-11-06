@@ -92,7 +92,7 @@ const schemaData = {
       "@type": "LegalService",
       "@id": "https://riccio-advocacia.lovable.app/advogado-trabalhista-online#service",
       "name": "Advogado Trabalhista Online - AdvogadoJá",
-      "description": "Advogado trabalhista especializado em demissão, horas extras, assédio moral e acidente de trabalho. Consulta gratuita.",
+      "description": "Advogado trabalhista especializado em demissão, horas extras, assédio moral e acidente de trabalho. Atendimento online.",
       "url": "https://riccio-advocacia.lovable.app/advogado-trabalhista-online",
       "telephone": "+55 71 99703-6269",
       "areaServed": { "@type": "Country", "name": "Brasil" },
@@ -135,7 +135,7 @@ const TrabalhistaLanding = () => {
     <PageTransition>
       <Helmet>
         <title>Advogado Trabalhista Online | Demissão, Horas Extras | Consulta Grátis</title>
-        <meta name="description" content="Advogado trabalhista online para demissão, horas extras, pejotização e acidente de trabalho. Consulta gratuita. Só paga se ganhar." />
+        <meta name="description" content="Advogado trabalhista online para demissão, horas extras, pejotização e acidente de trabalho. Atendimento online. Só paga se ganhar." />
         <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-trabalhista-online" />
         <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
       </Helmet>

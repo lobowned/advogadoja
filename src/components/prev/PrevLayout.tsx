@@ -61,7 +61,7 @@ export default function PrevLayout({
                 Previdenciário
               </div>
               <div className="text-[10px] uppercase tracking-[0.18em] text-prev-navy/60">
-                Especialista em INSS
+                Atuante em INSS
               </div>
             </div>
           </Link>
@@ -154,7 +154,7 @@ export default function PrevLayout({
                 <div className="leading-tight">
                   <div className="font-serif text-lg">Previdenciário</div>
                   <div className="text-[10px] uppercase tracking-[0.18em] text-prev-beige/60">
-                    Especialista em INSS
+                    Atuante em INSS
                   </div>
                 </div>
               </div>

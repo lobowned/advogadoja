@@ -149,7 +149,7 @@ const LawyerChatSection = ({ defaultLawyerId, area }: LawyerChatSectionProps = {
                     <Badge
                       variant="outline"
                       className="h-4 px-1.5 text-[9px] gap-0.5 bg-white/10 border-white/30 text-white font-normal shrink-0"
-                      title={`Assistente virtual especializado em ${currentLawyer.subSpecialty}`}
+                      title={`Assistente virtual que atua em ${currentLawyer.subSpecialty}`}
                     >
                       <Bot className="w-2.5 h-2.5" />
                       Assistente Virtual

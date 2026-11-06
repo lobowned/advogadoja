@@ -15,7 +15,7 @@ const CalculatorDisclaimer = () => {
             específicas do seu caso, acordos coletivos, decisões judiciais e outros fatores.
           </p>
           <p>
-            Para uma análise precisa, consulte um advogado especializado.
+            Para uma análise precisa, consulte um advogado.
           </p>
         </div>
       </div>

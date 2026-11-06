@@ -157,7 +157,7 @@ const RelatedContent = ({
             to="/"
             className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
           >
-            <span>Falar com advogado especializado</span>
+            <span>Falar com advogado</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

@@ -22,8 +22,7 @@ const Index = () => {
       "height": 512
     },
     "image": "https://riccio-advocacia.lovable.app/favicon.svg",
-    "description": "Escritório de advocacia online especializado em todas as áreas do direito. Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp.",
-    "email": "contato@advogadoja.com.br",
+    "description": "Escritório de advocacia online que atua em todas as áreas do direito. Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp.",
     "telephone": "+55-71-99703-6269",
     "legalName": "Riccio Advocacia",
     "taxID": "50.947.818/0001-94",
@@ -42,12 +41,6 @@ const Index = () => {
       "Direito Civil",
       "Direito Penal"
     ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Salvador",
-      "addressRegion": "BA",
-      "addressCountry": "BR"
-    },
     "contactPoint": [
       {
         "@type": "ContactPoint",
@@ -58,7 +51,6 @@ const Index = () => {
       },
       {
         "@type": "ContactPoint",
-        "email": "contato@advogadoja.com.br",
         "contactType": "customer support",
         "availableLanguage": "Portuguese"
       }
@@ -75,42 +67,16 @@ const Index = () => {
     "@id": "https://riccio-advocacia.lovable.app/#localbusiness",
     "name": "Riccio Advocacia",
     "image": "https://riccio-advocacia.lovable.app/favicon.svg",
-    "description": "Escritório de advocacia online. Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Consulta gratuita em todo o Brasil.",
+    "description": "Escritório de advocacia online. Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento online em todo o Brasil.",
     "url": "https://riccio-advocacia.lovable.app",
     "telephone": "+55-71-99703-6269",
-    "email": "contato@advogadoja.com.br",
-    "priceRange": "Consulta Gratuita",
+    "priceRange": "$$",
     "currenciesAccepted": "BRL",
     "paymentAccepted": "Pix, Cartão de Crédito, Boleto",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Salvador",
-      "addressRegion": "BA",
-      "addressCountry": "BR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -12.9714,
-      "longitude": -38.5014
-    },
     "areaServed": {
       "@type": "Country",
       "name": "Brasil"
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "09:00",
-        "closes": "14:00"
-      }
-    ]
+    }
   };
 
   // Schema.org LegalService - Specific for legal services
@@ -119,10 +85,9 @@ const Index = () => {
     "@type": "LegalService",
     "@id": "https://riccio-advocacia.lovable.app/#legalservice",
     "name": "Riccio Advocacia - Escritório de Advocacia Online",
-    "description": "Escritório especializado em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp em todo o Brasil.",
+    "description": "Escritório que atua em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp em todo o Brasil.",
     "url": "https://riccio-advocacia.lovable.app",
     "telephone": "+55-71-99703-6269",
-    "email": "contato@advogadoja.com.br",
     "areaServed": {
       "@type": "Country",
       "name": "Brasil"
@@ -139,13 +104,7 @@ const Index = () => {
       "Inventário e Herança",
       "Defesa Criminal"
     ],
-    "priceRange": "Consulta Gratuita",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "08:00",
-      "closes": "20:00"
-    },
+    "priceRange": "$$",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Serviços Jurídicos",
@@ -208,7 +167,7 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Advogado em Salvador e Online | Riccio Advocacia",
-    "description": "Precisa de advogado? Especialistas em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp. Consulta gratuita.",
+    "description": "Precisa de advogado? Especialistas em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp. Atendimento online.",
     "url": "https://riccio-advocacia.lovable.app",
     "isPartOf": {
       "@type": "WebSite",
@@ -237,13 +196,13 @@ const Index = () => {
         <link rel="canonical" href="https://riccio-advocacia.lovable.app" />
         
         <meta property="og:title" content="Advogado em Salvador e Online | Riccio Advocacia" />
-        <meta property="og:description" content="Advogados online para todas as áreas do direito. Atendimento via WhatsApp. Consulta gratuita em todo o Brasil." />
+        <meta property="og:description" content="Advogados online para todas as áreas do direito. Atendimento via WhatsApp. Atendimento online em todo o Brasil." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://riccio-advocacia.lovable.app" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Advogado em Salvador e Online | Riccio Advocacia" />
-        <meta name="twitter:description" content="Advogados online para todas as áreas do direito. Atendimento via WhatsApp. Consulta gratuita em todo o Brasil." />
+        <meta name="twitter:description" content="Advogados online para todas as áreas do direito. Atendimento via WhatsApp. Atendimento online em todo o Brasil." />
 
         
         <script type="application/ld+json">

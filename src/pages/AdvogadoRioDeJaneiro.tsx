@@ -22,8 +22,7 @@ const rjCities = [
   { name: "Campos dos Goytacazes", slug: "campos-dos-goytacazes", population: "507K" },
   { name: "São João de Meriti", slug: "sao-joao-de-meriti", population: "472K" },
   { name: "Petrópolis", slug: "petropolis", population: "306K" },
-  { name: "Volta Redonda", slug: "volta-redonda", population: "273K" },
-];
+  { name: "Volta Redonda", slug: "volta-redonda", population: "273K" }];
 
 const legalAreas = [
   { id: "consumidor", name: "Consumidor", icon: ShoppingBag, color: "text-emerald-600 bg-emerald-50" },
@@ -31,8 +30,7 @@ const legalAreas = [
   { id: "previdenciario", name: "Previdenciário", icon: Shield, color: "text-purple-600 bg-purple-50" },
   { id: "familia", name: "Família", icon: Users, color: "text-pink-600 bg-pink-50" },
   { id: "civil", name: "Civil", icon: Scale, color: "text-amber-600 bg-amber-50" },
-  { id: "penal", name: "Criminal", icon: Gavel, color: "text-red-600 bg-red-50" },
-];
+  { id: "penal", name: "Criminal", icon: Gavel, color: "text-red-600 bg-red-50" }];
 
 const localInfo = {
   procon: {
@@ -58,8 +56,7 @@ const stats = [
   { value: "8.200+", label: "Casos no RJ" },
   { value: "10", label: "Cidades atendidas" },
   { value: "97%", label: "Taxa de sucesso" },
-  { value: "R$ 18M+", label: "Em indenizações" },
-];
+  { value: "R$ 18M+", label: "Em indenizações" }];
 
 const AdvogadoRioDeJaneiro = () => {
   const breadcrumbs = [
@@ -106,7 +103,7 @@ const AdvogadoRioDeJaneiro = () => {
     <PageTransition>
       <Helmet>
         <title>Advogado Online no Rio de Janeiro | Capital, Niterói, Baixada | Consulta Grátis</title>
-        <meta name="description" content="Advogado online no Rio de Janeiro: Capital, Niterói, Baixada Fluminense e todas as cidades. Direito do consumidor, trabalhista, previdenciário. Consulta gratuita." />
+        <meta name="description" content="Advogado online no Rio de Janeiro: Capital, Niterói, Baixada Fluminense e todas as cidades. Direito do consumidor, trabalhista, previdenciário. Atendimento online." />
         <meta name="keywords" content="advogado rio de janeiro, advogado rj, advogado online rj, advogado niteroi, advogado baixada fluminense, advogado consumidor rj" />
         <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-rio-de-janeiro" />
         
@@ -315,20 +312,20 @@ const AdvogadoRioDeJaneiro = () => {
               Precisa de Advogado no Rio de Janeiro?
             </h2>
             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-              Fale agora com um de nossos advogados especializados.
+              Fale agora com um de nossos advogados.
             </p>
             
             <Button asChild size="lg" variant="secondary">
               <Link to="/">
                 <MessageCircle className="w-5 h-5 mr-2" />
-                Iniciar Consulta Gratuita
+                Iniciar Fale com advogado
               </Link>
             </Button>
 
             <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm opacity-80">
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5" />
-                <span>Consulta gratuita</span>
+                <span>Atendimento online</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5" />

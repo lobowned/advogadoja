@@ -35,6 +35,11 @@ const GuiaPage = () => {
     url: `${SITE}/riccioadvocacia`,
   };
 
+  const speakable = {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", "p.guia-intro", "h2", "[data-speakable]"],
+  };
+
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -49,6 +54,11 @@ const GuiaPage = () => {
     articleSection: guia.area,
     author: autor,
     publisher: { "@type": "LegalService", name: "Riccio Advocacia", url: SITE },
+    isAccessibleForFree: true,
+    about: { "@type": "Thing", name: `Direito ${guia.area.toLowerCase()} no Brasil` },
+    audience: { "@type": "Audience", audienceType: "pessoas com dúvidas jurídicas" },
+    speakable,
+    image: `${SITE}/og-image.png`,
   };
 
   const faqLd = {
@@ -104,7 +114,7 @@ const GuiaPage = () => {
             <p className="font-roman tracking-[0.25em] uppercase text-xs text-accent mb-4">Guia · {guia.area}</p>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl leading-tight">{guia.h1}</h1>
             <div className="h-px w-24 bg-accent my-6" />
-            <p className="font-sans text-base sm:text-lg text-primary-foreground/85 leading-relaxed">{guia.intro}</p>
+            <p className="guia-intro font-sans text-base sm:text-lg text-primary-foreground/85 leading-relaxed">{guia.intro}</p>
             <p className="mt-6 text-sm text-primary-foreground/70">
               Por Dr. Gilberto Riccio, OAB/BA 46.638 · Atualizado em{" "}
               {new Date(guia.atualizadoEm + "T12:00:00").toLocaleDateString("pt-BR")}

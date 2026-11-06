@@ -151,14 +151,32 @@ function generateCityUrls(): SitemapURL[] {
 // ============================================
 function generateCityNicheUrls(): SitemapURL[] {
   // Só as páginas com rota explícita no App.tsx: o padrão /advogado-:nicho-:cidade não casa no React Router v6.
-  const niches = ['criminal', 'previdenciario', 'trabalhista', 'familia', 'consumidor'];
-  const cities = ['salvador', 'camacari', 'lauro-de-freitas'];
-  return niches.flatMap(n => cities.map(c => ({
-    loc: `/advogado-${n}-${c}`,
-    lastmod: UNKNOWN,
-    changefreq: 'monthly' as const,
-    priority: 0.95,
-  })));
+  // Salvador/Camaçari/Lauro ganham também a área de consumidor; as demais cidades cobrem só as 4 áreas principais.
+  const coreCities = ['salvador', 'camacari', 'lauro-de-freitas'];
+  const extendedCities = [
+    'feira-de-santana',
+    'vitoria-da-conquista',
+    'ilheus',
+    'itabuna',
+    'juazeiro',
+    'porto-seguro',
+    'barreiras',
+  ];
+  const coreNiches = ['criminal', 'previdenciario', 'trabalhista', 'familia'];
+  const urls: SitemapURL[] = [];
+  for (const n of coreNiches) {
+    for (const c of coreCities) {
+      urls.push({ loc: `/advogado-${n}-${c}`, lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.95 });
+    }
+    for (const c of extendedCities) {
+      urls.push({ loc: `/advogado-${n}-${c}`, lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.95 });
+    }
+  }
+  // Consumidor existe só nas 3 cidades principais por enquanto.
+  for (const c of coreCities) {
+    urls.push({ loc: `/advogado-consumidor-${c}`, lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.95 });
+  }
+  return urls;
 }
 
 // ============================================

@@ -346,7 +346,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-  <!-- ===== LANDING PAGES CIDADE + NICHO (15 URLs) ===== -->
+  <!-- ===== LANDING PAGES CIDADE + NICHO (43 URLs) ===== -->
   <url>
     <loc>https://riccio-advocacia.lovable.app/advogado-criminal-salvador</loc>
     <changefreq>monthly</changefreq>
@@ -359,6 +359,41 @@
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/advogado-criminal-lauro-de-freitas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-criminal-feira-de-santana</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-criminal-vitoria-da-conquista</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-criminal-ilheus</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-criminal-itabuna</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-criminal-juazeiro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-criminal-porto-seguro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-criminal-barreiras</loc>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -378,6 +413,41 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-previdenciario-feira-de-santana</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-previdenciario-vitoria-da-conquista</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-previdenciario-ilheus</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-previdenciario-itabuna</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-previdenciario-juazeiro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-previdenciario-porto-seguro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-previdenciario-barreiras</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://riccio-advocacia.lovable.app/advogado-trabalhista-salvador</loc>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
@@ -393,6 +463,41 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-trabalhista-feira-de-santana</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-trabalhista-vitoria-da-conquista</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-trabalhista-ilheus</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-trabalhista-itabuna</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-trabalhista-juazeiro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-trabalhista-porto-seguro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-trabalhista-barreiras</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://riccio-advocacia.lovable.app/advogado-familia-salvador</loc>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
@@ -404,6 +509,41 @@
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/advogado-familia-lauro-de-freitas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-familia-feira-de-santana</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-familia-vitoria-da-conquista</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-familia-ilheus</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-familia-itabuna</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-familia-juazeiro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-familia-porto-seguro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado-familia-barreiras</loc>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -519,7 +659,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- ===== ARTIGOS DO BLOG (LEGACY) (66 URLs) ===== -->
+  <!-- ===== ARTIGOS DO BLOG (LEGACY) (81 URLs) ===== -->
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/trabalhista/demissao-sem-justa-causa</loc>
     <lastmod>2026-11-05</lastmod>
@@ -913,6 +1053,96 @@
   <url>
     <loc>https://riccio-advocacia.lovable.app/artigos/previdenciario/inss-negou-beneficio-o-que-fazer</loc>
     <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/trabalhista/quanto-cobra-advogado-trabalhista</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/trabalhista/quanto-tempo-demora-processo-trabalhista</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/trabalhista/audiencia-trabalhista-o-que-esperar</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/trabalhista/falta-grave-no-trabalho-quando-configura</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/trabalhista/pedido-demissao-vs-rescisao-acordo</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/previdenciario/aposentadoria-do-professor-regras</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/previdenciario/como-processar-o-inss</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/trabalhista/revisao-fgts-correcao-ipca</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/familia/execucao-alimentos-prisao-penhora</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/familia/pensao-alimenticia-maior-de-18-anos</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/atraso-entrega-imovel-direitos</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/sinal-pago-nao-devolvido-o-que-fazer</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/civil/citacao-por-edital-o-que-fazer</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/consumidor/revisional-contrato-bancario-juros-abusivos</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/artigos/penal/crime-hediondo-o-que-e</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

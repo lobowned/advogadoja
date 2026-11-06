@@ -1349,6 +1349,21 @@ export const brazilianCities: CityData[] = [
     ],
     courtInfo: "TRT-5 e TJBA - Fórum de Alagoinhas",
     localContext: "Alagoinhas é centro industrial e comercial do agreste baiano, com demandas trabalhistas na indústria de bebidas."
+  },
+  {
+    slug: "porto-seguro",
+    name: "Porto Seguro",
+    state: "Bahia",
+    stateCode: "BA",
+    population: "150 mil",
+    region: "Nordeste",
+    highlights: [
+      "Polo turístico do extremo sul",
+      "Economia baseada em hotelaria e serviços",
+      "Trabalho sazonal no turismo"
+    ],
+    courtInfo: "TRT-5 e TJBA - Fórum de Porto Seguro",
+    localContext: "Porto Seguro é o maior destino turístico do extremo sul da Bahia, com demandas trabalhistas na hotelaria e no comércio ligado ao turismo."
   }
 ];
 
@@ -1381,6 +1396,7 @@ export const INDEXED_CITY_SLUGS: ReadonlySet<string> = new Set([
   "barreiras",
   "jequie",
   "alagoinhas",
+  "porto-seguro",
 ]);
 
 export const isCityIndexable = (slug: string): boolean =>

@@ -28,7 +28,26 @@ export function attorneySchema() {
     "@type": "Attorney",
     "@id": `${SITE_URL}/#attorney`,
     name: FIRM.attorney,
+    givenName: "Gilberto",
+    familyName: "Riccio",
     identifier: FIRM.oab,
+    jobTitle: "Advogado",
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Inscrição profissional",
+      recognizedBy: { "@type": "Organization", name: "Ordem dos Advogados do Brasil - Seccional Bahia" },
+      identifier: "46.638",
+    },
+    knowsAbout: [
+      "Direito Trabalhista",
+      "Direito Previdenciário",
+      "Direito de Família",
+      "Direito do Consumidor",
+      "Direito Civil",
+      "Direito Criminal",
+      "Direito Sucessório",
+    ],
+    knowsLanguage: "pt-BR",
     worksFor: { "@id": `${SITE_URL}/#legalservice` },
     address,
   };
@@ -44,6 +63,28 @@ export function legalServiceSchema(opts: { areaServed?: string[]; description?: 
     image: OG_IMAGE,
     telephone: FIRM.telephone,
     address,
+    priceRange: "$$",
+    openingHours: "Mo-Fr 08:00-18:00",
+    availableLanguage: "pt-BR",
+    knowsAbout: [
+      "Direito Trabalhista",
+      "Direito Previdenciário",
+      "Direito de Família",
+      "Direito do Consumidor",
+      "Direito Civil",
+      "Direito Criminal",
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Áreas de atuação",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Consultoria em Direito Trabalhista" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Consultoria em Direito Previdenciário" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Consultoria em Direito de Família" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Consultoria em Direito do Consumidor" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Consultoria em Direito Criminal" } },
+      ],
+    },
     ...(opts.description ? { description: opts.description } : {}),
     ...(opts.areaServed?.length
       ? { areaServed: opts.areaServed.map((name) => ({ "@type": "City", name })) }
@@ -83,6 +124,27 @@ export function articleSchema(a: {
     dateModified: a.dateModified || a.datePublished,
     author: { "@type": "Person", name: FIRM.attorney, identifier: FIRM.oab },
     publisher: { "@type": "Organization", name: FIRM.name, logo: { "@type": "ImageObject", url: OG_IMAGE } },
+  };
+}
+
+export function howToSchema(opts: {
+  name: string;
+  description?: string;
+  steps: { name: string; text: string }[];
+  totalTime?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: opts.name,
+    ...(opts.description ? { description: opts.description } : {}),
+    ...(opts.totalTime ? { totalTime: opts.totalTime } : {}),
+    step: opts.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
   };
 }
 

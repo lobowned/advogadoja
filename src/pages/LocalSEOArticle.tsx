@@ -133,7 +133,7 @@ const LocalSEOArticle = () => {
     "@context": "https://schema.org",
     "@type": "LegalService",
     "name": `Advogado do Consumidor em ${article.cityName}`,
-    "description": `Advogado especializado em direito do consumidor em ${article.cityName}, ${article.state}`,
+    "description": `Advogado que atua em direito do consumidor em ${article.cityName}, ${article.state}`,
     "url": `https://riccio-advocacia.lovable.app/artigos/consumidor/${article.slug}`,
     "areaServed": {
       "@type": "City",
@@ -439,7 +439,7 @@ const LocalSEOArticle = () => {
                       Teve Problema com {article.problemLabel} em {article.cityName}?
                     </h2>
                     <p className="mb-6 opacity-90">
-                      Fale agora com um advogado especializado e saiba seus direitos
+                      Fale agora com um advogado e saiba seus direitos
                     </p>
                     <Button asChild size="lg" variant="secondary" className="shadow-lg">
                       <a href={whatsappLink} target="_blank" rel="noopener noreferrer">

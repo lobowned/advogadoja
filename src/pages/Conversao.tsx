@@ -43,7 +43,7 @@ const Conversao = () => {
 
           {/* Description */}
           <p className="text-gray-600 mb-6 leading-relaxed">
-            Você será atendido em instantes por um de nossos advogados especializados.
+            Você será atendido em instantes por um de nossos advogados.
           </p>
 
           {/* Instructions */}

@@ -380,7 +380,7 @@ const BlogPost = ({ nicheIdOverride, slugOverride }: BlogPostProps = {}) => {
                   <CardContent className="space-y-4">
                     <p className="text-muted-foreground">
                       Fale agora com um advogado que atua em {nicheInfo.name}. 
-                      Atendimento gratuito e imediato.
+                      Atendimento online, com sigilo profissional.
                     </p>
                     <Button asChild size="lg">
                       <Link to="/">Falar com Advogado Agora</Link>

@@ -104,6 +104,8 @@ export default function News() {
     <PageTransition variant="fade">
       <Helmet>
         <title>{pageTitle}</title>
+        {/* Notícias vêm de fontes externas: não indexar (conteúdo de terceiros) */}
+        <meta name="robots" content="noindex,follow" />
         <meta name="description" content={pageDescription} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />

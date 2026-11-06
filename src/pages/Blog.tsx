@@ -275,7 +275,7 @@ const Blog = () => {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-2xl font-bold mb-3">Tem dúvidas sobre seu caso?</h2>
             <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-              Fale agora com um advogado. Atendimento gratuito e imediato.
+              Fale com um advogado pelo WhatsApp ou pelo chat.
             </p>
             <Button asChild size="lg">
               <Link to="/">Falar com Advogado Agora</Link>

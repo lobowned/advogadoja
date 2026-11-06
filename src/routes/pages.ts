@@ -47,7 +47,6 @@ export const BlogArticle = lazyPage(() => import("@/pages/BlogArticle"));
 export const SelectNiche = lazyPage(() => import("@/pages/SelectNiche"));
 export const SelectAction = lazyPage(() => import("@/pages/SelectAction"));
 export const News = lazyPage(() => import("@/pages/News"));
-export const CasosSucesso = lazyPage(() => import("@/pages/CasosSucesso"));
 export const Sitemap = lazyPage(() => import("@/pages/Sitemap"));
 export const Conversao = lazyPage(() => import("@/pages/Conversao"));
 export const CityConsumerLanding = lazyPage(() => import("@/pages/CityConsumerLanding"));
@@ -114,7 +113,6 @@ const ROUTE_PRELOADS: Array<[RegExp, Preloadable[]]> = [
   [/^\/privacidade$/, [PrivacyPolicy]],
   [/^\/termos-de-uso$/, [TermsOfUse]],
   [/^\/sitemap$/, [Sitemap]],
-  [/^\/casos-de-sucesso$/, [CasosSucesso]],
   [/^\/advogado-bahia$/, [AdvogadoBahia]],
   [/^\/noticias(\/[^/]+)?$/, [News]],
   [/^\/calculadoras$/, [Calculadoras]],

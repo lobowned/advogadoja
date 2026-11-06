@@ -411,7 +411,7 @@ const FAQQuestion = () => {
                         Precisa de ajuda com seu caso?
                       </h3>
                       <p className="text-sm text-muted-foreground mb-4">
-                        Fale com um advogado especializado e receba orientação personalizada para sua situação.
+                        Fale com um advogado e receba orientação personalizada para sua situação.
                       </p>
                       <Link to="/">
                         <Button className="w-full sm:w-auto">

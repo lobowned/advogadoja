@@ -24,7 +24,7 @@ export default function PrevSobre() {
         <title>Sobre — {nameSet ? LAWYER.fullName : "Advogado(a) Previdenciário(a)"}</title>
         <meta
           name="description"
-          content="Conheça a trajetória profissional e a forma de atuar do escritório especializado em direito previdenciário."
+          content="Conheça a trajetória profissional e a forma de atuar do escritório que atua em direito previdenciário."
         />
         <link rel="canonical" href="https://riccio-advocacia.lovable.app/prev/sobre" />
       </Helmet>

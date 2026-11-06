@@ -54,7 +54,7 @@ const ObjecionsFAQ = ({ detectedArea }: ObjecionsFAQProps) => {
     },
     {
       question: "Tenho que pagar algo para começar?",
-      answer: "A consulta inicial é gratuita. Analisamos seu caso e explicamos suas chances. Muitos processos de consumidor podem ser feitos sem custo inicial, com honorários apenas em caso de vitória."
+      answer: "Os honorários são combinados por escrito antes de qualquer ação e dependem do tipo de caso, conforme a tabela da OAB/BA. O primeiro passo é contar o que aconteceu pelo WhatsApp, para entender o caso e os documentos necessários."
     }
   ];
 

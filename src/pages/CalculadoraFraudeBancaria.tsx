@@ -72,7 +72,7 @@ const CalculadoraFraudeBancaria = () => {
     <PageTransition variant="fade">
       <Helmet>
         <title>Calculadora de Indenização Fraude Bancária | PIX, Cartão Clonado 2025</title>
-        <meta name="description" content="Sofreu golpe do PIX ou teve cartão clonado? Calcule grátis quanto você pode receber de indenização. Banco tem responsabilidade. Advogado especializado." />
+        <meta name="description" content="Sofreu golpe do PIX ou teve cartão clonado? Calcule grátis quanto você pode receber de indenização. Banco tem responsabilidade. Advogado." />
         <meta name="keywords" content="golpe pix, cartão clonado, fraude bancária, empréstimo fraude, banco devolver dinheiro, indenização banco" />
         <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-fraude-bancaria" />
         <meta property="og:title" content="Calculadora de Indenização Fraude Bancária | PIX, Cartão Clonado" />
@@ -221,7 +221,7 @@ const CalculadoraFraudeBancaria = () => {
               <ShieldCheck className="w-12 h-12 text-blue-500 mx-auto mb-4" />
               <h2 className="text-2xl font-bold mb-4">Quer recuperar seu dinheiro?</h2>
               <p className="text-muted-foreground mb-6">
-                Nossos advogados especializados em fraudes bancárias podem te ajudar a 
+                Nossos advogados que atuam em fraudes bancárias podem te ajudar a 
                 responsabilizar o banco e recuperar seu prejuízo com danos morais.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

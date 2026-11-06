@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import PageTransition from "@/components/motion/PageTransition";
 import { getCityBySlug, brazilianCities, isCityIndexable } from "@/data/cities";
+import { LOCAL_PAGE_ROUTES, LOCAL_NICHE_NAMES } from "@/data/local-page-keys";
 import { CityLocalGuide } from "@/components/CityLocalGuide";
 
 const CityLanding = () => {
@@ -71,8 +72,8 @@ const CityLanding = () => {
     },
     {
       icon: <Clock className="h-5 w-5" />,
-      title: "Resposta Imediata",
-      description: "Atendimento em minutos, não em dias"
+      title: "Orientação clara",
+      description: "Direitos, prazos e documentos explicados em linguagem simples"
     },
     {
       icon: <Shield className="h-5 w-5" />,
@@ -91,7 +92,7 @@ const CityLanding = () => {
     "@context": "https://schema.org",
     "@type": "LegalService",
     "name": `Riccio Advocacia ${city.name}`,
-    "description": `Advogados que atuam em ${city.name}, ${city.state}. Atendimento jurídico online gratuito em Direito Trabalhista, Família, Previdenciário, Civil e Criminal.`,
+    "description": `Advogados que atuam em ${city.name}, ${city.state}. Atendimento jurídico online em Direito Trabalhista, Família, Previdenciário, Civil e Criminal.`,
     "url": canonicalUrl,
     "telephone": "+55-71-99703-6269",
     "priceRange": "$$",
@@ -146,7 +147,7 @@ const CityLanding = () => {
         "name": `Como encontrar um advogado em ${city.name}?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `Você pode falar com um advogado em ${city.name} agora mesmo através do Advogado Online. Nosso atendimento é online, gratuito e imediato.`
+          "text": `Você pode falar com um advogado em ${city.name} pelo WhatsApp ou pelo chat da Riccio Advocacia. O atendimento é online.`
         }
       },
       {
@@ -154,7 +155,7 @@ const CityLanding = () => {
         "name": `Qual o valor de uma consulta com advogado em ${city.name}?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `No Advogado Online, a consulta inicial é gratuita. Você pode tirar suas dúvidas com advogados de ${city.name} sem custo.`
+          "text": `Os honorários dependem do tipo de caso e são combinados por escrito antes de qualquer ação. Conte o caso pelo WhatsApp para receber a orientação inicial.`
         }
       },
       {
@@ -173,6 +174,11 @@ const CityLanding = () => {
   };
 
   // Get nearby cities for internal linking
+  const cityAreaPages = LOCAL_PAGE_ROUTES.filter((r) => r.citySlug === city.slug).map((r) => ({
+    href: `/advogado-${r.key}`,
+    area: (LOCAL_NICHE_NAMES[r.nicheSlug] ?? r.nicheSlug).toLowerCase(),
+  }));
+
   const nearbyCities = brazilianCities
     .filter(c => c.region === city.region && c.slug !== city.slug)
     .slice(0, 4);
@@ -181,10 +187,10 @@ const CityLanding = () => {
     <PageTransition>
       <div className="min-h-screen bg-background">
         <Helmet>
-          <title>{`Advogado em ${city.name} ${city.stateCode} | Consulta Jurídica Online Gratuita`}</title>
+          <title>{`Advogado em ${city.name} ${city.stateCode} | Riccio Advocacia`}</title>
           <meta 
             name="description" 
-            content={`Advogado em ${city.name} online. Consulta jurídica gratuita com especialistas em Trabalhista, Família, Previdenciário e mais. Atendimento imediato para ${city.name} e região.`} 
+            content={`Advogado em ${city.name} online. Atendimento jurídico online em Trabalhista, Família, Previdenciário e mais, para ${city.name} e região.`} 
           />
           <meta 
             name="keywords" 
@@ -196,7 +202,7 @@ const CityLanding = () => {
           )}
           
           <meta property="og:title" content={`Advogado em ${city.name} | Fale com advogado`} />
-          <meta property="og:description" content={`Fale agora com advogados que atuam em ${city.name}. Atendimento online gratuito e imediato.`} />
+          <meta property="og:description" content={`Fale agora com advogados que atuam em ${city.name}. Atendimento online pelo WhatsApp.`} />
           <meta property="og:url" content={canonicalUrl} />
           <meta property="og:type" content="website" />
           
@@ -232,12 +238,12 @@ const CityLanding = () => {
                 
                 <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
                   Advogado em {city.name}
-                  <span className="text-primary block mt-2">Consulta Jurídica Online Gratuita</span>
+                  <span className="text-primary block mt-2">Atendimento Jurídico Online</span>
                 </h1>
                 
                 <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
                   Fale agora com advogados que atuam em {city.name}. 
-                  Atendimento online, gratuito e imediato para resolver seu problema jurídico.
+                  Atendimento online para orientar sobre o seu problema jurídico.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -340,7 +346,7 @@ const CityLanding = () => {
           <section className="py-12 bg-primary/5">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
-                Por que escolher o Advogado Online em {city.name}?
+                Como funciona o atendimento em {city.name}
               </h2>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -369,9 +375,9 @@ const CityLanding = () => {
                   <CardContent className="pt-6">
                     <h3 className="font-semibold mb-2">Como encontrar um advogado em {city.name}?</h3>
                     <p className="text-muted-foreground">
-                      Você pode falar com um advogado em {city.name} agora mesmo através do Advogado Online. 
-                      Nosso atendimento é online, gratuito e imediato. Basta clicar no botão "Falar com Advogado" 
-                      e você será atendido por um especialista.
+                      Você pode falar com um advogado em {city.name} pelo WhatsApp ou pelo chat da Riccio Advocacia. 
+                      O atendimento é online. Basta clicar no botão "Falar com Advogado" 
+                      e você será atendido pelo escritório.
                     </p>
                   </CardContent>
                 </Card>
@@ -380,9 +386,9 @@ const CityLanding = () => {
                   <CardContent className="pt-6">
                     <h3 className="font-semibold mb-2">Qual o valor de uma consulta com advogado em {city.name}?</h3>
                     <p className="text-muted-foreground">
-                      No Advogado Online, a consulta inicial é gratuita. Você pode tirar suas dúvidas com 
-                      advogados de {city.name} sem custo. Após a análise do seu caso, você 
-                      receberá um orçamento transparente se houver necessidade de ação judicial.
+                      Os honorários dependem do tipo de caso e são combinados por escrito antes de
+                      qualquer ação. Conte o seu caso pelo WhatsApp: a primeira resposta indica o
+                      caminho e quais documentos reunir.
                     </p>
                   </CardContent>
                 </Card>
@@ -409,8 +415,8 @@ const CityLanding = () => {
                 Precisa de um advogado em {city.name}?
               </h2>
               <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-                Fale agora com um especialista. Atendimento gratuito e imediato para 
-                moradores de {city.name} e região metropolitana.
+                Fale com o escritório pelo WhatsApp. Atendimento online para
+                moradores de {city.name} e região.
               </p>
               <Button 
                 size="lg" 
@@ -423,6 +429,30 @@ const CityLanding = () => {
               </Button>
             </div>
           </section>
+
+          {/* Páginas por área desta cidade (as páginas locais com conteúdo próprio) */}
+          {cityAreaPages.length > 0 && (
+            <section className="py-12 border-b">
+              <div className="container mx-auto px-4">
+                <h2 className="text-xl font-bold mb-2">Atendimento por área em {city.name}</h2>
+                <p className="text-muted-foreground mb-6">
+                  Direitos, prazos e onde o caso tramita em {city.name}, área por área.
+                </p>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {cityAreaPages.map((p) => (
+                    <Link
+                      key={p.href}
+                      to={p.href}
+                      className="flex items-center gap-2 p-4 rounded-lg border hover:bg-muted transition-colors"
+                    >
+                      <Scale className="h-4 w-4 text-primary" />
+                      <span>Advogado {p.area} em {city.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
 
           {/* Nearby Cities - Internal Linking */}
           {nearbyCities.length > 0 && (
@@ -451,7 +481,7 @@ const CityLanding = () => {
         {/* Footer */}
         <footer className="border-t py-6">
           <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>© 2025 Advogado Online | OAB/BA 46.638 | Atendendo {city.name}, {city.stateCode}</p>
+            <p>© {new Date().getFullYear()} Riccio Advocacia | OAB/BA 46.638 | Atendendo {city.name}, {city.stateCode}</p>
           </div>
         </footer>
       </div>

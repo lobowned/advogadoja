@@ -72,7 +72,7 @@ const CalculadoraPlanoSaude = () => {
     <PageTransition variant="fade">
       <Helmet>
         <title>Calculadora de Indenização Plano de Saúde | Negativa de Cobertura 2025</title>
-        <meta name="description" content="Plano de saúde negou seu procedimento? Calcule grátis sua indenização por negativa de cobertura. Saiba sobre liminar em 48h. Advogado especializado." />
+        <meta name="description" content="Plano de saúde negou seu procedimento? Calcule grátis sua indenização por negativa de cobertura. Saiba sobre liminar em 48h. Advogado." />
         <meta name="keywords" content="plano saúde negou, negativa cobertura, liminar plano saúde, indenização plano saúde, calculadora, processo plano saúde" />
         <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-plano-saude" />
         <meta property="og:title" content="Calculadora de Indenização Plano de Saúde | Negativa de Cobertura" />
@@ -115,7 +115,7 @@ const CalculadoraPlanoSaude = () => {
               </div>
               <div className="flex items-center gap-2 text-sm">
                 <CheckCircle className="w-4 h-4 text-green-500" />
-                <span>Advogado Especializado</span>
+                <span>Advogado</span>
               </div>
             </div>
           </div>
@@ -221,7 +221,7 @@ const CalculadoraPlanoSaude = () => {
               <ShieldCheck className="w-12 h-12 text-rose-500 mx-auto mb-4" />
               <h2 className="text-2xl font-bold mb-4">Precisa de uma liminar urgente?</h2>
               <p className="text-muted-foreground mb-6">
-                Nossos advogados especializados em Direito da Saúde podem conseguir uma liminar 
+                Nossos advogados que atuam em Direito da Saúde podem conseguir uma liminar 
                 em até 48h para obrigar o plano a cobrir seu procedimento.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SiteLinks from "@/components/SiteLinks";
 
 export const WHATSAPP_GUIAS = "5571997036269";
 export const waLink = (texto: string) =>
@@ -7,11 +8,14 @@ export const waLink = (texto: string) =>
 const GuiaFooter = () => (
   <footer className="border-t bg-gradient-to-b from-muted/30 to-muted/50 py-8 sm:py-10 safe-bottom">
     <div className="container mx-auto px-4">
+      <div className="mb-8 pb-8 border-b border-border/60">
+        <SiteLinks />
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center md:text-left text-sm text-muted-foreground">
         <div>
           <p className="font-semibold text-foreground mb-2">Riccio Advocacia</p>
           <p>Dr. Gilberto Riccio — OAB/BA 46.638</p>
-          <p className="mt-2">Salvador, Camaçari, Lauro de Freitas e atendimento online</p>
+          <p className="mt-2">Atendimento online em toda a Bahia e no Brasil</p>
         </div>
         <nav className="flex flex-wrap justify-center md:justify-end gap-4 text-xs">
           <Link to="/guias" className="hover:text-foreground py-2">Guias</Link>

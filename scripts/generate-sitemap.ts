@@ -72,7 +72,7 @@ const staticPages: SitemapURL[] = [
 ];
 
 // Só as cidades onde o escritório atende de fato; o resto fica fora do sitemap.
-const LOCAL_CITIES = ['salvador', 'camacari', 'lauro-de-freitas'];
+const LOCAL_CITIES = ['salvador', 'camacari', 'lauro-de-freitas', 'feira-de-santana', 'vitoria-da-conquista', 'ilheus', 'itabuna', 'juazeiro', 'porto-seguro', 'barreiras'];
 
 // ============================================
 // CALCULATORS

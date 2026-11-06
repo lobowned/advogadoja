@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Calculator, Trophy, Map } from "lucide-react";
+import { MessageCircle, Calculator } from "lucide-react";
 
 const WHATSAPP_NUMBER = '5571997036269';
 const DEFAULT_MESSAGE = 'Olá! Preciso de orientação jurídica.';
@@ -45,32 +46,23 @@ const Navbar = ({ onCtaClick }: NavbarProps) => {
       <div className="container mx-auto px-3 md:px-4">
         <div className="flex items-center justify-between h-14 md:h-20">
 
-          {/* Navigation Links - Prioritized */}
-          <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 md:gap-8">
-            <a href="#" className={`${linkClass} text-xs md:text-sm`}>
+          {/* Links do site inteiro: os hubs que importam para quem lê e para o Google.
+              Antes: "#"/"#advogados" (quebrados fora da home), Casos (resultados com valor,
+              vedado pela OAB), Notícias (conteúdo de terceiros) e Mapa. */}
+          <div className="flex items-center gap-3 sm:gap-5 md:gap-8">
+            <Link to="/" className={`${linkClass} text-xs md:text-sm`}>
               Início
-            </a>
-            <a href="#advogados" className={`${linkClass} text-xs md:text-sm`}>
-              Advogados
-            </a>
-            <a href="/artigos" className={`${linkClass} text-xs md:text-sm hidden xs:inline`}>
+            </Link>
+            <Link to="/guias" className={`${linkClass} text-xs md:text-sm`}>
+              Guias
+            </Link>
+            <Link to="/artigos" className={`${linkClass} text-xs md:text-sm`}>
               Artigos
-            </a>
-            <a href="/casos-de-sucesso" className={`${linkClass} text-xs md:text-sm hidden sm:inline`}>
-              <Trophy className="w-3.5 h-3.5 sm:w-4 sm:h-4 inline-block align-middle mr-1" />
-              <span className="align-middle">Casos</span>
-            </a>
-            <a href="/noticias" className={`${linkClass} text-xs md:text-sm hidden md:inline`}>
-              Notícias
-            </a>
-            <a href="/calculadoras" className={`${linkClass} text-xs md:text-sm`}>
+            </Link>
+            <Link to="/calculadoras" className={`${linkClass} text-xs md:text-sm`}>
               <Calculator className="w-3.5 h-3.5 sm:w-4 sm:h-4 inline-block align-middle mr-1" />
               <span className="hidden sm:inline align-middle">Calculadoras</span>
-            </a>
-            <a href="/sitemap" className={`${linkClass} text-xs md:text-sm hidden lg:inline`}>
-              <Map className="w-3.5 h-3.5 sm:w-4 sm:h-4 inline-block align-middle mr-1" />
-              <span className="align-middle">Mapa</span>
-            </a>
+            </Link>
           </div>
 
           {/* CTA Button with Icon - WhatsApp */}

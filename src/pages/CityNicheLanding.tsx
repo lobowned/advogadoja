@@ -533,7 +533,7 @@ const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
                 Precisa de um Advogado {area.name} em {city.name}?
               </h2>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Fale agora com um especialista. Atendimento gratuito e imediato.
+                Fale com o escritório pelo WhatsApp ou pelo chat. Atendimento online, com sigilo profissional.
               </p>
               <Button size="lg" className="text-lg px-8" onClick={handleCTA}>
                 <MessageCircle className="h-5 w-5 mr-2" />

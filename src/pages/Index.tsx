@@ -6,6 +6,7 @@ import LawyerChatSection from "@/components/LawyerChatSection";
 import ObjecionsFAQ from "@/components/ObjecionsFAQ";
 import Navbar from "@/components/Navbar";
 import PracticeAreasSection from "@/components/PracticeAreasSection";
+import SiteLinks from "@/components/SiteLinks";
 
 const Index = () => {
   // Schema.org Organization - Enhanced for Knowledge Panel
@@ -239,11 +240,14 @@ const Index = () => {
         {/* Footer */}
         <footer className="border-t bg-gradient-to-b from-muted/30 to-muted/50 py-8 sm:py-10 safe-bottom">
           <div className="container mx-auto px-4">
+            <div className="mb-8 pb-8 border-b border-border/60">
+              <SiteLinks />
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center md:text-left text-sm text-muted-foreground">
               <div>
                 <p className="font-semibold text-foreground mb-2">Riccio Advocacia</p>
                 <p>OAB/BA 46.638 | CNPJ 50.947.818/0001-94</p>
-                <p>© 2025</p>
+                <p>© {new Date().getFullYear()}</p>
                 <p className="mt-2">Atendimento: seg-sex 8h às 20h</p>
               </div>
               <div className="flex flex-col items-center md:items-end gap-3">

@@ -412,7 +412,7 @@ export const getLawyersBySpecialty = (specialty: LawyerSpecialty): Lawyer[] => {
 export const detectSpecialtyFromMessage = (message: string): LawyerSpecialty | null => {
   const lowerMessage = message.toLowerCase();
   
-  // Verificar cada advogado especializado (exceto o geral)
+  // Verificar cada advogado (exceto o geral)
   for (const lawyer of lawyers) {
     if (lawyer.specialty === 'geral') continue;
     

@@ -115,7 +115,7 @@ const FAQIndex = () => {
           <title>Perguntas Frequentes sobre Direito | Riccio Advocacia</title>
           <meta 
             name="description" 
-            content="Tire suas dúvidas jurídicas: trabalhista, família, previdenciário, civil, consumidor e penal. Respostas claras e objetivas de advogados especializados." 
+            content="Tire suas dúvidas jurídicas: trabalhista, família, previdenciário, civil, consumidor e penal. Respostas claras e objetivas de advogados." 
           />
           <meta 
             name="keywords" 
@@ -124,7 +124,7 @@ const FAQIndex = () => {
           <link rel="canonical" href={canonicalUrl} />
           
           <meta property="og:title" content="Perguntas Frequentes sobre Direito" />
-          <meta property="og:description" content="Tire suas dúvidas jurídicas com respostas claras de advogados especializados." />
+          <meta property="og:description" content="Tire suas dúvidas jurídicas com respostas claras de advogados." />
           <meta property="og:url" content={canonicalUrl} />
           <meta property="og:type" content="website" />
           
@@ -149,7 +149,7 @@ const FAQIndex = () => {
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Encontre respostas claras e objetivas para suas dúvidas jurídicas. 
-              Conteúdo elaborado por advogados especializados.
+              Conteúdo elaborado por advogados.
             </p>
           </div>
 
@@ -248,7 +248,7 @@ const FAQIndex = () => {
                   Não encontrou sua dúvida?
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  Fale diretamente com um advogado especializado e receba orientação personalizada para seu caso.
+                  Fale diretamente com um advogado e receba orientação personalizada para seu caso.
                 </p>
                 <Link to="/">
                   <Button size="lg">

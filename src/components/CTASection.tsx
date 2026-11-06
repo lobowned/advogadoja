@@ -12,16 +12,16 @@ interface CTASectionProps {
 
 const CTASection = ({ 
   title = "Cada Dia Sem Agir Pode Custar Seus Direitos",
-  subtitle = "Muitos direitos trabalhistas, familiares e previdenciários têm prazo para serem cobrados. Não deixe prescrever — faça uma análise gratuita hoje.",
+  subtitle = "Muitos direitos trabalhistas, familiares e previdenciários têm prazo para serem cobrados. Não deixe prescrever: fale com o escritório hoje.",
   buttonText = "Quero Descobrir Meus Direitos",
   showBadges = true,
   variant = "primary",
   onAction
 }: CTASectionProps) => {
   const badges = [
-    { icon: CheckCircle2, text: "✅ Análise Gratuita" },
-    { icon: Clock, text: "⏰ Resposta em 24h" },
-    { icon: Shield, text: "🔒 100% Sigiloso" }
+    { icon: CheckCircle2, text: "✅ Atendimento online" },
+    { icon: Clock, text: "⏰ Prazos explicados" },
+    { icon: Shield, text: "🔒 Sigilo profissional" }
   ];
 
   const bgClass = variant === "primary" 

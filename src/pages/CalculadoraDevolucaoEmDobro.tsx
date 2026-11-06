@@ -218,7 +218,7 @@ const CalculadoraDevolucaoEmDobro = () => {
               <ShieldCheck className="w-12 h-12 text-orange-500 mx-auto mb-4" />
               <h2 className="text-2xl font-bold mb-4">Quer recuperar seu dinheiro?</h2>
               <p className="text-muted-foreground mb-6">
-                Nossos advogados especializados em Direito do Consumidor podem te ajudar a 
+                Nossos advogados que atuam em Direito do Consumidor podem te ajudar a 
                 receber a devolução em dobro e indenização por danos morais.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

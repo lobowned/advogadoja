@@ -63,7 +63,7 @@ export function CityLocalGuide({
 
   // Fechamento variável
   const closing = [
-    `Se você mora em ${city.name} e está com um problema jurídico, o primeiro passo é entender em qual via o seu caso se resolve mais rápido: administrativa, juizado especial ou justiça comum. É exatamente sobre isso que conversamos no atendimento inicial pelo WhatsApp — sem custo e sem compromisso.`,
+    `Se você mora em ${city.name} e está com um problema jurídico, o primeiro passo é entender em qual via o seu caso se resolve mais rápido: administrativa, juizado especial ou justiça comum. É exatamente sobre isso que conversamos no atendimento inicial pelo WhatsApp.`,
     `Para quem está em ${city.name}, a recomendação prática é simples: junte os documentos que você tem, descreva a situação em uma linha do tempo curta e fale com um advogado antes de aceitar acordo, assinar contrato ou desistir. A maior parte dos prejuízos que vemos vem de decisões tomadas sem orientação na hora certa.`,
     `Cada caso em ${city.name} tem um caminho próprio — alguns se resolvem em semanas pelo juizado, outros exigem ação na justiça comum, outros nem precisam de processo. O atendimento pelo WhatsApp serve justamente para identificar isso antes de gastar tempo e dinheiro em uma estratégia que não cabe ao seu problema.`,
   ][variant];

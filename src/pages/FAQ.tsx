@@ -22,7 +22,7 @@ const faqCategories: FAQCategory[] = [
     questions: [
       {
         question: "Como funciona o atendimento do Riccio Advocacia?",
-        answer: "O atendimento é simples e rápido. Você acessa nosso chat, descreve seu problema jurídico, e um de nossos advogados especializados irá atendê-lo imediatamente. A consulta inicial é gratuita e você pode tirar todas as suas dúvidas antes de decidir prosseguir com uma ação."
+        answer: "O atendimento é simples e rápido. Você acessa nosso chat, descreve seu problema jurídico, e um de nossos advogados irá atendê-lo imediatamente. A consulta inicial é gratuita e você pode tirar todas as suas dúvidas antes de decidir prosseguir com uma ação."
       },
       {
         question: "Preciso agendar horário para ser atendido?",

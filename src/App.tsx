@@ -50,7 +50,6 @@ import {
   SelectNiche,
   SelectAction,
   News,
-  CasosSucesso,
   Sitemap,
   Conversao,
   CityConsumerLanding,
@@ -164,7 +163,7 @@ const AnimatedRoutes = () => {
         <Route path="/sitemap" element={<Sitemap />} />
 
         {/* Success Stories */}
-        <Route path="/casos-de-sucesso" element={<CasosSucesso />} />
+        <Route path="/casos-de-sucesso" element={<Navigate to="/" replace />} />
 
         {/* Regional Hub Pages */}
         <Route path="/advogado-bahia" element={<AdvogadoBahia />} />

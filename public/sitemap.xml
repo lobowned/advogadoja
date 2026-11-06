@@ -300,9 +300,19 @@
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
-  <!-- ===== LANDING PAGES POR CIDADE (3 URLs) ===== -->
+  <!-- ===== LANDING PAGES POR CIDADE (10 URLs) ===== -->
   <url>
     <loc>https://riccio-advocacia.lovable.app/advogado/salvador</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado/feira-de-santana</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado/vitoria-da-conquista</loc>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -313,6 +323,31 @@
   </url>
   <url>
     <loc>https://riccio-advocacia.lovable.app/advogado/lauro-de-freitas</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado/itabuna</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado/ilheus</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado/juazeiro</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado/barreiras</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://riccio-advocacia.lovable.app/advogado/porto-seguro</loc>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>

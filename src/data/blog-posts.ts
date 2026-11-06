@@ -146,7 +146,7 @@ export const blogPosts: BlogPost[] = [
         <li>Recursos já negados em primeira instância</li>
       </ul>
       
-      <p class="mb-4">Um advogado especializado conhece os detalhes técnicos e jurídicos que podem fazer a diferença no resultado do seu recurso.</p>
+      <p class="mb-4">Um advogado conhece os detalhes técnicos e jurídicos que podem fazer a diferença no resultado do seu recurso.</p>
 
       <div class="bg-gradient-to-r from-primary/20 to-secondary/20 p-8 rounded-xl my-10 text-center">
         <h3 class="text-2xl font-bold text-foreground mb-3">Precisa de Ajuda com Sua Multa?</h3>
@@ -557,7 +557,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">O Papel do Advogado no Superendividamento</h2>
       
-      <p class="mb-4">Um advogado especializado pode ajudar em várias frentes:</p>
+      <p class="mb-4">Um advogado pode ajudar em várias frentes:</p>
       
       <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">Análise de Cláusulas Abusivas</h3>
       <p class="mb-4">Muitos contratos de crédito contêm cláusulas abusivas que podem ser anuladas, como:</p>
@@ -696,7 +696,7 @@ export const blogPosts: BlogPost[] = [
           <strong>Procure o PROCON:</strong> Se a escola não resolver, registre reclamação no PROCON de sua cidade.
         </li>
         <li>
-          <strong>Busque apoio jurídico:</strong> Em casos mais complexos ou de valores altos, consulte um advogado especializado.
+          <strong>Busque apoio jurídico:</strong> Em casos mais complexos ou de valores altos, consulte um advogado.
         </li>
       </ol>
 

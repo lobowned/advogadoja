@@ -234,9 +234,9 @@ const Sitemap = () => {
                     <Newspaper className="h-4 w-4 text-primary" />
                     <span>Notícias</span>
                   </Link>
-                  <Link to="/casos-de-sucesso" className="flex items-center gap-2 p-3 rounded-lg hover:bg-muted transition-colors">
+                  <Link to="/guias" className="flex items-center gap-2 p-3 rounded-lg hover:bg-muted transition-colors">
                     <Scale className="h-4 w-4 text-primary" />
-                    <span>Casos de Sucesso</span>
+                    <span>Guias por área</span>
                   </Link>
                   <Link to="/privacidade" className="flex items-center gap-2 p-3 rounded-lg hover:bg-muted transition-colors">
                     <Shield className="h-4 w-4 text-primary" />

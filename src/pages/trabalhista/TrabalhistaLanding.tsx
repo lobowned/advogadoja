@@ -134,7 +134,7 @@ const TrabalhistaLanding = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>Advogado Trabalhista Online | Demissão, Horas Extras | Consulta Grátis</title>
+        <title>Advogado Trabalhista Online | Demissão, Horas Extras | Riccio Advocacia</title>
         <meta name="description" content="Advogado trabalhista online para demissão, horas extras, pejotização e acidente de trabalho. Atendimento online. Só paga se ganhar." />
         <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-trabalhista-online" />
         <script type="application/ld+json">{JSON.stringify(schemaData)}</script>

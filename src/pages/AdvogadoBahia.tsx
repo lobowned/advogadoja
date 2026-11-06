@@ -110,7 +110,7 @@ const AdvogadoBahia = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>Advogado Online na Bahia | Salvador, Feira de Santana e Mais | Consulta Grátis</title>
+        <title>Advogado Online na Bahia | Salvador, Feira de Santana e Mais | Riccio</title>
         <meta name="description" content="Advogado online na Bahia: Salvador, Feira de Santana, Vitória da Conquista e todas as cidades baianas. Direito do consumidor, trabalhista, previdenciário. Atendimento online." />
         <meta name="keywords" content="advogado bahia, advogado salvador, advogado feira de santana, advogado online bahia, advogado consumidor bahia, advogado trabalhista bahia, advogado INSS bahia" />
         <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-bahia" />

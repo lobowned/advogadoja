@@ -39,7 +39,7 @@ export const ExitIntentModal = () => {
   const handleConvert = () => {
     trackGAEvent("exit_intent_converted", { path: location.pathname });
     trackWhatsAppConversion();
-    const msg = "Olá! Vi a oferta de análise gratuita. Preciso de orientação jurídica.";
+    const msg = "Olá! Preciso de orientação jurídica.";
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
     setOpen(false);
   };
@@ -52,7 +52,7 @@ export const ExitIntentModal = () => {
         <DialogHeader>
           <DialogTitle className="text-2xl">Espera! Sua análise jurídica é gratuita.</DialogTitle>
           <DialogDescription className="text-base">
-            Antes de sair — fale 2 minutos com um advogado pelo WhatsApp. Sem custo, sem compromisso.
+            Antes de sair — fale 2 minutos com um advogado pelo WhatsApp.
           </DialogDescription>
         </DialogHeader>
 

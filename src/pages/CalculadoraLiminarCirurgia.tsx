@@ -249,7 +249,7 @@ const CalculadoraLiminarCirurgia = () => {
               <AlertTriangle className="w-12 h-12 text-red-500 mx-auto mb-4" />
               <h2 className="text-2xl font-bold mb-4">Sua cirurgia foi negada?</h2>
               <p className="text-muted-foreground mb-6">
-                Não espere mais. Nossa equipe de advogados especializados pode conseguir 
+                Não espere mais. Nossa equipe de advogados pode conseguir 
                 a liminar para sua cirurgia em até 48 horas.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

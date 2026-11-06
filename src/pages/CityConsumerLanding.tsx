@@ -157,7 +157,7 @@ const CityConsumerLanding = () => {
   return (
     <>
       <Helmet>
-        <title>{`Advogado Consumidor ${cityData.cityName} ${cityData.stateCode} | Indenização até R$15.000 - Consulta Grátis`}</title>
+        <title>{`Advogado Consumidor ${cityData.cityName} ${cityData.stateCode} | Riccio Advocacia`}</title>
         <meta 
           name="description" 
           content={`Advogado que atua em Direito do Consumidor em ${cityData.cityName}. Atendimento online pelo WhatsApp.`} 

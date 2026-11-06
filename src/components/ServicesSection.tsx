@@ -96,7 +96,6 @@ const resources = [
   { title: "Blog e Artigos", href: "/artigos", icon: FileText, count: "50+" },
   { title: "Perguntas Frequentes", href: "/perguntas", icon: HelpCircle, count: "300+" },
   { title: "Notícias Jurídicas", href: "/noticias", icon: Newspaper, count: "Diário" },
-  { title: "Casos de Sucesso", href: "/casos-de-sucesso", icon: Trophy, count: "Real" },
 ];
 
 interface ServiceCardProps {

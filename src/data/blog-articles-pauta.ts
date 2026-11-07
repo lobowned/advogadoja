@@ -688,4 +688,135 @@ export const pautaArticles: BlogArticle[] = [
     relatedActions: ["violencia-domestica", "prisao-flagrante"],
     updatedAt: "2026-11-07",
   },
+
+  // ============================================================
+  // 8. CRIME DE AMEAÇA
+  // Conferido em 07/11/2026 no Planalto (texto em vigor): Código Penal arts. 147 (com a Lei
+  // 14.994/2024), 147-A e 147-B; Lei 11.340/2006 arts. 16, 19 §§ 4º a 6º, 24-A e 41; CPP art. 38.
+  // ============================================================
+  {
+    id: "crime-de-ameaca",
+    nicheId: "penal",
+    slug: "crime-de-ameaca",
+    title: "Crime de Ameaça: Pena, Representação e Medida Protetiva",
+    metaTitle: "Crime de Ameaça (Art. 147): Pena, Representação e Proteção",
+    metaDescription:
+      "Crime de ameaça (art. 147 do Código Penal): pena, quando depende de representação, ameaça contra a mulher, ameaça por WhatsApp, provas e medida protetiva.",
+    keywords: [
+      "crime de ameaça",
+      "ameaça pena",
+      "crime de ameaça artigo 147",
+      "ameaça ação penal condicionada",
+      "ameaça contra mulher",
+      "ameaça pelo whatsapp",
+      "medida protetiva",
+    ],
+    excerpt:
+      "Ameaçar alguém de mal injusto e grave é crime (art. 147 do Código Penal), com pena de detenção de 1 a 6 meses ou multa. Contra a mulher, por razões de gênero, a pena dobra e o processo não depende de representação.",
+    content: {
+      intro:
+        "Em resumo: ameaçar alguém, por palavra, mensagem, gesto ou qualquer outro meio, de causar mal injusto e grave é crime (art. 147 do Código Penal), com pena de detenção de 1 a 6 meses ou multa. Em regra, o caso só vira processo se a vítima representar, em até 6 meses depois de saber quem é o autor. Desde 2024, quando a ameaça é contra a mulher por razões da condição do sexo feminino, a pena é aplicada em dobro e o processo não depende de representação. Em violência doméstica, a vítima pode pedir medida protetiva de urgência mesmo sem boletim de ocorrência.",
+      whatIs:
+        "Ameaça é prometer a alguém um mal injusto e grave, capaz de causar medo real: matar, agredir, destruir bens, expor a intimidade. Pode ser feita pessoalmente, por telefone, por mensagem de WhatsApp, em rede social, por carta ou com gestos. Não é preciso que o autor cumpra a promessa: o crime está em intimidar. Uma discussão acalorada, sem promessa séria de mal, nem sempre configura o crime; o contexto é que define.",
+      whenYouHaveRight: [
+        "Registrar boletim de ocorrência na delegacia; em violência contra a mulher, também nas delegacias especializadas de atendimento à mulher",
+        "Representar contra o autor em até 6 meses depois de saber quem ele é (art. 147, § 2º, do Código Penal e art. 38 do CPP)",
+        "Na ameaça contra a mulher por razões de gênero, ver o caso seguir mesmo sem representação, com pena em dobro (art. 147, §§ 1º e 2º)",
+        "Pedir medidas protetivas de urgência em violência doméstica, mesmo sem boletim de ocorrência ou inquérito (art. 19, § 5º, da Lei 11.340/2006)",
+        "Em violência doméstica, a renúncia à representação nos crimes que dependem dela só vale perante o juiz, em audiência própria, antes do recebimento da denúncia (art. 16 da Lei 11.340/2006)",
+        "Se a ameaça se repete e vira perseguição, o caso pode ser o crime de perseguição (art. 147-A), com pena maior",
+      ],
+      documents: [
+        "Prints das mensagens, com data, hora e o número ou perfil de quem enviou",
+        "Áudios, vídeos e e-mails originais, sem apagar do celular",
+        "Ata notarial das mensagens, feita em cartório de notas, quando o caso é sério",
+        "Nome e contato de testemunhas",
+        "Boletim de ocorrência e protocolo",
+        "Registros de ameaças anteriores, se houver",
+      ],
+      deadlines:
+        "Em regra, a vítima tem 6 meses, contados de quando soube quem é o autor, para representar (art. 38 do CPP); depois disso perde o direito. Na ameaça contra a mulher por razões de gênero não há esse prazo, porque o processo não depende de representação. Medidas protetivas de urgência podem ser pedidas enquanto houver risco e valem enquanto ele persistir (art. 19, § 6º, da Lei 11.340/2006).",
+      faq: [
+        {
+          question: "Qual a pena para o crime de ameaça?",
+          answer:
+            "Detenção de 1 a 6 meses ou multa (art. 147 do Código Penal). Se a ameaça é contra a mulher por razões da condição do sexo feminino, a pena é aplicada em dobro (§ 1º, incluído pela Lei 14.994/2024).",
+        },
+        {
+          question: "Ameaça pelo WhatsApp é crime?",
+          answer:
+            "Sim. A lei fala em ameaça por palavra, escrito, gesto ou qualquer outro meio simbólico, o que inclui mensagens, áudios e publicações em rede social. Guarde as mensagens originais, faça prints com data e número e, se o caso for sério, registre o conteúdo em ata notarial no cartório.",
+        },
+        {
+          question: "O crime de ameaça precisa de representação?",
+          answer:
+            "Em regra, sim: o processo só começa se a vítima representar, em até 6 meses depois de saber quem é o autor (art. 147, § 2º). A exceção é a ameaça contra a mulher por razões de gênero, em que o processo segue mesmo sem a vontade dela.",
+        },
+        {
+          question: "A vítima pode retirar a queixa?",
+          answer:
+            "Na ameaça comum, a vítima pode retirar a representação até o Ministério Público oferecer a denúncia (art. 25 do CPP). Na ameaça contra a mulher por razões de gênero, o processo não depende dela. Nos outros crimes que dependem de representação em violência doméstica, a renúncia só vale perante o juiz, em audiência própria (art. 16 da Lei 11.340/2006).",
+        },
+        {
+          question: "Ameaça dá prisão?",
+          answer:
+            "A pena é baixa e, fora da violência doméstica, o caso vai ao Juizado Especial Criminal, onde cabem acordo com a vítima e transação penal. Em violência doméstica contra a mulher, o Juizado não se aplica (art. 41 da Lei 11.340/2006), e descumprir medida protetiva é crime próprio (art. 24-A), que pode levar à prisão.",
+        },
+        {
+          question: "Como pedir medida protetiva?",
+          answer:
+            "Na delegacia, na Defensoria Pública, no Ministério Público ou diretamente ao juiz. Em violência doméstica, as medidas são concedidas a partir do relato da vítima, independentemente de boletim de ocorrência, inquérito ou processo, e valem enquanto houver risco (art. 19, §§ 4º a 6º, da Lei 11.340/2006). Podem incluir afastamento do lar e proibição de contato e de aproximação.",
+        },
+        {
+          question: "Ameaça e perseguição são a mesma coisa?",
+          answer:
+            "Não. A perseguição (art. 147-A) é seguir alguém de forma reiterada, por qualquer meio, ameaçando sua integridade, restringindo sua locomoção ou invadindo sua privacidade, com pena de reclusão de 6 meses a 2 anos e multa. Contra a mulher há ainda o crime de violência psicológica (art. 147-B), com a mesma pena.",
+        },
+        {
+          question: "Fui acusado de ameaça. O que fazer?",
+          answer:
+            "Não procure a vítima, não apague mensagens e não responda provocações. Você tem direito de ficar calado e de ser acompanhado por advogado no depoimento. O contexto das mensagens importa, e fora da violência doméstica o acordo e a transação penal podem encerrar o caso. Se houver medida protetiva, cumpra rigorosamente: descumpri-la é crime.",
+        },
+      ],
+      sections: [
+        {
+          title: "O que é ameaça e o que não é",
+          paragraphs: [
+            "O crime exige promessa de mal injusto e grave, feita de forma séria o bastante para intimidar: \"vou te matar\", \"vou quebrar seu carro\", \"vou espalhar suas fotos\". O mal precisa ser injusto: avisar que vai cobrar uma dívida na Justiça ou que vai registrar boletim de ocorrência não é ameaça, porque é um direito.",
+            "Não é preciso que o autor tenha intenção de cumprir nem que cumpra; basta a intimidação. Por outro lado, frases ditas no calor de uma briga, sem seriedade, podem não configurar o crime. O juiz avalia o contexto, o histórico entre as pessoas e o efeito na vítima.",
+          ],
+        },
+        {
+          title: "Pena, representação e Juizado",
+          paragraphs: [
+            "A pena é de detenção de 1 a 6 meses ou multa. Em regra, o processo depende de representação da vítima, que tem 6 meses, contados de quando soube quem é o autor, para manifestar que quer o processo. Fora da violência doméstica, é crime de menor potencial ofensivo: a polícia faz um termo circunstanciado e o caso vai ao Juizado Especial Criminal.",
+            "No Juizado há uma audiência de conciliação, em que se pode fazer acordo; sem acordo, o Ministério Público pode propor transação penal. Se nada disso resolver, segue o processo.",
+          ],
+        },
+        {
+          title: "Ameaça contra a mulher e violência doméstica",
+          paragraphs: [
+            "Desde a Lei 14.994/2024, a ameaça contra a mulher por razões da condição do sexo feminino tem pena aplicada em dobro, e o processo não depende de representação (art. 147, §§ 1º e 2º). Em violência doméstica e familiar contra a mulher, não se aplicam o Juizado Especial Criminal, o acordo nem a transação penal (art. 41 da Lei 11.340/2006).",
+            "A vítima pode pedir medidas protetivas de urgência, que o juiz concede a partir do relato dela, sem depender de boletim de ocorrência, inquérito ou processo, e que valem enquanto houver risco. Descumprir a medida é crime próprio (art. 24-A). Na Bahia, além das delegacias comuns, há delegacias especializadas de atendimento à mulher em Salvador e em várias cidades do interior.",
+          ],
+        },
+        {
+          title: "Como provar a ameaça",
+          paragraphs: [
+            "Mensagens e áudios são as provas mais comuns. Não apague nada do celular, faça prints que mostrem data, hora e o número ou perfil de quem enviou, e guarde os arquivos originais. Em casos sérios, a ata notarial, feita em cartório de notas, registra o conteúdo com fé pública e evita discussões sobre montagem.",
+            "Testemunhas, gravações de câmeras e o histórico de ameaças anteriores também ajudam. Não responda com outra ameaça: além de enfraquecer o seu relato, pode transformar você em autor de crime.",
+          ],
+        },
+        {
+          title: "Perseguição e violência psicológica",
+          paragraphs: [
+            "Quando a conduta se repete, com mensagens insistentes, vigilância, aparições no trabalho ou em casa, o caso pode ser o crime de perseguição (art. 147-A), com pena de reclusão de 6 meses a 2 anos e multa, aumentada de metade contra criança, adolescente, idoso ou mulher por razões de gênero, ou com arma.",
+            "Contra a mulher, causar dano emocional por meio de ameaça, humilhação, manipulação, isolamento, chantagem ou controle de suas decisões é o crime de violência psicológica (art. 147-B), com a mesma pena, se a conduta não for crime mais grave.",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["violencia-domestica"],
+    updatedAt: "2026-11-07",
+  },
 ];

@@ -5,7 +5,7 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sat, 07 Nov 2026 17:07:14 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 17:09:43 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
@@ -74,6 +74,15 @@
       <category>penal</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Lesão corporal (art. 129 do CP): leve, grave e gravíssima, penas atualizadas, violência doméstica, exame de corpo de delito e prazo de representação.</description>
+    </item>
+    <item>
+      <title>Crime de Ameaça (Art. 147): Pena, Representação e Proteção</title>
+      <link>https://riccioadvocacia.online/artigos/penal/crime-de-ameaca</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/penal/crime-de-ameaca</guid>
+      <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
+      <category>penal</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Crime de ameaça (art. 147 do Código Penal): pena, quando depende de representação, ameaça contra a mulher, ameaça por WhatsApp, provas e medida protetiva.</description>
     </item>
     <item>
       <title>Quanto Cobra Advogado Trabalhista | Honorários OAB/BA</title>
@@ -452,15 +461,6 @@
       <category>consumidor</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Voo atrasou ou foi cancelado? Saiba seus direitos: assistência material, reacomodação e indenização. Veja o que a ANAC e o CDC garantem.</description>
-    </item>
-    <item>
-      <title>Overbooking e Bagagem Extraviada | Direitos e Indenização</title>
-      <link>https://riccioadvocacia.online/artigos/consumidor/overbooking-extravio-bagagem</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/consumidor/overbooking-extravio-bagagem</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>consumidor</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Foi impedido de embarcar por overbooking ou teve a mala extraviada? Entenda a Resolução ANAC 400, a compensação, a assistência material, os prazos e a indenização.</description>
     </item>
   </channel>
 </rss>

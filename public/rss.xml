@@ -5,13 +5,22 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sat, 07 Nov 2026 16:36:37 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 16:42:59 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
       <title>Riccio Advocacia</title>
       <link>https://riccioadvocacia.online</link>
     </image>
+    <item>
+      <title>Pensão Alimentícia Atrasada: Como Cobrar | Prisão e Penhora</title>
+      <link>https://riccioadvocacia.online/artigos/familia/execucao-alimentos-prisao-penhora</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/familia/execucao-alimentos-prisao-penhora</guid>
+      <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
+      <category>familia</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Pensão atrasada: como cobrar na Justiça, quando cabe prisão (3 últimas parcelas), penhora, desconto em folha, protesto e quando a dívida prescreve.</description>
+    </item>
     <item>
       <title>Aposentadoria 2026: Regras, Idade e Pontos do INSS</title>
       <link>https://riccioadvocacia.online/artigos/previdenciario/aposentadoria-2026-regras</link>
@@ -92,15 +101,6 @@
       <category>trabalhista</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Entenda a tese da revisão do FGTS, o julgamento da ADI 5090 pelo STF e os efeitos sobre correção, saldo e direito a diferenças.</description>
-    </item>
-    <item>
-      <title>Execução de Alimentos | Prisão (art. 528) e Penhora (art. 531)</title>
-      <link>https://riccioadvocacia.online/artigos/familia/execucao-alimentos-prisao-penhora</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/familia/execucao-alimentos-prisao-penhora</guid>
-      <pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate>
-      <category>familia</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Como cobrar pensão alimentícia atrasada: rito da prisão civil (art. 528 CPC), penhora (art. 531 CPC), bloqueio de contas e desconto em folha.</description>
     </item>
     <item>
       <title>Pensão Maior de 18 Anos | Súmula 358 STJ e Exoneração</title>

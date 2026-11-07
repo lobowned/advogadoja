@@ -1050,127 +1050,150 @@ export const newArticles2026: BlogArticle[] = [
     id: "execucao-alimentos-prisao-penhora",
     nicheId: "familia",
     slug: "execucao-alimentos-prisao-penhora",
-    title: "Execução de Alimentos: Prisão e Penhora (CPC)",
-    metaTitle: "Execução de Alimentos | Prisão (art. 528) e Penhora (art. 531)",
-    metaDescription: "Como cobrar pensão alimentícia atrasada: rito da prisão civil (art. 528 CPC), penhora (art. 531 CPC), bloqueio de contas e desconto em folha.",
+    // Revisto em 07/11/2026 no texto do CPC (arts. 139, 523, 528 a 533, 782, 833 e 911) e do
+    // Código Civil (arts. 197, 198, 206, 1.698 e 1.699) no Planalto. Antes citava a Súmula 150
+    // do STF para a prescrição e chamava a penhora de "rito do art. 531", o que estava errado.
+    title: "Pensão Alimentícia Atrasada: Como Cobrar com Prisão, Penhora e Desconto em Folha",
+    metaTitle: "Pensão Alimentícia Atrasada: Como Cobrar | Prisão e Penhora",
+    metaDescription: "Pensão atrasada: como cobrar na Justiça, quando cabe prisão (3 últimas parcelas), penhora, desconto em folha, protesto e quando a dívida prescreve.",
     keywords: [
+      "pensão alimentícia atrasada",
+      "pensão atrasada o que fazer",
+      "pensão atrasada prescreve",
+      "pensão atrasada parcelada",
       "execução de alimentos",
-      "pensão atrasada",
-      "prisão civil pensão",
-      "art 528 CPC",
-      "art 531 CPC",
-      "cobrar pensão",
+      "prisão por pensão",
+      "cobrar pensão atrasada",
     ],
     excerpt:
-      "Pensão atrasada tem dois caminhos no CPC: a prisão para débitos recentes e a penhora para dívidas antigas. Entenda quando usar cada um.",
+      "Pensão atrasada se cobra pela prisão (até as 3 parcelas anteriores ao pedido e as que vencerem no processo) ou pela penhora (qualquer valor, inclusive parcelas antigas). Veja os passos, os documentos e quando a dívida prescreve.",
     content: {
       intro:
-        "Quando a pensão não é paga, o CPC oferece dois caminhos distintos: a prisão civil, prevista no art. 528, e a penhora, prevista no art. 531. Escolher o rito certo faz muita diferença no resultado. O primeiro pressiona o devedor com a possibilidade de prisão de até 3 meses; o segundo recupera o dinheiro atacando o patrimônio. Saber quando usar cada um é a primeira decisão do credor.",
+        "Em resumo: pensão alimentícia atrasada se cobra na Justiça por dois caminhos. No rito da prisão, que vale para as 3 parcelas anteriores ao pedido e as que vencerem durante o processo, o devedor tem 3 dias para pagar, provar que pagou ou justificar; se não fizer, o juiz manda protestar a decisão e decreta prisão de 1 a 3 meses. No rito da penhora, que serve para qualquer valor, inclusive parcelas antigas, a Justiça bloqueia contas, salário e bens. O pedido pode ser feito na cidade de quem recebe a pensão, e o prazo de 2 anos para cobrar não corre entre pais e filhos enquanto durar o poder familiar.",
       whatIs:
-        "A execução de alimentos é o procedimento judicial para cobrar pensão alimentícia que não foi paga. Está regulada nos artigos 528 e 531 do CPC. O rito da prisão é usado para débitos das últimas três parcelas e das vincendas. A penhora é a via para dívidas mais antigas ou quando se prefere ir direto ao patrimônio.",
+        "É a cobrança judicial da pensão que foi fixada e não foi paga, no todo ou em parte. Quando a pensão vem de sentença, decisão provisória ou acordo homologado, a cobrança segue os arts. 528 a 533 do Código de Processo Civil; quando vem de acordo fora da Justiça, como escritura pública, segue os arts. 911 a 913. Quem cobra é o filho, representado pela mãe, pelo pai ou pelo responsável enquanto for menor, ou o próprio credor adulto.",
       whenYouHaveRight: [
-        "Direito de executar pensão fixada em sentença, acordo homologado ou título executivo extrajudicial",
-        "Direito a pedir prisão de até 3 meses para débitos das últimas 3 parcelas",
-        "Direito a desconto em folha de pagamento do devedor",
-        "Direito a protestar o nome do devedor em cartório",
-        "Direito a inscrever o devedor em cadastros de proteção ao crédito",
+        "Pensão fixada por sentença, decisão provisória, acordo homologado ou escritura que não foi paga, total ou parcialmente",
+        "Prisão civil de 1 a 3 meses, em regime fechado, pelas 3 parcelas anteriores ao pedido e pelas que vencerem no processo (art. 528, §§ 3º, 4º e 7º, do CPC)",
+        "Penhora de contas, salário e bens para qualquer valor atrasado, inclusive parcelas antigas (art. 528, § 8º)",
+        "Desconto em folha ou no benefício do INSS, inclusive da dívida em parcelas, até 50% dos ganhos líquidos somando a pensão do mês (art. 529, § 3º)",
+        "Protesto da decisão em cartório e inclusão do nome do devedor em cadastros de inadimplentes (arts. 528, § 1º, e 782, § 3º)",
+        "Cobrança na cidade onde mora quem recebe a pensão (art. 528, § 9º)",
       ],
       documents: [
-        "Sentença ou acordo com a fixação da pensão",
-        "Comprovantes dos pagamentos recebidos e falta de pagamento",
-        "Dados do devedor (CPF, RG, endereço, local de trabalho)",
-        "Certidão de nascimento ou documento que comprove o parentesco",
-        "Guia de recolhimento de custas, quando devida",
+        "Sentença, decisão ou acordo que fixou a pensão, com o número do processo, se houver",
+        "Lista das parcelas não pagas, com mês e valor",
+        "Comprovantes do que foi pago em parte, se houver",
+        "Certidão de nascimento do filho e documentos de quem o representa",
+        "Dados do devedor: CPF, endereço, local de trabalho, contas e bens conhecidos",
+        "Comprovante de residência de quem recebe a pensão",
       ],
       deadlines:
-        "Para prisão: últimas 3 parcelas + vincendas. Dívidas mais antigas seguem para penhora. Prazo de pagamento, justificativa ou provas: 3 dias (art. 528). Prazo prescricional para cobrar pensão: 2 anos a partir do vencimento (Súmula 150 do STF).",
+        "No rito da prisão, o devedor tem 3 dias para pagar, provar o pagamento ou justificar (art. 528 do CPC); no rito da penhora, 15 dias, sob pena de multa de 10% (art. 523). Cada parcela prescreve em 2 anos a partir do vencimento (art. 206, § 2º, do Código Civil), mas esse prazo não corre entre pais e filhos durante o poder familiar (art. 197, II) nem contra menores de 16 anos (art. 198, I). Na prática, o filho pode cobrar do pai ou da mãe as parcelas atrasadas até 2 anos depois de completar 18 anos.",
       faq: [
         {
-          question: "Qual rito usar: prisão ou penhora?",
+          question: "O que fazer quando a pensão está atrasada?",
           answer:
-            "Depende do tempo da dívida. Para débitos das últimas 3 parcelas e vincendas, o rito da prisão é mais rápido e eficaz pela pressão psicológica. Para dívidas mais antigas, só cabe penhora (art. 531 CPC).",
+            "Junte a decisão que fixou a pensão e a lista das parcelas não pagas e peça o cumprimento na Justiça, com advogado ou pela Defensoria Pública. Se o atraso é recente, o rito da prisão pressiona mais; para dívidas antigas, o caminho é a penhora. Não precisa esperar acumular: uma parcela atrasada já pode ser cobrada.",
+        },
+        {
+          question: "Pensão atrasada prescreve?",
+          answer:
+            "Cada parcela prescreve em 2 anos a partir do vencimento (art. 206, § 2º, do Código Civil). Mas, entre pais e filhos, esse prazo não corre durante o poder familiar (art. 197, II), e também não corre contra menores de 16 anos (art. 198, I). Por isso, parcelas que o pai ou a mãe deixou de pagar durante a infância normalmente ainda podem ser cobradas até o filho completar 20 anos.",
         },
         {
           question: "Quanto tempo o devedor pode ficar preso?",
           answer:
-            "De 1 a 3 meses, em regime fechado (art. 528, §3º, CPC). A prisão não quita a dívida; a soltura só acontece com o pagamento integral ou cumprimento do prazo.",
+            "De 1 a 3 meses, em regime fechado, separado dos presos comuns (art. 528, §§ 3º e 4º, do CPC). A prisão não quita a dívida (§ 5º). Se ele pagar, o juiz suspende a ordem de prisão (§ 6º).",
         },
         {
           question: "A prisão por pensão é automática?",
           answer:
-            "Não. O devedor é intimado para pagar, justificar ou provar o pagamento em 3 dias. Só se não fizer nenhuma das três coisas, ou se a justificativa for recusada, o juiz decreta a prisão.",
+            "Não. O devedor é intimado pessoalmente para, em 3 dias, pagar, provar que pagou ou justificar. Só se não fizer nada disso, ou se a justificativa for recusada, o juiz manda protestar a decisão e decreta a prisão. E a prisão só vale para as 3 parcelas anteriores ao pedido e as que vencerem no processo; o restante segue pela penhora.",
+        },
+        {
+          question: "Pensão atrasada pode ser parcelada?",
+          answer:
+            "Pode, se quem recebe concordar, em acordo levado ao juiz. Sem acordo, o juiz pode mandar descontar a dívida em parcelas do salário ou do benefício do devedor, desde que, somada à pensão do mês, não passe de 50% dos ganhos líquidos (art. 529, § 3º, do CPC). Parcelar a dívida não suspende a pensão dos meses seguintes.",
+        },
+        {
+          question: "Posso cobrar na cidade onde moro?",
+          answer:
+            "Sim. Quem cobra pode pedir o cumprimento no juízo do seu próprio domicílio (art. 528, § 9º, do CPC), mesmo que a pensão tenha sido fixada em outra cidade ou outro estado. O processo eletrônico facilita: quase tudo corre sem precisar ir ao fórum.",
+        },
+        {
+          question: "Desemprego justifica não pagar a pensão?",
+          answer:
+            "Só a impossibilidade absoluta de pagar, comprovada, justifica o atraso (art. 528, § 2º, do CPC). Desemprego, sozinho, costuma não ser aceito. Quem perdeu renda deve pedir a revisão do valor (art. 1.699 do Código Civil), e não simplesmente parar de pagar.",
         },
         {
           question: "Pode pedir desconto em folha?",
           answer:
-            "Sim. É das medidas mais eficazes. O juiz expede ofício ao empregador, que passa a descontar a pensão diretamente do salário e depositar na conta do credor. Vale também para benefício do INSS.",
-        },
-        {
-          question: "Como cobrar de devedor autônomo ou desempregado?",
-          answer:
-            "Aí entram as outras ferramentas: bloqueio de contas (Sisbajud), penhora de bens, inclusão em cadastros de inadimplentes, protesto em cartório e, se for sócio de empresa, penhora de faturamento.",
-        },
-        {
-          question: "Preciso de advogado para a execução?",
-          answer:
-            "Em regra sim. A execução de alimentos é uma ação específica, com rito próprio. A defensoria pública atende quem não pode contratar advogado. Também há protocolo direto em alguns casos, mas o acompanhamento profissional faz diferença.",
-        },
-        {
-          question: "Pensão prescreveu. Perdi tudo?",
-          answer:
-            "Cada parcela prescreve em 2 anos (Súmula 150 do STF, com aplicação consolidada). Parcelas anteriores ao prazo não podem mais ser cobradas, mas as mais recentes continuam exigíveis, inclusive pelo rito da prisão.",
+            "Sim, quando o devedor tem emprego com carteira, é servidor público ou militar (art. 529 do CPC). O juiz manda o empregador descontar a pensão do salário a partir do mês seguinte, sob pena de crime de desobediência. Também vale para aposentadoria e outros benefícios do INSS.",
         },
         {
           question: "Posso cobrar pensão do avô?",
           answer:
-            "Sim, quando os pais não conseguem pagar. É a chamada obrigação subsidiária dos avós (art. 1.698 do Código Civil), limitada à capacidade deles e à necessidade comprovada do neto.",
+            "Sim, quando os pais não conseguem pagar tudo. A obrigação dos avós é complementar e subsidiária (art. 1.698 do Código Civil e Súmula 596 do STJ), limitada às possibilidades deles e à necessidade do neto.",
         },
         {
           question: "A pensão continua durante a prisão?",
           answer:
-            "Sim. A prisão não suspende a obrigação. Ao sair, o devedor continua devendo as parcelas vencidas durante o encarceramento, mais as novas parcelas que forem se vencendo.",
+            "Sim. A prisão não suspende a obrigação: as parcelas que vencem enquanto o devedor está preso continuam devidas e podem ser cobradas depois.",
+        },
+        {
+          question: "Preciso de advogado para cobrar?",
+          answer:
+            "Sim, o pedido é feito por advogado ou pela Defensoria Pública, que atende quem não pode pagar. Na Bahia, a Defensoria Pública do Estado atende em Salvador e no interior.",
         },
       ],
       sections: [
         {
-          title: "O rito da prisão civil (art. 528 CPC)",
+          title: "O rito da prisão civil (art. 528 do CPC)",
           paragraphs: [
-            "O procedimento começa com a intimação do devedor para, em 3 dias, pagar o débito, justificar a impossibilidade ou provar que já pagou. Se não fizer nenhuma dessas coisas, o juiz decreta a prisão civil, de 1 a 3 meses, em regime fechado. A prisão não quita a dívida; é uma medida coercitiva.",
-            "A justificativa precisa ser muito concreta: doença que impossibilitou o pagamento, desemprego inesperado, acidente. Alegação genérica de 'desemprego' sem provas não costuma ser aceita. A regra é que o devedor demonstre a real impossibilidade. Se a dívida soma mais de 3 parcelas, a execução se desdobra: as 3 últimas pela prisão, o restante pela penhora.",
+            "O devedor é intimado pessoalmente para, em 3 dias, pagar, provar que já pagou ou justificar a impossibilidade de pagar. Se não fizer nada disso, o juiz manda protestar a decisão em cartório e decreta a prisão civil, de 1 a 3 meses, em regime fechado. A prisão é uma forma de pressão: não quita a dívida, e o pagamento faz o juiz suspender a ordem.",
+            "Só a impossibilidade absoluta, comprovada, justifica o atraso. A prisão alcança até as 3 parcelas anteriores ao pedido e as que vencerem durante o processo (art. 528, § 7º, no mesmo sentido da Súmula 309 do STJ). Se a dívida é maior, divide-se a cobrança: as parcelas recentes pelo rito da prisão, as antigas pela penhora.",
           ],
         },
         {
-          title: "O rito da penhora (art. 531 CPC)",
+          title: "O rito da penhora (art. 528, § 8º, do CPC)",
           paragraphs: [
-            "Para dívidas mais antigas, ou quando o credor prefere ir direto ao patrimônio, a execução segue o rito comum. O devedor é citado para pagar em 3 dias; não pagando, começa a busca de bens. O juiz pode bloquear contas via Sisbajud, localizar veículos pelo Renajud, penhorar imóveis e salários dentro dos limites legais.",
-            "A penhora sobre salário tem previsão específica no CPC e pode atingir até 50% dos rendimentos, dependendo do caso. Também cabe penhora de restituição de imposto de renda, saldo de FGTS em hipóteses legais e outros ativos. Em certos casos, o juiz autoriza ainda o protesto do pronunciamento judicial.",
+            "Serve para qualquer valor atrasado, inclusive parcelas antigas, e para quem prefere ir direto ao patrimônio. O devedor é intimado para pagar em 15 dias; se não pagar, a dívida ganha multa de 10% (art. 523) e começa a busca de bens: bloqueio de contas pelo Sisbajud, veículos pelo Renajud, imóveis e salário. Nesse rito não há prisão.",
+            "Para pensão, o salário pode ser penhorado: a proteção comum do salário não vale para dívida alimentar (art. 833, § 2º, do CPC). Quando o dinheiro penhorado entra, quem cobra pode levantar mês a mês o valor da pensão, mesmo que o devedor conteste.",
           ],
         },
         {
-          title: "Medidas de pressão além da prisão",
+          title: "Pensão atrasada prescreve?",
           paragraphs: [
-            "Inscrição em cadastros de proteção ao crédito (SPC/Serasa) é cabível e costuma trazer resultado rápido. O devedor em atraso perde crédito, não consegue financiar e muitas vezes busca negociar. O protesto em cartório também funciona: o nome vai parar em lista pública e o impacto é grande.",
-            "A suspensão da CNH, do passaporte e de cartões de crédito já foi admitida em alguns casos como medidas atípicas, com base no art. 139, IV, do CPC. Depende do juiz e do histórico do devedor. Cada juízo avalia a razoabilidade da medida diante da situação concreta.",
+            "A regra geral é de 2 anos para cada parcela, contados do vencimento (art. 206, § 2º, do Código Civil). Mas há duas exceções que, na pensão de filhos, valem quase sempre: o prazo não corre entre pais e filhos durante o poder familiar (art. 197, II) e não corre contra menores de 16 anos (art. 198, I).",
+            "Exemplo: o pai deixou de pagar quando o filho tinha 10 anos. Enquanto o filho for menor, o prazo fica parado; ele começa a correr aos 18 anos e termina aos 20. Já a dívida com ex-cônjuge, ou com filho adulto, prescreve parcela por parcela em 2 anos. Por isso, quem tem pensão atrasada não deve esperar: além do prazo, a dívida antiga só pode ser cobrada pela penhora.",
           ],
         },
         {
-          title: "Desconto em folha e recolhimento direto",
+          title: "Outras medidas contra quem não paga",
           paragraphs: [
-            "A ferramenta mais tranquila para quem vai pagar é o desconto em folha. O juiz oficia o empregador, que passa a abater a pensão do salário do devedor e depositar na conta do credor. O percentual não pode exceder os limites da lei, considerando a remuneração líquida.",
-            "Para aposentados e pensionistas do INSS, o desconto é feito pela própria autarquia. Para autônomos, o caminho costuma ser o débito automático em conta, quando acordado. Cada caso é analisado e o juiz escolhe a modalidade mais eficaz.",
+            "O juiz pode mandar incluir o nome do devedor em cadastros de inadimplentes (art. 782, § 3º, do CPC), e no rito da prisão a decisão é protestada em cartório. Quando o devedor esconde renda ou bens, cabem medidas como suspensão da carteira de motorista ou do passaporte (art. 139, IV), que o STF admitiu desde que fundamentadas e proporcionais.",
+            "Se o juiz perceber que o devedor está adiando o pagamento de propósito, ele avisa o Ministério Público sobre possível crime de abandono material (art. 532 do CPC).",
+          ],
+        },
+        {
+          title: "Desconto em folha e no benefício do INSS",
+          paragraphs: [
+            "Para quem tem emprego com carteira, é servidor público, militar, diretor ou gerente de empresa, o juiz manda o empregador descontar a pensão direto do salário, a partir do mês seguinte (art. 529 do CPC). O mesmo vale para aposentadoria e outros benefícios do INSS. É a forma mais estável de receber em dia.",
+            "A dívida atrasada também pode ser descontada aos poucos, junto com a pensão do mês, desde que a soma não passe de 50% dos ganhos líquidos do devedor (art. 529, § 3º). Para autônomos, o caminho costuma ser a penhora de contas e de bens.",
           ],
         },
         {
           title: "Dicas práticas para quem cobra",
           paragraphs: [
-            "Primeiro, mantenha um controle claro das parcelas pagas e não pagas, com datas e recibos. Isso facilita a execução. Segundo, procure a defensoria pública ou um advogado assim que o atraso começar, para não deixar a dívida crescer e prescrever. Terceiro, informe ao juízo o endereço atualizado do devedor e o local de trabalho, se souber.",
-            "E por fim, considere sempre que a execução por prisão é mais eficaz quando a dívida é recente. Esperar demais para agir enfraquece o resultado. Em algumas situações, o acordo é melhor que a disputa prolongada: renegociar valores em prestações menores pode garantir o recebimento regular. A decisão final é do credor, com orientação jurídica.",
+            "Anote cada parcela paga e não paga, com data e valor, e guarde comprovantes. Informe o endereço e o local de trabalho do devedor, se souber: isso acelera a intimação e o desconto em folha. Não deixe acumular: a prisão só alcança as parcelas recentes, e a demora fortalece a defesa do devedor.",
+            "Acordo pode ser melhor que disputa longa, desde que feito por escrito e levado ao juiz, com datas e valores claros. Antes de aceitar, compare com o que a Justiça pode alcançar: desconto em folha, bloqueio de contas e penhora de bens.",
           ],
         },
       ],
     },
-    relatedActions: ["pensao-alimenticia", "divorcio", "guarda-filhos"],
-    updatedAt: U,
+    relatedActions: ["pensao-alimenticia", "revisao-pensao", "guarda"],
+    updatedAt: "2026-11-07",
   },
 
   // ============================================================

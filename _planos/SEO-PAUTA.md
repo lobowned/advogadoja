@@ -20,3 +20,5 @@ Regras de todo artigo: só lei e fonte oficial conferidas na hora (Planalto, gov
 Reservas: boletim de ocorrência online na Bahia (Delegacia Virtual), reclamação no Procon da Bahia e no consumidor.gov.br, seguro-desemprego 2026, conta alta da Embasa. Para reforçar páginas que já existem em vez de criar novas: rescisão indireta (continuar trabalhando, seguro-desemprego) e assédio moral (como provar, exemplos, se é crime).
 
 Ordem do loop (itens 5 a 9 de SEO-LOOP.md): 1, 2, 3, 4 e 5. Os outros ficam para a próxima rodada.
+
+Andamento: 1 publicado no código (aposentadoria-2026-regras). 2 virou reescrita do artigo que já existia, /artigos/familia/execucao-alimentos-prisao-penhora, para não ter dois artigos disputando a mesma busca. Antes de cada artigo novo, procurar no sitemap e em src/data um endereço parecido: se existir, reforçar o existente.

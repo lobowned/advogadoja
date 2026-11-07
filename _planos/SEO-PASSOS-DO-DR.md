@@ -12,8 +12,8 @@ Tudo o que dependia do código já está no GitHub. Estes passos precisam da sua
 No Lovable, projeto "Riccio Advocacia": botão **Publicar → Publicar alterações**.
 A publicação de 07/11 à tarde levou a página do advogado, o artigo de aposentadoria 2026 e as correções de velocidade e de dados estruturados.
 Estão no GitHub esperando a próxima publicação:
-- artigos novos de auxílio-acidente, conta de luz da Coelba e inquérito policial;
-- artigo de pensão alimentícia atrasada reescrito (corrige dois erros jurídicos);
+- 6 artigos novos: auxílio-acidente, conta de luz da Coelba, inquérito policial, lesão corporal, crime de ameaça e perícia do INSS;
+- 3 artigos reescritos ou reforçados: pensão alimentícia atrasada (corrige dois erros jurídicos), divórcio em cartório (dizia que com filhos menores só na Justiça, regra que mudou em 2024) e usucapião em cartório;
 - texto completo dos artigos no HTML que Bing e os robôs de IA leem;
 - artigos relacionados escolhidos por assunto e listas dos guias sem repetição.
 

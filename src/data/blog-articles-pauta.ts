@@ -139,4 +139,139 @@ export const pautaArticles: BlogArticle[] = [
     relatedActions: ["aposentadoria", "idade", "pensao-morte"],
     updatedAt: "2026-11-07",
   },
+
+  // ============================================================
+  // 3. AUXÍLIO-ACIDENTE
+  // Conferido em 07/11/2026: Lei 8.213/1991, arts. 18 § 1º, 26 I, 86 e 103 (texto em vigor,
+  // planalto.gov.br); serviço "Solicitar Auxílio-Acidente no INSS" (gov.br, atualizado em 20/08/2026).
+  // ============================================================
+  {
+    id: "auxilio-acidente",
+    nicheId: "previdenciario",
+    slug: "auxilio-acidente",
+    title: "Auxílio-Acidente do INSS: Quem Tem Direito, Valor e Como Pedir",
+    metaTitle: "Auxílio-Acidente: Quem Tem Direito, Valor e Como Pedir",
+    metaDescription:
+      "Auxílio-acidente do INSS: quem tem direito, valor (50% do salário de benefício), como pedir pelo Meu INSS e por que dá para continuar trabalhando.",
+    keywords: [
+      "auxílio-acidente",
+      "auxílio acidente como funciona",
+      "auxílio acidente quem tem direito",
+      "auxílio acidente valor",
+      "auxílio acidente inss",
+      "sequela de acidente inss",
+    ],
+    excerpt:
+      "O auxílio-acidente é uma indenização mensal do INSS para quem ficou com sequela permanente de um acidente que reduz a capacidade de trabalho. Paga 50% do salário de benefício, não exige carência e pode ser recebido junto com o salário.",
+    content: {
+      intro:
+        "Em resumo: o auxílio-acidente é uma indenização mensal paga pelo INSS a quem, depois de um acidente de qualquer natureza (no trabalho, no trânsito, em casa), ficou com sequela permanente que reduz a capacidade para o trabalho que fazia. O valor é 50% do salário de benefício, não exige tempo mínimo de contribuição e pode ser recebido junto com o salário: a pessoa continua trabalhando. Têm direito o empregado com carteira, o empregado doméstico, o trabalhador avulso e o segurado especial (rural). O benefício termina quando a pessoa se aposenta. O pedido é feito pelo Meu INSS e passa por perícia médica.",
+      whatIs:
+        "Diferente do auxílio por incapacidade temporária (o antigo auxílio-doença), que substitui o salário enquanto a pessoa não pode trabalhar, o auxílio-acidente não substitui renda: é uma indenização pela perda parcial e permanente da capacidade para o trabalho (art. 86 da Lei 8.213/1991). Por isso pode ser menor que o salário mínimo e é pago junto com o salário. Em geral começa no dia seguinte ao fim do auxílio por incapacidade temporária que a pessoa recebeu por causa do acidente.",
+      whenYouHaveRight: [
+        "Ter sofrido acidente de qualquer natureza: no trabalho, no trajeto, no trânsito, em casa ou no lazer",
+        "Ficar com sequela permanente, depois da consolidação das lesões, que reduza a capacidade para o trabalho que fazia (art. 86 da Lei 8.213/1991)",
+        "Ser empregado com carteira, empregado doméstico, trabalhador avulso ou segurado especial na data do acidente (art. 18, § 1º)",
+        "Estar vinculado ao INSS (qualidade de segurado) na data do acidente; não se exige carência (art. 26, I)",
+        "Não estar aposentado: o auxílio-acidente não se acumula com aposentadoria (art. 86, § 2º)",
+        "Perda auditiva só dá direito se ligada ao trabalho e se reduzir, de forma comprovada, a capacidade para a atividade habitual (art. 86, § 4º)",
+      ],
+      documents: [
+        "Documento de identidade com CPF",
+        "Laudos, exames e relatórios médicos que descrevam a sequela e a limitação para o trabalho, com o CID",
+        "Registro do acidente: CAT (Comunicação de Acidente de Trabalho), boletim de ocorrência ou ficha de atendimento hospitalar",
+        "Carta de concessão e de encerramento do auxílio por incapacidade temporária, se houve",
+        "Carteira de trabalho e documentos que mostrem a atividade que a pessoa exercia",
+        "Para trabalhador rural: documentos da atividade no campo",
+      ],
+      deadlines:
+        "Não há prazo para pedir, mas as parcelas atrasadas só podem ser cobradas dos últimos 5 anos (art. 103, parágrafo único, da Lei 8.213/1991). Se o INSS negar, o recurso administrativo tem prazo de 30 dias. A ação judicial de acidente do trabalho corre na Justiça Estadual; a de acidente de outra natureza, na Justiça Federal.",
+      faq: [
+        {
+          question: "Quem tem direito ao auxílio-acidente?",
+          answer:
+            "O empregado com carteira, o empregado doméstico, o trabalhador avulso e o segurado especial (trabalhador rural em regime familiar) que, depois de um acidente de qualquer natureza, ficaram com sequela permanente que reduz a capacidade para o trabalho que faziam (arts. 18, § 1º, e 86 da Lei 8.213/1991). Não se exige tempo mínimo de contribuição.",
+        },
+        {
+          question: "Qual o valor do auxílio-acidente?",
+          answer:
+            "50% do salário de benefício (art. 86, § 1º), que é calculado pela média dos salários de contribuição. Como é uma indenização e não substitui o salário, o auxílio-acidente pode ficar abaixo do salário mínimo.",
+        },
+        {
+          question: "Quem recebe auxílio-acidente pode trabalhar?",
+          answer:
+            "Sim. O benefício é pago independentemente de salário ou outra renda (art. 86, §§ 2º e 3º). A pessoa pode continuar no mesmo emprego, mudar de emprego e até receber outros benefícios do INSS, exceto aposentadoria.",
+        },
+        {
+          question: "Auxílio-acidente é para sempre?",
+          answer:
+            "É pago até a véspera de qualquer aposentadoria ou até a morte (art. 86, § 1º). Voltar a trabalhar não encerra o benefício. Só quem teve a lesão e a aposentadoria antes de 11/11/1997 pode receber os dois juntos (Súmula 507 do STJ).",
+        },
+        {
+          question: "Autônomo ou MEI tem direito ao auxílio-acidente?",
+          answer:
+            "Não. A lei limita o benefício ao empregado, ao empregado doméstico (incluído em 2015 pela Lei Complementar 150), ao trabalhador avulso e ao segurado especial (art. 18, § 1º). Contribuinte individual, inclusive o MEI, e o segurado facultativo ficam de fora.",
+        },
+        {
+          question: "Preciso ter recebido auxílio-doença antes?",
+          answer:
+            "Não é obrigatório, mas é o caminho mais comum: pela lei, o auxílio-acidente começa no dia seguinte ao fim do auxílio por incapacidade temporária (art. 86, § 2º). Quem não recebeu pode pedir diretamente pelo Meu INSS e passar pela perícia.",
+        },
+        {
+          question: "Como pedir o auxílio-acidente?",
+          answer:
+            "Pelo Meu INSS (site ou aplicativo), no serviço Auxílio-Acidente, com a conta gov.br. O pedido começa todo pela internet e, durante a análise, o INSS pode chamar para perícia médica. Também é possível pedir pelo telefone 135.",
+        },
+        {
+          question: "O INSS negou. E agora?",
+          answer:
+            "Dá para recorrer à Junta de Recursos em 30 dias ou entrar na Justiça. Se o acidente foi de trabalho, a ação contra o INSS é na Justiça Estadual (Súmula 15 do STJ); se foi de outra natureza, na Justiça Federal. Nos dois casos, o juiz costuma nomear um perito para examinar a sequela.",
+        },
+        {
+          question: "Acidente de trabalho também dá direito a indenização da empresa?",
+          answer:
+            "Pode dar, mas é outra coisa. O auxílio-acidente vem do INSS e não depende de culpa de ninguém. A indenização contra o empregador depende de dolo ou culpa da empresa (art. 7º, XXVIII, da Constituição) e é pedida na Justiça do Trabalho.",
+        },
+      ],
+      sections: [
+        {
+          title: "O que conta como acidente e como sequela",
+          paragraphs: [
+            "Desde 1995 a lei fala em acidente de qualquer natureza: vale o acidente de trabalho, o de trajeto, o de trânsito, a queda em casa ou o acidente no futebol do fim de semana. O que importa é o resultado: depois que as lesões se consolidam, isto é, quando o tratamento já não muda o quadro, sobra uma sequela permanente que reduz a capacidade para o trabalho que a pessoa fazia.",
+            "Não precisa ser incapacidade total. Exemplos comuns são a perda parcial de movimento ou de força de um membro, a amputação de um dedo e a redução da visão. O que se avalia é se o trabalho habitual passou a exigir mais esforço ou ficou limitado. Quem decide é a perícia médica do INSS, por isso os laudos precisam descrever a limitação, e não só o diagnóstico.",
+          ],
+        },
+        {
+          title: "Valor, início e fim do benefício",
+          paragraphs: [
+            "O valor é 50% do salário de benefício, que hoje é a média dos salários de contribuição desde julho de 1994. Como o auxílio-acidente não substitui o salário, ele pode ficar abaixo do salário mínimo e é pago junto com a remuneração de quem continua trabalhando.",
+            "Pela lei, começa no dia seguinte ao fim do auxílio por incapacidade temporária ligado ao acidente e vai até a véspera da aposentadoria ou até a morte do segurado. Não se acumula com aposentadoria, mas se acumula com salário, com seguro-desemprego e com outros benefícios, como pensão por morte.",
+          ],
+        },
+        {
+          title: "Quem fica de fora",
+          paragraphs: [
+            "O contribuinte individual (autônomo, MEI, sócio que paga o próprio INSS) e o segurado facultativo não recebem auxílio-acidente, mesmo que contribuam em dia. A regra está no art. 18, § 1º, da Lei 8.213/1991. Para eles, a proteção em caso de acidente é o auxílio por incapacidade temporária, enquanto não puderem trabalhar, e a aposentadoria por incapacidade permanente, se for o caso.",
+            "Na perda auditiva, a lei é mais exigente: além de provar a ligação com o trabalho, é preciso demonstrar que a perda reduziu a capacidade para a atividade que a pessoa exercia (art. 86, § 4º).",
+          ],
+        },
+        {
+          title: "Como pedir e como se preparar para a perícia",
+          paragraphs: [
+            "O pedido é feito pelo Meu INSS, no serviço Auxílio-Acidente, ou pelo telefone 135. Antes, reúna os documentos do acidente (CAT, boletim de ocorrência ou atendimento médico) e laudos atualizados. O laudo mais útil é o que explica, em palavras simples, o que a pessoa deixou de conseguir fazer no trabalho: carregar peso, ficar de pé, usar a mão, enxergar de longe.",
+            "Na perícia, leve exames de imagem, receitas e relatórios de fisioterapia. Conte como era o trabalho antes do acidente e como é agora. Se a empresa mudou a função por causa da sequela, peça um documento que registre isso: é uma prova forte de redução da capacidade.",
+          ],
+        },
+        {
+          title: "Se o INSS negar",
+          paragraphs: [
+            "A carta de indeferimento explica o motivo. Se faltou documento, um novo pedido bem instruído pode resolver. Se o problema foi a conclusão da perícia, cabe recurso à Junta de Recursos em 30 dias ou ação judicial, em que o juiz nomeia um perito de sua confiança.",
+            "Na Bahia, a ação de acidente do trabalho contra o INSS corre na Justiça Estadual; a de acidente de outra natureza, na Justiça Federal, que tem Juizado Especial Federal em Salvador e nas subseções do interior. As parcelas atrasadas podem ser cobradas dos últimos 5 anos.",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["auxilio-doenca", "aposentadoria"],
+    updatedAt: "2026-11-07",
+  },
 ];

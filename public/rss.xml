@@ -5,7 +5,7 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sat, 07 Nov 2026 16:42:59 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 16:46:29 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
@@ -29,6 +29,15 @@
       <category>previdenciario</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Regras da aposentadoria do INSS em 2026: 93 pontos (mulher) e 103 (homem), idade mínima de 59,5 e 64,5 anos, pedágios, regra por idade e cálculo do valor.</description>
+    </item>
+    <item>
+      <title>Auxílio-Acidente: Quem Tem Direito, Valor e Como Pedir</title>
+      <link>https://riccioadvocacia.online/artigos/previdenciario/auxilio-acidente</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/previdenciario/auxilio-acidente</guid>
+      <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
+      <category>previdenciario</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Auxílio-acidente do INSS: quem tem direito, valor (50% do salário de benefício), como pedir pelo Meu INSS e por que dá para continuar trabalhando.</description>
     </item>
     <item>
       <title>Quanto Cobra Advogado Trabalhista | Honorários OAB/BA</title>
@@ -452,15 +461,6 @@
       <category>previdenciario</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Aprenda a fazer a simulação de aposentadoria no app Meu INSS. Veja quando pode se aposentar e quanto vai receber. Tutorial completo.</description>
-    </item>
-    <item>
-      <title>Divórcio Litigioso | Sem Acordo, Briga, Contencioso</title>
-      <link>https://riccioadvocacia.online/artigos/familia/divorcio-litigioso</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/familia/divorcio-litigioso</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>familia</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Não consegue acordo com seu cônjuge? Entenda como funciona o divórcio litigioso, quanto tempo leva e como proteger seus direitos.</description>
     </item>
   </channel>
 </rss>

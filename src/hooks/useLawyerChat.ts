@@ -1231,82 +1231,76 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
   const submitRating = async (rating: number) => {
     try {
       console.log('⭐ [SUBMITTING RATING]', { rating, sessionId });
-      
-      // Buscar dados do lead
-      const { data: lead, error: leadError } = await supabase
+
+      // Converter mensagens para JSON serializado (sem Date objects)
+      const messagesForDb = messages.map(m => ({
+        role: m.role,
+        content: m.content,
+        timestamp: m.timestamp.toISOString(),
+        ...(('lawyerId' in m) && { lawyerId: m.lawyerId }),
+        ...(('isTransfer' in m) && { isTransfer: true }),
+        ...(('isQueue' in m) && { isQueue: true, queuePosition: m.queuePosition })
+      }));
+
+      // Desde 07/11/2026 o banco não deixa o visitante ler nem alterar os contatos.
+      // O servidor (lawyer-chat) já grava nome, WhatsApp, resumo e conversa; aqui a
+      // leitura volta vazia e a gravação não muda nada, e a avaliação segue mesmo assim.
+      const { data: lead } = await supabase
         .from('leads')
         .select('*')
         .eq('session_id', sessionId)
-        .single();
-      
-      if (leadError) {
-        console.error('Error fetching lead:', leadError);
-        toast({
-          title: "Erro ao salvar avaliação",
-          description: "Não foi possível processar sua avaliação.",
-          variant: "destructive"
-        });
-        return;
+        .maybeSingle();
+
+      const { error: updateError } = await supabase
+        .from('leads')
+        .update({
+          conversation_history: messagesForDb,
+          case_summary: caseSummary,
+          status: 'completed',
+          rating: rating,
+          updated_at: new Date().toISOString()
+        })
+        .eq('session_id', sessionId);
+
+      if (updateError) {
+        console.warn('Avaliação não gravada pelo navegador (esperado com o banco fechado):', updateError.message);
       }
-      
-      if (lead) {
-        // Converter mensagens para JSON serializado (sem Date objects)
-        const messagesForDb = messages.map(m => ({
-          role: m.role,
-          content: m.content,
-          timestamp: m.timestamp.toISOString(),
-          ...(('lawyerId' in m) && { lawyerId: m.lawyerId }),
-          ...(('isTransfer' in m) && { isTransfer: true }),
-          ...(('isQueue' in m) && { isQueue: true, queuePosition: m.queuePosition })
-        }));
-        
-        // Salvar histórico, resumo e avaliação
-        const { error: updateError } = await supabase
-          .from('leads')
-          .update({
-            conversation_history: messagesForDb,
-            case_summary: caseSummary,
-            status: 'completed',
-            rating: rating,
-            updated_at: new Date().toISOString()
-          })
-          .eq('session_id', sessionId);
-        
-        if (updateError) {
-          console.error('Error updating lead:', updateError);
-          toast({
-            title: "Erro ao salvar avaliação",
-            description: "Não foi possível processar sua avaliação.",
-            variant: "destructive"
-          });
-          return;
-        }
-        
-        // Disparar notificação WhatsApp com resumo
-        console.log('📨 [INVOKING WHATSAPP NOTIFICATION]');
-        try {
-          const { error: notificationError } = await supabase.functions.invoke('send-whatsapp-notification', {
-            body: { 
-              leadData: {
-                ...lead,
-                case_summary: caseSummary,
-                conversation_history: messagesForDb,
-                rating: rating
-              },
-              isEndConversation: true
-            }
-          });
-          
-          if (notificationError) {
-            console.error('Error sending WhatsApp notification:', notificationError);
-          } else {
-            console.log('✅ WhatsApp notification sent successfully');
+
+      // Sem o contato do banco, o aviso usa o que está na conversa
+      const telefoneNaConversa = [...messages]
+        .reverse()
+        .filter(m => m.role === 'user')
+        .map(m => m.content.match(/(?:\+?55\s?)?\(?\d{2}\)?\s?9?\s?\d{4}[-\s]?\d{4}/)?.[0])
+        .find(Boolean) || null;
+
+      // Disparar notificação WhatsApp com resumo
+      console.log('📨 [INVOKING WHATSAPP NOTIFICATION]');
+      try {
+        const { error: notificationError } = await supabase.functions.invoke('send-whatsapp-notification', {
+          body: {
+            leadData: {
+              ...(lead ?? {}),
+              name: lead?.name || userName,
+              phone: lead?.phone || telefoneNaConversa,
+              detected_problem: lead?.detected_problem || detectedProblem,
+              message_count: lead?.message_count || messages.filter(m => m.role === 'user').length,
+              case_summary: caseSummary,
+              conversation_history: messagesForDb,
+              rating: rating
+            },
+            isEndConversation: true
           }
-        } catch (notifError) {
-          console.error('Failed to invoke WhatsApp notification:', notifError);
+        });
+
+        if (notificationError) {
+          console.error('Error sending WhatsApp notification:', notificationError);
+        } else {
+          console.log('✅ WhatsApp notification sent successfully');
         }
+      } catch (notifError) {
+        console.error('Failed to invoke WhatsApp notification:', notifError);
       }
-      
+
       setShowRatingButton(false);
       toast({ 
         title: "Obrigado pela avaliação! 🙏",

@@ -9,6 +9,17 @@ export interface SubmitCaseData {
   documents?: File[];
 }
 
+// O banco não devolve ao visitante o que ele gravou (dados de cliente ficam fechados),
+// então o número do caso é gerado aqui, antes de gravar.
+function novoId(): string {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID();
+  }
+  return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, (c) =>
+    (Number(c) ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (Number(c) / 4)))).toString(16)
+  );
+}
+
 export function useSubmitCase() {
   const submitCase = async ({
     nicheId,
@@ -19,25 +30,25 @@ export function useSubmitCase() {
     try {
       // 1. Gerar protocolo único
       const protocolId = generateProtocolId();
+      const caseId = novoId();
 
-      // 2. Criar registro do caso
-      const { data: caseData, error: caseError } = await supabase
+      // 2. Criar registro do caso (sem pedir o registro de volta)
+      const { error: caseError } = await supabase
         .from("cases")
         .insert({
+          id: caseId,
           protocol_id: protocolId,
           niche_id: nicheId,
           action_id: actionId,
           status: "novo",
           urgency: answers.urgencia as string || "sem_urgencia",
-        })
-        .select()
-        .single();
+        });
 
       if (caseError) throw caseError;
 
       // 3. Salvar respostas
       const answersToInsert = Object.entries(answers).map(([key, value]) => ({
-        case_id: caseData.id,
+        case_id: caseId,
         question_id: key,
         question_label: key,
         answer_value: typeof value === 'string' ? value : JSON.stringify(value),
@@ -64,7 +75,7 @@ export function useSubmitCase() {
           }
 
           await supabase.from("case_documents").insert({
-            case_id: caseData.id,
+            case_id: caseId,
             file_name: file.name,
             file_path: filePath,
             file_size: file.size,
@@ -79,7 +90,7 @@ export function useSubmitCase() {
       const { error: analysisError } = await supabase
         .from("case_analysis")
         .insert({
-          case_id: caseData.id,
+          case_id: caseId,
           complexity,
           risks: [],
           opportunities: [],
@@ -108,10 +119,10 @@ export function useSubmitCase() {
         // Não falha o processo se email não funcionar
       }
 
-      return { 
-        success: true, 
-        protocolId, 
-        caseId: caseData.id 
+      return {
+        success: true,
+        protocolId,
+        caseId
       };
     } catch (error) {
       console.error("Erro ao submeter caso:", error);

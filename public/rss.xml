@@ -5,7 +5,7 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sat, 07 Nov 2026 16:46:29 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 16:50:50 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
@@ -38,6 +38,15 @@
       <category>previdenciario</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Auxílio-acidente do INSS: quem tem direito, valor (50% do salário de benefício), como pedir pelo Meu INSS e por que dá para continuar trabalhando.</description>
+    </item>
+    <item>
+      <title>Conta de Luz da Coelba Alta: Como Contestar e Pedir Revisão</title>
+      <link>https://riccioadvocacia.online/artigos/consumidor/conta-de-luz-coelba-alta</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/consumidor/conta-de-luz-coelba-alta</guid>
+      <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
+      <category>consumidor</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Conta da Coelba alta? Como reclamar, prazos de resposta, verificação do medidor, devolução em dobro e quando a luz não pode ser cortada.</description>
     </item>
     <item>
       <title>Quanto Cobra Advogado Trabalhista | Honorários OAB/BA</title>
@@ -452,15 +461,6 @@
       <category>consumidor</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>O plano negou cirurgia, exame, internação ou tratamento? Entenda o rol da ANS após a Lei 14.454/2022, carência, prazos de autorização e como pedir liminar na urgência.</description>
-    </item>
-    <item>
-      <title>Simular Aposentadoria Meu INSS | Passo a Passo</title>
-      <link>https://riccioadvocacia.online/artigos/previdenciario/simular-aposentadoria-meu-inss</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/previdenciario/simular-aposentadoria-meu-inss</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>previdenciario</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Aprenda a fazer a simulação de aposentadoria no app Meu INSS. Veja quando pode se aposentar e quanto vai receber. Tutorial completo.</description>
     </item>
   </channel>
 </rss>

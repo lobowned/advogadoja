@@ -544,6 +544,11 @@ function buildPages(d: Awaited<ReturnType<typeof loadData>>, baseTitle: string, 
     const faq: Faq[] = (c.faq || []).map((f: any) => ({ q: f.question, a: f.answer }));
     const sections = [
       c.whatIs && { h2: "O que é", paragraphs: [c.whatIs] },
+      // Seções de texto corrido (e as expansões juntadas em blog-articles.ts), na mesma ordem
+      // da página React. Antes ficavam de fora e o HTML estático perdia a maior parte do texto.
+      ...((c.sections || []) as { title: string; paragraphs: string[] }[])
+        .filter((s) => s?.title && s.paragraphs?.length)
+        .map((s) => ({ h2: s.title, paragraphs: s.paragraphs })),
       c.whenYouHaveRight?.length && { h2: "Quando você tem direito", paragraphs: [], list: c.whenYouHaveRight },
       c.documents?.length && { h2: "Documentos necessários", paragraphs: [], list: c.documents },
       c.deadlines && { h2: "Prazos", paragraphs: [c.deadlines] },

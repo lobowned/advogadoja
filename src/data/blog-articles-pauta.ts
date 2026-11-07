@@ -274,4 +274,143 @@ export const pautaArticles: BlogArticle[] = [
     relatedActions: ["auxilio-doenca", "aposentadoria"],
     updatedAt: "2026-11-07",
   },
+
+  // ============================================================
+  // 4. CONTA DE LUZ DA COELBA ALTA
+  // Conferido em 07/11/2026: Resolução Normativa ANEEL 1.000/2021 (www2.aneel.gov.br/cedoc/
+  // ren20211000.html), arts. 252 a 255, 323, 357, 408 e 421 e anexo sobre suspensão; canais
+  // da Neoenergia Coelba em neoenergia.com/web/bahia/sua-casa/canais-de-atendimento.
+  // ============================================================
+  {
+    id: "conta-de-luz-coelba-alta",
+    nicheId: "consumidor",
+    slug: "conta-de-luz-coelba-alta",
+    title: "Conta de Luz da Coelba Alta ou com Erro: Como Contestar",
+    metaTitle: "Conta de Luz da Coelba Alta: Como Contestar e Pedir Revisão",
+    metaDescription:
+      "Conta da Coelba alta? Como reclamar, prazos de resposta, verificação do medidor, devolução em dobro e quando a luz não pode ser cortada.",
+    keywords: [
+      "conta de luz coelba alta",
+      "conta de luz coelba",
+      "contestar conta de luz",
+      "neoenergia coelba reclamação",
+      "conta de luz alta o que fazer",
+      "devolução em dobro conta de luz",
+    ],
+    excerpt:
+      "Se a conta da Neoenergia Coelba veio muito acima do normal, reclame primeiro na distribuidora: ela tem 5 dias úteis para resolver (10 se precisar de visita). Veja como pedir a verificação do medidor, quando a devolução é em dobro e as regras para o corte.",
+    content: {
+      intro:
+        "Em resumo: se a conta da Neoenergia Coelba veio muito acima do normal, compare a leitura impressa na fatura com o número do medidor e reclame na própria Coelba (telefone 116, WhatsApp (71) 3370-6350, aplicativo ou site), anotando o protocolo. A distribuidora tem até 5 dias úteis para resolver a reclamação, ou 10 dias úteis se precisar de visita técnica (art. 408 da Resolução ANEEL 1.000/2021). Se não resolver, recorra à Ouvidoria da Coelba (0800 071 7676) e depois à ANEEL, ao Procon ou ao Juizado Especial. O que foi cobrado a mais deve ser devolvido em dobro, com correção, salvo nas exceções da norma.",
+      whatIs:
+        "Conta alta pode ter várias causas: leitura errada ou estimada, defeito no medidor, consumo de outro imóvel lançado na sua unidade, acúmulo de leituras que não foram feitas, bandeira tarifária mais cara ou aumento real de consumo, como um aparelho com defeito ou uma fuga de corrente. As regras de faturamento, reclamação, inspeção do medidor e devolução estão na Resolução Normativa ANEEL 1.000/2021, e o Código de Defesa do Consumidor também vale para a relação com a distribuidora (art. 42, parágrafo único, sobre cobrança indevida).",
+      whenYouHaveRight: [
+        "Solução da reclamação em até 5 dias úteis, ou 10 dias úteis quando for preciso visita técnica, contados do protocolo (art. 408 da Resolução ANEEL 1.000/2021)",
+        "Resposta da Ouvidoria em até 10 dias úteis, com a informação de que você pode levar o caso à ANEEL (art. 421)",
+        "Devolução em dobro do que pagou a mais, corrigida pelo IPCA e com juros de 1% ao mês, salvo se a distribuidora provar que o erro foi seu ou de terceiro, nas condições da norma (art. 323)",
+        "Inspeção do medidor e, se discordar do resultado, verificação pelo INMETRO pedida em até 15 dias do relatório (arts. 252 e 253)",
+        "Troca do medidor com defeito em até 30 dias e conta refeita pelos critérios da ANEEL, como a média dos últimos 12 meses de medição normal (arts. 252 e 255)",
+        "Aviso escrito de corte com pelo menos 15 dias de antecedência quando a conta está atrasada; corte só em dia útil, das 8h às 18h, nunca na sexta-feira ou na véspera de feriado",
+        "Nenhum corte por conta vencida há mais de 90 dias, salvo impedimento justificado (art. 357)",
+      ],
+      documents: [
+        "Faturas dos últimos 12 meses, para mostrar o consumo normal",
+        "Foto do medidor com a leitura e a data",
+        "Número da unidade consumidora, que aparece na fatura",
+        "Protocolos dos atendimentos na Coelba e na Ouvidoria",
+        "Comprovantes de pagamento das contas contestadas",
+        "Termo de Ocorrência e Inspeção (TOI) e relatório, se houve inspeção ou troca de medidor",
+      ],
+      deadlines:
+        "A Coelba tem 5 dias úteis para resolver a reclamação, ou 10 dias úteis se precisar de visita técnica. A Ouvidoria responde em até 10 dias úteis. Depois do relatório da inspeção do medidor, você tem 15 dias para pedir a verificação pelo INMETRO. Para a Justiça também há prazos: quanto antes a reclamação for feita, mais fácil provar o erro e recuperar o valor.",
+      faq: [
+        {
+          question: "O que fazer quando a conta da Coelba vem muito alta?",
+          answer:
+            "Primeiro, confira a leitura impressa na fatura com o número do medidor e compare o consumo com os meses anteriores. Depois, reclame na Coelba pelo 116, pelo WhatsApp (71) 3370-6350, pelo aplicativo ou pelo site, peça a revisão da fatura e anote o protocolo. Se a resposta não resolver, vá à Ouvidoria (0800 071 7676) e, depois, à ANEEL, ao Procon ou ao Juizado Especial.",
+        },
+        {
+          question: "Quanto tempo a Coelba tem para responder a reclamação?",
+          answer:
+            "Até 5 dias úteis, se não precisar de visita técnica, ou até 10 dias úteis, se precisar, contados do protocolo (art. 408 da Resolução ANEEL 1.000/2021). Se o prazo vencer ou você discordar da resposta, a Ouvidoria tem até 10 dias úteis para responder (art. 421).",
+        },
+        {
+          question: "Tenho direito à devolução em dobro?",
+          answer:
+            "Em regra, sim. A resolução da ANEEL manda devolver em dobro o que foi faturado a mais, com correção pelo IPCA e juros de 1% ao mês, independentemente de culpa da distribuidora (art. 323). A devolução é simples só se a distribuidora provar que o erro foi causado por você ou, em condições específicas, por terceiro. O Código de Defesa do Consumidor tem regra parecida (art. 42, parágrafo único).",
+        },
+        {
+          question: "Como pedir a verificação do medidor?",
+          answer:
+            "Peça à Coelba a inspeção do medidor. Ela deve entregar o Termo de Ocorrência e Inspeção e um relatório com o resultado. Se discordar, você tem 15 dias para pedir a verificação pelo INMETRO ou órgão delegado (art. 253). Você só paga a inspeção e a verificação se elas mostrarem que o medidor funciona bem (art. 254).",
+        },
+        {
+          question: "A Coelba pode cobrar consumo de meses anteriores?",
+          answer:
+            "Se faturou a menos por erro dela, pode cobrar a diferença limitada aos últimos 3 ciclos de faturamento e deve parcelar em número de parcelas igual ao dobro do período do erro, se você quiser (art. 323, I e § 1º). Casos de irregularidade no medidor seguem outro procedimento, com regras próprias de apuração e defesa.",
+        },
+        {
+          question: "A Coelba pode cortar a luz enquanto eu contesto a conta?",
+          answer:
+            "O corte por falta de pagamento exige aviso escrito com pelo menos 15 dias de antecedência e só pode ser feito em dia útil, das 8h às 18h, nunca na sexta-feira ou na véspera de feriado; e não pode acontecer por conta vencida há mais de 90 dias. Para não correr risco, pague as contas seguintes em dia e, se possível, a contestada também, pedindo a devolução do que for indevido. Corte irregular pode ser levado ao Juizado com pedido urgente de religação.",
+        },
+        {
+          question: "Conta mais cara por bandeira tarifária é erro?",
+          answer:
+            "Não. As bandeiras (verde, amarela e vermelha) mudam o valor do kWh conforme o custo de geração de energia no mês, e a cor aparece na fatura. Se o consumo em kWh está normal e só o valor subiu, a causa provável é a bandeira ou o reajuste da tarifa.",
+        },
+        {
+          question: "Onde reclamar se a Coelba não resolver?",
+          answer:
+            "Na Ouvidoria da Neoenergia Coelba (0800 071 7676, de segunda a sexta, das 8h às 18h, ou pelo portal da Ouvidoria), na ANEEL, no Procon da Bahia ou no consumidor.gov.br. Se nada resolver, o Juizado Especial Cível atende causas de até 20 salários mínimos sem advogado e de até 40 salários mínimos com advogado.",
+        },
+      ],
+      sections: [
+        {
+          title: "Por que a conta pode ter vindo alta",
+          paragraphs: [
+            "Antes de reclamar, olhe a fatura com calma. Ela mostra a leitura anterior, a leitura atual, o número de dias do período e o consumo em kWh. Compare a leitura atual com o número que aparece no seu medidor: se o medidor marca menos do que a fatura, há erro de leitura. Veja também se a conta diz que o consumo foi estimado ou calculado pela média, o que acontece quando o leiturista não consegue ler o medidor.",
+            "Compare o consumo com os últimos 12 meses. Um salto grande sem mudança na casa (mais gente, ar-condicionado novo, chuveiro elétrico mais usado) indica problema. Se o consumo em kWh está normal e só o valor subiu, a causa provável é a bandeira tarifária ou o reajuste anual. Aparelho com defeito e fuga de corrente também aumentam o consumo: um eletricista pode testar desligando o disjuntor geral e observando se o medidor continua girando.",
+          ],
+        },
+        {
+          title: "Como reclamar na Coelba",
+          paragraphs: [
+            "Os canais da Neoenergia Coelba são o telefone 116 (24 horas), o WhatsApp (71) 3370-6350 (24 horas), o aplicativo e a área do cliente no site. Peça a revisão da fatura, explique o motivo (leitura errada, consumo fora do padrão, conta de outro imóvel) e envie a foto do medidor. Anote o número do protocolo e a data.",
+            "Pela Resolução ANEEL 1.000/2021, a reclamação deve ser resolvida em até 5 dias úteis, ou em até 10 dias úteis se houver visita técnica, contados do protocolo. Se a Coelba precisar de visita, deve avisar no registro da reclamação ou dentro dos 5 primeiros dias úteis.",
+          ],
+        },
+        {
+          title: "Inspeção e verificação do medidor",
+          paragraphs: [
+            "Se a suspeita é o medidor, peça a inspeção. A distribuidora emite o Termo de Ocorrência e Inspeção (TOI), envia um relatório com as variações encontradas e, se houver defeito, troca o equipamento em até 30 dias e refaz a conta. A correção segue a ordem prevista na norma: fator de correção apurado em laboratório, média dos últimos 12 meses de medição normal ou o consumo depois da troca.",
+            "Se você discordar do relatório, tem 15 dias para pedir que o medidor seja verificado pelo INMETRO ou órgão delegado; os lacres não podem ser rompidos antes disso. Quem paga a inspeção e a verificação é o consumidor apenas quando ele as pediu e o medidor funcionava bem; nos demais casos, é a distribuidora (podendo cobrar só o frete pelos Correios).",
+          ],
+        },
+        {
+          title: "Devolução em dobro e cobrança de diferenças",
+          paragraphs: [
+            "Quando a distribuidora fatura a mais, deve devolver o valor até o segundo ciclo de faturamento depois de constatar o erro, em dobro, corrigido pelo IPCA e com juros de 1% ao mês (art. 323 da Resolução ANEEL 1.000/2021). A devolução é simples apenas se a distribuidora provar que o erro foi causado pelo consumidor ou, em condições específicas, por terceiro.",
+            "O inverso também tem limite: se a distribuidora cobrou a menos por erro dela, só pode buscar a diferença dos últimos 3 ciclos, e deve oferecer parcelamento em número de parcelas igual ao dobro do período do erro. Casos de irregularidade no medidor seguem outro procedimento, com direito de defesa.",
+          ],
+        },
+        {
+          title: "Quando a luz não pode ser cortada",
+          paragraphs: [
+            "O corte por falta de pagamento precisa de aviso escrito e específico, entregue com comprovação ou impresso em destaque na fatura, com pelo menos 15 dias de antecedência. A suspensão só pode ser feita das 8h às 18h, em dia útil, e é proibida às sextas-feiras e nas vésperas de feriado.",
+            "Passados 90 dias do vencimento da fatura não paga, a distribuidora não pode mais cortar por causa dela, salvo se provar que foi impedida por ordem judicial ou outro motivo justificável (art. 357). Pagar as contas seguintes em dia, enquanto a reclamação corre, reduz o risco de corte.",
+          ],
+        },
+        {
+          title: "Se a Coelba não resolver",
+          paragraphs: [
+            "O próximo passo é a Ouvidoria da Neoenergia Coelba (0800 071 7676, de segunda a sexta, das 8h às 18h, ou portal da Ouvidoria), que responde em até 10 dias úteis. Persistindo a discordância, o caso pode ir à ANEEL, ao Procon da Bahia ou ao consumidor.gov.br. Guarde todos os protocolos: eles mostram que você tentou resolver.",
+            "Se nada funcionar, o Juizado Especial Cível julga causas de até 40 salários mínimos; até 20 salários mínimos não é obrigatório ter advogado. Na ação é possível pedir a revisão da conta, a devolução do que foi pago a mais e, em caso de corte indevido, a religação com urgência. Para conta de água alta da Embasa, o caminho é parecido: reclamação com protocolo, ouvidoria, Procon e Juizado.",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["cobranca-indevida"],
+    updatedAt: "2026-11-07",
+  },
 ];

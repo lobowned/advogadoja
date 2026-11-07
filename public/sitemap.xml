@@ -675,7 +675,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- ===== ARTIGOS DO BLOG (LEGACY) (88 URLs) ===== -->
+  <!-- ===== ARTIGOS DO BLOG (LEGACY) (89 URLs) ===== -->
   <url>
     <loc>https://riccioadvocacia.online/artigos/trabalhista/demissao-sem-justa-causa</loc>
     <lastmod>2026-11-05</lastmod>
@@ -1200,6 +1200,12 @@
   </url>
   <url>
     <loc>https://riccioadvocacia.online/artigos/previdenciario/auxilio-acidente</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccioadvocacia.online/artigos/consumidor/conta-de-luz-coelba-alta</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

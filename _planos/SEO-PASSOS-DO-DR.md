@@ -2,14 +2,22 @@
 
 Tudo o que dependia do código já está no GitHub. Estes passos precisam da sua conta, assinatura ou pagamento.
 
-## 0. URGENTE: dados de clientes expostos (achado em 06/11)
-- O banco do site (Lovable Cloud) tem regras que deixam **qualquer pessoa ler** os contatos (`leads`), os casos, as respostas do questionário e as análises, e **alterar** contatos. A pasta de documentos enviados (`case-documents`) deixa qualquer um ver e enviar arquivos. O próprio Lovable marca isso como crítico (Mais → Segurança: 10 tabelas e 2 regras de arquivos).
-- A página **/admin** mostrava e exportava esses contatos **sem login**. Ela saiu do ar em 06/11 (o código ficou guardado em `src/pages/admin`).
-- Falta fechar as regras do banco. O Lovable oferece "Try to fix" de graça, mas a correção mexe no banco de produção e pode quebrar o chat do site, que lê e atualiza o próprio contato pelo navegador. Por isso precisa da sua autorização. O caminho seguro é o chat passar a gravar pelo servidor (função) e só um login de administrador ler os contatos.
+## 0. Dados de clientes: RESOLVIDO (07/11)
+- A página /admin, que mostrava os contatos sem login, saiu do ar.
+- Em 07/11, às 2h26, o banco foi fechado com a correção grátis do Lovable, autorizada por você. Teste como visitante: nenhum contato, caso ou arquivo aparece.
+- O questionário e a avaliação no fim do chat foram ajustados para o banco fechado e estão no ar desde a publicação de 07/11 à tarde. A conversa do chat e o aviso de novo contato no seu WhatsApp nunca pararam.
+- Ficou de fora só um aviso de login ("Authentication & account security"), que não expõe dados.
 
-## 1. Publicar
+## 1. Publicar (de novo)
 No Lovable, projeto "Riccio Advocacia": botão **Publicar → Publicar alterações**.
-Sem isso, nada do que foi feito aparece no site no ar.
+A publicação de 07/11 à tarde levou a página do advogado, o artigo de aposentadoria 2026 e as correções de velocidade e de dados estruturados.
+Estão no GitHub esperando a próxima publicação:
+- artigos novos de auxílio-acidente, conta de luz da Coelba e inquérito policial;
+- artigo de pensão alimentícia atrasada reescrito (corrige dois erros jurídicos);
+- texto completo dos artigos no HTML que Bing e os robôs de IA leem;
+- artigos relacionados escolhidos por assunto e listas dos guias sem repetição.
+
+Depois de publicar, me avise: eu aviso o Bing (IndexNow) e peço indexação no Google.
 
 ## 2. Domínio próprio: FEITO (riccioadvocacia.online)
 O site responde em **https://riccioadvocacia.online** e o endereço antigo (riccio-advocacia.lovable.app) redireciona para ele.
@@ -44,6 +52,8 @@ Texto de apresentação para usar no JusBrasil, LinkedIn e no Google Meu Negóci
 No JusBrasil, publique 1 artigo por mês (pode ser a versão resumida de um guia do site) com o link para o guia completo.
 
 ## Para decidir
+- Velocidade no celular: os códigos do Google Ads e do GTM pesam uns 490 KB e atrasam a página. Dá para carregá-los alguns segundos depois, mas isso mexe na medição dos anúncios. Só faço com o seu "pode".
+- Página do advogado (/advogado-gilberto-riccio): se tiver perfil profissional no LinkedIn, no JusBrasil ou no Instagram, me passe os endereços para ligar à página (o Google usa isso para confirmar quem é o autor).
 - Horário de atendimento: a página inicial diz seg–sex 8h–20h e a área do INSS (/prev) diz 9h–18h. Qual vale?
 - O rodapé da página /criminal cita Camaçari; o resto do site cita Salvador.
 - A página /criminal diz que o escritório atua em "tribunais superiores". Se não for o caso, eu tiro.

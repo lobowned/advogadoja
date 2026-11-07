@@ -521,7 +521,8 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_recent_case: { Args: { _case_id: string }; Returns: boolean }
+      is_recent_protocol: { Args: { _protocol: string }; Returns: boolean }
     }
     Enums: {
       qa_category:

@@ -5,7 +5,7 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sat, 07 Nov 2026 16:50:50 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 16:54:42 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
@@ -47,6 +47,15 @@
       <category>consumidor</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Conta da Coelba alta? Como reclamar, prazos de resposta, verificação do medidor, devolução em dobro e quando a luz não pode ser cortada.</description>
+    </item>
+    <item>
+      <title>Inquérito Policial: O Que É, Prazos e Direitos do Investigado</title>
+      <link>https://riccioadvocacia.online/artigos/penal/inquerito-policial</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/penal/inquerito-policial</guid>
+      <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
+      <category>penal</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Inquérito policial: como começa, prazos de 10 e 30 dias, direito ao silêncio, acesso do advogado, arquivamento e acordo de não persecução penal.</description>
     </item>
     <item>
       <title>Quanto Cobra Advogado Trabalhista | Honorários OAB/BA</title>
@@ -452,15 +461,6 @@
       <category>consumidor</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Nome sujo por dívida que você não tem ou já pagou? Entenda a negativação indevida, a Súmula 385 do STJ, os prazos de baixa e como pedir exclusão e indenização.</description>
-    </item>
-    <item>
-      <title>Plano de Saúde Negou Cirurgia ou Exame | Direitos e Liminar</title>
-      <link>https://riccioadvocacia.online/artigos/consumidor/plano-saude-negativa-cobertura</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/consumidor/plano-saude-negativa-cobertura</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>consumidor</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>O plano negou cirurgia, exame, internação ou tratamento? Entenda o rol da ANS após a Lei 14.454/2022, carência, prazos de autorização e como pedir liminar na urgência.</description>
     </item>
   </channel>
 </rss>

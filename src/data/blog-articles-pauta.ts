@@ -413,4 +413,140 @@ export const pautaArticles: BlogArticle[] = [
     relatedActions: ["cobranca-indevida"],
     updatedAt: "2026-11-07",
   },
+
+  // ============================================================
+  // 5. INQUÉRITO POLICIAL
+  // Conferido em 07/11/2026 no Planalto (texto em vigor): CPP arts. 4º a 6º, 10, 14, 17, 20, 28
+  // e 28-A; Lei 8.906/1994, art. 7º, XIV, XXI e §§ 10 e 11; Constituição, art. 5º, LXIII.
+  // ============================================================
+  {
+    id: "inquerito-policial",
+    nicheId: "penal",
+    slug: "inquerito-policial",
+    title: "Inquérito Policial: O Que É, Prazos e Direitos de Quem É Investigado",
+    metaTitle: "Inquérito Policial: O Que É, Prazos e Direitos do Investigado",
+    metaDescription:
+      "Inquérito policial: como começa, prazos de 10 e 30 dias, direito ao silêncio, acesso do advogado, arquivamento e acordo de não persecução penal.",
+    keywords: [
+      "inquérito policial",
+      "inquérito policial o que é",
+      "prazo do inquérito policial",
+      "intimado para depor na delegacia",
+      "consulta inquérito policial",
+      "arquivamento do inquérito",
+      "acordo de não persecução penal",
+    ],
+    excerpt:
+      "O inquérito policial é a investigação feita pela polícia antes de existir processo. Veja como começa, quanto tempo dura, quais são os direitos de quem é investigado e como ele termina.",
+    content: {
+      intro:
+        "Em resumo: o inquérito policial é a investigação feita pela polícia (em regra, a Polícia Civil do estado) para apurar um possível crime antes de existir processo. Começa por boletim de ocorrência, prisão em flagrante, pedido do Ministério Público ou do juiz, ou por iniciativa do delegado. Deve terminar em 10 dias se o investigado estiver preso e em 30 dias se estiver solto, prazo que o juiz pode estender quando o caso é difícil. Quem é investigado tem direito de ficar calado, de ter advogado no depoimento e de o advogado examinar os autos. No fim, o delegado faz um relatório e o Ministério Público decide se acusa, se propõe acordo ou se arquiva.",
+      whatIs:
+        "É um procedimento conduzido pelo delegado de polícia para reunir provas sobre um fato que pode ser crime e sobre quem o praticou: depoimentos, perícias, documentos, imagens. Ainda não é processo e ninguém é condenado nele: o inquérito serve para o Ministério Público decidir se há elementos para acusar (arts. 4º e seguintes do Código de Processo Penal). Ser chamado à delegacia não significa ser acusado; a pessoa pode ser ouvida como testemunha, como vítima ou como investigada.",
+      whenYouHaveRight: [
+        "Ficar calado e não produzir prova contra si mesmo (art. 5º, LXIII, da Constituição)",
+        "Ser acompanhado por advogado no depoimento ou interrogatório, sob pena de nulidade absoluta (art. 7º, XXI, da Lei 8.906/1994)",
+        "Ter os autos examinados pelo advogado, que pode copiar peças, mesmo sem procuração; com procuração, se houver sigilo (art. 7º, XIV e § 10, e Súmula Vinculante 14)",
+        "Pedir diligências ao delegado, como ouvir uma testemunha ou fazer uma perícia (art. 14 do Código de Processo Penal)",
+        "Não ser levado à força para ser interrogado (STF, ADPFs 395 e 444)",
+        "Ter indiciamento fundamentado pelo delegado, com análise técnico-jurídica do fato (art. 2º, § 6º, da Lei 12.830/2013)",
+      ],
+      documents: [
+        "A intimação recebida, com data, hora e endereço da delegacia",
+        "Documento de identidade com CPF",
+        "Documentos que ajudem a explicar o fato: mensagens, recibos, contratos, fotos e vídeos",
+        "Nome e contato de testemunhas",
+        "Boletim de ocorrência, se você registrou algum sobre o mesmo fato",
+        "Contato do advogado, para ir ao depoimento acompanhado",
+      ],
+      deadlines:
+        "O inquérito deve terminar em 10 dias se o investigado estiver preso, contados da prisão, e em 30 dias se estiver solto (art. 10 do Código de Processo Penal). Com investigado solto e fato de difícil apuração, o juiz pode devolver os autos à polícia para novas diligências, no prazo que marcar (art. 10, § 3º). Quando o inquérito é arquivado, a vítima é comunicada e pode pedir revisão em 30 dias (art. 28, § 1º).",
+      faq: [
+        {
+          question: "O que é inquérito policial?",
+          answer:
+            "É a investigação feita pela polícia, sob o comando do delegado, para apurar se um crime aconteceu e quem o cometeu. Não é processo e não condena ninguém: serve para o Ministério Público decidir se acusa, se propõe acordo ou se pede o arquivamento.",
+        },
+        {
+          question: "Fui intimado para depor na delegacia. O que fazer?",
+          answer:
+            "Veja na intimação se você foi chamado como testemunha, vítima ou investigado. Testemunha tem o dever de comparecer e de dizer a verdade. Investigado tem o direito de ficar calado e de ir com advogado, que pode examinar os autos antes do depoimento. Antes de entregar documentos ou dar sua versão, converse com o advogado.",
+        },
+        {
+          question: "Quanto tempo dura um inquérito policial?",
+          answer:
+            "A lei fixa 10 dias para investigado preso e 30 dias para investigado solto (art. 10 do CPP). Com investigado solto, o prazo costuma ser estendido pelo juiz quando ainda há diligências a fazer, e há inquéritos que levam meses ou anos.",
+        },
+        {
+          question: "Como consultar um inquérito policial?",
+          answer:
+            "Pelo advogado: ele pode examinar os autos na delegacia ou no sistema eletrônico, mesmo sem procuração, e copiar peças; se o inquérito tiver sigilo, precisa de procuração (art. 7º, XIV e § 10, da Lei 8.906/1994). Diligências em andamento e ainda não documentadas podem ter o acesso limitado (§ 11).",
+        },
+        {
+          question: "Ser indiciado é o mesmo que ser condenado?",
+          answer:
+            "Não. O indiciamento é o ato fundamentado em que o delegado aponta quem, na visão dele, é o provável autor do fato. Quem decide se haverá acusação é o Ministério Público, e só o juiz, depois de um processo com direito de defesa, pode condenar.",
+        },
+        {
+          question: "O delegado pode arquivar o inquérito?",
+          answer:
+            "Não (art. 17 do CPP). O arquivamento é decidido pelo Ministério Público, que comunica a vítima, o investigado e a polícia, com controle da própria instituição e do Judiciário nos termos fixados pelo STF (ADI 6.298). A vítima pode pedir revisão em 30 dias.",
+        },
+        {
+          question: "O que é o acordo de não persecução penal?",
+          answer:
+            "É um acordo que o Ministério Público pode propor, em vez de denunciar, quando o crime não teve violência ou grave ameaça e a pena mínima é inferior a 4 anos, desde que o investigado confesse formalmente (art. 28-A do CPP). Ele cumpre condições, como reparar o dano ou prestar serviços à comunidade, e, cumpridas, a punibilidade é extinta. Não cabe, entre outros casos, para reincidente nem em violência doméstica ou contra a mulher.",
+        },
+        {
+          question: "Preciso de advogado no inquérito?",
+          answer:
+            "A lei não obriga, mas o investigado tem direito a ser assistido, e o interrogatório feito com o advogado impedido de participar é nulo. O acompanhamento desde o início ajuda a pedir diligências, a preparar o depoimento e a avaliar um eventual acordo. Quem não pode pagar pode procurar a Defensoria Pública.",
+        },
+        {
+          question: "A vítima pode acompanhar o inquérito?",
+          answer:
+            "Sim. A vítima pode pedir diligências ao delegado (art. 14 do CPP), ser assistida por advogado e é comunicada se o Ministério Público arquivar o caso, podendo pedir revisão em 30 dias (art. 28, § 1º).",
+        },
+      ],
+      sections: [
+        {
+          title: "Como o inquérito começa",
+          paragraphs: [
+            "Nos crimes de ação pública, o inquérito começa por iniciativa do delegado, por requisição do juiz ou do Ministério Público ou a pedido da vítima (art. 5º do Código de Processo Penal). Na prática, o caminho mais comum é o boletim de ocorrência ou a prisão em flagrante. Nos crimes em que a lei exige representação da vítima, como, em regra, a ameaça, a investigação só começa se ela manifestar essa vontade.",
+            "Crimes de menor potencial ofensivo, com pena máxima de até 2 anos, normalmente não geram inquérito: a polícia faz um termo circunstanciado e o caso vai direto ao Juizado Especial Criminal.",
+          ],
+        },
+        {
+          title: "O que acontece durante a investigação",
+          paragraphs: [
+            "O delegado ouve a vítima, as testemunhas e o investigado, pede perícias, colhe documentos e imagens e pode representar ao juiz por medidas como busca e apreensão, quebra de sigilo bancário ou telefônico e prisão preventiva. Essas medidas dependem de ordem judicial: a polícia não pode, por conta própria, entrar numa casa fora do flagrante nem acessar dados protegidos.",
+            "O inquérito tem o sigilo necessário para a investigação funcionar (art. 20), mas esse sigilo não vale contra o advogado do investigado quanto às provas já documentadas (Súmula Vinculante 14).",
+          ],
+        },
+        {
+          title: "Os direitos de quem é investigado",
+          paragraphs: [
+            "O investigado pode ficar calado, e o silêncio não pode ser usado contra ele. Pode ser acompanhado por advogado no interrogatório, e impedir essa assistência torna o ato nulo. O advogado pode examinar os autos, copiar peças, apresentar razões e quesitos e pedir diligências. Desde 2018, por decisão do STF, o investigado não pode ser levado à força para ser interrogado.",
+            "Esses direitos valem desde o primeiro contato com a polícia. Por isso, quem recebe intimação como investigado deve procurar um advogado antes do depoimento, e não depois.",
+          ],
+        },
+        {
+          title: "Como o inquérito termina",
+          paragraphs: [
+            "Concluída a investigação, o delegado faz um relatório e envia os autos ao Judiciário e ao Ministério Público (art. 10, § 1º). O Ministério Público pode oferecer denúncia, que abre o processo; propor acordo de não persecução penal, quando cabível; pedir mais diligências; ou arquivar o caso, comunicando a vítima, o investigado e a polícia.",
+            "O delegado não pode arquivar o inquérito por conta própria. Arquivado o caso, ele pode ser reaberto se surgirem provas novas.",
+          ],
+        },
+        {
+          title: "Inquérito na Bahia",
+          paragraphs: [
+            "Na Bahia, a maior parte dos inquéritos é conduzida pela Polícia Civil, nas delegacias territoriais e especializadas; crimes federais ficam com a Polícia Federal. Concluído, o inquérito segue para a comarca do Tribunal de Justiça da Bahia onde o fato aconteceu, ou para a Justiça Federal, conforme o caso.",
+            "Quem é investigado e não tem condições de pagar advogado pode procurar a Defensoria Pública. A vítima também pode ter advogado para acompanhar a investigação e pedir diligências.",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["prisao-flagrante", "habeas-corpus"],
+    updatedAt: "2026-11-07",
+  },
 ];

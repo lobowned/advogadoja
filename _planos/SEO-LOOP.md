@@ -22,9 +22,9 @@ Objetivo: mais visitas do Google e do Bing para https://riccioadvocacia.online.
 - [x] 7. Artigo novo 3 da pauta.
 - [x] 8. Artigo novo 4 da pauta.
 - [x] 9. Artigo novo 5 da pauta.
-- [ ] 10. Search Console (quando o Chrome responder): páginas indexadas, erros, pedir indexação das páginas novas dentro da cota do dia.
+- [x] 10. Search Console (quando o Chrome responder): páginas indexadas, erros, pedir indexação das páginas novas dentro da cota do dia.
 - [x] 11. Links internos: páginas de área e artigos antigos apontando para os artigos novos.
-- [ ] 12. Fechamento: lista do que publicar e IndexNow das URLs novas depois do Publish.
+- [x] 12. Fechamento: lista do que publicar e IndexNow das URLs novas depois do Publish.
 - [x] 13. Artigo 6 da pauta: divórcio em cartório e online.
 - [x] 14. Artigo 7 da pauta: lesão corporal.
 - [x] 15. Artigo 8 da pauta: crime de ameaça.
@@ -60,3 +60,4 @@ Formato dos artigos: objeto BlogArticle (src/data/blog-articles.ts), rota /artig
 - 07/11 · item 18 · commit "seo: /prev/sobre com HTML estatico". O título da página era montado com expressão ("Sobre — {nome}") e o gerador não lia; virou texto fixo e descritivo ("Sobre o Dr. Gilberto Riccio | Advogado Previdenciário (INSS)"), com descrição mais específica. Agora as 351 URLs do sitemap têm HTML estático.
 - 07/11 · item 19 · commit "seo: boletim de ocorrencia online na Bahia". /artigos/penal/boletim-de-ocorrencia-online-bahia: passo a passo na Delegacia Virtual do Ministério da Justiça (link oficial no site da SSP-BA), login gov.br, o que não pode ser feito online (menor de idade, arrombamento, subtração de veículo, arma, munição, explosivos, medicamentos, produtos químicos), como acompanhar, B.O. falso (art. 340 do CP) e golpe com Pix. Conferido nas orientações oficiais da Delegacia Virtual para a Bahia. 7 perguntas.
 - 07/11 · item 20 · commit "seo: reclamacao no Procon-BA e no consumidor.gov.br". /artigos/consumidor/reclamacao-procon-bahia-consumidor-gov: formulário on-line e postos do Procon-BA (conferidos no site da SJDH), consumidor.gov.br (empresa responde em até 10 dias, consumidor avalia em até 20, conferido no site do serviço), prazos do CDC (arts. 26 e 27), devolução em dobro, Juizado (até 40 salários mínimos; até 20 sem advogado) e agências de cada setor. Sitemap com 353 URLs. 6 perguntas.
+- 07/11 · itens 10 e 12 · Publicado pelo Dr. às 17h57 (conferido no ar: os 8 artigos novos, as 3 reescritas, a /prev/sobre, artigos antigos com 10 seções e relacionados no HTML estático, sitemap com 353 URLs). IndexNow aceitou as 353 URLs (HTTP 200). Search Console: a cota diária de "Solicitar indexação" da propriedade nova acabou depois de 2 pedidos (página do advogado e aposentadoria 2026); sitemap reenviado com as 353 páginas. Próximos dias: pedir indexação de 1 ou 2 por dia, nesta ordem: inquérito policial, auxílio-acidente, conta de luz da Coelba, pensão atrasada, perícia do INSS, lesão corporal, crime de ameaça, divórcio em cartório, usucapião, B.O. online na Bahia, Procon-BA.

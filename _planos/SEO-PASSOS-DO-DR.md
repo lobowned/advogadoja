@@ -2,6 +2,11 @@
 
 Tudo o que dependia do código já está no GitHub. Estes passos precisam da sua conta, assinatura ou pagamento.
 
+## 0. URGENTE: dados de clientes expostos (achado em 06/11)
+- O banco do site (Lovable Cloud) tem regras que deixam **qualquer pessoa ler** os contatos (`leads`), os casos, as respostas do questionário e as análises, e **alterar** contatos. A pasta de documentos enviados (`case-documents`) deixa qualquer um ver e enviar arquivos. O próprio Lovable marca isso como crítico (Mais → Segurança: 10 tabelas e 2 regras de arquivos).
+- A página **/admin** mostrava e exportava esses contatos **sem login**. Ela saiu do ar em 06/11 (o código ficou guardado em `src/pages/admin`).
+- Falta fechar as regras do banco. O Lovable oferece "Try to fix" de graça, mas a correção mexe no banco de produção e pode quebrar o chat do site, que lê e atualiza o próprio contato pelo navegador. Por isso precisa da sua autorização. O caminho seguro é o chat passar a gravar pelo servidor (função) e só um login de administrador ler os contatos.
+
 ## 1. Publicar
 No Lovable, projeto "Riccio Advocacia": botão **Publicar → Publicar alterações**.
 Sem isso, nada do que foi feito aparece no site no ar.

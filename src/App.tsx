@@ -86,8 +86,6 @@ import {
   LiminarOftalmologicaLanding,
   ProblemasVooLanding,
   CartaoConsignadoLanding,
-  LeadsDashboard,
-  QADashboard,
 } from "./routes/pages";
 
 // Components
@@ -351,10 +349,9 @@ const AnimatedRoutes = () => {
           }
         />
 
-        {/* Admin */}
-        <Route path="/admin" element={<LeadsDashboard />} />
-        <Route path="/admin/leads" element={<LeadsDashboard />} />
-        <Route path="/admin/qa" element={<QADashboard />} />
+        {/* Admin (/admin, /admin/leads, /admin/qa) FORA DO AR desde 06/11/2026: não tinha login e mostrava
+            e exportava os contatos dos clientes para qualquer visitante. Volta só com autenticação de verdade
+            e com as regras do banco (RLS) fechadas — ver _planos/SEO-PASSOS-DO-DR.md. */}
 
         {/* Área /prev - Advogado Previdenciário */}
         <Route

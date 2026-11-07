@@ -88,8 +88,7 @@ export const ProblemasVooLanding = lazyPage(() => import("@/pages/consumer/Probl
 export const CartaoConsignadoLanding = lazyPage(() => import("@/pages/consumer/CartaoConsignadoLanding"));
 
 // Admin
-export const LeadsDashboard = lazyPage(() => import("@/pages/admin/LeadsDashboard"));
-export const QADashboard = lazyPage(() => import("@/pages/admin/QADashboard"));
+// LeadsDashboard e QADashboard fora do ar (sem login; ver App.tsx). Os arquivos continuam em src/pages/admin.
 
 type Preloadable = { preload: () => Promise<unknown> };
 
@@ -151,8 +150,6 @@ const ROUTE_PRELOADS: Array<[RegExp, Preloadable[]]> = [
   [/^\/advogado\/[^/]+$/, [CityLanding]],
   [/^\/conversao$/, [Conversao]],
   [/^\/riccioadvocacia$/, [RiccioAdvocacia]],
-  [/^\/admin(\/leads)?$/, [LeadsDashboard]],
-  [/^\/admin\/qa$/, [QADashboard]],
   [/^\/prev$/, [PrevHome]],
   [/^\/prev\/aposentadorias$/, [PrevAposentadorias]],
   [/^\/prev\/aposentadoria-por-idade$/, [PrevAposentadoriaIdade]],

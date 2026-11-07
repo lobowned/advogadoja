@@ -10,7 +10,7 @@ import { redirectedPaths } from "../src/data/article-redirects";
 import * as fs from "fs";
 import * as path from "path";
 
-const SITE = "https://riccio-advocacia.lovable.app";
+const SITE = "https://riccioadvocacia.online";
 const MAX_ITEMS = 50;
 
 function esc(s: string) {

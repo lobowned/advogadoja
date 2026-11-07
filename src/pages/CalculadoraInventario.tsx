@@ -21,7 +21,7 @@ const CalculadoraInventario = () => {
         <title>Calculadora de Inventário 2024 | Calcule ITCMD e Custos</title>
         <meta name="description" content="Calcule os custos do inventário: ITCMD, custas cartoriais e honorários. Simulador por estado com alíquotas atualizadas 2024." />
         <meta name="keywords" content="calculadora inventário, calcular itcmd, custos inventário, inventário extrajudicial, inventário judicial" />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-inventario" />
+        <link rel="canonical" href="https://riccioadvocacia.online/calculadora-inventario" />
         {webAppSchema && <script type="application/ld+json">{JSON.stringify(webAppSchema)}</script>}
         {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
         {breadcrumbSchema && <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>}

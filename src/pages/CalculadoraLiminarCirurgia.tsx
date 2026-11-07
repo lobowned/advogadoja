@@ -19,7 +19,7 @@ const CalculadoraLiminarCirurgia = () => {
     "@type": "WebApplication",
     "name": "Calculadora de Liminar para Cirurgia Negada",
     "description": "Calcule online e grátis a probabilidade de conseguir liminar para cirurgia negada pelo plano de saúde. Estimativa de tempo e indenização por danos morais.",
-    "url": "https://riccio-advocacia.lovable.app/calculadora-liminar-cirurgia",
+    "url": "https://riccioadvocacia.online/calculadora-liminar-cirurgia",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Web",
     "offers": {
@@ -83,11 +83,11 @@ const CalculadoraLiminarCirurgia = () => {
         <title>Calculadora Liminar Cirurgia Negada | Probabilidade e Indenização 2025</title>
         <meta name="description" content="Cirurgia negada pelo plano? Calcule grátis a probabilidade de conseguir liminar em 24-48h. Estimativa de danos morais. Advogado que atua em plano de saúde." />
         <meta name="keywords" content="calculadora liminar cirurgia, cirurgia negada plano saúde, probabilidade liminar, indenização cirurgia negada, tutela urgência saúde, advogado plano saúde" />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-liminar-cirurgia" />
+        <link rel="canonical" href="https://riccioadvocacia.online/calculadora-liminar-cirurgia" />
         <meta property="og:title" content="Calculadora Liminar Cirurgia Negada | Probabilidade e Tempo" />
         <meta property="og:description" content="Cirurgia negada? Calcule a probabilidade de conseguir liminar em 24-48h e estimativa de indenização." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://riccio-advocacia.lovable.app/calculadora-liminar-cirurgia" />
+        <meta property="og:url" content="https://riccioadvocacia.online/calculadora-liminar-cirurgia" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>

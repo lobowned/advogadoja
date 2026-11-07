@@ -22,7 +22,7 @@ const CalculadoraPensaoMorte = () => {
         <title>{`Calculadora de Pensão por Morte ${ANO_VIGENTE}: valor do benefício`}</title>
         <meta name="description" content="Calcule o valor da pensão por morte do INSS. Simulador com regras pós-reforma 2019. Descubra quanto os dependentes podem receber." />
         <meta name="keywords" content="calculadora pensão por morte, pensão por morte inss, valor pensão morte, benefício dependentes inss" />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-pensao-morte" />
+        <link rel="canonical" href="https://riccioadvocacia.online/calculadora-pensao-morte" />
         {webAppSchema && <script type="application/ld+json">{JSON.stringify(webAppSchema)}</script>}
         {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
         {breadcrumbSchema && <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>}

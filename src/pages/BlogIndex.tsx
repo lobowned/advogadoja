@@ -22,20 +22,20 @@ const BlogIndex = () => {
     "@type": "Blog",
     "name": "Blog Riccio Advocacia",
     "description": "Artigos sobre direitos do consumidor, trânsito e finanças, escritos pelo Dr. Gilberto Riccio (OAB/BA 46.638).",
-    "url": "https://riccio-advocacia.lovable.app/blog",
+    "url": "https://riccioadvocacia.online/blog",
     "publisher": {
       "@type": "Organization",
       "name": "Riccio Advocacia",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://riccio-advocacia.lovable.app/og-image.png"
+        "url": "https://riccioadvocacia.online/og-image.png"
       }
     },
     "blogPost": posts.map(post => ({
       "@type": "BlogPosting",
       "headline": post.title,
       "description": post.metaDescription,
-      "url": `https://riccio-advocacia.lovable.app/blog/${post.slug}`,
+      "url": `https://riccioadvocacia.online/blog/${post.slug}`,
       "datePublished": post.publishedAt,
       "dateModified": post.updatedAt,
       "author": {
@@ -51,11 +51,11 @@ const BlogIndex = () => {
         <title>Blog Riccio Advocacia | Artigos sobre Direito do Consumidor, Trânsito e Finanças</title>
         <meta name="description" content="Artigos completos sobre direitos do consumidor, multas de trânsito, superendividamento e muito mais. Conteúdo informativo do Dr. Gilberto Riccio, OAB/BA 46.638." />
         <meta name="keywords" content="blog jurídico, direito do consumidor, multas de trânsito, superendividamento, orientação jurídica, advogado online" />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/blog" />
+        <link rel="canonical" href="https://riccioadvocacia.online/blog" />
         
         <meta property="og:title" content="Blog Riccio Advocacia | Artigos sobre seus direitos" />
         <meta property="og:description" content="Artigos completos sobre direitos do consumidor, multas de trânsito, superendividamento e muito mais." />
-        <meta property="og:url" content="https://riccio-advocacia.lovable.app/blog" />
+        <meta property="og:url" content="https://riccioadvocacia.online/blog" />
         <meta property="og:type" content="website" />
         
         <script type="application/ld+json">

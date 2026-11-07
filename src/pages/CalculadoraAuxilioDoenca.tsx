@@ -22,7 +22,7 @@ const CalculadoraAuxilioDoenca = () => {
         <title>{`Calculadora de Auxílio-Doença ${ANO_VIGENTE}: valor do benefício`}</title>
         <meta name="description" content={`Calcule o valor estimado do auxílio-doença (benefício por incapacidade temporária) do INSS, com piso e teto de ${ANO_VIGENTE}. Comum e acidentário.`} />
         <meta name="keywords" content="calculadora auxílio doença, auxílio doença inss, valor auxílio doença, benefício incapacidade inss" />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-auxilio-doenca" />
+        <link rel="canonical" href="https://riccioadvocacia.online/calculadora-auxilio-doenca" />
         {webAppSchema && <script type="application/ld+json">{JSON.stringify(webAppSchema)}</script>}
         {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
         {breadcrumbSchema && <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>}

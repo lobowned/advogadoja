@@ -19,7 +19,7 @@ const NegativacaoIndevidaLanding = () => (
           <title>Advogado para Negativação Indevida | Nome Sujo sem Dever</title>
           <meta name="description" content="Seu nome foi negativado indevidamente? Veja com um advogado como pedir a retirada do nome e indenização por danos morais." />
           <meta name="keywords" content="negativação indevida, nome sujo indevido, indenização SPC, indenização Serasa, tirar nome do SPC, dívida que não é minha, advogado negativação" />
-          <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-negativacao-indevida" />
+          <link rel="canonical" href="https://riccioadvocacia.online/advogado-negativacao-indevida" />
           <script type="application/ld+json">{JSON.stringify(schema)}</script>
         </Helmet>
       }

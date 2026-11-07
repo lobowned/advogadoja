@@ -28,7 +28,7 @@ const schemaData = {
       "@type": "LegalService",
       "name": "Advogado para Problemas Aéreos | Riccio Advocacia",
       "description": "Indenização por voo cancelado, atrasado, overbooking, bagagem extraviada e outros problemas aéreos.",
-      "url": "https://riccio-advocacia.lovable.app/advogado-problemas-voo",
+      "url": "https://riccioadvocacia.online/advogado-problemas-voo",
       "telephone": "+5571997036269",
       "areaServed": "BR",
       "serviceType": ["Direito do Consumidor", "Direitos do Passageiro Aéreo", "Indenização Voo Cancelado"],
@@ -54,10 +54,10 @@ const ProblemasVooLanding = () => (
             name="description"
             content="Voo cancelado, atrasado, overbooking ou bagagem perdida? Advogado que atua em direitos do passageiro aéreo. Indenização por voo cancelado."
           />
-          <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-problemas-voo" />
+          <link rel="canonical" href="https://riccioadvocacia.online/advogado-problemas-voo" />
           <meta property="og:title" content="Problemas com Voo? Conheça Seus Direitos | Riccio Advocacia" />
           <meta property="og:description" content="Voo cancelado, atrasado, overbooking ou bagagem perdida? Advogado que atua em direitos do passageiro aéreo." />
-          <meta property="og:url" content="https://riccio-advocacia.lovable.app/advogado-problemas-voo" />
+          <meta property="og:url" content="https://riccioadvocacia.online/advogado-problemas-voo" />
           <meta property="og:type" content="website" />
           <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
         </Helmet>

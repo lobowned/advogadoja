@@ -3,7 +3,7 @@
  * (O Bing também abastece o ChatGPT Search e o DuckDuckGo.)
  *
  * Só funciona com o site PUBLICADO: o arquivo da chave (public/<chave>.txt) precisa
- * estar no ar em https://riccio-advocacia.lovable.app/<chave>.txt.
+ * estar no ar em https://riccioadvocacia.online/<chave>.txt.
  *
  * Uso:
  *   npx tsx scripts/indexnow.ts            -> envia todas as URLs do sitemap
@@ -12,7 +12,7 @@
 import * as fs from "fs";
 import * as path from "path";
 
-const SITE = "https://riccio-advocacia.lovable.app";
+const SITE = "https://riccioadvocacia.online";
 const HOST = new URL(SITE).host;
 
 const keyFile = fs.readdirSync(path.resolve(process.cwd(), "public")).find((f) => /^[0-9a-f]{32}\.txt$/.test(f));

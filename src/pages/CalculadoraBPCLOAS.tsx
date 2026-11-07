@@ -22,7 +22,7 @@ const CalculadoraBPCLOAS = () => {
         <title>{`Calculadora BPC/LOAS ${ANO_VIGENTE}: veja se você tem direito`}</title>
         <meta name="description" content="Verifique se você tem direito ao BPC/LOAS. Calculadora de renda per capita e elegibilidade para idosos e pessoas com deficiência." />
         <meta name="keywords" content="calculadora bpc loas, benefício assistencial, renda per capita bpc, bpc idoso, bpc deficiente" />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-bpc-loas" />
+        <link rel="canonical" href="https://riccioadvocacia.online/calculadora-bpc-loas" />
         {webAppSchema && <script type="application/ld+json">{JSON.stringify(webAppSchema)}</script>}
         {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
         {breadcrumbSchema && <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>}

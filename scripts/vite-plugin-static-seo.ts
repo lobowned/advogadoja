@@ -13,7 +13,7 @@ import fs from "node:fs";
 import path from "node:path";
 import type { Plugin, ResolvedConfig } from "vite";
 
-const SITE = "https://riccio-advocacia.lovable.app";
+const SITE = "https://riccioadvocacia.online";
 const OG_IMAGE = `${SITE}/og-image.png`;
 const BRAND = "Riccio Advocacia";
 const LAWYER = "Gilberto Riccio";

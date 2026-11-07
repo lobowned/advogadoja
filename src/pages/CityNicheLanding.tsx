@@ -43,7 +43,7 @@ const CityNicheLanding = (props: CityNicheLandingProps = {}) => {
 
 function LocalNichePage({
   local, areaName, areaSlug, cityName, citySlug}: { local: LocalPageContent; areaName: string; areaSlug: string; cityName: string; citySlug: string }) {
-  const base = "https://riccio-advocacia.lovable.app";
+  const base = "https://riccioadvocacia.online";
   const canonicalUrl = `${base}/advogado-${areaSlug}-${citySlug}`;
   const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(local.whatsappText)}`;
 

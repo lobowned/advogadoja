@@ -19,7 +19,7 @@ const CalculadoraVooCancelado = () => {
     "@type": "WebApplication",
     "name": "Calculadora de Indenização por Voo Cancelado",
     "description": "Calcule gratuitamente quanto você pode receber de indenização por voo cancelado, atrasado ou overbooking. Valores de R$ 3.000 a R$ 15.000.",
-    "url": "https://riccio-advocacia.lovable.app/calculadora-voo-cancelado",
+    "url": "https://riccioadvocacia.online/calculadora-voo-cancelado",
     "applicationCategory": "LegalService",
     "operatingSystem": "Web",
     "offers": {
@@ -30,7 +30,7 @@ const CalculadoraVooCancelado = () => {
     "provider": {
       "@type": "LegalService",
       "name": "Riccio Advocacia",
-      "url": "https://riccio-advocacia.lovable.app"
+      "url": "https://riccioadvocacia.online"
     }
   };
 
@@ -71,11 +71,11 @@ const CalculadoraVooCancelado = () => {
         <title>Calculadora de Indenização por Voo Cancelado 2025 | Calcule Grátis</title>
         <meta name="description" content="Calcule sua indenização por voo cancelado, atrasado ou overbooking. Valores de R$ 3.000 a R$ 15.000. Resultado instantâneo e gratuito. Fale com advogado." />
         <meta name="keywords" content="calculadora voo cancelado, indenização voo cancelado, voo atrasado indenização, overbooking indenização, quanto ganho voo cancelado, advogado voo cancelado" />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-voo-cancelado" />
+        <link rel="canonical" href="https://riccioadvocacia.online/calculadora-voo-cancelado" />
         <meta property="og:title" content="Calculadora de Indenização por Voo Cancelado 2025" />
         <meta property="og:description" content="Calcule gratuitamente quanto você pode receber de indenização por voo cancelado. Valores atualizados 2025." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://riccio-advocacia.lovable.app/calculadora-voo-cancelado" />
+        <meta property="og:url" content="https://riccioadvocacia.online/calculadora-voo-cancelado" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>

@@ -26,7 +26,7 @@ const CalculadoraAtualizacaoDivida = () => {
           content="Calculadora gratuita para atualizar dívidas. Correção monetária por INPC, IPCA, IGP-M ou SELIC + juros de mora. Calcule o valor atualizado." 
         />
         <meta name="keywords" content="calculadora atualização dívida, correção monetária, INPC, IPCA, IGP-M, SELIC, juros mora" />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-atualizacao-divida" />
+        <link rel="canonical" href="https://riccioadvocacia.online/calculadora-atualizacao-divida" />
         {webAppSchema && (
           <script type="application/ld+json">
             {JSON.stringify(webAppSchema)}

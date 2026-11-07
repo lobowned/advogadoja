@@ -100,7 +100,7 @@ const LocalSEOArticle = () => {
       "name": "Riccio Advocacia",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://riccio-advocacia.lovable.app/og-image.png"
+        "url": "https://riccioadvocacia.online/og-image.png"
       }
     },
     "datePublished": article.updatedAt,
@@ -134,7 +134,7 @@ const LocalSEOArticle = () => {
     "@type": "LegalService",
     "name": "Riccio Advocacia",
     "description": `Atendimento online em direito do consumidor para quem mora em ${article.cityName}, ${article.state}. Dr. Gilberto Riccio, OAB/BA 46.638.`,
-    "url": `https://riccio-advocacia.lovable.app/artigos/consumidor/${article.slug}`,
+    "url": `https://riccioadvocacia.online/artigos/consumidor/${article.slug}`,
     "telephone": "+55-71-99703-6269",
     // Escritório digital: só a cidade atendida, sem coordenadas nem endereço
     "areaServed": { "@type": "City", "name": article.cityName }
@@ -148,25 +148,25 @@ const LocalSEOArticle = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://riccio-advocacia.lovable.app"
+        "item": "https://riccioadvocacia.online"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Artigos",
-        "item": "https://riccio-advocacia.lovable.app/artigos"
+        "item": "https://riccioadvocacia.online/artigos"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Consumidor",
-        "item": "https://riccio-advocacia.lovable.app/artigos/consumidor"
+        "item": "https://riccioadvocacia.online/artigos/consumidor"
       },
       {
         "@type": "ListItem",
         "position": 4,
         "name": article.title,
-        "item": `https://riccio-advocacia.lovable.app/artigos/consumidor/${article.slug}`
+        "item": `https://riccioadvocacia.online/artigos/consumidor/${article.slug}`
       }
     ]
   };
@@ -181,13 +181,13 @@ const LocalSEOArticle = () => {
         <meta name="keywords" content={article.keywords.join(", ")} />
         {/* Fora da Bahia o escritório não atende presencialmente: página fica acessível, mas fora do índice. */}
         {!isIndexableLocalSEOArticle(article) && <meta name="robots" content="noindex,follow" />}
-        <link rel="canonical" href={`https://riccio-advocacia.lovable.app/artigos/consumidor/${article.slug}`} />
+        <link rel="canonical" href={`https://riccioadvocacia.online/artigos/consumidor/${article.slug}`} />
         
         {/* Open Graph */}
         <meta property="og:title" content={article.metaTitle} />
         <meta property="og:description" content={article.metaDescription} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://riccio-advocacia.lovable.app/artigos/consumidor/${article.slug}`} />
+        <meta property="og:url" content={`https://riccioadvocacia.online/artigos/consumidor/${article.slug}`} />
         <meta property="og:locale" content="pt_BR" />
         
         {/* Article meta */}

@@ -59,11 +59,11 @@ const LiminarCirurgiaNegadaLanding = () => (
           <title>Liminar Cirurgia Negada pelo Plano de Saúde | Riccio Advocacia</title>
           <meta name="description" content="Teve cirurgia negada pelo plano de saúde? Advogado para pedido de liminar judicial de urgência para o seu tratamento. Bariátrica, câncer, ortopedia e mais." />
           <meta name="keywords" content="liminar cirurgia plano saúde, cirurgia negada, tutela urgência saúde, bariátrica negada, quimioterapia negada, prótese negada, advogado plano saúde" />
-          <link rel="canonical" href="https://riccio-advocacia.lovable.app/liminar-cirurgia-negada" />
+          <link rel="canonical" href="https://riccioadvocacia.online/liminar-cirurgia-negada" />
           <meta property="og:title" content="Cirurgia Negada? Advogado para Liminar" />
           <meta property="og:description" content="Plano negou sua cirurgia? Peça autorização judicial urgente com advogado." />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://riccio-advocacia.lovable.app/liminar-cirurgia-negada" />
+          <meta property="og:url" content="https://riccioadvocacia.online/liminar-cirurgia-negada" />
           <script type="application/ld+json">{JSON.stringify(schema)}</script>
           <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         </Helmet>

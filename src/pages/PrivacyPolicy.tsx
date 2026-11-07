@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
           name="description" 
           content="Política de Privacidade do Riccio Advocacia. Saiba como coletamos, usamos e protegemos seus dados pessoais em conformidade com a LGPD." 
         />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/privacidade" />
+        <link rel="canonical" href="https://riccioadvocacia.online/privacidade" />
       </Helmet>
 
       <div className="min-h-screen bg-background">

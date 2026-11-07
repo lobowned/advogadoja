@@ -19,7 +19,7 @@ const FraudeBancariaLanding = () => (
           <title>Fraude Bancária | Golpe PIX, Cartão Clonado - Devolução de Valores</title>
           <meta name="description" content="Vítima de fraude bancária? PIX não autorizado, cartão clonado, empréstimo fraudulento. Advogado para pedir a devolução e indenização, conforme o caso." />
           <meta name="keywords" content="fraude bancária, golpe PIX, cartão clonado, empréstimo fraudulento, recuperar dinheiro banco, advogado fraude" />
-          <link rel="canonical" href="https://riccio-advocacia.lovable.app/fraude-bancaria" />
+          <link rel="canonical" href="https://riccioadvocacia.online/fraude-bancaria" />
           <script type="application/ld+json">{JSON.stringify(schema)}</script>
         </Helmet>
       }

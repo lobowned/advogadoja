@@ -26,7 +26,7 @@ const CalculadoraTrabalhista = () => {
           content="Calcule grátis suas verbas rescisórias: aviso prévio, FGTS com multa 40%, 13º salário, férias proporcionais. Descubra quanto você tem a receber na demissão." 
         />
         <meta name="keywords" content="calculadora rescisão trabalhista, calcular verbas rescisórias, FGTS multa 40%, aviso prévio, demissão sem justa causa, 13º salário, férias proporcionais" />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-trabalhista" />
+        <link rel="canonical" href="https://riccioadvocacia.online/calculadora-trabalhista" />
         
         {webAppSchema && (
           <script type="application/ld+json">

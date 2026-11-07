@@ -48,7 +48,7 @@ const FAQQuestion = () => {
   const relatedCalculators = getRelatedCalculatorsForFAQ(faq);
   const relatedArticles = getRelatedArticlesForFAQ(faq);
 
-  const canonicalUrl = `https://riccio-advocacia.lovable.app/perguntas/${faq.slug}`;
+  const canonicalUrl = `https://riccioadvocacia.online/perguntas/${faq.slug}`;
   const whatsappUrl = `https://wa.me/5571997036269?text=${encodeURIComponent(`Olá, li a pergunta "${faq.question}" no site e quero falar sobre o meu caso.`)}`;
   // Descrição sem a marcação de negrito/lista quando a pergunta não tem metaDescription própria
   const description =
@@ -57,8 +57,8 @@ const FAQQuestion = () => {
 
   // Build related links for Schema.org
   const relatedLinks = [
-    ...relatedCalculators.map(c => `https://riccio-advocacia.lovable.app${c.url}`),
-    ...relatedArticles.map(a => `https://riccio-advocacia.lovable.app/artigos/${a.nicheId}/${a.slug}`)
+    ...relatedCalculators.map(c => `https://riccioadvocacia.online${c.url}`),
+    ...relatedArticles.map(a => `https://riccioadvocacia.online/artigos/${a.nicheId}/${a.slug}`)
   ];
   
   // Schema.org FAQPage - Enhanced for FAQ rich snippets
@@ -70,7 +70,7 @@ const FAQQuestion = () => {
     "author": {
       "@type": "Organization",
       "name": "Riccio Advocacia",
-      "url": "https://riccio-advocacia.lovable.app"
+      "url": "https://riccioadvocacia.online"
     },
     "mainEntity": [{
       "@type": "Question",
@@ -100,10 +100,10 @@ const FAQQuestion = () => {
     "publisher": {
       "@type": "Organization",
       "name": "Riccio Advocacia",
-      "url": "https://riccio-advocacia.lovable.app",
+      "url": "https://riccioadvocacia.online",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://riccio-advocacia.lovable.app/og-image.png"
+        "url": "https://riccioadvocacia.online/og-image.png"
       }
     },
     "mainEntityOfPage": {
@@ -125,19 +125,19 @@ const FAQQuestion = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://riccio-advocacia.lovable.app"
+        "item": "https://riccioadvocacia.online"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Perguntas Frequentes",
-        "item": "https://riccio-advocacia.lovable.app/perguntas"
+        "item": "https://riccioadvocacia.online/perguntas"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": areaLabels[faq.area],
-        "item": `https://riccio-advocacia.lovable.app/perguntas?area=${faq.area}`
+        "item": `https://riccioadvocacia.online/perguntas?area=${faq.area}`
       },
       {
         "@type": "ListItem",
@@ -158,7 +158,7 @@ const FAQQuestion = () => {
     "isPartOf": {
       "@type": "WebSite",
       "name": "Riccio Advocacia",
-      "url": "https://riccio-advocacia.lovable.app"
+      "url": "https://riccioadvocacia.online"
     },
     "about": {
       "@type": "Thing",

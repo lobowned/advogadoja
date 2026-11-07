@@ -23,7 +23,7 @@ const CityLanding = () => {
     return <Navigate to="/" replace />;
   }
 
-  const canonicalUrl = `https://riccio-advocacia.lovable.app/advogado/${city.slug}`;
+  const canonicalUrl = `https://riccioadvocacia.online/advogado/${city.slug}`;
   const indexable = isCityIndexable(city.slug);
 
   const meta = cityPageMeta(city);
@@ -125,11 +125,11 @@ const CityLanding = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://riccio-advocacia.lovable.app"
+        "item": "https://riccioadvocacia.online"
       },
       // A página da Bahia é o índice das cidades (não existe /advogado sozinho)
       ...(city.stateCode === "BA"
-        ? [{ "@type": "ListItem", "position": 2, "name": "Bahia", "item": "https://riccio-advocacia.lovable.app/advogado-bahia" }]
+        ? [{ "@type": "ListItem", "position": 2, "name": "Bahia", "item": "https://riccioadvocacia.online/advogado-bahia" }]
         : []),
       {
         "@type": "ListItem",

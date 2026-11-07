@@ -26,7 +26,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { pathToFileURL } from 'url';
 
-const BASE_URL = 'https://riccio-advocacia.lovable.app';
+const BASE_URL = 'https://riccioadvocacia.online';
 const TODAY = new Date().toISOString().split('T')[0];
 // lastmod só quando a data é real (updatedAt/publishedAt do conteúdo). Sem data conhecida, omitimos a tag
 // em vez de mentir "hoje" para o Google. Páginas estáticas: sem lastmod.

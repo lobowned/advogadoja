@@ -79,7 +79,7 @@ const AdvogadoSaoPaulo = () => {
     "@type": "LegalService",
     "name": "Riccio Advocacia em São Paulo",
     "description": "Advogado online para consulta jurídica em São Paulo. Atendemos capital, ABC Paulista, Campinas e todas as cidades paulistas.",
-    "url": "https://riccio-advocacia.lovable.app/advogado-sao-paulo",
+    "url": "https://riccioadvocacia.online/advogado-sao-paulo",
     "areaServed": {
       "@type": "State",
       "name": "São Paulo",
@@ -99,13 +99,13 @@ const AdvogadoSaoPaulo = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://riccio-advocacia.lovable.app"
+        "item": "https://riccioadvocacia.online"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Advogado São Paulo",
-        "item": "https://riccio-advocacia.lovable.app/advogado-sao-paulo"
+        "item": "https://riccioadvocacia.online/advogado-sao-paulo"
       }
     ]
   };
@@ -116,11 +116,11 @@ const AdvogadoSaoPaulo = () => {
         <title>Advogado Online em São Paulo | Capital, ABC, Campinas | Consulta Grátis</title>
         <meta name="description" content="Advogado online em São Paulo: Capital, Guarulhos, Campinas, ABC Paulista e todas as cidades. Direito do consumidor, trabalhista, previdenciário. Atendimento online." />
         <meta name="keywords" content="advogado são paulo, advogado sp, advogado online sp, advogado consumidor sp, advogado trabalhista sp, advogado campinas, advogado abc paulista" />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-sao-paulo" />
+        <link rel="canonical" href="https://riccioadvocacia.online/advogado-sao-paulo" />
         
         <meta property="og:title" content="Advogado Online em São Paulo | Consulta Jurídica Gratuita" />
         <meta property="og:description" content="Advogado online para todo o estado de São Paulo. Atendemos capital, interior e litoral." />
-        <meta property="og:url" content="https://riccio-advocacia.lovable.app/advogado-sao-paulo" />
+        <meta property="og:url" content="https://riccioadvocacia.online/advogado-sao-paulo" />
         
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>

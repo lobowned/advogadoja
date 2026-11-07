@@ -64,7 +64,7 @@ const NicheLanding = () => {
     "@type": "LegalService",
     "name": `Riccio Advocacia · ${data.title}`,
     "description": data.heroDescription,
-    "url": `https://riccio-advocacia.lovable.app/${data.slug}`,
+    "url": `https://riccioadvocacia.online/${data.slug}`,
     "areaServed": "Brasil",
     "serviceType": nicheInfo.name,
   };
@@ -75,11 +75,11 @@ const NicheLanding = () => {
         <title>{data.metaTitle}</title>
         <meta name="description" content={data.metaDescription} />
         <meta name="keywords" content={data.keywords.join(", ")} />
-        <link rel="canonical" href={`https://riccio-advocacia.lovable.app/${data.slug}`} />
+        <link rel="canonical" href={`https://riccioadvocacia.online/${data.slug}`} />
         
         <meta property="og:title" content={data.metaTitle} />
         <meta property="og:description" content={data.metaDescription} />
-        <meta property="og:url" content={`https://riccio-advocacia.lovable.app/${data.slug}`} />
+        <meta property="og:url" content={`https://riccioadvocacia.online/${data.slug}`} />
         
         <script type="application/ld+json">
           {JSON.stringify(schema)}

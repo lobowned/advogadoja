@@ -26,7 +26,7 @@ const CalculadoraPartilhaBens = () => {
           content="Calculadora gratuita de partilha de bens para divórcio. Estime a divisão conforme seu regime de casamento: comunhão parcial, universal ou separação total." 
         />
         <meta name="keywords" content="calculadora partilha bens, divórcio, separação, comunhão parcial, comunhão universal, regime de bens" />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-partilha-bens" />
+        <link rel="canonical" href="https://riccioadvocacia.online/calculadora-partilha-bens" />
         {webAppSchema && (
           <script type="application/ld+json">
             {JSON.stringify(webAppSchema)}

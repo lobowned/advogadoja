@@ -69,7 +69,7 @@ const AdvogadoRioDeJaneiro = () => {
     "@type": "LegalService",
     "name": "Riccio Advocacia no Rio de Janeiro",
     "description": "Advogado online para consulta jurídica no Rio de Janeiro. Atendemos capital, Baixada Fluminense, Niterói e todas as cidades fluminenses.",
-    "url": "https://riccio-advocacia.lovable.app/advogado-rio-de-janeiro",
+    "url": "https://riccioadvocacia.online/advogado-rio-de-janeiro",
     "areaServed": {
       "@type": "State",
       "name": "Rio de Janeiro",
@@ -88,13 +88,13 @@ const AdvogadoRioDeJaneiro = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://riccio-advocacia.lovable.app"
+        "item": "https://riccioadvocacia.online"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Advogado Rio de Janeiro",
-        "item": "https://riccio-advocacia.lovable.app/advogado-rio-de-janeiro"
+        "item": "https://riccioadvocacia.online/advogado-rio-de-janeiro"
       }
     ]
   };
@@ -105,11 +105,11 @@ const AdvogadoRioDeJaneiro = () => {
         <title>Advogado Online no Rio de Janeiro | Capital, Niterói, Baixada | Consulta Grátis</title>
         <meta name="description" content="Advogado online no Rio de Janeiro: Capital, Niterói, Baixada Fluminense e todas as cidades. Direito do consumidor, trabalhista, previdenciário. Atendimento online." />
         <meta name="keywords" content="advogado rio de janeiro, advogado rj, advogado online rj, advogado niteroi, advogado baixada fluminense, advogado consumidor rj" />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-rio-de-janeiro" />
+        <link rel="canonical" href="https://riccioadvocacia.online/advogado-rio-de-janeiro" />
         
         <meta property="og:title" content="Advogado Online no Rio de Janeiro | Consulta Jurídica Gratuita" />
         <meta property="og:description" content="Advogado online para todo o estado do Rio de Janeiro." />
-        <meta property="og:url" content="https://riccio-advocacia.lovable.app/advogado-rio-de-janeiro" />
+        <meta property="og:url" content="https://riccioadvocacia.online/advogado-rio-de-janeiro" />
         
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>

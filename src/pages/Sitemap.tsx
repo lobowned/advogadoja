@@ -25,7 +25,7 @@ import { LOCAL_PAGE_ROUTES, LOCAL_CITY_NAMES, LOCAL_NICHE_NAMES } from "@/data/l
  * combinações têm página própria (LOCAL_PAGE_ROUTES).
  */
 const Sitemap = () => {
-  const canonicalUrl = "https://riccio-advocacia.lovable.app/sitemap";
+  const canonicalUrl = "https://riccioadvocacia.online/sitemap";
 
   const articles = blogArticles.filter((a) => !redirectedPaths.has(`/artigos/${a.nicheId}/${a.slug}`));
   const posts = blogPosts.filter((p) => !redirectedPaths.has(`/blog/${p.slug}`));
@@ -111,7 +111,7 @@ const Sitemap = () => {
     "isPartOf": {
       "@type": "WebSite",
       "name": "Riccio Advocacia",
-      "url": "https://riccio-advocacia.lovable.app"
+      "url": "https://riccioadvocacia.online"
     }
   };
 
@@ -119,7 +119,7 @@ const Sitemap = () => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://riccio-advocacia.lovable.app" },
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://riccioadvocacia.online" },
       { "@type": "ListItem", "position": 2, "name": "Mapa do Site", "item": canonicalUrl }
     ]
   };

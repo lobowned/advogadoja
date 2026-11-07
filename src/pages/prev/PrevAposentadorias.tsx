@@ -45,7 +45,7 @@ export default function PrevAposentadorias() {
           name="description"
           content="Conheça os 5 tipos de aposentadoria do INSS após a Reforma. A gente analisa seu CNIS e indica qual paga mais e demora menos pro seu caso."
         />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/prev/aposentadorias" />
+        <link rel="canonical" href="https://riccioadvocacia.online/prev/aposentadorias" />
       </Helmet>
 
       <PrevLayout ctaMessage={WHATSAPP_MESSAGES.aposentadorias} quizKey="aposentadorias">

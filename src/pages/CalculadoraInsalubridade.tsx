@@ -22,7 +22,7 @@ const CalculadoraInsalubridade = () => {
         <title>{`Calculadora de Insalubridade e Periculosidade ${ANO_VIGENTE}`}</title>
         <meta name="description" content="Calcule o adicional de insalubridade ou periculosidade. Simulador com todos os graus e reflexos trabalhistas." />
         <meta name="keywords" content="calculadora insalubridade, calculadora periculosidade, adicional insalubridade, adicional periculosidade, graus insalubridade" />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-insalubridade" />
+        <link rel="canonical" href="https://riccioadvocacia.online/calculadora-insalubridade" />
         {webAppSchema && <script type="application/ld+json">{JSON.stringify(webAppSchema)}</script>}
         {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
         {breadcrumbSchema && <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>}

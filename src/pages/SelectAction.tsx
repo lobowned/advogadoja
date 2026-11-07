@@ -34,7 +34,7 @@ const SelectAction = () => {
       <Helmet>
         <title>{`${niche.name} - Tipos de Ação | Riccio Advocacia`}</title>
         <meta name="description" content={`Selecione o tipo de ação para ${niche.name}. ${niche.actions.length} opções disponíveis. Atendimento jurídico online, OAB/BA 46.638.`} />
-        <link rel="canonical" href={`https://riccio-advocacia.lovable.app/selecionar-acao/${nicheId}`} />
+        <link rel="canonical" href={`https://riccioadvocacia.online/selecionar-acao/${nicheId}`} />
         <meta name="robots" content="index, follow" />
       </Helmet>
     <div className="min-h-screen bg-background">

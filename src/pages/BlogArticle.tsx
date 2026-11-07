@@ -35,21 +35,21 @@ const BlogArticle = () => {
     "@type": "Article",
     "headline": post.title,
     "description": post.metaDescription,
-    "image": post.featuredImage || "https://riccio-advocacia.lovable.app/og-image.png",
+    "image": post.featuredImage || "https://riccioadvocacia.online/og-image.png",
     "author": authorSchema,
     "publisher": {
       "@type": "Organization",
       "name": "Riccio Advocacia",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://riccio-advocacia.lovable.app/og-image.png"
+        "url": "https://riccioadvocacia.online/og-image.png"
       }
     },
     "datePublished": post.publishedAt,
     "dateModified": post.updatedAt,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://riccio-advocacia.lovable.app/blog/${post.slug}`
+      "@id": `https://riccioadvocacia.online/blog/${post.slug}`
     },
     "keywords": post.keywords.join(", ")
   };
@@ -62,19 +62,19 @@ const BlogArticle = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://riccio-advocacia.lovable.app"
+        "item": "https://riccioadvocacia.online"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Blog",
-        "item": "https://riccio-advocacia.lovable.app/blog"
+        "item": "https://riccioadvocacia.online/blog"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": post.title,
-        "item": `https://riccio-advocacia.lovable.app/blog/${post.slug}`
+        "item": `https://riccioadvocacia.online/blog/${post.slug}`
       }
     ]
   };
@@ -101,11 +101,11 @@ const BlogArticle = () => {
         <title>{post.metaTitle}</title>
         <meta name="description" content={post.metaDescription} />
         <meta name="keywords" content={post.keywords.join(", ")} />
-        <link rel="canonical" href={`https://riccio-advocacia.lovable.app/blog/${post.slug}`} />
+        <link rel="canonical" href={`https://riccioadvocacia.online/blog/${post.slug}`} />
         
         <meta property="og:title" content={post.metaTitle} />
         <meta property="og:description" content={post.metaDescription} />
-        <meta property="og:url" content={`https://riccio-advocacia.lovable.app/blog/${post.slug}`} />
+        <meta property="og:url" content={`https://riccioadvocacia.online/blog/${post.slug}`} />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={post.publishedAt} />
         <meta property="article:modified_time" content={post.updatedAt} />

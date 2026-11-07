@@ -73,7 +73,7 @@ Criar experiência fluida, como uma conversa guiada, sem parecer um formulário 
 
 This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://riccio-advocacia.lovable.app
+**Live app**: https://riccioadvocacia.online
 
 ## Build with Lovable
 

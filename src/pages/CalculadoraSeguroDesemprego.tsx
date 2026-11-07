@@ -22,7 +22,7 @@ const CalculadoraSeguroDesemprego = () => {
         <title>{`Calculadora de Seguro-Desemprego ${ANO_VIGENTE}: valor e parcelas`}</title>
         <meta name="description" content={`Quanto vou receber de seguro-desemprego? Simule o valor e o número de parcelas com a tabela oficial de ${ANO_VIGENTE}: informe os 3 últimos salários e o tempo trabalhado.`} />
         <meta name="keywords" content={`calcular seguro desemprego, calculadora seguro desemprego, simulador seguro desemprego, quanto vou receber de seguro desemprego, seguro desemprego ${ANO_VIGENTE}`} />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-seguro-desemprego" />
+        <link rel="canonical" href="https://riccioadvocacia.online/calculadora-seguro-desemprego" />
         {webAppSchema && <script type="application/ld+json">{JSON.stringify(webAppSchema)}</script>}
         {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
         {breadcrumbSchema && <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>}

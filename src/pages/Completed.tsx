@@ -23,7 +23,7 @@ const Completed = () => {
     <Helmet>
       <title>{`Informações recebidas | Riccio Advocacia`}</title>
       <meta name="robots" content="noindex, nofollow" />
-      <link rel="canonical" href="https://riccio-advocacia.lovable.app/concluido" />
+      <link rel="canonical" href="https://riccioadvocacia.online/concluido" />
     </Helmet>
     <div className="min-h-screen bg-background">
       <section className="container mx-auto flex min-h-screen items-center justify-center px-4 py-12">

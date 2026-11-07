@@ -19,7 +19,7 @@ const CalculadoraFraudeBancaria = () => {
     "@type": "WebApplication",
     "name": "Calculadora de Indenização Fraude Bancária",
     "description": "Calcule online e grátis quanto você pode receber de indenização por fraude bancária, golpe do PIX, cartão clonado ou empréstimo não autorizado.",
-    "url": "https://riccio-advocacia.lovable.app/calculadora-fraude-bancaria",
+    "url": "https://riccioadvocacia.online/calculadora-fraude-bancaria",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Web",
     "offers": {
@@ -74,11 +74,11 @@ const CalculadoraFraudeBancaria = () => {
         <title>Calculadora de Indenização Fraude Bancária | PIX, Cartão Clonado 2025</title>
         <meta name="description" content="Sofreu golpe do PIX ou teve cartão clonado? Calcule grátis quanto você pode receber de indenização. Banco tem responsabilidade. Advogado." />
         <meta name="keywords" content="golpe pix, cartão clonado, fraude bancária, empréstimo fraude, banco devolver dinheiro, indenização banco" />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-fraude-bancaria" />
+        <link rel="canonical" href="https://riccioadvocacia.online/calculadora-fraude-bancaria" />
         <meta property="og:title" content="Calculadora de Indenização Fraude Bancária | PIX, Cartão Clonado" />
         <meta property="og:description" content="Sofreu golpe do PIX ou teve cartão clonado? Calcule grátis quanto você pode receber de indenização." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://riccio-advocacia.lovable.app/calculadora-fraude-bancaria" />
+        <meta property="og:url" content="https://riccioadvocacia.online/calculadora-fraude-bancaria" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>

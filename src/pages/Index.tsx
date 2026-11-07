@@ -15,14 +15,14 @@ const Index = () => {
     "@type": "Organization",
     "name": "Riccio Advocacia",
     "alternateName": "Riccio Advocacia Brasil",
-    "url": "https://riccio-advocacia.lovable.app",
+    "url": "https://riccioadvocacia.online",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://riccio-advocacia.lovable.app/favicon.svg",
+      "url": "https://riccioadvocacia.online/favicon.svg",
       "width": 512,
       "height": 512
     },
-    "image": "https://riccio-advocacia.lovable.app/favicon.svg",
+    "image": "https://riccioadvocacia.online/favicon.svg",
     "description": "Escritório de advocacia online que atua em todas as áreas do direito. Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp.",
     "telephone": "+55-71-99703-6269",
     "legalName": "Riccio Advocacia",
@@ -65,11 +65,11 @@ const Index = () => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://riccio-advocacia.lovable.app/#localbusiness",
+    "@id": "https://riccioadvocacia.online/#localbusiness",
     "name": "Riccio Advocacia",
-    "image": "https://riccio-advocacia.lovable.app/favicon.svg",
+    "image": "https://riccioadvocacia.online/favicon.svg",
     "description": "Escritório de advocacia online. Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento online em todo o Brasil.",
-    "url": "https://riccio-advocacia.lovable.app",
+    "url": "https://riccioadvocacia.online",
     "telephone": "+55-71-99703-6269",
     "priceRange": "$$",
     "currenciesAccepted": "BRL",
@@ -84,10 +84,10 @@ const Index = () => {
   const legalServiceSchema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "@id": "https://riccio-advocacia.lovable.app/#legalservice",
+    "@id": "https://riccioadvocacia.online/#legalservice",
     "name": "Riccio Advocacia - Escritório de Advocacia Online",
     "description": "Escritório que atua em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp em todo o Brasil.",
-    "url": "https://riccio-advocacia.lovable.app",
+    "url": "https://riccioadvocacia.online",
     "telephone": "+55-71-99703-6269",
     "areaServed": {
       "@type": "Country",
@@ -152,12 +152,12 @@ const Index = () => {
     "@type": "WebSite",
     "name": "Riccio Advocacia",
     "alternateName": "Riccio Advocacia Brasil",
-    "url": "https://riccio-advocacia.lovable.app",
+    "url": "https://riccioadvocacia.online",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://riccio-advocacia.lovable.app/perguntas?q={search_term_string}"
+        "urlTemplate": "https://riccioadvocacia.online/perguntas?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -169,10 +169,10 @@ const Index = () => {
     "@type": "WebPage",
     "name": "Advogado em Salvador e Online | Riccio Advocacia",
     "description": "Precisa de advogado? Atuação em Direito Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp. Atendimento online.",
-    "url": "https://riccio-advocacia.lovable.app",
+    "url": "https://riccioadvocacia.online",
     "isPartOf": {
       "@type": "WebSite",
-      "@id": "https://riccio-advocacia.lovable.app/#website"
+      "@id": "https://riccioadvocacia.online/#website"
     },
     "about": {
       "@type": "Thing",
@@ -180,7 +180,7 @@ const Index = () => {
     },
     "mainEntity": {
       "@type": "LegalService",
-      "@id": "https://riccio-advocacia.lovable.app/#legalservice"
+      "@id": "https://riccioadvocacia.online/#legalservice"
     },
     "speakable": {
       "@type": "SpeakableSpecification",
@@ -194,12 +194,12 @@ const Index = () => {
         <title>Advogado em Salvador e Online | Riccio Advocacia</title>
         <meta name="description" content="Riccio Advocacia (OAB/BA 46.638): trabalhista, INSS, família, consumidor, cível e criminal. Atendimento em Salvador, Camaçari, Lauro de Freitas e online pelo WhatsApp." />
         <meta name="keywords" content="advogado online, advogado trabalhista, advogado família, advogado consumidor, advogado previdenciário INSS, advogado civil, advogado criminal, divórcio online, pensão alimentícia, demissão sem justa causa, verbas rescisórias, aposentadoria INSS, auxílio-doença, BPC LOAS, voo cancelado, plano de saúde negou, nome sujo, negativação indevida, inventário, defesa criminal, falar com advogado agora" />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app" />
+        <link rel="canonical" href="https://riccioadvocacia.online" />
         
         <meta property="og:title" content="Advogado em Salvador e Online | Riccio Advocacia" />
         <meta property="og:description" content="Riccio Advocacia (OAB/BA 46.638): trabalhista, INSS, família, consumidor, cível e criminal. Atendimento online pelo WhatsApp." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://riccio-advocacia.lovable.app" />
+        <meta property="og:url" content="https://riccioadvocacia.online" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Advogado em Salvador e Online | Riccio Advocacia" />

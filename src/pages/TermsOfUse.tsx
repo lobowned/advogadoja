@@ -18,7 +18,7 @@ const TermsOfUse = () => {
           name="description" 
           content="Termos de Uso do Riccio Advocacia. Conheça as condições de uso da plataforma, responsabilidades e direitos em conformidade com a OAB." 
         />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/termos-de-uso" />
+        <link rel="canonical" href="https://riccioadvocacia.online/termos-de-uso" />
       </Helmet>
 
       <div className="min-h-screen bg-background">

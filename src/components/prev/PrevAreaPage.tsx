@@ -113,7 +113,7 @@ export default function PrevAreaPage({
       <Helmet>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
-        <link rel="canonical" href={`https://riccio-advocacia.lovable.app${canonicalPath}`} />
+        <link rel="canonical" href={`https://riccioadvocacia.online${canonicalPath}`} />
       </Helmet>
 
       <PrevLayout ctaMessage={whatsappMessage} quizKey={quizKey} palette={palette}>

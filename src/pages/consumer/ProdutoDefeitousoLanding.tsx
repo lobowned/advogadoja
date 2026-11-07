@@ -42,7 +42,7 @@ const ProdutoDefeitousoLanding = () => (
           <title>Advogado para Produto Defeituoso | Troca e Indenização</title>
           <meta name="description" content="Comprou um produto com defeito e a empresa não resolve? Advogado que atua em direito do consumidor para troca e indenização." />
           <meta name="keywords" content="produto defeituoso, garantia produto, vício oculto, vício aparente, troca produto defeituoso, advogado consumidor, indenização produto, CDC, direito do consumidor" />
-          <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-produto-defeituoso" />
+          <link rel="canonical" href="https://riccioadvocacia.online/advogado-produto-defeituoso" />
           <script type="application/ld+json">{JSON.stringify(schema)}</script>
         </Helmet>
       }

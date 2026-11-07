@@ -62,13 +62,13 @@ const Blog = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Riccio Advocacia",
-    "url": "https://riccio-advocacia.lovable.app",
+    "url": "https://riccioadvocacia.online",
     "description": "Central de conhecimento jurídico com artigos sobre direitos trabalhistas, família, civil, previdenciário e criminal.",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://riccio-advocacia.lovable.app/artigos?q={search_term_string}"
+        "urlTemplate": "https://riccioadvocacia.online/artigos?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -84,7 +84,7 @@ const Blog = () => {
     "itemListElement": articles.slice(0, 10).map((article, index) => ({
       "@type": "ListItem",
       "position": index + 1,
-      "url": `https://riccio-advocacia.lovable.app/artigos/${article.nicheId}/${article.slug}`,
+      "url": `https://riccioadvocacia.online/artigos/${article.nicheId}/${article.slug}`,
       "name": article.title
     }))
   };
@@ -95,7 +95,7 @@ const Blog = () => {
     "@type": "CollectionPage",
     "name": pageTitle,
     "description": pageDescription,
-    "url": `https://riccio-advocacia.lovable.app/artigos${nicheId ? `/${nicheId}` : ""}`,
+    "url": `https://riccioadvocacia.online/artigos${nicheId ? `/${nicheId}` : ""}`,
     "mainEntity": {
       "@type": "ItemList",
       "numberOfItems": articles.length
@@ -107,7 +107,7 @@ const Blog = () => {
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={`https://riccio-advocacia.lovable.app/artigos${nicheId ? `/${nicheId}` : ""}`} />
+        <link rel="canonical" href={`https://riccioadvocacia.online/artigos${nicheId ? `/${nicheId}` : ""}`} />
         <script type="application/ld+json">
           {JSON.stringify(websiteSchema)}
         </script>

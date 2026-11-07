@@ -24,7 +24,7 @@ const CalculadoraDPVAT = () => {
           content="Calcule a indenização do DPVAT/SPVAT por acidente de trânsito. Valores para morte, invalidez e despesas médicas." 
         />
         <meta name="keywords" content="calculadora dpvat, indenização dpvat, seguro dpvat, spvat, acidente de trânsito indenização" />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/calculadora-dpvat" />
+        <link rel="canonical" href="https://riccioadvocacia.online/calculadora-dpvat" />
         {webAppSchema && (
           <script type="application/ld+json">
             {JSON.stringify(webAppSchema)}

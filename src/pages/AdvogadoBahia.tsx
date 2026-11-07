@@ -66,7 +66,7 @@ const AdvogadoBahia = () => {
     "@type": "LegalService",
     "name": "Riccio Advocacia",
     "description": "Atendimento jurídico online em toda a Bahia: Salvador, Feira de Santana, Vitória da Conquista e demais cidades baianas. Dr. Gilberto Riccio, OAB/BA 46.638.",
-    "url": "https://riccio-advocacia.lovable.app/advogado-bahia",
+    "url": "https://riccioadvocacia.online/advogado-bahia",
     "telephone": "+55-71-99703-6269",
     "areaServed": {
       "@type": "State",
@@ -95,8 +95,8 @@ const AdvogadoBahia = () => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://riccio-advocacia.lovable.app/" },
-      { "@type": "ListItem", "position": 2, "name": "Advogado Bahia", "item": "https://riccio-advocacia.lovable.app/advogado-bahia" }
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://riccioadvocacia.online/" },
+      { "@type": "ListItem", "position": 2, "name": "Advogado Bahia", "item": "https://riccioadvocacia.online/advogado-bahia" }
     ]
   };
 
@@ -106,11 +106,11 @@ const AdvogadoBahia = () => {
         <title>Advogado Online na Bahia | Salvador, Feira de Santana e Mais | Riccio</title>
         <meta name="description" content="Advogado online na Bahia: Salvador, Feira de Santana, Vitória da Conquista e todas as cidades baianas. Direito do consumidor, trabalhista, previdenciário. Atendimento online." />
         <meta name="keywords" content="advogado bahia, advogado salvador, advogado feira de santana, advogado online bahia, advogado consumidor bahia, advogado trabalhista bahia, advogado INSS bahia" />
-        <link rel="canonical" href="https://riccio-advocacia.lovable.app/advogado-bahia" />
+        <link rel="canonical" href="https://riccioadvocacia.online/advogado-bahia" />
         
         <meta property="og:title" content="Advogado Online na Bahia | Riccio Advocacia" />
         <meta property="og:description" content="Atendimento jurídico online para toda a Bahia, com o Dr. Gilberto Riccio (OAB/BA 46.638)." />
-        <meta property="og:url" content="https://riccio-advocacia.lovable.app/advogado-bahia" />
+        <meta property="og:url" content="https://riccioadvocacia.online/advogado-bahia" />
         <meta property="og:type" content="website" />
         
         <script type="application/ld+json">{JSON.stringify(schema)}</script>

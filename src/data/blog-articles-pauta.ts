@@ -549,4 +549,143 @@ export const pautaArticles: BlogArticle[] = [
     relatedActions: ["prisao-flagrante", "habeas-corpus"],
     updatedAt: "2026-11-07",
   },
+
+  // ============================================================
+  // 7. LESÃO CORPORAL
+  // Conferido em 07/11/2026 no Planalto (texto em vigor, sem trechos revogados): Código Penal
+  // art. 129 (com as Leis 14.994/2024, 15.159/2025, 15.358/2026 e 15.455/2026); CPP arts. 25,
+  // 38, 158 e 168. Lei 9.099/1995 art. 88 e Súmula 542 do STJ.
+  // ============================================================
+  {
+    id: "lesao-corporal",
+    nicheId: "penal",
+    slug: "lesao-corporal",
+    title: "Lesão Corporal: Leve, Grave e Gravíssima, Penas e Como Funciona o Processo",
+    metaTitle: "Lesão Corporal: Leve, Grave, Gravíssima e Penas (Art. 129)",
+    metaDescription:
+      "Lesão corporal (art. 129 do CP): leve, grave e gravíssima, penas atualizadas, violência doméstica, exame de corpo de delito e prazo de representação.",
+    keywords: [
+      "lesão corporal",
+      "lesão corporal leve",
+      "lesão corporal grave",
+      "lesão corporal gravíssima",
+      "lesão corporal dolosa",
+      "art 129 código penal",
+      "lesão corporal pena",
+    ],
+    excerpt:
+      "O crime de lesão corporal (art. 129 do Código Penal) vai da lesão leve, com detenção de 3 meses a 1 ano, à gravíssima, com reclusão de 2 a 8 anos. Veja as diferenças, as regras de violência doméstica e como corre o processo.",
+    content: {
+      intro:
+        "Em resumo: lesão corporal é ofender a integridade física ou a saúde de alguém (art. 129 do Código Penal). A lesão leve tem pena de detenção de 3 meses a 1 ano e, em regra, só vira processo se a vítima representar em até 6 meses. A grave, como afastamento das atividades por mais de 30 dias ou perigo de vida, tem pena de reclusão de 1 a 5 anos; a gravíssima, como deformidade permanente ou perda de um sentido, de 2 a 8 anos; e a seguida de morte, de 4 a 12 anos. Na violência doméstica e na lesão contra a mulher por razões de gênero, a pena é de reclusão de 2 a 5 anos. O exame de corpo de delito é a prova central.",
+      whatIs:
+        "É o crime de quem machuca outra pessoa ou prejudica a saúde dela, de propósito (lesão dolosa) ou por descuido (lesão culposa). A classificação depende do resultado: leve, grave, gravíssima ou seguida de morte. Quem descreve a lesão e suas consequências é o laudo do exame de corpo de delito, feito pelo Instituto Médico Legal, indispensável quando há vestígios (art. 158 do Código de Processo Penal).",
+      whenYouHaveRight: [
+        "A vítima pode registrar boletim de ocorrência e fazer o exame de corpo de delito, que tem prioridade em violência doméstica contra a mulher e contra criança, adolescente, idoso ou pessoa com deficiência (art. 158 do CPP)",
+        "Na lesão leve e na culposa, a vítima decide se quer o processo e tem 6 meses, contados de quando soube quem é o autor, para representar (art. 88 da Lei 9.099/1995 e art. 38 do CPP)",
+        "Na violência doméstica contra a mulher, o processo segue mesmo sem representação (Súmula 542 do STJ), e a vítima pode pedir medidas protetivas (Lei 11.340/2006)",
+        "A vítima pode pedir reparação dos danos, como despesas médicas, dias sem trabalhar e dano moral",
+        "O acusado tem direito de ficar calado, de ter advogado e de pedir exame complementar quando discordar da classificação da lesão (art. 168 do CPP)",
+        "Na lesão leve fora da violência doméstica, cabem acordo com a vítima e transação penal no Juizado Especial Criminal (Lei 9.099/1995)",
+      ],
+      documents: [
+        "Boletim de ocorrência",
+        "Laudo do exame de corpo de delito",
+        "Relatórios médicos, receitas, exames e atestados de afastamento",
+        "Fotos das lesões, com data",
+        "Nome e contato de testemunhas e vídeos de câmeras, se houver",
+        "Comprovantes de despesas e dos dias sem trabalhar",
+      ],
+      deadlines:
+        "Na lesão leve e na culposa, a vítima tem 6 meses, contados de quando soube quem é o autor, para representar; depois disso perde o direito (art. 38 do CPP). Para classificar a lesão como grave por afastamento de mais de 30 dias, o exame complementar deve ser feito logo que se passarem 30 dias do fato (art. 168, § 2º, do CPP). Na lesão grave, na gravíssima e na lesão contra a mulher em violência doméstica, não há prazo de representação: o processo não depende da vontade da vítima.",
+      faq: [
+        {
+          question: "Qual a diferença entre lesão leve, grave e gravíssima?",
+          answer:
+            "Leve é a que não se encaixa nas outras. Grave é a que causa afastamento das ocupações habituais por mais de 30 dias, perigo de vida, debilidade permanente de membro, sentido ou função, ou aceleração de parto (art. 129, § 1º). Gravíssima é a que causa incapacidade permanente para o trabalho, doença incurável, perda ou inutilização de membro, sentido ou função, deformidade permanente ou aborto (§ 2º).",
+        },
+        {
+          question: "Qual a pena de lesão corporal?",
+          answer:
+            "Leve: detenção de 3 meses a 1 ano. Grave: reclusão de 1 a 5 anos. Gravíssima: reclusão de 2 a 8 anos. Seguida de morte: reclusão de 4 a 12 anos. Culposa: detenção de 2 meses a 1 ano. Em violência doméstica (§ 9º) e contra a mulher por razões de gênero (§ 13): reclusão de 2 a 5 anos. Há aumentos de pena em situações específicas previstas no art. 129.",
+        },
+        {
+          question: "Lesão corporal leve dá cadeia?",
+          answer:
+            "A pena máxima é de 1 ano de detenção, então a lesão leve, fora da violência doméstica, é crime de menor potencial ofensivo e vai ao Juizado Especial Criminal, onde cabem acordo com a vítima e transação penal. Na violência doméstica contra a mulher essas medidas não se aplicam (art. 41 da Lei 11.340/2006) e a pena é maior.",
+        },
+        {
+          question: "A vítima pode desistir do processo?",
+          answer:
+            "Na lesão leve e na culposa fora da violência doméstica, a vítima pode retirar a representação até o Ministério Público oferecer a denúncia (art. 25 do CPP). Na lesão contra a mulher em violência doméstica, o processo é público incondicionado e não depende da vontade dela (Súmula 542 do STJ).",
+        },
+        {
+          question: "O que é o exame de corpo de delito e como fazer?",
+          answer:
+            "É a perícia que descreve as lesões e suas consequências, feita pelo Instituto Médico Legal (na Bahia, ligado ao Departamento de Polícia Técnica). A delegacia encaminha a vítima depois do boletim de ocorrência. Quanto antes for feito, melhor, porque as marcas desaparecem; se faltar o exame, outras provas, como relatórios médicos e testemunhas, podem ajudar.",
+        },
+        {
+          question: "Lesão corporal no trânsito é crime?",
+          answer:
+            "Quando é culposa e acontece na direção de veículo, segue o Código de Trânsito (art. 303), com pena de detenção e suspensão ou proibição de dirigir. A lesão causada de propósito com o carro continua sendo o crime do art. 129 do Código Penal.",
+        },
+        {
+          question: "Numa briga em que os dois se machucaram, os dois respondem?",
+          answer:
+            "Podem responder, cada um como autor da lesão que causou. Se as lesões forem recíprocas e não graves, o juiz pode trocar a detenção por multa (art. 129, § 5º). E quem apenas se defendeu de uma agressão injusta, usando os meios necessários com moderação, age em legítima defesa e não comete crime (art. 25 do Código Penal).",
+        },
+        {
+          question: "A vítima pode pedir indenização?",
+          answer:
+            "Sim. O juiz criminal pode fixar um valor mínimo de reparação na sentença, e a vítima pode cobrar na Justiça cível as despesas de tratamento, os dias sem trabalhar e o dano moral. Guarde comprovantes de gastos e atestados.",
+        },
+      ],
+      sections: [
+        {
+          title: "Lesão corporal leve",
+          paragraphs: [
+            "É a forma mais comum: hematomas, arranhões, cortes e escoriações que não deixam as consequências mais sérias previstas nos parágrafos do art. 129. A pena é de detenção de 3 meses a 1 ano. Fora da violência doméstica, é crime de menor potencial ofensivo: a polícia faz um termo circunstanciado, e o caso vai ao Juizado Especial Criminal.",
+            "Ali a vítima decide se quer seguir: precisa representar em até 6 meses depois de saber quem é o autor. Há uma audiência de conciliação, em que se pode fazer acordo de reparação dos danos; não havendo acordo, o Ministério Público pode propor transação penal, como prestação de serviços ou pagamento de valor a entidade social, sem reconhecimento de culpa.",
+          ],
+        },
+        {
+          title: "Lesão grave e gravíssima",
+          paragraphs: [
+            "A lesão é grave quando causa afastamento das ocupações habituais por mais de 30 dias, perigo de vida, debilidade permanente de membro, sentido ou função ou aceleração do parto; a pena é de reclusão de 1 a 5 anos. É gravíssima quando causa incapacidade permanente para o trabalho, doença incurável, perda ou inutilização de membro, sentido ou função, deformidade permanente ou aborto; a pena é de reclusão de 2 a 8 anos.",
+            "Para provar o afastamento de mais de 30 dias, faz-se um exame complementar logo depois desse prazo; se ele faltar, testemunhas podem suprir (art. 168 do CPP). Nesses casos o processo não depende de representação da vítima. A lei também aumenta a pena quando a vítima é policial ou outro agente público no exercício da função, ou quando a lesão acontece dentro de escola (art. 129, § 12, de 2025).",
+          ],
+        },
+        {
+          title: "Lesão seguida de morte e lesão culposa",
+          paragraphs: [
+            "Quando a agressão causa a morte sem que o autor quisesse esse resultado ou assumisse o risco de produzi-lo, o crime é de lesão corporal seguida de morte, com reclusão de 4 a 12 anos. Se havia intenção de matar, o caso é de homicídio.",
+            "A lesão culposa, causada por descuido, imprudência ou imperícia, tem pena de detenção de 2 meses a 1 ano e também depende de representação. Na direção de veículo, aplica-se o Código de Trânsito (art. 303).",
+          ],
+        },
+        {
+          title: "Violência doméstica e lesão contra a mulher",
+          paragraphs: [
+            "Se a lesão é praticada contra ascendente, descendente, irmão, cônjuge, companheiro ou pessoa com quem o autor conviva ou tenha convivido, ou aproveitando relações domésticas, de coabitação ou de hospitalidade, a pena é de reclusão de 2 a 5 anos (§ 9º). A mesma pena vale para a lesão contra a mulher por razões da condição do sexo feminino (§ 13). Nos casos graves, gravíssimos ou com morte nesse contexto, a pena aumenta em um terço (§ 10).",
+            "Na violência doméstica contra a mulher, não se aplicam o Juizado Especial Criminal, o acordo nem a transação penal (art. 41 da Lei 11.340/2006), e o processo não depende de representação. A vítima pode pedir medidas protetivas na delegacia, que as encaminha ao juiz.",
+          ],
+        },
+        {
+          title: "O que fazer se você foi vítima",
+          paragraphs: [
+            "Procure atendimento médico e registre boletim de ocorrência; a delegacia encaminha ao exame de corpo de delito. Fotografe as lesões com data, guarde receitas, atestados e comprovantes de gastos e anote nomes de testemunhas. Se for o caso de lesão leve fora da violência doméstica, diga na delegacia que quer representar contra o autor, ou faça isso depois, dentro de 6 meses.",
+            "A reparação dos danos pode ser pedida no próprio processo criminal e em ação cível. Quem não pode pagar advogado pode procurar a Defensoria Pública; em violência doméstica, a vítima também tem atendimento especializado.",
+          ],
+        },
+        {
+          title: "Se você foi acusado",
+          paragraphs: [
+            "Não discuta o caso com a vítima nem com testemunhas e não apague mensagens. Você tem direito de ficar calado e de ser acompanhado por advogado no depoimento. O advogado avalia o laudo, pode pedir exame complementar quando a classificação estiver errada e verifica se houve legítima defesa ou lesões recíprocas.",
+            "Na lesão leve fora da violência doméstica, o acordo com a vítima e a transação penal podem encerrar o caso sem processo. Em violência doméstica, o cumprimento de eventuais medidas protetivas é obrigatório: descumpri-las é crime próprio.",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["violencia-domestica", "prisao-flagrante"],
+    updatedAt: "2026-11-07",
+  },
 ];

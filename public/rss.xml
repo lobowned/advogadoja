@@ -5,7 +5,7 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sat, 07 Nov 2026 17:03:49 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 17:07:14 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
@@ -65,6 +65,15 @@
       <category>penal</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Inquérito policial: como começa, prazos de 10 e 30 dias, direito ao silêncio, acesso do advogado, arquivamento e acordo de não persecução penal.</description>
+    </item>
+    <item>
+      <title>Lesão Corporal: Leve, Grave, Gravíssima e Penas (Art. 129)</title>
+      <link>https://riccioadvocacia.online/artigos/penal/lesao-corporal</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/penal/lesao-corporal</guid>
+      <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
+      <category>penal</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Lesão corporal (art. 129 do CP): leve, grave e gravíssima, penas atualizadas, violência doméstica, exame de corpo de delito e prazo de representação.</description>
     </item>
     <item>
       <title>Quanto Cobra Advogado Trabalhista | Honorários OAB/BA</title>
@@ -452,15 +461,6 @@
       <category>consumidor</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Foi impedido de embarcar por overbooking ou teve a mala extraviada? Entenda a Resolução ANAC 400, a compensação, a assistência material, os prazos e a indenização.</description>
-    </item>
-    <item>
-      <title>Negativação Indevida SPC Serasa | Limpar Nome e Danos Morais</title>
-      <link>https://riccioadvocacia.online/artigos/consumidor/negativacao-indevida-spc-serasa</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/consumidor/negativacao-indevida-spc-serasa</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>consumidor</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Nome sujo por dívida que você não tem ou já pagou? Entenda a negativação indevida, a Súmula 385 do STJ, os prazos de baixa e como pedir exclusão e indenização.</description>
     </item>
   </channel>
 </rss>

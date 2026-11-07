@@ -26,7 +26,7 @@ Objetivo: mais visitas do Google e do Bing para https://riccioadvocacia.online.
 - [x] 11. Links internos: páginas de área e artigos antigos apontando para os artigos novos.
 - [ ] 12. Fechamento: lista do que publicar e IndexNow das URLs novas depois do Publish.
 - [x] 13. Artigo 6 da pauta: divórcio em cartório e online.
-- [ ] 14. Artigo 7 da pauta: lesão corporal.
+- [x] 14. Artigo 7 da pauta: lesão corporal.
 - [ ] 15. Artigo 8 da pauta: crime de ameaça.
 - [ ] 16. Artigo 9 da pauta: usucapião em cartório.
 - [ ] 17. Artigo 10 da pauta: perícia do INSS.
@@ -49,3 +49,4 @@ Formato dos artigos: objeto BlogArticle (src/data/blog-articles.ts), rota /artig
 - 07/11 · item 11 · commit "seo: links internos para os artigos novos". "Artigos relacionados" passou a escolher por assunto em comum (antes eram sempre os 3 primeiros da área, e artigo novo nunca aparecia nos antigos) e agora também sai no HTML estático. Listas dos guias de área sem repetições (havia "aposentadoria", "prisão em flagrante", "habeas corpus" e "guarda" duplicados) e com os artigos novos. Resultado no HTML estático: cada artigo novo recebe link de 6 a 14 páginas.
 - 07/11 · item 12 (parcial) · O Dr. publicou à tarde: entrou tudo até a volta 5 (questionário e avaliação do chat consertados no ar; página do advogado; aposentadoria 2026; velocidade; dados estruturados). IndexNow aceitou 5 URLs (/, /advogado-gilberto-riccio, aposentadoria 2026, /artigos, /artigos/previdenciario). Voltas 6 a 11 esperam nova publicação; lista em SEO-PASSOS-DO-DR.md item 1.
 - 07/11 · item 13 · commit "seo: divorcio em cartorio e online". O tema já tinha artigo (/artigos/familia/divorcio-consensual) e ele se contradizia: o bloco original dizia que, com filhos menores, o divórcio só podia ser judicial, e a expansão dizia o contrário. Reescrito no mesmo endereço para "divórcio em cartório, online e com filhos menores", conferido no CPC (art. 733) e na Resolução CNJ 35/2007 com a redação da Resolução 571/2024 (arts. 6º-8º, 33-36, no site do CNJ): gratuidade por declaração, procurador com procuração pública de 30 dias, gravidez impede o cartório. Corrigidas 2 frases das páginas locais (uma dizia "depende do cartório e do estado"; a regra é nacional). 11 perguntas.
+- 07/11 · item 14 · commit "seo: artigo lesao corporal". /artigos/penal/lesao-corporal: leve, grave, gravíssima, seguida de morte e culposa, com as penas do texto em vigor do art. 129 do Código Penal (o § 9º, violência doméstica, passou a reclusão de 2 a 5 anos pela Lei 14.994/2024; § 12 de 2025; §§ 3º-A e 8º-A de 2026), representação em 6 meses na leve e na culposa, Súmula 542 do STJ, exame de corpo de delito e complementar (CPP arts. 158 e 168), legítima defesa e lesões recíprocas. 8 perguntas.

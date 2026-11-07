@@ -63,7 +63,7 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
   // Sistema de nudges
   const [nudgeCount, setNudgeCount] = useState(0);
   const [lastUserActivity, setLastUserActivity] = useState<Date>(new Date());
-  const nudgeTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const nudgeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const sessionStartRef = useRef<Date>(new Date());
   
   // Detecção de urgência e problema

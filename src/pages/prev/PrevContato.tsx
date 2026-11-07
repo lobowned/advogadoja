@@ -110,22 +110,24 @@ export default function PrevContato() {
                 </p>
               </motion.a>
 
-              {/* E-mail */}
+              {/* Documentos (pelo WhatsApp: o e-mail do domínio antigo não recebe mensagens) */}
               <motion.a
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.08 }}
-                href={`mailto:${LAWYER.email}`}
+                href={whatsappLink(WHATSAPP_MESSAGES.contato)}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group bg-prev-beige p-8 hover:bg-white transition-colors duration-500"
               >
                 <Mail className="w-7 h-7 text-prev-gold mb-6 group-hover:scale-110 transition-transform duration-500" strokeWidth={1.2} />
-                <h3 className="font-serif text-[1.35rem] text-prev-navy mb-2 leading-tight">E-mail</h3>
+                <h3 className="font-serif text-[1.35rem] text-prev-navy mb-2 leading-tight">Documentos</h3>
                 <p className="text-[10px] uppercase tracking-[0.22em] text-prev-navy/55 mb-4 font-semibold">
-                  Para anexar documentos
+                  Pelo WhatsApp
                 </p>
-                <p className="text-prev-navy/72 text-[14.5px] break-all leading-[1.7]">
-                  {LAWYER.email}
+                <p className="text-prev-navy/72 text-[14.5px] leading-[1.7]">
+                  Envie fotos ou PDFs dos documentos na mesma conversa.
                 </p>
               </motion.a>
 

@@ -91,7 +91,7 @@ const TermsOfUse = () => {
                   <strong className="text-foreground">CNPJ:</strong> 50.947.818/0001-94<br />
                   <strong className="text-foreground">Inscrição OAB:</strong> OAB/BA 46.638<br />
                   <strong className="text-foreground">Endereço:</strong> Salvador, Bahia, Brasil<br />
-                  <strong className="text-foreground">E-mail:</strong> contato@advogadoja.com.br
+                  <strong className="text-foreground">WhatsApp:</strong> (71) 99703-6269
                 </p>
               </CardContent>
             </Card>
@@ -321,13 +321,6 @@ const TermsOfUse = () => {
               <CardContent className="prose prose-sm max-w-none text-muted-foreground">
                 <p>Para dúvidas sobre estes Termos de Uso:</p>
                 <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                  <a 
-                    href="mailto:contato@advogadoja.com.br"
-                    className="flex items-center gap-2 text-primary hover:underline"
-                  >
-                    <Mail className="w-4 h-4" />
-                    contato@advogadoja.com.br
-                  </a>
                   <a 
                     href="https://wa.me/5571997036269"
                     target="_blank"

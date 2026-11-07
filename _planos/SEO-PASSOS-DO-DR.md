@@ -26,13 +26,11 @@ Quando chegar a carta do Google com o código, digite o código no perfil (ou me
 Depois de verificado: foto real sua ou do logo e a lista de serviços por área.
 
 ## 5. Bing (abastece também o ChatGPT e o DuckDuckGo)
-Depois do passo 3: em bing.com/webmasters, com sua conta Microsoft, **Importar do Google Search Console**. Leva 2 minutos.
+O Bing já recebeu os 343 endereços do domínio novo pelo IndexNow (06/11). A conta no Bing Webmaster é opcional, só para acompanhar: em bing.com/webmasters, com sua conta Microsoft, **Importar do Google Search Console**.
 
-## 6. E-mail do site
-Os endereços que aparecem no site (contato@advogadoja.com.br e privacidade@advogadoja.com.br) **não recebem e-mail**: o domínio advogadoja.com.br não tem servidor de e-mail configurado.
-A Política de Privacidade precisa de um contato que funcione (LGPD). Duas saídas:
-- ativar o encaminhamento grátis de e-mail do Cloudflare (Email Routing) para o seu Gmail; ou
-- me dizer qual e-mail mostrar no site, que eu troco.
+## 6. E-mail do site: resolvido pelo WhatsApp
+Os endereços contato@ e privacidade@advogadoja.com.br não recebiam e-mail (o domínio não tem servidor de e-mail). Em 06/11 saíram do site e o contato (inclusive o do encarregado de dados, na Política de Privacidade) passou a ser o WhatsApp (71) 99703-6269.
+Se quiser e-mail de volta, ative o encaminhamento grátis do Cloudflare (Email Routing) para o seu Gmail e me avise qual endereço mostrar.
 
 ## 7. Chat do site (assistente virtual)
 O texto do robô foi corrigido no código: ele não se apresenta mais como "Dr. Rafael, especialista em…" nem usa nomes de advogados que não existem.

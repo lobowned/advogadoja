@@ -86,16 +86,18 @@ const Completed = () => {
               <div className="rounded-lg border bg-card p-4 text-left">
                 <div className="mb-2 flex items-center gap-2 text-foreground">
                   <Mail className="h-5 w-5" />
-                  <span className="font-medium">Entre em contato por e-mail:</span>
+                  <span className="font-medium">Documentos do caso:</span>
                 </div>
                 <a
-                  href="mailto:contato@advogadoja.com.br"
+                  href="https://wa.me/5571997036269"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-primary hover:underline"
                 >
-                  contato@advogadoja.com.br
+                  WhatsApp (71) 99703-6269
                 </a>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  O e-mail também serve para enviar documentos do caso.
+                  Envie fotos ou PDFs dos documentos pela mesma conversa.
                 </p>
               </div>
             </div>

@@ -209,14 +209,6 @@ export default function PrevLayout({
                     WhatsApp
                   </PrevWhatsappButton>
                 </li>
-                <li>
-                  <a
-                    href={`mailto:${LAWYER.email}`}
-                    className="hover:text-prev-beige transition-colors"
-                  >
-                    {LAWYER.email}
-                  </a>
-                </li>
                 <li className="text-prev-beige/60 pt-2 text-xs">
                   {LAWYER.businessHours}
                 </li>

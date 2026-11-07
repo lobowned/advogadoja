@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { AUTHOR_PATH, authorSchema } from '@/data/author';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Share2, MessageCircle, ChevronRight, Scale, Calculator, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -92,11 +93,7 @@ const FAQQuestion = () => {
     "description": description,
     "datePublished": FAQS_PUBLICADAS_EM,
     "dateModified": FAQS_REVISADAS_EM,
-    "author": {
-      "@type": "Person",
-      "name": "Gilberto Riccio",
-      "jobTitle": "Advogado OAB/BA 46.638"
-    },
+    "author": authorSchema,
     "publisher": {
       "@type": "Organization",
       "name": "Riccio Advocacia",
@@ -348,7 +345,7 @@ const FAQQuestion = () => {
                   </div>
 
                   <p className="mt-8 pt-6 border-t text-sm text-muted-foreground">
-                    Atualizado em {dataBr(FAQS_REVISADAS_EM)} · Riccio Advocacia, Dr. Gilberto Riccio (OAB/BA 46.638).
+                    Atualizado em {dataBr(FAQS_REVISADAS_EM)} · Riccio Advocacia, <Link to={AUTHOR_PATH} className="underline underline-offset-4 hover:text-foreground">Dr. Gilberto Riccio</Link> (OAB/BA 46.638).
                     Resposta informativa: cada caso depende dos documentos e dos fatos.
                   </p>
                 </CardContent>

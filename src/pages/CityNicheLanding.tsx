@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
+import { authorSchema } from "@/data/author";
 import { Helmet } from "react-helmet-async";
 import { MessageCircle, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -59,11 +60,7 @@ function LocalNichePage({
       "@type": "City",
       "name": cityName,
       "containedInPlace": { "@type": "State", "name": "Bahia" }},
-    "employee": {
-      "@type": "Person",
-      "name": "Gilberto Riccio",
-      "jobTitle": "Advogado",
-      "identifier": "OAB/BA 46.638"}};
+    "employee": authorSchema};
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",

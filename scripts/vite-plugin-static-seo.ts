@@ -19,6 +19,16 @@ const BRAND = "Riccio Advocacia";
 const LAWYER = "Gilberto Riccio";
 const OAB = "OAB/BA 46.638";
 const WHATSAPP = "5571997036269";
+/** Página do advogado (mesmo endereço de src/data/author.ts). */
+const AUTHOR_ROUTE = "/advogado-gilberto-riccio";
+const AUTHOR_PERSON = {
+  "@type": "Person",
+  "@id": `${SITE}${AUTHOR_ROUTE}#pessoa`,
+  name: LAWYER,
+  url: `${SITE}${AUTHOR_ROUTE}`,
+  jobTitle: "Advogado",
+  identifier: OAB,
+};
 
 type Faq = { q: string; a: string };
 type Crumb = { name: string; path: string };
@@ -62,6 +72,7 @@ const COMPONENT_PAGES: { route: string; file: string; area: "consumidor" | "prev
   { route: "/prev/contato", file: "src/pages/prev/PrevContato.tsx", area: "previdenciario" },
   { route: "/privacidade", file: "src/pages/PrivacyPolicy.tsx", area: "institucional" },
   { route: "/termos-de-uso", file: "src/pages/TermsOfUse.tsx", area: "institucional" },
+  { route: AUTHOR_ROUTE, file: "src/pages/AdvogadoGilbertoRiccio.tsx", area: "institucional" },
   { route: "/calculadora-devolucao-dobro", file: "src/pages/CalculadoraDevolucaoEmDobro.tsx", area: "calc" },
   { route: "/advogado-problemas-voo", file: "src/pages/consumer/ProblemasVooLanding.tsx", area: "consumidor" },
   { route: "/advogado-negativacao-indevida", file: "src/pages/consumer/NegativacaoIndevidaLanding.tsx", area: "consumidor" },
@@ -267,7 +278,7 @@ function articleLd(p: { route: string; title: string; description: string; date?
     image: OG_IMAGE,
     ...(p.published ? { datePublished: p.published } : p.date ? { datePublished: p.date } : {}),
     ...(p.date ? { dateModified: p.date } : {}),
-    author: { "@type": "Person", name: LAWYER, jobTitle: `Advogado ${OAB}` },
+    author: AUTHOR_PERSON,
     publisher: { "@type": "Organization", name: BRAND, logo: { "@type": "ImageObject", url: OG_IMAGE } },
   };
 }
@@ -878,6 +889,21 @@ function buildPages(d: Awaited<ReturnType<typeof loadData>>, baseTitle: string, 
       jsonLd: [
         ...(isService
           ? [{ "@context": "https://schema.org", ...org, "@id": `${abs(c.route)}#legalservice`, description: info.description, areaServed: { "@type": "State", name: "Bahia" } }]
+          : []),
+        ...(c.route === AUTHOR_ROUTE
+          ? [{
+              "@context": "https://schema.org",
+              "@type": "ProfilePage",
+              "@id": abs(c.route),
+              url: abs(c.route),
+              name: info.title,
+              inLanguage: "pt-BR",
+              mainEntity: {
+                ...AUTHOR_PERSON,
+                description: info.description,
+                worksFor: { "@type": "LegalService", "@id": `${SITE}/#legalservice`, name: BRAND, url: `${SITE}/` },
+              },
+            }]
           : []),
         ...(info.faq.length ? [faqLd(info.faq)] : []),
         breadcrumb([home, { name: info.h1, path: c.route }]),

@@ -36,6 +36,7 @@ O escritório não tem endereço físico para atendimento presencial. Contato: W
 Para cada uma das 10 primeiras cidades há páginas por área, no formato /advogado-<área>-<cidade> (por exemplo, [advogado trabalhista em Feira de Santana](https://riccioadvocacia.online/advogado-trabalhista-feira-de-santana)). A lista completa está no mapa do site.
 
 ## Outras páginas
+- [Dr. Gilberto Riccio](https://riccioadvocacia.online/advogado-gilberto-riccio): quem é o advogado responsável, como confirmar a inscrição na OAB e como funciona o atendimento online
 - [Todos os artigos](https://riccioadvocacia.online/artigos)
 - [Calculadoras](https://riccioadvocacia.online/calculadoras): seguro-desemprego, FGTS, rescisão, BPC/LOAS e outras, com valores de 2026
 - [Perguntas frequentes](https://riccioadvocacia.online/perguntas): mais de 100 perguntas, cada uma com resposta própria e base legal

@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
+import { authorSchema } from "@/data/author";
 import { Helmet } from "react-helmet-async";
 import { 
   MapPin, 
@@ -90,11 +91,7 @@ const LocalSEOArticle = () => {
     "@type": "Article",
     "headline": article.title,
     "description": article.metaDescription,
-    "author": {
-      "@type": "Person",
-      "name": "Gilberto Riccio",
-      "jobTitle": "Advogado OAB/BA 46.638"
-    },
+    "author": authorSchema,
     "publisher": {
       "@type": "Organization",
       "name": "Riccio Advocacia",

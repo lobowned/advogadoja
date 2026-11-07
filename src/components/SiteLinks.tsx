@@ -63,6 +63,8 @@ const SiteLinks = () => (
         {" · "}
         <Link to="/advogado-bahia" className="hover:text-foreground hover:underline underline-offset-4">Todas as cidades da Bahia</Link>
         {" · "}
+        <Link to="/advogado-gilberto-riccio" className="hover:text-foreground hover:underline underline-offset-4">Sobre o advogado</Link>
+        {" · "}
         <Link to="/sitemap" className="hover:text-foreground hover:underline underline-offset-4">Mapa do site</Link>
       </p>
     </div>

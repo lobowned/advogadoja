@@ -1,15 +1,9 @@
+import { Link } from "react-router-dom";
+import { AUTHOR_PATH, authorSchema } from "@/data/author";
+
 export const AUTHOR_NAME = "Dr. Gilberto Riccio";
 
-export const authorSchema = {
-  "@type": "Person",
-  "name": "Gilberto Riccio",
-  "jobTitle": "Advogado",
-  "identifier": "OAB/BA 46.638",
-  "worksFor": {
-    "@type": "LegalService",
-    "name": "Riccio Advocacia",
-  },
-};
+export { authorSchema };
 
 const AuthorBox = () => (
   <aside
@@ -24,10 +18,16 @@ const AuthorBox = () => (
     </div>
     <div>
       <p className="font-semibold text-foreground">
-        Dr. Gilberto Riccio — Advogado, OAB/BA 46.638 · Riccio Advocacia
+        <Link to={AUTHOR_PATH} className="hover:underline underline-offset-4">
+          Dr. Gilberto Riccio
+        </Link>{" "}
+        — Advogado, OAB/BA 46.638 · Riccio Advocacia
       </p>
       <p className="text-sm text-muted-foreground mt-1">
-        Atua em Salvador e região metropolitana nas áreas criminal, previdenciária, trabalhista e de família.
+        Atua em Salvador e região metropolitana nas áreas criminal, previdenciária, trabalhista e de família.{" "}
+        <Link to={AUTHOR_PATH} className="text-primary hover:underline underline-offset-4">
+          Sobre o advogado
+        </Link>
       </p>
     </div>
   </aside>

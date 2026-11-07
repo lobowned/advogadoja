@@ -51,6 +51,7 @@ export const Conversao = lazyPage(() => import("@/pages/Conversao"));
 export const CityConsumerLanding = lazyPage(() => import("@/pages/CityConsumerLanding"));
 export const LocalSEOArticle = lazyPage(() => import("@/pages/LocalSEOArticle"));
 export const AdvogadoBahia = lazyPage(() => import("@/pages/AdvogadoBahia"));
+export const AdvogadoGilbertoRiccio = lazyPage(() => import("@/pages/AdvogadoGilbertoRiccio"));
 export const TrabalhistaLanding = lazyPage(() => import("@/pages/trabalhista/TrabalhistaLanding"));
 export const CriminalLanding = lazyPage(() => import("@/pages/criminal/CriminalLanding"));
 
@@ -112,6 +113,7 @@ const ROUTE_PRELOADS: Array<[RegExp, Preloadable[]]> = [
   [/^\/termos-de-uso$/, [TermsOfUse]],
   [/^\/sitemap$/, [Sitemap]],
   [/^\/advogado-bahia$/, [AdvogadoBahia]],
+  [/^\/advogado-gilberto-riccio$/, [AdvogadoGilbertoRiccio]],
   [/^\/noticias(\/[^/]+)?$/, [News]],
   [/^\/calculadoras$/, [Calculadoras]],
   // Calculadoras de indenização aposentadas em 06/11/2026: redirecionam para o artigo da área

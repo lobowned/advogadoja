@@ -55,6 +55,7 @@ import {
   CityConsumerLanding,
   LocalSEOArticle,
   AdvogadoBahia,
+  AdvogadoGilbertoRiccio,
   TrabalhistaLanding,
   CriminalLanding,
   Calculadoras,
@@ -166,6 +167,7 @@ const AnimatedRoutes = () => {
 
         {/* Regional Hub Pages */}
         <Route path="/advogado-bahia" element={<AdvogadoBahia />} />
+        <Route path="/advogado-gilberto-riccio" element={<AdvogadoGilbertoRiccio />} />
 
         {/* News */}
         <Route path="/noticias" element={<News />} />

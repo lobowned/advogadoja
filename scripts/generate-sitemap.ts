@@ -69,6 +69,7 @@ const staticPages: SitemapURL[] = [
   { loc: '/privacidade', lastmod: UNKNOWN, changefreq: 'yearly', priority: 0.2 },
   { loc: '/termos-de-uso', lastmod: UNKNOWN, changefreq: 'yearly', priority: 0.2 },
   { loc: '/advogado-bahia', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
+  { loc: '/advogado-gilberto-riccio', lastmod: '2026-11-07', changefreq: 'monthly', priority: 0.7 },
 ];
 
 // Só as cidades onde o escritório atende de fato; o resto fica fora do sitemap.

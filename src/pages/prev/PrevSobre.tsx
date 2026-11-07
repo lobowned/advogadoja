@@ -21,10 +21,11 @@ export default function PrevSobre() {
   return (
     <>
       <Helmet>
-        <title>Sobre — {nameSet ? LAWYER.fullName : "Advogado(a) Previdenciário(a)"}</title>
+        {/* Título em texto fixo: o gerador do HTML estático só lê título sem expressões */}
+        <title>Sobre o Dr. Gilberto Riccio | Advogado Previdenciário (INSS)</title>
         <meta
           name="description"
-          content="Conheça a trajetória profissional e a forma de atuar do escritório que atua em direito previdenciário."
+          content="Dr. Gilberto Riccio, advogado inscrito na OAB/BA sob o nº 46.638, atua em direito previdenciário: aposentadorias, auxílio por incapacidade, BPC/LOAS e revisões, com atendimento online a partir de Salvador."
         />
         <link rel="canonical" href="https://riccioadvocacia.online/prev/sobre" />
       </Helmet>

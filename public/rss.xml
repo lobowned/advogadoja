@@ -5,7 +5,7 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sat, 07 Nov 2026 17:25:02 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 17:28:05 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
@@ -110,6 +110,15 @@
       <category>penal</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Boletim de ocorrência online na Bahia: como registrar na Delegacia Virtual com gov.br, o que não pode ser feito pela internet e como acompanhar.</description>
+    </item>
+    <item>
+      <title>Reclamação no Procon-BA e no consumidor.gov.br: Como Fazer</title>
+      <link>https://riccioadvocacia.online/artigos/consumidor/reclamacao-procon-bahia-consumidor-gov</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/consumidor/reclamacao-procon-bahia-consumidor-gov</guid>
+      <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
+      <category>consumidor</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Como reclamar no Procon da Bahia (formulário on-line ou posto) e no consumidor.gov.br: prazos de resposta, documentos e quando levar o caso ao Juizado.</description>
     </item>
     <item>
       <title>Quanto Cobra Advogado Trabalhista | Honorários OAB/BA</title>
@@ -452,15 +461,6 @@
       <category>penal</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Prisão ilegal, sem fundamentação ou com excesso de prazo? Entenda quando cabe habeas corpus, preventivo ou liberatório, quem pode impetrar e como é julgado.</description>
-    </item>
-    <item>
-      <title>Violência Doméstica | Medida Protetiva Lei Maria da Penha</title>
-      <link>https://riccioadvocacia.online/artigos/penal/violencia-domestica</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/penal/violencia-domestica</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>penal</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Está sofrendo violência doméstica? Saiba como pedir medida protetiva, onde denunciar e quais seus direitos pela Lei Maria da Penha.</description>
     </item>
   </channel>
 </rss>

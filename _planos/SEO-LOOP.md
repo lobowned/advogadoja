@@ -32,7 +32,7 @@ Objetivo: mais visitas do Google e do Bing para https://riccioadvocacia.online.
 - [x] 17. Artigo 10 da pauta: perícia do INSS.
 - [x] 18. /prev/sobre sem HTML estático (única página do sitemap descoberta).
 - [x] 19. Reserva da pauta: boletim de ocorrência online na Bahia (Delegacia Virtual).
-- [ ] 20. Reserva da pauta: reclamação no Procon da Bahia e no consumidor.gov.br.
+- [x] 20. Reserva da pauta: reclamação no Procon da Bahia e no consumidor.gov.br.
 
 Itens 10 e 12 dependem do Chrome e de nova publicação: a cada volta, conferir se o site no ar já tem /artigos/penal/inquerito-policial; se tiver, fazer o 12 (IndexNow) e o 10 (Search Console) antes do próximo artigo.
 
@@ -59,3 +59,4 @@ Formato dos artigos: objeto BlogArticle (src/data/blog-articles.ts), rota /artig
 - 07/11 · item 10 (parcial) · Chrome voltou. Search Console do domínio novo ainda com "dados em processamento" (propriedade criada ontem). Indexação solicitada e aceita para /advogado-gilberto-riccio e /artigos/previdenciario/aposentadoria-2026-regras (as duas páginas novas já no ar). sitemap.xml reenviado. Depois da próxima publicação: pedir indexação dos artigos novos, dentro da cota do dia.
 - 07/11 · item 18 · commit "seo: /prev/sobre com HTML estatico". O título da página era montado com expressão ("Sobre — {nome}") e o gerador não lia; virou texto fixo e descritivo ("Sobre o Dr. Gilberto Riccio | Advogado Previdenciário (INSS)"), com descrição mais específica. Agora as 351 URLs do sitemap têm HTML estático.
 - 07/11 · item 19 · commit "seo: boletim de ocorrencia online na Bahia". /artigos/penal/boletim-de-ocorrencia-online-bahia: passo a passo na Delegacia Virtual do Ministério da Justiça (link oficial no site da SSP-BA), login gov.br, o que não pode ser feito online (menor de idade, arrombamento, subtração de veículo, arma, munição, explosivos, medicamentos, produtos químicos), como acompanhar, B.O. falso (art. 340 do CP) e golpe com Pix. Conferido nas orientações oficiais da Delegacia Virtual para a Bahia. 7 perguntas.
+- 07/11 · item 20 · commit "seo: reclamacao no Procon-BA e no consumidor.gov.br". /artigos/consumidor/reclamacao-procon-bahia-consumidor-gov: formulário on-line e postos do Procon-BA (conferidos no site da SJDH), consumidor.gov.br (empresa responde em até 10 dias, consumidor avalia em até 20, conferido no site do serviço), prazos do CDC (arts. 26 e 27), devolução em dobro, Juizado (até 40 salários mínimos; até 20 sem advogado) e agências de cada setor. Sitemap com 353 URLs. 6 perguntas.

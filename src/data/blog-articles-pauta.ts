@@ -1068,4 +1068,124 @@ export const pautaArticles: BlogArticle[] = [
     relatedActions: ["estelionato"],
     updatedAt: "2026-11-07",
   },
+
+  // ============================================================
+  // RESERVA 2. RECLAMAÇÃO NO PROCON DA BAHIA E NO CONSUMIDOR.GOV.BR
+  // Conferido em 07/11/2026: página do Procon-BA no site da SJDH (ba.gov.br/justica/iniciativas/
+  // atendimento-procon, com o formulário on-line); consumidor.gov.br ("Sobre o serviço" e
+  // "Conheça"); CDC arts. 26, 27, 42 e 55 a 56; Lei 9.099/1995 arts. 3º e 9º.
+  // ============================================================
+  {
+    id: "reclamacao-procon-bahia-consumidor-gov",
+    nicheId: "consumidor",
+    slug: "reclamacao-procon-bahia-consumidor-gov",
+    title: "Reclamação no Procon da Bahia e no Consumidor.gov.br: Como Fazer",
+    metaTitle: "Reclamação no Procon-BA e no consumidor.gov.br: Como Fazer",
+    metaDescription:
+      "Como reclamar no Procon da Bahia (formulário on-line ou posto) e no consumidor.gov.br: prazos de resposta, documentos e quando levar o caso ao Juizado.",
+    keywords: [
+      "procon bahia reclamação online",
+      "procon bahia",
+      "procon ba reclamação",
+      "consumidor.gov.br",
+      "como reclamar no procon",
+      "reclamação contra empresa",
+    ],
+    excerpt:
+      "Na Bahia, a reclamação de consumo pode ser feita no Procon-BA, pelo formulário on-line ou nos postos, ou no consumidor.gov.br, em que a empresa cadastrada tem até 10 dias para responder. Veja o passo a passo, os documentos e quando ir ao Juizado.",
+    content: {
+      intro:
+        "Em resumo: na Bahia, a reclamação no Procon pode ser feita pelo formulário de atendimento on-line do Procon-BA (atendimentoprocon.sjdhds.ba.gov.br), indicado no site da Secretaria de Justiça e Direitos Humanos, ou presencialmente nos postos do Procon. Outra opção é o consumidor.gov.br, do Ministério da Justiça: se a empresa for cadastrada, ela tem até 10 dias para responder, e você tem até 20 dias para avaliar a resposta. Antes, tente resolver com a empresa e guarde o protocolo. Se nada resolver, o Juizado Especial Cível julga causas de até 40 salários mínimos, e até 20 não precisa de advogado.",
+      whatIs:
+        "O Procon-BA (Superintendência de Proteção e Defesa do Consumidor) é o órgão estadual, ligado à Secretaria de Justiça e Direitos Humanos, que orienta consumidores, registra reclamações individuais, chama as empresas para tentar um acordo e pode aplicar sanções administrativas, como multa (arts. 55 a 56 do Código de Defesa do Consumidor). O consumidor.gov.br é um serviço público e gratuito do Ministério da Justiça em que o consumidor fala direto com as empresas que aderiram a ele. Nenhum dos dois condena a empresa a indenizar: isso é papel da Justiça, ou de um acordo.",
+      whenYouHaveRight: [
+        "Reclamar de produto com defeito, serviço mal prestado, cobrança indevida, propaganda enganosa, cláusula abusiva e outros problemas de consumo (Código de Defesa do Consumidor)",
+        "Registrar a reclamação no Procon-BA pelo formulário on-line ou em um posto, e acompanhar o andamento do processo",
+        "No consumidor.gov.br: resposta da empresa cadastrada em até 10 dias e até 20 dias para você avaliar se foi resolvido",
+        "Receber em dobro o que pagou por cobrança indevida, salvo engano justificável da empresa (art. 42, parágrafo único, do CDC)",
+        "Ir ao Juizado Especial Cível se não houver solução, sem precisar passar antes pelo Procon",
+      ],
+      documents: [
+        "Documento de identidade e CPF",
+        "Nota fiscal, contrato, pedido ou comprovante da compra",
+        "Faturas, extratos ou cobranças contestadas",
+        "Protocolos de atendimento da empresa, com data",
+        "Prints de conversas, e-mails e anúncios",
+        "Fotos ou laudo do defeito, se for produto",
+      ],
+      deadlines:
+        "Para reclamar de defeito aparente, o prazo é de 30 dias para produto ou serviço não durável e 90 dias para durável (art. 26 do CDC); a reclamação feita à empresa, comprovada, impede que o prazo corra até a resposta negativa. Para pedir indenização por dano causado por defeito do produto ou do serviço, o prazo é de 5 anos (art. 27). No consumidor.gov.br, a empresa tem até 10 dias para responder e você, até 20 dias para avaliar.",
+      faq: [
+        {
+          question: "Como fazer reclamação no Procon da Bahia?",
+          answer:
+            "Pelo formulário de atendimento on-line do Procon-BA (atendimentoprocon.sjdhds.ba.gov.br), indicado no site da Secretaria de Justiça e Direitos Humanos (ba.gov.br/justica), ou presencialmente em um posto do Procon. Descreva o problema, o que você já tentou com a empresa e o que quer (troca, conserto, cancelamento, devolução), e anexe nota fiscal, protocolos e prints.",
+        },
+        {
+          question: "Procon ou consumidor.gov.br: qual escolher?",
+          answer:
+            "Se a empresa estiver cadastrada no consumidor.gov.br, ele costuma ser o caminho mais direto: a empresa tem até 10 dias para responder. O Procon atende reclamações contra qualquer fornecedor, pode chamar a empresa para uma audiência e aplicar multa. Comece por um deles e use o outro se não resolver.",
+        },
+        {
+          question: "O Procon pode obrigar a empresa a me indenizar?",
+          answer:
+            "Não. O Procon orienta, intermedeia acordos e pode multar a empresa, mas não condena a pagar indenização. Para isso, é preciso um acordo ou uma ação na Justiça, normalmente no Juizado Especial Cível.",
+        },
+        {
+          question: "Como funciona o consumidor.gov.br?",
+          answer:
+            "Você entra com a conta gov.br, confere se a empresa está cadastrada, registra a reclamação e aguarda: a empresa tem até 10 dias para analisar e responder. Depois, você tem até 20 dias para comentar e informar se a reclamação foi resolvida ou não. O serviço é gratuito e acompanhado pela Secretaria Nacional do Consumidor.",
+        },
+        {
+          question: "Preciso de advogado no Juizado Especial?",
+          answer:
+            "Nas causas de até 20 salários mínimos, não é obrigatório; entre 20 e 40 salários mínimos, sim (art. 9º da Lei 9.099/1995). Mesmo nas causas menores, o advogado ajuda a pedir o que é cabível e a organizar as provas.",
+        },
+        {
+          question: "Tem prazo para reclamar?",
+          answer:
+            "Sim. Defeito aparente: 30 dias para produto ou serviço não durável e 90 dias para durável, contados da entrega ou do fim do serviço (art. 26 do CDC). Dano causado por defeito: 5 anos para pedir indenização (art. 27). Reclamar com a empresa, de forma comprovada, impede que o prazo do art. 26 corra até a resposta.",
+        },
+      ],
+      sections: [
+        {
+          title: "Antes de reclamar: fale com a empresa",
+          paragraphs: [
+            "Procure o SAC, o chat ou a ouvidoria da empresa, explique o problema e anote o número de protocolo, a data e o nome do atendente. Guarde prints, e-mails e gravações. Esse registro mostra que você tentou resolver e, no caso de defeito, impede que o prazo para reclamar corra até a empresa responder (art. 26, § 2º, do CDC).",
+            "Seja claro sobre o que quer: troca do produto, conserto, abatimento do preço, cancelamento ou devolução do dinheiro. Isso facilita o acordo e orienta o Procon ou o juiz depois.",
+          ],
+        },
+        {
+          title: "Procon-BA: formulário on-line ou posto",
+          paragraphs: [
+            "O Procon-BA atende pelo formulário de atendimento on-line, indicado na página do Procon no site da Secretaria de Justiça e Direitos Humanos, e nos postos de atendimento, cuja lista também está no site. Pelo atendimento on-line é possível pedir orientação, registrar reclamação individual e acompanhar o andamento do processo.",
+            "Depois do registro, o Procon notifica a empresa e pode marcar audiência de conciliação. Se houver infração ao Código de Defesa do Consumidor, a empresa pode ser multada. Guarde o número da reclamação para acompanhar.",
+          ],
+        },
+        {
+          title: "Consumidor.gov.br: passo a passo",
+          paragraphs: [
+            "Entre em consumidor.gov.br com a conta gov.br e confira se a empresa está na lista de participantes; só participam empresas que aderiram formalmente ao serviço. Registre a reclamação com os dados da compra, o relato do problema e o pedido, e anexe os documentos.",
+            "A empresa tem até 10 dias para responder. Depois, você tem até 20 dias para avaliar a resposta, dizendo se a reclamação foi resolvida e qual o seu nível de satisfação. Se não resolver, a reclamação e a resposta servem como prova no Procon ou na Justiça.",
+          ],
+        },
+        {
+          title: "Se não resolver: Juizado Especial Cível",
+          paragraphs: [
+            "O Juizado Especial Cível julga causas de até 40 salários mínimos; até 20, o consumidor pode ir sem advogado (Lei 9.099/1995). Não é preciso ter reclamado antes no Procon ou no consumidor.gov.br, mas esses registros ajudam a provar que a empresa foi procurada e não resolveu.",
+            "Na ação é possível pedir o cumprimento do que a empresa deve (troca, conserto, cancelamento), a devolução de valores, em dobro quando houver cobrança indevida paga, e indenização por danos. Na Bahia, há Juizados em Salvador e nas comarcas do interior, com processo eletrônico.",
+          ],
+        },
+        {
+          title: "Casos com órgão próprio",
+          paragraphs: [
+            "Alguns setores têm agências que também recebem reclamações: bancos, no Banco Central (Meu BC); energia elétrica, na ANEEL, depois da ouvidoria da distribuidora; telefonia e internet, na Anatel; planos de saúde, na ANS; voos, na ANAC. Elas podem pressionar a empresa e registrar a infração.",
+            "Para conta de luz alta da Coelba, há um passo a passo próprio, com os prazos da ANEEL, em outro artigo deste site.",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["cobranca-indevida"],
+    updatedAt: "2026-11-07",
+  },
 ];

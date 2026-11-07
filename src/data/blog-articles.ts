@@ -2853,13 +2853,13 @@ export const blogArticles: BlogArticle[] = [
     id: 'usucapiao',
     nicheId: 'civil',
     slug: 'usucapiao-aquisicao-imovel',
-    title: 'Usucapião: Como Adquirir Imóvel por Tempo de Posse',
-    metaTitle: 'Usucapião | Como Adquirir Imóvel pela Posse',
-    metaDescription: 'Mora há anos em imóvel sem registro? Conheça o usucapião: requisitos, tipos, prazos e como regularizar sua propriedade.',
-    keywords: ['usucapião', 'aquisição imóvel', 'posse prolongada', 'regularização imóvel', 'usucapião urbano', 'usucapião rural'],
-    excerpt: 'Entenda como funciona o usucapião, os diferentes tipos e como adquirir a propriedade de um imóvel pelo tempo de posse.',
+    title: 'Usucapião em Cartório ou na Justiça: Como Adquirir Imóvel pela Posse',
+    metaTitle: 'Usucapião em Cartório e na Justiça | Prazos e Passo a Passo',
+    metaDescription: 'Usucapião: tipos e prazos, como fazer em cartório com ata notarial e planta, o que acontece se o vizinho não assinar e quando o caso vai à Justiça.',
+    keywords: ['usucapião', 'usucapião extrajudicial', 'usucapião em cartório', 'usucapião quantos anos', 'usucapião familiar', 'regularização imóvel', 'usucapião urbano', 'usucapião rural'],
+    excerpt: 'Como funciona o usucapião, quantos anos de posse cada tipo exige e o passo a passo para fazer em cartório (extrajudicial) ou na Justiça.',
     content: {
-      intro: 'O usucapião é uma forma legal de adquirir a propriedade de um imóvel através da posse prolongada. Se você mora há anos em um imóvel sem registro, pode ter direito à propriedade.',
+      intro: 'Em resumo: o usucapião é a forma de virar dono de um imóvel pela posse prolongada, contínua, sem oposição e com comportamento de dono. Os prazos vão de 2 anos (familiar) a 15 anos (extraordinário). Desde 2016 dá para fazer em cartório de registro de imóveis, com advogado, ata notarial, planta assinada por profissional habilitado e documentos da posse (art. 216-A da Lei 6.015/1973); vizinhos e titulares que não assinarem são notificados e, se não responderem em 15 dias, o silêncio vale como concordância. Se houver impugnação justificada ou faltar prova, o caminho é a ação judicial.',
       whatIs: 'Usucapião é a aquisição da propriedade pelo exercício da posse por determinado período, de forma mansa, pacífica e ininterrupta, como se dono fosse.',
       whenYouHaveRight: [
         'Posse mansa e pacífica (sem contestação)',
@@ -2876,7 +2876,7 @@ export const blogArticles: BlogArticle[] = [
         'IPTU em seu nome',
         'Cadastro na prefeitura',
       ],
-      deadlines: 'Prazos variam: 5 anos (especial urbano), 10 anos (ordinário), 15 anos (extraordinário). Processo: 1 a 3 anos.',
+      deadlines: 'Prazos de posse: 15 anos no extraordinário (10 se for moradia ou houver obras produtivas), 10 anos no ordinário, 5 anos no especial urbano e no rural e 2 anos no familiar. No cartório, as notificações, a manifestação dos entes públicos e o edital têm prazo de 15 dias cada; o tempo total depende da documentação e de eventuais diligências.',
       faq: [
         {
           question: 'Quais os tipos de usucapião?',
@@ -2884,7 +2884,7 @@ export const blogArticles: BlogArticle[] = [
         },
         {
           question: 'Posso fazer usucapião em cartório?',
-          answer: 'Sim, o usucapião extrajudicial é possível se não houver oposição. É feito em cartório de registro de imóveis.',
+          answer: 'Sim. O pedido é feito no cartório de registro de imóveis da cidade do imóvel, com advogado, ata notarial sobre o tempo de posse, planta e memorial assinados por profissional habilitado, certidões negativas e documentos da posse (art. 216-A da Lei 6.015/1973). Se o pedido for impugnado com fundamento ou faltar documento, o caso vai à Justiça.',
         },
         {
           question: 'Imóvel financiado pode sofrer usucapião?',
@@ -2897,7 +2897,7 @@ export const blogArticles: BlogArticle[] = [
       ],
     },
     relatedActions: ['regularizacao-imovel', 'cobranca'],
-    updatedAt: '2025-01-01',
+    updatedAt: '2026-11-07',
   },
   {
     id: 'erro-medico',

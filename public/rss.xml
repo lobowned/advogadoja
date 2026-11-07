@@ -5,7 +5,7 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sat, 07 Nov 2026 17:09:43 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 17:12:11 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
@@ -20,6 +20,15 @@
       <category>familia</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Divórcio consensual em cartório, inclusive online e, desde 2024, com filhos menores: requisitos, documentos, gratuidade, advogado e quando precisa de juiz.</description>
+    </item>
+    <item>
+      <title>Usucapião em Cartório e na Justiça | Prazos e Passo a Passo</title>
+      <link>https://riccioadvocacia.online/artigos/civil/usucapiao-aquisicao-imovel</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/civil/usucapiao-aquisicao-imovel</guid>
+      <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
+      <category>civil</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Usucapião: tipos e prazos, como fazer em cartório com ata notarial e planta, o que acontece se o vizinho não assinar e quando o caso vai à Justiça.</description>
     </item>
     <item>
       <title>Pensão Alimentícia Atrasada: Como Cobrar | Prisão e Penhora</title>
@@ -452,15 +461,6 @@
       <category>trabalhista</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>A empresa atrasou o pagamento das verbas rescisórias? Você tem direito à multa de um salário. Saiba como cobrar.</description>
-    </item>
-    <item>
-      <title>Atraso de Voo | Cancelamento | Indenização</title>
-      <link>https://riccioadvocacia.online/artigos/consumidor/atraso-cancelamento-voo-direitos</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/consumidor/atraso-cancelamento-voo-direitos</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>consumidor</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Voo atrasou ou foi cancelado? Saiba seus direitos: assistência material, reacomodação e indenização. Veja o que a ANAC e o CDC garantem.</description>
     </item>
   </channel>
 </rss>

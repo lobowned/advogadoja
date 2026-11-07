@@ -257,6 +257,14 @@ const expansions: Record<string, ArticleExpansion> = {
         ],
       },
       {
+        title: "Usucapião em cartório: documentos e etapas",
+        paragraphs: [
+          "O pedido é apresentado ao cartório de registro de imóveis da comarca do imóvel, por advogado, com: ata notarial lavrada por tabelião atestando o tempo de posse do requerente e de quem possuía antes; planta e memorial descritivo assinados por profissional habilitado, com ART, e pelos titulares de direitos na matrícula do imóvel e dos imóveis vizinhos; certidões negativas dos distribuidores da comarca do imóvel e do domicílio do requerente; e o justo título ou outros documentos da posse, como IPTU e taxas pagas (art. 216-A da Lei 6.015/1973).",
+          "Quem não assinou a planta é notificado para se manifestar em 15 dias, e o silêncio é interpretado como concordância; se a pessoa não for encontrada, a notificação é feita por edital. A União, o Estado e o Município também são avisados e têm 15 dias para se manifestar, e o cartório publica edital para terceiros, com mais 15 dias. Em apartamento de condomínio, basta notificar o síndico. Sem pendências e com os documentos em ordem, o cartório registra a aquisição.",
+          "Se alguém impugnar o pedido com fundamento, o cartório envia o caso ao juiz da comarca, e o requerente adapta o pedido ao processo judicial; impugnação sem fundamento não é admitida. Se o cartório rejeitar o pedido por falta de documentos, isso não impede a ação de usucapião na Justiça.",
+        ],
+      },
+      {
         title: "Como provar a posse",
         paragraphs: [
           "As provas mais úteis são contas de água, luz e telefone em seu nome ao longo dos anos, carnês de IPTU, notas fiscais de material de construção, fotos antigas, correspondências, contrato de compra e venda ou cessão de direitos e declarações de vizinhos que conhecem a sua ocupação.",
@@ -294,8 +302,24 @@ const expansions: Record<string, ArticleExpansion> = {
         question: "Terreno da prefeitura pode ser usucapido?",
         answer: "Não. A Constituição proíbe o usucapião de imóveis públicos. Nesses casos, existem outros instrumentos de regularização fundiária.",
       },
+      {
+        question: "O que acontece se o vizinho não assinar a planta?",
+        answer: "Ele é notificado pelo cartório para se manifestar em 15 dias; se ficar em silêncio, a lei entende que concordou (art. 216-A, § 2º, da Lei 6.015/1973). Se não for encontrado, a notificação é feita por edital, com o mesmo efeito. Só uma impugnação com fundamento leva o caso à Justiça.",
+      },
+      {
+        question: "Quanto tempo demora o usucapião em cartório?",
+        answer: "Não há prazo fixo. As notificações, a manifestação da União, do Estado e do Município e o edital têm 15 dias cada, mas o tempo total depende da documentação estar completa e de o cartório pedir diligências.",
+      },
+      {
+        question: "Se o cartório negar, ainda posso entrar na Justiça?",
+        answer: "Sim. A rejeição do pedido extrajudicial não impede a ação de usucapião (art. 216-A, § 9º). E, se houver impugnação justificada, o próprio cartório envia o caso ao juiz da comarca.",
+      },
+      {
+        question: "Apartamento pode ser usucapido em cartório?",
+        answer: "Pode. Quando o imóvel é unidade de condomínio, dispensa-se o consentimento dos vizinhos de matrícula e basta notificar o síndico (art. 216-A, § 11). Os demais requisitos, como tempo de posse e ata notarial, continuam valendo.",
+      },
     ],
-    updatedAt: "2026-11-05",
+    updatedAt: "2026-11-07",
   },
 
   "civil/erro-medico-indenizacao": {

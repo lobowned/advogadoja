@@ -63,7 +63,6 @@ export function legalServiceSchema(opts: { areaServed?: string[]; description?: 
     url: SITE_URL,
     image: OG_IMAGE,
     telephone: FIRM.telephone,
-    priceRange: "$$",
     // Negócio de atendimento remoto; sem endereço nem horário fixo
     availableLanguage: "pt-BR",
     serviceArea,

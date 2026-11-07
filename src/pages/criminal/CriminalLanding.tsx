@@ -33,8 +33,7 @@ const CriminalLanding = () => {
       "Crimes contra a Administração Pública",
       "Crimes cibernéticos",
       "Recurso Criminal",
-      "Revisão Criminal"],
-    "priceRange": "Consulta inicial"};
+      "Revisão Criminal"]};
 
   const attorneySchema = {
     "@context": "https://schema.org",

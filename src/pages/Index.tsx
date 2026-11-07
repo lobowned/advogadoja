@@ -22,7 +22,7 @@ const Index = () => {
       "width": 512,
       "height": 512
     },
-    "image": "https://riccioadvocacia.online/favicon.svg",
+    "image": "https://riccioadvocacia.online/og-image.png",
     "description": "Escritório de advocacia online que atua em todas as áreas do direito. Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento via WhatsApp.",
     "telephone": "+55-71-99703-6269",
     "legalName": "Riccio Advocacia",
@@ -67,11 +67,10 @@ const Index = () => {
     "@type": "LocalBusiness",
     "@id": "https://riccioadvocacia.online/#localbusiness",
     "name": "Riccio Advocacia",
-    "image": "https://riccioadvocacia.online/favicon.svg",
+    "image": "https://riccioadvocacia.online/og-image.png",
     "description": "Escritório de advocacia online. Trabalhista, Família, Consumidor, Previdenciário, Civil e Criminal. Atendimento online em todo o Brasil.",
     "url": "https://riccioadvocacia.online",
     "telephone": "+55-71-99703-6269",
-    "priceRange": "$$",
     "currenciesAccepted": "BRL",
     "paymentAccepted": "Pix, Cartão de Crédito, Boleto",
     "areaServed": {
@@ -105,7 +104,6 @@ const Index = () => {
       "Inventário e Herança",
       "Defesa Criminal"
     ],
-    "priceRange": "$$",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Serviços Jurídicos",

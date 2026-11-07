@@ -99,7 +99,6 @@ const CityLanding = () => {
     "description": `Atendimento jurídico online para quem mora em ${city.name}, ${city.state}: Direito Trabalhista, Família, Previdenciário, Civil, Consumidor e Criminal. Dr. Gilberto Riccio, OAB/BA 46.638.`,
     "url": canonicalUrl,
     "telephone": "+55-71-99703-6269",
-    "priceRange": "$$",
     "areaServed": {
       "@type": "City",
       "name": city.name,

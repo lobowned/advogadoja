@@ -85,7 +85,6 @@ const CityConsumerLanding = () => {
         "name": cityData.state
       }
     },
-    "priceRange": "$$",
     "knowsAbout": [
       "Direito do Consumidor",
       "Voo Cancelado",

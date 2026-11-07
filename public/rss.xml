@@ -5,13 +5,22 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sat, 07 Nov 2026 16:54:42 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 17:03:49 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
       <title>Riccio Advocacia</title>
       <link>https://riccioadvocacia.online</link>
     </image>
+    <item>
+      <title>Divórcio Consensual em Cartório e Online | Passo a Passo</title>
+      <link>https://riccioadvocacia.online/artigos/familia/divorcio-consensual</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/familia/divorcio-consensual</guid>
+      <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
+      <category>familia</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Divórcio consensual em cartório, inclusive online e, desde 2024, com filhos menores: requisitos, documentos, gratuidade, advogado e quando precisa de juiz.</description>
+    </item>
     <item>
       <title>Pensão Alimentícia Atrasada: Como Cobrar | Prisão e Penhora</title>
       <link>https://riccioadvocacia.online/artigos/familia/execucao-alimentos-prisao-penhora</link>
@@ -317,15 +326,6 @@
       <category>trabalhista</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Trabalha como PJ ou MEI, mas cumpre horário e recebe ordens? Entenda quando a pejotização é fraude, como provar o vínculo e quais direitos podem ser cobrados.</description>
-    </item>
-    <item>
-      <title>Divórcio Consensual | Como Fazer Rápido e Barato</title>
-      <link>https://riccioadvocacia.online/artigos/familia/divorcio-consensual</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/familia/divorcio-consensual</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>familia</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Quer se divorciar de forma amigável? Saiba como fazer divórcio consensual em cartório ou judicial. Advogado de família explica tudo.</description>
     </item>
     <item>
       <title>Pensão Alimentícia | Valor, Como Pedir e Execução</title>

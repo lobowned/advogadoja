@@ -4,7 +4,7 @@ const U = "2026-11-05";
 
 const expansions: Record<string, ArticleExpansion> = {
   "familia/divorcio-consensual": {
-    updatedAt: U,
+    updatedAt: "2026-11-07",
     sections: [
       {
         title: "Base legal: o que permite o divórcio direto",

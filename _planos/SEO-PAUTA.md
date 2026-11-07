@@ -21,4 +21,4 @@ Reservas: boletim de ocorrência online na Bahia (Delegacia Virtual), reclamaç�
 
 Ordem do loop (itens 5 a 9 de SEO-LOOP.md): 1, 2, 3, 4 e 5. Os outros ficam para a próxima rodada.
 
-Andamento: 1 publicado no código (aposentadoria-2026-regras). 2 virou reescrita do artigo que já existia, /artigos/familia/execucao-alimentos-prisao-penhora, para não ter dois artigos disputando a mesma busca. Antes de cada artigo novo, procurar no sitemap e em src/data um endereço parecido: se existir, reforçar o existente.
+Andamento: 1 publicado no código (aposentadoria-2026-regras). 2 virou reescrita do artigo que já existia, /artigos/familia/execucao-alimentos-prisao-penhora, para não ter dois artigos disputando a mesma busca. Antes de cada artigo novo, procurar no sitemap e em src/data um endereço parecido: se existir, reforçar o existente. 3, 4 e 5 viraram artigos novos. 6 virou reescrita de /artigos/familia/divorcio-consensual.

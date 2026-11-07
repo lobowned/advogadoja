@@ -364,7 +364,7 @@ export const localPages: Record<LocalPageKey, LocalPageContent> = {
     faq: [
       {
         q: "Posso fazer divórcio em cartório tendo filho menor?",
-        a: "Depende do cartório e do estado: questões de guarda e pensão de filhos menores precisam de solução judicial prévia. O advogado verifica se o seu caso permite a via extrajudicial.",
+        a: "Pode, desde que a guarda, as visitas e a pensão do filho já tenham sido definidas por decisão judicial (Resolução CNJ 35/2007, com a redação de 2024, que vale em todo o país). Se ainda não foram, o divórcio consensual é feito na Vara de Família, resolvendo tudo de uma vez.",
       },
       {
         q: "Qual o valor da pensão alimentícia?",
@@ -595,7 +595,7 @@ export const localPages: Record<LocalPageKey, LocalPageContent> = {
       "Advogado de família em Lauro de Freitas: divórcio judicial ou em cartório, pensão alimentícia, guarda, união estável e partilha. Atendimento pelo WhatsApp. OAB/BA 46.638.",
     h1: "Advogado de família em Lauro de Freitas",
     intro:
-      "Em Lauro de Freitas, divórcio, pensão e guarda correm na comarca local do TJBA ou, havendo acordo e sem filhos menores ou incapazes, podem ser resolvidos em cartório.",
+      "Em Lauro de Freitas, divórcio, pensão e guarda correm na comarca local do TJBA ou, havendo acordo, o divórcio pode ser feito em cartório; com filhos menores, desde que guarda, visitas e pensão já tenham sido definidas na Justiça.",
     sections: [
       {
         h2: "Partilha do imóvel financiado",

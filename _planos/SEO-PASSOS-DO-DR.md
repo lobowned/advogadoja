@@ -16,12 +16,9 @@ O site responde em **https://riccioadvocacia.online** e o endereço antigo (ricc
 Desde 06/11 o site inteiro declara o domínio novo como endereço oficial (canonical, mapa do site, dados para o Google).
 Opcional: registrar também **riccio.adv.br** (exclusivo de advogados, estava livre) só para proteger o nome.
 
-## 3. Google Search Console do domínio novo (o que mais pesa agora)
-O Search Console hoje acompanha só o endereço antigo. Com o domínio novo é preciso:
-1. Em search.google.com/search-console, **Adicionar propriedade → Prefixo do URL → https://riccioadvocacia.online/**.
-2. Verificar pelo **arquivo HTML** (o arquivo de verificação já está publicado no site).
-3. Em **Sitemaps**, enviar `sitemap.xml`.
-Se preferir, me peça que eu faço com você no Chrome.
+## 3. Google Search Console do domínio novo: FEITO (06/11)
+Propriedade **https://riccioadvocacia.online/** criada e verificada (arquivo HTML), `sitemap.xml` enviado e processado (343 páginas encontradas) e indexação pedida para a página inicial, /advogado-bahia e /perguntas.
+Acompanhe em search.google.com/search-console (conta em que já está a propriedade antiga), menu **Páginas**: a indexação do domínio novo leva de alguns dias a algumas semanas.
 
 ## 4. Google Meu Negócio
 Trocar o site do perfil para **https://riccioadvocacia.online**.

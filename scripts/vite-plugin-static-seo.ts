@@ -311,6 +311,11 @@ function renderHtml(base: string, p: Page): string {
     .replace(/<title>[\s\S]*?<\/title>/i, "")
     .replace(/<meta\s+(?:name|property)="(?:title|description|og:title|og:description|og:url|og:type|twitter:title|twitter:description|twitter:url)"[^>]*>\s*/gi, "")
     .replace(/<link\s+rel="canonical"[^>]*>\s*/gi, "");
+  // O poster do vídeo só aparece na home; nas outras páginas a pré-carga com prioridade alta
+  // só disputava a banda do celular com o que importa (texto, CSS, JS).
+  if (p.route !== "/") {
+    html = html.replace(/\s*<!-- Preload do poster do hero[^>]*-->\s*<link rel="preload" as="image" href="\/videos\/hero-poster\.jpg"[^>]*>/i, "");
+  }
   const head = [
     `<title>${esc(p.title)}</title>`,
     `<meta data-rh="true" name="description" content="${esc(p.description)}" />`,

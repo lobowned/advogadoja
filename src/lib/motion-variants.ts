@@ -203,6 +203,16 @@ export const heroStagger = {
   }
 };
 
+// Título da home: só desliza, sem sumir. Se começasse invisível (opacity 0 / scale 0),
+// o Google contaria o carregamento só depois da animação (LCP de 7,6 s no celular).
+export const heroTitleSlide = {
+  hidden: { y: 12 },
+  visible: {
+    y: 0,
+    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+};
+
 export const heroBadge = {
   hidden: { 
     opacity: 0, 

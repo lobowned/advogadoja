@@ -1,7 +1,7 @@
 import { m, useReducedMotion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { MessageCircle, ArrowRight } from "lucide-react";
-import { heroStagger, heroBadge } from "@/lib/motion-variants";
+import { heroStagger, heroBadge, heroTitleSlide } from "@/lib/motion-variants";
 import { trackWhatsAppConversion } from "@/lib/trackWhatsApp";
 
 const WHATSAPP_NUMBER = "5571997036269";
@@ -103,7 +103,7 @@ const HeroSection = () => {
           />
           <m.div variants={heroBadge} className="relative h-px w-12 sm:w-16 bg-accent/60 mb-6 sm:mb-8" />
           <m.h1
-            variants={heroBadge}
+            variants={heroTitleSlide}
             className="relative font-display text-background text-[2.5rem] leading-[1.05] sm:text-6xl lg:text-7xl font-light tracking-[0.01em] drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)]"
           >
             Riccio <span className="text-accent">Advocacia</span>

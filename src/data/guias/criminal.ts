@@ -148,8 +148,7 @@ export const guiaCriminal: Guia = {
   ],
   artigosRelacionados: [
     "/artigos/penal/prisao-flagrante-direitos",
-    "/artigos/penal/prisao-flagrante-direitos",
-    "/artigos/penal/habeas-corpus",
+    "/artigos/penal/inquerito-policial",
     "/artigos/penal/habeas-corpus",
     "/artigos/penal/violencia-domestica",
     "/artigos/penal/estelionato-golpes-fraudes",

@@ -4415,9 +4415,29 @@ export function getNicheInfo(nicheId: string): NicheInfo | undefined {
   return niches.find(niche => niche.id === nicheId);
 }
 
-// Helper function to get related articles
-export function getRelatedArticles(article: BlogArticle): BlogArticle[] {
+// Artigos relacionados: mesma área, ordenados pelas palavras em comum no título e nas
+// palavras-chave; no empate, o mais recente. Antes eram sempre os 3 primeiros da lista,
+// e os artigos novos nunca apareciam nos antigos. Usado na página e no HTML estático.
+const palavrasDoArtigo = (a: BlogArticle): Set<string> =>
+  new Set(
+    `${a.title} ${a.keywords.join(" ")}`
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[̀-ͯ]/g, "")
+      .split(/[^a-z0-9]+/)
+      .filter((w) => w.length > 3),
+  );
+
+export function getRelatedArticles(article: BlogArticle, limite = 3): BlogArticle[] {
+  const base = palavrasDoArtigo(article);
   return blogArticles
-    .filter(a => a.nicheId === article.nicheId && a.id !== article.id)
-    .slice(0, 3);
+    .filter((a) => a.nicheId === article.nicheId && a.id !== article.id)
+    .map((a) => {
+      let comuns = 0;
+      for (const w of palavrasDoArtigo(a)) if (base.has(w)) comuns++;
+      return { a, comuns };
+    })
+    .sort((x, y) => y.comuns - x.comuns || (y.a.updatedAt || "").localeCompare(x.a.updatedAt || ""))
+    .slice(0, limite)
+    .map((x) => x.a);
 }

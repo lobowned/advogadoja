@@ -554,6 +554,8 @@ function buildPages(d: Awaited<ReturnType<typeof loadData>>, baseTitle: string, 
       c.deadlines && { h2: "Prazos", paragraphs: [c.deadlines] },
     ].filter(Boolean) as Page["sections"];
     const niche = niches.find((n) => n.id === a.nicheId);
+    // Mesmos relacionados da página React (por assunto em comum), também no HTML estático
+    const relacionados: any[] = d.articles?.getRelatedArticles?.(a, 4) || [];
     pages.push({
       route,
       ogType: "article",
@@ -563,7 +565,11 @@ function buildPages(d: Awaited<ReturnType<typeof loadData>>, baseTitle: string, 
       intro: c.intro || a.excerpt,
       sections,
       faq,
-      links: [{ href: `/artigos/${a.nicheId}`, label: niche?.name || "Artigos" }, { href: "/guias", label: "Guias jurídicos por área" }],
+      links: [
+        ...relacionados.map((r) => ({ href: `/artigos/${r.nicheId}/${r.slug}`, label: r.title })),
+        { href: `/artigos/${a.nicheId}`, label: niche?.name || "Artigos" },
+        { href: "/guias", label: "Guias jurídicos por área" },
+      ],
       jsonLd: articleBundle({ route, title: a.title, description: a.metaDescription || a.excerpt, date: a.updatedAt }, faq, [
         home,
         { name: "Artigos", path: "/artigos" },

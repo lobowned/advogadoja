@@ -153,6 +153,7 @@ export const guiaConsumidor: Guia = {
     "/artigos/consumidor/produto-defeito-troca-reembolso",
     "/artigos/consumidor/direito-arrependimento-compras-online-7-dias",
     "/artigos/consumidor/cobranca-indevida-restituicao-dobro",
+    "/artigos/consumidor/conta-de-luz-coelba-alta",
     "/artigos/consumidor/negativacao-indevida-spc-serasa",
     "/artigos/consumidor/tarifas-bancarias-abusivas",
     "/artigos/consumidor/golpe-pix-como-recuperar-dinheiro",

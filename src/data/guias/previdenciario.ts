@@ -153,9 +153,10 @@ export const guiaPrevidenciario: Guia = {
   ],
   artigosRelacionados: [
     "/artigos/previdenciario/aposentadoria",
-    "/artigos/previdenciario/aposentadoria",
+    "/artigos/previdenciario/aposentadoria-2026-regras",
     "/artigos/previdenciario/simular-aposentadoria-meu-inss",
     "/artigos/previdenciario/auxilio-doenca",
+    "/artigos/previdenciario/auxilio-acidente",
     "/artigos/previdenciario/aposentadoria-por-invalidez-incapacidade-permanente",
     "/artigos/previdenciario/bpc-loas",
     "/artigos/previdenciario/pensao-por-morte",

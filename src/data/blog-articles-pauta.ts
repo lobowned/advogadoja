@@ -951,4 +951,121 @@ export const pautaArticles: BlogArticle[] = [
     relatedActions: ["auxilio-doenca", "aposentadoria"],
     updatedAt: "2026-11-07",
   },
+
+  // ============================================================
+  // RESERVA 1. BOLETIM DE OCORRÊNCIA ONLINE NA BAHIA
+  // Conferido em 07/11/2026: link oficial no site da SSP-BA (ba.gov.br/ssp) para a Delegacia
+  // Virtual do Ministério da Justiça; orientações da Bahia em
+  // delegaciavirtual.sinesp.gov.br/portal/comunicacaofato/ba/orientacoes. CPP art. 38; CP art. 340.
+  // ============================================================
+  {
+    id: "boletim-de-ocorrencia-online-bahia",
+    nicheId: "penal",
+    slug: "boletim-de-ocorrencia-online-bahia",
+    title: "Boletim de Ocorrência Online na Bahia: Como Registrar na Delegacia Virtual",
+    metaTitle: "B.O. Online na Bahia: Como Registrar na Delegacia Virtual",
+    metaDescription:
+      "Boletim de ocorrência online na Bahia: como registrar na Delegacia Virtual com gov.br, o que não pode ser feito pela internet e como acompanhar.",
+    keywords: [
+      "boletim de ocorrência online bahia",
+      "boletim de ocorrência online salvador",
+      "delegacia virtual bahia",
+      "fazer bo online bahia",
+      "registrar ocorrência online",
+    ],
+    excerpt:
+      "Na Bahia, o boletim de ocorrência pode ser feito pela internet na Delegacia Virtual do Ministério da Justiça, com a conta gov.br. Veja o passo a passo, o que não pode ser registrado online e como acompanhar.",
+    content: {
+      intro:
+        "Em resumo: na Bahia, o boletim de ocorrência pode ser registrado pela internet na Delegacia Virtual do Ministério da Justiça (delegaciavirtual.sinesp.gov.br), escolhendo o estado da Bahia e entrando com a conta gov.br; o próprio site da Secretaria da Segurança Pública da Bahia aponta para ela. A comunicação é analisada pela Polícia Civil da Bahia e, se aprovada, a cópia chega por e-mail. Não dá para registrar online quando quem comunica ou o suspeito é menor de idade, quando houve arrombamento ou subtração de veículo, ou quando o caso envolve arma, munição, explosivos, medicamentos ou produtos químicos: nesses casos, vá a uma delegacia. Em emergência, ligue 190.",
+      whatIs:
+        "O boletim de ocorrência é o registro oficial, na Polícia Civil, de um fato que pode ser crime ou que precisa ficar documentado. Ele serve para iniciar uma investigação e como prova perante bancos, seguradoras, empresas e na Justiça. Comunicar à polícia um crime que não aconteceu é crime (art. 340 do Código Penal), então o relato deve ser fiel aos fatos.",
+      whenYouHaveRight: [
+        "Registrar online fatos ocorridos na Bahia, sendo maior de idade e com conta gov.br",
+        "O registro online não vale se o suspeito for menor de idade, se houve arrombamento, subtração de veículo ou envolvimento de arma, munição, explosivos, medicamentos ou produtos químicos",
+        "Receber a cópia por e-mail quando a Polícia Civil aprovar a comunicação e acompanhar pelo menu Acompanhar Ocorrência",
+        "Registrar presencialmente em qualquer delegacia, inclusive nos casos que não podem ser feitos online",
+        "Em emergência ou crime em andamento, ligar 190; em violência contra a mulher, procurar a delegacia especializada ou ligar 180",
+      ],
+      documents: [
+        "Conta gov.br",
+        "Documento de identidade e CPF",
+        "Data, hora e local do fato",
+        "Descrição do que aconteceu, em ordem",
+        "Dados de quem praticou o fato, se souber: nome, telefone, perfil, placa",
+        "Provas: prints, comprovantes de transferência, notas fiscais, números de série e fotos",
+      ],
+      deadlines:
+        "Registre o quanto antes: provas se perdem com o tempo e, nos crimes que dependem de representação da vítima, há prazo de 6 meses contados de quando se soube quem é o autor (art. 38 do Código de Processo Penal). Em golpe com Pix ou transferência, avise o banco imediatamente, pelos canais oficiais, além de registrar a ocorrência.",
+      faq: [
+        {
+          question: "Como fazer boletim de ocorrência online na Bahia?",
+          answer:
+            "Acesse a Delegacia Virtual do Ministério da Justiça (delegaciavirtual.sinesp.gov.br), escolha Bahia, leia as orientações, confirme que está ciente e entre com a conta gov.br. Depois, escolha o tipo de fato, descreva o que aconteceu, anexe as informações e envie. A Polícia Civil da Bahia analisa a comunicação e, se aprovar, envia a cópia por e-mail.",
+        },
+        {
+          question: "O que não pode ser registrado pela internet?",
+          answer:
+            "Segundo as orientações da Delegacia Virtual para a Bahia: casos em que quem comunica ou o suspeito é menor de idade; crimes com arrombamento (cadeado, tranca, porta ou janela rompidos); subtração de veículo; e ocorrências com arma de fogo, munição, explosivos, medicamentos ou produtos químicos. Nesses casos, registre pessoalmente em uma delegacia.",
+        },
+        {
+          question: "Precisa de conta gov.br?",
+          answer:
+            "Sim. O login gov.br é exigido para comunicar a ocorrência e para acompanhar o andamento. Se ainda não tiver conta, crie pelo site ou aplicativo gov.br antes de começar.",
+        },
+        {
+          question: "Como acompanhar e pegar a cópia do B.O.?",
+          answer:
+            "Se a comunicação for aprovada, a cópia é enviada para o e-mail informado. Também é possível consultar pelo menu Acompanhar Ocorrência, no site da Delegacia Virtual, com o mesmo login gov.br.",
+        },
+        {
+          question: "B.O. online tem o mesmo valor do feito na delegacia?",
+          answer:
+            "Depois de analisado e aprovado pela Polícia Civil, ele é o registro oficial da ocorrência e serve para os mesmos fins: investigação, banco, seguradora e processos. A polícia pode chamar você para complementar as informações.",
+        },
+        {
+          question: "Fazer B.O. falso é crime?",
+          answer:
+            "Sim. Comunicar à autoridade um crime ou contravenção que você sabe que não aconteceu é o crime do art. 340 do Código Penal. A própria Delegacia Virtual registra o endereço de internet de quem faz a comunicação.",
+        },
+        {
+          question: "Fui vítima de golpe. O que fazer além do B.O.?",
+          answer:
+            "Avise o banco imediatamente pelos canais oficiais e peça o bloqueio e a devolução pelos mecanismos do Pix, guarde prints das conversas, comprovantes e o perfil ou número do golpista, e registre a ocorrência. Se o banco negar a devolução, reclame no consumidor.gov.br e avalie com um advogado se há responsabilidade da instituição.",
+        },
+      ],
+      sections: [
+        {
+          title: "Passo a passo na Delegacia Virtual",
+          paragraphs: [
+            "Entre em delegaciavirtual.sinesp.gov.br, selecione o estado da Bahia e leia as orientações. Clique em \"Estou ciente e desejo prosseguir\" e faça login com a conta gov.br. Escolha o tipo de fato entre as opções que o sistema mostra e preencha os dados: quando e onde aconteceu, o que aconteceu, quem são os envolvidos e o que foi levado ou danificado.",
+            "Revise antes de enviar. A comunicação é analisada pela Polícia Civil da Bahia; se aprovada, a cópia chega por e-mail e fica disponível no menu Acompanhar Ocorrência. Se faltar alguma informação, a polícia pode entrar em contato.",
+          ],
+        },
+        {
+          title: "Quando é preciso ir à delegacia",
+          paragraphs: [
+            "As orientações oficiais excluem do registro online os casos em que quem comunica ou o suspeito é menor de idade, os crimes com arrombamento, a subtração de veículo e as ocorrências com arma de fogo, munição, explosivos, medicamentos ou produtos químicos. Nesses casos, procure pessoalmente uma delegacia da Polícia Civil.",
+            "Em emergência ou crime em andamento, ligue 190. Em violência doméstica ou contra a mulher, procure uma delegacia especializada de atendimento à mulher ou ligue 180; nesses casos, a vítima pode pedir medidas protetivas de urgência.",
+          ],
+        },
+        {
+          title: "Como escrever um bom relato",
+          paragraphs: [
+            "Conte em ordem: o que aconteceu primeiro, depois e por último, com datas e horários. Prefira fatos a opiniões e inclua tudo o que identifica quem praticou o fato: nome, apelido, telefone, perfil de rede social, placa do carro, chave Pix usada no golpe.",
+            "Liste os bens com marca, modelo e número de série quando tiver, e guarde as notas fiscais. Um relato claro facilita a investigação e evita que você precise voltar à delegacia para complementar.",
+          ],
+        },
+        {
+          title: "Para que serve o B.O. depois",
+          paragraphs: [
+            "Com o boletim, a polícia pode investigar, e a vítima comprova o fato perante banco, seguradora, operadora de celular e empresa onde trabalha. Em golpes bancários, ele acompanha o pedido de devolução ao banco e uma eventual reclamação ou ação.",
+            "Nos crimes que dependem de representação, como, em regra, a ameaça e a lesão corporal leve, registrar a ocorrência e dizer que quer o processo dentro de 6 meses é o que permite que o caso siga.",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["estelionato"],
+    updatedAt: "2026-11-07",
+  },
 ];

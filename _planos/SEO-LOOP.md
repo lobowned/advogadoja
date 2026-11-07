@@ -31,7 +31,7 @@ Objetivo: mais visitas do Google e do Bing para https://riccioadvocacia.online.
 - [x] 16. Artigo 9 da pauta: usucapião em cartório.
 - [x] 17. Artigo 10 da pauta: perícia do INSS.
 - [x] 18. /prev/sobre sem HTML estático (única página do sitemap descoberta).
-- [ ] 19. Reserva da pauta: boletim de ocorrência online na Bahia (Delegacia Virtual).
+- [x] 19. Reserva da pauta: boletim de ocorrência online na Bahia (Delegacia Virtual).
 - [ ] 20. Reserva da pauta: reclamação no Procon da Bahia e no consumidor.gov.br.
 
 Itens 10 e 12 dependem do Chrome e de nova publicação: a cada volta, conferir se o site no ar já tem /artigos/penal/inquerito-policial; se tiver, fazer o 12 (IndexNow) e o 10 (Search Console) antes do próximo artigo.
@@ -58,3 +58,4 @@ Formato dos artigos: objeto BlogArticle (src/data/blog-articles.ts), rota /artig
 - 07/11 · item 17 · commit "seo: artigo pericia do INSS". /artigos/previdenciario/pericia-inss: como pedir no Meu INSS, o que o atestado precisa ter, decisão só com documentos em afastamentos de até 180 dias, como se preparar, o que o perito avalia, prorrogação (120 dias sem data fixada), revisão periódica e isenções (55 anos com 15 de benefício, ou 60), doença preexistente, estabilidade de 12 meses após acidente de trabalho e o que fazer se negarem. Conferido no gov.br (página atualizada em 26/10/2026) e na Lei 8.213/1991 (arts. 59, 60, 101 e 118). Sitemap com 351 URLs. 8 perguntas. Fila de artigos encerrada; faltam só os itens 10 e 12, que dependem de nova publicação e do Chrome.
 - 07/11 · item 10 (parcial) · Chrome voltou. Search Console do domínio novo ainda com "dados em processamento" (propriedade criada ontem). Indexação solicitada e aceita para /advogado-gilberto-riccio e /artigos/previdenciario/aposentadoria-2026-regras (as duas páginas novas já no ar). sitemap.xml reenviado. Depois da próxima publicação: pedir indexação dos artigos novos, dentro da cota do dia.
 - 07/11 · item 18 · commit "seo: /prev/sobre com HTML estatico". O título da página era montado com expressão ("Sobre — {nome}") e o gerador não lia; virou texto fixo e descritivo ("Sobre o Dr. Gilberto Riccio | Advogado Previdenciário (INSS)"), com descrição mais específica. Agora as 351 URLs do sitemap têm HTML estático.
+- 07/11 · item 19 · commit "seo: boletim de ocorrencia online na Bahia". /artigos/penal/boletim-de-ocorrencia-online-bahia: passo a passo na Delegacia Virtual do Ministério da Justiça (link oficial no site da SSP-BA), login gov.br, o que não pode ser feito online (menor de idade, arrombamento, subtração de veículo, arma, munição, explosivos, medicamentos, produtos químicos), como acompanhar, B.O. falso (art. 340 do CP) e golpe com Pix. Conferido nas orientações oficiais da Delegacia Virtual para a Bahia. 7 perguntas.

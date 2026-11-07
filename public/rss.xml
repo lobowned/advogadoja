@@ -5,7 +5,7 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sat, 07 Nov 2026 17:16:16 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 17:25:02 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
@@ -101,6 +101,15 @@
       <category>previdenciario</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Perícia do INSS: como pedir, o que o atestado precisa ter, análise só por documentos (até 180 dias), o que levar, prorrogação e o que fazer se negarem.</description>
+    </item>
+    <item>
+      <title>B.O. Online na Bahia: Como Registrar na Delegacia Virtual</title>
+      <link>https://riccioadvocacia.online/artigos/penal/boletim-de-ocorrencia-online-bahia</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/penal/boletim-de-ocorrencia-online-bahia</guid>
+      <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
+      <category>penal</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Boletim de ocorrência online na Bahia: como registrar na Delegacia Virtual com gov.br, o que não pode ser feito pela internet e como acompanhar.</description>
     </item>
     <item>
       <title>Quanto Cobra Advogado Trabalhista | Honorários OAB/BA</title>
@@ -452,15 +461,6 @@
       <category>penal</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Está sofrendo violência doméstica? Saiba como pedir medida protetiva, onde denunciar e quais seus direitos pela Lei Maria da Penha.</description>
-    </item>
-    <item>
-      <title>Insalubridade e Periculosidade | Adicional CLT</title>
-      <link>https://riccioadvocacia.online/artigos/trabalhista/adicional-insalubridade-periculosidade</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/adicional-insalubridade-periculosidade</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>trabalhista</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Trabalha em ambiente insalubre ou perigoso? Saiba se tem direito ao adicional de 10%, 20%, 30% ou 40%. Guia completo com advogado.</description>
     </item>
   </channel>
 </rss>

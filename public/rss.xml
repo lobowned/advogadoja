@@ -5,13 +5,22 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sat, 07 Nov 2026 00:02:04 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 16:36:37 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
       <title>Riccio Advocacia</title>
       <link>https://riccioadvocacia.online</link>
     </image>
+    <item>
+      <title>Aposentadoria 2026: Regras, Idade e Pontos do INSS</title>
+      <link>https://riccioadvocacia.online/artigos/previdenciario/aposentadoria-2026-regras</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/previdenciario/aposentadoria-2026-regras</guid>
+      <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
+      <category>previdenciario</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Regras da aposentadoria do INSS em 2026: 93 pontos (mulher) e 103 (homem), idade mínima de 59,5 e 64,5 anos, pedágios, regra por idade e cálculo do valor.</description>
+    </item>
     <item>
       <title>Quanto Cobra Advogado Trabalhista | Honorários OAB/BA</title>
       <link>https://riccioadvocacia.online/artigos/trabalhista/quanto-cobra-advogado-trabalhista</link>
@@ -452,15 +461,6 @@
       <category>familia</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Não consegue acordo com seu cônjuge? Entenda como funciona o divórcio litigioso, quanto tempo leva e como proteger seus direitos.</description>
-    </item>
-    <item>
-      <title>Revisão de Pensão Alimentícia | Aumentar ou Diminuir</title>
-      <link>https://riccioadvocacia.online/artigos/familia/revisao-pensao-alimenticia-2025</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/familia/revisao-pensao-alimenticia-2025</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>familia</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Precisa revisar o valor da pensão? Saiba quando pode pedir aumento ou redução. Veja quando a mudança de renda justifica.</description>
     </item>
   </channel>
 </rss>

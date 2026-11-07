@@ -2,6 +2,7 @@
 import { articleExpansions } from "./article-expansions";
 import { newArticles2026 } from "./blog-articles-new";
 import { consorcioArticles } from "./blog-articles-consorcio";
+import { pautaArticles } from "./blog-articles-pauta";
 export interface BlogArticle {
   id: string;
   nicheId: string;
@@ -4387,6 +4388,8 @@ export const blogArticles: BlogArticle[] = [
 blogArticles.push(...newArticles2026);
 // Cluster de consórcio (2026-11-06), a partir das buscas reais do Search Console
 blogArticles.push(...consorcioArticles);
+// Pauta de 07/11/2026 (_planos/SEO-PAUTA.md): temas com busca real e sem página no site
+blogArticles.push(...pautaArticles);
 
 // Helper function to get articles by niche
 // Junta as expansões (src/data/article-expansions) aos artigos curtos

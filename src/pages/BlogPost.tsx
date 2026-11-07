@@ -203,13 +203,10 @@ const BlogPost = ({ nicheIdOverride, slugOverride }: BlogPostProps = {}) => {
           </div>
         </nav>
 
-        {/* Mobile TOC */}
-        <TableOfContents items={tocItems} />
-
         {/* Article Content */}
         <article className="container mx-auto px-4 py-8 md:py-12">
           <div className="flex flex-col lg:flex-row gap-4 lg:gap-8">
-            {/* Desktop TOC Sidebar */}
+            {/* Índice: o componente já mostra a barra no celular e a lateral no computador */}
             <TableOfContents items={tocItems} />
 
             {/* Main Content */}

@@ -253,7 +253,7 @@ export const newArticles2026: BlogArticle[] = [
         {
           title: "Acordo vale a pena?",
           paragraphs: [
-            "Em média, metade das reclamações trabalhistas termina em acordo. A principal razão é o tempo: receber menos agora pode ser melhor do que receber o total daqui a cinco anos. O acordo também evita o risco da perda, da recusa de recurso ou da execução frustrada.",
+            "Muitas reclamações trabalhistas terminam em acordo. A principal razão é o tempo: receber menos agora pode ser melhor do que receber o total daqui a cinco anos. O acordo também evita o risco da perda, da recusa de recurso ou da execução frustrada.",
             "Nem todo acordo compensa. Quando a prova é forte, a prescrição não atingiu nada e a empresa tem patrimônio, pode ser melhor aguardar a sentença. Essa avaliação precisa ser feita caso a caso, com base nos documentos, nas testemunhas e no histórico da empresa.",
           ],
         },

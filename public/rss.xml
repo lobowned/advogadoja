@@ -5,7 +5,7 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sat, 07 Nov 2026 17:12:11 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 17:16:16 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
@@ -92,6 +92,15 @@
       <category>penal</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Crime de ameaça (art. 147 do Código Penal): pena, quando depende de representação, ameaça contra a mulher, ameaça por WhatsApp, provas e medida protetiva.</description>
+    </item>
+    <item>
+      <title>Perícia do INSS: Como Funciona, o Que Levar e Se Negarem</title>
+      <link>https://riccioadvocacia.online/artigos/previdenciario/pericia-inss</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/previdenciario/pericia-inss</guid>
+      <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
+      <category>previdenciario</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Perícia do INSS: como pedir, o que o atestado precisa ter, análise só por documentos (até 180 dias), o que levar, prorrogação e o que fazer se negarem.</description>
     </item>
     <item>
       <title>Quanto Cobra Advogado Trabalhista | Honorários OAB/BA</title>
@@ -452,15 +461,6 @@
       <category>trabalhista</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Trabalha em ambiente insalubre ou perigoso? Saiba se tem direito ao adicional de 10%, 20%, 30% ou 40%. Guia completo com advogado.</description>
-    </item>
-    <item>
-      <title>Multa 477 CLT | Atraso no Pagamento da Rescisão</title>
-      <link>https://riccioadvocacia.online/artigos/trabalhista/multa-477-atraso-rescisao</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/multa-477-atraso-rescisao</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>trabalhista</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>A empresa atrasou o pagamento das verbas rescisórias? Você tem direito à multa de um salário. Saiba como cobrar.</description>
     </item>
   </channel>
 </rss>

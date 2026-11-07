@@ -819,4 +819,136 @@ export const pautaArticles: BlogArticle[] = [
     relatedActions: ["violencia-domestica"],
     updatedAt: "2026-11-07",
   },
+
+  // ============================================================
+  // 10. PERÍCIA DO INSS
+  // Conferido em 07/11/2026: serviço "Solicitar Auxílio por Incapacidade Temporária" no gov.br
+  // (atualizado em 26/10/2026); Lei 8.213/1991, arts. 59, 60 §§ 3º, 8º e 9º e 101 (texto em vigor
+  // no Planalto, com a Lei 15.157/2025).
+  // ============================================================
+  {
+    id: "pericia-inss",
+    nicheId: "previdenciario",
+    slug: "pericia-inss",
+    title: "Perícia do INSS: Como Funciona, o Que Levar e o Que Fazer se Negarem",
+    metaTitle: "Perícia do INSS: Como Funciona, o Que Levar e Se Negarem",
+    metaDescription:
+      "Perícia do INSS: como pedir, o que o atestado precisa ter, análise só por documentos (até 180 dias), o que levar, prorrogação e o que fazer se negarem.",
+    keywords: [
+      "perícia inss",
+      "perícia inss como funciona",
+      "o que levar na perícia do inss",
+      "perícia inss negada",
+      "atestmed",
+      "prorrogação auxílio doença",
+      "perícia médica inss",
+    ],
+    excerpt:
+      "A perícia médica decide se a pessoa está incapaz para o trabalho. Veja como pedir pelo Meu INSS, o que o atestado precisa ter, quando o INSS decide só com documentos, o que levar e o que fazer se o benefício for negado.",
+    content: {
+      intro:
+        "Em resumo: a perícia médica do INSS avalia se a doença ou lesão deixa a pessoa incapaz para o trabalho ou para a atividade habitual. O pedido é feito todo pela internet, no Meu INSS (\"Benefício por incapacidade\" e depois \"Pedir novo benefício\"), ou pelo telefone 135. O atestado ou laudo precisa ter nome completo, data, período de repouso estimado, assinatura do profissional com registro no conselho e a doença ou o CID; em afastamentos de até 180 dias, o INSS pode decidir só com esse documento ou chamar para perícia. O empregado recebe da empresa os primeiros 15 dias. Se o benefício for negado, dá para recorrer em 30 dias, fazer novo pedido com novos documentos ou ir ao Juizado Especial Federal.",
+      whatIs:
+        "É o exame feito por um perito médico federal para verificar se existe incapacidade e por quanto tempo. Ela é exigida no auxílio por incapacidade temporária (o antigo auxílio-doença), na aposentadoria por incapacidade permanente e no auxílio-acidente; no BPC/LOAS da pessoa com deficiência há avaliação médica e social. A perícia não avalia só o diagnóstico: avalia o que a doença impede você de fazer no seu trabalho.",
+      whenYouHaveRight: [
+        "Incapacidade para o trabalho ou para a atividade habitual por mais de 15 dias consecutivos (art. 59 da Lei 8.213/1991)",
+        "Carência de 12 contribuições, em regra; não se exige em acidente de qualquer natureza nem em doenças graves previstas em lei, como câncer e cardiopatia grave",
+        "Doença que já existia antes de começar a contribuir só dá direito se a incapacidade vier do agravamento ou da progressão dela (art. 59, § 1º)",
+        "Empregado: os primeiros 15 dias de afastamento são pagos pela empresa (art. 60, § 3º)",
+        "Pedir prorrogação pelo Meu INSS se continuar incapaz quando o benefício estiver perto de acabar (art. 60, § 9º)",
+        "Recorrer da decisão em 30 dias ou ir à Justiça, onde o juiz nomeia um perito",
+      ],
+      documents: [
+        "Documento de identidade com foto (RG, CIN, CNH ou carteira de trabalho) e CPF",
+        "Atestado ou laudo legível, sem rasuras, com nome completo, data, período de repouso estimado, assinatura e registro do profissional (CRM, CRO ou RMS) e a doença ou o CID",
+        "Exames, receitas e relatórios de tratamento, como fisioterapia, internações e cirurgias",
+        "Carteira de trabalho ou documentos que mostrem qual é o seu trabalho",
+        "Comunicação de Acidente de Trabalho (CAT), se a doença ou lesão for ligada ao trabalho",
+        "Procuração ou termo de representação, se outra pessoa fizer o pedido",
+      ],
+      deadlines:
+        "Segundo o gov.br, a análise do pedido leva até 45 dias. Se o benefício for concedido sem data de término, ele acaba em 120 dias, salvo pedido de prorrogação (art. 60, § 9º, da Lei 8.213/1991). Contra a decisão, o recurso à Junta de Recursos tem prazo de 30 dias.",
+      faq: [
+        {
+          question: "Como funciona a perícia do INSS?",
+          answer:
+            "Você pede o benefício no Meu INSS e envia o atestado ou laudo. Em afastamentos de até 180 dias, o INSS pode conceder só com a análise do documento; se ele não bastar, você é chamado para a perícia, em que um perito médico federal examina você e os documentos e decide se há incapacidade e por quanto tempo. O resultado aparece no Meu INSS, em \"Consultar pedidos\".",
+        },
+        {
+          question: "O que levar na perícia do INSS?",
+          answer:
+            "Documento com foto, CPF, laudos e atestados atualizados, exames, receitas e relatórios de tratamento, e algo que mostre qual é o seu trabalho, como a carteira de trabalho. Leve os originais organizados por data e explique com exemplos o que a doença impede você de fazer no trabalho.",
+        },
+        {
+          question: "O INSS pode conceder o benefício sem perícia presencial?",
+          answer:
+            "Sim, no auxílio por incapacidade temporária. Para afastamentos de até 180 dias, o INSS pode decidir com base no atestado ou laudo enviado pelo Meu INSS. Por isso o documento precisa estar completo: nome, data, período de repouso, assinatura com registro do profissional e a doença ou o CID.",
+        },
+        {
+          question: "Quanto tempo demora o resultado?",
+          answer:
+            "O gov.br estima até 45 dias para a análise do pedido. O andamento e o resultado aparecem no Meu INSS, em \"Consultar pedidos\". Se demorar muito além disso, vale procurar orientação para cobrar uma decisão.",
+        },
+        {
+          question: "A perícia negou o benefício. O que fazer?",
+          answer:
+            "Leia o motivo na decisão do Meu INSS. Se faltou documento ou o atestado estava incompleto, um novo pedido bem instruído pode resolver. Se o perito concluiu que não há incapacidade, cabe recurso à Junta de Recursos em 30 dias ou ação no Juizado Especial Federal, em que um perito nomeado pelo juiz faz um novo exame.",
+        },
+        {
+          question: "Como pedir a prorrogação do benefício?",
+          answer:
+            "Pelo Meu INSS, antes da data de cessação, se você continuar sem condições de trabalhar. A lei prevê que, sem data de término fixada, o benefício acaba em 120 dias, salvo pedido de prorrogação (art. 60, § 9º, da Lei 8.213/1991). Junte atestado novo que explique por que o afastamento precisa continuar.",
+        },
+        {
+          question: "Aposentado por incapacidade precisa fazer perícia de novo?",
+          answer:
+            "Pode ser chamado para revisões periódicas (art. 101 da Lei 8.213/1991). Quem não voltou a trabalhar fica isento dessa revisão depois dos 60 anos, ou depois dos 55 anos se já tiverem passado 15 anos da concessão do benefício, com as exceções previstas na lei.",
+        },
+        {
+          question: "Doença que eu já tinha antes de contribuir dá direito?",
+          answer:
+            "Só se a incapacidade vier do agravamento ou da progressão dessa doença depois que você passou a contribuir (art. 59, § 1º, da Lei 8.213/1991). Relatórios médicos que mostrem quando a doença piorou são a prova mais importante nesse caso.",
+        },
+      ],
+      sections: [
+        {
+          title: "Como pedir e como funciona a análise",
+          paragraphs: [
+            "No Meu INSS (site ou aplicativo), entre com a conta gov.br, procure \"Benefício por incapacidade\" e escolha \"Pedir novo benefício\". O pedido começa todo pela internet; o telefone 135 atende de segunda a sábado, das 7h às 22h, e agenda atendimento presencial quando necessário. Empregados com carteira recebem os primeiros 15 dias de afastamento da empresa; o INSS paga a partir do 16º dia.",
+            "Em afastamentos de até 180 dias, o INSS pode conceder o benefício só com a análise do atestado ou laudo enviado. Se o documento não for suficiente, ou se o caso exigir, a pessoa é chamada para a perícia presencial, que também define se a incapacidade é temporária ou permanente.",
+          ],
+        },
+        {
+          title: "Como se preparar para a perícia",
+          paragraphs: [
+            "Leve os laudos mais recentes e completos que tiver, com a descrição do que você não consegue fazer: ficar de pé por muito tempo, carregar peso, digitar, dirigir, concentrar-se. Exames de imagem, receitas e relatórios de fisioterapia ou de internação mostram que o tratamento existe e continua.",
+            "Explique ao perito qual é o seu trabalho e como a doença atrapalha cada tarefa. Seja objetivo e não exagere: o perito compara o relato com o exame e com os documentos. Chegue com antecedência e leve documento com foto.",
+          ],
+        },
+        {
+          title: "O que o perito avalia",
+          paragraphs: [
+            "O perito não decide se a doença existe, e sim se ela impede o trabalho ou a atividade habitual e por quanto tempo. Duas pessoas com o mesmo diagnóstico podem ter resultados diferentes, porque o que pesa é a limitação concreta em relação à atividade de cada uma.",
+            "Se concluir pela incapacidade, o perito fixa uma data estimada para o fim do benefício. Se considerar a incapacidade permanente para qualquer trabalho, pode indicar a aposentadoria por incapacidade permanente; se houver condições de exercer outra atividade, pode encaminhar à reabilitação profissional.",
+          ],
+        },
+        {
+          title: "Depois do resultado",
+          paragraphs: [
+            "A decisão aparece no Meu INSS. Se o benefício for concedido, confira a data de cessação: se você ainda não puder trabalhar perto dessa data, peça a prorrogação pelo Meu INSS com atestado atualizado. Quem recebe benefício por incapacidade pode ser chamado para novos exames e deve seguir o tratamento e a reabilitação oferecidos (art. 101 da Lei 8.213/1991).",
+            "Ao voltar ao trabalho, o empregado afastado por acidente de trabalho tem garantia de emprego por 12 meses depois do fim do auxílio (art. 118 da Lei 8.213/1991).",
+          ],
+        },
+        {
+          title: "Se o benefício for negado",
+          paragraphs: [
+            "Primeiro, leia o motivo. Atestado sem período de repouso, sem CID ou sem assinatura legível é causa frequente de negativa por documento, e um novo pedido com o atestado completo resolve. Se o perito concluiu que não há incapacidade, há dois caminhos: recurso à Junta de Recursos, em 30 dias, ou ação na Justiça.",
+            "Na Bahia, ações contra o INSS de até 60 salários mínimos vão ao Juizado Especial Federal, com unidades em Salvador e nas subseções do interior; se a incapacidade vier de acidente de trabalho, a ação é na Justiça Estadual. No processo, o juiz nomeia um perito próprio, e os laudos do seu médico assistente ajudam a orientar o exame.",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["auxilio-doenca", "aposentadoria"],
+    updatedAt: "2026-11-07",
+  },
 ];

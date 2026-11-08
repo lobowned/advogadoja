@@ -285,8 +285,25 @@ function articleLd(p: { route: string; title: string; description: string; date?
 const articleBundle = (p: Parameters<typeof articleLd>[0], faq: Faq[], crumbs: Crumb[]) =>
   [articleLd(p), ...(faq.length ? [faqLd(faq)] : []), breadcrumb(crumbs)];
 
+/**
+ * Tipografia do conteúdo pré-montado, que aparece antes do JavaScript. Sem ela o título
+ * saía com o tamanho de texto comum (o reset do Tailwind zera os títulos) e, na home, o
+ * "maior conteúdo" só surgia quando o React desenhava o título grande (10,6 s no celular
+ * com rede lenta, Lighthouse de 08/11/2026). O React troca todo o conteúdo do #root ao
+ * montar, então a classe .pre-render não alcança as páginas do app.
+ */
+const PRERENDER_CSS =
+  ".pre-render{max-width:44rem;margin:0 auto;padding:1.5rem 1rem 3rem;font-size:1rem;line-height:1.65}" +
+  ".pre-render h1{font-size:clamp(1.75rem,5vw + 1rem,2.5rem);line-height:1.15;font-weight:700;margin:.5rem 0 1.25rem}" +
+  ".pre-render h2{font-size:1.375rem;line-height:1.3;font-weight:700;margin:2rem 0 .75rem}" +
+  ".pre-render h3{font-size:1.125rem;line-height:1.35;font-weight:600;margin:1.25rem 0 .5rem}" +
+  ".pre-render p{margin:0 0 1rem}" +
+  ".pre-render ul{list-style:disc;padding-left:1.25rem;margin:0 0 1rem}" +
+  ".pre-render li{margin:.25rem 0}" +
+  ".pre-render a{text-decoration:underline;text-underline-offset:2px}";
+
 function renderBody(p: Page): string {
-  const parts: string[] = [`<main>`, `<h1>${esc(p.h1)}</h1>`];
+  const parts: string[] = [`<main class="pre-render">`, `<h1>${esc(p.h1)}</h1>`];
   if (p.intro) parts.push(`<p>${esc(p.intro)}</p>`);
   if (p.html) parts.push(p.html);
   for (const s of p.sections || []) {
@@ -328,6 +345,7 @@ function renderHtml(base: string, p: Page): string {
     html = html.replace(/\s*<!-- Preload do poster do hero[^>]*-->\s*<link rel="preload" as="image" href="\/videos\/hero-poster\.jpg"[^>]*>/i, "");
   }
   const head = [
+    `<style id="pre-render-css">${PRERENDER_CSS}</style>`,
     `<title>${esc(p.title)}</title>`,
     `<meta data-rh="true" name="description" content="${esc(p.description)}" />`,
     ...(p.robots ? [`<meta data-rh="true" name="robots" content="${esc(p.robots)}" />`] : []),

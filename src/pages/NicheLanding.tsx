@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import BlogCard from "@/components/BlogCard";
-import { niches, getArticlesByNiche, getNicheInfo } from "@/data/blog-articles";
+import { niches, getArticlesByNiche, getArticleBySlug, getNicheInfo } from "@/data/blog-articles";
 import { LOCAL_PAGE_ROUTES, LOCAL_CITY_NAMES } from "@/data/local-page-keys";
 import { nicheData } from "@/data/niche-pages";
 
@@ -44,7 +44,16 @@ const NicheLanding = () => {
   const nicheId = slugToId[nicheSlug || ""];
   const data = nicheId ? nicheData[nicheId] : null;
   const nicheInfo = nicheId ? getNicheInfo(nicheId) : null;
-  const articles = nicheId ? getArticlesByNiche(nicheId).slice(0, 3) : [];
+  // Destaques da área primeiro (artigos novos ou mais procurados), completando até 3 com os demais.
+  const destacados = nicheId
+    ? (data?.destaques ?? []).flatMap((s) => {
+        const a = getArticleBySlug(nicheId, s);
+        return a ? [a] : [];
+      })
+    : [];
+  const articles = nicheId
+    ? [...destacados, ...getArticlesByNiche(nicheId).filter((a) => !destacados.includes(a))].slice(0, 3)
+    : [];
   
   if (!data || !nicheInfo) {
     return <Navigate to="/" replace />;

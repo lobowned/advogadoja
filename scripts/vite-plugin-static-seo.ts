@@ -537,6 +537,11 @@ function buildPages(d: Awaited<ReturnType<typeof loadData>>, baseTitle: string, 
         { h2: "Como funciona o atendimento", paragraphs: [], list: n.benefits || [] },
       ],
       links: [
+        // Artigos em destaque da área (os mesmos que a página mostra), para levar link aos novos
+        ...((n.destaques || []) as string[]).flatMap((slug) => {
+          const a = (d.articles?.blogArticles || []).find((x: any) => x.nicheId === n.id && x.slug === slug);
+          return a ? [{ href: `/artigos/${a.nicheId}/${a.slug}`, label: a.title }] : [];
+        }),
         ...(n.guideSlug ? [{ href: `/guia/${n.guideSlug}`, label: "Guia completo da área" }] : []),
         ...cityLinks,
         { href: "/guias", label: "Guias jurídicos por área" },

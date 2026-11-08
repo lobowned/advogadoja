@@ -20,6 +20,11 @@ export interface NicheData {
   /** Área das páginas locais (/advogado-<area>-<cidade>) */
   localNiche?: string;
   whatsappText: string;
+  /**
+   * Slugs de artigos da área mostrados primeiro na página (os mais novos ou mais procurados).
+   * Sem isso a página mostrava sempre os 3 primeiros da lista, e artigo novo nunca aparecia.
+   */
+  destaques?: string[];
 }
 
 // Conteúdo revisado em 06/11/2026: sem estatística inventada, sem "especialista",
@@ -58,6 +63,7 @@ export const nicheData: Record<string, NicheData> = {
     guideSlug: "consumidor",
     localNiche: "consumidor",
     whatsappText: "Olá, Dr. Gilberto. Tenho um problema de consumidor e gostaria de orientação.",
+    destaques: ["conta-de-luz-coelba-alta", "reclamacao-procon-bahia-consumidor-gov"],
   },
   trabalhista: {
     id: "trabalhista",
@@ -92,6 +98,7 @@ export const nicheData: Record<string, NicheData> = {
     guideSlug: "trabalhista",
     localNiche: "trabalhista",
     whatsappText: "Olá, Dr. Gilberto. Preciso de orientação trabalhista.",
+    destaques: ["fim-da-escala-6x1-jornada-40-horas", "atestado-medico-trabalho", "empregada-domestica-direitos"],
   },
   familia: {
     id: "familia",
@@ -126,6 +133,7 @@ export const nicheData: Record<string, NicheData> = {
     guideSlug: "familia",
     localNiche: "familia",
     whatsappText: "Olá, Dr. Gilberto. Preciso de orientação em direito de família.",
+    destaques: ["regulamentacao-de-visitas", "regime-de-bens", "execucao-alimentos-prisao-penhora"],
   },
   civil: {
     id: "civil",
@@ -158,6 +166,7 @@ export const nicheData: Record<string, NicheData> = {
       { value: "20 SM", label: "até esse valor, dá para ir ao Juizado sem advogado (Lei 9.099, art. 9º)" },
     ],
     whatsappText: "Olá, Dr. Gilberto. Preciso de orientação em uma questão cível.",
+    destaques: ["usucapiao-aquisicao-imovel"],
   },
   previdenciario: {
     id: "previdenciario",
@@ -192,6 +201,7 @@ export const nicheData: Record<string, NicheData> = {
     guideSlug: "previdenciario",
     localNiche: "previdenciario",
     whatsappText: "Olá, Dr. Gilberto. Preciso de orientação sobre benefício do INSS.",
+    destaques: ["aposentadoria-2026-regras", "pericia-inss", "qualidade-de-segurado-carencia"],
   },
   penal: {
     id: "penal",
@@ -226,5 +236,6 @@ export const nicheData: Record<string, NicheData> = {
     guideSlug: "criminal",
     localNiche: "criminal",
     whatsappText: "Olá, Dr. Gilberto. Preciso de orientação em uma questão criminal.",
+    destaques: ["furto", "prisao-preventiva", "inquerito-policial"],
   },
 };

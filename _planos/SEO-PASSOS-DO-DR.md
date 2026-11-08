@@ -19,7 +19,10 @@ O que entrou nesta publicação:
 
 Depois de publicar, me avise: eu aviso o Bing (IndexNow) e peço indexação no Google.
 
-## 1-C. Próxima publicação (preparada em 08/11, à tarde)
+## 1-D. Próxima publicação (preparada em 08/11, fim da tarde)
+Já no GitHub: as páginas de área (/advogado-trabalhista, /advogado-criminal etc.) passam a mostrar os artigos novos em destaque, como o da escala 6x1. Publique quando puder (Publicar e depois o azul Publicar alterações).
+
+## 1-C. Publicação de 08/11 à tarde: FEITA (escala 6x1, jovem aprendiz, antecedentes)
 Já está no GitHub; entra no ar quando você clicar em **Publicar** e depois no azul **Publicar alterações**:
 - **Fim da escala 6x1**: artigo sobre a Emenda Constitucional 141/2026 (jornada de 42 horas e 2 folgas a partir de 16/12/2026, 40 horas a partir de 16/12/2027, sem redução de salário). É o assunto trabalhista mais procurado do momento;
 - jovem aprendiz e antecedentes criminais na Bahia (artigos novos);

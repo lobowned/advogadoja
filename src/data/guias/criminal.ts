@@ -157,6 +157,7 @@ export const guiaCriminal: Guia = {
     "/artigos/penal/receptacao",
     "/artigos/penal/saida-temporaria-saidinha",
     "/artigos/penal/prisao-preventiva",
+    "/artigos/penal/antecedentes-criminais-bahia",
     "/artigos/penal/calunia-difamacao-injuria",
     "/artigos/penal/crimes-transito-embriaguez-volante",
   ],

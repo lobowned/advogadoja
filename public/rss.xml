@@ -5,7 +5,7 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 08 Nov 2026 12:47:41 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 13:40:30 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
@@ -191,6 +191,24 @@
       <category>trabalhista</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Direitos da empregada doméstica (LC 150/2015): doméstica ou diarista, jornada, horas extras, férias, FGTS, aviso prévio, seguro-desemprego e justa causa.</description>
+    </item>
+    <item>
+      <title>Jovem Aprendiz: Direitos, Salário, Jornada e Contrato</title>
+      <link>https://riccioadvocacia.online/artigos/trabalhista/jovem-aprendiz-direitos</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/jovem-aprendiz-direitos</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>trabalhista</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Jovem aprendiz: idade de 14 a 24 anos, contrato de até 2 anos, salário mínimo hora, jornada de 6 ou 8 horas, FGTS de 2%, férias e fim do contrato.</description>
+    </item>
+    <item>
+      <title>Antecedentes Criminais na Bahia: Como Emitir Online</title>
+      <link>https://riccioadvocacia.online/artigos/penal/antecedentes-criminais-bahia</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/penal/antecedentes-criminais-bahia</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>penal</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Como tirar antecedentes criminais na Bahia: atestado da Polícia Civil pelo ba.gov.br, certidão da Polícia Federal, certidão do TJBA e o que fazer se constar algo.</description>
     </item>
     <item>
       <title>Divórcio Consensual em Cartório e Online | Passo a Passo</title>
@@ -443,24 +461,6 @@
       <category>trabalhista</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Saiba todos os seus direitos na demissão sem justa causa: verbas rescisórias, FGTS, multa 40%, seguro-desemprego. Guia completo com advogado trabalhista.</description>
-    </item>
-    <item>
-      <title>Acidente de Trabalho | Direitos, CAT e Indenização</title>
-      <link>https://riccioadvocacia.online/artigos/trabalhista/acidente-trabalho</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/acidente-trabalho</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>trabalhista</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Sofreu acidente de trabalho? Saiba seus direitos: estabilidade, CAT, auxílio-doença acidentário, indenização. Fale com um advogado.</description>
-    </item>
-    <item>
-      <title>Horas Extras Não Pagas | Como Cobrar na Justiça</title>
-      <link>https://riccioadvocacia.online/artigos/trabalhista/horas-extras</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/horas-extras</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>trabalhista</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Trabalhou horas extras e não recebeu? Saiba como calcular, provar e cobrar na Justiça. Advogado trabalhista explica seus direitos.</description>
     </item>
   </channel>
 </rss>

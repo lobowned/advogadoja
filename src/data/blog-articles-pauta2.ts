@@ -1485,4 +1485,254 @@ export const pauta2Articles: BlogArticle[] = [
     relatedActions: ["verbas-rescissorias", "demissao-sem-justa-causa"],
     updatedAt: "2026-11-08",
   },
+
+  // ============================================================
+  // 22. JOVEM APRENDIZ (reserva da pauta 2)
+  // Conferido em 08/11/2026 no Planalto: CLT arts. 136, § 2º, e 428 a 433; Lei 8.036/1990 art. 15,
+  // § 7º (FGTS de 2%); Constituição art. 7º, XXXIII; LC 123/2006 art. 51, III.
+  // ============================================================
+  {
+    id: "jovem-aprendiz-direitos",
+    nicheId: "trabalhista",
+    slug: "jovem-aprendiz-direitos",
+    title: "Jovem Aprendiz: Direitos, Salário, Jornada, Idade e Como Funciona o Contrato",
+    metaTitle: "Jovem Aprendiz: Direitos, Salário, Jornada e Contrato",
+    metaDescription:
+      "Jovem aprendiz: idade de 14 a 24 anos, contrato de até 2 anos, salário mínimo hora, jornada de 6 ou 8 horas, FGTS de 2%, férias e fim do contrato.",
+    keywords: [
+      "jovem aprendiz direitos",
+      "jovem aprendiz",
+      "direitos do jovem aprendiz",
+      "jovem aprendiz salário",
+      "jovem aprendiz jornada",
+      "contrato de aprendizagem",
+      "jovem aprendiz idade",
+    ],
+    excerpt:
+      "O jovem aprendiz tem contrato especial de até 2 anos, para quem tem de 14 a 24 anos, com carteira assinada, salário mínimo hora, jornada de até 6 horas (8 com as aulas, para quem concluiu o ensino fundamental), FGTS de 2%, férias e 13º.",
+    content: {
+      intro:
+        "Em resumo: o jovem aprendiz tem um contrato de trabalho especial, escrito e por prazo determinado, de até 2 anos, para quem tem de 14 a 24 anos e está inscrito num programa de aprendizagem (art. 428 da CLT). Tem carteira assinada, salário mínimo por hora, ou mais se o contrato for melhor, jornada de até 6 horas por dia, ou até 8 para quem já terminou o ensino fundamental contando as aulas teóricas, sem horas extras nem compensação (art. 432), FGTS de 2%, férias, 13º e vale-transporte. Para pessoa com deficiência não há idade máxima nem o limite de 2 anos. Empresas devem contratar aprendizes em número de 5% a 15% dos empregados em funções que exigem formação profissional (art. 429).",
+      whatIs:
+        "A aprendizagem combina aulas teóricas numa entidade qualificada, como os Serviços Nacionais de Aprendizagem, as escolas técnicas e entidades sem fins lucrativos registradas no Conselho Municipal dos Direitos da Criança e do Adolescente, com prática na empresa, em tarefas de complexidade progressiva (arts. 428 e 430 da CLT). Para valer, o contrato exige anotação na carteira de trabalho, matrícula e frequência na escola, para quem não concluiu o ensino médio, e inscrição no programa de aprendizagem (art. 428, § 1º). A contratação pode ser feita pela própria empresa ou por uma entidade sem fins lucrativos ou de prática desportiva; neste caso, não há vínculo de emprego com a empresa onde acontece a prática (art. 431).",
+      whenYouHaveRight: [
+        "Carteira assinada e contrato escrito de até 2 anos, sem esse limite para aprendiz com deficiência (art. 428, caput e § 3º)",
+        "Salário mínimo hora, salvo condição mais favorável (art. 428, § 2º)",
+        "Jornada de até 6 horas por dia, sem prorrogação nem compensação; até 8 horas para quem concluiu o ensino fundamental, se incluídas as horas de aula teórica (art. 432)",
+        "FGTS de 2% sobre a remuneração (art. 15, § 7º, da Lei 8.036/1990)",
+        "Férias com 1/3, 13º salário, descanso semanal e vale-transporte; o aprendiz estudante menor de 18 anos pode fazer as férias coincidirem com as escolares (art. 136, § 2º)",
+        "Certificado de qualificação profissional ao concluir o curso com aproveitamento (art. 430, § 2º)",
+        "Para menores de 18 anos, proibição de trabalho noturno, perigoso ou insalubre (art. 7º, XXXIII, da Constituição)",
+      ],
+      documents: [
+        "Documento de identidade, CPF e carteira de trabalho digital",
+        "Comprovante de matrícula e frequência escolar, se não concluiu o ensino médio",
+        "Comprovante de inscrição no programa de aprendizagem",
+        "Contrato de aprendizagem escrito",
+        "Recibos de salário e extrato do FGTS",
+      ],
+      deadlines:
+        "O contrato dura no máximo 2 anos, sem esse limite para aprendiz com deficiência, e termina também quando o aprendiz completa 24 anos, salvo a pessoa com deficiência (art. 433). No fim normal do contrato não há aviso prévio nem multa de 40% do FGTS, porque se trata de contrato por prazo determinado, mas o aprendiz pode sacar o FGTS depositado.",
+      faq: [
+        {
+          question: "Qual a idade para ser jovem aprendiz?",
+          answer:
+            "De 14 a 24 anos: a lei fala em maior de 14 e menor de 24 anos (art. 428 da CLT). Para a pessoa com deficiência não há idade máxima (art. 428, § 5º).",
+        },
+        {
+          question: "Quanto ganha um jovem aprendiz?",
+          answer:
+            "No mínimo o salário mínimo por hora, multiplicado pelas horas de trabalho e de curso previstas no contrato (art. 428, § 2º). O contrato ou a convenção coletiva da categoria pode garantir valor maior.",
+        },
+        {
+          question: "Jovem aprendiz pode fazer hora extra?",
+          answer:
+            "Não. A jornada é de até 6 horas por dia e a lei proíbe prorrogação e compensação. Quem já concluiu o ensino fundamental pode ter até 8 horas por dia, desde que nelas estejam incluídas as horas de aula teórica (art. 432).",
+        },
+        {
+          question: "Jovem aprendiz tem FGTS, férias e 13º?",
+          answer:
+            "Tem. O FGTS é de 2% sobre a remuneração, em vez dos 8% dos demais empregados (art. 15, § 7º, da Lei 8.036/1990). Também tem férias com 1/3, 13º, descanso semanal e vale-transporte, e o estudante menor de 18 anos pode tirar as férias junto com as da escola.",
+        },
+        {
+          question: "O aprendiz pode ser demitido antes do fim do contrato?",
+          answer:
+            "Só nas hipóteses da lei: desempenho insuficiente ou inadaptação (salvo aprendiz com deficiência sem os recursos de acessibilidade necessários), falta disciplinar grave, faltas à escola que causem perda do ano letivo ou a pedido do próprio aprendiz (art. 433). Fora desses casos, a dispensa antecipada gera a indenização dos contratos por prazo determinado (art. 479 da CLT).",
+        },
+        {
+          question: "Aprendiz grávida tem estabilidade?",
+          answer:
+            "Tem. A Justiça do Trabalho aplica a estabilidade da gestante também aos contratos por prazo determinado, como o de aprendizagem (Súmula 244, III, do TST), da confirmação da gravidez até 5 meses após o parto.",
+        },
+        {
+          question: "O aprendiz recebe seguro-desemprego quando o contrato acaba?",
+          answer:
+            "No fim normal do contrato, não, porque não há dispensa sem justa causa; o aprendiz saca o FGTS depositado. Se a empresa dispensar antes do prazo fora das hipóteses do art. 433, a situação muda e vale procurar orientação.",
+        },
+        {
+          question: "Toda empresa é obrigada a contratar aprendiz?",
+          answer:
+            "Os estabelecimentos devem ter aprendizes em número de 5% a 15% dos empregados em funções que exigem formação profissional (art. 429 da CLT). Microempresas e empresas de pequeno porte são dispensadas dessa obrigação (art. 51, III, da Lei Complementar 123/2006), e entidades sem fins lucrativos de educação profissional não têm o limite máximo.",
+        },
+      ],
+      sections: [
+        {
+          title: "Quem pode ser aprendiz e como funciona",
+          paragraphs: [
+            "Pode ser aprendiz quem tem mais de 14 e menos de 24 anos e está inscrito num programa de aprendizagem; para a pessoa com deficiência não há idade máxima, e a escolaridade é avaliada pelas habilidades ligadas à profissionalização (art. 428). Quem ainda não terminou o ensino médio precisa estar matriculado e frequentando a escola.",
+            "O contrato junta teoria e prática: as aulas são dadas por uma entidade qualificada e a prática acontece na empresa, com tarefas que ficam mais complexas ao longo do contrato. Ao concluir o curso com aproveitamento, o aprendiz recebe certificado de qualificação profissional (art. 430, § 2º).",
+          ],
+        },
+        {
+          title: "Salário, jornada e direitos",
+          paragraphs: [
+            "O salário é de pelo menos o mínimo por hora, salvo condição mais favorável no contrato ou na convenção coletiva. A jornada é de até 6 horas por dia, sem horas extras nem banco de horas; para quem concluiu o ensino fundamental, pode chegar a 8 horas, desde que as horas de aula teórica estejam incluídas (art. 432).",
+            "O aprendiz tem carteira assinada, FGTS de 2%, férias com 1/3, 13º, descanso semanal remunerado e vale-transporte. Se for menor de 18 anos, não pode trabalhar à noite nem em atividades perigosas ou insalubres, e, se for estudante, pode fazer as férias coincidirem com as escolares.",
+          ],
+        },
+        {
+          title: "Como o contrato termina",
+          paragraphs: [
+            "O contrato termina no prazo combinado, que não pode passar de 2 anos, ou quando o aprendiz completa 24 anos, salvo a pessoa com deficiência. Antes disso, só pode acabar por desempenho insuficiente ou inadaptação, falta disciplinar grave, faltas à escola que causem perda do ano letivo ou pedido do próprio aprendiz (art. 433). Nesses casos não se aplicam as indenizações dos arts. 479 e 480 da CLT.",
+            "No fim normal do contrato, o aprendiz recebe saldo de salário, 13º e férias proporcionais com 1/3 e saca o FGTS. Muitos aprendizes são efetivados ao fim do contrato; se isso acontecer, o vínculo passa a seguir as regras comuns da CLT.",
+          ],
+        },
+        {
+          title: "A cota das empresas",
+          paragraphs: [
+            "Os estabelecimentos de qualquer natureza devem empregar e matricular aprendizes em número de 5% a 15% dos trabalhadores em funções que demandam formação profissional, e frações dão lugar a mais um aprendiz (art. 429). Parte da cota pode ser destinada à aprendizagem em atividades esportivas, e as empresas também podem oferecer vagas a adolescentes do sistema socioeducativo.",
+            "Microempresas e empresas de pequeno porte são dispensadas da cota (Lei Complementar 123/2006, art. 51, III), mas podem contratar aprendizes se quiserem. O descumprimento da cota é fiscalizado pelo Ministério do Trabalho.",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["verbas-rescissorias", "demissao-sem-justa-causa"],
+    updatedAt: "2026-11-08",
+  },
+
+  // ============================================================
+  // 23. ANTECEDENTES CRIMINAIS NA BAHIA (reserva da pauta 2)
+  // Conferido em 08/11/2026: página "Antecedentes Criminais" da Polícia Civil da Bahia
+  // (ba.gov.br/policiacivil, atualizada em 29/04/2025); Guia de Serviços do Estado, serviço 635
+  // (publicado em 07/05/2026); serviço "Emitir Certidão de Antecedentes Criminais" da Polícia
+  // Federal no gov.br (atualizado em 23/07/2026); página "Certidões do Primeiro Grau" do TJBA;
+  // Lei 12.037/2009 art. 6º; LEP art. 202; Código Penal arts. 93 a 95; Constituição art. 5º, XXXIV, b.
+  // ============================================================
+  {
+    id: "antecedentes-criminais-bahia",
+    nicheId: "penal",
+    slug: "antecedentes-criminais-bahia",
+    title: "Antecedentes Criminais na Bahia: Como Emitir o Atestado, a Certidão da PF e a do TJBA",
+    metaTitle: "Antecedentes Criminais na Bahia: Como Emitir Online",
+    metaDescription:
+      "Como tirar antecedentes criminais na Bahia: atestado da Polícia Civil pelo ba.gov.br, certidão da Polícia Federal, certidão do TJBA e o que fazer se constar algo.",
+    keywords: [
+      "antecedentes criminais bahia",
+      "atestado de antecedentes criminais bahia",
+      "antecedentes criminais",
+      "certidão de antecedentes criminais",
+      "antecedentes criminais polícia federal",
+      "certidão criminal tjba",
+      "nada consta",
+    ],
+    excerpt:
+      "Na Bahia, o certificado de antecedentes da Polícia Civil sai na hora pelo ba.gov.br, para maiores de 18 anos com RG baiano. A Polícia Federal e o TJBA também emitem certidões online e gratuitas. Veja qual pedir e o que fazer se aparecer registro.",
+    content: {
+      intro:
+        "Em resumo: há três documentos diferentes, e muitas vezes o empregador ou o concurso pede mais de um. O Certificado de Antecedentes Criminais da Polícia Civil da Bahia é emitido pela plataforma ba.gov.br, na hora, quando não há registro; quem tem RG de outro estado pede por e-mail ao ISPE, e quem tem registro precisa ir a um posto SAC ou ao ISPE. A Certidão de Antecedentes Criminais da Polícia Federal é online e gratuita, vale 90 dias e só sai pela internet quando o resultado é nada consta. A certidão criminal do Tribunal de Justiça da Bahia, também gratuita e imediata, mostra os processos na Justiça estadual. Depois de cumprida ou extinta a pena, a condenação não deve aparecer em atestados e certidões, salvo para instruir novo processo criminal (art. 202 da Lei de Execução Penal).",
+      whatIs:
+        "Antecedentes criminais são os registros que a polícia e a Justiça guardam sobre investigações, processos e condenações de uma pessoa. Cada órgão consulta a própria base: a Polícia Civil da Bahia usa os registros do Instituto de Segurança Pública, Estatística e Pesquisa Criminal (ISPE); a Polícia Federal usa o Sistema Nacional de Informações Criminais (SINIC), que reúne dados federais e só parte dos estaduais; e o Tribunal de Justiça da Bahia mostra os processos criminais da Justiça estadual, incluindo execução penal. Por isso um documento pode dar nada consta e outro não.",
+      whenYouHaveRight: [
+        "Pedir o certificado da Polícia Civil da Bahia pelo ba.gov.br, com emissão imediata quando não há registro",
+        "Emitir a certidão da Polícia Federal pela internet, de graça, com validade de 90 dias",
+        "Emitir a certidão criminal do 1º grau do TJBA pelo portal de certidões, de graça e na hora, inclusive quando positiva",
+        "Não ter mencionada, em atestados para fins civis, a identificação criminal feita no indiciamento antes da condenação definitiva (art. 6º da Lei 12.037/2009)",
+        "Não ter a condenação já cumprida ou extinta em atestados e certidões, salvo para instruir novo processo criminal (art. 202 da Lei de Execução Penal)",
+        "Pedir reabilitação 2 anos depois de extinta ou cumprida a pena, para garantir o sigilo dos registros (arts. 93 e 94 do Código Penal)",
+        "Certidões gratuitas para defesa de direitos e esclarecimento de situações de interesse pessoal (art. 5º, XXXIV, b, da Constituição)",
+      ],
+      documents: [
+        "Carteira de Identidade (RG); se mudou de nome, também a certidão de registro civil atualizada",
+        "CPF e acesso à conta da plataforma ba.gov.br ou gov.br, para os pedidos online",
+        "Procuração autenticada em cartório, para pedir em nome de outra pessoa no atendimento presencial",
+        "Para quem tem registro: sentença, certidão de extinção da pena ou de arquivamento do processo",
+      ],
+      deadlines:
+        "A certidão da Polícia Federal vale 90 dias. As emissões online da Polícia Civil da Bahia e do TJBA são imediatas. A reabilitação pode ser pedida 2 anos depois do dia em que a pena foi extinta ou terminou de ser cumprida (art. 94 do Código Penal); se for negada, pode ser pedida de novo com novos documentos.",
+      faq: [
+        {
+          question: "Como tirar antecedentes criminais na Bahia pela internet?",
+          answer:
+            "Pela plataforma ba.gov.br, com login, no serviço Emitir Certificado de Antecedentes Criminais da Polícia Civil, informando os dados da Carteira de Identidade. Se não houver registro, o certificado sai na hora para imprimir. Se houver, é preciso ir a um posto SAC ou ao ISPE. Quem tem RG de outro estado faz o pedido pelo e-mail antecedentecriminal.ispe@pcivil.ba.gov.br.",
+        },
+        {
+          question: "Qual a diferença entre o atestado da Polícia Civil e a certidão da Polícia Federal?",
+          answer:
+            "A Polícia Civil da Bahia consulta os registros do ISPE, ou seja, do estado. A Polícia Federal consulta o SINIC, que tem os casos federais e só parte das informações estaduais. Por isso muitos empregadores e concursos pedem os dois, além da certidão do Tribunal de Justiça.",
+        },
+        {
+          question: "A certidão da Polícia Federal não saiu pela internet. O que fazer?",
+          answer:
+            "O sistema só emite online quando o resultado é nada consta. Se houver homônimo, divergência nos dados do CPF ou algum registro, é preciso ir a uma unidade da Polícia Federal, que confere a informação pessoalmente.",
+        },
+        {
+          question: "Processo em andamento aparece nos antecedentes?",
+          answer:
+            "Na certidão do Tribunal de Justiça, os processos criminais em andamento aparecem e a certidão sai positiva. Já nos atestados policiais para fins civis, a lei proíbe mencionar a identificação criminal do indiciado antes da condenação definitiva (art. 6º da Lei 12.037/2009), e a certidão da Polícia Federal para fins civis considera só condenações com trânsito em julgado.",
+        },
+        {
+          question: "Depois de cumprir a pena, a condenação some dos antecedentes?",
+          answer:
+            "Cumprida ou extinta a pena, a condenação não deve constar de folha corrida, atestados ou certidões fornecidas pela polícia ou pela Justiça, salvo para instruir novo processo criminal ou em casos previstos em lei (art. 202 da LEP). A reabilitação, que pode ser pedida 2 anos depois, reforça o sigilo dos registros (arts. 93 e 94 do Código Penal).",
+        },
+        {
+          question: "Quanto custa tirar antecedentes criminais?",
+          answer:
+            "A certidão da Polícia Federal e a do TJBA são gratuitas, e a Constituição garante certidões gratuitas para defesa de direitos e esclarecimento de situações pessoais (art. 5º, XXXIV, b). Desconfie de sites que cobram para emitir: use só endereços oficiais terminados em gov.br ou jus.br.",
+        },
+        {
+          question: "Posso pedir antecedentes de outra pessoa?",
+          answer:
+            "No atendimento presencial da Polícia Civil da Bahia, sim, com procuração autenticada em cartório. O certificado é pedido por maiores de 18 anos, com documento original em bom estado.",
+        },
+        {
+          question: "Para concurso, quais certidões costumam ser pedidas?",
+          answer:
+            "Além do certificado da Polícia Civil e da certidão da Polícia Federal, editais costumam pedir as certidões criminais da Justiça estadual e da Justiça Federal e, às vezes, da Justiça Eleitoral e da Militar. Leia o edital: ele diz quais órgãos e de quais estados.",
+        },
+      ],
+      sections: [
+        {
+          title: "Certificado da Polícia Civil da Bahia",
+          paragraphs: [
+            "O Certificado de Antecedentes Criminais informa se existem registros criminais no momento da pesquisa, nos sistemas do Instituto de Segurança Pública, Estatística e Pesquisa Criminal (ISPE). Pela internet, o pedido é feito na plataforma ba.gov.br, com login, informando os dados da Carteira de Identidade; não havendo registro, o certificado sai na hora para imprimir.",
+            "Se houver registro, o solicitante precisa ir a um posto SAC ou ao ISPE, em Salvador, com a Carteira de Identidade original em bom estado, sem replastificação. Quem tem RG emitido em outro estado faz o pedido pelo e-mail antecedentecriminal.ispe@pcivil.ba.gov.br. A Polícia Civil informa também o telefone (71) 99631-0755.",
+          ],
+        },
+        {
+          title: "Certidão da Polícia Federal",
+          paragraphs: [
+            "A Certidão de Antecedentes Criminais da Polícia Federal é emitida no gov.br, de graça, e vale 90 dias. Ela consulta o SINIC, que reúne os registros federais e parte dos estaduais enviados por convênio, e só é emitida pela internet quando o resultado é nada consta.",
+            "Por causa de homônimos, a certidão positiva nunca sai online: quem não conseguir emitir deve procurar uma unidade da Polícia Federal. Divergências entre o nome e os dados do CPF na Receita Federal também travam a emissão e devem ser corrigidas antes.",
+          ],
+        },
+        {
+          title: "Certidão do Tribunal de Justiça da Bahia",
+          paragraphs: [
+            "O Tribunal de Justiça da Bahia emite as certidões do 1º grau pelo Portal de Certidões, de forma imediata, positivas ou negativas. A certidão criminal inclui os processos de execução penal e da Auditoria Militar. Se houver algum erro, o Setor de Certidões (SEDEC) analisa e emite nova certidão.",
+            "A certidão do tribunal mostra processos, não só condenações. Se ela vier positiva por um processo já arquivado ou com pena extinta, a pessoa pode pedir a certidão de objeto e pé no cartório da vara, que descreve a situação do processo.",
+          ],
+        },
+        {
+          title: "Se aparecer algum registro",
+          paragraphs: [
+            "Primeiro, confira se o registro é mesmo seu: homônimos são comuns, e a solução é a conferência presencial com documentos. Depois, veja a situação do processo. Inquérito arquivado, absolvição e pena cumprida ou extinta têm consequências diferentes, e a lei proíbe que a condenação já cumprida apareça em atestados e certidões para fins civis (art. 202 da LEP).",
+            "Dois anos depois de extinta a pena, é possível pedir a reabilitação ao juiz, que assegura o sigilo dos registros sobre o processo e a condenação. É preciso ter tido domicílio no país, bom comportamento e ter reparado o dano ou mostrado que não pode (art. 94 do Código Penal).",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["acompanhamento-delegacia"],
+    updatedAt: "2026-11-08",
+  },
 ];

@@ -164,6 +164,7 @@ export const guiaTrabalhista: Guia = {
     "/artigos/trabalhista/assedio-moral",
     "/artigos/trabalhista/pejotizacao-vinculo-empregaticio",
     "/artigos/trabalhista/acidente-trabalho",
+    "/artigos/trabalhista/atestado-medico-trabalho",
     "/artigos/trabalhista/empresa-faliu-nao-pagou-o-que-fazer",
   ],
   paginasLocais: [
@@ -173,5 +174,5 @@ export const guiaTrabalhista: Guia = {
     { href: "/advogado-trabalhista", label: "Direito do Trabalho — área de atuação" },
   ],
   whatsappText: "Olá! Li o guia de direitos trabalhistas e quero analisar meu caso.",
-  atualizadoEm: "2026-11-04",
+  atualizadoEm: "2026-11-08",
 };

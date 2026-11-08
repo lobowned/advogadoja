@@ -5,13 +5,22 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 08 Nov 2026 12:14:56 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 12:20:57 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
       <title>Riccio Advocacia</title>
       <link>https://riccioadvocacia.online</link>
     </image>
+    <item>
+      <title>Auxílio-Doença INSS | Como Pedir, Perícia, Recurso</title>
+      <link>https://riccioadvocacia.online/artigos/previdenciario/auxilio-doenca</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/previdenciario/auxilio-doenca</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>previdenciario</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Está doente e não consegue trabalhar? Saiba como pedir auxílio-doença no INSS, passar na perícia e o que fazer se for negado.</description>
+    </item>
     <item>
       <title>Prisão em Flagrante | Direitos, Audiência de Custódia e Fiança</title>
       <link>https://riccioadvocacia.online/artigos/penal/prisao-flagrante-direitos</link>
@@ -38,6 +47,15 @@
       <category>penal</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Lista de crimes hediondos, efeitos penais após a Lei 8.072/90 e o Pacote Anticrime: progressão, fiança, livramento, anistia e graça.</description>
+    </item>
+    <item>
+      <title>Perícia do INSS: Como Funciona, o Que Levar e Se Negarem</title>
+      <link>https://riccioadvocacia.online/artigos/previdenciario/pericia-inss</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/previdenciario/pericia-inss</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>previdenciario</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Perícia do INSS: como pedir, o que o atestado precisa ter, análise só por documentos (atestados de até 90 dias), o que levar, prorrogação e se negarem.</description>
     </item>
     <item>
       <title>Furto (Art. 155): Pena em 2026, Qualificado e de Celular</title>
@@ -110,6 +128,15 @@
       <category>previdenciario</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Qualidade de segurado e carência no INSS: período de graça de 12, 24 ou 36 meses, carência de cada benefício, doenças que dispensam carência e como recuperar.</description>
+    </item>
+    <item>
+      <title>Atestado Médico no Trabalho: Regras, CID e 15 Dias</title>
+      <link>https://riccioadvocacia.online/artigos/trabalhista/atestado-medico-trabalho</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/atestado-medico-trabalho</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>trabalhista</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Atestado médico no trabalho: o que deve conter, se a empresa pode exigir CID, declaração de comparecimento, acompanhamento de filho e quando o INSS paga.</description>
     </item>
     <item>
       <title>Divórcio Consensual em Cartório e Online | Passo a Passo</title>
@@ -191,15 +218,6 @@
       <category>penal</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Crime de ameaça (art. 147 do Código Penal): pena, quando depende de representação, ameaça contra a mulher, ameaça por WhatsApp, provas e medida protetiva.</description>
-    </item>
-    <item>
-      <title>Perícia do INSS: Como Funciona, o Que Levar e Se Negarem</title>
-      <link>https://riccioadvocacia.online/artigos/previdenciario/pericia-inss</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/previdenciario/pericia-inss</guid>
-      <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
-      <category>previdenciario</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Perícia do INSS: como pedir, o que o atestado precisa ter, análise só por documentos (até 180 dias), o que levar, prorrogação e o que fazer se negarem.</description>
     </item>
     <item>
       <title>B.O. Online na Bahia: Como Registrar na Delegacia Virtual</title>
@@ -443,24 +461,6 @@
       <category>trabalhista</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Trabalha à noite? Entenda o adicional noturno de 20%, a hora reduzida de 52min30s, a prorrogação após as 5h, os reflexos e como cobrar valores não pagos.</description>
-    </item>
-    <item>
-      <title>Férias Não Pagas | Como Receber em Dobro</title>
-      <link>https://riccioadvocacia.online/artigos/trabalhista/ferias-nao-pagas-como-receber</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/ferias-nao-pagas-como-receber</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>trabalhista</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Não recebeu férias ou recebeu em atraso? Saiba quando tem direito a receber em dobro. Advogado trabalhista explica como cobrar.</description>
-    </item>
-    <item>
-      <title>Desvio de Função e Acúmulo de Função | Diferenças Salariais</title>
-      <link>https://riccioadvocacia.online/artigos/trabalhista/desvio-funcao-acumulo-funcoes</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/desvio-funcao-acumulo-funcoes</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>trabalhista</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Faz o trabalho de outro cargo ou acumula funções sem receber a mais? Entenda desvio e acúmulo de função, equiparação salarial, provas e prazos para cobrar.</description>
     </item>
   </channel>
 </rss>

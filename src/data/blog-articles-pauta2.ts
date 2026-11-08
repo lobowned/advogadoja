@@ -1080,4 +1080,142 @@ export const pauta2Articles: BlogArticle[] = [
     relatedActions: ["auxilio-doenca", "aposentadoria", "pensao-morte"],
     updatedAt: "2026-11-08",
   },
+
+  // ============================================================
+  // 18. ATESTADO MÉDICO NO TRABALHO
+  // Conferido em 08/11/2026: Lei 605/1949 art. 6º; CLT art. 473 (com as Leis 14.457/2022, 15.156/2025
+  // e 15.377/2026); Lei 8.213/1991 art. 60 (com a Lei 15.265/2025); Decreto 3.048/1999 art. 75;
+  // Lei 5.081/1966 art. 6º, III; Resolução CFM 2.381/2024 (DOU de 02/07/2024), arts. 2º, 4º e 5º,
+  // que revogou a Resolução CFM 1.658/2002; notícia do Ministério da Previdência sobre o novo
+  // Atestmed (22/04/2026, atualizada em 26/10/2026).
+  // ============================================================
+  {
+    id: "atestado-medico-trabalho",
+    nicheId: "trabalhista",
+    slug: "atestado-medico-trabalho",
+    title: "Atestado Médico no Trabalho: O Que a Empresa Pode Exigir, CID, Prazos e Quando o INSS Paga",
+    metaTitle: "Atestado Médico no Trabalho: Regras, CID e 15 Dias",
+    metaDescription:
+      "Atestado médico no trabalho: o que deve conter, se a empresa pode exigir CID, declaração de comparecimento, acompanhamento de filho e quando o INSS paga.",
+    keywords: [
+      "atestado médico trabalho",
+      "empresa pode recusar atestado",
+      "atestado com cid",
+      "declaração de comparecimento",
+      "atestado de acompanhamento",
+      "atestado de dentista",
+      "atestado mais de 15 dias",
+    ],
+    excerpt:
+      "A falta por doença comprovada por atestado é justificada e não pode ser descontada. A empresa paga os primeiros 15 dias; a partir do 16º, o INSS. Veja o que o atestado deve conter, quando a empresa pode recusar e o que vale para acompanhar filho.",
+    content: {
+      intro:
+        "Em resumo: a falta por doença comprovada por atestado é justificada e não pode ser descontada do salário nem do descanso semanal (art. 6º da Lei 605/1949). Só médicos e dentistas, dentro da sua área, podem dar atestado de afastamento do trabalho (Resolução CFM 2.381/2024 e Lei 5.081/1966). A empresa paga os primeiros 15 dias de afastamento; a partir do 16º, quem paga é o INSS, como auxílio por incapacidade temporária (art. 60 da Lei 8.213/1991). O diagnóstico (CID) só vai no atestado se o paciente pedir: a empresa não pode exigir. Declaração de comparecimento e acompanhamento de familiares só abonam a falta nos casos da lei, como levar filho de até 6 anos ao médico uma vez por ano, ou se a empresa ou a convenção coletiva aceitarem.",
+      whatIs:
+        "Atestado médico de afastamento é o documento em que o médico registra o atendimento e quantos dias o paciente precisa ficar longe do trabalho para se recuperar. Pelas regras do Conselho Federal de Medicina, todo documento médico deve trazer, no mínimo, nome e CRM do médico, nome e CPF do paciente, data de emissão, assinatura (qualificada, se for digital, ou assinatura e carimbo, se for em papel) e contato e endereço do médico (Resolução CFM 2.381/2024, arts. 2º e 4º). É diferente da declaração de comparecimento, que só confirma que a pessoa esteve no atendimento, e do atestado de acompanhamento, dado a quem acompanha um paciente.",
+      whenYouHaveRight: [
+        "Ter a falta por doença justificada, sem desconto do salário nem do descanso semanal remunerado, com atestado (art. 6º, § 1º, f, da Lei 605/1949)",
+        "Receber da empresa o salário dos primeiros 15 dias de afastamento e, a partir do 16º, o benefício do INSS (art. 60 da Lei 8.213/1991)",
+        "Não ser obrigado a revelar o diagnóstico: o CID só entra no atestado a pedido do paciente, por dever legal ou justa causa (Resolução CFM 2.381/2024, art. 5º, § 3º)",
+        "Usar atestado de dentista para justificar falta ao emprego (art. 6º, III, da Lei 5.081/1966)",
+        "Faltar sem desconto para acompanhar a esposa ou companheira grávida em até 6 consultas ou exames e para levar filho de até 6 anos ao médico 1 vez por ano (art. 473, X e XI, da CLT)",
+        "Faltar até 3 dias a cada 12 meses para exames preventivos de câncer (art. 473, XII, da CLT); desde 2026, a empresa deve informar esse direito (§ 3º)",
+      ],
+      documents: [
+        "Atestado com nome e CRM do médico (ou CRO do dentista), data, dias de afastamento e assinatura",
+        "Comprovante da entrega à empresa: protocolo, e-mail ou mensagem",
+        "Para o INSS, a partir do 16º dia: atestado ou laudo com a doença ou o CID e o período estimado de repouso",
+        "Exames e receitas que mostrem o tratamento",
+        "Convenção coletiva da categoria, que pode trazer regras sobre prazo de entrega e acompanhamento de familiares",
+      ],
+      deadlines:
+        "A lei não fixa prazo para entregar o atestado: valem o regulamento da empresa e a convenção coletiva, por isso entregue o quanto antes e guarde comprovante. Afastamentos pelo mesmo motivo dentro de 60 dias se somam para a conta dos 15 dias pagos pela empresa (Decreto 3.048/1999, art. 75, §§ 3º a 5º). Passados 15 dias, peça o benefício pelo Meu INSS; se o pedido for feito com mais de 30 dias de afastamento, o benefício é pago a partir da data do pedido (art. 60, § 1º, da Lei 8.213/1991).",
+      faq: [
+        {
+          question: "A empresa é obrigada a aceitar atestado médico?",
+          answer:
+            "Em regra, sim: a doença comprovada é motivo legal de falta justificada (art. 6º da Lei 605/1949). A lei traz uma ordem de preferência entre médicos (do INSS, do Sesi ou Sesc, da empresa, do serviço público de saúde e, na falta deles, de escolha do empregado), e a empresa com serviço médico próprio ou conveniado pode examinar o empregado e é quem abona os primeiros 15 dias (art. 60, § 4º, da Lei 8.213/1991). A recusa precisa de motivo concreto, como atestado incompleto, ilegível ou com indício de falsidade.",
+        },
+        {
+          question: "A empresa pode exigir CID no atestado?",
+          answer:
+            "Não pode obrigar. Pelas regras do Conselho Federal de Medicina, o médico só coloca o diagnóstico, em código ou por extenso, a pedido do paciente, com a concordância escrita no atestado, por dever legal ou por justa causa (Resolução CFM 2.381/2024, art. 5º, §§ 3º e 4º). Dados de saúde são dados sensíveis pela Lei Geral de Proteção de Dados. Para o INSS, porém, o atestado precisa informar a doença ou o CID.",
+        },
+        {
+          question: "Declaração de comparecimento abona a falta?",
+          answer:
+            "Só se a empresa aceitar ou a convenção coletiva previr. A declaração, emitida pela clínica ou pelo médico sem recomendação de afastamento, confirma que você esteve no atendimento; o CFM diz que ela pode justificar a falta com a anuência do empregador (Resolução CFM 2.381/2024, art. 4º, III). A Lei 605/1949 também permite à empresa abonar ausências a seu critério.",
+        },
+        {
+          question: "Atestado para acompanhar filho ou familiar vale?",
+          answer:
+            "A lei garante 1 dia por ano para levar filho de até 6 anos ao médico e o tempo necessário para acompanhar a esposa ou companheira grávida em até 6 consultas ou exames (art. 473, X e XI, da CLT). Fora disso, o atestado de acompanhamento abona a falta se a empresa aceitar ou se a convenção coletiva da categoria garantir.",
+        },
+        {
+          question: "Atestado de dentista vale para faltar ao trabalho?",
+          answer:
+            "Vale. A lei permite ao cirurgião-dentista atestar estados de saúde da sua área, inclusive para justificar faltas ao emprego (art. 6º, III, da Lei 5.081/1966), e o CFM reconhece o atestado odontológico para afastamento. Para o INSS, o atestado pode ter assinatura com CRM, CRO ou RMS.",
+        },
+        {
+          question: "Atestado de mais de 15 dias: quem paga?",
+          answer:
+            "A empresa paga os primeiros 15 dias; a partir do 16º, o INSS paga o auxílio por incapacidade temporária, pedido pelo Meu INSS (art. 60 da Lei 8.213/1991). Desde março de 2026, atestados que recomendam até 90 dias podem ser analisados só por documentos, sem perícia presencial, no novo Atestmed.",
+        },
+        {
+          question: "Atestados seguidos da mesma doença se somam?",
+          answer:
+            "Sim. Se o empregado volta a se afastar pelo mesmo motivo dentro de 60 dias, os dias se somam para a conta dos 15 que a empresa paga, e o INSS passa a pagar a partir do dia seguinte ao 15º. Se o novo afastamento vem dentro de 60 dias do fim de um benefício do INSS, o benefício anterior é prorrogado, sem novos 15 dias pagos pela empresa (Decreto 3.048/1999, art. 75).",
+        },
+        {
+          question: "Posso ser demitido estando de atestado?",
+          answer:
+            "Durante o auxílio por incapacidade do INSS, o contrato fica suspenso e, segundo o TST, a dispensa sem justa causa só produz efeitos depois da alta. A dispensa de quem tem doença grave que cause estigma ou preconceito é presumida discriminatória (Súmula 443 do TST), e o acidente de trabalho com afastamento de mais de 15 dias e auxílio do INSS dá estabilidade de 12 meses depois da alta (art. 118 da Lei 8.213/1991). Demissão logo após atestado, ligada à doença, pode ser questionada na Justiça.",
+        },
+        {
+          question: "Atestado falso dá justa causa?",
+          answer:
+            "Pode dar: apresentar atestado falso é falta grave por improbidade (art. 482, a, da CLT) e também é crime de uso de documento falso. O médico que detecta indício de falsidade deve comunicar ao Conselho Regional de Medicina (Resolução CFM 2.381/2024, art. 7º).",
+        },
+      ],
+      sections: [
+        {
+          title: "O que a lei garante",
+          paragraphs: [
+            "A Lei 605/1949 trata a doença comprovada como motivo justificado de falta, o que impede o desconto do dia e do descanso semanal remunerado (art. 6º, § 1º, f). A mesma lei lista outros motivos justificados, como as faltas da CLT e as ausências que a empresa aceitar a seu critério.",
+            "A CLT (art. 473) garante faltas sem desconto em situações específicas: até 2 dias por falecimento de familiar próximo, 3 dias por casamento, 5 dias por nascimento, adoção ou guarda compartilhada, 1 dia por ano para doação de sangue, até 6 consultas ou exames para acompanhar a esposa ou companheira grávida, 1 dia por ano para levar filho de até 6 anos ao médico e até 3 dias por ano para exames preventivos de câncer, entre outras.",
+          ],
+        },
+        {
+          title: "O que o atestado precisa ter",
+          paragraphs: [
+            "Pela Resolução CFM 2.381/2024, só médicos e dentistas, estes na sua área, podem emitir atestado para afastamento do trabalho. O documento deve ter nome e CRM do médico, nome e CPF do paciente, data de emissão, a quantidade de dias de afastamento, assinatura e contato e endereço do médico. O atestado digital vale, com assinatura eletrônica qualificada.",
+            "O diagnóstico não é obrigatório para a empresa: o médico só o escreve, em CID ou por extenso, a pedido do paciente, com a concordância expressa no próprio atestado, por dever legal ou justa causa. Para o INSS, ao contrário, o atestado ou laudo precisa informar a doença ou o CID e o período estimado de repouso, além de estar legível e sem rasuras.",
+          ],
+        },
+        {
+          title: "Quando a empresa pode recusar",
+          paragraphs: [
+            "A Lei 605/1949 prevê uma ordem de preferência para o atestado: médico da Previdência, do Sesi ou Sesc, da empresa ou por ela indicado, de órgão público de saúde e, na falta deles, médico escolhido pelo empregado (art. 6º, § 2º). A empresa com serviço médico próprio ou conveniado é quem faz o exame e abona os primeiros 15 dias (art. 60, § 4º, da Lei 8.213/1991).",
+            "Recusar um atestado regular, sem motivo, para descontar o dia ou punir o empregado é abusivo e pode ser cobrado na Justiça do Trabalho. Já o atestado incompleto, ilegível, rasurado ou com indício de falsidade pode ser questionado, e o empregado pode ser encaminhado ao médico da empresa.",
+          ],
+        },
+        {
+          title: "Declaração de comparecimento e acompanhamento",
+          paragraphs: [
+            "A declaração de comparecimento é emitida pela clínica ou pelo médico sem recomendação de afastamento; ela prova que você esteve no atendimento e, pelo CFM, serve de justificativa se o empregador concordar. O atestado de acompanhamento confirma a presença de quem acompanha um paciente, com a data e a quantidade de dias.",
+            "Fora dos casos garantidos pela CLT, como o filho de até 6 anos e a esposa ou companheira grávida, a aceitação desses documentos depende da empresa ou da convenção coletiva. Vale ler a convenção da sua categoria: muitas trazem regras mais favoráveis para acompanhar filhos, pais idosos ou pessoas com deficiência.",
+          ],
+        },
+        {
+          title: "Mais de 15 dias: o INSS entra",
+          paragraphs: [
+            "A partir do 16º dia de afastamento, o empregado deve pedir o auxílio por incapacidade temporária no Meu INSS. Desde março de 2026, com o novo Atestmed, atestados que recomendam até 90 dias podem ser analisados só pelos documentos; acima disso, ou se o documento não bastar, há perícia. Se o pedido for feito com mais de 30 dias de afastamento, o benefício é pago a partir da data do pedido.",
+            "Se a doença ou o acidente tem relação com o trabalho, a empresa deve emitir a Comunicação de Acidente de Trabalho (CAT), e o benefício acidentário garante estabilidade de 12 meses depois da alta (art. 118 da Lei 8.213/1991). Durante o benefício do INSS, o contrato fica suspenso.",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["acidente-trabalho", "demissao-sem-justa-causa"],
+    updatedAt: "2026-11-08",
+  },
 ];

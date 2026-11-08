@@ -172,5 +172,5 @@ export const guiaFamilia: Guia = {
     { href: "/advogado-familia", label: "Direito de Família — área de atuação" },
   ],
   whatsappText: "Olá! Li o guia de Direito de Família e quero conversar sobre meu caso.",
-  atualizadoEm: "2026-11-04",
+  atualizadoEm: "2026-11-08",
 };

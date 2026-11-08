@@ -174,5 +174,5 @@ export const guiaPrevidenciario: Guia = {
     { href: "/advogado-previdenciario", label: "Direito Previdenciário — área de atuação" },
   ],
   whatsappText: "Olá! Li o guia do INSS e quero analisar meu benefício.",
-  atualizadoEm: "2026-11-04",
+  atualizadoEm: "2026-11-08",
 };

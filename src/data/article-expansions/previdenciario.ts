@@ -4,7 +4,7 @@ const U = "2026-11-05";
 
 const expansions: Record<string, ArticleExpansion> = {
   "previdenciario/auxilio-doenca": {
-    updatedAt: U,
+    updatedAt: "2026-11-08",
     sections: [
       {
         title: "O que diz a lei sobre o benefício por incapacidade temporária",
@@ -18,7 +18,7 @@ const expansions: Record<string, ArticleExpansion> = {
         title: "Passo a passo para pedir pelo Meu INSS",
         paragraphs: [
           "Entre no site ou aplicativo Meu INSS com a conta Gov.br. Na busca, digite benefício por incapacidade e escolha a opção de pedido. O sistema pergunta se você quer enviar os documentos médicos para análise documental (o chamado Atestmed) ou agendar perícia presencial.",
-          "Na análise documental, você anexa atestado ou laudo legível, com nome completo, data, CID ou descrição da doença, tempo estimado de afastamento, assinatura e número do conselho do médico. Se o documento estiver incompleto, o pedido costuma ser negado ou convertido em perícia. Na perícia presencial, leve todos os originais e chegue com antecedência.",
+          "Na análise documental, você anexa atestado ou laudo legível, com nome completo, data, CID ou descrição da doença, tempo estimado de afastamento, assinatura e número do conselho do médico. Desde março de 2026, com o novo Atestmed, essa via vale para atestados que recomendam afastamento de até 90 dias (antes, 60). Se o documento estiver incompleto, o pedido costuma ser negado ou convertido em perícia. Na perícia presencial, leve todos os originais e chegue com antecedência.",
           "Depois do pedido, acompanhe pela opção Consultar pedidos. O resultado aparece ali, com a data de cessação do benefício (DCB). Se você continuar incapaz quando a data estiver perto, faça o pedido de prorrogação nos 15 dias finais antes da cessação, também pelo Meu INSS ou pelo telefone 135.",
         ],
       },
@@ -57,7 +57,7 @@ const expansions: Record<string, ArticleExpansion> = {
       },
       {
         question: "Posso pedir auxílio-doença sem perícia?",
-        answer: "Sim. O Meu INSS permite enviar atestado ou laudo para análise documental. Se o documento for considerado insuficiente, o INSS pode negar ou exigir perícia presencial.",
+        answer: "Sim, quando o atestado recomenda afastamento de até 90 dias (novo Atestmed, desde março de 2026). O Meu INSS permite enviar atestado ou laudo para análise documental. Se o documento for considerado insuficiente, o INSS pode negar ou exigir perícia presencial.",
       },
       {
         question: "O que fazer quando o auxílio-doença acaba e eu ainda estou doente?",

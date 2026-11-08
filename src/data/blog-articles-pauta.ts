@@ -824,7 +824,9 @@ export const pautaArticles: BlogArticle[] = [
   // 10. PERÍCIA DO INSS
   // Conferido em 07/11/2026: serviço "Solicitar Auxílio por Incapacidade Temporária" no gov.br
   // (atualizado em 26/10/2026); Lei 8.213/1991, arts. 59, 60 §§ 3º, 8º e 9º e 101 (texto em vigor
-  // no Planalto, com a Lei 15.157/2025).
+  // no Planalto, com a Lei 15.157/2025). Revisto em 08/11/2026: análise só por documentos limitada a
+  // 30 dias pela Lei 15.265/2025 (art. 60, §§ 11-F a 11-I), ampliada por ato do Executivo para até
+  // 90 dias no novo Atestmed (notícia do Ministério da Previdência de 22/04/2026, atualizada em 26/10/2026).
   // ============================================================
   {
     id: "pericia-inss",
@@ -833,7 +835,7 @@ export const pautaArticles: BlogArticle[] = [
     title: "Perícia do INSS: Como Funciona, o Que Levar e o Que Fazer se Negarem",
     metaTitle: "Perícia do INSS: Como Funciona, o Que Levar e Se Negarem",
     metaDescription:
-      "Perícia do INSS: como pedir, o que o atestado precisa ter, análise só por documentos (até 180 dias), o que levar, prorrogação e o que fazer se negarem.",
+      "Perícia do INSS: como pedir, o que o atestado precisa ter, análise só por documentos (atestados de até 90 dias), o que levar, prorrogação e se negarem.",
     keywords: [
       "perícia inss",
       "perícia inss como funciona",
@@ -872,7 +874,7 @@ export const pautaArticles: BlogArticle[] = [
         {
           question: "Como funciona a perícia do INSS?",
           answer:
-            "Você pede o benefício no Meu INSS e envia o atestado ou laudo. Em afastamentos de até 180 dias, o INSS pode conceder só com a análise do documento; se ele não bastar, você é chamado para a perícia, em que um perito médico federal examina você e os documentos e decide se há incapacidade e por quanto tempo. O resultado aparece no Meu INSS, em \"Consultar pedidos\".",
+            "Você pede o benefício no Meu INSS e envia o atestado ou laudo. Quando o atestado recomenda afastamento de até 90 dias (limite do novo Atestmed, em vigor desde março de 2026), o INSS pode conceder só com a análise do documento; se ele não bastar, você é chamado para a perícia, em que um perito médico federal examina você e os documentos e decide se há incapacidade e por quanto tempo. O resultado aparece no Meu INSS, em \"Consultar pedidos\".",
         },
         {
           question: "O que levar na perícia do INSS?",
@@ -882,7 +884,7 @@ export const pautaArticles: BlogArticle[] = [
         {
           question: "O INSS pode conceder o benefício sem perícia presencial?",
           answer:
-            "Sim, no auxílio por incapacidade temporária. Para afastamentos de até 180 dias, o INSS pode decidir com base no atestado ou laudo enviado pelo Meu INSS. Por isso o documento precisa estar completo: nome, data, período de repouso, assinatura com registro do profissional e a doença ou o CID.",
+            "Sim, no auxílio por incapacidade temporária. Quando o atestado recomenda afastamento de até 90 dias, o INSS pode decidir só com o atestado ou laudo enviado pelo Meu INSS; antes de março de 2026 esse limite era de 60 dias, e a lei permite ao governo mudá-lo (art. 60, §§ 11-F e 11-I, da Lei 8.213/1991). Por isso o documento precisa estar completo e legível: nome, data de emissão, período estimado de repouso, assinatura e carimbo com registro do profissional e a doença ou o CID.",
         },
         {
           question: "Quanto tempo demora o resultado?",
@@ -915,7 +917,7 @@ export const pautaArticles: BlogArticle[] = [
           title: "Como pedir e como funciona a análise",
           paragraphs: [
             "No Meu INSS (site ou aplicativo), entre com a conta gov.br, procure \"Benefício por incapacidade\" e escolha \"Pedir novo benefício\". O pedido começa todo pela internet; o telefone 135 atende de segunda a sábado, das 7h às 22h, e agenda atendimento presencial quando necessário. Empregados com carteira recebem os primeiros 15 dias de afastamento da empresa; o INSS paga a partir do 16º dia.",
-            "Em afastamentos de até 180 dias, o INSS pode conceder o benefício só com a análise do atestado ou laudo enviado. Se o documento não for suficiente, ou se o caso exigir, a pessoa é chamada para a perícia presencial, que também define se a incapacidade é temporária ou permanente.",
+            "Quando o atestado recomenda afastamento de até 90 dias, o INSS pode conceder o benefício só com a análise do atestado ou laudo enviado (novo Atestmed, desde março de 2026). Se o documento não for suficiente, ou se o caso exigir, a pessoa é chamada para a perícia presencial, que também define se a incapacidade é temporária ou permanente.",
           ],
         },
         {
@@ -949,7 +951,7 @@ export const pautaArticles: BlogArticle[] = [
       ],
     },
     relatedActions: ["auxilio-doenca", "aposentadoria"],
-    updatedAt: "2026-11-07",
+    updatedAt: "2026-11-08",
   },
 
   // ============================================================

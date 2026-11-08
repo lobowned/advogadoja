@@ -19,7 +19,7 @@ O que entrou nesta publicação:
 
 Depois de publicar, me avise: eu aviso o Bing (IndexNow) e peço indexação no Google.
 
-## 1-B. Próxima publicação (preparada em 08/11)
+## 1-B. Publicação de 08/11: FEITA (conferida no ar às 10h)
 Já está no GitHub e entra no ar quando você clicar em **Publicar** e depois no botão azul **Publicar alterações**:
 - 11 artigos novos: furto, roubo e receptação (com as penas novas da Lei 15.397/2026), saída temporária (saidinha), prisão preventiva (com a Lei 15.272/2025), regulamentação de visitas, regime de bens, aposentadoria da pessoa com deficiência, qualidade de segurado e carência no INSS, atestado médico no trabalho e direitos da empregada doméstica;
 - título e texto legíveis antes do JavaScript (o texto principal da home aparecia só aos 10 s no celular com rede lenta);

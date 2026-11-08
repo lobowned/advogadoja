@@ -40,8 +40,9 @@ Trocar o site do perfil para **https://riccioadvocacia.online**.
 Quando chegar a carta do Google com o código, digite o código no perfil (ou me mande que eu sigo com você).
 Depois de verificado: foto real sua ou do logo e a lista de serviços por área.
 
-## 5. Bing (abastece também o ChatGPT e o DuckDuckGo)
-O Bing já recebeu os 343 endereços do domínio novo pelo IndexNow (06/11). A conta no Bing Webmaster é opcional, só para acompanhar: em bing.com/webmasters, com sua conta Microsoft, **Importar do Google Search Console**.
+## 5. Bing (abastece também o ChatGPT, o Copilot e o DuckDuckGo): FEITO (08/11)
+Com o seu login, o site foi importado do Search Console para o Bing Webmaster (na mesma conta em que já estava o institutoamoremcristo.org). O mapa do site entrou junto e está em processamento, e os 100 endereços principais (home, páginas de serviço de Salvador, guias e 76 artigos) foram enviados manualmente em 08/11 às 10h27; a cota é de 100 por dia. As demais páginas já tinham sido avisadas pelo IndexNow.
+Opcional: o mesmo Search Console tem o saudementalonline.org, que também pode ser importado para o Bing em 1 minuto.
 
 ## 6. E-mail do site: resolvido pelo WhatsApp
 Os endereços contato@ e privacidade@advogadoja.com.br não recebiam e-mail (o domínio não tem servidor de e-mail). Em 06/11 saíram do site e o contato (inclusive o do encarregado de dados, na Política de Privacidade) passou a ser o WhatsApp (71) 99703-6269.

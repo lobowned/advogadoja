@@ -5,7 +5,7 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 08 Nov 2026 12:41:15 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 12:47:41 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
@@ -182,6 +182,15 @@
       <category>penal</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Prisão preventiva: requisitos dos arts. 312 e 313 do CPP, critérios da Lei 15.272/2025, revisão a cada 90 dias, prisão domiciliar, cautelares e como pedir a revogação.</description>
+    </item>
+    <item>
+      <title>Empregada Doméstica: Direitos, FGTS, Férias e Demissão</title>
+      <link>https://riccioadvocacia.online/artigos/trabalhista/empregada-domestica-direitos</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/empregada-domestica-direitos</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>trabalhista</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Direitos da empregada doméstica (LC 150/2015): doméstica ou diarista, jornada, horas extras, férias, FGTS, aviso prévio, seguro-desemprego e justa causa.</description>
     </item>
     <item>
       <title>Divórcio Consensual em Cartório e Online | Passo a Passo</title>
@@ -452,15 +461,6 @@
       <category>trabalhista</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Trabalhou horas extras e não recebeu? Saiba como calcular, provar e cobrar na Justiça. Advogado trabalhista explica seus direitos.</description>
-    </item>
-    <item>
-      <title>Assédio Moral no Trabalho | Como Denunciar e Processar</title>
-      <link>https://riccioadvocacia.online/artigos/trabalhista/assedio-moral</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/assedio-moral</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>trabalhista</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Está sofrendo assédio moral no trabalho? Saiba identificar, reunir provas e buscar indenização. Fale com um advogado.</description>
     </item>
   </channel>
 </rss>

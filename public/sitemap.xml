@@ -675,7 +675,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- ===== ARTIGOS DO BLOG (LEGACY) (105 URLs) ===== -->
+  <!-- ===== ARTIGOS DO BLOG (LEGACY) (106 URLs) ===== -->
   <url>
     <loc>https://riccioadvocacia.online/artigos/trabalhista/demissao-sem-justa-causa</loc>
     <lastmod>2026-11-05</lastmod>
@@ -1302,6 +1302,12 @@
   </url>
   <url>
     <loc>https://riccioadvocacia.online/artigos/penal/prisao-preventiva</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccioadvocacia.online/artigos/trabalhista/empregada-domestica-direitos</loc>
     <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

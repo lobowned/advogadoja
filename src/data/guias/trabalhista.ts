@@ -165,6 +165,7 @@ export const guiaTrabalhista: Guia = {
     "/artigos/trabalhista/pejotizacao-vinculo-empregaticio",
     "/artigos/trabalhista/acidente-trabalho",
     "/artigos/trabalhista/atestado-medico-trabalho",
+    "/artigos/trabalhista/empregada-domestica-direitos",
     "/artigos/trabalhista/empresa-faliu-nao-pagou-o-que-fazer",
   ],
   paginasLocais: [

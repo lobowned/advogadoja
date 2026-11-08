@@ -40,6 +40,7 @@ Depois que o Dr. publicar e o site no ar mostrar estas páginas, passar para a F
 - https://riccioadvocacia.online/artigos/previdenciario/qualidade-de-segurado-carencia
 - https://riccioadvocacia.online/artigos/penal/saida-temporaria-saidinha
 - https://riccioadvocacia.online/artigos/penal/prisao-preventiva
+- https://riccioadvocacia.online/artigos/trabalhista/empregada-domestica-direitos
 - https://riccioadvocacia.online/artigos/penal/estelionato-golpes-fraudes (corrigido)
 - https://riccioadvocacia.online/artigos/penal/crime-hediondo-o-que-e (corrigido)
 

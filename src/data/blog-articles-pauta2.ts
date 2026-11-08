@@ -1350,4 +1350,139 @@ export const pauta2Articles: BlogArticle[] = [
     relatedActions: ["habeas-corpus", "defesa-flagrante"],
     updatedAt: "2026-11-08",
   },
+
+  // ============================================================
+  // 21. EMPREGADA DOMÉSTICA (reserva da pauta 2)
+  // Conferido em 08/11/2026 no Planalto: Lei Complementar 150/2015 arts. 1º a 4º, 10, 12 a 14,
+  // 17 a 19, 21 a 24, 26 a 30-A (Capítulo I-A incluído pela Lei 15.455/2026), 34 e 43.
+  // ============================================================
+  {
+    id: "empregada-domestica-direitos",
+    nicheId: "trabalhista",
+    slug: "empregada-domestica-direitos",
+    title: "Empregada Doméstica: Direitos, Deveres, FGTS, Férias e o Que Muda na Demissão",
+    metaTitle: "Empregada Doméstica: Direitos, FGTS, Férias e Demissão",
+    metaDescription:
+      "Direitos da empregada doméstica (LC 150/2015): doméstica ou diarista, jornada, horas extras, férias, FGTS, aviso prévio, seguro-desemprego e justa causa.",
+    keywords: [
+      "empregada doméstica direitos",
+      "direitos da empregada doméstica",
+      "empregada doméstica direitos e deveres",
+      "diarista ou doméstica",
+      "fgts empregada doméstica",
+      "seguro-desemprego doméstica",
+      "lei complementar 150",
+    ],
+    excerpt:
+      "Quem trabalha numa casa de família mais de 2 dias por semana é empregada doméstica e tem carteira assinada, jornada de 8 horas, horas extras, férias de 30 dias, 13º, FGTS e seguro-desemprego (Lei Complementar 150/2015). Até 2 dias por semana, é diarista.",
+    content: {
+      intro:
+        "Em resumo: é empregada doméstica quem presta serviço contínuo, pessoal e pago a uma pessoa ou família, no âmbito da casa, sem finalidade de lucro, por mais de 2 dias por semana (art. 1º da Lei Complementar 150/2015). Até 2 dias por semana, é diarista, sem vínculo de emprego. A doméstica tem carteira assinada, jornada de até 8 horas por dia e 44 por semana, horas extras com pelo menos 50%, registro de horário obrigatório, férias de 30 dias com 1/3, 13º, FGTS, depósito mensal de 3,2% para a indenização na demissão, aviso prévio proporcional e seguro-desemprego de um salário mínimo por até 3 meses. É proibido contratar menor de 18 anos para trabalho doméstico.",
+      whatIs:
+        "A Lei Complementar 150/2015 regula o trabalho de quem cuida da casa e da família: faxina, cozinha, cuidado de crianças, idosos ou pessoas com deficiência, e também motorista, caseiro e jardineiro da residência, desde que o serviço seja para a família, sem fins lucrativos. O empregador recolhe tudo numa guia única, o Simples Doméstico, pelo eSocial: INSS do empregado e do empregador, seguro contra acidentes, FGTS de 8% e os 3,2% da indenização (art. 34). Se a casa usa o trabalho num negócio, como pensão ou restaurante, a relação deixa de ser doméstica e segue a CLT comum.",
+      whenYouHaveRight: [
+        "Carteira assinada e registro de horário por meio manual, mecânico ou eletrônico (art. 12)",
+        "Jornada de até 8 horas por dia e 44 por semana, com hora extra de pelo menos 50% (art. 2º); compensação só por acordo escrito, com as primeiras 40 horas extras do mês pagas (art. 2º, §§ 4º e 5º)",
+        "Intervalo de 1 a 2 horas para refeição, que pode cair para 30 minutos por acordo escrito (art. 13)",
+        "Adicional noturno de pelo menos 20% entre 22h e 5h, com hora noturna de 52 minutos e 30 segundos (art. 14)",
+        "Férias de 30 dias com 1/3, que o empregador pode dividir em até 2 períodos, um de pelo menos 14 dias (art. 17)",
+        "13º salário, descanso semanal, feriados e vale-transporte, que pode ser pago em dinheiro mediante recibo (art. 19)",
+        "FGTS de 8% e depósito mensal de 3,2% para a indenização na demissão sem justa causa (arts. 21, 22 e 34)",
+        "Aviso prévio de 30 dias, mais 3 por ano de serviço, até 90 (art. 23)",
+        "Seguro-desemprego de 1 salário mínimo por até 3 meses, se dispensada sem justa causa com 15 meses de trabalho doméstico nos últimos 24 (arts. 26 e 28)",
+        "Não sofrer desconto por alimentação, vestuário, higiene ou moradia no local de trabalho (art. 18)",
+      ],
+      documents: [
+        "Carteira de trabalho, física ou digital, com o registro",
+        "Recibos de salário, de férias e de 13º",
+        "Registro de horário (folha de ponto ou aplicativo)",
+        "Extrato do FGTS no aplicativo e guias do eSocial",
+        "Mensagens com o empregador sobre horários, folgas e pagamentos",
+        "Termo de rescisão, se houve demissão",
+      ],
+      deadlines:
+        "O seguro-desemprego da doméstica deve ser pedido de 7 a 90 dias depois da dispensa (art. 29). Para cobrar direitos na Justiça do Trabalho, o prazo é de 2 anos depois do fim do contrato, alcançando os últimos 5 anos (art. 43). As férias devem ser concedidas nos 12 meses seguintes a cada período aquisitivo, e o abono de 1/3 das férias deve ser pedido até 30 dias antes do fim do período aquisitivo (art. 17).",
+      faq: [
+        {
+          question: "Qual a diferença entre diarista e empregada doméstica?",
+          answer:
+            "O número de dias. Quem trabalha para a mesma família mais de 2 dias por semana, de forma contínua, é empregada doméstica e tem todos os direitos da Lei Complementar 150/2015 (art. 1º). Quem trabalha até 2 dias por semana é diarista, sem vínculo de emprego, e recebe pelo dia trabalhado.",
+        },
+        {
+          question: "Empregada doméstica tem direito a FGTS?",
+          answer:
+            "Tem. O empregador deposita 8% do salário de FGTS e mais 3,2% por mês numa conta separada, que garante a indenização na demissão sem justa causa (arts. 21, 22 e 34). Se a doméstica pede demissão ou é demitida por justa causa, os 3,2% voltam para o empregador; na culpa recíproca, dividem-se ao meio.",
+        },
+        {
+          question: "Doméstica tem direito a hora extra?",
+          answer:
+            "Tem, com pelo menos 50% sobre a hora normal, e o registro de horário é obrigatório (arts. 2º e 12). Por acordo escrito, pode haver compensação, mas as primeiras 40 horas extras do mês são pagas; o restante deve ser compensado em até 1 ano, e o saldo é pago na rescisão (art. 2º, §§ 4º a 6º).",
+        },
+        {
+          question: "A doméstica pode trabalhar 12 por 36?",
+          answer:
+            "Pode, por acordo escrito, com intervalos concedidos ou indenizados. Nessa escala, o salário já inclui o descanso semanal e os feriados (art. 10).",
+        },
+        {
+          question: "O patrão pode descontar comida e moradia do salário?",
+          answer:
+            "Não. É proibido descontar alimentação, vestuário, higiene ou moradia no local de trabalho, e também despesas de viagem para acompanhar a família (art. 18). Podem ser descontados adiantamentos e, por acordo escrito, plano de saúde, seguro ou previdência privada, até 20% do salário.",
+        },
+        {
+          question: "Empregada doméstica tem direito a seguro-desemprego?",
+          answer:
+            "Tem, se for dispensada sem justa causa e tiver ao menos 15 meses de trabalho doméstico registrado nos últimos 24 meses. São até 3 parcelas de um salário mínimo, pedidas de 7 a 90 dias depois da dispensa (arts. 26, 28 e 29).",
+        },
+        {
+          question: "Como fica a rescisão da doméstica?",
+          answer:
+            "Na demissão sem justa causa: saldo de salário, aviso prévio proporcional, 13º e férias proporcionais com 1/3, férias vencidas, saque do FGTS com os 3,2% acumulados e guias do seguro-desemprego. No pedido de demissão, a doméstica não saca o FGTS nem recebe os 3,2%, e deve cumprir ou indenizar o aviso prévio (art. 23, § 4º).",
+        },
+        {
+          question: "O que é justa causa para doméstica?",
+          answer:
+            "A lei lista, entre outras, maus-tratos a idoso, criança, enfermo ou pessoa com deficiência sob seus cuidados, improbidade, desídia, embriaguez habitual ou em serviço, insubordinação e abandono de emprego por 30 dias (art. 27). A doméstica também pode romper o contrato por culpa do empregador, por exemplo se for tratada com rigor excessivo ou de forma degradante, se ele não cumprir o contrato ou se praticar violência doméstica contra mulheres (art. 27, parágrafo único).",
+        },
+      ],
+      sections: [
+        {
+          title: "Quem é empregada doméstica",
+          paragraphs: [
+            "A lei exige cinco elementos: trabalho contínuo, por mais de 2 dias por semana; subordinação, com ordens do empregador; pagamento; pessoalidade, ou seja, a própria trabalhadora presta o serviço; e finalidade não lucrativa, para a pessoa ou a família, no âmbito da casa (art. 1º da LC 150/2015). É proibido contratar menor de 18 anos para trabalho doméstico.",
+            "Também é possível o contrato por prazo determinado: o de experiência e o feito para necessidades transitórias da família ou para substituir doméstica afastada, com limite de 2 anos (art. 4º). Há ainda o regime de tempo parcial, de até 25 horas semanais, com salário e férias proporcionais (art. 3º).",
+          ],
+        },
+        {
+          title: "Jornada, intervalos e trabalho noturno",
+          paragraphs: [
+            "A jornada é de até 8 horas por dia e 44 por semana, e o registro de horário é obrigatório. A hora extra vale pelo menos 50% a mais, e a compensação depende de acordo escrito: as primeiras 40 horas extras do mês são pagas e o saldo deve ser compensado em até 1 ano (art. 2º). Por acordo escrito também se admite a escala de 12 por 36 (art. 10).",
+            "O intervalo para refeição é de 1 a 2 horas, podendo ser reduzido a 30 minutos por acordo escrito; quem mora no emprego pode ter o intervalo dividido em dois períodos de pelo menos 1 hora (art. 13). O trabalho entre 22h e 5h tem adicional de pelo menos 20%, e a hora noturna dura 52 minutos e 30 segundos (art. 14).",
+          ],
+        },
+        {
+          title: "Férias, 13º e descontos",
+          paragraphs: [
+            "A doméstica tem 30 dias de férias com 1/3 a cada 12 meses, concedidas nos 12 meses seguintes; o empregador pode dividi-las em até 2 períodos, um de pelo menos 14 dias, e a doméstica pode vender 1/3, pedindo até 30 dias antes do fim do período aquisitivo (art. 17). Também tem 13º salário, descanso semanal, feriados e vale-transporte.",
+            "A lei proíbe descontar alimentação, vestuário, higiene e moradia no local de trabalho, e a moradia oferecida não dá direito de posse ao imóvel (art. 18). Descontos só são permitidos para adiantamentos e, por acordo escrito, para plano de saúde, seguro ou previdência privada, até 20% do salário.",
+          ],
+        },
+        {
+          title: "FGTS, demissão e seguro-desemprego",
+          paragraphs: [
+            "Todo mês, pelo Simples Doméstico, o empregador recolhe 8% de FGTS e mais 3,2% numa conta separada, que substitui a multa de 40% da CLT (arts. 22 e 34). Na demissão sem justa causa, a doméstica saca o FGTS e os 3,2%; no pedido de demissão, na justa causa, no fim do contrato por prazo e na aposentadoria, os 3,2% voltam ao empregador.",
+            "O aviso prévio é de 30 dias mais 3 por ano de serviço, até 90 dias; se a dispensa partir do empregador, a doméstica trabalha 2 horas a menos por dia ou falta 7 dias corridos, sem desconto (arts. 23 e 24). Dispensada sem justa causa, ela tem direito a até 3 parcelas de seguro-desemprego de um salário mínimo, se tiver 15 meses de trabalho doméstico nos últimos 24 (arts. 26 e 28).",
+          ],
+        },
+        {
+          title: "Trabalho análogo à escravidão",
+          paragraphs: [
+            "Desde 2026, a lei prevê medidas de proteção urgentes quando se constata que uma empregada doméstica foi reduzida a condição análoga à de escravo: inclusão no CadÚnico e em programas sociais e acolhimento imediato, quando necessário; se a vítima for mulher, aplicam-se também as medidas protetivas da Lei Maria da Penha (art. 30-A, incluído pela Lei 15.455/2026).",
+            "Jornadas exaustivas, retenção de documentos, falta de salário, proibição de sair da casa e trabalho em troca de moradia e comida são sinais de alerta. A denúncia pode ser feita ao Ministério Público do Trabalho, à polícia ou pelo Disque 100.",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["verbas-rescissorias", "demissao-sem-justa-causa"],
+    updatedAt: "2026-11-08",
+  },
 ];

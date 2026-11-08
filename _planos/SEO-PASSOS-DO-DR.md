@@ -21,7 +21,7 @@ Depois de publicar, me avise: eu aviso o Bing (IndexNow) e peço indexação no 
 
 ## 1-B. Próxima publicação (preparada em 08/11)
 Já está no GitHub e entra no ar quando você clicar em **Publicar** e depois no botão azul **Publicar alterações**:
-- 10 artigos novos: furto, roubo e receptação (com as penas novas da Lei 15.397/2026), saída temporária (saidinha), prisão preventiva (com a Lei 15.272/2025), regulamentação de visitas, regime de bens, aposentadoria da pessoa com deficiência, qualidade de segurado e carência no INSS e atestado médico no trabalho;
+- 11 artigos novos: furto, roubo e receptação (com as penas novas da Lei 15.397/2026), saída temporária (saidinha), prisão preventiva (com a Lei 15.272/2025), regulamentação de visitas, regime de bens, aposentadoria da pessoa com deficiência, qualidade de segurado e carência no INSS, atestado médico no trabalho e direitos da empregada doméstica;
 - título e texto legíveis antes do JavaScript (o texto principal da home aparecia só aos 10 s no celular com rede lenta);
 - correções em páginas que já estão no ar e estavam desatualizadas ou erradas: estelionato (deixou de depender de representação em 2026), crime hediondo (percentuais de progressão de 2026 e exame criminológico), prisão em flagrante e guia criminal (audiência de custódia por videoconferência), perícia do INSS e auxílio-doença (análise só por documentos vale para atestados de até 90 dias, não 180), estabilidade no emprego (gestante, serviço militar, acidente de trajeto), férias vencidas, conta da Coelba e honorários.
 Depois de publicar, me avise: eu aviso o Bing (IndexNow) e ponho os endereços novos na fila de indexação do Google.

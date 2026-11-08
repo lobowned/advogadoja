@@ -10,7 +10,7 @@ Objetivo: mais visitas do Google e do Bing para https://riccioadvocacia.online.
 - Uma tarefa por volta, do começo ao fim, e anotar em "Feito".
 
 ## 0. Do Dr. (trava o resto)
-- [ ] Publicar no Lovable. Desde 07/11 02h30 o banco está fechado e o site no ar ainda tem o código antigo: o envio do questionário (/questionario) e a avaliação no fim do chat dão erro. O ajuste já está no GitHub (371b2d0 e c7f0975).
+- [x] Publicar no Lovable (feito em 07/11, à tarde e às 17h57; questionário e avaliação do chat consertados no ar).
 
 ## Fila do loop
 - [x] 1. Medição de base: Lighthouse no celular (rodando local) da home e de um artigo. Anotar notas e os 3 maiores ganhos; corrigir na hora o que for barato (imagem do topo, carregamento).
@@ -33,6 +33,23 @@ Objetivo: mais visitas do Google e do Bing para https://riccioadvocacia.online.
 - [x] 18. /prev/sobre sem HTML estático (única página do sitemap descoberta).
 - [x] 19. Reserva da pauta: boletim de ocorrência online na Bahia (Delegacia Virtual).
 - [x] 20. Reserva da pauta: reclamação no Procon da Bahia e no consumidor.gov.br.
+
+### Rodada 2 (começou em 08/11/2026)
+- [x] 21. Medição do dia e pedidos de indexação dentro da cota (Search Console, "site:" no Google e no Bing).
+- [x] 22. Velocidade depois da publicação: Lighthouse no celular da home e de um artigo, no ar.
+- [x] 23. Pauta 2: sugestões reais da busca para 100 sementes novas, cruzadas com o site; temas em _planos/SEO-PAUTA.md.
+- [ ] 24. Artigo: furto (simples, qualificado, privilegiado; diferença para roubo).
+- [ ] 25. Artigo: roubo (pena, aumentos, latrocínio).
+- [ ] 26. Artigo: regulamentação de visitas (convivência).
+- [ ] 27. Artigo: regime de bens no casamento e na união estável.
+- [ ] 28. Artigo: receptação.
+- [ ] 29. Artigo: aposentadoria da pessoa com deficiência.
+- [ ] 30. Artigo: saída temporária (saidinha).
+- [ ] 31. Artigo: atestado médico no trabalho.
+- [ ] 32. Artigo: qualidade de segurado e carência no INSS.
+- [ ] 33. Reforços em páginas que já existem: estabilidade da gestante (artigo de estabilidade), férias vencidas (artigo de férias), Pix enviado por engano (artigo do golpe do Pix), "corte de energia" no artigo da Coelba e o parágrafo confuso sobre sucumbência no artigo de honorários.
+- [ ] 34. Fechamento da rodada: links internos e guias para os artigos novos, sitemap, RSS e lista do que publicar.
+- [ ] 35. Velocidade (técnico): o artigo baixa o texto de todos os artigos (213 KB comprimidos); separar os dados por artigo ou por área.
 
 Itens 10 e 12 dependem do Chrome e de nova publicação: a cada volta, conferir se o site no ar já tem /artigos/penal/inquerito-policial; se tiver, fazer o 12 (IndexNow) e o 10 (Search Console) antes do próximo artigo.
 
@@ -61,3 +78,6 @@ Formato dos artigos: objeto BlogArticle (src/data/blog-articles.ts), rota /artig
 - 07/11 · item 19 · commit "seo: boletim de ocorrencia online na Bahia". /artigos/penal/boletim-de-ocorrencia-online-bahia: passo a passo na Delegacia Virtual do Ministério da Justiça (link oficial no site da SSP-BA), login gov.br, o que não pode ser feito online (menor de idade, arrombamento, subtração de veículo, arma, munição, explosivos, medicamentos, produtos químicos), como acompanhar, B.O. falso (art. 340 do CP) e golpe com Pix. Conferido nas orientações oficiais da Delegacia Virtual para a Bahia. 7 perguntas.
 - 07/11 · item 20 · commit "seo: reclamacao no Procon-BA e no consumidor.gov.br". /artigos/consumidor/reclamacao-procon-bahia-consumidor-gov: formulário on-line e postos do Procon-BA (conferidos no site da SJDH), consumidor.gov.br (empresa responde em até 10 dias, consumidor avalia em até 20, conferido no site do serviço), prazos do CDC (arts. 26 e 27), devolução em dobro, Juizado (até 40 salários mínimos; até 20 sem advogado) e agências de cada setor. Sitemap com 353 URLs. 6 perguntas.
 - 07/11 · itens 10 e 12 · Publicado pelo Dr. às 17h57 (conferido no ar: os 8 artigos novos, as 3 reescritas, a /prev/sobre, artigos antigos com 10 seções e relacionados no HTML estático, sitemap com 353 URLs). IndexNow aceitou as 353 URLs (HTTP 200). Search Console: a cota diária de "Solicitar indexação" da propriedade nova acabou depois de 2 pedidos (página do advogado e aposentadoria 2026); sitemap reenviado com as 353 páginas. Medição na noite de 07/11 (por volta das 21h): no Google, "site:riccioadvocacia.online" já mostra cerca de 25 páginas do domínio novo, entre elas a página do advogado e "Aposentadoria 2026", indexadas poucas horas depois do pedido; no Bing, ainda nenhuma (normal: o IndexNow foi aceito, o rastreamento vem depois). Próximos dias: pedir indexação de 1 ou 2 por dia (tarefa agendada "indexacao-riccio-diaria", fila em SEO-INDEXACAO.md), nesta ordem: inquérito policial, auxílio-acidente, conta de luz da Coelba, pensão atrasada, perícia do INSS, lesão corporal, crime de ameaça, divórcio em cartório, usucapião, B.O. online na Bahia, Procon-BA.
+- 08/11 · item 21 · Search Console, pedidos feitos de manhã: inquérito policial, auxílio-acidente, conta de luz da Coelba, pensão atrasada, perícia do INSS e lesão corporal aceitos; o 7º deu "cota excedida" (a propriedade nova passou de 2 para 6 pedidos por dia). Fila de indexação ampliada com 10 páginas de serviço (Salvador por área e páginas de área) e tarefa agendada ajustada: de 09 a 13/11, até 6 por dia, anotando também cliques e impressões. Desempenho e Páginas da propriedade nova ainda "em processamento" (dados até 06/11: 0 cliques, 0 impressões). "site:riccioadvocacia.online" no Google: cerca de 25 páginas (home, perguntas, artigos, Bahia, advogado, consumidor em Salvador, aposentadoria 2026, vários artigos de consumidor). Bing: nenhuma página, nem do domínio novo nem do antigo; o robô do Bing recebe as páginas com código 200 e o robots.txt libera tudo, então é espera ou cadastro no Bing Webmaster (conta Microsoft do Dr.). Redirecionamentos: lovable.app e www dão 302 (temporário) para o domínio novo; http dá 301. Não dá para trocar no Lovable; o canonical das páginas já aponta o domínio novo.
+- 08/11 · item 22 · Lighthouse no celular, site no ar depois da publicação: home 54 (texto principal aos 8,8 s; primeira pintura 2,9 s; bloqueio 490 ms), artigo 57 (texto principal aos 9,2 s; primeira pintura 5,6 s). SEO técnico 100 nas duas. Sem melhora em relação a 07/11 (57 e 57). Causas medidas: cada artigo baixa o texto de todos os 112 artigos (213 KB comprimidos) e as tags do Google Ads e do GTM somam 487 KB comprimidos. Como o site ainda tem pouca visita, o Google não tem dados de campo para usar velocidade na classificação; fica como melhoria (item 35) e a decisão das tags segue com o Dr.
+- 08/11 · item 23 · Pauta 2: 975 sugestões reais do Google para 100 sementes novas (scripts/pauta/sementes2.json e sugestoes2.json), cruzadas com 4.778 títulos e perguntas do site. Sem nenhuma página: furto, roubo, receptação, saidinha, antecedentes criminais, regulamentação de visitas. Com cobertura fraca: regime de bens, aposentadoria da pessoa com deficiência, atestado médico no trabalho, qualidade de segurado, carência, auxílio-reclusão, empregada doméstica, jovem aprendiz, protesto em cartório, golpe do WhatsApp. Já têm página parecida (viram reforço): estabilidade da gestante, férias vencidas, dívida prescrita, Pix por engano, cartão clonado.

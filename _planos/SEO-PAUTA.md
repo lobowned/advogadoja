@@ -22,3 +22,24 @@ Reservas: boletim de ocorrência online na Bahia (Delegacia Virtual), reclamaç�
 Ordem do loop (itens 5 a 9 de SEO-LOOP.md): 1, 2, 3, 4 e 5. Os outros ficam para a próxima rodada.
 
 Andamento: 1 publicado no código (aposentadoria-2026-regras). 2 virou reescrita do artigo que já existia, /artigos/familia/execucao-alimentos-prisao-penhora, para não ter dois artigos disputando a mesma busca. Antes de cada artigo novo, procurar no sitemap e em src/data um endereço parecido: se existir, reforçar o existente. 3, 4 e 5 viraram artigos novos. 6 virou reescrita de /artigos/familia/divorcio-consensual.
+
+# Pauta 2 (08/11/2026)
+
+Origem: 975 sugestões reais do campo de busca do Google para 100 sementes novas (`scripts/pauta/sementes2.json`, resultado em `scripts/pauta/sugestoes2.json`), cruzadas com 4.778 títulos e perguntas do site (`python -X utf8 scripts/pauta/lacunas.py scripts/pauta/sugestoes2.json`).
+
+| # | Tema e título de trabalho | Área / endereço | Buscas reais que cobre | Conferir antes de escrever |
+|---|---|---|---|---|
+| 11 | Furto: simples, qualificado e privilegiado, penas e diferença para roubo | penal · /artigos/penal/furto | furto, furto qualificado, furto e roubo | Código Penal arts. 155 e 156 (texto em vigor), Lei 9.099/1995 art. 89, CPP art. 28-A |
+| 12 | Roubo: pena, aumentos e latrocínio | penal · /artigos/penal/roubo | roubo, roubo majorado, furto e roubo | Código Penal art. 157 (texto em vigor), Lei 8.072/1990 |
+| 13 | Regulamentação de visitas: como funciona, como pedir e o que fazer se descumprirem | família · /artigos/familia/regulamentacao-de-visitas | regulamentação de visitas, como funciona, modelo | CC arts. 1.583 a 1.589, CPC arts. 693 a 699, Lei 12.318/2010 |
+| 14 | Regime de bens no casamento e na união estável | família · /artigos/familia/regime-de-bens | regime de bens, casamento, união estável | CC arts. 1.639 a 1.688 e 1.725, Súmula 377 do STF |
+| 15 | Receptação: o que é, pena e como se defender | penal · /artigos/penal/receptacao | receptação, culposa, qualificada | Código Penal art. 180 (texto em vigor) |
+| 16 | Aposentadoria da pessoa com deficiência | previdenciário · /artigos/previdenciario/aposentadoria-pessoa-com-deficiencia | aposentadoria pessoa com deficiência, por idade, por tempo | LC 142/2013, EC 103/2019 art. 22, Decreto 3.048/1999 |
+| 17 | Saída temporária (saidinha): quem tem direito depois da lei de 2024 | penal · /artigos/penal/saida-temporaria-saidinha | saidinha, saidinha presos | Lei 7.210/1984 arts. 122 a 125 com a Lei 14.843/2024 |
+| 18 | Atestado médico no trabalho: o que a empresa pode e não pode exigir | trabalhista · /artigos/trabalhista/atestado-medico-trabalho | atestado médico trabalho, atestado de acompanhamento | Lei 605/1949 art. 6º, CLT art. 473, Lei 8.213/1991 art. 60 |
+| 19 | Qualidade de segurado e carência no INSS | previdenciário · /artigos/previdenciario/qualidade-de-segurado-carencia | qualidade de segurado, carência inss, período de graça | Lei 8.213/1991 arts. 15, 24 a 27-A |
+
+Reforçar em vez de criar: estabilidade da gestante (artigo de estabilidade em blog-articles.ts), férias vencidas (/artigos/trabalhista/ferias-nao-pagas-como-receber), dívida prescrita (/perguntas/cobranca-divida-prescrita-prazo), Pix enviado por engano (/artigos/consumidor/golpe-pix-como-recuperar-dinheiro), cartão clonado e compra não reconhecida (pergunta já existente), "corte de energia" (artigo da Coelba).
+
+Próximas reservas: antecedentes criminais na Bahia, auxílio-reclusão, empregada doméstica, jovem aprendiz, contribuição do autônomo ao INSS, protesto em cartório, golpe do WhatsApp, prisão preventiva, porte de drogas para consumo pessoal.
+

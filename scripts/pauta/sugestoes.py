@@ -48,6 +48,11 @@ def sugerir(q: str) -> list[str]:
         data = json.loads(r.read().decode("utf-8", "replace"))
     return data[1] if len(data) > 1 else []
 
+import sys
+# Rodadas seguintes: python scripts/pauta/sugestoes.py scripts/pauta/sementes2.json > scripts/pauta/sugestoes2.json
+if len(sys.argv) > 1:
+    SEMENTES = json.loads(open(sys.argv[1], encoding="utf-8").read())
+
 saida = {}
 for area, sementes in SEMENTES.items():
     saida[area] = {}

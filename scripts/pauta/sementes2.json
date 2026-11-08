@@ -1,0 +1,36 @@
+{
+  "trabalhista": [
+    "aviso prévio", "férias vencidas", "13º salário", "insalubridade", "periculosidade", "adicional noturno",
+    "estabilidade gestante", "acidente de trabalho", "banco de horas", "desvio de função", "salário atrasado",
+    "escala 12x36", "abandono de emprego", "verbas rescisórias", "multa de 40% do fgts", "empregada doméstica direitos",
+    "motorista de aplicativo direitos", "trabalho sem registro", "atestado médico trabalho", "jovem aprendiz direitos"
+  ],
+  "previdenciario": [
+    "aposentadoria por invalidez", "aposentadoria pessoa com deficiência", "aposentadoria rural", "tempo de contribuição",
+    "cnis", "carência inss", "qualidade de segurado", "auxílio reclusão", "bpc idoso", "benefício cessado inss",
+    "recurso inss", "salário maternidade desempregada", "aposentadoria professor", "contribuição inss autônomo",
+    "mei aposentadoria", "inss exigência", "pensão por morte cônjuge", "aposentadoria especial vigilante"
+  ],
+  "familia": [
+    "alienação parental", "valor da pensão alimentícia", "revisão de pensão alimentícia", "exoneração de pensão",
+    "guarda unilateral", "regulamentação de visitas", "adoção", "testamento", "inventário extrajudicial", "herança",
+    "divórcio litigioso", "regime de bens", "pensão para ex mulher", "dna paternidade", "medida protetiva filhos"
+  ],
+  "consumidor": [
+    "superendividamento", "juros abusivos", "cartão clonado", "compra não reconhecida", "seguro negado",
+    "reajuste plano de saúde", "atraso entrega imóvel", "distrato imóvel", "bagagem extraviada", "golpe whatsapp",
+    "pix errado", "conta bloqueada banco", "dívida prescrita", "limpar nome", "cancelamento de contrato multa",
+    "embasa", "coelba corte de energia"
+  ],
+  "criminal": [
+    "violência doméstica", "lei maria da penha", "tráfico de drogas", "porte de drogas", "furto", "roubo",
+    "estelionato", "receptação", "embriaguez ao volante", "habeas corpus", "prisão preventiva", "progressão de regime",
+    "saidinha", "tornozeleira eletrônica", "transação penal", "calúnia difamação injúria", "crimes virtuais",
+    "antecedentes criminais"
+  ],
+  "civil": [
+    "acidente de trânsito indenização", "vizinho barulhento", "condomínio dívida", "contrato de compra e venda",
+    "fiador", "protesto em cartório", "prescrição de dívida", "imóvel sem escritura", "pensão por acidente",
+    "indenização por erro médico", "danos morais valor", "ação de cobrança"
+  ]
+}

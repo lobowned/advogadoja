@@ -44,7 +44,10 @@ def cobertura(sug: str):
             melhor, ref = s, texto
     return melhor, ref
 
-sug = json.loads((Path(__file__).parent / "sugestoes.json").read_text(encoding="utf-8"))
+import sys
+# Rodadas seguintes: python -X utf8 scripts/pauta/lacunas.py scripts/pauta/sugestoes2.json
+arq_sug = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).parent / "sugestoes.json"
+sug = json.loads(arq_sug.read_text(encoding="utf-8"))
 print(f"Itens já publicados considerados: {len(existentes)}")
 for area, sementes in sug.items():
     vistos = set()

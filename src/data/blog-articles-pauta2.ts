@@ -551,4 +551,279 @@ export const pauta2Articles: BlogArticle[] = [
     relatedActions: ["habeas-corpus"],
     updatedAt: "2026-11-08",
   },
+
+  // ============================================================
+  // 13. REGULAMENTAÇÃO DE VISITAS
+  // Conferido em 08/11/2026 no Planalto: Código Civil arts. 1.583 a 1.590 (com as Leis 13.058/2014
+  // e 14.713/2023); CPC arts. 693, 694 e 699-A; Lei 12.318/2010 arts. 2º, 4º e 6º (com a Lei
+  // 14.340/2022); Lei 11.340/2006 art. 22, IV.
+  // ============================================================
+  {
+    id: "regulamentacao-de-visitas",
+    nicheId: "familia",
+    slug: "regulamentacao-de-visitas",
+    title: "Regulamentação de Visitas: Como Funciona, Como Pedir e o Que Fazer se Descumprirem",
+    metaTitle: "Regulamentação de Visitas: Como Pedir e se Descumprirem",
+    metaDescription:
+      "Regulamentação de visitas dos filhos: acordo ou ação na Justiça, como montar a convivência, avós, descumprimento, alienação parental e violência doméstica.",
+    keywords: [
+      "regulamentação de visitas",
+      "regulamentação de visitas como funciona",
+      "direito de visita",
+      "convivência familiar",
+      "visita dos avós",
+      "descumprimento de visitas",
+      "pai não deixa ver o filho",
+    ],
+    excerpt:
+      "O pai ou a mãe que não mora com o filho tem direito de visitá-lo e tê-lo em sua companhia, conforme o acordo ou o que o juiz fixar (art. 1.589 do Código Civil). Veja como pedir, como montar a convivência e o que fazer se o outro descumprir.",
+    content: {
+      intro:
+        "Em resumo: o pai ou a mãe que não está com a guarda tem direito de visitar o filho e tê-lo em sua companhia, segundo o que combinar com o outro ou o que o juiz fixar, e de fiscalizar sua manutenção e educação (art. 1.589 do Código Civil). Os avós também podem ter visitas fixadas. O caminho mais rápido é um acordo escrito levado ao juiz, que passa a valer como decisão; sem acordo, a regulamentação é pedida em ação de família, com tentativa de mediação. Impedir a convivência sem motivo pode configurar alienação parental. Na guarda compartilhada, a lei manda dividir o tempo com os filhos de forma equilibrada.",
+      whatIs:
+        "Regulamentação de visitas é a definição de quando e como o filho fica com o pai ou a mãe com quem não mora: dias da semana, fins de semana, férias escolares, feriados, aniversários, Dia das Mães e Dia dos Pais, quem busca e quem leva, contato por telefone e vídeo. Ela existe na guarda unilateral e na compartilhada; na compartilhada, o tempo de convívio deve ser dividido de forma equilibrada, conforme as condições de fato e o interesse dos filhos (art. 1.583, § 2º). A convivência é um direito do filho, e não depende do pagamento de pensão.",
+      whenYouHaveRight: [
+        "Pai ou mãe que não mora com o filho: visitar, ter o filho em sua companhia e fiscalizar sua manutenção e educação (art. 1.589 do Código Civil)",
+        "Avós: pedir a fixação de visitas, que o juiz decide pelo interesse da criança ou do adolescente (art. 1.589, parágrafo único)",
+        "Na guarda compartilhada: tempo de convivência dividido de forma equilibrada (art. 1.583, § 2º)",
+        "Qualquer dos pais: pedir informações sobre o filho à escola, ao posto de saúde e a qualquer estabelecimento, que é obrigado a responder (art. 1.584, § 6º)",
+        "Se o outro dificulta a convivência: pedir ao juiz que amplie o convívio, aplique multa, determine acompanhamento psicológico ou altere a guarda (art. 6º da Lei 12.318/2010)",
+        "Mesmo quando há suspeita a ser apurada: garantia mínima de visitação assistida no fórum ou em entidade conveniada, salvo risco iminente à criança (art. 4º, parágrafo único, da Lei 12.318/2010)",
+      ],
+      documents: [
+        "Certidão de nascimento do filho",
+        "Documentos pessoais e comprovante de residência",
+        "Acordo ou decisão anterior sobre guarda e pensão, se houver",
+        "Mensagens e registros das visitas negadas ou descumpridas",
+        "Informações da rotina da criança: escola, horários e atividades",
+      ],
+      deadlines:
+        "Não há prazo para pedir a regulamentação: ela pode ser pedida a qualquer tempo e revista quando a rotina do filho ou dos pais mudar. Quando há urgência, como o corte total do contato, o juiz pode fixar visitas provisórias no início do processo; a decisão sobre guarda, mesmo provisória, deve ser tomada de preferência depois de ouvir os dois (art. 1.585). Nas ações de guarda, antes da mediação, o juiz pergunta se há risco de violência doméstica e dá 5 dias para apresentar provas (art. 699-A do CPC).",
+      faq: [
+        {
+          question: "Como funciona a regulamentação de visitas?",
+          answer:
+            "Os pais definem, por acordo ou por decisão do juiz, os dias e horários de convivência. A lei não traz tabela: é comum combinar fins de semana alternados, um ou dois dias na semana, metade das férias escolares e alternância de feriados e datas especiais, mas o calendário depende da idade e da rotina da criança, da distância entre as casas e do trabalho dos pais.",
+        },
+        {
+          question: "Precisa de advogado para regulamentar visitas?",
+          answer:
+            "Os pais podem chegar a um acordo com ajuda de advogado, da Defensoria Pública ou dos centros de conciliação do tribunal (Cejusc) e pedir a homologação ao juiz, para que ele vire decisão que pode ser cobrada. Sem acordo, a ação de regulamentação exige advogado ou Defensoria.",
+        },
+        {
+          question: "Os avós podem pedir visitas aos netos?",
+          answer:
+            "Podem. O direito de visita se estende aos avós, a critério do juiz e de acordo com o interesse da criança ou do adolescente (art. 1.589, parágrafo único, do Código Civil). É o caminho quando os pais impedem o contato sem motivo.",
+        },
+        {
+          question: "Quem não paga pensão perde o direito de visita?",
+          answer:
+            "Não. Pensão e convivência são independentes: a pensão atrasada se cobra na Justiça, mas não autoriza impedir as visitas, porque o convívio é direito do filho. Do mesmo modo, quem não visita continua obrigado a pagar a pensão.",
+        },
+        {
+          question: "O que fazer se o outro não deixa ver o filho?",
+          answer:
+            "Registre as tentativas (mensagens, testemunhas), não force a entrada e peça ao juiz o cumprimento do acordo ou da decisão, com multa e, se preciso, outras medidas. Se o impedimento for repetido, pode configurar alienação parental, e o juiz pode ampliar a convivência, aplicar multa, determinar acompanhamento psicológico, alterar a guarda e até inverter a obrigação de levar e buscar a criança (Lei 12.318/2010, art. 6º).",
+        },
+        {
+          question: "E se quem descumpre é quem deveria visitar?",
+          answer:
+            "O descumprimento sem motivo de cláusula de guarda pode reduzir as prerrogativas de quem descumpre (art. 1.584, § 4º, do Código Civil). Ninguém é obrigado à força a conviver, mas o descumprimento reiterado pode ser levado ao juiz e pesar na revisão da guarda e da convivência.",
+        },
+        {
+          question: "As visitas podem ser suspensas?",
+          answer:
+            "Em situação de risco à criança, sim. Em violência doméstica, o juiz pode restringir ou suspender as visitas aos filhos menores como medida protetiva, ouvida a equipe multidisciplinar (art. 22, IV, da Lei 11.340/2006). Fora disso, a regra é preservar o convívio, se necessário com visitas assistidas no fórum ou em entidades conveniadas.",
+        },
+        {
+          question: "Com que idade o filho escolhe se quer ir?",
+          answer:
+            "A lei não fixa idade. A opinião da criança e do adolescente é ouvida e pesa mais conforme a maturidade, mas quem decide é o juiz, pelo interesse do filho, muitas vezes com apoio de psicólogos e assistentes sociais do tribunal.",
+        },
+      ],
+      sections: [
+        {
+          title: "Visita ou convivência: o que a lei diz",
+          paragraphs: [
+            "O Código Civil garante ao pai ou à mãe que não tem a guarda o direito de visitar o filho, tê-lo em sua companhia e fiscalizar sua manutenção e educação (art. 1.589). Na guarda compartilhada, que é a regra quando os dois estão aptos e não há risco de violência doméstica, o tempo de convívio deve ser dividido de forma equilibrada, e a cidade-base de moradia é a que melhor atende aos interesses dos filhos (arts. 1.583 e 1.584).",
+            "Mesmo na guarda unilateral, quem não está com a criança tem o dever de supervisionar seus interesses e pode pedir informações e prestação de contas sobre saúde e educação (art. 1.583, § 5º). Escolas, hospitais e outros estabelecimentos são obrigados a informar qualquer dos pais, sob pena de multa diária (art. 1.584, § 6º).",
+          ],
+        },
+        {
+          title: "Como montar o calendário",
+          paragraphs: [
+            "Um bom acordo responde a perguntas práticas: quais dias da semana, como ficam os fins de semana, como dividir as férias de julho e de dezembro, Natal e Ano-Novo, aniversários, Dia das Mães e Dia dos Pais, quem busca e quem leva, horários de ligação ou videochamada e regras para viagens.",
+            "Quanto mais detalhado, menos briga depois. Para bebês e crianças pequenas, costuma-se começar com períodos mais curtos e frequentes, ampliados com o tempo. Se os pais moram em cidades diferentes, as férias e os feriados prolongados ganham peso, e o custo do deslocamento também pode ser combinado.",
+          ],
+        },
+        {
+          title: "Acordo ou ação na Justiça",
+          paragraphs: [
+            "Com acordo, os pais podem levá-lo ao juiz para homologação, por advogado, pela Defensoria Pública ou pelo Cejusc. Sem acordo, a regulamentação é pedida em ação de família, que começa com a tentativa de solução consensual, com apoio de mediadores e de profissionais de outras áreas (arts. 693 e 694 do CPC).",
+            "Nas ações de guarda, antes da audiência de mediação, o juiz pergunta às partes e ao Ministério Público se há risco de violência doméstica ou familiar e dá 5 dias para provas ou indícios (art. 699-A do CPC). Havendo esse risco, a guarda compartilhada não é aplicada (art. 1.584, § 2º, do Código Civil).",
+          ],
+        },
+        {
+          title: "Quando o outro descumpre",
+          paragraphs: [
+            "Se a decisão ou o acordo homologado não é cumprido, é possível pedir ao juiz o cumprimento, com multa e outras medidas para garantir a convivência. Guarde mensagens, registre as datas e evite discussões na porta da casa, principalmente na frente da criança.",
+            "Dificultar o contato, omitir informações escolares e médicas, apresentar denúncia falsa ou mudar para longe sem justificativa para afastar o filho do outro são exemplos de alienação parental (art. 2º da Lei 12.318/2010). Reconhecida a prática, o juiz pode advertir, ampliar a convivência do genitor prejudicado, aplicar multa, determinar acompanhamento psicológico, alterar a guarda e fixar cautelarmente o domicílio da criança (art. 6º).",
+          ],
+        },
+        {
+          title: "Violência doméstica e visitas",
+          paragraphs: [
+            "A proteção da criança vem antes do calendário. Em violência doméstica contra a mulher, o juiz pode restringir ou suspender as visitas aos filhos menores como medida protetiva de urgência, ouvida a equipe multidisciplinar (art. 22, IV, da Lei 11.340/2006).",
+            "Quando há acusação a ser apurada, a lei procura não cortar o vínculo de uma vez: garante visitação assistida mínima, no fórum ou em entidades conveniadas, salvo risco iminente à integridade da criança atestado por profissional (art. 4º, parágrafo único, da Lei 12.318/2010).",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["regulamentacao-visita", "alienacao-parental", "guarda"],
+    updatedAt: "2026-11-08",
+  },
+
+  // ============================================================
+  // 14. REGIME DE BENS
+  // Conferido em 08/11/2026 no Planalto: Código Civil arts. 1.240-A, 1.639 a 1.641, 1.647, 1.657
+  // a 1.668, 1.672, 1.687, 1.688, 1.725, 1.829 e 1.830 (sem alterações de 2025 ou 2026 no texto
+  // compilado). STF, Tema 1.236 (ARE 1.309.642, 2024), e Súmula 377.
+  // ============================================================
+  {
+    id: "regime-de-bens",
+    nicheId: "familia",
+    slug: "regime-de-bens",
+    title: "Regime de Bens no Casamento e na União Estável: Tipos, Escolha, Divórcio e Herança",
+    metaTitle: "Regime de Bens: Comunhão Parcial, Universal e Separação",
+    metaDescription:
+      "Regime de bens no casamento e na união estável: comunhão parcial, universal, separação e participação final, maiores de 70 anos, mudança de regime e herança.",
+    keywords: [
+      "regime de bens",
+      "regime de bens casamento",
+      "comunhão parcial de bens",
+      "comunhão universal de bens",
+      "separação total de bens",
+      "regime de bens união estável",
+      "pacto antenupcial",
+      "separação obrigatória 70 anos",
+    ],
+    excerpt:
+      "Sem pacto antenupcial, o casamento e a união estável seguem a comunhão parcial: divide-se o que foi comprado durante a união, e ficam de fora os bens anteriores, as heranças e as doações. Veja os outros regimes, a regra dos maiores de 70 anos e como mudar o regime.",
+    content: {
+      intro:
+        "Em resumo: o regime de bens define o que é de cada um e o que é dos dois no casamento e na união estável. Se o casal não escolher nada, vale a comunhão parcial: entra na divisão o que foi adquirido de forma onerosa durante a união, e ficam de fora os bens de antes, as heranças e as doações (arts. 1.640 e 1.658 a 1.660 do Código Civil). Para escolher outro regime é preciso pacto antenupcial em escritura pública ou, na união estável, contrato escrito. Para quem se casa com mais de 70 anos, a lei impõe a separação de bens, mas o STF decidiu em 2024 que o casal pode afastá-la por escritura pública. O regime pode ser mudado depois do casamento, com autorização judicial.",
+      whatIs:
+        "Regime de bens é o conjunto de regras sobre o patrimônio do casal: quem é dono do quê, quem administra, o que precisa da assinatura do outro e como fica a divisão no divórcio ou na morte. O Código Civil prevê a comunhão parcial, a comunhão universal, a participação final nos aquestos e a separação de bens, que pode ser convencional, escolhida pelo casal, ou obrigatória, imposta pela lei em certos casos. O regime começa a valer na data do casamento (art. 1.639, § 1º).",
+      whenYouHaveRight: [
+        "Escolher o regime antes do casamento, por pacto antenupcial em escritura pública; a comunhão parcial basta ser indicada no processo de habilitação (art. 1.640, parágrafo único)",
+        "Na união estável, escolher o regime por contrato escrito; sem contrato, vale a comunhão parcial (art. 1.725)",
+        "Mudar o regime depois de casado, com pedido motivado dos dois ao juiz, sem prejudicar terceiros (art. 1.639, § 2º)",
+        "Maiores de 70 anos: afastar a separação obrigatória por escritura pública (STF, Tema 1.236, 2024)",
+        "Exigir a assinatura do cônjuge para vender ou hipotecar imóvel, prestar fiança ou aval, salvo na separação absoluta (art. 1.647)",
+        "No divórcio ou na dissolução da união estável, receber a meação dos bens comuns conforme o regime",
+      ],
+      documents: [
+        "Certidão de casamento atualizada, que informa o regime",
+        "Pacto antenupcial registrado ou contrato de união estável, se houver",
+        "Matrículas dos imóveis e documentos dos veículos",
+        "Extratos de contas, investimentos e FGTS na data da separação",
+        "Comprovantes de herança ou doação recebida, para excluir da divisão",
+        "Contratos de financiamento e de dívidas do casal",
+      ],
+      deadlines:
+        "O pacto antenupcial só tem efeito perante terceiros depois de registrado no Registro de Imóveis do domicílio do casal (art. 1.657). A partilha pode ser feita depois do divórcio, mas o ideal é não deixar para depois: o tempo dificulta a prova, trava vendas e financiamentos e, se um dos dois abandona o lar, quem fica no imóvel urbano de até 250 m² pode adquirir a parte do outro após 2 anos de posse exclusiva, se não tiver outro imóvel (usucapião familiar, art. 1.240-A).",
+      faq: [
+        {
+          question: "Qual é o regime de bens se o casal não escolher nenhum?",
+          answer:
+            "A comunhão parcial de bens, tanto no casamento (art. 1.640 do Código Civil) quanto na união estável sem contrato escrito (art. 1.725).",
+        },
+        {
+          question: "O que entra na divisão na comunhão parcial?",
+          answer:
+            "Entram os bens adquiridos de forma onerosa durante a união, mesmo em nome de um só, os ganhos eventuais, como prêmios, as benfeitorias em bens particulares e os frutos, como aluguéis, recebidos no período (art. 1.660). Ficam de fora os bens de antes, os recebidos por herança ou doação e os comprados com o dinheiro deles, as dívidas anteriores, os bens de uso pessoal e os instrumentos de profissão (art. 1.659).",
+        },
+        {
+          question: "O salário entra na divisão?",
+          answer:
+            "O direito ao salário de cada um não se divide (art. 1.659, VI), mas o que foi comprado ou poupado com ele durante a união entra na comunhão. O STJ também considera comunicáveis os depósitos de FGTS feitos durante o casamento.",
+        },
+        {
+          question: "Herança entra na divisão do divórcio?",
+          answer:
+            "Na comunhão parcial, não: o que um recebe por herança ou doação é só dele, assim como o que comprar com esse dinheiro (art. 1.659, I e II). Na comunhão universal, a herança entra, salvo se veio com cláusula de incomunicabilidade (art. 1.668, I).",
+        },
+        {
+          question: "Quem tem mais de 70 anos pode escolher o regime?",
+          answer:
+            "A lei impõe a separação obrigatória para quem se casa com mais de 70 anos (art. 1.641, II), mas o STF decidiu em 2024 que o casal pode afastar essa regra por escritura pública, no casamento e na união estável (Tema 1.236). Para quem já se casou sob a separação obrigatória, o caminho é o pedido de mudança de regime ao juiz, e o resultado depende de como o tribunal aplica a decisão do STF.",
+        },
+        {
+          question: "Na separação obrigatória, nada se divide?",
+          answer:
+            "Pela Súmula 377 do STF, os bens adquiridos durante o casamento sob a separação obrigatória podem ser divididos; o STJ exige que quem pede prove que contribuiu para a compra. Na separação convencional, escolhida em pacto, cada um fica com o que está em seu nome.",
+        },
+        {
+          question: "Casado em separação total de bens herda?",
+          answer:
+            "Herda. Na separação convencional não há meação, mas o cônjuge é herdeiro e, segundo o STJ, concorre com os filhos na herança. Já na separação obrigatória e na comunhão universal o cônjuge não concorre com os descendentes, e na comunhão parcial só concorre se o falecido deixou bens particulares (art. 1.829, I).",
+        },
+        {
+          question: "Dá para mudar o regime de bens depois de casado?",
+          answer:
+            "Dá, com pedido motivado dos dois cônjuges ao juiz, que verifica as razões e protege os direitos de credores e outros terceiros (art. 1.639, § 2º). Na união estável, a mudança é feita por novo contrato escrito, e o STJ não admite que ele produza efeitos para trás.",
+        },
+        {
+          question: "Precisa da assinatura do cônjuge para vender um imóvel?",
+          answer:
+            "Sim, salvo no regime da separação absoluta. Sem autorização do outro, nenhum dos cônjuges pode vender ou hipotecar imóvel, discutir esses bens na Justiça, prestar fiança ou aval ou doar bens comuns (art. 1.647).",
+        },
+      ],
+      sections: [
+        {
+          title: "Comunhão parcial: o regime da maioria",
+          paragraphs: [
+            "Na comunhão parcial, cada um mantém como seus os bens que tinha antes, os que recebe por herança ou doação e os que compra com esse dinheiro. O que o casal adquire de forma onerosa durante a união é dos dois, ainda que esteja em nome de um só (arts. 1.658 a 1.660). Num imóvel financiado antes do casamento e pago durante a união, por exemplo, as parcelas pagas no período tendem a ser divididas.",
+            "As dívidas contraídas para atender às despesas da família e à administração dos bens comuns são suportadas pelos bens do casal (art. 1.664). Já as dívidas anteriores ao casamento e as que vêm de ato ilícito ficam com quem as fez, salvo se revertidas em proveito do casal (art. 1.659, III e IV).",
+          ],
+        },
+        {
+          title: "Comunhão universal",
+          paragraphs: [
+            "Na comunhão universal, comunicam-se todos os bens presentes e futuros e também as dívidas, inclusive os bens que cada um tinha antes do casamento (art. 1.667). Ficam de fora, entre outros, os bens recebidos com cláusula de incomunicabilidade, as dívidas anteriores que não reverteram em proveito comum e os bens de uso pessoal (art. 1.668).",
+            "Esse regime exige pacto antenupcial por escritura pública. Foi o regime padrão até 1977, por isso é comum em casamentos antigos, o que pesa em divórcios e inventários de casais mais velhos.",
+          ],
+        },
+        {
+          title: "Separação de bens: convencional e obrigatória",
+          paragraphs: [
+            "Na separação convencional, escolhida em pacto antenupcial, cada um administra e pode vender livremente os próprios bens, e os dois contribuem para as despesas do casal na proporção dos seus rendimentos, salvo outra regra no pacto (arts. 1.687 e 1.688). Na separação obrigatória, a lei impõe o regime a quem se casa sem observar as causas suspensivas, a quem depende de autorização judicial para casar e a quem tem mais de 70 anos (art. 1.641).",
+            "Na separação obrigatória, a Súmula 377 do STF permite dividir os bens adquiridos durante o casamento, e o STJ exige prova do esforço comum. Para maiores de 70 anos, o STF decidiu em 2024 que a separação obrigatória pode ser afastada por manifestação expressa do casal em escritura pública (Tema 1.236).",
+          ],
+        },
+        {
+          title: "Participação final nos aquestos",
+          paragraphs: [
+            "Pouco usado, esse regime funciona como separação durante o casamento e como comunhão no fim: cada um tem patrimônio próprio, mas, na dissolução, tem direito à metade dos bens adquiridos pelo casal de forma onerosa durante a união (art. 1.672). Exige pacto antenupcial e uma apuração contábil cuidadosa no divórcio.",
+          ],
+        },
+        {
+          title: "União estável",
+          paragraphs: [
+            "Na união estável, vale a comunhão parcial, salvo contrato escrito entre os companheiros (art. 1.725). O contrato pode escolher outro regime e pode ser feito por escritura pública ou instrumento particular; a mudança posterior vale para o futuro.",
+            "Para a herança, o STF equiparou o companheiro ao cônjuge ao declarar inconstitucional a regra antiga que dava menos direitos ao companheiro. Por isso, união estável sem prova organizada costuma gerar disputas no inventário: guardar documentos que mostrem o início da convivência evita problemas.",
+          ],
+        },
+        {
+          title: "Herança: o regime também conta",
+          paragraphs: [
+            "Na morte de um dos cônjuges, primeiro se separa a meação, a metade dos bens comuns que já pertence ao viúvo ou à viúva conforme o regime; depois vem a herança. O cônjuge concorre com os filhos na herança, salvo se era casado na comunhão universal ou na separação obrigatória, ou na comunhão parcial sem bens particulares do falecido (art. 1.829, I). Sem descendentes, concorre com os pais do falecido e, sem eles, herda tudo.",
+            "O direito à herança depende de o casal não estar separado judicialmente nem separado de fato há mais de 2 anos na data da morte, salvo prova de que a convivência se tornou impossível sem culpa do sobrevivente (art. 1.830).",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["divorcio-litigioso", "uniao-estavel", "divorcio-consensual"],
+    updatedAt: "2026-11-08",
+  },
 ];

@@ -5,7 +5,7 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 08 Nov 2026 12:04:39 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 12:09:46 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
@@ -74,6 +74,24 @@
       <category>penal</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Saída temporária depois da Lei 14.843/2024: só para estudo, requisitos de 1/6 ou 1/4 da pena, quem não tem direito, crimes anteriores e o que decidiu o STJ.</description>
+    </item>
+    <item>
+      <title>Regulamentação de Visitas: Como Pedir e se Descumprirem</title>
+      <link>https://riccioadvocacia.online/artigos/familia/regulamentacao-de-visitas</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/familia/regulamentacao-de-visitas</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>familia</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Regulamentação de visitas dos filhos: acordo ou ação na Justiça, como montar a convivência, avós, descumprimento, alienação parental e violência doméstica.</description>
+    </item>
+    <item>
+      <title>Regime de Bens: Comunhão Parcial, Universal e Separação</title>
+      <link>https://riccioadvocacia.online/artigos/familia/regime-de-bens</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/familia/regime-de-bens</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>familia</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Regime de bens no casamento e na união estável: comunhão parcial, universal, separação e participação final, maiores de 70 anos, mudança de regime e herança.</description>
     </item>
     <item>
       <title>Divórcio Consensual em Cartório e Online | Passo a Passo</title>
@@ -443,24 +461,6 @@
       <category>familia</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Precisa pedir pensão alimentícia para seu filho? Saiba qual o valor correto, como fazer o pedido e o que fazer se não pagarem.</description>
-    </item>
-    <item>
-      <title>Guarda de Filhos | Compartilhada, Unilateral e Alternada</title>
-      <link>https://riccioadvocacia.online/artigos/familia/guarda-filhos-compartilhada-unilateral</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/familia/guarda-filhos-compartilhada-unilateral</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>familia</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Separou e precisa definir a guarda? Entenda a guarda compartilhada, unilateral e alternada, a convivência, a mudança de cidade e como pedir ou revisar a guarda.</description>
-    </item>
-    <item>
-      <title>Danos Morais | Quando Posso Processar? Valores</title>
-      <link>https://riccioadvocacia.online/artigos/civil/danos-morais</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/civil/danos-morais</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>civil</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Sofreu ofensa, humilhação ou constrangimento? Saiba quando você tem direito a indenização por danos morais e quanto pode receber.</description>
     </item>
   </channel>
 </rss>

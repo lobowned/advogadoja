@@ -675,7 +675,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- ===== ARTIGOS DO BLOG (LEGACY) (99 URLs) ===== -->
+  <!-- ===== ARTIGOS DO BLOG (LEGACY) (101 URLs) ===== -->
   <url>
     <loc>https://riccioadvocacia.online/artigos/trabalhista/demissao-sem-justa-causa</loc>
     <lastmod>2026-11-05</lastmod>
@@ -1266,6 +1266,18 @@
   </url>
   <url>
     <loc>https://riccioadvocacia.online/artigos/penal/saida-temporaria-saidinha</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccioadvocacia.online/artigos/familia/regulamentacao-de-visitas</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccioadvocacia.online/artigos/familia/regime-de-bens</loc>
     <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

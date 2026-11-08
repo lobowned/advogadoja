@@ -675,7 +675,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- ===== ARTIGOS DO BLOG (LEGACY) (98 URLs) ===== -->
+  <!-- ===== ARTIGOS DO BLOG (LEGACY) (99 URLs) ===== -->
   <url>
     <loc>https://riccioadvocacia.online/artigos/trabalhista/demissao-sem-justa-causa</loc>
     <lastmod>2026-11-05</lastmod>
@@ -1158,7 +1158,7 @@
   </url>
   <url>
     <loc>https://riccioadvocacia.online/artigos/penal/crime-hediondo-o-que-e</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1260,6 +1260,12 @@
   </url>
   <url>
     <loc>https://riccioadvocacia.online/artigos/penal/receptacao</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccioadvocacia.online/artigos/penal/saida-temporaria-saidinha</loc>
     <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

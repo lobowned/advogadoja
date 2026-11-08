@@ -419,4 +419,136 @@ export const pauta2Articles: BlogArticle[] = [
     relatedActions: ["crimes-patrimoniais"],
     updatedAt: "2026-11-08",
   },
+
+  // ============================================================
+  // 17. SAÍDA TEMPORÁRIA (SAIDINHA)
+  // Conferido em 08/11/2026 no Planalto: Lei 7.210/1984 (LEP) arts. 112 (com as Leis 14.843/2024,
+  // 15.358/2026 e 15.402/2026), 120 a 125 e 146-B; Lei 14.843, de 11/04/2024, e as partes
+  // promulgadas após a derrubada do veto (DOU de 13/06/2024). STJ, HC 932.864/SC (Sexta Turma,
+  // 2024, Informativo 827); STF, Tema 1.381 da repercussão geral (sem tese localizada em 08/11/2026).
+  // ============================================================
+  {
+    id: "saida-temporaria-saidinha",
+    nicheId: "penal",
+    slug: "saida-temporaria-saidinha",
+    title: "Saída Temporária (Saidinha): Quem Ainda Tem Direito Depois da Lei de 2024",
+    metaTitle: "Saidinha (Saída Temporária): Quem Tem Direito em 2026",
+    metaDescription:
+      "Saída temporária depois da Lei 14.843/2024: só para estudo, requisitos de 1/6 ou 1/4 da pena, quem não tem direito, crimes anteriores e o que decidiu o STJ.",
+    keywords: [
+      "saidinha",
+      "saída temporária",
+      "saidinha presos",
+      "lei da saidinha",
+      "saída temporária requisitos",
+      "lei 14.843/2024",
+      "saidinha acabou",
+    ],
+    excerpt:
+      "Desde a Lei 14.843/2024, a saída temporária do preso no semiaberto vale só para estudar. Quem cumpre pena por crime hediondo ou com violência ou grave ameaça não tem direito, mas o STJ decidiu que a restrição não alcança crimes anteriores à lei.",
+    content: {
+      intro:
+        "Em resumo: a saída temporária, a chamada saidinha, é a autorização para o preso do regime semiaberto deixar o presídio sem vigilância direta. Desde a Lei 14.843/2024, ela só existe para frequentar curso profissionalizante, supletivo, ensino médio ou superior; acabaram as saídas para visitar a família e para atividades de convívio social. Quem cumpre pena por crime hediondo ou cometido com violência ou grave ameaça não tem direito à saída nem ao trabalho externo sem vigilância. O Superior Tribunal de Justiça decidiu que essas restrições não valem para crimes cometidos antes da lei, e o tema também está no Supremo Tribunal Federal.",
+      whatIs:
+        "A saída temporária está nos arts. 122 a 125 da Lei de Execução Penal (Lei 7.210/1984). É um benefício do regime semiaberto: o preso sai sem escolta, pode ser fiscalizado por tornozeleira eletrônica se o juiz determinar, e volta no horário fixado. Não se confunde com a permissão de saída (art. 120), que é feita com escolta, vale também no regime fechado e serve para falecimento ou doença grave de familiar próximo e para tratamento médico.",
+      whenYouHaveRight: [
+        "Estar no regime semiaberto",
+        "Ter comportamento adequado, atestado pela direção do presídio (art. 123, I)",
+        "Ter cumprido 1/6 da pena, se primário, ou 1/4, se reincidente (art. 123, II); para o STJ, conta o tempo cumprido no regime fechado (Súmula 40)",
+        "Estar matriculado em curso profissionalizante, supletivo, ensino médio ou superior na comarca do juízo da execução; a saída dura o tempo necessário às atividades do curso (art. 122, § 3º)",
+        "Não cumprir pena por crime hediondo ou com violência ou grave ameaça contra pessoa (art. 122, § 2º), salvo se o crime for anterior à lei, segundo o STJ",
+        "Em qualquer regime, permissão de saída com escolta para falecimento ou doença grave de cônjuge, companheira, pais, filhos ou irmãos e para tratamento médico, concedida pelo diretor do presídio (art. 120)",
+      ],
+      documents: [
+        "Atestado de conduta carcerária",
+        "Cálculo de pena atualizado do processo de execução",
+        "Comprovante de matrícula e de frequência no curso",
+        "Comprovante do endereço onde o preso ficará, se o juiz pedir",
+        "Cópia das decisões anteriores da execução",
+      ],
+      deadlines:
+        "Não há prazo para pedir: o pedido é feito ao juiz da execução quando os requisitos estão cumpridos, e ele decide em ato motivado, depois de ouvir o Ministério Público e a administração do presídio (art. 123). O benefício é revogado automaticamente se o preso cometer crime doloso, for punido por falta grave, descumprir as condições ou tiver baixo aproveitamento no curso (art. 125).",
+      faq: [
+        {
+          question: "A saidinha acabou?",
+          answer:
+            "Acabaram as saídas para visitar a família, inclusive nas datas comemorativas, e para atividades de convívio social. Continua a saída para estudar, para quem está no semiaberto e cumpre os requisitos (Lei 14.843/2024).",
+        },
+        {
+          question: "Quem não tem direito à saída temporária?",
+          answer:
+            "Quem está no regime fechado e quem cumpre pena por crime hediondo ou cometido com violência ou grave ameaça contra pessoa, como roubo, homicídio, estupro e crimes com violência doméstica (art. 122, § 2º, da Lei de Execução Penal). A mesma regra impede o trabalho externo sem vigilância direta.",
+        },
+        {
+          question: "Quem cometeu o crime antes de 2024 ainda pode ter saidinha?",
+          answer:
+            "Para o Superior Tribunal de Justiça, sim: as restrições da Lei 14.843/2024 são mais graves e não alcançam crimes cometidos antes dela (HC 932.864, Sexta Turma, 2024). O que importa é a data do crime. O Supremo Tribunal Federal reconheceu repercussão geral sobre o assunto (Tema 1.381); antes de pedir, confira se já há tese fixada.",
+        },
+        {
+          question: "Quanto da pena é preciso cumprir?",
+          answer:
+            "1/6 da pena, se o preso for primário, ou 1/4, se for reincidente, além de comportamento adequado e compatibilidade com os objetivos da pena (art. 123). Para o STJ, o tempo cumprido no regime fechado conta para esse cálculo (Súmula 40).",
+        },
+        {
+          question: "Quantos dias dura a saída temporária?",
+          answer:
+            "Na saída para estudo, o tempo necessário às atividades do curso (art. 122, § 3º). A regra antiga de até 7 dias, renovável 4 vezes por ano, estava no art. 124, revogado em 2024.",
+        },
+        {
+          question: "O preso usa tornozeleira na saída temporária?",
+          answer:
+            "Pode usar, se o juiz da execução determinar. A falta de vigilância direta não impede a monitoração eletrônica (art. 122, § 1º, e art. 146-B da Lei de Execução Penal).",
+        },
+        {
+          question: "O que faz o preso perder a saída temporária?",
+          answer:
+            "Cometer crime doloso, ser punido por falta grave, descumprir as condições da autorização ou ter baixo aproveitamento no curso. Para recuperar o direito, é preciso absolvição, cancelamento da punição ou demonstração de merecimento (art. 125).",
+        },
+        {
+          question: "Saída temporária e permissão de saída são a mesma coisa?",
+          answer:
+            "Não. A permissão de saída é feita com escolta, vale para presos do fechado, do semiaberto e provisórios, e serve para falecimento ou doença grave de cônjuge, companheira, pais, filhos ou irmãos e para tratamento médico. Quem concede é o diretor do presídio, pelo tempo necessário (arts. 120 e 121). Ela não foi alterada em 2024.",
+        },
+      ],
+      sections: [
+        {
+          title: "O que mudou com a Lei 14.843/2024",
+          paragraphs: [
+            "A Lei 14.843/2024, chamada Lei Sargento PM Dias, foi sancionada em 11 de abril de 2024 com duas mudanças imediatas: proibiu a saída temporária e o trabalho externo sem vigilância para condenados por crime hediondo ou com violência ou grave ameaça, e passou a exigir exame criminológico para a progressão de regime. O fim das saídas para visitar a família e para atividades de convívio social havia sido vetado, mas o Congresso derrubou o veto, e essa parte foi publicada em 13 de junho de 2024.",
+            "Com isso, das três hipóteses originais do art. 122 sobrou só a frequência a curso. Também foi revogado o art. 124, que fixava saídas de até 7 dias, renováveis 4 vezes por ano, e o intervalo de 45 dias entre elas.",
+          ],
+        },
+        {
+          title: "Quem ainda pode sair para estudar",
+          paragraphs: [
+            "Pode pedir a saída o preso do regime semiaberto, com comportamento adequado, que já cumpriu 1/6 da pena, se primário, ou 1/4, se reincidente, matriculado em curso supletivo profissionalizante, de ensino médio ou superior na comarca do juízo da execução. O tempo de saída é o necessário para as aulas e atividades.",
+            "Fica de fora quem cumpre pena por crime hediondo ou cometido com violência ou grave ameaça contra pessoa. O juiz pode impor tornozeleira e outras condições, e o benefício cai automaticamente em caso de novo crime doloso, falta grave, descumprimento ou baixo aproveitamento no curso.",
+          ],
+        },
+        {
+          title: "Crimes anteriores à lei",
+          paragraphs: [
+            "A Constituição só permite que a lei penal volte no tempo para beneficiar o réu (art. 5º, XL). Com base nisso, o Superior Tribunal de Justiça decidiu que as restrições da Lei 14.843/2024 têm natureza material e mais grave e, por isso, não se aplicam a quem cometeu o crime antes dela (HC 932.864, Sexta Turma, 2024). O mesmo raciocínio foi aplicado pelo STJ ao exame criminológico obrigatório: para crimes anteriores, o exame só pode ser exigido por decisão fundamentada do juiz (Súmula 439).",
+            "O Supremo Tribunal Federal reconheceu repercussão geral sobre a aplicação da lei a crimes anteriores (Tema 1.381). Como a decisão do STF vale para todos os processos, quem tem pedido em andamento deve conferir se o tema já foi julgado e qual tese foi fixada.",
+          ],
+        },
+        {
+          title: "Progressão de regime também ficou mais rígida",
+          paragraphs: [
+            "Para crimes cometidos a partir de 11 de abril de 2024, a progressão de regime depende de boa conduta e do resultado do exame criminológico (art. 112, § 1º). Em 2026, os percentuais de pena para progredir também mudaram: nos crimes hediondos, a Lei 15.358/2026 elevou o mínimo para 70% da pena no caso do primário, 75% quando há morte e 80% ou 85% para reincidentes em hediondo, valendo para crimes a partir de 25 de março de 2026.",
+            "Para os demais crimes, a Lei 15.402/2026 reorganizou a regra: 1/6 da pena como base; 25% para o primário e 30% para o reincidente em crime com violência ou grave ameaça; e 20% para o reincidente nos demais crimes. O cálculo correto depende da data de cada crime e do histórico do preso.",
+          ],
+        },
+        {
+          title: "Como pedir e como a defesa atua",
+          paragraphs: [
+            "O pedido é feito ao juiz da Vara de Execuções Penais, no processo de execução, com o atestado de conduta, o cálculo de pena e a comprovação da matrícula. O juiz ouve o Ministério Público e a administração do presídio e decide de forma motivada. Se negar, cabe agravo em execução.",
+            "Nos casos de crime anterior à lei, a defesa sustenta a irretroatividade com base na Constituição e nas decisões do STJ. Também vale conferir o cálculo de pena, as remições por trabalho e estudo e a data-base, que mudam o momento em que cada benefício pode ser pedido.",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["habeas-corpus"],
+    updatedAt: "2026-11-08",
+  },
 ];

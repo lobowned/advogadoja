@@ -1868,7 +1868,7 @@ export const newArticles2026: BlogArticle[] = [
       "Quais são os crimes hediondos, o que mudou com o Pacote Anticrime (Lei 13.964/2019) e quais as consequências na pena, na progressão e no livramento.",
     content: {
       intro:
-        "A classificação de um crime como hediondo tem impacto profundo em toda a vida processual e no cumprimento de pena. Fiança proibida, progressão de regime mais difícil, livramento condicional restrito, vedação à graça, anistia e indulto. Com a Lei 13.964/2019 (Pacote Anticrime), o cenário ganhou novas regras. Este guia organiza as hipóteses e explica cada consequência.",
+        "A classificação de um crime como hediondo tem impacto profundo em toda a vida processual e no cumprimento de pena. Fiança proibida, progressão de regime mais difícil, livramento condicional restrito, vedação à graça, anistia e indulto. Com a Lei 13.964/2019 (Pacote Anticrime), o cenário ganhou novas regras, e em 2026 a Lei 15.358/2026 endureceu de novo a progressão: para crimes a partir de 25 de março de 2026, o primário só progride depois de cumprir 70% da pena. Este guia organiza as hipóteses e explica cada consequência.",
       whatIs:
         "Crime hediondo é o delito considerado especialmente grave pelo legislador, com rol taxativo definido no artigo 1º da Lei 8.072/1990. Equiparam-se a hediondos os crimes de tortura, tráfico ilícito de drogas e terrorismo (art. 2º). Esses crimes recebem tratamento diferenciado em toda a persecução penal, com restrições maiores ao acusado e ao condenado.",
       whenYouHaveRight: [
@@ -1886,12 +1886,12 @@ export const newArticles2026: BlogArticle[] = [
         "Procuração ao advogado",
       ],
       deadlines:
-        "Progressão de regime em crime hediondo sem morte, primário: 40% da pena. Hediondo sem morte, reincidente: 60%. Hediondo com morte, primário: 50%. Hediondo com morte, reincidente em hediondo: 70%. Reincidente genérico em hediondo sem morte: 60%. Reincidente genérico em hediondo com morte: 60%. Livramento condicional: 2/3 da pena.",
+        "Os percentuais para progredir dependem da data do crime. Para crimes a partir de 25 de março de 2026 (Lei 15.358/2026): 70% da pena para o primário em hediondo; 75% quando há morte, para quem comanda organização criminosa ultraviolenta, para milícia e para feminicídio de primário; 80% para o reincidente em hediondo; 85% para o reincidente em hediondo com morte. Para crimes de 23 de janeiro de 2020 a 24 de março de 2026, valem os percentuais do Pacote Anticrime: 40%, 50%, 60% e 70%. Livramento condicional: mais de 2/3 da pena, vedado em várias hipóteses.",
       faq: [
         {
           question: "Quais são os crimes hediondos?",
           answer:
-            "O art. 1º da Lei 8.072/1990 lista: homicídio praticado em atividade típica de grupo de extermínio e homicídio qualificado; latrocínio; extorsão qualificada pela morte; extorsão mediante sequestro e na forma qualificada; estupro e estupro de vulnerável; epidemia com resultado morte; falsificação de medicamento; favorecimento à prostituição ou outra forma de exploração sexual de criança, adolescente ou vulnerável; feminicídio; entre outros descritos no rol.",
+            "O art. 1º da Lei 8.072/1990 lista: homicídio praticado em atividade típica de grupo de extermínio e homicídio qualificado; roubo com restrição da liberdade da vítima, com arma de fogo ou com lesão grave ou morte (o latrocínio); extorsão qualificada pela morte; extorsão mediante sequestro e na forma qualificada; estupro e estupro de vulnerável; epidemia com resultado morte; falsificação de medicamento; favorecimento à prostituição ou outra forma de exploração sexual de criança, adolescente ou vulnerável; feminicídio; entre outros descritos no rol.",
         },
         {
           question: "Tráfico de drogas é crime hediondo?",
@@ -1911,12 +1911,12 @@ export const newArticles2026: BlogArticle[] = [
         {
           question: "A progressão depende de exame criminológico?",
           answer:
-            "O Pacote Anticrime reforçou requisitos. Para progressão, exige-se cumprimento do percentual, bom comportamento carcerário atestado e ausência de falta grave nos últimos 12 meses. O exame criminológico pode ser pedido pelo juiz, justificadamente.",
+            "Para crimes cometidos a partir de 11 de abril de 2024, sim: a Lei 14.843/2024 passou a exigir, em todos os casos, boa conduta carcerária comprovada pelo diretor do presídio e o resultado do exame criminológico (art. 112, § 1º, da Lei de Execução Penal). Para crimes anteriores, o STJ entende que a exigência não retroage e que o exame só pode ser determinado por decisão fundamentada do juiz (Súmula 439).",
         },
         {
           question: "Reincidente em hediondo pode progredir?",
           answer:
-            "Pode, com percentuais maiores: 60% (reincidência em hediondo sem morte) ou 70% (reincidência em hediondo com morte). A regra foi inserida pelo Pacote Anticrime na Lei de Execução Penal.",
+            "Pode, com percentuais maiores. Para crimes a partir de 25 de março de 2026: 80% da pena para o reincidente em hediondo e 85% se houve morte, sem livramento condicional neste último caso (art. 112, VII e VIII, da Lei de Execução Penal, com a Lei 15.358/2026). Para crimes anteriores, 60% e 70%, pelo Pacote Anticrime. Na regra de 2019, o STJ decidiu que o condenado por hediondo sem morte que é reincidente só em crime comum segue o percentual do primário (Tema 1.084).",
         },
         {
           question: "Advogado é obrigatório na defesa?",
@@ -1926,7 +1926,7 @@ export const newArticles2026: BlogArticle[] = [
         {
           question: "Cabe livramento condicional em hediondo?",
           answer:
-            "Sim, quando cumpridos 2/3 da pena, não reincidente específico. Reincidente específico em crime hediondo não tem direito ao livramento (art. 83, V, Código Penal, com alterações).",
+            "Cabe depois de cumpridos mais de 2/3 da pena, se o condenado não for reincidente específico em crimes dessa natureza (art. 83, V, do Código Penal). A Lei de Execução Penal veda o livramento, conforme a data do crime, no hediondo com morte, no comando de organização criminosa ultraviolenta, no feminicídio e na reincidência em hediondo com morte (art. 112, VI e VIII).",
         },
         {
           question: "Existe diferença entre crime hediondo e equiparado?",
@@ -1943,10 +1943,10 @@ export const newArticles2026: BlogArticle[] = [
           ],
         },
         {
-          title: "A progressão de regime após o Pacote Anticrime",
+          title: "A progressão de regime: Pacote Anticrime e as mudanças de 2024 e 2026",
           paragraphs: [
-            "A Lei 13.964/2019 (Pacote Anticrime) alterou a Lei de Execução Penal e fixou percentuais específicos para progressão nos crimes hediondos. São: 40% da pena para primário em hediondo sem morte; 50% para primário em hediondo com morte; 60% para reincidente em crime comum ou em hediondo sem morte; 70% para reincidente em hediondo com morte. Para condenação em hediondo com morte, vedou-se o livramento condicional.",
-            "Esses percentuais substituíram o modelo anterior, que previa progressão após 2/5 ou 3/5. A nova sistemática é mais severa em várias hipóteses e mais branda em outras, dependendo do caso. Também permaneceu a exigência de bom comportamento carcerário (atestado pela direção do presídio) e a possibilidade de o juiz determinar exame criminológico quando fundamentar a decisão.",
+            "A Lei 13.964/2019 (Pacote Anticrime), em vigor desde 23 de janeiro de 2020, fixou percentuais para progressão nos crimes hediondos: 40% da pena para o primário; 50% para o primário em hediondo com morte, com vedação do livramento condicional; 60% para o reincidente em hediondo; 70% para o reincidente em hediondo com morte. A Lei 15.358/2026 elevou esses patamares para crimes cometidos a partir de 25 de março de 2026: 70% para o primário; 75% para hediondo com morte, para quem comanda organização criminosa ultraviolenta, para milícia e para feminicídio de primário; 80% para o reincidente em hediondo; 85% para o reincidente em hediondo com morte.",
+            "Desde a Lei 14.843/2024, a progressão também depende do resultado do exame criminológico, além da boa conduta atestada pela direção do presídio (art. 112, § 1º). Como regra mais grave não alcança fatos anteriores, cada condenado segue os percentuais e as exigências vigentes na data do seu crime; para crimes anteriores a 11 de abril de 2024, o STJ só admite o exame criminológico por decisão fundamentada (Súmula 439). Por isso o cálculo de pena precisa ser conferido crime a crime.",
           ],
         },
         {
@@ -1973,6 +1973,6 @@ export const newArticles2026: BlogArticle[] = [
       ],
     },
     relatedActions: ["habeas-corpus", "crimes-defesa"],
-    updatedAt: U,
+    updatedAt: "2026-11-08",
   },
 ];

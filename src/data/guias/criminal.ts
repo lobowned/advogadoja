@@ -89,7 +89,7 @@ export const guiaCriminal: Guia = {
       h2: "Prescrição e execução da pena",
       paragrafos: [
         "A prescrição é a perda do poder do Estado de punir pelo decurso do tempo. Os prazos variam conforme a pena máxima prevista para o crime (art. 109 do CP) e, depois da condenação, conforme a pena aplicada (art. 110). São reduzidos pela metade quando o acusado tinha menos de 21 anos na data do fato ou mais de 70 na data da sentença (art. 115). O cálculo exige atenção às causas que interrompem e suspendem o prazo (arts. 116 e 117).",
-        "Após a condenação, a pena é cumprida conforme a Lei de Execução Penal (Lei 7.210/1984). A progressão de regime depende do cumprimento de frações da pena que variam conforme o tipo de crime, o emprego de violência e a reincidência, nos termos do art. 112 da LEP, além de bom comportamento. Trabalho e estudo permitem remição de parte da pena (art. 126). Também são analisados na execução benefícios como livramento condicional, saídas temporárias, indulto e comutação.",
+        "Após a condenação, a pena é cumprida conforme a Lei de Execução Penal (Lei 7.210/1984). A progressão de regime depende do cumprimento de frações da pena que variam conforme o tipo de crime, o emprego de violência e a reincidência, nos termos do art. 112 da LEP, além de bom comportamento e, para crimes a partir de 11 de abril de 2024, do exame criminológico. Esses percentuais mudaram em 2026 (nos hediondos, 70% a 85% da pena para crimes a partir de 25 de março de 2026), e cada condenado segue a regra da data do seu crime. Trabalho e estudo permitem remição de parte da pena (art. 126). Também são analisados na execução benefícios como livramento condicional, indulto, comutação e a saída temporária, que desde 2024 só existe para estudo no regime semiaberto.",
       ],
     },
     {
@@ -155,6 +155,7 @@ export const guiaCriminal: Guia = {
     "/artigos/penal/furto",
     "/artigos/penal/roubo",
     "/artigos/penal/receptacao",
+    "/artigos/penal/saida-temporaria-saidinha",
     "/artigos/penal/calunia-difamacao-injuria",
     "/artigos/penal/crimes-transito-embriaguez-volante",
   ],

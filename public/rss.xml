@@ -5,7 +5,7 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 08 Nov 2026 11:58:12 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 12:04:39 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
@@ -29,6 +29,15 @@
       <category>penal</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Caiu em golpe ou fraude? Saiba o que fazer: como denunciar, recuperar dinheiro e processar criminalmente. Pix, internet, WhatsApp.</description>
+    </item>
+    <item>
+      <title>Crime Hediondo | Lei 8.072/90 e Pacote Anticrime</title>
+      <link>https://riccioadvocacia.online/artigos/penal/crime-hediondo-o-que-e</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/penal/crime-hediondo-o-que-e</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>penal</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Lista de crimes hediondos, efeitos penais após a Lei 8.072/90 e o Pacote Anticrime: progressão, fiança, livramento, anistia e graça.</description>
     </item>
     <item>
       <title>Furto (Art. 155): Pena em 2026, Qualificado e de Celular</title>
@@ -56,6 +65,15 @@
       <category>penal</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Receptação (art. 180 do Código Penal) com as penas de 2026: dolosa, culposa e qualificada, compra de celular ou moto de origem duvidosa e como se defender.</description>
+    </item>
+    <item>
+      <title>Saidinha (Saída Temporária): Quem Tem Direito em 2026</title>
+      <link>https://riccioadvocacia.online/artigos/penal/saida-temporaria-saidinha</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/penal/saida-temporaria-saidinha</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>penal</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Saída temporária depois da Lei 14.843/2024: só para estudo, requisitos de 1/6 ou 1/4 da pena, quem não tem direito, crimes anteriores e o que decidiu o STJ.</description>
     </item>
     <item>
       <title>Divórcio Consensual em Cartório e Online | Passo a Passo</title>
@@ -283,15 +301,6 @@
       <description>Revisão de contrato bancário: entenda a Súmula 596 STF, a média do mercado, o art. 406 do CC pós-Lei 14.905/24 e quando os juros são abusivos.</description>
     </item>
     <item>
-      <title>Crime Hediondo | Lei 8.072/90 e Pacote Anticrime</title>
-      <link>https://riccioadvocacia.online/artigos/penal/crime-hediondo-o-que-e</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/penal/crime-hediondo-o-que-e</guid>
-      <pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate>
-      <category>penal</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Lista de crimes hediondos, efeitos penais após a Lei 8.072/90 e o Pacote Anticrime: progressão, fiança, livramento, anistia e graça.</description>
-    </item>
-    <item>
       <title>Desistência de consórcio: como receber de volta | Riccio</title>
       <link>https://riccioadvocacia.online/artigos/consumidor/desistencia-consorcio-como-receber-dinheiro-de-volta</link>
       <guid isPermaLink="true">https://riccioadvocacia.online/artigos/consumidor/desistencia-consorcio-como-receber-dinheiro-de-volta</guid>
@@ -452,15 +461,6 @@
       <category>civil</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Sofreu ofensa, humilhação ou constrangimento? Saiba quando você tem direito a indenização por danos morais e quanto pode receber.</description>
-    </item>
-    <item>
-      <title>Ação de Cobrança | Como Cobrar Dívida na Justiça</title>
-      <link>https://riccioadvocacia.online/artigos/civil/cobranca</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/civil/cobranca</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>civil</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Alguém te deve dinheiro e não paga? Saiba como fazer ação de cobrança, quais documentos precisa e como recuperar o valor.</description>
     </item>
   </channel>
 </rss>

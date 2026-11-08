@@ -24,6 +24,9 @@ Já no GitHub; entra no ar quando você clicar em **Publicar** e depois no azul 
 - **6 páginas de liminar** (bariátrica, câncer, cardíaca, neurocirurgia, olhos e ortopédica): diziam ao Google que o endereço oficial delas era advogadoja.com, um site que não é seu. O Google trata página assim como cópia de outro site e não a mostra na busca.
 - **/riccioadvocacia** (recebeu 9 visitas do Google em 90 dias): apontava para riccioadvocacia.com.br, domínio que nem está registrado, e o Google via a home no lugar dela.
 - **Artigos relacionados das calculadoras**: os links levavam a endereços /blog/... que não existem (o visitante caía na lista do blog). Agora vão para o artigo certo, e os endereços antigos redirecionam.
+- **/prev/invalidez**: dizia ao Google que o endereço oficial era outro (/prev/aposentadoria-por-invalidez, que não tem página própria para o Google).
+- **Post do recall de veículos** (/blog/recall-veiculos-indenizacao-consumidor, recebe visitas do Google): tinha regras que não existem ("carta registrada", "carro reserva se o reparo demorar mais de 24 horas", "perder a garantia", indenização por "ter sido negativado"). Reescrito com a Portaria MJSP 618/2019 e o CDC, conferidos nos sites oficiais.
+Conferido numa cópia do site montada aqui: as 9 páginas ficaram certas. No site no ar, das 367 páginas do mapa, só essas tinham erro.
 
 ## 1-D. Publicação de 08/11 (artigos em destaque nas páginas de área): FEITA (conferida no ar às 11h)
 As páginas de área (/advogado-trabalhista, /advogado-criminal etc.) mostram os artigos novos em destaque, como o da escala 6x1. IndexNow avisado das 6 páginas.

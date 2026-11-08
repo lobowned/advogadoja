@@ -6,7 +6,7 @@ export default function PrevInvalidez() {
     <PrevAreaPage
       metaTitle="Aposentadoria por Invalidez — Quando não dá mais pra trabalhar | INSS"
       metaDescription="Aposentadoria por invalidez é pra quem não tem mais como trabalhar de forma permanente. INSS negou? Cortou seu benefício? A gente te ajuda."
-      canonicalPath="/prev/aposentadoria-por-invalidez"
+      canonicalPath="/prev/invalidez"
       breadcrumb="Em quais casos eu ajudo / Aposentadoria por Invalidez"
       lawyerId="claudia-martins"
       quizKey="aposentadoria-por-invalidez"

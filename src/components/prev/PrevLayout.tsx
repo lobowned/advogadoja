@@ -182,7 +182,7 @@ export default function PrevLayout({
                   </Link>
                 </li>
                 <li>
-                  <Link to="/prev/aposentadoria-por-invalidez" className="hover:text-prev-beige transition-colors">
+                  <Link to="/prev/invalidez" className="hover:text-prev-beige transition-colors">
                     Aposentadoria por Invalidez
                   </Link>
                 </li>

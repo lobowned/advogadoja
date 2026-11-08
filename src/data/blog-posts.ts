@@ -1335,7 +1335,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Seu veículo foi convocado para recall? Entenda seus direitos, obrigações da montadora e quando você pode buscar indenização por danos.",
     author: "Dr. Gilberto Riccio",
     publishedAt: "2026-01-15",
-    updatedAt: "2026-01-15",
+    updatedAt: "2026-11-08",
     readingTime: 12,
     content: `
       <p class="text-lg text-muted-foreground mb-8">O <strong>recall</strong> é um chamamento do fabricante para corrigir defeitos que podem colocar em risco a segurança dos consumidores. Embora seja uma medida de proteção, muitos proprietários não sabem que podem ter direito a <strong>indenização</strong> quando sofrem prejuízos relacionados a esses defeitos. Neste guia, explicamos tudo sobre seus direitos.</p>
@@ -1354,72 +1354,69 @@ export const blogPosts: BlogPost[] = [
         <li>Software com bugs críticos</li>
       </ul>
       
-      <p class="mb-4">O recall é <strong>obrigatório</strong> quando o defeito pode afetar a segurança, e a montadora deve comunicar todos os proprietários e o PROCON.</p>
+      <p class="mb-4">O recall é <strong>obrigatório</strong>. O fornecedor que descobre, depois da venda, que o produto oferece perigo deve avisar imediatamente as autoridades e os consumidores, com anúncios na imprensa, no rádio e na televisão pagos por ele (<a href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm" target="_blank" rel="noopener noreferrer" class="text-primary underline">Código de Defesa do Consumidor, art. 10, §§ 1º e 2º</a>). O passo a passo está na <a href="https://www.gov.br/mj/pt-br/assuntos/seus-direitos/consumidor/defesadoconsumidor/Biblioteca/legislacao-upload/portaria_mjsp_n-_618_2019.pdf" target="_blank" rel="noopener noreferrer" class="text-primary underline">Portaria MJSP nº 618/2019</a> e, para veículos, também na Portaria Conjunta nº 3/2019.</p>
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Suas Obrigações e Direitos</h2>
       
       <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">O Que o Fabricante Deve Fazer</h3>
       <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li><strong>Comunicar</strong> todos os proprietários por carta registrada</li>
-        <li><strong>Publicar anúncios</strong> em jornais de grande circulação</li>
-        <li><strong>Realizar o reparo gratuitamente</strong></li>
-        <li><strong>Fornecer carro reserva</strong> se o reparo demorar mais de 24 horas</li>
-        <li><strong>Cobrir custos de deslocamento</strong> até a concessionária, se necessário</li>
+        <li><strong>Avisar a Secretaria Nacional do Consumidor (Senacon)</strong> em até dois dias úteis depois de decidir fazer o recall (Portaria 618/2019, art. 3º)</li>
+        <li><strong>Divulgar o aviso de risco</strong> em pelo menos um meio escrito, um de áudio e um de áudio e vídeo, além do próprio site, onde o aviso fica por cinco anos (art. 4º)</li>
+        <li><strong>Fazer o reparo ou a troca sem nenhum custo</strong> para o consumidor (art. 6º, § 1º, VII, e art. 10)</li>
+        <li><strong>Entregar um comprovante do atendimento</strong>, em papel ou eletrônico, com local, data, horário, duração e o que foi feito (art. 7º)</li>
+        <li><strong>Garantir peças de reposição</strong> enquanto fabricar ou importar o modelo, e por um período razoável depois (CDC, art. 32)</li>
       </ul>
       
-      <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">O Que Você Pode Exigir</h3>
+      <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">O Que Você Pode Pedir</h3>
       <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li>Reparo imediato e gratuito</li>
-        <li>Veículo reserva durante o reparo</li>
-        <li>Reembolso de despesas relacionadas (táxi, guincho se não atendeu ao recall)</li>
-        <li>Indenização por danos causados pelo defeito</li>
-        <li>Em casos extremos, substituição do veículo</li>
+        <li>O reparo ou a troca da peça sem pagar nada, também se comprou o carro usado (a campanha identifica o veículo pelo chassi)</li>
+        <li>O comprovante do atendimento (guarde com os documentos do carro)</li>
+        <li>Se o problema não for resolvido em até 30 dias: a troca por outro igual, o dinheiro de volta corrigido ou um abatimento no preço, à sua escolha (CDC, art. 18, § 1º)</li>
+        <li>A reparação dos danos causados pelo defeito, pela qual o fabricante responde mesmo sem culpa (CDC, art. 12)</li>
       </ul>
 
       <div class="bg-primary/10 border-l-4 border-primary p-6 my-8 rounded-r-lg">
         <p class="font-semibold text-primary mb-2">⚠️ Atenção!</p>
-        <p class="text-foreground">Ignorar o recall pode trazer consequências: além do risco de acidente, você pode perder a garantia do veículo e ter dificuldades em receber indenização se ocorrer um sinistro.</p>
+        <p class="text-foreground">Não atender ao recall mantém o risco de acidente. E, se um acidente acontecer depois do aviso, a montadora pode alegar na Justiça que o dono foi avisado e não levou o carro, o que pode atrapalhar um pedido de indenização.</p>
       </div>
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Quando Você Pode Pedir Indenização</h2>
       
-      <p class="mb-4">Além do reparo gratuito, você pode buscar indenização quando:</p>
+      <p class="mb-4">Além do reparo gratuito, o fabricante responde pelos danos causados por defeito do produto, mesmo sem culpa (CDC, art. 12). Cada caso depende de prova. Situações que costumam ser discutidas:</p>
       
       <ul class="list-disc pl-6 mb-6 space-y-3">
-        <li><strong>Sofreu acidente</strong> causado pelo defeito antes do recall</li>
-        <li><strong>Teve prejuízos materiais</strong> (veículo ficou parado, perdeu compromisso)</li>
-        <li><strong>Passou por constrangimento</strong> ou transtorno significativo</li>
-        <li><strong>O veículo desvalorizou</strong> por causa do problema</li>
-        <li><strong>A montadora demorou</strong> para fazer o reparo ou disponibilizar peças</li>
-        <li><strong>Foi negativado</strong> por deixar de pagar parcelas durante problema</li>
+        <li><strong>Acidente</strong> causado pelo defeito</li>
+        <li><strong>Gastos comprovados</strong> por causa do defeito, como guincho, conserto e transporte enquanto o carro ficou parado</li>
+        <li><strong>Demora no reparo</strong> por falta de peça ou de agenda, com prejuízo comprovado</li>
       </ul>
+
+      <p class="mb-4">O prazo para pedir a reparação de danos causados por defeito do produto é de cinco anos, contados de quando você soube do dano e de quem o causou (CDC, art. 27).</p>
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Ações Coletivas: O Que São e Como Funcionam</h2>
       
-      <p class="mb-4">As <strong>ações coletivas</strong> são processos judiciais que representam os interesses de um grupo de consumidores afetados pelo mesmo problema. São vantajosas porque:</p>
+      <p class="mb-4">As <strong>ações coletivas</strong> defendem, num só processo, os consumidores atingidos pelo mesmo problema. Quem pode propor é o Ministério Público, a União, os estados, os municípios, órgãos de defesa do consumidor como o Procon e associações de consumidores criadas há pelo menos um ano (CDC, art. 82). Na prática:</p>
       
       <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li>Você não precisa entrar com ação individual</li>
-        <li>Os custos são diluídos entre todos os beneficiados</li>
-        <li>A decisão vale para todos os afetados</li>
-        <li>Tem mais força para pressionar grandes empresas</li>
+        <li>Você não precisa entrar com ação individual para ser beneficiado</li>
+        <li>Não há adiantamento de custas nem de honorários de perito (CDC, art. 87)</li>
+        <li>Se o pedido for julgado procedente, a decisão beneficia todas as vítimas e seus sucessores (CDC, art. 103, III)</li>
+        <li>Depois da decisão, cada vítima pode cobrar a sua parte (CDC, art. 97)</li>
       </ul>
       
       <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">Como Participar</h3>
       <ol class="list-decimal pl-6 mb-6 space-y-2">
         <li>Verifique se existe ação coletiva sobre o recall do seu veículo</li>
-        <li>Acompanhe notícias e sites do PROCON e associações de consumidores</li>
-        <li>Guarde toda documentação do seu caso</li>
-        <li>Quando houver decisão favorável, habilite-se para receber sua parte</li>
+        <li>Acompanhe o Procon, o Ministério Público e as associações de consumidores</li>
+        <li>Guarde toda a documentação do seu caso (nota fiscal, aviso de recall, comprovante do atendimento, gastos)</li>
+        <li>Se a decisão for favorável, peça a sua parte no processo (liquidação e execução)</li>
       </ol>
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Como Verificar Se Seu Veículo Tem Recall</h2>
       
       <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li><strong>Site do PROCON:</strong> Consulta por marca e modelo</li>
-        <li><strong>Site do fabricante:</strong> Geralmente há área de consulta por chassi</li>
-        <li><strong>App do Detran:</strong> Alguns estados mostram pendências de recall</li>
-        <li><strong>Senatran:</strong> Portal do Departamento Nacional de Trânsito</li>
+        <li><strong>Carteira Digital de Trânsito (app do governo federal):</strong> em Veículos, escolha o carro e toque em Recall; o app mostra se há recall pendente</li>
+        <li><strong>Portal de Serviços da Senatran (Secretaria Nacional de Trânsito):</strong> com login gov.br, use "Consultar Recall Pendente" e informe a placa ou o chassi (<a href="https://www.gov.br/pt-br/servicos/realizar-consulta-sobre-recall-de-veiculos" target="_blank" rel="noopener noreferrer" class="text-primary underline">serviço gratuito no gov.br</a>)</li>
+        <li><strong>Site do fabricante:</strong> o aviso de risco deve estar no site da empresa, a até dois cliques, por cinco anos (Portaria 618/2019, art. 4º, § 4º)</li>
       </ul>
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Perguntas Frequentes</h2>
@@ -1427,22 +1424,22 @@ export const blogPosts: BlogPost[] = [
       <div class="space-y-6 mb-8">
         <div>
           <h3 class="text-lg font-semibold text-foreground mb-2">O recall tem prazo para ser feito?</h3>
-          <p class="text-muted-foreground">A obrigação do fabricante é permanente. Mas você deve atender ao chamado assim que possível para não correr riscos.</p>
+          <p class="text-muted-foreground">Não há data-limite para o reparo gratuito: a Portaria 618/2019 (art. 10) diz que o fornecedor continua obrigado a reparar ou trocar de graça mesmo quando deixa de prestar contas da campanha. Ainda assim, atenda ao chamado logo, porque o risco continua enquanto a peça não é trocada.</p>
         </div>
         
         <div>
           <h3 class="text-lg font-semibold text-foreground mb-2">Comprei o carro usado e não fui avisado do recall. E agora?</h3>
-          <p class="text-muted-foreground">Você pode cobrar do vendedor (se for empresa) ou ir direto à montadora. O direito ao reparo gratuito continua válido.</p>
+          <p class="text-muted-foreground">O direito ao reparo gratuito continua valendo, porque a campanha identifica o veículo pelo chassi. Consulte pela Carteira Digital de Trânsito ou pelo Portal de Serviços da Senatran e procure uma concessionária da marca.</p>
         </div>
         
         <div>
           <h3 class="text-lg font-semibold text-foreground mb-2">A concessionária diz que não tem peças. O que fazer?</h3>
-          <p class="text-muted-foreground">A montadora é obrigada a disponibilizar peças. Se houver demora, exija carro reserva e, se sofrer prejuízos, documente para pedir indenização.</p>
+          <p class="text-muted-foreground">Fabricantes e importadores devem garantir peças de reposição (CDC, art. 32). Peça o protocolo do atendimento, anote as datas e guarde os gastos que tiver por causa da demora. Se o problema não for resolvido em até 30 dias, o CDC (art. 18, § 1º) permite escolher entre a troca do produto, o dinheiro de volta ou um abatimento no preço.</p>
         </div>
         
         <div>
           <h3 class="text-lg font-semibold text-foreground mb-2">Posso recusar o recall?</h3>
-          <p class="text-muted-foreground">Você pode, mas assumirá os riscos. Se ocorrer acidente, pode haver dificuldade em responsabilizar a montadora.</p>
+          <p class="text-muted-foreground">Ninguém é obrigado a levar o carro, mas o risco fica com você. Se houver acidente depois do aviso, a montadora pode alegar que você foi avisado e não fez o reparo.</p>
         </div>
       </div>
 
@@ -1456,9 +1453,9 @@ export const blogPosts: BlogPost[] = [
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Conclusão</h2>
       
-      <p class="mb-4">O recall é uma medida de segurança importante que protege você e sua família. Atenda sempre ao chamado do fabricante e guarde toda a documentação. Se você sofreu prejuízos relacionados ao defeito ou ao processo de reparo, saiba que pode buscar indenização.</p>
+      <p class="mb-4">O recall é uma medida de segurança que protege você e sua família. Atenda ao chamado do fabricante, peça o comprovante do atendimento e guarde a documentação. Se o defeito ou a demora no reparo causaram prejuízo, a lei prevê a reparação dos danos, e cada caso depende de prova.</p>
       
-      <p class="mb-4">Em casos de recalls massivos, as ações coletivas são uma forma eficiente de garantir seus direitos sem precisar enfrentar sozinho grandes montadoras.</p>
+      <p class="mb-4">Em recalls que atingem muita gente, vale acompanhar as ações coletivas, que podem beneficiar todas as vítimas sem que cada uma precise entrar com processo próprio.</p>
     `
   },
   {

@@ -6,7 +6,9 @@ Em 08/11 a propriedade aceitou 6 pedidos no dia antes de dar "cota excedida". De
 Já pedidos em 07/11/2026: /advogado-gilberto-riccio e /artigos/previdenciario/aposentadoria-2026-regras.
 
 ## Fila (na ordem)
-Os 7 primeiros só depois da publicação de 08/11 11h30 (`SEO-PASSOS-DO-DR.md`, item 1-E): antes de pedir, abra a página no ar e confira, depois do JavaScript, que `link[rel=canonical]` aponta para https://riccioadvocacia.online/ (antes apontava para advogadoja.com ou riccioadvocacia.com.br). Depois, rode também `npx tsx scripts/indexnow.ts` com esses 7 endereços.
+Os 9 primeiros só depois da publicação do item 1-E de `SEO-PASSOS-DO-DR.md`: antes de pedir, rode `node scripts/auditar-render.cjs` (ou abra a página no ar) e confira, depois do JavaScript, que o canonical é o próprio endereço em https://riccioadvocacia.online/ (antes apontava para advogadoja.com, riccioadvocacia.com.br ou /prev/aposentadoria-por-invalidez). Depois, rode também `npx tsx scripts/indexnow.ts` com esses 9 endereços.
+- [ ] https://riccioadvocacia.online/prev/invalidez
+- [ ] https://riccioadvocacia.online/blog/recall-veiculos-indenizacao-consumidor
 - [ ] https://riccioadvocacia.online/liminar-cirurgia-bariatrica
 - [ ] https://riccioadvocacia.online/liminar-tratamento-cancer
 - [ ] https://riccioadvocacia.online/liminar-cirurgia-ortopedica

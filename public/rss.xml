@@ -5,7 +5,7 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 08 Nov 2026 13:44:59 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 14:40:07 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
@@ -238,6 +238,15 @@
       <description>Fim da escala 6x1 (EC 141/2026): 42 horas e 2 folgas a partir de 16/12/2026, 40 horas a partir de 16/12/2027, sem redução de salário. Veja quem é afetado.</description>
     </item>
     <item>
+      <title>Recall de Veículo: Seus Direitos e Como Pedir Indenização</title>
+      <link>https://riccioadvocacia.online/blog/recall-veiculos-indenizacao-consumidor</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/blog/recall-veiculos-indenizacao-consumidor</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>blog</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Seu carro foi convocado para recall? Conheça seus direitos, como funciona o processo e quando você pode pedir indenização por danos.</description>
+    </item>
+    <item>
       <title>Divórcio Consensual em Cartório e Online | Passo a Passo</title>
       <link>https://riccioadvocacia.online/artigos/familia/divorcio-consensual</link>
       <guid isPermaLink="true">https://riccioadvocacia.online/artigos/familia/divorcio-consensual</guid>
@@ -452,15 +461,6 @@
       <category>consumidor</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Parou de pagar o consórcio? Veja o que acontece com a sua cota, por que formalizar a saída evita custo extra e como receber de volta o que pagou.</description>
-    </item>
-    <item>
-      <title>Cancelamento de consórcio: como fazer o pedido | Riccio</title>
-      <link>https://riccioadvocacia.online/artigos/consumidor/cancelamento-consorcio-como-fazer</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/consumidor/cancelamento-consorcio-como-fazer</guid>
-      <pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate>
-      <category>consumidor</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Veja como pedir o cancelamento do consórcio, quando cabe o arrependimento em 7 dias, o que exigir por escrito e quando o dinheiro volta.</description>
     </item>
   </channel>
 </rss>

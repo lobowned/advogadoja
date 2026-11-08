@@ -195,15 +195,15 @@ const expansions: Record<string, ArticleExpansion> = {
       {
         title: "Fraude eletrônica e outras formas agravadas",
         paragraphs: [
-          "A Lei 14.155/2021 criou a fraude eletrônica (art. 171, §2º-A, do Código Penal). Ela ocorre quando a vítima é enganada por redes sociais, contatos telefônicos, e-mails falsos ou meios parecidos. A pena é de reclusão de 4 a 8 anos, maior que a do estelionato comum.",
+          "A Lei 14.155/2021 criou a fraude eletrônica (art. 171, §2º-A, do Código Penal). Ela ocorre quando a vítima ou outra pessoa é enganada por redes sociais, contatos telefônicos, e-mails falsos ou meios parecidos e fornece as informações usadas no golpe; desde a Lei 15.397/2026, a lei também cita a clonagem de aparelho e o uso de aplicativos. A pena é de reclusão de 4 a 8 anos, maior que a do estelionato comum, que é de 1 a 5 anos.",
           "A pena aumenta se o golpe for contra idoso ou pessoa vulnerável (art. 171, §4º) e se o servidor usado estiver fora do país (§2º-B). Pirâmides financeiras podem configurar também crime contra a economia popular (art. 2º, IX, da Lei 1.521/1951).",
         ],
       },
       {
         title: "Representação e local da investigação",
         paragraphs: [
-          "Desde 2019, o estelionato depende de representação da vítima, ou seja, da manifestação de que ela quer ver o autor processado (art. 171, §5º, do Código Penal). Na prática, isso é feito no boletim de ocorrência ou na delegacia. O prazo é de 6 meses a partir do dia em que a vítima soube quem é o autor.",
-          "Essa exigência não vale quando a vítima é a Administração Pública, criança ou adolescente, pessoa com deficiência mental, maior de 70 anos ou incapaz. Quando o golpe envolve transferência, depósito ou cheque sem fundos, a investigação corre no local do domicílio da vítima (art. 70, §4º, do CPP), o que facilita o acompanhamento.",
+          "De 2019 até 3 de maio de 2026, o estelionato comum dependia de representação da vítima, ou seja, da manifestação de que ela queria ver o autor processado (antigo § 5º do art. 171 do Código Penal). A Lei 15.397/2026 revogou essa exigência: para golpes a partir de 4 de maio de 2026, a polícia e o Ministério Público agem mesmo sem a manifestação da vítima.",
+          "Para fatos anteriores, a defesa pode sustentar que a exigência continua valendo, porque a mudança piora a situação do acusado; nesses casos, a vítima que quer o processo deve representar em até 6 meses depois de saber quem é o autor, o que na prática se faz no boletim de ocorrência ou na delegacia. Quando o golpe envolve transferência, depósito ou cheque sem fundos, a investigação corre no local do domicílio da vítima (art. 70, §4º, do CPP), o que facilita o acompanhamento.",
         ],
       },
       {
@@ -223,7 +223,7 @@ const expansions: Record<string, ArticleExpansion> = {
       {
         title: "Se você foi acusado ou emprestou sua conta",
         paragraphs: [
-          "Muitas pessoas emprestam ou “alugam” a conta bancária a terceiros sem saber que ela será usada para receber dinheiro de golpes. Essas contas são chamadas de “contas laranja”, e o titular pode ser investigado. Se você recebeu uma intimação por isso, não ignore e não preste depoimento sem orientação.",
+          "Muitas pessoas emprestam ou “alugam” a conta bancária a terceiros sem saber que ela será usada para receber dinheiro de golpes. Essas contas são chamadas de “contas laranja”, e o titular pode ser investigado. Desde 4 de maio de 2026, ceder a conta, de graça ou por dinheiro, para que nela passem recursos de crime ou destinados a financiar crime é estelionato, com a mesma pena (art. 171, § 2º, VII, incluído pela Lei 15.397/2026). Se você recebeu uma intimação por isso, não ignore e não preste depoimento sem orientação.",
           "Um advogado pode demonstrar a sua real participação nos fatos e avaliar se cabe acordo de não persecução penal ou outra solução prevista em lei.",
         ],
       },
@@ -239,14 +239,14 @@ const expansions: Record<string, ArticleExpansion> = {
       },
       {
         question: "Quanto tempo tenho para denunciar um estelionato?",
-        answer: "A representação deve ser feita em até 6 meses do dia em que a vítima souber quem é o autor. Mas o ideal é registrar imediatamente, para aumentar a chance de bloqueio do dinheiro.",
+        answer: "Para golpes a partir de 4 de maio de 2026, o processo não depende mais de representação da vítima (a Lei 15.397/2026 revogou essa exigência). Para fatos anteriores, a representação deve ser feita em até 6 meses do dia em que a vítima souber quem é o autor. Em qualquer caso, o ideal é registrar imediatamente, para aumentar a chance de bloqueio do dinheiro.",
       },
       {
         question: "O que fazer se clonaram meu WhatsApp?",
         answer: "Avise seus contatos por outros meios, peça o bloqueio da conta pelo suporte do aplicativo, registre boletim de ocorrência e ative a verificação em duas etapas assim que recuperar o acesso.",
       },
     ],
-    updatedAt: U,
+    updatedAt: "2026-11-08",
   },
 };
 

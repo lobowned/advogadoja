@@ -30,7 +30,7 @@ export const guiaCriminal: Guia = {
     {
       h2: "Audiência de custódia",
       paragrafos: [
-        "Toda pessoa presa em flagrante deve ser apresentada a um juiz em até 24 horas na audiência de custódia, com a presença do Ministério Público e do advogado ou defensor (art. 310 do CPP). O juiz não julga se a pessoa é culpada; ele decide sobre a prisão.",
+        "Toda pessoa presa em flagrante deve ser apresentada a um juiz em até 24 horas na audiência de custódia, com a presença do Ministério Público e do advogado ou defensor (art. 310 do CPP); desde a Lei 15.358/2026, essa audiência é feita por videoconferência em tempo real. O juiz não julga se a pessoa é culpada; ele decide sobre a prisão.",
         "Nessa audiência há três caminhos: relaxar a prisão, se ela foi ilegal; converter o flagrante em prisão preventiva, se presentes os requisitos legais e se outras medidas não forem suficientes; ou conceder liberdade provisória, com ou sem fiança, podendo impor medidas cautelares. O juiz também verifica se houve maus-tratos ou tortura no momento da prisão.",
         "Para essa audiência, ajuda muito levar documentos que mostrem os vínculos do preso: comprovante de residência, carteira de trabalho ou declaração do empregador, certidões de nascimento de filhos menores que dependam dele, laudos de doença e comprovantes de estudo. Esses documentos demonstram que a pessoa tem endereço fixo e não oferece risco ao processo.",
       ],
@@ -152,6 +152,9 @@ export const guiaCriminal: Guia = {
     "/artigos/penal/habeas-corpus",
     "/artigos/penal/violencia-domestica",
     "/artigos/penal/estelionato-golpes-fraudes",
+    "/artigos/penal/furto",
+    "/artigos/penal/roubo",
+    "/artigos/penal/receptacao",
     "/artigos/penal/calunia-difamacao-injuria",
     "/artigos/penal/crimes-transito-embriaguez-volante",
   ],
@@ -161,5 +164,5 @@ export const guiaCriminal: Guia = {
     { href: "/advogado-criminal", label: "Direito Criminal — área de atuação" },
   ],
   whatsappText: "Olá! Li o guia de Direito Criminal e preciso de orientação urgente.",
-  atualizadoEm: "2026-11-04",
+  atualizadoEm: "2026-11-08",
 };

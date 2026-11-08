@@ -3,6 +3,7 @@ import { articleExpansions } from "./article-expansions";
 import { newArticles2026 } from "./blog-articles-new";
 import { consorcioArticles } from "./blog-articles-consorcio";
 import { pautaArticles } from "./blog-articles-pauta";
+import { pauta2Articles } from "./blog-articles-pauta2";
 export interface BlogArticle {
   id: string;
   nicheId: string;
@@ -1411,7 +1412,7 @@ export const blogArticles: BlogArticle[] = [
         {
           "title": "Audiência de custódia: as três decisões possíveis",
           "paragraphs": [
-            "O artigo 310 do CPP determina que o juiz, em até 24 horas após a prisão, realize audiência de custódia com a presença do preso, do Ministério Público e da defesa. Nela, o juiz deve relaxar a prisão se for ilegal; converter o flagrante em preventiva, apenas se presentes os requisitos do artigo 312 e se as medidas cautelares não bastarem; ou conceder liberdade provisória, com ou sem fiança e com ou sem medidas cautelares, como comparecimento periódico em juízo ou monitoração eletrônica.",
+            "O artigo 310 do CPP determina que o juiz, em até 24 horas após a prisão, realize audiência de custódia com a presença do preso, do Ministério Público e da defesa; desde a Lei 15.358/2026, ela é feita por videoconferência em tempo real. Nela, o juiz deve relaxar a prisão se for ilegal; converter o flagrante em preventiva, apenas se presentes os requisitos do artigo 312 e se as medidas cautelares não bastarem; ou conceder liberdade provisória, com ou sem fiança e com ou sem medidas cautelares, como comparecimento periódico em juízo ou monitoração eletrônica.",
             "A audiência não discute se a pessoa é culpada, mas a legalidade da prisão, eventuais abusos e a necessidade de manter alguém preso. Por isso, documentos que mostrem residência fixa, trabalho e vínculos familiares ajudam a defesa a demonstrar que a liberdade não oferece risco ao processo."
           ]
         },
@@ -1474,7 +1475,7 @@ export const blogArticles: BlogArticle[] = [
       "habeas-corpus",
       "acompanhamento-delegacia"
     ],
-    "updatedAt": "2026-11-05"
+    "updatedAt": "2026-11-08"
   },
   {
     "id": "habeas-corpus",
@@ -3883,7 +3884,7 @@ export const blogArticles: BlogArticle[] = [
         'Boletim de ocorrência',
         'Extratos bancários',
       ],
-      deadlines: 'Denuncie imediatamente à polícia e ao banco. Quanto antes, maior chance de bloquear valores. Prazo penal: até 16 anos.',
+      deadlines: 'Avise o banco e registre o boletim de ocorrência imediatamente: quanto antes, maior a chance de bloquear valores. Para golpes a partir de 4 de maio de 2026, o processo não depende mais de representação da vítima (Lei 15.397/2026).',
       faq: [
         {
           question: 'Como recuperar dinheiro de golpe do Pix?',
@@ -3891,7 +3892,7 @@ export const blogArticles: BlogArticle[] = [
         },
         {
           question: 'Qual a pena para estelionato?',
-          answer: 'De 1 a 5 anos de prisão. Aumenta para 4 a 8 anos se for pela internet. Pode chegar a 16 anos se envolver idoso.',
+          answer: 'Reclusão de 1 a 5 anos e multa (art. 171 do Código Penal). Na fraude eletrônica, quando a vítima é enganada por redes sociais, telefone, e-mail falso, clonagem de aparelho ou aplicativo, a pena é de 4 a 8 anos. Contra idoso ou vulnerável, a pena aumenta de um terço até o dobro.',
         },
         {
           question: 'Posso processar o banco se cair em golpe?',
@@ -4407,6 +4408,8 @@ blogArticles.push(...newArticles2026);
 blogArticles.push(...consorcioArticles);
 // Pauta de 07/11/2026 (_planos/SEO-PAUTA.md): temas com busca real e sem página no site
 blogArticles.push(...pautaArticles);
+// Pauta 2 de 08/11/2026 (_planos/SEO-PAUTA.md)
+blogArticles.push(...pauta2Articles);
 
 // Helper function to get articles by niche
 // Junta as expansões (src/data/article-expansions) aos artigos curtos

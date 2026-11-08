@@ -35,10 +35,11 @@ Opcional: registrar também **riccio.adv.br** (exclusivo de advogados, estava li
 Propriedade **https://riccioadvocacia.online/** criada e verificada (arquivo HTML), `sitemap.xml` enviado e processado (343 páginas encontradas) e indexação pedida para a página inicial, /advogado-bahia e /perguntas.
 Acompanhe em search.google.com/search-console (conta em que já está a propriedade antiga), menu **Páginas**: a indexação do domínio novo leva de alguns dias a algumas semanas.
 
-## 4. Google Meu Negócio
-Trocar o site do perfil para **https://riccioadvocacia.online**.
-Quando chegar a carta do Google com o código, digite o código no perfil (ou me mande que eu sigo com você).
-Depois de verificado: foto real sua ou do logo e a lista de serviços por área.
+## 4. Google Meu Negócio (Perfil da Empresa)
+- FEITO em 08/11, com sua autorização: o site do perfil foi trocado de riccio-advocacia.lovable.app para **https://riccioadvocacia.online/**.
+- Situação em 08/11: "O Google está processando sua verificação. Isso pode levar até 5 dias." O perfil ainda não aparece para o público. Se o Google pedir código ou vídeo, me avise que eu sigo com você.
+- Para decidir: o horário do perfil aparece como "Aberto 24 horas" (pelo menos segunda e terça; domingo fechado), e o site diz segunda a sexta, das 8h às 20h. Os dois devem dizer o mesmo. Também dá para ligar Instagram e outras redes ao perfil (campo "Perfis de redes sociais").
+- Depois de verificado: foto real sua ou do logo e a lista de serviços por área.
 
 ## 5. Bing (abastece também o ChatGPT, o Copilot e o DuckDuckGo): FEITO (08/11)
 Com o seu login, o site foi importado do Search Console para o Bing Webmaster (na mesma conta em que já estava o institutoamoremcristo.org). O mapa do site entrou junto e está em processamento, e os 100 endereços principais (home, páginas de serviço de Salvador, guias e 76 artigos) foram enviados manualmente em 08/11 às 10h27; a cota é de 100 por dia. As demais páginas já tinham sido avisadas pelo IndexNow.

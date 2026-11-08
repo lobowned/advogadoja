@@ -65,7 +65,7 @@ const LiminarOrtopedicaLanding = () => (
           <title>Cirurgia Ortopédica Negada? Prótese, Coluna, Joelho</title>
           <meta name="description" content="Plano negou prótese de quadril, joelho ou cirurgia de coluna? Advogado para pedido de liminar contra o plano de saúde." />
           <meta name="keywords" content="prótese negada plano saúde, cirurgia ortopédica negada, liminar prótese quadril, cirurgia coluna negada, advogado ortopedia" />
-          <link rel="canonical" href="https://advogadoja.com/liminar-cirurgia-ortopedica" />
+          <link rel="canonical" href="https://riccioadvocacia.online/liminar-cirurgia-ortopedica" />
           <meta property="og:title" content="Cirurgia ortopédica negada pelo plano?" />
           <meta property="og:description" content="Plano negou prótese de quadril, joelho ou cirurgia de coluna? Advogado para pedido de liminar contra o plano de saúde." />
           <meta property="og:type" content="website" />

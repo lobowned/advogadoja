@@ -207,7 +207,7 @@ export default function RiccioAdvocacia() {
         <meta name="theme-color" content="#0b0b0d" />
         <link
           rel="canonical"
-          href="https://riccioadvocacia.com.br/riccioadvocacia"
+          href="https://riccioadvocacia.online/riccioadvocacia"
         />
       </Helmet>
 

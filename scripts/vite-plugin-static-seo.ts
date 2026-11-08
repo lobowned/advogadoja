@@ -58,7 +58,10 @@ type Page = {
  * O título, a descrição, a chamada e as perguntas são lidos do próprio arquivo no build, com
  * expressões simples; o que não casar fica de fora (a página continua funcionando como SPA).
  */
-const COMPONENT_PAGES: { route: string; file: string; area: "consumidor" | "previdenciario" | "criminal" | "trabalhista" | "calc" | "institucional" }[] = [
+const COMPONENT_PAGES: { route: string; file: string; area: "consumidor" | "previdenciario" | "criminal" | "trabalhista" | "inss-trabalho" | "calc" | "institucional" }[] = [
+  // Landing de INSS + trabalho: recebeu visitas do Google (Lovable Análises, 90 dias até 08/11/2026)
+  // e servia a home no HTML pré-montado.
+  { route: "/riccioadvocacia", file: "src/pages/RiccioAdvocacia.tsx", area: "inss-trabalho" },
   { route: "/criminal", file: "src/pages/criminal/CriminalLanding.tsx", area: "criminal" },
   { route: "/advogado-trabalhista-online", file: "src/pages/trabalhista/TrabalhistaLanding.tsx", area: "trabalhista" },
   { route: "/prev", file: "src/pages/prev/PrevHome.tsx", area: "previdenciario" },
@@ -138,6 +141,12 @@ const AREA_LINKS: Record<string, { href: string; label: string }[]> = {
   ],
   trabalhista: [
     { href: "/advogado-trabalhista", label: "Advogado trabalhista" },
+    { href: "/guia/trabalhista", label: "Guia: direitos trabalhistas" },
+  ],
+  "inss-trabalho": [
+    { href: "/advogado-previdenciario", label: "Advogado previdenciário (INSS)" },
+    { href: "/advogado-trabalhista", label: "Advogado trabalhista" },
+    { href: "/guia/previdenciario", label: "Guia: INSS e aposentadoria" },
     { href: "/guia/trabalhista", label: "Guia: direitos trabalhistas" },
   ],
   calc: [
@@ -954,7 +963,17 @@ function buildRedirects(d: Awaited<ReturnType<typeof loadData>>): { from: string
     ...(d.redirects?.articleRedirects || []),
     ...(d.routeRedirects?.routeRedirects || []),
   ];
-  return list.filter((r) => r.from && r.to && r.from !== r.to && r.from !== "/");
+  // O bloco "Artigos Relacionados" das calculadoras apontou até 08/11/2026 para /blog/<slug> de artigos que
+  // ficam em /artigos/<área>/<slug>; o Google já achou alguns desses endereços (ex.: /blog/atraso-cancelamento-voo-direitos).
+  const postSlugs = new Set((d.posts?.blogPosts || []).map((p: any) => p.slug));
+  const finalOf = new Map(list.map((r) => [r.from, r.to]));
+  for (const a of (d.articles?.blogArticles || []) as any[]) {
+    if (!a?.slug || !a?.nicheId || postSlugs.has(a.slug)) continue;
+    const route = `/artigos/${a.nicheId}/${a.slug}`;
+    list.push({ from: `/blog/${a.slug}`, to: finalOf.get(route) || route });
+  }
+  const seen = new Set<string>();
+  return list.filter((r) => r.from && r.to && r.from !== r.to && r.from !== "/" && !seen.has(r.from) && !!seen.add(r.from));
 }
 
 function renderRedirect(r: { from: string; to: string }): string {

@@ -65,7 +65,7 @@ const LiminarBariatricaLanding = () => (
           <title>Cirurgia Bariátrica Negada? Advogado</title>
           <meta name="description" content="Plano de saúde negou sua cirurgia bariátrica? Advogado para pedido de liminar. Gastroplastia, bypass, sleeve." />
           <meta name="keywords" content="cirurgia bariátrica negada, liminar gastroplastia, plano saúde obesidade, bypass gástrico negado, sleeve negado, advogado bariátrica" />
-          <link rel="canonical" href="https://advogadoja.com/liminar-cirurgia-bariatrica" />
+          <link rel="canonical" href="https://riccioadvocacia.online/liminar-cirurgia-bariatrica" />
           <meta property="og:title" content="Cirurgia bariátrica negada pelo plano?" />
           <meta property="og:description" content="Plano de saúde negou sua cirurgia bariátrica? Advogado para pedido de liminar. Gastroplastia, bypass, sleeve." />
           <meta property="og:type" content="website" />

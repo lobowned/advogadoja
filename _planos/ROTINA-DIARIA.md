@@ -16,6 +16,7 @@ Roda todo dia às 10h pela tarefa agendada "seo-riccio-diaria" (criada com autor
    - Desempenho: cliques, impressões, CTR e posição média dos últimos 7 dias; às segundas, também os últimos 28 dias contra os 28 anteriores e as 10 consultas e 10 páginas com mais impressões.
    - Páginas (indexação): quantas indexadas e quantas não, com os motivos.
    - Se a janela do Chrome estiver escondida e a captura de tela falhar, leia o texto com get_page_text ou javascript_tool em pedaços pequenos.
+   - Visitas de verdade vindas da busca: no Lovable (https://lovable.dev/projects/df589a75-d092-4a8d-b576-ed256bbbd500?view=more&subview=newAnalytics&channel=search), leia "SEO & AEO" dos últimos 7 dias (Google, Bing, ChatGPT) e as páginas de entrada; às segundas, também 30 dias. Só leitura: não clique em "Atrair mais tráfego", "Executar análise", "Tentar corrigir" nem "Conectar" (gastam crédito ou mexem no código). Se uma página de entrada abrir a home no lugar do conteúdo (título da home no HTML), corrija ou redirecione.
 3. Medição no Bing (só às segundas; bing.com/webmasters, site riccioadvocacia.online, conta já logada no Chrome): Search Performance (cliques e impressões) e Site Explorer (páginas indexadas). Se pedir login, anote e siga sem ele.
 4. Anote os números numa linha nova da tabela de `_planos/SEO-MEDICAO.md` (uma linha por dia) e compare com os dias e semanas anteriores.
 5. Indexação:
@@ -28,4 +29,4 @@ Roda todo dia às 10h pela tarefa agendada "seo-riccio-diaria" (criada com autor
 10. Feche as abas que abriu no Chrome.
 
 ## Resumo para o Dr. (no fim)
-Curto e simples (ele é advogado, não técnico): cliques e impressões dos últimos 7 dias no Google (às segundas, as últimas 4 semanas contra as 4 anteriores, no Google e no Bing); quantas páginas indexadas; o que foi pedido de indexação; o que mudou hoje (títulos, correções por lei nova, artigo novo); e, se houve mudança de código, o lembrete "Falta clicar em Publicar no Lovable para entrar no ar". Se algo falhar (Search Console sem acesso, build quebrado), diga o que falhou e não suba nada quebrado.
+Curto e simples (ele é advogado, não técnico): visitas vindas da busca nos últimos 7 dias (Lovable, "SEO & AEO"); cliques e impressões dos últimos 7 dias no Google (às segundas, as últimas 4 semanas contra as 4 anteriores, no Google e no Bing); quantas páginas indexadas; o que foi pedido de indexação; o que mudou hoje (títulos, correções por lei nova, artigo novo); e, se houve mudança de código, o lembrete "Falta clicar em Publicar no Lovable para entrar no ar". Se algo falhar (Search Console sem acesso, build quebrado), diga o que falhou e não suba nada quebrado.

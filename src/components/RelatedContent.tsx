@@ -3,6 +3,7 @@ import { Calculator, FileText, HelpCircle, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { blogArticles } from "@/data/blog-articles";
+import { redirectedPaths } from "@/data/article-redirects";
 import { programmaticFAQs } from "@/data/programmatic-faqs";
 import { calculatorInfo, CalculatorType, CalculatorInfo } from "@/data/calculator-config";
 
@@ -21,7 +22,7 @@ const RelatedContent = ({
 }: RelatedContentProps) => {
   // Get related articles
   const relatedArticles = blogArticles
-    .filter((a) => a.nicheId === nicheId && a.slug !== currentSlug)
+    .filter((a) => a.nicheId === nicheId && a.slug !== currentSlug && !redirectedPaths.has(`/artigos/${a.nicheId}/${a.slug}`))
     .slice(0, limit);
 
   // Get related calculators
@@ -77,7 +78,7 @@ const RelatedContent = ({
                 <h3 className="font-semibold">Artigos Relacionados</h3>
               </div>
               {relatedArticles.slice(0, 2).map((article) => (
-                <Link key={article.id} to={`/blog/${article.slug}`}>
+                <Link key={article.id} to={`/artigos/${article.nicheId}/${article.slug}`}>
                   <Card className="hover:shadow-md transition-shadow hover:border-primary/50">
                     <CardContent className="p-4">
                       <h4 className="font-medium text-sm line-clamp-2 mb-2">

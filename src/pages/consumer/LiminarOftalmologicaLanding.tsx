@@ -65,7 +65,7 @@ const LiminarOftalmologicaLanding = () => (
           <title>Cirurgia de Olhos Negada? Catarata, Glaucoma, Retina</title>
           <meta name="description" content="Plano negou cirurgia de catarata, glaucoma ou retina? Advogado para pedido de liminar contra o plano de saúde." />
           <meta name="keywords" content="cirurgia catarata negada, lente multifocal plano saúde, glaucoma negado, liminar olhos, advogado oftalmologia" />
-          <link rel="canonical" href="https://advogadoja.com/liminar-cirurgia-olhos" />
+          <link rel="canonical" href="https://riccioadvocacia.online/liminar-cirurgia-olhos" />
           <meta property="og:title" content="Cirurgia nos olhos negada pelo plano?" />
           <meta property="og:description" content="Plano negou cirurgia de catarata, glaucoma ou retina? Advogado para pedido de liminar contra o plano de saúde." />
           <meta property="og:type" content="website" />

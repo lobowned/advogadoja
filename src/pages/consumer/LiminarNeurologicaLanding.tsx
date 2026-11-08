@@ -65,7 +65,7 @@ const LiminarNeurologicaLanding = () => (
           <title>Neurocirurgia Negada? Coluna, Tumor, Aneurisma</title>
           <meta name="description" content="Plano negou cirurgia de coluna, tumor cerebral ou aneurisma? Advogado para pedido de liminar de urgência." />
           <meta name="keywords" content="cirurgia coluna negada, tumor cerebral plano saúde, neurocirurgia negada, liminar hérnia disco, advogado neurologia" />
-          <link rel="canonical" href="https://advogadoja.com/liminar-neurocirurgia" />
+          <link rel="canonical" href="https://riccioadvocacia.online/liminar-neurocirurgia" />
           <meta property="og:title" content="Neurocirurgia negada pelo plano?" />
           <meta property="og:description" content="Plano negou cirurgia de coluna, tumor cerebral ou aneurisma? Advogado para pedido de liminar de urgência." />
           <meta property="og:type" content="website" />

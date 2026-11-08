@@ -65,7 +65,7 @@ const LiminarCardiologicaLanding = () => (
           <title>Cirurgia Cardíaca Negada? Ponte de Safena, Stent</title>
           <meta name="description" content="Plano negou ponte de safena, stent ou angioplastia? Advogado para pedido de liminar de urgência contra o plano de saúde." />
           <meta name="keywords" content="cirurgia cardíaca negada, stent negado plano saúde, ponte safena negada, liminar cardiologia, advogado coração" />
-          <link rel="canonical" href="https://advogadoja.com/liminar-cirurgia-cardiaca" />
+          <link rel="canonical" href="https://riccioadvocacia.online/liminar-cirurgia-cardiaca" />
           <meta property="og:title" content="Cirurgia cardíaca negada pelo plano?" />
           <meta property="og:description" content="Plano negou ponte de safena, stent ou angioplastia? Advogado para pedido de liminar de urgência contra o plano de saúde." />
           <meta property="og:type" content="website" />

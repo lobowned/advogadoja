@@ -65,7 +65,7 @@ const LiminarOncologicaLanding = () => (
           <title>Tratamento de Câncer Negado? Advogado Oncológico</title>
           <meta name="description" content="Plano negou quimioterapia, radioterapia ou imunoterapia? Advogado para pedido de liminar urgente em tratamento oncológico." />
           <meta name="keywords" content="quimioterapia negada, plano saúde câncer, liminar tratamento oncológico, imunoterapia negada, advogado câncer" />
-          <link rel="canonical" href="https://advogadoja.com/liminar-tratamento-cancer" />
+          <link rel="canonical" href="https://riccioadvocacia.online/liminar-tratamento-cancer" />
           <meta property="og:title" content="Tratamento de câncer negado pelo plano?" />
           <meta property="og:description" content="Plano negou quimioterapia, radioterapia ou imunoterapia? Advogado para pedido de liminar urgente em tratamento oncológico." />
           <meta property="og:type" content="website" />

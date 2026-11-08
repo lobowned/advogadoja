@@ -12,6 +12,9 @@ Já pedidos em 07/11/2026: /advogado-gilberto-riccio e /artigos/previdenciario/a
 - [x] https://riccioadvocacia.online/artigos/familia/execucao-alimentos-prisao-penhora (pedido em 08/11)
 - [x] https://riccioadvocacia.online/artigos/previdenciario/pericia-inss (pedido em 08/11)
 - [x] https://riccioadvocacia.online/artigos/penal/lesao-corporal (pedido em 08/11)
+- [ ] https://riccioadvocacia.online/artigos/trabalhista/fim-da-escala-6x1-jornada-40-horas
+- [ ] https://riccioadvocacia.online/artigos/trabalhista/jovem-aprendiz-direitos
+- [ ] https://riccioadvocacia.online/artigos/penal/antecedentes-criminais-bahia
 - [ ] https://riccioadvocacia.online/artigos/penal/furto
 - [ ] https://riccioadvocacia.online/artigos/penal/roubo
 - [ ] https://riccioadvocacia.online/artigos/penal/prisao-preventiva
@@ -41,11 +44,7 @@ Já pedidos em 07/11/2026: /advogado-gilberto-riccio e /artigos/previdenciario/a
 - [ ] https://riccioadvocacia.online/advogado-criminal
 - [ ] https://riccioadvocacia.online/prev
 
-## Esperando publicação (não pedir antes de estarem no ar)
-- https://riccioadvocacia.online/artigos/trabalhista/fim-da-escala-6x1-jornada-40-horas (prioridade máxima)
-- https://riccioadvocacia.online/artigos/trabalhista/jovem-aprendiz-direitos
-- https://riccioadvocacia.online/artigos/penal/antecedentes-criminais-bahia
-
 ## Registro
 - 08/11/2026: pedidos feitos na conversa com o Dr., por volta das 8h40: inquérito policial, auxílio-acidente, conta de luz da Coelba, pensão atrasada, perícia do INSS e lesão corporal, todos com "Indexação solicitada". O 7º (crime de ameaça) deu "cota excedida". O Google ainda dizia "O URL não está no Google" para os 6 (a pensão atrasada aparecia como "Detectada, mas não indexada"). Relatórios de Desempenho e de Páginas da propriedade nova ainda "em processamento" (dados só até 06/11, 0 cliques e 0 impressões). "site:riccioadvocacia.online" no Google: cerca de 25 páginas. No Bing: nenhuma página, nem do domínio novo nem do antigo (o robô do Bing recebe as páginas com código 200 e o robots.txt libera tudo). Fila ampliada com 10 páginas de serviço (Salvador por área e páginas de área).
 - 08/11/2026: o Dr. publicou à tarde (conferido no ar: furto, prisão preventiva, empregada doméstica e regime de bens com o título novo; home com o conteúdo pré-montado; estelionato corrigido; sitemap com 364 endereços). IndexNow aceitou 30 endereços (novos, corrigidos, guias e índices). Os 11 artigos novos e 2 corrigidos entraram na Fila, intercalados com as páginas de serviço; a cota do Google de hoje já tinha sido usada, então os pedidos começam amanhã com a tarefa agendada.
+- 08/11/2026 (tarde): o Dr. publicou a leva da escala 6x1, do jovem aprendiz e dos antecedentes criminais (conferido no ar). IndexNow aceitou 11 endereços. Pedido de indexação do artigo da escala 6x1 deu "cota excedida" (cota do dia já usada de manhã); os 3 artigos novos foram para o topo da Fila.

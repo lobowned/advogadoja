@@ -6,7 +6,7 @@ Em 08/11 a propriedade aceitou 6 pedidos no dia antes de dar "cota excedida". De
 Já pedidos em 07/11/2026: /advogado-gilberto-riccio e /artigos/previdenciario/aposentadoria-2026-regras.
 
 ## Fila (na ordem)
-Os 10 primeiros só depois da publicação do item 1-E de `SEO-PASSOS-DO-DR.md`: antes de pedir, rode `node scripts/auditar-render.cjs` (ou abra a página no ar) e confira, depois do JavaScript, que o canonical é o próprio endereço em https://riccioadvocacia.online/ (antes apontava para advogadoja.com, riccioadvocacia.com.br ou /prev/aposentadoria-por-invalidez). Depois, rode também `npx tsx scripts/indexnow.ts` com esses 10 endereços.
+Os 10 primeiros já estão no ar (publicação 1-E de 08/11 12h25, IndexNow enviado); falta pedir no Google (cota de 08/11 já usada). Antes de pedir, rode `node scripts/auditar-render.cjs` (ou abra a página no ar) e confira, depois do JavaScript, que o canonical é o próprio endereço em https://riccioadvocacia.online/ (antes apontava para advogadoja.com, riccioadvocacia.com.br ou /prev/aposentadoria-por-invalidez). Depois, rode também `npx tsx scripts/indexnow.ts` com esses 10 endereços.
 - [ ] https://riccioadvocacia.online/prev/invalidez
 - [ ] https://riccioadvocacia.online/blog/recall-veiculos-indenizacao-consumidor
 - [ ] https://riccioadvocacia.online/blog/consorcio-desistencia-direitos-consumidor

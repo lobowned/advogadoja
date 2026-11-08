@@ -19,7 +19,7 @@ O que entrou nesta publicação:
 
 Depois de publicar, me avise: eu aviso o Bing (IndexNow) e peço indexação no Google.
 
-## 1-E. Próxima publicação (preparada em 08/11, 11h30)
+## 1-E. Publicação de 08/11, 12h25: FEITA (publicada por mim com o "Publique você" do Dr., conferida no ar em feda4ac; IndexNow 26 endereços)
 Já no GitHub; entra no ar quando você clicar em **Publicar** e depois no azul **Publicar alterações**:
 - **6 páginas de liminar** (bariátrica, câncer, cardíaca, neurocirurgia, olhos e ortopédica): diziam ao Google que o endereço oficial delas era advogadoja.com, um site que não é seu. O Google trata página assim como cópia de outro site e não a mostra na busca.
 - **/riccioadvocacia** (recebeu 9 visitas do Google em 90 dias): apontava para riccioadvocacia.com.br, domínio que nem está registrado, e o Google via a home no lugar dela.

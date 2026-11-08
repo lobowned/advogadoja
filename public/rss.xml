@@ -5,7 +5,7 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 08 Nov 2026 12:25:57 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 12:41:15 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
@@ -173,6 +173,15 @@
       <category>trabalhista</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Atestado médico no trabalho: o que deve conter, se a empresa pode exigir CID, declaração de comparecimento, acompanhamento de filho e quando o INSS paga.</description>
+    </item>
+    <item>
+      <title>Prisão Preventiva: Quando Cabe, Prazo e Como Revogar</title>
+      <link>https://riccioadvocacia.online/artigos/penal/prisao-preventiva</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/penal/prisao-preventiva</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>penal</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Prisão preventiva: requisitos dos arts. 312 e 313 do CPP, critérios da Lei 15.272/2025, revisão a cada 90 dias, prisão domiciliar, cautelares e como pedir a revogação.</description>
     </item>
     <item>
       <title>Divórcio Consensual em Cartório e Online | Passo a Passo</title>
@@ -452,15 +461,6 @@
       <category>trabalhista</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Está sofrendo assédio moral no trabalho? Saiba identificar, reunir provas e buscar indenização. Fale com um advogado.</description>
-    </item>
-    <item>
-      <title>Rescisão Indireta | Art. 483 da CLT e Falta Grave do Empregador</title>
-      <link>https://riccioadvocacia.online/artigos/trabalhista/rescisao-indireta</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/rescisao-indireta</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>trabalhista</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>A empresa atrasa salário, não deposita FGTS ou comete assédio? Entenda a rescisão indireta (art. 483 da CLT), como pedir, as provas e os direitos envolvidos.</description>
     </item>
   </channel>
 </rss>

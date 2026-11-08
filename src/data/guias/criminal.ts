@@ -39,7 +39,7 @@ export const guiaCriminal: Guia = {
       h2: "Prisão preventiva e medidas cautelares",
       paragrafos: [
         "A prisão preventiva pode ser decretada para garantia da ordem pública ou da ordem econômica, por conveniência da instrução criminal ou para assegurar a aplicação da lei penal, quando houver prova da existência do crime, indício suficiente de autoria e perigo gerado pelo estado de liberdade do investigado (art. 312 do CPP). Ela só é admitida, em regra, nos crimes dolosos com pena máxima superior a quatro anos, em caso de reincidência em crime doloso ou para garantir medidas protetivas de violência doméstica (art. 313).",
-        "A decisão que decreta a preventiva deve ser motivada em fatos novos ou contemporâneos, e não basta repetir a gravidade abstrata do crime (art. 312, § 2º, e art. 315 do CPP). Desde a Lei 13.964/2019, o juiz não pode decretar a preventiva de ofício, e a necessidade da prisão deve ser revisada a cada 90 dias (art. 316, parágrafo único).",
+        "A decisão que decreta a preventiva deve ser motivada em fatos novos ou contemporâneos, e não basta repetir a gravidade abstrata do crime (art. 312, § 2º, e art. 315 do CPP). Desde a Lei 13.964/2019, o juiz não pode decretar a preventiva de ofício, e a necessidade da prisão deve ser revisada a cada 90 dias (art. 316, parágrafo único). A Lei 15.272/2025 passou a proibir expressamente a preventiva baseada só na gravidade abstrata do crime e listou os critérios de periculosidade que o juiz deve examinar (art. 312, §§ 3º e 4º).",
         "Antes da prisão, o juiz deve considerar as medidas cautelares diversas do art. 319 do CPP, como comparecimento periódico em juízo, proibição de frequentar certos lugares, proibição de contato com determinadas pessoas, recolhimento domiciliar noturno, suspensão do exercício de função pública e monitoração eletrônica. A prisão é a última opção (art. 282, § 6º).",
         "A prisão preventiva pode ser substituída pela domiciliar em situações como pessoa maior de 80 anos, extremamente debilitada por doença grave, gestante ou mulher com filho de até 12 anos, e homem que seja o único responsável pelos cuidados de filho até 12 anos (art. 318 do CPP).",
       ],
@@ -156,6 +156,7 @@ export const guiaCriminal: Guia = {
     "/artigos/penal/roubo",
     "/artigos/penal/receptacao",
     "/artigos/penal/saida-temporaria-saidinha",
+    "/artigos/penal/prisao-preventiva",
     "/artigos/penal/calunia-difamacao-injuria",
     "/artigos/penal/crimes-transito-embriaguez-volante",
   ],

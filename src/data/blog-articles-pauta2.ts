@@ -1218,4 +1218,136 @@ export const pauta2Articles: BlogArticle[] = [
     relatedActions: ["acidente-trabalho", "demissao-sem-justa-causa"],
     updatedAt: "2026-11-08",
   },
+
+  // ============================================================
+  // 20. PRISÃO PREVENTIVA (reserva da pauta 2)
+  // Conferido em 08/11/2026 no Planalto: CPP arts. 282, 310 (com as Leis 15.272/2025 e 15.358/2026),
+  // 311 a 316, 318 a 319; Lei 15.272, de 26/11/2025 (DOU de 27/11/2025); Lei 7.960/1989 arts. 1º e 2º;
+  // Código Penal art. 42 (detração). STF, ADIs 6.581 e 6.582, sobre a revisão a cada 90 dias.
+  // ============================================================
+  {
+    id: "prisao-preventiva",
+    nicheId: "penal",
+    slug: "prisao-preventiva",
+    title: "Prisão Preventiva: Quando Cabe, Quanto Tempo Dura, Revisão a Cada 90 Dias e Como Revogar",
+    metaTitle: "Prisão Preventiva: Quando Cabe, Prazo e Como Revogar",
+    metaDescription:
+      "Prisão preventiva: requisitos dos arts. 312 e 313 do CPP, critérios da Lei 15.272/2025, revisão a cada 90 dias, prisão domiciliar, cautelares e como pedir a revogação.",
+    keywords: [
+      "prisão preventiva",
+      "prisão preventiva quanto tempo dura",
+      "prisão preventiva requisitos",
+      "revogação da prisão preventiva",
+      "prisão preventiva 90 dias",
+      "diferença entre prisão preventiva e temporária",
+      "prisão domiciliar",
+    ],
+    excerpt:
+      "A prisão preventiva é a prisão antes da condenação, decretada pelo juiz quando há prova do crime, indício de autoria e perigo concreto na liberdade da pessoa. Não tem prazo fixo, mas precisa ser revista a cada 90 dias e só cabe se medidas mais leves não bastarem.",
+    content: {
+      intro:
+        "Em resumo: a prisão preventiva é a prisão antes da condenação, que o juiz decreta a pedido do Ministério Público, do querelante, do assistente ou da polícia, quando há prova do crime, indício suficiente de autoria e perigo concreto gerado pela liberdade da pessoa (arts. 311 e 312 do CPP). Em regra, só cabe em crime doloso com pena máxima acima de 4 anos, para reincidente ou em violência doméstica (art. 313). Não tem prazo fixo, mas o juiz precisa revisá-la a cada 90 dias (art. 316). Desde a Lei 15.272/2025, a lei proíbe expressamente a preventiva baseada só na gravidade abstrata do crime e lista os critérios de periculosidade que o juiz deve examinar. Ela só é decretada quando medidas mais leves, como monitoração eletrônica, não bastam (art. 282, § 6º).",
+      whatIs:
+        "Prisão preventiva é uma medida cautelar: não é pena, não pressupõe culpa e serve para proteger a investigação, o processo ou a sociedade de um risco concreto. Pode ser decretada em qualquer fase da investigação ou do processo (art. 311) e pode nascer da conversão da prisão em flagrante na audiência de custódia (art. 310). É diferente da prisão temporária, que só existe na investigação, para crimes de uma lista, por 5 dias prorrogáveis por mais 5 (Lei 7.960/1989), ou 30 mais 30 nos crimes hediondos.",
+      whenYouHaveRight: [
+        "Decisão motivada, com fatos novos ou contemporâneos que justifiquem a prisão; a decisão genérica ou que só repete a lei não vale (arts. 312, § 2º, e 315 do CPP)",
+        "Não ter a prisão decretada só pela gravidade abstrata do crime (art. 312, § 4º, incluído pela Lei 15.272/2025)",
+        "Preferência por medidas cautelares diversas da prisão, como comparecimento em juízo, proibição de contato, recolhimento noturno e monitoração eletrônica (arts. 282, § 6º, e 319)",
+        "Revisão da necessidade da prisão a cada 90 dias (art. 316, parágrafo único)",
+        "Prisão domiciliar no lugar da preventiva para gestante, mãe ou responsável por criança de até 12 anos ou pessoa com deficiência, maior de 80 anos e pessoa extremamente debilitada, nas condições dos arts. 318 e 318-A",
+        "Ter o tempo da prisão preventiva descontado da pena, se houver condenação (detração, art. 42 do Código Penal)",
+      ],
+      documents: [
+        "Comprovante de residência fixa",
+        "Carteira de trabalho, contrato ou declaração do empregador",
+        "Certidões de nascimento de filhos que dependem do preso",
+        "Laudos médicos, se houver doença grave",
+        "Certidões de antecedentes criminais",
+        "Cópia da decisão que decretou a prisão e dos autos",
+      ],
+      deadlines:
+        "A prisão em flagrante deve ser analisada pelo juiz em até 24 horas, na audiência de custódia, por videoconferência (art. 310). Depois de decretada a preventiva, o juiz deve revisar a necessidade da prisão a cada 90 dias, em decisão fundamentada (art. 316, parágrafo único). O pedido de revogação pode ser feito a qualquer tempo, e o habeas corpus não tem prazo: cabe sempre que a prisão for ilegal ou se prolongar demais.",
+      faq: [
+        {
+          question: "Quanto tempo dura a prisão preventiva?",
+          answer:
+            "A lei não fixa prazo máximo. A prisão dura enquanto existirem os motivos que a justificaram, mas o juiz tem de revisá-la a cada 90 dias, em decisão fundamentada (art. 316, parágrafo único, do CPP). Para o STF, a falta dessa revisão não solta o preso automaticamente, mas obriga o juiz a reavaliar a prisão. Demora excessiva do processo pode ser levada ao tribunal por habeas corpus.",
+        },
+        {
+          question: "Quais são os requisitos da prisão preventiva?",
+          answer:
+            "Prova da existência do crime, indício suficiente de autoria e perigo gerado pela liberdade da pessoa, para garantir a ordem pública ou econômica, a instrução do processo ou a aplicação da lei penal (art. 312). Em regra, o crime deve ser doloso com pena máxima acima de 4 anos, ou a pessoa ser reincidente em crime doloso, ou o caso envolver violência doméstica para garantir medidas protetivas (art. 313).",
+        },
+        {
+          question: "O que mudou com a Lei 15.272/2025?",
+          answer:
+            "A lei, em vigor desde 27 de novembro de 2025, passou a listar o que o juiz deve considerar para avaliar a periculosidade (modo de agir, uso reiterado de violência, participação em organização criminosa, drogas e armas apreendidas e risco de reiteração) e proibiu a preventiva baseada só na gravidade abstrata do crime (art. 312, §§ 3º e 4º). Também listou circunstâncias que recomendam converter o flagrante em preventiva, como reiteração, violência, fuga e soltura anterior em audiência de custódia (art. 310, § 5º).",
+        },
+        {
+          question: "O juiz pode decretar a preventiva por conta própria?",
+          answer:
+            "Não. Desde o Pacote Anticrime, a preventiva depende de pedido do Ministério Público, do querelante ou do assistente, ou de representação da autoridade policial (art. 311), e o STF e o STJ aplicam essa regra também à conversão do flagrante em preventiva. O juiz pode, porém, revogar a prisão por conta própria (art. 316).",
+        },
+        {
+          question: "Como pedir a revogação da prisão preventiva?",
+          answer:
+            "Com pedido ao juiz do caso mostrando que os motivos deixaram de existir ou nunca existiram de forma concreta, e que medidas mais leves bastam: residência fixa, trabalho, filhos dependentes, ausência de antecedentes, fim da instrução. Se o juiz negar ou a decisão for genérica, cabe habeas corpus ao tribunal.",
+        },
+        {
+          question: "Quem pode ir para a prisão domiciliar?",
+          answer:
+            "O juiz pode substituir a preventiva pela domiciliar para maior de 80 anos, pessoa extremamente debilitada por doença grave, quem é imprescindível aos cuidados de criança de até 6 anos ou pessoa com deficiência, gestante, mulher com filho de até 12 anos e homem que seja o único responsável por filho dessa idade (art. 318). Para a gestante e a mãe ou responsável por criança ou pessoa com deficiência, a substituição é obrigatória se o crime não teve violência ou grave ameaça e não foi contra o próprio filho ou dependente (art. 318-A).",
+        },
+        {
+          question: "Qual a diferença entre prisão preventiva e temporária?",
+          answer:
+            "A temporária só existe durante o inquérito, para crimes de uma lista da Lei 7.960/1989, e tem prazo de 5 dias prorrogáveis por mais 5, ou 30 mais 30 nos crimes hediondos. A preventiva pode ocorrer na investigação ou no processo, para crimes que cabem no art. 313 do CPP, sem prazo fixo, com revisão a cada 90 dias.",
+        },
+        {
+          question: "O tempo de preventiva conta na pena?",
+          answer:
+            "Conta. Se houver condenação, o tempo de prisão provisória é descontado da pena (detração, art. 42 do Código Penal), o que também conta para a progressão de regime.",
+        },
+      ],
+      sections: [
+        {
+          title: "Quando a prisão preventiva cabe",
+          paragraphs: [
+            "O juiz pode decretar a preventiva quando há prova da existência do crime, indício suficiente de autoria e perigo gerado pela liberdade da pessoa, para garantir a ordem pública ou econômica, a instrução criminal ou a aplicação da lei penal (art. 312). A decisão precisa apontar fatos concretos, novos ou contemporâneos; não vale repetir a lei, usar conceitos vagos ou motivos que serviriam para qualquer caso (art. 315).",
+            "Em regra, só cabe em crime doloso com pena máxima acima de 4 anos, para quem é reincidente em crime doloso ou em violência doméstica, para garantir medidas protetivas, além de hipóteses específicas, como crimes de organização criminosa ultraviolenta e crimes sexuais contra criança ou adolescente (art. 313). Nunca cabe para antecipar a pena nem como consequência automática da investigação ou da denúncia (art. 313, § 2º), e não cabe se as provas indicam legítima defesa, estado de necessidade ou cumprimento de dever legal (art. 314).",
+          ],
+        },
+        {
+          title: "O que mudou em 2025",
+          paragraphs: [
+            "A Lei 15.272/2025 incluiu no CPP os critérios que o juiz deve considerar ao avaliar a periculosidade: o modo de agir, inclusive o uso reiterado de violência ou grave ameaça e a premeditação; a participação em organização criminosa; a natureza, a quantidade e a variedade de drogas, armas ou munições apreendidas; e o risco de reiteração, inclusive por outros inquéritos e processos (art. 312, § 3º). Ao mesmo tempo, proibiu a preventiva com base em alegações de gravidade abstrata do crime (§ 4º).",
+            "Na audiência de custódia, a lei passou a apontar circunstâncias que recomendam converter o flagrante em preventiva, como reiteração, violência ou grave ameaça, soltura anterior em audiência de custódia, crime cometido durante outro inquérito ou processo, fuga ou risco às provas (art. 310, § 5º), e exige que o juiz examine esses pontos na decisão (§ 6º). Em crimes violentos, sexuais, hediondos ou ligados a organização criminosa armada, o Ministério Público ou a polícia deve pedir a coleta de material genético do preso (art. 310-A).",
+          ],
+        },
+        {
+          title: "Medidas cautelares no lugar da prisão",
+          paragraphs: [
+            "A prisão é a última opção: só cabe quando não for possível substituí-la por outra medida, e o juiz precisa explicar por que as alternativas não bastam (art. 282, § 6º). As medidas do art. 319 incluem comparecimento periódico em juízo, proibição de frequentar lugares, proibição de contato com determinada pessoa, proibição de sair da comarca, recolhimento domiciliar à noite e nas folgas, suspensão de função pública, fiança e monitoração eletrônica.",
+            "Descumprir uma medida cautelar pode levar à substituição por outra mais rígida ou, em último caso, à preventiva (arts. 282, § 4º, e 312, § 1º). Por isso, quem é solto com condições deve cumpri-las à risca e guardar comprovantes de comparecimento.",
+          ],
+        },
+        {
+          title: "Revisão a cada 90 dias e excesso de prazo",
+          paragraphs: [
+            "Decretada a preventiva, o juiz deve revisar a necessidade da prisão a cada 90 dias, de ofício, em decisão fundamentada (art. 316, parágrafo único). O STF decidiu que, se a revisão não acontecer no prazo, a soltura não é automática, mas o juiz deve ser provocado a reavaliar a prisão.",
+            "A lei não fixa prazo máximo para a preventiva, mas o processo de réu preso deve andar com prioridade. Atrasos que não se devem à defesa podem caracterizar constrangimento ilegal por excesso de prazo, que se combate com habeas corpus.",
+          ],
+        },
+        {
+          title: "Como a defesa atua",
+          paragraphs: [
+            "Na audiência de custódia e no pedido de revogação, pesam documentos de residência, trabalho, filhos dependentes, saúde e antecedentes. A defesa mostra por que medidas mais leves são suficientes e se a decisão se apoiou em fatos concretos ou só na gravidade do crime, o que a Lei 15.272/2025 proibiu.",
+            "Se o juiz mantiver a prisão sem fundamento concreto, cabe habeas corpus ao Tribunal de Justiça e, depois, aos tribunais superiores. A família pode ajudar reunindo os documentos e acompanhando as datas de revisão.",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["habeas-corpus", "defesa-flagrante"],
+    updatedAt: "2026-11-08",
+  },
 ];

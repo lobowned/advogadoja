@@ -43,3 +43,25 @@ Reforçar em vez de criar: estabilidade da gestante (artigo de estabilidade em b
 
 Próximas reservas: antecedentes criminais na Bahia, auxílio-reclusão, empregada doméstica, jovem aprendiz, contribuição do autônomo ao INSS, protesto em cartório, golpe do WhatsApp, prisão preventiva, porte de drogas para consumo pessoal.
 
+
+# Pauta 3 (08/11/2026): revisão dos posts antigos do /blog e temas novos, intercalados
+
+Por que: os 12 posts de `src/data/blog-posts.ts` (/blog/<slug>) são de antes da revisão de conformidade e recebem visitas do Google. O do recall tinha regras que não existem ("carro reserva se o reparo demorar mais de 24 horas", "carta registrada", "perder a garantia") e foi reescrito em 08/11. Revisar = conferir cada regra no texto oficial em vigor, tirar o que não tiver base, citar a norma com link, sem promessa nem valor, e atualizar `updatedAt`. Um item por dia, o primeiro não marcado (a rotina diária faz este no lugar do artigo novo quando ele for "Revisar"). As normas ao lado são o ponto de partida da conferência, não fatos já conferidos.
+
+- [x] Revisar /blog/recall-veiculos-indenizacao-consumidor (feito em 08/11: Portaria MJSP 618/2019 e CDC)
+- [ ] Revisar /blog/consorcio-desistencia-direitos-consumidor (10 visitas em 7 dias no painel do Lovable) · Lei 11.795/2008, CDC, entendimento atual do STJ sobre devolução das parcelas
+- [ ] Novo: auxílio-reclusão · Lei 8.213/1991 art. 80, EC 103/2019, valor do ano em valores-vigentes.ts
+- [ ] Revisar /blog/problemas-pacotes-viagem-cancelamento · CDC, Lei 14.046/2020 (se ainda aplicável)
+- [ ] Novo: contribuição do autônomo e do MEI ao INSS · Lei 8.212/1991 art. 21, LC 123/2006
+- [ ] Revisar /blog/acoes-bancos-tarifas-abusivas · CDC, resoluções do Conselho Monetário Nacional sobre tarifas
+- [ ] Novo: protesto em cartório (como sair, prazos, cancelamento) · Lei 9.492/1997
+- [ ] Revisar /blog/superendividamento-negociar-dividas · CDC arts. 54-A a 54-G e 104-A a 104-C (Lei 14.181/2021)
+- [ ] Novo: golpe do WhatsApp (procurar antes: pode já existir pergunta ou artigo) · CP art. 171, § 2º-A
+- [ ] Revisar /blog/cobranca-indevida-mensalidade-escolar · Lei 9.870/1999, CDC art. 42
+- [ ] Novo: porte de drogas para consumo pessoal · Lei 11.343/2006 art. 28 e decisão do STF no RE 635.659 (Tema 506)
+- [ ] Revisar /blog/como-recorrer-multa-transito-indevida · Código de Trânsito (prazos de defesa e recurso em vigor)
+- [ ] Revisar /blog/direitos-consumidor-compras-online · CDC art. 49, Decreto 7.962/2013
+- [ ] Revisar /blog/produto-defeito-troca-devolucao · CDC arts. 18 e 26
+- [ ] Revisar /blog/garantias-compras-online-produto-errado · CDC arts. 18, 26 e 49
+- [ ] Revisar /blog/problemas-telecomunicacoes-cobranca-indevida · regulamento geral de direitos do consumidor da Anatel em vigor
+- [ ] Revisar /blog/responsabilidade-marketplace-compra-problema · CDC arts. 7º, parágrafo único, 18 e 25

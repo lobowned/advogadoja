@@ -19,6 +19,12 @@ O que entrou nesta publicação:
 
 Depois de publicar, me avise: eu aviso o Bing (IndexNow) e peço indexação no Google.
 
+## 1-B. Próxima publicação (preparada em 08/11)
+Já está no GitHub e entra no ar quando você clicar em **Publicar** e depois no botão azul **Publicar alterações**:
+- 9 artigos novos: furto, roubo e receptação (com as penas novas da Lei 15.397/2026), saída temporária (saidinha), regulamentação de visitas, regime de bens, aposentadoria da pessoa com deficiência, qualidade de segurado e carência no INSS e atestado médico no trabalho;
+- correções em páginas que já estão no ar e estavam desatualizadas ou erradas: estelionato (deixou de depender de representação em 2026), crime hediondo (percentuais de progressão de 2026 e exame criminológico), prisão em flagrante e guia criminal (audiência de custódia por videoconferência), perícia do INSS e auxílio-doença (análise só por documentos vale para atestados de até 90 dias, não 180), estabilidade no emprego (gestante, serviço militar, acidente de trajeto), férias vencidas, conta da Coelba e honorários.
+Depois de publicar, me avise: eu aviso o Bing (IndexNow) e ponho os endereços novos na fila de indexação do Google.
+
 ## 2. Domínio próprio: FEITO (riccioadvocacia.online)
 O site responde em **https://riccioadvocacia.online** e o endereço antigo (riccio-advocacia.lovable.app) redireciona para ele.
 Desde 06/11 o site inteiro declara o domínio novo como endereço oficial (canonical, mapa do site, dados para o Google).

@@ -571,9 +571,9 @@ export const blogArticles: BlogArticle[] = [
     id: 'ferias-nao-pagas',
     nicheId: 'trabalhista',
     slug: 'ferias-nao-pagas-como-receber',
-    title: 'Férias Não Pagas: Como Receber em Dobro',
-    metaTitle: 'Férias Não Pagas | Como Receber em Dobro',
-    metaDescription: 'Não recebeu férias ou recebeu em atraso? Saiba quando tem direito a receber em dobro. Advogado trabalhista explica como cobrar.',
+    title: 'Férias Vencidas e Não Pagas: Quando Recebe em Dobro e Como Cobrar',
+    metaTitle: 'Férias Vencidas e Não Pagas: Quando Recebe em Dobro',
+    metaDescription: 'Férias vencidas: prazo para a empresa conceder, quando são pagas em dobro (art. 137 da CLT), atraso no pagamento depois da ADPF 501 e férias na rescisão.',
     keywords: ['férias não pagas', 'férias vencidas', 'férias em dobro', 'período aquisitivo', 'férias atrasadas', 'direito a férias'],
     excerpt: 'Saiba quando você tem direito a receber férias em dobro e como cobrar férias não pagas ou vencidas do seu empregador.',
     content: {
@@ -581,7 +581,7 @@ export const blogArticles: BlogArticle[] = [
       whatIs: 'Férias são o período de 30 dias de descanso remunerado a que todo trabalhador tem direito após 12 meses de trabalho (período aquisitivo). A empresa tem mais 12 meses para conceder as férias (período concessivo).',
       whenYouHaveRight: [
         'Férias não concedidas dentro do período concessivo (dobra)',
-        'Férias pagas fora do prazo legal (2 dias antes)',
+        'Férias pagas depois do prazo de 2 dias antes do descanso: cabe cobrança com correção, mas não mais em dobro (STF, ADPF 501)',
         'Falta de pagamento do terço constitucional',
         'Parcelamento irregular das férias',
         'Férias "vendidas" forçadamente pela empresa',
@@ -603,7 +603,15 @@ export const blogArticles: BlogArticle[] = [
         },
         {
           question: 'Quando tenho direito a receber em dobro?',
-          answer: 'Quando as férias são concedidas fora do período concessivo (após 24 meses de contrato) ou quando são pagas com atraso.',
+          answer: 'Quando as férias são concedidas depois do período concessivo, ou seja, depois dos 12 meses seguintes ao período aquisitivo (art. 137 da CLT). Se as férias foram gozadas no prazo e só o pagamento atrasou, o STF decidiu em 2022 (ADPF 501) que não cabe a dobra.',
+        },
+        {
+          question: 'O que são férias vencidas?',
+          answer: 'São as férias de um período aquisitivo de 12 meses já completo que ainda não foram gozadas. A empresa tem os 12 meses seguintes para concedê-las (art. 134 da CLT); se passar desse prazo, paga em dobro (art. 137). O empregado também pode pedir ao juiz que marque a data das férias (art. 137, § 1º).',
+        },
+        {
+          question: 'A empresa pode dividir as férias?',
+          answer: 'Pode, se o empregado concordar: em até 3 períodos, um deles com pelo menos 14 dias corridos e os outros com pelo menos 5 dias cada (art. 134, § 1º, da CLT). As férias não podem começar nos 2 dias que antecedem feriado ou o descanso semanal (§ 3º).',
         },
         {
           question: 'O que são férias proporcionais?',
@@ -620,7 +628,7 @@ export const blogArticles: BlogArticle[] = [
       ],
     },
     relatedActions: ['verbas-rescisorias', 'rescisao-indireta'],
-    updatedAt: '2026-01-12',
+    updatedAt: '2026-11-08',
   },
   {
     "id": "desvio-funcao",
@@ -2458,12 +2466,12 @@ export const blogArticles: BlogArticle[] = [
       intro: 'A estabilidade provisória protege o trabalhador contra demissão sem justa causa em determinadas situações. Se você for demitido durante o período de estabilidade, pode pedir reintegração ou indenização.',
       whatIs: 'Estabilidade provisória é a garantia temporária de emprego que impede a demissão sem justa causa durante determinado período. Quem tem estabilidade só pode ser demitido por falta grave.',
       whenYouHaveRight: [
-        'Gestante: da confirmação até 5 meses após o parto',
-        'Acidente de trabalho: 12 meses após alta do INSS',
-        'Membro da CIPA: durante mandato + 1 ano',
-        'Dirigente sindical: durante mandato + 1 ano',
+        'Gestante: da confirmação da gravidez até 5 meses após o parto, mesmo que a empresa não soubesse (art. 10, II, b, do ADCT)',
+        'Acidente de trabalho: 12 meses após a alta, quando houve afastamento de mais de 15 dias com auxílio do INSS (art. 118 da Lei 8.213/1991)',
+        'Membro eleito da CIPA: do registro da candidatura até 1 ano depois do fim do mandato',
+        'Dirigente sindical: do registro da candidatura até 1 ano depois do fim do mandato',
         'Pré-aposentadoria: conforme convenção coletiva',
-        'Retorno de serviço militar: 30 dias',
+        'Serviço militar: o afastamento não pode levar à demissão, e o empregado tem até 30 dias da baixa para avisar que quer voltar (art. 472 da CLT)',
       ],
       documents: [
         'Carteira de trabalho',
@@ -2485,11 +2493,11 @@ export const blogArticles: BlogArticle[] = [
         },
         {
           question: 'Acidente de trajeto dá estabilidade?',
-          answer: 'Sim, o acidente de trajeto (casa-trabalho) é equiparado ao acidente de trabalho e garante 12 meses de estabilidade.',
+          answer: 'O acidente no percurso entre a casa e o trabalho é equiparado ao acidente de trabalho (art. 21, IV, d, da Lei 8.213/1991). A estabilidade de 12 meses depois da alta vale quando houve afastamento de mais de 15 dias com auxílio do INSS (Súmula 378 do TST).',
         },
         {
           question: 'Posso abrir mão da estabilidade?',
-          answer: 'A gestante pode negociar acordo, mas deve ter assistência sindical ou do Ministério Público para validade.',
+          answer: 'O pedido de demissão de quem tem estabilidade só vale com a assistência do sindicato ou, se não houver, perante a autoridade do Ministério do Trabalho ou a Justiça do Trabalho (art. 500 da CLT), e a Justiça do Trabalho aplica essa regra à gestante. Acordo para encerrar o contrato também deve ser feito com orientação, porque a estabilidade protege o salário até 5 meses após o parto.',
         },
       ],
     },

@@ -5,13 +5,22 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 08 Nov 2026 12:20:57 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 12:25:57 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
       <title>Riccio Advocacia</title>
       <link>https://riccioadvocacia.online</link>
     </image>
+    <item>
+      <title>Férias Vencidas e Não Pagas: Quando Recebe em Dobro</title>
+      <link>https://riccioadvocacia.online/artigos/trabalhista/ferias-nao-pagas-como-receber</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/ferias-nao-pagas-como-receber</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>trabalhista</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Férias vencidas: prazo para a empresa conceder, quando são pagas em dobro (art. 137 da CLT), atraso no pagamento depois da ADPF 501 e férias na rescisão.</description>
+    </item>
     <item>
       <title>Auxílio-Doença INSS | Como Pedir, Perícia, Recurso</title>
       <link>https://riccioadvocacia.online/artigos/previdenciario/auxilio-doenca</link>
@@ -31,6 +40,15 @@
       <description>Familiar preso em flagrante? Entenda os direitos do preso, a audiência de custódia, a fiança, a liberdade provisória e o que fazer nas primeiras horas.</description>
     </item>
     <item>
+      <title>Estabilidade Provisória | Gestante, CIPA, Acidentado</title>
+      <link>https://riccioadvocacia.online/artigos/trabalhista/estabilidade-provisoria-emprego</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/estabilidade-provisoria-emprego</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>trabalhista</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Saiba quem tem estabilidade no emprego: gestante, membro CIPA, acidentado, pré-aposentadoria. Não pode ser demitido!</description>
+    </item>
+    <item>
       <title>Estelionato e Golpes | Como Denunciar Fraude</title>
       <link>https://riccioadvocacia.online/artigos/penal/estelionato-golpes-fraudes</link>
       <guid isPermaLink="true">https://riccioadvocacia.online/artigos/penal/estelionato-golpes-fraudes</guid>
@@ -40,6 +58,15 @@
       <description>Caiu em golpe ou fraude? Saiba o que fazer: como denunciar, recuperar dinheiro e processar criminalmente. Pix, internet, WhatsApp.</description>
     </item>
     <item>
+      <title>Quanto Cobra Advogado Trabalhista | Honorários OAB/BA</title>
+      <link>https://riccioadvocacia.online/artigos/trabalhista/quanto-cobra-advogado-trabalhista</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/quanto-cobra-advogado-trabalhista</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>trabalhista</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Entenda como funciona a cobrança do advogado trabalhista: Tabela de Honorários OAB/BA, êxito, consulta e contrato. Veja o que considerar antes de contratar.</description>
+    </item>
+    <item>
       <title>Crime Hediondo | Lei 8.072/90 e Pacote Anticrime</title>
       <link>https://riccioadvocacia.online/artigos/penal/crime-hediondo-o-que-e</link>
       <guid isPermaLink="true">https://riccioadvocacia.online/artigos/penal/crime-hediondo-o-que-e</guid>
@@ -47,6 +74,15 @@
       <category>penal</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Lista de crimes hediondos, efeitos penais após a Lei 8.072/90 e o Pacote Anticrime: progressão, fiança, livramento, anistia e graça.</description>
+    </item>
+    <item>
+      <title>Conta da Coelba Alta ou Corte de Energia: Como Contestar</title>
+      <link>https://riccioadvocacia.online/artigos/consumidor/conta-de-luz-coelba-alta</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/consumidor/conta-de-luz-coelba-alta</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>consumidor</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Conta da Coelba alta ou ameaça de corte de energia? Como reclamar, prazos de resposta, verificação do medidor, devolução em dobro e regras do corte.</description>
     </item>
     <item>
       <title>Perícia do INSS: Como Funciona, o Que Levar e Se Negarem</title>
@@ -184,15 +220,6 @@
       <description>Auxílio-acidente do INSS: quem tem direito, valor (50% do salário de benefício), como pedir pelo Meu INSS e por que dá para continuar trabalhando.</description>
     </item>
     <item>
-      <title>Conta de Luz da Coelba Alta: Como Contestar e Pedir Revisão</title>
-      <link>https://riccioadvocacia.online/artigos/consumidor/conta-de-luz-coelba-alta</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/consumidor/conta-de-luz-coelba-alta</guid>
-      <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
-      <category>consumidor</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Conta da Coelba alta? Como reclamar, prazos de resposta, verificação do medidor, devolução em dobro e quando a luz não pode ser cortada.</description>
-    </item>
-    <item>
       <title>Inquérito Policial: O Que É, Prazos e Direitos do Investigado</title>
       <link>https://riccioadvocacia.online/artigos/penal/inquerito-policial</link>
       <guid isPermaLink="true">https://riccioadvocacia.online/artigos/penal/inquerito-policial</guid>
@@ -236,15 +263,6 @@
       <category>consumidor</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Como reclamar no Procon da Bahia (formulário on-line ou posto) e no consumidor.gov.br: prazos de resposta, documentos e quando levar o caso ao Juizado.</description>
-    </item>
-    <item>
-      <title>Quanto Cobra Advogado Trabalhista | Honorários OAB/BA</title>
-      <link>https://riccioadvocacia.online/artigos/trabalhista/quanto-cobra-advogado-trabalhista</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/quanto-cobra-advogado-trabalhista</guid>
-      <pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate>
-      <category>trabalhista</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Entenda como funciona a cobrança do advogado trabalhista: Tabela de Honorários OAB/BA, êxito, consulta e contrato. Veja o que considerar antes de contratar.</description>
     </item>
     <item>
       <title>Quanto Tempo Demora Processo Trabalhista | Prazo Realista</title>
@@ -443,24 +461,6 @@
       <category>trabalhista</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>A empresa atrasa salário, não deposita FGTS ou comete assédio? Entenda a rescisão indireta (art. 483 da CLT), como pedir, as provas e os direitos envolvidos.</description>
-    </item>
-    <item>
-      <title>Verbas Rescisórias | Calcular Rescisão Trabalhista</title>
-      <link>https://riccioadvocacia.online/artigos/trabalhista/verbas-rescisorias-o-que-voce-tem-direito</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/verbas-rescisorias-o-que-voce-tem-direito</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>trabalhista</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Saiba exatamente o que você deve receber na demissão: FGTS, multa 40%, férias, 13º. Entenda cada verba e como calcular sua rescisão.</description>
-    </item>
-    <item>
-      <title>Adicional Noturno e Trabalho Noturno | Cálculo e Hora Reduzida</title>
-      <link>https://riccioadvocacia.online/artigos/trabalhista/adicional-noturno-calcular-direitos</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/adicional-noturno-calcular-direitos</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>trabalhista</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Trabalha à noite? Entenda o adicional noturno de 20%, a hora reduzida de 52min30s, a prorrogação após as 5h, os reflexos e como cobrar valores não pagos.</description>
     </item>
   </channel>
 </rss>

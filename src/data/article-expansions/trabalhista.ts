@@ -363,7 +363,7 @@ const expansions: Record<string, ArticleExpansion> = {
         answer: "Durante o contrato, contam-se 5 anos a partir do fim do período concessivo de cada férias. Depois da saída, o prazo para entrar com ação é de 2 anos.",
       },
     ],
-    updatedAt: U,
+    updatedAt: "2026-11-08",
   },
 
   "trabalhista/adicional-insalubridade-periculosidade": {
@@ -571,7 +571,7 @@ const expansions: Record<string, ArticleExpansion> = {
       {
         title: "Erros comuns e quando procurar ajuda",
         paragraphs: [
-          "Erros frequentes: assinar pedido de demissão sem entender que perde a estabilidade, aceitar acordo informal abaixo do que é devido e demorar a comunicar a gravidez ou a doença. Pedido de demissão de empregado estável com mais de um ano deve ter assistência do sindicato (art. 500 da CLT).",
+          "Erros frequentes: assinar pedido de demissão sem entender que perde a estabilidade, aceitar acordo informal abaixo do que é devido e demorar a comunicar a gravidez ou a doença. Pedido de demissão de empregado estável só vale com assistência do sindicato ou, na falta dele, perante a autoridade do Ministério do Trabalho ou a Justiça do Trabalho (art. 500 da CLT).",
           "Procure um advogado logo após a demissão. Quanto mais cedo, maior a chance de pedir a volta ao emprego, e não apenas a indenização.",
         ],
       },
@@ -593,8 +593,16 @@ const expansions: Record<string, ArticleExpansion> = {
         question: "Quanto tempo tenho para pedir a reintegração?",
         answer: "O prazo é de 2 anos após a demissão. Mas, se você quer voltar ao emprego, o ideal é agir logo, porque depois do fim da estabilidade sobra, em regra, apenas a indenização.",
       },
+      {
+        question: "A empresa precisava saber da gravidez para eu ter estabilidade?",
+        answer: "Não. O STF decidiu que basta a gravidez ser anterior à dispensa sem justa causa (Tema 497), e o TST diz o mesmo (Súmula 244, I). Por isso, mesmo quem descobre a gravidez depois da demissão tem direito, se a concepção aconteceu antes do fim do contrato, contando o aviso prévio (art. 391-A da CLT).",
+      },
+      {
+        question: "Se a mãe falecer, a estabilidade passa para alguém?",
+        answer: "Sim. Se a mãe morrer, a garantia de emprego até 5 meses após o parto fica assegurada a quem tiver a guarda do filho (Lei Complementar 146/2014).",
+      },
     ],
-    updatedAt: U,
+    updatedAt: "2026-11-08",
   },
 
   "trabalhista/home-office-teletrabalho-direitos": {

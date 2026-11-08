@@ -103,7 +103,7 @@ export const newArticles2026: BlogArticle[] = [
           title: "Sucumbência, êxito e contratual: três coisas diferentes",
           paragraphs: [
             "O honorário contratual é o que o cliente paga ao seu próprio advogado, com base no contrato de honorários. Pode ser fixo ou por êxito. Já o honorário de sucumbência é o valor que o juiz impõe à parte perdedora para pagar ao advogado da parte vencedora. Na Justiça do Trabalho, a Lei 13.467/2017 fixa esse percentual entre 5% e 15% sobre o valor da condenação.",
-            "Na prática, em muitos contratos de êxito, o cliente autoriza o advogado a reter também a sucumbência. Isso é válido desde que esteja escrito. Se não houver essa autorização expressa, a sucumbência pertence ao advogado por força de lei, e o combinado da quota litis incide apenas sobre o valor devido ao cliente.",
+            "Os honorários de sucumbência pertencem ao advogado por força de lei (art. 23 da Lei 8.906/1994) e não se confundem com o percentual combinado no contrato, que incide sobre o valor recebido pelo cliente. O Código de Ética e Disciplina da OAB não permite que os honorários por êxito, somados aos de sucumbência, superem a vantagem obtida pelo cliente. Tudo isso deve estar claro no contrato escrito.",
           ],
         },
         {
@@ -130,7 +130,7 @@ export const newArticles2026: BlogArticle[] = [
       ],
     },
     relatedActions: ["verbas-rescisorias", "demissao-sem-justa-causa", "horas-extras"],
-    updatedAt: U,
+    updatedAt: "2026-11-08",
   },
 
   // ============================================================

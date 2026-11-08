@@ -285,13 +285,15 @@ export const pautaArticles: BlogArticle[] = [
     id: "conta-de-luz-coelba-alta",
     nicheId: "consumidor",
     slug: "conta-de-luz-coelba-alta",
-    title: "Conta de Luz da Coelba Alta ou com Erro: Como Contestar",
-    metaTitle: "Conta de Luz da Coelba Alta: Como Contestar e Pedir Revisão",
+    title: "Conta de Luz da Coelba Alta, com Erro ou Corte de Energia: Como Contestar",
+    metaTitle: "Conta da Coelba Alta ou Corte de Energia: Como Contestar",
     metaDescription:
-      "Conta da Coelba alta? Como reclamar, prazos de resposta, verificação do medidor, devolução em dobro e quando a luz não pode ser cortada.",
+      "Conta da Coelba alta ou ameaça de corte de energia? Como reclamar, prazos de resposta, verificação do medidor, devolução em dobro e regras do corte.",
     keywords: [
       "conta de luz coelba alta",
       "conta de luz coelba",
+      "coelba corte de energia",
+      "prazo para corte de energia coelba",
       "contestar conta de luz",
       "neoenergia coelba reclamação",
       "conta de luz alta o que fazer",
@@ -411,7 +413,7 @@ export const pautaArticles: BlogArticle[] = [
       ],
     },
     relatedActions: ["cobranca-indevida"],
-    updatedAt: "2026-11-07",
+    updatedAt: "2026-11-08",
   },
 
   // ============================================================

@@ -163,7 +163,9 @@ export const guiaPrevidenciario: Guia = {
     "/artigos/previdenciario/salario-maternidade",
     "/artigos/previdenciario/aposentadoria-rural",
     "/artigos/previdenciario/aposentadoria-especial-atividades-insalubres",
+    "/artigos/previdenciario/aposentadoria-pessoa-com-deficiencia",
     "/artigos/previdenciario/inss-negou-beneficio-o-que-fazer",
+    "/artigos/previdenciario/qualidade-de-segurado-carencia",
     "/artigos/previdenciario/revisao-aposentadoria",
   ],
   paginasLocais: [

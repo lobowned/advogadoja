@@ -826,4 +826,258 @@ export const pauta2Articles: BlogArticle[] = [
     relatedActions: ["divorcio-litigioso", "uniao-estavel", "divorcio-consensual"],
     updatedAt: "2026-11-08",
   },
+
+  // ============================================================
+  // 16. APOSENTADORIA DA PESSOA COM DEFICIÊNCIA
+  // Conferido em 08/11/2026: LC 142/2013 (texto no Planalto), EC 103/2019 art. 22, e a página do
+  // serviço "Solicitar Aposentadoria da Pessoa com Deficiência por Tempo de Contribuição" no
+  // gov.br (última modificação em 12/08/2026).
+  // ============================================================
+  {
+    id: "aposentadoria-pessoa-com-deficiencia",
+    nicheId: "previdenciario",
+    slug: "aposentadoria-pessoa-com-deficiencia",
+    title: "Aposentadoria da Pessoa com Deficiência: Tempo, Idade, Valor e Como Pedir",
+    metaTitle: "Aposentadoria da Pessoa com Deficiência: Regras e Valor",
+    metaDescription:
+      "Aposentadoria da pessoa com deficiência (LC 142/2013): tempo de 20 a 33 anos conforme o grau, por idade aos 55 ou 60 anos, valor, perícia e como pedir no Meu INSS.",
+    keywords: [
+      "aposentadoria pessoa com deficiência",
+      "aposentadoria pcd",
+      "aposentadoria da pessoa com deficiência por idade",
+      "aposentadoria da pessoa com deficiência por tempo de contribuição",
+      "lc 142",
+      "deficiência leve moderada grave aposentadoria",
+    ],
+    excerpt:
+      "A pessoa com deficiência se aposenta com menos tempo de contribuição: de 20 a 33 anos, conforme o grau, ou por idade aos 60 (homem) e 55 (mulher) com 15 anos de contribuição. A reforma de 2019 manteve essas regras e o cálculo próprio.",
+    content: {
+      intro:
+        "Em resumo: a Lei Complementar 142/2013 garante ao segurado do INSS com deficiência uma aposentadoria com menos tempo de contribuição, conforme o grau: deficiência grave, 25 anos (homem) ou 20 (mulher); moderada, 29 ou 24; leve, 33 ou 28. Há também a aposentadoria por idade, aos 60 anos (homem) ou 55 (mulher), com 15 anos de contribuição na condição de pessoa com deficiência. A reforma da Previdência manteve essas regras, inclusive o cálculo (art. 22 da EC 103/2019). O grau é definido pela perícia médica e pela avaliação social do INSS, e o pedido é feito pelo Meu INSS.",
+      whatIs:
+        "Para essa aposentadoria, pessoa com deficiência é quem tem impedimento de longo prazo de natureza física, mental, intelectual ou sensorial que, diante das barreiras do dia a dia, pode dificultar a participação plena na sociedade em igualdade de condições (art. 2º da LC 142/2013). Não basta ter uma doença ou um laudo: a avaliação é médica e funcional, e olha como a pessoa vive e trabalha. Não se confunde com o BPC/LOAS, que é benefício assistencial sem contribuição, nem com a aposentadoria por incapacidade, que é para quem não pode mais trabalhar.",
+      whenYouHaveRight: [
+        "Deficiência grave: 25 anos de contribuição (homem) ou 20 (mulher), sem idade mínima (art. 3º, I, da LC 142/2013)",
+        "Deficiência moderada: 29 anos (homem) ou 24 (mulher) (art. 3º, II)",
+        "Deficiência leve: 33 anos (homem) ou 28 (mulher) (art. 3º, III)",
+        "Por idade: 60 anos (homem) ou 55 (mulher), com 15 anos de contribuição e deficiência comprovada no mesmo período, qualquer que seja o grau (art. 3º, IV)",
+        "Quem ficou com deficiência depois de começar a contribuir, ou mudou de grau, tem o tempo ajustado proporcionalmente (art. 7º)",
+        "Receber outra aposentadoria do INSS, se ela for mais vantajosa (art. 9º, V)",
+      ],
+      documents: [
+        "Documento de identificação com foto e CPF",
+        "Laudos, exames e relatórios médicos que mostrem a deficiência e desde quando ela existe",
+        "Carteira de trabalho, carnês e extrato do CNIS",
+        "Documentos que mostrem as barreiras no trabalho e na rotina (adaptações, recursos de acessibilidade, declarações)",
+        "Procuração no modelo do INSS ou pública, se outra pessoa fizer o pedido",
+      ],
+      deadlines:
+        "Não há prazo para pedir: o direito existe quando os requisitos são cumpridos. Pelo gov.br, a análise leva em média 45 dias corridos, e durante ela o segurado pode ser chamado para perícia médica e avaliação social. Se o pedido for negado, o recurso administrativo é de 30 dias da ciência da decisão, e também é possível ir à Justiça.",
+      faq: [
+        {
+          question: "Quem tem direito à aposentadoria da pessoa com deficiência?",
+          answer:
+            "O segurado do INSS que, na data do pedido, é pessoa com deficiência e tem o tempo de contribuição exigido para o seu grau (grave, moderado ou leve), ou que atingiu 60 anos (homem) ou 55 (mulher) com 15 anos de contribuição na condição de pessoa com deficiência (art. 3º da LC 142/2013).",
+        },
+        {
+          question: "Precisa de idade mínima?",
+          answer:
+            "Na aposentadoria por tempo de contribuição da pessoa com deficiência, não: basta o tempo exigido para o grau. A reforma de 2019, que criou idade mínima para as aposentadorias comuns, manteve as regras da LC 142/2013 para a pessoa com deficiência (art. 22 da EC 103/2019).",
+        },
+        {
+          question: "Qual é o valor da aposentadoria da pessoa com deficiência?",
+          answer:
+            "Na aposentadoria por tempo, 100% do salário de benefício; na por idade, 70% mais 1% por grupo de 12 contribuições, até 100% (art. 8º da LC 142/2013). O fator previdenciário só é aplicado se aumentar o valor (art. 9º, I). O valor nunca fica abaixo do salário mínimo.",
+        },
+        {
+          question: "Como o INSS define se a deficiência é leve, moderada ou grave?",
+          answer:
+            "Por perícia própria, com avaliação médica e funcional feita pelo perito médico e pelo serviço social do INSS (arts. 4º e 5º da LC 142/2013). A avaliação considera as limitações e as barreiras que a pessoa enfrenta no trabalho, em casa e na vida social, não só o diagnóstico.",
+        },
+        {
+          question: "Quem ficou com deficiência depois de anos de trabalho tem direito?",
+          answer:
+            "Tem, com o tempo ajustado: os anos trabalhados sem deficiência e com deficiência são convertidos proporcionalmente, conforme o grau (art. 7º da LC 142/2013). A data de início da deficiência é fixada pela perícia, por isso laudos antigos e prontuários fazem diferença.",
+        },
+        {
+          question: "Dá para somar com tempo de atividade especial?",
+          answer:
+            "No mesmo período, não: a redução por deficiência não se acumula com a redução por atividade insalubre ou perigosa (art. 10 da LC 142/2013). Períodos diferentes podem ser analisados separadamente, e o INSS deve conceder a aposentadoria mais vantajosa (art. 9º, V).",
+        },
+        {
+          question: "Qual a diferença para o BPC/LOAS?",
+          answer:
+            "O BPC é benefício assistencial de um salário mínimo para pessoa com deficiência ou idosa de baixa renda, sem exigir contribuição, e não gera 13º nem pensão por morte. A aposentadoria da pessoa com deficiência exige contribuição, segue as regras de cálculo da LC 142/2013, tem 13º e pode gerar pensão para os dependentes.",
+        },
+        {
+          question: "Como pedir?",
+          answer:
+            "Pelo Meu INSS (site ou aplicativo), em Do que você precisa?, digitando Aposentadoria da pessoa com deficiência por tempo ou por idade, ou pelo telefone 135. Durante a análise, o segurado pode ser chamado para perícia médica e avaliação social, e podem ser pedidos documentos sobre a data de início da deficiência e o tempo de contribuição.",
+        },
+      ],
+      sections: [
+        {
+          title: "Os requisitos por grau de deficiência",
+          paragraphs: [
+            "A LC 142/2013 reduz o tempo de contribuição conforme o grau da deficiência: grave, 25 anos para o homem e 20 para a mulher; moderada, 29 e 24; leve, 33 e 28. Não há idade mínima nessa modalidade. A carência, número mínimo de contribuições mensais, é a mesma das demais aposentadorias, de 180 contribuições, e a página do serviço no gov.br informa que é preciso ter ao menos 180 meses de trabalho na condição de pessoa com deficiência.",
+            "Na aposentadoria por idade, o grau não importa: bastam 60 anos (homem) ou 55 (mulher), 15 anos de contribuição e a deficiência comprovada durante esse mesmo período. Para quem passou a ter deficiência depois de começar a contribuir, ou teve o grau alterado, os anos são convertidos proporcionalmente (art. 7º).",
+          ],
+        },
+        {
+          title: "A reforma de 2019 manteve as regras",
+          paragraphs: [
+            "A Emenda Constitucional 103/2019 criou idade mínima e mudou o cálculo das aposentadorias comuns, mas determinou que a aposentadoria da pessoa com deficiência continue a ser concedida na forma da LC 142/2013, inclusive quanto aos critérios de cálculo, até que nova lei trate do assunto (art. 22).",
+            "Por isso, na modalidade por tempo, o valor é de 100% do salário de benefício, e na modalidade por idade, de 70% mais 1% por grupo de 12 contribuições, até 100% (art. 8º). Para quem tem tempo em outra modalidade, o INSS deve comparar e conceder a mais vantajosa (art. 9º, V).",
+          ],
+        },
+        {
+          title: "Como funciona a avaliação",
+          paragraphs: [
+            "O grau é definido por perícia do INSS, com avaliação médica e funcional (arts. 4º e 5º). Na prática, o perito médico e o assistente social entrevistam o segurado e analisam como as limitações e as barreiras afetam o trabalho, a casa e a vida social. A primeira avaliação fixa também a data provável de início da deficiência, que define quanto tempo conta como tempo com deficiência (art. 6º, § 1º).",
+            "Para períodos anteriores à LC 142/2013, a lei não aceita prova só por testemunhas (art. 6º, § 2º). Laudos antigos, prontuários, exames, receitas, adaptações no posto de trabalho e registros de contratação como pessoa com deficiência são as provas que mais ajudam.",
+          ],
+        },
+        {
+          title: "Como pedir e o que fazer se negarem",
+          paragraphs: [
+            "O pedido é feito pelo Meu INSS, no site ou no aplicativo, ou pelo telefone 135. Antes, confira o CNIS: vínculos e contribuições que faltam devem ser corrigidos com carteira de trabalho, holerites e carnês. Reúna os documentos médicos em ordem cronológica, para mostrar desde quando existe a deficiência.",
+            "Se o INSS negar ou fixar um grau menor que o real, cabe recurso administrativo em 30 dias, ou ação na Justiça Federal, onde a deficiência e o grau são examinados por perito judicial. Quem já tem tempo para outra aposentadoria pode comparar as opções antes de decidir.",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["aposentadoria", "bpc-loas"],
+    updatedAt: "2026-11-08",
+  },
+
+  // ============================================================
+  // 19. QUALIDADE DE SEGURADO E CARÊNCIA
+  // Conferido em 08/11/2026 no Planalto: Lei 8.213/1991 arts. 15, 24 a 27-A e 151 (texto
+  // compilado); Lei 10.666/2003 art. 3º. STF, ADIs 2.110 e 2.111 (2024), sobre a carência do
+  // salário-maternidade da contribuinte individual e da facultativa.
+  // ============================================================
+  {
+    id: "qualidade-de-segurado-carencia",
+    nicheId: "previdenciario",
+    slug: "qualidade-de-segurado-carencia",
+    title: "Qualidade de Segurado e Carência no INSS: Período de Graça, Prazos e Como Não Perder o Direito",
+    metaTitle: "Qualidade de Segurado e Carência no INSS: Guia Simples",
+    metaDescription:
+      "Qualidade de segurado e carência no INSS: período de graça de 12, 24 ou 36 meses, carência de cada benefício, doenças que dispensam carência e como recuperar.",
+    keywords: [
+      "qualidade de segurado",
+      "carência inss",
+      "período de graça inss",
+      "perda da qualidade de segurado",
+      "qualidade de segurado inss",
+      "carência auxílio-doença",
+      "quantos meses de carência",
+    ],
+    excerpt:
+      "Qualidade de segurado é estar protegido pelo INSS; carência é o número mínimo de contribuições de cada benefício. Quem para de contribuir mantém a proteção por 12 meses, que podem chegar a 36, e alguns benefícios não exigem carência.",
+    content: {
+      intro:
+        "Em resumo: para receber quase todo benefício do INSS é preciso ter qualidade de segurado, ou seja, estar coberto pela Previdência na data do fato (doença, parto, prisão, morte), e cumprir a carência, que é o número mínimo de contribuições mensais exigido para cada benefício. Quem para de contribuir não perde a proteção na hora: há o período de graça, em regra de 12 meses, que pode chegar a 24 para quem tem mais de 120 contribuições e a 36 para o desempregado (art. 15 da Lei 8.213/1991). A carência é de 12 contribuições no auxílio por incapacidade e na aposentadoria por invalidez, 24 no auxílio-reclusão e 180 nas aposentadorias; pensão por morte e auxílio-acidente não exigem carência (arts. 25 e 26).",
+      whatIs:
+        "Qualidade de segurado é a condição de quem está coberto pelo INSS: quem trabalha com carteira assinada, quem contribui como autônomo, MEI ou facultativo e quem está recebendo benefício. Carência é outra coisa: é o número mínimo de contribuições mensais que a lei exige para cada benefício (art. 24). Os dois requisitos são analisados juntos, e é possível ter um sem o outro: alguém pode ter muitos anos de contribuição e ter perdido a qualidade de segurado, ou estar coberto sem ter ainda a carência suficiente.",
+      whenYouHaveRight: [
+        "Manter a qualidade de segurado sem contribuir, sem limite de prazo, enquanto recebe benefício, exceto o auxílio-acidente (art. 15, I)",
+        "Período de graça de 12 meses depois da última contribuição para quem deixou de trabalhar ou está suspenso ou licenciado sem salário (art. 15, II)",
+        "Mais 12 meses, até 24, para quem tem mais de 120 contribuições sem perda da qualidade de segurado (art. 15, § 1º)",
+        "Mais 12 meses para o desempregado, o que pode chegar a 36 meses (art. 15, § 2º); a Justiça aceita provar o desemprego por outros meios além do registro no órgão do Ministério do Trabalho",
+        "Contribuinte facultativo: 6 meses depois da última contribuição (art. 15, VI)",
+        "Benefícios sem carência: pensão por morte, salário-família, auxílio-acidente e auxílio por incapacidade ou aposentadoria por invalidez decorrentes de acidente de qualquer natureza, doença do trabalho ou doença grave da lista legal (art. 26)",
+      ],
+      documents: [
+        "Extrato do CNIS, no Meu INSS",
+        "Carteira de trabalho e contracheques",
+        "Guias de recolhimento pagas (GPS) ou DAS do MEI",
+        "Comprovantes de seguro-desemprego ou de cadastro no Sine, para estender o período de graça",
+        "Laudos médicos com a data de início da doença, nos pedidos por incapacidade",
+      ],
+      deadlines:
+        "A qualidade de segurado se perde no dia seguinte ao vencimento da contribuição do mês posterior ao fim do período de graça (art. 15, § 4º). Exemplo: quem saiu do emprego em março de 2025, sem os acréscimos, mantém a qualidade até março de 2026 e a perde em 16 de maio de 2026, dia seguinte ao vencimento da contribuição de abril. Contribuições de autônomo, facultativo e segurado especial pagas com atraso não contam para a carência (art. 27, II).",
+      faq: [
+        {
+          question: "O que é qualidade de segurado?",
+          answer:
+            "É estar coberto pelo INSS. Tem qualidade de segurado quem contribui (empregado, doméstico, autônomo, MEI, facultativo), quem recebe benefício e quem está no período de graça, que é o prazo em que a proteção continua mesmo sem contribuição. Durante esse prazo, o segurado conserva todos os seus direitos (art. 15, § 3º).",
+        },
+        {
+          question: "Quanto tempo continuo segurado depois que paro de contribuir?",
+          answer:
+            "Em regra, 12 meses. São 24 meses para quem tem mais de 120 contribuições sem ter perdido a qualidade, e há mais 12 meses para quem comprova desemprego, o que pode chegar a 36. O facultativo tem 6 meses, o preso tem 12 meses depois da soltura e quem recebe benefício, exceto o auxílio-acidente, mantém a qualidade enquanto receber (art. 15).",
+        },
+        {
+          question: "O que é carência e quantas contribuições preciso?",
+          answer:
+            "É o número mínimo de contribuições mensais para cada benefício: 12 para o auxílio por incapacidade temporária (auxílio-doença) e a aposentadoria por invalidez, 24 para o auxílio-reclusão e 180 para as aposentadorias por idade, por tempo e especial (art. 25). Pensão por morte, salário-família e auxílio-acidente não exigem carência (art. 26).",
+        },
+        {
+          question: "Perdi a qualidade de segurado. E agora?",
+          answer:
+            "Volte a contribuir: a proteção recomeça com a nova filiação. Para auxílio por incapacidade, aposentadoria por invalidez, salário-maternidade e auxílio-reclusão, é preciso cumprir, a partir da volta, metade da carência exigida, como 6 contribuições no auxílio por incapacidade (art. 27-A). Nas aposentadorias, as contribuições antigas continuam valendo: a perda da qualidade não é considerada na aposentadoria por tempo e especial, nem na por idade para quem já tem a carência (art. 3º da Lei 10.666/2003).",
+        },
+        {
+          question: "Doença grave dispensa carência?",
+          answer:
+            "Sim, no auxílio por incapacidade e na aposentadoria por invalidez, se a doença começou depois da filiação ao INSS. A lei cita tuberculose ativa, hanseníase, alienação mental, esclerose múltipla, hepatopatia grave, câncer, cegueira, paralisia irreversível e incapacitante, cardiopatia grave, Parkinson, espondiloartrose anquilosante, nefropatia grave, doença de Paget avançada, aids e contaminação por radiação (arts. 26, II, e 151). Acidente de qualquer natureza e doença do trabalho também dispensam carência.",
+        },
+        {
+          question: "Contribuição paga em atraso conta para a carência?",
+          answer:
+            "Para o autônomo (contribuinte individual), o facultativo e o segurado especial, a carência conta a partir da primeira contribuição paga em dia; as pagas com atraso de meses anteriores não entram na carência (art. 27, II). Para o empregado e o doméstico, conta desde a filiação, porque o recolhimento é obrigação do empregador (art. 27, I).",
+        },
+        {
+          question: "Autônoma precisa de carência para o salário-maternidade?",
+          answer:
+            "A lei previa 10 contribuições para a contribuinte individual e a facultativa (art. 25, III), mas o STF considerou inconstitucional essa exigência ao julgar as ADIs 2.110 e 2.111, em 2024. Ela precisa ter qualidade de segurada na data do parto, da adoção ou do afastamento.",
+        },
+        {
+          question: "Como sei se ainda tenho qualidade de segurado?",
+          answer:
+            "Consulte o extrato do CNIS no Meu INSS e veja a data da última contribuição. A partir dela, conte o período de graça que se aplica ao seu caso e confira se há mais de 120 contribuições sem interrupção longa e se você tem prova de desemprego. Vínculos sem data de saída ou contribuições com pendência devem ser corrigidos antes do pedido.",
+        },
+      ],
+      sections: [
+        {
+          title: "Qualidade de segurado e período de graça",
+          paragraphs: [
+            "Quem contribui está coberto pelo INSS. Quando as contribuições param, a proteção continua por um tempo, o período de graça: 12 meses para quem deixou de trabalhar ou está suspenso ou licenciado sem salário; 24 meses se já pagou mais de 120 contribuições sem perder a qualidade de segurado; e mais 12 meses se comprovar desemprego (art. 15). Quem recebe benefício, exceto o auxílio-acidente, mantém a qualidade sem limite de prazo.",
+            "O facultativo, como a dona de casa ou o estudante que contribui por conta própria, tem 6 meses. O preso mantém a qualidade até 12 meses depois de ser solto, e quem presta serviço militar, até 3 meses depois do licenciamento. Durante o período de graça, a pessoa conserva todos os direitos perante a Previdência (art. 15, § 3º).",
+          ],
+        },
+        {
+          title: "Como contar o fim do período de graça",
+          paragraphs: [
+            "A perda não acontece no último dia do período de graça. A lei dá um prazo extra: a qualidade de segurado só se perde no dia seguinte ao vencimento da contribuição do mês posterior ao fim desse período (art. 15, § 4º). Como a contribuição do autônomo vence no dia 15 do mês seguinte, a conta costuma terminar no dia 16.",
+            "Exemplo: quem saiu do emprego em março de 2025, sem direito aos acréscimos, tem período de graça até março de 2026. A contribuição de abril de 2026 venceria em 15 de maio de 2026, uma sexta-feira, e a qualidade de segurado se perde em 16 de maio de 2026. Quando o dia 15 cai em fim de semana ou feriado, o vencimento passa para o dia útil seguinte, e a conta muda junto. Uma doença que comece antes dessa data ainda é coberta, se houver carência ou se ela for dispensada.",
+          ],
+        },
+        {
+          title: "Carência de cada benefício",
+          paragraphs: [
+            "A carência é contada em contribuições mensais (art. 24): 12 para o auxílio por incapacidade temporária e a aposentadoria por invalidez; 180 para as aposentadorias por idade, por tempo e especial; 24 para o auxílio-reclusão; e 10 para o salário-maternidade da contribuinte individual, da facultativa e da segurada especial, regra que o STF derrubou em 2024 para a contribuinte individual e a facultativa (art. 25).",
+            "Não exigem carência a pensão por morte, o salário-família, o auxílio-acidente, o salário-maternidade da empregada, da doméstica e da avulsa, e o auxílio por incapacidade ou a aposentadoria por invalidez quando vêm de acidente de qualquer natureza, de doença profissional ou do trabalho ou de doença grave da lista legal (art. 26).",
+          ],
+        },
+        {
+          title: "Perdi a qualidade de segurado: como recuperar",
+          paragraphs: [
+            "Basta voltar a contribuir para recuperar a proteção. Para auxílio por incapacidade, aposentadoria por invalidez, salário-maternidade e auxílio-reclusão, a lei exige, a partir da nova filiação, metade da carência do benefício: 6 contribuições para o auxílio por incapacidade e 12 para o auxílio-reclusão (art. 27-A). Para o autônomo, conta a partir do primeiro pagamento feito em dia.",
+            "Nas aposentadorias, o tempo antigo não se perde. A perda da qualidade de segurado não é considerada na aposentadoria por tempo de contribuição e na especial, e na aposentadoria por idade também não, desde que a pessoa já tenha a carência exigida (art. 3º da Lei 10.666/2003).",
+          ],
+        },
+        {
+          title: "Antes de pedir: confira o CNIS",
+          paragraphs: [
+            "Quase toda negativa por falta de qualidade de segurado ou de carência começa com dados errados no CNIS: vínculo sem data de saída, salário faltando, contribuição de MEI paga com atraso, recolhimento abaixo do mínimo. Confira o extrato no Meu INSS e corrija as pendências com carteira de trabalho, holerites e guias pagas.",
+            "Nos pedidos por incapacidade, a data de início da doença fixada pela perícia decide se havia qualidade de segurado e carência naquele momento. Laudos e exames antigos, com data, ajudam a mostrar que a doença começou quando a pessoa ainda estava coberta.",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["auxilio-doenca", "aposentadoria", "pensao-morte"],
+    updatedAt: "2026-11-08",
+  },
 ];

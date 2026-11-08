@@ -5,7 +5,7 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 08 Nov 2026 12:09:46 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 12:14:56 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
@@ -92,6 +92,24 @@
       <category>familia</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Regime de bens no casamento e na união estável: comunhão parcial, universal, separação e participação final, maiores de 70 anos, mudança de regime e herança.</description>
+    </item>
+    <item>
+      <title>Aposentadoria da Pessoa com Deficiência: Regras e Valor</title>
+      <link>https://riccioadvocacia.online/artigos/previdenciario/aposentadoria-pessoa-com-deficiencia</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/previdenciario/aposentadoria-pessoa-com-deficiencia</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>previdenciario</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Aposentadoria da pessoa com deficiência (LC 142/2013): tempo de 20 a 33 anos conforme o grau, por idade aos 55 ou 60 anos, valor, perícia e como pedir no Meu INSS.</description>
+    </item>
+    <item>
+      <title>Qualidade de Segurado e Carência no INSS: Guia Simples</title>
+      <link>https://riccioadvocacia.online/artigos/previdenciario/qualidade-de-segurado-carencia</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/previdenciario/qualidade-de-segurado-carencia</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>previdenciario</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Qualidade de segurado e carência no INSS: período de graça de 12, 24 ou 36 meses, carência de cada benefício, doenças que dispensam carência e como recuperar.</description>
     </item>
     <item>
       <title>Divórcio Consensual em Cartório e Online | Passo a Passo</title>
@@ -443,24 +461,6 @@
       <category>trabalhista</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Faz o trabalho de outro cargo ou acumula funções sem receber a mais? Entenda desvio e acúmulo de função, equiparação salarial, provas e prazos para cobrar.</description>
-    </item>
-    <item>
-      <title>Pejotização e Vínculo Empregatício | Quando o PJ é Fraude</title>
-      <link>https://riccioadvocacia.online/artigos/trabalhista/pejotizacao-vinculo-empregaticio</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/trabalhista/pejotizacao-vinculo-empregaticio</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>trabalhista</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Trabalha como PJ ou MEI, mas cumpre horário e recebe ordens? Entenda quando a pejotização é fraude, como provar o vínculo e quais direitos podem ser cobrados.</description>
-    </item>
-    <item>
-      <title>Pensão Alimentícia | Valor, Como Pedir e Execução</title>
-      <link>https://riccioadvocacia.online/artigos/familia/pensao-alimenticia</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/familia/pensao-alimenticia</guid>
-      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
-      <category>familia</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Precisa pedir pensão alimentícia para seu filho? Saiba qual o valor correto, como fazer o pedido e o que fazer se não pagarem.</description>
     </item>
   </channel>
 </rss>

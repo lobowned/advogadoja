@@ -26,7 +26,8 @@ Já no GitHub; entra no ar quando você clicar em **Publicar** e depois no azul 
 - **Artigos relacionados das calculadoras**: os links levavam a endereços /blog/... que não existem (o visitante caía na lista do blog). Agora vão para o artigo certo, e os endereços antigos redirecionam.
 - **/prev/invalidez**: dizia ao Google que o endereço oficial era outro (/prev/aposentadoria-por-invalidez, que não tem página própria para o Google).
 - **Post do recall de veículos** (/blog/recall-veiculos-indenizacao-consumidor, recebe visitas do Google): tinha regras que não existem ("carta registrada", "carro reserva se o reparo demorar mais de 24 horas", "perder a garantia", indenização por "ter sido negativado"). Reescrito com a Portaria MJSP 618/2019 e o CDC, conferidos nos sites oficiais.
-Conferido numa cópia do site montada aqui: as 9 páginas ficaram certas. No site no ar, das 367 páginas do mapa, só essas tinham erro.
+- **Post da desistência do consórcio** (/blog/consorcio-desistencia-direitos-consumidor, o post antigo com mais visitas): dizia que "alguns tribunais determinam devolução em 30 a 60 dias", "multa geralmente de 10 a 20%" e "exclusão após 3 parcelas", sem base. Reescrito com a Lei 11.795/2008 (devolução pelo sorteio ou no fim do grupo), o CDC (art. 53) e o Tema 312 do STJ (devolução não é imediata).
+Conferido numa cópia do site montada aqui: as páginas corrigidas ficaram certas. No site no ar, das 367 páginas do mapa, só 7 tinham erro de canonical.
 
 ## 1-D. Publicação de 08/11 (artigos em destaque nas páginas de área): FEITA (conferida no ar às 11h)
 As páginas de área (/advogado-trabalhista, /advogado-criminal etc.) mostram os artigos novos em destaque, como o da escala 6x1. IndexNow avisado das 6 páginas.

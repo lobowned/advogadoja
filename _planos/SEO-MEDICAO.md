@@ -20,5 +20,6 @@ Preenchida pela rotina diária (`_planos/ROTINA-DIARIA.md`). Domínio novo desde
 |---|---|---|---|---|
 
 ## Leis conferidas no Planalto
+- 08/11/2026 (post do consórcio): Lei 11.795/2008 arts. 6º, 13, 22, 24, 30, 31 e 32 e CDC art. 53 (Planalto, sem trechos riscados); Tema 312 do STJ ("devida a restituição ... mas não de imediato, e sim em até trinta dias a contar do prazo previsto contratualmente para o encerramento do plano"), conforme a página "Jurisprudência em perguntas" do TJDFT (atualizada em 16/07/2025), que cita também o Acórdão 2000421 (2025: aguardar a contemplação) e o 1999513 (contrato anulado por vício de consentimento: devolução imediata).
 - 08/11/2026 (post do recall): CDC arts. 10, 12, 18 § 1º, 27, 32, 82, 87, 97 e 103, III (Planalto, texto compilado, sem trechos riscados); Portaria MJSP nº 618/2019 (PDF oficial no gov.br/mj, arts. 2º a 10); consulta de recall de veículos pela Senatran (gov.br/pt-br/servicos/realizar-consulta-sobre-recall-de-veiculos: Carteira Digital de Trânsito ou Portal de Serviços, placa ou chassi, gratuito).
 - Até 08/11/2026: conferidas e aplicadas no site Lei 15.397/2026, Lei 15.358/2026, Lei 15.402/2026, Lei 15.272/2025, Lei 15.265/2025, Lei 15.455/2026, Lei 15.377/2026, Lei 15.156/2025, Resolução CFM 2.381/2024 e EC 141/2026. Última conferida: EC 141/2026 (16/10/2026).

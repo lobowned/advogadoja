@@ -1757,7 +1757,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Quer desistir do consórcio? Entenda seus direitos de cancelamento, quanto você pode receber de volta e quais os prazos.",
     author: "Dr. Gilberto Riccio",
     publishedAt: "2026-01-15",
-    updatedAt: "2026-01-15",
+    updatedAt: "2026-11-08",
     readingTime: 11,
     content: `
       <p class="text-lg text-muted-foreground mb-8">O consórcio é uma forma popular de aquisição de bens no Brasil, mas imprevistos acontecem e você pode precisar <strong>desistir do grupo</strong>. Neste guia, explicamos seus direitos de cancelamento, como funciona a devolução de valores e os cuidados necessários.</p>
@@ -1770,8 +1770,8 @@ export const blogPosts: BlogPost[] = [
         <li>Não há cobrança de juros (apenas taxa de administração)</li>
         <li>Contemplação por sorteio mensal</li>
         <li>Possibilidade de dar lances para antecipar</li>
-        <li>Regulamentação pelo Banco Central</li>
-        <li>Contratos de longo prazo (geralmente 60-80 meses)</li>
+        <li>Fiscalização pelo Banco Central (<a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11795.htm" target="_blank" rel="noopener noreferrer" class="text-primary underline">Lei 11.795/2008</a>, art. 6º)</li>
+        <li>Prazo longo, definido no contrato do grupo</li>
       </ul>
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Formas de Desistência</h2>
@@ -1779,81 +1779,72 @@ export const blogPosts: BlogPost[] = [
       <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">1. Desistência Voluntária (Cancelamento)</h3>
       <p class="mb-4">Quando você decide não continuar no grupo por qualquer motivo:</p>
       <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li>Você pode solicitar o cancelamento a qualquer momento</li>
-        <li>O reembolso é feito ao final do grupo, descontadas taxas</li>
-        <li>Alternativamente, pode ser feito por sorteio mensal entre desistentes</li>
+        <li>Você pode pedir a saída a qualquer momento e passa a ser "consorciado excluído"</li>
+        <li>O excluído continua concorrendo aos sorteios do grupo: quando é sorteado, recebe a devolução (Lei 11.795/2008, arts. 22, § 2º, e 30)</li>
+        <li>Se não for sorteado, recebe no encerramento do grupo</li>
       </ul>
       
       <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">2. Exclusão por Inadimplência</h3>
       <p class="mb-4">Quando a administradora exclui você por falta de pagamento:</p>
       <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li>Após 3 parcelas em atraso, pode haver exclusão</li>
-        <li>Direito ao reembolso permanece</li>
-        <li>Mesmas regras de devolução da desistência voluntária</li>
+        <li>O contrato define quantas parcelas em atraso levam à exclusão</li>
+        <li>O direito à devolução continua (Lei 11.795/2008, art. 30)</li>
+        <li>Valem as mesmas regras de devolução da saída voluntária</li>
       </ul>
       
       <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">3. Transferência da Cota</h3>
       <p class="mb-4">Uma alternativa ao cancelamento é vender sua cota para outra pessoa:</p>
       <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li>Precisa de aprovação da administradora</li>
-        <li>Você pode recuperar parte ou todo o valor pago</li>
-        <li>É mais vantajoso que o cancelamento em muitos casos</li>
+        <li>Precisa de concordância prévia da administradora (Lei 11.795/2008, art. 13)</li>
+        <li>O valor da venda é combinado entre você e quem compra a cota</li>
+        <li>Você recebe sem esperar sorteio nem o fim do grupo</li>
       </ul>
 
       <div class="bg-primary/10 border-l-4 border-primary p-6 my-8 rounded-r-lg">
         <p class="font-semibold text-primary mb-2">📊 Lei 11.795/2008</p>
-        <p class="text-foreground">Esta lei regula os consórcios no Brasil e garante seus direitos de desistência e restituição de valores.</p>
+        <p class="text-foreground">É a lei dos consórcios. Ela garante a quem sai do grupo sem ter sido contemplado a devolução do que pagou ao fundo comum (art. 30), pelo sorteio ou no encerramento do grupo.</p>
       </div>
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Quanto Você Recebe de Volta</h2>
       
-      <p class="mb-4">Ao desistir, você tem direito ao reembolso das <strong>parcelas pagas</strong>, mas alguns descontos são legais:</p>
-      
-      <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">Descontos Permitidos</h3>
+      <p class="mb-4">A lei manda devolver o que você pagou ao <strong>fundo comum</strong> do grupo, calculado pelo percentual do bem que você já pagou, sobre o valor do bem na data da assembleia em que você for sorteado, mais os rendimentos da aplicação do dinheiro (Lei 11.795/2008, art. 30).</p>
+
+      <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">O Que Não Volta ou Pode Ser Descontado</h3>
       <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li><strong>Taxa de administração:</strong> Proporcional ao tempo de participação</li>
-        <li><strong>Multa contratual:</strong> Geralmente limitada a 10-20% do fundo comum</li>
-        <li><strong>Seguro:</strong> Se contratado, não é devolvido</li>
-        <li><strong>Fundo de reserva:</strong> Pode ser devolvido no encerramento do grupo</li>
+        <li><strong>Taxa de administração e seguro:</strong> não fazem parte do fundo comum</li>
+        <li><strong>Prejuízo que a saída causou ao grupo:</strong> pode ser descontado, além de alguma vantagem que você tenha tido (<a href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm" target="_blank" rel="noopener noreferrer" class="text-primary underline">CDC, art. 53, § 2º</a>); por isso a Justiça costuma exigir prova desse prejuízo para aceitar a multa (cláusula penal)</li>
       </ul>
-      
-      <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">Descontos Abusivos (Ilegais)</h3>
+
+      <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">O Que É Abusivo</h3>
       <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li>Retenção total dos valores pagos</li>
-        <li>Multas superiores ao permitido em contrato</li>
-        <li>Taxas não previstas ou não explicadas</li>
-        <li>Correção monetária negativa (inversa)</li>
+        <li>Ficar com tudo o que foi pago (CDC, art. 53)</li>
+        <li>Cobrar taxas que não estão no contrato</li>
+        <li>Calcular a devolução sem a atualização pelo valor do bem prevista no art. 30</li>
       </ul>
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Prazo para Receber o Dinheiro</h2>
       
-      <p class="mb-4">Esta é uma das maiores reclamações dos consumidores. A regra geral é:</p>
-      
+      <p class="mb-4">Esta é uma das maiores reclamações dos consumidores. Como funciona:</p>
+
       <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li><strong>Regra:</strong> Devolução no encerramento do grupo (pode demorar anos)</li>
-        <li><strong>Alternativa:</strong> Sorteio mensal entre os desistentes (se previsto em contrato)</li>
-        <li><strong>Exceção:</strong> Ação judicial pode antecipar a devolução</li>
+        <li><strong>Pelo sorteio:</strong> o excluído concorre aos sorteios do grupo e recebe quando é sorteado (Lei 11.795/2008, art. 22, § 2º)</li>
+        <li><strong>No fim do grupo:</strong> se não for sorteado, recebe no encerramento; até 60 dias depois da última assembleia, a administradora deve avisar quem tem valores para receber (art. 31)</li>
+        <li><strong>Não é imediata:</strong> o Superior Tribunal de Justiça firmou que a devolução ao desistente é devida, mas não de imediato (Tema 312 dos recursos repetitivos)</li>
       </ul>
-      
-      <p class="mb-4">A jurisprudência tem evoluído para considerar abusiva a demora excessiva, e alguns tribunais determinam devolução em <strong>30 a 60 dias</strong> após a desistência.</p>
+
+      <p class="mb-4">A devolução imediata só costuma ser discutida quando o próprio contrato é anulado, por exemplo quando o vendedor prometeu contemplação garantida ou data certa para receber o bem. Cada caso depende das provas.</p>
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">E Se Eu Já Fui Contemplado?</h2>
       
       <p class="mb-4">Se você foi contemplado e usou o crédito:</p>
       
       <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li>Não pode simplesmente desistir</li>
-        <li>Deve continuar pagando as parcelas até quitar o bem</li>
-        <li>Inadimplência pode resultar em busca e apreensão do bem</li>
-        <li>Pode negociar a transferência do bem e da dívida</li>
+        <li>Continua devendo as parcelas que faltam</li>
+        <li>O bem costuma ficar como garantia, e o atraso pode levar à retomada dele</li>
+        <li>Pode transferir a cota, com o bem e a dívida, se a administradora concordar (Lei 11.795/2008, art. 13)</li>
       </ul>
-      
-      <p class="mb-4">Se foi contemplado mas <strong>ainda não usou o crédito</strong>:</p>
-      <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li>Pode renunciar à contemplação</li>
-        <li>Volta à condição de cotista não contemplado</li>
-        <li>Pode então desistir normalmente</li>
-      </ul>
+
+      <p class="mb-4">Se foi contemplado mas <strong>ainda não usou o crédito</strong>, o valor fica aplicado e rendendo (art. 24, § 1º). As condições para usar ou receber esse crédito estão no contrato do grupo; no encerramento, a administradora deve avisar quem não usou o crédito de que ele está à disposição em dinheiro (art. 31).</p>
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Como Proceder para Desistir</h2>
       
@@ -1871,10 +1862,10 @@ export const blogPosts: BlogPost[] = [
           <strong>Verifique se os descontos são legais:</strong> Compare com o contrato e a lei.
         </li>
         <li>
-          <strong>Negocie:</strong> Se possível, tente transferir a cota em vez de cancelar.
+          <strong>Compare:</strong> Veja se vender a cota (com a concordância da administradora) rende mais do que esperar a devolução.
         </li>
         <li>
-          <strong>Busque a Justiça se necessário:</strong> Se houver abuso ou demora excessiva.
+          <strong>Busque orientação se necessário:</strong> Se houver desconto sem base, retenção de tudo o que foi pago ou falta de devolução depois do sorteio ou do encerramento.
         </li>
       </ol>
 
@@ -1883,27 +1874,27 @@ export const blogPosts: BlogPost[] = [
       <div class="space-y-6 mb-8">
         <div>
           <h3 class="text-lg font-semibold text-foreground mb-2">Posso desistir a qualquer momento?</h3>
-          <p class="text-muted-foreground">Sim, você pode solicitar a desistência quando quiser. O que muda são as condições de devolução.</p>
+          <p class="text-muted-foreground">Sim, você pode pedir a saída quando quiser. A devolução segue a Lei 11.795/2008: pelo sorteio ou no encerramento do grupo.</p>
         </div>
         
         <div>
           <h3 class="text-lg font-semibold text-foreground mb-2">A administradora pode reter tudo que paguei?</h3>
-          <p class="text-muted-foreground">Não! Isso é considerado abusivo. Você tem direito ao reembolso, descontadas apenas as taxas legais e proporcionais.</p>
+          <p class="text-muted-foreground">Não. O CDC (art. 53) proíbe a perda total do que foi pago, e a Lei 11.795/2008 (art. 30) garante a devolução do que você pagou ao fundo comum. Podem ser descontados a taxa de administração, o seguro e o prejuízo comprovado que a saída causou ao grupo.</p>
         </div>
         
         <div>
           <h3 class="text-lg font-semibold text-foreground mb-2">Preciso esperar o grupo acabar para receber?</h3>
-          <p class="text-muted-foreground">Em regra, sim. Mas a Justiça tem antecipado esse prazo em casos de demora excessiva.</p>
+          <p class="text-muted-foreground">Não necessariamente: você concorre aos sorteios do grupo e recebe quando for sorteado. Se não for, recebe no encerramento. O STJ firmou que a devolução não é imediata (Tema 312).</p>
         </div>
         
         <div>
           <h3 class="text-lg font-semibold text-foreground mb-2">É melhor vender a cota ou cancelar?</h3>
-          <p class="text-muted-foreground">Geralmente é mais vantajoso vender, pois você pode recuperar mais dinheiro e não precisa esperar o fim do grupo.</p>
+          <p class="text-muted-foreground">Depende. Vender a cota (com a concordância da administradora) traz o dinheiro sem esperar sorteio nem o fim do grupo, mas o preço é negociado com o comprador. Sair do grupo garante a devolução pela lei, só que mais tarde. Compare os dois valores antes de decidir.</p>
         </div>
         
         <div>
           <h3 class="text-lg font-semibold text-foreground mb-2">Fui contemplado há pouco tempo. Posso desistir?</h3>
-          <p class="text-muted-foreground">Se não usou o crédito, pode renunciar à contemplação e depois desistir. Se já usou, terá que continuar pagando.</p>
+          <p class="text-muted-foreground">Se já usou o crédito, continua devendo as parcelas, e a saída possível é transferir a cota com a dívida, se a administradora concordar. Se ainda não usou, veja no contrato as regras para o crédito não utilizado e converse com a administradora antes de decidir.</p>
         </div>
       </div>
 
@@ -1917,9 +1908,9 @@ export const blogPosts: BlogPost[] = [
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Conclusão</h2>
       
-      <p class="mb-4">Desistir de um consórcio é um direito seu, mas é importante conhecer as regras para não ser surpreendido. A devolução de valores é garantida por lei, mas os prazos e descontos variam. Analise seu contrato e, se necessário, busque orientação jurídica.</p>
-      
-      <p class="mb-4">Se a administradora estiver retendo valores indevidamente ou demorando excessivamente para devolver, não hesite em buscar a Justiça. A jurisprudência tem sido favorável aos consumidores em muitos casos.</p>
+      <p class="mb-4">Sair de um consórcio é um direito seu, e a devolução do que foi pago ao fundo comum está na lei. Ela vem pelo sorteio ou no encerramento do grupo, não na hora. Leia o contrato, peça por escrito o cálculo da devolução e confira se os descontos têm base.</p>
+
+      <p class="mb-4">Se a administradora cobrar descontos sem base, ficar com tudo o que foi pago ou não devolver depois do sorteio ou do encerramento, guarde os documentos e procure orientação. Cada caso depende do contrato e das provas.</p>
     `
   }
 ];

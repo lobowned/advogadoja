@@ -5,7 +5,7 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 08 Nov 2026 14:40:07 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 14:47:02 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
@@ -247,6 +247,15 @@
       <description>Seu carro foi convocado para recall? Conheça seus direitos, como funciona o processo e quando você pode pedir indenização por danos.</description>
     </item>
     <item>
+      <title>Como Sair do Consórcio: Seus Direitos de Desistência</title>
+      <link>https://riccioadvocacia.online/blog/consorcio-desistencia-direitos-consumidor</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/blog/consorcio-desistencia-direitos-consumidor</guid>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <category>blog</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Quer desistir do consórcio? Conheça seus direitos de cancelamento, como receber seu dinheiro de volta e os prazos envolvidos.</description>
+    </item>
+    <item>
       <title>Divórcio Consensual em Cartório e Online | Passo a Passo</title>
       <link>https://riccioadvocacia.online/artigos/familia/divorcio-consensual</link>
       <guid isPermaLink="true">https://riccioadvocacia.online/artigos/familia/divorcio-consensual</guid>
@@ -452,15 +461,6 @@
       <category>consumidor</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Desistiu ou foi excluído do consórcio? Veja o que dizem a Lei 11.795/2008 e o STJ: quando o dinheiro volta, como é calculado e o que pode ser descontado.</description>
-    </item>
-    <item>
-      <title>Parei de pagar o consórcio: e agora? | Riccio</title>
-      <link>https://riccioadvocacia.online/artigos/consumidor/parei-de-pagar-consorcio-e-agora</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/consumidor/parei-de-pagar-consorcio-e-agora</guid>
-      <pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate>
-      <category>consumidor</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Parou de pagar o consórcio? Veja o que acontece com a sua cota, por que formalizar a saída evita custo extra e como receber de volta o que pagou.</description>
     </item>
   </channel>
 </rss>

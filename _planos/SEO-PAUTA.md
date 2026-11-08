@@ -49,7 +49,7 @@ Próximas reservas: antecedentes criminais na Bahia, auxílio-reclusão, emprega
 Por que: os 12 posts de `src/data/blog-posts.ts` (/blog/<slug>) são de antes da revisão de conformidade e recebem visitas do Google. O do recall tinha regras que não existem ("carro reserva se o reparo demorar mais de 24 horas", "carta registrada", "perder a garantia") e foi reescrito em 08/11. Revisar = conferir cada regra no texto oficial em vigor, tirar o que não tiver base, citar a norma com link, sem promessa nem valor, e atualizar `updatedAt`. Um item por dia, o primeiro não marcado (a rotina diária faz este no lugar do artigo novo quando ele for "Revisar"). As normas ao lado são o ponto de partida da conferência, não fatos já conferidos.
 
 - [x] Revisar /blog/recall-veiculos-indenizacao-consumidor (feito em 08/11: Portaria MJSP 618/2019 e CDC)
-- [ ] Revisar /blog/consorcio-desistencia-direitos-consumidor (10 visitas em 7 dias no painel do Lovable) · Lei 11.795/2008, CDC, entendimento atual do STJ sobre devolução das parcelas
+- [x] Revisar /blog/consorcio-desistencia-direitos-consumidor (feito em 08/11: Lei 11.795/2008 arts. 6º, 13, 22, 24, 30 e 31, CDC art. 53 e Tema 312 do STJ; tirados "30 a 60 dias", "multa de 10-20%", "3 parcelas", "renunciar à contemplação") (10 visitas em 7 dias no painel do Lovable) · Lei 11.795/2008, CDC, entendimento atual do STJ sobre devolução das parcelas
 - [ ] Novo: auxílio-reclusão · Lei 8.213/1991 art. 80, EC 103/2019, valor do ano em valores-vigentes.ts
 - [ ] Revisar /blog/problemas-pacotes-viagem-cancelamento · CDC, Lei 14.046/2020 (se ainda aplicável)
 - [ ] Novo: contribuição do autônomo e do MEI ao INSS · Lei 8.212/1991 art. 21, LC 123/2006

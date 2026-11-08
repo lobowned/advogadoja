@@ -130,7 +130,7 @@ const expansions: Record<string, ArticleExpansion> = {
       {
         title: "Como estimar suas horas extras",
         paragraphs: [
-          "Comece pelo valor da sua hora normal. Para quem trabalha 44 horas por semana, divida o salário mensal por 220. Para 40 horas semanais, o divisor costuma ser 200. Depois, acrescente o adicional: no mínimo 50% sobre a hora normal, ou o percentual maior previsto na convenção coletiva da sua categoria.",
+          "Comece pelo valor da sua hora normal. Para quem trabalha 44 horas por semana, divida o salário mensal por 220. Para 40 horas semanais, o divisor costuma ser 200. Com a Emenda Constitucional 141/2026, o limite semanal cai para 42 horas a partir de 16/12/2026 e para 40 horas a partir de 16/12/2027, sem redução de salário, o que diminui o divisor e aumenta o valor da hora. Depois, acrescente o adicional: no mínimo 50% sobre a hora normal, ou o percentual maior previsto na convenção coletiva da sua categoria.",
           "Em seguida, some quantas horas você trabalhou além do combinado em cada mês. Multiplique pelo valor da hora extra. Esse é o valor principal. Sobre ele ainda entram os reflexos: descanso semanal remunerado, férias com um terço, 13º salário, aviso prévio e FGTS, quando as horas extras eram habituais.",
           "Esse cálculo é só uma estimativa. O valor real depende dos registros de ponto, da convenção coletiva e de verbas que integram o salário, como adicional noturno e insalubridade.",
         ],
@@ -183,7 +183,7 @@ const expansions: Record<string, ArticleExpansion> = {
         answer: "Sim, quando é habitual. A média das horas extras reflete em férias com um terço, 13º, descanso semanal remunerado, aviso prévio e FGTS.",
       },
     ],
-    updatedAt: U,
+    updatedAt: "2026-11-08",
   },
 
   "trabalhista/assedio-moral": {

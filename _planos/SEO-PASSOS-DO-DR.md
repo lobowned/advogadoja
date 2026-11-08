@@ -19,6 +19,12 @@ O que entrou nesta publicação:
 
 Depois de publicar, me avise: eu aviso o Bing (IndexNow) e peço indexação no Google.
 
+## 1-C. Próxima publicação (preparada em 08/11, à tarde)
+Já está no GitHub; entra no ar quando você clicar em **Publicar** e depois no azul **Publicar alterações**:
+- **Fim da escala 6x1**: artigo sobre a Emenda Constitucional 141/2026 (jornada de 42 horas e 2 folgas a partir de 16/12/2026, 40 horas a partir de 16/12/2027, sem redução de salário). É o assunto trabalhista mais procurado do momento;
+- jovem aprendiz e antecedentes criminais na Bahia (artigos novos);
+- jornada atualizada em 6 páginas que ainda davam 44 horas como regra definitiva (horas extras, adicional noturno, guia trabalhista e empregada doméstica).
+
 ## 1-B. Publicação de 08/11: FEITA (conferida no ar às 10h)
 Já está no GitHub e entra no ar quando você clicar em **Publicar** e depois no botão azul **Publicar alterações**:
 - 11 artigos novos: furto, roubo e receptação (com as penas novas da Lei 15.397/2026), saída temporária (saidinha), prisão preventiva (com a Lei 15.272/2025), regulamentação de visitas, regime de bens, aposentadoria da pessoa com deficiência, qualidade de segurado e carência no INSS, atestado médico no trabalho e direitos da empregada doméstica;

@@ -675,7 +675,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- ===== ARTIGOS DO BLOG (LEGACY) (108 URLs) ===== -->
+  <!-- ===== ARTIGOS DO BLOG (LEGACY) (109 URLs) ===== -->
   <url>
     <loc>https://riccioadvocacia.online/artigos/trabalhista/demissao-sem-justa-causa</loc>
     <lastmod>2026-11-05</lastmod>
@@ -690,7 +690,7 @@
   </url>
   <url>
     <loc>https://riccioadvocacia.online/artigos/trabalhista/horas-extras</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -714,7 +714,7 @@
   </url>
   <url>
     <loc>https://riccioadvocacia.online/artigos/trabalhista/adicional-noturno-calcular-direitos</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1320,6 +1320,12 @@
   </url>
   <url>
     <loc>https://riccioadvocacia.online/artigos/penal/antecedentes-criminais-bahia</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccioadvocacia.online/artigos/trabalhista/fim-da-escala-6x1-jornada-40-horas</loc>
     <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

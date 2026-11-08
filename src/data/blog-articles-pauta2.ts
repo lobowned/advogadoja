@@ -1377,12 +1377,12 @@ export const pauta2Articles: BlogArticle[] = [
       "Quem trabalha numa casa de família mais de 2 dias por semana é empregada doméstica e tem carteira assinada, jornada de 8 horas, horas extras, férias de 30 dias, 13º, FGTS e seguro-desemprego (Lei Complementar 150/2015). Até 2 dias por semana, é diarista.",
     content: {
       intro:
-        "Em resumo: é empregada doméstica quem presta serviço contínuo, pessoal e pago a uma pessoa ou família, no âmbito da casa, sem finalidade de lucro, por mais de 2 dias por semana (art. 1º da Lei Complementar 150/2015). Até 2 dias por semana, é diarista, sem vínculo de emprego. A doméstica tem carteira assinada, jornada de até 8 horas por dia e 44 por semana, horas extras com pelo menos 50%, registro de horário obrigatório, férias de 30 dias com 1/3, 13º, FGTS, depósito mensal de 3,2% para a indenização na demissão, aviso prévio proporcional e seguro-desemprego de um salário mínimo por até 3 meses. É proibido contratar menor de 18 anos para trabalho doméstico.",
+        "Em resumo: é empregada doméstica quem presta serviço contínuo, pessoal e pago a uma pessoa ou família, no âmbito da casa, sem finalidade de lucro, por mais de 2 dias por semana (art. 1º da Lei Complementar 150/2015). Até 2 dias por semana, é diarista, sem vínculo de emprego. A doméstica tem carteira assinada, jornada de até 8 horas por dia e 44 por semana (42 a partir de 16/12/2026 e 40 a partir de 16/12/2027, com 2 folgas semanais desde 16/12/2026, pela Emenda Constitucional 141/2026), horas extras com pelo menos 50%, registro de horário obrigatório, férias de 30 dias com 1/3, 13º, FGTS, depósito mensal de 3,2% para a indenização na demissão, aviso prévio proporcional e seguro-desemprego de um salário mínimo por até 3 meses. É proibido contratar menor de 18 anos para trabalho doméstico.",
       whatIs:
         "A Lei Complementar 150/2015 regula o trabalho de quem cuida da casa e da família: faxina, cozinha, cuidado de crianças, idosos ou pessoas com deficiência, e também motorista, caseiro e jardineiro da residência, desde que o serviço seja para a família, sem fins lucrativos. O empregador recolhe tudo numa guia única, o Simples Doméstico, pelo eSocial: INSS do empregado e do empregador, seguro contra acidentes, FGTS de 8% e os 3,2% da indenização (art. 34). Se a casa usa o trabalho num negócio, como pensão ou restaurante, a relação deixa de ser doméstica e segue a CLT comum.",
       whenYouHaveRight: [
         "Carteira assinada e registro de horário por meio manual, mecânico ou eletrônico (art. 12)",
-        "Jornada de até 8 horas por dia e 44 por semana, com hora extra de pelo menos 50% (art. 2º); compensação só por acordo escrito, com as primeiras 40 horas extras do mês pagas (art. 2º, §§ 4º e 5º)",
+        "Jornada de até 8 horas por dia e 44 por semana, que cai para 42 a partir de 16/12/2026 e para 40 a partir de 16/12/2027, com 2 dias de descanso semanal desde 16/12/2026 (Emenda Constitucional 141/2026), e hora extra de pelo menos 50% (art. 2º); compensação só por acordo escrito, com as primeiras 40 horas extras do mês pagas (art. 2º, §§ 4º e 5º)",
         "Intervalo de 1 a 2 horas para refeição, que pode cair para 30 minutos por acordo escrito (art. 13)",
         "Adicional noturno de pelo menos 20% entre 22h e 5h, com hora noturna de 52 minutos e 30 segundos (art. 14)",
         "Férias de 30 dias com 1/3, que o empregador pode dividir em até 2 períodos, um de pelo menos 14 dias (art. 17)",
@@ -1455,7 +1455,7 @@ export const pauta2Articles: BlogArticle[] = [
         {
           title: "Jornada, intervalos e trabalho noturno",
           paragraphs: [
-            "A jornada é de até 8 horas por dia e 44 por semana, e o registro de horário é obrigatório. A hora extra vale pelo menos 50% a mais, e a compensação depende de acordo escrito: as primeiras 40 horas extras do mês são pagas e o saldo deve ser compensado em até 1 ano (art. 2º). Por acordo escrito também se admite a escala de 12 por 36 (art. 10).",
+            "A jornada é de até 8 horas por dia e 44 por semana, e o registro de horário é obrigatório. Pela Emenda Constitucional 141/2026, que vale também para domésticos, o limite cai para 42 horas a partir de 16/12/2026 e para 40 a partir de 16/12/2027, com 2 dias de descanso semanal desde 16/12/2026 e sem redução de salário. A hora extra vale pelo menos 50% a mais, e a compensação depende de acordo escrito: as primeiras 40 horas extras do mês são pagas e o saldo deve ser compensado em até 1 ano (art. 2º). Por acordo escrito também se admite a escala de 12 por 36 (art. 10).",
             "O intervalo para refeição é de 1 a 2 horas, podendo ser reduzido a 30 minutos por acordo escrito; quem mora no emprego pode ter o intervalo dividido em dois períodos de pelo menos 1 hora (art. 13). O trabalho entre 22h e 5h tem adicional de pelo menos 20%, e a hora noturna dura 52 minutos e 30 segundos (art. 14).",
           ],
         },
@@ -1733,6 +1733,138 @@ export const pauta2Articles: BlogArticle[] = [
       ],
     },
     relatedActions: ["acompanhamento-delegacia"],
+    updatedAt: "2026-11-08",
+  },
+
+  // ============================================================
+  // 24. FIM DA ESCALA 6X1 (EC 141/2026)
+  // Conferido em 08/11/2026 no Planalto: Emenda Constitucional 141, de 16/10/2026 (DOU de
+  // 16/10/2026, edição extra), arts. 1º a 10; Constituição art. 7º, XIII, XV, XVI, § 1º a § 3º
+  // (texto compilado, com o novo XV em vigência futura); CLT arts. 58 e 67 ainda sem adaptação.
+  // Teto do INSS 2026 em src/data/valores-vigentes.ts.
+  // ============================================================
+  {
+    id: "fim-da-escala-6x1-jornada-40-horas",
+    nicheId: "trabalhista",
+    slug: "fim-da-escala-6x1-jornada-40-horas",
+    title: "Fim da Escala 6x1: Jornada de 40 Horas e Duas Folgas por Semana (Emenda Constitucional 141/2026)",
+    metaTitle: "Fim da Escala 6x1: Jornada de 40 Horas, 2 Folgas e Datas",
+    metaDescription:
+      "Fim da escala 6x1 (EC 141/2026): 42 horas e 2 folgas a partir de 16/12/2026, 40 horas a partir de 16/12/2027, sem redução de salário. Veja quem é afetado.",
+    keywords: [
+      "fim da escala 6x1",
+      "escala 6x1",
+      "pec 6x1",
+      "jornada de 40 horas",
+      "emenda constitucional 141",
+      "duas folgas semanais",
+      "redução da jornada de trabalho",
+      "jornada 42 horas",
+    ],
+    excerpt:
+      "A Emenda Constitucional 141/2026 reduz a jornada máxima para 40 horas semanais e garante 2 dias de descanso por semana, sem redução de salário. A mudança é gradual: 42 horas e 2 folgas a partir de 16/12/2026 e 40 horas a partir de 16/12/2027.",
+    content: {
+      intro:
+        "Em resumo: a Emenda Constitucional 141, promulgada em 16 de outubro de 2026, mudou o art. 7º da Constituição: a jornada normal passa a ter no máximo 8 horas por dia e 40 por semana, e o descanso semanal remunerado passa a ser de 2 dias, um deles preferencialmente no domingo, o que acaba com a escala 6x1 como regra. A mudança é gradual: a partir de 16 de dezembro de 2026, a jornada não pode passar de 42 horas semanais e valem as 2 folgas; a partir de 16 de dezembro de 2027, o limite cai para 40 horas. Nada disso pode reduzir o salário, nem os pisos da categoria. As regras valem para os contratos que já estão em vigor e também para empregadas e empregados domésticos.",
+      whatIs:
+        "A escala 6x1 é a rotina de 6 dias de trabalho para 1 de folga, permitida enquanto a Constituição previa descanso semanal de 1 dia e jornada de até 44 horas. Com a EC 141/2026, o inciso XIII do art. 7º passa a prever 8 horas diárias e 40 semanais, e o inciso XV, 2 dias de repouso semanal remunerado. Convenções e acordos coletivos podem criar um regime compensatório que garanta, na média do mês, 2 dias de descanso por semana, com pelo menos 1 folga em cada semana (art. 7º, § 2º), e uma lei poderá tratar de regimes diferenciados, respeitados os novos limites (§ 3º). A CLT ainda não foi adaptada, mas a Constituição prevalece.",
+      whenYouHaveRight: [
+        "Jornada de até 42 horas semanais a partir de 16/12/2026 e de até 40 horas a partir de 16/12/2027 (art. 6º da EC 141/2026)",
+        "2 dias de descanso semanal remunerado a partir de 16/12/2026, um deles preferencialmente no domingo (art. 7º, XV, da Constituição, e art. 10, I, da EC)",
+        "Manter o salário, sem redução nominal, proporcional ou de qualquer outra espécie, inclusive nos pisos salariais (art. 2º da EC)",
+        "Receber como hora extra, com pelo menos 50% a mais, o que passar dos novos limites (art. 7º, XVI, da Constituição)",
+        "Quem já trabalha 40 horas ou menos não tem a jornada reduzida, mas também passa a ter 2 dias de descanso (art. 4º da EC)",
+        "Empregadas e empregados domésticos têm os mesmos limites de jornada e o mesmo descanso (art. 7º, § 1º, da Constituição)",
+      ],
+      documents: [
+        "Contrato de trabalho e acordos de jornada ou de compensação",
+        "Convenção ou acordo coletivo da categoria",
+        "Registros de ponto e escalas de trabalho",
+        "Contracheques, para conferir salário e horas extras",
+      ],
+      deadlines:
+        "A emenda foi publicada em 16/10/2026. A partir de 16/12/2026 valem o limite de 42 horas semanais e os 2 dias de descanso, e perdem efeito as cláusulas de convenções e acordos coletivos incompatíveis (arts. 3º, 6º, I, e 10, I, da EC). A partir de 16/12/2027, o limite é de 40 horas semanais (art. 6º, II). Até lá, convenções e acordos coletivos podem ampliar a jornada diária para distribuir as 42 horas, respeitando as 2 folgas (art. 7º da EC). Para cobrar diferenças na Justiça do Trabalho, o prazo é de 2 anos depois do fim do contrato, alcançando os últimos 5 anos.",
+      faq: [
+        {
+          question: "A escala 6x1 acabou?",
+          answer:
+            "Como regra, sim, a partir de 16 de dezembro de 2026, quando o descanso semanal remunerado passa a ser de 2 dias (art. 7º, XV, da Constituição, com a EC 141/2026). Por convenção ou acordo coletivo, é possível um regime compensatório que garanta, na média do mês, 2 dias de descanso por semana, desde que haja pelo menos 1 folga em cada semana (art. 7º, § 2º).",
+        },
+        {
+          question: "Quando começa a jornada de 40 horas?",
+          answer:
+            "A redução é em duas etapas: a partir de 16/12/2026, a jornada não pode passar de 42 horas semanais; a partir de 16/12/2027, de 40 horas (art. 6º da EC 141/2026). O limite diário continua de 8 horas, com a possibilidade de compensação por acordo ou convenção coletiva.",
+        },
+        {
+          question: "Meu salário pode diminuir por causa da jornada menor?",
+          answer:
+            "Não. A emenda proíbe qualquer redução salarial, nominal, proporcional ou de outra espécie, e a regra vale também para os pisos salariais (art. 2º da EC 141/2026).",
+        },
+        {
+          question: "Vale para empregada doméstica?",
+          answer:
+            "Vale. A Constituição garante aos trabalhadores domésticos os direitos de jornada (inciso XIII) e de descanso semanal (inciso XV) do art. 7º (§ 1º). Assim, a doméstica também passa a ter limite de 42 horas e 2 folgas a partir de 16/12/2026, e de 40 horas a partir de 16/12/2027.",
+        },
+        {
+          question: "Quem já trabalha 40 horas ou menos ganha alguma coisa?",
+          answer:
+            "A jornada não é reduzida proporcionalmente, mas o trabalhador também passa a ter direito aos 2 dias de descanso semanal remunerado a partir de 16/12/2026 (art. 4º da EC 141/2026).",
+        },
+        {
+          question: "Pequenas empresas e MEI têm regra diferente?",
+          answer:
+            "A emenda permite que uma lei complementar crie medidas transitórias para microempreendedores individuais, microempresas e empresas de pequeno porte, condicionadas à manutenção do nível de emprego (art. 5º). Enquanto essa lei não existir, valem as regras gerais. Vale acompanhar se ela será aprovada.",
+        },
+        {
+          question: "Quem ganha salário alto tem a mesma regra?",
+          answer:
+            "Não necessariamente. Para o empregado com diploma de nível superior que ganhe pelo menos 2,5 vezes o teto do INSS (em 2026, R$ 8.475,55, o que dá R$ 21.188,88), as regras de duração e controle de jornada só se aplicam por liberalidade do empregador ou por acordo ou convenção coletiva, mas os 2 dias de descanso continuam valendo (art. 8º da EC). A exceção não vale para empregados públicos.",
+        },
+        {
+          question: "E se a empresa não cumprir as novas regras?",
+          answer:
+            "As horas que passarem dos novos limites devem ser pagas como extras, com pelo menos 50% a mais, e a falta das 2 folgas também pode ser cobrada. Converse com o RH e com o sindicato, guarde registros de ponto e escalas e, se necessário, denuncie ao Ministério do Trabalho ou entre na Justiça do Trabalho, no prazo de 2 anos depois do fim do contrato.",
+        },
+      ],
+      sections: [
+        {
+          title: "O que a Emenda 141 mudou",
+          paragraphs: [
+            "A EC 141/2026 alterou dois incisos do art. 7º da Constituição. O XIII passou a fixar a duração normal do trabalho em até 8 horas por dia e 40 por semana, mantida a possibilidade de compensação e de redução por acordo ou convenção coletiva. O XV passou a garantir 2 dias de repouso semanal remunerado, um deles preferencialmente aos domingos.",
+            "A emenda vale para os contratos em vigor e proíbe qualquer redução de salário por causa da jornada menor (art. 2º). Também criou dois parágrafos no art. 7º: o § 2º permite que convenções e acordos coletivos garantam as 2 folgas na média do mês, com pelo menos 1 por semana, inclusive para regimes diferenciados previstos em lei ou norma regulamentadora; o § 3º permite que uma lei trate de regimes diferenciados, respeitados os novos limites.",
+          ],
+        },
+        {
+          title: "As datas: 42 horas em 2026, 40 horas em 2027",
+          paragraphs: [
+            "A redução é progressiva (art. 6º da EC). Dois meses depois da publicação, ou seja, a partir de 16 de dezembro de 2026, a jornada normal não pode passar de 42 horas semanais. Um ano depois disso, a partir de 16 de dezembro de 2027, o limite passa a ser de 40 horas semanais.",
+            "Os 2 dias de descanso semanal também começam a valer em 16 de dezembro de 2026 (art. 10, I). Nessa mesma data, perdem efeito as cláusulas de convenções e acordos coletivos sobre jornada e descanso que contrariem a emenda (art. 3º). Até 16 de dezembro de 2027, convenções e acordos podem ampliar a jornada diária para distribuir as 42 horas, respeitadas as 2 folgas (art. 7º).",
+          ],
+        },
+        {
+          title: "Salário, pisos e horas extras",
+          paragraphs: [
+            "Com menos horas e mais folgas, o salário mensal continua o mesmo: a emenda proíbe redução nominal, proporcional ou de qualquer espécie, e estende a proteção aos pisos salariais. Quem trabalha por hora ou recebe por produção deve conferir como a convenção da categoria vai tratar a mudança.",
+            "O que passar dos novos limites é hora extra, com acréscimo de pelo menos 50% (art. 7º, XVI). Por isso, a partir de 16/12/2026, a 43ª hora da semana deve ser paga como extra, salvo regime de compensação válido.",
+          ],
+        },
+        {
+          title: "Quem tem regra diferente",
+          paragraphs: [
+            "Empregados com diploma de nível superior e salário de pelo menos 2,5 vezes o teto do INSS ficam fora das regras de duração e controle de jornada, salvo liberalidade do empregador ou previsão em acordo ou convenção coletiva, mas mantêm as 2 folgas (art. 8º). A exceção não se aplica a empregados públicos, e as ações sobre ela correm na Justiça do Trabalho.",
+            "Nos contratos da administração pública com mão de obra terceirizada, a redução depende de aditamento para reequilibrar o contrato, no prazo máximo de 1 ano da publicação; passado esse prazo, os empregados terceirizados ficam abrangidos mesmo sem aditamento (art. 9º). Para MEI, microempresas e empresas de pequeno porte, uma lei complementar ainda pode criar medidas transitórias (art. 5º).",
+          ],
+        },
+        {
+          title: "Empregadas e empregados domésticos",
+          paragraphs: [
+            "Os domésticos têm na Constituição os mesmos direitos de jornada e descanso semanal dos demais empregados (art. 7º, § 1º). Por isso, a partir de 16/12/2026, a doméstica que trabalha 44 horas por semana deve passar a trabalhar no máximo 42 e ter 2 dias de folga, sem redução do salário; a partir de 16/12/2027, o limite é de 40 horas.",
+            "A Lei Complementar 150/2015 ainda fala em 44 horas semanais, mas a Constituição prevalece. Empregadores domésticos devem ajustar horários e registro de ponto e, se houver acordo de compensação ou de 12x36, conferir se ele respeita os novos limites.",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["horas-extras", "demissao-sem-justa-causa"],
     updatedAt: "2026-11-08",
   },
 ];

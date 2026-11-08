@@ -54,7 +54,7 @@ export const guiaTrabalhista: Guia = {
     {
       h2: "Jornada, horas extras e intervalos",
       paragrafos: [
-        "A Constituição limita a jornada normal a oito horas diárias e 44 semanais (art. 7º, XIII) e garante que a hora extra seja paga com adicional de, no mínimo, 50% sobre a hora normal (art. 7º, XVI). Convenções coletivas da categoria podem prever percentuais maiores. As horas extras habituais refletem em férias, 13º, FGTS, aviso prévio e descanso semanal remunerado.",
+        "A Constituição limita a jornada normal a oito horas diárias e, com a Emenda Constitucional 141/2026, a 40 semanais, com redução gradual: 44 horas até 15/12/2026, 42 a partir de 16/12/2026 e 40 a partir de 16/12/2027, sem redução de salário; também a partir de 16/12/2026 o descanso semanal remunerado passa a ser de 2 dias (art. 7º, XIII e XV). A Constituição garante que a hora extra seja paga com adicional de, no mínimo, 50% sobre a hora normal (art. 7º, XVI). Convenções coletivas da categoria podem prever percentuais maiores. As horas extras habituais refletem em férias, 13º, FGTS, aviso prévio e descanso semanal remunerado.",
         "O intervalo para refeição em jornadas acima de seis horas é de no mínimo uma hora e, em regra, no máximo duas (art. 71 da CLT). Quando o intervalo é suprimido ou reduzido, o § 4º do art. 71 manda pagar o período suprimido com acréscimo de 50%, com natureza indenizatória. Entre uma jornada e outra deve haver pelo menos onze horas de descanso (art. 66).",
         "Empresas com mais de 20 empregados devem registrar a jornada (art. 74, § 2º). Se o registro não existe, é falso ou mostra horários sempre iguais, a jornada pode ser provada por testemunhas, mensagens enviadas fora do horário, registros de sistema, rastreadores e fotos. Anotar em um caderno ou no celular os horários reais de entrada e saída ajuda a reconstruir a jornada depois.",
         "O trabalho noturno urbano, entre 22h e 5h, tem adicional de pelo menos 20% e a hora noturna é reduzida, contada como 52 minutos e 30 segundos (art. 73 da CLT). Quem trabalha em home office também tem direitos; as regras do teletrabalho estão nos arts. 75-A a 75-F da CLT.",
@@ -153,6 +153,7 @@ export const guiaTrabalhista: Guia = {
     },
   ],
   artigosRelacionados: [
+    "/artigos/trabalhista/fim-da-escala-6x1-jornada-40-horas",
     "/artigos/trabalhista/demissao-sem-justa-causa",
     "/artigos/trabalhista/verbas-rescisorias-o-que-voce-tem-direito",
     "/artigos/trabalhista/rescisao-indireta",

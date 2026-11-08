@@ -42,6 +42,7 @@ Já pedidos em 07/11/2026: /advogado-gilberto-riccio e /artigos/previdenciario/a
 - [ ] https://riccioadvocacia.online/prev
 
 ## Esperando publicação (não pedir antes de estarem no ar)
+- https://riccioadvocacia.online/artigos/trabalhista/fim-da-escala-6x1-jornada-40-horas (prioridade máxima)
 - https://riccioadvocacia.online/artigos/trabalhista/jovem-aprendiz-direitos
 - https://riccioadvocacia.online/artigos/penal/antecedentes-criminais-bahia
 

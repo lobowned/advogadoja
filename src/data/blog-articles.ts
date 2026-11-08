@@ -200,10 +200,10 @@ export const blogArticles: BlogArticle[] = [
     excerpt: 'Entenda como funcionam as horas extras, quanto você deve receber por elas e como cobrar na Justiça caso não tenha sido pago corretamente.',
     content: {
       intro: 'Muitos trabalhadores realizam horas extras sem receber o pagamento correto. A CLT garante que toda hora trabalhada além da jornada normal deve ser paga com adicional mínimo de 50%.',
-      whatIs: 'Hora extra é todo o tempo de trabalho que excede a jornada normal do empregado. A jornada padrão é de 8 horas diárias e 44 horas semanais. Tudo que ultrapassar isso deve ser pago como hora extra.',
+      whatIs: 'Hora extra é todo o tempo de trabalho que excede a jornada normal do empregado. A jornada padrão é de 8 horas diárias e 44 horas semanais; pela Emenda Constitucional 141/2026, o limite semanal cai para 42 horas a partir de 16/12/2026 e para 40 horas a partir de 16/12/2027, sem redução de salário. Tudo que ultrapassar o limite deve ser pago como hora extra.',
       whenYouHaveRight: [
         'Quando trabalha além das 8 horas diárias',
-        'Quando trabalha além das 44 horas semanais',
+        'Quando trabalha além do limite semanal: 44 horas até 15/12/2026, 42 horas a partir de 16/12/2026 e 40 horas a partir de 16/12/2027 (Emenda Constitucional 141/2026)',
         'Quando trabalha em feriados ou domingos sem folga compensatória',
         'Quando não tem intervalo de almoço integral',
         'Quando é obrigado a responder mensagens fora do horário',
@@ -237,7 +237,7 @@ export const blogArticles: BlogArticle[] = [
       ],
     },
     relatedActions: ['demissao-sem-justa-causa', 'verbas-rescissorias'],
-    updatedAt: '2025-01-01',
+    updatedAt: '2026-11-08',
   },
   {
     id: 'assedio-moral',
@@ -488,7 +488,7 @@ export const blogArticles: BlogArticle[] = [
         {
           "title": "Como calcular, passo a passo",
           "paragraphs": [
-            "Primeiro, encontre o valor da hora normal: divida o salário mensal pelo divisor da jornada (220 para quem trabalha 44 horas semanais). Depois, acrescente o adicional de 20%. Exemplo ilustrativo: salário de R$ 2.200,00 dividido por 220 resulta em hora de R$ 10,00; com o adicional, a hora noturna vale R$ 12,00.",
+            "Primeiro, encontre o valor da hora normal: divida o salário mensal pelo divisor da jornada (220 para quem trabalha 44 horas semanais; com a jornada menor da Emenda Constitucional 141/2026, de 42 horas a partir de 16/12/2026 e 40 a partir de 16/12/2027, o divisor diminui, e para 40 horas costuma ser 200). Depois, acrescente o adicional de 20%. Exemplo ilustrativo: salário de R$ 2.200,00 dividido por 220 resulta em hora de R$ 10,00; com o adicional, a hora noturna vale R$ 12,00.",
             "Em seguida, converta as horas de relógio em horas noturnas. Quem trabalha das 22h às 5h cumpre 7 horas de relógio, que equivalem a 8 horas noturnas (420 minutos divididos por 52,5). No exemplo, seriam 8 horas de R$ 12,00 por noite. Os valores são apenas ilustrativos; o cálculo real depende do salário, da jornada e da norma coletiva."
           ]
         },
@@ -565,7 +565,7 @@ export const blogArticles: BlogArticle[] = [
       "horas-extras",
       "intervalo-intrajornada"
     ],
-    "updatedAt": "2026-11-05"
+    "updatedAt": "2026-11-08"
   },
   {
     id: 'ferias-nao-pagas',

@@ -5,13 +5,22 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Tue, 10 Nov 2026 01:40:39 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 16:56:47 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
       <title>Riccio Advocacia</title>
       <link>https://riccioadvocacia.online</link>
     </image>
+    <item>
+      <title>Viagem Cancelada ou Alterada? Seus Direitos pelo CDC</title>
+      <link>https://riccioadvocacia.online/blog/problemas-pacotes-viagem-cancelamento</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/blog/problemas-pacotes-viagem-cancelamento</guid>
+      <pubDate>Tue, 10 Nov 2026 12:00:00 GMT</pubDate>
+      <category>blog</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Agência cancelou ou mudou sua viagem? O que o CDC garante: cumprir o contratado, serviço equivalente, abatimento ou reembolso, multa de cancelamento e prazos.</description>
+    </item>
     <item>
       <title>Auxílio-Reclusão 2026: Quem Tem Direito e Como Pedir</title>
       <link>https://riccioadvocacia.online/artigos/previdenciario/auxilio-reclusao</link>
@@ -452,15 +461,6 @@
       <category>civil</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Fui citado por edital: o que significa, quais os requisitos (art. 256 CPC), prazo para resposta e como pedir nulidade quando mal feita.</description>
-    </item>
-    <item>
-      <title>Revisional Contrato Bancário | Juros Abusivos e SELIC</title>
-      <link>https://riccioadvocacia.online/artigos/consumidor/revisional-contrato-bancario-juros-abusivos</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/consumidor/revisional-contrato-bancario-juros-abusivos</guid>
-      <pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate>
-      <category>consumidor</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Revisão de contrato bancário: entenda a Súmula 596 STF, a média do mercado, o art. 406 do CC pós-Lei 14.905/24 e quando os juros são abusivos.</description>
     </item>
   </channel>
 </rss>

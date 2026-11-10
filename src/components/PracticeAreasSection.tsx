@@ -10,60 +10,23 @@ import {
   ArrowRight,
   MessageCircle
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { HOME_AREAS, HOME_INTRO, type HomeArea } from '@/data/home-content';
 
 const WHATSAPP_NUMBER = '5571997036269';
 
-const practiceAreas = [
-  {
-    id: 'trabalhista',
-    icon: Briefcase,
-    title: "Trabalhista",
-    description: "Demissão, horas extras, FGTS, assédio, rescisão",
-    services: ["Rescisão indireta", "Verbas rescisórias", "Danos morais", "Assédio moral"],
-    message: "Olá! Preciso de orientação sobre um problema trabalhista."
-  },
-  {
-    id: 'familia',
-    icon: Users,
-    title: "Família",
-    description: "Divórcio, pensão, guarda de filhos, inventário",
-    services: ["Divórcio", "Pensão alimentícia", "Guarda de filhos", "Inventário"],
-    message: "Olá! Preciso de orientação sobre um problema de família."
-  },
-  {
-    id: 'consumidor',
-    icon: ShoppingCart,
-    title: "Consumidor",
-    description: "Voo cancelado, cobrança indevida, plano de saúde",
-    services: ["Voo cancelado", "Nome sujo", "Plano de saúde", "Fraude bancária"],
-    message: "Olá! Preciso de orientação sobre um problema de consumidor."
-  },
-  {
-    id: 'previdenciario',
-    icon: Heart,
-    title: "Previdenciário",
-    description: "Aposentadoria, auxílio-doença, BPC/LOAS, pensão",
-    services: ["Aposentadoria", "Auxílio-doença", "BPC/LOAS", "Pensão por morte"],
-    message: "Olá! Preciso de orientação sobre um benefício do INSS."
-  },
-  {
-    id: 'civil',
-    icon: Scale,
-    title: "Civil",
-    description: "Contratos, danos morais, herança, imóveis",
-    services: ["Danos morais", "Contratos", "Herança", "Usucapião"],
-    message: "Olá! Preciso de orientação sobre um problema civil."
-  },
-  {
-    id: 'criminal',
-    icon: Shield,
-    title: "Criminal",
-    description: "Defesa criminal, habeas corpus, recursos",
-    services: ["Defesa criminal", "Habeas corpus", "Recursos", "Audiência de custódia"],
-    message: "Olá! Preciso de orientação sobre um problema criminal."
-  }
-];
+const areaIcons: Record<HomeArea['id'], typeof Briefcase> = {
+  trabalhista: Briefcase,
+  familia: Users,
+  consumidor: ShoppingCart,
+  previdenciario: Heart,
+  civil: Scale,
+  criminal: Shield,
+};
+
+// Textos e links em src/data/home-content.ts (os mesmos vão no HTML pronto da home).
+const practiceAreas = HOME_AREAS.map((area) => ({ ...area, icon: areaIcons[area.id] }));
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -104,7 +67,7 @@ const PracticeAreasSection = () => {
           <m.div variants={fadeInUp} className="text-center max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-3 mb-5">
               <span className="h-px w-8 bg-accent" />
-              <span className="text-[11px] sm:text-xs font-sans font-medium tracking-[0.25em] uppercase text-accent">
+              <span className="text-[11px] sm:text-xs font-sans font-medium tracking-[0.25em] uppercase text-[#8a6a1f]">
                 Áreas de atuação
               </span>
               <span className="h-px w-8 bg-accent" />
@@ -113,9 +76,7 @@ const PracticeAreasSection = () => {
               Um escritório, <em className="not-italic text-primary">seis áreas</em> do direito.
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground font-sans leading-relaxed">
-              Atendimento generalista, feito pelo Dr. Gilberto Riccio (OAB/BA 46.638).
-              Do trabalhista ao criminal, cada caso é conduzido com a discrição e a
-              estratégia que ele exige.
+              {HOME_INTRO}
             </p>
           </m.div>
 
@@ -136,7 +97,7 @@ const PracticeAreasSection = () => {
                     <div className="w-12 h-12 border border-accent/60 flex items-center justify-center">
                       <Icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
                     </div>
-                    <span className="text-[10px] font-sans uppercase tracking-[0.2em] text-accent">
+                    <span className="text-[10px] font-sans font-medium uppercase tracking-[0.2em] text-[#8a6a1f]">
                       Direito
                     </span>
                   </div>
@@ -158,13 +119,21 @@ const PracticeAreasSection = () => {
                     ))}
                   </ul>
 
-                  <button
-                    onClick={() => handleWhatsApp(area.message)}
-                    className="inline-flex items-center gap-2 text-sm font-sans font-medium text-primary border-b border-primary/40 pb-1 hover:border-primary transition-colors"
-                  >
-                    Falar com advogado
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
+                  <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+                    <button
+                      onClick={() => handleWhatsApp(area.message)}
+                      className="inline-flex items-center gap-2 text-sm font-sans font-medium text-primary border-b border-primary/40 pb-1 hover:border-primary transition-colors"
+                    >
+                      Falar com advogado
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
+                    <Link
+                      to={area.href}
+                      className="text-sm font-sans text-muted-foreground underline underline-offset-4 decoration-accent/60 hover:text-foreground transition-colors"
+                    >
+                      Saiba mais sobre {area.linkLabel}
+                    </Link>
+                  </div>
                 </m.article>
               );
             })}

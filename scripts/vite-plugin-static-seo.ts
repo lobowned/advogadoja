@@ -397,6 +397,7 @@ async function loadData(root: string) {
   };
   try {
     return {
+      home: await load("src/data/home-content.ts"),
       guias: await load("src/data/guias.ts"),
       local: await load("src/data/local-pages.ts"),
       niches: await load("src/data/niche-pages.ts"),
@@ -434,20 +435,44 @@ function buildPages(d: Awaited<ReturnType<typeof loadData>>, baseTitle: string, 
   const localRoutes: { key: string; nicheSlug: string; citySlug: string }[] = d.local?.LOCAL_PAGE_ROUTES || [];
   const cityNames: Record<string, string> = d.local?.LOCAL_CITY_NAMES || {};
 
-  // Home: title/description do index.html (fallback), só com navegação para os conteúdos existentes.
+  // Home: title/description do index.html (fallback). Texto, áreas, artigos em destaque e perguntas
+  // vêm de src/data/home-content.ts, os mesmos que a página React mostra (PracticeAreasSection,
+  // HomeDestaques e ObjecionsFAQ), para o Bing e os robôs de IA lerem o que o Google vê.
+  const hc = d.home || {};
+  const homeFaq: Faq[] = [...(hc.HOME_OBJECOES || []), ...(hc.HOME_FAQ || [])].map((f: any) => ({ q: f.question, a: f.answer }));
+  const articleRoutes = new Set(
+    ((d.articles?.blogArticles || []) as any[]).map((a) => `/artigos/${a.nicheId}/${a.slug}`),
+  );
+  for (const x of hc.HOME_DESTAQUES || []) {
+    if (!articleRoutes.has(x.href)) console.warn(`[static-seo] aviso: artigo em destaque da home não existe: ${x.href}`);
+  }
   pages.push({
     route: "/",
     noCanonical: true,
     title: baseTitle,
     description: baseDesc,
-    h1: baseTitle,
+    h1: hc.HOME_H1 || baseTitle,
+    intro: hc.HOME_INTRO,
+    faq: homeFaq,
+    linkGroups: [
+      {
+        h2: "Áreas de atuação",
+        links: (hc.HOME_AREAS || []).map((a: any) => ({ href: a.href, label: `${a.title} (${a.linkLabel}): ${a.description}` })),
+      },
+      {
+        h2: "Artigos em destaque",
+        links: (hc.HOME_DESTAQUES || [])
+          .filter((x: any) => articleRoutes.has(x.href))
+          .map((x: any) => ({ href: x.href, label: x.label })),
+      },
+    ],
     links: [
       { href: "/guias", label: "Guias jurídicos por área" },
       ...guias.map((g) => ({ href: `/guia/${g.slug}`, label: g.h1 })),
       ...Object.values(d.niches?.nicheData || {}).map((n: any) => ({ href: `/${n.slug}`, label: n.title })),
       ...localRoutes.map((r) => ({ href: `/advogado-${r.key}`, label: localPages[r.key]?.h1 || r.key })),
     ],
-    jsonLd: [{ "@context": "https://schema.org", ...org }],
+    jsonLd: [{ "@context": "https://schema.org", ...org }, ...(homeFaq.length ? [faqLd(homeFaq)] : [])],
   });
 
   // /guias

@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import { AlertCircle, Shield, FileQuestion, HelpCircle, Briefcase, Heart, Building, Scale, ShoppingCart } from "lucide-react";
 import { faqsByArea, defaultFAQs, type AreaFAQ } from "@/data/faq-by-area";
+import { HOME_FAQ, HOME_OBJECOES } from "@/data/home-content";
 
 interface ObjecionsFAQProps {
   detectedArea?: string | null;
@@ -31,59 +32,17 @@ const areaLabels: Record<string, string> = {
 
 const ObjecionsFAQ = ({ detectedArea }: ObjecionsFAQProps) => {
   const [searchParams] = useSearchParams();
-  const [currentArea, setCurrentArea] = useState<string | null>('consumidor');
-  
+  // Na home não há área: as perguntas são gerais. Com ?area= (ou detectedArea), entra o bloco da área.
+  const [currentArea, setCurrentArea] = useState<string | null>(null);
+
   useEffect(() => {
-    // Priority: prop > query param > default to consumidor
     const areaFromParam = searchParams.get('area');
-    setCurrentArea(detectedArea || areaFromParam || 'consumidor');
+    setCurrentArea(detectedArea || areaFromParam || null);
   }, [detectedArea, searchParams]);
 
-  const objections = [
-    {
-      question: "Será que tenho direito mesmo?",
-      answer: "O Código de Defesa do Consumidor (CDC) protege você em diversas situações: cobranças indevidas, produtos defeituosos, serviços não prestados, negativação indevida e muito mais. Se há direito no seu caso, depende dos fatos e das provas que você tem."
-    },
-    {
-      question: "Processar empresa grande dá certo?",
-      answer: "Bancos, operadoras, companhias aéreas e planos de saúde respondem pelos danos que causam ao consumidor como qualquer outro fornecedor. O resultado depende das provas e do caso concreto, e ninguém pode garantir o desfecho de um processo."
-    },
-    {
-      question: "Quanto tempo demora para resolver?",
-      answer: "Depende do caso. Em urgência, como cirurgia negada pelo plano de saúde, o pedido pode ser levado ao plantão judiciário, inclusive à noite e em fins de semana; quem decide o prazo é o juiz. Processos no Juizado Especial costumam levar alguns meses, e ações comuns, mais tempo. O caminho é avaliado caso a caso."
-    },
-    {
-      question: "Tenho que pagar algo para começar?",
-      answer: "Os honorários são combinados por escrito antes de qualquer ação e dependem do tipo de caso, conforme a tabela da OAB/BA. O primeiro passo é contar o que aconteceu pelo WhatsApp, para entender o caso e os documentos necessários."
-    }
-  ];
-
-  const generalFaqs = [
-    {
-      question: "Como funciona o atendimento?",
-      answer: "O atendimento começa com uma análise completa do seu caso, seguida pela elaboração de uma estratégia personalizada. Você terá acompanhamento contínuo durante todo o processo, com atualizações regulares e acesso direto ao advogado responsável."
-    },
-    {
-      question: "Quanto tempo demora para resolver meu caso?",
-      answer: "O prazo varia conforme a complexidade e natureza do caso. Durante a análise inicial, você receberá uma estimativa realista baseada em casos similares e na legislação vigente. O compromisso é com a celeridade possível sem comprometer a qualidade da defesa."
-    },
-    {
-      question: "Posso acompanhar o andamento do meu processo?",
-      answer: "Sim, você terá acesso a todas as atualizações do seu processo e poderá entrar em contato sempre que tiver dúvidas. A transparência e comunicação contínua são pilares fundamentais do atendimento."
-    },
-    {
-      question: "Qual é o investimento necessário?",
-      answer: "Os honorários são definidos após a análise do caso, considerando a complexidade, tempo estimado e estratégias necessárias. Você receberá uma proposta clara e transparente antes de qualquer compromisso, com todas as condições especificadas."
-    },
-    {
-      question: "O escritório atua em todo o Brasil?",
-      answer: "O escritório é digital, sem endereço físico, e o foco é a Bahia, onde o Dr. Gilberto Riccio tem inscrição (OAB/BA 46.638). O atendimento é online, pelo WhatsApp; casos de outros estados são avaliados um a um."
-    },
-    {
-      question: "Posso fazer uma consulta antes de decidir?",
-      answer: "Sim, a primeira consulta serve para entender seu caso, esclarecer dúvidas e avaliar as melhores estratégias. É uma oportunidade para você conhecer o método de trabalho e sentir confiança na condução do seu caso."
-    }
-  ];
+  // Textos em src/data/home-content.ts (os mesmos vão no HTML pronto e no FAQPage da home).
+  const objections = HOME_OBJECOES;
+  const generalFaqs = HOME_FAQ;
 
   // Get area-specific FAQs
   const areaFaqs = currentArea && faqsByArea[currentArea] ? faqsByArea[currentArea] : [];
@@ -97,7 +56,11 @@ const ObjecionsFAQ = ({ detectedArea }: ObjecionsFAQProps) => {
           {/* H2 Principal da Seção FAQ */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Perguntas Frequentes sobre <span className="text-primary">Direito do Consumidor</span>
+              {areaLabel ? (
+                <>Perguntas Frequentes sobre <span className="text-primary">{areaLabel === 'Consumidor' ? 'Direito do Consumidor' : areaLabel}</span></>
+              ) : (
+                <>Perguntas <span className="text-primary">frequentes</span></>
+              )}
             </h2>
           </div>
 

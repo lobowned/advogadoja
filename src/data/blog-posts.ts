@@ -1461,133 +1461,140 @@ export const blogPosts: BlogPost[] = [
   {
     id: "problemas-pacotes-viagem-cancelamento",
     slug: "problemas-pacotes-viagem-cancelamento",
+    // Revisto em 10/11/2026 no Planalto (texto em vigor): CDC arts. 6º, III e VI, 7º, parágrafo único,
+    // 14, 20, 25, § 1º, 26, 27, 30, 31, 34, 35, 37, § 1º, 49 e 51, II e IV; Lei 11.771/2008, art. 27
+    // (com a Lei 14.978/2024; § 8º: multa por alteração ou cancelamento limitada ao valor total dos
+    // serviços); Lei 9.099/1995, arts. 3º, I, e 9º; Lei 14.046/2020, art. 2º (com a Lei 14.390/2022).
+    // Saíram: "upgrade", indenização por dano moral dada como certa, "Juizado até 20 salários" (são 40;
+    // até 20 sem advogado), "jurisprudência muito favorável" e nomes de empresas nas palavras-chave.
     title: "Problemas com Pacotes de Viagens e Turismo: Direitos do Consumidor Diante de Cancelamentos",
     metaTitle: "Viagem Cancelada ou Alterada? Seus Direitos pelo CDC",
-    metaDescription: "Agência cancelou sua viagem ou fez mudanças sem avisar? Conheça seus direitos de reembolso, remarcação e indenização por danos.",
-    keywords: ["viagem cancelada", "pacote turismo problema", "agência cancelou viagem", "reembolso viagem", "direito consumidor turismo", "CVC problema", "decolar reclamação"],
+    metaDescription: "Agência cancelou ou mudou sua viagem? O que o CDC garante: cumprir o contratado, serviço equivalente, abatimento ou reembolso, multa de cancelamento e prazos.",
+    keywords: ["viagem cancelada", "pacote de viagem cancelado", "agência cancelou viagem", "reembolso viagem", "multa cancelamento pacote de viagem", "desistir de pacote de viagem", "direito do consumidor turismo"],
     category: "Consumidor",
-    excerpt: "Sua viagem foi cancelada ou alterada sem aviso? Saiba quais são seus direitos e como buscar reembolso ou indenização.",
+    excerpt: "Sua viagem foi cancelada ou mudou sem aviso? Veja o que o Código de Defesa do Consumidor garante em cada situação, a multa de cancelamento e os prazos para reclamar.",
     author: "Dr. Gilberto Riccio",
     publishedAt: "2026-01-15",
-    updatedAt: "2026-01-15",
-    readingTime: 11,
+    updatedAt: "2026-11-10",
+    readingTime: 9,
     content: `
-      <p class="text-lg text-muted-foreground mb-8">Planejar uma viagem é motivo de alegria, mas quando surgem problemas como <strong>cancelamentos, mudanças de hotel ou itinerário</strong>, a frustração é enorme. Neste guia, explicamos seus direitos como consumidor de serviços turísticos e como agir em cada situação.</p>
+      <p class="text-lg text-muted-foreground mb-8">Cancelamento, troca de hotel, passeio que não aconteceu, agência que fechou as portas: quem compra um pacote de viagem está protegido pelo Código de Defesa do Consumidor (CDC). Este guia explica o que a lei garante em cada situação, com os artigos conferidos no texto em vigor em novembro de 2026.</p>
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Principais Problemas com Pacotes de Viagem</h2>
-      
+
       <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li><strong>Cancelamento do pacote</strong> pela agência</li>
-        <li><strong>Mudança de hotel</strong> para categoria inferior</li>
-        <li><strong>Alteração de datas ou itinerário</strong> sem consulta</li>
-        <li><strong>Overbooking</strong> em hotéis ou voos</li>
-        <li><strong>Serviços não prestados</strong> conforme contratado</li>
-        <li><strong>Empresa faliu</strong> antes da viagem</li>
-        <li><strong>Propaganda enganosa</strong> sobre o destino ou serviços</li>
+        <li><strong>Cancelamento do pacote</strong> pela agência ou pela operadora</li>
+        <li><strong>Troca de hotel</strong> por outro de categoria inferior</li>
+        <li><strong>Mudança de datas ou de roteiro</strong> sem a concordância do viajante</li>
+        <li><strong>Passeios, traslados ou serviços incluídos</strong> que não foram prestados</li>
+        <li><strong>Agência que fechou</strong> antes da viagem</li>
+        <li><strong>Propaganda enganosa</strong> sobre o destino, o hotel ou o preço</li>
       </ul>
 
-      <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">O Que Diz a Lei</h2>
-      
-      <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">Código de Defesa do Consumidor</h3>
-      <p class="mb-4">O CDC se aplica integralmente aos serviços de turismo. Destaques:</p>
-      
-      <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li><strong>Art. 20:</strong> Serviço prestado em desconformidade gera direito a reexecução, abatimento ou reembolso</li>
-        <li><strong>Art. 35:</strong> Oferta não cumprida permite exigir cumprimento, aceitar equivalente ou rescindir com reembolso</li>
-        <li><strong>Art. 37:</strong> Propaganda enganosa é proibida e gera indenização</li>
-      </ul>
-      
-      <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">Lei do Turismo (Lei 11.771/2008)</h3>
-      <p class="mb-4">Estabelece regras específicas para agências de viagens e operadoras de turismo.</p>
+      <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Quem Responde pelos Problemas do Pacote</h2>
+
+      <p class="mb-4">Agência de turismo é a empresa que faz a intermediação entre o viajante e os prestadores de serviços turísticos, como hotel, transporte e cruzeiro, ou que fornece esses serviços diretamente (Lei 11.771/2008, art. 27). Pelo CDC, quando mais de um fornecedor causa o dano, todos respondem solidariamente pela reparação (arts. 7º, parágrafo único, e 25, § 1º), e o fornecedor responde também pelos atos de seus representantes (art. 34).</p>
+
+      <p class="mb-4">Na prática, quem comprou um pacote pode reclamar com a agência que o vendeu e com a empresa que prestou mal o serviço. Quem comprou cada serviço separadamente, direto com o hotel e direto com a companhia aérea, reclama com a empresa daquele serviço.</p>
 
       <div class="bg-primary/10 border-l-4 border-primary p-6 my-8 rounded-r-lg">
         <p class="font-semibold text-primary mb-2">✈️ Importante</p>
-        <p class="text-foreground">A agência de viagens é <strong>solidariamente responsável</strong> pelos serviços que vende, mesmo que prestados por terceiros (hotéis, companhias aéreas). Você pode reclamar diretamente com ela.</p>
+        <p class="text-foreground">O que foi anunciado obriga quem anunciou e passa a fazer parte do contrato (CDC, art. 30). Guarde anúncios, prints e e-mails da venda: eles mostram o que foi prometido.</p>
       </div>
 
-      <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Seus Direitos em Cada Situação</h2>
-      
-      <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">Cancelamento pela Agência</h3>
-      <p class="mb-4">Se a agência cancelar sua viagem, você pode escolher:</p>
+      <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Cancelamento ou Mudança Feita pela Agência</h2>
+
+      <p class="mb-4">Se a agência ou o prestador não cumpre o que foi oferecido, como data, hotel, roteiro ou passeios, o consumidor escolhe livremente uma destas saídas (CDC, art. 35):</p>
       <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li><strong>Reembolso integral</strong> de todos os valores pagos</li>
-        <li><strong>Remarcação</strong> para outra data sem custos</li>
-        <li><strong>Pacote equivalente</strong> de mesma qualidade</li>
-        <li><strong>Indenização por danos</strong> (materiais e morais)</li>
+        <li>exigir o cumprimento do que foi oferecido;</li>
+        <li>aceitar outro serviço equivalente; ou</li>
+        <li>desfazer o contrato, com devolução do que pagou, corrigida, e reparação das perdas e danos.</li>
       </ul>
-      
-      <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">Mudança de Hotel ou Serviços</h3>
-      <p class="mb-4">Alterações unilaterais sem sua concordância configuram descumprimento contratual:</p>
+      <p class="mb-4">Cláusula que tire do consumidor a opção de receber de volta o que pagou nesses casos é nula (art. 51, II).</p>
+
+      <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Hotel Pior, Passeio Cancelado ou Serviço Mal Prestado</h2>
+
+      <p class="mb-4">Quando o serviço é prestado com falha ou diferente do anunciado, o consumidor pode exigir, à sua escolha (CDC, art. 20):</p>
       <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li>Hotel de categoria inferior: direito a <strong>upgrade ou reembolso da diferença</strong></li>
-        <li>Passeios cancelados: <strong>reembolso proporcional</strong></li>
-        <li>Guia não incluído: <strong>desconto ou disponibilização de guia</strong></li>
+        <li>que o serviço seja refeito, sem custo adicional, quando possível;</li>
+        <li>a devolução imediata do que pagou, corrigida, sem prejuízo de eventuais perdas e danos; ou</li>
+        <li>um abatimento proporcional no preço.</li>
       </ul>
-      
-      <h3 class="text-xl font-semibold text-foreground mt-6 mb-3">Propaganda Enganosa</h3>
-      <p class="mb-4">Se o destino ou serviços não corresponderem ao anunciado:</p>
+      <p class="mb-4">Exemplos: hotel de categoria inferior à contratada, passeio incluído que não aconteceu, traslado que não apareceu. Se a falha causou outros prejuízos, como uma diária paga do próprio bolso, a reparação depende da prova desses gastos (arts. 6º, VI, e 14).</p>
+
+      <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Propaganda Enganosa e Informação Escondida</h2>
+
+      <p class="mb-4">É enganosa a informação publicitária total ou parcialmente falsa, ou que omite dado importante e leva o consumidor a erro sobre o serviço ou o preço (CDC, art. 37, § 1º). O consumidor tem direito a informação clara sobre o que compra, inclusive preço e riscos (art. 6º, III), e a oferta deve trazer informações corretas, claras e precisas (art. 31). Hotel em obras não informado, praia "a poucos passos" que fica longe e taxas escondidas são situações em que valem as saídas dos arts. 20 e 35.</p>
+
+      <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Quando É o Consumidor Que Desiste</h2>
+
       <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li>Direito a <strong>compensação ou upgrade</strong></li>
-        <li>Possibilidade de <strong>cancelar o restante da viagem</strong></li>
-        <li><strong>Indenização por danos morais</strong> (viagem arruinada)</li>
+        <li><strong>Compra pela internet ou por telefone:</strong> o CDC dá 7 dias, contados da contratação, para desistir sem precisar justificar, com devolução imediata e corrigida de tudo o que foi pago (art. 49).</li>
+        <li><strong>Depois desse prazo:</strong> vale a multa prevista no contrato, mas ela não pode passar do valor total dos serviços reservados (Lei 11.771/2008, art. 27, § 8º, incluído pela Lei 14.978/2024) e é nula se for abusiva ou colocar o consumidor em desvantagem exagerada (CDC, art. 51, IV).</li>
+        <li><strong>Passagem aérea comprada sozinha:</strong> tem regras próprias; veja a página sobre <a href="/advogado-problemas-voo" class="text-primary underline">problemas com voo</a>.</li>
       </ul>
+      <p class="mb-4">As regras especiais da pandemia (Lei 14.046/2020), que permitiam trocar o reembolso por remarcação ou crédito, valeram só para adiamentos e cancelamentos entre 1º de janeiro de 2020 e 31 de dezembro de 2022 (art. 2º). Para as viagens de hoje, vale o CDC.</p>
+
+      <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Prazos para Reclamar</h2>
+
+      <p class="mb-4">Para falha aparente em serviço que se consome na hora, como hospedagem e passeio, o prazo para reclamar é de 30 dias, contados do fim da prestação do serviço (CDC, art. 26, I, e § 1º). A reclamação feita por escrito à empresa, com comprovante, trava esse prazo até a resposta negativa (art. 26, § 2º, I). Já o pedido de reparação de danos causados por defeito do serviço prescreve em 5 anos, contados do conhecimento do dano e de quem o causou (art. 27).</p>
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Como Proceder: Passo a Passo</h2>
-      
+
       <ol class="list-decimal pl-6 mb-6 space-y-4">
         <li>
-          <strong>Documente tudo:</strong> Fotos, vídeos, e-mails, contrato, vouchers, recibos.
+          <strong>Guarde tudo:</strong> contrato, vouchers, anúncios, e-mails, conversas, fotos e vídeos do problema e notas de gastos extras.
         </li>
         <li>
-          <strong>Reclame no local:</strong> Se o problema ocorrer durante a viagem, registre reclamação formal com a agência/hotel.
+          <strong>Reclame logo, por escrito:</strong> com a agência e com o prestador, ainda durante a viagem se possível, e anote o protocolo.
         </li>
         <li>
-          <strong>Contate a agência por escrito:</strong> E-mail ou carta com protocolo, expondo o problema e suas exigências.
+          <strong>Use os canais oficiais:</strong> registre a reclamação no consumidor.gov.br ou no Procon. Veja como no artigo sobre <a href="/artigos/consumidor/reclamacao-procon-bahia-consumidor-gov" class="text-primary underline">reclamação no Procon-BA e no consumidor.gov.br</a>.
         </li>
         <li>
-          <strong>Use o consumidor.gov.br:</strong> Plataforma oficial com bom índice de resolução.
-        </li>
-        <li>
-          <strong>PROCON:</strong> Para mediação e eventual multa à empresa.
-        </li>
-        <li>
-          <strong>Ação judicial:</strong> Juizado Especial para valores até 20 salários mínimos.
+          <strong>Justiça:</strong> no Juizado Especial Cível cabem causas de até 40 salários mínimos, e até 20 salários mínimos a pessoa pode ir sem advogado (Lei 9.099/1995, arts. 3º, I, e 9º).
         </li>
       </ol>
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Documentos Importantes</h2>
-      
+
       <ul class="list-disc pl-6 mb-6 space-y-2">
         <li>Contrato do pacote de viagem</li>
         <li>Comprovantes de pagamento</li>
         <li>Vouchers de hotel e passeios</li>
-        <li>E-mails e comunicações com a agência</li>
+        <li>Anúncios e prints da oferta</li>
+        <li>E-mails e conversas com a agência</li>
         <li>Fotos e vídeos do local (se diferente do anunciado)</li>
         <li>Notas fiscais de gastos extras</li>
         <li>Bilhetes aéreos</li>
       </ul>
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Perguntas Frequentes</h2>
-      
+
       <div class="space-y-6 mb-8">
         <div>
           <h3 class="text-lg font-semibold text-foreground mb-2">Posso desistir da viagem? Qual a multa?</h3>
-          <p class="text-muted-foreground">Você pode desistir, mas geralmente há multas previstas em contrato. Quanto mais próximo da viagem, maior a multa. Analise seu contrato.</p>
+          <p class="text-muted-foreground">Se a compra foi feita pela internet ou por telefone, há 7 dias para desistir com devolução de tudo o que foi pago (CDC, art. 49). Fora disso, vale a multa do contrato, que não pode passar do valor total dos serviços (Lei 11.771/2008, art. 27, § 8º) e pode ser contestada se for abusiva (CDC, art. 51, IV).</p>
         </div>
-        
+
         <div>
-          <h3 class="text-lg font-semibold text-foreground mb-2">A agência faliu. Perdi meu dinheiro?</h3>
-          <p class="text-muted-foreground">Tente recuperar via operadora de cartão de crédito (contestação de compra). Também é possível habilitar-se na falência, mas a recuperação é incerta.</p>
+          <h3 class="text-lg font-semibold text-foreground mb-2">A agência fechou ou faliu. Perdi o dinheiro?</h3>
+          <p class="text-muted-foreground">Se pagou com cartão de crédito, procure o banco emissor do cartão e peça a contestação da compra. Se a falência da agência foi decretada, o valor pode ser cobrado no processo de falência, como crédito. Guarde o contrato e os comprovantes de pagamento.</p>
         </div>
-        
+
         <div>
-          <h3 class="text-lg font-semibold text-foreground mb-2">O hotel estava em obras e estragou minha viagem. Tenho direito a indenização?</h3>
-          <p class="text-muted-foreground">Sim! Se a informação foi omitida, você pode pleitear indenização por danos morais pelo transtorno causado.</p>
+          <h3 class="text-lg font-semibold text-foreground mb-2">O hotel estava em obras e ninguém avisou. O que posso pedir?</h3>
+          <p class="text-muted-foreground">Se a obra não foi informada e atrapalhou a estadia, houve falha de informação (CDC, arts. 6º, III, e 31) e serviço diferente do contratado (art. 20). Cabe pedir abatimento no preço ou a devolução do que pagou, e a reparação de outros prejuízos que você comprovar.</p>
         </div>
-        
+
         <div>
-          <h3 class="text-lg font-semibold text-foreground mb-2">Comprei passagem e hotel separados. A agência é responsável?</h3>
-          <p class="text-muted-foreground">Cada fornecedor responde pelo seu serviço. Se comprou tudo separado, terá que reclamar individualmente.</p>
+          <h3 class="text-lg font-semibold text-foreground mb-2">Comprei passagem e hotel separados. A agência responde?</h3>
+          <p class="text-muted-foreground">Quem comprou cada serviço direto com cada empresa reclama com a empresa daquele serviço. Quando a compra foi feita numa agência, ela faz parte da cadeia de fornecedores, e a responsabilidade dela pelo problema de um serviço avulso depende do que foi vendido e de como o problema aconteceu.</p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-foreground mb-2">Ainda vale a lei da pandemia para viagens canceladas?</h3>
+          <p class="text-muted-foreground">Não para as viagens de hoje. A Lei 14.046/2020 só cobriu adiamentos e cancelamentos entre 1º de janeiro de 2020 e 31 de dezembro de 2022 (art. 2º, com a redação da Lei 14.390/2022).</p>
         </div>
       </div>
 
@@ -1600,10 +1607,10 @@ export const blogPosts: BlogPost[] = [
       </div>
 
       <h2 class="text-2xl font-bold text-foreground mt-10 mb-4">Conclusão</h2>
-      
-      <p class="mb-4">Viagens são momentos especiais que não devem ser arruinados por falhas de prestadores de serviço. O CDC oferece proteção robusta ao turista consumidor, e você não precisa aceitar alterações ou cancelamentos sem compensação adequada.</p>
-      
-      <p class="mb-4">Documente tudo, exija seus direitos e, se necessário, busque a Justiça. A jurisprudência brasileira tem sido muito favorável aos consumidores em casos de turismo.</p>
+
+      <p class="mb-4">Em quase todo problema com pacote de viagem, o ponto de partida é o que foi anunciado e contratado. A lei dá ao consumidor a escolha entre exigir o cumprimento, aceitar algo equivalente, receber abatimento ou ter o dinheiro de volta, e a reparação de outros prejuízos depende de prova.</p>
+
+      <p class="mb-4">Guarde os documentos, reclame por escrito e fique de olho nos prazos: 7 dias para desistir de compra feita pela internet ou por telefone e 30 dias para reclamar de serviço mal prestado.</p>
     `
   },
   {

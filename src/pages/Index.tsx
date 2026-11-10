@@ -6,7 +6,20 @@ import LawyerChatSection from "@/components/LawyerChatSection";
 import ObjecionsFAQ from "@/components/ObjecionsFAQ";
 import Navbar from "@/components/Navbar";
 import PracticeAreasSection from "@/components/PracticeAreasSection";
+import HomeDestaques from "@/components/HomeDestaques";
 import SiteLinks from "@/components/SiteLinks";
+import { HOME_FAQ, HOME_OBJECOES } from "@/data/home-content";
+
+// Mesmas perguntas da seção de dúvidas (ObjecionsFAQ) e do HTML pronto da home.
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [...HOME_OBJECOES, ...HOME_FAQ].map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
+};
 
 const Index = () => {
   // Schema.org Organization - Enhanced for Knowledge Panel
@@ -219,6 +232,9 @@ const Index = () => {
         <script type="application/ld+json">
           {JSON.stringify(webPageSchema)}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
       </Helmet>
       
       <div className="min-h-screen bg-background overflow-x-hidden">
@@ -231,6 +247,8 @@ const Index = () => {
         <LawyerChatSection />
 
         <PracticeAreasSection />
+
+        <HomeDestaques />
 
         <ObjecionsFAQ />
 

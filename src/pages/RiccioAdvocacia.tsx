@@ -202,7 +202,7 @@ export default function RiccioAdvocacia() {
         </title>
         <meta
           name="description"
-          content="Riccio Advocacia — advocacia previdenciária e trabalhista. Atendimento humano e direto com advogado pelo WhatsApp, de Salvador/BA para todo o Brasil. OAB/BA 46.638."
+          content="Riccio Advocacia — advocacia previdenciária e trabalhista. Atendimento direto com advogado pelo WhatsApp, de Salvador/BA para todo o Brasil. OAB/BA 46.638."
         />
         <meta name="theme-color" content="#0b0b0d" />
         <link

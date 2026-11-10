@@ -5,13 +5,22 @@
     <link>https://riccioadvocacia.online</link>
     <description>Artigos jurídicos práticos sobre direito trabalhista, previdenciário, de família, do consumidor, cível e criminal, por Dr. Gilberto Riccio (OAB/BA 46.638).</description>
     <language>pt-BR</language>
-    <lastBuildDate>Tue, 10 Nov 2026 01:34:35 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 01:40:39 GMT</lastBuildDate>
     <atom:link href="https://riccioadvocacia.online/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://riccioadvocacia.online/og-image.png</url>
       <title>Riccio Advocacia</title>
       <link>https://riccioadvocacia.online</link>
     </image>
+    <item>
+      <title>Auxílio-Reclusão 2026: Quem Tem Direito e Como Pedir</title>
+      <link>https://riccioadvocacia.online/artigos/previdenciario/auxilio-reclusao</link>
+      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/previdenciario/auxilio-reclusao</guid>
+      <pubDate>Mon, 09 Nov 2026 12:00:00 GMT</pubDate>
+      <category>previdenciario</category>
+      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
+      <description>Auxílio-reclusão em 2026: limite de renda de R$ 1.980,38, valor de R$ 1.621,00, 24 contribuições, regime fechado e como pedir no Meu INSS.</description>
+    </item>
     <item>
       <title>Horas Extras Não Pagas | Como Cobrar na Justiça</title>
       <link>https://riccioadvocacia.online/artigos/trabalhista/horas-extras</link>
@@ -452,15 +461,6 @@
       <category>consumidor</category>
       <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
       <description>Revisão de contrato bancário: entenda a Súmula 596 STF, a média do mercado, o art. 406 do CC pós-Lei 14.905/24 e quando os juros são abusivos.</description>
-    </item>
-    <item>
-      <title>Desistência de consórcio: como receber de volta | Riccio</title>
-      <link>https://riccioadvocacia.online/artigos/consumidor/desistencia-consorcio-como-receber-dinheiro-de-volta</link>
-      <guid isPermaLink="true">https://riccioadvocacia.online/artigos/consumidor/desistencia-consorcio-como-receber-dinheiro-de-volta</guid>
-      <pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate>
-      <category>consumidor</category>
-      <dc:creator>Dr. Gilberto Riccio, OAB/BA 46.638</dc:creator>
-      <description>Desistiu ou foi excluído do consórcio? Veja o que dizem a Lei 11.795/2008 e o STJ: quando o dinheiro volta, como é calculado e o que pode ser descontado.</description>
     </item>
   </channel>
 </rss>

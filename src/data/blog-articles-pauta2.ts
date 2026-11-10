@@ -1867,4 +1867,144 @@ export const pauta2Articles: BlogArticle[] = [
     relatedActions: ["horas-extras", "demissao-sem-justa-causa"],
     updatedAt: "2026-11-08",
   },
+
+  // ============================================================
+  // 20. AUXÍLIO-RECLUSÃO (Pauta 3)
+  // Conferido em 09/11/2026 no Planalto (texto em vigor): Lei 8.213/1991 arts. 15, IV, 16 (com a
+  // Lei 15.108/2025 no § 2º), 25, IV, 27-A, 74, 77 e 80 (com a Lei 13.846/2019); EC 103/2019 art. 27;
+  // Decreto 3.048/1999 arts. 116 a 119 e 305, § 1º (com o Decreto 10.410/2020). Valor e limite de 2026:
+  // Portaria Interministerial MPS/MF nº 13, de 9/1/2026, art. 5º (DOU de 12/01/2026, seção 1, p. 58).
+  // Página do INSS sobre o valor limite (atualizada em 06/02/2026) e serviço "Solicitar Auxílio-Reclusão
+  // Urbano" no gov.br (modificado em 12/08/2026): canais, documentos, semiaberto até 17/01/2019, 45 dias.
+  // ============================================================
+  {
+    id: "auxilio-reclusao",
+    nicheId: "previdenciario",
+    slug: "auxilio-reclusao",
+    title: "Auxílio-Reclusão em 2026: Quem Tem Direito, Limite de Renda, Valor e Como Pedir",
+    metaTitle: "Auxílio-Reclusão 2026: Quem Tem Direito e Como Pedir",
+    metaDescription:
+      "Auxílio-reclusão em 2026: limite de renda de R$ 1.980,38, valor de R$ 1.621,00, 24 contribuições, regime fechado e como pedir no Meu INSS.",
+    keywords: [
+      "auxílio-reclusão",
+      "auxílio reclusão 2026",
+      "auxílio-reclusão quem tem direito",
+      "auxílio-reclusão valor",
+      "auxílio-reclusão limite de renda",
+      "auxílio-reclusão regime semiaberto",
+      "como pedir auxílio-reclusão",
+    ],
+    excerpt:
+      "O auxílio-reclusão é pago pelo INSS à família do segurado de baixa renda preso em regime fechado. Em 2026, a média salarial do preso nos 12 meses antes da prisão deve ser de até R$ 1.980,38, e o benefício é de R$ 1.621,00.",
+    content: {
+      intro:
+        "Em resumo: o auxílio-reclusão é o benefício do INSS pago aos dependentes de quem foi preso em regime fechado, quando o preso era segurado de baixa renda. Em 2026, a média dos salários de contribuição do preso nos 12 meses anteriores à prisão precisa ser de até R$ 1.980,38, e o benefício é de R$ 1.621,00 por mês, dividido entre os dependentes (Portaria Interministerial MPS/MF nº 13/2026, art. 5º). O preso precisa ter 24 contribuições e não pode receber salário nem outro benefício durante a prisão (art. 80 da Lei 8.213/1991). O pedido é feito pelo Meu INSS, sem ir a uma agência.",
+      whatIs:
+        "O auxílio-reclusão é um benefício da Previdência Social pago à família, não ao preso. Ele substitui a renda que o segurado levava para casa e segue as regras da pensão por morte (art. 80 da Lei 8.213/1991). Só existe para quem era segurado do INSS na data da prisão: quem contribuía como empregado, doméstico, autônomo, MEI ou facultativo, o segurado especial rural e quem ainda estava no período de graça depois de parar de contribuir. Se o preso nunca contribuiu, a família não tem direito a esse benefício.",
+      whenYouHaveRight: [
+        "O preso era segurado do INSS na data da prisão, contribuindo ou ainda no período de graça, que em regra dura 12 meses depois da última contribuição (art. 15 da Lei 8.213/1991)",
+        "Ele tinha pelo menos 24 contribuições mensais, a carência do benefício (art. 25, IV); quem perdeu a qualidade de segurado e voltou a contribuir precisa de 12 contribuições a partir da volta (art. 27-A)",
+        "A média dos salários de contribuição dos 12 meses anteriores ao mês da prisão foi de até R$ 1.980,38 em 2026, sem contar 13º salário e terço de férias; quem estava sem salário nesse período, mas ainda era segurado, é considerado de baixa renda",
+        "Ele está preso em regime fechado; o regime semiaberto só dá direito para quem foi preso até 17/01/2019",
+        "Durante a prisão, ele não recebe salário da empresa nem auxílio por incapacidade, pensão por morte, salário-maternidade, aposentadoria ou abono de permanência",
+        "Quem pede é dependente: cônjuge ou companheiro, filho menor de 21 anos ou inválido ou com deficiência e, se não houver nenhum deles, os pais e depois os irmãos nas mesmas condições dos filhos (art. 16)",
+      ],
+      documents: [
+        "Do preso: documento de identidade e CPF",
+        "Certidão judicial que atesta o recolhimento à prisão (art. 80, § 1º)",
+        "Comprovantes do trabalho e das contribuições do preso: carteira de trabalho, contracheques, guias pagas ou extrato do CNIS",
+        "Dos dependentes: documento de identidade, CPF e prova da dependência, como certidão de casamento ou de nascimento e documentos da união estável",
+        "Procuração, ou termo de tutela, curatela ou guarda, quando outra pessoa faz o pedido",
+        "Depois da concessão, a cada 3 meses, atestado de que o segurado continua em regime fechado (serviço “Renovar Declaração de Cárcere/Reclusão” no gov.br)",
+      ],
+      deadlines:
+        "Peça logo depois da prisão. Se o pedido for feito em até 90 dias da prisão, ou em até 180 dias para filhos menores de 16 anos, o benefício é pago desde a data da prisão; depois desses prazos, só a partir do pedido (Decreto 3.048/1999, art. 116, § 4º). O INSS não concede o benefício depois que o preso é solto (art. 119). A resposta leva em média 45 dias, segundo o gov.br, e, se o pedido for negado, o recurso ao Conselho de Recursos da Previdência Social deve ser apresentado em até 30 dias da ciência da decisão (art. 305, § 1º).",
+      faq: [
+        {
+          question: "Quem tem direito ao auxílio-reclusão?",
+          answer:
+            "Os dependentes do segurado do INSS de baixa renda preso em regime fechado: cônjuge ou companheiro e filhos menores de 21 anos ou inválidos ou com deficiência; se não houver nenhum deles, os pais; e, na falta dos pais, os irmãos nas mesmas condições dos filhos (art. 16 da Lei 8.213/1991). Enteado e menor sob tutela ou sob guarda judicial são equiparados a filho, mediante declaração do segurado, se não tiverem como se sustentar (art. 16, § 2º).",
+        },
+        {
+          question: "Qual o valor do auxílio-reclusão em 2026?",
+          answer:
+            "R$ 1.621,00 por mês, desde 1º de janeiro de 2026 (Portaria Interministerial MPS/MF nº 13/2026, art. 5º). O cálculo segue o da pensão por morte, e o valor não pode passar de um salário mínimo (Emenda Constitucional 103/2019, art. 27, § 1º). Com mais de um dependente, o valor é dividido em partes iguais, e a parte de quem deixa de ter direito passa para os outros (art. 77 da Lei 8.213/1991).",
+        },
+        {
+          question: "Qual o limite de renda do auxílio-reclusão em 2026?",
+          answer:
+            "A média dos salários de contribuição do preso nos 12 meses anteriores ao mês da prisão deve ser de até R$ 1.980,38 (Portaria Interministerial MPS/MF nº 13/2026, art. 5º, parágrafo único). Conta a renda do preso, não a da família (art. 80, §§ 3º e 4º). Segundo o INSS, 13º salário e terço de férias ficam fora da conta, e quem estava sem salário nesse período, mas ainda era segurado, é considerado de baixa renda.",
+        },
+        {
+          question: "Preso em regime semiaberto tem direito?",
+          answer:
+            "Para prisões a partir de 18/01/2019, não: desde a Lei 13.846/2019, o benefício é só para o regime fechado (art. 80). Segundo o INSS, quem foi preso até 17/01/2019 em regime semiaberto ainda pode ter direito. Quando o preso passa do fechado para o semiaberto ou o aberto, o benefício deixa de ser devido (Decreto 3.048/1999, art. 116, § 5º).",
+        },
+        {
+          question: "Se o preso trabalhar na prisão, a família perde o benefício?",
+          answer:
+            "Não. O trabalho remunerado do preso em regime fechado não tira o direito da família (art. 80, § 7º). Se ele contribuir para o INSS durante a prisão e morrer, a pensão por morte leva essas contribuições em conta, e a família pode optar pelo valor do auxílio-reclusão (art. 80, § 8º).",
+        },
+        {
+          question: "O que acontece se o preso fugir, for solto ou morrer?",
+          answer:
+            "Na fuga, o benefício é suspenso; se houver recaptura, volta a ser pago a partir dela, desde que o preso ainda tenha qualidade de segurado (Decreto 3.048/1999, art. 117, § 2º). Com a soltura, o benefício acaba. Se o segurado morrer preso, o auxílio-reclusão é encerrado e a família passa a receber a pensão por morte (art. 118).",
+        },
+        {
+          question: "Preciso ir a uma agência do INSS para pedir?",
+          answer:
+            "Não. O pedido é feito pelo Meu INSS, no site ou no aplicativo: entre com CPF e senha do gov.br, procure “Auxílio-reclusão urbano” (ou rural) em “Do que você precisa?” e siga as orientações, anexando os documentos. Se o sistema estiver fora do ar, ligue 135, de segunda a sábado, das 7h às 22h. O serviço é gratuito.",
+        },
+        {
+          question: "Casei ou passei a viver com o preso depois da prisão. Tenho direito?",
+          answer:
+            "O cônjuge ou companheiro que passa a ter essa condição depois da prisão recebe a partir da data em que se habilitar, desde que comprove que a dependência econômica já existia antes da prisão (Decreto 3.048/1999, art. 116, § 3º). A união estável exige início de prova material de até 24 meses antes da prisão, e só testemunhas não bastam, salvo força maior ou caso fortuito (art. 16, § 5º, da Lei 8.213/1991).",
+        },
+        {
+          question: "O pedido foi negado. O que fazer?",
+          answer:
+            "Leia o motivo na decisão, no Meu INSS. Os mais comuns são falta das 24 contribuições, média salarial acima do limite, regime diferente do fechado e falta de prova da dependência ou da união estável. Dá para recorrer ao Conselho de Recursos da Previdência Social em até 30 dias da ciência da decisão (Decreto 3.048/1999, art. 305, § 1º) ou entrar com ação na Justiça, levando os documentos que faltaram.",
+        },
+      ],
+      sections: [
+        {
+          title: "Requisitos do auxílio-reclusão em 2026",
+          paragraphs: [
+            "São cinco condições ao mesmo tempo: o preso precisa ser segurado do INSS na data da prisão; ter 24 contribuições mensais; ser de baixa renda, com média dos salários de contribuição dos 12 meses anteriores à prisão de até R$ 1.980,38; estar em regime fechado; e não receber salário nem outro benefício do INSS durante a prisão (arts. 25, IV, e 80 da Lei 8.213/1991 e Portaria Interministerial MPS/MF nº 13/2026).",
+            "Quem já tinha parado de contribuir ainda pode gerar o benefício se estava no período de graça, que em regra vai até 12 meses depois da última contribuição e pode chegar a 24 ou 36 meses em alguns casos (art. 15). Se a qualidade de segurado foi perdida e a pessoa voltou a contribuir, a lei exige 12 contribuições a partir da volta (art. 27-A).",
+          ],
+        },
+        {
+          title: "Como o INSS confere a baixa renda",
+          paragraphs: [
+            "O INSS faz a média dos salários de contribuição do preso nos 12 meses anteriores ao mês da prisão (art. 80, § 4º). Conta a renda de quem foi preso, não a dos dependentes. Em 2026, a média precisa ser igual ou menor que R$ 1.980,38; em 2025, o limite era R$ 1.906,04.",
+            "Segundo a página oficial do INSS, 13º salário e terço de férias não entram na média. Se a pessoa não teve salário de contribuição nesses 12 meses, por estar desempregada, mas ainda tinha qualidade de segurado, ela é considerada de baixa renda. Quem recebeu auxílio por incapacidade nesse período tem esses meses contados pelo valor que serviu de base para o benefício (art. 80, § 6º).",
+          ],
+        },
+        {
+          title: "Valor e divisão entre os dependentes",
+          paragraphs: [
+            "Em 2026, o auxílio-reclusão é de R$ 1.621,00 por mês (Portaria Interministerial MPS/MF nº 13/2026, art. 5º). A Emenda Constitucional 103/2019 manda calcular o benefício como a pensão por morte e proíbe que ele passe de um salário mínimo (art. 27, § 1º).",
+            "Havendo mais de um dependente, o valor é dividido em partes iguais. Quando um deles perde o direito, como o filho que completa 21 anos sem ser inválido nem ter deficiência, a parte dele passa para os demais (art. 77 da Lei 8.213/1991).",
+          ],
+        },
+        {
+          title: "Como pedir pelo Meu INSS e manter o benefício",
+          paragraphs: [
+            "Entre no Meu INSS com a conta gov.br, procure “Auxílio-reclusão urbano” ou “Auxílio-reclusão rural” em “Do que você precisa?” e anexe a certidão judicial da prisão, os documentos do preso e os dos dependentes. Depois, acompanhe em “Consultar pedidos”. A resposta leva em média 45 dias, segundo o gov.br.",
+            "Para continuar recebendo, a família precisa comprovar a cada 3 meses que o segurado continua em regime fechado, com atestado da autoridade competente, enquanto o INSS não tiver acesso direto ao cadastro de presos do Conselho Nacional de Justiça (Decreto 3.048/1999, art. 117, § 1º). No gov.br, o serviço se chama “Renovar Declaração de Cárcere/Reclusão”.",
+          ],
+        },
+        {
+          title: "Quando o benefício acaba",
+          paragraphs: [
+            "O auxílio-reclusão só é pago enquanto o segurado está em regime fechado (Decreto 3.048/1999, art. 116, § 5º). Ele acaba com a soltura e com a progressão para o semiaberto ou o aberto. Na fuga, o pagamento é suspenso e volta com a recaptura, se o preso ainda tiver qualidade de segurado (art. 117, § 2º).",
+            "Se o segurado morre na prisão, o auxílio-reclusão é encerrado e os dependentes passam a receber a pensão por morte (art. 118). Depois da soltura, o preso mantém a qualidade de segurado por até 12 meses (art. 15, IV, da Lei 8.213/1991).",
+          ],
+        },
+      ],
+    },
+    relatedActions: ["pensao-morte", "bpc-loas"],
+    updatedAt: "2026-11-09",
+  },
 ];

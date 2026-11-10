@@ -50,7 +50,7 @@ Por que: os 12 posts de `src/data/blog-posts.ts` (/blog/<slug>) são de antes da
 
 - [x] Revisar /blog/recall-veiculos-indenizacao-consumidor (feito em 08/11: Portaria MJSP 618/2019 e CDC)
 - [x] Revisar /blog/consorcio-desistencia-direitos-consumidor (feito em 08/11: Lei 11.795/2008 arts. 6º, 13, 22, 24, 30 e 31, CDC art. 53 e Tema 312 do STJ; tirados "30 a 60 dias", "multa de 10-20%", "3 parcelas", "renunciar à contemplação") (10 visitas em 7 dias no painel do Lovable) · Lei 11.795/2008, CDC, entendimento atual do STJ sobre devolução das parcelas
-- [ ] Novo: auxílio-reclusão · Lei 8.213/1991 art. 80, EC 103/2019, valor do ano em valores-vigentes.ts
+- [x] Novo: auxílio-reclusão (feito em 09/11: /artigos/previdenciario/auxilio-reclusao; Lei 8.213/1991 arts. 15, 16, 25, 27-A, 74, 77 e 80, EC 103/2019 art. 27, Decreto 3.048/1999 arts. 116 a 119 e 305, Portaria Interministerial MPS/MF nº 13/2026 art. 5º no DOU: valor R$ 1.621,00 e limite R$ 1.980,38)
 - [ ] Revisar /blog/problemas-pacotes-viagem-cancelamento · CDC, Lei 14.046/2020 (se ainda aplicável)
 - [ ] Novo: contribuição do autônomo e do MEI ao INSS · Lei 8.212/1991 art. 21, LC 123/2006 (a LC 238, de 21/10/2026, mudou o limite de receita e de empregados do MEI: ler o texto em vigor no Planalto)
 - [ ] Revisar /blog/acoes-bancos-tarifas-abusivas · CDC, resoluções do Conselho Monetário Nacional sobre tarifas

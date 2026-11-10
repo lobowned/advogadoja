@@ -10,7 +10,7 @@ Tudo o que dependia do código já está no GitHub. Estes passos precisam da sua
 
 ## 1-H. Chat do site quebrado: correção PUBLICADA em 10/11 (no ar em cd86d12, publicada por mim com o "Publique você" do Dr.; conferida no ar na home e no chat flutuante de /advogado-trabalhista)
 - Commit 58f71b4: quando o chat não consegue responder, mostra na hora o botão "Continuar no WhatsApp" com o que o visitante escreveu, para o (71) 99703-6269. Conferido no site local: 1 tentativa, sem aviso de "internet", botão com a mensagem pronta.
-- Para o chat voltar a responder sozinho (com IA), é preciso publicar a função lawyer-chat no Lovable (pedido no chat do Lovable, gasta crédito, e cada conversa gasta crédito de IA). Decisão sua; até lá, o botão do WhatsApp resolve.
+- Para o chat voltar a responder sozinho (com IA), é preciso publicar a função lawyer-chat no Lovable (pedido no chat do Lovable, gasta crédito, e cada conversa gasta crédito de IA). DECISÃO DO DR. (10/11): "Não, fica só o WhatsApp". O chat continua levando o visitante direto para o WhatsApp.
 - O questionário (/selecionar-nicho) não tem link em nenhuma página do site e o aviso dele para você é de mentira (a função send-case-notification só registra, não manda nada). Ninguém chega nele hoje.
 - Ficou de fora só um aviso de login ("Authentication & account security"), que não expõe dados.
 

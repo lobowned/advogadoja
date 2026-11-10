@@ -20,6 +20,7 @@ Roda todo dia às 10h pela tarefa agendada "seo-riccio-diaria" (criada com autor
 3. Medição no Bing (só às segundas; bing.com/webmasters, site riccioadvocacia.online, conta já logada no Chrome): Search Performance (cliques e impressões) e Site Explorer (páginas indexadas). Se pedir login, anote e siga sem ele.
 4. Anote os números numa linha nova da tabela de `_planos/SEO-MEDICAO.md` (uma linha por dia) e compare com os dias e semanas anteriores.
 5. Indexação:
+   - Não faça pedidos de indexação à noite fora da rotina: a cota do Google e a do Bing contam a partir do pedido, e pedidos feitos depois das 21h tiram a cota da rotina do dia seguinte (aconteceu em 10/11/2026).
    - Google: pedir indexação de até 6 endereços ("Solicitar indexação"), na ordem da Fila de `_planos/SEO-INDEXACAO.md`; se a fila estiver vazia, use páginas do relatório Páginas com "Detectada, mas não indexada" ou "Rastreada, mas não indexada". Pare na mensagem "A cota foi excedida". Marque no arquivo.
    - Bing: em URL Submission, envie até 100 endereços do sitemap que ainda não constam na lista "Enviados ao Bing" de `_planos/SEO-INDEXACAO.md` (crie a lista se não existir; a 1ª leva de 100 foi em 08/11/2026). Anote os enviados.
 5b. Conferência do que o Google vê depois do JavaScript (só às segundas): `node scripts/auditar-render.cjs` abre as páginas do sitemap no Chrome sem janela (sem contar visita) e lista canonical errado, noindex, redirecionamento, título da home e página sem h1. Corrija o que aparecer (o Helmet de cada página manda no canonical final).

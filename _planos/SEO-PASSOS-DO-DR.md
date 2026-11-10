@@ -19,6 +19,13 @@ O que entrou nesta publicação:
 
 Depois de publicar, me avise: eu aviso o Bing (IndexNow) e peço indexação no Google.
 
+## 1-F. Publicação de 09/11 (noite): AGUARDA
+Já está no GitHub; entra no ar quando você clicar em **Publicar** e depois no azul **Publicar alterações**:
+- **Artigo novo: auxílio-reclusão em 2026** (/artigos/previdenciario/auxilio-reclusao): quem tem direito, limite de renda de R$ 1.980,38, valor de R$ 1.621,00, 24 contribuições, regime fechado, como pedir no Meu INSS e quando acaba. Conferido na Lei 8.213/1991, na Emenda 103/2019, no Decreto 3.048/1999 e na portaria de 2026 publicada no Diário Oficial.
+- **/riccioadvocacia no mapa do site**: é a página com mais visitas do Google depois da home e tinha ficado de fora do mapa.
+- **Descrições da home e da /riccioadvocacia** encurtadas para o limite do Bing (ele apontou a da home como longa demais).
+Depois de publicar, eu aviso o Bing (IndexNow) e peço a indexação do artigo novo no Google.
+
 ## 1-E. Publicação de 08/11, 12h25: FEITA (publicada por mim com o "Publique você" do Dr., conferida no ar em feda4ac; IndexNow 26 endereços)
 Já no GitHub; entra no ar quando você clicar em **Publicar** e depois no azul **Publicar alterações**:
 - **6 páginas de liminar** (bariátrica, câncer, cardíaca, neurocirurgia, olhos e ortopédica): diziam ao Google que o endereço oficial delas era advogadoja.com, um site que não é seu. O Google trata página assim como cópia de outro site e não a mostra na busca.

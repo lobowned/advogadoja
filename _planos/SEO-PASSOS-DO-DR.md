@@ -19,11 +19,11 @@ O que entrou nesta publicação:
 
 Depois de publicar, me avise: eu aviso o Bing (IndexNow) e peço indexação no Google.
 
-## 1-G. Publicação de 10/11 (página inicial e post de viagens): AGUARDA
-Já está no GitHub; entra no ar quando você clicar em **Publicar** e depois no azul **Publicar alterações**:
+## 1-G. Publicação de 10/11 (página inicial e post de viagens): FEITA (publicada por mim com o "Publique você" do Dr., conferida no ar em 010126e; IndexNow da home e do post)
+O que entrou:
 - **Página inicial**: para o Bing e os robôs de IA, que leem a página sem JavaScript, ela era só um título e uma lista de links (298 palavras); agora tem apresentação do escritório, áreas de atuação, perguntas frequentes de todas as áreas e artigos em destaque (1.019 palavras). Na página que o visitante vê: seção nova "Artigos em destaque" (escala 6x1, aposentadoria 2026, auxílio-reclusão, perícia do INSS, pensão atrasada, visitas, prisão preventiva e conta da Coelba), link "Saiba mais" em cada área de atuação e perguntas frequentes gerais (antes eram só de direito do consumidor). Os rótulos dourados pequenos ficaram mais escuros, porque estavam difíceis de ler.
 - **Post de pacotes de viagem** (/blog/problemas-pacotes-viagem-cancelamento, recebe visitas do Google): dizia que o Juizado Especial vai até 20 salários mínimos (são 40; até 20 sem advogado), prometia "upgrade" e indenização por dano moral e falava em "jurisprudência muito favorável". Reescrito com o CDC e com a regra nova de 2024 da Lei Geral do Turismo: a multa por cancelamento não pode passar do valor total dos serviços.
-Depois de publicar, eu aviso o Bing (IndexNow) e peço a indexação no Google.
+O Bing já foi avisado (IndexNow). O pedido de indexação no Google fica para a rotina da manhã (a cota de hoje tinha sido usada na noite de 09/11).
 
 ## 1-F. Publicação de 09/11 (noite): FEITA (publicada por mim com o "Publique você" do Dr., conferida no ar em 5ed0231; IndexNow 6 endereços)
 O que entrou:

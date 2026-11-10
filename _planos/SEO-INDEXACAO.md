@@ -24,6 +24,8 @@ Antes de pedir uma página que acabou de mudar, confira no ar (ou com `node scri
 - [x] https://riccioadvocacia.online/artigos/previdenciario/pericia-inss (pedido em 08/11)
 - [x] https://riccioadvocacia.online/artigos/penal/lesao-corporal (pedido em 08/11)
 - [x] https://riccioadvocacia.online/artigos/trabalhista/fim-da-escala-6x1-jornada-40-horas (pedido em 09/11)
+- [ ] https://riccioadvocacia.online/ (página inicial nova no ar desde 10/11, 010126e: pedir para o Google reler)
+- [ ] https://riccioadvocacia.online/blog/problemas-pacotes-viagem-cancelamento (revisto, no ar desde 10/11)
 - [ ] https://riccioadvocacia.online/artigos/trabalhista/jovem-aprendiz-direitos (09/11: "cota excedida"; é o próximo)
 - [ ] https://riccioadvocacia.online/artigos/previdenciario/auxilio-reclusao (artigo novo; no ar desde 09/11 à noite, conferido depois do JavaScript; IndexNow enviado)
 - [ ] https://riccioadvocacia.online/artigos/penal/antecedentes-criminais-bahia

@@ -25,7 +25,7 @@ Antes de pedir uma página que acabou de mudar, confira no ar (ou com `node scri
 - [x] https://riccioadvocacia.online/artigos/penal/lesao-corporal (pedido em 08/11)
 - [x] https://riccioadvocacia.online/artigos/trabalhista/fim-da-escala-6x1-jornada-40-horas (pedido em 09/11)
 - [ ] https://riccioadvocacia.online/artigos/trabalhista/jovem-aprendiz-direitos (09/11: "cota excedida"; é o próximo)
-- [ ] https://riccioadvocacia.online/artigos/previdenciario/auxilio-reclusao (artigo novo de 09/11; só pedir depois de publicado e conferido no ar)
+- [ ] https://riccioadvocacia.online/artigos/previdenciario/auxilio-reclusao (artigo novo; no ar desde 09/11 à noite, conferido depois do JavaScript; IndexNow enviado)
 - [ ] https://riccioadvocacia.online/artigos/penal/antecedentes-criminais-bahia
 - [ ] https://riccioadvocacia.online/artigos/penal/furto
 - [ ] https://riccioadvocacia.online/artigos/penal/roubo

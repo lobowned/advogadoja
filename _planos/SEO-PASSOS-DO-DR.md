@@ -8,7 +8,7 @@ Tudo o que dependia do código já está no GitHub. Estes passos precisam da sua
 - O questionário e a avaliação no fim do chat foram ajustados para o banco fechado e estão no ar desde a publicação de 07/11 à tarde.
 - CORREÇÃO (10/11): estava escrito aqui que a conversa do chat "nunca parou". Errado: a função do servidor do chat (lawyer-chat) não existe no ar (erro 404) desde que o chat voltou ao site, em 01/11. Quem escrevia no chat via "Reconectando..." e depois "verifique sua internet", e nada chegava a você. O último contato gravado pelo chat é de 24/01/2026 (o chat ficou fora do site de 24/01 a 01/11). Ver o passo 1-H.
 
-## 1-H. Chat do site quebrado: correção no GitHub, falta publicar (10/11)
+## 1-H. Chat do site quebrado: correção PUBLICADA em 10/11 (no ar em cd86d12, publicada por mim com o "Publique você" do Dr.; conferida no ar na home e no chat flutuante de /advogado-trabalhista)
 - Commit 58f71b4: quando o chat não consegue responder, mostra na hora o botão "Continuar no WhatsApp" com o que o visitante escreveu, para o (71) 99703-6269. Conferido no site local: 1 tentativa, sem aviso de "internet", botão com a mensagem pronta.
 - Para o chat voltar a responder sozinho (com IA), é preciso publicar a função lawyer-chat no Lovable (pedido no chat do Lovable, gasta crédito, e cada conversa gasta crédito de IA). Decisão sua; até lá, o botão do WhatsApp resolve.
 - O questionário (/selecionar-nicho) não tem link em nenhuma página do site e o aviso dele para você é de mentira (a função send-case-notification só registra, não manda nada). Ninguém chega nele hoje.

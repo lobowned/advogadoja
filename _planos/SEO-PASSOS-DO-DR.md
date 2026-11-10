@@ -5,7 +5,13 @@ Tudo o que dependia do código já está no GitHub. Estes passos precisam da sua
 ## 0. Dados de clientes: RESOLVIDO (07/11)
 - A página /admin, que mostrava os contatos sem login, saiu do ar.
 - Em 07/11, às 2h26, o banco foi fechado com a correção grátis do Lovable, autorizada por você. Teste como visitante: nenhum contato, caso ou arquivo aparece.
-- O questionário e a avaliação no fim do chat foram ajustados para o banco fechado e estão no ar desde a publicação de 07/11 à tarde. A conversa do chat e o aviso de novo contato no seu WhatsApp nunca pararam.
+- O questionário e a avaliação no fim do chat foram ajustados para o banco fechado e estão no ar desde a publicação de 07/11 à tarde.
+- CORREÇÃO (10/11): estava escrito aqui que a conversa do chat "nunca parou". Errado: a função do servidor do chat (lawyer-chat) não existe no ar (erro 404) desde que o chat voltou ao site, em 01/11. Quem escrevia no chat via "Reconectando..." e depois "verifique sua internet", e nada chegava a você. O último contato gravado pelo chat é de 24/01/2026 (o chat ficou fora do site de 24/01 a 01/11). Ver o passo 1-H.
+
+## 1-H. Chat do site quebrado: correção no GitHub, falta publicar (10/11)
+- Commit 58f71b4: quando o chat não consegue responder, mostra na hora o botão "Continuar no WhatsApp" com o que o visitante escreveu, para o (71) 99703-6269. Conferido no site local: 1 tentativa, sem aviso de "internet", botão com a mensagem pronta.
+- Para o chat voltar a responder sozinho (com IA), é preciso publicar a função lawyer-chat no Lovable (pedido no chat do Lovable, gasta crédito, e cada conversa gasta crédito de IA). Decisão sua; até lá, o botão do WhatsApp resolve.
+- O questionário (/selecionar-nicho) não tem link em nenhuma página do site e o aviso dele para você é de mentira (a função send-case-notification só registra, não manda nada). Ninguém chega nele hoje.
 - Ficou de fora só um aviso de login ("Authentication & account security"), que não expõe dados.
 
 ## 1. Publicar: FEITO (07/11, 17h57)

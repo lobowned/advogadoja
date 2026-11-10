@@ -70,6 +70,8 @@ const staticPages: SitemapURL[] = [
   { loc: '/termos-de-uso', lastmod: UNKNOWN, changefreq: 'yearly', priority: 0.2 },
   { loc: '/advogado-bahia', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
   { loc: '/advogado-gilberto-riccio', lastmod: '2026-11-07', changefreq: 'monthly', priority: 0.7 },
+  // Página de entrada que recebe visitas do Google (9 em 90 dias até 08/11/2026); estava fora do mapa.
+  { loc: '/riccioadvocacia', lastmod: UNKNOWN, changefreq: 'monthly', priority: 0.8 },
 ];
 
 // Só as cidades onde o escritório atende de fato; o resto fica fora do sitemap.

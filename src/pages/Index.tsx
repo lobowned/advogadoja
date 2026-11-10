@@ -190,7 +190,7 @@ const Index = () => {
     <PageTransition variant="slideUp">
       <Helmet>
         <title>Advogado em Salvador e Online | Riccio Advocacia</title>
-        <meta name="description" content="Riccio Advocacia (OAB/BA 46.638): trabalhista, INSS, família, consumidor, cível e criminal. Atendimento em Salvador, Camaçari, Lauro de Freitas e online pelo WhatsApp." />
+        <meta name="description" content="Riccio Advocacia (OAB/BA 46.638): trabalhista, INSS, família, consumidor, cível e criminal, em Salvador, Camaçari, Lauro de Freitas e online pelo WhatsApp." />
         <meta name="keywords" content="advogado online, advogado trabalhista, advogado família, advogado consumidor, advogado previdenciário INSS, advogado civil, advogado criminal, divórcio online, pensão alimentícia, demissão sem justa causa, verbas rescisórias, aposentadoria INSS, auxílio-doença, BPC LOAS, voo cancelado, plano de saúde negou, nome sujo, negativação indevida, inventário, defesa criminal, falar com advogado agora" />
         <link rel="canonical" href="https://riccioadvocacia.online" />
         

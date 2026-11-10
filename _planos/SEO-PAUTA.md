@@ -52,7 +52,7 @@ Por que: os 12 posts de `src/data/blog-posts.ts` (/blog/<slug>) são de antes da
 - [x] Revisar /blog/consorcio-desistencia-direitos-consumidor (feito em 08/11: Lei 11.795/2008 arts. 6º, 13, 22, 24, 30 e 31, CDC art. 53 e Tema 312 do STJ; tirados "30 a 60 dias", "multa de 10-20%", "3 parcelas", "renunciar à contemplação") (10 visitas em 7 dias no painel do Lovable) · Lei 11.795/2008, CDC, entendimento atual do STJ sobre devolução das parcelas
 - [ ] Novo: auxílio-reclusão · Lei 8.213/1991 art. 80, EC 103/2019, valor do ano em valores-vigentes.ts
 - [ ] Revisar /blog/problemas-pacotes-viagem-cancelamento · CDC, Lei 14.046/2020 (se ainda aplicável)
-- [ ] Novo: contribuição do autônomo e do MEI ao INSS · Lei 8.212/1991 art. 21, LC 123/2006
+- [ ] Novo: contribuição do autônomo e do MEI ao INSS · Lei 8.212/1991 art. 21, LC 123/2006 (a LC 238, de 21/10/2026, mudou o limite de receita e de empregados do MEI: ler o texto em vigor no Planalto)
 - [ ] Revisar /blog/acoes-bancos-tarifas-abusivas · CDC, resoluções do Conselho Monetário Nacional sobre tarifas
 - [ ] Novo: protesto em cartório (como sair, prazos, cancelamento) · Lei 9.492/1997
 - [ ] Revisar /blog/superendividamento-negociar-dividas · CDC arts. 54-A a 54-G e 104-A a 104-C (Lei 14.181/2021)

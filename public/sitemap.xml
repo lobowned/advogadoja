@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- ===== PÁGINAS ESTÁTICAS (20 URLs) ===== -->
+  <!-- ===== PÁGINAS ESTÁTICAS (21 URLs) ===== -->
   <url>
     <loc>https://riccioadvocacia.online/</loc>
     <changefreq>weekly</changefreq>
@@ -101,6 +101,11 @@
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://riccioadvocacia.online/riccioadvocacia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <!-- ===== GUIAS PILARES (5 URLs) ===== -->
   <url>

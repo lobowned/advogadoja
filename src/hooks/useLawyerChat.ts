@@ -35,6 +35,9 @@ type UseLawyerChatOptions = {
   area?: 'familia' | 'trabalhista' | 'civil' | 'previdenciario' | 'penal' | 'geral';
 };
 
+// WhatsApp do escritório (o mesmo dos botões do site).
+const WHATSAPP_ESCRITORIO = '5571997036269';
+
 export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
   const { defaultLawyerId, area } = options;
   const [messages, setMessages] = useState<(Message | TransferMessage | QueueMessage)[]>([]);
@@ -58,6 +61,8 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
   const [hasJoinedQueue, setHasJoinedQueue] = useState<boolean>(false);
   const [peopleAhead, setPeopleAhead] = useState<number>(0);
   const [showRatingButton, setShowRatingButton] = useState(false);
+  // Link do WhatsApp mostrado quando o servidor do chat não responde.
+  const [whatsappHandoff, setWhatsappHandoff] = useState<string | null>(null);
   const [caseSummary, setCaseSummary] = useState<string | null>(null);
   
   // Sistema de nudges
@@ -149,8 +154,9 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
 
   // Sistema de nudges - enviar mensagens proativas quando usuário fica inativo
   const sendNudge = useCallback(() => {
-    if (nudgeCount >= NUDGE_CONFIG.length || isLoading || isTyping) return;
-    
+    // Depois que o chat passou para o WhatsApp, não manda mais lembretes automáticos.
+    if (nudgeCount >= NUDGE_CONFIG.length || isLoading || isTyping || whatsappHandoff) return;
+
     const config = NUDGE_CONFIG[nudgeCount];
     const nudgeMessage: Message = {
       role: 'assistant',
@@ -172,7 +178,7 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
     if (nudgeCount + 1 < NUDGE_CONFIG.length) {
       nudgeTimerRef.current = setTimeout(sendNudge, NUDGE_CONFIG[nudgeCount + 1].delay);
     }
-  }, [nudgeCount, detectedProblem, userName, currentLawyer.id, sessionId, isLoading, isTyping]);
+  }, [nudgeCount, detectedProblem, userName, currentLawyer.id, sessionId, isLoading, isTyping, whatsappHandoff]);
   
   // Resetar timer de nudge quando usuário interage
   const resetNudgeTimer = useCallback(() => {
@@ -261,6 +267,38 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
         lawyerId: currentLawyer.id,
       },
     ]);
+  };
+
+  // Quando o servidor do chat não responde (fora do ar, sem crédito, erro de rede), o visitante
+  // não fica parado nem recebe "verifique sua internet": aparece o botão "Continuar no WhatsApp"
+  // com o que ele escreveu, para o número do escritório.
+  const passarParaWhatsApp = (ultimaMensagem: string) => {
+    const escritas = messages
+      .filter((m): m is Message => m.role === 'user')
+      .map(m => m.content)
+      .concat(ultimaMensagem)
+      .filter((texto, i, todas) => texto && todas.indexOf(texto) === i);
+    let relato = escritas.join('\n');
+    if (relato.length > 700) relato = `${relato.slice(0, 700)}...`;
+    const texto = `Olá, vim pelo site riccioadvocacia.online e escrevi no chat:\n${relato}`;
+    const jaEstavaNoWhatsApp = whatsappHandoff !== null;
+    if (nudgeTimerRef.current) {
+      clearTimeout(nudgeTimerRef.current);
+      nudgeTimerRef.current = null;
+    }
+    setWhatsappHandoff(`https://wa.me/${WHATSAPP_ESCRITORIO}?text=${encodeURIComponent(texto)}`);
+    if (!jaEstavaNoWhatsApp) {
+      setMessages(prev => [
+        ...prev,
+        {
+          role: 'assistant',
+          content:
+            'O atendimento automático não está respondendo agora. Para não perder sua mensagem, toque em "Continuar no WhatsApp": ela já vai escrita para o Dr. Gilberto Riccio (OAB/BA 46.638).',
+          timestamp: new Date(),
+          lawyerId: currentLawyer.id,
+        },
+      ]);
+    }
   };
 
   const sendMessage = async (content: string, retryCount = 0) => {
@@ -412,9 +450,16 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
     };
 
     setMessages(prev => [...prev, userMessage]);
+
+    // Chat já passou para o WhatsApp: junta a mensagem nova ao texto do botão.
+    if (whatsappHandoff) {
+      passarParaWhatsApp(content.trim());
+      return;
+    }
+
     setIsLoading(true);
     setIsThinking(true);
-    
+
     // Detectar urgência na mensagem do usuário
     const detectedUrgency = detectUrgencyLevel(content);
     if (detectedUrgency.level !== 'baixa') {
@@ -500,55 +545,13 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
       });
 
       if (!response.ok) {
-        let errorMessage = 'Falha ao conectar com o advogado';
-        let shouldRetry = false;
-        
-        // Handle specific error codes
-        if (response.status === 402) {
-          errorMessage = 'O serviço está temporariamente indisponível devido ao limite de créditos. Por favor, tente novamente mais tarde.';
-          toast({
-            title: 'Serviço Indisponível',
-            description: errorMessage,
-            variant: 'destructive',
-          });
-        } else if (response.status === 429) {
-          errorMessage = 'Muitas requisições. Por favor, aguarde um momento antes de tentar novamente.';
-          toast({
-            title: 'Limite de Requisições',
-            description: errorMessage,
-            variant: 'destructive',
-          });
-        } else if (response.status >= 500 && retryCount < 3) {
-          // Retry on server errors (max 3 attempts)
-          shouldRetry = true;
-          errorMessage = `Erro no servidor. Tentando novamente (${retryCount + 1}/3)...`;
-          console.warn(`⚠️ [RETRY] Attempt ${retryCount + 1} after server error ${response.status}`);
-        } else if (!navigator.onLine) {
-          errorMessage = 'Sem conexão com a internet. Verifique sua conexão e tente novamente.';
-          toast({
-            title: 'Sem Conexão',
-            description: errorMessage,
-            variant: 'destructive',
-          });
-        } else {
-          errorMessage = `Erro de conexão (código ${response.status}). Tente novamente.`;
-          toast({
-            title: 'Erro de Conexão',
-            description: errorMessage,
-            variant: 'destructive',
-          });
-        }
-        
+        // Qualquer erro do servidor (fora do ar, sem crédito, limite): oferece o WhatsApp
+        // na hora, sem repetir a mensagem nem culpar a internet do visitante.
+        console.warn(`⚠️ [CHAT SEM RESPOSTA] servidor respondeu ${response.status}; oferecendo o WhatsApp`);
         setIsLoading(false);
         setIsTyping(false);
         setIsThinking(false);
-        
-        if (shouldRetry) {
-          // Wait 2 seconds before retry
-          await new Promise(resolve => setTimeout(resolve, 2000));
-          return sendMessage(content, retryCount + 1);
-        }
-        
+        passarParaWhatsApp(content.trim());
         return;
       }
       
@@ -1185,32 +1188,15 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
       }
       
       console.error('❌ [ERROR]', error);
-      
+
       setIsLoading(false);
       setIsTyping(false);
       setIsThinking(false);
 
-      // Check if it's a network error and retry
-      const isNetworkError = error instanceof TypeError && error.message.includes('fetch');
-      if (isNetworkError && retryCount < 3) {
-        console.warn(`⚠️ [NETWORK RETRY] Attempt ${retryCount + 1} after network error`);
-        toast({
-          title: 'Reconectando...',
-          description: `Tentativa ${retryCount + 1} de 3`,
-        });
-        
-        // Wait 2 seconds before retry
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        return sendMessage(content, retryCount + 1);
-      }
-
-      toast({
-        title: 'Erro de Conexão',
-        description: isNetworkError 
-          ? 'Não foi possível conectar. Verifique sua internet e tente novamente.'
-          : 'Não foi possível conectar com o advogado. Tente novamente.',
-        variant: 'destructive',
-      });
+      // Sem resposta do servidor do chat (inclusive função inexistente, que o navegador
+      // mostra como erro de rede): oferece o WhatsApp em vez de repetir e pedir para
+      // o visitante conferir a internet.
+      passarParaWhatsApp(content.trim());
     } finally {
       setIsLoading(false);
       setIsTyping(false);
@@ -1335,6 +1321,7 @@ export const useLawyerChat = (options: UseLawyerChatOptions = {}) => {
     joinQueue,
     peopleAhead,
     showRatingButton,
+    whatsappHandoff,
     // Novos campos para sistema proativo
     detectedProblem,
     urgencyLevel,

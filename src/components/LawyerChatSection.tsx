@@ -29,7 +29,7 @@ const LawyerChatSection = ({ defaultLawyerId, area }: LawyerChatSectionProps = {
   const {
     messages, isLoading, isTyping, isThinking, isTransferring, sendMessage, currentLawyer, allLawyers,
     isCollectingLead, leadQuestion, isInQueue, queuePosition, hasJoinedQueue, joinQueue, peopleAhead,
-    showRatingButton, submitRating,
+    showRatingButton, submitRating, whatsappHandoff,
     detectedProblem, urgencyLevel, contextualSuggestions, resetNudgeTimer
   } = useLawyerChat({ defaultLawyerId, area });
   const { onlineLawyers, notification, onlineCount } = useLawyerPresence();
@@ -523,6 +523,24 @@ const LawyerChatSection = ({ defaultLawyerId, area }: LawyerChatSectionProps = {
                     )}
                   </div>
                 )}
+              </div>
+            )}
+
+            {/* Servidor do chat sem resposta: o visitante segue pelo WhatsApp do escritório */}
+            {whatsappHandoff && (
+              <div className="bg-white border-t border-whatsapp-divider px-3 sm:px-4 py-3">
+                <a
+                  href={whatsappHandoff}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-whatsapp-send-btn hover:bg-whatsapp-send-btn/90 text-white font-semibold py-3 text-sm sm:text-base rounded-lg transition-colors flex items-center justify-center gap-2 min-h-[48px] shadow-md"
+                >
+                  <MessageSquare className="w-5 h-5" />
+                  Continuar no WhatsApp
+                </a>
+                <p className="text-[11px] text-center text-muted-foreground mt-1.5">
+                  (71) 99703-6269 · Dr. Gilberto Riccio, OAB/BA 46.638
+                </p>
               </div>
             )}
 
